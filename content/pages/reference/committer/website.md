@@ -1,6 +1,7 @@
-[TOC]
+Title: How To Manage any Apache Project's Website
+slug: reference/committer/website
 
-# How To Manage any Apache Project's Website # {#intro}
+[TOC]
 
 Every Apache project or podling has a website hosted at apache.org that 
 is maintained by one of these tools.  It is up to each project to decide 
