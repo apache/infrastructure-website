@@ -1,0 +1,123 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Committer e-mail configuration - Apache Infrastructure</title>
+    <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/foundation.css">
+    <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/app.css">
+    <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/font-awesome.min.css">
+  </head>
+  <body style="background: #EDD6B4;">
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 20px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px;">
+                <img style="vertical-align: middle;" src='https://infra-test.apache.org/theme/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #AA0000; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="has-dropdown"><a href="/reference" target="_self" style="padding-left: 0px;">Documentation</a></li>
+              <li class="has-dropdown"><a href="/selfserve" target="_self" style="padding-left: 0px;">Self Serve</a></li>
+              <li class="has-dropdown"><a href="/reference" target="_self" style="padding-left: 0px;">Third Link</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+     <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem;">
+        <a href="/">Home</a>
+        <i class="fa fa-caret-right"></i>
+        <a href="https://infra-test.apache.org/reference/committer/email.html">Committer e-mail configuration</a>
+      </div>
+    </div>
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>Committer e-mail configuration</h2>
+          <p>[TOC]</p>
+<p>An e-mail address at <code>apache.org</code> is associated with every committer
+account. Occasional official Apache e-mails will be directed to this
+account. It is very important that you check mail sent to your <code>apache.org</code>
+e-mail address regularly for announcements. You are also free to use this
+address for other ASF work related to projects you work on.</p>
+<p>Note that the infrastructure group provides an e-mail address for you;
+however they do not provide a mailbox — you <strong>must</strong>
+setup forwarding for this address to be able to read your mails.
+Instructions on how to <a href="#configure">setup your forwarding address</a> file
+are available.  Be sure to keep your forwarding address up to date in the
+future as well.</p>
+<h1 id="alias">Registering an e-mail alias</h1>
+<p>You can register e-mail aliases with your committer account.  Registered 
+e-mail aliases are inspected when you subscribe to a restricted mailing list
+with an e-mail other than your <code>apache.org</code> e-mail address. It is these
+registered e-mail addresses that will be allowed to registered to restricted
+mailing lists, assuming that you are actually allowed to subscribe to the list
+in the first place.</p>
+<p>On the Web, use the Selfserve app
+ at <a href="https://id.apache.org/">https://id.apache.org/</a></p>
+<h1 id="configure">Reading e-mail from your apache.org address</h1>
+<p>When your committer account is first created by Infrastructure, the forwarding
+e-mail address is set to the address provided in the account request (and,
+typically, in the ICLA).  You must keep your forwarding address up-to-date.
+(You can have more than one forwarding address.)
+You can view and change your forwarding addresses here:</p>
+<ul>
+<li>On the Web, by using the Selfserve app
+  at <a href="https://id.apache.org/">https://id.apache.org/</a></li>
+</ul>
+<p><strong>Note</strong>: It used to be possible to change the forwarding address by editing
+~/.forward and/or ~/.qmail files.  This is no longer possible.  Any manual
+changes made to these files will be lost!</p>
+<p><strong>Note</strong>: It used to be possible to not have a forwarding address.  This is
+no longer possible.</p>
+<p>Users of GMail (Googlemail) please note that only one copy of an e-mail is
+shown by GMail. If you try to test forwarding by sending a message to your
+ASF account from the GMail account that is the target of the .forward, it
+can be difficult to tell if it has worked. Send the test e-mail from a
+different account.</p>
+<h1>Sending email from your apache.org email address</h1>
+<p>If you wish to send email using your apache.org email address you will need to submit this via the committer mail-relay service. This can be configured in your mail environment using the following configuration: </p>
+<div class="highlight"><pre><span></span><span class="n">Server</span><span class="o">:</span>     <span class="n">mail</span><span class="o">-</span><span class="n">relay</span><span class="o">.</span><span class="na">apache</span><span class="o">.</span><span class="na">org</span> 
+<span class="n">Port</span><span class="o">:</span>       <span class="mi">587</span> <span class="o">(</span><span class="n">STARTTLS</span><span class="o">),</span> <span class="mi">465</span> <span class="o">(</span><span class="n">SSL</span><span class="o">)</span> 
+<span class="n">User</span><span class="o">/</span><span class="n">Pass</span><span class="o">:</span>  <span class="o">{</span><span class="n">Your</span> <span class="n">LDAP</span> <span class="n">credentials</span><span class="o">}</span>
+</pre></div>
+
+
+<p><strong>Note:</strong> If you are using <em>Gmail</em> for your <code>apache.org</code> e-mail, there is 
+a way to configure it to take advantage of this service. See 
+<a href="http://gmailblog.blogspot.com/2009/07/send-mail-from-another-address-without.html">Gmail's feature</a>
+to allow outbound mail from your <code>apache.org</code> address to be directed to 
+the mail-relay service, instead of to a Gmail server, for delivery.</p>
+<!-- vim: set noet ts=2: -->
+        </div>
+      </div>
+    </div>
+    </div>
+    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2016, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the Apache License, Version 2.0.<br/>
+          Apache and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    
+    <script src="https://infra-test.apache.org/theme/js/vendor/jquery.js"></script>
+    <script src="https://infra-test.apache.org/theme/js/vendor/what-input.js"></script>
+    <script src="https://infra-test.apache.org/theme/js/vendor/foundation.js"></script>
+    <script src="https://infra-test.apache.org/theme/js/app.js"></script>
+  </body>
+</html>

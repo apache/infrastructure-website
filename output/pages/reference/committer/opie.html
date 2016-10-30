@@ -1,0 +1,130 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using OPIE - Apache Infrastructure</title>
+    <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/foundation.css">
+    <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/app.css">
+    <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/font-awesome.min.css">
+  </head>
+  <body style="background: #EDD6B4;">
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 20px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px;">
+                <img style="vertical-align: middle;" src='https://infra-test.apache.org/theme/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #AA0000; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="has-dropdown"><a href="/reference" target="_self" style="padding-left: 0px;">Documentation</a></li>
+              <li class="has-dropdown"><a href="/selfserve" target="_self" style="padding-left: 0px;">Self Serve</a></li>
+              <li class="has-dropdown"><a href="/reference" target="_self" style="padding-left: 0px;">Third Link</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+     <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem;">
+        <a href="/">Home</a>
+        <i class="fa fa-caret-right"></i>
+        <a href="https://infra-test.apache.org/reference/committer/opie.html">Using OPIE</a>
+      </div>
+    </div>
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>Using OPIE</h2>
+          <p>This document covers the setup and use of OPIE (One-time Passwords In Everything). This is 
+a mechanism used by the ASF that ensures that your sudo password is not erroneously intercepted
+or pasted into the wrong prompt on the remote machine.</p>
+<p>Note: FreeBSD uses <code>opiepasswd</code>, Ubuntu VM's use <code>ortpasswd</code> (part of Orthrus) instead.</p>
+<p>All users in the wheel group (or in the $machine-sudoers in LDAP) have sudo access.
+In order to use sudo, a user <strong>must
+configure OPIE</strong> by running <code>opiepasswd</code> on the remote machine.</p>
+<h1>Getting an OPIE client for your computer</h1>
+<p>Using OPIE requires having an OPIE (S/Key) client on the local (trusted) machine. Some OPIE clients are:</p>
+<ul>
+<li>Debian/Ubuntu: See <a href="http://ubuntuforums.org/showthread.php?t=1891356">this forum thread</a></li>
+<li>Browser-based: <a href="/committer/otp-md5">otp-md5 tool in JavaScript</a></li>
+<li>SkeyCalc (Mac OS X)</li>
+<li>Orthrus (Unix-like; portable)</li>
+<li>FreeBSD: opiekey(1) is part of the base system</li>
+<li>donkey (Debian package donkey) Note: Use the '-f' option to set the hash type, usually 'donkey -f md5'</li>
+</ul>
+<h1>Setting up OPIE:</h1>
+<ol>
+<li>pick a good passphrase, between 10 and 127 characters long.</li>
+<li>never expose it to the net, <strong>never type it on the remote machine</strong></li>
+<li>run <code>opiepasswd</code> (or <code>ortpasswd</code>)on the remote machine you wish to get sudo access to.</li>
+<li>that will prompt you with an otp challenge, for instance: <code>otp-md5 fo1834 470</code></li>
+<li>take that challenge string and run it <strong>locally on your workstation</strong></li>
+<li>enter your passphrase at the <strong>local prompt</strong> in 5</li>
+<li>repeat 5 and 6 until you are <em>certain</em> you entered your pw correctly</li>
+<li>paste the resulting six word response into the challenge prompt in 4. If you get a 20014 error,
+    you have entered your password remotely by mistake, please contact infra if so.</li>
+<li>have someone add you to the 'wheel' group</li>
+<li>run sudo</li>
+<li>that will prompt you for an otp challenge</li>
+<li>repeat steps 5-8</li>
+<li>get root</li>
+</ol>
+<h1>An example:</h1>
+<h2>Remote machine you want to get sudo access to:</h2>
+<div class="highlight"><pre><span></span>foo@test-vm.apache.org# opiepasswd
+You need the response from an OTP generator.
+New secret pass phrase:
+otp-md5 499 fo4576  &lt;-- COPY THIS STRING
+Response:
+</pre></div>
+
+
+<h2>Local machine:</h2>
+<div class="highlight"><pre><span></span>$ otp-md5 <span class="m">499</span> fo4576
+Using the MD5 algorithm to compute response.
+Reminder: Don<span class="err">&#39;</span>t use opiekey from telnet or dial-in sessions.
+Enter secret pass phrase: foobarbaztwothirty
+WERE GAIL THUG CEIL VIE TWO  &lt;-- COPY THESE WORDS
+</pre></div>
+
+
+<h2>Remote machine:</h2>
+<div class="highlight"><pre><span></span>    Response: WERE GAIL THUG CEIL VIE TWO
+root@test-vm.apache.org #
+</pre></div>
+
+
+<h2>Video Tutorial</h2>
+<p><video controls src="https://home.apache.org/~gmcdonald/using\_opie\_orthrus.mov"><a href="https://home.apache.org/~gmcdonald/using\_opie\_orthrus.mov">Setting up Orthrus using SKeyCalc on Mac</a>
+</video></p>
+        </div>
+      </div>
+    </div>
+    </div>
+    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2016, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the Apache License, Version 2.0.<br/>
+          Apache and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    
+    <script src="https://infra-test.apache.org/theme/js/vendor/jquery.js"></script>
+    <script src="https://infra-test.apache.org/theme/js/vendor/what-input.js"></script>
+    <script src="https://infra-test.apache.org/theme/js/vendor/foundation.js"></script>
+    <script src="https://infra-test.apache.org/theme/js/app.js"></script>
+  </body>
+</html>

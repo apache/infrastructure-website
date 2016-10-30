@@ -1,0 +1,104 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subversion and Git integration with JIRA tickets - Apache Infrastructure</title>
+    <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/foundation.css">
+    <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/app.css">
+    <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/font-awesome.min.css">
+  </head>
+  <body style="background: #EDD6B4;">
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 20px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px;">
+                <img style="vertical-align: middle;" src='https://infra-test.apache.org/theme/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #AA0000; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="has-dropdown"><a href="/reference" target="_self" style="padding-left: 0px;">Documentation</a></li>
+              <li class="has-dropdown"><a href="/selfserve" target="_self" style="padding-left: 0px;">Self Serve</a></li>
+              <li class="has-dropdown"><a href="/reference" target="_self" style="padding-left: 0px;">Third Link</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+     <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem;">
+        <a href="/">Home</a>
+        <i class="fa fa-caret-right"></i>
+        <a href="https://infra-test.apache.org/reference/committer/svngit2jira.html">Subversion and Git integration with JIRA tickets</a>
+      </div>
+    </div>
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>Subversion and Git integration with JIRA tickets</h2>
+          <p>Many projects use JIRA for managing tracking bugs, milestones, feature
+requests and so on, and many of these projects keep track of which
+commit affects which ticket. In order to make things even easier, we
+have a service called svngit2jira, which integrates Subversion and Git
+commits with JIRA tickets.</p>
+<h2>How it works</h2>
+<p>The amount of work a committer has to do to achieve this integration is
+very light; Simply mention a JIRA ticket in a commit, and the specific
+JIRA ticket will receive an update indicating that a certain commit has
+been made in reference to the ticket. As an example, you may want to
+check out, for instance, <a href="https://issues.apache.org/jira/browse/CLOUDSTACK-1638">this CloudStack
+ticket</a> (just
+scroll down a bit and you'll see the commit mentioned).</p>
+<p>This service also plugs into the ReviewBoard instance if you use JIRA
+ticket names there, as for example the CloudStack project does. General
+use of the service</p>
+<p>As explained, the most common scenario is simply mentioning a JIRA
+ticket in your commit, and the JIRA ticket will be updated to reflect
+your new commit. Some projects have this trigger set, so that it only
+updates a ticket if the first sentence is the JIRA ticket number, but we
+can tailor this to suit your project's needs.</p>
+<h2>Getting set up for svngit2jira</h2>
+<p>Enabling the service for your project is as easy as creating a
+<a href="https://issues.apache.org/jira/browse/INFRA">JIRA</a> ticket with
+Infrastructure. We'll need to know the following things in order to
+proceed:</p>
+<ul>
+<li>Which project is interested in this service</li>
+<li>Is the project in agreement on using this? (please ensure this before requesting the feature, as it does tend to add quite a lot of new information to JIRA)</li>
+<li>What JIRA name does your project use? (for example, INFRA, GIRAPH etc)</li>
+<li>Do you use git or subversion</li>
+<li>How would you like commits to trigger an update of a JIRA ticket (this can be anything from the standard catch-all FOO-1234 trigger to more specific rules you thought of yourself)</li>
+<li>If you are using Git, are there any specific branches you'd like the service to ignore</li>
+</ul>
+<h2>Source code</h2>
+<p>The source for this feature is freely available at <a href="https://svn.apache.org/repos/infra/infrastructure/trunk/projects/svngit2jira/">this location</a>.</p>
+        </div>
+      </div>
+    </div>
+    </div>
+    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2016, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the Apache License, Version 2.0.<br/>
+          Apache and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    
+    <script src="https://infra-test.apache.org/theme/js/vendor/jquery.js"></script>
+    <script src="https://infra-test.apache.org/theme/js/vendor/what-input.js"></script>
+    <script src="https://infra-test.apache.org/theme/js/vendor/foundation.js"></script>
+    <script src="https://infra-test.apache.org/theme/js/app.js"></script>
+  </body>
+</html>
