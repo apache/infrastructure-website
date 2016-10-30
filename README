@@ -1,4 +1,4 @@
-first start for new infra.apache.org website
+How to build Infra Site
 
 `virtualenv $venvname`
 `source $venvname/bin/activate`
