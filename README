@@ -1,9 +1,0 @@
-first start for new infra.apache.org website
-
-`virtualenv $venvname`
-`source $venvname/bin/activate`
-`pip install pelican markdown`
-Edit all the markdown
-`pelican content`
-To preview
-`python -m pelican.server`
