@@ -17,6 +17,7 @@
       .frontbox:hover {
         border-top: 6px solid #1583CC;
         margin-top: 0px;
+        cursor: pointer;
       }
     </style>
   </head>
@@ -55,7 +56,7 @@
           <div class="row">
             <!-- how can we help? -->
             <div class="large-4 medium-4 columns">
-              <div class="frontbox">
+              <div class="frontbox" onclick="location.href='pages/help.html';">
                 <h3 style="text-transform: capitalize; text-align: center;">
                   <i class="fa fa-question-circle" style="color: #FFF; font-size: 24pt;"></i>
                   <a href="{{SITEURL}}/pages/help.html">How can we help?</a>
@@ -76,7 +77,7 @@
             
             <!-- helping out (volunteering) -->
             <div class="large-4 medium-4 columns">
-              <div class="frontbox">
+              <div class="frontbox" onclick="location.href='pages/volunteer.html';">
                 <h3 style="text-transform: capitalize; text-align: center;">
                   <i class="fa fa-handshake-o" style="color: #FFF; font-size: 24pt;"></i>
                   <a href="{{SITEURL}}/pages/volunteer.html">Lend us a hand!</a>
@@ -95,7 +96,7 @@
             
             <!-- who are we (team etc) -->
             <div class="large-4 medium-4 columns">
-              <div class="frontbox">
+              <div class="frontbox" onclick="location.href='pages/team.html';">
                 <h3 style="text-transform: capitalize; text-align: center;">
                   <i class="fa fa-group" style="color: #FFF; font-size: 24pt;"></i>
                   <a href="{{SITEURL}}/pages/team.html">Who are we?</a>
