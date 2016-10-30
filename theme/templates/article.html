@@ -1,0 +1,51 @@
+{% block head %}
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ article.title }} - Apache Infrastructure</title>
+    <link rel="stylesheet" href="theme/css/foundation.css">
+    <link rel="stylesheet" href="theme/css/app.css">
+  </head>
+  <body style="background: #EEE;">
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 20px; background: #222;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu dark" style="background: #222;">
+              <li class="notable-logo"><a href="/" target="_self">
+                <h4 style="color: #AA0000; text-transform: uppercase;"><img src='theme/images/feather.png' width='18'/> Apache Infrastructure</h4></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="menu" style="background: #222;">
+              <li class="has-dropdown"><a href="/reference" target="_self">Reference library</a></li>
+              <li class="has-dropdown"><a href="/selfserve" target="_self">Self Serve Tools</a></li>
+              <li class="has-dropdown"><a href="/reference" target="_self">Third menu item</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>{{ article.title }}</h2>
+          {{ article.content }}
+        </div>
+      </div>
+    </div>
+    </div>
+    
+    
+    <script src="theme/js/vendor/jquery.js"></script>
+    <script src="theme/js/vendor/what-input.js"></script>
+    <script src="theme/js/vendor/foundation.js"></script>
+    <script src="theme/js/app.js"></script>
+  </body>
+</html>
+{% endblock %}

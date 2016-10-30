@@ -1,0 +1,144 @@
+{% block head %}
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apache Infrastructure</title>
+    <link rel="stylesheet" href="theme/css/foundation.css">
+    <link rel="stylesheet" href="theme/css/app.css">
+  </head>
+  <body style="background: #EEE;">
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 20px; background: #222;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu dark" style="background: #222;">
+              <li class="notable-logo"><a href="/" target="_self">
+                <h4 style="color: #AA0000; text-transform: uppercase;"><img src='theme/images/feather.png' width='18'/> Apache Infrastructure</h4></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="menu" style="background: #222;">
+              <li class="has-dropdown"><a href="/reference" target="_self">Reference library</a></li>
+              <li class="has-dropdown"><a href="/selfserve" target="_self">Self Serve Tools</a></li>
+              <li class="has-dropdown"><a href="/reference" target="_self">Third menu item</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h3>Welcome to the web site of the Apache Infrastructure Team!</h3>
+          <p>
+            More and more stuff will come here, once we've...made it!
+          </p>
+          <div class="row">
+            <!-- how can we help? -->
+            <div class="large-4 medium-4 columns">
+              <div style="border-radius: 3px; border: 1px solid #999; background: #444; color: #EEE; padding: 5px;">
+                <h3 style="text-transform: capitalize; text-align: center;"><a href="help.html">How can we help?</a></h3>
+                <p style="height: 200px;">
+                  The Apache Infrastructure team exists to ensure the
+                  day-to-day operations of the technical aspects of the
+                  foundation. If you have questions about or require
+                  support regarding email, code repositories, web sites,
+                  issue trackers and so forth, we are here to help!
+                </p>
+                <p style="text-align: center;">
+                  <a href="help.html" class="button">Learn More...</a>
+                </p>
+              </div>
+            </div>
+            
+            <!-- helping out (volunteering) -->
+            <div class="large-4 medium-4 columns">
+              <div style="border-radius: 3px; border: 1px solid #999; background: #444; color: #EEE; padding: 5px;">
+                <h3 style="text-transform: capitalize; text-align: center;"><a href="volunteer.html">Lend us a hand!</a></h3>
+                <p style="height: 200px;">
+                  Volunteers are the driving force of the Apache
+                  Softeware Foundation. The Infrastructure team is
+                  always looking for people willing to help out at
+                  whatever effort level suits just you.
+                </p>
+                <p style="text-align: center;">
+                  <a href="volunteer.html" class="button">Learn More...</a>
+                </p>
+              </div>
+            </div>
+            
+            <!-- who are we (team etc) -->
+            <div class="large-4 medium-4 columns">
+              <div style="border-radius: 3px; border: 1px solid #999; background: #444; color: #EEE; padding: 5px;">
+                <h3 style="text-transform: capitalize; text-align: center;"><a href="team.html">Who are we?</a></h3>
+                <p style="height: 200px;">
+                  Bla bla bla something about the team.
+                </p>
+                <p style="text-align: center;">
+                  <a href="team.html" class="button">Learn More...</a>
+                </p>
+              </div>
+            </div>
+            
+        </div>
+      </div>
+    </div>
+    </div>
+    
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <div class="callout">
+        <h3>News from Infrastructure:</h3>
+        <hr/>
+          {% endblock %}
+          
+          {%block content %}
+          
+          {% if articles %}
+              {% for article in articles_page.object_list %}        
+          
+                  {# First item #}
+              
+                      <aside id="featured">
+                          <div class="body">
+                              <article>
+                                  <h4><a href="{{ article.url }}">{{ article.title }}</a> - {{ article.date|strftime('%d %B %Y') }}</h4>
+                                  {{ article.content }}
+                              </article>
+              {% if loop.last and (articles_page.has_previous() or not articles_page.has_previous() and loop.length > 1) %} 
+                              {% include 'pagination.html' %}
+                          {% endif %}
+                          <hr/>
+                          </div>
+                      </aside><!-- /#featured -->
+                      
+                  
+              {% endfor %}
+          {% else %}
+          <!--
+          <section id="content" >
+              <div class="body">
+              <h2>Pages</h2>
+                  {% for page in PAGES %}
+                      <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
+                  {% endfor %}
+              </div>
+          </section>
+          -->
+          {% endif %}
+          {% endblock %}
+        </div>
+      </div>
+    </div>
+    <script src="theme/js/vendor/jquery.js"></script>
+    <script src="theme/js/vendor/what-input.js"></script>
+    <script src="theme/js/vendor/foundation.js"></script>
+    <script src="theme/js/app.js"></script>
+  </body>
+</html>
+
