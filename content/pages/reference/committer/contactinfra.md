@@ -1,5 +1,5 @@
 Title: Contacting Infrastructure
-slug: reference/committer/contact-infra
+slug: reference/committer/contactinfra
 
 
 # JIRA Tickets
