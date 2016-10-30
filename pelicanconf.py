@@ -14,6 +14,9 @@ TIMEZONE = 'UTC'
 
 DEFAULT_LANG = u'en'
 
+# Sort news by date, descending, latest article first
+ARTICLE_ORDER_BY = 'reversed-date'
+
 # Feed generation is usually not desired when developing
 FEED_ALL_ATOM = None
 CATEGORY_FEED_ATOM = None
