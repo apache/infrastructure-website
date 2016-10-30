@@ -13,6 +13,7 @@ PATH = 'content'
 TIMEZONE = 'UTC'
 
 DEFAULT_LANG = u'en'
+SITEURL = 'https://infra-test.apache.org'
 
 # Sort news by date, descending, latest article first
 ARTICLE_ORDER_BY = 'reversed-date'
