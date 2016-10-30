@@ -1,10 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
+from datetime import date
 
 AUTHOR = u'PonyGnomeBot'
 SITENAME = u'Apache Infrastructure'
 SITEURL = ''
+CURRENTYEAR = date.today().year
 
 PATH = 'content'
 
