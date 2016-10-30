@@ -1,0 +1,156 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How To Manage any Apache Project's Website - Apache Infrastructure</title>
+    <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/foundation.css">
+    <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/app.css">
+    <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/font-awesome.min.css">
+  </head>
+  <body style="background: #EDD6B4;">
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 20px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px;">
+                <img style="vertical-align: middle;" src='https://infra-test.apache.org/theme/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #AA0000; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="has-dropdown"><a href="/reference" target="_self" style="padding-left: 0px;">Documentation</a></li>
+              <li class="has-dropdown"><a href="/selfserve" target="_self" style="padding-left: 0px;">Self Serve</a></li>
+              <li class="has-dropdown"><a href="/reference" target="_self" style="padding-left: 0px;">Third Link</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+     <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem;">
+        <a href="/">Home</a>
+        <i class="fa fa-caret-right"></i>
+        <a href="https://infra-test.apache.org/reference/committer/website.html">How To Manage any Apache Project's Website</a>
+      </div>
+    </div>
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>How To Manage any Apache Project's Website</h2>
+          <p>[TOC]</p>
+<p>Every Apache project or podling has a website hosted at apache.org that 
+is maintained by one of these tools.  It is up to each project to decide 
+the details of how their own website is maintained and what software
+is used - as long as it results in static files that can be served by the
+our public web servers (limited support for .htaccess files and CGI
+scripts is also available). </p>
+<p>The basic requirements for site management
+are that only committers should be able to modify the site and that
+notifications of all site changes should be sent to the relevant
+project mailing lists.  The Apache CMS allows non-committers to send 
+patches via a simple web interface by "Mail Diff"ing to the project 
+mailing list that can be easily published by a committer.</p>
+<p>The infrastructure team currently supports two primary tools for
+publishing and maintaining Apache project websites:</p>
+<ul>
+<li><strong>Apache CMS</strong>, which provides a simple browser-based user interface
+    for editing, staging and publishing site content in Markdown, HTML
+    or any other source format for which support has been added. See
+    the <a href="cmsref">CMS reference</a> and <a href="cmsadoption">adoption</a> for more details. The Apache CMS
+    uses svnpubsub as the underlying mechanism for publishing a site.</li>
+<li><strong>svnpubsub</strong>, which allows the static contents of a designated svn
+    folder (<a href="http://svn.apache.org/repos/asf/ant/site/ant/production/">example</a>) to automatically published
+    as the project web site at <code>http://project.apache.org/</code>. The project
+    team can use any site build mechanism it wants as long as the above
+    requirements are met.</li>
+</ul>
+<p>Some projects still use a deprecated site deployment system based
+on periodic synchronization of static files from people.apache.org to
+the live web servers. This mechanism will be <strong>discontinued</strong> at the end of
+2012, by which time all projects should have migrated to one of the above
+site publishing mechanisms.</p>
+<h1 id="preview">How do I preview my project website?</h1>
+<p>For svnpubsub sites, review the local files in your svn checkout before
+committing them. The changes will be published immediately after you
+commit them.</p>
+<p>For CMS sites, just commit the changes (without "publish"-ing them) and browse
+to <code>http://TLP.staging.apache.org/</code>. The CMS 
+web interface includes a [Staged] link that will take you there directly.</p>
+<h1 id="configure">Can I control the configuration of my project website?</h1>
+<p>Yes, the central config file allows you to use <code>.htaccess</code> files in your
+website directories to control configuration. Of course, reading and
+parsing an <code>.htaccess</code> file on each request can slow down the server, so
+you should consider requesting an adjustment in the central config file for
+permanent configuration changes.</p>
+<h1 id="logging">How does logging work?</h1>
+<p>Each day's error and access logs are kept in
+<code>www.apache.org:/x1/logs/www/</code>. They are shuffled off each night to a
+directory under <code>people.apache.org:/x1/logarchive/</code> and are then
+periodically archived to other media.</p>
+<p>No formal log analysis is performed, but you are free to grab the logs and
+do whatever analysis you would like.</p>
+<h1 id="use-cms">Do project sites have to use <a href="cms">the CMS</a>?</h1>
+<p>No.  It's recommended but not required.  (<a href="http://www.apache.org/dev/cms">More information</a> and
+<a href="http://www.apache.org/dev/cmsref">reference</a> about the Apache CMS.)</p>
+<h1 id="svnpubsub">Do project sites have to use <a href="http://svn.apache.org/viewvc/subversion/trunk/tools/server-side/svnpubsub/">svnpubsub</a>?</h1>
+<p>Yes.  Infrastructure will mandate transition to svnpubsub over this year.
+(svnpubsub <a href="#intro">requires</a> the generated site files to be in a Subversion
+tree somewhere.  For CMS users this tree will be the CMS build output tree.)</p>
+<h2 id="svnpubsub-revision">What revision of the site is currently being served?</h2>
+<p>Look at the <code>.revision</code> file at the root of your site (for example,
+<a href="https://www.apache.org/dist/subversion/.revision">https://www.apache.org/dist/subversion/.revision</a> or 
+<a href="http://subversion.apache.org/.revision">http://subversion.apache.org/.revision</a>).  That file is updated after every
+successful <code>svn update</code>.  (If the update is underway or exited abnormally,
+<code>.revision</code> won't have been changed.)</p>
+<h1 id="mail">How to provide public access to our project mail archive mbox files?</h1>
+<p>Some projects have a "mail" directory at the top of their project website.
+Enable this by creating a symbolic link in svnpubsub or CMS output
+(to <code>/home/apmail/public-arch/$tlp.apache.org</code>).
+Also see other <a href="http://apache.org/dev/#mail">notes</a>.</p>
+<h1 id="feather">Can my project site use its own favicon instead of just the Apache Feather?</h1>
+<p>Yes, just add a <code>favicon.ico</code> file to your site's root.  The feather is only
+used for project sites that don't have a <code>favicon.ico</code> file.</p>
+<h1 id="generated">How can I minimize the number of changes committed in my Maven/JavaDoc/generated site?</h1>
+<p>If you are using svnpubsub, the commit will perform very slowly if the number of changes is large - particularly if the number of files is large.
+This is often the case with JavaDoc, and to a lesser extent Maven generated sites.</p>
+<p>You may wish to use the CMS instead of svnpubsub directly. This moves the work to the server-side, but it will still be valuable to minimize the changes committed.</p>
+<p>These are some steps that can be taken:</p>
+<ul>
+<li>Ask infrastructure to store your generated content in the CMS repository, rather than the main ASF repository. While this won't necessarily speed up the commit, it will prevent it from impacting other users.</li>
+<li>When running JavaDoc, pass the <code>-notimestamp</code> option. This will avoid most files from being modified between runs if there haven't been code changes.</li>
+<li>Use a Maven skin that doesn't generate a timestamp into the output. This may require customizing the current skins.</li>
+<li>If you use the Maven dependencies report in the Project Info Reports plugin, use version 2.7+ of the plugin (<em>not yet released</em>) which avoids random strings being generated.</li>
+<li>If you maintain historical versions of documentation, always check-in to a single "trunk", then use an <code>svn copy</code> operation to tag or branch the content, rather than checking in a complete copy</li>
+<li>Minimize uses of "publish date" and "version" in templates to those that are truly necessary or helpful. Consider using a "last modified date" and version in the URL instead (unless "latest" is implied).</li>
+<li>Minimize Subversion keywords in the output that may change frequently without significant meaning. This includes in source code that may be rendered to JavaDoc or a Maven JXR source cross-reference).</li>
+<li>Avoid publishing Maven reports that change constantly to the project site. Code coverage, style reports, static analysis, etc. can be generated into a working copy on the CI server instead for easy developer viewing, and project's can consider utilizing https://analysis.apache.org/ for such reports as well.</li>
+</ul>
+        </div>
+      </div>
+    </div>
+    </div>
+    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2016, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the Apache License, Version 2.0.<br/>
+          Apache and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    
+    <script src="https://infra-test.apache.org/theme/js/vendor/jquery.js"></script>
+    <script src="https://infra-test.apache.org/theme/js/vendor/what-input.js"></script>
+    <script src="https://infra-test.apache.org/theme/js/vendor/foundation.js"></script>
+    <script src="https://infra-test.apache.org/theme/js/app.js"></script>
+  </body>
+</html>
