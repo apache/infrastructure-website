@@ -84,7 +84,7 @@
                 </h3>
                 <p style="height: 140px; font-size: 0.9rem;">
                   Volunteers are the driving force of the Apache
-                  Softeware Foundation. The Infrastructure team is
+                  Software Foundation. The Infrastructure team is
                   always looking for people willing to help out at
                   whatever effort level suits just you.
                 </p>
@@ -125,43 +125,7 @@
         <div class="callout">
         <h3>News from Infrastructure:</h3>
         <hr/>
-          {% endblock %}
-          
-          {%block content %}
-          
-          {% if articles %}
-              {% for article in articles_page.object_list %}        
-          
-                  {# First item #}
-              
-                      <aside id="featured">
-                          <div class="body">
-                              <article>
-                                  <h4><a href="{{ article.url }}">{{ article.title }}</a> - {{ article.date|strftime('%d %B %Y') }}</h4>
-                                  {{ article.summary }}
-                              </article>
-              {% if loop.last and (articles_page.has_previous() or not articles_page.has_previous() and loop.length > 1) %} 
-                              {% include 'pagination.html' %}
-                          {% endif %}
-                          <hr/>
-                          </div>
-                      </aside><!-- /#featured -->
-                      
-                  
-              {% endfor %}
-          {% else %}
-          <!--
-          <section id="content" >
-              <div class="body">
-              <h2>Pages</h2>
-                  {% for page in PAGES %}
-                      <li><a href="{{ SITEURL }}/{{ page.url }}">{{ page.title }}</a></li>
-                  {% endfor %}
-              </div>
-          </section>
-          -->
-          {% endif %}
-          {% endblock %}
+         <div id="infranews"></div>
         </div>
       </div>
     </div>
@@ -177,6 +141,21 @@
     <script src="{{SITEURL}}/theme/js/vendor/what-input.js"></script>
     <script src="{{SITEURL}}/theme/js/vendor/foundation.js"></script>
     <script src="{{SITEURL}}/theme/js/app.js"></script>
+    <script type="text/javascript">
+      <!--
+      var FEED_URL = 'https://blogs.apache.org/infra/feed/entries/atom'
+      var max = 5;
+      $.get(FEED_URL, function (data) {
+        $(data).find("entry").each(function (el) {
+          
+          var t = el.find("title");
+          var c = el.find("content");
+          max--;
+          if (max < 0) return;
+          document.getElementById('infranews').innerHTML += "<h3>" + t + "</h3><p>" + c + "</p>"
+      })});
+      -->
+    </script>
   </body>
 </html>
-
+{% endblock %}
