@@ -28,6 +28,16 @@ which may already have the answer you are seeking.
 </span>
 <hr/>
 
+<!-- new repo setup -->
+<span style='color: #A00;'><q>
+    We need a new repository for Project Foo!
+</q></span>
+<br/>
+<span style='color: #00A;'>
+    For new (empty) repositories, please use <a href="/self-serve/reporeq/">reporeq</a>.
+    For imports, please create a JIRA through the <a href="https://infrahelp.apache.org/">Service Desk</a> platform.
+</span>
+<hr/>
 
 #### Email-related questions
 <!-- unsubbing -->
