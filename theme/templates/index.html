@@ -22,27 +22,7 @@
     </style>
   </head>
   <body style="background: #EDD6B4;">
-    <div class="row">
-      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
-        <div class="hide-for-small-only">
-          <div class="top-bar-left">
-            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
-              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px;">
-                <img style="vertical-align: middle;" src='{{SITEURL}}/theme/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
-              </li>
-            </ul>
-          </div>
-          <div class="top-bar-right">
-            <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px;">
-              <li class="has-dropdown"><a href="https://status.apache.org/" target="_self" style="padding-left: 0px;">Service Status</a></li>
-              <li class="has-dropdown"><a href="/reference" target="_self" style="padding-left: 0px;">Documentation</a></li>
-              <li class="has-dropdown"><a href="/selfserve" target="_self" style="padding-left: 0px;">Self Serve</a></li>
-              <li class="has-dropdown"><a href="/reference" target="_self" style="padding-left: 0px;">Third Link</a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
+    {% include "menu.html" %}
     
     <div class="row">
       <div class="large-12 columns">
