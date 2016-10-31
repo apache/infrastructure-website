@@ -4,7 +4,7 @@ Slug: help
 The Infrastructure Team is ready to assist during most of the day,
 thanks to our distributed team on four continents, whether it be via
 email ([users@infra.apache.org](mailto:users@infra.apache.org)),
-[HipChat](http://infra.chat/) or via [JIRA tickets](https:/infrahelp.apache.org/).
+[HipChat](http://infra.chat/) or via [JIRA tickets](https://infrahelp.apache.org/).
 
 If you have an issue that neds solving, we ask that you please review the FAQ below,
 which may already have the answer you are seeking.
