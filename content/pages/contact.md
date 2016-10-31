@@ -22,7 +22,7 @@ General inquiries and questions should go to our user mailing list:
         <tr>
             <td>users@infra.apache.org</td>
             <td>users-subscribe@infra.apache.org</td>
-            <td>[lists.apache.org](https://lists.apache.org/list.html?users@infra.apache.org)</td>
+            <td><a href="https://lists.apache.org/list.html?users@infra.apache.org">lists.apache.org</a></td>
         </tr>
     </tbody>
 </table>
