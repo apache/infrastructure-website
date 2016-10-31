@@ -64,5 +64,5 @@ Using OPIE requires having an OPIE (S/Key) client on the local (trusted) machine
 
 ## Video Tutorial
 
-  <video controls src="https://home.apache.org/~gmcdonald/using\_opie\_orthrus.mov"><a href="https://home.apache.org/~gmcdonald/using\_opie\_orthrus.mov">Setting up Orthrus using SKeyCalc on Mac</a>
+  <video controls src="https://home.apache.org/~gmcdonald/using_opie_orthrus.mov"><a href="https://home.apache.org/~gmcdonald/using_opie_orthrus.mov">Setting up Orthrus using SKeyCalc on Mac</a>
 </video>
