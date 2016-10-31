@@ -9,7 +9,7 @@ On this site, you can log on and change your credentials such as password, email
 and more.
 
 
-# Lost your password?{#pwd}
+# Lost your password?
 
 If you have misplaced or forgotten your password, you can reset it by following the instructions at:
 [https://id.apache.org/reset/enter](https://id.apache.org/reset/enter).
@@ -19,7 +19,7 @@ A reset key is only valid for 15 minutes, so be sure to use it as soon as it arr
 
 NOTE:  If you have added a GPG key to your account the password reset will be encrypted with that key, so you'll need extra intervention if you have lost/ forgotten that key.
 
-# Locked out of the system? {#locked}
+# Locked out of the system?
 If you have forgotten your password and cannot retrieve it, you should contact Infrastructure for
 further information. This can be done via [root@apache.org](mailto:root@apache.org).
 
