@@ -3,7 +3,7 @@ Slug: help
 
 
 The Infrastructure Team is ready to assist during most of the day,
-thanks to our distributed team on four continents, whether it be via
+thanks to our distributed team on three continents, whether it be via
 email ([users@infra.apache.org](mailto:users@infra.apache.org)),
 [HipChat](http://infra.chat/) or via [JIRA tickets](https://infrahelp.apache.org/).
 
