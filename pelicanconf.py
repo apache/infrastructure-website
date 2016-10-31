@@ -15,6 +15,8 @@ TIMEZONE = 'UTC'
 DEFAULT_LANG = u'en'
 SITEURL = 'https://infra-test.apache.org'
 PAGE_SAVE_AS = './{slug}.html'
+ARTICLE_SAVE_AS = 'news/{slug}.html'
+ARTICLE_URL = 'news/{slug}.html'
 
 # Sort news by date, descending, latest article first
 ARTICLE_ORDER_BY = 'reversed-date'
