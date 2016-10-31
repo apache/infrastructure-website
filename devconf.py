@@ -29,6 +29,11 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+# TOC Generator
+PLUGIN_PATHS = ['./theme/plugins']
+PLUGINS = ['toc']
+TOC_HEADERS = r"h[1-6]"
+
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
          ('Python.org', 'http://python.org/'),
