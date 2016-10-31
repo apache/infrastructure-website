@@ -67,7 +67,7 @@ Guide to new committers        </a>
           <h2>
               Guide to new committers
           </h2>
-              <p>[TOC]</p>
+              <div id="toc" style="border-radius: 3px; border: 1px solid #999; background-color: #EEE; padding: 4px;"><h4>Table of Contents:</h4><ul><ul><li><a class="toc-href" href="#cla" title="Contributor license agreement">Contributor license agreement</a></li><li><a class="toc-href" href="#before-account-creation" title="Before account creation">Before account creation</a></li><li><a class="toc-href" href="#account-creation" title="Account creation">Account creation</a></li><li><a class="toc-href" href="#ssh-setup" title="Setting up SSH">Setting up SSH</a></li><li><a class="toc-href" href="#setting-up-email" title="Setting up email">Setting up email</a></li><li><a class="toc-href" href="#subversion-access-and-web-sites" title="Subversion access and Web sites">Subversion access and Web sites</a></li><li><a class="toc-href" href="#security-and-pgp" title="Security and PGP">Security and PGP</a></li><li><a class="toc-href" href="#other-resources" title="Other resources">Other resources</a></li><li><a class="toc-href" href="#committers-only-subversion-modules" title="Committers-only Subversion modules">Committers-only Subversion modules</a></li><li><a class="toc-href" href="#community" title="Community">Community</a></li><li><a class="toc-href" href="#responsibilities" title="Responsibilities">Responsibilities</a></li><li><a class="toc-href" href="#apachecon" title="ApacheCon">ApacheCon</a></li><li><a class="toc-href" href="#personal-web-space" title="Personal web space">Personal web space</a></li><li><a class="toc-href" href="#identity-theft" title="Identity theft">Identity theft</a></li><li><a class="toc-href" href="#unofficial-resources" title="Unofficial resources">Unofficial resources</a></li></ul></ul></div>
 <p>This document aims to bring together in one place all of the general
 information that a newbie committer needs to know. There will be other
 details (some project-specific) that cannot be covered here. Those should
@@ -107,7 +107,7 @@ understanding read the <a href="../licenses/">ASF license guide</a>.</p>
 clearly contributed to the ASF in public. In the case of any doubt (or when
 a contribution with a more complex history is presented) please consult your
 project PMC before committing it.</p>
-<h1>Before account creation</h1>
+<h1 id="before-account-creation">Before account creation</h1>
 <p>You will also be asked for a preferred Apache user name. Please think also
 of an alternative, in the case that the primary is unsuitable or taken.
 Note that your user name must not contain punctuation. (<a href="http://people.apache.org/committer-index.html">This
@@ -146,7 +146,7 @@ bring it all together. What follows is a partial list:</p>
 <p>and the ASF general <a href="http://wiki.apache.org/general">wiki</a>.</p>
 </li>
 </ul>
-<h1>Account creation</h1>
+<h1 id="account-creation">Account creation</h1>
 <p>You will receive an email when your account has been created.  (This may take
 a week or two.)</p>
 <p>There are a number of general things you need to do. These will be covered
@@ -170,8 +170,6 @@ You can add multiple lines.</p>
 minotaur.apache.org using ssh:</p>
 <div class="highlight"><pre><span></span>$ ssh <span class="o">[</span>username<span class="o">]</span>@minotaur.apache.org
 </pre></div>
-
-
 <p>If you cannot login, you need to check (via the project PMC) that the
 account has been created correctly. Please check your ssh configuration
 first (do <code>ssh -e</code>).</p>
@@ -186,16 +184,14 @@ committers. To do this, (depending on which shell you use) edit the
 is set as follows:</p>
 <div class="highlight"><pre><span></span><span class="nb">umask</span> 002
 </pre></div>
-
-
 <p>You may find that a <code>umask</code> line already exists, in which case
 it should be modified. Otherwise, a new line needs to be added. (You will
 need to use a *nix command-line editor such as <code>vi</code>.) Tip: You can view the
 files of some other committer, e.g. <code>ls -al ~mymentor; cat
 ~mymentor/.cshrc</code> </p>
-<h1>Setting up email</h1>
+<h1 id="setting-up-email">Setting up email</h1>
 <p>See these <a href="user-email.html">instructions</a>.</p>
-<h1>Subversion access and Web sites</h1>
+<h1 id="subversion-access-and-web-sites">Subversion access and Web sites</h1>
 <p>All the information you need is contained <a href="version-control.html">here</a>.</p>
 <p>If your project has a page about the developers and committers, go right
 ahead and add your name and information to it! Really. This is a great way
@@ -208,7 +204,7 @@ website, then ask on your dev mailing list and use the answer to create a
 document describing how to do that. It will be gratefully received!</p>
 <p>Here are some general infrastructure notes about how to manage your
 <a href="project-site.html">project website</a>.</p>
-<h1>Security and PGP</h1>
+<h1 id="security-and-pgp">Security and PGP</h1>
 <p>Security is vital and Apache pays great attention to it. Please remember
 that at all times.</p>
 <p>Security is vital and Apache pays great attention to it. Please remember
@@ -242,7 +238,7 @@ HOWTO</a>. </p>
 related to the use of signatures both in general and specifically at
 Apache. See also the <a href="http://www.apache.org/dev/release-signing.html">signing
 guide</a>.</p>
-<h1>Other resources</h1>
+<h1 id="other-resources">Other resources</h1>
 <p><a href="http://people.apache.org">Apache People</a> maintains public resources about
 Apache committers.
 <a href="http://people.apache.org/foaf/index.html">Participation</a> is easy but
@@ -250,7 +246,7 @@ optional. If you want to take part, now is a good time to add your details.</p>
 <p>Although the Apache Way is to keep things as public as possible, there are
 some resources here at Apache which are closed to those who are not
 committers.</p>
-<h1>Committers-only Subversion modules</h1>
+<h1 id="committers-only-subversion-modules">Committers-only Subversion modules</h1>
 <p>You should do a checkout of the private <code>committers</code> module. This is stored
 in the subversion repository with url
 <code>https://svn.apache.org/repos/private/committers</code>. (See
@@ -261,7 +257,7 @@ are a number of private mailing lists you need to know about. Join in the
 Apache community by signing up to every list that interests you. It is
 better to sign up (even if you sign off later) than to miss out! Please
 respect the usage guidelines for these private lists.</p>
-<h1>Community</h1>
+<h1 id="community">Community</h1>
 <p>The community makes Apache fun. The community list is a public
 <a href="http://mail-archives.apache.org/mod_mbox/www-community/">readable</a> list
 for topics that cut across <a href="pmc.html">PMC</a> boundaries. Discussions of all
@@ -277,7 +273,7 @@ within the Apache community without the burden of community building.</p>
 committers then come and discuss it at <a href="http://labs.apache.org/">Labs</a>.
 Even if you don't have anything at the moment, then come and take a look at
 what other committers are working on.</p>
-<h1>Responsibilities</h1>
+<h1 id="responsibilities">Responsibilities</h1>
 <p>Join your project's commit mailing list if one exists (some projects send
 all commit emails to the dev list).</p>
 <p>Each committer has a responsibility to monitor the changes made for
@@ -288,7 +284,7 @@ necessary to veto (-1) a commit but please beware that this is an extreme
 sanction and rarely warranted.</p>
 <p>Do not be surprised if your first commit has a delayed diff email. It needs
 to go through the human moderators.</p>
-<h1>ApacheCon</h1>
+<h1 id="apachecon">ApacheCon</h1>
 <p>If you don't have one already, make a note in your diary about the next
 <a href="http://www.apachecon.com/">ApacheCon</a>. This is a great opportunity to meet
 other Apache folks, hack code and dream about great new open source
@@ -315,7 +311,7 @@ the <code>http://home.apache.org/~<em>username</em>/</code> url (where
 <li>Installation media for any software</li>
 </ul>
 <p>As a guide, your personal web space is not expected to exceed a few hundred MB. If it does, you may be required to justify to the infrastructure team why you require so much personal web space.</p>
-<h1>Identity theft</h1>
+<h1 id="identity-theft">Identity theft</h1>
 <p>Please be aware that Apache Software Foundation committers are targets for
 identity theft. These spoof attacks resemble the
 <a href="http://en.wikipedia.org/wiki/Phishing">phishing</a> attacks used to gain
@@ -334,10 +330,10 @@ question to infrastructure before taking any action.</p>
 fingerprint of the certificate used to <a href="version-control.html#cert">securely serve the
 website</a>.  A full list of fingerprints is maintained
 on the <a href="machines">machines</a> page.</p>
-<h1>Unofficial resources</h1>
+<h1 id="unofficial-resources">Unofficial resources</h1>
 <p>If you like, get involved with unofficial resources open to ASF committers:</p>
 <ul>
-<li><a href="committers.html#planetapache">Join</a> 
+<li><a href="committers.html#planetapache">Join</a>
 <a href="http://planet.apache.org/committers/">PlanetApache</a> </li>
 </ul>
 <p>Please help to improve this document (see <a href="infra-site.html">guidelines</a> for
