@@ -22,7 +22,7 @@
   </head>
   <body style="background: #EDD6B4;">
     <div class="row">
-      <div class="top-bar" style="padding: 0; margin-bottom: 20px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
         <div class="hide-for-small-only">
           <div class="top-bar-left">
             <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
@@ -60,7 +60,7 @@
                   <i class="fa fa-question-circle" style="color: #FFF; font-size: 24pt;"></i>
                   <a href="https://infra-test.apache.org/help.html">How can we help?</a>
                 </h3>
-                <p style="height: 140px; font-size: 0.9rem;">
+                <p style="height: 130px; font-size: 0.9rem;">
                   
                   The Apache Infrastructure team exists to ensure the
                   day-to-day operations of the technical aspects of the
@@ -81,9 +81,9 @@
                   <i class="fa fa-handshake-o" style="color: #FFF; font-size: 24pt;"></i>
                   <a href="https://infra-test.apache.org/volunteer.html">Lend us a hand!</a>
                 </h3>
-                <p style="height: 140px; font-size: 0.9rem;">
+                <p style="height: 130px; font-size: 0.9rem;">
                   Volunteers are the driving force of the Apache
-                  Softeware Foundation. The Infrastructure team is
+                  Software Foundation. The Infrastructure team is
                   always looking for people willing to help out at
                   whatever effort level suits just you.
                 </p>
@@ -100,7 +100,7 @@
                   <i class="fa fa-group" style="color: #FFF; font-size: 24pt;"></i>
                   <a href="https://infra-test.apache.org/team.html">Who are we?</a>
                 </h3>
-                <p style="height: 140px; font-size: 0.9rem;">
+                <p style="height: 130px; font-size: 0.9rem;">
                   
                   The Infrastructure team is responsible for the
                   management and day-to-day system administration and
@@ -124,39 +124,7 @@
         <div class="callout">
         <h3>News from Infrastructure:</h3>
         <hr/>
-          
-          
-        
-          
-              
-                      <aside id="featured">
-                          <div class="body">
-                              <article>
-                                  <h4><a href="new-roadmap-for-infrastructure.html">New Roadmap for Infrastructure</a> - 30 October 2016</h4>
-                                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In ultrices finibus diam ac pharetra. Cras mollis lectus quis nibh rutrum, at lacinia justo pulvinar. Vestibulum aliquet pharetra enim mattis molestie. Nunc vel fermentum nulla, nec finibus magna. Pellentesque est dolor, consectetur vel iaculis a, cursus sed nibh. Suspendisse luctus fermentum ...</p>
-                              </article>
-                          <hr/>
-                          </div>
-                      </aside><!-- /#featured -->
-                      
-                  
-        
-          
-              
-                      <aside id="featured">
-                          <div class="body">
-                              <article>
-                                  <h4><a href="welcome-to-our-new-webpage.html">Welcome to Our New Webpage</a> - 26 October 2016</h4>
-                                  <p>This is a sample new article from the Infrastructure Team.</p>
-<p>It could be about an outage, or a new feature, or something entirely
-different.</p>
-                              </article>
- 
-                          <hr/>
-                          </div>
-                      </aside><!-- /#featured -->
-                      
-                  
+         <div id="infranews"></div>
         </div>
       </div>
     </div>
@@ -172,5 +140,20 @@ different.</p>
     <script src="https://infra-test.apache.org/theme/js/vendor/what-input.js"></script>
     <script src="https://infra-test.apache.org/theme/js/vendor/foundation.js"></script>
     <script src="https://infra-test.apache.org/theme/js/app.js"></script>
+    <script type="text/javascript">
+      <!--
+      var FEED_URL = 'https://blogs.apache.org/infra/feed/entries/atom'
+      var max = 5;
+      $.get(FEED_URL, function (data) {
+        $(data).find("entry").each(function (el) {
+          
+          var t = el.find("title");
+          var c = el.find("content");
+          max--;
+          if (max < 0) return;
+          document.getElementById('infranews').innerHTML += "<h3>" + t + "</h3><p>" + c + "</p>"
+      })});
+      -->
+    </script>
   </body>
 </html>
