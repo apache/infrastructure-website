@@ -17,9 +17,20 @@ which may already have the answer you are seeking.
 
 [TOC]
 
+#### Apache Account Info ####
+<p style="font-size: 0.9rem; width: 80%;">
+<!-- forgot my password -->
+<span style='color: #A00;'><q>
+    I forgot my password
+</q></span>
+<br/>
+<span style='color: #00A;'>
+    Initially try https://id.apache.org/; failing that mail root@
+</span>
+<hr/>
+
 
 #### Repository-related questions
-<p style="font-size: 0.9rem; width: 80%;">
 <!-- github sync stuff -->
 <span style='color: #A00;'><q>
     Our GitHub repository is out of sync, can you help?
@@ -86,6 +97,18 @@ which may already have the answer you are seeking.
 <br/>
 <span style='color: #00A;'>
     Please see <a href="/reference/committer/id">this page</a> for help.
+</span>
+<hr/>
+
+<!-- missing email sent to lists -->
+<span style='color: #A00;'><q>
+    I don't see the emails that I posted to a mailing list
+</q></span>
+<br/>
+<span style='color: #00A;'>
+If you are using GMail, remember that it only shows one copy of the
+mail, and hides the one that comes back to you from the mailing list.
+You can use the mail-archives to check if the mail has been received by the list
 </span>
 <hr/>
 
