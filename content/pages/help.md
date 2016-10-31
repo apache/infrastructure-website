@@ -14,6 +14,7 @@ which may already have the answer you are seeking.
 
 ### Frequently asked questions (and answers)
 
+#### Repository-related questions
 <p style="font-size: 0.9rem; width: 80%;">
 <!-- github sync stuff -->
 <span style='color: #A00;'><q>
@@ -27,6 +28,19 @@ which may already have the answer you are seeking.
 </span>
 <hr/>
 
+
+#### Email-related questions
+<!-- unsubbing -->
+<span style='color: #A00;'><q>
+    How do I unsubscribe from foo@tlp.apache.org?
+</q></span>
+<br/>
+<span style='color: #00A;'>
+    Send an email to <code>foo-unsubscribe@tlp.apache.org</code> to unsubscribe
+    yourself from the list.
+</span>
+<hr/>
+
 <!-- email whitelisting -->
 <span style='color: #A00;'><q>
     How do I allow foo@bar.baz to post to our mailing list, dev@tlp.apache.org??
@@ -37,6 +51,27 @@ which may already have the answer you are seeking.
     #080;'>foo=bar.baz</span>@tlp.apache.org</code>, or see the
     <a href="http://untroubled.org/ezmlm/ezman/ezman2.html">ezmlm manual</a>
     for more details.
+</span>
+<hr/>
+
+<!-- need subscriber list -->
+<span style='color: #A00;'><q>
+    How do I see who's subscribed to dev@tlp.apache.org?
+</q></span>
+<br/>
+<span style='color: #00A;'>
+    Send an email to <code>dev-list@tlp.apache.org</code>. This will
+    only work if you are a moderator of that particular list.
+</span>
+<hr/>
+
+<!-- account forward borked -->
+<span style='color: #A00;'><q>
+    My email address changed and I forgot my password, how do I change it?
+</q></span>
+<br/>
+<span style='color: #00A;'>
+    Please see <a href="/reference/committer/id">this page</a> for help.
 </span>
 <hr/>
 
