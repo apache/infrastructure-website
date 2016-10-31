@@ -18,6 +18,11 @@ PAGE_SAVE_AS = './{slug}.html'
 ARTICLE_SAVE_AS = 'news/{slug}.html'
 ARTICLE_URL = 'news/{slug}.html'
 
+# TOC Generator
+PLUGIN_PATHS = ['./theme/plugins']
+PLUGINS = ['toc']
+TOC_HEADERS = r"h[1-6]"
+
 # Sort news by date, descending, latest article first
 ARTICLE_ORDER_BY = 'reversed-date'
 
