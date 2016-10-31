@@ -1,0 +1,262 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bugzilla - Apache Infrastructure</title>
+    <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/foundation.css">
+    <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/app.css">
+    <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/font-awesome.min.css">
+  </head>
+  <body style="background: #C9B191;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='https://infra-test.apache.org/theme/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li><a href="/reference/" target="_self" style="padding-left: 5px;">Documentation</a></li>
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 0px;">Services and Status</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                <li><a href="https://status.apache.org/" >Status Report</a></li>
+                <li><a href="https://issues.apache.org/jira/" >JIRA</a></li>
+                <li><a href="https://cwiki.apache.org/" >Confluence</a></li>
+                <li><a href="https://builds.apache.org/" >Jenkins</a></li>
+                <li><a href="https://ci.apache.org/" >Buildbot</a></li>
+                </ul>
+              </li>
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">Self Serve</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/self-serve/acreq/">Account requests</a></li>
+                  <li><a href="/self-serve/mlreq/">Mailing lists</a></li>
+                  <li><a href="/self-serve/reporeq/">New git repository</a></li>
+                  <li><a href="/self-serve/id/">Edit account information</a></li>
+                  <li><a href="/contact.html">Other inquiries</a></li>
+                </ul>
+              </li>
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+                  <li><a href="/policies.html">Our policies</a></li>
+                  <li><a href="/roadmap.html">Strategies & Roadmap</a></li>
+                  <li><a href="/contact.html">Contact infrastructure</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="https://infra-test.apache.org/reference/infra/bugzilla.html">
+Bugzilla        </a>
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              Bugzilla
+          </h2>
+              <h2>Basics</h2>
+<table>
+<tr><td>Bugzilla version</td><td>4.4.x upgrading to 5.0.x</td></tr>
+<tr><td>Web Server</td><td>apache 2.4 (Ubuntu)</td></tr>
+<tr><td>Database</td><td>mysql</td></tr>
+<tr><td>CGI environment</td><td>mod_cgi
+</td></tr>
+</table>
+
+<h2>Hosts</h2>
+<p>The Bugzilla instances and associated database instances are located at RackSpace. The hosts are:</p>
+<ul>
+<li>asf-bz1-us-mid.priv.apache.org - the actual BZ instances</li>
+<li>nat1-us-mid.priv.apache.org - ssh jump host</li>
+<li>proxy1.us-mid.priv.apache.org - http proxy</li>
+<li>mysql1.us-mid.priv.apache.org - primary db</li>
+<li>mysql2.us-mid.priv.apache.org - backup db</li>
+</ul>
+<h2>Networking</h2>
+<p>The Bugzilla instances are only accessible (for HTTP(s)) via the reverse proxy on proxy1-us-mid.priv.apache.org. This MUST NOT be changed since a key function  of the reverse proxy is to protect all communications (but particularly
+passwords and session cookies) with SSL.</p>
+<p>To access asf-bz1, mysql1 or mysql2, ssh via nat1.</p>
+<h2>Layout</h2>
+<p>There are three separate Bugzilla instances:
+<table>
+<tr><td>/var/www/bugzilla-asf</td><td>Main instance</td></tr>
+<tr><td>/var/www/bugzilla-sa</td><td>Spam Assassin instance</td></tr>
+<tr><td>/var/www/bugzilla-ooo</td><td>AOO instance</td></tr>
+</table></p>
+<h2>Starting and Stopping</h2>
+<p>All three BZ Instaces currently run on the same apache24 install as vhosts. To restart:</p>
+<div class="highlight"><pre><span></span>service apache2 restart
+</pre></div>
+
+
+<p>To refresh:</p>
+<div class="highlight"><pre><span></span>service apache2 reload
+</pre></div>
+
+
+<h2>Installation</h2>
+<p>Installation of BZ is done all through puppet.</p>
+<p>The only outside manual steps are:</p>
+<ul>
+<li>Adding the information to create the mysql database in puppet</li>
+<li>Building the (and updating) to deb package (see Upgrading section below)</li>
+<li>Uploading the deb package to bintray</li>
+</ul>
+<p>Everything else is contained in the bugzilla puppet module and the asf-bz1-us-mid.priv.apache.or.yaml file in the puppet repo.</p>
+<p>There is a provision in the bugzilla module to install perl libs using CPAN, but this is highly discouraged in favor of native packages and/or using fpm. This is because the native packages will get security fixes whereas modules installed via CPAN will need to be manually updated. The current exceptions are:</p>
+<ul>
+<li>PatchReader (not provided by Ubuntu repos)</li>
+<li>DateTime::TimeZone (version required by BZ 5.0.x not recent enough in Ubuntu Trusty)</li>
+<li>Email::Sender (version required by BZ 5.0.x not recent enough in Ubuntu Trusty)</li>
+<li>Text::Wrap (version in Ubuntu Trusty has a bug that impacts Bugzilla)</li>
+</ul>
+<p>Bugzilla is built manually from the ASF's locally modified version kept in svn, but installed using Puppet. For details of the process of updating and installing that version see the upgrading section below.</p>
+<p>The OOo BZ instance required the following additional mysql configuration over and above that defined in the docs:
+In <code>/etc/mysql/my.cnf</code> on mysql{1,2}-us-mid.priv.apache.org (and is set already using Puppet)</p>
+<div class="highlight"><pre><span></span>max_allowed_packet=16M
+</pre></div>
+
+
+<h2>Upgrading</h2>
+<p>1) Check out the relevant parts of the svn tree for Bugzilla.
+   Assumes an svn 1.5 or later client</p>
+<div class="highlight"><pre><span></span>$ svn co --depth immediates https://svn.apache.org/repos/infra/infrastructure/ asf-infra
+$ <span class="nb">cd</span> asf-infra
+$ svn up --set-depth infinity bugzilla
+$ svn up --set-depth immediates vendor
+$ <span class="nb">cd</span> vendor
+$ svn up --set-depth immediates bugzilla
+$ <span class="nb">cd</span> bugzilla
+$ svn up --set-depth infinity current
+</pre></div>
+
+
+<p>2) Download and extract the new Bugzilla version.</p>
+<div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~/downloads
+$ wget http://ftp.mozilla.org/pub/mozilla.org/webtools/bugzilla-&lt;version&gt;.tar.gz
+$ tar xfz bugzilla-&lt;version&gt;.tar.gz
+</pre></div>
+
+
+<p>3) Import the new version drop into infrastructure svn.</p>
+<div class="highlight"><pre><span></span>$ &lt;path_to_checkout&gt;/bugzilla/tools/svn_load_dirs.pl -t &lt;version&gt;     <span class="se">\</span>
+    -p &lt;path_to_checkout&gt;/bugzilla/local/svn_load_dirs_property_table <span class="se">\</span>
+    <span class="o">[</span>-wc &lt;path_to_checkout&gt;/vendor/bugzilla/current<span class="o">]</span>                  <span class="se">\</span>
+    https://svn.apache.org/repos/infra/infrastructure/vendor/bugzilla <span class="se">\</span>
+    current                                                           <span class="se">\</span>
+    &lt;path_to&gt;bugzilla-&lt;version&gt;
+</pre></div>
+
+
+<p>4) Merge the differences between the current and previous version into our local
+   version.</p>
+<div class="highlight"><pre><span></span>$ svn merge <span class="se">\</span>
+   https://svn.apache.org/repos/infra/infrastructure/vendor/bugzilla/&lt;previous-version&gt; <span class="se">\</span>
+   https://svn.apache.org/repos/infra/infrastructure/vendor/bugzilla/current <span class="se">\</span>
+   bugzilla
+</pre></div>
+
+
+<p>5) Resolve any conflicts that the merge came up with.</p>
+<p>6) Then, cd to bugzilla/template/en/custom and find all *.html.tmpl
+   files. This is our custom content. Carry over any changes in the
+   corresponding template/en/default hierarchy to their custom
+   counterparts.</p>
+<p>For instance:</p>
+<div class="highlight"><pre><span></span>$ <span class="nb">pwd</span>
+&lt;...&gt;/infrastructure/bugzilla/bugzilla/template/en/custom/global
+$ svn diff ../../default/global/code-error.html.tmpl <span class="se">\</span>
+    <span class="p">|</span> patch -p0 code-error.html.tmpl
+</pre></div>
+
+
+<p>Resolve any failed patch chunks.</p>
+<p>Do this for every customized template.</p>
+<p>7) Once you're done with this, commit the whole infrastructure/bugzilla/bugzilla hierarchy.</p>
+<div class="highlight"><pre><span></span>$ <span class="nb">pwd</span>
+&lt;...&gt;/infrastructure/bugzilla/bugzilla
+$ svn ci -m <span class="s2">&quot;Upgrade to Bugzilla Release xx&quot;</span>
+...
+</pre></div>
+
+
+<p>Congratulations! You now have a new version drop of Bugzilla in svn, complete with our local modifications!</p>
+<p>Steps 4 to 7 need to be repeated for each of the 3 Bugzilla instances</p>
+<p>8) Build the updated package: run the build script from infrastructure/bugzilla/tools/fpm-build:</p>
+<div class="highlight"><pre><span></span>$ ./buildbz.sh  -v 4.4.6 -n asf -d <span class="s2">&quot;ASF Bugzilla&quot;</span>
+<span class="c1"># where -v is the version, -n is the tree (asf, sa, ooo), and -d is the description</span>
+</pre></div>
+
+
+<p>Assuming no errors, you should have a .deb file looking something like:</p>
+<div class="highlight"><pre><span></span><span class="x">bugzilla-</span><span class="p">$</span><span class="nv">tree_</span><span class="p">$</span><span class="nv">version</span><span class="x">-</span><span class="p">$</span><span class="nv">date_amd64</span><span class="p">.</span><span class="nv">deb</span><span class="x"></span>
+</pre></div>
+
+
+<p>Repeat this for all three Bugzilla trees.</p>
+<p>9) Upload the .deb to bintray</p>
+<ul>
+<li>Add new versions</li>
+<li>Upload files</li>
+<li>arch=amd64, distribution=trusty, component=main</li>
+</ul>
+<p>10) Publish the files in bintray</p>
+<p>11) Open up ASF Bugzilla in your browser, and run a sanity check.</p>
+<p>12) Then go to the Parameters page, find the shutdownhtml parameter and enter a meaningful message like "ASF Bugzilla is currently down for a version upgrade. Please check back in a few minutes. We apologize for the inconvenience. ". Click 'Submit changes' at the bottom. Bugzilla is now unavailable to users and can be safely upgraded.</p>
+<p>13) Before pushing the node manifest change, copy bugzilla's data folder to /tmp/ (This step only required until a bug in fpm related to argument parsing with pre/post install scripts are fixed)</p>
+<div class="highlight"><pre><span></span><span class="err">#</span><span class="x"> mkdir /tmp/bugzilla-</span><span class="p">$</span><span class="nv">tree</span><span class="x"></span>
+<span class="err">#</span><span class="x"> rsync -a /var/www/bugzilla-</span><span class="p">$</span><span class="nv">tree</span><span class="x">/data /tmp/bugzilla-</span><span class="p">$</span><span class="nv">tree</span><span class="x">/</span>
+</pre></div>
+
+
+<p>14) Commit node's manifest to git, and then run puppet on the node</p>
+<div class="highlight"><pre><span></span># puppet agent -t
+</pre></div>
+
+
+<p>15) Go back to the parameters page, remove the shutdownhtml prose and submit.</p>
+<p>16) Do another sanity check from the link bar at the bottom of any Bugzilla page.</p>
+<p>17) Use the <path_to_svn_checkout>/bugzilla/tools/test-bugzilla-rpc.sh script to check that RPC still works</p>
+<p>Repeat steps 11 to 17 for each of the three Bugzilla instances.</p>
+<p>Done :)</p>
+        </div>
+      </div>
+    </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2016, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the Apache License, Version 2.0.<br/>
+          Apache and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>    
+    <script src="https://infra-test.apache.org/theme/js/vendor/jquery.js"></script>
+    <script src="https://infra-test.apache.org/theme/js/vendor/what-input.js"></script>
+    <script src="https://infra-test.apache.org/theme/js/vendor/foundation.js"></script>
+    <script src="https://infra-test.apache.org/theme/js/app.js"></script>
+  </body>
+</html>

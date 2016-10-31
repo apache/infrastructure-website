@@ -1,0 +1,486 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Circonus configuration - Apache Infrastructure</title>
+    <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/foundation.css">
+    <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/app.css">
+    <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/font-awesome.min.css">
+  </head>
+  <body style="background: #C9B191;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='https://infra-test.apache.org/theme/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li><a href="/reference/" target="_self" style="padding-left: 5px;">Documentation</a></li>
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 0px;">Services and Status</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                <li><a href="https://status.apache.org/" >Status Report</a></li>
+                <li><a href="https://issues.apache.org/jira/" >JIRA</a></li>
+                <li><a href="https://cwiki.apache.org/" >Confluence</a></li>
+                <li><a href="https://builds.apache.org/" >Jenkins</a></li>
+                <li><a href="https://ci.apache.org/" >Buildbot</a></li>
+                </ul>
+              </li>
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">Self Serve</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/self-serve/acreq/">Account requests</a></li>
+                  <li><a href="/self-serve/mlreq/">Mailing lists</a></li>
+                  <li><a href="/self-serve/reporeq/">New git repository</a></li>
+                  <li><a href="/self-serve/id/">Edit account information</a></li>
+                  <li><a href="/contact.html">Other inquiries</a></li>
+                </ul>
+              </li>
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+                  <li><a href="/policies.html">Our policies</a></li>
+                  <li><a href="/roadmap.html">Strategies & Roadmap</a></li>
+                  <li><a href="/contact.html">Contact infrastructure</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="https://infra-test.apache.org/reference/infra/circonus-config.html">
+Circonus configuration        </a>
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              Circonus configuration
+          </h2>
+              <div id="toc" style="border-radius: 3px; border: 1px solid #999; background-color: #EEE; padding: 4px;"><h4>Table of Contents:</h4><ul><ul><li><a class="toc-href" href="#overview" title="Overview">Overview</a></li><li><a class="toc-href" href="#config-files-in-use" title="Config files in use">Config files in use</a></li><li><a class="toc-href" href="#allowed-checks" title="allowed checks ##">allowed checks ##</a></li><li><a class="toc-href" href="#allowed-macros" title="allowed macros">allowed macros</a><ul><li><a class="toc-href" href="#add_team-macro" title="add_team macro">add_team macro</a></li><li><a class="toc-href" href="#add_colo-macro" title="add_colo macro">add_colo macro</a></li><li><a class="toc-href" href="#add_host-macro" title="add_host macro">add_host macro</a></li><li><a class="toc-href" href="#add_vm-macro" title="add_vm macro">add_vm macro</a></li><li><a class="toc-href" href="#add_zone-macro" title="add_zone macro">add_zone macro</a></li><li><a class="toc-href" href="#add_service-macro" title="add_service macro">add_service macro</a></li><li><a class="toc-href" href="#special_services-macros" title="special_services macros">special_services macros</a><ul><li><a class="toc-href" href="#add_dns" title="add_dns">add_dns</a></li><li><a class="toc-href" href="#add_ldap" title="add_ldap">add_ldap</a></li><li><a class="toc-href" href="#add_ldap_sync" title="add_ldap_sync">add_ldap_sync</a></li><li><a class="toc-href" href="#add_svn_sync" title="add_svn_sync">add_svn_sync</a></li><li><a class="toc-href" href="#add_rsync" title="add_rsync">add_rsync</a></li><li><a class="toc-href" href="#add_jira" title="add_jira">add_jira</a></li><li><a class="toc-href" href="#add_mon" title="add_mon">add_mon</a></li></ul></li><li><a class="toc-href" href="#standard-macros_1" title="standard macros">standard macros</a></li></ul></li></ul></ul></div>
+<h2 id="overview">Overview</h2>
+<p>All configuration files are stored in the infra repo as ~/trunk/circonus.</p>
+<p>Everybody with karma can commit the config files. However generation and loading of configurations can only be done on circonus-broker.a.o with sudo.</p>
+<p>to activate a change run the following:<br>
+1) <b>run_update</b> which updates everything from svn<br/></br></p>
+<p>2) <b>run_generate</b> which reads the configuration files and updates circonus</p>
+<h2 id="config-files-in-use">Config files in use</h2>
+<p>The configuration have been grouped into a set of files, to make changes easier.
+<table>
+<tr><th align="left">file name</th>
+<th align="left">description</th></tr>
+<tr><td><a href="#addteammacro">teams.py</a></td>
+<td>contains a list of all teams. A team consist of mail addresses</td></tr>
+<tr><td><a href="#addhostmacro">hosts.py</a></td>
+<td>contains a list of all colos and all hosts. A colo is a server center, and a host is a physical machine</td></tr>
+<tr><td><a href="#addvmmacro">vms.py</a></td>
+<td>contains a list of all vm. A vm is a virtual machine either hosted on one of our hosts or direct in a colo</td></tr>
+<tr><td><a href="#addzonemacro">zones.py</a></td>
+<td>contains a list of all zones. A zones is similar to a virtual machine and is always hosted one of our hosts</td></tr>
+<tr><td><a href="#addservicemacro">services.py</a></td>
+<td>contains a list of all monitored urls. A url is a http/https service, that is always hosted on a zone/vm/host</td></tr>
+<tr><td><a href="#specialservicesmacros">special_services.py</a></td>
+<td>consist of mainly internal infrastructure services, like dns/svn/ldap</td></tr>
+<tr><td><a href="#standardmacros">standard.py</a></td>
+<td>consist of templates for checks and rules. Each check command (argument to macros) has 1 check and n rules. <b>warning</b> changes in this file should not be done lightly, a change causes the whole monitoring setup to change</td></tr>
+</table></p>
+<h2 id="allowed-checks">allowed checks ##</h2>
+<p><table>
+<tr><th align="left">Name</th>
+<th align="left">Check</th>
+<th align="left">Frequency</th>
+<th align="left">Timeout</th>
+<th align="left">Wait</th>
+<th align="left">Severity</th></tr>
+<tr><td>LDAP</td>
+<td colspan="5">used in <b>add_ldap</b> and check a ldap server works</td></tr>
+<tr><td></td>
+<td>Trigger (rc != 0)</td>
+<td>1 min</td>
+<td>30 sec</td>
+<td>15 min</td>
+<td>1</td></tr>
+<tr><td></td>
+<td>not present</td>
+<td></td>
+<td></td>
+<td>15 min</td>
+<td>1</td></tr>
+<tr><td>LDAP_SYNC</td>
+<td colspan="5">used in <b>add_ldapsync</b> and checks synchronization of the ldap service</td></tr>
+<tr><td></td>
+<td>Trigger (rc != 0)</td>
+<td>1 min</td>
+<td>30 sec</td>
+<td>15 min</td>
+<td>1</td></tr>
+<tr><td></td>
+<td>not present</td>
+<td></td>
+<td></td>
+<td>15 min</td>
+<td>1</td></tr>
+<tr><td>MON</td>
+<td colspan="5">used in <b>add_mon</b> and checks that brokerController is running</td></tr>
+<tr><td></td>
+<td>Trigger (rc != 0)</td>
+<td>1 min</td>
+<td>30 sec</td>
+<td>15 min</td>
+<td>1</td></tr>
+<tr><td></td>
+<td>not present</td>
+<td></td>
+<td></td>
+<td>15 min</td>
+<td>1</td></tr>
+<tr><td>PING</td>
+<td colspan="5">used in <b>add_host, add_vm, add_zone, add_service</b> and checks dns name resolution and ping</td></tr>
+<tr><td></td>
+<td>Availability &lt; 30%</td>
+<td>1 min</td>
+<td>30 sec</td>
+<td>15 min</td>
+<td>1</td></tr>
+<tr><td></td>
+<td>not present</td>
+<td></td>
+<td></td>
+<td>15 min</td>
+<td>1</td></tr>
+<tr><td>PRIVATE_PING</td>
+<td colspan="5">used in <b>add_host, add_vm, add_zone</b> and checks ping on private LAN</td></tr>
+<tr><td></td>
+<td>Availability &lt; 30%</td>
+<td>1 min</td>
+<td>30 sec</td>
+<td>15 min</td>
+<td>1</td></tr>
+<tr><td></td>
+<td>not present</td>
+<td></td>
+<td></td>
+<td>15 min</td>
+<td>1</td></tr>
+<tr><td>PRIVATE_SSH</td>
+<td colspan="5">used in <b>add_host, add_vm, add_zone</b> and checks SSH on private LAN</td></tr>
+<tr><td></td>
+<td>Duration &gt; 20s</td>
+<td>1 min</td>
+<td>30 sec</td>
+<td>15 min</td>
+<td>1</td></tr>
+<tr><td></td>
+<td>not present</td>
+<td></td>
+<td></td>
+<td>15 min</td>
+<td>1</td></tr>
+<tr><td>RSYNC</td>
+<td colspan="5">used in <b>add_rsync</b> and checks that rsync server responds</td></tr>
+<tr><td></td>
+<td>Trigger (rc != 0)</td>
+<td>1 min</td>
+<td>30</td>
+<td>15 min</td>
+<td>1</td></tr>
+<tr><td></td>
+<td>not present</td>
+<td></td>
+<td></td>
+<td>15 min</td>
+<td>1</td></tr>
+<tr><td>SMTP</td>
+<td colspan="5">used in <b>add_host, add_vm, add_zone</b> and checks that mail server responds</td></tr>
+<tr><td></td>
+<td>mailfrom_time &gt; 5s</td>
+<td>1 min</td>
+<td>30 sec</td>
+<td>15 min</td>
+<td>1</td></tr>
+<tr><td></td>
+<td>not present</td>
+<td></td>
+<td></td>
+<td>15 min</td>
+<td>1</td></tr>
+<tr><td>SNMP</td>
+<td colspan="5">used in <b>add_host, add_vm</b> and collects snmp values</td></tr>
+<tr><td></td>
+<td>Code &lt; 2s</td>
+<td>1 min</td>
+<td>30 sec</td>
+<td>15 min</td>
+<td>1</td></tr>
+<tr><td><em>prepared</em></td>
+<td>not present</td>
+<td></td>
+<td></td>
+<td>15 min</td>
+<td>1</td></tr>
+<tr><td>SSH</td>
+<td colspan="5">used in <b>add_host, add_vm, add_zone</b> and checks that sshd responds</td></tr>
+<tr><td></td>
+<td>Duration &gt; 20s</td>
+<td>1 min</td>
+<td>30 sec</td>
+<td>15 min</td>
+<td>1</td></tr>
+<tr><td></td>
+<td>not present</td>
+<td></td>
+<td></td>
+<td>15 min</td>
+<td>1</td></tr>
+<tr><td>SVN_SYNC</td>
+<td colspan="5">used in <b>add_svnsync</b> and checks that svn in synchronized eu-us</td></tr>
+<tr><td></td>
+<td>Trigger (rc != 0)</td>
+<td>1 min</td>
+<td>30 sec</td>
+<td>15 min</td>
+<td>1</td></tr>
+<tr><td></td>
+<td>not present</td>
+<td></td>
+<td></td>
+<td>15 min</td>
+<td>1</td></tr>
+<tr><td>VIEWVC</td>
+<td colspan="5">used in <b>add_host</b> and checks that the viewvc port responds</td></tr>
+<tr><td></td>
+<td>Trigger (rc != 0)</td>
+<td>1 min</td>
+<td>30 sec</td>
+<td>15 min</td>
+<td>1</td></tr>
+<tr><td><em>prepared</em></td>
+<td>not present</td>
+<td></td>
+<td></td>
+<td>15 min</td>
+<td>1</td></tr>
+</table></p>
+<h2 id="allowed-macros">allowed macros</h2>
+<h3 id="add_team-macro">add_team macro</h3>
+<div class="highlight"><pre><span></span>add_team(&lt;name&gt;, &lt;list of mail&gt;)
+where:
+   &lt;name&gt;         is a logical team name
+   &lt;list of mail&gt; is a list of mail addresses
+</pre></div>
+<p>example:</p>
+<div class="highlight"><pre><span></span>add_team( 'test_team', [ 'tester1@apache.org', 'tester2@apache.org'])
+</pre></div>
+<h3 id="add_colo-macro">add_colo macro</h3>
+<div class="highlight"><pre><span></span>add_colo(&lt;name&gt;)
+where:
+   &lt;name&gt;  is logical name of the colo
+</pre></div>
+<p>example:</p>
+<div class="highlight"><pre><span></span>add_colo('alora_farm')
+</pre></div>
+<h3 id="add_host-macro">add_host macro</h3>
+<div class="highlight"><pre><span></span>add_host(&lt;name&gt;, &lt;ipaddr&gt;, &lt;router&gt;, &lt;checks&gt;, &lt;team&gt;,
+         {console=&lt;ipaddr&gt;}, {broker=&lt;name&gt;}, {private=&lt;ip&gt;})
+where:
+    &lt;name&gt;    is DNS name of host (not service)
+    &lt;ipaddr&gt;  is public ip address of host
+    &lt;router&gt;  is the router name (colo) where host is connected
+    &lt;checks&gt;  are the checks to perform (order is important):
+                             PING,     runs icmp PING against &lt;ipaddr&gt;
+                             SSH,      opens SSH port on &lt;ipaddr&gt;
+                             SMTP      check SMTP against &lt;ipaddr&gt;
+                             SNMP      runs  SNMP against &lt;ipaddr&gt;
+                             FAIL2BAN  check FAIL2BAN on &lt;ipaddr&gt;
+                             HTTPD     check HTTPD server gets statistic
+                             HTTPDS    check HTTPDS server gets statistic
+                             VIEWVC    check VIEWVC process
+    &lt;team&gt;     are a list of teams to receive alerts
+
+optional named parameters: 
+   console=&lt;ipaddr&gt;  Add check (PING, SSH) for console access
+   private=&lt;ip&gt;      Add chec for private interface (PING, SSH)
+   broker=&lt;name&gt;     overwrite broker in checks
+   private=&lt;ip&gt;      Add chec for private interface (PING, SSH)
+</pre></div>
+<p>example:</p>
+<div class="highlight"><pre><span></span>add_host('server1', ['160.45.257.2'], 'alora_farm',
+         [PING, SSH, HTTPDS],
+         ['alora_admin_team'],
+         console='192.168.209.190', broker='Munich, DE')
+</pre></div>
+<h3 id="add_vm-macro">add_vm macro</h3>
+<div class="highlight"><pre><span></span>add_vm  (&lt;name&gt;, &lt;ipaddr&gt;, &lt;host&gt;, &lt;checks&gt;, &lt;team&gt;,
+         {colo=&lt;name&gt;}, {broker=&lt;name&gt;}, {private=&lt;ip&gt;})
+
+where:
+   &lt;name&gt;    is DNS name of vm (not service)
+   &lt;ipaddr&gt;  is public ip address of vm
+   &lt;checks&gt;  are the checks to perform (order is important):
+                 PING,     runs icmp PING against &lt;ipaddr&gt;
+                 SSH,      opens SSH port on &lt;ipaddr&gt;
+                 SMTP      check SMTP against &lt;ipaddr&gt;
+                 SNMP      runs SNMP against &lt;ipaddr&gt;
+                 FAIL2BAN  check FAIL2BAN on &lt;ipaddr&gt;
+                 HTTPD     check HTTPD server gets statistic
+                 HTTPDS    check HTTPDS server gets statistic
+   &lt;team&gt;    are a list of teams to receive alerts
+   &lt;host&gt;    physical host name where vm resides
+
+optional named parameters:
+   private=&lt;ip&gt;   add chec for private interface (PING, SSH)
+   colo=&lt;name&gt;    used if host==NULL (vm without host)
+   broker=&lt;name&gt;  overwrite broker in checks
+</pre></div>
+<p>Example:</p>
+<div class="highlight"><pre><span></span>add_vm('vm1', '87.68.89.192', '',
+       [PING, SSH],
+       ['alora_admin_team'],
+       colo='alora_farm')
+</pre></div>
+<h3 id="add_zone-macro">add_zone macro</h3>
+<div class="highlight"><pre><span></span>add_zone  (&lt;name&gt;, &lt;ipaddr&gt;, &lt;host&gt;, &lt;checks&gt;, &lt;team&gt;,
+         {colo=&lt;name&gt;}, {broker=&lt;name&gt;}, {private=&lt;ip&gt;})
+
+where:
+   &lt;name&gt;    is DNS name of vm (not service)
+   &lt;ipaddr&gt;  is public ip address of vm
+   &lt;checks&gt;  are the checks to perform (order is important):
+                 PING,     runs icmp PING against &lt;ipaddr&gt;
+                 SSH,      opens SSH port on &lt;ipaddr&gt;
+                 SMTP      check SMTP against &lt;ipaddr&gt;
+                 SNMP      runs SNMP against &lt;ipaddr&gt;
+                 FAIL2BAN  check FAIL2BAN on &lt;ipaddr&gt;
+                 HTTPD     check HTTPD server gets statistic
+                 HTTPDS    check HTTPDS server gets statistic
+   &lt;team&gt;    are a list of teams to receive alerts
+   &lt;host&gt;    physical host name where vm resides
+
+optional named parameters:
+   private=&lt;ip&gt;   add chec for private interface (PING, SSH)
+   colo=&lt;name&gt;    used if host==NULL (vm without host)
+   broker=&lt;name&gt;  overwrite broker in checks
+</pre></div>
+<p>Example:</p>
+<div class="highlight"><pre><span></span>add_zone('zone1', '85.68.89.192', '',
+       [PING, SSH],
+       ['alora_admin_team'],
+       colo='bytemark')
+</pre></div>
+<h3 id="add_service-macro">add_service macro</h3>
+<div class="highlight"><pre><span></span>add_service(&lt;name&gt;, &lt;url&gt;, &lt;sub url&gt;, &lt;check&gt;, &lt;team&gt;,
+            {timeout=&lt;seconds&gt;}, {broker=&lt;name&gt;)
+
+where:
+  &lt;name&gt;     is DNS name of host/vm (not service)
+  &lt;url&gt;      is the dns name of the service
+  &lt;sub url&gt;  is added to &lt;url&gt; for check 
+  &lt;checks&gt;   are the checks to perform (order is important):
+                 PING,   runs icmp PING against &lt;url&gt;, dns check
+                 HTTP,   check &lt;url&gt;&lt;sub url&gt; for code 200
+                 HTTPS,  check &lt;url&gt;&lt;sub url&gt; for code 200
+  &lt;team&gt;     are a list of teams to receive alerts
+
+optional named parameters:
+  timeout=&lt;seconds&gt;  sets timeout, default is OS dependent
+  broker=&lt;name&gt;      overwrite broker in checks
+</pre></div>
+<p>Example:</p>
+<div class="highlight"><pre><span></span>add_service('vm1', 'url1', '', [HTTPS], ['alora_admin_team'])
+</pre></div>
+<h3 id="special_services-macros">special_services macros</h3>
+<h4 id="add_dns">add_dns</h4>
+<div class="highlight"><pre><span></span>add_dns(&lt;name&gt;, &lt;url&gt;, &lt;team&gt;)
+
+where:
+   &lt;name&gt;  is DNS name of host/vm (not service)
+   &lt;url&gt;   is the dns name of the service 
+   &lt;team&gt;  are a list of teams to receive alerts
+</pre></div>
+<h4 id="add_ldap">add_ldap</h4>
+<div class="highlight"><pre><span></span>add_ldap(&lt;name&gt;, &lt;url&gt;, &lt;team&gt;)
+
+where:
+   &lt;name&gt;  is DNS name of host/vm (not service)
+   &lt;url&gt;   is the dns name of the service 
+   &lt;team&gt;  are a list of teams to receive alerts
+</pre></div>
+<h4 id="add_ldap_sync">add_ldap_sync</h4>
+<div class="highlight"><pre><span></span>add_ldapsync(&lt;name&gt;, &lt;team&gt;)
+
+where:
+   &lt;name&gt;  is DNS name of host/vm (not service)
+   &lt;team&gt;  are a list of teams to receive alerts
+</pre></div>
+<h4 id="add_svn_sync">add_svn_sync</h4>
+<div class="highlight"><pre><span></span>add_svnsync(&lt;name&gt;, &lt;url1&gt;, &lt;url2&gt;, &lt;team&gt;)
+
+where:
+   &lt;name&gt;  is DNS name of host/vm (not service)
+   &lt;url1&gt;  is the dns name of the original svn
+   &lt;url2&gt;  is the dns name of the copied svn
+   &lt;team&gt;  are a list of teams to receive alerts
+</pre></div>
+<h4 id="add_rsync">add_rsync</h4>
+<div class="highlight"><pre><span></span>add_rsync(&lt;name&gt;, &lt;team&gt;)
+
+where:
+   &lt;name&gt;  is DNS name of host/vm (not service)
+   &lt;team&gt;  are a list of teams to receive alerts
+</pre></div>
+<h4 id="add_jira">add_jira</h4>
+<div class="highlight"><pre><span></span>add_jira(&lt;name&gt;, &lt;server&gt;, &lt;team&gt;)
+
+where:
+   &lt;name&gt;    is DNS name of host/vm (not service)
+   &lt;server&gt;  is the server name
+   &lt;team&gt;    are a list of teams to receive alerts
+</pre></div>
+<h4 id="add_mon">add_mon</h4>
+<div class="highlight"><pre><span></span>add_mon(&lt;name&gt;, &lt;server&gt;, &lt;team&gt;)
+
+where:
+   &lt;name&gt;    is DNS name of host/vm (not service)
+   &lt;server&gt;  is the server name
+   &lt;team&gt;    are a list of teams to receive alerts
+</pre></div>
+<h3 id="standard-macros_1">standard macros</h3>
+<p>See file standard.py</p>
+        </div>
+      </div>
+    </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2016, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the Apache License, Version 2.0.<br/>
+          Apache and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>    
+    <script src="https://infra-test.apache.org/theme/js/vendor/jquery.js"></script>
+    <script src="https://infra-test.apache.org/theme/js/vendor/what-input.js"></script>
+    <script src="https://infra-test.apache.org/theme/js/vendor/foundation.js"></script>
+    <script src="https://infra-test.apache.org/theme/js/app.js"></script>
+  </body>
+</html>

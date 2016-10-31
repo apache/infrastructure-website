@@ -4,21 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roadmap for Apache Infrastructure - Apache Infrastructure</title>
+    <title>Account Requisition - Apache Infrastructure</title>
     <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/foundation.css">
     <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/app.css">
     <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/font-awesome.min.css">
-    <style type="text/css">
-      .frontbox {
-        border-radius: 10%;
-        border: 1px solid #999; background: #444; color: #EEE; padding: 8px; margin: 5px;
-      }
-      .frontbox:hover {
-        border-top: 6px solid #1583CC;
-        margin-top: 0px;
-        cursor: pointer;
-      }
-    </style>  </head>
+  </head>
   <body style="background: #C9B191;">
     <!-- Menu bar --->
     <div class="row">
@@ -73,8 +63,8 @@
       <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
         <a href="/">Home</a>
         <i class="fa fa-angle-double-right"></i>
-        <a href="https://infra-test.apache.org/roadmap.html">
-Roadmap for Apache Infrastructure        </a>
+        <a href="https://infra-test.apache.org/reference/infra/acreq.html">
+Account Requisition        </a>
       </div>
     </div>
     
@@ -84,9 +74,16 @@ Roadmap for Apache Infrastructure        </a>
       <div class="large-12 columns">
         <div class="callout">
           <h2>
-              Roadmap for Apache Infrastructure
+              Account Requisition
           </h2>
-              <p>Docker docker docker /s.</p>
+              <p>New accounts come in from secretary into <code>infrastructure/trunk/acreq/new-account-reqs.txt</code>.  There should be entries in <code>infrastructure/trunk/tools/validation/officers/iclas.txt</code> with their information prepended with <code>notinavail</code>.  The scripts here process the list of usernames/ full names against iclas.txt, then create ldap, <code>hermes:/home/apmail/.qmail-$availid</code>, update iclas.txt and then send out mail.</p>
+<h2>Steps!</h2>
+<ul>
+<li><code>infrastructure/tools/make-accounts.sh</code> Run it about once a day (assuming there are accounts)</li>
+<li>Pay atttention to output (it can break), sometimes you'll find a username "used" on hermes but not actually anywhere</li>
+<li>Also watch for mail bounces on new account request forms before running acreq, and make sure to not run acreq for a new poddling before the podling has even requested the resources be setup.</li>
+<li>Rarely, sometimes the account creation process just breaks. You'll have to undo all the ldap changes and the files created on hermes.</li>
+</ul>
         </div>
       </div>
     </div>

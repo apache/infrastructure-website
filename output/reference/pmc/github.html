@@ -4,21 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roadmap for Apache Infrastructure - Apache Infrastructure</title>
+    <title>GitHub integration features # - Apache Infrastructure</title>
     <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/foundation.css">
     <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/app.css">
     <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/font-awesome.min.css">
-    <style type="text/css">
-      .frontbox {
-        border-radius: 10%;
-        border: 1px solid #999; background: #444; color: #EEE; padding: 8px; margin: 5px;
-      }
-      .frontbox:hover {
-        border-top: 6px solid #1583CC;
-        margin-top: 0px;
-        cursor: pointer;
-      }
-    </style>  </head>
+  </head>
   <body style="background: #C9B191;">
     <!-- Menu bar --->
     <div class="row">
@@ -73,8 +63,8 @@
       <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
         <a href="/">Home</a>
         <i class="fa fa-angle-double-right"></i>
-        <a href="https://infra-test.apache.org/roadmap.html">
-Roadmap for Apache Infrastructure        </a>
+        <a href="https://infra-test.apache.org/reference/pmc/github.html">
+GitHub integration features #        </a>
       </div>
     </div>
     
@@ -84,9 +74,16 @@ Roadmap for Apache Infrastructure        </a>
       <div class="large-12 columns">
         <div class="callout">
           <h2>
-              Roadmap for Apache Infrastructure
+              GitHub integration features #
           </h2>
-              <p>Docker docker docker /s.</p>
+              <p>The ASF allows for GitHUb integration with pull requests using a system with the following features:</p>
+<ul>
+<li>Any Pull Request that gets opened, closed, reopened or commented on can get recorded on the project's mailing list</li>
+<li>If a project has a JIRA instance, any PRs or comments on PRs that include a JIRA ticket ID will trigger an update on that specific ticket (unless opted out of)</li>
+<li>Replying to a GitHub comment on the dev@ mailing list will trigger a comment being placed on GitHub</li>
+<li>GitHub activity can be relayed to IRC channels on the Freenode network.</li>
+</ul>
+<p>All these features are opt-in for projects, meaning you will have to file a <a href="https://issues.apache.org/jira/browse/INFRA">JIRA ticket</a> to have them added to your project. Please set the component to <code>git</code> when creating a ticket.</p>
         </div>
       </div>
     </div>

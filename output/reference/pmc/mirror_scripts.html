@@ -4,21 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roadmap for Apache Infrastructure - Apache Infrastructure</title>
+    <title>Download page (mirror script) migration steps # - Apache Infrastructure</title>
     <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/foundation.css">
     <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/app.css">
     <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/font-awesome.min.css">
-    <style type="text/css">
-      .frontbox {
-        border-radius: 10%;
-        border: 1px solid #999; background: #444; color: #EEE; padding: 8px; margin: 5px;
-      }
-      .frontbox:hover {
-        border-top: 6px solid #1583CC;
-        margin-top: 0px;
-        cursor: pointer;
-      }
-    </style>  </head>
+  </head>
   <body style="background: #C9B191;">
     <!-- Menu bar --->
     <div class="row">
@@ -73,8 +63,8 @@
       <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
         <a href="/">Home</a>
         <i class="fa fa-angle-double-right"></i>
-        <a href="https://infra-test.apache.org/roadmap.html">
-Roadmap for Apache Infrastructure        </a>
+        <a href="https://infra-test.apache.org/reference/pmc/mirror_scripts.html">
+Download page (mirror script) migration steps #        </a>
       </div>
     </div>
     
@@ -84,9 +74,47 @@ Roadmap for Apache Infrastructure        </a>
       <div class="large-12 columns">
         <div class="callout">
           <h2>
-              Roadmap for Apache Infrastructure
+              Download page (mirror script) migration steps #
           </h2>
-              <p>Docker docker docker /s.</p>
+              <p>This document outlines the simple changes needed to migrate from the old download mirror system to the new one:</p>
+<h3>Using <code>www.apache.org/dyn/closer.cgi</code> in your download .cgi script?</h3>
+<p>Change this to <code>www.apache.org/dyn/closer.lua</code>!</p>
+<h3>Using a .cgi with an accompanying .html file with the same name?</h3>
+<p>Great, you probably don't need to do anything! But check that the script works OK to make sure.</p>
+<p>Note: the system relies on finding the .html file in the same directory as the .cgi file.
+If your site uses redirects, that may break the linkage.
+See below for details as these may affect how the page is displayed.</p>
+<h3>Using <code>.htaccess</code> files that redirect or refer to a .cgi file?</h3>
+<p>You may need to make changes, as all <code>.cgi</code> files are now being internally rewritten. 
+The redirect of the <code>.cgi</code> file occurs before the <code>.htaccess</code> file is processed so the mirror system won't see any redirects applied by your <code>.htaccess</code> file to the <code>.cgi</code> file.</p>
+<p>You can fix this by updating the links to .cgi files to point to the same parent directory as the redirected <code>.html</code> file.
+The <code>.cgi</code> file does not actually have to be present at the target location.</p>
+<p>However fixing ASF website pages won't fix existing links which may appear on 3rd party sites. The only way to fix these is to ensure that the HTML file is accessible at the same (un-redirected) URL as the CGI file. </p>
+<p>If the HTML redirect is to another directory in the same site, then a simple file link should suffice.</p>
+<p>Alternatively an HTML file may be created in the original location; this should have a meta-redirect to the redirected location of the CGI file (not the HTML file). The meta-redirect will be processed and the CGI reference will again be intercepted; this time it is in the correct location.</p>
+<p>For example, <code>commons.apache.org/lang/</code> currently redirects to <code>commons/proper/commons-lang/</code>
+This means that references to <code>/lang/download\_lang.cgi</code> no longer work properly.<br>
+Solution 1:<br>
+Create a link from <code>../proper/commons-lang/download\_lang.html</code> to <code>lang/download\_lang.html</code><br>
+Solution 2:<br>
+Create the file <code>lang/download\_lang.html</code> with the content</p>
+<div class="highlight"><pre><span></span><span class="nt">&lt;html&gt;</span>
+<span class="nt">&lt;head&gt;</span>
+<span class="nt">&lt;meta</span> <span class="na">http-equiv=</span><span class="s">&quot;refresh&quot;</span> <span class="na">content=</span><span class="s">&quot;0; url=/proper/commons-lang/download_lang.cgi&quot;</span> <span class="nt">/&gt;</span>
+<span class="nt">&lt;/head&gt;</span>
+<span class="nt">&lt;/html&gt;</span>
+</pre></div>
+
+
+<p>If the .htaccess redirects are changed later, any such fixes may have to be changed.</p>
+<h3>Creating new download links?</h3>
+<p>You may want to adopt either <code>closer.lua</code> or simply have an EZT template (see <a href="http://tomcat.apache.org/download-80.html">this Tomcat example</a> or <a href="http://svn.apache.org/viewvc/tomcat/site/trunk/docs/download-80.html?view=co&amp;content-type=text%2Fplain">source of Tomcat example</a>) called <code>download.html</code> and then point to <code>download.cgi</code> to have our new system use your template via internal rewrites.</p>
+<h3>Using a custom CGI file for your downloads?</h3>
+<p>Please have a static EZT template (see example above) only, call it <code>download.html</code> (or equivalent) and refer to it as <code>download.cgi</code> to have our mirror system pick up the template and use it. You can also call it <code>download-foo.html</code> and refer to it as <code>download-foo.cgi</code> to have it rendered via our mirror system.</p>
+<h3>Using SSI (Server-Side Includes) in your current download page?</h3>
+<p>This <strong>won't</strong> work anymore, please use a static html template (see above)</p>
+<h3>Still having trouble?</h3>
+<p>Contact us at <a href="mailto:infrastructure@apache.org">infrastructure@apache.org</a> or visit us on <a href="http://infra.chat/">HipChat</a> !</p>
         </div>
       </div>
     </div>

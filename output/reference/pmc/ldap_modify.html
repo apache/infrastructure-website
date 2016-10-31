@@ -4,21 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roadmap for Apache Infrastructure - Apache Infrastructure</title>
+    <title>Adding or removing a committer - Apache Infrastructure</title>
     <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/foundation.css">
     <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/app.css">
     <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/font-awesome.min.css">
-    <style type="text/css">
-      .frontbox {
-        border-radius: 10%;
-        border: 1px solid #999; background: #444; color: #EEE; padding: 8px; margin: 5px;
-      }
-      .frontbox:hover {
-        border-top: 6px solid #1583CC;
-        margin-top: 0px;
-        cursor: pointer;
-      }
-    </style>  </head>
+  </head>
   <body style="background: #C9B191;">
     <!-- Menu bar --->
     <div class="row">
@@ -73,8 +63,8 @@
       <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
         <a href="/">Home</a>
         <i class="fa fa-angle-double-right"></i>
-        <a href="https://infra-test.apache.org/roadmap.html">
-Roadmap for Apache Infrastructure        </a>
+        <a href="https://infra-test.apache.org/reference/pmc/ldap_modify.html">
+Adding or removing a committer        </a>
       </div>
     </div>
     
@@ -84,9 +74,27 @@ Roadmap for Apache Infrastructure        </a>
       <div class="large-12 columns">
         <div class="callout">
           <h2>
-              Roadmap for Apache Infrastructure
+              Adding or removing a committer
           </h2>
-              <p>Docker docker docker /s.</p>
+              <p>To add a committer to your LDAP/UNIX group, please use <code>modify\_unix_group.pl</code> on minotaur (people.a.o):</p>
+<div class="highlight"><pre><span></span><span class="c">% modify_unix_group.pl gump --add foouser</span>
+</pre></div>
+
+
+<p>To remove a user from the group, use the following command:</p>
+<div class="highlight"><pre><span></span><span class="c">% modify_unix_group.pl gump --rm foouser</span>
+</pre></div>
+
+
+<h1>Adding or removing a PMC member</h1>
+<p>To add a user to the PMC, use <code>modify_committee.pl</code> on minotaur:</p>
+<div class="highlight"><pre><span></span><span class="c">% modify_committee.pl gump --add foouser</span>
+</pre></div>
+
+
+<p>Likewise, to remove a member from the PMC, use:</p>
+<div class="highlight"><pre><span></span><span class="c">% modify_committee.pl gump --rm foouser</span>
+</pre></div>
         </div>
       </div>
     </div>

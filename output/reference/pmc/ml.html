@@ -4,21 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roadmap for Apache Infrastructure - Apache Infrastructure</title>
+    <title>TOC] - Apache Infrastructure</title>
     <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/foundation.css">
     <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/app.css">
     <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/font-awesome.min.css">
-    <style type="text/css">
-      .frontbox {
-        border-radius: 10%;
-        border: 1px solid #999; background: #444; color: #EEE; padding: 8px; margin: 5px;
-      }
-      .frontbox:hover {
-        border-top: 6px solid #1583CC;
-        margin-top: 0px;
-        cursor: pointer;
-      }
-    </style>  </head>
+  </head>
   <body style="background: #C9B191;">
     <!-- Menu bar --->
     <div class="row">
@@ -73,8 +63,8 @@
       <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
         <a href="/">Home</a>
         <i class="fa fa-angle-double-right"></i>
-        <a href="https://infra-test.apache.org/roadmap.html">
-Roadmap for Apache Infrastructure        </a>
+        <a href="https://infra-test.apache.org/reference/pmc/ml.html">
+TOC]        </a>
       </div>
     </div>
     
@@ -84,9 +74,78 @@ Roadmap for Apache Infrastructure        </a>
       <div class="large-12 columns">
         <div class="callout">
           <h2>
-              Roadmap for Apache Infrastructure
+              TOC]
           </h2>
-              <p>Docker docker docker /s.</p>
+              <h1>Working with mailing lists</h1>
+<h2 id="list-subscribers">How do I find out list subscribers there are?</h2>
+<p>Moderators can send an email to:</p>
+<p><tt><var>listname</var>-list@<var>tlp</var>.apache.org</tt></p>
+<p>Anyone with
+access to the apmail account can run the following command to get a count
+of the subscribers.</p>
+<p><tt>ezmlm-list~/lists/<var>project</var>/<var>listname</var>| wc -l</tt></p>
+<p>Remember that
+there often are people subscribed to the digest version
+too:</p>
+<p><tt>~lists/<var>project</var>/<var>listname</var>/digest</tt></p>
+<p>However,
+most committers do not have access to apmail. See the notes in the
+"committers" SVN module at /docs/resources.txt for another way.</p>
+<h2 id="mailing-list-moderators">Moderation: How do I request changes for moderators?</h2>
+<p>See our overall <a href="http://apache.org/dev/committers.html#mail-moderate">guide for mailing list moderation</a>.</p>
+<p>Ask your PMC to send a request to the apmail alias.</p>
+<p>If you have access to apmail, you can just change the list of subscribers
+to list/mod. For example for the mod_perl dev list that is in</p>
+<p><code>~apmail/lists/perl.apache.org/dev/mod/</code> </p>
+<p>Use <code>ezmlm-list</code> , <code>ezmlm-sub</code> and <code>ezmlm-unsub</code> to do that.</p>
+<p>To determine who the existing moderators are, any committer can use the
+technique described in the "committers" SVN module at /docs/resources.txt</p>
+<h2 id="mail-moderate">Moderation: what should I do with "MODERATE" emails.</h2>
+<p>First look in the mail and check if it is spam (or other severely misguided
+mail). If it is spam then just ignore the mail to have it silently dropped
+after 5 days. To bounce non-spam with a notice to the sender, reply to the
+<strong>-reject</strong> address in the mail header. If you wish to include a comment
+with the rejection, the body of the message should look like this:<pre>
+%%% Start comment
+Your message goes here...
+%%% End comment
+</pre></p>
+<p>If it is legitimate mail from a non-subscriber (or someone sending with a
+different envelope sender than the one subscribed), reply to the moderate
+request to the <strong>-accept</strong> address. If you also send mail to the <strong>-allow</strong>
+address (i.e. reply to all) then future postings from that address will be
+allowed through automatically.</p>
+<p>If there is no <strong>-allow</strong> address in the moderate requests the list was
+misconfigured when it was setup and you should contact
+<a href="mailto:apmail@apache.org">apmail@apache.org</a> and get them to enable remote
+administration.</p>
+<p>See the <a href="http://www.ezmlm.org/">EZMLM</a> "Moderator's and Administrator's
+Manual". You can also send email to {listname}-help@tlp.apache.org from
+your moderation address (there are extra details for moderators).</p>
+<p>Some lists are only open to ASF committers. The moderators have methods to
+ensure that subscribers are committers, so subscribers can use whatever
+email address that they want. Moderators see the tips described in the
+"committers" SVN module at /docs/resources.txt</p>
+<h2 id="problem_posts">Moderation: dealing with problem posts</h2>
+<p>If you have a troublesome poster, then you can un-subscribe them from the
+list using </p>
+<p><code>{listname}-unsubscribe-badboy=menace.com@tlp.apache.org</code></p>
+<p>(and send a courtesy email to them).</p>
+<p>Occasionally you will get someone with a poorly-configured spam filter
+sending automated replies to the list. You can deny their postings using</p>
+<p><code>{listname}-deny-subscribe-badposter=menace.com@tlp.apache.org</code></p>
+<p>(and send a courtesy email to them).</p>
+<p>If someone (an unsubscribed user) was added to the moderation list 
+(intentionally or unintentionally) and now they are sending spam to
+the list, you can remove them by sending an email to:</p>
+<p><code>{listname}-allow-unsubscribe-badposter=menace.com@tlp.apache.org</code></p>
+<p>Note that to see a list of who is allowed to post on the moderation list
+you can send an email to:</p>
+<p><code>{listname}-allow-list@tlp.apache.org</code></p>
+<p>All of these must be sent <strong>from your moderator address</strong>.  You can tell if
+you're sending from the right address by emailing the <code>-help</code> address (e.g.,
+<code>dev-help@tlp.apache.org</code>) and checking if the subject of the reply contains
+the word "Moderator help".</p>
         </div>
       </div>
     </div>

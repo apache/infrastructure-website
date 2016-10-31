@@ -1,0 +1,194 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASFBot - Apache Infrastructure</title>
+    <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/foundation.css">
+    <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/app.css">
+    <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/font-awesome.min.css">
+  </head>
+  <body style="background: #C9B191;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='https://infra-test.apache.org/theme/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li><a href="/reference/" target="_self" style="padding-left: 5px;">Documentation</a></li>
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 0px;">Services and Status</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                <li><a href="https://status.apache.org/" >Status Report</a></li>
+                <li><a href="https://issues.apache.org/jira/" >JIRA</a></li>
+                <li><a href="https://cwiki.apache.org/" >Confluence</a></li>
+                <li><a href="https://builds.apache.org/" >Jenkins</a></li>
+                <li><a href="https://ci.apache.org/" >Buildbot</a></li>
+                </ul>
+              </li>
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">Self Serve</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/self-serve/acreq/">Account requests</a></li>
+                  <li><a href="/self-serve/mlreq/">Mailing lists</a></li>
+                  <li><a href="/self-serve/reporeq/">New git repository</a></li>
+                  <li><a href="/self-serve/id/">Edit account information</a></li>
+                  <li><a href="/contact.html">Other inquiries</a></li>
+                </ul>
+              </li>
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+                  <li><a href="/policies.html">Our policies</a></li>
+                  <li><a href="/roadmap.html">Strategies & Roadmap</a></li>
+                  <li><a href="/contact.html">Contact infrastructure</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="https://infra-test.apache.org/reference/infra/asfbot.html">
+ASFBot        </a>
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              ASFBot
+          </h2>
+              <h2>Daily operations</h2>
+<p>For the day-to-day online operation of ASFBot, see the <a href="http://wilderness.apache.org/manual.html">ASFBot manual</a>.</p>
+<div id="toc" style="border-radius: 3px; border: 1px solid #999; background-color: #EEE; padding: 4px;"><h4>Table of Contents:</h4><ul><ul><li><a class="toc-href" href="#installation-and-running" title="Installation and running">Installation and running</a></li><li><a class="toc-href" href="#karma" title="Karma">Karma</a></li><li><a class="toc-href" href="#setting-up-reporting" title="Setting up reporting">Setting up reporting</a></li><li><a class="toc-href" href="#jira-reporting" title="JIRA Reporting">JIRA Reporting</a></li><li><a class="toc-href" href="#factoids" title="Factoids">Factoids</a></li><li><a class="toc-href" href="#irc-meetings" title="IRC Meetings">IRC Meetings</a></li><li><a class="toc-href" href="#irc-commands" title="IRC Commands">IRC Commands</a></li></ul></ul></div>
+<h2 id="installation-and-running">Installation and running</h2>
+<ul>
+<li>Download the bot from https://svn.apache.org/repos/infra/infrastructure/trunk/projects/asfbot/</li>
+<li>Install Python 2.7 or 3.x</li>
+<li>Set up default channels and options in asfbot.cfg (use your favorite text editor)</li>
+<li>run: <code>python asfbot.py start</code> (This should be done from ASFBot's folder, eg /usr/local/etc/asfbot)</li>
+</ul>
+<h2 id="karma">Karma</h2>
+<p>Karma is used to access the features that are not meant for everyone.
+Infrastructure people will usually have a karma level of 10, which grants access to all features.
+To give a specific person karma on IRC, use the following command:
+<code>ASFBot: karma add [nick] [level]</code>, for example: <code>ASFBot: karma add Humbedooh 3</code>.
+This karma will be tied to the ident of the user, so please try to constrain this to registered users 
+with a working cloak. To make the karma stick, add an entry in asfbot.cfg in the [Karma] section, as such:</p>
+<p>johndoe    apache/committer/johndoe 3</p>
+<p>The following karma levels are in effect (more to be added):</p>
+<div class="highlight"><pre><span></span><span class="k">[Action]                            [Required karma]</span>
+<span class="err">Restart/stop</span> <span class="err">ASFBot</span>                     <span class="err">10</span>
+<span class="err">Reload</span> <span class="err">configuration</span>                    <span class="err">10</span>
+<span class="err">Set</span> <span class="err">an</span> <span class="err">option</span>                           <span class="err">10</span>
+<span class="err">Grant/remove</span> <span class="err">karma</span>                      <span class="err">10</span>
+<span class="err">Display</span> <span class="err">PubSub</span> <span class="err">status</span>                    <span class="err">8</span>
+<span class="err">Reconnect</span> <span class="err">to</span> <span class="err">a</span> <span class="err">PubSub</span> <span class="err">service</span>            <span class="err">8</span>
+<span class="err">Send</span> <span class="err">an</span> <span class="err">alert/speak</span> <span class="err">as</span> <span class="err">ASFBot</span> <span class="err">(wall)</span>     <span class="err">8</span>
+<span class="err">Join/leave</span> <span class="err">a</span> <span class="err">channel</span>                     <span class="err">8</span>
+<span class="err">Subscribe/unsubscribe</span> <span class="err">to</span> <span class="err">repos</span>           <span class="err">6</span>
+<span class="err">List</span> <span class="err">channel</span> <span class="err">subscriptions</span>               <span class="err">3</span>
+<span class="err">Use</span> <span class="err">the</span> <span class="err">meeting</span> <span class="err">recording</span> <span class="err">feature</span>        <span class="err">3</span>
+<span class="err">Send</span> <span class="err">emails</span> <span class="err">with</span> <span class="err">meeting</span> <span class="err">summaries</span>       <span class="err">3</span>
+<span class="err">Add</span> <span class="err">comments</span> <span class="err">to</span> <span class="err">JIRA</span> <span class="err">tickets</span>             <span class="err">3</span>
+<span class="err">Reply</span> <span class="err">to</span> <span class="err">a</span> <span class="err">comment</span> <span class="err">on</span> <span class="err">comments.a.o</span>       <span class="err">2</span>
+<span class="err">Use</span> <span class="err">the</span> <span class="err">'help'</span> <span class="err">feature</span>                   <span class="err">0</span>
+<span class="err">Use</span> <span class="err">the</span> <span class="err">'tell'</span> <span class="err">feature</span>                   <span class="err">0</span>
+<span class="err">Use</span> <span class="err">the</span> <span class="err">issue</span> <span class="err">info</span> <span class="err">feature</span>               <span class="err">0</span>
+<span class="err">Use</span> <span class="err">the</span> <span class="err">beer</span> <span class="err">tab</span>                         <span class="err">0</span>
+</pre></div>
+<h2 id="setting-up-reporting">Setting up reporting</h2>
+<p>Reporting should initially be set up via the IRC interface, by asking ASFBot to join the appropriate channel.
+The following commands are usually used via #asftest:</p>
+<ul>
+<li><code>ASFBot: join #channel-name</code>
+   (Join the channel yourself and execute step 2 in there)</li>
+<li><code>ASFBot: subscribe projectname</code></li>
+</ul>
+<p>Once that is done, add an entry to the <code>channels</code> list in asfbot.cfg and commit the changes:</p>
+<p>[channel:#channel-name]
+  tags: project-subversion-name othertag thirdtag</p>
+<p>You can use <code>ASFBot: reload</code> to reload asfbot.cfg with your changes (don't forget to svn up first!)</p>
+<p>For incubator projects, use the special tag <code>incubator.projectname</code> which will match against both 
+<code>incubator/projectname</code> (Subversion) and <code>incubator-projectname</code> (Git repository).</p>
+<h2 id="jira-reporting">JIRA Reporting</h2>
+<p>JIRA reporting works by emails sent to asfbot@urd.zones.apache.org being run through dumpsubject.lua, 
+which - in the case of a JIRA update - passes this information onto the resident pubsub service on port
+2069 (this is an inactive gitpubsub daemon that just passes on information)</p>
+<p>To subscribe a channel to JIRA reporting, follow these steps:</p>
+<ul>
+<li>Subscribe asfbot@urd.zones.apache.org to the mailing list that reports JIRA updates</li>
+<li>In the appropriate channel, write: <code>ASFBot: subscribe JIRA:[jira-name]</code> (fx JIRA:INFRA) OR</li>
+<li>Add the JIRA:[jira-name] tag to asfbot.cfg and run <code>ASFBot: reconfigure</code>.</li>
+</ul>
+<h2 id="factoids">Factoids</h2>
+<p>Factoids can be served in any channel, if the 'factoids' directive is set in the channel's configuration.
+For factoids to persist, an admin must first touch 'factoids_#(channel).txt' in ASFBot's root directory,
+and chown it to the user ASFBot runs as (typically asfbot).</p>
+<h2 id="irc-meetings">IRC Meetings</h2>
+<p>To set up a channel for meeting recording, add the following to the channel's configuration:
+ allowLogging: true</p>
+<p>If the email feature is to be used, each person chairing a meeting should be set up with karma 
+level 3 in the main [karma] configuration, fx:</p>
+<p>johndoe apache/committer/johndoe 3</p>
+<h2 id="irc-commands">IRC Commands</h2>
+<p>IRC Commands can be used by IRC users with karma (see asfbot.cfg for the default list of users)</p>
+<div class="highlight"><pre><span></span><span class="n">wall</span> <span class="p">[</span><span class="n">message</span><span class="p">]</span>                      <span class="o">:</span> <span class="n">Sends</span> <span class="n">a</span> <span class="n">message</span> <span class="n">to</span> <span class="n">all</span> <span class="n">IRC</span> <span class="n">channels</span> <span class="n">ASFBot</span> <span class="n">is</span> <span class="k">in</span>
+<span class="nl">help</span>                                <span class="p">:</span> <span class="n">Lists</span> <span class="n">the</span> <span class="n">available</span> <span class="n">commands</span>
+
+<span class="n">join</span> <span class="p">[</span><span class="n">channel</span> <span class="n">name</span><span class="p">]</span>                 <span class="o">:</span> <span class="n">Joins</span> <span class="n">a</span> <span class="n">channel</span>
+<span class="nl">leave</span>                               <span class="p">:</span> <span class="n">Leaves</span> <span class="n">the</span> <span class="n">channel</span> <span class="n">from</span> <span class="n">which</span> <span class="n">the</span> <span class="n">command</span> <span class="n">was</span> <span class="n">issued</span>
+
+<span class="n">subscribe</span> <span class="p">[</span><span class="n">pattern</span><span class="p">]</span>                 <span class="o">:</span> <span class="n">Subscribes</span> <span class="n">the</span> <span class="n">current</span> <span class="n">channel</span> <span class="n">to</span> <span class="n">directories</span> <span class="n">matching</span> <span class="p">[</span><span class="n">pattern</span><span class="p">]</span> <span class="p">(</span><span class="n">using</span> <span class="n">Lua</span> <span class="n">Patterns</span><span class="p">)</span>
+<span class="n">unsubscribe</span> <span class="p">[</span><span class="n">pattern</span><span class="p">]</span>               <span class="o">:</span> <span class="n">Unsubscribes</span> <span class="n">the</span> <span class="n">current</span> <span class="n">channel</span> <span class="n">from</span> <span class="n">directories</span> <span class="n">matching</span> <span class="p">[</span><span class="n">pattern</span><span class="p">]</span> <span class="p">(</span><span class="n">using</span> <span class="n">Lua</span> <span class="n">Patterns</span><span class="p">)</span>
+<span class="nl">subs</span>                                <span class="p">:</span> <span class="n">Lists</span> <span class="n">the</span> <span class="n">currently</span> <span class="n">subscribed</span> <span class="n">directories</span> <span class="k">for</span> <span class="n">the</span> <span class="n">current</span> <span class="n">channel</span>
+
+<span class="n">karma</span> <span class="p">[</span><span class="n">add</span><span class="o">|</span><span class="n">remove</span><span class="o">|</span><span class="n">list</span><span class="p">]</span> <span class="p">[</span><span class="n">user</span><span class="p">]</span>      <span class="o">:</span> <span class="n">Adds</span><span class="o">/</span><span class="n">removes</span><span class="o">/</span><span class="n">list</span> <span class="n">karma</span> <span class="p">(</span><span class="n">add</span> <span class="n">people</span> <span class="n">to</span> <span class="n">config</span><span class="p">.</span><span class="n">lua</span> <span class="k">for</span> <span class="n">permanent</span> <span class="n">karma</span><span class="p">)</span>
+
+<span class="n">option</span> <span class="p">[</span><span class="n">value</span><span class="p">]</span> <span class="p">[</span><span class="n">key</span><span class="p">]</span>                <span class="o">:</span> <span class="n">Sets</span> <span class="n">an</span> <span class="n">option</span> <span class="n">specific</span> <span class="n">to</span> <span class="n">the</span> <span class="n">channel</span><span class="p">.</span> <span class="n">Use</span> <span class="err">`</span><span class="n">help</span> <span class="n">option</span><span class="err">`</span> <span class="k">for</span> <span class="n">more</span> <span class="n">information</span>
+<span class="nl">reload</span>                              <span class="p">:</span> <span class="n">Reloads</span> <span class="n">the</span> <span class="n">configuration</span> <span class="n">and</span> <span class="n">any</span> <span class="n">plugins</span> <span class="n">available</span> <span class="k">in</span> <span class="n">the</span> <span class="n">scripts</span> <span class="n">folder</span>
+<span class="n">reply</span> <span class="p">[</span><span class="n">comment</span> <span class="kt">id</span><span class="p">]</span> <span class="p">[</span><span class="n">message</span><span class="p">]</span>        <span class="o">:</span> <span class="n">Replies</span> <span class="n">to</span> <span class="n">a</span> <span class="n">comment</span> <span class="n">through</span> <span class="n">comments</span><span class="p">.</span><span class="n">apache</span><span class="p">.</span><span class="n">org</span>
+<span class="n">comment</span> <span class="p">[</span><span class="n">jira</span> <span class="n">ticket</span> <span class="kt">id</span><span class="p">]</span> <span class="p">[</span><span class="n">message</span><span class="p">]</span>  <span class="o">:</span> <span class="n">Replies</span> <span class="n">to</span> <span class="n">a</span> <span class="n">comment</span> <span class="n">through</span> <span class="n">JIRA</span>
+<span class="nl">restart</span>                             <span class="p">:</span> <span class="n">Restarts</span> <span class="n">the</span> <span class="n">IRC</span> <span class="n">service</span><span class="p">.</span> <span class="n">This</span> <span class="n">is</span> <span class="n">mainly</span> <span class="n">used</span> <span class="k">for</span> <span class="n">reloading</span> <span class="n">the</span> <span class="n">core</span> <span class="n">features</span>
+<span class="nl">status</span>                              <span class="p">:</span> <span class="n">Displays</span> <span class="n">the</span> <span class="n">current</span> <span class="n">svnpubsub</span> <span class="n">connection</span> <span class="n">status</span>
+<span class="n">tell</span> <span class="p">[</span><span class="n">recipient</span><span class="p">]</span> <span class="p">[</span><span class="n">message</span><span class="p">]</span>          <span class="o">:</span> <span class="n">Notifies</span> <span class="p">[</span><span class="n">recipient</span><span class="p">]</span> <span class="n">of</span> <span class="n">a</span> <span class="n">message</span> <span class="n">when</span> <span class="n">he</span><span class="o">/</span><span class="n">she</span> <span class="n">joins</span> <span class="n">the</span> <span class="n">channel</span> <span class="n">or</span> <span class="n">starts</span> <span class="n">to</span> <span class="n">talk</span><span class="p">.</span>
+<span class="n">meeting</span> <span class="p">[</span><span class="n">start</span><span class="o">|</span><span class="n">end</span><span class="p">]</span>                 <span class="o">:</span> <span class="n">Start</span><span class="o">/</span><span class="n">stop</span> <span class="n">recording</span> <span class="n">a</span> <span class="n">meeting</span> <span class="k">in</span> <span class="n">a</span> <span class="n">channel</span><span class="p">.</span>
+<span class="nl">factoids</span>                            <span class="p">:</span> <span class="n">Lists</span> <span class="n">the</span> <span class="n">currently</span> <span class="n">known</span> <span class="n">factoids</span> <span class="k">for</span> <span class="n">a</span> <span class="n">channel</span><span class="p">,</span> <span class="k">if</span> <span class="n">factoids</span> <span class="n">are</span> <span class="n">enabled</span><span class="p">.</span>
+</pre></div>
+        </div>
+      </div>
+    </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2016, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the Apache License, Version 2.0.<br/>
+          Apache and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>    
+    <script src="https://infra-test.apache.org/theme/js/vendor/jquery.js"></script>
+    <script src="https://infra-test.apache.org/theme/js/vendor/what-input.js"></script>
+    <script src="https://infra-test.apache.org/theme/js/vendor/foundation.js"></script>
+    <script src="https://infra-test.apache.org/theme/js/app.js"></script>
+  </body>
+</html>

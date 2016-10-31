@@ -1,0 +1,245 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Roller Webl - Apache Infrastructure</title>
+    <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/foundation.css">
+    <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/app.css">
+    <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/font-awesome.min.css">
+  </head>
+  <body style="background: #C9B191;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='https://infra-test.apache.org/theme/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li><a href="/reference/" target="_self" style="padding-left: 5px;">Documentation</a></li>
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 0px;">Services and Status</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                <li><a href="https://status.apache.org/" >Status Report</a></li>
+                <li><a href="https://issues.apache.org/jira/" >JIRA</a></li>
+                <li><a href="https://cwiki.apache.org/" >Confluence</a></li>
+                <li><a href="https://builds.apache.org/" >Jenkins</a></li>
+                <li><a href="https://ci.apache.org/" >Buildbot</a></li>
+                </ul>
+              </li>
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">Self Serve</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/self-serve/acreq/">Account requests</a></li>
+                  <li><a href="/self-serve/mlreq/">Mailing lists</a></li>
+                  <li><a href="/self-serve/reporeq/">New git repository</a></li>
+                  <li><a href="/self-serve/id/">Edit account information</a></li>
+                  <li><a href="/contact.html">Other inquiries</a></li>
+                </ul>
+              </li>
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+                  <li><a href="/policies.html">Our policies</a></li>
+                  <li><a href="/roadmap.html">Strategies & Roadmap</a></li>
+                  <li><a href="/contact.html">Contact infrastructure</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="https://infra-test.apache.org/reference/infra/blog.html">
+Roller Webl        </a>
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              Roller Webl
+          </h2>
+              <p>Roller is used as the main blog software for all Apache Projects.
+Available from https://blogs.apache.org
+Roller is currently housed on roller-vm.apache.org</p>
+<p>[XXX THIS DOCUMENT NEEDS TO BE UPDATED FOR THE NEW HOST ROLLER-VM.APACHE.ORG]</p>
+<div id="toc" style="border-radius: 3px; border: 1px solid #999; background-color: #EEE; padding: 4px;"><h4>Table of Contents:</h4><ul><ul><li><a class="toc-href" href="#environment" title="Environment:">Environment:</a></li><li><a class="toc-href" href="#layout" title="Layout:">Layout:</a></li><li><a class="toc-href" href="#starting-stopping" title="Starting &amp; Stopping:">Starting &amp; Stopping:</a><ul><li><a class="toc-href" href="#roller" title="Roller:">Roller:</a></li><li><a class="toc-href" href="#tomcat" title="Tomcat:">Tomcat:</a></li><li><a class="toc-href" href="#other-info" title="Other Info:">Other Info:</a></li></ul></li><li><a class="toc-href" href="#ssl_1" title="SSL:">SSL:</a></li><li><a class="toc-href" href="#creating-new-blogs-for-projects" title="Creating New Blogs for projects:">Creating New Blogs for projects:</a><ul><li><a class="toc-href" href="#adding-users" title="Adding Users:">Adding Users:</a></li><li><a class="toc-href" href="#adding-a-project-blog" title="Adding a project blog:">Adding a project blog:</a></li><li><a class="toc-href" href="#add-users-to-a-project-blog" title="Add Users to a project blog:">Add Users to a project blog:</a></li></ul></li><li><a class="toc-href" href="#upgrading-roller_1" title="Upgrading Roller:">Upgrading Roller:</a></li><li><a class="toc-href" href="#building-and-installing-apache-httpd-on-solaris-x86" title="Building and installing Apache httpd on Solaris x86:">Building and installing Apache httpd on Solaris x86:</a><ul><li><a class="toc-href" href="#openssl" title="OpenSSL:">OpenSSL:</a></li><li><a class="toc-href" href="#httpd" title="HTTPD:">HTTPD:</a></li><li><a class="toc-href" href="#smf-for-our-custom-httpd" title="SMF for our custom httpd:">SMF for our custom httpd:</a></li></ul></li><li><a class="toc-href" href="#todo-and-possible-optimizations_1" title="TODO and possible optimizations:">TODO and possible optimizations:</a></li></ul></ul></div>
+<h2 id="environment">Environment:</h2>
+<ul>
+<li>Roller Version 5.0 (release)</li>
+<li>Tomcat 7.0.23</li>
+<li>Java 1.7.0_51</li>
+<li>mysql 5.5.x</li>
+</ul>
+<h2 id="layout">Layout:</h2>
+<ul>
+<li>/var/lib/tomcat7/webapps/ROOT - Roller5 Installation</li>
+<li>/usr/share/tomcat7/ - Tomcat Installation ($CATALINA_HOME)</li>
+<li>/var/lib/roller_data - uploads &amp; search-index directory</li>
+<li>/usr/share/tomcat7/lib/roller-custom.properties - Custom properties file</li>
+<li>(Mysql Installation is on coeus + titan)</li>
+<li>/home/roller/backups - Backups dir (copied to Bia)</li>
+<li>/var/log/tomcat7/ - log dir (see roller.log)</li>
+</ul>
+<h2 id="starting-stopping">Starting &amp; Stopping:</h2>
+<h3 id="roller">Roller:</h3>
+<p>Roller is deployed as a webapp inside Tomcat.</p>
+<p>Roller can be started/stopped/reloaded by going to</p>
+<p><a href="https://blogs.apache.org:8080/welcome/">https://blogs.apache.org:8080/welcome/</a> and clicking on the 'Tomcat Manager' 
+link.</p>
+<p>Username/Password is required and can be found in /.tcmanager</p>
+<p>However, it has been neccessary to restart Tomcat due to permgen out of
+memory issues so see below:</p>
+<h3 id="tomcat">Tomcat:</h3>
+<p><code>service tomcat7 [start|stop|restart]</code></p>
+<h3 id="other-info">Other Info:</h3>
+<p>mysql:: Lives on Coeus + Titan now</p>
+<p>roller blog administration::</p>
+<p>Global Administrator to create new users and create new weblogs etc.
+Details are in ~gmcdonald/.rolleradmin</p>
+<p>Backups::</p>
+<p>A root cronjob runs once per day and executes</p>
+<p>/export/home/roller/backup_db.sh</p>
+<p>which stores backups in</p>
+<p>/export/home/roller/backups</p>
+<p>which includes a mysqldump and the main roller/tomcat files and the
+roller data directory.</p>
+<p>An apbackup cronjob runs once per day and executes</p>
+<p>/export/home/apbackup/bin/backups-blogs-zones-daily.sh</p>
+<h2 id="ssl_1">SSL:</h2>
+<p>Roller has SSL termination on Erebus-SSL.
+See trunk/machines/vms/erebus-ssl.apache.org/etc/apache2/ for vhost config</p>
+<h2 id="creating-new-blogs-for-projects">Creating New Blogs for projects:</h2>
+<h3 id="adding-users">Adding Users:</h3>
+<ul>
+<li>blogs.apache.org -&gt; bottom right 'Login' -&gt; Right side 'Server administration' -&gt; 'Server Admin' submenu 'User Admin' -&gt; Bottom left 'create a new user' </li>
+<li>Only use apache.org email addresses and use their availid as the username. <strong>Do not tick the 'Administrator' box when 
+creating a user - this is for global administrator rights!</strong></li>
+<li>Create a temporary password. </li>
+<li>Email these details to the new user and ask that they change their password. </li>
+<li>At this stage a new user has been created but they still can not do anything as they are not members of any blogs.</li>
+</ul>
+<h3 id="adding-a-project-blog">Adding a project blog:</h3>
+<p>This process is Very easy now because we have an ASF theme installed.</p>
+<ul>
+<li>From the main menu click on 'Create new weblog'</li>
+<li>Give it a name e.g. - 'Apache $projectname'</li>
+<li>Give it a description - usually 'Apache $projectname'</li>
+<li>Give it a handle (url) - MUST be $projectname</li>
+<li>Email address should be private@$projectname.apache.org</li>
+<li>Timezone - maybe set to UTC (?)</li>
+<li>Theme MUST be 'ASF Theme' - NOT 'ASF Frontpage Theme' so change this.</li>
+<li>Click on 'Create Weblog' and pat yourself on the back, job done.</li>
+</ul>
+<h3 id="add-users-to-a-project-blog">Add Users to a project blog:</h3>
+<p>Now that the user(s) are created and the blog is created, you need to add the users
+as 'Admin's for the blog (if these are the project members that asked for the blog!)
+(Any other users should be added as 'author' or 'limited' and usually you should
+leave this up to blog admins to add more members in after their initial account
+has been created.)</p>
+<ul>
+<li>From the Main Menu click on 'Settings' for the blog you need.</li>
+<li>Click on 'Members' tab.</li>
+<li>Click on 'Invite new member'</li>
+<li>Choose the user you created</li>
+<li>Select the 'Admin' Permission</li>
+<li>Click on 'Send Invitation'</li>
+</ul>
+<h2 id="upgrading-roller_1">Upgrading Roller:</h2>
+<p>Nearly the same as my blog post from:
+http://16degrees.com.au/roller5/gmcdonald/entry/unofficial_upgrade_of_roller_4</p>
+<p>except I also needed to follow the manual section 9.1</p>
+<h2 id="building-and-installing-apache-httpd-on-solaris-x86">Building and installing Apache httpd on Solaris x86:</h2>
+<p>Installed to /opt. Since /opt is mounted read-only from the global zone
+to the local zones, the build and install was done on the global zone.</p>
+<p>Build was done with the installed sfw gcc.
+Environment used was</p>
+<div class="highlight"><pre><span></span>export CC=gcc
+export CFLAGS="-O2 -g -Wall -fno-strict-aliasing"
+export PATH=/usr/ccs/bin:/usr/bin:/usr/sbin:/bin:/sbin:/usr/sfw/bin
+</pre></div>
+<p>Needed libraries (and versions last used):</p>
+<ul>
+<li>pcre 8.33</li>
+<li>expat 2.1.0</li>
+<li>openssl 1.0.1e</li>
+</ul>
+<p>PCRE, Ecpat:</p>
+<p>configure, make, make check, make install</p>
+<h3 id="openssl">OpenSSL:</h3>
+<p>Note: OpenSSL by default builds 64 bit binaries.
+Since everything else is 32 bits by default, we
+override the OpenSSL decision done by the normal
+call to ./config:</p>
+<div class="highlight"><pre><span></span>export CFLAGS="-m32 -g -Wall -fno-strict-aliasing"
+./Configure solaris-x86-gcc --prefix=... shared -fPIC
+make, make test, make install
+</pre></div>
+<h3 id="httpd">HTTPD:</h3>
+<p>Config flags see /opt/apache2-install/shared/2.4.6/build/config.nice.</p>
+<div class="highlight"><pre><span></span>configure, make, make install
+</pre></div>
+<p>Since openssl directory s not added to RPATH by httpd build
+procedure, I decided to copy the OpenSSL shared libs to
+the httpd lib directory. This is not needed for pcre and expat
+for which the RPATH is correctly set up. As an alternative
+one could add the original OpenSSL lib install directory to
+LD_LIBRARY_PATH in bin/envvars.</p>
+<h3 id="smf-for-our-custom-httpd">SMF for our custom httpd:</h3>
+<ul>
+<li>wrapper control script /lib/svc/method/http-blogs</li>
+<li>service manifest</li>
+</ul>
+<p>Both are in svn.</p>
+<h2 id="todo-and-possible-optimizations_1">TODO and possible optimizations:</h2>
+<ul>
+<li>clean up no longer used /var/apache2/(cgi-bin|htdocs) directories
+  as soon as it is sure that we won't switch back to the
+  platform httpd and config</li>
+<li>disable Solaris webconsole on each zone on gaea</li>
+<li>maybe stop restarting roller Tomcat every day at 1 p.m. (see crontab)</li>
+<li>consider switching to pooled DB connection in roller/Tomcat
+  Currently each DB request creates a new db connection and throws
+  it away after its execution!</li>
+<li>optionally switch to mod_proxy_ajp (and adjust Tomcat config)</li>
+<li>update roller Tomcat</li>
+<li>separate product and instance for roller Tomcat</li>
+<li>check whether we really need the preview.cgi CGI script</li>
+</ul>
+<p>Contribs welcome!</p>
+        </div>
+      </div>
+    </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2016, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the Apache License, Version 2.0.<br/>
+          Apache and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>    
+    <script src="https://infra-test.apache.org/theme/js/vendor/jquery.js"></script>
+    <script src="https://infra-test.apache.org/theme/js/vendor/what-input.js"></script>
+    <script src="https://infra-test.apache.org/theme/js/vendor/foundation.js"></script>
+    <script src="https://infra-test.apache.org/theme/js/app.js"></script>
+  </body>
+</html>
