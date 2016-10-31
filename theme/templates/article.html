@@ -10,39 +10,12 @@
     <link rel="stylesheet" href="{{SITEURL}}/theme/css/app.css">
     <link rel="stylesheet" href="{{SITEURL}}/theme/css/font-awesome.min.css">
   </head>
-  <body style="background: #EDD6B4;">
+  <body style="background: #C9B191;">
     {% include "menu.html" %}
     
-    <!-- bread crumb -->
-    <div class="row">
-      <div class="large-12 columns" style="font-size: 0.8rem;">
-        <a href="/">Home</a>
-        <i class="fa fa-angle-double-right"></i>
-        <a href="{{SITEURL}}/news/{{article.slug}}.html">{{article.title}}</a>
-      </div>
-    </div>
+    {% include "generic.html" %}
     
-    
-    <!-- contents -->
-    <div class="row">
-      <div class="large-12 columns">
-        <div class="callout">
-          <h2>{{ article.title }}</h2>
-          {{ article.content }}
-        </div>
-      </div>
-    </div>
-    </div>
-    
-    <!-- footer -->
-    <div class="row">
-      <div class="large-12 medium-12 columns">
-        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
-          Copyright {{ CURRENTYEAR }}, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the Apache License, Version 2.0.<br/>
-          Apache and the Apache feather logo are trademarks of The Apache Software Foundation.
-        </p>
-      </div>
-    </div>
+    {% include "footer.html" %}
     
     <script src="{{SITEURL}}/theme/js/vendor/jquery.js"></script>
     <script src="{{SITEURL}}/theme/js/vendor/what-input.js"></script>

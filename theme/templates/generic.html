@@ -1,0 +1,32 @@
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="{{SITEURL}}/{%if article%}{{article.slug}}{%else%}{{page.slug}}.html{%endif%}">
+          {%if article%}{{article.title}}{%else%}{{page.title}}{%endif%}
+        </a>
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+            {% if article %}
+              {{ article.title }}
+            {% else %}
+              {{ page.title }}
+            {% endif %}
+          </h2>
+          {% if article %}
+              {{ article.content }}
+            {% else %}
+              {{ page.content }}
+            {% endif %}
+        </div>
+      </div>
+    </div>
+    </div>
