@@ -17,15 +17,28 @@ which may already have the answer you are seeking.
 
 [TOC]
 
-#### Apache Account Info ####
-<p style="font-size: 0.9rem; width: 80%;">
-<!-- forgot my password -->
+#### General service status
+
+<!-- service is down -->
 <span style='color: #A00;'><q>
-    I forgot my password
+    The $foo service is down!
 </q></span>
 <br/>
 <span style='color: #00A;'>
-    Initially try https://id.apache.org/; failing that mail root@
+    Before you go alerting us, check <a href="https://status.apache.org">status.apache.org</a>.
+    If the service is listed as down on that page, we have most likely already been informed.
+</span>
+<hr/>
+
+#### Apache account info
+
+<!-- forgot my password -->
+<span style='color: #A00;'><q>
+    I forgot my password!
+</q></span>
+<br/>
+<span style='color: #00A;'>
+    See <a href="/reference/committer/contactinfra">this page</a> for assistance
 </span>
 <hr/>
 
