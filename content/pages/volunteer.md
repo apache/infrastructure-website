@@ -12,3 +12,4 @@ There are some basic things you should be able to do, if you're going to help ou
   - Look for support requests on infrastructure@ as they come in and volunteer to handle them.
   - Add entries to the Issue Tracker for issues raised via e-mail that are not yet being handled. We don't want them slipping through the cracks.
   - Work on in-house tasks. At any time there are several outstanding TODOs involving the in-house services, patches, and scripts; not everything is recorded on the issue tracker.
+
