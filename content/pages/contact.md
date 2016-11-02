@@ -1,6 +1,9 @@
 Title: Contact Infrastructure
 Slug: contact
 
+## Hello World
+Join us on (Hipchat)[http://infra.chat]!
+
 ### Resource requests
 Requests for resources and their adjustments should be handled through
 JIRA, unless a [self-serve](/self-serve/) tool exists for the specific resource.
