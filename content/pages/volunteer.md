@@ -1,6 +1,8 @@
 Title: Volunteering for Apache Infrastructure
 Slug: volunteer
 
+Come talk to us on (Hipchat)[http://infra.chat]!
+
 If you're a willing volunteer, who can tell the difference between a server and a hifi amp, this is for you! There are plenty of opportunities for you to help out with the small tasks that need to be done every day to keep the ASF Infrastructure alive. Some are self-explanatory, and you'll learn more about the rest of them as you get involved.
 
 There are some basic things you should be able to do, if you're going to help out with the ASF Infrastructure team. You probably do them all already, in other ASF projects.
