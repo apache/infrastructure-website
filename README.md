@@ -11,5 +11,6 @@ This builds the website and puts pages in output/
     `pelican content`
 
 To preview:
+
     `python -m pelican.server`
 
