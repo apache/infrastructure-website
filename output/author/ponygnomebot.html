@@ -18,6 +18,14 @@
         margin-top: 0px;
         cursor: pointer;
       }
+      .clickable {
+        height: 100%;
+        width: 100%;
+        left: 0;
+        top: 0;
+        position: absolute;     
+        z-index: 1;
+      }
     </style>  </head>
   <body style="background: #C9B191;">
     <!-- Menu bar --->
@@ -82,7 +90,8 @@
           <div class="row">
             <!-- how can we help? -->
             <div class="large-4 medium-4 columns">
-              <div class="frontbox" onclick="location.href='help.html';">
+              <div class="frontbox">
+                <a href="https://infra-test.apache.org/help.html"><span class="clickable"></span></a>
                 <h3 style="text-transform: capitalize; text-align: center;">
                   <i class="fa fa-question-circle" style="color: #FFF; font-size: 24pt;"></i>
                   <a href="https://infra-test.apache.org/help.html">How can we help?</a>
@@ -103,7 +112,8 @@
             
             <!-- helping out (volunteering) -->
             <div class="large-4 medium-4 columns">
-              <div class="frontbox" onclick="location.href='volunteer.html';">
+              <div class="frontbox">
+                <a href="https://infra-test.apache.org/volunteer.html"><span class="clickable"></span></a>
                 <h3 style="text-transform: capitalize; text-align: center;">
                   <i class="fa fa-handshake-o" style="color: #FFF; font-size: 24pt;"></i>
                   <a href="https://infra-test.apache.org/volunteer.html">Lend us a hand!</a>
@@ -122,7 +132,8 @@
             
             <!-- who are we (team etc) -->
             <div class="large-4 medium-4 columns">
-              <div class="frontbox" onclick="location.href='team.html';">
+              <div class="frontbox">
+                <a href="https://infra-test.apache.org/team.html"><span class="clickable"></span></a>
                 <h3 style="text-transform: capitalize; text-align: center;">
                   <i class="fa fa-group" style="color: #FFF; font-size: 24pt;"></i>
                   <a href="https://infra-test.apache.org/team.html">Who are we?</a>
