@@ -182,6 +182,7 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
 | metis | 256 5e:2e:be:db:e6:ec:d8:ac:5c:fd:c5:06:06:1b:00:98 |
 | projects-vm | 256 6f:ed:f8:1d:af:e6:63:cd:ea:68:41:3a:9a:8c:f7:61 |
 | svn01-us-west | 256 c3:85:f4:d0:4a:6d:8b:f9:73:4b:8c:92:04:5c:7e:96 |
+| syncope-vm2 | 256 da:f1:ed:75:22:1c:7e:7a:d3:73:2c:6a:79:98:42:b6 |
 | themis | 256 7f:0e:bb:f9:32:78:94:b9:bf:3f:68:cf:c6:db:89:bb |
 | whimsy-vm3 | 256 a1:e3:d1:b4:d7:f6:34:7a:43:e3:50:68:d4:e2:c0:03 |
 
