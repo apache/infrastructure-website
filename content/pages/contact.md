@@ -13,7 +13,7 @@ Please use the [Service Desk Portal](https://infrahelp.apache.org) for filing JI
 ### Mailing list for general inquiries
 General inquiries and questions should go to our user mailing list:
 
-| Mailing List      | Subscribe Address | Archives (private):  |
+| Mailing list      | Subscribe address | Archives (private):  |
 |:-------------------|:------------------|:--------------------|
 | users@infra.apache.org | users-subscribe@infra.apache.org | [lists.apache.org](https://lists.apache.org/list.html?users@infra.apache.org) |
 | commits@infra.apache.org | commits-subscribe@infra.apache.org | [lists.apache.org](https://lists.apache.org/list.html?commits@infra.apache.org) |
