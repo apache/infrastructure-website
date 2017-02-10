@@ -8,7 +8,7 @@ Join us on [Hipchat](http://infra.chat)!
 Requests for resources and their adjustments should be handled through
 JIRA, unless a [self-serve](/self-serve/) tool exists for the specific resource.
 
-Please use the [Service Desk Portal](https://infrahelp.apache.org) for filing JIRAs.
+Please use the [Service Desk Portal](https://infrahelp.apache.org) for filing new JIRAs.
 
 ### Mailing list for general inquiries
 General inquiries and questions should go to our user mailing list:
