@@ -1,6 +1,7 @@
 Title: Contact Infrastructure
 Slug: contact
 
+
 ## Hello World:
 Join us on [Hipchat](http://infra.chat)!
 
