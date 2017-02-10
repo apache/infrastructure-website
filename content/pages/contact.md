@@ -1,16 +1,16 @@
 Title: Contact Infrastructure
 Slug: contact
 
-## Hello World
+## Hello World:
 Join us on [Hipchat](http://infra.chat)!
 
-### Resource requests
+### Resource requests:
 Requests for resources and their adjustments should be handled through
 JIRA, unless a [self-serve](/self-serve/) tool exists for the specific resource.
 
 Please use the [Service Desk Portal](https://infrahelp.apache.org) for filing new JIRAs.
 
-### Mailing list for general inquiries
+### Mailing list for general inquiries:
 General inquiries and questions should go to our user mailing list:
 
 | Mailing list      | Subscribe address | Archives (private):  |
