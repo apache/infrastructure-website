@@ -1,4 +1,4 @@
-Title: Contact Infrastructure
+Title: Contact the Infrastructure Team
 Slug: contact
 
 
