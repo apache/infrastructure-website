@@ -16,7 +16,7 @@ We divide Infra-provided services into four groups:
 1. Core
 
    Target: 99% uptime
-   * foo
+   * issue trackers (Bugzilla and Jira)
    * bar
 
 1. Standard
