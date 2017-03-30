@@ -23,7 +23,7 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
 ### FreeBSD: ###
 
 | Name | Os | HW | CPU | RAM | Disk | Arrays | Services | Location | Comissioned | Class |
-|^-----|----|----|-----|-----|------|--------|----------|----------|-------------|-------|
+|-----|----|----|-----|-----|------|--------|----------|----------|-------------|-------|
 | baldr | 9.1-RELEASE | DPE 1950 | E5420@2.50GHz 2x4=8 | 4x2@667MHz + 4x4@667MHz=24GB | 2x931GB@7.2k gpt+zmirror |  | Jails - Services | OSUOSL | 2008/02 | dm |
 | minotaur | 9.1-RELEASE | HP DL580G7 | E7540@2.00GHz 4x2x6=48 | 8*4@1333MHz = 32GB | 4x146GB@10k | Powervault 220S:15x500GB@7.2k raidz2 + 2x120GB SSD l2arc | e-mail, SSH, seed | OSUOSL | 2011/04 | people |
 | eos | 9.1-RELEASE | DPE r410 | X5550@2.67GHz 2x4x2=16 | 6x8@1333MHz = 48GB | 2x160GB@7.2k gpt+zmirror | Storform D55J:10x300GB@10k +2x75GB SSD raidz2 l2 arch | US: www, rsync, mod_mbox, wiki | OSUOSL | 2010/06 | www, wiki, rsync |
@@ -40,7 +40,7 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
 ### Ubuntu: ###
 
 | Name | Os | HW | CPU | RAM | Disk | Arrays | Services | Location | Comissioned | Class |
-|^-----|----|----|-----|-----|------|--------|----------|----------|-------------|-------|
+|-----|----|----|-----|-----|------|--------|----------|----------|-------------|-------|
 | arcas | 12.04.2 LTS | r410 | X5550@2.67GHz 2x4x2=16 | 8x8GB@1333MHz = 64GB | | | Jira | OSUOSL | 2010/07 | jira |
 | crius | 12.04.5 LTS | r720 | E5-2665@2.6GHz | 4x16=64 @ 1600MHz| 1x200SSD + 2x300SAS RAID1 + 5 x 600SAS |  | CI (Jenkins Master) | OSUOSL | 2013/06 | ci, jenkins |
 | lares | 14.04 LTS | HP Proliant DL180 G6  |  | 50GB |  |  | CI (Buildbot slave) | Y! | 2014/07 | ci, bb |
@@ -59,12 +59,12 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
 ### MacOSX: ###
 
 | name | os | HW | Arrays | Services | Location | Comissioned | Class |
-|^-----|----|----|--------|----------|----------|-------------|-------|
+|-----|----|----|--------|----------|----------|-------------|-------|
 | adam | 10.6 | Apple Xserve |  | Gump | OSUOSL | 2010/07 | ci |
 
 ### vCenter ###
 | name | os | HW | CPU | RAM | Disk | Arrays | Services | Location | Comissioned | Class |
-|^-----|----|----|-----|-----|------|--------|----------|----------|-------------|-------|
+|-----|----|----|-----|-----|------|--------|----------|----------|-------------|-------|
 | aether | Win 2k8 | DPE r210 | X3430@2.4GHz 1x4=4 | 8x2@1333MHz = 16GB | 2x500GB@7.2k | None | VM mgmt | OSUOSL | 2011/03 | |
 | erebus | ESX | DPE r515| 4176HE@2.4GHz 2x6x1=12 | 8x8GB@1333MHz = 64GB | 1x2TB@7.2k | TBD | VM host | OSUOSL | 2010/12 | vms |
 | eirene | ESX | DPE r720 | E5-2665@2.4GHz 2x8x2=32 | 256GB | ? = 830GB | ? = 2 x 1.6TB | VM host | OSUOSL | 2013/?? | vms|
@@ -74,7 +74,7 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
 ### Virtual Machines: ###
 
 | name | VM name | os | HW | Services | Location | Class |
-|^-----|---------|----|----|----------|----------|-------|
+|-----|---------|----|----|----------|----------|-------|
 | archiva-vm | archiva-vm | | VM on vCenter | | OSUOSL | nyxvm || bloodhound-vm2 | | VM on vCenter | | OSUOSL | erebusvm |
 | allura-vm | allura-vm | Ubuntu 12.04.2 LTS | VM on vCenter | TLP Playground | OSUOSL | erebusvm | 
 | analysis | analysis | Ubuntu 10.4.2 LTS | VM on vCenter | CI (Jenkins/Analysis) | OSUOSL | erebusvm, ci |
@@ -113,7 +113,7 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
 ### Zones: ###
 
 | name | os | HW | Arrays | Services | Location | Class |
-|^-----|----|----|--------|----------|----------|-------|
+|-----|----|----|--------|----------|----------|-------|
 | community.zones | SunOS | Zone/odyne |  | Community | SARA | |
 | hudson-solaris.zones | SunOS | Zone/odyne |  | CI (Hudson slave) | SARA | |
 | git.zones | SunOS | Zone/odyne |  | TLP playground | SARA | vc |
@@ -127,7 +127,7 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
 ### Jails - Services ###
 
 | name | os | HW | Services | Location | Class |
-|^-----|----|----|----------|----------|-------|
+|-----|----|----|----------|----------|-------|
 | cms.zones | FreeBSD 9.1-RELEASE | Jail/baldr | Apache CMS | OSUOSL | baldrjail |
 | urd.zones | FreeBSD 9.1-RELEASE | Jail/baldr | comments.a.o gitpubsub svngit2jira | OSUOSL | baldrjail |
 | vor.zones | FreeBSD 9.1-RELEASE | Jail/baldr | pear.a.o | OSUOSL | baldrjail |
@@ -135,7 +135,7 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
 ### Hardware: ###
 
 | name | os | HW | Arrays | Services | Location | Comissioned |
-|^-----|----|----|--------|----------|----------|-------------|
+|-----|----|----|--------|----------|----------|-------------|
 | console | n/a | Cyclades Alter Path ACS (32 ports) |  | n/a | OSUOSL | n/a |
 | r1sw0 | n/a | HP ProCurve |  | public | OSUOSL | 2013/05 |
 | r2sw0 | n/a | HP ProCurve |  | public | OSUOSL | 2013/05 |
@@ -146,13 +146,13 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
 ### Deprecated ###
 
 | name | os | HW | CPU | RAM | Disk | Arrays | Services | Location | Comissioned | Class |
-|^-----|----|----|-----|-----|------|--------|----------|----------|-------------|-------|
+|-----|----|----|-----|-----|------|--------|----------|----------|-------------|-------|
 | hyperion | 10u7 | Sun x2100 M2 | | | | | Zones | OSUOSL | 2007/12 | |
 
 ### SSH RSA Keys: ###
 
 | name | RSA Key |
-|^-----|---------|
+|-----|---------|
 | baldr | 2048 1f:7d:b4:10:e0:52:38:09:01:89:8e:c1:44:80:d4:85 |
 | comdev1-us-west | 2048 6f:85:00:45:24:c0:8b:e4:02:c7:e3:58:f0:3a:b2:fc |
 | eos | 2048 2e:8f:6a:67:5a:ee:9c:0d:f9:98:b4:4f:80:25:a0:71 |
@@ -173,7 +173,7 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
 ### SSH ECDSA Keys: ###
 
 | name | ECDSA Key |
-|^-----|-----------|
+|-----|-----------|
 | baldr | 256 74:e1:5c:55:71:5c:42:09:66:81:1d:a0:8c:20:8f:45 |
 | eos | 256 82:9b:ad:ba:c7:f4:dd:69:35:71:33:ea:ea:12:f7:34 |
 | harmonia | 256 98:23:94:9f:b9:3b:b4:ca:f3:83:d2:54:7f:26:e0:17 |
@@ -191,7 +191,7 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
 ### SSH ED25519 Keys: ###
 
 | name | ED25519 Key |
-|^-----|-----------|
+|-----|-----------|
 | home | 256 79:04:05:a4:79:38:99:d8:f2:e9:49:a1:39:4b:78:bb |
 
 
@@ -199,7 +199,7 @@ Notice:    Licensed to the Apache Software Foundation (ASF) under one
 ### SSL Keys: ###
 
 | name | Fingerprint |
-|^-----|-------------|
+|-----|-------------|
 | svn (deprecated) | BC:5F:40:92:FD:6A:49:AA:F8:B8:35:0D:ED:27:5E:A6:64:C1:7A:1B |
 | svn (svn01-us-west, svn-master, sha-256) | 9C:1B:1D:84:DC:4B:F2:7C:E4:CD:48:9E:FC:DF:05:4D:40:9C:3B:A3:95:F3:D3:35:08:68:A8:1D:E5:68:94:18 |
 | svn (svn01-us-west, svn-master, sha-1) | 4a:d7:22:dd:04:42:04:36:57:d1:76:f9:c8:1a:ab:66:09:4d:42:23 |
