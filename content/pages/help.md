@@ -62,7 +62,7 @@ which may already have the answer you are seeking.
 </q></span>
 <br/>
 <span style='color: #00A;'>
-    For new (empty) repositories, please use <a href="/self-serve/reporeq/">reporeq</a>.
+    For new (empty) repositories, please use <a href="/self-serve/reporeq/">reporeq</a>. If your project is using the GitBox service, please see the <a href="https://gitbox.apache.org/">GitBox web site</a> instead.
     For imports, please create a JIRA through the <a href="https://infrahelp.apache.org/">Service Desk</a> platform.
 </span>
 <hr/>
