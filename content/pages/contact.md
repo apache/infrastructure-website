@@ -3,7 +3,7 @@ Slug: contact
 
 
 ## Hello World!:
-Join us on [Hipchat](http://infra.chat)!
+Join us on [Hipchat](http://infra.chat/)!
 
 ### Resource requests:
 Requests for resources and their adjustments should be handled through
