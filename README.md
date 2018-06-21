@@ -10,12 +10,18 @@ This builds the website and puts pages in output/
     `virtualenv $venvname`
     `source $venvname/bin/activate`
     `pip install -r requirements.txt`
-    Edit all the markdown! (pages/)
-    `pelican content`
+
+    `git checkout https://github.com/apache/infrastructure-website`
+    Edit all the markdown! (infrastructure-website/content/pages/)
+
+    `cd infrastrucure-website`
+    `pelican content -s pelicanconf.py -t theme`
 
 To preview:
 
+    `cd infrastructure-website/output/`
     `python -m pelican.server`
+    Browse to localhost:8000
 
 ## Technical site documentation:
 Anytime you checkin a file, the site is regenerated:
