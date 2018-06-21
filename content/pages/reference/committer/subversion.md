@@ -195,7 +195,7 @@ If you're getting an error message like the following:
 
 That's a known issue in the neon client library which has been fixed in
 neon 0.24.7. A workaround is to disable compression in your client. Edit
-~/.subversion/servers. Uncomment the [global] section if neccessary, and
+~/.subversion/servers. Uncomment the [global] section if necessary, and
 add a line that reads
 
     :::text

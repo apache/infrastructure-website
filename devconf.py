@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 from datetime import date
+import mdx_gfm
 
 AUTHOR = u'PonyGnomeBot'
 SITENAME = u'Apache Infrastructure'
@@ -48,3 +49,7 @@ DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
+# Use GitHub Flavored Markdown
+MARKDOWN = {'extensions': [mdx_gfm.GithubFlavoredMarkdownExtension()],
+            }

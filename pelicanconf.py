@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 from datetime import date
+import mdx_gfm
 
 AUTHOR = u'PonyGnomeBot'
 SITENAME = u'Apache Infrastructure'
@@ -18,11 +19,6 @@ PAGE_SAVE_AS = './{slug}.html'
 ARTICLE_SAVE_AS = 'news/{slug}.html'
 ARTICLE_URL = 'news/{slug}.html'
 
-# TOC Generator
-PLUGIN_PATHS = ['./theme/plugins']
-PLUGINS = ['toc']
-TOC_HEADERS = r"h[1-6]"
-
 # Sort news by date, descending, latest article first
 ARTICLE_ORDER_BY = 'reversed-date'
 
@@ -32,6 +28,11 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
+
+# TOC Generator
+PLUGIN_PATHS = ['./theme/plugins']
+PLUGINS = ['toc']
+TOC_HEADERS = r"h[1-6]"
 
 # Blogroll
 LINKS = (('Pelican', 'http://getpelican.com/'),
@@ -47,3 +48,7 @@ DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
+
+# Use GitHub Flavored Markdown
+MARKDOWN = {'extensions': [mdx_gfm.GithubFlavoredMarkdownExtension()],
+            }
