@@ -6,3 +6,4 @@ The ASF Infrastructure team provides and manages all infrastructure and services
 The ASF Infrastructure team is made up of ASF committers, some of whom are paid sysadmin contractors. Like every ASF project, the non-contracted committers work as volunteers - and we could always do with more help! Those volunteers work alongside the contractors in support of decisions approved, either implicitly or explicitly, by the Infrastructure President's Committee. Decision-making follows a distributed hierarchy instead of the typical fully group-centric decision-making of an Apache project, see [policies](policies.html) for details on how this works in practice.
 
 Gnomes.
+GNOMES.
