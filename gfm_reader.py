@@ -24,11 +24,13 @@ import sys
 import os
 import ctypes
 import time
+import re
 
 import pelican.readers
 import pelican.utils
 
 _LIBDIR = '/home/buildslave/slave/tools/lib'
+_LIBDIR = '/Users/gstein/src/asf/infra-site/build-cmark/lib'
 if sys.platform == 'darwin':
   _LIBCMARK = 'libcmark-gfm.dylib'
   _LIBEXT = 'libcmark-gfmextensions.dylib'
@@ -70,30 +72,68 @@ class GFMReader(pelican.readers.BaseReader):
   #       non-deterministic which Reader will be used for these files.
   file_extensions = ['md', 'markdown', 'mkd', 'mdown']
 
+  # Metadata is specified as a single, colon-separated line, such as:
+  #
+  # Title: this is the title
+  #
+  # Note: name starts in column 0, no whitespace before colon, will be
+  #       made lower-case, and value will be stripped
+  #
+  RE_METADATA = re.compile('^([A-za-z]+): (.*)$')
+
   def read(self, source_path):
     "Parse content and metadata of GFM source files."
 
+    # Prepare the "slug", which is the target file name. It will be the
+    # same as the source file, minus the leading ".../content/(articles|pages)"
+    # and with the extension removed (Pelican will add .html)
+    relpath = os.path.relpath(source_path, self.settings['PATH'])
+    parts = relpath.split(os.sep)
+    parts[-1] = os.path.splitext(parts[-1])[0]  # split off ext, keep base
+    slug = os.sep.join(parts[1:])
+
+    metadata = {
+      'slug': slug,
+      }
+
     # Fetch the source content, with a few appropriate tweaks
     with pelican.utils.pelican_open(source_path) as text:
+
+      # Extract the metadata from the header of the text
+      lines = text.splitlines()
+      for i in range(len(lines)):
+        line = lines[i]
+        match = GFMReader.RE_METADATA.match(line)
+        if match:
+          name = match.group(1).strip().lower()
+          if name != 'slug':
+            value = match.group(2).strip()
+            metadata[name] = value
+            #if name != 'title':
+            #  print 'META:', name, value
+        elif not line.strip():
+          # blank line
+          continue
+        else:
+          # reached actual content
+          break
+
+      # Reassemble content, minus the metadata
+      text = '\n'.join(lines[i:])
+
+      # Render the markdown into HTML
       if sys.version_info >= (3, 0):
         text = text.encode('utf-8')
         content = render(text).decode('utf-8')
       else:
         content = render(text)
 
-    ### make up a title
-    slug = '/'.join(source_path.split('/')[-2:])
-    metadata = {
-      'slug': slug,
-      'title': 'gstein was here',  ### clearly wrong
-#      'date': pelican.utils.set_date_tzinfo(time.gmtime()),  ### way wrong
-      }
-    ### extract metadata
-
     return content, metadata
 
 
 def render(text):
+  "Use cmark-gfm to render the Markdown into an HTML fragment."
+
   parser = F_cmark_parser_new(OPTS)
   assert parser
   for name in EXTENSIONS:
@@ -114,6 +154,8 @@ def render(text):
 
   return output
 
+
+# Use ctypes to access the functions in libcmark-gfm
 
 F_cmark_parser_new = cmark.cmark_parser_new
 F_cmark_parser_new.restype = ctypes.c_void_p
