@@ -49,9 +49,9 @@ OPTS = 0
 class GFMReader(pelican.readers.BaseReader):
   """GFM-flavored Reader for the Pelican system.
 
-  This Reader will be automatically registered (for the file extensions
-  noted below) within the Pelican system (being a BaseReader subclass), so
-  nothing further is required by users of this Reader.
+  Pelican looks for all subclasses of BaseReader, and automatically
+  registers them for the file extensions listed below. Thus, nothing
+  further is required by users of this Reader.
   """
 
   # NOTE: the builtin MarkdownReader must be disabled. Otherwise, it will be
