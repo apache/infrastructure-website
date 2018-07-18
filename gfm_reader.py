@@ -31,12 +31,16 @@ import pelican.utils
 _LIBDIR = '/home/buildslave/slave/tools/lib'
 if sys.platform == 'darwin':
   _LIBCMARK = 'libcmark-gfm.dylib'
+  _LIBEXT = 'libcmark-gfmextensions.dylib'
 elif sys.platform == 'windows':
   _LIBCMARK = 'cmark-gfm.dll'
+  _LIBEXT = 'cmark-gfmextensions.dll'
 else:
   _LIBCMARK = 'libcmark-gfm.so'
+  _LIBEXT = 'libcmark-gfmextensions.so'
 try:
   cmark = ctypes.CDLL(os.path.join(_LIBDIR, _LIBCMARK))
+  cmark_ext = ctypes.CDLL(os.path.join(_LIBDIR, _LIBEXT))
 except OSError:
   raise ImportError('%s not found. see build-mark.sh and gfm_reader.py'
                     % _LIBCMARK)
@@ -44,6 +48,14 @@ except OSError:
 # Options for the GFM rendering call
 ### this could be moved into SETTINGS or somesuch, but meh. not needed now.
 OPTS = 0
+
+# The GFM extensions that we want to use
+EXTENSIONS = (
+  'autolink',
+  'table',
+  'strikethrough',
+  'tagfilter',
+  )
 
 
 class GFMReader(pelican.readers.BaseReader):
@@ -58,11 +70,6 @@ class GFMReader(pelican.readers.BaseReader):
   #       non-deterministic which Reader will be used for these files.
   file_extensions = ['md', 'markdown', 'mkd', 'mdown']
 
-  # Proxy function for the GFM renderer
-  render = cmark.cmark_markdown_to_html
-  render.restype = ctypes.c_char_p
-  render.argtypes = (ctypes.c_char_p, ctypes.c_size_t, ctypes.c_int)
-
   def read(self, source_path):
     "Parse content and metadata of GFM source files."
 
@@ -70,9 +77,9 @@ class GFMReader(pelican.readers.BaseReader):
     with pelican.utils.pelican_open(source_path) as text:
       if sys.version_info >= (3, 0):
         text = text.encode('utf-8')
-        content = GFMReader.render(text, len(text), OPTS).decode('utf-8')
+        content = render(text).decode('utf-8')
       else:
-        content = str(GFMReader.render(text, len(text), OPTS))
+        content = render(text)
 
     ### make up a title
     slug = '/'.join(source_path.split('/')[-2:])
@@ -84,3 +91,67 @@ class GFMReader(pelican.readers.BaseReader):
     ### extract metadata
 
     return content, metadata
+
+
+def render(text):
+  parser = F_cmark_parser_new(OPTS)
+  assert parser
+  for name in EXTENSIONS:
+    ext = F_cmark_find_syntax_extension(name)
+    assert ext
+    rv = F_cmark_parser_attach_syntax_extension(parser, ext)
+    assert rv
+  exts = F_cmark_parser_get_syntax_extensions(parser)
+
+  F_cmark_parser_feed(parser, text, len(text))
+  doc = F_cmark_parser_finish(parser)
+  assert doc
+
+  output = F_cmark_render_html(doc, OPTS, exts)
+
+  F_cmark_parser_free(parser)
+  F_cmark_node_free(doc)
+
+  return output
+
+
+F_cmark_parser_new = cmark.cmark_parser_new
+F_cmark_parser_new.res_type = ctypes.c_void_p
+F_cmark_parser_new.arg_types = (ctypes.c_int,)
+
+F_cmark_parser_feed = cmark.cmark_parser_feed
+F_cmark_parser_feed.res_type = None
+F_cmark_parser_feed.arg_types = (ctypes.c_void_p, ctypes.c_char_p, ctypes.c_size_t)
+
+F_cmark_parser_finish = cmark.cmark_parser_finish
+F_cmark_parser_finish.res_type = ctypes.c_void_p
+F_cmark_parser_finish.arg_types = (ctypes.c_void_p,)
+
+F_cmark_parser_attach_syntax_extension = cmark.cmark_parser_attach_syntax_extension
+F_cmark_parser_attach_syntax_extension.res_type = ctypes.c_int
+F_cmark_parser_attach_syntax_extension.arg_types = (ctypes.c_void_p, ctypes.c_void_p)
+
+F_cmark_parser_get_syntax_extensions = cmark.cmark_parser_get_syntax_extensions
+F_cmark_parser_get_syntax_extensions.res_type = ctypes.c_void_p
+F_cmark_parser_get_syntax_extensions.arg_types = (ctypes.c_void_p,)
+
+F_cmark_parser_free = cmark.cmark_parser_free
+F_cmark_parser_free.res_type = None
+F_cmark_parser_free.arg_types = (ctypes.c_void_p,)
+
+F_cmark_node_free = cmark.cmark_node_free
+F_cmark_node_free.res_type = None
+F_cmark_node_free.arg_types = (ctypes.c_void_p,)
+
+F_cmark_find_syntax_extension = cmark.cmark_find_syntax_extension
+F_cmark_find_syntax_extension.res_type = ctypes.c_void_p
+F_cmark_find_syntax_extension.arg_types = (ctypes.c_char_p,)
+
+
+# Set up the libcmark-gfm library and its extensions
+F_register = cmark_ext.core_extensions_ensure_registered
+F_register.res_type = None
+F_register.arg_types = ( )
+F_register()
+
+### technically, maybe install an atexit() to release the plugins
