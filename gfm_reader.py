@@ -30,7 +30,6 @@ import pelican.readers
 import pelican.utils
 
 _LIBDIR = '/home/buildslave/slave/tools/lib'
-_LIBDIR = '/Users/gstein/src/asf/infra-site/build-cmark/lib'
 if sys.platform == 'darwin':
   _LIBCMARK = 'libcmark-gfm.dylib'
   _LIBEXT = 'libcmark-gfmextensions.dylib'
