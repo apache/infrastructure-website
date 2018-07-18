@@ -1,5 +1,4 @@
 Title: Requesting assistance
-Slug: help
 
 
 The Infrastructure Team is ready to assist during most of the day,

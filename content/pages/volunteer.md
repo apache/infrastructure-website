@@ -1,5 +1,5 @@
 Title: Volunteering for Apache Infrastructure
-Slug: volunteer
+
 
 Come talk to us on [Hipchat](http://infra.chat)!
 

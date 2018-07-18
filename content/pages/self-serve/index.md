@@ -1,5 +1,5 @@
 Title: Self-serve Tools
-Slug: self-serve/index
+
 
 The following self-serve tools are currently available:
 

@@ -1,5 +1,4 @@
 Title: Contact the Infrastructure Team
-Slug: contact
 
 
 ## Hello World!:
