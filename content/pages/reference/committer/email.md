@@ -10,7 +10,7 @@ e-mail address regularly for announcements. You are also free to use this
 address for other ASF work related to projects you work on.
 
 Note that the infrastructure group provides an e-mail address for you;
-however they do not provide a mailbox — you **must**
+however they do not provide a mailbox -- you **must**
 setup forwarding for this address to be able to read your mails.
 Instructions on how to [setup your forwarding address](#configure) file
 are available.  Be sure to keep your forwarding address up to date in the

@@ -207,7 +207,7 @@ USA
 
 - SARA: Surfnet
 
-- FUB: Freie Universität Berlin, Institut für Informatik
+- FUB: Freie Universitat Berlin, Institut fur Informatik
 
 - Bytemark:
 
