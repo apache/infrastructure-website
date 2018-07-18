@@ -4,6 +4,12 @@ from __future__ import unicode_literals
 from datetime import date
 import mdx_gfm
 
+import sys
+import os
+sys.path.append(os.path.dirname(__file__))
+#import gfm_reader
+
+
 AUTHOR = u'PonyGnomeBot'
 SITENAME = u'Apache Infrastructure'
 SITEURL = ''

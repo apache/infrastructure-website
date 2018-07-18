@@ -15,7 +15,7 @@ This builds the website and puts pages in output/
     Edit all the markdown! (infrastructure-website/content/pages/)
 
     `cd infrastrucure-website`
-    `pelican content -s pelicanconf.py -t theme`
+    `pelican content -t theme`
 
 To preview:
 
