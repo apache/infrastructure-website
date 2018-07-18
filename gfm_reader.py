@@ -23,8 +23,10 @@
 import sys
 import os
 import ctypes
+import time
 
 import pelican.readers
+import pelican.utils
 
 _LIBDIR = '/home/buildslave/slave/tools/lib'
 if sys.platform == 'darwin':
@@ -40,31 +42,45 @@ except OSError:
                     % _LIBCMARK)
 
 # Options for the GFM rendering call
+### this could be moved into SETTINGS or somesuch, but meh. not needed now.
 OPTS = 0
 
 
 class GFMReader(pelican.readers.BaseReader):
+  """GFM-flavored Reader for the Pelican system.
 
-  enabled = True  # if we got here, the library is available
+  This Reader will be automatically registered (for the file extensions
+  noted below) within the Pelican system (being a BaseReader subclass), so
+  nothing further is required by users of this Reader.
+  """
 
-  if cmark:
-    render = cmark.cmark_markdown_to_html
-    render.restype = ctypes.c_char_p
-    render.argtypes = (ctypes.c_char_p, ctypes.c_size_t, ctypes.c_int)
+  # NOTE: the builtin MarkdownReader must be disabled. Otherwise, it will be
+  #       non-deterministic which Reader will be used for these files.
+  file_extensions = ['md', 'markdown', 'mkd', 'mdown']
+
+  # Proxy function for the GFM renderer
+  render = cmark.cmark_markdown_to_html
+  render.restype = ctypes.c_char_p
+  render.argtypes = (ctypes.c_char_p, ctypes.c_size_t, ctypes.c_int)
 
   def read(self, source_path):
     "Parse content and metadata of GFM source files."
 
-    # Fetch the source content, with some like 
-    text = pelican_open(source_path)
+    # Fetch the source content, with a few appropriate tweaks
+    with pelican.utils.pelican_open(source_path) as text:
+      if sys.version_info >= (3, 0):
+        text = text.encode('utf-8')
+        content = GFMReader.render(text, len(text), OPTS).decode('utf-8')
+      else:
+        content = str(GFMReader.render(text, len(text), OPTS))
 
-    if sys.version_info >= (3, 0):
-      text = text.encode('utf-8')
-      content = GFMReader.render(text, len(text), OPTS).decode('utf-8')
-    else:
-      content = GFMRender.render(text, len(text), OPTS)
-
-    metadata = { }
+    ### make up a title
+    slug = '/'.join(source_path.split('/')[-2:])
+    metadata = {
+      'slug': slug,
+      'title': 'gstein was here',  ### clearly wrong
+#      'date': pelican.utils.set_date_tzinfo(time.gmtime()),  ### way wrong
+      }
     ### extract metadata
 
     return content, metadata
