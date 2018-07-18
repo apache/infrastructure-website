@@ -107,6 +107,8 @@ class GFMReader(pelican.readers.BaseReader):
           name = match.group(1).strip().lower()
           if name != 'slug':
             value = match.group(2).strip()
+            if name == 'date':
+              value = pelican.utils.get_date(value)
             metadata[name] = value
             #if name != 'title':
             #  print 'META:', name, value
