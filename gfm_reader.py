@@ -147,6 +147,10 @@ F_cmark_find_syntax_extension = cmark.cmark_find_syntax_extension
 F_cmark_find_syntax_extension.res_type = ctypes.c_void_p
 F_cmark_find_syntax_extension.arg_types = (ctypes.c_char_p,)
 
+F_cmark_render_html = cmark.cmark_render_html
+F_cmark_render_html.res_type = ctypes.c_char_p
+F_cmark_render_html.arg_types = (ctypes.c_void_p, ctypes.c_int, ctypes.c_void_p)
+
 
 # Set up the libcmark-gfm library and its extensions
 F_register = cmark_ext.core_extensions_ensure_registered
