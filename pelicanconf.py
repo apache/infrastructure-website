@@ -2,12 +2,11 @@
 # -*- coding: utf-8 -*- #
 from __future__ import unicode_literals
 from datetime import date
-import mdx_gfm
 
 import sys
 import os
 sys.path.append(os.path.dirname(__file__))
-#import gfm_reader
+import gfm_reader
 
 
 AUTHOR = u'PonyGnomeBot'
@@ -54,7 +53,3 @@ DEFAULT_PAGINATION = False
 
 # Uncomment following line if you want document-relative URLs when developing
 #RELATIVE_URLS = True
-
-# Use GitHub Flavored Markdown
-MARKDOWN = {'extensions': [mdx_gfm.GithubFlavoredMarkdownExtension()],
-            }
