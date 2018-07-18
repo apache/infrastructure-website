@@ -26,13 +26,13 @@ import ctypes
 
 import pelican.readers
 
-_LIBDIR = '/home/buildslave/slave/tools'
+_LIBDIR = '/home/buildslave/slave/tools/lib'
 if sys.platform == 'darwin':
-  _LIBCMARK = 'libcmark.dylib'
+  _LIBCMARK = 'libcmark-gfm.dylib'
 elif sys.platform == 'windows':
-  _LIBCMARK = 'cmark.dll'
+  _LIBCMARK = 'cmark-gfm.dll'
 else:
-  _LIBCMARK = 'libcmark.so'
+  _LIBCMARK = 'libcmark-gfm.so'
 try:
   cmark = ctypes.CDLL(os.path.join(_LIBDIR, _LIBCMARK))
 except OSError:
