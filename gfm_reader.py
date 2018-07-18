@@ -129,6 +129,12 @@ class GFMReader(pelican.readers.BaseReader):
       else:
         content = render(text)
 
+    # Redo the slug for articles.
+    if parts[0] == 'articles' and 'title' in metadata:
+      metadata['slug'] = pelican.utils.slugify(
+                           metadata['title'],
+                           self.settings.get('SLUG_SUBSTITUTIONS', ()))
+
     return content, metadata
 
 
