@@ -116,46 +116,46 @@ def render(text):
 
 
 F_cmark_parser_new = cmark.cmark_parser_new
-F_cmark_parser_new.res_type = ctypes.c_void_p
-F_cmark_parser_new.arg_types = (ctypes.c_int,)
+F_cmark_parser_new.restype = ctypes.c_void_p
+F_cmark_parser_new.argtypes = (ctypes.c_int,)
 
 F_cmark_parser_feed = cmark.cmark_parser_feed
-F_cmark_parser_feed.res_type = None
-F_cmark_parser_feed.arg_types = (ctypes.c_void_p, ctypes.c_char_p, ctypes.c_size_t)
+F_cmark_parser_feed.restype = None
+F_cmark_parser_feed.argtypes = (ctypes.c_void_p, ctypes.c_char_p, ctypes.c_size_t)
 
 F_cmark_parser_finish = cmark.cmark_parser_finish
-F_cmark_parser_finish.res_type = ctypes.c_void_p
-F_cmark_parser_finish.arg_types = (ctypes.c_void_p,)
+F_cmark_parser_finish.restype = ctypes.c_void_p
+F_cmark_parser_finish.argtypes = (ctypes.c_void_p,)
 
 F_cmark_parser_attach_syntax_extension = cmark.cmark_parser_attach_syntax_extension
-F_cmark_parser_attach_syntax_extension.res_type = ctypes.c_int
-F_cmark_parser_attach_syntax_extension.arg_types = (ctypes.c_void_p, ctypes.c_void_p)
+F_cmark_parser_attach_syntax_extension.restype = ctypes.c_int
+F_cmark_parser_attach_syntax_extension.argtypes = (ctypes.c_void_p, ctypes.c_void_p)
 
 F_cmark_parser_get_syntax_extensions = cmark.cmark_parser_get_syntax_extensions
-F_cmark_parser_get_syntax_extensions.res_type = ctypes.c_void_p
-F_cmark_parser_get_syntax_extensions.arg_types = (ctypes.c_void_p,)
+F_cmark_parser_get_syntax_extensions.restype = ctypes.c_void_p
+F_cmark_parser_get_syntax_extensions.argtypes = (ctypes.c_void_p,)
 
 F_cmark_parser_free = cmark.cmark_parser_free
-F_cmark_parser_free.res_type = None
-F_cmark_parser_free.arg_types = (ctypes.c_void_p,)
+F_cmark_parser_free.restype = None
+F_cmark_parser_free.argtypes = (ctypes.c_void_p,)
 
 F_cmark_node_free = cmark.cmark_node_free
-F_cmark_node_free.res_type = None
-F_cmark_node_free.arg_types = (ctypes.c_void_p,)
+F_cmark_node_free.restype = None
+F_cmark_node_free.argtypes = (ctypes.c_void_p,)
 
 F_cmark_find_syntax_extension = cmark.cmark_find_syntax_extension
-F_cmark_find_syntax_extension.res_type = ctypes.c_void_p
-F_cmark_find_syntax_extension.arg_types = (ctypes.c_char_p,)
+F_cmark_find_syntax_extension.restype = ctypes.c_void_p
+F_cmark_find_syntax_extension.argtypes = (ctypes.c_char_p,)
 
 F_cmark_render_html = cmark.cmark_render_html
-F_cmark_render_html.res_type = ctypes.c_char_p
-F_cmark_render_html.arg_types = (ctypes.c_void_p, ctypes.c_int, ctypes.c_void_p)
+F_cmark_render_html.restype = ctypes.c_char_p
+F_cmark_render_html.argtypes = (ctypes.c_void_p, ctypes.c_int, ctypes.c_void_p)
 
 
 # Set up the libcmark-gfm library and its extensions
 F_register = cmark_ext.core_extensions_ensure_registered
-F_register.res_type = None
-F_register.arg_types = ( )
+F_register.restype = None
+F_register.argtypes = ( )
 F_register()
 
 ### technically, maybe install an atexit() to release the plugins
