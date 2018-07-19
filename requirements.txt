@@ -1,4 +1,2 @@
 pelican
-markdown
-py-gfm
 beautifulsoup4
