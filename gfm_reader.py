@@ -33,7 +33,7 @@ _LIBDIR = '/home/buildslave/slave/tools/lib'
 if sys.platform == 'darwin':
   _LIBCMARK = 'libcmark-gfm.dylib'
   _LIBEXT = 'libcmark-gfmextensions.dylib'
-elif sys.platform == 'windows':
+elif sys.platform == 'win32':
   _LIBCMARK = 'cmark-gfm.dll'
   _LIBEXT = 'cmark-gfmextensions.dll'
 else:
