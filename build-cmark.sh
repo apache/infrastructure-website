@@ -47,4 +47,5 @@ mkdir build && cd build
 cmake -DCMARK_TESTS=OFF -DCMARK_STATIC=OFF ..
 make
 
-echo "NOTE: Dynamic library is in build/src/"
+echo "NOTE: see build-cmark/cmark-$VERSION/build/src/libcmark-gfm.so"
+echo "NOTE: see build-cmark/cmark-$VERSION/build/extensions/libcmark-gfmextensions.so"
