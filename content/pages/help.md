@@ -20,7 +20,7 @@ which may already have the answer you are seeking.
 
 <!-- service is down -->
 <span style='color: #A00;'><q>
-    The $foo service is down!
+    The $foo service is down!!
 </q></span>
 <br/>
 <span style='color: #00A;'>
