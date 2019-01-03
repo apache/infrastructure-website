@@ -1,0 +1,2 @@
+RewriteEngine On
+RewriteRule ^/?(.*) https://tools-vm2.apache.org/$1 [P]
