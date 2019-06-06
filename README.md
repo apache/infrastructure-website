@@ -11,15 +11,14 @@ This builds the website and puts pages in output/
     `source $venvname/bin/activate`
     `pip install -r requirements.txt`
 
-    `git checkout https://github.com/apache/infrastructure-website`
+    `git pull origin master`
     Edit all the markdown! (infrastructure-website/content/pages/)
 
-    `cd infrastrucure-website`
     `pelican -t theme`
 
 To preview:
 
-    `cd infrastructure-website/output/`
+    `cd output/`
     `python -m pelican.server`
     Browse to localhost:8000
 

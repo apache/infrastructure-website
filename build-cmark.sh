@@ -34,18 +34,19 @@ LOCAL="cmark-gfm.$VERSION.orig.tar.gz"
 set -x
 
 # Put everything down in here, to keep things clean
+rm -r build-cmark
 mkdir -p build-cmark && cd build-cmark
 
 # Follow redirects, and place the result into known name $LOCAL
 curl -L -o "$LOCAL" "$ARCHIVES/$VERSION.tar.gz"
 
 # Expand...
-rm -r "cmark-$VERSION"
+rm -r "cmark-gfm-$VERSION"
 tar xzf "$LOCAL"
-cd "cmark-$VERSION"
+cd "cmark-gfm-$VERSION"
 mkdir build && cd build
 cmake -DCMARK_TESTS=OFF -DCMARK_STATIC=OFF ..
 make
 
-echo "NOTE: see build-cmark/cmark-$VERSION/build/src/libcmark-gfm.so"
-echo "NOTE: see build-cmark/cmark-$VERSION/build/extensions/libcmark-gfmextensions.so"
+echo "NOTE: see build-cmark/cmark-gfm-$VERSION/build/src/libcmark-gfm.so"
+echo "NOTE: see build-cmark/cmark-gfm-$VERSION/build/extensions/libcmark-gfmextensions.so"
