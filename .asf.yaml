@@ -1,2 +1,5 @@
+pelican:
+  notify: users@infra.apache.org
+
 gnomes:
   - foobar
