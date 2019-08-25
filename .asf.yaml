@@ -1,5 +1,3 @@
 pelican:
-  notify: users@infra.apache.org
-
-gnomes:
-  - foobarz
+  notify:         users@infra.apache.org
+  publish_branch: asf-site
