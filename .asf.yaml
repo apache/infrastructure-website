@@ -1,3 +1,6 @@
 pelican:
   notify:         users@infra.apache.org
   publish_branch: asf-site
+
+staging:
+  profile: gnomery
