@@ -3,4 +3,4 @@ pelican:
   publish_branch: asf-site
 
 staging:
-  profile: gnomery
+  profile: test
