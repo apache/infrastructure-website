@@ -1,5 +1,6 @@
 pelican:
   notify:         users@infra.apache.org
-  publish_branch: asf-site
+  autobuild:      true
+  description:    "Infra Website"
 
 staging: true
