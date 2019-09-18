@@ -5,8 +5,6 @@ from datetime import date
 
 import sys
 import os
-sys.path.append(os.path.dirname(__file__))
-import gfm_reader
 
 
 AUTHOR = u'PonyGnomeBot'
