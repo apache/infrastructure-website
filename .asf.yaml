@@ -1,7 +1,7 @@
 pelican:
   notify:         users@infra.apache.org
   autobuild:      true
-  description:    "Infra Website"
+  target:         pelican-auto-test
 
 staging: true
 
