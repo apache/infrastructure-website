@@ -1,8 +1,8 @@
 pelican:
   notify:         users@infra.apache.org
   autobuild:      true
-  target:         pelican-auto-test
-
+  target:         asf-staging-pelican
+  
 staging: true
 
 
