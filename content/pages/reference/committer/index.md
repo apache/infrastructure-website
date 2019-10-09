@@ -5,12 +5,6 @@ For committers (primarily)
 As of now we have a couple places for documentation; this new website hopes to
 collate them and provide a single or primary point of reference.
 
-[Confluence](https://cwiki.apache.org/confluence/display/INFRA/Index): just like
-other projects we use Confluence for How-To's, meeting notes and other tidbits.
-
-This directory contains various reference articles for Committers, PMC members and Infrastructure:
-
-
 * [Contact Infrastructure](/reference/committer/contactinfra.html)
 * [Committer Email](/reference/committer/email.html)
 * [Github](/reference/committer/github.html)
@@ -26,9 +20,3 @@ This directory contains various reference articles for Committers, PMC members a
 * [subversion and git integrations to jira](/reference/committer/svngit2jira.html)
 * [Project websites](/reference/committer/website.html)
 * [Website policy and guidelines](/reference/committer/website-policy.html)
-
-
-* [Documentation for Committers](/reference/committer/)
-* [Documentation for PMC members](https://reference.apache.org/pmc/start)
-* [Documentation for Infra members](https://reference.apache.org/infra/start)
-
