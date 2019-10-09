@@ -18,7 +18,15 @@ TIMEZONE = 'UTC'
 
 DEFAULT_LANG = u'en'
 SITEURL = 'https://infra-test.apache.org'
-PAGE_SAVE_AS = './{slug}.html'
+
+# Save pages using full directory preservation
+PATH_METADATA= '(?P<path_no_ext>.*)\..*'
+PAGE_SAVE_AS= '{path_no_ext}.html'
+PAGE_URL= '{path_no_ext}.html'
+
+# Standard behavior:
+#PAGE_SAVE_AS = './{slug}.html'
+
 ARTICLE_SAVE_AS = 'news/{slug}.html'
 ARTICLE_URL = 'news/{slug}.html'
 
