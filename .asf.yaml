@@ -1,5 +1,5 @@
 staging:
-  profile: bb2-test
+  profile: test
 
 publish:
   whoami: asf-site
