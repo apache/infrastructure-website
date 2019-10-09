@@ -10,7 +10,6 @@ collate them and provide a single or primary point of reference.
 * [Getting started with Git](git.html)
 * [Apache and GitHub](github.html)
 * [Changing your account details (self serve)](id.html)
-* [Committer Documentation](index.html)
 * [Using Docker with builds.apache.org](jenkins-docker.html)
 * [Guide to new committers](newaccount.html)
 * [Using OPIE](opie.html)
