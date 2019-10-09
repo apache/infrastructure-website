@@ -1,2 +1,5 @@
 staging:
   profile: bb2-test
+
+publish:
+  whoami: asf-site
