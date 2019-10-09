@@ -1,5 +1,5 @@
 Title: Committer Documentation
-
+slug: reference/committer/index
 For committers (primarily)
 
 As of now we have a couple places for documentation; this new website hopes to
