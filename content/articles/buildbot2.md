@@ -1,4 +1,4 @@
-Title: buildbot now using pelican gfm!
+Title: buildbot still using pelican gfm!
 Date: 2019-06-19
 
 the infrastructure-website repository is now generated using the pelican gfm plugin.
