@@ -8,7 +8,7 @@ other projects we use Confluence for How-To's, meeting notes and other tidbits.
 
 This directory contains various reference articles for Committers, PMC members and Infrastructure:
 
-- [Documentation for Committers](/reference/committer/)
+- [Documentation for Committers](/pages/reference/committer/)
 - [Documentation for PMC members](https://reference.apache.org/pmc/start)
 - [Documentation for Infra members](https://reference.apache.org/infra/start)
 
