@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Committer e-mail configuration - </title>
+    <title>Committer Documentation - Apache Infrastructure</title>
     <link rel="stylesheet" href="/theme/css/foundation.css">
     <link rel="stylesheet" href="/theme/css/app.css">
     <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
@@ -83,8 +83,8 @@
       <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
         <a href="/">Home</a>
         <i class="fa fa-angle-double-right"></i>
-        <a href="/Committer e-mail configuration.html">
-Committer e-mail configuration        </a>
+        <a href="/Committer Documentation.html">
+Committer Documentation        </a>
       </div>
     </div>
     
@@ -94,61 +94,28 @@ Committer e-mail configuration        </a>
       <div class="large-12 columns">
         <div class="callout">
           <h2>
-              Committer e-mail configuration
+              Committer Documentation
           </h2>
-              <div id="toc" style="border-radius: 3px; border: 1px solid #999; background-color: #EEE; padding: 4px;"><h4>Table of Contents:</h4><ul><ul><li><a class="toc-href" href="#registering an e-mail alias # {#alias}" title="Registering an e-mail alias # {#alias}">Registering an e-mail alias # {#alias}</a></li><li><a class="toc-href" href="#reading e-mail from your apache.org address # {#configure}" title="Reading e-mail from your apache.org address # {#configure}">Reading e-mail from your apache.org address # {#configure}</a></li><li><a class="toc-href" href="#sending email from your apache.org email address" title="Sending email from your apache.org email address">Sending email from your apache.org email address</a></li></ul></ul></div>
-<p>An e-mail address at <code>apache.org</code> is associated with every committer
-account. Occasional official Apache e-mails will be directed to this
-account. It is very important that you check mail sent to your <code>apache.org</code>
-e-mail address regularly for announcements. You are also free to use this
-address for other ASF work related to projects you work on.</p>
-<p>Note that the infrastructure group provides an e-mail address for you;
-however they do not provide a mailbox -- you <strong>must</strong>
-setup forwarding for this address to be able to read your mails.
-Instructions on how to <a href="#configure">setup your forwarding address</a> file
-are available.  Be sure to keep your forwarding address up to date in the
-future as well.</p>
-<h1 id="registering an e-mail alias # {#alias}">Registering an e-mail alias # {#alias}</h1>
-<p>You can register e-mail aliases with your committer account.  Registered
-e-mail aliases are inspected when you subscribe to a restricted mailing list
-with an e-mail other than your <code>apache.org</code> e-mail address. It is these
-registered e-mail addresses that will be allowed to registered to restricted
-mailing lists, assuming that you are actually allowed to subscribe to the list
-in the first place.</p>
-<p>On the Web, use the Selfserve app
-at <a href="https://id.apache.org/">https://id.apache.org/</a></p>
-<h1 id="reading e-mail from your apache.org address # {#configure}">Reading e-mail from your apache.org address # {#configure}</h1>
-<p>When your committer account is first created by Infrastructure, the forwarding
-e-mail address is set to the address provided in the account request (and,
-typically, in the ICLA).  You must keep your forwarding address up-to-date.
-(You can have more than one forwarding address.)
-You can view and change your forwarding addresses here:</p>
+              <p>For committers (primarily)</p>
+<p>As of now we have a couple places for documentation; this new website hopes to
+collate them and provide a single or primary point of reference.</p>
 <ul>
-<li>On the Web, by using the Selfserve app
-at <a href="https://id.apache.org/">https://id.apache.org/</a></li>
+<li>[Apache and GitHub](/Apache and GitHub.html)</li>
+<li>[Changing your account details (self serve)](/Changing your account details (self serve).html)</li>
+<li>[Committer documentation](/Committer documentation.html)</li>
+<li>[Committer e-mail configuration](/Committer e-mail configuration.html)</li>
+<li>[Contacting Infrastructure](/Contacting Infrastructure.html)</li>
+<li>[Getting started with Git](/Getting started with Git.html)</li>
+<li>[Guide to new committers](/Guide to new committers.html)</li>
+<li>[How To Manage any Apache Project's Website](/How To Manage any Apache Project's Website.html)</li>
+<li>[Releasing project packages](/Releasing project packages.html)</li>
+<li>[Setting up SSH for ASF machines](/Setting up SSH for ASF machines.html)</li>
+<li>[Subversion and Git integration with JIRA tickets](/Subversion and Git integration with JIRA tickets.html)</li>
+<li>[Using Docker with builds](/Using Docker with builds.html)</li>
+<li>[Using OPIE](/Using OPIE.html)</li>
+<li>[Using Subversion](/Using Subversion.html)</li>
+<li>[Web Site Guidelines](/Web Site Guidelines.html)</li>
 </ul>
-<p><strong>Note</strong>: It used to be possible to change the forwarding address by editing
-~/.forward and/or ~/.qmail files.  This is no longer possible.  Any manual
-changes made to these files will be lost!</p>
-<p><strong>Note</strong>: It used to be possible to not have a forwarding address.  This is
-no longer possible.</p>
-<p>Users of GMail (Googlemail) please note that only one copy of an e-mail is
-shown by GMail. If you try to test forwarding by sending a message to your
-ASF account from the GMail account that is the target of the .forward, it
-can be difficult to tell if it has worked. Send the test e-mail from a
-different account.</p>
-<h1 id="sending email from your apache.org email address">Sending email from your apache.org email address</h1>
-<p>If you wish to send email using your apache.org email address you will need to submit this via the committer mail-relay service. This can be configured in your mail environment using the following configuration:</p>
-<pre><code>Server:     mail-relay.apache.org 
-Port:       587 (STARTTLS), 465 (SSL) 
-User/Pass:  {Your LDAP credentials}
-</code></pre>
-<p><strong>Note:</strong> If you are using <em>Gmail</em> for your <code>apache.org</code> e-mail, there is
-a way to configure it to take advantage of this service. See
-<a href="http://gmailblog.blogspot.com/2009/07/send-mail-from-another-address-without.html">Gmail's feature</a>
-to allow outbound mail from your <code>apache.org</code> address to be directed to
-the mail-relay service, instead of to a Gmail server, for delivery.</p>
-<!-- vim: set noet ts=2: -->
 
         </div>
       </div>

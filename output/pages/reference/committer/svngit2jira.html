@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Committer Documentation - </title>
+    <title>Subversion and Git integration with JIRA tickets - Apache Infrastructure</title>
     <link rel="stylesheet" href="/theme/css/foundation.css">
     <link rel="stylesheet" href="/theme/css/app.css">
     <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
@@ -83,8 +83,8 @@
       <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
         <a href="/">Home</a>
         <i class="fa fa-angle-double-right"></i>
-        <a href="/Committer Documentation.html">
-Committer Documentation        </a>
+        <a href="/Subversion and Git integration with JIRA tickets.html">
+Subversion and Git integration with JIRA tickets        </a>
       </div>
     </div>
     
@@ -94,28 +94,44 @@ Committer Documentation        </a>
       <div class="large-12 columns">
         <div class="callout">
           <h2>
-              Committer Documentation
+              Subversion and Git integration with JIRA tickets
           </h2>
-              <p>For committers (primarily)</p>
-<p>As of now we have a couple places for documentation; this new website hopes to
-collate them and provide a single or primary point of reference.</p>
+              <p>Many projects use JIRA for managing tracking bugs, milestones, feature
+requests and so on, and many of these projects keep track of which
+commit affects which ticket. In order to make things even easier, we
+have a service called svngit2jira, which integrates Subversion and Git
+commits with JIRA tickets.</p>
+<h2>How it works</h2>
+<p>The amount of work a committer has to do to achieve this integration is
+very light; Simply mention a JIRA ticket in a commit, and the specific
+JIRA ticket will receive an update indicating that a certain commit has
+been made in reference to the ticket. As an example, you may want to
+check out, for instance, <a href="https://issues.apache.org/jira/browse/CLOUDSTACK-1638">this CloudStack
+ticket</a> (just
+scroll down a bit and you'll see the commit mentioned).</p>
+<p>This service also plugs into the ReviewBoard instance if you use JIRA
+ticket names there, as for example the CloudStack project does. General
+use of the service</p>
+<p>As explained, the most common scenario is simply mentioning a JIRA
+ticket in your commit, and the JIRA ticket will be updated to reflect
+your new commit. Some projects have this trigger set, so that it only
+updates a ticket if the first sentence is the JIRA ticket number, but we
+can tailor this to suit your project's needs.</p>
+<h2>Getting set up for svngit2jira</h2>
+<p>Enabling the service for your project is as easy as creating a
+<a href="https://issues.apache.org/jira/browse/INFRA">JIRA</a> ticket with
+Infrastructure. We'll need to know the following things in order to
+proceed:</p>
 <ul>
-<li>[Apache and GitHub](/Apache and GitHub.html)</li>
-<li>[Changing your account details (self serve)](/Changing your account details (self serve).html)</li>
-<li>[Committer documentation](/Committer documentation.html)</li>
-<li>[Committer e-mail configuration](/Committer e-mail configuration.html)</li>
-<li>[Contacting Infrastructure](/Contacting Infrastructure.html)</li>
-<li>[Getting started with Git](/Getting started with Git.html)</li>
-<li>[Guide to new committers](/Guide to new committers.html)</li>
-<li>[How To Manage any Apache Project's Website](/How To Manage any Apache Project's Website.html)</li>
-<li>[Releasing project packages](/Releasing project packages.html)</li>
-<li>[Setting up SSH for ASF machines](/Setting up SSH for ASF machines.html)</li>
-<li>[Subversion and Git integration with JIRA tickets](/Subversion and Git integration with JIRA tickets.html)</li>
-<li>[Using Docker with builds](/Using Docker with builds.html)</li>
-<li>[Using OPIE](/Using OPIE.html)</li>
-<li>[Using Subversion](/Using Subversion.html)</li>
-<li>[Web Site Guidelines](/Web Site Guidelines.html)</li>
+<li>Which project is interested in this service</li>
+<li>Is the project in agreement on using this? (please ensure this before requesting the feature, as it does tend to add quite a lot of new information to JIRA)</li>
+<li>What JIRA name does your project use? (for example, INFRA, GIRAPH etc)</li>
+<li>Do you use git or subversion</li>
+<li>How would you like commits to trigger an update of a JIRA ticket (this can be anything from the standard catch-all FOO-1234 trigger to more specific rules you thought of yourself)</li>
+<li>If you are using Git, are there any specific branches you'd like the service to ignore</li>
 </ul>
+<h2>Source code</h2>
+<p>The source for this feature is freely available at <a href="https://svn.apache.org/repos/infra/infrastructure/trunk/projects/svngit2jira/">this location</a>.</p>
 
         </div>
       </div>

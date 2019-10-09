@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Using OPIE - </title>
+    <title>Releasing project packages - Apache Infrastructure</title>
     <link rel="stylesheet" href="/theme/css/foundation.css">
     <link rel="stylesheet" href="/theme/css/app.css">
     <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
@@ -83,8 +83,8 @@
       <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
         <a href="/">Home</a>
         <i class="fa fa-angle-double-right"></i>
-        <a href="/Using OPIE.html">
-Using OPIE        </a>
+        <a href="/Releasing project packages.html">
+Releasing project packages        </a>
       </div>
     </div>
     
@@ -94,64 +94,16 @@ Using OPIE        </a>
       <div class="large-12 columns">
         <div class="callout">
           <h2>
-              Using OPIE
+              Releasing project packages
           </h2>
-              <p>This document covers the setup and use of OPIE (One-time Passwords In Everything). This is
-a mechanism used by the ASF that ensures that your sudo password is not erroneously intercepted
-or pasted into the wrong prompt on the remote machine.</p>
-<p>Note: FreeBSD uses <code>opiepasswd</code>, Ubuntu VM's use <code>ortpasswd</code> (part of Orthrus) instead.</p>
-<p>All users in the wheel group (or in the $machine-sudoers in LDAP) have sudo access.
-In order to use sudo, a user <strong>must
-configure OPIE</strong> by running <code>opiepasswd</code> on the remote machine.</p>
-<h1>Getting an OPIE client for your computer</h1>
-<p>Using OPIE requires having an OPIE (S/Key) client on the local (trusted) machine. Some OPIE clients are:</p>
-<ul>
-<li>Debian/Ubuntu: See <a href="http://ubuntuforums.org/showthread.php?t=1891356">this forum thread</a></li>
-<li>Browser-based: <a href="/committer/otp-md5">otp-md5 tool in JavaScript</a></li>
-<li>SkeyCalc (Mac OS X)</li>
-<li>Orthrus (Unix-like; portable)</li>
-<li>FreeBSD: opiekey(1) is part of the base system</li>
-<li>donkey (Debian package donkey) Note: Use the '-f' option to set the hash type, usually 'donkey -f md5'</li>
+              <ul>
+<li>Development packages and snapshots should be uploaded to <a href="https://dist.apache.org/dist/dev/$project/">https://dist.apache.org/dist/dev/$project/</a></li>
+<li>Releases should be uploaded to <a href="https://dist.apache.org/dist/release/$project/">https://dist.apache.org/dist/release/$project/</a> (or moved via <code>svn mv</code> from the dev folder)</li>
 </ul>
-<h1>Setting up OPIE:</h1>
-<ol>
-<li>pick a good passphrase, between 10 and 127 characters long.</li>
-<li>never expose it to the net, <strong>never type it on the remote machine</strong></li>
-<li>run <code>opiepasswd</code> (or <code>ortpasswd</code>)on the remote machine you wish to get sudo access to.</li>
-<li>that will prompt you with an otp challenge, for instance: <code>otp-md5 fo1834 470</code></li>
-<li>take that challenge string and run it <strong>locally on your workstation</strong></li>
-<li>enter your passphrase at the <strong>local prompt</strong> in 5</li>
-<li>repeat 5 and 6 until you are <em>certain</em> you entered your pw correctly</li>
-<li>paste the resulting six word response into the challenge prompt in 4. If you get a 20014 error,
-you have entered your password remotely by mistake, please contact infra if so.</li>
-<li>have someone add you to the 'wheel' group</li>
-<li>run sudo</li>
-<li>that will prompt you for an otp challenge</li>
-<li>repeat steps 5-8</li>
-<li>get root</li>
-</ol>
-<h1>An example:</h1>
-<h2>Remote machine you want to get sudo access to:</h2>
-<pre><code>foo@test-vm.apache.org# opiepasswd
-You need the response from an OTP generator.
-New secret pass phrase:
-otp-md5 499 fo4576  &lt;-- COPY THIS STRING
-Response:
-</code></pre>
-<h2>Local machine:</h2>
-<pre><code>$ otp-md5 499 fo4576
-Using the MD5 algorithm to compute response.
-Reminder: Don't use opiekey from telnet or dial-in sessions.
-Enter secret pass phrase: foobarbaztwothirty
-WERE GAIL THUG CEIL VIE TWO  &lt;-- COPY THESE WORDS
-</code></pre>
-<h2>Remote machine:</h2>
-<pre><code>    Response: WERE GAIL THUG CEIL VIE TWO
-root@test-vm.apache.org #
-</code></pre>
-<h2>Video Tutorial</h2>
-<p><video controls src="https://home.apache.org/~gmcdonald/using_opie_orthrus.mov"><a href="https://home.apache.org/~gmcdonald/using_opie_orthrus.mov">Setting up Orthrus using SKeyCalc on Mac</a>
-</video></p>
+<p>Incubator projects will find their dev/release folder inside the incubator directory.
+Unless otherwise specified, only PMC members can act as release managers.
+If your project wishes to allow normal committers to release files, please
+<a href="/committer/contact">contact infrastructure</a> with your request</p>
 
         </div>
       </div>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Changing your account details (self serve) - </title>
+    <title>Service Level Agreement (SLA) - Apache Infrastructure</title>
     <link rel="stylesheet" href="/theme/css/foundation.css">
     <link rel="stylesheet" href="/theme/css/app.css">
     <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
@@ -83,8 +83,8 @@
       <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
         <a href="/">Home</a>
         <i class="fa fa-angle-double-right"></i>
-        <a href="/Changing your account details (self serve).html">
-Changing your account details (self serve)        </a>
+        <a href="/sla.html">
+Service Level Agreement (SLA)        </a>
       </div>
     </div>
     
@@ -94,27 +94,46 @@ Changing your account details (self serve)        </a>
       <div class="large-12 columns">
         <div class="callout">
           <h2>
-              Changing your account details (self serve)
+              Service Level Agreement (SLA)
           </h2>
-              <p>The ASF uses a self serve site for managing account information about committers.</p>
-<p>The site can be found at: <a href="https://id.apache.org">https://id.apache.org</a></p>
-<p>On this site, you can log on and change your credentials such as password, email, SSH key information
-and more.</p>
-<h1>Lost your password?</h1>
-<p>If you have misplaced or forgotten your password, you can reset it by following the instructions at:
-<a href="https://id.apache.org/reset/enter">https://id.apache.org/reset/enter</a>.</p>
-<p>This requires you to still have access to the email account associated with your Apache account.
-A reset key is only valid for 15 minutes, so be sure to use it as soon as it arrives.</p>
-<p>NOTE:  If you have added a GPG key to your account the password reset will be encrypted with that key, so you'll need extra intervention if you have lost/ forgotten that key.</p>
-<h1>Locked out of the system?</h1>
-<p>If you have forgotten your password and cannot retrieve it, you should contact Infrastructure for
-further information. This can be done via <a href="mailto:root@apache.org">root@apache.org</a>.</p>
-<p>When asking for a manual password reset or email change, please consider the following:</p>
+              <p>For current status, see <a href="http://status.apache.org/">http://status.apache.org/</a> and SLA graphs at <a href="http://status.apache.org/sla/">http://status.apache.org/sla/</a></p>
+<p>We divide Infra-provided services into four groups:</p>
+<ol>
+<li>
+<p>Critical</p>
+<p>Target: 99.5% uptime</p>
 <ul>
-<li>If you have access to an ASF machine via SSH (with a private key), you can use this to prove your identity.</li>
-<li>If you don't have access to anything to prove your identity, you may be asked to file a new ICLA to confirm
-your identity.</li>
+<li>email</li>
+<li>version control (svn and git)</li>
+<li>TLP websites</li>
+<li>LDAP</li>
 </ul>
+</li>
+<li>
+<p>Core</p>
+<p>Target: 99% uptime</p>
+<ul>
+<li>issue trackers (Bugzilla and Jira)</li>
+<li>bar</li>
+</ul>
+</li>
+<li>
+<p>Standard</p>
+<p>Target: 95% uptime</p>
+<ul>
+<li>foo</li>
+<li>bar</li>
+</ul>
+</li>
+<li>
+<p>None</p>
+<p>These services have no SLA.</p>
+<ul>
+<li>foo</li>
+<li>bar</li>
+</ul>
+</li>
+</ol>
 
         </div>
       </div>

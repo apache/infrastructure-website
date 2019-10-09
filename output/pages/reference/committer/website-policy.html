@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Level Agreement (SLA) - </title>
+    <title>Web Site Guidelines - Apache Infrastructure</title>
     <link rel="stylesheet" href="/theme/css/foundation.css">
     <link rel="stylesheet" href="/theme/css/app.css">
     <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
@@ -83,8 +83,8 @@
       <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
         <a href="/">Home</a>
         <i class="fa fa-angle-double-right"></i>
-        <a href="/sla.html">
-Service Level Agreement (SLA)        </a>
+        <a href="/Web Site Guidelines.html">
+Web Site Guidelines        </a>
       </div>
     </div>
     
@@ -94,46 +94,26 @@ Service Level Agreement (SLA)        </a>
       <div class="large-12 columns">
         <div class="callout">
           <h2>
-              Service Level Agreement (SLA)
+              Web Site Guidelines
           </h2>
-              <p>For current status, see <a href="http://status.apache.org/">http://status.apache.org/</a> and SLA graphs at <a href="http://status.apache.org/sla/">http://status.apache.org/sla/</a></p>
-<p>We divide Infra-provided services into four groups:</p>
-<ol>
-<li>
-<p>Critical</p>
-<p>Target: 99.5% uptime</p>
+              <h1>Web Site Guidelines</h1>
+<p>This is a set of guidelines set out by the ASF Infrastructure Team.
+They only cover policies that we have on resource consumption, linking and ownership.
+For policies and guidelines that fall under other committees or directors, please see their respective sites/pages.</p>
+<h3>General web site usage policy:</h3>
 <ul>
-<li>email</li>
-<li>version control (svn and git)</li>
-<li>TLP websites</li>
-<li>LDAP</li>
+<li>Never link directly to downloads hosted at apache.org, always use the mirror scripts.</li>
+<li>Never redirect from the front page of $TLP.apache.org to another domain. $TLP.apache.org MUST be your main project site. Links are of course okay.</li>
+<li>Never redirect from a $TLP.apache.org site to a non-ASF site unless this is explicitly recognized as an external web site</li>
+<li>Don't cause unnecessary resource usage (CPU, RAM, disk space). We refer to common sense, but Infrastructure will ultimately decide whether this is the case or not on a case-by-case basis.</li>
+<li>All official project web sites (including any domain names used) must be owned by the ASF and hosted on ASF hardware under the control of the ASF Infrastructure Team.</li>
+<li>Cookies and means of tracking users may only be used on ASF web sites if the visitor is explicitly made aware of this.</li>
+<li>Web sites must be licensed under the Apache License v.2.</li>
+<li>You must not host or distribute any material that may constitute a felony under US or German law.</li>
+<li>All web sites must be available on ASF's git or svn servers, and published using git- or svn-pubsub (this includes the ASF CMS system)</li>
+<li>You must not host source releases or convenience binaries directly on the web site, use the mirror system through dist.apache.org (but do NOT link to dist.apache.org, use closer.lua!)</li>
 </ul>
-</li>
-<li>
-<p>Core</p>
-<p>Target: 99% uptime</p>
-<ul>
-<li>issue trackers (Bugzilla and Jira)</li>
-<li>bar</li>
-</ul>
-</li>
-<li>
-<p>Standard</p>
-<p>Target: 95% uptime</p>
-<ul>
-<li>foo</li>
-<li>bar</li>
-</ul>
-</li>
-<li>
-<p>None</p>
-<p>These services have no SLA.</p>
-<ul>
-<li>foo</li>
-<li>bar</li>
-</ul>
-</li>
-</ol>
+<p>Should you have any questions about the above policies, please feel free to reach out to us at <a href="mailto:infrastructure@apache.org">infrastructure@apache.org</a> or visit us in our <a href="http://infra.chat/">HipChat room</a>.</p>
 
         </div>
       </div>

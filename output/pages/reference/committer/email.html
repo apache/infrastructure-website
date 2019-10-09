@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web Site Guidelines - </title>
+    <title>Committer e-mail configuration - Apache Infrastructure</title>
     <link rel="stylesheet" href="/theme/css/foundation.css">
     <link rel="stylesheet" href="/theme/css/app.css">
     <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
@@ -83,8 +83,8 @@
       <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
         <a href="/">Home</a>
         <i class="fa fa-angle-double-right"></i>
-        <a href="/Web Site Guidelines.html">
-Web Site Guidelines        </a>
+        <a href="/Committer e-mail configuration.html">
+Committer e-mail configuration        </a>
       </div>
     </div>
     
@@ -94,26 +94,61 @@ Web Site Guidelines        </a>
       <div class="large-12 columns">
         <div class="callout">
           <h2>
-              Web Site Guidelines
+              Committer e-mail configuration
           </h2>
-              <h1>Web Site Guidelines</h1>
-<p>This is a set of guidelines set out by the ASF Infrastructure Team.
-They only cover policies that we have on resource consumption, linking and ownership.
-For policies and guidelines that fall under other committees or directors, please see their respective sites/pages.</p>
-<h3>General web site usage policy:</h3>
+              <div id="toc" style="border-radius: 3px; border: 1px solid #999; background-color: #EEE; padding: 4px;"><h4>Table of Contents:</h4><ul><ul><li><a class="toc-href" href="#registering an e-mail alias # {#alias}" title="Registering an e-mail alias # {#alias}">Registering an e-mail alias # {#alias}</a></li><li><a class="toc-href" href="#reading e-mail from your apache.org address # {#configure}" title="Reading e-mail from your apache.org address # {#configure}">Reading e-mail from your apache.org address # {#configure}</a></li><li><a class="toc-href" href="#sending email from your apache.org email address" title="Sending email from your apache.org email address">Sending email from your apache.org email address</a></li></ul></ul></div>
+<p>An e-mail address at <code>apache.org</code> is associated with every committer
+account. Occasional official Apache e-mails will be directed to this
+account. It is very important that you check mail sent to your <code>apache.org</code>
+e-mail address regularly for announcements. You are also free to use this
+address for other ASF work related to projects you work on.</p>
+<p>Note that the infrastructure group provides an e-mail address for you;
+however they do not provide a mailbox -- you <strong>must</strong>
+setup forwarding for this address to be able to read your mails.
+Instructions on how to <a href="#configure">setup your forwarding address</a> file
+are available.  Be sure to keep your forwarding address up to date in the
+future as well.</p>
+<h1 id="registering an e-mail alias # {#alias}">Registering an e-mail alias # {#alias}</h1>
+<p>You can register e-mail aliases with your committer account.  Registered
+e-mail aliases are inspected when you subscribe to a restricted mailing list
+with an e-mail other than your <code>apache.org</code> e-mail address. It is these
+registered e-mail addresses that will be allowed to registered to restricted
+mailing lists, assuming that you are actually allowed to subscribe to the list
+in the first place.</p>
+<p>On the Web, use the Selfserve app
+at <a href="https://id.apache.org/">https://id.apache.org/</a></p>
+<h1 id="reading e-mail from your apache.org address # {#configure}">Reading e-mail from your apache.org address # {#configure}</h1>
+<p>When your committer account is first created by Infrastructure, the forwarding
+e-mail address is set to the address provided in the account request (and,
+typically, in the ICLA).  You must keep your forwarding address up-to-date.
+(You can have more than one forwarding address.)
+You can view and change your forwarding addresses here:</p>
 <ul>
-<li>Never link directly to downloads hosted at apache.org, always use the mirror scripts.</li>
-<li>Never redirect from the front page of $TLP.apache.org to another domain. $TLP.apache.org MUST be your main project site. Links are of course okay.</li>
-<li>Never redirect from a $TLP.apache.org site to a non-ASF site unless this is explicitly recognized as an external web site</li>
-<li>Don't cause unnecessary resource usage (CPU, RAM, disk space). We refer to common sense, but Infrastructure will ultimately decide whether this is the case or not on a case-by-case basis.</li>
-<li>All official project web sites (including any domain names used) must be owned by the ASF and hosted on ASF hardware under the control of the ASF Infrastructure Team.</li>
-<li>Cookies and means of tracking users may only be used on ASF web sites if the visitor is explicitly made aware of this.</li>
-<li>Web sites must be licensed under the Apache License v.2.</li>
-<li>You must not host or distribute any material that may constitute a felony under US or German law.</li>
-<li>All web sites must be available on ASF's git or svn servers, and published using git- or svn-pubsub (this includes the ASF CMS system)</li>
-<li>You must not host source releases or convenience binaries directly on the web site, use the mirror system through dist.apache.org (but do NOT link to dist.apache.org, use closer.lua!)</li>
+<li>On the Web, by using the Selfserve app
+at <a href="https://id.apache.org/">https://id.apache.org/</a></li>
 </ul>
-<p>Should you have any questions about the above policies, please feel free to reach out to us at <a href="mailto:infrastructure@apache.org">infrastructure@apache.org</a> or visit us in our <a href="http://infra.chat/">HipChat room</a>.</p>
+<p><strong>Note</strong>: It used to be possible to change the forwarding address by editing
+~/.forward and/or ~/.qmail files.  This is no longer possible.  Any manual
+changes made to these files will be lost!</p>
+<p><strong>Note</strong>: It used to be possible to not have a forwarding address.  This is
+no longer possible.</p>
+<p>Users of GMail (Googlemail) please note that only one copy of an e-mail is
+shown by GMail. If you try to test forwarding by sending a message to your
+ASF account from the GMail account that is the target of the .forward, it
+can be difficult to tell if it has worked. Send the test e-mail from a
+different account.</p>
+<h1 id="sending email from your apache.org email address">Sending email from your apache.org email address</h1>
+<p>If you wish to send email using your apache.org email address you will need to submit this via the committer mail-relay service. This can be configured in your mail environment using the following configuration:</p>
+<pre><code>Server:     mail-relay.apache.org 
+Port:       587 (STARTTLS), 465 (SSL) 
+User/Pass:  {Your LDAP credentials}
+</code></pre>
+<p><strong>Note:</strong> If you are using <em>Gmail</em> for your <code>apache.org</code> e-mail, there is
+a way to configure it to take advantage of this service. See
+<a href="http://gmailblog.blogspot.com/2009/07/send-mail-from-another-address-without.html">Gmail's feature</a>
+to allow outbound mail from your <code>apache.org</code> address to be directed to
+the mail-relay service, instead of to a Gmail server, for delivery.</p>
+<!-- vim: set noet ts=2: -->
 
         </div>
       </div>
