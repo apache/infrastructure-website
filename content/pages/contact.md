@@ -1,14 +1,11 @@
 Title: Contact the Infrastructure Team
 
 
-## Hello World!:
-Join us on [Hipchat](http://infra.chat/)!
+## Chat
+Join us on [Slack](http://infra.chat/)!
 
-### Resource requests:
-Requests for resources and their adjustments should be handled through
-JIRA, unless a [self-serve](/self-serve/) tool exists for the specific resource.
-
-Please use the [Service Desk Portal](https://infrahelp.apache.org) for filing new JIRAs.
+### Requesting resources/tasks/projects:
+Please use the [JIRA](https://issues.apache.org/jira/).
 
 ### Mailing list for general inquiries:
 General inquiries and questions should go to our user mailing list:
