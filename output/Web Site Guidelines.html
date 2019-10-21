@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Web Site Guidelines - </title>
     <link rel="stylesheet" href="/theme/css/foundation.css">
     <link rel="stylesheet" href="/theme/css/app.css">
     <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
@@ -73,103 +73,47 @@
         </div>
       </div>
     </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/Web Site Guidelines.html">
+Web Site Guidelines        </a>
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
     <div class="row">
       <div class="large-12 columns">
         <div class="callout">
-          <h3>Welcome to the web site of the Apache Infrastructure Team!</h3>
-          <p>
-            <q style="font-size: 1.15rem; color: #666; margin-bottom: 15px; font-style: italic;">A distributed group of indviduals assigned to serve the needs of the Foundation and Projects.</q>
-          </p>
-          <div class="row">
-            <!-- how can we help? -->
-            <div class="large-4 medium-4 columns">
-              <div class="frontbox">
-                <a href="/pages/help.html"><span class="clickable"></span></a>
-                <h3 style="text-transform: capitalize; text-align: center;">
-                  <i class="fa fa-question-circle" style="color: #FFF; font-size: 20pt;"></i>
-                  <a href="/pages/help.html" style="font-size: 90%;">How can we help?</a>
-                </h3>
-                <p style="height: 110px; font-size: 0.9rem;">
-                  
-                  The Apache Infrastructure team exists to ensure the
-                  day-to-day operations of the technical aspects of the
-                  foundation. If you have questions about or require
-                  support regarding email, code repositories, web sites,
-                  issue trackers and so forth, we are here to help!
-                </p>
-                <p style="text-align: center; margin-bottom: -10px;">
-                  <a href="/pages/help.html" class="button">Learn More...</a>
-                </p>
-              </div>
-            </div>
-            
-            <!-- helping out (volunteering) -->
-            <div class="large-4 medium-4 columns">
-              <div class="frontbox">
-                <a href="/pages/volunteer.html"><span class="clickable"></span></a>
-                <h3 style="text-transform: capitalize; text-align: center;">
-                  <i class="fa fa-handshake-o" style="color: #FFF; font-size: 20pt;"></i>
-                  <a href="/pages/volunteer.html" style="font-size: 90%;">How can you help?</a>
-                </h3>
-                <p style="height: 110px; font-size: 0.9rem;">
-                  Volunteers are the driving force of the Apache
-                  Software Foundation. The Infrastructure team is
-                  always looking for people willing to help out at
-                  whatever effort level suits just you.
-                </p>
-                <p style="text-align: center; center; margin-bottom: -10px;">
-                  <a href="/pages/volunteer.html" class="button">Learn More...</a>
-                </p>
-              </div>
-            </div>
-            
-            <!-- who are we (team etc) -->
-            <div class="large-4 medium-4 columns">
-              <div class="frontbox">
-                <a href="/pages/team.html"><span class="clickable"></span></a>
-                <h3 style="text-transform: capitalize; text-align: center;">
-                  <i class="fa fa-group" style="color: #FFF; font-size: 20pt;"></i>
-                  <a href="/pages/team.html" style="font-size: 90%;">Who are we?</a>
-                </h3>
-                <p style="height: 110px; font-size: 0.9rem;">
-                  
-                  The Infrastructure team is responsible for the
-                  management and day-to-day system administration and
-                  operation of the various hardware that runs the many
-                  services at the ASF. Click the button below to learn
-                  more about who we are and how we operate.
-                </p>
-                <p style="text-align: center; center; margin-bottom: -10px;">
-                  <a href="/pages/team.html" class="button">Learn More...</a>
-                </p>
-              </div>
-            </div>
-            
+          <h2>
+              Web Site Guidelines
+          </h2>
+              <h1>Web Site Guidelines</h1>
+<p>This is a set of guidelines set out by the ASF Infrastructure Team.
+They only cover policies that we have on resource consumption, linking and ownership.
+For policies and guidelines that fall under other committees or directors, please see their respective sites/pages.</p>
+<h3>General web site usage policy:</h3>
+<ul>
+<li>Never link directly to downloads hosted at apache.org, always use the mirror scripts.</li>
+<li>Never redirect from the front page of $TLP.apache.org to another domain. $TLP.apache.org MUST be your main project site. Links are of course okay.</li>
+<li>Never redirect from a $TLP.apache.org site to a non-ASF site unless this is explicitly recognized as an external web site</li>
+<li>Don't cause unnecessary resource usage (CPU, RAM, disk space). We refer to common sense, but Infrastructure will ultimately decide whether this is the case or not on a case-by-case basis.</li>
+<li>All official project web sites (including any domain names used) must be owned by the ASF and hosted on ASF hardware under the control of the ASF Infrastructure Team.</li>
+<li>Cookies and means of tracking users may only be used on ASF web sites if the visitor is explicitly made aware of this.</li>
+<li>Web sites must be licensed under the Apache License v.2.</li>
+<li>You must not host or distribute any material that may constitute a felony under US or German law.</li>
+<li>All web sites must be available on ASF's git or svn servers, and published using git- or svn-pubsub (this includes the ASF CMS system)</li>
+<li>You must not host source releases or convenience binaries directly on the web site, use the mirror system through dist.apache.org (but do NOT link to dist.apache.org, use closer.lua!)</li>
+</ul>
+<p>Should you have any questions about the above policies, please feel free to reach out to us at <a href="mailto:infrastructure@apache.org">infrastructure@apache.org</a> or visit us in our <a href="http://infra.chat/">HipChat room</a>.</p>
+
         </div>
       </div>
     </div>
-    </div>
-    
-    
-    <!-- news -->
-    <div class="row">
-      <div class="large-12 medium-12 columns">
-        <div class="callout">
-        <h3>News from Infrastructure:</h3>
-        <hr/>
-          
-          
-          <!--
-          <section id="content" >
-              <div class="body">
-              <h2>Pages</h2>
-              </div>
-          </section>
-          -->
-        </div>
-      </div>
-    </div>
-    
+    </div>    
     <!-- footer -->
     <div class="row">
       <div class="large-12 medium-12 columns">
@@ -178,11 +122,10 @@
           Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
         </p>
       </div>
-    </div>    <script src="/theme/js/vendor/jquery.js"></script>
+    </div>    
+    <script src="/theme/js/vendor/jquery.js"></script>
     <script src="/theme/js/vendor/what-input.js"></script>
     <script src="/theme/js/vendor/foundation.js"></script>
     <script src="/theme/js/app.js"></script>
-    
-    <script src="https://v878zkhv9tmg.statuspage.io/embed/script.js"></script>
   </body>
 </html>
