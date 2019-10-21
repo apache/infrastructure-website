@@ -1,5 +1,2 @@
-staging:
-  profile: test
-
 publish:
   whoami: asf-site
