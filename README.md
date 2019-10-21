@@ -24,7 +24,7 @@ To preview:
 
 ## Technical site documentation:
 Anytime you checkin a file, the site is regenerated:
-https://ci.apache.org/builders/infra-site
+https://ci.apache.org/builders/infrastructure-website/
 
 ## Preparation
 The `gfm_reader.py` script points to a specific directory on
