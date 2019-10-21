@@ -20,5 +20,4 @@ collate them and provide a single or primary point of reference.
 * [Subversion and Git integration with JIRA tickets](svngit2jira.html)
 * [Web Site Guidelines](website-policy.html)
 * [How To Manage any Apache Project's Website](website.html)
-* [Does this work](website.html)
 
