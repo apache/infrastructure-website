@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Service Level Agreement (SLA) - </title>
     <link rel="stylesheet" href="/theme/css/foundation.css">
     <link rel="stylesheet" href="/theme/css/app.css">
     <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
@@ -70,106 +70,67 @@
         </div>
       </div>
     </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/sla.html">
+Service Level Agreement (SLA)        </a>
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
     <div class="row">
       <div class="large-12 columns">
         <div class="callout">
-          <h3>Welcome to the web site of the Apache Infrastructure Team!</h3>
-          <p>
-            <q style="font-size: 1.15rem; color: #666; margin-bottom: 15px; font-style: italic;">The ASF does not have offices or buildings, it's an
-            intangible entity that exists only on the internet. Its only
-            physical existence is the technical infrastructure that
-            enables it to operate, and the team that manages it.</q>
-          </p>
-          <div class="row">
-            <!-- how can we help? -->
-            <div class="large-4 medium-4 columns">
-              <div class="frontbox">
-                <a href="/help.html"><span class="clickable"></span></a>
-                <h3 style="text-transform: capitalize; text-align: center;">
-                  <i class="fa fa-question-circle" style="color: #FFF; font-size: 20pt;"></i>
-                  <a href="/help.html" style="font-size: 90%;">How can we help?</a>
-                </h3>
-                <p style="height: 110px; font-size: 0.9rem;">
-                  
-                  The Apache Infrastructure team exists to ensure the
-                  day-to-day operations of the technical aspects of the
-                  foundation. If you have questions about or require
-                  support regarding email, code repositories, web sites,
-                  issue trackers and so forth, we are here to help!
-                </p>
-                <p style="text-align: center; margin-bottom: -10px;">
-                  <a href="/help.html" class="button">Learn More...</a>
-                </p>
-              </div>
-            </div>
-            
-            <!-- helping out (volunteering) -->
-            <div class="large-4 medium-4 columns">
-              <div class="frontbox">
-                <a href="/volunteer.html"><span class="clickable"></span></a>
-                <h3 style="text-transform: capitalize; text-align: center;">
-                  <i class="fa fa-handshake-o" style="color: #FFF; font-size: 20pt;"></i>
-                  <a href="/volunteer.html" style="font-size: 90%;">How can you help?</a>
-                </h3>
-                <p style="height: 110px; font-size: 0.9rem;">
-                  Volunteers are the driving force of the Apache
-                  Software Foundation. The Infrastructure team is
-                  always looking for people willing to help out at
-                  whatever effort level suits just you.
-                </p>
-                <p style="text-align: center; center; margin-bottom: -10px;">
-                  <a href="/volunteer.html" class="button">Learn More...</a>
-                </p>
-              </div>
-            </div>
-            
-            <!-- who are we (team etc) -->
-            <div class="large-4 medium-4 columns">
-              <div class="frontbox">
-                <a href="/team.html"><span class="clickable"></span></a>
-                <h3 style="text-transform: capitalize; text-align: center;">
-                  <i class="fa fa-group" style="color: #FFF; font-size: 20pt;"></i>
-                  <a href="/team.html" style="font-size: 90%;">Who are we?</a>
-                </h3>
-                <p style="height: 110px; font-size: 0.9rem;">
-                  
-                  The Infrastructure team is responsible for the
-                  management and day-to-day system administration and
-                  operation of the various hardware that runs the many
-                  services at the ASF. Click the button below to learn
-                  more about who we are and how we operate.
-                </p>
-                <p style="text-align: center; center; margin-bottom: -10px;">
-                  <a href="/team.html" class="button">Learn More...</a>
-                </p>
-              </div>
-            </div>
-            
+          <h2>
+              Service Level Agreement (SLA)
+          </h2>
+              <p>For current status, see <a href="http://status.apache.org/">http://status.apache.org/</a> and SLA graphs at <a href="http://status.apache.org/sla/">http://status.apache.org/sla/</a></p>
+<p>We divide Infra-provided services into four groups:</p>
+<ol>
+<li>
+<p>Critical</p>
+<p>Target: 99.5% uptime</p>
+<ul>
+<li>email</li>
+<li>version control (svn and git)</li>
+<li>TLP websites</li>
+<li>LDAP</li>
+</ul>
+</li>
+<li>
+<p>Core</p>
+<p>Target: 99% uptime</p>
+<ul>
+<li>issue trackers (Bugzilla and Jira)</li>
+<li>bar</li>
+</ul>
+</li>
+<li>
+<p>Standard</p>
+<p>Target: 95% uptime</p>
+<ul>
+<li>foo</li>
+<li>bar</li>
+</ul>
+</li>
+<li>
+<p>None</p>
+<p>These services have no SLA.</p>
+<ul>
+<li>foo</li>
+<li>bar</li>
+</ul>
+</li>
+</ol>
+
         </div>
       </div>
     </div>
-    </div>
-    
-    
-    <!-- news -->
-    <div class="row">
-      <div class="large-12 medium-12 columns">
-        <div class="callout">
-        <h3>News from Infrastructure:</h3>
-        <hr/>
-          
-          
-          <!--
-          <section id="content" >
-              <div class="body">
-              <h2>Pages</h2>
-              </div>
-          </section>
-          -->
-        </div>
-      </div>
-    </div>
-    
+    </div>    
     <!-- footer -->
     <div class="row">
       <div class="large-12 medium-12 columns">
@@ -178,11 +139,10 @@
           Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
         </p>
       </div>
-    </div>    <script src="/theme/js/vendor/jquery.js"></script>
+    </div>    
+    <script src="/theme/js/vendor/jquery.js"></script>
     <script src="/theme/js/vendor/what-input.js"></script>
     <script src="/theme/js/vendor/foundation.js"></script>
     <script src="/theme/js/app.js"></script>
-    
-    <script src="https://v878zkhv9tmg.statuspage.io/embed/script.js"></script>
   </body>
 </html>
