@@ -62,6 +62,9 @@
                 <li><a href="https://www.apache.org/dev/machines.html" >Fingerprints</a></li>
                 <li><a href="https://blocky.apache.org" >Blocky</a></li>
                 <li><a href="https://uls.apache.org/app/kibana#/discover?_g=()" >Kibana and Unified Logging System</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" >Committer Search</a></li>
+		<li><a href="https://apache.pagerduty.com/sign_in" >PagerDuty</a></li>
                 </ul>
               </li>
               <li><a href="http://infra.chat" style="padding-left: 5px;"><i class="fa fa-weixin" style="color: #FFF; font-size: 0.9rem;"></i>Chat with Us</a></li>
@@ -88,7 +91,7 @@ Using Subversion        </a>
           <h2>
               Using Subversion
           </h2>
-              <div id="toc" style="border-radius: 3px; border: 1px solid #999; background-color: #EEE; padding: 4px;"><h4>Table of Contents:</h4><ul><ul><li><a class="toc-href" href="#web access ## {#viewcvs}" title="Web Access ## {#viewcvs}">Web Access ## {#viewcvs}</a></li><li><a class="toc-href" href="#anonymous subversion ## {#anon-svn}" title="Anonymous Subversion ## {#anon-svn}">Anonymous Subversion ## {#anon-svn}</a></li><li><a class="toc-href" href="#committer subversion access ## {#https-svn}" title="Committer Subversion Access ## {#https-svn}">Committer Subversion Access ## {#https-svn}</a></li><li><a class="toc-href" href="#configuring the subversion client ## {#https-svn-config}" title="Configuring the Subversion client ## {#https-svn-config}">Configuring the Subversion client ## {#https-svn-config}</a></li><li><a class="toc-href" href="#ssl server certificate ## {#cert}" title="SSL Server certificate ## {#cert}">SSL Server certificate ## {#cert}</a></li><li><a class="toc-href" href="#problems with subversion? # {#svnproblems}_1" title="Problems with Subversion? # {#svnproblems}">Problems with Subversion? # {#svnproblems}</a><ul><li><a class="toc-href" href='#"error validating server certificate" errors ## {#no-trusted-root-cert}' title='"Error validating server certificate" errors ## {#no-trusted-root-cert}'>"Error validating server certificate" errors ## {#no-trusted-root-cert}</a></li><li><a class="toc-href" href='#"svn: no such revision 765287" errors ## {#out-of-sync}' title='"svn: No such revision 765287" errors ## {#out-of-sync}'>"svn: No such revision 765287" errors ## {#out-of-sync}</a></li><li><a class="toc-href" href='#"specified baseline is not the latest baseline" errors ## {#latest-baseline}' title='"specified baseline is not the latest baseline" errors ## {#latest-baseline}'>"specified baseline is not the latest baseline" errors ## {#latest-baseline}</a></li><li><a class="toc-href" href='#"compressed stream invalid" errors ## {#compressed-stream-errors}' title='"Compressed stream invalid" errors ## {#compressed-stream-errors}'>"Compressed stream invalid" errors ## {#compressed-stream-errors}</a></li><li><a class="toc-href" href="#problems using date revisions ## {#date-revisions}" title="Problems using date revisions ## {#date-revisions}">Problems using date revisions ## {#date-revisions}</a></li></ul></li><li><a class="toc-href" href="#frequently asked questions # {#faq}_1" title="Frequently Asked Questions # {#FAQ}">Frequently Asked Questions # {#FAQ}</a><ul><li><a class="toc-href" href="#when do i need to use svn lock? ## {#lock}" title="When Do I Need To Use svn lock? ## {#lock}">When Do I Need To Use svn lock? ## {#lock}</a></li><li><a class="toc-href" href="#how frequently can i run a cron that connects to the repository? ## {#poll}" title="How frequently can I run a cron that connects to the repository? ## {#poll}">How frequently can I run a cron that connects to the repository? ## {#poll}</a></li><li><a class="toc-href" href="#how do i mirror the entire svn repository for my experimental $foo? ## {#mirror}" title="How do I mirror the entire SVN repository for my experimental $foo? ## {#mirror}">How do I mirror the entire SVN repository for my experimental $foo? ## {#mirror}</a></li><li><a class="toc-href" href="#why do i get a 403 when i try to commit? ## {#commit-403}" title="Why Do I Get a 403 When I Try To Commit? ## {#commit-403}">Why Do I Get a 403 When I Try To Commit? ## {#commit-403}</a></li></ul></li></ul></ul></div>
+              <div id="toc" style="border-radius: 3px; border: 1px solid #999; background-color: #EEE; padding: 4px;"><h4>Table of Contents:</h4><ul><ul><li><a class="toc-href" href="#web-access-viewcvs" title="Web Access ## {#viewcvs}">Web Access ## {#viewcvs}</a></li><li><a class="toc-href" href="#anonymous-subversion-anon-svn" title="Anonymous Subversion ## {#anon-svn}">Anonymous Subversion ## {#anon-svn}</a></li><li><a class="toc-href" href="#committer-subversion-access-https-svn" title="Committer Subversion Access ## {#https-svn}">Committer Subversion Access ## {#https-svn}</a></li><li><a class="toc-href" href="#configuring-the-subversion-client-https-svn-config" title="Configuring the Subversion client ## {#https-svn-config}">Configuring the Subversion client ## {#https-svn-config}</a></li><li><a class="toc-href" href="#ssl-server-certificate-cert" title="SSL Server certificate ## {#cert}">SSL Server certificate ## {#cert}</a></li><li><a class="toc-href" href="#problems-with-subversion-svnproblems_1" title="Problems with Subversion? # {#svnproblems}">Problems with Subversion? # {#svnproblems}</a><ul><li><a class="toc-href" href="#error-validating-server-certificate-errors-no-trusted-root-cert" title='"Error validating server certificate" errors ## {#no-trusted-root-cert}'>"Error validating server certificate" errors ## {#no-trusted-root-cert}</a></li><li><a class="toc-href" href="#svn-no-such-revision-765287-errors-out-of-sync" title='"svn: No such revision 765287" errors ## {#out-of-sync}'>"svn: No such revision 765287" errors ## {#out-of-sync}</a></li><li><a class="toc-href" href="#specified-baseline-is-not-the-latest-baseline-errors-latest-baseline" title='"specified baseline is not the latest baseline" errors ## {#latest-baseline}'>"specified baseline is not the latest baseline" errors ## {#latest-baseline}</a></li><li><a class="toc-href" href="#compressed-stream-invalid-errors-compressed-stream-errors" title='"Compressed stream invalid" errors ## {#compressed-stream-errors}'>"Compressed stream invalid" errors ## {#compressed-stream-errors}</a></li><li><a class="toc-href" href="#problems-using-date-revisions-date-revisions" title="Problems using date revisions ## {#date-revisions}">Problems using date revisions ## {#date-revisions}</a></li></ul></li><li><a class="toc-href" href="#frequently-asked-questions-faq_1" title="Frequently Asked Questions # {#FAQ}">Frequently Asked Questions # {#FAQ}</a><ul><li><a class="toc-href" href="#when-do-i-need-to-use-svn-lock-lock" title="When Do I Need To Use svn lock? ## {#lock}">When Do I Need To Use svn lock? ## {#lock}</a></li><li><a class="toc-href" href="#how-frequently-can-i-run-a-cron-that-connects-to-the-repository-poll" title="How frequently can I run a cron that connects to the repository? ## {#poll}">How frequently can I run a cron that connects to the repository? ## {#poll}</a></li><li><a class="toc-href" href="#how-do-i-mirror-the-entire-svn-repository-for-my-experimental-foo-mirror" title="How do I mirror the entire SVN repository for my experimental $foo? ## {#mirror}">How do I mirror the entire SVN repository for my experimental $foo? ## {#mirror}</a></li><li><a class="toc-href" href="#why-do-i-get-a-403-when-i-try-to-commit-commit-403" title="Why Do I Get a 403 When I Try To Commit? ## {#commit-403}">Why Do I Get a 403 When I Try To Commit? ## {#commit-403}</a></li></ul></li></ul></ul></div>
 <p>Our developers are located all around the world. To enable them to work
 together on our software, we keep the source code in an Internet-accessible
 revision control system called <a href="http://subversion.apache.org/">Subversion</a>
@@ -103,13 +106,13 @@ repository should only be used if you want to be on the <em>bleeding-edge</em> o
 the development effort. The code contained in them may fail to work, or it
 may even eat your hard drive.
 There are several ways to access the Subversion repository:</p>
-<h2 id="web access ## {#viewcvs}">Web Access ## {#viewcvs}</h2>
+<h2 id="web-access-viewcvs">Web Access ## {#viewcvs}</h2>
 <p>If you just wish to browse around or download a few individual files, the
 best tool is the web-based <a href="http://svn.apache.org/viewvc/">ViewVC interface for
 Subversion</a> or go straight to the public
 repository at
 <a href="http://svn.apache.org/repos/asf/">http://svn.apache.org/repos/asf/</a>.</p>
-<h2 id="anonymous subversion ## {#anon-svn}">Anonymous Subversion ## {#anon-svn}</h2>
+<h2 id="anonymous-subversion-anon-svn">Anonymous Subversion ## {#anon-svn}</h2>
 <p>To access the Subversion repository anonymously, you will need a Subversion
 client. You can also browse for projects via
 <a href="http://svn.apache.org/repos/asf/">http://svn.apache.org/repos/asf/</a>.</p>
@@ -122,7 +125,7 @@ website</a> or <a href="http://svnbook.red-bean.com/">Subversion
 book</a>. The web site provides a <a href="http://subversion.tigris.org/project_links.html">list of
 clients and useful links</a>
 (including a link to the <a href="http://subclipse.tigris.org/">Eclipse plug-in</a> ).</p>
-<h2 id="committer subversion access ## {#https-svn}">Committer Subversion Access ## {#https-svn}</h2>
+<h2 id="committer-subversion-access-https-svn">Committer Subversion Access ## {#https-svn}</h2>
 <p>We currently use HTTPS basic authentication for logging in to Subversion (
 <a href="#cert">certificate info below</a> ). To change your password, visit
 <a href="https://svn.apache.org/change-password">https://svn.apache.org/change-password</a>.</p>
@@ -139,7 +142,7 @@ $ svn commit --username your-name --password your-password \
   --message "Trying out svn"
 </code></pre>
 <p>svnserve is not supported, nor is svn+ssh.</p>
-<h2 id="configuring the subversion client ## {#https-svn-config}">Configuring the Subversion client ## {#https-svn-config}</h2>
+<h2 id="configuring-the-subversion-client-https-svn-config">Configuring the Subversion client ## {#https-svn-config}</h2>
 <p>Committers will need to properly configure their svn client. One particular
 issue is OS-specific line-endings for text files. When you add a new text
 file, especially when applying patches from Bugzilla, first ensure that the
@@ -165,7 +168,7 @@ TortiseSVN - Settings, and then press the "Edit" button to
 update your "Subversion configuration file:".  Simply copy the
 above svn-eol-style.txt file's contents into the end of the
 config editor (usually Notepad) that appears, and save the file.</p>
-<h2 id="ssl server certificate ## {#cert}">SSL Server certificate ## {#cert}</h2>
+<h2 id="ssl-server-certificate-cert">SSL Server certificate ## {#cert}</h2>
 <p>The server certificate for
 <a href="https://svn.apache.org/">https://svn.apache.org/</a> is a real SSL
 certificate. However, Subversion, by default, does not currently ship with
@@ -180,8 +183,8 @@ Fingerprint: bc:5f:40:92:fd:6a:49:aa:f8:b8:35:0d:ed:27:5e:a6:64:c1:7a:1b
 <p>Note that the SSL certificate for our Subversion repository is different
 from certificates used when logging into Apache infrastructure -
 please <a href="http://www.apache.org/dev/new-committers-guide.html#spoof">see the New Committer guide</a> for more information.</p>
-<h1 id="problems with subversion? # {#svnproblems}_1">Problems with Subversion? # {#svnproblems}</h1>
-<h2 id='"error validating server certificate" errors ## {#no-trusted-root-cert}'>"Error validating server certificate" errors ## {#no-trusted-root-cert}</h2>
+<h1 id="problems-with-subversion-svnproblems_1">Problems with Subversion? # {#svnproblems}</h1>
+<h2 id="error-validating-server-certificate-errors-no-trusted-root-cert">"Error validating server certificate" errors ## {#no-trusted-root-cert}</h2>
 <pre><code>:::text
 Error validating server certificate for 'https://svn.apache.org:443':
  - The certificate is not issued by a trusted authority. Use the
@@ -216,7 +219,7 @@ amending the path appropriately:</p>
 <p>Re-trying the Subversion operation should now succeed. In some cases,
 you may additionally need to move to a more recent svn client, version,
 1.6 or higher should be sufficient.</p>
-<h2 id='"svn: no such revision 765287" errors ## {#out-of-sync}'>"svn: No such revision 765287" errors ## {#out-of-sync}</h2>
+<h2 id="svn-no-such-revision-765287-errors-out-of-sync">"svn: No such revision 765287" errors ## {#out-of-sync}</h2>
 <p>If you're getting an error message like the following:</p>
 <pre><code>:::text
 svn: No such revision 765287
@@ -226,7 +229,7 @@ Subversion mirrors, and can occur if multiple commits are run immediately
 after each other. This error will usually only happen if you are located in
 Europe, or explicitly using the European mirror.</p>
 <p>Waiting for 10 seconds and repeating the command should succeed.</p>
-<h2 id='"specified baseline is not the latest baseline" errors ## {#latest-baseline}'>"specified baseline is not the latest baseline" errors ## {#latest-baseline}</h2>
+<h2 id="specified-baseline-is-not-the-latest-baseline-errors-latest-baseline">"specified baseline is not the latest baseline" errors ## {#latest-baseline}</h2>
 <p>If you're getting an error message like the following:</p>
 <pre><code>:::text
 svn: Commit failed (details follow):
@@ -238,7 +241,7 @@ Subversion mirrors, and can occur if multiple commits are run immediately
 after each other. This error will usually only happen if you are located in
 Europe, or explicitly using the European mirror.</p>
 <p>Waiting for 10 seconds and repeating the command should succeed.</p>
-<h2 id='"compressed stream invalid" errors ## {#compressed-stream-errors}'>"Compressed stream invalid" errors ## {#compressed-stream-errors}</h2>
+<h2 id="compressed-stream-invalid-errors-compressed-stream-errors">"Compressed stream invalid" errors ## {#compressed-stream-errors}</h2>
 <p>If you're getting an error message like the following:</p>
 <pre><code>:::text
 svn: PROPFIND of '/repos/asf/foobar':
@@ -252,7 +255,7 @@ add a line that reads</p>
 http-compression = no
 </code></pre>
 <p>And that should "fix" the problem until you can upgrade.</p>
-<h2 id="problems using date revisions ## {#date-revisions}">Problems using date revisions ## {#date-revisions}</h2>
+<h2 id="problems-using-date-revisions-date-revisions">Problems using date revisions ## {#date-revisions}</h2>
 <p>If you are using a date revision such as <code>-r{2004-09-12}:{2004-08-12}</code> and
 not getting any or all of the revisions you expected, this is a known
 problem specific to the ASF repository.</p>
@@ -287,8 +290,8 @@ remove old requires descriptions
 not identical to the order of dates in the repository. This is a side
 effect of loading CVS repositories with history with dates prior to the
 latest date in the Subversion repository.</p>
-<h1 id="frequently asked questions # {#faq}_1">Frequently Asked Questions # {#FAQ}</h1>
-<h2 id="when do i need to use svn lock? ## {#lock}">When Do I Need To Use svn lock? ## {#lock}</h2>
+<h1 id="frequently-asked-questions-faq_1">Frequently Asked Questions # {#FAQ}</h1>
+<h2 id="when-do-i-need-to-use-svn-lock-lock">When Do I Need To Use svn lock? ## {#lock}</h2>
 <p>Very rarely. Commits in subversion are
 transactional. This means that locks are almost always unnecessary.</p>
 <p>An oft quoted use case is to prevent concurrent editing of a large
@@ -296,21 +299,21 @@ unmergeable binary document. However, for open development, good
 communication is preferable to locking even in this use case. A good timely
 post to the list letting your fellow developers know that you're going to
 start editing that huge PDF is better than locking the file.</p>
-<h2 id="how frequently can i run a cron that connects to the repository? ## {#poll}">How frequently can I run a cron that connects to the repository? ## {#poll}</h2>
+<h2 id="how-frequently-can-i-run-a-cron-that-connects-to-the-repository-poll">How frequently can I run a cron that connects to the repository? ## {#poll}</h2>
 <p>Hourly is fine. Please do not use programs that poll the repository more
 frequently than hourly. People who run automated scripts that continuously
 poll the repository wind up getting their access denied, which may impact
 other folks connecting through the same host. If you need to stay more
 in-sync than an hourly cron allows, subscribe your script to the relevant
 commit mailing list.</p>
-<h2 id="how do i mirror the entire svn repository for my experimental $foo? ## {#mirror}">How do I mirror the entire SVN repository for my experimental $foo? ## {#mirror}</h2>
+<h2 id="how-do-i-mirror-the-entire-svn-repository-for-my-experimental-foo-mirror">How do I mirror the entire SVN repository for my experimental $foo? ## {#mirror}</h2>
 <p>First, ask yourself: do I really want the <em>entire</em> ASF repository?  Generally
 most people really want only a single project.  In that case, just checkout that
 source directory from the repo.</p>
 <p>If you really do want the entire ASF repository, <em>don't</em> use svnsync.  Instead,
 start by looking here: <a href="http://svn-master.apache.org/dump/">http://svn-master.apache.org/dump/</a>  Use that to bootstrap
 your repo.</p>
-<h2 id="why do i get a 403 when i try to commit? ## {#commit-403}">Why Do I Get a 403 When I Try To Commit? ## {#commit-403}</h2>
+<h2 id="why-do-i-get-a-403-when-i-try-to-commit-commit-403">Why Do I Get a 403 When I Try To Commit? ## {#commit-403}</h2>
 <p>Run <code>svn info</code> and check that the URL starts with https://.  If it starts with
 http://, run:</p>
 <pre><code>$ svn switch --relocate http://svn.apache.org https://svn.apache.org
