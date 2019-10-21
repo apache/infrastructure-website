@@ -40,21 +40,6 @@
           </div>
           <div class="top-bar-right">
             <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
-              <li><a href="/pages/reference/" target="_self" style="padding-left: 5px;">Documentation</a></li>
-              <li class="is-dropdown-submenu-parent">
-                <a href="#" target="_self" style="padding-left: 0px;">Services and Status</a>
-                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
-                <li><a href="https://status.apache.org/" >Status Report</a></li>
-                <li><a href="https://issues.apache.org/jira/" >JIRA</a></li>
-                <li><a href="https://cwiki.apache.org/" >Confluence</a></li>
-                <li><a href="https://builds.apache.org/" >Jenkins</a></li>
-                <li><a href="https://ci.apache.org/" >Buildbot</a></li>
-                <li><a href="https://www.apache.org/dev/machines.html" >Fingerprints</a></li>
-                <li><a href="https://blocky.apache.org" >Blocky</a></li>
-                <li><a href="https://uls.apache.org/app/kibana#/discover?_g=()" >Kibana and Unified Logging System</a></li>
-                </ul>
-              </li>
-              <li><a href="https://selfserve.apache.org" target="_self" style="padding-left: 5px;">Selfserve</a></li>
               <li class="is-dropdown-submenu-parent">
                 <a href="#" target="_self" style="padding-left: 7px;">About</a>
                 <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
@@ -62,6 +47,21 @@
                   <li><a href="/pages/policies.html">Our policies</a></li>
                   <li><a href="/pages/roadmap.html">Strategies & Roadmap</a></li>
                   <li><a href="/pages/contact.html">Contact infrastructure</a></li>
+                </ul>
+              </li>
+              <li><a href="https://cwiki.apache.org/confluence/display/INFRA/Index" target="_self" style="padding-left: 5px;">Documentation</a></li>
+              <li><a href="https://status.apache.org" target="_self" style="padding-left: 5px;">Status</a></li>
+              <li><a href="https://selfserve.apache.org" target="_self" style="padding-left: 5px;">Selfserve</a></li>
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 0px;">Services</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                <li><a href="https://issues.apache.org/jira/" >JIRA</a></li>
+                <li><a href="https://cwiki.apache.org/" >Confluence</a></li>
+                <li><a href="https://builds.apache.org/" >Jenkins</a></li>
+                <li><a href="https://ci.apache.org/" >Buildbot</a></li>
+                <li><a href="https://www.apache.org/dev/machines.html" >Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" >Blocky</a></li>
+                <li><a href="https://uls.apache.org/app/kibana#/discover?_g=()" >Kibana and Unified Logging System</a></li>
                 </ul>
               </li>
               <li><a href="http://infra.chat" style="padding-left: 5px;"><i class="fa fa-weixin" style="color: #FFF; font-size: 0.9rem;"></i>Chat with Us</a></li>
@@ -91,8 +91,8 @@ Requesting assistance        </a>
               <p>The Infrastructure Team is ready to assist during most of the day,
 thanks to our distributed team on three continents, whether it be via
 email (<a href="mailto:users@infra.apache.org">users@infra.apache.org</a>),
-<a href="http://infra.chat/">HipChat</a> or via <a href="https://infrahelp.apache.org/">JIRA tickets</a>.</p>
-<p>For JIRA tickets, please take a look at <a href="/reference/committer/contactinfra">this page</a>
+<a href="http://infra.chat/">Slack</a> or via <a href="https://issues.apache.org/jira/">JIRA tickets</a>.</p>
+<p>For JIRA tickets, please take a look at <a href="https://cwiki.apache.org/confluence/display/INFRA/Contacting+infrastructure">this page</a>
 regarding which severity to attach to tickets.</p>
 <p>If you have an issue that needs solving, we ask that you please review the FAQ below,
 which may already have the answer you are seeking.</p>
@@ -116,7 +116,7 @@ I forgot my password!
 </q></span>
 <br/>
 <span style="color: #00A;">
-See <a href="/reference/committer/contactinfra">this page</a> for assistance
+You can <a href="https://id.apache.org/reset/enter">reset your password here.</a>
 </span></p>
 <hr/>
 <h4 id="repository-related questions">Repository-related questions</h4>
@@ -127,8 +127,7 @@ Our GitHub repository is out of sync, can you help?
 <br/>
 <span style="color: #00A;">
 Usually, you can trigger a resync by pushing a <i>trivial commit</i>,
-such as a whitespace change to any branch. If this does not help, please either
-file a ticket or contact us on HipChat to get the sync going.
+such as a whitespace change to any branch. You can also trigger a resync through <a href="https://selfserve.apache.org">our SelfServe page.</a>
 </span></p>
 <hr/>
 <!-- new repo setup -->
@@ -138,7 +137,7 @@ We need a new repository for Project Foo!
 <br/>
 <span style="color: #00A;">
 For new (empty) repositories, please use <a href="https://selfserve.apache.org/">self-serve</a>. If your project is using the GitBox service, please see the <a href="https://gitbox.apache.org/">GitBox web site</a> instead.
-For imports, please create a JIRA through the <a href="https://infrahelp.apache.org/">Service Desk</a> platform.
+For imports, please <a href="https://issues.apache.org/jira/">create a JIRA ticket</a>.
 </span></p>
 <hr/>
 <h4 id="email-related questions">Email-related questions</h4>
@@ -180,7 +179,7 @@ My email address changed and I forgot my password, how do I change it?
 </q></span>
 <br/>
 <span style="color: #00A;">
-Please see <a href="/reference/committer/id">this page</a> for help.
+Please see <a href="https://selfserve.apache.org/">this page</a> for help.
 </span></p>
 <hr/>
 <!-- missing email sent to lists -->
