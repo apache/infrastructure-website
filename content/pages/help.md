@@ -4,9 +4,9 @@ Title: Requesting assistance
 The Infrastructure Team is ready to assist during most of the day,
 thanks to our distributed team on three continents, whether it be via
 email ([users@infra.apache.org](mailto:users@infra.apache.org)),
-[HipChat](http://infra.chat/) or via [JIRA tickets](https://infrahelp.apache.org/).
+[Slack](http://infra.chat/) or via [JIRA tickets](https://issues.apache.org/jira/).
 
-For JIRA tickets, please take a look at [this page](/reference/committer/contactinfra)
+For JIRA tickets, please take a look at [this page](https://cwiki.apache.org/confluence/display/INFRA/Contacting+infrastructure)
 regarding which severity to attach to tickets.
 
 If you have an issue that needs solving, we ask that you please review the FAQ below,
@@ -37,7 +37,7 @@ which may already have the answer you are seeking.
 </q></span>
 <br/>
 <span style='color: #00A;'>
-    See <a href="/reference/committer/contactinfra">this page</a> for assistance
+    You can <a href="https://id.apache.org/reset/enter">reset your password here.</a>
 </span>
 <hr/>
 
@@ -50,8 +50,7 @@ which may already have the answer you are seeking.
 <br/>
 <span style='color: #00A;'>
     Usually, you can trigger a resync by pushing a <i>trivial commit</i>,
-    such as a whitespace change to any branch. If this does not help, please either
-    file a ticket or contact us on HipChat to get the sync going.
+    such as a whitespace change to any branch. You can also trigger a resync through <a href="https://selfserve.apache.org">our SelfServe page.</a>
 </span>
 <hr/>
 
@@ -62,7 +61,7 @@ which may already have the answer you are seeking.
 <br/>
 <span style='color: #00A;'>
     For new (empty) repositories, please use <a href="https://selfserve.apache.org/">self-serve</a>. If your project is using the GitBox service, please see the <a href="https://gitbox.apache.org/">GitBox web site</a> instead.
-    For imports, please create a JIRA through the <a href="https://infrahelp.apache.org/">Service Desk</a> platform.
+    For imports, please <a href="https://issues.apache.org/jira/">create a JIRA ticket</a>.
 </span>
 <hr/>
 
@@ -108,7 +107,7 @@ which may already have the answer you are seeking.
 </q></span>
 <br/>
 <span style='color: #00A;'>
-    Please see <a href="/reference/committer/id">this page</a> for help.
+    Please see <a href="https://selfserve.apache.org/">this page</a> for help.
 </span>
 <hr/>
 
