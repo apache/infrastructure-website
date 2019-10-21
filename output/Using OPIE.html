@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title></title>
+    <title>Using OPIE - </title>
     <link rel="stylesheet" href="/theme/css/foundation.css">
     <link rel="stylesheet" href="/theme/css/app.css">
     <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
@@ -73,103 +73,85 @@
         </div>
       </div>
     </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/Using OPIE.html">
+Using OPIE        </a>
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
     <div class="row">
       <div class="large-12 columns">
         <div class="callout">
-          <h3>Welcome to the web site of the Apache Infrastructure Team!</h3>
-          <p>
-            <q style="font-size: 1.15rem; color: #666; margin-bottom: 15px; font-style: italic;">A distributed group of indviduals assigned to serve the needs of the Foundation and Projects.</q>
-          </p>
-          <div class="row">
-            <!-- how can we help? -->
-            <div class="large-4 medium-4 columns">
-              <div class="frontbox">
-                <a href="/pages/help.html"><span class="clickable"></span></a>
-                <h3 style="text-transform: capitalize; text-align: center;">
-                  <i class="fa fa-question-circle" style="color: #FFF; font-size: 20pt;"></i>
-                  <a href="/pages/help.html" style="font-size: 90%;">How can we help?</a>
-                </h3>
-                <p style="height: 110px; font-size: 0.9rem;">
-                  
-                  The Apache Infrastructure team exists to ensure the
-                  day-to-day operations of the technical aspects of the
-                  foundation. If you have questions about or require
-                  support regarding email, code repositories, web sites,
-                  issue trackers and so forth, we are here to help!
-                </p>
-                <p style="text-align: center; margin-bottom: -10px;">
-                  <a href="/pages/help.html" class="button">Learn More...</a>
-                </p>
-              </div>
-            </div>
-            
-            <!-- helping out (volunteering) -->
-            <div class="large-4 medium-4 columns">
-              <div class="frontbox">
-                <a href="/pages/volunteer.html"><span class="clickable"></span></a>
-                <h3 style="text-transform: capitalize; text-align: center;">
-                  <i class="fa fa-handshake-o" style="color: #FFF; font-size: 20pt;"></i>
-                  <a href="/pages/volunteer.html" style="font-size: 90%;">How can you help?</a>
-                </h3>
-                <p style="height: 110px; font-size: 0.9rem;">
-                  Volunteers are the driving force of the Apache
-                  Software Foundation. The Infrastructure team is
-                  always looking for people willing to help out at
-                  whatever effort level suits just you.
-                </p>
-                <p style="text-align: center; center; margin-bottom: -10px;">
-                  <a href="/pages/volunteer.html" class="button">Learn More...</a>
-                </p>
-              </div>
-            </div>
-            
-            <!-- who are we (team etc) -->
-            <div class="large-4 medium-4 columns">
-              <div class="frontbox">
-                <a href="/pages/team.html"><span class="clickable"></span></a>
-                <h3 style="text-transform: capitalize; text-align: center;">
-                  <i class="fa fa-group" style="color: #FFF; font-size: 20pt;"></i>
-                  <a href="/pages/team.html" style="font-size: 90%;">Who are we?</a>
-                </h3>
-                <p style="height: 110px; font-size: 0.9rem;">
-                  
-                  The Infrastructure team is responsible for the
-                  management and day-to-day system administration and
-                  operation of the various hardware that runs the many
-                  services at the ASF. Click the button below to learn
-                  more about who we are and how we operate.
-                </p>
-                <p style="text-align: center; center; margin-bottom: -10px;">
-                  <a href="/pages/team.html" class="button">Learn More...</a>
-                </p>
-              </div>
-            </div>
-            
+          <h2>
+              Using OPIE
+          </h2>
+              <p>This document covers the setup and use of OPIE (One-time Passwords In Everything). This is
+a mechanism used by the ASF that ensures that your sudo password is not erroneously intercepted
+or pasted into the wrong prompt on the remote machine.</p>
+<p>Note: FreeBSD uses <code>opiepasswd</code>, Ubuntu VM's use <code>ortpasswd</code> (part of Orthrus) instead.</p>
+<p>All users in the wheel group (or in the $machine-sudoers in LDAP) have sudo access.
+In order to use sudo, a user <strong>must
+configure OPIE</strong> by running <code>opiepasswd</code> on the remote machine.</p>
+<h1>Getting an OPIE client for your computer</h1>
+<p>Using OPIE requires having an OPIE (S/Key) client on the local (trusted) machine. Some OPIE clients are:</p>
+<ul>
+<li>Debian/Ubuntu: See <a href="http://ubuntuforums.org/showthread.php?t=1891356">this forum thread</a></li>
+<li>Browser-based: <a href="/committer/otp-md5">otp-md5 tool in JavaScript</a></li>
+<li>SkeyCalc (Mac OS X)</li>
+<li>Orthrus (Unix-like; portable)</li>
+<li>FreeBSD: opiekey(1) is part of the base system</li>
+<li>donkey (Debian package donkey) Note: Use the '-f' option to set the hash type, usually 'donkey -f md5'</li>
+</ul>
+<h1>Setting up OPIE:</h1>
+<ol>
+<li>pick a good passphrase, between 10 and 127 characters long.</li>
+<li>never expose it to the net, <strong>never type it on the remote machine</strong></li>
+<li>run <code>opiepasswd</code> (or <code>ortpasswd</code>)on the remote machine you wish to get sudo access to.</li>
+<li>that will prompt you with an otp challenge, for instance: <code>otp-md5 fo1834 470</code></li>
+<li>take that challenge string and run it <strong>locally on your workstation</strong></li>
+<li>enter your passphrase at the <strong>local prompt</strong> in 5</li>
+<li>repeat 5 and 6 until you are <em>certain</em> you entered your pw correctly</li>
+<li>paste the resulting six word response into the challenge prompt in 4. If you get a 20014 error,
+you have entered your password remotely by mistake, please contact infra if so.</li>
+<li>have someone add you to the 'wheel' group</li>
+<li>run sudo</li>
+<li>that will prompt you for an otp challenge</li>
+<li>repeat steps 5-8</li>
+<li>get root</li>
+</ol>
+<h1>An example:</h1>
+<h2>Remote machine you want to get sudo access to:</h2>
+<pre><code>foo@test-vm.apache.org# opiepasswd
+You need the response from an OTP generator.
+New secret pass phrase:
+otp-md5 499 fo4576  &lt;-- COPY THIS STRING
+Response:
+</code></pre>
+<h2>Local machine:</h2>
+<pre><code>$ otp-md5 499 fo4576
+Using the MD5 algorithm to compute response.
+Reminder: Don't use opiekey from telnet or dial-in sessions.
+Enter secret pass phrase: foobarbaztwothirty
+WERE GAIL THUG CEIL VIE TWO  &lt;-- COPY THESE WORDS
+</code></pre>
+<h2>Remote machine:</h2>
+<pre><code>    Response: WERE GAIL THUG CEIL VIE TWO
+root@test-vm.apache.org #
+</code></pre>
+<h2>Video Tutorial</h2>
+<p><video controls src="https://home.apache.org/~gmcdonald/using_opie_orthrus.mov"><a href="https://home.apache.org/~gmcdonald/using_opie_orthrus.mov">Setting up Orthrus using SKeyCalc on Mac</a>
+</video></p>
+
         </div>
       </div>
     </div>
-    </div>
-    
-    
-    <!-- news -->
-    <div class="row">
-      <div class="large-12 medium-12 columns">
-        <div class="callout">
-        <h3>News from Infrastructure:</h3>
-        <hr/>
-          
-          
-          <!--
-          <section id="content" >
-              <div class="body">
-              <h2>Pages</h2>
-              </div>
-          </section>
-          -->
-        </div>
-      </div>
-    </div>
-    
+    </div>    
     <!-- footer -->
     <div class="row">
       <div class="large-12 medium-12 columns">
@@ -178,11 +160,10 @@
           Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
         </p>
       </div>
-    </div>    <script src="/theme/js/vendor/jquery.js"></script>
+    </div>    
+    <script src="/theme/js/vendor/jquery.js"></script>
     <script src="/theme/js/vendor/what-input.js"></script>
     <script src="/theme/js/vendor/foundation.js"></script>
     <script src="/theme/js/app.js"></script>
-    
-    <script src="https://v878zkhv9tmg.statuspage.io/embed/script.js"></script>
   </body>
 </html>

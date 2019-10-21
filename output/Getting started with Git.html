@@ -1,0 +1,186 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting started with Git - </title>
+    <link rel="stylesheet" href="/theme/css/foundation.css">
+    <link rel="stylesheet" href="/theme/css/app.css">
+    <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>  </head>
+  <body style="background: #C9B191;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/theme/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/pages/team.html">About the team</a></li>
+                  <li><a href="/pages/policies.html">Our policies</a></li>
+                  <li><a href="/pages/roadmap.html">Strategies & Roadmap</a></li>
+                  <li><a href="https://cwiki.apache.org/confluence/display/INFRA/Contacting+infrastructure">Contact infrastructure</a></li>
+                </ul>
+              </li>
+              <li><a href="https://cwiki.apache.org/confluence/display/INFRA/Documentation+Index" target="_self" style="padding-left: 5px;">Documentation</a></li>
+              <li><a href="https://status.apache.org" target="_self" style="padding-left: 5px;">Status</a></li>
+              <li><a href="https://selfserve.apache.org" target="_self" style="padding-left: 5px;">Selfserve</a></li>
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 0px;">Services</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                <li><a href="https://issues.apache.org/jira/" >JIRA</a></li>
+                <li><a href="https://cwiki.apache.org/" >Confluence</a></li>
+                <li><a href="https://builds.apache.org/" >Jenkins</a></li>
+                <li><a href="https://ci.apache.org/" >Buildbot</a></li>
+                <li><a href="https://www.apache.org/dev/machines.html" >Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" >Blocky</a></li>
+                <li><a href="https://uls.apache.org/app/kibana#/discover?_g=()" >Kibana and Unified Logging System</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" >Committer Search</a></li>
+		<li><a href="https://apache.pagerduty.com/sign_in" >PagerDuty</a></li>
+                </ul>
+              </li>
+              <li><a href="http://infra.chat" style="padding-left: 5px;"><i class="fa fa-weixin" style="color: #FFF; font-size: 0.9rem;"></i>Chat with Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/Getting started with Git.html">
+Getting started with Git        </a>
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              Getting started with Git
+          </h2>
+              <div id="toc" style="border-radius: 3px; border: 1px solid #999; background-color: #EEE; padding: 4px;"><h4>Table of Contents:</h4><ul><ul><li><a class="toc-href" href="#repository checkout" title="Repository Checkout">Repository Checkout</a><ul><li><a class="toc-href" href="#to clone a repository:" title="To clone a repository:">To clone a repository:</a><ul><li><a class="toc-href" href="#non committers" title="Non Committers">Non Committers</a></li><li><a class="toc-href" href="#committers" title="Committers">Committers</a></li></ul></li></ul></li><li><a class="toc-href" href="#committers: getting started_2" title="Committers: Getting Started">Committers: Getting Started</a><ul><li><a class="toc-href" href="#windows users" title="Windows Users">Windows Users</a><ul><li><a class="toc-href" href="#line endings" title="Line Endings">Line Endings</a></li></ul></li></ul></li><li><a class="toc-href" href="#troubleshooting_2" title="Troubleshooting">Troubleshooting</a><ul><li><a class="toc-href" href="#no dav locking" title="no DAV locking">no DAV locking</a></li></ul></li><li><a class="toc-href" href="#further git reading_1" title="Further Git Reading">Further Git Reading</a></li></ul></ul></div>
+<p>This document aims to be a primer in getting started using Git within the ASF.
+There are two forms of git repositories:</p>
+<ul>
+<li>Read-only mirrors, hosted at <a href="https://git.apache.org">https://git.apache.org</a></li>
+<li>Read/write repositories hosted at <a href="https://git-wip-us.apache.org/repos/asf">https://git-wip-us.apache.org/repos/asf</a></li>
+</ul>
+<p>This document is chiefly about the read/write repositories at git-wip.</p>
+<h1 id="repository checkout">Repository Checkout</h1>
+<p>For now the repository URLs are all of the form:</p>
+<pre><code>https://git-wip-us.apache.org/repos/asf/reponame.git
+</code></pre>
+<h2 id="to clone a repository:">To clone a repository:</h2>
+<h3 id="non committers">Non Committers</h3>
+<pre><code>$ git clone http://git-wip-us.apache.org/repos/asf/reponame.git
+</code></pre>
+<h3 id="committers">Committers</h3>
+<pre><code>$ git clone https://git-wip-us.apache.org/repos/asf/reponame.git
+</code></pre>
+<h1 id="committers: getting started_2">Committers: Getting Started</h1>
+<p>First things first, you'll want to set up your name and email that will be used by git when you make commits:</p>
+<pre><code>$ git config --global user.name "My Name Here"
+$ git config --global user.email myusername@apache.org
+</code></pre>
+<p>If you're a long time GitHub user you can instead set these configuration variables on a per repository basis like such:</p>
+<pre><code>$ git config user.name "My Name Here"
+$ git config user.email myusername@apache.org
+</code></pre>
+<p>You can also add your apache.org email address to your GitHub account so that your Gravatar and user account are linked to from the Apache mirrors on GitHub.</p>
+<p>To push to a repository you need to authenticate. More recent versions of Git will prompt for a username and password, and in some cases will cache the credentials in your operating system's default credential store.</p>
+<p>On Mac OS X, you need to have installed git-credential-osxkeychain and set the following configuration:</p>
+<pre><code>$ git config --global credential.helper osxkeychain
+</code></pre>
+<p>If you are not prompted, then you will need to setup a ~/.netrc file that contains your user credentials:</p>
+<pre><code>$ (umask 0277; cat &gt;&gt; ~/.netrc &lt;&lt;EOF)
+machine git-wip-us.apache.org
+login username
+password mypassword
+EOF
+chmod 0600 ~/.netrc
+</code></pre>
+<p>Alternatively you can list your username in the Git repository URL but this will require that you type your password for every fetch and push. You can do this by cloning a URL like:</p>
+<pre><code>$ git clone https://username@git-wip-us.apache.org/repos/asf/reponame.git
+</code></pre>
+<p>While its possible to list your password in the URL this is highly discouraged as it obviously leaves your password in plain text in the shell history.</p>
+<h2 id="windows users">Windows Users</h2>
+<p>You can use git-gui as part of the msysgit package.</p>
+<p>Instead of setting up a ~/.netrc file you need to:</p>
+<ul>
+<li>Set up a %HOME% environment pointing to C:\Users\yourloginname\</li>
+<li>Create a _netrc file in %HOME%_netrc with this text all on one line: machine git-wip-us.apache.org login username password mypassword</li>
+</ul>
+<h3 id="line endings">Line Endings</h3>
+<p>In general, you will want line endings to be normalized in the Git repository and set to be platform specific on checkout.</p>
+<p>The msysgit installer on Windows will prompt to set the core.autocrlf setting to true by default. On Mac OS X or Linux, the following setting should be used:</p>
+<pre><code>$ git config --global core.autocrlf input
+</code></pre>
+<p>Further details and attributes for handling them differently per file type can be found in the GitHub article Dealing with line endings.</p>
+<h1 id="troubleshooting_2">Troubleshooting</h1>
+<h2 id="no dav locking">no DAV locking</h2>
+<p>If you get an error like this:</p>
+<pre><code>:::text
+error: no DAV locking support on http://git-wip-us.apache.org/repos/asf/reponame.git/
+fatal: git-http-push failed
+</code></pre>
+<p>It means that you're trying to push over <em>HTTP</em> which is disabled. To fix this error change the remote repository URL to use <em>HTTPS</em>. You can either edit the .git/config file to update the URL variable or alternatively:</p>
+<pre><code>$ git config remote.origin.url https://git-wip-us.apache.org/repos/asf/reponame.git
+</code></pre>
+<h1 id="further git reading_1">Further Git Reading</h1>
+<ul>
+<li><a href="http://learn.github.com/p/setup.html">http://learn.github.com/p/setup.html</a></li>
+<li><a href="http://gitref.org/">http://gitref.org/</a></li>
+</ul>
+
+        </div>
+      </div>
+    </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2019, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    
+    <script src="/theme/js/vendor/jquery.js"></script>
+    <script src="/theme/js/vendor/what-input.js"></script>
+    <script src="/theme/js/vendor/foundation.js"></script>
+    <script src="/theme/js/app.js"></script>
+  </body>
+</html>
