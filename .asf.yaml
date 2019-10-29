@@ -6,3 +6,7 @@ pelican:
 staging: false
 
 
+github:
+  ghp_branch:    master
+  ghp_path:      /content/docs
+
