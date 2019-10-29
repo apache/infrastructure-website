@@ -7,6 +7,5 @@ staging: false
 
 
 github:
-  description:   Infrastructure Website
   ghp_branch:    master
   ghp_path:      /docs
