@@ -7,5 +7,5 @@ staging: false
 
 
 github:
-  ghp_branch:    gh-pages
-  ghp_path:      /
+  ghp_branch:    master
+  ghp_path:      ~
