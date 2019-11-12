@@ -1,5 +1,5 @@
 pelican:
-  notify:         users@infra.apache.org
+  notify:         private@infra.apache.org
   autobuild:      true
   target:         asf-site
   
