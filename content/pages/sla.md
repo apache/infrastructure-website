@@ -30,5 +30,3 @@ We divide Infra-provided services into four groups:
    These services have no SLA.
    * foo
    * bar
-
-
