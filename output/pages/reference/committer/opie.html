@@ -44,7 +44,7 @@
 <section id="content" class="body">
     <h1 class="entry-title">Using OPIE</h1>
     
-    <p>This document covers the setup and use of OPIE (One-time Passwords In Everything). This is
+    <p>This document covers the setup and use of OPIE (One-time Passwords In Everything). This is 
 a mechanism used by the ASF that ensures that your sudo password is not erroneously intercepted
 or pasted into the wrong prompt on the remote machine.</p>
 <p>Note: FreeBSD uses <code>opiepasswd</code>, Ubuntu VM's use <code>ortpasswd</code> (part of Orthrus) instead.</p>
@@ -71,7 +71,7 @@ configure OPIE</strong> by running <code>opiepasswd</code> on the remote machine
 <li>enter your passphrase at the <strong>local prompt</strong> in 5</li>
 <li>repeat 5 and 6 until you are <em>certain</em> you entered your pw correctly</li>
 <li>paste the resulting six word response into the challenge prompt in 4. If you get a 20014 error,
-you have entered your password remotely by mistake, please contact infra if so.</li>
+    you have entered your password remotely by mistake, please contact infra if so.</li>
 <li>have someone add you to the 'wheel' group</li>
 <li>run sudo</li>
 <li>that will prompt you for an otp challenge</li>
@@ -80,27 +80,32 @@ you have entered your password remotely by mistake, please contact infra if so.<
 </ol>
 <h1>An example:</h1>
 <h2>Remote machine you want to get sudo access to:</h2>
-<pre><code>foo@test-vm.apache.org# opiepasswd
-You need the response from an OTP generator.
-New secret pass phrase:
-otp-md5 499 fo4576  &lt;-- COPY THIS STRING
-Response:
-</code></pre>
+<div class="highlight"><pre><span></span><span class="n">foo</span><span class="nv">@test</span><span class="o">-</span><span class="n">vm</span><span class="p">.</span><span class="n">apache</span><span class="p">.</span><span class="n">org</span><span class="err">#</span><span class="w"> </span><span class="n">opiepasswd</span><span class="w"></span>
+<span class="n">You</span><span class="w"> </span><span class="n">need</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">response</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">OTP</span><span class="w"> </span><span class="n">generator</span><span class="p">.</span><span class="w"></span>
+<span class="k">New</span><span class="w"> </span><span class="n">secret</span><span class="w"> </span><span class="n">pass</span><span class="w"> </span><span class="nl">phrase</span><span class="p">:</span><span class="w"></span>
+<span class="n">otp</span><span class="o">-</span><span class="n">md5</span><span class="w"> </span><span class="mi">499</span><span class="w"> </span><span class="n">fo4576</span><span class="w">  </span><span class="o">&lt;</span><span class="c1">-- COPY THIS STRING</span>
+<span class="nl">Response</span><span class="p">:</span><span class="w"></span>
+</pre></div>
+
+
 <h2>Local machine:</h2>
-<pre><code>$ otp-md5 499 fo4576
+<div class="highlight"><pre><span></span>$ otp-md5 <span class="m">499</span> fo4576
 Using the MD5 algorithm to compute response.
-Reminder: Don't use opiekey from telnet or dial-in sessions.
+Reminder: Don<span class="err">&#39;</span>t use opiekey from telnet or dial-in sessions.
 Enter secret pass phrase: foobarbaztwothirty
 WERE GAIL THUG CEIL VIE TWO  &lt;-- COPY THESE WORDS
-</code></pre>
+</pre></div>
+
+
 <h2>Remote machine:</h2>
-<pre><code>    Response: WERE GAIL THUG CEIL VIE TWO
-root@test-vm.apache.org #
-</code></pre>
+<div class="highlight"><pre><span></span><span class="w">    </span><span class="nl">Response</span><span class="p">:</span><span class="w"> </span><span class="n">WERE</span><span class="w"> </span><span class="n">GAIL</span><span class="w"> </span><span class="n">THUG</span><span class="w"> </span><span class="n">CEIL</span><span class="w"> </span><span class="n">VIE</span><span class="w"> </span><span class="n">TWO</span><span class="w"></span>
+<span class="n">root</span><span class="nv">@test</span><span class="o">-</span><span class="n">vm</span><span class="p">.</span><span class="n">apache</span><span class="p">.</span><span class="n">org</span><span class="w"> </span><span class="err">#</span><span class="w"></span>
+</pre></div>
+
+
 <h2>Video Tutorial</h2>
 <p><video controls src="https://home.apache.org/~gmcdonald/using_opie_orthrus.mov"><a href="https://home.apache.org/~gmcdonald/using_opie_orthrus.mov">Setting up Orthrus using SKeyCalc on Mac</a>
 </video></p>
-
 </section>
         <section id="extras" class="body">
                 <div class="blogroll">

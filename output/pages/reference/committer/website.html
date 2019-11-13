@@ -44,80 +44,80 @@
 <section id="content" class="body">
     <h1 class="entry-title">How To Manage any Apache Project's Website</h1>
     
-    <div id="toc" style="border-radius: 3px; border: 1px solid #999; background-color: #EEE; padding: 4px;"><h4>Table of Contents:</h4><ul><ul><li><a class="toc-href" href="#how do i preview my project website? # {#preview}" title="How do I preview my project website? # {#preview}">How do I preview my project website? # {#preview}</a></li><li><a class="toc-href" href="#can i control the configuration of my project website? # {#configure}" title="Can I control the configuration of my project website? # {#configure}">Can I control the configuration of my project website? # {#configure}</a></li><li><a class="toc-href" href="#how does logging work? # {#logging}" title="How does logging work? # {#logging}">How does logging work? # {#logging}</a></li><li><a class="toc-href" href="#do project sites have to use the cms? # {#use-cms}" title="Do project sites have to use the CMS? # {#use-cms}">Do project sites have to use the CMS? # {#use-cms}</a></li><li><a class="toc-href" href="#do project sites have to use svnpubsub? # {#svnpubsub}" title="Do project sites have to use svnpubsub? # {#svnpubsub}">Do project sites have to use svnpubsub? # {#svnpubsub}</a><ul><li><a class="toc-href" href="#what revision of the site is currently being served? ## {#svnpubsub-revision}" title="What revision of the site is currently being served? ## {#svnpubsub-revision}">What revision of the site is currently being served? ## {#svnpubsub-revision}</a></li></ul></li><li><a class="toc-href" href="#how to provide public access to our project mail archive mbox files? # {#mail}_1" title="How to provide public access to our project mail archive mbox files? # {#mail}">How to provide public access to our project mail archive mbox files? # {#mail}</a></li><li><a class="toc-href" href="#can my project site use its own favicon instead of just the apache feather? # {#feather}" title="Can my project site use its own favicon instead of just the Apache Feather? # {#feather}">Can my project site use its own favicon instead of just the Apache Feather? # {#feather}</a></li><li><a class="toc-href" href="#how can i minimize the number of changes committed in my maven/javadoc/generated site? # {#generated}" title="How can I minimize the number of changes committed in my Maven/JavaDoc/generated site? # {#generated}">How can I minimize the number of changes committed in my Maven/JavaDoc/generated site? # {#generated}</a></li></ul></ul></div>
-<p>Every Apache project or podling has a website hosted at apache.org that
-is maintained by one of these tools.  It is up to each project to decide
+    <div id="toc" style="border-radius: 3px; border: 1px solid #999; background-color: #EEE; padding: 4px;"><h4>Table of Contents:</h4><ul><ul><li><a class="toc-href" href="#preview" title="How do I preview my project website?">How do I preview my project website?</a></li><li><a class="toc-href" href="#configure" title="Can I control the configuration of my project website?">Can I control the configuration of my project website?</a></li><li><a class="toc-href" href="#logging" title="How does logging work?">How does logging work?</a></li><li><a class="toc-href" href="#use-cms" title="Do project sites have to use the CMS?">Do project sites have to use the CMS?</a></li><li><a class="toc-href" href="#svnpubsub" title="Do project sites have to use svnpubsub?">Do project sites have to use svnpubsub?</a><ul><li><a class="toc-href" href="#svnpubsub-revision" title="What revision of the site is currently being served?">What revision of the site is currently being served?</a></li></ul></li><li><a class="toc-href" href="#mail_1" title="How to provide public access to our project mail archive mbox files?">How to provide public access to our project mail archive mbox files?</a></li><li><a class="toc-href" href="#feather" title="Can my project site use its own favicon instead of just the Apache Feather?">Can my project site use its own favicon instead of just the Apache Feather?</a></li><li><a class="toc-href" href="#generated" title="How can I minimize the number of changes committed in my Maven/JavaDoc/generated site?">How can I minimize the number of changes committed in my Maven/JavaDoc/generated site?</a></li></ul></ul></div>
+<p>Every Apache project or podling has a website hosted at apache.org that 
+is maintained by one of these tools.  It is up to each project to decide 
 the details of how their own website is maintained and what software
 is used - as long as it results in static files that can be served by the
 our public web servers (limited support for .htaccess files and CGI
-scripts is also available).</p>
+scripts is also available). </p>
 <p>The basic requirements for site management
 are that only committers should be able to modify the site and that
 notifications of all site changes should be sent to the relevant
-project mailing lists.  The Apache CMS allows non-committers to send
-patches via a simple web interface by "Mail Diff"ing to the project
+project mailing lists.  The Apache CMS allows non-committers to send 
+patches via a simple web interface by "Mail Diff"ing to the project 
 mailing list that can be easily published by a committer.</p>
 <p>The infrastructure team currently supports two primary tools for
 publishing and maintaining Apache project websites:</p>
 <ul>
 <li><strong>Apache CMS</strong>, which provides a simple browser-based user interface
-for editing, staging and publishing site content in Markdown, HTML
-or any other source format for which support has been added. See
-the <a href="cmsref">CMS reference</a> and <a href="cmsadoption">adoption</a> for more details. The Apache CMS
-uses svnpubsub as the underlying mechanism for publishing a site.</li>
+    for editing, staging and publishing site content in Markdown, HTML
+    or any other source format for which support has been added. See
+    the <a href="cmsref">CMS reference</a> and <a href="cmsadoption">adoption</a> for more details. The Apache CMS
+    uses svnpubsub as the underlying mechanism for publishing a site.</li>
 <li><strong>svnpubsub</strong>, which allows the static contents of a designated svn
-folder (<a href="http://svn.apache.org/repos/asf/ant/site/ant/production/">example</a>) to automatically published
-as the project web site at <code>http://project.apache.org/</code>. The project
-team can use any site build mechanism it wants as long as the above
-requirements are met.</li>
+    folder (<a href="http://svn.apache.org/repos/asf/ant/site/ant/production/">example</a>) to automatically published
+    as the project web site at <code>http://project.apache.org/</code>. The project
+    team can use any site build mechanism it wants as long as the above
+    requirements are met.</li>
 </ul>
 <p>Some projects still use a deprecated site deployment system based
 on periodic synchronization of static files from people.apache.org to
 the live web servers. This mechanism will be <strong>discontinued</strong> at the end of
 2012, by which time all projects should have migrated to one of the above
 site publishing mechanisms.</p>
-<h1 id="how do i preview my project website? # {#preview}">How do I preview my project website? # {#preview}</h1>
+<h1 id="preview">How do I preview my project website?</h1>
 <p>For svnpubsub sites, review the local files in your svn checkout before
 committing them. The changes will be published immediately after you
 commit them.</p>
 <p>For CMS sites, just commit the changes (without "publish"-ing them) and browse
-to <code>http://TLP.staging.apache.org/</code>. The CMS
+to <code>http://TLP.staging.apache.org/</code>. The CMS 
 web interface includes a [Staged] link that will take you there directly.</p>
-<h1 id="can i control the configuration of my project website? # {#configure}">Can I control the configuration of my project website? # {#configure}</h1>
+<h1 id="configure">Can I control the configuration of my project website?</h1>
 <p>Yes, the central config file allows you to use <code>.htaccess</code> files in your
 website directories to control configuration. Of course, reading and
 parsing an <code>.htaccess</code> file on each request can slow down the server, so
 you should consider requesting an adjustment in the central config file for
 permanent configuration changes.</p>
-<h1 id="how does logging work? # {#logging}">How does logging work? # {#logging}</h1>
+<h1 id="logging">How does logging work?</h1>
 <p>Each day's error and access logs are kept in
 <code>www.apache.org:/x1/logs/www/</code>. They are shuffled off each night to a
 directory under <code>people.apache.org:/x1/logarchive/</code> and are then
 periodically archived to other media.</p>
 <p>No formal log analysis is performed, but you are free to grab the logs and
 do whatever analysis you would like.</p>
-<h1 id="do project sites have to use the cms? # {#use-cms}">Do project sites have to use <a href="cms">the CMS</a>? # {#use-cms}</h1>
+<h1 id="use-cms">Do project sites have to use <a href="cms">the CMS</a>?</h1>
 <p>No.  It's recommended but not required.  (<a href="http://www.apache.org/dev/cms">More information</a> and
 <a href="http://www.apache.org/dev/cmsref">reference</a> about the Apache CMS.)</p>
-<h1 id="do project sites have to use svnpubsub? # {#svnpubsub}">Do project sites have to use <a href="http://svn.apache.org/viewvc/subversion/trunk/tools/server-side/svnpubsub/">svnpubsub</a>? # {#svnpubsub}</h1>
+<h1 id="svnpubsub">Do project sites have to use <a href="http://svn.apache.org/viewvc/subversion/trunk/tools/server-side/svnpubsub/">svnpubsub</a>?</h1>
 <p>Yes.  Infrastructure will mandate transition to svnpubsub over this year.
 (svnpubsub <a href="#intro">requires</a> the generated site files to be in a Subversion
 tree somewhere.  For CMS users this tree will be the CMS build output tree.)</p>
-<h2 id="what revision of the site is currently being served? ## {#svnpubsub-revision}">What revision of the site is currently being served? ## {#svnpubsub-revision}</h2>
+<h2 id="svnpubsub-revision">What revision of the site is currently being served?</h2>
 <p>Look at the <code>.revision</code> file at the root of your site (for example,
-<a href="https://www.apache.org/dist/subversion/.revision">https://www.apache.org/dist/subversion/.revision</a> or
+<a href="https://www.apache.org/dist/subversion/.revision">https://www.apache.org/dist/subversion/.revision</a> or 
 <a href="http://subversion.apache.org/.revision">http://subversion.apache.org/.revision</a>).  That file is updated after every
 successful <code>svn update</code>.  (If the update is underway or exited abnormally,
 <code>.revision</code> won't have been changed.)</p>
-<h1 id="how to provide public access to our project mail archive mbox files? # {#mail}_1">How to provide public access to our project mail archive mbox files? # {#mail}</h1>
+<h1 id="mail_1">How to provide public access to our project mail archive mbox files?</h1>
 <p>Some projects have a "mail" directory at the top of their project website.
 Enable this by creating a symbolic link in svnpubsub or CMS output
 (to <code>/home/apmail/public-arch/$tlp.apache.org</code>).
 Also see other <a href="http://apache.org/dev/#mail">notes</a>.</p>
-<h1 id="can my project site use its own favicon instead of just the apache feather? # {#feather}">Can my project site use its own favicon instead of just the Apache Feather? # {#feather}</h1>
+<h1 id="feather">Can my project site use its own favicon instead of just the Apache Feather?</h1>
 <p>Yes, just add a <code>favicon.ico</code> file to your site's root.  The feather is only
 used for project sites that don't have a <code>favicon.ico</code> file.</p>
-<h1 id="how can i minimize the number of changes committed in my maven/javadoc/generated site? # {#generated}">How can I minimize the number of changes committed in my Maven/JavaDoc/generated site? # {#generated}</h1>
+<h1 id="generated">How can I minimize the number of changes committed in my Maven/JavaDoc/generated site?</h1>
 <p>If you are using svnpubsub, the commit will perform very slowly if the number of changes is large - particularly if the number of files is large.
 This is often the case with JavaDoc, and to a lesser extent Maven generated sites.</p>
 <p>You may wish to use the CMS instead of svnpubsub directly. This moves the work to the server-side, but it will still be valuable to minimize the changes committed.</p>
@@ -130,9 +130,8 @@ This is often the case with JavaDoc, and to a lesser extent Maven generated site
 <li>If you maintain historical versions of documentation, always check-in to a single "trunk", then use an <code>svn copy</code> operation to tag or branch the content, rather than checking in a complete copy</li>
 <li>Minimize uses of "publish date" and "version" in templates to those that are truly necessary or helpful. Consider using a "last modified date" and version in the URL instead (unless "latest" is implied).</li>
 <li>Minimize Subversion keywords in the output that may change frequently without significant meaning. This includes in source code that may be rendered to JavaDoc or a Maven JXR source cross-reference).</li>
-<li>Avoid publishing Maven reports that change constantly to the project site. Code coverage, style reports, static analysis, etc. can be generated into a working copy on the CI server instead for easy developer viewing, and project's can consider utilizing <a href="https://analysis.apache.org/">https://analysis.apache.org/</a> for such reports as well.</li>
+<li>Avoid publishing Maven reports that change constantly to the project site. Code coverage, style reports, static analysis, etc. can be generated into a working copy on the CI server instead for easy developer viewing, and project's can consider utilizing https://analysis.apache.org/ for such reports as well.</li>
 </ul>
-
 </section>
         <section id="extras" class="body">
                 <div class="blogroll">
