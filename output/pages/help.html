@@ -1,0 +1,223 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Requesting assistance - Apache Infrastructure</title>
+    <link rel="stylesheet" href="/theme/css/foundation.css">
+    <link rel="stylesheet" href="/theme/css/app.css">
+    <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>  </head>
+  <body style="background: #C9B191;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/theme/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/pages/team.html">About the team</a></li>
+                  <li><a href="/pages/policies.html">Our policies</a></li>
+                  <li><a href="/pages/roadmap.html">Strategies & Roadmap</a></li>
+                  <li><a href="https://cwiki.apache.org/confluence/display/INFRA/Contacting+infrastructure">Contact infrastructure</a></li>
+                </ul>
+              </li>
+              <li><a href="https://cwiki.apache.org/confluence/display/INFRA/Documentation+Index" target="_self" style="padding-left: 5px;">Documentation</a></li>
+              <li><a href="https://status.apache.org" target="_self" style="padding-left: 5px;">Status</a></li>
+              <li><a href="https://selfserve.apache.org" target="_self" style="padding-left: 5px;">Selfserve</a></li>
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 0px;">Services</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                <li><a href="https://issues.apache.org/jira/" >JIRA</a></li>
+                <li><a href="https://cwiki.apache.org/" >Confluence</a></li>
+                <li><a href="https://builds.apache.org/" >Jenkins</a></li>
+                <li><a href="https://ci.apache.org/" >Buildbot</a></li>
+                <li><a href="https://www.apache.org/dev/machines.html" >Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" >Blocky</a></li>
+                <li><a href="https://uls.apache.org/app/kibana#/discover?_g=()" >Kibana and Unified Logging System</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" >Committer Search</a></li>
+		<li><a href="https://apache.pagerduty.com/sign_in" >PagerDuty</a></li>
+                </ul>
+              </li>
+              <li><a href="http://infra.chat" style="padding-left: 5px;"><i class="fa fa-weixin" style="color: #FFF; font-size: 0.9rem;"></i>Chat with Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/help.html">
+Requesting assistance        </a>
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              Requesting assistance
+          </h2>
+              <p>The Infrastructure Team is ready to assist during most of the day,
+thanks to our distributed team on three continents, whether it be via
+email (<a href="mailto:users@infra.apache.org">users@infra.apache.org</a>),
+<a href="http://infra.chat/">Slack</a> or via <a href="https://issues.apache.org/jira/">JIRA tickets</a>.</p>
+<p>For JIRA tickets, please take a look at <a href="https://cwiki.apache.org/confluence/display/INFRA/Contacting+infrastructure">this page</a>
+regarding which severity to attach to tickets.</p>
+<p>If you have an issue that needs solving, we ask that you please review the FAQ below,
+which may already have the answer you are seeking.</p>
+<h3>Frequently asked questions (and answers)</h3>
+<div id="toc" style="border-radius: 3px; border: 1px solid #999; background-color: #EEE; padding: 4px;"><h4>Table of Contents:</h4><ul><ul><li><a class="toc-href" href="#general service status" title="General service status">General service status</a></li><li><a class="toc-href" href="#apache account info" title="Apache account info">Apache account info</a></li><li><a class="toc-href" href="#repository-related questions" title="Repository-related questions">Repository-related questions</a></li><li><a class="toc-href" href="#email-related questions" title="Email-related questions">Email-related questions</a></li></ul></ul></div>
+<h4 id="general service status">General service status</h4>
+<!-- service is down -->
+<p><span style="color: #A00;"><q>
+The $foo service is down!!
+</q></span>
+<br/>
+<span style="color: #00A;">
+Before you go alerting us, check <a href="https://status.apache.org">status.apache.org</a>.
+If the service is listed as down on that page, we have most likely already been informed.
+</span></p>
+<hr/>
+<h4 id="apache account info">Apache account info</h4>
+<!-- forgot my password -->
+<p><span style="color: #A00;"><q>
+I forgot my password!
+</q></span>
+<br/>
+<span style="color: #00A;">
+You can <a href="https://id.apache.org/reset/enter">reset your password here.</a>
+</span></p>
+<hr/>
+<h4 id="repository-related questions">Repository-related questions</h4>
+<!-- github sync stuff -->
+<p><span style="color: #A00;"><q>
+Our GitHub repository is out of sync, can you help?
+</q></span>
+<br/>
+<span style="color: #00A;">
+Usually, you can trigger a resync by pushing a <i>trivial commit</i>,
+such as a whitespace change to any branch. You can also trigger a resync through <a href="https://selfserve.apache.org">our SelfServe page.</a>
+</span></p>
+<hr/>
+<!-- new repo setup -->
+<p><span style="color: #A00;"><q>
+We need a new repository for Project Foo!
+</q></span>
+<br/>
+<span style="color: #00A;">
+For new (empty) repositories, please use <a href="https://selfserve.apache.org/">self-serve</a>. If your project is using the GitBox service, please see the <a href="https://gitbox.apache.org/">GitBox web site</a> instead.
+For imports, please <a href="https://issues.apache.org/jira/">create a JIRA ticket</a>.
+</span></p>
+<hr/>
+<h4 id="email-related questions">Email-related questions</h4>
+<!-- unsubbing -->
+<p><span style="color: #A00;"><q>
+How do I unsubscribe from <a href="mailto:foo@tlp.apache.org">foo@tlp.apache.org</a>?
+</q></span>
+<br/>
+<span style="color: #00A;">
+Send an email to <code><a href="mailto:foo-unsubscribe@tlp.apache.org">foo-unsubscribe@tlp.apache.org</a></code> to unsubscribe
+yourself from the list.
+</span></p>
+<hr/>
+<!-- email whitelisting -->
+<p><span style="color: #A00;"><q>
+How do I allow <a href="mailto:foo@bar.baz">foo@bar.baz</a> to post to our mailing list, <a href="mailto:dev@tlp.apache.org">dev@tlp.apache.org</a>??
+</q></span>
+<br/>
+<span style="color: #00A;">
+Send an email to <code>dev-allow-subscribe-<span style="color:
+#080;">foo=bar.baz</span>@tlp.apache.org</code>, or see the
+<a href="http://untroubled.org/ezmlm/ezman/ezman2.html">ezmlm manual</a>
+for more details.
+</span></p>
+<hr/>
+<!-- need subscriber list -->
+<p><span style="color: #A00;"><q>
+How do I see who's subscribed to <a href="mailto:dev@tlp.apache.org">dev@tlp.apache.org</a>?
+</q></span>
+<br/>
+<span style="color: #00A;">
+Send an email to <code><a href="mailto:dev-list@tlp.apache.org">dev-list@tlp.apache.org</a></code>. This will
+only work if you are a moderator of that particular list.
+</span></p>
+<hr/>
+<!-- account forward borked -->
+<p><span style="color: #A00;"><q>
+My email address changed and I forgot my password, how do I change it?
+</q></span>
+<br/>
+<span style="color: #00A;">
+Please see <a href="https://selfserve.apache.org/">this page</a> for help.
+</span></p>
+<hr/>
+<!-- missing email sent to lists -->
+<p><span style="color: #A00;"><q>
+I don't see the emails that I posted to a mailing list
+</q></span>
+<br/>
+<span style="color: #00A;">
+If you are using GMail, remember that it only shows one copy of the
+mail, and hides the one that comes back to you from the mailing list.
+You can use the mail-archives to check if the mail has been received by the list
+</span>
+<br/>
+<span style="color: #00A;">
+Some lists only allow subscribers to post. If you use more than one email address, you might have accidentally sent a message from the wrong account.
+</span></p>
+<hr/>
+
+
+        </div>
+      </div>
+    </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2019, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    
+    <script src="/theme/js/vendor/jquery.js"></script>
+    <script src="/theme/js/vendor/what-input.js"></script>
+    <script src="/theme/js/vendor/foundation.js"></script>
+    <script src="/theme/js/app.js"></script>
+  </body>
+</html>
