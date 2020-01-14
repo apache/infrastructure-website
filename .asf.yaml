@@ -13,4 +13,3 @@ github:
 jenkins:
   github_whitelist:
     - KibbleDemo
-    - foobar123
