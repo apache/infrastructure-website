@@ -13,4 +13,4 @@ github:
 jenkins:
   ghprb_whitelist:
     - KibbleDemo
-
+    - foobar123
