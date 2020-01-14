@@ -11,6 +11,6 @@ github:
   ghp_path:      /docs
 
 jenkins:
-  ghprb_whitelist:
+  github_whitelist:
     - KibbleDemo
     - foobar123
