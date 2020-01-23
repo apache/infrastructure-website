@@ -3,4 +3,4 @@ publish:
 
 staging:
   whoami: asf-break-test
-  profile: broken
+  profile: ~
