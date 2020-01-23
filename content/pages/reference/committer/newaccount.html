@@ -1,0 +1,386 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guide to new committers - Apache Infrastructure</title>
+    <link rel="stylesheet" href="/theme/css/foundation.css">
+    <link rel="stylesheet" href="/theme/css/app.css">
+    <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>  </head>
+  <body style="background: #C9B191;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/theme/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/pages/team.html">About the team</a></li>
+                  <li><a href="/pages/policies.html">Our policies</a></li>
+                  <li><a href="/pages/roadmap.html">Strategies & Roadmap</a></li>
+                  <li><a href="https://cwiki.apache.org/confluence/display/INFRA/Contacting+infrastructure">Contact infrastructure</a></li>
+                </ul>
+              </li>
+              <li><a href="https://cwiki.apache.org/confluence/display/INFRA/Documentation+Index" target="_self" style="padding-left: 5px;">Documentation</a></li>
+              <li><a href="https://status.apache.org" target="_self" style="padding-left: 5px;">Status</a></li>
+              <li><a href="https://selfserve.apache.org" target="_self" style="padding-left: 5px;">Selfserve</a></li>
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 0px;">Services</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                <li><a href="https://issues.apache.org/jira/" >JIRA</a></li>
+                <li><a href="https://cwiki.apache.org/" >Confluence</a></li>
+                <li><a href="https://builds.apache.org/" >Jenkins</a></li>
+                <li><a href="https://ci.apache.org/" >Buildbot</a></li>
+                <li><a href="https://www.apache.org/dev/machines.html" >Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" >Blocky</a></li>
+                <li><a href="https://uls.apache.org/app/kibana#/discover?_g=()" >Kibana and Unified Logging System</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" >Committer Search</a></li>
+		<li><a href="https://apache.pagerduty.com/sign_in" >PagerDuty</a></li>
+                </ul>
+              </li>
+              <li><a href="http://infra.chat" style="padding-left: 5px;"><i class="fa fa-weixin" style="color: #FFF; font-size: 0.9rem;"></i>Chat with Us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/Guide to new committers.html">
+Guide to new committers        </a>
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              Guide to new committers
+          </h2>
+              <div id="toc" style="border-radius: 3px; border: 1px solid #999; background-color: #EEE; padding: 4px;"><h4>Table of Contents:</h4><ul><ul><li><a class="toc-href" href="#contributor license agreement # {#cla}" title="Contributor license agreement # {#cla}">Contributor license agreement # {#cla}</a></li><li><a class="toc-href" href="#before account creation" title="Before account creation">Before account creation</a></li><li><a class="toc-href" href="#account creation" title="Account creation">Account creation</a></li><li><a class="toc-href" href="#setting up ssh # {#ssh-setup}" title="Setting up SSH # {#ssh-setup}">Setting up SSH # {#ssh-setup}</a></li><li><a class="toc-href" href="#setting up email" title="Setting up email">Setting up email</a></li><li><a class="toc-href" href="#subversion access and web sites" title="Subversion access and Web sites">Subversion access and Web sites</a></li><li><a class="toc-href" href="#security and pgp" title="Security and PGP">Security and PGP</a></li><li><a class="toc-href" href="#other resources" title="Other resources">Other resources</a></li><li><a class="toc-href" href="#committers-only subversion modules" title="Committers-only Subversion modules">Committers-only Subversion modules</a></li><li><a class="toc-href" href="#community" title="Community">Community</a></li><li><a class="toc-href" href="#responsibilities" title="Responsibilities">Responsibilities</a></li><li><a class="toc-href" href="#apachecon" title="ApacheCon">ApacheCon</a></li><li><a class="toc-href" href="#personal web space # {#personal-web-space}" title="Personal web space # {#personal-web-space}">Personal web space # {#personal-web-space}</a></li><li><a class="toc-href" href="#identity theft" title="Identity theft">Identity theft</a></li><li><a class="toc-href" href="#unofficial resources" title="Unofficial resources">Unofficial resources</a></li></ul></ul></div>
+<p>This document aims to bring together in one place all of the general
+information that a newbie committer needs to know. There will be other
+details (some project-specific) that cannot be covered here. Those should
+be covered by your project community.</p>
+<p>The plain sense of the word "committer" is that you will have access rights
+to your project's repository to write (as well as read) the source.
+Rather than creating a patch and submitting it to be actively reviewed and
+then (hopefully) committed, you can now create a local patch and commit it
+yourself - or even review and commit patches created by others. Your
+patches will still be reviewed by your fellow committers. This will happen
+after the event (usually through commit emails, although the exact
+convention for the review may differ between projects).</p>
+<p>Take more care than you did before and expect existing committers to be
+particularly vigilant.
+You would already know well (by example) how a committer should behave.
+If you are <em>not</em> familiar, you can always ask your <a href="pmc.html">PMC</a> for guidance.</p>
+<h1 id="contributor license agreement # {#cla}">Contributor license agreement # {#cla}</h1>
+<p>The very first thing you need to do is to complete and submit an <a href="../licenses/#clas">Individual
+Contributor License Agreement</a> (ICLA). This is a formal
+delcaration declaration of the terms under which you will contribute
+intellectual property to the ASF.</p>
+<p>You can send in the ICLA either by postal mail, fax or by emailing a scan of
+the signed copy to <a href="mailto:secretary@apache.org">secretary@apache.org</a>.
+Please ensure that it is clearly written. Your PMC will keep track to know
+when the ICLA is received and recorded by the ASF Secretary (this might take time).</p>
+<p>Note that you may need to hold discussions with your employer before
+signing the agreement. Your employer might even need to provide a
+<a href="../licenses/#clas">Corporate CLA</a> - determining that is your
+responsibility. Also make sure that you keep up-to-date with this
+requirement.</p>
+<p>It is important to read and understand the agreements and strive to meet
+the standards expected. Correct title to the source is of great importance
+to ASF and it must be to you too. Some procedures may appear a little
+bureaucratic, but they are there to protect you as well as ASF. For a clearer
+understanding read the <a href="../licenses/">ASF license guide</a>.</p>
+<p>Please take care to ensure that patches are original works which have been
+clearly contributed to the ASF in public. In the case of any doubt (or when
+a contribution with a more complex history is presented) please consult your
+project PMC before committing it.</p>
+<h1 id="before account creation">Before account creation</h1>
+<p>You will also be asked for a preferred Apache user name. Please think also
+of an alternative, in the case that the primary is unsuitable or taken.
+Note that your user name must not contain punctuation. (<a href="http://people.apache.org/committer-index.html">This
+list</a> may prove helpful).</p>
+<p>The acceptance process may well take some time. The ASF is staffed by
+volunteers working in their free time. It often takes some time for
+requests to be processed and new accounts set up. Please be patient. You
+will be informed when the process is complete (and your <a href="./pmc.html#chair">PMC chair</a>
+will monitor the progress).</p>
+<p>This quiet lull is a good time to familiarize yourself with the Apache
+Software Foundation in general. Browse the <a href="../dev/">developer information</a>
+and the <a href="../foundation/">Foundation website</a>. Remember, that the website is
+being continually updated, so you should regularly visit these pages.</p>
+<p>You will also need to familiarize yourself with some Apache policies and
+procedures. Do not worry, this isn't as intimidating as it seems: you will
+probably have learnt a lot by osmosis already. But it is important to know
+where authoritative information is held when you need to consult it.
+Unfortunately it is currently scattered. There is ongoing an effort to
+bring it all together. What follows is a partial list:</p>
+<p>If there is anything that you are not sure about, then just ask on the
+"dev" list for your particular project.</p>
+<ul>
+<li>
+<p><a href="index.html">ASF Developer Resources</a></p>
+</li>
+<li>
+<p>the <a href="../foundation/how-it-works.html">ASF How it works</a> document</p>
+</li>
+<li>
+<p>the <a href="http://incubator.apache.org/learn/">Incubator Learn</a> pages</p>
+</li>
+<li>
+<p>the <a href="../foundation/bylaws.html">ASF Bylaws</a></p>
+</li>
+<li>
+<p>and the ASF general <a href="http://wiki.apache.org/general">wiki</a>.</p>
+</li>
+</ul>
+<h1 id="account creation">Account creation</h1>
+<p>You will receive an email when your account has been created.  (This may take
+a week or two.)</p>
+<p>There are a number of general things you need to do. These will be covered
+in separate sections below. There may some other things that the particular
+project requires, but you should be told of those by your fellow
+committers.</p>
+<p>Setting up the account at this time is convenient (since the logon needs to
+be tested).</p>
+<h1 id="setting up ssh # {#ssh-setup}">Setting up SSH # {#ssh-setup}</h1>
+<p>We are not going to describe how to use ssh (there are plenty of good
+<a href="user-ssh.html">tutorials</a> elsewhere).</p>
+<p>All ASF servers require that you use a key based login. The first steps are to
+generate the key on your local desktop (not on minotaur.apache.org) and then upload your
+authorized keys to your Apache LDAP account. You can do this via the
+<a href="https://id.apache.org">Apache Account Utility</a>.
+Do not try to configure an authorized_keys file in your <code>~/.ssh</code> directory. It won't work.
+Each line that would normally be in your authorized_keys should be added to your
+Apache LDAP account via the <a href="https://id.apache.org">Apache Account Utility</a>.
+You can add multiple lines.</p>
+<p>Once you have configured your ssh client, you will be able to log onto your account at
+minotaur.apache.org using ssh:</p>
+<pre><code>$ ssh [username]@minotaur.apache.org
+</code></pre>
+<p>If you cannot login, you need to check (via the project PMC) that the
+account has been created correctly. Please check your ssh configuration
+first (do <code>ssh -e</code>).</p>
+<p>If you use PuTTY then ensure that it is configured to force SSH v2
+protocol. And use keyboard-interactive.</p>
+<p>Once you are logged on, there are few tasks best performed right away.
+Please take care when using your shell account.</p>
+<p>You need to check that your <code>umask</code> is set in a group friendly fashion.
+This ensures that the documents you create are editable by your fellow
+committers. To do this, (depending on which shell you use) edit the
+<code>.cshrc</code> file or <code>.profile</code> (sh derivatives) and ensure that the <code>umask</code>
+is set as follows:</p>
+<pre><code>:::shell
+umask 002 
+</code></pre>
+<p>You may find that a <code>umask</code> line already exists, in which case
+it should be modified. Otherwise, a new line needs to be added. (You will
+need to use a *nix command-line editor such as <code>vi</code>.) Tip: You can view the
+files of some other committer, e.g. <code>ls -al ~mymentor; cat ~mymentor/.cshrc</code></p>
+<h1 id="setting up email">Setting up email</h1>
+<p>See these <a href="user-email.html">instructions</a>.</p>
+<h1 id="subversion access and web sites">Subversion access and Web sites</h1>
+<p>All the information you need is contained <a href="version-control.html">here</a>.</p>
+<p>If your project has a page about the developers and committers, go right
+ahead and add your name and information to it! Really. This is a great way
+to make your first commit.</p>
+<p>It also serves another purpose: you will learn how to add documentation to
+your project's website and the technology used to build it. Documentation
+is vital, and being able to improve the project's web site is a skill that
+you will need. If your project has not documented how to rebuild the
+website, then ask on your dev mailing list and use the answer to create a
+document describing how to do that. It will be gratefully received!</p>
+<p>Here are some general infrastructure notes about how to manage your
+<a href="project-site.html">project website</a>.</p>
+<h1 id="security and pgp">Security and PGP</h1>
+<p>Security is vital and Apache pays great attention to it. Please remember
+that at all times.</p>
+<p>Security is vital and Apache pays great attention to it. Please remember
+that at all times.</p>
+<p><a href="http://www.openpgp.org/">OpenPGP</a> is a
+<a href="http://www.ietf.org/rfc/rfc2440.txt">standard</a> which provides (amongst
+other things) methods to create digital signatures for documents. These
+documents could be emails or could be ASF releases. A variety of
+applications exist which provide OpenPGP compatible signatures including
+the well known <a href="http://www.gnupg.org/">GPG</a> and <a href="http://www.pgp.com/">PGP</a>.</p>
+<p>It is recommended that you create a PGP key for your <code>apache.org</code> address now
+(or add that address to an existing key, if you have one). <b>DO NOT</b> create
+this key on minotaur.apache.org or any other machine to which multiple
+users have access and <b>DO NOT</b>, ever, copy your private
+key to people.apache.org or any other shared machine. Release managers need
+to take particular <a href="/dev/release-signing.html#private-key-protection">care of keys used to sign releases</a>.</p>
+<p>Upload the public key to a public key server (for example <a href="http://pgp.mit.edu/">MIT</a>).
+Afterwards, add your keys' primary fingerprints to <a href="https://id.apache.org/">your LDAP
+profile</a>; this will cause your to be added to the
+individual and per-project pre-fetched KEYS files on
+<a href="https://people.apache.org/keys/committer/">https://people.apache.org/keys/committer/</a>, and allow
+automated tools to encrypt communications to you.
+Start to build up a good
+web of trust now before you need to use it in earnest. Be prepared to
+exchange key information at any face-to-face events where ASF folks may be
+present. The best practice is to insist on identification before signing
+another's key. See <a href="http://www.apache.org/dev/release-signing.html#link-into-wot">signing guide</a> and
+Henk's <a href="http://people.apache.org/%7Ehenkp/sig/pgp-key-signing.txt">Key Signing
+HOWTO</a>.</p>
+<p>Henk's <a href="http://home.apache.org/%7Ehenkp/">Apache home page</a> provides some useful information
+related to the use of signatures both in general and specifically at
+Apache. See also the <a href="http://www.apache.org/dev/release-signing.html">signing
+guide</a>.</p>
+<h1 id="other resources">Other resources</h1>
+<p><a href="http://people.apache.org">Apache People</a> maintains public resources about
+Apache committers.
+<a href="http://people.apache.org/foaf/index.html">Participation</a> is easy but
+optional. If you want to take part, now is a good time to add your details.</p>
+<p>Although the Apache Way is to keep things as public as possible, there are
+some resources here at Apache which are closed to those who are not
+committers.</p>
+<h1 id="committers-only subversion modules">Committers-only Subversion modules</h1>
+<p>You should do a checkout of the private <code>committers</code> module. This is stored
+in the subversion repository with url
+<code>https://svn.apache.org/repos/private/committers</code>. (See
+<a href="index.html#svn">notes</a> for those unfamiliar with subversion.)</p>
+<p>Once you have checked out this module, you need to read all the documents
+contained in the <code>docs</code> directory, especially the resources.txt file. There
+are a number of private mailing lists you need to know about. Join in the
+Apache community by signing up to every list that interests you. It is
+better to sign up (even if you sign off later) than to miss out! Please
+respect the usage guidelines for these private lists.</p>
+<h1 id="community">Community</h1>
+<p>The community makes Apache fun. The community list is a public
+<a href="http://mail-archives.apache.org/mod_mbox/www-community/">readable</a> list
+for topics that cut across <a href="pmc.html">PMC</a> boundaries. Discussions of all
+kinds are on topic as long as the matter doesn't need to be sensitive or
+confidential.</p>
+<p>The <a href="http://labs.apache.org/">Apache Labs</a> project is open to all ASF
+Committers (and only them).</p>
+<p><a href="http://labs.apache.org/">Apache Labs</a> is a place for innovation where
+committers of the foundation can experiment with new ideas. The aim is to
+provide the necessary resource to promote and maintain the innovative power
+within the Apache community without the burden of community building.</p>
+<p>If you have an idea that you want to explore and collaborate on with other
+committers then come and discuss it at <a href="http://labs.apache.org/">Labs</a>.
+Even if you don't have anything at the moment, then come and take a look at
+what other committers are working on.</p>
+<h1 id="responsibilities">Responsibilities</h1>
+<p>Join your project's commit mailing list if one exists (some projects send
+all commit emails to the dev list).</p>
+<p>Each committer has a responsibility to monitor the changes made for
+potential issues, both coding and legal. If you spot any potential issues
+in a commit, the right course of action is to post a reply (to the email)
+raising your concerns to the dev list. In extreme situations, it may be
+necessary to veto (-1) a commit but please beware that this is an extreme
+sanction and rarely warranted.</p>
+<p>Do not be surprised if your first commit has a delayed diff email. It needs
+to go through the human moderators.</p>
+<h1 id="apachecon">ApacheCon</h1>
+<p>If you don't have one already, make a note in your diary about the next
+<a href="http://www.apachecon.com/">ApacheCon</a>. This is a great opportunity to meet
+other Apache folks, hack code and dream about great new open source
+projects. Watch the lists as the conference dates approach for details
+about special deals for committers and opportunities to speak.</p>
+<h1 id="personal web space # {#personal-web-space}">Personal web space # {#personal-web-space}</h1>
+<p>You might already be aware that some Apache folks have content served from
+Apache web servers. For example, Henk and Vadim both provide
+<a href="committers.html#statistics">statistics</a>. The server does not enforce rules
+about appropriate content: committers should know how to behave! Most other
+folks use it for Apache related content and some for interesting private
+projects. If you do use it, please use it responsibly.</p>
+<p>Material placed in the <code>public_html</code> directory will be available under
+the <code><a href="http://home.apache.org/%7E*username*/">http://home.apache.org/~*username*/</a></code> url (where
+<em>username</em> is your ASF account Id).</p>
+<p>The following are NOT permitted to be hosted in your personal web space:</p>
+<ul>
+<li>Releases - These should be uploaded to <a href="https://dist.apache.org/repos/dist">https://dist.apache.org/repos/dist</a></li>
+<li>Release candidates - These should be uploaded to <a href="https://dist.apache.org/repos/dist">https://dist.apache.org/repos/dist</a></li>
+<li>Nightly builds - These should be hosted by <a href="https://ci.apache.org/">https://ci.apache.org/</a></li>
+<li>Maven repositories - These should be hosted by <a href="https://repository.apache.org/">https://repository.apache.org/</a></li>
+<li>Project documentation</li>
+<li>Project data backups</li>
+<li>Installation media for any software</li>
+</ul>
+<p>As a guide, your personal web space is not expected to exceed a few hundred MB. If it does, you may be required to justify to the infrastructure team why you require so much personal web space.</p>
+<h1 id="identity theft">Identity theft</h1>
+<p>Please be aware that Apache Software Foundation committers are targets for
+identity theft. These spoof attacks resemble the
+<a href="http://en.wikipedia.org/wiki/Phishing">phishing</a> attacks used to gain
+access to bank accounts and other web subscriptions. They typically seek to
+persuade you to enter your access details into a fake website.
+The foundation will <strong>never</strong> solicit such 'verification'.</p>
+<p>Leaking your access to Apache can have very destructive consequences.
+<strong>Never</strong> disclose your ASF password to anyone.</p>
+<p>The Apache team is clueful about DNS maintenance: do <strong>not</strong> trust any
+redirection by IP address. Your access to Apache will be through the
+machines serving the <code>svn.apache.org</code> and <code>git-wip.apache.org</code> domains. The
+ssh/ssl fingerprints are <a href="machines">listed on the machines page</a>.</p>
+<p>Please use caution. Do not hesitate to ask if you have doubts: post a
+question to infrastructure before taking any action.</p>
+<p><strong>Note:</strong> the fingerprint for the key used for ssh is different to the
+fingerprint of the certificate used to <a href="version-control.html#cert">securely serve the
+website</a>.  A full list of fingerprints is maintained
+on the <a href="machines">machines</a> page.</p>
+<h1 id="unofficial resources">Unofficial resources</h1>
+<p>If you like, get involved with unofficial resources open to ASF committers:</p>
+<ul>
+<li><a href="committers.html#planetapache">Join</a>
+<a href="http://planet.apache.org/committers/">PlanetApache</a></li>
+</ul>
+<p>Please help to improve this document (see <a href="infra-site.html">guidelines</a> for
+website update). <a href="infra-volunteer.html">Subscribe</a> to the Infrastructure
+list if you want to discuss the improvements, or just to find out how the
+good ship Apache is kept afloat (and to help).</p>
+
+        </div>
+      </div>
+    </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2020, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    
+    <script src="/theme/js/vendor/jquery.js"></script>
+    <script src="/theme/js/vendor/what-input.js"></script>
+    <script src="/theme/js/vendor/foundation.js"></script>
+    <script src="/theme/js/app.js"></script>
+  </body>
+</html>
