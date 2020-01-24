@@ -2,7 +2,11 @@ pelican:
   notify:         private@infra.apache.org
   autobuild:      true
   target:         asf-site
-  
+
+pelican:
+  whoami: pelican-test
+  target: asf-break-test
+
 staging: false
 
 
