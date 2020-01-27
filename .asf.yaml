@@ -3,7 +3,8 @@ pelican:
   autobuild:      true
   target:         asf-site
   
-staging: false
+staging:
+  whoami: asf-break-test
 
 
 github:
