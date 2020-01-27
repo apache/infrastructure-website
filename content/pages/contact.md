@@ -1,7 +1,7 @@
 Title: Contact the Infrastructure Team
 
 ## Chat
-Join us on [Slack](http://infra.chat/)!
+Join us on [Slack](http://infra.chat/) for direct messaging!
 
 ### Requesting resources/tasks/projects:
 Please use the [JIRA](https://issues.apache.org/jira/).
