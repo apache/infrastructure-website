@@ -1,14 +1,13 @@
 Title: Requesting assistance
 
+
 The Infrastructure Team is ready to assist during most of the day,
 thanks to our distributed team on three continents, whether it be via
 email ([users@infra.apache.org](mailto:users@infra.apache.org)),
 [Slack](http://infra.chat/) or via [JIRA tickets](https://issues.apache.org/jira/).
 
-
 For JIRA tickets, please take a look at [this page](https://cwiki.apache.org/confluence/display/INFRA/Contacting+infrastructure)
 regarding which severity to attach to tickets.
-
 
 If you have an issue that needs solving, we ask that you please review the FAQ below,
 which may already have the answer you are seeking.
