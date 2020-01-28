@@ -1,5 +1,6 @@
 Title: Requesting assistance
 
+
 The Infrastructure Team is ready to assist during most of the day,
 thanks to our distributed team on three continents, whether it be via
 email ([users@infra.apache.org](mailto:users@infra.apache.org)),
