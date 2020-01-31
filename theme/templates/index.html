@@ -95,44 +95,12 @@
     <div class="row">
       <div class="large-12 medium-12 columns">
         <div class="callout">
-        <h3>News from Infrastructure:</h3>
+        <h3>News from Infra</h3>
         <hr/>
-          {% endblock %}
+        <p style="height: 110px; font-size: 0.9rem;">We periodically publish updates about Infra's work, successes, and challenges on <a href="https://blogs.apache.org/infra/" target="_blank">the Infra blog</a>.
           
-          {%block content %}
-          
-          {% if articles %}
-              {% for article in articles_page.object_list %}        
-          
-                  {# First item #}
-              
-                      <aside id="featured">
-                          <div class="body">
-                              <article>
-                                  <h4><a href="{{ article.url }}">{{ article.title }}</a> - {{ article.date|strftime('%d %B %Y') }}</h4>
-                                  {{ article.summary }}
-                              </article>
-              {% if loop.last and (articles_page.has_previous() or not articles_page.has_previous() and loop.length > 1) %} 
-                              {% include 'pagination.html' %}
-                          {% endif %}
-                          <hr/>
-                          </div>
-                      </aside><!-- /#featured -->
-                      
-                  
-              {% endfor %}
-          {% else %}
-          <!--
-          <section id="content" >
-              <div class="body">
-              <h2>Pages</h2>
-                  {% for page in PAGES %}
-                      <li><a href="{{ page.url }}">{{ page.title }}</a></li>
-                  {% endfor %}
-              </div>
-          </section>
-          -->
-          {% endif %}
+        </p>
+        
           {% endblock %}
         </div>
       </div>
