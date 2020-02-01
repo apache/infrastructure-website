@@ -1,15 +1,15 @@
 Title: Contact the Infrastructure Team
 
-## Chat
+### Chat
 Join us on [Slack](http://infra.chat/) for direct messaging!
 
-### Requesting resources/tasks/projects:
+### Request resources/tasks/projects
 Please create a [Jira](https://issues.apache.org/jira/) ticket for your request. 
 
 Review the [guidelines for creating a Jira ticket](jira-guidelines).
 
 
-### Mailing lists for general inquiries:
+### Use mailing lists for general inquiries
 General inquiries and questions should go to one of our user mailing lists:
 
 | Mailing list      | Subscribe address | 
