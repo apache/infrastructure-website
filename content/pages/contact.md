@@ -6,7 +6,7 @@ Join us on [Slack](http://infra.chat/) for direct messaging!
 ### Requesting resources/tasks/projects:
 Please create a [Jira](https://issues.apache.org/jira/) ticket for your request. 
 
-Review the [guidelines for creating a Jira ticket](/pages/jira-guidelines).
+Review the [guidelines for creating a Jira ticket](jira-guidelines).
 
 
 ### Mailing lists for general inquiries:
