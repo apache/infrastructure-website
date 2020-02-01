@@ -91,8 +91,47 @@ Guidelines for creating a Jira ticket        </a>
           <h2>
               Guidelines for creating a Jira ticket
           </h2>
-              <p>##Jira</p>
-<p>Jira is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management. Atlassian provides Jira services to Apache projects. The tool's name is a short form of the name of the Japanese movie monster, Godzilla, and was an early developer nickname for the application.</p>
+              <h2>Jira</h2>
+<p><a href="https://issues.apache.org/jira">Jira</a>{:target=&quot;_blank&quot;} is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management. Atlassian provides Jira services to Apache projects. The tool's name is a short form of the name of the Japanese movie monster, Godzilla, and was an early developer nickname for the application.</p>
+<p>Anyone is free to review existing Jira tickets, or &quot;issues&quot;. You must register and log in if you want to create, comment or vote on, or watch issues. Only developers can edit, prioritize, schedule and resolve issues.</p>
+<h3>Setting a ticket's priority</h3>
+<p>Follow these guidelines when assigning a priority to a Jira ticket. Infra uses these priorities to triage operations, and if we feel a ticket is mis-prioritized, we will change it or put it on hold.</p>
+<ul>
+<li>
+<p><strong>Blocker</strong>: A time-sensitive issue that is hindering the basic functions of a project.</p>
+<ul>
+<li><em>Example</em>: Our web site has been defaced and we just sent out a press release.</li>
+</ul>
+</li>
+<li>
+<p><strong>Critical</strong>: A time-sensitive issue that causes disruption for a project, but is not hindering the basic functionality</p>
+<ul>
+<li><em>Example</em>: We just announced a new release, but SVN is not allowing us to upload or move the artifacts.</li>
+</ul>
+</li>
+<li>
+<p><strong>Major</strong>: A (large) issue that needs attention soon, but is not time-sensitive in terms of basic project functionality. This includes asking for new resources to be set up. <em>Examples</em>:</p>
+<ul>
+<li>Set up a new podling.</li>
+<li>Add a Git repository.</li>
+<li>Set up svn/git-pubsub.</li>
+</ul>
+</li>
+<li>
+<p><strong>Minor</strong>: An issue that needs attention within a reasonable amount of time, but is not time-sensitive nor critical to a project's basic functionality or ongoing daily business. <em>Examples</em>:</p>
+<ul>
+<li>Retire a project's resources.</li>
+<li>Fix a JavaScript error on a web site.</li>
+<li>Add GitHub integration for a repository.</li>
+</ul>
+</li>
+<li>
+<p><strong>Trivial</strong>: A task that should be solved, but has minimal or no constraints in time</p>
+<ul>
+<li><em>Example</em>: Fix the copyright year on a web site.</li>
+</ul>
+</li>
+</ul>
 
         </div>
       </div>
