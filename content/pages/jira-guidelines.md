@@ -13,18 +13,22 @@ Follow these guidelines when assigning a priority to a Jira ticket. Infra uses t
 - **Blocker**: A time-sensitive issue that is hindering the basic functions of a project.
   - *Example*: Our web site has been defaced and we just sent out a press release.
 
+
 - **Critical**: A time-sensitive issue that causes disruption for a project, but is not hindering the basic functionality
   - *Example*: We just announced a new release, but SVN is not allowing us to upload or move the artifacts.
+
 
 - **Major**: A (large) issue that needs attention soon, but is not time-sensitive in terms of basic project functionality. This includes asking for new resources to be set up. *Examples*:
    - Set up a new podling.
    - Add a Git repository.
    - Set up svn/git-pubsub.
 
+
 - **Minor**: An issue that needs attention within a reasonable amount of time, but is not time-sensitive nor critical to a project's basic functionality or ongoing daily business. *Examples*:
   - Retire a project's resources.
   - Fix a JavaScript error on a web site.
   - Add GitHub integration for a repository.
+
 
 - **Trivial**: A task that should be solved, but has minimal or no constraints in time
   - *Example*: Fix the copyright year on a web site.
