@@ -11,18 +11,27 @@ One of Infra's goals is to empower ASF members, PMCs, and committers to do much 
   * Synchronize Git repositories.
   * Use the OTP Calculator to generate passwords for the OTP or S/Key one-time-password systems (generally, PMC members).
   
+### Tools for ASF projects
 
-#### Bugtracking
+#### Bug-tracking and feature requests
 
-* [JIRA](https://issues.apache.org/jira)
-* [Bugzilla](https://bz.apache.org/bugzilla/)
+Projects can use either of these bug-tracking  and feature request tools:
+
+* <a href="https://issues.apache.org/jira" target="_blank">Jira</a>
+* <a href="https://bz.apache.org/bugzilla/" target="_blank">Bugzilla</a>
 
 #### CI/CD
 
-* [Jenkins](http://builds.apache.org)
-* [Buildbot](http://ci.apache.org)
-* [TravisCI](https://travis-ci.org/)
-* [Appveyor](https://www.appveyor.com/)
+Apache supports and models continuous integration and continuous deployment, or *CI/CD*. The <a href="https://ci.apache.org" target="_blank">Apache CI/CD site</a> provides more information, and links to these build tools:
+
+* BuildBot
+* Gump
+* Jenkins
+
+Other tools to consider:
+
+* <a href="https://travis-ci.org/" target="_blank">Travis CI</a>
+* <a href="https://www.appveyor.com" target="_blank">Appveyor</a>
 
 #### Mailing LIsts
 
