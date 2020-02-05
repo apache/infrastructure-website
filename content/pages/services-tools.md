@@ -47,10 +47,6 @@ Other tools to consider:
 * [PagerDuty](http://pagerduty.com)
 * [StatusPage](http://status.apache.org)
 
-#### Wiki
-
-* [Confluence](https://cwiki.apache.org)
-
 #### Version Control
 
 * [GitBox](https://gitbox.apache.org)
