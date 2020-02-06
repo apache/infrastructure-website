@@ -14,6 +14,14 @@ One of Infra's goals is to empower ASF members, PMCs, and committers to do much 
   
 ### Tools for ASF projects
 
+#### Version Control
+
+Apache provides, and Infra maintains, code repositories that Apache projects can use to keep their project code safe, accessible to team members, and under version control.
+
+* [GitBox](https://gitbox.apache.org)
+* [GitHub](https://github.com/apache/)
+* [Subversion](https://svn.apache.org/viewvc)
+
 #### Bug-tracking and feature requests
 
 Projects can use either of these bug-tracking  and feature request tools:
@@ -34,25 +42,18 @@ Other tools to consider:
 * <a href="https://travis-ci.org/" target="_blank">Travis CI</a>
 * <a href="https://www.appveyor.com" target="_blank">Appveyor</a>
 
+
+#### Code Distribution
+
+Use the ASF <a href="https://repository.apache.org/" target="_blank">Nexus Repository Manager</a> to browse for and review code distribtuions by ASF projects.
+
+
 #### Mailing LIsts
 
 <a href="https://lists.apache.org" target="_blank">PonyMail</a> lets you browse Apache email archives by certain categories, by user, or by project. You must log in if you want to respond to an email, or write a new one, through this interface.
 
 
-#### Monitoring
 
-* [DataDog](https://www.datadoghq.com/)
-* [StatusPage](http://status.apache.org)
-
-#### Version Control
-
-* [GitBox](https://gitbox.apache.org)
-* [GitHub](https://github.com/apache/)
-* [Subversion](https://svn.apache.org/viewvc)
-
-#### Code Distribution
-
-* [nexus](https://repository.apache.org/)
 
 #### Blogs
 
