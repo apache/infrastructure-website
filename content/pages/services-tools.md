@@ -45,7 +45,7 @@ Other tools to consider:
 
 #### Code Distribution
 
-Use the ASF <a href="https://repository.apache.org/" target="_blank">Nexus Repository Manager</a> to browse for and review code distribtuions by ASF projects.
+Use the ASF <a href="https://repository.apache.org/" target="_blank">Nexus Repository Manager</a> to browse for and review code distributions by ASF projects.
 
 
 #### Mailing LIsts
