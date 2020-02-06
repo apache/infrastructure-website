@@ -11,6 +11,7 @@ One of Infra's goals is to empower ASF members, PMCs, and committers to do much 
   * Synchronize Git repositories.
   * Use the OTP Calculator to generate passwords for the OTP or S/Key one-time-password systems (generally, PMC members).
   
+  
 ### Tools for ASF projects
 
 #### Bug-tracking and feature requests
@@ -35,16 +36,12 @@ Other tools to consider:
 
 #### Mailing LIsts
 
-* [PonyMail](http://lists.apache.org)
+<a href="https://lists.apache.org" target="_blank">PonyMail</a> lets you browse Apache email archives by certain categories, by user, or by project. You must log in if you want to respond to an email, or write a new one, through this interface.
 
-#### LDAP
-
-* [OpenLDAP](http://www.openldap.org/)
 
 #### Monitoring
 
 * [DataDog](https://www.datadoghq.com/)
-* [PagerDuty](http://pagerduty.com)
 * [StatusPage](http://status.apache.org)
 
 #### Version Control
