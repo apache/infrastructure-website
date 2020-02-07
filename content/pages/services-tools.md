@@ -29,6 +29,8 @@ Projects can use either of these bug-tracking  and feature request tools:
 * <a href="https://issues.apache.org/jira" target="_blank">Jira</a>
 * <a href="https://bz.apache.org/bugzilla/" target="_blank">Bugzilla</a>
 
+Review Apache's <a href="https://issues.apache.org/bugwritinghelp.html" target="_blank">bug reporting guidelines</a>.
+
 #### Build services
 
 Apache supports and models continuous integration and continuous deployment, or *CI/CD*. The <a href="https://ci.apache.org" target="_blank">Apache Build services site</a> provides more information, and links to these build tools:
