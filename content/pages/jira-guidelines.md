@@ -4,7 +4,14 @@ Title: Guidelines for creating a Jira ticket
 
 <a href="https://issues.apache.org/jira" target="_blank">Jira</a> is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management. Atlassian provides Jira services to Apache projects. The tool's name is a short form of the name of the Japanese movie monster, Godzilla, and was an early developer nickname for the application.
 
-Anyone can review existing Jira tickets, or "issues". You must register and log in if you want to create, comment or vote on, or watch issues. Only developers can edit, prioritize, schedule and resolve issues.
+Anyone can review existing Jira tickets, or issues. You must register and log in if you want to create, comment or vote on, or watch issues. Only developers can edit, prioritize, schedule and resolve issues.
+
+ASF and many of its projects use Jira to keep track of work to be done. The largest group of tickets assigned to Infra are requests for Infra to perform a task of one sort or another. The next largest category is reports of possible bugs in the Infrastructure system:
+
+![pie chart of Infra tickets in Jira](/images/infra-jira450.png)
+
+### Writing a good Jira ticket
+Whether you need a task done for your project or think you have spotted a bug, providing as much relevant information as you can helps Infra respond quickly and appropriately. While we have many skills, mind-reading is not among them. 
 
 ### Setting a ticket's priority
 
