@@ -8,7 +8,7 @@ Anyone can review existing Jira tickets, or issues. You must register and log in
 
 ASF and many of its projects use Jira to keep track of work to be done. The largest group of tickets assigned to Infra are requests for Infra to perform a task of one sort or another. The next largest category is reports of possible bugs in the Infrastructure system:
 
-![pie chart of Infra tickets in Jira](/images/infra-jira450.png)
+![pie chart of Infra tickets in Jira](/images/infra-jira.jpg)
 
 ### Writing a good Jira ticket
 Whether you need a task done for your project or think you have spotted a bug, providing as much relevant information as you can helps Infra respond quickly and appropriately. While we have many skills, mind-reading is not among them. 
