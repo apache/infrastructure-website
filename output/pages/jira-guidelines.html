@@ -92,46 +92,43 @@ Guidelines for creating a Jira ticket        </a>
 <p>Anyone can review existing Jira tickets, or issues. You must register and log in if you want to create, comment or vote on, or watch issues. Only developers can edit, prioritize, schedule and resolve issues.</p>
 <p>ASF and many of its projects use Jira to keep track of work to be done. The largest group of tickets assigned to Infra are requests for Infra to perform a task of one sort or another. The next largest category is reports of possible bugs in the Infrastructure system:</p>
 <p><img src="/images/infra-jira.jpg" alt="pie chart of Infra tickets in Jira" /></p>
+<h3>Before you create a ticket</h3>
+<p>Browse the existing Jira tickets to see if others have already reported the bug you noticed or have requested the task or additional feature that you were going to ask for. If you find a ticket that covers what you wanted to report, you can add a comment and maybe some more relevant information to the existing ticket.</p>
 <h3>Writing a good Jira ticket</h3>
-<p>Whether you need a task done for your project or think you have spotted a bug, providing as much relevant information as you can helps Infra respond quickly and appropriately. While we have many skills, mind-reading is not among them.</p>
-<h3>Setting a ticket's priority</h3>
-<p>Follow these guidelines when assigning a priority to a Jira ticket. Infra uses these priorities to triage operations, and if we feel a ticket is mis-prioritized, we will change it or put it on hold.</p>
+<p>If there is nothing in Jira already that covers what's on your mind, click &quot;Create&quot; to display a form where you can describe your issue or request. Providing as much relevant information as you can helps Infra respond quickly and appropriately.</p>
+<p>The form is pretty clear, so the focus here is on a couple of key fields.</p>
+<h4>Project</h4>
+<p>This is the group you want to take a look at the ticket. Select &quot;Infra&quot; for an infrastructure issue or request. Select a specific project if the issue is something like a problem in the project's documentation or website.</p>
+<h4>Issue type</h4>
+<p>There's a good list of issue types to choose from. Make sure you select the most appropriate one.</p>
+<h4>Project (again)</h4>
+<p>Maybe you want Infra to look at a problem with the Apache Widget project. Then in this field you would select Widget. Most of the time, for an Infra ticket, you will select Infra again.</p>
+<h4>Summary</h4>
+<p>This is your quick statement of your problem or request. &quot;Infra is broken!&quot; would not be a useful statement. Something like &quot;Self-serve site hangs, then crashes&quot; is more likely to get the right person's attention and a prompt resolution to the problem.</p>
+<h4>Priority</h4>
+<p>Make your best guess at how urgent this thing is. Infra triages Jira tickets by their prioritiesm, and may adjust the priority of a ticket if we feel its current setting is too high or too low.</p>
+<p>The options are</p>
 <ul>
-<li>
-<p><strong>Blocker</strong>: A time-sensitive issue that is hindering the basic functions of a project.</p>
-<ul>
-<li><em>Example</em>: Our web site has been defaced and we just sent out a press release.</li>
+<li><strong>Blocker</strong>: a time-sensitive issue that is hindering a basic function of a project. (<em>example: &quot;We just announced a new release, but SVN is not allowing us to upload or move the artifacts.&quot;</em>)</li>
+<li><strong>Critical</strong>: a time-sensitive issue that is disrupting the project, but does not hinder basic functions. (<em>&quot;Our website has been defaced.&quot;</em>)</li>
+<li><strong>Major</strong>: this issue needs attention soon, but is not hindering basic functions. Most requests for new resources fall into this category. (<em>&quot;Add a Git repository.&quot;</em>)</li>
+<li><strong>Minor</strong>: this issue needs attention, but is not time-sensitive and does not hinder basic functions. (<em>&quot;Fix a JavaScript error on our website.&quot;</em>)</li>
+<li><strong>Trivial</strong>: this issue is minimal and has no time constraints. ( <em>&quot;The copyright year on Infra web page bla.html is incorrect.&quot;</em>)</li>
 </ul>
-</li>
-<li>
-<p><strong>Critical</strong>: A time-sensitive issue that causes disruption for a project, but is not hindering the basic functionality</p>
-<ul>
-<li><em>Example</em>: We just announced a new release, but SVN is not allowing us to upload or move the artifacts.</li>
-</ul>
-</li>
-<li>
-<p><strong>Major</strong>: A (large) issue that needs attention soon, but is not time-sensitive in terms of basic project functionality. This includes asking for new resources to be set up. <em>Examples</em>:</p>
-<ul>
-<li>Set up a new podling.</li>
-<li>Add a Git repository.</li>
-<li>Set up svn/git-pubsub.</li>
-</ul>
-</li>
-<li>
-<p><strong>Minor</strong>: An issue that needs attention within a reasonable amount of time, but is not time-sensitive nor critical to a project's basic functionality or ongoing daily business. <em>Examples</em>:</p>
-<ul>
-<li>Retire a project's resources.</li>
-<li>Fix a JavaScript error on a web site.</li>
-<li>Add GitHub integration for a repository.</li>
-</ul>
-</li>
-<li>
-<p><strong>Trivial</strong>: A task that should be solved, but has minimal or no constraints in time</p>
-<ul>
-<li><em>Example</em>: Fix the copyright year on a web site.</li>
-</ul>
-</li>
-</ul>
+<h4>Component/s</h4>
+<p>Select one or more components that this issue or request relates to. If you cannot figure out what to pick, select &quot;Other/misc&quot;.</p>
+<h4>Fix Version/s</h4>
+<p>This an optional field, useful if your issue concerns a specific Infra tool or service and you know the version you are using.</p>
+<h4>Assignee</h4>
+<p>If you specify someone here, that person receives an alert about the issue. You can accept the default (Automatic) to put the issue in the queue for the Infra team.</p>
+<h4>Environment</h4>
+<p>This is an optional field where you can describe your operating system, software platform and/or hardware specifications if they are relevant to the bug, task, or feature request.</p>
+<h4>Description</h4>
+<p>Provide the juicy details here. For example, for a bug report, Infra needs to know how to reproduce the thing you ran into. Describe what you were doing (&quot;I was logged in to bla.html using Firefox&quot;), what you wanted to do (&quot;I wanted to do xxx&quot;), what you expected to happen, and what you actually experienced.</p>
+<p>For a feature request, it helps if you can not only describe the feature, but explain why the project needs it.</p>
+<h4>Other fields</h4>
+<p>There are many more optional fields that you can probably skip.</p>
+<p>When you have completed entering the useful information, click <strong>Create</strong> to create the ticket.</p>
 
         </div>
       </div>
