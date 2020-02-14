@@ -10,32 +10,55 @@ ASF and many of its projects use Jira to keep track of work to be done. The larg
 
 ![pie chart of Infra tickets in Jira](/images/infra-jira.jpg)
 
+### Before you create a ticket
+Browse the existing Jira tickets to see if others have already reported the bug you noticed or have requested the task or additional feature that you were going to ask for. If you find a ticket that covers what you wanted to report, you can add a comment and maybe some more relevant information to the existing ticket.
+
 ### Writing a good Jira ticket
-Whether you need a task done for your project or think you have spotted a bug, providing as much relevant information as you can helps Infra respond quickly and appropriately. While we have many skills, mind-reading is not among them. 
+If there is nothing in Jira already that covers what's on your mind, click "Create" to display a form where you can describe your issue or request. Providing as much relevant information as you can helps Infra respond quickly and appropriately.
 
-### Setting a ticket's priority
+The form is pretty clear, so the focus here is on a couple of key fields.
 
-Follow these guidelines when assigning a priority to a Jira ticket. Infra uses these priorities to triage operations, and if we feel a ticket is mis-prioritized, we will change it or put it on hold.
+#### Project
+This is the group you want to take a look at the ticket. Select "Infra" for an infrastructure issue or request. Select a specific project if the issue is something like a problem in the project's documentation or website.
 
-- **Blocker**: A time-sensitive issue that is hindering the basic functions of a project.
-  - *Example*: Our web site has been defaced and we just sent out a press release.
+#### Issue type
+There's a good list of issue types to choose from. Make sure you select the most appropriate one.
 
+#### Project (again)
+Maybe you want Infra to look at a problem with the Apache Widget project. Then in this field you would select Widget. Most of the time, for an Infra ticket, you will select Infra again.
 
-- **Critical**: A time-sensitive issue that causes disruption for a project, but is not hindering the basic functionality
-  - *Example*: We just announced a new release, but SVN is not allowing us to upload or move the artifacts.
+#### Summary
+This is your quick statement of your problem or request. "Infra is broken!" would not be a useful statement. Something like "Self-serve site hangs, then crashes" is more likely to get the right person's attention and a prompt resolution to the problem.
 
+#### Priority
+Make your best guess at how urgent this thing is. Infra triages Jira tickets by their prioritiesm, and may adjust the priority of a ticket if we feel its current setting is too high or too low.
 
-- **Major**: A (large) issue that needs attention soon, but is not time-sensitive in terms of basic project functionality. This includes asking for new resources to be set up. *Examples*:
-   - Set up a new podling.
-   - Add a Git repository.
-   - Set up svn/git-pubsub.
+The options are
 
+  - **Blocker**: a time-sensitive issue that is hindering a basic function of a project. (_example: "We just announced a new release, but SVN is not allowing us to upload or move the artifacts."_)
+  - **Critical**: a time-sensitive issue that is disrupting the project, but does not hinder basic functions. (_"Our website has been defaced."_)
+  - **Major**: this issue needs attention soon, but is not hindering basic functions. Most requests for new resources fall into this category. (_"Add a Git repository."_)
+  - **Minor**: this issue needs attention, but is not time-sensitive and does not hinder basic functions. (_"Fix a JavaScript error on our website."_)
+  - **Trivial**: this issue is minimal and has no time constraints. ( _"The copyright year on Infra web page bla.html is incorrect."_)
 
-- **Minor**: An issue that needs attention within a reasonable amount of time, but is not time-sensitive nor critical to a project's basic functionality or ongoing daily business. *Examples*:
-  - Retire a project's resources.
-  - Fix a JavaScript error on a web site.
-  - Add GitHub integration for a repository.
+#### Component/s
+Select one or more components that this issue or request relates to. If you cannot figure out what to pick, select "Other/misc".
 
+#### Fix Version/s
+This an optional field, useful if your issue concerns a specific Infra tool or service and you know the version you are using.
 
-- **Trivial**: A task that should be solved, but has minimal or no constraints in time
-  - *Example*: Fix the copyright year on a web site.
+#### Assignee
+If you specify someone here, that person receives an alert about the issue. You can accept the default (Automatic) to put the issue in the queue for the Infra team.
+
+#### Environment
+This is an optional field where you can describe your operating system, software platform and/or hardware specifications if they are relevant to the bug, task, or feature request.
+
+#### Description
+Provide the juicy details here. For example, for a bug report, Infra needs to know how to reproduce the thing you ran into. Describe what you were doing ("I was logged in to bla.html using Firefox"), what you wanted to do ("I wanted to do xxx"), what you expected to happen, and what you actually experienced.
+
+For a feature request, it helps if you can not only describe the feature, but explain why the project needs it.
+
+#### Other fields
+There are many more optional fields that you can probably skip.
+
+When you have completed entering the useful information, click **Create** to create the ticket.
