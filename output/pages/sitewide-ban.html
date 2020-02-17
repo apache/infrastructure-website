@@ -87,7 +87,26 @@ Site-wide ban policy        </a>
           <h2>
               Site-wide ban policy
           </h2>
-              <p>_text from a page on apache.org/dev will move here</p>
+              <p>Infra has a very specific set of rules in place to prevent abuse of Apache services. If you break one of these rules, your IP will be banned from all services across the ASF.</p>
+<p>The following actions are <strong>not allowed</strong> on ASF services:</p>
+<ul>
+<li>Slow Loris-like abuse (too many request timeouts).</li>
+<li>More than 200,000 pageviews on any box per 12 hours.</li>
+<li>More than 100,000 JIRA requests per 24 hours.</li>
+<li>More than 10,000 download page views per 24 hours.</li>
+<li>More than 10,000 visits to our backup dist/ area on <code>www.apache.org</code> per 24 hours.</li>
+<li>More than 50 Gibibytes traffic per 12 hours (does not include mirrors, but does include <code>archive.apache.org</code>!).</li>
+<li>More than 50,000 visits to archive.apache.org per 12 hours.</li>
+<li>More than 100 mebibits/second sustained traffic for an hour or more.</li>
+<li>More than 2,000 viewvc requests per 24 hours.</li>
+<li>More than 100,000 Confluence (<code>cwiki.apache.org</code>) page visits per 24 hours.</li>
+<li>More than 10,000 Bugzilla requests per 24 hours.</li>
+<li>More than 1,000 Gitbox requests per hour.</li>
+<li>More than 75,000 <code>repository.apache.org</code> visits per 24 hours.</li>
+<li>More than 100,000 <code>builds.apache.org</code> visits per 12 hours.</li>
+<li>More than 2,500 code 429 (rate-limited) responses not respected per 12 hours. Services like Gitbox, Jira, Confluence, and Bugzilla have rate limits imposed. Abusing these services will result in a <strong>429 HTTP</strong> response code. Not respecting the HTTP response may result in a permanent ban.</li>
+</ul>
+<p>If you think we banned your IP address by mistake, or if you have been banned but have an explanation why we should bend the rules for your specific case (for instance, if you have a NAT IP address that a lot of people use), contact us at <code>users@infra.apache.org</code> or through the &quot;asfinfra&quot; <a href="https://the-asf.slack.com/" target="_blank">Slack channel</a>. We will consider leniency and whitelisting on a case-by-case basis.</p>
 
         </div>
       </div>
