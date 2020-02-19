@@ -1,4 +1,4 @@
-Mail Rejection Policy
+Title: Mail Rejection Policy
 
 The apache.org MX servers reject messages under the following circumstances:
 
