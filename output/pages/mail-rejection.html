@@ -86,7 +86,9 @@ Mail Rejection Policy        </a>
           <h2>
               Mail Rejection Policy
           </h2>
-              <p>The apache.org MX servers reject messages under the following circumstances:</p>
+              <p>People emailing ASF addresses sometimes see this rejection message:</p>
+<p><code>_550 5.7.23 Recipient address rejected: Message rejected due to: Receiver policy for SPF Softfail_</code></p>
+<p>The apache.org MX servers reject messages under the following circumstances:</p>
 <ul>
 <li>SPF (Sender Policy Framework) hard fail for domains which have it configured (-all)</li>
 <li>SPF hard fail for major spam targets despite ~all (gmail.com, yahoo.com)</li>
