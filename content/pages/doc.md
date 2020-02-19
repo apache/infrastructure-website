@@ -8,7 +8,9 @@ An extensive infrastructure overview for developers is <a href="https://www.apac
 
 ### Policies
 
-- The Apache Infrastructure Team (Infra) operates under the <a href="https://www.apache.org/foundation/policies/conduct.html" target="_blank">ASF Code of Conduct</a>.
+The Apache Infrastructure Team (Infra) operates under the <a href="https://www.apache.org/foundation/policies/conduct.html" target="_blank">ASF Code of Conduct</a>.
+
+- [Mail rejection policy](mail-rejection.html)
 - [Site-wide ban policy](sitewide-ban.html)
 
 ### Guidelines
