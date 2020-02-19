@@ -1,5 +1,9 @@
 Title: Mail Rejection Policy
 
+People emailing ASF addresses sometimes see this rejection message: 
+
+``_550 5.7.23 Recipient address rejected: Message rejected due to: Receiver policy for SPF Softfail_``
+
 The apache.org MX servers reject messages under the following circumstances:
 
 - SPF (Sender Policy Framework) hard fail for domains which have it configured (-all)
