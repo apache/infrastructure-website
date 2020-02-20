@@ -13,13 +13,19 @@ The Apache Infrastructure Team (Infra) operates under the <a href="https://www.a
 - [Mail rejection policy](mail-rejection.html)
 - [Site-wide ban policy](sitewide-ban.html)
 
-### Guidelines
+### Guides and guidelines
+
+- [Creating a Jira ticket](jira-guidelines.html)
+
+#### PMC resources
 
 - [Project website guidelines](website-guidelines.html)
-- [Creating a Jira ticket](jira-guidelines.html)
+
+#### Committer resources
+
 
 ### Infra Wiki
 
-The <a href="https://cwiki.apache.org/confluence/display/INFRA/Documentation+Index" target="_blank">Infra Wiki</a> provides scripts, guidelines, how-to articles, and code samples. Most support the functions of the Infra team, but a great deal of material has guidance for project committers and PMCs.
+The <a href="https://cwiki.apache.org/confluence/display/INFRA/Documentation+Index" target="_blank">Infra Wiki</a> provides scripts, how-to articles, and code samples. Most support the functions of the Infra team, but a great deal of material has guidance for project committers and PMCs.
 
 You can also browse the complete <a href="https://cwiki.apache.org/" target="_blank" >ASF Wiki</a>.
