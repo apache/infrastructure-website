@@ -20,6 +20,7 @@ The Apache Infrastructure Team (Infra) operates under the <a href="https://www.a
 #### PMC resources
 
 - [Project website guidelines](website-guidelines.html)
+- [Managing project committers](managing-committers.html)
 
 #### Committer resources
 
