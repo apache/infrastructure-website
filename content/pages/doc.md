@@ -24,7 +24,7 @@ The Apache Infrastructure Team (Infra) operates under the <a href="https://www.a
 
 #### Committer resources
 
-_this material is coming soon_
+-  [Managing your Apache email address](committer-email.html)
 
 ### Infra Wiki
 
