@@ -12,6 +12,7 @@ The Apache Infrastructure Team (Infra) operates under the <a href="https://www.a
 
 - [Mail rejection policy](mail-rejection.html)
 - [Site-wide ban policy](sitewide-ban.html)
+- [Virtual machine for your project](vm-policy.html)
 
 ### Guides and guidelines
 
