@@ -17,7 +17,7 @@ One of Infra's goals is to empower ASF members, PMCs, and committers to do much 
 #### PMC tools
 
 - <a href="https://reporter.apache.org/" target="_blank">Reporter</a> provides actvitity statistics and other information about your project, and editing tools to help you write and submit your project's quarterly Board reports.
-- The <a href="https://translate.apache.org/" target="_blank">ASF Translation Service</a> provides the Pootle localization tool to help projects that want to provide documentation and user-interface text in multiple languages.
+- The <a href="https://translate.apache.org/" target="_blank">ASF Translation Service</a> provides the Pootle localization tool to help projects that want to provide documentation and user-interface text in multiple languages. *NOTE*: While several ASF projects continue to use Pootle, AFS is not approving new Pootle use. As of March, 2020, Infra is testing a replacement translation service.
 
 #### Version Control
 
