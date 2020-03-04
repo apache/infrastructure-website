@@ -6,6 +6,14 @@ pelican:
 staging:
   whoami: asf-break-test
 
+custom:
+  whoami: custombuild
+  target: customtarget
+  outputdir: output
+
+staging:
+  whoami: customtarget
+  profile: custom
 
 github:
   ghp_branch:    master
