@@ -6,10 +6,11 @@ pelican:
 staging:
   whoami: asf-break-test
 
-custom:
+custombuild:
   whoami: custombuild
   target: customtarget
   outputdir: output
+  buildscript: "bash -c /tmp/source/pelican_build.sh"
 
 staging:
   whoami: customtarget
