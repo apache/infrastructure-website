@@ -2,10 +2,8 @@ pelican:
   notify:         private@infra.apache.org
   autobuild:      true
   target:         asf-site
+  whoami:         master
   
-staging:
-  whoami: asf-break-test
-
 custombuild:
   whoami: custombuild
   target: customtarget
