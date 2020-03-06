@@ -12,7 +12,6 @@ The Apache Infrastructure Team (Infra) operates under the <a href="https://www.a
 
 - [Mail rejection policy](mail-rejection.html)
 - [Site-wide ban policy](sitewide-ban.html)
-- [Virtual machine for your project](vm-policy.html)
 
 ### Guides and guidelines
 
@@ -21,7 +20,9 @@ The Apache Infrastructure Team (Infra) operates under the <a href="https://www.a
 #### PMC resources
 
 - [Project website guidelines](website-guidelines.html)
+- [Project blog](project-blog.html)
 - [Managing project committers](managing-committers.html)
+- [Virtual machine for your project](vm-policy.html)
 
 #### Committer resources
 
