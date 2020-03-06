@@ -17,6 +17,7 @@ One of Infra's goals is to empower ASF members, PMCs, and committers to do much 
 #### PMC tools
 
 - <a href="https://reporter.apache.org/" target="_blank">Reporter</a> provides actvitity statistics and other information about your project, and editing tools to help you write and submit your project's quarterly Board reports.
+- You can create and run a [project blog](project-blog.html).
 - The <a href="https://translate.apache.org/" target="_blank">ASF Translation Service</a> provides the Pootle localization tool to help projects that want to provide documentation and user-interface text in multiple languages. *NOTE*: While several ASF projects continue to use Pootle, AFS is not approving new Pootle use. As of March, 2020, Infra is testing a replacement translation service.
 
 #### Version Control
@@ -62,11 +63,6 @@ Use the ASF <a href="https://repository.apache.org/" target="_blank">Nexus Repos
 #### Sharing Snippets
 
 <a href="https://paste.apache.org/" target="_blank">Paste</a> is a service that lets ASF members post code snippets or similar file extracts they want to share to illustrate a code issue or make available for reuse, usually with other project members. You can post content as plain text, or formatted for a number of coding and scripting languages.
-
-
-#### Blogs
-
-* [ASF Blog](http://blogs.apache.org)
 
 #### Logging
 
