@@ -6,17 +6,17 @@ The application that makes your blog possible is <a href="https://roller.apache.
 
 It is good practice to discuss the content of blog posts on the project's dev list before publishing.
 
-## Requesting a project blog ##
+### Requesting a project blog ###
 
 To request a blog, create a Jira ticket for Infra using _Blogs_ as its component name. Indicate the project name and the Apache ID of at least one initial blog user who will have Admin access and responsibilities. The Roller <a href="https://github.com/apache/roller/tree/roller-5.2.0/docs" target="_blank">help documentation</a> outlines user roles, and extensive details about working with Roller.
 
-## Getting editor access ##
+### Getting editor access ###
 
 The Admins you identify in the Jira ticket also have editor access to your new blog. They should be able to log in with their Apache IDs at <a href="https://blogs.apache.org/" target="_blank">blogs.apache.org</a>. Your project blog is at `blogs.apache.org/$project`, and the login link is at the bottom of the right column. The Admins can give other people editor or limited writing access.
 
 Your project PMC "owns" the blog and can choose who gets access to it.
 
-## Working with your blog ##
+### Working with your blog ###
 This is not a personal blog; it is part of the way your project presents itself to the world. The PMC should approve a plan that covers
 
 - Who is responsible for the blog. It will not write itself!
