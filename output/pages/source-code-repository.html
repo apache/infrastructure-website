@@ -193,8 +193,11 @@ remove old requires descriptions
 <ul>
 <li><strong>When should I use svn lock?</strong> Very rarely. Commits in subversion are transactional. This means that locks are almost always unnecessary. An oft-quoted use case is to prevent concurrent editing of a large, unmergeable binary document. However, for open development, good communication is preferable to locking even in this use case. A good, timely post to the list to let your fellow developers know that you're going to start editing that huge PDF is better than locking the file.</li>
 <li><strong>How often can I run a cron job that connects to the repository?</strong> Hourly is fine. Please do not use programs that poll the repository more frequently than hourly. People who run automated scripts that continuously poll the repository wind up getting their access denied, and that may impact other folks connecting through the same host. If you need to stay more in-sync than an hourly cron allows, subscribe your script to the relevant commit mailing list.</li>
-<li><strong>Next</strong></li>
+<li><strong>How do I mirror the whole SVN repository for an experiment?</strong>  First, ask yourself whether you really want the entire ASF repository Most people really want only a single project. In that case, just check out that source directory from the repo. If you really do want the entire ASF repository, don't use svnsync. Instead, start by looking <a href="httpa://svn-master.apache.org/dump/" target="_blank">here</a>. Use that to bootstrap your repo.</li>
+<li><strong>Why do I get a 403 error when I try to commit code?</strong> Run <code>svn info</code> and check that the URL starts with <code>https://</code>. If it starts with <code>http://</code>, run:</li>
 </ul>
+<p><code>$ svn switch --relocate http://svn.apache.org https://svn.apache.org</code></p>
+<p>If you still get 403 Forbidden errors, ask your PMC to double-check the authz file and LDAP/Unix group membership.</p>
 
         </div>
       </div>
