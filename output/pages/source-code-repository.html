@@ -140,6 +140,61 @@ $ svn commit --username your-name --password your-password \
 <p>copy the above svn-eol-style.txt file's contents into the end of the config editor that appears, and save the file.</p>
 <h3>SVN SSL server certificate</h3>
 <p>You can check the validity of the server certificate on the <a href="https://www.apache.org/dev/machines.html" target="_blank">Apache host keys listing</a>.</p>
+<h3>Typical SVN error messages</h3>
+<p><strong>Error validating server certificate</strong></p>
+<pre><code class="language-Error"> - The certificate is not issued by a trusted authority. Use the
+   fingerprint to validate the certificate manually!
+Certificate information:
+ - Hostname: *.apache.org
+ - Valid: from Apr 20 00:00:00 2017 GMT until July 20 23:59:59 2019 GMT
+ - Issuer: SSL.com
+ - SHA-1 Fingerprint 2D:97:67:D9:2E:20:EE:07:3D:26:DA:97:A6:43:36:5F:71:8E:94:19
+(R)eject, accept (t)emporarily or accept (p)ermanently?
+</code></pre>
+<p>Check the fingerprint against the list at the link above for server certificates.</p>
+<p><strong>No such revision</strong></p>
+<p>If you get an error like</p>
+<p><code>svn: No such revision 765287</code></p>
+<p>This may be because of a short lag in the synchronization between Subversion mirrors, and can occur if multiple commits run in quick succession. This error usually happens if you are located in Europe, or are explicitly using the European mirror.</p>
+<p>Wait for 10 seconds and repeat the command, and you should have success.</p>
+<p><em>Note</em> that this error can also occur when running <code>mvn release:prepare</code>. The mvn release plugin has a special property to handle this situation: <a href="http://maven.apache.org/maven-release/maven-release-plugin/prepare-mojo.html#waitBeforeTagging" target="_blank">waitBeforeTagging</a>.</p>
+<p><strong>Not the latest baseline</strong></p>
+<p>If you get an error like this:</p>
+<pre><code class="language-svn:">svn: The specified baseline is not the latest baseline, so it may not be
+checked out.
+</code></pre>
+<p>This may be because of a short lag in the synchronization between Subversion mirrors, and can occur if multiple commits run in quick succession. This error usually happens if you are located in Europe, or are explicitly using the European mirror.</p>
+<p>Wait for 10 seconds and repeat the command, and you should have success.</p>
+<p><strong>Compressed stream invalid</strong></p>
+<p>This error</p>
+<p><strong>Problems using date revisions</strong></p>
+<p>If you are using a date revision such as <code>-r{2004-09-12}:{2004-08-12}</code> and not getting any or all of the revisions you expected, this is a known problem specific to the ASF repository.</p>
+<p>Unfortunately, there is nothing that can be done to improve this situation, so you must use a workaround. You can use <code>svn log</code> or ViewVC to locate the actual revision number that is first after the date you desire, and substitute that into your <code>-r</code> argument to the svn command.</p>
+<p>For example, consider the desired command:</p>
+<p><code>$ svn diff -rHEAD:{2005-01-01}</code></p>
+<p>While this produces no results, running <code>svn log</code> alone produces a result like this:</p>
+<pre><code>------------------------------------------------------------------------
+r124032 | aheritier | 2005-01-04 09:58:16 +1100 (Tue, 04 Jan 2005) | 1 line
+
+Switch to subversion
+------------------------------------------------------------------------
+r123911 | brett | 2005-01-03 09:48:57 +1100 (Mon, 03 Jan 2005) | 1 line
+
+remove nagoya references
+------------------------------------------------------------------------
+r116173 | brett | 2004-10-23 22:11:51 +1000 (Sat, 23 Oct 2004) | 2 lines
+
+remove old requires descriptions
+</code></pre>
+<p>So try the command:</p>
+<p><code>$ svn diff -rHEAD:123911</code></p>
+<p>This problem crops up because the order of the revisions is not identical to the order of dates in the repository. This is a side effect of loading CVS repositories with history including dates prior to the earliest date in the Subversion repository.</p>
+<h3>SVN FAQs</h3>
+<ul>
+<li><strong>When should I use svn lock?</strong> Very rarely. Commits in subversion are transactional. This means that locks are almost always unnecessary. An oft-quoted use case is to prevent concurrent editing of a large, unmergeable binary document. However, for open development, good communication is preferable to locking even in this use case. A good, timely post to the list to let your fellow developers know that you're going to start editing that huge PDF is better than locking the file.</li>
+<li><strong>How often can I run a cron job that connects to the repository?</strong> Hourly is fine. Please do not use programs that poll the repository more frequently than hourly. People who run automated scripts that continuously poll the repository wind up getting their access denied, and that may impact other folks connecting through the same host. If you need to stay more in-sync than an hourly cron allows, subscribe your script to the relevant commit mailing list.</li>
+<li><strong>Next</strong></li>
+</ul>
 
         </div>
       </div>
