@@ -1,7 +1,7 @@
 Title: Service Level Agreement (SLA)
 
 
-For current status, see http://status.apache.org/ and SLA graphs at http://status.apache.org/sla/
+For current status, see http://status.apache.org/ and SLA graphs at http://www.apache.org/uptime/
 
 We divide Infra-provided services into four groups:
 
