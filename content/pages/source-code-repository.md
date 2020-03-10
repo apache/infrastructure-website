@@ -61,8 +61,92 @@ Pay attention to the messages from your svn client when you do 'svn commit'.
 copy the above svn-eol-style.txt file's contents into the end of the config editor that appears, and save the file.
 
 ### SVN SSL server certificate ###
-
 You can check the validity of the server certificate on the <a href="https://www.apache.org/dev/machines.html" target="_blank">Apache host keys listing</a>.
+
+### Typical SVN error messages ###
+
+**Error validating server certificate**
+
+```Error validating server certificate for 'https://svn.apache.org:443':
+ - The certificate is not issued by a trusted authority. Use the
+   fingerprint to validate the certificate manually!
+Certificate information:
+ - Hostname: *.apache.org
+ - Valid: from Apr 20 00:00:00 2017 GMT until July 20 23:59:59 2019 GMT
+ - Issuer: SSL.com
+ - SHA-1 Fingerprint 2D:97:67:D9:2E:20:EE:07:3D:26:DA:97:A6:43:36:5F:71:8E:94:19
+(R)eject, accept (t)emporarily or accept (p)ermanently?
+```
+
+Check the fingerprint against the list at the link above for server certificates.
+
+**No such revision**
+
+If you get an error like
+
+`svn: No such revision 765287`
+
+This may be because of a short lag in the synchronization between Subversion mirrors, and can occur if multiple commits run in quick succession. This error usually happens if you are located in Europe, or are explicitly using the European mirror.
+
+Wait for 10 seconds and repeat the command, and you should have success.
+
+_Note_ that this error can also occur when running `mvn release:prepare`. The mvn release plugin has a special property to handle this situation: <a href="http://maven.apache.org/maven-release/maven-release-plugin/prepare-mojo.html#waitBeforeTagging" target="_blank">waitBeforeTagging</a>.
+
+**Not the latest baseline**
+
+If you get an error like this:
+
+```svn: Commit failed (details follow):
+svn: The specified baseline is not the latest baseline, so it may not be
+checked out.
+```
+
+This may be because of a short lag in the synchronization between Subversion mirrors, and can occur if multiple commits run in quick succession. This error usually happens if you are located in Europe, or are explicitly using the European mirror.
+
+Wait for 10 seconds and repeat the command, and you should have success.
+
+**Compressed stream invalid**
+
+This error
+
+**Problems using date revisions**
+
+If you are using a date revision such as `-r{2004-09-12}:{2004-08-12}` and not getting any or all of the revisions you expected, this is a known problem specific to the ASF repository.
+
+Unfortunately, there is nothing that can be done to improve this situation, so you must use a workaround. You can use `svn log` or ViewVC to locate the actual revision number that is first after the date you desire, and substitute that into your `-r` argument to the svn command.
+
+For example, consider the desired command:
+
+`$ svn diff -rHEAD:{2005-01-01}`
+
+While this produces no results, running `svn log` alone produces a result like this:
+
+```
+------------------------------------------------------------------------
+r124032 | aheritier | 2005-01-04 09:58:16 +1100 (Tue, 04 Jan 2005) | 1 line
+
+Switch to subversion
+------------------------------------------------------------------------
+r123911 | brett | 2005-01-03 09:48:57 +1100 (Mon, 03 Jan 2005) | 1 line
+
+remove nagoya references
+------------------------------------------------------------------------
+r116173 | brett | 2004-10-23 22:11:51 +1000 (Sat, 23 Oct 2004) | 2 lines
+
+remove old requires descriptions
+```
+
+So try the command:
+
+`$ svn diff -rHEAD:123911`
+
+This problem crops up because the order of the revisions is not identical to the order of dates in the repository. This is a side effect of loading CVS repositories with history including dates prior to the earliest date in the Subversion repository.
+
+### SVN FAQs ###
+
+- **When should I use svn lock?** Very rarely. Commits in subversion are transactional. This means that locks are almost always unnecessary. An oft-quoted use case is to prevent concurrent editing of a large, unmergeable binary document. However, for open development, good communication is preferable to locking even in this use case. A good, timely post to the list to let your fellow developers know that you're going to start editing that huge PDF is better than locking the file. 
+- **How often can I run a cron job that connects to the repository?** Hourly is fine. Please do not use programs that poll the repository more frequently than hourly. People who run automated scripts that continuously poll the repository wind up getting their access denied, and that may impact other folks connecting through the same host. If you need to stay more in-sync than an hourly cron allows, subscribe your script to the relevant commit mailing list.
+- **Next**
 
 
 
