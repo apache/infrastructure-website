@@ -22,7 +22,7 @@ One of Infra's goals is to empower ASF members, PMCs, and committers to do much 
 
 #### Version Control
 
-Apache provides, and Infra maintains, code repositories that Apache projects can use to keep their project code safe, accessible to team members, and under version control.
+Apache provides, and Infra maintains, [code repositories](source-code-repository.html) that Apache projects can use to keep their project code safe, accessible to team members, and under version control.
 
 * [GitBox](https://gitbox.apache.org)
 * [GitHub](https://github.com/apache/)
