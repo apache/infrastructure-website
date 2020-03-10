@@ -24,10 +24,6 @@ One of Infra's goals is to empower ASF members, PMCs, and committers to do much 
 
 Apache provides, and Infra maintains, [code repositories](source-code-repository.html) that Apache projects can use to keep their project code safe, accessible to team members, and under version control.
 
-* [GitBox](https://gitbox.apache.org)
-* [GitHub](https://github.com/apache/)
-* [Subversion](https://svn.apache.org/viewvc)
-
 #### Bug-tracking and feature requests
 
 Projects can use either of these bug-tracking  and feature request tools:
