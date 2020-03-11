@@ -36,3 +36,25 @@ Many projects have dependencies on non-Apache components. For an Apache release 
 
 ## Signing release artifacts ##
 
+The files that make up an Apache release always have accompanied by cryptographic signatures. This allows users to ensure that the files have not been tampered with since they were created. The mechanics of signing depend on the project's build technology. Infra strongly recommends that projects set up automated infrastructure to sign the files to simplify the work. Generally, projects set up their build system so that the same process that creates the files for a release also signs them.
+
+The process of setting up to sign the code is somewhat complicated, and it is described on the [release signing](release-signing.html) page. If you plan to serve as a release manager, you should generate a key and publish it well in advance of creating a release.
+
+## Voting whether to approve the release ##
+
+A binding release vote of the PMC is the critical gating step in the release process. Without such a vote, the release is just a set of files prepared by an individual. After such a vote, it is a formal offering of the ASF, backed by the "full faith and credit" of the Foundation.
+
+## Distribution ##
+
+The Apache infrastructure _must_ be the primary source for all artifacts officially released by the ASF.
+
+Infra maintains the Apache release distribution infrastructure, which has three parts:
+
+- the mirrored directories on `downloads.apache.org`
+- previous releases on `archive.apache.org`
+- Maven repository on `repository.apache.org`
+
+### Normal distribution on the Apache downloads site ###
+
+_coming soon_
+
