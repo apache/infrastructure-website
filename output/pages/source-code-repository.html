@@ -170,8 +170,6 @@ checked out.
 </code></pre>
 <p>This may be because of a short lag in the synchronization between Subversion mirrors, and can occur if multiple commits run in quick succession. This error usually happens if you are located in Europe, or are explicitly using the European mirror.</p>
 <p>Wait for 10 seconds and repeat the command, and you should have success.</p>
-<p><strong>Compressed stream invalid</strong></p>
-<p>This error</p>
 <p><strong>Problems using date revisions</strong></p>
 <p>If you are using a date revision such as <code>-r{2004-09-12}:{2004-08-12}</code> and not getting any or all of the revisions you expected, this is a known problem specific to the ASF repository.</p>
 <p>Unfortunately, there is nothing that can be done to improve this situation, so you must use a workaround. You can use <code>svn log</code> or ViewVC to locate the actual revision number that is first after the date you desire, and substitute that into your <code>-r</code> argument to the svn command.</p>
