@@ -110,10 +110,6 @@ This may be because of a short lag in the synchronization between Subversion mir
 
 Wait for 10 seconds and repeat the command, and you should have success.
 
-**Compressed stream invalid**
-
-This error
-
 **Problems using date revisions**
 
 If you are using a date revision such as `-r{2004-09-12}:{2004-08-12}` and not getting any or all of the revisions you expected, this is a known problem specific to the ASF repository.
