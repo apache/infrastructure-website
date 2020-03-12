@@ -10,7 +10,7 @@ Currently, the service streams the following events:
 * Pull Requests and Issues from GitHub
 * Staging and publishing notifications sent via our <a href="https://s.apache.org/asfyaml" target="_blank">.asf.yaml</a> offering.
 
-Events are delivered as JSON objects in a <a href="https://en.wikipedia.org/wiki/Chunked_transfer_encoding" target="_blank">chunked response stream</a>), with each new chunk being either an event payload or a keep-alive ping. 
+Events are delivered as JSON objects in a <a href="https://en.wikipedia.org/wiki/Chunked_transfer_encoding" target="_blank">chunked response stream</a>, with each new chunk being either an event payload or a keep-alive ping. 
 
 ## How to subscribe
 Subscribers can pick one or multiple topics to subscribe to, with more specific subscriptions getting fewer, but tailored event payloads. Construct subscriptions in the form of: `http://pubsub.apache.org:2069/topics/go/here`, and separate the topics you want to subscribfe to with forward slashes. 
