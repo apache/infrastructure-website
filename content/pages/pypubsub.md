@@ -1,6 +1,6 @@
-Title: PyPubSub at the Apache Software Foundation
+Title: Subscribe to Apache Software Foundation infrastructure events
 
-The ASF employs a plain-text publisher/subscriber service called PyPubSub at `pubsub.apache.org:2069`, which lists most events that happen within the Foundation's infrastructure.
+The ASF employs a plain-text publisher/subscriber service called **PyPubSub** at `pubsub.apache.org:2069`, which lists most events that happen within the Foundation's infrastructure.
 
 Currently, the service streams the following events:
 
@@ -63,7 +63,7 @@ An example of a real event payload, in this case a git commit, could be (emails 
 Payloads vary depending on what they represent, so check both what sub-objects are present in the payload and the `pubsub_path` variable, which will show the full payload event path and explain which type is being sent.
 
 ## Try it yourself
-To try it out and take a look at the event stream, just use <a href="https://en.wikipedia.org/wiki/CURL" targe"_blank">cURL</a> in your terminal:
+To try it out and take a look at the event stream, just use <a href="https://en.wikipedia.org/wiki/CURL" target"_blank">cURL</a> in your terminal:
 ~~~
 curl http://pubsub.apache.org:2069/git/commit
 ~~~
