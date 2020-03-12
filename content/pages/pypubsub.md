@@ -41,13 +41,14 @@ Pings are simple objects like this:
 {"stillalive": 1583973410.9620552}
 ~~~
 
-An example of a real event payload, in this case a git commit, could be:
+An example of a real event payload, in this case a git commit, could be 
+(emails redacted in this example):
 
 ~~~
 {
 	"commit": {
 		"body": "[maven-release-plugin] prepare for next development iteration\n",
-		"committer": "sblackmon <sblackmon@apache.org>",
+		"committer": "sblackmon <s...@apache.org>",
 		"hash": "8e6f956",
 		"log": "[maven-release-plugin] prepare for next development iteration",
 		"repository": "git",
@@ -61,7 +62,7 @@ An example of a real event payload, in this case a git commit, could be:
 		"commited": "Wed Mar 11 19:25:06 2020 -0500",
 		"subject": "[maven-release-plugin] prepare for next development iteration",
 		"ref": "refs/heads/master",
-		"email": "sblackmon@apache.org",
+		"email": "s...@apache.org",
 		"authored": "Wed Mar 11 19:25:06 2020 -0500",
 		"ref_names": ""
 	},
