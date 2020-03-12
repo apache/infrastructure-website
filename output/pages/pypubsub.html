@@ -125,11 +125,12 @@ Only events that match all of the subscribers topics will be returned.</p>
 <p>Pings are simple objects like this:</p>
 <pre><code>{&quot;stillalive&quot;: 1583973410.9620552}
 </code></pre>
-<p>An example of a real event payload, in this case a git commit, could be:</p>
+<p>An example of a real event payload, in this case a git commit, could be
+(emails redacted in this example):</p>
 <pre><code>{
 	&quot;commit&quot;: {
 		&quot;body&quot;: &quot;[maven-release-plugin] prepare for next development iteration\n&quot;,
-		&quot;committer&quot;: &quot;sblackmon &lt;sblackmon@apache.org&gt;&quot;,
+		&quot;committer&quot;: &quot;sblackmon &lt;s...@apache.org&gt;&quot;,
 		&quot;hash&quot;: &quot;8e6f956&quot;,
 		&quot;log&quot;: &quot;[maven-release-plugin] prepare for next development iteration&quot;,
 		&quot;repository&quot;: &quot;git&quot;,
@@ -143,7 +144,7 @@ Only events that match all of the subscribers topics will be returned.</p>
 		&quot;commited&quot;: &quot;Wed Mar 11 19:25:06 2020 -0500&quot;,
 		&quot;subject&quot;: &quot;[maven-release-plugin] prepare for next development iteration&quot;,
 		&quot;ref&quot;: &quot;refs/heads/master&quot;,
-		&quot;email&quot;: &quot;sblackmon@apache.org&quot;,
+		&quot;email&quot;: &quot;s...@apache.org&quot;,
 		&quot;authored&quot;: &quot;Wed Mar 11 19:25:06 2020 -0500&quot;,
 		&quot;ref_names&quot;: &quot;&quot;
 	},
