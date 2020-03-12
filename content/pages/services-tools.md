@@ -11,6 +11,9 @@ One of Infra's goals is to empower ASF members, PMCs, and committers to do much 
   * Synchronize Git repositories.
   * Use the OTP Calculator to generate passwords for the OTP or S/Key one-time-password systems (generally, PMC members).
   
+### Getting notices of infrastructure events
+You can subscribe to notices of infrastructure events that you want to know about, ranging from Subversion commits to emails to specific lists. [Learn more here](pypubsub.html).
+  
   
 ### Tools for ASF projects
 
