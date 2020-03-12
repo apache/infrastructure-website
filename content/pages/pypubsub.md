@@ -84,3 +84,8 @@ curl http://pubsub.apache.org:2069/git/commit
 ## Want to know more? Have questions?
 To learn more, or just get some questions answered, please contact us at users@infra.apache.org, 
 and we'll try our best to help you out.
+
+## Acknowledgements
+PyPubSub is based on [SvnPubSub](https://paul.querna.org/articles/2010/10/22/evolution-of-apaches-websites/) 
+and [gitPubSub](https://www.apache.org/dev/gitpubsub.html). We wish to thank the Subversion project for 
+building the precursor to this service.
