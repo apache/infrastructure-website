@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PyPubSub at the Apache Software Foundation - Apache Infrastructure</title>
+    <title>Subscribe to Apache Software Foundation infrastructure events - Apache Infrastructure</title>
     <link rel="stylesheet" href="/theme/css/foundation.css">
     <link rel="stylesheet" href="/theme/css/app.css">
     <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
@@ -81,7 +81,7 @@
         <a href="/">Home</a>
         <i class="fa fa-angle-double-right"></i>
         <a href="/pypubsub.html">
-PyPubSub at the Apache Software Foundation        </a>
+Subscribe to Apache Software Foundation infrastructure events        </a>
       </div>
     </div>
     
@@ -91,9 +91,9 @@ PyPubSub at the Apache Software Foundation        </a>
       <div class="large-12 columns">
         <div class="callout">
           <h2>
-              PyPubSub at the Apache Software Foundation
+              Subscribe to Apache Software Foundation infrastructure events
           </h2>
-              <p>The ASF employs a plain-text publisher/subscriber service called PyPubSub at <code>pubsub.apache.org:2069</code>, which lists most events that happen within the Foundation's infrastructure.</p>
+              <p>The ASF employs a plain-text publisher/subscriber service called <strong>PyPubSub</strong> at <code>pubsub.apache.org:2069</code>, which lists most events that happen within the Foundation's infrastructure.</p>
 <p>Currently, the service streams the following events:</p>
 <ul>
 <li>Subversion commits</li>
@@ -145,7 +145,7 @@ PyPubSub at the Apache Software Foundation        </a>
 </code></pre>
 <p>Payloads vary depending on what they represent, so check both what sub-objects are present in the payload and the <code>pubsub_path</code> variable, which will show the full payload event path and explain which type is being sent.</p>
 <h2>Try it yourself</h2>
-<p>To try it out and take a look at the event stream, just use &lt;a href=&quot;<a href="https://en.wikipedia.org/wiki/CURL">https://en.wikipedia.org/wiki/CURL</a>&quot; targe&quot;_blank&quot;&gt;cURL</a> in your terminal:</p>
+<p>To try it out and take a look at the event stream, just use &lt;a href=&quot;<a href="https://en.wikipedia.org/wiki/CURL">https://en.wikipedia.org/wiki/CURL</a>&quot; target&quot;_blank&quot;&gt;cURL</a> in your terminal:</p>
 <pre><code>curl http://pubsub.apache.org:2069/git/commit
 </code></pre>
 <h2>Want to know more? Have questions?</h2>
