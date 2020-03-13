@@ -17,3 +17,8 @@ General inquiries and questions should go to one of our user mailing lists:
 | users@infra.apache.org | users-subscribe@infra.apache.org | 
 | commits@infra.apache.org | commits-subscribe@infra.apache.org | 
 | issues@infra.apache.org | issues-subscribe@infra.apache.org | 
+
+### What we need to know ###
+Here's a guide to what to tell us so we can respond to your request quickly and appropriately.
+
+_coming soon; moving from `apache.org/dev/infra-contact#what-we-need-to-know`_
