@@ -56,5 +56,37 @@ Infra maintains the Apache release distribution infrastructure, which has three 
 
 ### Normal distribution on the Apache downloads site ###
 
-_coming soon_
+See the [Release Distribution Policy](release-distribution-policy.html) for specific technical requirements.
+
+Each Apache TLP has a `release/TLP-name` directory in the distribution Subversion repository at `https://dist.apache.org/repos/dist/`. Once a release vote passes, the release manager adds the release artifacts (plus signature and hash files) to this location. Each project is responsible for the structure of its directory. [PyPubSub](pypubsub.html] pushes the contents of these directories to `http://downloads.apache.org/`. **Note** that only the most recent version of each supported release line should be stored here.
+
+The contents of the dist/release/ directories are published to the 3rd party mirrors using rsync.
+
+  - **Do not** use the SVN directories under `https://dist.apache.org/repos/dist/` to link to product releases. Projects must use the ASF mirror system. For details, see [Release Download Pages](release-download-pages.html) for further details.
+
+  - A signature (`.asc`) can become invalid because the signing key is revoked or has expired. Make sure all current signatures for your project in `downloads.apache.org/` are valid.
+
+  - Hash, signature and KEYS files are not propagated to the mirrors; these files are excluded:
+
+`*.md5 *.sha *.sha1 *.sha256 *.sha512 *.asc *.sig KEYS *.mds MD5SUM SHA*SUM`
+
+The current list is <a href="https://github.com/apache/infrastructure-puppet/blob/deployment/modules/rsync_mirror/manifests/init.pp" target="_blank">here</a>.
+
+  - **Do not** publish `.md5` files because MD5 is broken.
+  - **Do not** publish `.sig` files. Make sure your `.asc`s are plain-text files.
+  - The download page should use `HTTPS:` rather than plain `HTTP:` for linking to KEYS, sigs and hashes (for example: `https://downloads.apache.org/httpd/KEYS`).
+
+  - In addition to the checksum files required in the [Release Distribution Policy](release-distribution-policy.html), the project can provide an `MD5SUM` or `SHA*SUM`. `MD5SUM` and `SHA*SUM` must look like the output of `md5sum(1)`: lines containing a checksum, followed by a filename ; use only plain file names (no slashes). Do not use any other file names for such files.
+
+If the release directory does not yet exist, please create a Jira ticket for INFRA with the required information (see the [contact](contact.html) page).
+
+**Note**: By default, only PMC/PPMC members have write access to the `dist/release` directories. The `dist/dev` directories by default allow write access by committers.
+
+### Maven distribution ###
+See [Publishing Maven releases](maven-releases.html)
+
+## FAQs ##
+
+  - **I published a release. Why don't I see it on XYZ yet?** Apache uses [PyPubSub](pypubsub.html) internally and rsync mirrroring externally. Files committed to the Subversion repository at `https://dist.apache.org/repos/dist/` are automatically copied, using PyPubSub, to `www.apache.org`. Then the external mirrors pick up the files from `www.apache.org`. It may take up to 24 hours or more for a newly published release to be sync'd to all mirrors. Mirrors are required to check for new releases at least once a day, but most will check for updates more frequently.
+  - **How do I archive an old release?** `downloads.apache.org` is automatically archived. Therefore, a copy of every official release exists in the archives. Just delete the copy of the release that is in your project's dist directory. Remember to update any links from the download page related to that release.
 
