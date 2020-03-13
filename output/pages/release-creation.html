@@ -128,7 +128,45 @@ Release Creation Process        </a>
 <li>Maven repository on <code>repository.apache.org</code></li>
 </ul>
 <h3>Normal distribution on the Apache downloads site</h3>
-<p><em>coming soon</em></p>
+<p>See the <a href="release-distribution-policy.html">Release Distribution Policy</a> for specific technical requirements.</p>
+<p>Each Apache TLP has a <code>release/TLP-name</code> directory in the distribution Subversion repository at <code>https://dist.apache.org/repos/dist/</code>. Once a release vote passes, the release manager adds the release artifacts (plus signature and hash files) to this location. Each project is responsible for the structure of its directory. [PyPubSub](pypubsub.html] pushes the contents of these directories to <code>http://downloads.apache.org/</code>. <strong>Note</strong> that only the most recent version of each supported release line should be stored here.</p>
+<p>The contents of the dist/release/ directories are published to the 3rd party mirrors using rsync.</p>
+<ul>
+<li>
+<p><strong>Do not</strong> use the SVN directories under <code>https://dist.apache.org/repos/dist/</code> to link to product releases. Projects must use the ASF mirror system. For details, see <a href="release-download-pages.html">Release Download Pages</a> for further details.</p>
+</li>
+<li>
+<p>A signature (<code>.asc</code>) can become invalid because the signing key is revoked or has expired. Make sure all current signatures for your project in <code>downloads.apache.org/</code> are valid.</p>
+</li>
+<li>
+<p>Hash, signature and KEYS files are not propagated to the mirrors; these files are excluded:</p>
+</li>
+</ul>
+<p><code>*.md5 *.sha *.sha1 *.sha256 *.sha512 *.asc *.sig KEYS *.mds MD5SUM SHA*SUM</code></p>
+<p>The current list is <a href="https://github.com/apache/infrastructure-puppet/blob/deployment/modules/rsync_mirror/manifests/init.pp" target="_blank">here</a>.</p>
+<ul>
+<li>
+<p><strong>Do not</strong> publish <code>.md5</code> files because MD5 is broken.</p>
+</li>
+<li>
+<p><strong>Do not</strong> publish <code>.sig</code> files. Make sure your <code>.asc</code>s are plain-text files.</p>
+</li>
+<li>
+<p>The download page should use <code>HTTPS:</code> rather than plain <code>HTTP:</code> for linking to KEYS, sigs and hashes (for example: <code>https://downloads.apache.org/httpd/KEYS</code>).</p>
+</li>
+<li>
+<p>In addition to the checksum files required in the <a href="release-distribution-policy.html">Release Distribution Policy</a>, the project can provide an <code>MD5SUM</code> or <code>SHA*SUM</code>. <code>MD5SUM</code> and <code>SHA*SUM</code> must look like the output of <code>md5sum(1)</code>: lines containing a checksum, followed by a filename ; use only plain file names (no slashes). Do not use any other file names for such files.</p>
+</li>
+</ul>
+<p>If the release directory does not yet exist, please create a Jira ticket for INFRA with the required information (see the <a href="contact.html">contact</a> page).</p>
+<p><strong>Note</strong>: By default, only PMC/PPMC members have write access to the <code>dist/release</code> directories. The <code>dist/dev</code> directories by default allow write access by committers.</p>
+<h3>Maven distribution</h3>
+<p>See <a href="maven-releases.html">Publishing Maven releases</a></p>
+<h2>FAQs</h2>
+<ul>
+<li><strong>I published a release. Why don't I see it on XYZ yet?</strong> Apache uses <a href="pypubsub.html">PyPubSub</a> internally and rsync mirrroring externally. Files committed to the Subversion repository at <code>https://dist.apache.org/repos/dist/</code> are automatically copied, using PyPubSub, to <code>www.apache.org</code>. Then the external mirrors pick up the files from <code>www.apache.org</code>. It may take up to 24 hours or more for a newly published release to be sync'd to all mirrors. Mirrors are required to check for new releases at least once a day, but most will check for updates more frequently.</li>
+<li><strong>How do I archive an old release?</strong> <code>downloads.apache.org</code> is automatically archived. Therefore, a copy of every official release exists in the archives. Just delete the copy of the release that is in your project's dist directory. Remember to update any links from the download page related to that release.</li>
+</ul>
 
         </div>
       </div>
