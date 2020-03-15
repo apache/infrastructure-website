@@ -126,12 +126,63 @@ Publishing Maven Releases        </a>
 <p>This parent POM sets up the defaults so your <code>&lt;distributionManagement&gt;</code> section uses the correct release and snapshot repositories. Be sure to remove those from your POM so they inherit correctly. Keep the entry for deploying your site (if you use Maven to deploy your site). If you do, we suggest you use <code>apache.website</code> as the id to better match the settings below and to save the sanity of committers working on multiple projects.</p>
 <p>The POM also provides a default configuration to make sure that a correct source archive is created for your project. This is separate and in addition to the typical <code>-sources.jar</code> that is created.</p>
 <h3>Set up your development environment</h3>
-<p><em>moving information here from <code>https://www.apache.org/dev/publishing-maven-artifacts.html</code></em></p>
+<p>You must sign all artifacts with a key that is publicly verifiable. Follow the instructions here to get your keys created and environment set up.</p>
+<p><strong>Note</strong>: We recommend that you use <a href="https://maven.apache.org/guides/mini/guide-encryption.html" target="_blank">Maven's password encryption capabilities</a> for your passwords. <strong>Do not</strong> store your signing key in <code>settings.xml</code>.</p>
+<p>The <a href="https://cwiki.apache.org/confluence/display/INFRA/hiera-eyaml-gpg+How-To+Guide" target="_blank">gpg plugin</a> can prompt for the key (input is masked) or you can configure it to use an agent.</p>
+<pre><code>&lt;settings&gt;
+...
+  &lt;servers&gt;
+    &lt;!-- To publish a snapshot of some part of Maven --&gt;
+    &lt;server&gt;
+      &lt;id&gt;apache.snapshots.https&lt;/id&gt;
+      &lt;username&gt; &lt;!-- YOUR APACHE LDAP USERNAME --&gt; &lt;/username&gt;
+      &lt;password&gt; &lt;!-- YOUR APACHE LDAP PASSWORD (encrypted) --&gt; &lt;/password&gt;
+    &lt;/server&gt;
+    &lt;!-- To stage a release of some part of Maven --&gt;
+    &lt;server&gt;
+      &lt;id&gt;apache.releases.https&lt;/id&gt;
+      &lt;username&gt; &lt;!-- YOUR APACHE LDAP USERNAME --&gt; &lt;/username&gt;
+      &lt;password&gt; &lt;!-- YOUR APACHE LDAP PASSWORD (encrypted) --&gt; &lt;/password&gt;
+    &lt;/server&gt;
+   ...
+  &lt;/servers&gt;
+&lt;/settings&gt;
+</code></pre>
+<h3>Test your settings</h3>
+<p>Try installing locally artifacts with activation apache-release profile:</p>
+<p><code>mvn clean install -Papache-release</code></p>
+<p>This will build artifacts and sources and sign them.</p>
+<h2>Staging your release</h2>
+<h3>1. Prepare your POMs</h3>
+<ol>
+<li>Make sure there are no dependencies on snapshots in the POMs to be released. However, the project you want to stage must be a SNAPSHOT version.</li>
+<li>Check that your POMs will not lose content when they are rewritten during the release process:</li>
+<li>Verify that all pom.xml files have an SCM definition.</li>
+<li>Do a dryRun release: <code>mvn release:prepare -DdryRun=true</code> You may also wish to pass <code>-DautoVersionSubmodules=true</code> as this will save you time if your project is multi-moduled.</li>
+<li>Diff the original file <code>pom.xml</code> with the one called <code>pom.xml.tag</code> to see if the license or any other info has been removed. This has been known to happen if the starting <code>&lt;project&gt;</code> tag is not on a single line. The only things that should be different between these files are the <code>&lt;version&gt;</code> and <code>&lt;scm&gt;</code> elements. Backport any other changes you find to the original <code>pom.xml</code> file and commit it before proceeding with the release.</li>
+</ol>
+<h3>2. Publish a snapshot</h3>
+<pre><code>mvn deploy
+...
+[INFO] [deploy:deploy]
+[INFO] Retrieving previous build number from apache.snapshots.https
+...
+</code></pre>
+<p><strong>Notes</strong></p>
+<ul>
+<li>If you experience an error like a <em>HTTP 401</em> during deployment, check your settings for the required server entries as outlined above.</li>
+<li>Be sure that the generated artifacts respect the <a href="https://www.apache.org/legal/release-policy.html#distribute-raw-artifact" target="_blank">Apache release rules</a>: NOTICE and LICENSE files should be present in the META-INF directory within the jar.</li>
+<li>Verify the deployment under the ASF &lt;a hre&quot;<a href="https://repository.apache.org/content/repositories/snapshots/">https://repository.apache.org/content/repositories/snapshots/</a>&quot; target=&quot;_blank&quot;&gt;Maven Snapshot repository</a>.</li>
+</ul>
 <p>possibly include these fragments:</p>
 <ul>
 <li>Don't try to publish <code>.sha256</code>, <code>.sha512</code> files yet; Nexus doesn't handle them (as of March 2018)
 = <code>.md5</code>s in <code>dist.apache.org/repos/dist/release/</code> must be removed manually.</li>
 </ul>
+<h3>3. Prepare the release</h3>
+<pre><code>mvn release:clean
+mvn release:prepare
+</code></pre>
 
         </div>
       </div>
