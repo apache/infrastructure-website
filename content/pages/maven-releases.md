@@ -47,12 +47,75 @@ The POM also provides a default configuration to make sure that a correct source
 
 ### Set up your development environment ###
 
+You must sign all artifacts with a key that is publicly verifiable. Follow the instructions here to get your keys created and environment set up.
 
+**Note**: We recommend that you use <a href="https://maven.apache.org/guides/mini/guide-encryption.html" target="_blank">Maven's password encryption capabilities</a> for your passwords. **Do not** store your signing key in `settings.xml`.
 
+The <a href="https://cwiki.apache.org/confluence/display/INFRA/hiera-eyaml-gpg+How-To+Guide" target="_blank">gpg plugin</a> can prompt for the key (input is masked) or you can configure it to use an agent.
 
-_moving information here from `https://www.apache.org/dev/publishing-maven-artifacts.html`_
+```
+<settings>
+...
+  <servers>
+    <!-- To publish a snapshot of some part of Maven -->
+    <server>
+      <id>apache.snapshots.https</id>
+      <username> <!-- YOUR APACHE LDAP USERNAME --> </username>
+      <password> <!-- YOUR APACHE LDAP PASSWORD (encrypted) --> </password>
+    </server>
+    <!-- To stage a release of some part of Maven -->
+    <server>
+      <id>apache.releases.https</id>
+      <username> <!-- YOUR APACHE LDAP USERNAME --> </username>
+      <password> <!-- YOUR APACHE LDAP PASSWORD (encrypted) --> </password>
+    </server>
+   ...
+  </servers>
+</settings>
+```
+
+### Test your settings ###
+
+Try installing locally artifacts with activation apache-release profile:
+
+`mvn clean install -Papache-release`
+
+This will build artifacts and sources and sign them.
+
+## Staging your release ##
+
+### 1. Prepare your POMs ###
+
+1. Make sure there are no dependencies on snapshots in the POMs to be released. However, the project you want to stage must be a SNAPSHOT version.
+2. Check that your POMs will not lose content when they are rewritten during the release process:
+3. Verify that all pom.xml files have an SCM definition.
+4. Do a dryRun release: `mvn release:prepare -DdryRun=true` You may also wish to pass `-DautoVersionSubmodules=true` as this will save you time if your project is multi-moduled.
+5. Diff the original file `pom.xml` with the one called `pom.xml.tag` to see if the license or any other info has been removed. This has been known to happen if the starting `<project>` tag is not on a single line. The only things that should be different between these files are the `<version>` and `<scm>` elements. Backport any other changes you find to the original `pom.xml` file and commit it before proceeding with the release.
+
+### 2. Publish a snapshot ###
+
+```
+mvn deploy
+...
+[INFO] [deploy:deploy]
+[INFO] Retrieving previous build number from apache.snapshots.https
+...
+```
+
+**Notes**
+
+  - If you experience an error like a _HTTP 401_ during deployment, check your settings for the required server entries as outlined above.
+  - Be sure that the generated artifacts respect the <a href="https://www.apache.org/legal/release-policy.html#distribute-raw-artifact" target="_blank">Apache release rules</a>: NOTICE and LICENSE files should be present in the META-INF directory within the jar.
+  - Verify the deployment under the ASF <a hre"https://repository.apache.org/content/repositories/snapshots/" target="_blank">Maven Snapshot repository</a>.
 
 possibly include these fragments:
 
   - Don't try to publish `.sha256`, `.sha512` files yet; Nexus doesn't handle them (as of March 2018)
   = `.md5`s in `dist.apache.org/repos/dist/release/` must be removed manually.
+
+### 3. Prepare the release ###
+```
+mvn release:clean
+mvn release:prepare
+```
+
