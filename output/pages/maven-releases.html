@@ -93,7 +93,40 @@ Publishing Maven Releases        </a>
           <h2>
               Publishing Maven Releases
           </h2>
-              <p><em>moving information here from <code>https://www.apache.org/dev/publishing-maven-artifacts.html</code></em></p>
+              <p>Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.</p>
+<p>this document describes how to release Maven artifacts. These are optional. Apache project <strong>must</strong> release all software packages through the ASF mirror system. See <a href="release-distribution-policy.html">Release distribution policy</a> for more details.</p>
+<p><strong>Note</strong> make sure you are using version 3.0.5 or newer of Maven. You can <a href="https://maven.apache.org/download.cgi" target="_blank">download</a> and install the latest version of Maven before continuing.</p>
+<h2>Setting up your project in the Nexus repository</h2>
+<p>The Nexus repository enforces security by constraining who can deploy or release a project's artifacts. Nexus maps which artifacts (usually by GroupId) your project produces. This is particularly helpful in preventing accidental releases of a project.</p>
+<p>Before a project can use the repository to release Maven artifacts, it must be configured in Nexus. This is generally a quick and easy process. To get set up, <a href="https://issues.apache.org/jira/secure/CreateIssueDetails!init.jspa?issuetype=3&priority=3&pid=10410&components=12312660&summary=Enable+Nexus+Access+For+[insert+project]&description=Project+URL:%0D%0DSVN+URL:%0D%0DMaven+Group+Ids:%0D%0DManaged+By+This+TLP+Project:" target="_blank">use this link</a> to create a Jira ticket with the following information:</p>
+<ul>
+<li><strong>Project URL</strong>: a link to your project page.</li>
+<li><strong>SVN URL</strong>: where you store your source code, in case Infra needs to look up more information.</li>
+<li><strong>Maven Group IDs</strong>: a list of the groupIDs for this project. They should all be subgroups of <code>org.apache</code>.</li>
+<li><strong>Managed By This TLP Project</strong>: if this is a subproject, list the TLP that is responsible. Subprojects usually don't have their own LDAP group, so we need the TLP LDAP group for permissions.</li>
+</ul>
+<p>If you have specific questions or concerns, please call them out in the ticket.</p>
+<p>Once you file the Jira ticket, Infra will do the following:</p>
+<ul>
+<li><strong>Set up the project in Nexus</strong>: We configure your groupIds in Nexus and link them to the appropriate LDAP group for authorization.</li>
+<li><strong>Move Existing Artifacts</strong>: To maintain the proper <code>maven-metadata.xml</code> files and prevent rsync conflicts in Central, we must move all your artifacts to the new repository. We will mark the folder in the old repository as read-only to prevent accidental deployments.</li>
+<li><strong>Check POMs</strong>: If your project is Maven-based, we will check your POM for any obvious problems.</li>
+</ul>
+<p>Further information about the POM and other Maven matters is <a href="https://maven.apache.org/pom/asf/" target="_blank">here</a>.</p>
+<h2>Adjusting your build to use the Maven repository</h2>
+<p>To use the Maven repository, follow these steps.</p>
+<h3>Inherit the Apache POM</h3>
+<p>Inherit the Apache Parent POM like this:</p>
+<pre><code>&lt;parent&gt;
+  &lt;groupId&gt;org.apache&lt;/groupId&gt;
+  &lt;artifactId&gt;apache&lt;/artifactId&gt;
+  &lt;version&gt;10&lt;/version&gt;
+&lt;/parent&gt;
+</code></pre>
+<p>This parent POM sets up the defaults so your <code>&lt;distributionManagement&gt;</code> section uses the correct release and snapshot repositories. Be sure to remove those from your POM so they inherit correctly. Keep the entry for deploying your site (if you use Maven to deploy your site). If you do, we suggest you use <code>apache.website</code> as the id to better match the settings below and to save the sanity of committers working on multiple projects.</p>
+<p>The POM also provides a default configuration to make sure that a correct source archive is created for your project. This is separate and in addition to the typical <code>-sources.jar</code> that is created.</p>
+<h3>Set up your development environment</h3>
+<p><em>moving information here from <code>https://www.apache.org/dev/publishing-maven-artifacts.html</code></em></p>
 <p>possibly include these fragments:</p>
 <ul>
 <li>Don't try to publish <code>.sha256</code>, <code>.sha512</code> files yet; Nexus doesn't handle them (as of March 2018)
