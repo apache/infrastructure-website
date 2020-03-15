@@ -219,10 +219,12 @@ Your artifacts should now exist in a new staging repository. See <a href="http:/
 
 Now you go call your vote. Based on the results you will either promote (yay!) or drop and restage the release. If you are an **incubating project**, don't forget the IPMC vote before promoting. The actual Vote process is project=specific, but if you're looking for some examples, the Maven project has thorough <a href="http://maven.apache.org/developers/release/maven-project-release-procedure.html" target="_blank">documentation on their voting process</a>.
 
-### Drop a repo ###
+### Drop a repository ###
 
 If you bungled the release or your vote failed, follow <a href="http://central.sonatype.org/pages/releasing-the-deployment.html#close-and-drop-or-release-your-staging-repository" target="_blank">these instructions</a> to drop your repo. _Don't forget to roll back any SCM changes_.
 
-### Promote a repo ###
+### Promote a repository ###
+
+Congratulations, your vote was successful. The last step is to <a href="http://central.sonatype.org/pages/releasing-the-deployment.html#close-and-drop-or-release-your-staging-repository" target="_blank">promote the artifacts</a> to the release repository where they will get picked up by Central.
 
 
