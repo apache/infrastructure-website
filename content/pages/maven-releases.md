@@ -107,15 +107,122 @@ mvn deploy
   - If you experience an error like a _HTTP 401_ during deployment, check your settings for the required server entries as outlined above.
   - Be sure that the generated artifacts respect the <a href="https://www.apache.org/legal/release-policy.html#distribute-raw-artifact" target="_blank">Apache release rules</a>: NOTICE and LICENSE files should be present in the META-INF directory within the jar.
   - Verify the deployment under the ASF <a hre"https://repository.apache.org/content/repositories/snapshots/" target="_blank">Maven Snapshot repository</a>.
-
-possibly include these fragments:
-
-  - Don't try to publish `.sha256`, `.sha512` files yet; Nexus doesn't handle them (as of March 2018)
-  = `.md5`s in `dist.apache.org/repos/dist/release/` must be removed manually.
-
+  
 ### 3. Prepare the release ###
 ```
 mvn release:clean
 mvn release:prepare
 ```
+
+**Notes**
+
+  - Don't try to publish `.sha256` or `.sha512` files; Nexus doesn't handle them
+  - `.md5`s in `dist.apache.org/repos/dist/release/` must be removed manually.
+  - Preparing the release will create a new tag in SVN, and automatically check the version in on your behalf.
+  - If you're located in Europe, `release:prepare` may fail with `Unable to tag SCM` and `svn: No such revision X`. Wait 10 seconds and run `mvn release:prepare` again.
+  
+### 4. Stage the release for a vote ###
+
+`mvn release:perform`
+
+Maven automatically inserts the release into a temporary staging repository for you. See <a href="https://help.sonatype.com/repomanager2/staging-releases" target="_blank">the Nexus staging documentation</a> for full details.
+
+Now you must close the staging repository to indicate to Nexus that the build is done and to make the artifacts available. Follow the steps in **Closing the Staged Repository**, later in this document. This will allow your community to **vote** on the staged artifacts.
+
+## Troubleshooting ##
+
+1. If you get an **error message** like this:
+
+```
+[INFO] Unable to tag SCM
+Provider message:
+The svn tag command failed.
+Command output:
+svn: Commit failed (details follow):
+svn: File
+'/repos/asf/maven/plugins/tags/maven-eclipse-plugin-2.7/.../EclipsePlugin.java'
+already exists
+```
+Then use a Subversion client 1.6 or newer and run `svn update`.
+
+2. If you get an **error message** similar to:
+
+```
+[ERROR] BUILD FAILURE
+[INFO]
+[INFO] Unable to tag SCM
+Provider message:
+The svn tag command failed.
+Command output:
+svn: Path
+'https://svn.apache.org/repos/asf/maven/plugins/tags/maven-eclipse-plugin-2.7'
+already exists
+```
+
+Delete the tag using 
+
+`svn del -m "re-releasing build" {svn path}`
+
+This likely occured because you're trying to restage the release and you didn't roll back the changes that created the previous tag, or you're trying to release a version that already exists. If that is the case, you need to adjust the versions in your POM and start over.
+
+## Procedures for Ant + Ivy ##
+
+<a href="https://ant.apache.org/" target="_blank">Apache Ant</a> is a popular command-line build tool. <a href="https://ant.apache.org/ivy/" targe"_blank">Ivy</a> is a dependency manager designed to work with Ant. 
+
+### 1 Prepare your build ###
+
+Usually your normal build process will create the artifacts you want to publish (typically jars), but you may need to PGP-sign them the same way you sign your normal distribution artifacts. The jars are expected to follow the naming scheme `artifactId - version.jar`.
+
+You will need a minimal POM for your jar. If you are already using Ivy, you can use the `makepom` task to create one from your `ivy.xml` file. Otherwise see the Apache Maven project's <a href="https://maven.apache.org/pom.html" target="_blank">documentation</a> for "minimal" and the Apache Compress Antlib's <a href="https://svn.apache.org/repos/asf/ant/antlibs/compress/trunk/project-template.pom" target="_blank">POM</a> for an example. 
+
+If you are publishing multiple jars you may consider adding a parent POM to encapsulate the common information; see the Maven documentation for details. An example might be <a href="https://svn.apache.org/repos/asf/ant/core/trunk/src/etc/poms/pom.xml" target="_blank">Ant's parent POM</a>, used for the several jars that make up an Ant release.
+
+Users who use your project's jars from the Maven repository rather than using your "normal" distributions will likely want additional artifacts containing the source files or javadocs matching your jars in files named `artifactId - version -sources.jar` and `artifactId - version -javadoc.jar` respectively. Don't forget to sign those jars as well if you provide them.
+
+### 2. Create minimal Ivy files for your project ###
+
+If you are not already using Ivy in your project you'll need to create a minimal `ivy.xml` file for it. The syntax is described in <a href="https://ant.apache.org/ivy/history/latest-milestone/ivyfile.html" target="_blank">Ivy's documentation</a>. Since you will only use the file to publish your artifacts, all you need to provide are the organization, module and revision definitions and an entry for each artifact you want to publish; see <a href="http://svn.apache.org/repos/asf/ant/core/trunk/release/ivy.xml" target="_blank">Ant's ivy.xml file</a> for a minimal version.
+
+`organization` and `module` combined must match your Maven `groupId`.
+
+You need `artifact` elements for your jar as well as the POM and any PGP signature file. You don't need artifacts for your checksum files (if you create any) since Nexus creates MD5 and SHA1 checksums for you.
+
+If you are publishing source or javadoc jars as well, you'll need to provide something similar to Maven's classifier. You do so by adding an extra attribute to each artifact element that lives outside of Ivy's XML namespace and referencing this element in your `ivysettings.xml` file (see below). An example which uses this approach is <a href="http://svn.apache.org/repos/asf/ant/antlibs/compress/trunk/project-template.ivy.xml" target="_blank">the Compress Antlib's ivy.xml</a>. It contains additional information and `-sources` as well as `-javadoc` artifacts.
+
+Alternatively you can specify the `-sources` and `-javadoc` artifacts inside your `publish` task rather than your `ivy.xml` file. If you use Ivy 2.2.0 or later you can also configure it to `PGP-sign` your artifacts so you no longer need to specify your signatures as artifacts. Ivy's own <a href="http://svn.apache.org/repos/asf/ant/ivy/core/trunk/ivysettings-release.xml" target="_blank">ivy-settings.xml</a> configures Ivy to sign artifacts and the <a href="http://svn.apache.org/repos/asf/ant/ivy/core/trunk/build-release.xml" target="_blank")publish task inside the upload-nexus target</a> declares the POM as well as `-sources` and `-javadoc` jars as additional artifacts.
+
+### 3. Configure Ivy to use Nexus ###
+
+If you are already using Ivy you may need to adapt your `resolvers` configuration by adding an url resolver for Nexus and referencing that in a module matching your `ivy.xml`.
+
+You usually need to adapt the `ivysettings.xml` file used by Ant by using the same values for `organization` and `name` on the module element that you used in your `ivy.xml` file (where `name` on the module element in `ivysettings.xml` corresponds to `module` in `ivy.xml`).
+
+Ant's `ivysettings.xml` uses Ant properties for the authentication information and Nexus' URL which will be expanded by the `ivy:configure` task. It also shows how to use the `classifier` extra attribute.
+
+### 4. Upload the artifacts ###
+
+Uploading involves three Ivy tasks.
+
+1. `ivy:configure` uses your `ivysettings.xml` file to configure Ivy (what else?).
+2. `ivy:resolve` reads your `ivy.xml` and doesn't do much beyond that if you are only using Ivy to upload your artifacts.
+3. `ivy:publish` publishes the artifacts to Nexus.
+
+Here is a link to an <a href="http://svn.apache.org/repos/asf/ant/antlibs/common/trunk/upload.xml" target="_blank">example build file combining those steps</a> that expects you to provide the authentication information via the command line (i.e. `ant -Dupload.user=YOUR-ASF_ID -Dupload.password=YOUR-PASSWORD`).
+
+## Common procedures ##
+
+How to manage your staged release, no matter which build tool you used.
+
+### Close the staged repository ###
+
+Your artifacts should now exist in a new staging repository. See <a href="http://central.sonatype.org/pages/releasing-the-deployment.html#locate-and-examine-your-staging-repository" target="_blank">Locate and Examine</a> for instructions on how to "close" this repository to trigger the quality checks and prepare it for a vote.
+
+Now you go call your vote. Based on the results you will either promote (yay!) or drop and restage the release. If you are an **incubating project**, don't forget the IPMC vote before promoting. The actual Vote process is project=specific, but if you're looking for some examples, the Maven project has thorough <a href="http://maven.apache.org/developers/release/maven-project-release-procedure.html" target="_blank">documentation on their voting process</a>.
+
+### Drop a repo ###
+
+If you bungled the release or your vote failed, follow <a href="http://central.sonatype.org/pages/releasing-the-deployment.html#close-and-drop-or-release-your-staging-repository" target="_blank">these instructions</a> to drop your repo. _Don't forget to roll back any SCM changes_.
+
+### Promote a repo ###
+
 
