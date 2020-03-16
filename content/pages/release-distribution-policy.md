@@ -89,3 +89,11 @@ Regarding KEYS files:
 
   - All releases **must** be archived on `archive.apache.org`. This generally happens via an automated process which adds releases to the archive about a day after they first appear on `downloads.apache.org/`.
   - Each project's distribution directory **should** contain the latest release in each branch that is currently under development. When development ceases on a version branch, releases of that branch **should** be removed.
+  
+## Using Maven for releases ##
+
+Infra operates an Apache Maven repository manager at `repository.apache.org`. Projects **may** use the repository system as a downstream channel to redistribute released materials via Maven Central, and **may** use it to distribute snapshots containing unreleased materials directly to consenting members of a project development community.
+
+Projects **must not** point or refer to `repository.apache.org` directly in download pages, release announcements or emails. Instead, any public download links for those releases **should** point to Maven Central.
+
+Read more about [Maven releases for Apache projects](maven-releases.html).
