@@ -8,7 +8,7 @@ Currently, the service streams the following events:
 * Git commits and pushes
 * Emails to publicly archived lists
 * Pull Requests and Issues from GitHub
-* Staging and publishing notifications sent via our <a href="https://s.apache.org/asfyaml" target="_blank">.asf.yaml</a> offering.
+* Staging and publishing notifications sent via our [.asf.yaml](https://s.apache.org/asfyaml) offering.
 
 Events are delivered as JSON objects in a <a href="https://en.wikipedia.org/wiki/Chunked_transfer_encoding" target="_blank">chunked response stream</a>, with each new chunk being either an event payload or a keep-alive ping. 
 
