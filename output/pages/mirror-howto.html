@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>How to be an Apache download mirror - Apache Infrastructure</title>
+    <title>How to be an Apache Software Foundation download mirror - Apache Infrastructure</title>
     <link rel="stylesheet" href="/theme/css/foundation.css">
     <link rel="stylesheet" href="/theme/css/app.css">
     <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
@@ -81,7 +81,7 @@
         <a href="/">Home</a>
         <i class="fa fa-angle-double-right"></i>
         <a href="/mirror-howto.html">
-How to be an Apache download mirror        </a>
+How to be an Apache Software Foundation download mirror        </a>
       </div>
     </div>
     
@@ -91,9 +91,22 @@ How to be an Apache download mirror        </a>
       <div class="large-12 columns">
         <div class="callout">
           <h2>
-              How to be an Apache download mirror
+              How to be an Apache Software Foundation download mirror
           </h2>
-              <p><em>information will move here from <a href="https://www.apache.org/info/how-to-mirror.html">https://www.apache.org/info/how-to-mirror.html</a></em></p>
+              <p>The Apache Software Foundation has mirror sites all around the world, but we are always looking for additional reliable and well-connected sites that can help us distribute our software by mirroring our main software distribution directory.</p>
+<h2>Requirements</h2>
+<p>We have a few requirements for those wishing to run a mirror:</p>
+<ul>
+<li>At least 90 GB of available disk space. The current distribution directory is around 45 GB, but we wish to leave room for considerable expansion.</li>
+<li>You may mirror either the full distributions tree, or a reduced tree that excludes a few very resource-intensive (disk-wise and bandwidth-wise) projects.</li>
+<li>You must not trim or abridge the mirrored tree in any way.</li>
+<li>You must not modify the mirrored tree in any way. In particular, HEADER.html and README.html files must not be altered or removed. See below for adding sponsor information.</li>
+<li>Your mirror must not be shown &quot;inside&quot; another site using, for instance, frames.</li>
+<li>You must do an <strong>update-check</strong> at least onc and preferably twice a day. You may sync a maximum of four times per day, but only if you have a slow or poor connection that causes timeouts.</li>
+<li>You must subscribe to the mailing list for mirror maintainers (see below).</li>
+</ul>
+<p>In addition, we require that you run the Apache HTTP Server version 2.2 or later and use the following configuration for your web mirror to allow all the features of our download site to function optimally:</p>
+<p><em>information will move here from <a href="https://www.apache.org/info/how-to-mirror.html">https://www.apache.org/info/how-to-mirror.html</a></em></p>
 
         </div>
       </div>
