@@ -7,7 +7,7 @@ The Apache Software Foundation has mirror sites all around the world, but we are
 We have a few requirements for those wishing to run a mirror:
 
   - We select https mirrors as "preferred" mirrors. We do add ftp mirrors to our list, but we no longer accept http mirrors.
-  - At least 90 GB of available disk space. The current distribution directory is around 45 GB, but we wish to leave room for considerable expansion.
+  - At least 100 GB of available disk space. The current distribution directory is around 50 GB, but we wish to leave room for considerable expansion.
   - You may mirror either the full distributions tree, or a reduced tree that excludes a few very resource-intensive (disk-wise and bandwidth-wise) projects.
   - You must not trim or abridge the mirrored tree in any way.
   - You must not modify the mirrored tree in any way. In particular, HEADER.html and README.html files must not be altered or removed. See below for adding sponsor information.
