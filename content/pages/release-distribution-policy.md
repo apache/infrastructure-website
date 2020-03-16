@@ -97,3 +97,7 @@ Infra operates an Apache Maven repository manager at `repository.apache.org`. Pr
 Projects **must not** point or refer to `repository.apache.org` directly in download pages, release announcements or emails. Instead, any public download links for those releases **should** point to Maven Central.
 
 Read more about [Maven releases for Apache projects](maven-releases.html).
+
+## Policy administration ##
+
+This policy is **required** for all Apache projects. The <a href="https://whimsy.apache.org/foundation/orgchart/vp-infra" target="_blank">V.P. of Apache Infrastructure</a> **must** approve changes to this policy.
