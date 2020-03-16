@@ -1,3 +1,3 @@
 Title: Project Management Committee Guide
 
-_material moving here from dev/pmc.html_
+_material moving here from https://www.apache.org/dev/pmc.html_
