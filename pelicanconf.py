@@ -15,15 +15,16 @@ CURRENTYEAR = date.today().year
 PATH = 'content'
 
 TIMEZONE = 'UTC'
-
+DEFAULT_DATE = str(date.today())
 DEFAULT_LANG = u'en'
 SITEURL = 'https://infra-test.apache.org'
 
 # Save pages using full directory preservation
 PATH_METADATA= '(?P<path_no_ext>.*)\..*'
-PAGE_SAVE_AS= '{slug}.html'
-PAGE_URL= '{slug}.html'
-
+PAGE_SAVE_AS= './{slug}.html'
+PAGE_URL= './{slug}.html'
+PAGE_PATHS = ['./content']
+DEFAULT_CATEGORY = 'pages'
 # Standard behavior:
 #PAGE_SAVE_AS = './{slug}.html'
 
