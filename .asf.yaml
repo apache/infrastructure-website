@@ -16,7 +16,7 @@ pelican:
   
 staging:
   whoami: asf-staging-nopages
-  profile: beta
+  profile: nopages
 
 
 github:
