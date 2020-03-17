@@ -15,7 +15,7 @@ CURRENTYEAR = date.today().year
 PATH = 'content'
 
 TIMEZONE = 'UTC'
-DEFAULT_DATE = str(date.today())
+DEFAULT_DATE = 'fs'
 DEFAULT_LANG = u'en'
 SITEURL = 'https://infra-test.apache.org'
 
