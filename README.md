@@ -24,7 +24,7 @@ To preview:
 
 ## Technical site documentation:
 Any time you check in a file, the site regenerates:
-https://ci.apache.org/builders/infrastructure-website/
+https://ci2.apache.org/#/builders/3
 
 ## Preparation
 The `gfm_reader.py` script points to a specific directory on
