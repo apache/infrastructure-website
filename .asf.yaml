@@ -1,5 +1,5 @@
 pelican:
-  notify:         private@infra.apache.org
+  notify:         notifications@infra.apache.org
   autobuild:      true
   target:         asf-site
   whoami:         master
