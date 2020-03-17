@@ -160,20 +160,23 @@ How to be an Apache Software Foundation download mirror        </a>
 <p>Once your site is configured, tested, and updating consistently, subscribe to the mirror-maintainers mailing list by sending an mail to <code>mirrors-subscribe@apache.org</code>.</p>
 <p>If possible, please use an alias like <code>admin@hostname.example</code> for the contact address rather than a personal e-mail address. To subscribe the alias address, send the email to <code>mirrors-subscribe-admin=example.org@apache.org</code>.</p>
 <p>Submit the details of your mirror by submitting them to the <a href="https://issues.apache.org/jira/projects/INFRA" target="_blank">Infra Issue Tracker</a>.</p>
-<p>You'll need to sign up for an account, then create a new issue in project &quot;Infrastructure (INFRA)&quot; with component &quot;Mirrors&quot;.</p>
-<p>Please include the following information in the Description field:</p>
-<p>URL of mirror :
-[optional] rsync mirror : rsync://rsync.your.org/apache/
-Country where the mirror is located :
-Contact email address :
-Update frequency :
-Rsync repository used :
-I use these rsync options :
-I have configured my Apache HTTP server as requested (yes/no)
-I have subscribed the contact address to <a href="mailto:mirrors@apache.org">mirrors@apache.org</a> : (yes/no)
-At the moment, I rsync from the IP address : (your IP address here)
-I am checking the output from the rsynch job on a regular basis
-We only use the IP to check the logs before we add the mirror to the list. Once your mirror is on the list, you can change the IP of the mirror without notifying us.</p>
+<p>Create an account if you do not already have one, then create a new issue in the project &quot;Infrastructure (INFRA)&quot; with the component &quot;Mirrors&quot;. Include the following information in the <em>Description</em> field:</p>
+<ul>
+<li>URL of mirror:</li>
+<li>(optional) rsync mirror: <code>rsync://rsync.your.org/apache/</code></li>
+<li>Country where the mirror is located:</li>
+<li>Contact email address:</li>
+<li>Update frequency (2-4 times per day):</li>
+<li>Rsync repository used:</li>
+<li>I use these rsync options:</li>
+<li>I have configured my Apache HTTP server as requested (yes/no):</li>
+<li>I have subscribed the contact address to <a href="mailto:mirrors@apache.org">mirrors@apache.org</a> (yes/no):</li>
+<li>At the moment, I rsync from this IP address: (your IP address here)</li>
+<li>I am checking the output from the rsynch job on a regular basis</li>
+</ul>
+<p>We only use the IP address to check the logs before we add the mirror to the list. Once your mirror is on the list, you can change the IP of the mirror without notifying us.</p>
+<h2>Questions?</h2>
+<p>If you have any questions, feel free to raise them in your Jira ticket (component &quot;Mirrors&quot;) or on the mirror maintainers' public mailing list <code>mirrors@apache.org</code>. You don't need to subscribe to the list in order to post (but a short note in your signature that you request replies to be CC'd to you would help).</p>
 <p><em>information will move here from <a href="https://www.apache.org/info/how-to-mirror.html">https://www.apache.org/info/how-to-mirror.html</a></em></p>
 
         </div>
