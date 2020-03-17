@@ -16,7 +16,7 @@ pelican:
   
 staging:
   whoami: nopages_test_site
-  profile: test
+  profile: beta
 
 
 github:
