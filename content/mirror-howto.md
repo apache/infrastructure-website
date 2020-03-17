@@ -56,6 +56,24 @@ umask 022 ; rsync ...
   
 ## Sponsor information ##
 
+Here is how to add sponsor information:
 
+  1. Edit the file `/local/path/to/mirror/README.html`
+  2. Add to your rsync options `--exclude "/README.html"`
+
+The contents of README.html appear near the bottom of your mirror's home page.
+
+  - Only customize the home-page (top-level) README.html. Do not change any other README.html files. 
+  - Don't omit the '/' in `"/README.html"`.
+
+Please limit the contents of the README.html to something like:
+
+```
+This mirror is donated by www.domain.com [url] to support the Apache open source community.
+```
+
+Search engines interpret referring to specific services or products as _PageRank manipulation_. This could hurt your site's ranking.
+
+We have noticed that certain sites redirect 404 pages as a form of extra advertising or traffic booster. We will remove mirrors that do this from our list and then send an email to the maintainers address. The top level /README.html file as mentioned above is the ONLY local alteration of any part of the mirror we accept for you to provide Sponsor Information.
 
 _information will move here from https://www.apache.org/info/how-to-mirror.html_
