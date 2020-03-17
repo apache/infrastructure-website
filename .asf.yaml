@@ -6,7 +6,7 @@ pelican:
   
 staging:
   whoami: asf-break-test
-
+  profile: ~
 
 github:
   ghp_branch:    master
