@@ -11,11 +11,11 @@ staging:
 pelican:
   notify:         private@infra.apache.org
   autobuild:      true
-  target:         nopages-site
+  target:         asf-staging-nopages
   whoami:         nopages-test
   
 staging:
-  whoami: nopages-site
+  whoami: asf-staging-nopages
   profile: beta
 
 
