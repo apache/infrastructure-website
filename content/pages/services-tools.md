@@ -66,13 +66,13 @@ Use the ASF <a href="https://repository.apache.org/" target="_blank">Nexus Repos
 
 #### Logging
 
-* [Kibana](https://uls.apache.org/app/kibana#/discover?_g=())
+* <a href="https://uls.apache.org/app/kibana#/discover?_g=()" target="_blank">Kibana</a>
 
 #### Machine List
 
-* [Fingerprints](https://www.apache.org/dev/machines.html)
+* <a href="https://www.apache.org/dev/machines.html" target="_blank">Host Keys and Fingerprints</a>
 
 #### Whimsy
 
-* [Committer Search](https://whimsy.apache.org/roster/committer/https://whimsy.apache.org/roster/committer/)
+* <a href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer search</a>
 
