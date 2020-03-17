@@ -23,4 +23,4 @@ SPF hard fail for the apache.org domain has been implemented for incoming apache
 
 Refer to <a href="https://blogs.apache.org/infra/entry/committers_mail_relay_service" target="_blank">this blog post</a> for additional information.
 
-[Contact Infra](/pages/contact.html) via an alternate email address, or <a href="https://issues.apache.org/jira/" target="_blank">file a Jira ticket</a> with any questions.
+[Contact Infra](/contact.html) via an alternate email address, or <a href="https://issues.apache.org/jira/" target="_blank">file a Jira ticket</a> with any questions.
