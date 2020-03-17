@@ -8,6 +8,17 @@ staging:
   whoami: asf-break-test
 
 
+pelican:
+  notify:         private@infra.apache.org
+  autobuild:      true
+  target:         nopages_test_site
+  whoami:         nopages_test
+  
+staging:
+  whoami: nopages_test_site
+  role: nopages
+
+
 github:
   ghp_branch:    master
   ghp_path:      /docs
