@@ -23,6 +23,10 @@ SITEURL = 'https://infra-test.apache.org'
 PATH_METADATA= '.*?(pages/)?(?P<path_no_ext>.*?)\.[a-z]*$'
 PAGE_SAVE_AS= './{slug}.html'
 PAGE_URL= './{slug}.html'
+
+# Make .htaccess static
+STATIC_PATHS = ['pages/.htaccess']
+
 # Standard behavior:
 #PAGE_SAVE_AS = './{slug}.html'
 
