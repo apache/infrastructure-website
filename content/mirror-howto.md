@@ -32,7 +32,29 @@ In addition, we require that you run the <a href="https://httpd.apache.org/" tar
 
 Please ensure that the server does not send a `Content-Encoding` header for any of the compressed archives. The hashes and signatures used to check downloads are created for the compressed archives so it is vital that the browser is not told to decompress them. For example, `.tar.gz` and `.tgz` files are compressed TAR files. They should have a suitable Content-Type - e.g. `application/x-gzip` - but no `Content-Encoding` should be sent. If the server incorrectly sends `Content-Encoding: x-gzip` (for example), many browsers will automatically decompress the response. This produces a TAR file which will not verify when checked against the hashes or sigs.
 
+## Mirroring techniques ##
 
+We only support <a href="https://rsync.samba.org/" target="_blank">rsync</a> for updating mirrors.
+
+Update your mirror with:
+
+```
+rsync -avz --delete --safe-links rsync.apache.org::apache-dist /path/to/mirror
+```
+
+To exclude resource-intensive projects, replace `::apache-dist` with `::apache-dist-most`. Do not use `--exclude`.
+
+If there is a problem with file/directory permissions, make sure you use a proper umask in your cronjob:
+
+```
+umask 022 ; rsync ...
+```
+
+  - Don't rsync "on the hour" (`cronjob minute 0`). Pick a random minute between 5 and 55. Never run cronjobs at minute 0 unless the nature of the job requires it.
+  - Run the job twice a day; no more than four times a day in any case.
+  - Check the output from the rsynch job regularly so you can detect problems like lack of disk space or permission issues.
+  
+## Sponsor information ##
 
 
 
