@@ -20,16 +20,14 @@ DEFAULT_LANG = u'en'
 SITEURL = 'https://infra-test.apache.org'
 
 # Save pages using full directory preservation
-PATH_METADATA= '(?P<path_no_ext>.*)\..*'
+PATH_METADATA= '.*?(pages/)?(?P<path_no_ext>.*?)\.[a-z]*$'
 PAGE_SAVE_AS= './{slug}.html'
 PAGE_URL= './{slug}.html'
-PAGE_PATHS = ['./content']
-DEFAULT_CATEGORY = 'pages'
 # Standard behavior:
 #PAGE_SAVE_AS = './{slug}.html'
 
-ARTICLE_SAVE_AS = 'news/{slug}.html'
-ARTICLE_URL = 'news/{slug}.html'
+#ARTICLE_SAVE_AS = 'news/{slug}.html'
+#ARTICLE_URL = 'news/{slug}.html'
 
 # Sort news by date, descending, latest article first
 ARTICLE_ORDER_BY = 'reversed-date'
