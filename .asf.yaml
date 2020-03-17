@@ -6,7 +6,7 @@ pelican:
   
 staging:
   whoami: asf-break-test
-
+  profile: ~
 
 pelican:
   notify:         private@infra.apache.org
