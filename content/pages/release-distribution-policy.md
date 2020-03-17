@@ -34,7 +34,7 @@ Unreleased materials, in original or derived form,
   -  **may** be distributed to consenting members of a project's development community
   -  **must not** be advertised to anyone outside of the project development community
   -  **must not** be distributed through `www.apache.org/dist` or `downloads.apache.org`
-  = **must not** be distributed through channels which encourage use by anyone outside the project development community
+  -  **must not** be distributed through channels which encourage use by anyone outside the project development community
 
 ## Notify Infra before uploading large artifacts ##
 

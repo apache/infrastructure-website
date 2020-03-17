@@ -18,7 +18,6 @@ staging:
   whoami: asf-staging-nopages
   profile: nopages
 
-
 github:
   ghp_branch:    master
   ghp_path:      /docs
