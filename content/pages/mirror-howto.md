@@ -74,6 +74,40 @@ This mirror is donated by www.domain.com [url] to support the Apache open source
 
 Search engines interpret referring to specific services or products as _PageRank manipulation_. This could hurt your site's ranking.
 
-We have noticed that certain sites redirect 404 pages as a form of extra advertising or traffic booster. We will remove mirrors that do this from our list and then send an email to the maintainers address. The top level /README.html file as mentioned above is the ONLY local alteration of any part of the mirror we accept for you to provide Sponsor Information.
+We have noticed that certain sites redirect 404 pages as a form of extra advertising or as a traffic booster. We remove mirrors that do this from our list and then send an email to the maintainer's address to ask them to correct the issue. The top level `/README.html` file, as mentioned, is the **only** local alteration of any part of the mirror we accept for you to provide sponsor information.
+
+## Testing your mirror ##
+
+We sometimes get requests to add mirrors that are not working correctly. Please check at least the following:
+
+  - Page headers and footers display correctly
+  - All top-level directories and files on the ASF mirror are present on your mirror
+  - Download a couple of files to check that the process works. 
+  - Trying to download a missing file should generate a `404 Not Found` error. You can verify this by modifying one of the valid URLs that you tested above.
+  
+## Let us know you are ready ##
+
+Once your site is configured, tested, and updating consistently, subscribe to the mirror-maintainers mailing list by sending an mail to `mirrors-subscribe@apache.org`.
+
+If possible, please use an alias like `admin@hostname.example` for the contact address rather than a personal e-mail address. To subscribe the alias address, send the email to `mirrors-subscribe-admin=example.org@apache.org`.
+
+Submit the details of your mirror by submitting them to the <a href="https://issues.apache.org/jira/projects/INFRA" target="_blank">Infra Issue Tracker</a>.
+
+You'll need to sign up for an account, then create a new issue in project "Infrastructure (INFRA)" with component "Mirrors".
+
+Please include the following information in the Description field:
+
+URL of mirror :
+[optional] rsync mirror : rsync://rsync.your.org/apache/
+Country where the mirror is located :
+Contact email address :
+Update frequency :
+Rsync repository used :
+I use these rsync options :
+I have configured my Apache HTTP server as requested (yes/no)
+I have subscribed the contact address to mirrors@apache.org : (yes/no)
+At the moment, I rsync from the IP address : (your IP address here)
+I am checking the output from the rsynch job on a regular basis
+We only use the IP to check the logs before we add the mirror to the list. Once your mirror is on the list, you can change the IP of the mirror without notifying us.
 
 _information will move here from https://www.apache.org/info/how-to-mirror.html_
