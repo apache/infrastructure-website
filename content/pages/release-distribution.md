@@ -1,4 +1,4 @@
-Title: Release Distribution Policy
+<h1 id="policy">Release Distribution Policy</h1>
 
 This policy governs how Apache software releases are distributed through the technical channels that Infra maintains. It complements the formal <a href="https://www.apache.org/legal/release-policy.html" target="_blank">Apache Release Policy</a>, which defines what must be in a software release, and the [Release Creation Process](release-creation.html) page, which describes the steps for a PMC to create a release.
 
@@ -91,12 +91,12 @@ Regarding KEYS files:
   - All links to checksums, detached signatures and public keys **must** reference `downloads.apache.org/` using `https://` (TLS).
   - Old releases **should** be archived and **MAY** be linked to from public download pages.
   
-## Archiving releases ##
+<h2 id="archival">Archiving releases</h2>
 
   - All releases **must** be archived on `archive.apache.org`. This generally happens via an automated process which adds releases to the archive about a day after they first appear on `downloads.apache.org/`.
   - Each project's distribution directory **should** contain the latest release in each branch that is currently under development. When development ceases on a version branch, releases of that branch **should** be removed.
   
-## Using Maven for releases ##
+<h2 id="maven">Using Maven for releases</h2>
 
 Infra operates an Apache Maven repository manager at `repository.apache.org`. Projects **may** use the repository system as a downstream channel to redistribute released materials via Maven Central, and **may** use it to distribute snapshots containing unreleased materials directly to consenting members of a project development community.
 
@@ -104,6 +104,6 @@ Projects **must not** point or refer to `repository.apache.org` directly in down
 
 Read more about [Maven releases for Apache projects](maven-releases.html).
 
-## Policy administration ##
+<h2 id="administration">Policy administration</h2>
 
 This policy is **required** for all Apache projects. The <a href="https://whimsy.apache.org/foundation/orgchart/vp-infra" target="_blank">V.P. of Apache Infrastructure</a> **must** approve changes to this policy.
