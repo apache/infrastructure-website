@@ -30,7 +30,7 @@ The Apache Infrastructure Team (Infra) operates under the <a href="https://www.a
   - [Release creation process](release-creation.html)
   - Creating optional [Maven releases](maven-releases.html)
   - [Signing releases](release-signing.html)
-  - [Release distribution policy](release-distribution-policy.html)
+  - [Release distribution policy](release-distribution.html)
   - [Release download pages](release-download-pages.html)
 
 
