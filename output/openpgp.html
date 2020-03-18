@@ -100,6 +100,41 @@ OpenPGP is encryption software. The program provides cryptographic privacy and a
 <h2 id="gnupg">Gnu Privacy Guard (GPG)</h2>
 <p>The Apaches Software Foundation recommends using <a href="https://www.gnupg.org" target="_blank">Gnu Privacy Guard (GPG)</a>, a well-known open source cryptography tool with OpenPGP support. Always use the latest version.</p>
 <p>GnuPG has a good set of <a href="https://www.gnupg.org/documentation" target="_blank">documentation</a>. This guide covers only some important points.</p>
+<h3 id="home">GnuPG Home</h3>
+<p>GnuPG stores important files, including keyrings and configuration files, in a home directory. You can specify your proejct's home directory in an environmental variable or on the command line. This allows different configurations and keys to be used.</p>
+<p>For example:</p>
+<pre><code>    ::console
+    $ gpg --homedir /home/alice/keys --list-keys
+</code></pre>
+<p>Projects generally rely on the default. For <code>\*nux</code> (linux, BSD, MaxOSX, Solaris, AIX) this is:</p>
+<pre><code>    :::shell
+    $HOME/.gnupg
+</code></pre>
+<h4 id="switch-home">How to switch Home</h4>
+<p>You can set Home using an envionmental variable. This lets you select a specific configuration and keyring for the duration of a
+command line session. This is useful when <a href="release-signing.html#safe-practice">practicing</a> and when using multiple keyrings.</p>
+<p>For example, to set home directory to <code>alice</code> when using Linux:</p>
+<pre><code>    :::console
+    $ export GNUPGHOME=alice
+</code></pre>
+<p>When switching key rings, check that the required keyring has been selected by examining the secret keys. For example:</p>
+<pre><code>    :::console
+    $ gpg --list-secret-keys
+    alice/secring.gpg
+    -----------------
+
+    sec   4096R/E2B054B8 2009-08-20
+    uid                  Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;
+    ssb   4096R/4A6D5217 2009-08-20
+</code></pre>
+<h3 id="configuration">Configuration</h3>
+<p>GnuPG supports a wide range of configuration options. You can specify them on the command line, but it is usually more convenient to set them in the <code>gpg.conf</code> file. By default, this is located in the <a href="#home">GnuPG Home</a> directory.</p>
+<h3 id="sha1">Avoid SHA-1</h3>
+<p>Avoid using SHA-1 should now be <a href="release-signing.html#sha1">avoided</a>. Until
+<a href="release-signing.html#sha3">SHA3</a> is available, <code>SHA512</code> or <code>SHA256</code> should
+be used instead. <code>SHA512</code> is stronger than <code>SHA256</code>. Though some old
+clients lack <code>SHA512</code> support, switching to <code>SHA512</code> is recommended since
+it is more likely to be strong enough to bridge the gap until <code>SHA3</code>.</p>
 
         </div>
       </div>
