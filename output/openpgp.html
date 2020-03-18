@@ -132,7 +132,7 @@ command line session. This is useful when <a href="release-signing.html#safe-pra
 <h3 id="sha1">Avoid SHA-1</h3>
 <p><a href="release-signing.html#sha1">Avoid</a> using <code>SHA-1</code>. Use <code>SHA512</code> or <code>SHA256</code> instead. <code>SHA512</code> is stronger than <code>SHA256</code>. Though some old
 clients lack <code>SHA512</code> support, we recommend switching to <code>SHA512</code> if possible.</p>
-<h3 id="sha-defaults">Setting defaults</a>
+<h3 id="sha-defaults">Setting defaults</h3>
 <p>To configure <code>gpg</code> to avoid SHA-1, edit the options in <a href="#configuration"><code>gpg.conf</code></a>. Options need to be added or given the correct values for:</p>
 <ul>
 <li><code>cert-digest-algo</code> - the certificate digest used when linking into the <a href="release-signing.html#link-into-wot">web of trust</a></li>
