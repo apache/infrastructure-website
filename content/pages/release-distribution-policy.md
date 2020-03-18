@@ -9,25 +9,31 @@ This policy governs how Apache software releases are distributed through the tec
   - Infra maintains a number of developer-only channels which facilitate distribution of unreleased software to consenting members of a development community.
   - All historic Apache releases are available from `archive.apache.org`.
   
-## Release distribution directories ##
+<h2 id="directory">Release distribution directory</h2>
 
 Every top-level project at Apache has its own public distribution directory, which is a subdirectory of `downloads.apache.org/`. Each PMC is responsible for all artifacts within their project's distribution directory.
 
 Apache Incubator podlings cannot create official ASF releases; see the <a href="http://incubator.apache.org/guides/releasemanagement.html" target="_blank">Incubator documentation</a> for details and discussion.
 
-## Public distribution ##
+<h2 id="release-content">Release content</h2>
+
+The <a href="http://www.apache.org/dev/release#what"" target="_blank">Apache Release Policy</a> governs the content of official Apache releases and the process by which projects create valid releases.
+
+The Policy specifies that binary packages provided by third parties which meet certain criteria may be distributed alongside official source packages. Such packages are sometimes referred to as "convenience binaries" to distinguish them from other binary packages.
+
+<h2 id="public-distribution">Public distribution channels</h2>
 
 Projects **must** upload all official releases to the official distribution channel, `downloads.apache.org/`. Content suitable for the official distribution channel includes:
 
   - Official releases
   - "Convenience binaries", compiled code anyone can download and install
   - Cryptographic signatures and checksums
-  - The KEYS file
+  - The <a href="#sigs-and-sums">KEYS</a> file
   - README, CHANGES and similar documents describing distributed content
 
 If an Apache PMC wishes to publish additional materials through the official distribution channel and there is any question about the suitability of said materials, the PMC **must** consult with the ASF Board before publishing.
 
-## Distribution of unreleased materials ##
+<h2 id="unreleased">Distribution of unreleased materials</h2>
 
 Unreleased materials, in original or derived form,
 
@@ -36,13 +42,13 @@ Unreleased materials, in original or derived form,
   -  **must not** be distributed through `www.apache.org/dist` or `downloads.apache.org`
   -  **must not** be distributed through channels which encourage use by anyone outside the project development community
 
-## Notify Infra before uploading large artifacts ##
+<h2 id="heads-up">Notify Infra before uploading large artifacts</h2>
 
 Projects must coordinate with Infra in advance about releases of larger than 1GB of artifacts to mitigate strain on mirroring and download resources.
 
-## Requirements for cryptographic signatures and checksums ##
+<h2 id="sigs-and-sums">Requirements for cryptographic signatures and checksums</h2>
 
-For more information, see the [release signing](release-signing.html) page.
+For more information, see the <a href="https://www.apache.org/dev/release-signing.html" target="_blank">release signing</a> page.
 
 **Note**: <a href="https://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> describes how **must**, **should**, **should not** and similar terms are to be interpreted.
 
@@ -78,7 +84,7 @@ Regarding KEYS files:
   - Private keys **must not** be stored on any ASF machine. Likewise, signatures for releases **must not** be created on ASF machines.
   - Compromised signing keys **must** be revoked and replaced immediately.
   
-## Download links ##
+<h2 id="download-links">Download links</h2>
 
   - The website documentation for any Apache product **must** provide public download links where interested parties may obtain current official source releases and accompanying cryptographic files.
   - Links to mirrored distribution artifacts **must not** reference the main Apache web site. They **should** use the [standard mechanisms](mirror-howto.html) to distribute the load between the mirrors.
