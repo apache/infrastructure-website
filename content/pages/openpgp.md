@@ -154,7 +154,7 @@ The next generation of [OpenPGP](release-signing.html#openpgp) will use [SHA-3](
 Though 8192 bit keys are stronger, they are slower and may be incompatible with some older clients. For the present, 4096 bit RSA should be strong enough for code signing at Apache. To generate RSA keys with length more
 than 4096 bits, <a href="https://www.jroller.com/robertburrelldonkin/entry/gnupg_8192bit_rsa_keys" target="_blank">changes are needed</a>. Then you can follow the procedure for 4096 bits.
 
-<h3 id="key-gen-install-latest-gnupg">Install and configure GnuGPG</h3>
+<h3 id="key-gen-install-latest-gnupg">Install and configure GnuPG</h3>
 
 
 
