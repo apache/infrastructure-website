@@ -63,7 +63,7 @@ GnuPG supports a wide range of configuration options. You can specify them on th
 [Avoid](release-signing.html#sha1) using `SHA-1`. Use `SHA512` or `SHA256` instead. `SHA512` is stronger than `SHA256`. Though some old
 clients lack `SHA512` support, we recommend switching to `SHA512` if possible.
 
-<h3 id="sha-defaults">Setting defaults</a>
+<h3 id="sha-defaults">Setting defaults</h3>
 
 To configure `gpg` to avoid SHA-1, edit the options in [`gpg.conf`](#configuration). Options need to be added or given the correct values for:
 
