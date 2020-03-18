@@ -2,8 +2,7 @@ Title: Release Distribution Policy
 
 This policy governs how Apache software releases are distributed through the technical channels that Infra maintains. It complements the formal <a href="https://www.apache.org/legal/release-policy.html" target="_blank">Apache Release Policy</a>, which defines what must be in a software release, and the [Release Creation Process](release-creation.html) page, which describes the steps for a PMC to create a release.
 
-## Release distribution channels ## 
-{: #channels}
+<h2 id="channels">Release distribution channels</h2>
 
   - The Apache Software Foundation's official channel for distribution of current Apache software releases to the general public is `downloads.apache.org/`. This directory is automatically sync'd out to the ASF mirror network, and most users download releases from one of the ASF mirrors.
   - The public may also obtain Apache software from any number of downstream channels (rpm, deb, homebrew, etc.) which redistribute our releases in either original or derived form. The vast majority of such downstream channels operate independently of Apache.
