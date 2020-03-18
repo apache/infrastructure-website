@@ -145,6 +145,18 @@ Then upload the modified public key to a public keyserver. For example:
     $ gpg --send-keys F8B7B4FD
 ```
 
+<h2 id="generate-key">How to generate a strong key</h2>
+
+The weaknesses found in [SHA-1](release-signing.html#sha1) threaten all DSA keys and those RSA keys with length less than 2048 bits. Though no realistic attack against those keys have been made public and these keys continue to be useful (and do not need to be revoked), Projects should not generate new keys that are exposed to this weakness.
+
+The next generation of [OpenPGP](release-signing.html#openpgp) will use [SHA-3](release-signing.html#sha3). For now, the 2048 bit RSA keys with SHA256 hash should be strong enough. For those with 2048 bit RSA keys, the best advice is to [switch](#sha1) to SHA256 or SHA512 as soon as possible. All new keys generated should be RSA with at least 4096 bits.
+
+Though 8192 bit keys are stronger, they are slower and may be incompatible with some older clients. For the present, 4096 bit RSA should be strong enough for code signing at Apache. To generate RSA keys with length more
+than 4096 bits, <a href="https://www.jroller.com/robertburrelldonkin/entry/gnupg_8192bit_rsa_keys" target="_blank">changes are needed</a>. Then you can follow the procedure for 4096 bits.
+
+<h3 id="key-gen-install-latest-gnupg">Install and configure GnuGPG</h3>
+
+
 
 
 
