@@ -124,17 +124,81 @@ command line session. This is useful when <a href="release-signing.html#safe-pra
     -----------------
 
     sec   4096R/E2B054B8 2009-08-20
-    uid                  Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;
+    uid   Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;
     ssb   4096R/4A6D5217 2009-08-20
 </code></pre>
 <h3 id="configuration">Configuration</h3>
 <p>GnuPG supports a wide range of configuration options. You can specify them on the command line, but it is usually more convenient to set them in the <code>gpg.conf</code> file. By default, this is located in the <a href="#home">GnuPG Home</a> directory.</p>
 <h3 id="sha1">Avoid SHA-1</h3>
-<p>Avoid using SHA-1 should now be <a href="release-signing.html#sha1">avoided</a>. Until
-<a href="release-signing.html#sha3">SHA3</a> is available, <code>SHA512</code> or <code>SHA256</code> should
-be used instead. <code>SHA512</code> is stronger than <code>SHA256</code>. Though some old
-clients lack <code>SHA512</code> support, switching to <code>SHA512</code> is recommended since
-it is more likely to be strong enough to bridge the gap until <code>SHA3</code>.</p>
+<p><a href="release-signing.html#sha1">Avoid</a> using <code>SHA-1</code>. Use <code>SHA512</code> or <code>SHA256</code> instead. <code>SHA512</code> is stronger than <code>SHA256</code>. Though some old
+clients lack <code>SHA512</code> support, we recommend switching to <code>SHA512</code> if possible.</p>
+<h3 id="sha-defaults">Setting defaults</a>
+<p>To configure <code>gpg</code> to avoid SHA-1, edit the options in <a href="#configuration"><code>gpg.conf</code></a>. Options need to be added or given the correct values for:</p>
+<ul>
+<li><code>cert-digest-algo</code> - the certificate digest used when linking into the <a href="release-signing.html#link-into-wot">web of trust</a></li>
+<li><code>personal-digest-preferences</code> - the digest used for <a href="release-signing.html#detach-sig">signing messages</a></li>
+<li><code>default-preference-list</code> - the default algorithm preferences for <a href="release-signing.html#generate">new keys</a> (this does not affect existing keys: see next paragraph)</li>
+</ul>
+<p>To use <code>SHA512</code> (recommended):</p>
+<pre><code>    :::text
+    personal-digest-preferences SHA512
+    cert-digest-algo SHA512
+    default-preference-list SHA512 SHA384 SHA256 SHA224 AES256 AES192 AES CAST5 ZLIB BZIP2 ZIP Uncompressed
+</code></pre>
+<p>To use SHA256:</p>
+<pre><code>    :::text
+    personal-digest-preferences SHA256
+    cert-digest-algo SHA256
+    default-preference-list SHA512 SHA384 SHA256 SHA224 AES256 AES192 AES CAST5 ZLIB BZIP2 ZIP Uncompressed
+</code></pre>
+<h3 id="key-prefs">Setting preferences for keys</h3>
+<p>The digest preferences for each key (from the <a href="#sha-defaults">configuration defaults</a> ) are set when the key is generated. Once the
+configuration has been updated to avoid SHA-1, all new keys generated will use these defaults, but keys generated before the configuration won't be affected.</p>
+<p>All existing private keys in the ring need to be updated to indicate that stronger hashes are preferred. For each public-private key pair (generated with the previous defaults):</p>
+<pre><code>    :::console
+    $ gpg --edit-key F8B7B4FD
+    gpg (GnuPG) 1.4.9; Copyright (C) 2008 Free Software Foundation, Inc.
+    This program comes with ABSOLUTELY NO WARRANTY.
+    This is free software, and you are welcome to redistribute it
+    under certain conditions. See the file COPYING for details.
+
+    Secret key is available.
+
+    pub  1024D/F8B7B4FD  created: 2009-08-12  expires: 2009-09-11  usage: SC  
+                         trust: ultimate      validity: ultimate
+    sub  1024g/D55BD150  created: 2009-08-12  expires: 2009-09-11  usage: E   
+    [ultimate] (1). Example Key (NOT FOR DISTRIBUTION) &lt;bogus@example.org&gt;
+
+    Command&gt; showpref
+    [ultimate] (1). Example Key (NOT FOR DISTRIBUTION) &lt;bogus@example.org&gt;
+         Cipher: AES256, AES192, AES, CAST5, 3DES
+         Digest: SHA1, SHA256, RIPEMD160
+         Compression: ZLIB, BZIP2, ZIP, Uncompressed
+         Features: MDC, Keyserver no-modify
+
+    Command&gt;  setpref SHA512 SHA384 SHA256 SHA224 AES256 AES192 AES CAST5 ZLIB BZIP2 ZIP Uncompressed
+    Set preference list to:
+         Cipher: AES256, AES192, AES, CAST5, 3DES
+         Digest: SHA512, SHA384, SHA256, SHA224, SHA1
+         Compression: ZLIB, BZIP2, ZIP, Uncompressed
+         Features: MDC, Keyserver no-modify
+    Really update the preferences? (y/N) y
+
+    You need a passphrase to unlock the secret key for
+    user: &quot;Example Key (NOT FOR DISTRIBUTION) &lt;bogus@example.org&gt;&quot;
+    1024-bit DSA key, ID F8B7B4FD, created 2009-08-12
+
+    pub  1024D/F8B7B4FD  created: 2009-08-12  expires: 2009-09-11  usage: SC  
+                         trust: ultimate      validity: ultimate
+    sub  1024g/D55BD150  created: 2009-08-12  expires: 2009-09-11  usage: E   
+    [ultimate] (1). Example Key (NOT FOR DISTRIBUTION) &lt;bogus@example.org&gt;
+
+    Command&gt; save
+</code></pre>
+<p>Then upload the modified public key to a public keyserver. For example:</p>
+<pre><code>    :::console
+    $ gpg --send-keys F8B7B4FD
+</code></pre>
 
         </div>
       </div>
