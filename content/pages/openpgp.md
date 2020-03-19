@@ -434,6 +434,57 @@ You can confirm this using:
 
 <h3 id="find-key-id-with-secret-key">When you have the secret key</h3>
 
+When you have the secret key, listing the secret key details allows the key ID to be read from the `sec` lines in the output.
+
+**Note** that it is possible for an attacker to introduce a new secret key into your keyring (for example, as part of an import). It is vital that you know how many secret keys each keyring should hold. If any unexpected secret keys are present, this probably indicates an attack.
+
+For example, Alice is [transitioning](key-transition.html) and so expects two secret keys in her main keyring. (The case of a single key is similar but less complex.) She lists all secret keys on the keyring:
+
+```
+    :::console
+    $ gpg --list-secret-keys
+    alice/secring.gpg
+    -----------------
+    sec   1024D/AD741727 2009-08-20
+    uid                  Alice Example (EXAMPLE OF OLD KEY) <alice@example.org>
+    ssb   1024g/268883A9 2009-08-20
+
+    sec   4096R/E2B054B8 2009-08-20
+    uid                  Alice Example (EXAMPLE NEW KEY) <alice@example.org>
+    ssb   4096R/4A6D5217 2009-08-20
+```
+
+Alice verifies that details for only two keys are listed and that there are no unexpected additions.
+
+The `sec` lines are:
+
+```
+    :::text
+    sec   1024D/AD741727 2009-08-20
+```
+
+and
+
+```
+    :::text
+    sec   4096R/E2B054B8 2009-08-20
+```
+
+The key ID forms part of the second column, to the right of the key length. In this case the key IDs are `AD741727` and `E2B054B8`. The
+[comments](release-signing.html#key-comment) help Alice identify each key.
+
+<h3 id="find-key-id-otherwise">When you do not have the secret key</h3>
+
+Unless you have the [private key](release-signing.html#public-private) or a [fingerprint](release-signing.html#fingerprint), the only safe way to find the key ID is to ask the owner of the key, using a secure communication channel.
+
+Trusting that an import contains only the owner's public key is **not recommended**. The import may contain additional public keys (intentionally or not). So, when using an import, always verify the key ID of interest from another source.
+
+For example, a <a href="http://home.apache.org/~rdonkin/" target="_blank">web page with an embedded export</a> should also list the key IDs of interest. 
+
+<h2 id="backup">How to back up</h2>
+
+<h3 id="backup-public">Back up public information</h3>
+
 
 
 
