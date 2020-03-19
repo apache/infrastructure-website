@@ -365,7 +365,7 @@ When you generate a new code signing key, you need to update a number of Apache 
 
 If you are generating a key for use in a [transition](release-signing.html#transition), there is more you should do before updating these documents, so [go to the transition instructions now](key-transition.html#ContinueAfterGeneration).
 
-<p id="generation-final-steps-new-key" >
+<p id="generation-final-steps-new-key" />
 
 If this is a new code signing key not involved with a transition:
 
@@ -384,11 +384,11 @@ new key to be included at the earliest opportunity.
 
 <h2 id="private-keyring-management">Private keyring management</h2>
 
-1. Never transmit your private keyring over the internet!
+  1. Never transmit your private keyring over the internet!
 
-2. Store your keys on unshared local disk storage. If your employer only provides networked storage, ask for permission to use a USB fob (or CD) to store your .gnupg directory.
+  2. Store your keys on unshared local disk storage. If your employer only provides networked storage, ask for permission to use a USB fob (or CD) to store your .gnupg directory.
 
-3. Destroy your retired disks appropriately using a disk wiping utility or similar tools to ensure your keyring is no longer available
+  3. Destroy your retired disks appropriately using a disk wiping utility or similar tools to ensure your keyring is no longer available
 on those disks once you are through with them. Failing that, drill through the disk platters so they are physically unusable.
 
 <h2 id="find-key-id">Find a key ID</h2>
@@ -518,12 +518,9 @@ almost always means *exporting a public key*.
 
 GnuPG seeks to limit accidental private key exports by using different operations for each export. Both operations share common options.
 
-### Output Options ### {#export-option-output}
+<h3 id="export-option-output">Output options</h3>
 
-By default, operations print their results to the command line.
-
-For example, to export all public keys (with ASCII encoding) to the command
-line:
+By default, operations print their results to the command line. For example, to export all public keys (with ASCII encoding) to the command line, do:
 
 ```
     :::console
@@ -543,7 +540,7 @@ Though most of the examples in this guide choose to output to a file, command li
 
 The *--armor* option encodes the output using [ASCII characters only](release-signing.html#ascii). This permits embedding the output easily in documents and displaying it on the command line.
 
-For example, to export all public keys (to the command line) encoded in ASCII:
+For example, to export all public keys (to the command line) encoded in ASCII, use:
 
 ```
     :::console
@@ -552,7 +549,7 @@ For example, to export all public keys (to the command line) encoded in ASCII:
 
 The binary format is shorter but has few other advantages. For all uses at Apache, use ASCII armor.
 
-<h3 id="export-public-key")How to export public keys</h3>
+<h3 id="export-public-key">How to export public keys</h3>
 
 The `--export` operation exports public keys.
 
@@ -566,7 +563,7 @@ line](#export-option-output) with [ASCII encoding](#export-option-armor):
 
 To export specific keys, add identifiers for these keys to the end of the command. There are a number of ways to identify keys, but only the [key ID](release-signing.html#key-id) will definitely select a single key. This [guide](#find-key-id) discusses how to find the key ID when it is unknown.
 
-For example, to export to the [command line](#export-option-output) with [ASCII encoding](#export-option-armor) the public key with ID `AD741727`:
+For example, to export to the [command line](#export-option-output) with [ASCII encoding](#export-option-armor) the public key with ID `AD741727`, use:
 
 ```
     :::console
@@ -621,7 +618,7 @@ Import this temporary file into the target keyring. Ensure that GnuPG [home](#ho
     gpg:   secret keys imported: 1
 ```
 
-Check for *secret keys imported* in the output. Listing secret keys for the target keyring should now show the existance of the secret key:
+Check for *secret keys imported* in the output. Listing secret keys for the target keyring should now show the existence of the secret key:
 
 ```
     :::console
@@ -637,7 +634,7 @@ Check for *secret keys imported* in the output. Listing secret keys for the targ
     ssb   4096R/4A6D5217 2009-08-20
 ```
 
-Finally make that the temporary file used cannot be read. We recommend secure deletion. If you are working on Linux, for example, you can use the <a href="http://www.linfo.org/shred.html" target="_blank">shred</a> command:
+Finally make sure that the temporary file you used cannot be read. We recommend secure deletion. If you are working on Linux, for example, you can use the <a href="http://www.linfo.org/shred.html" target="_blank">shred</a> command:
 
 ```
     :::console
@@ -646,6 +643,26 @@ Finally make that the temporary file used cannot be read. We recommend secure de
 ```
 
 Those using encrypted `tmp` should now restart the machine.
+
+<h2 id="transition">How to transition from an old to a new key</h2>
+
+If you have a short but uncompromised key and would like to [transition](release-signing.html#transition) to a longer one, follow these
+[instructions](key-transition.html).
+
+If your key has been compromised, you **must not** transition. Instead, [revoke](release-signing.html#revoke-key) the old key and replace it with a new one immediately. **Do not** use a transition period.
+
+<h2 id="revocation-certs">How to use revocation certificates</h2>
+
+When a private key is lost or compromised, a [revocation
+certificate](release-signing.html#revocation-cert) should be
+[distributed](release-signing.html#revoke-cert) to
+[publicly](release-signing.html#keyserver)  [revoke the
+key](release-signing.html#delete-vs-revoke). In the event of a compromise
+or loss, it is best to create a new revocation certification including the
+particulars of the case. Since this may not always be possible, generic
+revocation certificates should be created for each new key pair
+[generated](#generate-key) and [securely
+stored](release-signing.html#revocation-certificate-storage).
 
 
 
