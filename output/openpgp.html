@@ -477,6 +477,26 @@ user ID or other information.</p>
 <p>For example, a <a href="http://home.apache.org/~rdonkin/" target="_blank">web page with an embedded export</a> should also list the key IDs of interest.</p>
 <h2 id="backup">How to back up</h2>
 <h3 id="backup-public">Back up public information</h3>
+<p>The <a href="release-signing.html#key-id">key ID</a> is not confidential but without access to this information from a trusted source, substitution attacks are <a href="release-signing.html#infeasible">feasible</a> (see this <a href="#find-key-id">discussion</a>).</p>
+<p>So, for each <a href="release-signing.html#public-private">key pair</a> you generate, the <a href="release-signing.html#key-id">key ID</a> needs to recorded in a form that makes tampering difficult. Defense in depth is the best strategy. We recommend that you use a range of methods::</p>
+<ul>
+<li>Print a hard copy of the key ID and store it securely</li>
+<li>Include the key ID on your business cards</li>
+<li>ASF Members should include the key ID on their Apache business cards</li>
+<li>Include a text document containing the key ID in your <a href="#backup-private">secure, tamperproof private backups</a></li>
+</ul>
+<h3 id="backup-private">Back up private information</h3>
+<p>Keep your <a href="release-signing.html#public-private">private key</a> both safe and away from attackers. If a private key is destroyed or lost, it must be revoked and should no longer be used. Given the effort that's needed to build a strong <a href="release-signing.html#web-of-trust">web of trust</a>, it is important to back up the private key without compromising security.</p>
+<p>The best way to back up a private key is to securely archive the entire <a href="#home">GnuPG home</a> by copying the contents into secure, encrypted storage. We recommended that you version each archived copy and store it permenantly.</p>
+<p>Full disk encryption is the best storage solution for disks containing the private key. How to encrypt a full disc is platform dependent and is beyond the scope of this guide, but many major platforms now support this.</p>
+<p>Choose a strong passphrase. If this is not possible then use strong, <a href="#symmetric">symmetric</a> encryption to protect a compressed archive.</p>
+<p>We recommend a removable medium type with good long term storage characteristics:</p>
+<ul>
+<li>A small capacity, high quality USB flash drive</li>
+<li>A CDROM</li>
+</ul>
+<p>Make and securely store multiple copies.</p>
+<h2 id="export-key">How to export a key</h2>
 
         </div>
       </div>
