@@ -432,6 +432,9 @@ You can confirm this using:
     sub   4096R/4A6D5217 2009-08-20
 ```
 
+<h3 id="find-key-id-with-secret-key">When you have the secret key</h3>
+
+
 
 
 
