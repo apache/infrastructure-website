@@ -384,6 +384,54 @@ new key to be included at the earliest opportunity.
 
 <h2 id="private-keyring-management">Private keyring management</h2>
 
+1. Never transmit your private keyring over the internet!
+
+2. Store your keys on unshared local disk storage. If your employer only provides networked storage, ask for permission to use a USB fob (or CD) to store your .gnupg directory.
+
+3. Destroy your retired disks appropriately using a disk wiping utility or similar tools to ensure your keyring is no longer available
+on those disks once you are through with them. Failing that, drill through the disk platters so they are physically unusable.
+
+<h2 id="find-key-id">Find a key ID</h2>
+
+There are a number of ways that a key may be identified. Only one is unique: the [key fingerprint](release-signing.html#fingerprint).
+
+Attackers can easily create new keys similar to yours with identical user IDs and comments. Such a public key may be introduced to your keyring when you download keys from a [public keyserver](release-signing.html#keyserver) or as part of an import. If this information is used to identify public keys then you may be misled into believing that another public key is yours. A cunning attacker may even introduce a matching secret key taht lets you sign with that key.
+
+Creating a different key with a matching identity is considered [infeasible](release-signing.html#infeasible). For all operations where
+precise identity matters and that identity is specified on the command line, you should use the key ID to identify the key. Avoid using
+user ID or other information.
+
+<h3 id="find-key-id-from-trusted-source">Find a key ID from a trusted source</h3>
+
+The best way to find a key ID is to obtain it directly from a trusted source, for example, from a business card you obtain personally from the owner of the key.
+
+<h3 id="find-key-id-with-fingerprint">Find a key ID with its fingerprint</h3>
+
+If you have a [fingerprint](release-signing.html#fingerprint), the key ID should be the last 8 digits. For example, the ID of the key with this fingerprint:
+
+```
+    :::text
+    FF96 6261 C995 1DDE BF34  5150 D5D2 BDB5 E2B0 54B8
+```
+
+should be:
+
+```
+    :::text
+    E2B054B8
+```
+
+You can confirm this using:
+
+```
+    :::console
+    $ gpg --list-keys --fingerprint E2B054B8
+    pub   4096R/E2B054B8 2009-08-20
+          Key fingerprint = FF96 6261 C995 1DDE BF34  5150 D5D2 BDB5 E2B0 54B8
+    uid                  Alice Example (EXAMPLE NEW KEY) <alice@example.org>
+    sub   4096R/4A6D5217 2009-08-20
+```
+
 
 
 
