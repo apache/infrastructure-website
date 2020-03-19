@@ -384,7 +384,7 @@ keys are used for both encryption and signing. Longer key lengths are available.
 <p>When you generate a new code signing key, you need to update a number of Apache documents and perform some other tasks.</p>
 <p id="generation-final-steps-transition" />
 <p>If you are generating a key for use in a <a href="release-signing.html#transition">transition</a>, there is more you should do before updating these documents, so <a href="key-transition.html#ContinueAfterGeneration">go to the transition instructions now</a>.</p>
-<p id="generation-final-steps-new-key" >
+<p id="generation-final-steps-new-key" />
 <p>If this is a new code signing key not involved with a transition:</p>
 <ol>
 <li>
@@ -500,10 +500,8 @@ user ID or other information.</p>
 <p>Exporting public keys is a common operation. It is rarely necessary to export a <a href="release-signing.html#public-private">private key</a> and use of that operation should be kept to a minimum (see <a href="#export-secret-key">below</a> ). So, the unqualified term <em>exporting a key</em>
 almost always means <em>exporting a public key</em>.</p>
 <p>GnuPG seeks to limit accidental private key exports by using different operations for each export. Both operations share common options.</p>
-<h3>Output Options ### {#export-option-output}</h3>
-<p>By default, operations print their results to the command line.</p>
-<p>For example, to export all public keys (with ASCII encoding) to the command
-line:</p>
+<h3 id="export-option-output">Output options</h3>
+<p>By default, operations print their results to the command line. For example, to export all public keys (with ASCII encoding) to the command line, do:</p>
 <pre><code>    :::console
     $ gpg --export --armor 
 </code></pre>
@@ -514,12 +512,12 @@ line:</p>
 <p>Though most of the examples in this guide choose to output to a file, command line output is often useful (for example, the output can be piped into a second command) and is equally valid for most operations. The exception is <a href="#export-secret-key">secret key export</a>, which should always be to a secure temporary file.</p>
 <h3 id="export-option-armor">The armor option</h3>
 <p>The <em>--armor</em> option encodes the output using <a href="release-signing.html#ascii">ASCII characters only</a>. This permits embedding the output easily in documents and displaying it on the command line.</p>
-<p>For example, to export all public keys (to the command line) encoded in ASCII:</p>
+<p>For example, to export all public keys (to the command line) encoded in ASCII, use:</p>
 <pre><code>    :::console
     $ gpg --export --armor 
 </code></pre>
 <p>The binary format is shorter but has few other advantages. For all uses at Apache, use ASCII armor.</p>
-<h3 id="export-public-key")How to export public keys</h3>
+<h3 id="export-public-key">How to export public keys</h3>
 <p>The <code>--export</code> operation exports public keys.</p>
 <p>When you don't specify a key, the system exports all public keys in the keyring. For example, to export all public keys to the <a href="#export-option-output">command
 line</a> with <a href="#export-option-armor">ASCII encoding</a>:</p>
@@ -527,7 +525,7 @@ line</a> with <a href="#export-option-armor">ASCII encoding</a>:</p>
     $ gpg --export --armor 
 </code></pre>
 <p>To export specific keys, add identifiers for these keys to the end of the command. There are a number of ways to identify keys, but only the <a href="release-signing.html#key-id">key ID</a> will definitely select a single key. This <a href="#find-key-id">guide</a> discusses how to find the key ID when it is unknown.</p>
-<p>For example, to export to the <a href="#export-option-output">command line</a> with <a href="#export-option-armor">ASCII encoding</a> the public key with ID <code>AD741727</code>:</p>
+<p>For example, to export to the <a href="#export-option-output">command line</a> with <a href="#export-option-armor">ASCII encoding</a> the public key with ID <code>AD741727</code>, use:</p>
 <pre><code>    :::console
     $ gpg --export --armor AD741727
 </code></pre>
@@ -561,7 +559,7 @@ all times.</p>
     gpg:       secret keys read: 1
     gpg:   secret keys imported: 1
 </code></pre>
-<p>Check for <em>secret keys imported</em> in the output. Listing secret keys for the target keyring should now show the existance of the secret key:</p>
+<p>Check for <em>secret keys imported</em> in the output. Listing secret keys for the target keyring should now show the existence of the secret key:</p>
 <pre><code>    :::console
     $ gpg --list-secret-keys
     alice/secring.gpg
@@ -574,12 +572,27 @@ all times.</p>
     uid                  Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;
     ssb   4096R/4A6D5217 2009-08-20
 </code></pre>
-<p>Finally make that the temporary file used cannot be read. We recommend secure deletion. If you are working on Linux, for example, you can use the <a href="http://www.linfo.org/shred.html" target="_blank">shred</a> command:</p>
+<p>Finally make sure that the temporary file you used cannot be read. We recommend secure deletion. If you are working on Linux, for example, you can use the <a href="http://www.linfo.org/shred.html" target="_blank">shred</a> command:</p>
 <pre><code>    :::console
     $ shred /tmp/new.sec 
     $ rm /tmp/new.sec 
 </code></pre>
 <p>Those using encrypted <code>tmp</code> should now restart the machine.</p>
+<h2 id="transition">How to transition from an old to a new key</h2>
+<p>If you have a short but uncompromised key and would like to <a href="release-signing.html#transition">transition</a> to a longer one, follow these
+<a href="key-transition.html">instructions</a>.</p>
+<p>If your key has been compromised, you <strong>must not</strong> transition. Instead, <a href="release-signing.html#revoke-key">revoke</a> the old key and replace it with a new one immediately. <strong>Do not</strong> use a transition period.</p>
+<h2 id="revocation-certs">How to use revocation certificates</h2>
+<p>When a private key is lost or compromised, a <a href="release-signing.html#revocation-cert">revocation
+certificate</a> should be
+<a href="release-signing.html#revoke-cert">distributed</a> to
+<a href="release-signing.html#keyserver">publicly</a>  <a href="release-signing.html#delete-vs-revoke">revoke the
+key</a>. In the event of a compromise
+or loss, it is best to create a new revocation certification including the
+particulars of the case. Since this may not always be possible, generic
+revocation certificates should be created for each new key pair
+<a href="#generate-key">generated</a> and <a href="release-signing.html#revocation-certificate-storage">securely
+stored</a>.</p>
 
         </div>
       </div>
