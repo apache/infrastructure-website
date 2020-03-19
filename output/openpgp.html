@@ -407,6 +407,43 @@ new key to be included at the earliest opportunity.</p>
 </li>
 </ol>
 <h2 id="private-keyring-management">Private keyring management</h2>
+<ol>
+<li>
+<p>Never transmit your private keyring over the internet!</p>
+</li>
+<li>
+<p>Store your keys on unshared local disk storage. If your employer only provides networked storage, ask for permission to use a USB fob (or CD) to store your .gnupg directory.</p>
+</li>
+<li>
+<p>Destroy your retired disks appropriately using a disk wiping utility or similar tools to ensure your keyring is no longer available
+on those disks once you are through with them. Failing that, drill through the disk platters so they are physically unusable.</p>
+</li>
+</ol>
+<h2 id="find-key-id">Find a key ID</h2>
+<p>There are a number of ways that a key may be identified. Only one is unique: the <a href="release-signing.html#fingerprint">key fingerprint</a>.</p>
+<p>Attackers can easily create new keys similar to yours with identical user IDs and comments. Such a public key may be introduced to your keyring when you download keys from a <a href="release-signing.html#keyserver">public keyserver</a> or as part of an import. If this information is used to identify public keys then you may be misled into believing that another public key is yours. A cunning attacker may even introduce a matching secret key taht lets you sign with that key.</p>
+<p>Creating a different key with a matching identity is considered <a href="release-signing.html#infeasible">infeasible</a>. For all operations where
+precise identity matters and that identity is specified on the command line, you should use the key ID to identify the key. Avoid using
+user ID or other information.</p>
+<h3 id="find-key-id-from-trusted-source">Find a key ID from a trusted source</h3>
+<p>The best way to find a key ID is to obtain it directly from a trusted source, for example, from a business card you obtain personally from the owner of the key.</p>
+<h3 id="find-key-id-with-fingerprint">Find a key ID with its fingerprint</h3>
+<p>If you have a <a href="release-signing.html#fingerprint">fingerprint</a>, the key ID should be the last 8 digits. For example, the ID of the key with this fingerprint:</p>
+<pre><code>    :::text
+    FF96 6261 C995 1DDE BF34  5150 D5D2 BDB5 E2B0 54B8
+</code></pre>
+<p>should be:</p>
+<pre><code>    :::text
+    E2B054B8
+</code></pre>
+<p>You can confirm this using:</p>
+<pre><code>    :::console
+    $ gpg --list-keys --fingerprint E2B054B8
+    pub   4096R/E2B054B8 2009-08-20
+          Key fingerprint = FF96 6261 C995 1DDE BF34  5150 D5D2 BDB5 E2B0 54B8
+    uid                  Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;
+    sub   4096R/4A6D5217 2009-08-20
+</code></pre>
 
         </div>
       </div>
