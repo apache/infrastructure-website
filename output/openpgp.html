@@ -497,6 +497,89 @@ user ID or other information.</p>
 </ul>
 <p>Make and securely store multiple copies.</p>
 <h2 id="export-key">How to export a key</h2>
+<p>Exporting public keys is a common operation. It is rarely necessary to export a <a href="release-signing.html#public-private">private key</a> and use of that operation should be kept to a minimum (see <a href="#export-secret-key">below</a> ). So, the unqualified term <em>exporting a key</em>
+almost always means <em>exporting a public key</em>.</p>
+<p>GnuPG seeks to limit accidental private key exports by using different operations for each export. Both operations share common options.</p>
+<h3>Output Options ### {#export-option-output}</h3>
+<p>By default, operations print their results to the command line.</p>
+<p>For example, to export all public keys (with ASCII encoding) to the command
+line:</p>
+<pre><code>    :::console
+    $ gpg --export --armor 
+</code></pre>
+<p>The <code>--output</code> option followed by the name of a file creates that file and stores the output in it. To export all public keys (with ASCII encoding) into a newly created file named <code>export.asc</code>, use:</p>
+<pre><code>    :::console
+    $ gpg --export --output export.asc --armor 
+</code></pre>
+<p>Though most of the examples in this guide choose to output to a file, command line output is often useful (for example, the output can be piped into a second command) and is equally valid for most operations. The exception is <a href="#export-secret-key">secret key export</a>, which should always be to a secure temporary file.</p>
+<h3 id="export-option-armor">The armor option</h3>
+<p>The <em>--armor</em> option encodes the output using <a href="release-signing.html#ascii">ASCII characters only</a>. This permits embedding the output easily in documents and displaying it on the command line.</p>
+<p>For example, to export all public keys (to the command line) encoded in ASCII:</p>
+<pre><code>    :::console
+    $ gpg --export --armor 
+</code></pre>
+<p>The binary format is shorter but has few other advantages. For all uses at Apache, use ASCII armor.</p>
+<h3 id="export-public-key")How to export public keys</h3>
+<p>The <code>--export</code> operation exports public keys.</p>
+<p>When you don't specify a key, the system exports all public keys in the keyring. For example, to export all public keys to the <a href="#export-option-output">command
+line</a> with <a href="#export-option-armor">ASCII encoding</a>:</p>
+<pre><code>    :::console
+    $ gpg --export --armor 
+</code></pre>
+<p>To export specific keys, add identifiers for these keys to the end of the command. There are a number of ways to identify keys, but only the <a href="release-signing.html#key-id">key ID</a> will definitely select a single key. This <a href="#find-key-id">guide</a> discusses how to find the key ID when it is unknown.</p>
+<p>For example, to export to the <a href="#export-option-output">command line</a> with <a href="#export-option-armor">ASCII encoding</a> the public key with ID <code>AD741727</code>:</p>
+<pre><code>    :::console
+    $ gpg --export --armor AD741727
+</code></pre>
+<h3 id="export-all-or-some-public-keys">Should I export all or some public keys"</h3>
+<p>This is often a tricky question. An import should not be trusted for key identification (see <a href="#find-key-id">discussion</a>). So, for an import to be useful, usually the key ID of interest needs to be known.</p>
+<p>Keys used at Apache should be available through the global <a href="release-signing.html#keyserver">public keyserver</a> network. Using this network, given the <a href="release-signing.html#key-id">key ID</a> the person who needs it can download the public key.</p>
+<p>So an export is really only useful for someone who cannot use the global keyserver network. But in this case, the import really needs to include all the public keys on the ring to maximise the chances of a trusted path being found in the <a href="release-signing.html#web-of-trust">web of trust</a>.</p>
+<p>The risk of exporting all keys is that users who don't understand that they should not use an export for key identification may be mislead by the other keys in the export. The risk with exporting just one public key is that users may mistakenly think that imports are trustworthy for key identification.</p>
+<p>So neither is a very satisfactory solution. Now that global keyserver network works so well, Apache may move away from the use of exports in the future.</p>
+<h3 id="export-secret-key">How to export secret keys</h3>
+<p>This is a risky operation. The most vulnerable part of the system is the <a href="release-signing.html#passphrase">passphrase</a> that encrypts the private key. If an attacker obtains a copy of the encrypted private key file, an attack on the passphrase is likely to be
+<a href="release-signing.html#infeasible">feasible</a>. So it is vital to store the <a href="release-signing.html#public-private">private key</a> securely at
+all times.</p>
+<p>There are very few occasions when this risk is justified. When people talk about exporting keys, this means the export of the <em>public</em> key only (unless the secret key is mentioned explicitly). Whenever a private key export is necessary for a task covered in this guide,  we describe the process completely in the section. We do not recommend secret key export in other circumstances.</p>
+<p>To ensure that you do not accidentally expose private keys, the GnuPG <code>--export</code> operation exports only public keys.</p>
+<p><strong>Never</strong> export secret keys to the command line. Instead, use a secure temporary file that you can securelyi delete after use. Here is one way to do this:</p>
+<h2 id="secret-key-transfer">How to transfer a secret key</h2>
+<p>Start by <a href="#switch-home">switching</a> GnuPG <a href="#home">home</a> to the source. To export all secret keys to a temporary file such as <code>/tmp/new.sec</code>, do this:</p>
+<pre><code>    :::console
+    $ gpg --export-secret-keys --armor --output /tmp/new.sec
+</code></pre>
+<p>Import this temporary file into the target keyring. Ensure that GnuPG <a href="#home">home</a> is set to the target keyring (by either
+<a href="#switch-home">switching</a> the current session or opening a new terminal configured to use the target keyring). Then do this:</p>
+<pre><code>    :::console
+    $ gpg --import /tmp/new.sec 
+    gpg: key E2B054B8: secret key imported
+    gpg: key E2B054B8: public key &quot;Alice Example (EXAMPLE NEW KEY)
+    &lt;alice@example.org&gt;&quot; imported
+    gpg: Total number processed: 1
+    gpg:               imported: 1  (RSA: 1)
+    gpg:       secret keys read: 1
+    gpg:   secret keys imported: 1
+</code></pre>
+<p>Check for <em>secret keys imported</em> in the output. Listing secret keys for the target keyring should now show the existance of the secret key:</p>
+<pre><code>    :::console
+    $ gpg --list-secret-keys
+    alice/secring.gpg
+    -----------------
+    sec   1024D/AD741727 2009-08-20
+    uid                  Alice Example (EXAMPLE OF OLD KEY) &lt;alice@example.org&gt;
+    ssb   1024g/268883A9 2009-08-20
+
+    sec   4096R/E2B054B8 2009-08-20
+    uid                  Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;
+    ssb   4096R/4A6D5217 2009-08-20
+</code></pre>
+<p>Finally make that the temporary file used cannot be read. We recommend secure deletion. If you are working on Linux, for example, you can use the <a href="http://www.linfo.org/shred.html" target="_blank">shred</a> command:</p>
+<pre><code>    :::console
+    $ shred /tmp/new.sec 
+    $ rm /tmp/new.sec 
+</code></pre>
+<p>Those using encrypted <code>tmp</code> should now restart the machine.</p>
 
         </div>
       </div>
