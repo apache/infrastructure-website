@@ -205,6 +205,208 @@ configuration has been updated to avoid SHA-1, all new keys generated will use t
 <p>Though 8192 bit keys are stronger, they are slower and may be incompatible with some older clients. For the present, 4096 bit RSA should be strong enough for code signing at Apache. To generate RSA keys with length more
 than 4096 bits, <a href="https://www.jroller.com/robertburrelldonkin/entry/gnupg_8192bit_rsa_keys" target="_blank">changes are needed</a>. Then you can follow the procedure for 4096 bits.</p>
 <h3 id="key-gen-install-latest-gnupg">Install and configure GnuPG</h3>
+<p><a href="https://www.gnupg.org" target="_blank">GnuPG</a> comes in two flavors. To easily generate a 4096 bit RSA signing and encryption key pair with strong digests, use either GnuPG version:</p>
+<ul>
+<li><code>2.0.12</code> or higher (well-known, portable version)</li>
+<li><code>1.4.10</code> or higher (version with advanced features)</li>
+</ul>
+<p>Once you generate the key, you can use it with the widely available <code>1.4.9</code> and <code>2.x</code> releases.</p>
+<p>If the right version of GnuPG is not currently distributed for your platform, you need to <a href="http://www.gnupg.org/download/index.en.html" target="_blank">install it</a>. You only need this version to generate keys, so you do not need to repace the version distributed with your platform. You can install the new version into a working directory.</p>
+<p>Checking that the installation has worked and that the version is correct, using either</p>
+<pre><code>    :::console
+    $ gpg  --version 
+    gpg (GnuPG) 1.4.10
+    Copyright (C) 2008 Free Software Foundation, Inc.
+    License GPLv3+: GNU GPL version 3 or later
+    &lt;http://gnu.org/licenses/gpl.html&gt;
+    This is free software: you are free to change and redistribute it.
+    There is NO WARRANTY, to the extent permitted by law.
+
+    Home: ~/.gnupg
+    Supported algorithms:
+    Pubkey: RSA, RSA-E, RSA-S, ELG-E, DSA
+    Cipher: 3DES, CAST5, BLOWFISH, AES, AES192, AES256, TWOFISH, CAMELLIA128, 
+            CAMELLIA192, CAMELLIA256
+    Hash: MD5, SHA1, RIPEMD160, SHA256, SHA384, SHA512, SHA224
+    Compression: Uncompressed, ZIP, ZLIB, BZIP2
+</code></pre>
+<p>or</p>
+<pre><code>    :::console
+    $ gpg2 --version
+    gpg (GnuPG) 2.0.12
+    libgcrypt 1.4.4
+    Copyright (C) 2009 Free Software Foundation, Inc.
+    License GPLv3+: GNU GPL version 3 or later
+    &lt;http://gnu.org/licenses/gpl.html&gt;
+    This is free software: you are free to change and redistribute it.
+    There is NO WARRANTY, to the extent permitted by law.
+
+    Home: ~/.gnupg
+    Supported algorithms:
+    Pubkey: RSA, ELG, DSA
+    Cipher: 3DES, CAST5, BLOWFISH, AES, AES192, AES256, TWOFISH, CAMELLIA128, 
+            CAMELLIA192, CAMELLIA256
+    Hash: MD5, SHA1, RIPEMD160, SHA256, SHA384, SHA512, SHA224
+    Compression: Uncompressed, ZIP, ZLIB, BZIP2
+</code></pre>
+<p>Now confirm that the configuration file is <a href="#sha1">set up to avoid SHA-1</a>.</p>
+<h3 id="key-gen-generate-key">Generate a new key</h3>
+<p>Versions <code>2.0.12</code>and <code>1.4.10</code> introduced a new default key generation option - <em>RSA and RSA</em>. <a href="release-signing.html#rsa">RSA</a>
+keys are used for both encryption and signing. Longer key lengths are available. Select or accept this option when generating new keys.</p>
+<p>Follow the recommendations about <a href="release-signing.html#user-id">user ID</a> and <a href="release-signing.html#key-comment">comment</a>. Use a strong
+<a href="release-signing.html#passphrase">passphrase</a>.</p>
+<p>Follow either</p>
+<pre><code>    :::console
+    $ gpg --gen-key 
+    gpg (GnuPG) 1.4.10; Copyright (C) 2008 Free Software Foundation, Inc.
+    This is free software: you are free to change and redistribute it.
+    There is NO WARRANTY, to the extent permitted by law.
+
+    Please select what kind of key you want:
+       (1) RSA and RSA (default)
+       (2) DSA and Elgamal
+       (3) DSA (sign only)
+       (4) RSA (sign only)
+    Your selection? 1
+    RSA keys may be between 1024 and 4096 bits long.
+    What keysize do you want? (2048) 4096
+    Requested keysize is 4096 bits
+    Please specify how long the key should be valid.
+             0 = key does not expire
+          &lt;n&gt;  = key expires in n days
+          &lt;n&gt;w = key expires in n weeks
+          &lt;n&gt;m = key expires in n months
+          &lt;n&gt;y = key expires in n years
+    Key is valid for? (0) 
+    Key does not expire at all
+    Is this correct? (y/N) y
+
+    You need a user ID to identify your key; the software constructs the user
+    ID
+    from the Real Name, Comment and Email Address in this form:
+        &quot;Heinrich Heine (Der Dichter) &lt;heinrichh@duesseldorf.de&gt;&quot;
+
+    Real name: Robert Burrell Donkin 
+    Email address: rdonkin@apache.org
+    Comment: CODE SIGNING KEY
+    You selected this USER-ID:
+        &quot;Robert Burrell Donkin (CODE SIGNING KEY) &lt;rdonkin@apache.org&gt;&quot;
+
+    Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O
+    You need a Passphrase to protect your secret key.
+</code></pre>
+<p>or</p>
+<pre><code>    :::console
+    $ gpg2 --full-gen-key
+    gpg (GnuPG) 2.0.12; Copyright (C) 2009 Free Software Foundation, Inc.
+    This is free software: you are free to change and redistribute it.
+    There is NO WARRANTY, to the extent permitted by law.
+
+    Please select what kind of key you want:
+       (1) RSA and RSA (default)
+       (2) DSA and Elgamal
+       (3) DSA (sign only)
+       (4) RSA (sign only)
+    Your selection? 1
+    RSA keys may be between 1024 and 4096 bits long.
+    What keysize do you want? (2048) 4096
+    Requested keysize is 4096 bits
+    Please specify how long the key should be valid.
+             0 = key does not expire
+          &lt;n&gt;  = key expires in n days
+          &lt;n&gt;w = key expires in n weeks
+          &lt;n&gt;m = key expires in n months
+          &lt;n&gt;y = key expires in n years
+    Key is valid for? (0) 
+    Key does not expire at all
+    Is this correct? (y/N) y
+
+    GnuPG needs to construct a user ID to identify your key.
+
+    Real name: Robert Burrell Donkin
+    Email address: rdonkin@apache.org
+    Comment: CODE SIGNING KEY
+    You selected this USER-ID:
+        &quot;Robert Burrell Donkin (CODE SIGNING KEY) &lt;rdonkin@apache.org&gt;&quot;
+
+    Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O
+    You need a Passphrase to protect your secret key.
+</code></pre>
+<h3 id="key-gen-avoid-sha1">Check that the key avoids using SHA-1</h3>
+<p>Check that the configuration has correctly set the key preferences to avoid SHA-1, using either:</p>
+<pre><code>    :::console
+    $ gpg --edit-key 773447FD
+    gpg (GnuPG) 1.4.10; Copyright (C) 2008 Free Software Foundation, Inc.
+    This is free software: you are free to change and redistribute it.
+    There is NO WARRANTY, to the extent permitted by law.
+
+    Secret key is available.
+
+    pub  4096R/773447FD  created: 2010-02-16  expires: never       usage: SC  
+                         trust: ultimate      validity: ultimate
+    sub  4096R/436E0F7C  created: 2010-02-16  expires: never       usage: E   
+    [ultimate] (1). Robert Burrell Donkin (CODE SIGNING KEY) &lt;rdonkin@apache.org&gt;
+
+    Command&gt; showpref
+    [ultimate] (1). Robert Burrell Donkin (CODE SIGNING KEY)
+    &lt;rdonkin@apache.org&gt;
+         Cipher: AES256, AES192, AES, CAST5, 3DES
+         Digest: SHA512, SHA384, SHA256, SHA224, SHA1
+         Compression: ZLIB, BZIP2, ZIP, Uncompressed
+         Features: MDC, Keyserver no-modify
+</code></pre>
+<p>or</p>
+<pre><code>    :::console
+    $ gpg2 --edit-key A6EE6908
+    gpg (GnuPG) 2.0.12; Copyright (C) 2009 Free Software Foundation, Inc.
+    This is free software: you are free to change and redistribute it.
+    There is NO WARRANTY, to the extent permitted by law.
+
+    Secret key is available.
+
+    pub  8192R/A6EE6908  created: 2009-08-07  expires: never       usage: SC  
+                         trust: ultimate      validity: ultimate
+    sub  8192R/B800EFC1  created: 2009-08-07  expires: never       usage: E   
+    [ultimate] (1). Robert Burrell Donkin (CODE SIGNING KEY) &lt;rdonkin@apache.org&gt;
+
+    Command&gt; showpref 
+    [ultimate] (1). Robert Burrell Donkin (CODE SIGNING KEY)
+    &lt;rdonkin@apache.org&gt;
+         Cipher: AES256, AES192, AES, CAST5, 3DES
+         Digest: SHA512, SHA384, SHA256, SHA224, SHA1
+         Compression: ZLIB, BZIP2, ZIP, Uncompressed
+         Features: MDC, Keyserver no-modify
+
+</code></pre>
+<p>The <code>Digest</code> line should list SHA-512 first and SHA-1 last. Instructions for altering the preferences of a key are
+<a href="#key-prefs">here</a>.</p>
+<h3 id="final-steps">Final steps</h3>
+<p>When you generate a new code signing key, you need to update a number of Apache documents and perform some other tasks.</p>
+<p id="generation-final-steps-transition" />
+<p>If you are generating a key for use in a <a href="release-signing.html#transition">transition</a>, there is more you should do before updating these documents, so <a href="key-transition.html#ContinueAfterGeneration">go to the transition instructions now</a>.</p>
+<p id="generation-final-steps-new-key" >
+<p>If this is a new code signing key not involved with a transition:</p>
+<ol>
+<li>
+<p><a href="release-signing.html#keyserver-upload">Upload</a> the new <a href="release-signing.html#public-private">public key</a> to a public
+<a href="release-signing.html#keyserver">keyserver</a></p>
+</li>
+<li>
+<p>Create backups by following these <a href="#backup">instructions</a></p>
+</li>
+<li>
+<p>Follow these <a href="#revocation-certs">instructions</a> to create and securely store generic <a href="release-signing.html#revocation-cert">revocation
+certificates</a> for the new key</p>
+</li>
+<li>
+<p>Follow these <a href="#update">instructions</a> (ignoring the transition option) to create or update Apache documents</p>
+</li>
+<li>
+<p>Read this <a href="#wot">guide</a> to the Apache use of the <a href="release-signing.html#web-of-trust">web of trust</a> and make arrangements for your
+new key to be included at the earliest opportunity.</p>
+</li>
+</ol>
+<h2 id="private-keyring-management">Private keyring management</h2>
 
         </div>
       </div>
