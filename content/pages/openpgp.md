@@ -485,6 +485,36 @@ For example, a <a href="http://home.apache.org/~rdonkin/" target="_blank">web pa
 
 <h3 id="backup-public">Back up public information</h3>
 
+The [key ID](release-signing.html#key-id) is not confidential but without access to this information from a trusted source, substitution attacks are [feasible](release-signing.html#infeasible) (see this [discussion](#find-key-id)).
+
+So, for each [key pair](release-signing.html#public-private) you generate, the [key ID](release-signing.html#key-id) needs to recorded in a form that makes tampering difficult. Defense in depth is the best strategy. We recommend that you use a range of methods::
+
+  - Print a hard copy of the key ID and store it securely
+  - Include the key ID on your business cards
+  - ASF Members should include the key ID on their Apache business cards
+  - Include a text document containing the key ID in your [secure, tamperproof private backups](#backup-private)
+  
+<h3 id="backup-private">Back up private information</h3>
+
+Keep your [private key](release-signing.html#public-private) both safe and away from attackers. If a private key is destroyed or lost, it must be revoked and should no longer be used. Given the effort that's needed to build a strong [web of trust](release-signing.html#web-of-trust), it is important to back up the private key without compromising security.
+
+The best way to back up a private key is to securely archive the entire [GnuPG home](#home) by copying the contents into secure, encrypted storage. We recommended that you version each archived copy and store it permenantly.
+
+Full disk encryption is the best storage solution for disks containing the private key. How to encrypt a full disc is platform dependent and is beyond the scope of this guide, but many major platforms now support this.
+
+Choose a strong passphrase. If this is not possible then use strong, [symmetric](#symmetric) encryption to protect a compressed archive.
+
+We recommend a removable medium type with good long term storage characteristics:
+
+  - A small capacity, high quality USB flash drive
+  - A CDROM
+
+Make and securely store multiple copies.
+
+<h2 id="export-key">How to export a key</h2>
+
+
+
 
 
 
