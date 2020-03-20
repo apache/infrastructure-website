@@ -730,6 +730,59 @@ line. For example, to encrypt a document <code>INPUT_FILENAME</code> using <code
     $ gpg --output OUTPUT_FILE --decrypt ENCRYPTED_FILE
 </code></pre>
 <h2 id="update">How to update Apache documents with details of a new key</h2>
+<p>For the new key, you will need to provide both the <a href="release-signing.html#fingerprint">fingerprint</a> and the <a href="release-signing.html#public-private">public key</a> export more than once. We repeat the creation instructions below for each case but you may find it more convenient to create, store then reuse the results.</p>
+<h3 id="publish-in-web-space">Publish the new public key</h3>
+<p>Note: signing keys must also be uploaded to a public key server, see
+<a href="http://www.apache.org/dev/release-signing.html#keyserver-upload">http://www.apache.org/dev/release-signing.html#keyserver-upload</a></p>
+<p>They should also be added to your LDAP record using the self-service app at <a href="https://id.apache.org">https://id.apache.org</a></p>
+<p>A reliable, permanent URL for your new public key is useful. Your Apache
+web space is an ideal location for this. It is recommended that you copy an
+<a href="release-signing.html#ascii">ASCII armored</a>  <a href="release-signing.html#public-private">public
+key</a>
+<a href="release-signing.html#export">export</a> (see instructions later, or use
+documents you created earlier) into the <code>public_html</code> subdirectory of your
+home on <a href="http://home.apache.org">home.apache.org</a>.</p>
+<p>The suffix <code>.asc</code> is conventional for ASCII armored public key exports. So,
+for example, <code>A6EE6908.asc</code> is a reasonable choice for the export of key
+<code>A6EE6908</code>. Record the URL (for example
+<code>http://home.apache.org/~rdonkin/A6EE6908.asc</code> ) for use later in your
+<a href="#foaf">FOAF</a>.</p>
+<p>If your Apache home page contains details of your keys (recommended) update
+the <a href="release-signing.html#fingerprint">fingerprints</a> and the <a href="release-signing.html#ascii">ASCII
+armored</a>  <a href="release-signing.html#public-private">public
+key</a>
+<a href="release-signing.html#export">export</a>. Any browser with a suitable
+<a href="release-signing.html#openpgp">OpenPGP</a> plugin (for example,
+<a href="http://www.mozilla.com/firefox/">Firefox</a> with
+<a href="http://www.getfiregpg.org">FireGPG</a> ) will be able to download the key
+into the local keyring.</p>
+<p>For example, <a href="http://home.apache.org/%7Erdonkin/">this home page</a> contains
+a section with fingerprints and a link to the export. At the bottom, the
+export has been inlined allowing browsers with
+<a href="release-signing.html#opengpg">OpenPGP</a> support to import the keys.</p>
+<p>To create an <a href="release-signing.html#ascii">ASCII armored</a>  <a href="release-signing.html#public-private">public
+key</a>
+<a href="release-signing.html#export">export</a> :</p>
+<ul>
+<li>
+<p>When using a <a href="release-signing.html#transition">transition</a> , follow these
+<a href="key-transition.html#transition-export">instructions</a>.</p>
+</li>
+<li>
+<p>Otherwise this <a href="#export-key">discussion</a> describes how to export public
+keys</p>
+</li>
+</ul>
+<p>To find the <a href="release-signing.html#fingerprint">fingerprint</a> for a key:</p>
+<ul>
+<li>
+<p>When using a <a href="release-signing.html#transition">transition</a> , follow these
+<a href="key-transition.html#transition-fingerprints">instructions</a>.</p>
+</li>
+<li>
+<p>Otherwise <code>gpg --fingerprint</code></p>
+</li>
+</ul>
 
         </div>
       </div>
