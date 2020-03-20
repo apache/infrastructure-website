@@ -832,6 +832,61 @@ The file format contains metadata, including the cipher used. So to decrypt `ENC
 
 <h2 id="update">How to update Apache documents with details of a new key</h2>
 
+For the new key, you will need to provide both the [fingerprint](release-signing.html#fingerprint) and the [public key](release-signing.html#public-private) export more than once. We repeat the creation instructions below for each case but you may find it more convenient to create, store then reuse the results.
+
+<h3 id="publish-in-web-space">Publish the new public key</h3>
+
+Note: signing keys must also be uploaded to a public key server, see
+ [http://www.apache.org/dev/release-signing.html#keyserver-upload](http://www.apache.org/dev/release-signing.html#keyserver-upload)
+
+They should also be added to your LDAP record using the self-service app at https://id.apache.org
+
+A reliable, permanent URL for your new public key is useful. Your Apache
+web space is an ideal location for this. It is recommended that you copy an
+[ASCII armored](release-signing.html#ascii)  [public
+key](release-signing.html#public-private) 
+[export](release-signing.html#export) (see instructions later, or use
+documents you created earlier) into the `public_html` subdirectory of your
+home on [home.apache.org](http://home.apache.org).
+
+The suffix `.asc` is conventional for ASCII armored public key exports. So,
+for example, `A6EE6908.asc` is a reasonable choice for the export of key
+`A6EE6908`. Record the URL (for example
+`http://home.apache.org/~rdonkin/A6EE6908.asc` ) for use later in your
+[FOAF](#foaf).
+
+If your Apache home page contains details of your keys (recommended) update
+the [fingerprints](release-signing.html#fingerprint) and the [ASCII
+armored](release-signing.html#ascii)  [public
+key](release-signing.html#public-private) 
+[export](release-signing.html#export). Any browser with a suitable
+[OpenPGP](release-signing.html#openpgp) plugin (for example,
+[Firefox](http://www.mozilla.com/firefox/) with
+[FireGPG](http://www.getfiregpg.org) ) will be able to download the key
+into the local keyring.
+
+For example, [this home page](http://home.apache.org/~rdonkin/) contains
+a section with fingerprints and a link to the export. At the bottom, the
+export has been inlined allowing browsers with
+[OpenPGP](release-signing.html#opengpg) support to import the keys.
+
+To create an [ASCII armored](release-signing.html#ascii)  [public
+key](release-signing.html#public-private) 
+[export](release-signing.html#export) :
+
+- When using a [transition](release-signing.html#transition) , follow these
+[instructions](key-transition.html#transition-export).
+
+- Otherwise this [discussion](#export-key) describes how to export public
+keys
+
+To find the [fingerprint](release-signing.html#fingerprint) for a key:
+
+- When using a [transition](release-signing.html#transition) , follow these
+[instructions](key-transition.html#transition-fingerprints).
+
+- Otherwise `gpg --fingerprint` 
+
 
 
 
