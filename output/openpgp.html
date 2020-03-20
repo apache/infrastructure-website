@@ -94,7 +94,8 @@ Cryptography with OpenPGP        </a>
           <h2>
               Cryptography with OpenPGP
           </h2>
-              <h2 id="introduction">Introduction</h2>
+              <div id="toc" style="border-radius: 3px; border: 1px solid #999; background-color: #EEE; padding: 4px;"><h4>Table of Contents:</h4><ul><ul><li><a class="toc-href" href="#introduction" title="Introduction">Introduction</a></li><li><a class="toc-href" href="#gnupg" title="Gnu Privacy Guard (GPG)">Gnu Privacy Guard (GPG)</a><ul><li><a class="toc-href" href="#home" title="GnuPG Home">GnuPG Home</a><ul><li><a class="toc-href" href="#switch-home" title="How to switch Home">How to switch Home</a></li></ul></li><li><a class="toc-href" href="#configuration_1" title="Configuration">Configuration</a></li><li><a class="toc-href" href="#sha1" title="Avoid SHA-1">Avoid SHA-1</a></li><li><a class="toc-href" href="#sha-defaults" title="Setting defaults">Setting defaults</a></li><li><a class="toc-href" href="#key-prefs" title="Setting preferences for keys">Setting preferences for keys</a></li></ul></li><li><a class="toc-href" href="#generate-key_1" title="How to generate a strong key">How to generate a strong key</a><ul><li><a class="toc-href" href="#key-gen-install-latest-gnupg" title="Install and configure GnuPG">Install and configure GnuPG</a></li><li><a class="toc-href" href="#key-gen-generate-key" title="Generate a new key">Generate a new key</a></li><li><a class="toc-href" href="#key-gen-avoid-sha1" title="Check that the key avoids using SHA-1">Check that the key avoids using SHA-1</a></li><li><a class="toc-href" href="#final-steps" title="Final steps">Final steps</a></li></ul></li><li><a class="toc-href" href="#private-keyring-management_1" title="Private keyring management">Private keyring management</a></li><li><a class="toc-href" href="#find-key-id" title="Find a key ID">Find a key ID</a><ul><li><a class="toc-href" href="#find-key-id-from-trusted-source" title="Find a key ID from a trusted source">Find a key ID from a trusted source</a></li><li><a class="toc-href" href="#find-key-id-with-fingerprint" title="Find a key ID with its fingerprint">Find a key ID with its fingerprint</a></li><li><a class="toc-href" href="#find-key-id-with-secret-key" title="When you have the secret key">When you have the secret key</a></li><li><a class="toc-href" href="#find-key-id-otherwise" title="When you do not have the secret key">When you do not have the secret key</a></li></ul></li><li><a class="toc-href" href="#backup_1" title="How to back up">How to back up</a><ul><li><a class="toc-href" href="#backup-public" title="Back up public information">Back up public information</a></li><li><a class="toc-href" href="#backup-private" title="Back up private information">Back up private information</a></li></ul></li><li><a class="toc-href" href="#export-key_1" title="How to export a key">How to export a key</a><ul><li><a class="toc-href" href="#export-option-output" title="Output options">Output options</a></li><li><a class="toc-href" href="#export-option-armor" title="The armor option">The armor option</a></li><li><a class="toc-href" href="#export-public-key" title="How to export public keys">How to export public keys</a></li><li><a class="toc-href" href="#export-all-or-some-public-keys" title='Should I export all or some public keys"'>Should I export all or some public keys"</a></li><li><a class="toc-href" href="#export-secret-key" title="How to export secret keys">How to export secret keys</a></li></ul></li><li><a class="toc-href" href="#secret-key-transfer_1" title="How to transfer a secret key">How to transfer a secret key</a></li><li><a class="toc-href" href="#transition" title="How to transition from an old to a new key">How to transition from an old to a new key</a></li><li><a class="toc-href" href="#revocation-certs" title="How to use revocation certificates">How to use revocation certificates</a></li></ul></ul></div>
+<h2 id="introduction">Introduction</h2>
 OpenPGP is encryption software. The program provides cryptographic privacy and authentication for data communication, covering signing, encrypting, and decrypting texts, e-mails, files, directories, and whole disk partitions and increasing the security of e-mail communications.
 <p>Reliable cryptography applications follow OpenPGP, an open standard of Pretty Good Privacy (PGP) encryption software, standard (RFC 4880), for encrypting and decrypting data.</p>
 <h2 id="gnupg">Gnu Privacy Guard (GPG)</h2>
@@ -127,7 +128,7 @@ command line session. This is useful when <a href="release-signing.html#safe-pra
     uid   Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;
     ssb   4096R/4A6D5217 2009-08-20
 </code></pre>
-<h3 id="configuration">Configuration</h3>
+<h3 id="configuration_1">Configuration</h3>
 <p>GnuPG supports a wide range of configuration options. You can specify them on the command line, but it is usually more convenient to set them in the <code>gpg.conf</code> file. By default, this is located in the <a href="#home">GnuPG Home</a> directory.</p>
 <h3 id="sha1">Avoid SHA-1</h3>
 <p><a href="release-signing.html#sha1">Avoid</a> using <code>SHA-1</code>. Use <code>SHA512</code> or <code>SHA256</code> instead. <code>SHA512</code> is stronger than <code>SHA256</code>. Though some old
@@ -185,7 +186,7 @@ configuration has been updated to avoid SHA-1, all new keys generated will use t
     Really update the preferences? (y/N) y
 
     You need a passphrase to unlock the secret key for
-    user: &quot;Example Key (NOT FOR DISTRIBUTION) &lt;bogus@example.org&gt;&quot;
+    user: "Example Key (NOT FOR DISTRIBUTION) &lt;bogus@example.org&gt;"
     1024-bit DSA key, ID F8B7B4FD, created 2009-08-12
 
     pub  1024D/F8B7B4FD  created: 2009-08-12  expires: 2009-09-11  usage: SC  
@@ -199,7 +200,7 @@ configuration has been updated to avoid SHA-1, all new keys generated will use t
 <pre><code>    :::console
     $ gpg --send-keys F8B7B4FD
 </code></pre>
-<h2 id="generate-key">How to generate a strong key</h2>
+<h2 id="generate-key_1">How to generate a strong key</h2>
 <p>The weaknesses found in <a href="release-signing.html#sha1">SHA-1</a> threaten all DSA keys and those RSA keys with length less than 2048 bits. Though no realistic attack against those keys have been made public and these keys continue to be useful (and do not need to be revoked), Projects should not generate new keys that are exposed to this weakness.</p>
 <p>The next generation of <a href="release-signing.html#openpgp">OpenPGP</a> will use <a href="release-signing.html#sha3">SHA-3</a>. For now, the 2048 bit RSA keys with SHA256 hash should be strong enough. For those with 2048 bit RSA keys, the best advice is to <a href="#sha1">switch</a> to SHA256 or SHA512 as soon as possible. All new keys generated should be RSA with at least 4096 bits.</p>
 <p>Though 8192 bit keys are stronger, they are slower and may be incompatible with some older clients. For the present, 4096 bit RSA should be strong enough for code signing at Apache. To generate RSA keys with length more
@@ -284,13 +285,13 @@ keys are used for both encryption and signing. Longer key lengths are available.
     You need a user ID to identify your key; the software constructs the user
     ID
     from the Real Name, Comment and Email Address in this form:
-        &quot;Heinrich Heine (Der Dichter) &lt;heinrichh@duesseldorf.de&gt;&quot;
+        "Heinrich Heine (Der Dichter) &lt;heinrichh@duesseldorf.de&gt;"
 
     Real name: Robert Burrell Donkin 
     Email address: rdonkin@apache.org
     Comment: CODE SIGNING KEY
     You selected this USER-ID:
-        &quot;Robert Burrell Donkin (CODE SIGNING KEY) &lt;rdonkin@apache.org&gt;&quot;
+        "Robert Burrell Donkin (CODE SIGNING KEY) &lt;rdonkin@apache.org&gt;"
 
     Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O
     You need a Passphrase to protect your secret key.
@@ -327,7 +328,7 @@ keys are used for both encryption and signing. Longer key lengths are available.
     Email address: rdonkin@apache.org
     Comment: CODE SIGNING KEY
     You selected this USER-ID:
-        &quot;Robert Burrell Donkin (CODE SIGNING KEY) &lt;rdonkin@apache.org&gt;&quot;
+        "Robert Burrell Donkin (CODE SIGNING KEY) &lt;rdonkin@apache.org&gt;"
 
     Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O
     You need a Passphrase to protect your secret key.
@@ -382,9 +383,9 @@ keys are used for both encryption and signing. Longer key lengths are available.
 <a href="#key-prefs">here</a>.</p>
 <h3 id="final-steps">Final steps</h3>
 <p>When you generate a new code signing key, you need to update a number of Apache documents and perform some other tasks.</p>
-<p id="generation-final-steps-transition" />
+<p id="generation-final-steps-transition"></p>
 <p>If you are generating a key for use in a <a href="release-signing.html#transition">transition</a>, there is more you should do before updating these documents, so <a href="key-transition.html#ContinueAfterGeneration">go to the transition instructions now</a>.</p>
-<p id="generation-final-steps-new-key" />
+<p id="generation-final-steps-new-key"></p>
 <p>If this is a new code signing key not involved with a transition:</p>
 <ol>
 <li>
@@ -406,7 +407,7 @@ certificates</a> for the new key</p>
 new key to be included at the earliest opportunity.</p>
 </li>
 </ol>
-<h2 id="private-keyring-management">Private keyring management</h2>
+<h2 id="private-keyring-management_1">Private keyring management</h2>
 <ol>
 <li>
 <p>Never transmit your private keyring over the internet!</p>
@@ -475,7 +476,7 @@ user ID or other information.</p>
 <p>Unless you have the <a href="release-signing.html#public-private">private key</a> or a <a href="release-signing.html#fingerprint">fingerprint</a>, the only safe way to find the key ID is to ask the owner of the key, using a secure communication channel.</p>
 <p>Trusting that an import contains only the owner's public key is <strong>not recommended</strong>. The import may contain additional public keys (intentionally or not). So, when using an import, always verify the key ID of interest from another source.</p>
 <p>For example, a <a href="http://home.apache.org/~rdonkin/" target="_blank">web page with an embedded export</a> should also list the key IDs of interest.</p>
-<h2 id="backup">How to back up</h2>
+<h2 id="backup_1">How to back up</h2>
 <h3 id="backup-public">Back up public information</h3>
 <p>The <a href="release-signing.html#key-id">key ID</a> is not confidential but without access to this information from a trusted source, substitution attacks are <a href="release-signing.html#infeasible">feasible</a> (see this <a href="#find-key-id">discussion</a>).</p>
 <p>So, for each <a href="release-signing.html#public-private">key pair</a> you generate, the <a href="release-signing.html#key-id">key ID</a> needs to recorded in a form that makes tampering difficult. Defense in depth is the best strategy. We recommend that you use a range of methods::</p>
@@ -496,7 +497,7 @@ user ID or other information.</p>
 <li>A CDROM</li>
 </ul>
 <p>Make and securely store multiple copies.</p>
-<h2 id="export-key">How to export a key</h2>
+<h2 id="export-key_1">How to export a key</h2>
 <p>Exporting public keys is a common operation. It is rarely necessary to export a <a href="release-signing.html#public-private">private key</a> and use of that operation should be kept to a minimum (see <a href="#export-secret-key">below</a> ). So, the unqualified term <em>exporting a key</em>
 almost always means <em>exporting a public key</em>.</p>
 <p>GnuPG seeks to limit accidental private key exports by using different operations for each export. Both operations share common options.</p>
@@ -542,7 +543,7 @@ all times.</p>
 <p>There are very few occasions when this risk is justified. When people talk about exporting keys, this means the export of the <em>public</em> key only (unless the secret key is mentioned explicitly). Whenever a private key export is necessary for a task covered in this guide,  we describe the process completely in the section. We do not recommend secret key export in other circumstances.</p>
 <p>To ensure that you do not accidentally expose private keys, the GnuPG <code>--export</code> operation exports only public keys.</p>
 <p><strong>Never</strong> export secret keys to the command line. Instead, use a secure temporary file that you can securelyi delete after use. Here is one way to do this:</p>
-<h2 id="secret-key-transfer">How to transfer a secret key</h2>
+<h2 id="secret-key-transfer_1">How to transfer a secret key</h2>
 <p>Start by <a href="#switch-home">switching</a> GnuPG <a href="#home">home</a> to the source. To export all secret keys to a temporary file such as <code>/tmp/new.sec</code>, do this:</p>
 <pre><code>    :::console
     $ gpg --export-secret-keys --armor --output /tmp/new.sec
@@ -552,8 +553,8 @@ all times.</p>
 <pre><code>    :::console
     $ gpg --import /tmp/new.sec 
     gpg: key E2B054B8: secret key imported
-    gpg: key E2B054B8: public key &quot;Alice Example (EXAMPLE NEW KEY)
-    &lt;alice@example.org&gt;&quot; imported
+    gpg: key E2B054B8: public key "Alice Example (EXAMPLE NEW KEY)
+    &lt;alice@example.org&gt;" imported
     gpg: Total number processed: 1
     gpg:               imported: 1  (RSA: 1)
     gpg:       secret keys read: 1
@@ -586,7 +587,7 @@ all times.</p>
 <p>When a private key is lost or compromised, a <a href="release-signing.html#revocation-cert">revocation
 certificate</a> should be
 <a href="release-signing.html#revoke-cert">distributed</a> to
-<a href="release-signing.html#keyserver">publicly</a>  <a href="release-signing.html#delete-vs-revoke">revoke the
+<a href="release-signing.html#keyserver">publicly</a> <a href="release-signing.html#delete-vs-revoke">revoke the
 key</a>. In the event of a compromise
 or loss, it is best to create a new revocation certification including the
 particulars of the case. Since this may not always be possible, generic
