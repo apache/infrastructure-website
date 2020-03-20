@@ -836,10 +836,7 @@ For the new key, you will need to provide both the [fingerprint](release-signing
 
 <h3 id="publish-in-web-space">Publish the new public key</h3>
 
-Note: signing keys must also be uploaded to a public key server, see
- [http://www.apache.org/dev/release-signing.html#keyserver-upload](http://www.apache.org/dev/release-signing.html#keyserver-upload)
-
-They should also be added to your LDAP record using the self-service app at https://id.apache.org
+**Note**: you must [upload signing keys to a public key server](release-signing.html#keyserver-upload. You must also add them to your LDAP record using the Apache <a href="https://id.apache.org" target="_blank">self-service app</a>.
 
 A reliable, permanent URL for your new public key is useful. Your Apache
 web space is an ideal location for this. It is recommended that you copy an
