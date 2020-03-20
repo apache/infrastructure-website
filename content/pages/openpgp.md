@@ -4,7 +4,7 @@ Title: Cryptography with OpenPGP
 <ul>
     <li><a href="#introduction">Introduction</a></li>
     <li><a href="#gnupg">Gnu Privacy Guard</a></li>
-    <li><a href="#generate-key">How to generate a strong key</li>
+    <li><a href="#generate-key">How to generate a strong key</a></li>
 </ul>
 
 <h2 id="introduction">Introduction</h2>
