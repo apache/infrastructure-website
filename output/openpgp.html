@@ -105,7 +105,9 @@ Cryptography with OpenPGP        </a>
     <li><a href="#export-key">How to export a key</a></li>
     <li><a href="#secret-key-transfer">How to transfer a secret key</a></li>
     <li><a href="#transition">How to transition from an old to a new key</a></li>
-    <li><a href="revocation-certs">How to use revocation certificates</a></li>
+    <li><a href="#revocation-certs">How to use revocation certificates</a></li>
+    <li><a href="#symmetric">How to use symmetric encryption</a></li>
+    <li><a href="#update">How to update Apache documents with details of a new key</a></li>
 </ul>
 <h2 id="introduction">Introduction</h2>
 <p>OpenPGP is encryption software. The program provides cryptographic privacy and authentication for data communication, covering signing, encrypting, and decrypting texts, e-mails, files, directories, and whole disk partitions and increasing the security of e-mail communications.</p>
@@ -596,16 +598,138 @@ all times.</p>
 <a href="key-transition.html">instructions</a>.</p>
 <p>If your key has been compromised, you <strong>must not</strong> transition. Instead, <a href="release-signing.html#revoke-key">revoke</a> the old key and replace it with a new one immediately. <strong>Do not</strong> use a transition period.</p>
 <h2 id="revocation-certs">How to use revocation certificates</h2>
-<p>When a private key is lost or compromised, a <a href="release-signing.html#revocation-cert">revocation
-certificate</a> should be
-<a href="release-signing.html#revoke-cert">distributed</a> to
-<a href="release-signing.html#keyserver">publicly</a>  <a href="release-signing.html#delete-vs-revoke">revoke the
-key</a>. In the event of a compromise
-or loss, it is best to create a new revocation certification including the
-particulars of the case. Since this may not always be possible, generic
-revocation certificates should be created for each new key pair
-<a href="#generate-key">generated</a> and <a href="release-signing.html#revocation-certificate-storage">securely
-stored</a>.</p>
+<p>When a private key is lost or compromised, a <a href="release-signing.html#revocation-cert">revocation certificate</a> should be
+<a href="release-signing.html#revoke-cert">distributed</a> to <a href="release-signing.html#keyserver">publicly</a>  <a href="release-signing.html#delete-vs-revoke">revoke the key</a>. In the event of a compromise or loss of the key, it is best to create a new revocation certification including the particulars of the case. Since this may not always be possible, you can <a href="#generate-key">generate</a> and <a href="release-signing.html#revocation-certificate-storage">securely
+store</a> generic revocation certificates for each new key pair.</p>
+<h3 id="revocation-cert-generic">Generic revocation certificates</h3>
+<p>When you create a new <a href="release-signing.html#public-private">key pair</a>, also generate and store generic revocation certificates for that key pair. We recommend that you generate a certificate (following the instructions in the next section) for each appropriate
+revocation reason type:</p>
+<ul>
+<li>No reason specified</li>
+<li>Key has been compromised</li>
+<li>Key is no longer used</li>
+</ul>
+<p>Note that <em>Key is superseded</em> is not appropriate for a new key since it is not possible to know which key will replace it.</p>
+<p>Store your generic revocation certificates securely until you need to use them. If an attacker obtains a revocation certificate, they will be able to deny your use of the key by publishing it. The private key is not compromised by this act and this limits the harm they can do. However, you will need to generate a new key to replace the one that has been revoked, rebuild the <a href="release-signing.html#web-of-trust">web of trust</a> and follow the <a href="release-signing.html#revoke-cert">Apache revocation process</a>.</p>
+<p>We recommend that you store these certificates directly onto secure media with good long term stability (for example, an encrypted file
+system on a top end USB drive or a CDROM). Print and store hard copies of the certificates yourself, and with trusted third parties.</p>
+<h3 id="revocation-cert-gen">How to generate a revocation certificate</h3>
+<p>Revocation certificates include a small amount of additional information&quot;</p>
+<p>One of four machine readable reason types:</p>
+<ul>
+<li>No reason specified - <em>a catch-all category</em></li>
+<li>Key has been compromised - <em>also use this if you believe that the key may have been compromised (for example, when a storage device containing the private key has been lost)</em></li>
+<li>Key is superseded - <em>the comment should suggest the replacement key</em></li>
+<li>Key is no longer used - <em>useful when the key has been destroyed and so a generic revocation prepared earlier must be used</em></li>
+</ul>
+<p>The certificate also includes a human-readable <em>comment</em>. Explain here the reason why you are revoking the key. This lets those affected by the revocation to formulate an appropriate response.</p>
+<p>When a key has been compromised, lost or superseded, when possible generate a new certificate containing a comment explaining the
+situation. For example, generate an <a href="release-signing.html#ascii">ASCII armored</a> (for
+ease of handling) revocation certificate for key <code>AD741727</code> like this:</p>
+<pre><code>    :::console
+    $ gpg --output revoke-AD741727.asc --armor --gen-revoke AD741727
+
+    sec  1024D/AD741727 2009-08-20 Alice Example (EXAMPLE OF OLD KEY)
+    &lt;alice@example.org&gt;
+
+    Create a revocation certificate for this key? (y/N) y
+    Please select the reason for the revocation:
+      0 = No reason specified
+      1 = Key has been compromised
+      2 = Key is superseded
+      3 = Key is no longer used
+      Q = Cancel
+    (Probably you want to select 1 here)
+    Your decision? 1
+    Enter an optional description; end it with an empty line:
+    &gt; THIS IS AN EXAMPLE MESSAGE DESCRIBING THAT THIS KEY WAS COMPROMISED    
+    &gt; 
+    Reason for revocation: Key has been compromised
+    THIS IS AN EXAMPLE MESSAGE DESCRIBING THAT THIS KEY WAS COMPROMISED
+    Is this okay? (y/N) y
+
+    You need a passphrase to unlock the secret key for
+    user: &quot;Alice Example (EXAMPLE OF OLD KEY) &lt;alice@example.org&gt;&quot;
+    1024-bit DSA key, ID AD741727, created 2009-08-20
+
+    Revocation certificate created.
+
+    Please move it to a medium which you can hide away; if Mallory gets
+    access to this certificate he can use it to make your key unusable.
+    It is smart to print this certificate and store it away, just in case
+    your media become unreadable.  But have some caution:  The print system of
+    your machine might store the data and make it available to others!
+</code></pre>
+<p>When preparing generic certificates (for use if the <a href="release-signing.html#public-private">private key</a> is unavailable), the comment
+cannot include the specifics and so should indicate this.</p>
+<p>The process for generating a generic certificate is identical, but you should add a different comment. For example, generate an <a href="release-signing.html#ascii">ASCII armored</a> (for ease of handling) revocation certificate for key <code>AD741727</code> like this:</p>
+<pre><code>    :::console
+    $ gpg --output revoke-AD741727.asc --armor --gen-revoke AD741727
+
+    sec  1024D/AD741727 2009-08-20 Alice Example (EXAMPLE OF OLD KEY)
+    &lt;alice@example.org&gt;
+
+    Create a revocation certificate for this key? (y/N) y
+    Please select the reason for the revocation:
+      0 = No reason specified
+      1 = Key has been compromised
+      2 = Key is superseded
+      3 = Key is no longer used
+      Q = Cancel
+    (Probably you want to select 1 here)
+    Your decision? 1
+    Enter an optional description; end it with an empty line:
+    &gt; This revocation certificate was generate when the key was created.     
+    &gt; 
+    Reason for revocation: Key has been compromised
+    This revocation certificate was generate when the key was created.  
+    Is this okay? (y/N) y
+
+    You need a passphrase to unlock the secret key for
+    user: &quot;Alice Example (EXAMPLE OF OLD KEY) &lt;alice@example.org&gt;&quot;
+    1024-bit DSA key, ID AD741727, created 2009-08-20
+
+    Revocation certificate created.
+
+    Please move it to a medium which you can hide away; if Mallory gets
+    access to this certificate he can use it to make your key unusable.
+    It is smart to print this certificate and store it away, just in case
+    your media become unreadable.  But have some caution:  The print system of
+    your machine might store the data and make it available to others!
+</code></pre>
+<h2 id="symmetric">How to use symmetric encryption</h2>
+<p>GnuPG supports symmetric (in addition to public key) cryptography, but the ciphers available sometimes differ. Use <code>gpg --version</code> to discover which ciphers are available in the current installation:</p>
+<pre><code>    :::console
+    $ gpg --version
+    gpg (GnuPG) 1.4.9
+    Copyright (C) 2008 Free Software Foundation, Inc.
+    License GPLv3+: GNU GPL version 3 or later
+    &lt;http://gnu.org/licenses/gpl.html&gt;
+    This is free software: you are free to change and redistribute it.
+    There is NO WARRANTY, to the extent permitted by law.
+
+    Home: alice
+    Supported algorithms:
+    Pubkey: RSA, RSA-E, RSA-S, ELG-E, DSA
+    Cipher: 3DES, CAST5, BLOWFISH, AES, AES192, AES256, TWOFISH
+    Hash: MD5, SHA1, RIPEMD160, SHA256, SHA384, SHA512, SHA224
+    Compression: Uncompressed, ZIP, ZLIB, BZIP2
+</code></pre>
+<p>In this case, the available ciphers are:</p>
+<pre><code>    :::text
+    3DES, CAST5, BLOWFISH, AES, AES192, AES256, TWOFISH
+</code></pre>
+<p>Note that most of the ciphers early on the list are weak. This is typical. We recommend that you specify a strong cipher on the command
+line. For example, to encrypt a document <code>INPUT_FILENAME</code> using <code>AES256</code> (a strong cipher) and output it to file <code>ENCRYPTED_FILE</code>:</p>
+<pre><code>    :::console
+    $ gpg --cipher-algo AES256 --output ENCRYPTED_FILE --symmetric INPUT_FILENAME
+</code></pre>
+<p>When prompted for a <a href="release-signing.html#passphrase">passphrase</a>, choose a strong one.</p>
+<p>The file format contains metadata, including the cipher used. So to decrypt <code>ENCRYPTED_FILE</code> into <code>OUTPUT_FILE</code> use:</p>
+<pre><code>    :::console
+    $ gpg --output OUTPUT_FILE --decrypt ENCRYPTED_FILE
+</code></pre>
+<h2 id="update">How to update Apache documents with details of a new key</h2>
 
         </div>
       </div>
