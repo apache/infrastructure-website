@@ -1,13 +1,21 @@
 Title: Cryptography with OpenPGP
 
-## Contents ##
+### Contents ###
 <ul>
     <li><a href="#introduction">Introduction</a></li>
     <li><a href="#gnupg">Gnu Privacy Guard</a></li>
     <li><a href="#generate-key">How to generate a strong key</a></li>
+    <li><a href="#private-keyring-management">Private keyring management</a></li>
+    <li><a href="#find-key-id">Finding a key ID</a></li>
+    <li><a href="#backup">How to back up keys</a></li>
+    <li><a href="#export-key">How to export a key</a></li>
+    <li><a href="#secret-key-transfer">How to transfer a secret key</a></li>
+    <li><a href="#transition">How to transition from an old to a new key</a></li>
+    <li><a href="revocation-certs">How to use revocation certificates</a></li>
 </ul>
 
 <h2 id="introduction">Introduction</h2>
+
 OpenPGP is encryption software. The program provides cryptographic privacy and authentication for data communication, covering signing, encrypting, and decrypting texts, e-mails, files, directories, and whole disk partitions and increasing the security of e-mail communications.
 
 Reliable cryptography applications follow OpenPGP, an open standard of Pretty Good Privacy (PGP) encryption software, standard (RFC 4880), for encrypting and decrypting data.
@@ -398,9 +406,9 @@ new key to be included at the earliest opportunity.
   3. Destroy your retired disks appropriately using a disk wiping utility or similar tools to ensure your keyring is no longer available
 on those disks once you are through with them. Failing that, drill through the disk platters so they are physically unusable.
 
-<h2 id="find-key-id">Find a key ID</h2>
+<h2 id="find-key-id">Finding a key ID</h2>
 
-There are a number of ways that a key may be identified. Only one is unique: the [key fingerprint](release-signing.html#fingerprint).
+There are a number of ways to identify a key. Only one is unique: the [key fingerprint](release-signing.html#fingerprint).
 
 Attackers can easily create new keys similar to yours with identical user IDs and comments. Such a public key may be introduced to your keyring when you download keys from a [public keyserver](release-signing.html#keyserver) or as part of an import. If this information is used to identify public keys then you may be misled into believing that another public key is yours. A cunning attacker may even introduce a matching secret key taht lets you sign with that key.
 
@@ -488,7 +496,7 @@ Trusting that an import contains only the owner's public key is **not recommende
 
 For example, a <a href="http://home.apache.org/~rdonkin/" target="_blank">web page with an embedded export</a> should also list the key IDs of interest. 
 
-<h2 id="backup">How to back up</h2>
+<h2 id="backup">How to back up keys</h2>
 
 <h3 id="backup-public">Back up public information</h3>
 
