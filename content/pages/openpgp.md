@@ -1,6 +1,11 @@
 Title: Cryptography with OpenPGP
 
-[TOC]
+## Contents ##
+<ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#gnupg">Gnu Privacy Guard</a></li>
+    <li><a href="#generate-key">How to generate a strong key</li>
+</ul>
 
 <h2 id="introduction">Introduction</h2>
 OpenPGP is encryption software. The program provides cryptographic privacy and authentication for data communication, covering signing, encrypting, and decrypting texts, e-mails, files, directories, and whole disk partitions and increasing the security of e-mail communications.
