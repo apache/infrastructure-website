@@ -4,6 +4,24 @@ Title: Release Distribution Policy
 
 This policy governs how Apache software releases are distributed through the technical channels that Infra maintains. It complements the formal <a href="https://www.apache.org/legal/release-policy.html" target="_blank">Apache Release Policy</a>, which defines what must be in a software release, and the [Release Creation Process](release-creation.html) page, which describes the steps for a PMC to create a release.
 
+<h2 id="links">Contents</h2>
+
+<ul>
+<li><a href="#policy">Release Distribution Policy</a></li>
+<li><a href="#channels">Release Distribution Channels</a></li>
+<li><a href="#dist-dir">Release Distribution Directory</a></li>
+<li><a href="#release-content">Release Content</a></li>
+<li><a href="#public-distribution">Public Distribution</a></li>
+<li><a href="#unreleased">Distribution of Unreleased Materials</a></li>
+<li><a href="#heads-up">Notify Infra Before Uploading Large (&gt;1GB) artifacts</a></li>
+<li><a href="#sigs-and-sums">Cryptographic Signatures and Checksums Requirements</a></li>
+<li><a href="#download-links">Download Links Requirements</a></li>
+<li><a href="#archival">Releases Must Be Archived</a></li>
+<li><a href="#maven">Using Maven For Releases</a></li>
+<li><a href="#administration">Policy Administration</a></li>
+</ul>
+
+
 <h2 id="channels">Release distribution channels</h2>
 
   - The Apache Software Foundation's official channel for distribution of current Apache software releases to the general public is `downloads.apache.org/`. This directory is automatically sync'd out to the ASF mirror network, and most users download releases from one of the ASF mirrors.
@@ -11,7 +29,7 @@ This policy governs how Apache software releases are distributed through the tec
   - Infra maintains a number of developer-only channels which facilitate distribution of unreleased software to consenting members of a development community.
   - All historic Apache releases are available from `archive.apache.org`.
   
-<h2 id="directory">Release distribution directory</h2>
+<h2 id="dist-dir">Release distribution directory</h2>
 
 Every top-level project at Apache has its own public distribution directory, which is a subdirectory of `downloads.apache.org/`. Each PMC is responsible for all artifacts within their project's distribution directory.
 
@@ -19,7 +37,7 @@ Apache Incubator podlings cannot create official ASF releases; see the <a href="
 
 <h2 id="release-content">Release content</h2>
 
-The <a href="http://www.apache.org/dev/release#what"" target="_blank">Apache Release Policy</a> governs the content of official Apache releases and the process by which projects create valid releases.
+The <a href="http://www.apache.org/dev/release#what" target="_blank">Apache Release Policy</a> governs the content of official Apache releases and the process by which projects create valid releases.
 
 The Policy specifies that binary packages provided by third parties which meet certain criteria may be distributed alongside official source packages. Such packages are sometimes referred to as "convenience binaries" to distinguish them from other binary packages.
 
