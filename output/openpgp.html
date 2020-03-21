@@ -108,6 +108,7 @@ Cryptography with OpenPGP        </a>
     <li><a href="#revocation-certs">How to use revocation certificates</a></li>
     <li><a href="#symmetric">How to use symmetric encryption</a></li>
     <li><a href="#update">How to update Apache documents with details of a new key</a></li>
+    <li><a href="#wot">How to use the Web of Trust</a></li>
 </ul>
 <h2 id="introduction">Introduction</h2>
 <p>OpenPGP is encryption software. The program provides cryptographic privacy and authentication for data communication, covering signing, encrypting, and decrypting texts, e-mails, files, directories, and whole disk partitions and increasing the security of e-mail communications.</p>
@@ -733,54 +734,155 @@ line. For example, to encrypt a document <code>INPUT_FILENAME</code> using <code
 <p>For the new key, you will need to provide both the <a href="release-signing.html#fingerprint">fingerprint</a> and the <a href="release-signing.html#public-private">public key</a> export more than once. We repeat the creation instructions below for each case but you may find it more convenient to create, store then reuse the results.</p>
 <h3 id="publish-in-web-space">Publish the new public key</h3>
 <p><strong>Note</strong>: you must <a href="release-signing.html#keyserver-upload">upload signing keys to a public key server</a>. You must also add them to your LDAP record using the Apache <a href="https://id.apache.org" target="_blank">self-service app</a>.</p>
-<p>A reliable, permanent URL for your new public key is useful. Your Apache
-web space is an ideal location for this. It is recommended that you copy an
-<a href="release-signing.html#ascii">ASCII armored</a>  <a href="release-signing.html#public-private">public
-key</a>
-<a href="release-signing.html#export">export</a> (see instructions later, or use
-documents you created earlier) into the <code>public_html</code> subdirectory of your
-home on <a href="http://home.apache.org">home.apache.org</a>.</p>
-<p>The suffix <code>.asc</code> is conventional for ASCII armored public key exports. So,
-for example, <code>A6EE6908.asc</code> is a reasonable choice for the export of key
-<code>A6EE6908</code>. Record the URL (for example
-<code>http://home.apache.org/~rdonkin/A6EE6908.asc</code> ) for use later in your
+<p>A reliable, permanent URL for your new public key is useful. Your Apache web space is an ideal location for this. Copy an
+<a href="release-signing.html#ascii">ASCII armored</a> <a href="release-signing.html#public-private">public key</a>
+<a href="release-signing.html#export">export</a> (see instructions later, or use documents you created earlier) into the <code>public_html</code> subdirectory of your home on <a href="https://home.apache.org" target="_blank">home.apache.org</a>.</p>
+<p>The suffix <code>.asc</code> is conventional for ASCII armored public key exports. So, for example, <code>A6EE6908.asc</code> is a reasonable choice for the export of key <code>A6EE6908</code>. Record the URL (for example <code>http://home.apache.org/~rdonkin/A6EE6908.asc</code> ) for use later in your
 <a href="#foaf">FOAF</a>.</p>
-<p>If your Apache home page contains details of your keys (recommended) update
-the <a href="release-signing.html#fingerprint">fingerprints</a> and the <a href="release-signing.html#ascii">ASCII
-armored</a>  <a href="release-signing.html#public-private">public
-key</a>
-<a href="release-signing.html#export">export</a>. Any browser with a suitable
-<a href="release-signing.html#openpgp">OpenPGP</a> plugin (for example,
-<a href="http://www.mozilla.com/firefox/">Firefox</a> with
-<a href="http://www.getfiregpg.org">FireGPG</a> ) will be able to download the key
-into the local keyring.</p>
-<p>For example, <a href="http://home.apache.org/%7Erdonkin/">this home page</a> contains
-a section with fingerprints and a link to the export. At the bottom, the
-export has been inlined allowing browsers with
-<a href="release-signing.html#opengpg">OpenPGP</a> support to import the keys.</p>
-<p>To create an <a href="release-signing.html#ascii">ASCII armored</a>  <a href="release-signing.html#public-private">public
-key</a>
-<a href="release-signing.html#export">export</a> :</p>
+<p>If your Apache home page contains details of your keys (recommended), update the <a href="release-signing.html#fingerprint">fingerprints</a> and the <a href="release-signing.html#ascii">ASCII armored</a> <a href="release-signing.html#public-private">public key</a> <a href="release-signing.html#export">export</a>. Any browser with a suitable <a href="release-signing.html#openpgp">OpenPGP</a> plugin (for example, <a href="https://www.mozilla.com/firefox/" target="_blank">Firefox</a> with the <a href="https://www.getfiregpg.org" target="_blank">FireGPG plugin</a>) will let you download the key into the local keyring.</p>
+<p>For example, <a href="https://home.apache.org/~rdonkin/" target="_blank">this home page contains a section with fingerprints and a for exporting them. At the bottom, the export has been inlined so browsers with <a href="release-signing.html#opengpg">OpenPGP</a> support can import the keys.</p>
+<p>To create an <a href="release-signing.html#ascii">ASCII armored</a> <a href="release-signing.html#public-private">public key</a> <a href="release-signing.html#export">export</a>:</p>
 <ul>
-<li>
-<p>When using a <a href="release-signing.html#transition">transition</a> , follow these
-<a href="key-transition.html#transition-export">instructions</a>.</p>
-</li>
-<li>
-<p>Otherwise this <a href="#export-key">discussion</a> describes how to export public
-keys</p>
-</li>
+<li>When using a <a href="release-signing.html#transition">transition</a>, follow these <a href="key-transition.html#transition-export">instructions</a>.</li>
+<li>Otherwise this <a href="#export-key">discussion</a> describes how to export public keys.</li>
 </ul>
 <p>To find the <a href="release-signing.html#fingerprint">fingerprint</a> for a key:</p>
 <ul>
-<li>
-<p>When using a <a href="release-signing.html#transition">transition</a> , follow these
-<a href="key-transition.html#transition-fingerprints">instructions</a>.</p>
-</li>
-<li>
-<p>Otherwise <code>gpg --fingerprint</code></p>
-</li>
+<li>When using a <a href="release-signing.html#transition">transition</a>, follow these <a href="key-transition.html#transition-fingerprints">instructions</a>.</li>
+<li>Otherwise use <code>gpg --fingerprint</code>.</li>
 </ul>
+<p>Ensure that each <code>pubkeyAddress</code> points to the new export <a href="#publish-in-web-space">uploaded into your Apache home web space</a>.</p>
+<p>When <a href="release-signing.html#transition">transitioning</a>, include one entry for the old and one for the new key. Yu can use the same URL for both since the target should be the <a href="key-transition.html#transition-export">dual export</a> you <a href="#publish-in-web-space">uploadedearlier</a>. For example, for keys A6EE6908 (new) and B1313DE2 (old):</p>
+<pre><code>    :::xml
+    &lt;wot:hasKey&gt;
+      &lt;wot:PubKey&gt;
+        &lt;wot:hex_id&gt;A6EE6908&lt;/wot:hex_id&gt;
+        &lt;wot:fingerprint&gt;597C729B02371932E77CB9D5EDB8C082A6EE6908&lt;/wot:fingerprint&gt;
+        &lt;wot:pubkeyAddress
+            rdf:resource=&quot;http://home.apache.org/~rdonkin/A6EE6908.asc&quot;/&gt;
+      &lt;/wot:PubKey&gt;
+      &lt;wot:PubKey&gt;
+        &lt;wot:hex_id&gt;B1313DE2&lt;/wot:hex_id&gt;
+        &lt;wot:fingerprint&gt;EA6141E8E49E560C224B2F74D5334E75B1313DE2&lt;/wot:fingerprint&gt;
+        &lt;wot:pubkeyAddress
+            rdf:resource=&quot;http://home.apache.org/~rdonkin/A6EE6908.asc&quot;/&gt;
+      &lt;/wot:PubKey&gt;
+    &lt;/wot:hasKey&gt;
+</code></pre>
+<h3 id="update-KEYS">Update keys on the next release</h3>
+<p>Projects maintain <a href="release-signing.html#keys-policy">KEYS</a> files containing the public keys used to sign Apache releases. These documents need not be updated immediately, but you <strong>must</strong> update your project's file with the new key, with an export, before publishing a release using the new key.</p>
+<p>To create an <a href="release-signing.html#ascii">ASCII armored</a> <a href="release-signing.html#export">export</a>:</p>
+<ul>
+<li>When using a <a href="release-signing.html#transition">transition</a>, follow these <a href="key-transition.html#transition-export">instructions</a>.</li>
+<li>Otherwise this <a href="#export-key">discussion</a> describes how to export public keys</li>
+</ul>
+<p>If there is an older export in the <code>KEYS</code> file, only remove it if it has not been used to sign a release. It is important
+that the KEYS file can also be used to check archived releases.</p>
+<h3 id="members-details">ASF Members only: update details</h3>
+<p><a href="https://www.apache.org/foundation/members.html" target="_blank">ASF Members</a> should add the new key to their details stored in Subversion.</p>
+<p>Update your Apache business card with fingerprints (see <code>Cards</code> directory in the members area in Subversion) and place a new order for cards.</p>
+<h2 id="wot">How to use the Web of Trust</h2>
+<p>A link to a new key from a <a href="release-signing.html#web-of-trust">web of trust</a> is made when a key that is part of that network signs the new key.</p>
+<p>Each link is only one way. By signing a key, you indicate that you have verified the identity of the owner of that key. Links are established in both directions once the owner of that key also signs your key. When the owner has suitable identification, expect the owner to ask you to sign their key in return.</p>
+<p>You can use directional links to establish trust in the identity of a key whose owner you haven't met.</p>
+<h3 id="wot-verifying-links">How to verify identity</h3>
+<p>Verifying identities is usually automated, but here is an example to explain the process. If you already understand the process, free free to <a href="#apache-wot">skip forward</a>.</p>
+<h4 id="wot-manual-example">Example - The Hard Way</h4>
+<p>Take Alice, Bob and Charlie. Alice has verified Bob's identity in person. Bob has verified Charlie's identity in person. But Alice has
+never met Charlie. So</p>
+<ul>
+<li>Bob's key has been signed by Alice's key</li>
+<li>Charlie's key has been signed by Bob's key</li>
+</ul>
+<p>Alice has obtained a file ( <code>document</code> in this example) which Charlie may have created, and a detached signature for that file ( <code>document.asc</code> in this example). Alice wishes to discover whether Charlie signed this file.</p>
+<p>The basic idea is easy. If Alice has verified Bob's identity and trusts Bob to verify the Charlie's identity before signing, then Alice should be able to work out whether Charlie owns the key which was used to sign the file.</p>
+<p>Alice starts by verifying the signature:</p>
+<pre><code>    :::console
+    $ gpg --verify document.asc 
+    gpg: Signature made Wed Sep  9 14:33:12 2009 BST using RSA key ID 8F8A2525
+    gpg: Can't check signature: public key not found
+</code></pre>
+<p>This indicates that the key used to create this signature is missing from Alice's keyring. This is not unexpected. Alice adds the public key, perhaps by using a public key server or by importing an export, and tries again:</p>
+<pre><code>    :::console
+    $ gpg --verify document.asc 
+    gpg: Signature made Wed Sep  9 14:33:12 2009 BST using RSA key ID 8F8A2525
+    gpg: checking the trustdb
+    gpg: 3 marginal(s) needed, 1 complete(s) needed, PGP trust model
+    gpg: depth: 0  valid:   1  signed:   1  trust: 0-, 0q, 0n, 0m, 0f, 1u
+    gpg: depth: 1  valid:   1  signed:   0  trust: 1-, 0q, 0n, 0m, 0f, 0u
+    gpg: Good signature from &quot;Charlie (EXAMPLE ONLY NOT FOR DISTRIBUTION)
+    &lt;charlie@example.org&gt;&quot;
+    gpg: WARNING: This key is not certified with a trusted signature!
+    gpg:          There is no indication that the signature belongs to the
+    owner.
+    Primary key fingerprint: B7F6 17FA 4DEF E61F 37A4  7463 41F4 40D4 8F8A 2525
+</code></pre>
+<p>This output indicates that this key says that Charlie created it. This is a reasonable start but is easily faked.</p>
+<p>Alice examines the signatures on this key:</p>
+<pre><code>    :::console
+    $ gpg --list-sigs 8F8A2525
+    pub   2048R/8F8A2525 2009-09-09
+    uid                  Charlie (EXAMPLE ONLY NOT FOR DISTRIBUTION) &lt;charlie@example.org&gt;
+    sig 3       8F8A2525 2009-09-09  Charlie (EXAMPLE ONLY NOT FOR DISTRIBUTION) &lt;charlie@example.org&gt;
+</code></pre>
+<p>This key is signed only by itself. This is not indicative. Unless all keys in the ring have been refreshed, it is possible that a signature has been made but is missing from the ring. Alice refreshes the keys on the ring then verifies once more:</p>
+<pre><code>    :::console
+    $ gpg --list-sigs 8F8A2525
+    pub   2048R/8F8A2525 2009-09-09
+    uid                  Charlie (EXAMPLE ONLY NOT FOR DISTRIBUTION) &lt;charlie@example.org&gt;
+    sig 3       8F8A2525 2009-09-09  Charlie (EXAMPLE ONLY NOT FOR DISTRIBUTION) &lt;charlie@example.org&gt;
+    sig         1B912854 2009-09-09  Bob___ (EXAMPLE ONLY NOT FOR DISTRIBUTION) &lt;bob@example.org&gt;
+</code></pre>
+<p>The key now has a signature from Bob's key - or so says the key. But Alice has met Bob. So, she lists the signatures for that key that may - or may not - be owned by Bob:</p>
+<pre><code>    :::console
+    $ gpg --list-sigs 1B912854
+    pub   2048R/1B912854 2009-09-09
+    uid                  Bob___ (EXAMPLE ONLY NOT FOR DISTRIBUTION) &lt;bob@example.org&gt;
+    sig 3       1B912854 2009-09-09  Bob___ (EXAMPLE ONLY NOT FOR DISTRIBUTION) &lt;bob@example.org&gt;
+    sig         81590910 2009-09-09  Alice (EXAMPLE ONLY NOT FOR DISTRIBUTION) &lt;alice@example.org&gt;
+</code></pre>
+<p>Alice finds it signed by <code>81590910</code> - the master key for this keyring. Alice can therefore trust that Charlie has signed the file provided so long as Alice trusts Bob to verify Charlie's identity.</p>
+<h4 id="wot-automated">Automated trust</h4>
+<p>Most clients allow automation of this process of transitive trust resolution. This is easier and more convenient than by hand but clients differ in the amount of human control they provide. Some clients (including GnuPG) are highly configurable (allowing different trust models to be used) and allow finely grained control over trust placed in each signed key. For more details see <a href="https://www.gnupg.org/gph/en/manual.html" target="_blank">The GNU Privacy Handbook&lt;/a&lt;</p>
+<h3 id="apache-wot">Code signing keys and the Web of Trust</h3>
+<p>It is vital that Apache code signing keys are linked into a strong <a href="release-signing.html#web-of-trust">web of trust</a>. This allows independent verification of the fidelity of Apache releases by anyone strongly linked to this web. In particular, this lets two important groups independently verify releases:</p>
+<ul>
+<li>The Apache Infrastructure Team</li>
+<li>Downstream packagers</li>
+</ul>
+<p>The Apache web of trust is reasonably well connected to the wider-open source web of trust. Though every opportunity should be taken to link into wider networks, the most important action needs to be to plan to exchange signatures with other Apache committers.</p>
+<h3 id="apache-wot-link">How to link into the Apache Web of Trust</h3>
+<p>The process (explained below) is the same but the people are different: this means arranging to meet in person with Apache committers. For a global distributed organisation like Apache, this is not always easy and usually takes some planning.</p>
+<h4 id="wot-apachecon">Keysigning at ApacheCon</h4>
+<p>Apache organizes a major <a href="release-signing.html#key-signing-party">keysigning party</a> at every <a href="https://apachecon.com/" target="_blank">ApacheCon</a>. This is a great opportunity to collect dozens of signatures.</p>
+<h4 id="wot-apache-other-events">Keysigning at other Apache events</h4>
+<p>Other Apache events may also hold keysigning parties (and most will if asked). Typically, these will be smaller and less informal.</p>
+<h4 id="wot-apache-party">Informal Apache meetings</h4>
+<p>Smaller, informal Apache-sponsored meetings are also an opportunity to swap keys (as well as gossip) with other committers.</p>
+<p>Subscribe to the party list (see committer documentation) to find out about informal meetings. When you travel, take advantage of this opportunity to meet up with other Apache committers by posting to the party list. The &lt;a href=&quot;<a href="https://community.zones.apache.org/map.html">https://community.zones.apache.org/map.html</a>&quot; target=&quot;_blank&gt;committer map</a> shows locations for many committers. If there are committers near you, you can organise an informal meetup.</p>
+<h3 id="wot-link-in">How to link into a public web of trust</h3>
+<p>In short, expect that:</p>
+<ul>
+<li>this will involve a face-to-face meeting</li>
+<li>you will have to provide some sort of real-world identification, like a driver's license</li>
+<li>you will be asked to verify their identity and sign their public key in
+exchange</li>
+</ul>
+<p>Bring the key <a href="release-signing.html#fingerprint">fingerprint</a> but keep the private key safely at home.</p>
+<h4 id="wot-public-preparations">Be prepared</h4>
+<p>A small amount of preparation (before attending technical conferences or meetings) lets you exchange keys easily (if the other person is suitably prepared) or get your key signed if the opportunity presents itself. All that is required is suitable identification and the <a href="release-signing.html#fingerprint">public key fingerprint</a> (which can can be conveniently printed onto a small card).</p>
+<h4 id="wot-public-keysigning">Keysigning parties</h4>
+<p>The most effective way to achieve this is to attend a <a href="release-signing.html#key-signing-party">key signing party</a>. Apache and many other open-source organisations organize parties at their conferences. It may also be possible to arrange such a party at other events.</p>
+<p>Expect to:</p>
+<ul>
+<li>bring identification</li>
+<li>bring a hard copy of your key's <a href="release-signing.html#fingerprint">fingerprint</a></li>
+<li>supply the key ID or public key to the organiser before the party</li>
+<li>check that the <a href="release-signing.html#fingerprint">fingerprint</a> for your key supplied by the organiser matches your hard copy</li>
+<li>confirm this to those present</li>
+</ul>
+<p>Do <strong>not</strong> bring your private key. This <strong>must</strong> stay safe and secure at all times. Wait until the conference has finished and you have returned home before signing keys.</p>
+<p>For more information, see this <a href="https://www.cryptnet.net/fdp/crypto/keysigning_party/en/keysigning_party.html" target="_blank">guide</a>.</p>
 
         </div>
       </div>
