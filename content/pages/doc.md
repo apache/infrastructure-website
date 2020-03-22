@@ -40,6 +40,7 @@ The Apache Infrastructure Team (Infra) operates under the <a href="https://www.a
 - <a href="https://people.apache.org" target="_blank">Apache People</a> provides a simple phone book-like 
 lookup for Apache Committers.
 - <a href="https://whimsy.apache.org/" target="_blank">The Whimsy Project</a> provides a number of committer-specific tools for finding information about Apache people.
+- [Transitioning to a new PGP key](key-transition.html)
 
 ### Infra Wiki
 
