@@ -1,3 +1,3 @@
 Title: Release Downoload Pages for Projects
 
-_information moving her from a.o/dev_
+_information moving here from https://www.apache.org/dev/release-download-pages.html_
