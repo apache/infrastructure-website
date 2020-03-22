@@ -15,7 +15,7 @@ Events are delivered as JSON objects in a <a href="https://en.wikipedia.org/wiki
 ## How to subscribe
 Subscribers can pick one or multiple topics to subscribe to, with more specific subscriptions getting fewer, but tailored event payloads. Construct subscriptions in the form of: `http://pubsub.apache.org:2069/topics/go/here`, and separate the topics you want to subscribfe to with forward slashes. 
 
-The service returns events that match _all_ of the topics you list will be returned.
+The service returns events that match _all_ of the topics you are subscribed to.
 
 Some examples:
 
