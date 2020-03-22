@@ -98,18 +98,17 @@ Signing Releases        </a>
 <p>This document gives release managers a basic introduction to release signing. See under <a href="#reading">Further reading</a> for links to
 authoritative sources of deeper information.</p>
 <p>This document is informative and does not constitute policy.</p>
-<h3 id="note">Important</h3>
+<h2>Contents</h2>
+<h2 id="note">Important notes</h2>
 <p>All new <strong>RSA</strong> keys generated should be at least <strong>4096</strong> bits. <strong>Do not</strong> generate new <strong>DSA</strong> keys.</p>
 <p>Recent research has revealed weaknesses in SHA-1, and thus in the DSA and 1024 bit RSA OpenPGP keys which must use this algorithm. Though no realistic attacks have been made public, experience with similar weaknesses in MD5 suggests that further advances may well lead to practical attacks within the next few years. This accords with current NIST guidance on DSA.</p>
-<p>The impact of this weakness on Apache can be mitigated by action now. What needs to be done is a little involved. So, complete instructions have been prepared. Please read and follow them.</p>
+<p>The impact of this weakness on Apache can be mitigated by action now. What needs to be done is a little involved, so we have provided complete instructions.</p>
 <ul>
 <li>
 <p>Committers without a code signing key should read this document and follow these <a href="openpgp.html#generate-key">instructions</a>.</p>
 </li>
 <li>
-<p>Committers with a DSA key or an RSA key of length less than 2048 bits
-should generate a new key for signing releases. The original key does not
-need to be revoked yet. Follow this <a href="key-transition.html">guide</a>.</p>
+<p>Committers with a DSA key or an RSA key of length less than 2048 bits should generate a new key for signing releases. The original key does not need to be revoked yet. Follow this <a href="key-transition.html">guide</a>.</p>
 </li>
 <li>
 <p>Committers with RSA keys of length 2048 or more do not need to generate a
