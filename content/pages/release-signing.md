@@ -12,8 +12,6 @@ This document is informative and does not constitute policy.
 <ul>
 <li><a href="#abstract">Abstract</a></li>
 <li><a href="#note">Important notes</a></li>
-<li><a href="#help">Help Wanted!</a></li>
-<li><a href="#reading">Further Reading</a></li>
 <li><a href="#basic-facts">Basic facts</a></li>
 <li><a href="#keys-policy">The KEYS File</a></li>
 <li><a href="#motivation">Why We Sign Releases</a></li>
@@ -80,6 +78,8 @@ This document is informative and does not constitute policy.
 <li><a href="#update-document">I Have A New Key. Which Apache Documents Need To Be Updated?</a></li>
 <li><a href="#rsa">What Is RSA?</a></li>
 <li><a href="#key-length-how-to">How Do I Find The Length Of A Key?</a></li>
+<li><a href="#help">Help Wanted!</a></li>
+<li><a href="#reading">Further Reading</a></li>
 </ul>
 
 <h2 id="note">Important notes</h2>
@@ -103,4 +103,17 @@ How to find the length of your key is described [here](#key-length-how-to).
 
 
 
-_information will come here from https://www.apache.org/dev/release-signing.html_
+
+
+<h2 id="reading">Further reading</h2>
+
+There are many other excellent resources on signing releases, but these make a good start:
+
+  - The <a href="openpgp.html#gnupg">Guide to using GnuPG</a> at Apache
+  - The <a href="key-transition.html">Apache Key Transition Guide</a>
+  - RFC <a href="http://www.ietf.org/rfc/rfc1321.txt" target="_blank">1321</a> MD5 message-digest algorithm
+  - RFC <a href="http://www.ietf.org/rfc/rfc2440.txt">2440</a> OpenPGP message format
+  - The GNU Privacy Guard project <a href="https://www.gnupg.org/documentation/" target="_blank">documentation</a>
+  - An introduction to <a href="https://www.pgpi.org/doc/pgpintro/" target="_blank">PGP public key cryptography</a>
+  - <a href="https://www.schneier.com/book-applied.html" target="_blank">Applied Cryptography</a> by Bruce Schneier
+  - Windows-centric <a href="http://www.mccune.cc/PGPpage2.htm" target="_blank">PGP FAQ</a> by Tom McCune</p>
