@@ -11,10 +11,7 @@ Material about Apache's policies on releases, mirrors, and download pages is <a 
 <li><a href="#download-page">Your Apache project's download page</a></li>
 <li><a href="#download-scripts">Download scripts</a></li>
 <li><a href="#best_practice">Best practices</a></li>
-<li><a href="#less-than-24hr">Support for bypassing the 24 hour rule</a></li>
-<li><a href="#resources">Resources</a></li>
 <li><a href="#questions">Questions?</a></li>
-<li><a href="#help">Help improve this document</a></li>
 </ul>
 
 <h2 id="links">Download links</h2>
@@ -141,6 +138,32 @@ All that remains is to wait for the main website to sync.
 
 <h2 id="best_practice">Best practices</h2>
 
+<h3 id="remind-users">Remind users to check sums and signatures</h3>
 
+Users download Apache releases from mirrors. It is therefore important that they understand that they should always check the hash sums and (if possible) also verify the OpenPGP compatible signature of each download. The content of the release download page plays a critical role in this education process.
 
-_information moving here from https://www.apache.org/dev/release-download-pages.html_
+Please provide clear and easy links to the KEYS, sums and signatures from the download release page or include the information directly in the page itself. The <a href="https://httpd.apache.org/download.cgi" target="_blank">HTTPD page</a> is a good example.
+
+Include a reminder text with links to more information for users. For example:
+
+> Note: when downloading from a mirror please check the <a href="https://www.infra.apache.org/release-signing#md5" target="_blank">md5sum</a> and verify the <a href="https://www.infra.apache.org/release-signing#openpgp" target="_blank">OpenPGP compatible signature</a> from the <a href="https://www.apache.org" target="_blank">main Apache site</a>. Links are provided above (next to the release download link). This <a href="https://downloads.apache.org/ws/axis2/KEYS" target="_blank">KEYS file</a> contains the public keys used for signing release. We recommend that you use a web of trust, if possible to confirm the identity of these keys. For more information, please see the <a href="https://www.apache.org/dev/release.html" target="_blank">Apache Release FAQ</a>.
+
+<h3 id="linked-urls">Make sure the browser displays linked URLs</h3>
+
+Users need to understand the origin of the artifacts, signatures and sums they download. Check that the stylesheets your download site uses do not obscure the linked URLs. It is best to use a simple, plain style for download links. Note that some of the Maven-style sheets may obscure some external links in some browsers.
+
+<h3 id="less-than-24hr">Support for bypassing the 24-hour rule</h3>
+
+Normally you should wait 24 hours after uploading a release to `https://downloads.apache.org/` before announcing it, in order to let mirrors catch up.
+
+If you cannot wait, you can pass a date and time to the download script to indicate that only mirrors that have updated since that time should be selected. This works by adding `update=YYYYMMDDhhmm` to the query string. For example, you can use 
+
+`http://httpd.apache.org/download.cgi?update=200407051415` 
+
+to request only mirrors that have updated after 2:15pm on July 5, 2004 UTC. 
+
+Please use this option sparingly, since it can result in excessive load on particular mirrors. It would be appropriate, for example, in an emailed release announcement for an important security release, but not appropriate as a main website link.
+
+<h2 id="questions">Questions?</h2>
+
+If you need assistance in implementing URL redirection to the mirrors, or if you need any other help in implementing this policy, please contact the `users@infra.apache.org` mailing list.
