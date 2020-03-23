@@ -228,7 +228,6 @@ or
 </code></pre>
 <p>Store the KEYS file with the release archives to which it applies at the top level of the ASF mirror area for the project. This makes it  available for users to download, and for automatic archiving with its release. For example, the Ant KEYS file is in the directory <code>https://downloads.apache.org/ant</code>. The corresponding SVN area is at <code>https://dist.apache.org/repos/dist/release/ant</code></p>
 <p>Since users may need the KEYS file to check signatures for archived releases, it is important to retain in the file all keys that have ever been used to sign releases. Add entries with eadch new key the project uses, but do not remove entries.</p>
-<p><strong>Note:K</strong> this system will be replaced by a better process in the near future. In preparation, please ensure that public keys are connected as strongly as possible to the Apache <a href="#web-of-trust">web of trust</a> and are available from the major <a href="#keyserver">public key servers</a>.</p>
 <p><a href="#pke">Applied cryptography</a> is a subject that has considerable depth. Luckily, it's possible to get started signing releases without being an expert. Just remember that you will encounter some situations that require research and learning. We hope the
 <a href="#faq">FAQ</a> will be a reasonable first port of call.</p>
 <p>You need an <a href="#openpgp-applications">application</a> to manage keys and create signatures. We recommend <a href="http://www.gnupg.org/">GNU Privacy Guard</a>, and the Apache documentation generally assumes that's what
