@@ -137,9 +137,7 @@ Store the KEYS file with the release archives to which it applies at the top lev
 
 Since users may need the KEYS file to check signatures for archived releases, it is important to retain in the file all keys that have ever been used to sign releases. Add entries with eadch new key the project uses, but do not remove entries.
 
-<p><strong>Note:</strong> this system will be replaced by a better process in the near
-future. In preparation, please ensure that public keys are connected as
-strongly as possible to the Apache <a href="#web-of-trust">web of trust</a> and are
+<p><strong>Note:</strong> this system will be replaced by a better process in the near future. In preparation, please ensure that public keys are connected as strongly as possible to the Apache <a href="#web-of-trust">web of trust</a> and are
 available from the major <a href="#keyserver">public key servers</a>.</p>
 <p><a href="#pke">Applied cryptography</a> is a subject that has considerable depth.
 Luckily, it's possible to get started signing releases without being an
