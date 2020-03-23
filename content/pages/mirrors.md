@@ -22,7 +22,7 @@ Projects must adhere to the following guidelines to ensure a consistent way to m
   
 <h2 id="location">Location of files on main server</h2>
 
->Do not keep software distributions on the project's website. Move them to one of the two software distribution sites:
+Do **not** keep software distributions on the project's website. Move them to one of the two software distribution sites:
 
   - **Current public releases** appear on `downloads.apache.org/`. Place current, official releases that the PMC has approved for end-users here, on the main public release site that is mirrored world-wide. Make all changes at <a href="https://dist.apache.org/repos/dist/release/" target="_blank">`https://dist.apache.org/repos/dist/release/`</a>.
 
