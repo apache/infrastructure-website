@@ -176,20 +176,60 @@ authoritative sources of deeper information.</p>
 <p>Recent research has revealed weaknesses in SHA-1, and thus in the DSA and 1024 bit RSA OpenPGP keys which must use this algorithm. Though no realistic attacks have been made public, experience with similar weaknesses in MD5 suggests that further advances may well lead to practical attacks within the next few years. This accords with current NIST guidance on DSA.</p>
 <p>The impact of this weakness on Apache can be mitigated by action now. What needs to be done is a little involved, so we have provided complete instructions.</p>
 <ul>
-<li>
-<p>Committers without a code signing key should read this document and follow these <a href="openpgp.html#generate-key">instructions</a>.</p>
-</li>
-<li>
-<p>Committers with a DSA key or an RSA key of length less than 2048 bits should generate a new key for signing releases. The original key does not need to be revoked yet. Follow this <a href="key-transition.html">guide</a>.</p>
-</li>
-<li>
-<p>Committers with RSA keys of length 2048 or more do not need to generate a
-new key yet. They should reconfigure their client to avoid the weakness by
-following these <a href="openpgp.html#sha1">instructions</a> and wait for the next
-major OpenPGP revision.</p>
-</li>
+<li>Committers without a code signing key should read this document and follow these <a href="openpgp.html#generate-key">instructions</a>.</li>
+<li>Committers with a DSA key or an RSA key of length less than 2048 bits should generate a new key for signing releases. The original key does not need to be revoked yet. Follow this <a href="key-transition.html">guide</a>.</li>
+<li>Committers with RSA keys of length 2048 or more do not need to generate a new key yet. They should reconfigure their client to avoid the weakness by following these <a href="openpgp.html#sha1">instructions</a> and wait for the next major OpenPGP revision.</li>
 </ul>
 <p>How to find the length of your key is described <a href="#key-length-how-to">here</a>.</p>
+<h2 id="basic-facts">Basic facts</h2>
+<p>Every artifact distributed by the Apache Software Foundation  <strong>must</strong> be accompanied by one file containing an <a href="#openpgp-ascii-detach-sig">OpenPGP-compatible ASCII armored detached signature</a> and another file containing a <a href="release-signing#sha-checksum">SHA</a> or <a href="release-signing#md5">MD5</a>) checksum.</p>
+<ul>
+<li>MD5 hashes are <strong>deprecated</strong>; please use SHA for new releases.</li>
+<li><strong>Avoid</strong> further use of <code>SHA-1</code></code>.</li>
+</ul>
+<p>Form the names of these files by adding to the name of the artifact the following suffixes:</p></p>
+<ul>
+<li>the signature by suffixing <code>.asc</code></li>
+<li>the checksum by suffixing <code>.md5</code> or <code>.sha[1|256|512]</code> (as appropriate)</li>
+</ul>
+<p>Release managers <strong>must not</strong> store private keys used to sign Apache releases on ASF hardware.</p>
+<p>See the <a href="release-distribution.html#sigs-and-sums">release distribution policy</a> for details.</p>
+<h2 id="keys-policy">The KEYS File</h2>
+<p>The KEYS file is a plain-text file containing the public key signatures of the release managers (and optionally other committers) for the project. A good example is the <a href="https://downloads.apache.org/ant/KEYS" target="_blank">Apache Ant KEYS file</a>.</p>
+<p>It is traditional to include the following header to explain how to use the file. These commands generate a descriptive comment describing the key, followed by the key itself. Key handling software ignores the comments when importing a key file:</p>
+<pre><code>This file contains the PGP keys of various developers.&lt;/p&gt;
+&lt;p&gt;Users: pgp &amp;lt; KEYS
+or
+       gpg --import KEYS&lt;/p&gt;
+&lt;p&gt;Developers: 
+    pgp -kxa &amp;lt;your name&amp;gt; and append it to this file.
+or
+    (pgpk -ll &amp;lt;your name&amp;gt; &amp;amp;&amp;amp; pgpk -xa &amp;lt;your name&amp;gt;) &amp;gt;&amp;gt; this file.
+or
+    (gpg --list-sigs &amp;lt;your name&amp;gt;
+    &amp;amp;&amp;amp; gpg --armor --export &amp;lt;your name&amp;gt;) &amp;gt;&amp;gt; this file.
+</code></pre>
+<p>Store the KEYS file with the release archives to which it applies at the top level of the ASF mirror area for the project. This makes it  available for users to download, and for automatic archiving with its release. For example, the Ant KEYS file is in the directory <code>https://downloads.apache.org/ant</code>. The corresponding SVN area is at <code>https://dist.apache.org/repos/dist/release/ant</code></p>
+<p>Since users may need the KEYS file to check signatures for archived releases, it is important to retain in the file all keys that have ever been used to sign releases. Add entries with eadch new key the project uses, but do not remove entries.</p>
+<p><strong>Note:</strong> this system will be replaced by a better process in the near
+future. In preparation, please ensure that public keys are connected as
+strongly as possible to the Apache <a href="#web-of-trust">web of trust</a> and are
+available from the major <a href="#keyserver">public key servers</a>.</p>
+<p><a href="#pke">Applied cryptography</a> is a subject that has considerable depth.
+Luckily, it's possible to get started signing releases without being an
+expert. Just remember that (from time to time) you will encounter
+situations that will require research and learning. Hopefully the
+<a href="#faq">FAQ</a> will be a reasonable first port of call.</p>
+<p>You will need an <a href="#openpgp-applications">application</a> to manage keys and
+create signatures. <a href="http://www.gnupg.org/">GNU Privacy Guard</a> is
+recommended and the Apache documentation generally assumes that's what
+you're using. (Documentation patches for other tools welcomed.) Read the
+<a href="openpgp.html#gnupg">Apache usage guide</a> and keep the
+<a href="http://www.gnupg.org/gph/en/manual.html">manual</a> handy. Note that GnuPG
+can handle MD5 and SHA checksums as well as PGP signatures. It is your
+one-stop shop, cross-platform tool for release signing and verification.</p>
+<p>It can be hard for newbies to be confident that they have executed
+operations correctly. Consider doing some <a href="#safe-practice">practice</a> first.</p>
 <h2 id="reading">Further reading</h2>
 <p>There are many other excellent resources on signing releases, but these make a good start:</p>
 <ul>
