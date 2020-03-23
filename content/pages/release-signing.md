@@ -14,10 +14,6 @@ This document is informative and does not constitute policy.
 <li><a href="#note">Important notes</a></li>
 <li><a href="#basic-facts">Basic facts</a></li>
 <li><a href="#keys-policy">The KEYS File</a></li>
-<li><a href="#motivation">Why We Sign Releases</a></li>
-<li><a href="#security-basics">Security Basics</a></li>
-<li><a href="#key-basics">Key Basics</a></li>
-<li><a href="#signing-basics">Signing Basics</a></li>
 <li><a href="#sign-release">How Do I Sign A Release?</a></li>
 <li><a href="#openpgp-ascii-detach-sig">What Is an OpenPGP Compatible ASCII Armored Detached Signature?</a></li>
 <li><a href="#openpgp">What Is OpenPGP?</a></li>
@@ -27,30 +23,40 @@ This document is informative and does not constitute policy.
 <li><a href="#md5">What Is An MD5 Checksum?</a></li>
 <li><a href="#sha-checksum">What is a SHA checksum?</a></li>
 <li><a href="#message-digest">What Is A Message Digest Algorithm?</a></li>
+  
+  
 <li><a href="#web-of-trust">What Is A Web Of Trust?</a></li>
 <li><a href="#link-into-wot">How Do I Link Into A Public Web of Trust?</a></li>
 <li><a href="#key-signing-party">What Is A Key Signing Party?</a></li>
 <li><a href="#apache-wot">How Can I Link My Key Into The Apache Web of Trust?</a></li>
+
 <li><a href="#verifying-signature">What Does Verifying A Signature Mean?</a></li>
 <li><a href="#check-integrity">How Can I Check The Integrity Of A Release?</a></li>
 <li><a href="#public-key-not-found">What Does 'Public Key Not Found' Mean (When Verifying A Signature)?</a></li>
+
 <li><a href="#trust">What is a Trusted Key?</a></li>
 <li><a href="#valid-untrusted-vs-invalid-trusted">What Is The Difference Between A Valid Signature from an Untrusted Key And An Invalid Signature from an Untrusted Key?</a></li>
 <li><a href="#fingerprint">What Is A Public Key Fingerprint?</a></li>
 <li><a href="#infeasible">Why Infeasible And Not Impossible?</a></li>
+
 <li><a href="#where">Where Should I Create The Signatures?</a></li>
 <li><a href="#insecure-memory">What Is 'Insecure Memory' And Should I Be Worried?</a></li>
+
 <li><a href="#passphrase">What is a Passphrase?</a></li>
+
 <li><a href="#revocation-cert">What Is A Revocation Certificate?</a></li>
 <li><a href="#revoke-key">How Do I Revoke A Key?</a></li>
 <li><a href="#revocation-certificate-storage">Where Should A Revocation Certificate Be Stored?</a></li>
 <li><a href="#revoke-cert">How Do I Distribute A Revocation Certificate?</a></li>
 <li><a href="#delete-vs-revoke">What Is The Difference Between Deleting And Revoking A Key?</a></li>
+
 <li><a href="#local-sig">Can I Mark A Key As Locally Trusted?</a></li>
 <li><a href="#safe-practice">How Can I Safely Practice Using OpenPGP?</a></li>
 <li><a href="#public-private">What Is The Difference Between A Public And A Private Key?</a></li>
 <li><a href="#private-key-protection">How Should My Code Signing Private Key Be Protected?</a></li>
+
 <li><a href="#secure-machine">How Secure Does The Machine Used To Sign Releases Need To Be?</a></li>
+
 <li><a href="#openpgp-applications">Which Applications Create OpenPGP Compatible Signatures?</a></li>
 <li><a href="#safe-and-secure">How Safe Does The Private Key Need To Be?</a></li>
 <li><a href="#isolated-installation">What Does 'Isolated Installation' Mean?</a></li>
@@ -112,6 +118,32 @@ Release managers **must not** store private keys used to sign Apache releases on
 
 See the <a href="release-distribution.html#sigs-and-sums">release distribution policy</a> for details.
 
+<h3 id="motivation">Why we sign releases</h3>
+
+A signature allows anyone to verify that a file is identical to the one your project's release manager created. Since your project's release has a signature:
+
+  - users can make sure that what they received has not been modified in any way, either accidentally via a faulty transmission channel, or intentionally (with or without malicious intent).
+  - the Apache infrastructure team can verify the identity of a file.
+
+<a href="#openpgp">OpenPGP</a> <a href="#verifying-signature">signatures</a> confer the usual advantages of digital signatures: authentication, integrity and non-repudiation. <a href="#md5">MD5</a> and <a href="#sha-checksum">SHA</a> checksums only provide the integrity part as they are not encrypted.
+
+<h3 id="security-basics">Security checklist</h3>
+
+  - <a href="#private-key-protection">Protect</a> your <a href="#public-private">private key</a>
+  - Choose a <a href="#passphrase">good passphrase</a>
+  - Opt for a reasonably <a href="#key-length">long key length</a>
+  
+<h3 id="key-basics">Key Basics</h3>
+
+To sign releases, you need to <a href="#generate">generate</a> a new master key-pair for code signing. Follow these <a href="openpgp.html#generate-key" target="_blank">instructions</a>.
+
+<h3 id="signing-basics">Signing basics</h3>
+
+  - Signatures should be <a href="#openpgp-ascii-detach-sig">ASCII armored and detached</a>.
+  - You should <a href="#export">export</a> your <a href="#public-private">public key</a> and append the result to the appropriate <a href="#keys-policy">KEYS</a> file(s).
+
+That's all you need to know to sign a release.
+
 <h2 id="keys-policy">The KEYS File</h2>
 
 The KEYS file is a plain-text file containing the public key signatures of the release managers (and optionally other committers) for the project. A good example is the <a href="https://downloads.apache.org/ant/KEYS" target="_blank">Apache Ant KEYS file</a>. 
@@ -137,23 +169,19 @@ Store the KEYS file with the release archives to which it applies at the top lev
 
 Since users may need the KEYS file to check signatures for archived releases, it is important to retain in the file all keys that have ever been used to sign releases. Add entries with eadch new key the project uses, but do not remove entries.
 
-<p><strong>Note:</strong> this system will be replaced by a better process in the near future. In preparation, please ensure that public keys are connected as strongly as possible to the Apache <a href="#web-of-trust">web of trust</a> and are
-available from the major <a href="#keyserver">public key servers</a>.</p>
-<p><a href="#pke">Applied cryptography</a> is a subject that has considerable depth.
-Luckily, it's possible to get started signing releases without being an
-expert. Just remember that (from time to time) you will encounter
-situations that will require research and learning. Hopefully the
-<a href="#faq">FAQ</a> will be a reasonable first port of call.</p>
-<p>You will need an <a href="#openpgp-applications">application</a> to manage keys and
-create signatures. <a href="http://www.gnupg.org/">GNU Privacy Guard</a> is
-recommended and the Apache documentation generally assumes that's what
-you're using. (Documentation patches for other tools welcomed.) Read the
-<a href="openpgp.html#gnupg">Apache usage guide</a> and keep the
-<a href="http://www.gnupg.org/gph/en/manual.html">manual</a> handy. Note that GnuPG
-can handle MD5 and SHA checksums as well as PGP signatures. It is your
-one-stop shop, cross-platform tool for release signing and verification.</p>
-<p>It can be hard for newbies to be confident that they have executed
-operations correctly. Consider doing some <a href="#safe-practice">practice</a> first.</p>
+**Note:K** this system will be replaced by a better process in the near future. In preparation, please ensure that public keys are connected as strongly as possible to the Apache <a href="#web-of-trust">web of trust</a> and are available from the major <a href="#keyserver">public key servers</a>.
+
+<a href="#pke">Applied cryptography</a> is a subject that has considerable depth. Luckily, it's possible to get started signing releases without being an expert. Just remember that you will encounter some situations that require research and learning. We hope the
+<a href="#faq">FAQ</a> will be a reasonable first port of call.
+
+You need an <a href="#openpgp-applications">application</a> to manage keys and create signatures. We recommend <a href="http://www.gnupg.org/">GNU Privacy Guard</a>, and the Apache documentation generally assumes that's what
+you're using. (We welcome contributions that document use of other tools.) Read the <a href="openpgp.html#gnupg">Apache PGP user guide</a> and keep the <a href="https://www.gnupg.org/gph/en/manual.html">manual</a> handy. 
+
+GnuPG can handle MD5 and SHA checksums as well as PGP signatures. It is your all-in-one cross-platform tool for release signing and verification.
+
+**Note:** It can be hard for newbies to be confident that they have executed operations correctly. Consider doing some <a href="#safe-practice">practice</a> before you try to sign an actual release.
+
+
 
 
 
