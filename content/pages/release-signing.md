@@ -259,50 +259,32 @@ You create a digital signature from an original document using a <a href="#pke">
 ASCII armoring is an encoding format that converts a binary file into a string of ASCII characters. This format is more human readable and more portable than other formats.
 
 <h2 id="web-of-trust">What is a Web Of Trust?</h2>
-<p>It is difficult to personally verify the identity of all useful <a href="#pke">public
-keys</a>. However, having verified the identity of only a small number
-of public keys it is possible to deduce the identity of public keys trusted
-by the owners of these keys. This process can be repeated. This extended
-graph of trusted identities is termed a <a href="http://en.wikipedia.org/wiki/Web_of_trust">web of
-trust</a>.</p>
-<p>Webs of trust can be used to solve the problem of verifying the identity of
-public keys.</p>
-<p><strong>Note:</strong> in order to take full advantage of a web of trust, it is
-important to actively build your web of trust into the major public webs of
-trust. Conferences are an ideal opportunity but you must come
-<a href="#link-into-wot">prepared</a>.</p>
-<p>For more information read 
-<a href="http://home.apache.org/~henkp/">Henk Penning's Apache home page</a> and the 
-<a href="http://www.gnupg.org/(en)/documentation/guides.html">GNU Privacy Guard User Guide</a>.</p>
-<h1 id="link-into-wot">How Do I Link Into A Public Web of Trust?<a class="headerlink" href="#link-into-wot" title="Permanent link">&para;</a></h1>
-<p>By an existing member of that <a href="#web-of-trust">web of trust</a> signing your
-public key to verify your identity. See Henk Penning's 
-<a href="http://home.apache.org/~henkp/sig/pgp-key-signing.txt">Key Signing HOWTO</a> </p>
-<p>A short guide is <a href="openpgp.html#wot">available</a>.</p>
-<h1 id="key-signing-party">What Is A Key Signing Party?<a class="headerlink" href="#key-signing-party" title="Permanent link">&para;</a></h1>
-<p>A key signing party is a meeting organised to allow the exchange of public
-keys and so extension of the <a href="#web-of-trust">web of trust</a>.</p>
-<p>See the <a href="http://www.cryptnet.net/fdp/crypto/keysigning_party/en/keysigning_party.html">Keysigning Party HOWTO</a>
-and Henk Penning's 
-<a href="http://home.apache.org/~henkp/sig/pgp-key-signing.txt">Key Signing HOWTO</a> </p>
-<h1 id="apache-wot">How Can I Link My Key Into The Apache Web of Trust?<a class="headerlink" href="#apache-wot" title="Permanent link">&para;</a></h1>
-<p>By meeting other Apache committers face-to-face and <a href="#link-into-wot">exchanging public
-keys</a>. There are several ways to achieve this:</p>
-<ul>
-<li>
-<p><a href="#key-signing-party">Key signing parties</a> are organised at each
-<a href="http://www.apachecon.com">ApacheCon</a>.</p>
-</li>
-<li>
-<p>If you are not able to attend (or the conference is a long way off) then
-consider organising a face-to-face meeting of <a href="http://people.apache.org/map.html">local
-committers</a>.</p>
-</li>
-<li>
-<p>Subscribe to the <code>party</code> list and when you visit a new city, see if
-committers want to meet up.</p>
-</li>
-</ul>
+
+It is difficult to personally verify the identity of all useful <a href="#pke">public keys</a>. However, having verified the identity of only a small number of public keys it is possible to deduce the identity of public keys trusted by the owners of these keys. This process can be repeated. This extended graph of trusted identities is termed a <a href="http://en.wikipedia.org/wiki/Web_of_trust" target="_blank">>web of trust</a>.
+
+You can use webs of trust to solve the problem of verifying the identity of public keys.
+
+**Note:** to take full advantage of a web of trust, it is important to actively build your personal web of trust into the major public webs of trust. Conferences are an ideal opportunity for exchanging key information, but you must come <a href="#link-into-wot">prepared</a>. 
+
+For more information read the <a href="https://www.gnupg.org/(en)/documentation/guides.html" target="_blank">GNU Privacy Handbook</a>.
+
+<h3 id="link-into-wot">How do I link into a public web of trust?</h3>
+
+You join a web of trust when an existing member of that web signs your public key to verify your identity. See <a href="openpgp.html#wot">a short explanation</a>.
+
+<h3 id="key-signing-party">What is a key-signing party?</h3>
+
+A key signing party is a meeting organised to allow the exchange of public keys to extend the <a href="#web-of-trust">web of trust</a>. See the <a href="https://www.cryptnet.net/fdp/crypto/keysigning_party/en/keysigning_party.html">Keysigning Party HOWTO</a>.
+
+<h3 id="apache-wot">How can I link my key into the Apache Web of Trust?</h3>
+
+You can link into the Apache web of trust by meeting other Apache committers face-to-face and <a href="#link-into-wot">exchanging public
+keys</a>:
+
+  - Apache committers organizes <a href="#key-signing-party">key signing parties</a> at each <a href="https://www.apachecon.com" target="_blank">ApacheCon</a>.
+  - If you are not able to attend ApacheCon, or it will not happen for several months, consider organising a face-to-face meeting of <a href="https://people.apache.org/map.html">local committers</a>.
+
+Subscribe to the `party` list and when you visit a new city, see if committers want to meet up.
 
 
 
