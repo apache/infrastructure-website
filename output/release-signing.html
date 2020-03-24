@@ -103,9 +103,8 @@ authoritative sources of deeper information.</p>
 <li><a href="#abstract">Abstract</a></li>
 <li><a href="#note">Important notes</a></li>
 <li><a href="#basic-facts">Basic facts</a></li>
-<li><a href="#keys-policy">The KEYS File</a></li>
-<li><a href="#sign-release">How Do I Sign A Release?</a></li>
-<li><a href="#openpgp-ascii-detach-sig">What Is an OpenPGP Compatible ASCII Armored Detached Signature?</a></li>
+<li><a href="#signing-basics">Signing basics</li>
+<li><a href="#key-basics">Keys basics</a></li>
 <li><a href="#openpgp">What Is OpenPGP?</a></li>
 <li><a href="#pke">What Is Public Key Cryptography?</a></li>
 <li><a href="#detach-sig">What Is An Detached Signature?</a></li>
@@ -177,7 +176,7 @@ authoritative sources of deeper information.</p>
 <li>Committers with RSA keys of length 2048 or more do not need to generate a new key yet. They should reconfigure their client to avoid the weakness by following these <a href="openpgp.html#sha1">instructions</a> and wait for the next major OpenPGP revision.</li>
 </ul>
 <p>How to find the length of your key is described <a href="#key-length-how-to">here</a>.</p>
-<h2 id="basic-facts">Basic facts</h2>
+<h2 id="basic-facts">The basics</h2>
 <p>Every artifact distributed by the Apache Software Foundation  <strong>must</strong> be accompanied by one file containing an <a href="#openpgp-ascii-detach-sig">OpenPGP-compatible ASCII armored detached signature</a> and another file containing a <a href="release-signing#sha-checksum">SHA</a> or <a href="release-signing#md5">MD5</a>) checksum.</p>
 <ul>
 <li>MD5 hashes are <strong>deprecated</strong>; please use SHA for new releases.</li>
@@ -203,15 +202,29 @@ authoritative sources of deeper information.</p>
 <li>Choose a <a href="#passphrase">good passphrase</a></li>
 <li>Opt for a reasonably <a href="#key-length">long key length</a></li>
 </ul>
-<h3 id="key-basics">Key Basics</h3>
-<p>To sign releases, you need to <a href="#generate">generate</a> a new master key-pair for code signing. Follow these <a href="openpgp.html#generate-key" target="_blank">instructions</a>.</p>
-<h3 id="signing-basics">Signing basics</h3>
+<h2 id="signing-basics">Signing basics</h2>
 <ul>
 <li>Signatures should be <a href="#openpgp-ascii-detach-sig">ASCII armored and detached</a>.</li>
 <li>You should <a href="#export">export</a> your <a href="#public-private">public key</a> and append the result to the appropriate <a href="#keys-policy">KEYS</a> file(s).</li>
 </ul>
-<p>That's all you need to know to sign a release.</p>
-<h2 id="keys-policy">The KEYS File</h2>
+<h3 id="sign-release">How do I sign a release?</h3>
+<p>Create a <a href="#openpgp-ascii-detach-sig">OpenPGP compatible ASCII armored detached signature</a> for the released artifact. Upload the signature with the released artifact. See <a href="#basics">here</a> for a basic overview.</p>
+<h3 id="openpgp-ascii-detach-sig">What Is an OpenPGP compatible ASCII armored detached signature?</h3>
+It is
+<ul>
+<li>an <a href="#openpgp">OpenPGP</a> compatible</li>
+<li><a href="#ascii">ASCII armored</a></li>
+<li><a href="#detach-sig">detached signature</a></li>
+</ul>
+<p>To create one using <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a> for file
+<code>foo.tar.gz</code>, type:</p>
+<pre><code>&lt;code&gt;&lt;pre&gt;
+   $ gpg --armor --output foo.tar.gz.asc --detach-sig foo.tar.gz 
+&lt;/pre&gt;&lt;/code&gt;
+</code></pre>
+<h2 id="key-basics">Key basics</h2>
+<p>To sign releases, you need to <a href="#generate">generate</a> a new master key-pair for code signing. Follow these <a href="openpgp.html#generate-key" target="_blank">instructions</a>.</p>
+<h3 id="keys-policy">The KEYS File</h3>
 <p>The KEYS file is a plain-text file containing the public key signatures of the release managers (and optionally other committers) for the project. A good example is the <a href="https://downloads.apache.org/ant/KEYS" target="_blank">Apache Ant KEYS file</a>.</p>
 <p>It is traditional to include the following header to explain how to use the file. These commands generate a descriptive comment describing the key, followed by the key itself. Key handling software ignores the comments when importing a key file:</p>
 <pre><code>This file contains the PGP keys of various developers.&lt;/p&gt;
