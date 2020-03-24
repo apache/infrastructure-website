@@ -13,9 +13,12 @@ This document is informative and does not constitute policy.
 <li><a href="#abstract">Abstract</a></li>
 <li><a href="#note">Important notes</a></li>
 <li><a href="#basic-facts">Basic facts</a></li>
-<li><a href="#keys-policy">The KEYS File</a></li>
-<li><a href="#sign-release">How Do I Sign A Release?</a></li>
-<li><a href="#openpgp-ascii-detach-sig">What Is an OpenPGP Compatible ASCII Armored Detached Signature?</a></li>
+  
+<li><a href="#signing-basics">Signing basics</li>
+  
+<li><a href="#key-basics">Keys basics</a></li>
+
+
 <li><a href="#openpgp">What Is OpenPGP?</a></li>
 <li><a href="#pke">What Is Public Key Cryptography?</a></li>
 <li><a href="#detach-sig">What Is An Detached Signature?</a></li>
@@ -84,6 +87,7 @@ This document is informative and does not constitute policy.
 <li><a href="#update-document">I Have A New Key. Which Apache Documents Need To Be Updated?</a></li>
 <li><a href="#rsa">What Is RSA?</a></li>
 <li><a href="#key-length-how-to">How Do I Find The Length Of A Key?</a></li>
+
 <li><a href="#help">Help Wanted!</a></li>
 <li><a href="#reading">Further Reading</a></li>
 </ul>
@@ -102,7 +106,7 @@ The impact of this weakness on Apache can be mitigated by action now. What needs
 
 How to find the length of your key is described [here](#key-length-how-to).
 
-<h2 id="basic-facts">Basic facts</h2>
+<h2 id="basic-facts">The basics</h2>
 
 Every artifact distributed by the Apache Software Foundation  **must** be accompanied by one file containing an <a href="#openpgp-ascii-detach-sig">OpenPGP-compatible ASCII armored detached signature</a> and another file containing a <a href="release-signing#sha-checksum">SHA</a> or <a href="release-signing#md5">MD5</a>) checksum.
 
@@ -132,19 +136,41 @@ A signature allows anyone to verify that a file is identical to the one your pro
   - <a href="#private-key-protection">Protect</a> your <a href="#public-private">private key</a>
   - Choose a <a href="#passphrase">good passphrase</a>
   - Opt for a reasonably <a href="#key-length">long key length</a>
-  
-<h3 id="key-basics">Key Basics</h3>
 
-To sign releases, you need to <a href="#generate">generate</a> a new master key-pair for code signing. Follow these <a href="openpgp.html#generate-key" target="_blank">instructions</a>.
-
-<h3 id="signing-basics">Signing basics</h3>
+<h2 id="signing-basics">Signing basics</h2>
 
   - Signatures should be <a href="#openpgp-ascii-detach-sig">ASCII armored and detached</a>.
   - You should <a href="#export">export</a> your <a href="#public-private">public key</a> and append the result to the appropriate <a href="#keys-policy">KEYS</a> file(s).
 
-That's all you need to know to sign a release.
+<h3 id="sign-release">How do I sign a release?</h3>
 
-<h2 id="keys-policy">The KEYS File</h2>
+Create a <a href="#openpgp-ascii-detach-sig">OpenPGP compatible ASCII armored detached signature</a> for the released artifact. Upload the signature with the released artifact. See <a href="#basics">here</a> for a basic overview.
+
+<h3 id="openpgp-ascii-detach-sig">What Is an OpenPGP compatible ASCII armored detached signature?</h3>
+It is
+
+  - an <a href="#openpgp">OpenPGP</a> compatible 
+  - <a href="#ascii">ASCII armored</a> 
+  - <a href="#detach-sig">detached signature</a>
+
+To create one using <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a> for file
+`foo.tar.gz`, type:
+
+```
+<code><pre>
+   $ gpg --armor --output foo.tar.gz.asc --detach-sig foo.tar.gz 
+</pre></code>
+```
+
+
+
+
+
+<h2 id="key-basics">Key basics</h2>
+
+To sign releases, you need to <a href="#generate">generate</a> a new master key-pair for code signing. Follow these <a href="openpgp.html#generate-key" target="_blank">instructions</a>.
+
+<h3 id="keys-policy">The KEYS File</h3>
 
 The KEYS file is a plain-text file containing the public key signatures of the release managers (and optionally other committers) for the project. A good example is the <a href="https://downloads.apache.org/ant/KEYS" target="_blank">Apache Ant KEYS file</a>. 
 
@@ -164,7 +190,6 @@ or
     &amp;&amp; gpg --armor --export &lt;your name&gt;) &gt;&gt; this file.
 ```
 
-
 Store the KEYS file with the release archives to which it applies at the top level of the ASF mirror area for the project. This makes it  available for users to download, and for automatic archiving with its release. For example, the Ant KEYS file is in the directory `https://downloads.apache.org/ant`. The corresponding SVN area is at `https://dist.apache.org/repos/dist/release/ant`
 
 Since users may need the KEYS file to check signatures for archived releases, it is important to retain in the file all keys that have ever been used to sign releases. Add entries with eadch new key the project uses, but do not remove entries.
@@ -178,6 +203,9 @@ you're using. (We welcome contributions that document use of other tools.) Read 
 GnuPG can handle MD5 and SHA checksums as well as PGP signatures. It is your all-in-one cross-platform tool for release signing and verification.
 
 **Note:** It can be hard for newbies to be confident that they have executed operations correctly. Consider doing some <a href="#safe-practice">practice</a> before you try to sign an actual release.
+
+
+
 
 
 
