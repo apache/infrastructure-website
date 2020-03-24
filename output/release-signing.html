@@ -94,28 +94,18 @@ Signing Releases        </a>
           <h2>
               Signing Releases
           </h2>
-              <h2 id="abstract">Abstract</h2>
+              <h2 id="abstract">Introduction</h2>
 <p>This document gives release managers a basic introduction to release signing. See under <a href="#reading">Further reading</a> for links to
 authoritative sources of deeper information.</p>
 <p>This document is informative and does not constitute policy.</p>
 <h2>Contents</h2>
 <ul>
-<li><a href="#abstract">Abstract</a></li>
+<li><a href="#abstract">Introduction</a></li>
 <li><a href="#note">Important notes</a></li>
 <li><a href="#basic-facts">Basic facts</a></li>
 <li><a href="#signing-basics">Signing basics</li>
 <li><a href="#key-basics">Keys basics</a></li>
-<li><a href="#openpgp">What Is OpenPGP?</a></li>
-<li><a href="#pke">What Is Public Key Cryptography?</a></li>
-<li><a href="#detach-sig">What Is An Detached Signature?</a></li>
-<li><a href="#ascii">What Is ASCII Armoring?</a></li>
-<li><a href="#md5">What Is An MD5 Checksum?</a></li>
-<li><a href="#sha-checksum">What is a SHA checksum?</a></li>
-<li><a href="#message-digest">What Is A Message Digest Algorithm?</a></li>
-<li><a href="#web-of-trust">What Is A Web Of Trust?</a></li>
-<li><a href="#link-into-wot">How Do I Link Into A Public Web of Trust?</a></li>
-<li><a href="#key-signing-party">What Is A Key Signing Party?</a></li>
-<li><a href="#apache-wot">How Can I Link My Key Into The Apache Web of Trust?</a></li>
+<li><a href="#web-of-trust">What is a Web Of Trust?</a></li>
 <li><a href="#verifying-signature">What Does Verifying A Signature Mean?</a></li>
 <li><a href="#check-integrity">How Can I Check The Integrity Of A Release?</a></li>
 <li><a href="#public-key-not-found">What Does 'Public Key Not Found' Mean (When Verifying A Signature)?</a></li>
@@ -222,6 +212,42 @@ It is
    $ gpg --armor --output foo.tar.gz.asc --detach-sig foo.tar.gz 
 &lt;/pre&gt;&lt;/code&gt;
 </code></pre>
+<h3 id="md5">What is an MD5 checksum?</h3>
+<p>MD5 is a <a href="http://www.faqs.org/rfcs/rfc1321.html" target="_blank">well known</a>  <a href="#message-digest">message
+digest algorithm</a>. Many tools are available to calculate these sums. For example, you can use <a href="https://www.openssl.org/" target="_blank">OpenSSL</a>:</p>
+<pre><code>&lt;code&gt;&lt;pre&gt;
+$ openssl md5 &amp;lt; file
+&lt;/pre&gt;&lt;/code&gt;
+</code></pre>
+<p>Platform-specific applications are also common, such as <code>md5sum</code> on linux:</p>
+<pre><code>&lt;code&gt;&lt;pre&gt;
+$ md5sum file
+&lt;/pre&gt;&lt;/code&gt;
+With GnuPG:
+&lt;code&gt;&lt;pre&gt;
+  $ gpg --print-md MD5 [fileName] &amp;gt; [fileName].md5
+&lt;/pre&gt;&lt;/code&gt;&lt;/p&gt;
+</code></pre>
+<p>Run the command in the same directory as the file so the output only contains the file name with no directory prefixes.</p>
+<p><strong>Note</strong> that the security of MD5 is now <a href="#md5-security">questionable</a> and is only useful as part of a defense in depth.</p>
+<h3 id="sha-checksum">What is an SHA checksum?</h3>
+<p>Like <a href="#md5">MD5</a>, <a href="http://www.ietf.org/rfc/rfc3174.txt">SHA</a> is a <a href="#message-digest">message digest</a> algorithm. Using GnuPG, you can create a SHA1 signature as follows:</p>
+<pre><code>&lt;code&gt;&lt;pre&gt;
+  $ gpg --print-md SHA1 [fileName] &amp;gt; [fileName].sha1
+&lt;/pre&gt;&lt;/code&gt;
+</code></pre>
+<p><strong>Avoid</strong> further use of <a href="#sha1">SHA-1</a>. <code>SHA256</code> and <code>SHA512</code> use the same <code>SHA</code> algorithm family with longer hash
+lengths (256 and 512 bits respectively). These longer variations are less vulnerable to the weaknesses found in the algorithm family than <code>SHA1</code>. Apache recommends using <a href="#sha1">SHA512</a>.</p>
+<p>To create a <code>SHA512</code> checksum use:</p>
+<pre><code>&lt;code&gt;&lt;pre&gt;
+  $ gpg --print-md SHA512 [fileName] &amp;gt; [fileName].sha512
+&lt;/pre&gt;&lt;/code&gt;&lt;/p&gt;
+</code></pre>
+<p>Run the command in the same directory as the file so the output only contains the file name with no directory prefixes.</p>
+<p>There are other members of the <code>SHA</code> family that are rarely used.</p>
+<h3 id="message-digest">What is a message digest algorithm?</h3>
+<p>A message digest algorithm takes a document and produces a much smaller hash of that document. A good algorithm will produce different digests for very similar documents. A good algorithm makes it <a href="#infeasible">infeasible</a> to create a message matching a given hash.</p></p>
+<p>You can use a trusted digest for a document can be used to verify the contents of an untrusted file. You can deliver the digest, which has a small size over a secure but expensive channel while delivering the untrusted file over an insecure but inexpensive one. This is useful when distributing releases.</p>
 <h2 id="key-basics">Key basics</h2>
 <p>To sign releases, you need to <a href="#generate">generate</a> a new master key-pair for code signing. Follow these <a href="openpgp.html#generate-key" target="_blank">instructions</a>.</p>
 <h3 id="keys-policy">The KEYS File</h3>
@@ -247,6 +273,60 @@ or
 you're using. (We welcome contributions that document use of other tools.) Read the <a href="openpgp.html#gnupg">Apache PGP user guide</a> and keep the <a href="https://www.gnupg.org/gph/en/manual.html">manual</a> handy.</p>
 <p>GnuPG can handle MD5 and SHA checksums as well as PGP signatures. It is your all-in-one cross-platform tool for release signing and verification.</p>
 <p><strong>Note:</strong> It can be hard for newbies to be confident that they have executed operations correctly. Consider doing some <a href="#safe-practice">practice</a> before you try to sign an actual release.</p>
+<h3 id="openpgp">What is OpenPGP?</h3>
+[OpenPGP](openpgp.html) is an <a href="http://www.ietf.org/rfc/rfc2440.txt" target="_blank">RFC</a> describing a system for interoperable <a href="#pke">public key cryptography</a>. Various implementations exist. Apache recommends <a href="https://www.gnupg.org/" target="_blank">GNU Privacy Guard</a> (GnuPG), an open-source, OpenPGP compatible implementation. It comes with <a href="https://www.gnupg.org/(en)/documentation/guides.html" target="_blank">good documentation</a> that describes GnuPG and gives a good general introduction to public key cryptography.
+<h3 id="pke">What is public key cryptography?</h3>
+Public key cryptography is asymmetric. You use one key to encrypt a message which only the other key can decrypt. You can share the first key publicly without compromising the security of the second key. One key is therefore called the _public key_ and one the _private key_.
+<p>When you use public key cryptography, you can freely distribute the public key, but you must keep the private key secret. It is vital to <a href="#private-key-protection">protect</a> private key files.. Private keys are typically stored in files protected by symmetric encryption. Choose a strong <a href="#passphrase">passphrase</a> to protect the file.</p></p>
+<h3 id="detach-sig">What is a detached signature?</h3>
+<p>You create a digital signature from an original document using a <a href="#pke">private key</a>. Possession of the corresponding public key allows verification that a given file is identical to the original document. An <em>attached signature</em> is attached to the document whereas a <em>detached signature</em> is contained in a separate file.</p>
+<h3 id="ascii">What is ASCII armoring?</h3>
+ASCII armoring is an encoding format that converts a binary file into a string of ASCII characters. This format is more human readable and more portable than other formats.
+<h2 id="web-of-trust">What is a Web Of Trust?</h2>
+<p>It is difficult to personally verify the identity of all useful <a href="#pke">public
+keys</a>. However, having verified the identity of only a small number
+of public keys it is possible to deduce the identity of public keys trusted
+by the owners of these keys. This process can be repeated. This extended
+graph of trusted identities is termed a <a href="http://en.wikipedia.org/wiki/Web_of_trust">web of
+trust</a>.</p>
+<p>Webs of trust can be used to solve the problem of verifying the identity of
+public keys.</p>
+<p><strong>Note:</strong> in order to take full advantage of a web of trust, it is
+important to actively build your web of trust into the major public webs of
+trust. Conferences are an ideal opportunity but you must come
+<a href="#link-into-wot">prepared</a>.</p>
+<p>For more information read 
+<a href="http://home.apache.org/~henkp/">Henk Penning's Apache home page</a> and the 
+<a href="http://www.gnupg.org/(en)/documentation/guides.html">GNU Privacy Guard User Guide</a>.</p>
+<h1 id="link-into-wot">How Do I Link Into A Public Web of Trust?<a class="headerlink" href="#link-into-wot" title="Permanent link">&para;</a></h1>
+<p>By an existing member of that <a href="#web-of-trust">web of trust</a> signing your
+public key to verify your identity. See Henk Penning's 
+<a href="http://home.apache.org/~henkp/sig/pgp-key-signing.txt">Key Signing HOWTO</a> </p>
+<p>A short guide is <a href="openpgp.html#wot">available</a>.</p>
+<h1 id="key-signing-party">What Is A Key Signing Party?<a class="headerlink" href="#key-signing-party" title="Permanent link">&para;</a></h1>
+<p>A key signing party is a meeting organised to allow the exchange of public
+keys and so extension of the <a href="#web-of-trust">web of trust</a>.</p>
+<p>See the <a href="http://www.cryptnet.net/fdp/crypto/keysigning_party/en/keysigning_party.html">Keysigning Party HOWTO</a>
+and Henk Penning's 
+<a href="http://home.apache.org/~henkp/sig/pgp-key-signing.txt">Key Signing HOWTO</a> </p>
+<h1 id="apache-wot">How Can I Link My Key Into The Apache Web of Trust?<a class="headerlink" href="#apache-wot" title="Permanent link">&para;</a></h1>
+<p>By meeting other Apache committers face-to-face and <a href="#link-into-wot">exchanging public
+keys</a>. There are several ways to achieve this:</p>
+<ul>
+<li>
+<p><a href="#key-signing-party">Key signing parties</a> are organised at each
+<a href="http://www.apachecon.com">ApacheCon</a>.</p>
+</li>
+<li>
+<p>If you are not able to attend (or the conference is a long way off) then
+consider organising a face-to-face meeting of <a href="http://people.apache.org/map.html">local
+committers</a>.</p>
+</li>
+<li>
+<p>Subscribe to the <code>party</code> list and when you visit a new city, see if
+committers want to meet up.</p>
+</li>
+</ul>
 <h2 id="reading">Further reading</h2>
 <p>There are many other excellent resources on signing releases, but these make a good start:</p>
 <ul>
