@@ -19,7 +19,7 @@ This document is informative and does not constitute policy.
 <li><a href="#signing-basics">Signing basics</li>
 <li><a href="#key-basics">Keys basics</a></li>
 <li><a href="#safe-practice">How can I safely practice using OpenPGP?</a></li>
-<li><a href="#web-of-trust"Web of Trust basics</a></li>
+<li><a href="#web-of-trust">Web of Trust basics</a></li>
 <li><a href="#passphrase">What is a Passphrase?</a></li>
 <li><a href="#revocation-cert">Revocation Certificate basics</a></li>
   
