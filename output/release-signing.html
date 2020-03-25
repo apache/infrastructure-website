@@ -95,10 +95,11 @@ Signing Releases        </a>
               Signing Releases
           </h2>
               <h2 id="abstract">Introduction</h2>
-<p>This document gives release managers a basic introduction to release signing. See under <a href="#reading">Further reading</a> for links to
-authoritative sources of deeper information.</p>
+<p>The first part of thsi document gives release managers a basic introduction to release signing. See under <a href="#reading">Further reading</a> for links to authoritative sources of deeper information.</p>
+<p>The second part answers some frequently-asked questions from people who downlaod releases from Apache projects.</p>
 <p>This document is informative and does not constitute policy.</p>
 <h2>Contents</h2>
+<h3>For release managers</h3>
 <ul>
 <li><a href="#abstract">Introduction</a></li>
 <li><a href="#note">Important notes</a></li>
@@ -153,9 +154,10 @@ authoritative sources of deeper information.</p>
 <li><a href="#update-document">I Have A New Key. Which Apache Documents Need To Be Updated?</a></li>
 <li><a href="#rsa">What Is RSA?</a></li>
 <li><a href="#key-length-how-to">How Do I Find The Length Of A Key?</a></li>
-<li><a href="#help">Help Wanted!</a></li>
 <li><a href="#reading">Further Reading</a></li>
 </ul>
+<h2>FAQs from those downloading releases</h2>
+<p><a href="#help"><em>Help Wanted!</em></a></p>
 <h2 id="note">Important notes</h2>
 <p>All new <strong>RSA</strong> keys generated should be at least <strong>4096</strong> bits. <strong>Do not</strong> generate new <strong>DSA</strong> keys.</p>
 <p>Recent research has revealed weaknesses in SHA-1, and thus in the DSA and 1024 bit RSA OpenPGP keys which must use this algorithm. Though no realistic attacks have been made public, experience with similar weaknesses in MD5 suggests that further advances may well lead to practical attacks within the next few years. This accords with current NIST guidance on DSA.</p>
@@ -299,6 +301,34 @@ keys</a>:</p>
 <li>If you are not able to attend ApacheCon, or it will not happen for several months, consider organising a face-to-face meeting of <a href="https://people.apache.org/map.html">local committers</a>.</li>
 </ul>
 <p>Subscribe to the <code>party</code> list and when you visit a new city, see if committers want to meet up.</p>
+<h2>FAQs from those downloading releases</h2>
+<h3 id="verifying-signature">What Does Verifying A Signature Mean?<a class="headerlink" href="#verifying-signature" title="Permanent link">&para;</a></h1>
+<p><a href="#pke">Public key cryptography</a> can be used to test whether a particular
+file is identical (in content) to an original by verifying a
+<a href="#detach-sig">signature</a>. The signature file is a <a href="#message-digest">digest</a>
+of the original file signed by a private key which attests to the digest's
+authenticity.</p>
+<p>For example, when using <a href="http://www.gnupg.org/">GNU Privacy Guard</a> you
+verify the signature <code>foo-1.0.tar.gz.asc</code> for release <code>foo-1.0.tar.gz</code>
+using the following command:
+<code><pre>
+$ gpg --verify foo-1.0.tar.gz.asc foo-1.0.tar.gz
+</pre></code>
+A signature is valid, if <code>gpg</code> verifies the <code>.asc</code>
+as a <code>good signature</code>, and doesn't complain about expired
+or revoked keys. Technically :
+<code><pre>
+$ gpg --verify --status-fd 1 foo-1.0.tar.gz.asc foo-1.0.tar.gz
+</pre></code>
+should classify the <code>.asc</code> as a <code>GOODSIG</code>.</p>
+<p>Trust is required in the identity of the public key that made the signature
+and that the signature is for the original in question (and not some other
+file). When verifying a release from an untrusted source (for example, over
+P2P file sharing or from a mirror) it is therefore important to download
+the signature from a trusted source. Signatures for all Apache releases are
+available directly from <code>www.apache.org</code> and should be downloaded from
+there.</p>
+</ul>
 <h2 id="reading">Further reading</h2>
 <p>There are many other excellent resources on signing releases, but these make a good start:</p>
 <ul>
