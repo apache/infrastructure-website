@@ -2,7 +2,7 @@ Title: Signing Releases
 
 <h2 id="abstract">Introduction</h2>
 
-The first part of thsi document gives release managers a basic introduction to release signing. See under [Further reading](#reading) for links to authoritative sources of deeper information.
+The first part of this document gives release managers a basic introduction to release signing. See under [Further reading](#reading) for links to authoritative sources of deeper information.
 
 The second part answers some frequently-asked questions from people who downlaod releases from Apache projects.
 
