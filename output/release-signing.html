@@ -108,7 +108,7 @@ Signing Releases        </a>
 <li><a href="#key-basics">Keys basics</a></li>
 <li><a href="#web-of-trust">What is a Web Of Trust?</a></li>
 <li><a href="#passphrase">What is a Passphrase?</a></li>
-<li><a href="#revocation-cert">What Is A Revocation Certificate?</a></li>
+<li><a href="#revocation-cert">Revocation Certificate basics</a></li>
 <li><a href="#revoke-key">How Do I Revoke A Key?</a></li>
 <li><a href="#revocation-certificate-storage">Where Should A Revocation Certificate Be Stored?</a></li>
 <li><a href="#revoke-cert">How Do I Distribute A Revocation Certificate?</a></li>
@@ -147,7 +147,7 @@ Signing Releases        </a>
 <li><a href="#key-length-how-to">How Do I Find The Length Of A Key?</a></li>
 <li><a href="#reading">Further Reading</a></li>
 </ul>
-<h2>FAQs for those downloading releases</h2>
+<h3>FAQs from those downloading releases</h3>
 <ul>
   <li><a href="#verifying-signature">What does verifying a signature mean?</a></li>
   <li><a href="#check-integrity">How can I check the integrity of a release?</a></li>
@@ -318,6 +318,114 @@ keys</a>:</p>
 <li>If you are not able to attend ApacheCon, or it will not happen for several months, consider organising a face-to-face meeting of <a href="https://people.apache.org/map.html">local committers</a>.</li>
 </ul>
 <p>Subscribe to the <code>party</code> list and when you visit a new city, see if committers want to meet up.</p>
+<h3 id="passphrase">What is a Passphrase?</h3>
+<p>In cryptography <em>passphrase</em> is often used for what might be known as a password in other contexts. For example, an
+<a href="#openpgp">OpenPGP</a> private key is typically stored to disc in a file encrypted by a symmetric cypher keyed by a passphrase. This passphrase is one of the weakest elements in the system: should anyone else gain access to the file then a dictionary attack will be feasible on a weak passphrase. So choosing a strong passphrase is very important.</p>
+<p>Passphrases, unlike passwords, are typically unlimited in length. We recommend using long
+passphrases. You can use sequences of (at least seven) unrelated words or more conventional mixtures of symbols and alphanumerics.</p>
+<p>Even a good passphrase offers only limited protection. Given the encrypted file and enough time, a determined cracker will be able to
+break any passphrase. A good passphrase will buy important time in the event of a compromise, but is no substitute for keeping the private key <a href="#safe-and-secure">safe and secure</a> in the first place.</p>
+<h3 id="revocation-cert">Revocation Certificate basics</h3>
+<p><a href="#openpgp">OpenPGP</a> defines a special type of signed message called a
+<em>revocation certificate</em>. This message indicates that the signer believes
+that the key is no longer trustworthy. Typically, the revocation
+certificate will be signed by the key to be revoked (though the key may
+specify that other keys should be trusted for revocation). The type of
+revocation and the comment included may be used to judge how much trust to
+place in a good signature by a revoked key.</p></p>
+<p>A revocation certificate should be generated for each public key used.
+These should be stored safely, securely and separately from the public key.</p>
+<p>Each revocation certificates has a type specifying a general (machine
+readable) reason for the revocation:</p>
+<ul>
+<li>
+<p>No reason specified</p>
+</li>
+<li>
+<p>Key has been compromised</p>
+</li>
+<li>
+<p>Key is superseded</p>
+</li>
+<li>
+<p>Key is no longer used</p>
+</li>
+</ul>
+<p>It is recommended that certificates are created to cover the first two
+cases. Note that if a key is lost or can no longer be accessed (due to
+media failure, say) it is best to assume that the key has been potentially
+compromised. It is recommended that revocation certificates are printed and
+stored safely to guard against media failure.</p>
+<p>An <a href="#ascii">ASCII armored</a> revocation certificate for key <code>bob</code> can be
+generated and saved to <code>revoke.asc</code> using <a href="http://www.gnupg.org">GNU Privacy
+Guard</a> as follows:
+<code><pre>
+$ gpg --output revoke.asc --armor --gen-revoke bob
+</pre></code>
+The certificate produced should be <a href="#revocation-certificate-storage">securely
+stored</a>.</p>
+<p>If you are preparing a revocation certificate for future use, it is
+recommended that you test it. See <a href="#safe-practice">safe practice</a>.</p>
+<h1 id="revoke-key">How Do I Revoke A Key?<a class="headerlink" href="#revoke-key" title="Permanent link">&para;</a></h1>
+<p>To revoke a key (given a certificate) using <a href="http://www.gnupg.org">GNU Privacy
+Guard</a> import the <a href="#revocation-cert">revocation
+certificate</a> :
+<code><pre>
+$ gpg --import revoke.asc 
+gpg: key 4A03679A: "Some User &lt;someuser@example.org&gt;" revocation
+certificate imported
+gpg: Total number processed: 1
+gpg:    new key revocations: 1
+</pre></code></p>
+<h1 id="revocation-certificate-storage">Where Should A Revocation Certificate Be Stored?<a class="headerlink" href="#revocation-certificate-storage" title="Permanent link">&para;</a></h1>
+<p>The revocation certificate should be stored securely and separately from
+the key it revokes. Burning onto CDROM or printing out onto hard copy are
+good solutions.</p>
+<h1 id="revoke-cert">How Do I Distribute A Revocation Certificate?<a class="headerlink" href="#revoke-cert" title="Permanent link">&para;</a></h1>
+<p>In the event of a compromise, a <a href="#revocation-cert">revocation certificate</a>
+needs to be distributed to those using the key. This process needs to be a
+mirror of the process by which the original key was distributed.</p>
+<ul>
+<li>
+<p>The Apache infrastructure team should be informed by a post containing
+the revocation certificate</p>
+</li>
+<li>
+<p>The KEYS files containing the original key should be updated with the
+revocation certificate</p>
+</li>
+<li>
+<p>The revocation certificate should be uploaded to the major keyserver
+networks</p>
+</li>
+<li>
+<p>An announcement should be posted to the appropriate lists with the
+revocation certificate attached</p>
+</li>
+</ul>
+<h1 id="delete-vs-revoke">What Is The Difference Between Deleting And Revoking A Key?<a class="headerlink" href="#delete-vs-revoke" title="Permanent link">&para;</a></h1>
+<p>When a key is deleted from a keyring, it is simply removed. It can be added
+again later.</p>
+<p>When a key is revoked, the key is marked in the key ring. Whenever a
+message signed by this key is verified in the future, the user will be
+warned that the key has been revoked.</p>
+<p>For example, when verifying a revoked key, <a href="http://www.gnupg.org">GNU Privacy
+Guard</a> issues the following comment:
+<code><pre>
+$ gpg --verify message.asc.message 
+gpg: Signature made Sat Apr  8 09:28:31 2006 BST using DSA key ID 4A03679A
+gpg: Good signature from "Some User &lt;someuser@example.org&gt;"
+gpg: checking the trustdb
+gpg: checking at depth 0 signed=0 ot(-/q/n/m/f/u)=0/0/0/0/0/1
+gpg: WARNING: This key has been revoked by its owner!
+gpg:          This could mean that the signature is forgery.
+gpg: reason for revocation: Key has been compromised
+gpg: revocation comment: 
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the
+owner.
+Primary key fingerprint: 82D1 169B E6F1 9D14 DA76  A5DD 968E 66E4 4A03 679A
+</pre></code></p>
 <h2>FAQs from those downloading releases</h2>
 <h3 id="verifying-signature">What does verifying a signature mean?</h3>
 <p>You can use <a href="#pke">public key cryptography</a> to test whether a particular file is identical in content to an original by verifying a <a href="#detach-sig">signature</a>. The signature file is a <a href="#message-digest">digest</a> of the original file signed by a private key which attests to the digest's authenticity.</p>
