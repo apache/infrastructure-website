@@ -2,12 +2,15 @@ Title: Signing Releases
 
 <h2 id="abstract">Introduction</h2>
 
-This document gives release managers a basic introduction to release signing. See under [Further reading](#reading) for links to
-authoritative sources of deeper information.
+The first part of thsi document gives release managers a basic introduction to release signing. See under [Further reading](#reading) for links to authoritative sources of deeper information.
+
+The second part answers some frequently-asked questions from people who downlaod releases from Apache projects.
 
 This document is informative and does not constitute policy.
 
 <h2>Contents</h2>
+
+<h3>For release managers</h3>
 
 <ul>
 <li><a href="#abstract">Introduction</a></li>
@@ -72,10 +75,16 @@ This document is informative and does not constitute policy.
 <li><a href="#update-document">I Have A New Key. Which Apache Documents Need To Be Updated?</a></li>
 <li><a href="#rsa">What Is RSA?</a></li>
 <li><a href="#key-length-how-to">How Do I Find The Length Of A Key?</a></li>
-
-<li><a href="#help">Help Wanted!</a></li>
 <li><a href="#reading">Further Reading</a></li>
 </ul>
+
+<h2>FAQs from those downloading releases</h2>
+
+
+
+<a href="#help"><em>Help Wanted!</em></a>
+
+
 
 <h2 id="note">Important notes</h2>
 
@@ -287,6 +296,36 @@ keys</a>:
 Subscribe to the `party` list and when you visit a new city, see if committers want to meet up.
 
 
+<h2>FAQs from those downloading releases</h2>
+
+<h3 id="verifying-signature">What Does Verifying A Signature Mean?<a class="headerlink" href="#verifying-signature" title="Permanent link">&para;</a></h1>
+<p><a href="#pke">Public key cryptography</a> can be used to test whether a particular
+file is identical (in content) to an original by verifying a
+<a href="#detach-sig">signature</a>. The signature file is a <a href="#message-digest">digest</a>
+of the original file signed by a private key which attests to the digest's
+authenticity.</p>
+<p>For example, when using <a href="http://www.gnupg.org/">GNU Privacy Guard</a> you
+verify the signature <code>foo-1.0.tar.gz.asc</code> for release <code>foo-1.0.tar.gz</code>
+using the following command:
+<code><pre>
+$ gpg --verify foo-1.0.tar.gz.asc foo-1.0.tar.gz
+</pre></code>
+A signature is valid, if <code>gpg</code> verifies the <code>.asc</code>
+as a <code>good signature</code>, and doesn't complain about expired
+or revoked keys. Technically :
+<code><pre>
+$ gpg --verify --status-fd 1 foo-1.0.tar.gz.asc foo-1.0.tar.gz
+</pre></code>
+should classify the <code>.asc</code> as a <code>GOODSIG</code>.</p>
+<p>Trust is required in the identity of the public key that made the signature
+and that the signature is for the original in question (and not some other
+file). When verifying a release from an untrusted source (for example, over
+P2P file sharing or from a mirror) it is therefore important to download
+the signature from a trusted source. Signatures for all Apache releases are
+available directly from <code>www.apache.org</code> and should be downloaded from
+there.</p>
+  
+</ul>
 
 
 <h2 id="reading">Further reading</h2>
