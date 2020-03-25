@@ -22,16 +22,6 @@ This document is informative and does not constitute policy.
 
 
 
-
-
-<li><a href="#trust">What is a Trusted Key?</a></li>
-<li><a href="#valid-untrusted-vs-invalid-trusted">What Is The Difference Between A Valid Signature from an Untrusted Key And An Invalid Signature from an Untrusted Key?</a></li>
-<li><a href="#fingerprint">What Is A Public Key Fingerprint?</a></li>
-<li><a href="#infeasible">Why Infeasible And Not Impossible?</a></li>
-
-<li><a href="#where">Where Should I Create The Signatures?</a></li>
-<li><a href="#insecure-memory">What Is 'Insecure Memory' And Should I Be Worried?</a></li>
-
 <li><a href="#passphrase">What is a Passphrase?</a></li>
 
 <li><a href="#revocation-cert">What Is A Revocation Certificate?</a></li>
@@ -77,13 +67,16 @@ This document is informative and does not constitute policy.
 <li><a href="#reading">Further Reading</a></li>
 </ul>
 
-<h2>FAQs from those downloading releases</h2>
+<h2>FAQs for those downloading releases</h2>
 <ul>
   <li><a href="#verifying-signature">What does verifying a signature mean?</a></li>
   <li><a href="#check-integrity">How can I check the integrity of a release?</a></li>
   <li><a href="#public-key-not-found">What does 'Public key not found' Mean when verifying a signature?</a></li>
+  <li><a href="#trust">What is a trusted key?</a></li>
+  <li><a href="#valid-untrusted-vs-invalid-trusted">What is the difference between a valid signature from an untrusted key and an invalid signature from a trusted key?</a></li>
+  <li><a href="#fingerprint">What is a public key fingerprint?</a></li>
 </ul>
-<a href="#help"><em>Help Wanted!</em></a>
+<a href="#help">Add your wisdom</a>
 
 
 
@@ -215,6 +208,37 @@ A message digest algorithm takes a document and produces a much smaller hash of 
 
 You can use a trusted digest for a document can be used to verify the contents of an untrusted file. You can deliver the digest, which has a small size over a secure but expensive channel while delivering the untrusted file over an insecure but inexpensive one. This is useful when distributing releases.
 
+<h3 id="infeasible">Why infeasible and not impossible?</h3>
+
+Responsible cryptography talks about infeasible cracks (rather than impossible ones) since this is more accurate. All current practical methods can be subjected to brute force attacks and so can be cracked. So a better question is whether attacks are feasible _given the current state of the art_.
+
+<h3 id="where">Where should I create the signatures?</h3>
+
+Creating signatures requires the private key. Keep limited copies of the private key securely and confidentially. Though the file used
+to store the private key is typically protected by encryption, it is vulnerable to dictionary attacks on the <a href="#passphrase">passphrase</a>. So keep this file secret. 
+
+Create signatures on the machine where you store the private key, on secure hardware with limited read permissions, protected by a good
+<a href="#passphrase">passphrase</a>. Consider using removable media or an <a href="#isolated-installation">isolated
+installation</a>.
+
+A master private key used to sign Apache artifacts (or to secure communications with the ASF) is particularly valuable. If you want or need to be able to create signatures for other purposes (for example, signing email messages) in other, less secure, locations, create multiple <a href="#email-subkey">sub keys</a> for these purposes.
+
+Do **not** store your private key on any ASF machine. Do **not** create signatures on ASF machines.
+
+<h3 id="insecure-memory">What is 'insecure memory'?</h3>
+
+When you use <a href="http://www.gnupg.org">GNU Privacy Guard</a> you may see a warning similar to:
+
+```
+gpg: WARNING: using insecure memory!
+gpg: please see http://www.gnupg.org/faq.html for more information
+```
+
+If you are using GnuPG on Apache hardware, please read <a href="#where">this</a>. Do **not** carry out sensitive operations using a private key on ASF hardware.
+
+If you encounter this issue elsewhere, it indicates that GnuPG cannot lock memory pages, so they may be swapped out to disc. It would
+then be feasible for an attacker who had gained access to the machine to read the private key from the swap file. For more details, read the <a href="https://www.gnupg.org/faq.html">FAQ</a>.</p>
+
 <h2 id="key-basics">Key basics</h2>
 
 To sign releases, you need to <a href="#generate">generate</a> a new master key-pair for code signing. Follow these <a href="openpgp.html#generate-key" target="_blank">instructions</a>.
@@ -321,39 +345,90 @@ Trust is required in the identity of the public key that made the signature and 
 
 <h3 id="check-integrity">How can I check the integrity of a release?</h3>
   
-<a href="#md5">MD5</a> and <a href="#sha-checksum">SHA</a> checksums provide a simple, means of
-verifying the integrity of a download. You can simply create a checksum (in
-the same way as the release manager) after download, and compare the result
-to the checksum downloaded from the main Apache site. Obviously, this
-process does not provide for <a href="http://www.pgpi.org/doc/pgpintro/#p12">authentication and
-non-repudiation</a> as anybody can
-create the same checksum.</p>
-<p>The integrity of a release can also be checked by <a href="#verifying-signature">verifying the
-signature</a>. More knowledge is required to correctly
-interpret the result but it does provide authentication and
-non-repudiation. If you are connected to the Apache <a href="#web-of-trust">web of
-trust</a> then this also offers superior security.</p>
+<a href="#md5">MD5</a> and <a href="#sha-checksum">SHA</a> checksums provide a simple way to verify the integrity of a download. You can simply create a checksum (in the same way as the release manager) after download, and compare the result to the checksum downloaded from the main Apache site. However, this process does not provide for authentication and non-repudiation</a> as anybody can create the same checksum.
+
+You can also check the integrity of a release by <a href="#verifying-signature">verifying the signature</a>. You need more knowledge to correctly interpret the result, but it does provide authentication and non-repudiation. If you are connected to the Apache <a href="#web-of-trust">web of trust</a>, this also offers superior security.
 
 <h3 id="public-key-not-found">What does 'Public key not found' mean when I try to verify a signature?</h3>
-<p>Before a signature can be verified, the public key is required.</p>
-<p>For example, when using <a href="http://www.gnupg.org/">GNU Privacy Guard</a> if you
-have never imported the appropriate public key a message similar to the
-following will be displayed:
-<code><pre>
+To verify a signature, you need the release's public key. For example, when using <a href="https://www.gnupg.org/">GNU Privacy Guard</a>, if you have never imported the appropriate public key, you will see a message like this:
+
+```
 $ gpg --verify foo-1.0.tar.gz.asc foo-1.0.tar.gz
 gpg: Signature made Mon Sep 26 22:26:18 2005 BST using RSA key ID 00000000
 gpg: Can't check signature: public key not found
-</pre></code>
-Unknown keys can often be downloaded from <a href="#keyserver">public key servers</a>.
-However, these should only be <a href="#trust">trusted</a> through a <a href="#web-of-trust">web of
-trust</a>.</p>
-<p>Apache projects normally keep the developers' public keys in a file called
-<code>KEYS</code>. You may be able to find that file on the project's website, or in
-their code repository. Use
-<code><pre>
+```
+
+You can often download unknown keys from a <a href="#keyserver">public key servers</a>. However, only rely on these if you can confirm them through your <a href="#web-of-trust">web of trust</a>.
+
+Apache projects normally keep the developers' public keys in a file called `KEYS`. You may be able to find that file on the project's website, or in their code repository. Use
+
+```
   $ gpg --import KEYS
-</pre></code>
+```
+
 to import the public keys.</p>
+
+<h3 id="trust">What is a trusted key?</h3>
+
+<a href="#openpgp">OpenPGP</a> uses a <a href="#web-of-trust">web of trust</a>. The owner of a public key who trusts the identity of a second key may mark this key as trusted by signing it. This has several major effects:
+
+  - In future, no <a href="#valid-untrusted-vs-invalid-trusted">untrusted key warning</a> appears when a valid signature for
+this key is verified.
+  - Keys the owner of the key trusts may also become trusted. In other words, if the owner of a key whose identity you trust confirms the identity of a key, that key may be automatically trusted. This behavior is typically configurable.
+   - The next time you export your key, those who trust your key may start to trust the identity of the trusted key.
+
+The transitive nature of the web of trust places a responsibility on the owner to verify the identity of the owner of those keys marked as trusted.
+
+For more information read the <a href="https://www.gnupg.org/(en)/documentation/guides.html" target="_blank">GNU Privacy Guard User
+Guide</a>.
+
+<h3 id="valid-untrusted-vs-invalid-trusted">What is the difference between a valid signature from an unterusted key an invalid signature from a trusted key?</h3>
+
+Trustfulness and validity are different concepts. You may elect to trust the identity of a key to various degrees (or not at all). For a particular key, a particular signature for a particular file may be valid (created by the private key from an identical file) or invalid
+(either corrupt or created from a different file).
+
+Do not trust a file with an invalid signature. You can trust a file with a valid signature as much as you trust the identity of the key that was used to verify the signature.
+
+For example, when you use <a href="https://www.gnupg.org/" target="_blank">GNU Privacy Guard</a>, a message similar to the following indicates that the signature is invalid:
+
+```
+$ gpg --verify foo-1.0.tar.gz.asc foo-1.0.tar.gz
+gpg: Signature made Mon Sep 26 22:26:18 2005 BST using RSA key ID 00000000
+gpg: BAD signature from "someone@example.org"
+```
+
+A message similar to the following indicates that the signature is valid but for an untrusted key:
+
+```
+$ gpg --verify foo-1.0.tar.gz.asc foo-1.0.tar.gz
+gpg: Signature made Mon Sep 26 22:05:28 2005 BST using RSA key ID 00000000
+gpg: Good signature from "someone@example.org"
+gpg:                 aka "someone@anotherdomain.org"
+gpg: checking the trustdb
+gpg: checking at depth 0 signed=1 ot(-/q/n/m/f/u)=0/0/0/0/0/1
+gpg: checking at depth 1 signed=0 ot(-/q/n/m/f/u)=1/0/0/0/0/0
+gpg: WARNING: This key is not certified with a trusted signature!
+gpg:          There is no indication that the signature belongs to the
+owner.
+Primary key fingerprint: 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
+```
+
+You can use the <a href="#fingerprint">fingerprint</a> to decide how much trust to assign to the key.
+
+<h3 id="fingerprint">What is a public key fingerprint?</h3>
+
+Public keys are long and even when <a href="#ascii">ASCII armored</a> are not very easy for humans to understand or compare. A fingerprint is a short <a href="#message-digest">digest</a> of the key formatted in a way that makes it easier for humans to read and compare.
+
+
+
+
+
+
+
+
+
+
+
 
 <h2 id="reading">Further reading</h2>
 
