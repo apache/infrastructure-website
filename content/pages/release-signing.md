@@ -21,7 +21,7 @@ This document is informative and does not constitute policy.
 <li><a href="#web-of-trust">What is a Web Of Trust?</a></li>
 
 
-<li><a href="#verifying-signature">What Does Verifying A Signature Mean?</a></li>
+
 <li><a href="#check-integrity">How Can I Check The Integrity Of A Release?</a></li>
 <li><a href="#public-key-not-found">What Does 'Public Key Not Found' Mean (When Verifying A Signature)?</a></li>
 
@@ -79,7 +79,8 @@ This document is informative and does not constitute policy.
 </ul>
 
 <h2>FAQs from those downloading releases</h2>
-
+<ul>
+  <li><a href="#verifying-signature">What does verifying a signature mean?</a></li>
 
 
 <a href="#help"><em>Help Wanted!</em></a>
