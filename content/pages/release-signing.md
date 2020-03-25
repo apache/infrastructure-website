@@ -22,8 +22,7 @@ This document is informative and does not constitute policy.
 
 
 
-<li><a href="#check-integrity">How Can I Check The Integrity Of A Release?</a></li>
-<li><a href="#public-key-not-found">What Does 'Public Key Not Found' Mean (When Verifying A Signature)?</a></li>
+
 
 <li><a href="#trust">What is a Trusted Key?</a></li>
 <li><a href="#valid-untrusted-vs-invalid-trusted">What Is The Difference Between A Valid Signature from an Untrusted Key And An Invalid Signature from an Untrusted Key?</a></li>
@@ -81,8 +80,9 @@ This document is informative and does not constitute policy.
 <h2>FAQs from those downloading releases</h2>
 <ul>
   <li><a href="#verifying-signature">What does verifying a signature mean?</a></li>
-
-
+  <li><a href="#check-integrity">How can I check the integrity of a release?</a></li>
+  <li><a href="#public-key-not-found">What does 'Public key not found' Mean when verifying a signature?</a></li>
+</ul>
 <a href="#help"><em>Help Wanted!</em></a>
 
 
@@ -299,16 +299,13 @@ Subscribe to the `party` list and when you visit a new city, see if committers w
 
 <h2>FAQs from those downloading releases</h2>
 
-<h3 id="verifying-signature">What Does Verifying A Signature Mean?<a class="headerlink" href="#verifying-signature" title="Permanent link">&para;</a></h1>
-<p><a href="#pke">Public key cryptography</a> can be used to test whether a particular
-file is identical (in content) to an original by verifying a
-<a href="#detach-sig">signature</a>. The signature file is a <a href="#message-digest">digest</a>
-of the original file signed by a private key which attests to the digest's
-authenticity.</p>
-<p>For example, when using <a href="http://www.gnupg.org/">GNU Privacy Guard</a> you
-verify the signature <code>foo-1.0.tar.gz.asc</code> for release <code>foo-1.0.tar.gz</code>
-using the following command:
-<code><pre>
+<h3 id="verifying-signature">What does verifying a signature mean?</h3>
+
+You can use <a href="#pke">public key cryptography</a> to test whether a particular file is identical in content to an original by verifying a <a href="#detach-sig">signature</a>. The signature file is a <a href="#message-digest">digest</a> of the original file signed by a private key which attests to the digest's authenticity.
+
+For example, when using <a href="https://www.gnupg.org/" target="_blank">GNU Privacy Guard</a> you verify the signature `foo-1.0.tar.gz.asc` for release `foo-1.0.tar.gz` using the following command:
+
+```
 $ gpg --verify foo-1.0.tar.gz.asc foo-1.0.tar.gz
 </pre></code>
 A signature is valid, if <code>gpg</code> verifies the <code>.asc</code>
@@ -316,18 +313,47 @@ as a <code>good signature</code>, and doesn't complain about expired
 or revoked keys. Technically :
 <code><pre>
 $ gpg --verify --status-fd 1 foo-1.0.tar.gz.asc foo-1.0.tar.gz
-</pre></code>
-should classify the <code>.asc</code> as a <code>GOODSIG</code>.</p>
-<p>Trust is required in the identity of the public key that made the signature
-and that the signature is for the original in question (and not some other
-file). When verifying a release from an untrusted source (for example, over
-P2P file sharing or from a mirror) it is therefore important to download
-the signature from a trusted source. Signatures for all Apache releases are
-available directly from <code>www.apache.org</code> and should be downloaded from
-there.</p>
-  
-</ul>
+```
 
+should classify the `.asc` as a `GOODSIG`.
+
+Trust is required in the identity of the public key that made the signature and that the signature is for the original file and not some other file. When verifying a release from an untrusted source (for example, over P2P file sharing or from a mirror) it is important to download the signature from a trusted source. Signatures for all Apache releases are available directly for download from `www.apache.org`.
+
+<h3 id="check-integrity">How can I check the integrity of a release?</h3>
+  
+<a href="#md5">MD5</a> and <a href="#sha-checksum">SHA</a> checksums provide a simple, means of
+verifying the integrity of a download. You can simply create a checksum (in
+the same way as the release manager) after download, and compare the result
+to the checksum downloaded from the main Apache site. Obviously, this
+process does not provide for <a href="http://www.pgpi.org/doc/pgpintro/#p12">authentication and
+non-repudiation</a> as anybody can
+create the same checksum.</p>
+<p>The integrity of a release can also be checked by <a href="#verifying-signature">verifying the
+signature</a>. More knowledge is required to correctly
+interpret the result but it does provide authentication and
+non-repudiation. If you are connected to the Apache <a href="#web-of-trust">web of
+trust</a> then this also offers superior security.</p>
+
+<h3 id="public-key-not-found">What does 'Public key not found' mean when I try to verify a signature?</h3>
+<p>Before a signature can be verified, the public key is required.</p>
+<p>For example, when using <a href="http://www.gnupg.org/">GNU Privacy Guard</a> if you
+have never imported the appropriate public key a message similar to the
+following will be displayed:
+<code><pre>
+$ gpg --verify foo-1.0.tar.gz.asc foo-1.0.tar.gz
+gpg: Signature made Mon Sep 26 22:26:18 2005 BST using RSA key ID 00000000
+gpg: Can't check signature: public key not found
+</pre></code>
+Unknown keys can often be downloaded from <a href="#keyserver">public key servers</a>.
+However, these should only be <a href="#trust">trusted</a> through a <a href="#web-of-trust">web of
+trust</a>.</p>
+<p>Apache projects normally keep the developers' public keys in a file called
+<code>KEYS</code>. You may be able to find that file on the project's website, or in
+their code repository. Use
+<code><pre>
+  $ gpg --import KEYS
+</pre></code>
+to import the public keys.</p>
 
 <h2 id="reading">Further reading</h2>
 
