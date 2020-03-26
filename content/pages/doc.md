@@ -25,6 +25,7 @@ The Apache Infrastructure Team (Infra) operates under the <a href="https://www.a
 - [Project blog](project-blog.html)
 - [Managing project committers](managing-committers.html)
 - [Virtual machine for your project](vm-policy.html)
+- [Deploying a self-hosted runner](self-hosted-runners.html)
 
 #### Software release policies and procedures ####
 
