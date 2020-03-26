@@ -110,13 +110,6 @@ Signing Releases        </a>
 <li><a href="#web-of-trust">Web of Trust basics</a></li>
 <li><a href="#passphrase">What is a Passphrase?</a></li>
 <li><a href="#revocation-cert">Revocation Certificate basics</a></li>
-<li><a href="#public-private">What Is The Difference Between A Public And A Private Key?</a></li>
-<li><a href="#private-key-protection">How Should My Code Signing Private Key Be Protected?</a></li>
-<li><a href="#secure-machine">How Secure Does The Machine Used To Sign Releases Need To Be?</a></li>
-<li><a href="#openpgp-applications">Which Applications Create OpenPGP Compatible Signatures?</a></li>
-<li><a href="#safe-and-secure">How Safe Does The Private Key Need To Be?</a></li>
-<li><a href="#isolated-installation">What Does 'Isolated Installation' Mean?</a></li>
-<li><a href="#key-length">What Key Length Is Recommended?</a></li>
 <li><a href="#md5-security">Is MD5 Still Secure?</a></li>
 <li><a href="#sha1">Is SHA-1 Still Secure?</a></li>
 <li><a href="#sha3">What is SHA-3?</a></li>
@@ -247,6 +240,9 @@ lengths (256 and 512 bits respectively). These longer variations are less vulner
 <p>You can use a trusted digest for a document can be used to verify the contents of an untrusted file. You can deliver the digest, which has a small size over a secure but expensive channel while delivering the untrusted file over an insecure but inexpensive one. This is useful when distributing releases.</p>
 <h3 id="infeasible">Why infeasible and not impossible?</h3>
 <p>Responsible cryptography talks about infeasible cracks (rather than impossible ones) since this is more accurate. All current practical methods can be subjected to brute force attacks and so can be cracked. So a better question is whether attacks are feasible <em>given the current state of the art</em>.</p>
+<h3 id="openpgp-applications">Applications that create OpenPGP-compatible signatures</h3>
+<p>Many applications are available (some commercial, some freeware, some software libre) to help you sign releases. Whichever one you choose, please subscribe to the appropriate security lists and keep the application fully patched.</p>
+<p>Apache recommends that ASF release managers use <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a>.</p>
 <h3 id="where">Where should I create the signatures?</h3>
 <p>Creating signatures requires the private key. Keep limited copies of the private key securely and confidentially. Though the file used
 to store the private key is typically protected by encryption, it is vulnerable to dictionary attacks on the <a href="#passphrase">passphrase</a>. So keep this file secret.</p>
@@ -263,6 +259,9 @@ gpg: please see http://www.gnupg.org/faq.html for more information
 <p>If you are using GnuPG on Apache hardware, please read <a href="#where">this</a>. Do <strong>not</strong> carry out sensitive operations using a private key on ASF hardware.</p>
 <p>If you encounter this issue elsewhere, it indicates that GnuPG cannot lock memory pages, so they may be swapped out to disc. It would
 then be feasible for an attacker who had gained access to the machine to read the private key from the swap file. For more details, read the <a href="https://www.gnupg.org/faq.html">FAQ</a>.</p></p>
+<h3 id="secure-machine">How secure does the machine I use to sign releases need to be?</h3>
+<p>If the code signing machine is <a href="http://www.catb.org/~esr/jargon/html/O/owned.html">owned</a>, it is only a matter of time before the key is compromised.</p>
+<p>At a minimum, the machine should well maintained: kept up to date with security patches and with appropriate anti-virus and firewall software. The ideal is an isolated, well-maintained installation that you only use for creating releases. You can achieve this with a little effort by creating an <a href="#isolated-installation">isolated installation</a> on a separate hard disc (which is physically disconnected when not in use signing releases) or a live CD.</p>
 <h2 id="key-basics">Key basics</h2>
 <p>To sign releases, you need to <a href="#generate">generate</a> a new master key-pair for code signing. Follow these <a href="openpgp.html#generate-key" target="_blank">instructions</a>.</p>
 <h3 id="keys-policy">The KEYS File</h3>
@@ -324,6 +323,27 @@ keys</a>:</p>
 <li>If you are not able to attend ApacheCon, or it will not happen for several months, consider organising a face-to-face meeting of <a href="https://people.apache.org/map.html">local committers</a>.</li>
 </ul>
 <p>Subscribe to the <code>party</code> list and when you visit a new city, see if committers want to meet up.</p>
+<h3 id="public-private">The difference between a public and a private key</h3>
+<p>A public key is for verifying signatures and encrypting messages; a private key is for generating signatures and decrypting messages. You can freely distribute public keys safely , but you must keep private keys <a href="#safe-and-secure">protected</a>. More details <a href="#pke">here</a>.</p>
+<h3 id="private-key-protection">How to protect your code signing private key</h3>
+<p>Anyone who possesses a copy of a <a href="#public-private">private key</a> used to <a href="#sign-release">sign</a> releases can create doctored releases with valid signatures. If this person intends harm then the consequences could be serious indeed. It is therefore very important to keep the private key secret.</p>
+<ul>
+<li>Only sign releases on a <a href="#secure-machine">secure machine</a>.</li>
+<li>Keep your <a href="#openpgp-applications">signing application</a> fully patched.</li>
+<li>Keep the key file <a href="#safe-and-secure">safe and secret</a>.</li>
+<li>Choose a good <a href="#passphrase">passphrase</a>.</li>
+</ul>
+<h3 id="safe-and-secure">How safe does the private key need to be?</h3>
+<p>It is vital that the private key is kept safe and secure. Though the file is encrypted using a <a href="#passphrase">passphrase</a> , given enough time any determined cracker will be able to break that encryption. Basic precautions should include ensuring that only the user can read the directories.</p>
+<p>However, for code signing keys we recommend taking additional measures. Reduce the window of vulnerability by using an
+<a href="#isolated-installation">isolated installation</a> or by storing the private key on removable media (which you should remove and store securely when not actually signing a release.).</p>
+<h3 id="isolated-installation">The meaning of 'isolated installation'</h3>
+<p>An isolated installation is inaccessible when you are not using it to sign releases. For example, create an installation on a separate hard disc or use a live CD.</p>
+<h3 id="key-length">Recommended key length</h3>
+<p>The number of operations required to break a key by brute force increases with key size. However, the cost of using the key also rises. You must take into account the planned use of the key. You will use keys for code signing rarely and in situations where performance is not the main concern, so you can use long keys.</p>
+<p>Over time, the cost of attacking a key of a given length by brute force falls as computing power increases. So a key whose length
+seems adequate today may be seem too short in a few years time. This is a significant issue for long-lived keys such as those used to sign ASF releases, and another reason to use longer keys with releases.</p>
+<p>Now that there is doubt about the medium term security of <a href="#sha1">SHA-1</a>, avoid the DSA keys and 1024 bit RSA keys which depend on this algorithm. We recommended that new keys be at least 4096 bit RSA (the longest widely supported key length).</p>
 <h2 id="passphrase">What is a Passphrase?</h2>
 <p>In cryptography <em>passphrase</em> is often used for what might be known as a password in other contexts. For example, an
 <a href="#openpgp">OpenPGP</a> private key is typically stored to disc in a file encrypted by a symmetric cypher keyed by a passphrase. This passphrase is one of the weakest elements in the system: should anyone else gain access to the file then a dictionary attack will be feasible on a weak passphrase. So choosing a strong passphrase is very important.</p>
@@ -366,8 +386,8 @@ gpg:    new key revocations: 1
 <li>Post an announcement to the appropriate lists with the revocation certificate attached.</li>
 </ul>
 <h3 id="delete-vs-revoke">The difference between deleting and revoking a key</h3>
-<p>When you delete a from a keyring, it is simply removed. You can add it again later.</p>
-<p>When you revoke a key, it is marked in the key ring. Whenever a message signed by this key is verified in the future, the user will get a warning that the key has been revoked.</p>
+<p>When you <em>delete</em> a key from a keyring, it is simply removed. You can add it again later.</p>
+<p>When you <em>revoke</em> a key, it is marked in the key ring. Whenever a message signed by this key is verified in the future, the user will get a warning that the key has been revoked.</p>
 <p>For example, when you verify a revoked key, &lt;a href=&quot;<a href="https://www.gnupg.org">https://www.gnupg.org</a>&quot; &lt;target=&quot;_blank&quot;&gt;&gt;GNU Privacy Guard</a> issues the following comment:</p>
 <pre><code>$ gpg --verify message.asc.message 
 gpg: Signature made Sat Apr  8 09:28:31 2006 BST using DSA key ID 4A03679A
