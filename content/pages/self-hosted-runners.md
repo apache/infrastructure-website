@@ -10,4 +10,4 @@ Read the GitHub <a href="https://help.github.com/en/actions/hosting-your-own-run
 
 Apache permits projects to use self-hosted runners, but does **not recommend** them because of significant security issues they introduce.
 
-If your project, after careful consideration, wants to use a self-hosted runner open an Infra Jira ticket to ask Infra to do the required configuration work to enable your project's runner.
+If your project, after careful consideration, wants to use a self-hosted runner, open an Infra Jira ticket to ask Infra to do the required configuration work to enable your project's runner.
