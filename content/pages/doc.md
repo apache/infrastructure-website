@@ -21,6 +21,7 @@ The Apache Infrastructure Team (Infra) operates under the <a href="https://www.a
 
 - [Project website guidelines](website-guidelines.html). **Note**: No new projects can use the Apache CMS, and we enccourage projects using it to migrate to another resource for maintaining their websites. Here are <a href="https://cwiki.apache.org/confluence/display/INFRA/Migrate+your+project+website+from+the+Apache+CMS">migration instructions</a>.
 - [Project source code repositories](source-code-repository.html)
+- <a href="https://cwiki.apache.org/confluence/display/INFRA/.asf.yaml+features+for+git+repositories" target="_blank">.asf.yaml features for Git repositories</a>.
 - General information about [download mirror sites](mirrors.html)
 - [Project blog](project-blog.html)
 - [Managing project committers](managing-committers.html)
