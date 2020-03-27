@@ -303,41 +303,23 @@ generate keys for other uses.</p>
 </code></pre>
 <p>You must export each changed key separately.</p>
 <h3 id="update-web-of-trust">How to make sure your local web of trust is up-to-date</h3>
-<p>The public web of trust grows constantly as people sign new keys and upload
-the new signatures onto the network of <a href="#keyserver">public key servers</a>.
-Public keys should be periodically refreshed to ensure that your local web
-of trust is as full as possible. Many <a href="#openpgp">OpenPGP</a> 
-<a href="#openpgp-applications">clients</a> allow keys to be easily refreshed by
-querying a public key server.</p>
-<p>For example, to refresh all keys using <a href="http://www.gnupg.org">GNU Privacy
-Guard</a> use:
-<code><pre>
-$ gpg --refresh-keys
-</pre></code></p>
-<h1 id="export">How Do You Export A Key?<a class="headerlink" href="#export" title="Permanent link">&para;</a></h1>
-<p>A public key can be exported using <a href="http://www.gnupg.org">OpenPGP</a> by using
-<code>--export</code>. Typically, the export should be ASCII armored. For example, to
-export all public keys to the command line use:
-<pre>
-gpg --export --armor
-</pre>
-In most cases, it is better to export all keys - this ensures that
-signatures made on other keys will be exported. However, it is possible to
-export just one key by specifying it on the command line.</p>
-<p>Secret keys can also be exported. However, exporting secret keys poses a
-security risk and there are better solutions for most common use cases. For
-example, copying the <code>GNUPGHOME</code> directory (typically <code>~/.gnupg</code> ) is a
-better way to transfer an <a href="http://www.gnupg.org">OpenPGP</a> keyring from one
-machine to another.</p>
-<h1 id="key-id">What Is A Key ID?<a class="headerlink" href="#key-id" title="Permanent link">&para;</a></h1>
-<p>A key ID is similar to a <a href="#fingerprint">fingerprint</a> but is much smaller in
-length. There is no guarantee that key IDs are unique. Consequently, it is
-strongly recommended that the fingerprint is checked before signing a key.
-The key ID is typically used for locating keys and identifying keys already
-contained within the keyring. For these use cases, key ID should be unique
-enough in practice.</p>
-<p>A short guide to discovering the key ID for a key is
-<a href="openpgp.html#find-key-id">available</a>.</p>
+<p>The public web of trust grows constantly as people sign new keys and upload the new signatures onto the network of <a href="#keyserver">public key servers</a>. You should refresh public keys periodically to make sure that your local web of trust is as full as possible. Many <a href="#openpgp">OpenPGP</a> <a href="#openpgp-applications">clients</a> make it easy to refresh keys by
+querying a public key server. For example, to refresh all keys using <a href="https://www.gnupg.org" target="_blank">GNU Privacy
+Guard</a> use:</p>
+<pre><code>$ gpg --refresh-keys
+</code></pre>
+<h3 id="export">How to export a key</h3>
+<p>You can export a public key through <a href="https://www.gnupg.org" target="_blank">OpenPGP</a> by using
+<code>--export</code>. Typically, the export should be ASCII armored.</p>
+<p>To export all public keys to the command line use:</p>
+<pre><code>gpg --export --armor
+</code></pre>
+<p>In most cases, it is better to export all keys - this ensures that signatures made on other keys will be exported. However, it is possible to export just one key by specifying it on the command line.</p>
+<p>You can export secret keys. However, this poses a security risk and there are better solutions for most common use cases. For
+example, copying the <code>GNUPGHOME</code> directory (typically <code>~/.gnupg</code>) is a better way to transfer an <a href="https://www.gnupg.org" target="_blank">OpenPGP</a> keyring from one machine to another.</p>
+<h3 id="key-id">What a key ID is</h3>
+<p>A key ID is similar to a <a href="#fingerprint">fingerprint</a> but is much smaller in length. There is no guarantee that key IDs are unique. Consequently, we strongly recommend that you check the key's fingerprint before signing with it. People us key IDs for locating keys and identifying keys already contained within the keyring.</p>
+<p>A short guide to discovering the key ID for a key is <a href="openpgp.html#find-key-id">available</a>.</p>
 <h1 id="subkey">What Is A Sub Key?<a class="headerlink" href="#subkey" title="Permanent link">&para;</a></h1>
 <p>Each <a href="#openpgp">OpenPGP</a> keyring has a single master key. This key is
 signing only. It may also optionally have a number of sub keys (for
