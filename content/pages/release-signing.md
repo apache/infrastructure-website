@@ -22,30 +22,6 @@ This document is informative and does not constitute policy.
 <li><a href="#web-of-trust">Web of Trust basics</a></li>
 <li><a href="#passphrase">What is a Passphrase?</a></li>
 <li><a href="#revocation-cert">Revocation Certificate basics</a></li>
-  
-
-
-
-
-<li><a href="#generate">How Do You Generate A Code Signing Key?</a></li>
-<li><a href="#user-id">What OpenPGP User-ID Should I Choose For My Code Signing Key?</a></li>
-<li><a href="#key-comment">What OpenPGP Comment Should I Choose For My Code Signing Key?</a></li>
-<li><a href="#keyserver">What Is A Public Key Server?</a></li>
-<li><a href="#keyserver-upload">How Do You Upload A Key To A Public Key Server?</a></li>
-<li><a href="#update-web-of-trust">How Can I Ensure My Local Web Of Trust Is Up To Date?</a></li>
-<li><a href="#export">How Do You Export A Key?</a></li>
-<li><a href="#key-id">What Is A Key ID?</a></li>
-<li><a href="#subkey">What Is A Sub Key?</a></li>
-<li><a href="#email-subkey">How Do I A Use Sub Key To Sign Emails?</a></li>
-<li><a href="#more-information">How Can I Find Out More?</a></li>
-<li><a href="#quick-signing">Is There A Quick Way To Sign Several Distributions?</a></li>
-<li><a href="#transfer-secret-keys">How Can I Transfer A Secret Key?</a></li>
-<li><a href="#two-keys">Why Do Some People Have Two Keys?</a></li>
-<li><a href="#transition">What Is A Transition Period (For Keys)?</a></li>
-<li><a href="#how-to-transition">How Should I Transition From A Short To A Longer Key?</a></li>
-<li><a href="#update-document">I Have A New Key. Which Apache Documents Need To Be Updated?</a></li>
-<li><a href="#rsa">What Is RSA?</a></li>
-<li><a href="#key-length-how-to">How Do I Find The Length Of A Key?</a></li>
 <li><a href="#reading">Further Reading</a></li>
 </ul>
 
@@ -128,9 +104,7 @@ To create one using <a href="https://www.gnupg.org" target="_blank">GNU Privacy 
 `foo.tar.gz`, type:
 
 ```
-<code><pre>
-   $ gpg --armor --output foo.tar.gz.asc --detach-sig foo.tar.gz 
-</pre></code>
+$ gpg --armor --output foo.tar.gz.asc --detach-sig foo.tar.gz 
 ```
 
 <h3 id="md5">What is an MD5 checksum?</h3>
@@ -139,21 +113,20 @@ MD5 is a <a href="http://www.faqs.org/rfcs/rfc1321.html" target="_blank">well kn
 digest algorithm</a>. Many tools are available to calculate these sums. For example, you can use <a href="https://www.openssl.org/" target="_blank">OpenSSL</a>:
 
 ```
-<code><pre>
 $ openssl md5 &lt; file
-</pre></code>
 ```
 
 Platform-specific applications are also common, such as `md5sum` on linux:
 
 ```
-<code><pre>
 $ md5sum file
-</pre></code>
+```
+
 With GnuPG:
-<code><pre>
-  $ gpg --print-md MD5 [fileName] &gt; [fileName].md5
-</pre></code></p>
+
+```
+$ gpg --print-md MD5 [fileName] &gt; [fileName].md5
+
 ```
 
 Run the command in the same directory as the file so the output only contains the file name with no directory prefixes.
@@ -165,9 +138,7 @@ Run the command in the same directory as the file so the output only contains th
 Like <a href="#md5">MD5</a>, <a href="http://www.ietf.org/rfc/rfc3174.txt">SHA</a> is a <a href="#message-digest">message digest</a> algorithm. Using GnuPG, you can create a SHA1 signature as follows:
 
 ```
-<code><pre>
   $ gpg --print-md SHA1 [fileName] &gt; [fileName].sha1
-</pre></code>
 ```
 
 **Avoid** further use of <a href="#sha1">SHA-1</a>. `SHA256` and `SHA512` use the same `SHA` algorithm family with longer hash
@@ -176,9 +147,7 @@ lengths (256 and 512 bits respectively). These longer variations are less vulner
 To create a `SHA512` checksum use:
 
 ```
-<code><pre>
   $ gpg --print-md SHA512 [fileName] &gt; [fileName].sha512
-</pre></code></p>
 ```
 
 Run the command in the same directory as the file so the output only contains the file name with no directory prefixes.
@@ -335,76 +304,59 @@ A key ID is similar to a <a href="#fingerprint">fingerprint</a> but is much smal
 
 A short guide to discovering the key ID for a key is <a href="openpgp.html#find-key-id">available</a>.
 
-<h1 id="subkey">What Is A Sub Key?<a class="headerlink" href="#subkey" title="Permanent link">&para;</a></h1>
-<p>Each <a href="#openpgp">OpenPGP</a> keyring has a single master key. This key is
-signing only. It may also optionally have a number of sub keys (for
-encryption and signing).</p>
-<p>If you wish to sign emails using a key related to that used to sign code,
-it is recommended that a signing sub key is <a href="#email-subkey">used</a>.</p>
-<h1 id="email-subkey">How Do I A Use Sub Key To Sign Emails?<a class="headerlink" href="#email-subkey" title="Permanent link">&para;</a></h1>
-<p>To keep a code signing key <a href="#safe-and-secure">safe and secure</a> it is
-recommended that the key is not kept on a hard disc on a regular
-development machine. This means that the master key should not be used
-directly to sign emails. However, there are occasions when digitally signed
-emails are desirable.</p>
-<p>The recommended approach is to create a sub key for email signing and
-export it to the regular machine. The master key can then be kept safely
-offline. For more details, read:</p>
-<ul>
-<li>
-<p><a href="http://www.gnupg.org/(en)/faq/subkey-cross-certify.html">Subkey cross
-certification</a> </p>
-</li>
-<li>
-<p><a href="http://fortytwo.ch/gpg/subkeys">Signing Subkey HOWTO</a> </p>
-</li>
-</ul>
-<p>Note that some <a href="#keyserver">public key servers</a> do not handle sub keys
-correctly. It may be necessary to use one on the
-<a href="http://www.nongnu.org/sks/">SKS</a> network.</p>
-<h1 id="more-information">How Can I Find Out More?<a class="headerlink" href="#more-information" title="Permanent link">&para;</a></h1>
-<p>See <a href="#reading">this</a>.</p>
-<h1 id="quick-signing">Is There A Quick Way To Sign Several Distributions?<a class="headerlink" href="#quick-signing" title="Permanent link">&para;</a></h1>
-<p>The private <code>https://svn.apache.org/repos/private/committers</code> repository
-contains scripts that assist with batch signing several distributions.</p>
-<h1 id="transfer-secret-keys">How Can I Transfer A Secret Key?<a class="headerlink" href="#transfer-secret-keys" title="Permanent link">&para;</a></h1>
-<p>This is application dependent. Instructions for GnuPG are
-<a href="openpgp.html#secret-key-transfer">available</a>.</p>
-<h1 id="two-keys">Why Do Some People Have Two Keys?<a class="headerlink" href="#two-keys" title="Permanent link">&para;</a></h1>
-<p>When switching from an uncompromised key to another (typically stronger)
-one, it is convenient to use a <a href="#transition">transition period</a>. During a
-transition, both keys are trustworthy but only (the newer) one is actively
-used to sign documents and certify links in the <a href="#web-of-trust">web of
-trust</a>.</p>
-<h1 id="transition">What Is A Transition Period (For Keys)?<a class="headerlink" href="#transition" title="Permanent link">&para;</a></h1>
-<p>When replacing one uncompromised key with a newer (typically longer) one, a
-transition period where both keys are trustworthy and participate in the
-<a href="#web-of-trust">web of trust</a> allows - by <a href="#web-of-trust">trust
-transitivity</a> - links to the old key to be used to trust
-signatures and links created by the new key. During a transition, both keys
-are trustworthy but only (the newer) one is actively used to sign documents
-and certify links in the <a href="#web-of-trust">web of trust</a>.</p>
-<h1 id="how-to-transition">How Should I Transition From A Short To A Longer Key?<a class="headerlink" href="#how-to-transition" title="Permanent link">&para;</a></h1>
-<p>If you have a short but uncompromised key and would like to
-<a href="#transition">transition</a> to a longer one, follow these
-<a href="key-transition.html">instructions</a>.</p>
-<p>If your key has been compromised then you <strong>MUST NOT</strong> transition but
-<a href="#revoke-key">revoke</a> the old key and replace with a new one immediately.
-<strong>DO NOT</strong> use a transition period.</p>
-<h1 id="update-document">I Have A New Key. Which Apache Documents Need To Be Updated?<a class="headerlink" href="#update-document" title="Permanent link">&para;</a></h1>
-<p>A number of Apache documents need to be updated. Follow these
-<a href="openpgp.html#update">instructions</a>.</p>
-<h1 id="rsa">What Is RSA?<a class="headerlink" href="#rsa" title="Permanent link">&para;</a></h1>
-<p>RSA is a well known public key cryptography algorithm which supports
-signing and encryption.</p>
-<p>See <a href="#reading">further reading</a> for more details.</p>
-<h1 id="key-length-how-to">How Do I Find The Length Of A Key?<a class="headerlink" href="#key-length-how-to" title="Permanent link">&para;</a></h1>
-<p>The easiest way to discover the length of a key (with id <code>KEYID</code> ) is to
-use <code>gpg --list-keys KEYID</code>. This will print basic information about the
-key. The first line will include the size in the second column just before
-the id.</p>
-<p>For example:
-<pre>
+<h3 id="subkey">What a sub key is</h3>
+
+Each <a href="#openpgp">OpenPGP</a> keyring has a single master key. This key is for signing only. It may also optionally have a number of sub keys for encryption and signing.
+
+If you want to sign emails using a key related to one you use to sign code, we recommend that you use a signing <a href="#email-subkey">sub key</a>.
+
+<h1 id="email-subkey">How to use a sub key to sign emails</h3>
+
+To keep a code signing key <a href="#safe-and-secure">safe and secure</a> we recommend that you don't keep the key on a drive on a regular development machine. This means that you should not use the master key directly to sign emails. However, there are occasions when digitally signed emails are desirable.
+
+To do that, create a sub key for email signing and export it to your regular machine. You can then keep the master key safely
+offline. For more details, read <a href="https://www.gnupg.org/(en)/faq/subkey-cross-certify.html" target="_blank">Subkey cross
+certification</a>.
+
+**Note** that some <a href="#keyserver">public key servers</a> do not handle sub keys correctly. It may be necessary to use one on the
+<a href="https://bitbucket.org/skskeyserver/sks-keyserver/wiki/Home" target="_blank">SKS</a> network.
+
+<h3 id="quick-signing">A quick way to sign several distributions</h3>
+
+The private `https://svn.apache.org/repos/private/committers` repository contains scripts that assist with batch signing several distributions at one time.
+
+<h3 id="transfer-secret-keys">How to transfer a secret key</h3>
+
+The way to transfer secret keys depends on the application you are using. Instructions for GnuPG are <a href="openpgp.html#secret-key-transfer">available</a>.
+
+<h3 id="two-keys">Why some people have two keys</h3>
+
+When you switch from an uncompromised key to another, usually stronger, one, it is convenient to use a <a href="#transition">transition period</a>. During a transition, both keys are trustworthy but you only use the newer one to sign documents and certify links in the <a href="#web-of-trust">web of trust</a>.
+
+<h3 id="transition">What a transition period for keys is</h3>
+
+When you replace one uncompromised key with a newer and usually larger one, a transition period during which both keys are trustworthy and participate in the <a href="#web-of-trust">web of trust</a> allows - by <a href="#web-of-trust">trust transitivity</a> - links to the old key to be used to trust signatures and links created by the new key. During a transition, both keys are trustworthy but you only use the newer oneto sign documents and certify links in the <a href="#web-of-trust">web of trust</a>.
+
+<h3 id="how-to-transition">How to transition from a short to a longer key</h3>
+
+If you have a short but uncompromised key and would like to <a href="#transition">transition</a> to a longer one, follow these
+<a href="key-transition.html">instructions</a>.
+
+If your key has been compromised then you **must not** transition. <a href="#revoke-key">Revoke</a> the old key and replace it with a new one immediately. **Do not** use a transition period.
+
+<h3 id="update-document">I have a new key. What Apache documents do I have to update?</h3>
+
+There are several Apache documents you have to update when you have a new key. Follow these <a href="openpgp.html#update">instructions</a>.
+
+<h1 id="rsa">What RSA is</h3>
+<p>RSA is a well known public key cryptography algorithm which supports signing and encryption. See <a href="#reading">further reading</a> for more details.</p>
+
+<h3 id="key-length-how-to">How to find the length of a key</h3>
+
+The easiest way to discover the length of a key with id `KEYID` is to use `gpg --list-keys KEYID`. This prints basic information about the key. The first line includes the size in the second column, just before the id.
+For example:
+
+```
 $ gpg --list-keys B1313DE2
 pub   1024D/B1313DE2 2003-01-15
 uid                  Robert Burrell Donkin (CODE SIGNING KEY) &lt;rdonkin@apache.org&gt;
@@ -415,11 +367,9 @@ sub   4096R/40A882CB 2009-06-18 [expires: 2010-06-18]</p>
 pub   8192R/A6EE6908 2009-08-07
 uid                  Robert Burrell Donkin (CODE SIGNING KEY) &lt;rdonkin@apache.org&gt;
 sub   8192R/B800EFC1 2009-08-07
-</pre>
-shows that key B1313DE2 has length 1024 and A6EE6908 length 8192.</p></div>
+```
 
-
-
+shows that key `B1313DE2` has length 1024 and `A6EE6908` length 8192.
 
 
 <h2 id="key-basics">Key basics</h2>
@@ -550,10 +500,6 @@ seems adequate today may be seem too short in a few years time. This is a signif
 
 <p>Now that there is doubt about the medium term security of <a href="#sha1">SHA-1</a>, avoid the DSA keys and 1024 bit RSA keys which depend on this algorithm. We recommended that new keys be at least 4096 bit RSA (the longest widely supported key length).</p>
 
-
-
-
-
 <h2 id="passphrase">What is a Passphrase?</h2>
 
 In cryptography <em>passphrase</em> is often used for what might be known as a password in other contexts. For example, an
@@ -640,8 +586,6 @@ Primary key fingerprint: 82D1 169B E6F1 9D14 DA76  A5DD 968E 66E4 4A03 679A
 ```
 
 
-
-
 <h2>FAQs from those downloading releases</h2>
 
 <h3 id="verifying-signature">What does verifying a signature mean?</h3>
@@ -652,11 +596,12 @@ For example, when using <a href="https://www.gnupg.org/" target="_blank">GNU Pri
 
 ```
 $ gpg --verify foo-1.0.tar.gz.asc foo-1.0.tar.gz
-</pre></code>
-A signature is valid, if <code>gpg</code> verifies the <code>.asc</code>
-as a <code>good signature</code>, and doesn't complain about expired
+```
+
+A signature is valid, if `gpg` verifies the `.asc` as a _good signature_, and doesn't complain about expired
 or revoked keys. Technically :
-<code><pre>
+
+```
 $ gpg --verify --status-fd 1 foo-1.0.tar.gz.asc foo-1.0.tar.gz
 ```
 
@@ -749,16 +694,6 @@ For example, with <a href="https://www.gnupg.org" target="_blank">GNU Privacy Gu
 ```
 $ gpg --lsign-key someuser
 ```
-
-
-
-
-
-
-
-
-
-
 
 
 <h2 id="reading">Further reading</h2>
