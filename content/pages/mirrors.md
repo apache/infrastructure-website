@@ -30,4 +30,4 @@ Do **not** keep software distributions on the project's website. Move them to on
   
 <h2 id="use">How a project uses mirrors</h2>
 
-Complete instructions are on [How to be an Apache Software Foundation download mirror](mirror-howto.html).
+Complete instructions are on [How to be an Apache Software Foundation download mirror](how-to-mirror.html).
