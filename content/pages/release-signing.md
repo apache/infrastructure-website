@@ -26,10 +26,7 @@ This document is informative and does not constitute policy.
 
 
 
-<li><a href="#md5-security">Is MD5 Still Secure?</a></li>
-<li><a href="#sha1">Is SHA-1 Still Secure?</a></li>
-<li><a href="#sha3">What is SHA-3?</a></li>
-<li><a href="#secure-hash-algorithms">Which Standard Crytographic Hash Algorithms Are Secure?</a></li>
+
 <li><a href="#generate">How Do You Generate A Code Signing Key?</a></li>
 <li><a href="#user-id">What OpenPGP User-ID Should I Choose For My Code Signing Key?</a></li>
 <li><a href="#key-comment">What OpenPGP Comment Should I Choose For My Code Signing Key?</a></li>
@@ -188,7 +185,7 @@ Run the command in the same directory as the file so the output only contains th
 
 There are other members of the `SHA` family that are rarely used.
 
-<h3 id="message-digest">What is a message digest algorithm?</h3>
+<h3 id="message-digest">Message digest algorithms</h3>
 
 A message digest algorithm takes a document and produces a much smaller hash of that document. A good algorithm will produce different digests for very similar documents. A good algorithm makes it <a href="#infeasible">infeasible</a> to create a message matching a given hash.</p>
 
@@ -236,6 +233,198 @@ then be feasible for an attacker who had gained access to the machine to read th
 If the code signing machine is <a href="http://www.catb.org/~esr/jargon/html/O/owned.html">owned</a>, it is only a matter of time before the key is compromised.
 
 At a minimum, the machine should well maintained: kept up to date with security patches and with appropriate anti-virus and firewall software. The ideal is an isolated, well-maintained installation that you only use for creating releases. You can achieve this with a little effort by creating an <a href="#isolated-installation">isolated installation</a> on a separate hard disc (which is physically disconnected when not in use signing releases) or a live CD.
+
+<h3 id="md5-security">Is MD5 still secure?</h3>
+
+Though <a href="#infeasible">feasible</a> collision attacks that can defeat MD5 are known, they are still computationally expensive. MD5 may still be useful as an additional layer in a defense in depth, but Apache does **not recommend** it as your single security option.
+
+<h3 id="sha1">Is SHA-1 still secure?</h3>
+
+Research has revealed weaknesses in this algorithm. Though there are no practical attacks known at the time of writing, experience with similar weaknesses in <a href="#md5-security">MD5</a> suggest that code signers should move away from this algorithm.
+
+Breaking the longest members of this family (`SHA512` and `SHA256`) is still considered <a href="#infeasible">infeasible</a>. Until <a href="#sha3">SHA-3</a> is available, avoid new uses of `SHA-1` and use `SHA512` or `SHA256` instead.
+
+<h3 id="sha3">What is SHA-3?</h1>
+
+SHA-3 is the designation for a new <a href="#message-digest">cryptographic hash algorithm</a> to replace the SHA family. The full standard was issued in 2015, but it hasn't yet been officially introduced into the OpenPGP standard. For that reason GnuPG doesn't support it yet.
+
+<h3 id="secure-hash-algorithms">Which standard cryptographic hash algorithms are secure?</h3>
+
+<a href="#infeasible">Feasible</a> - though expensive - attacks on MD5 have been made public. Similar weaknesses have been found in the SHA family of hashes, though practical attacks are not yet publically known. However, longer hash sizes offer considerable protection, so larger members of the SHA family still look likely to be secure enough for a number of years.
+
+SHA512 is the strongest well-studied, widely-used cryptographic hash. It is therefore the best recommendation until <a href="#sha3">SHA3</a> is available.</p>
+
+<h3 id="generate">How to generate a code signing key</h3>
+
+The exact mechanics are <a href="#openpgp-applications">application</a>-dependent. For GnuPG (recommended): 
+
+  - Follow the <a href="openpgp.html#generate-key">strong key generation instructions</a>
+  - Decide on the <a href="#key-length">right key length</a>
+  - Configure the tool to <a href="#sha1">avoid SHA-1</a>
+  - Choose a good <a href="#passphrase">passphrase</a>
+  - Use the recommended <a href="#user-id">id</a> and <a href="#key-comment">comment</a>
+  
+<h3 id="user-id">The OpenPGP User-ID to use for your code-signing key</h3>
+
+We recommend that you use your Apache email address as the primary `User-ID` for the code signing key. For example, `rdonkin@apache.org`.
+
+<h3 id="key-comment">The OpenPGP comment to choose for your code-signing key</h3>
+
+The comment should include _CODE SIGNING KEY_. This makes clear the primary use for this key. This can be helpful if you later
+generate keys for other uses.
+
+Include the comment _NOT FOR CODE SIGNING_ for keys you generate for other purposes.
+
+<h3 id="keyserver">What is a public key server?</h3>
+
+A public key server manages <a href="#public-private">public keys</a>. Available functions may vary but typically include <a href="#keyserver-upload">upload</a>, search, and download.
+
+Public key servers exist to distribute public keys. They do not vouch for the actual identity of the owner of each key. You must establish this either directly or through a <a href="#web-of-trust">web of trust</a>. Do not trust a key just because it has been downloaded from a key server.
+
+The major public key servers synchronize their records regularly so a key uploaded to one should be disseminated to the rest. Some well-known public key servers:
+
+  - <a href="https://pgp.mit.edu" target="_blank">MIT</a>
+  - <a href="https://pgp.surfnet.nl/" target="_blank">SKS OpenPGP Public Key Server</a>
+
+Although <a href="https://keyserver.pgp.com/" target="_blank">PGP Global Directory</a> the following is also well-known, at present it does not synchronise keys with other key servers, so do not use it as the only public server for your key.
+
+<h3 id="keyserver-upload">How to upload a key to a public key server</h3>
+
+There are two common ways to upload a key to a <a href="#keyserver">public key server</a>:
+
+  - Most key servers let you upload <a href="#export">exports</a> through their websites
+  - Use automatic facilities built into most <a href="#openpgp">OpenPGP</a> <a href="#openpgp-applications">implementations</a>
+  
+For example using <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a>, send the key with <a href="#key-id">ID</a> B1313DE2 to the default public key server by:
+
+```
+$ gpg --send-key B13131DE2
+```
+
+You must export each changed key separately.
+
+<h3 id="update-web-of-trust">How to make sure your local web of trust is up-to-date</h3>
+<p>The public web of trust grows constantly as people sign new keys and upload
+the new signatures onto the network of <a href="#keyserver">public key servers</a>.
+Public keys should be periodically refreshed to ensure that your local web
+of trust is as full as possible. Many <a href="#openpgp">OpenPGP</a> 
+<a href="#openpgp-applications">clients</a> allow keys to be easily refreshed by
+querying a public key server.</p>
+<p>For example, to refresh all keys using <a href="http://www.gnupg.org">GNU Privacy
+Guard</a> use:
+<code><pre>
+$ gpg --refresh-keys
+</pre></code></p>
+<h1 id="export">How Do You Export A Key?<a class="headerlink" href="#export" title="Permanent link">&para;</a></h1>
+<p>A public key can be exported using <a href="http://www.gnupg.org">OpenPGP</a> by using
+<code>--export</code>. Typically, the export should be ASCII armored. For example, to
+export all public keys to the command line use:
+<pre>
+gpg --export --armor
+</pre>
+In most cases, it is better to export all keys - this ensures that
+signatures made on other keys will be exported. However, it is possible to
+export just one key by specifying it on the command line.</p>
+<p>Secret keys can also be exported. However, exporting secret keys poses a
+security risk and there are better solutions for most common use cases. For
+example, copying the <code>GNUPGHOME</code> directory (typically <code>~/.gnupg</code> ) is a
+better way to transfer an <a href="http://www.gnupg.org">OpenPGP</a> keyring from one
+machine to another.</p>
+<h1 id="key-id">What Is A Key ID?<a class="headerlink" href="#key-id" title="Permanent link">&para;</a></h1>
+<p>A key ID is similar to a <a href="#fingerprint">fingerprint</a> but is much smaller in
+length. There is no guarantee that key IDs are unique. Consequently, it is
+strongly recommended that the fingerprint is checked before signing a key.
+The key ID is typically used for locating keys and identifying keys already
+contained within the keyring. For these use cases, key ID should be unique
+enough in practice.</p>
+<p>A short guide to discovering the key ID for a key is
+<a href="openpgp.html#find-key-id">available</a>.</p>
+<h1 id="subkey">What Is A Sub Key?<a class="headerlink" href="#subkey" title="Permanent link">&para;</a></h1>
+<p>Each <a href="#openpgp">OpenPGP</a> keyring has a single master key. This key is
+signing only. It may also optionally have a number of sub keys (for
+encryption and signing).</p>
+<p>If you wish to sign emails using a key related to that used to sign code,
+it is recommended that a signing sub key is <a href="#email-subkey">used</a>.</p>
+<h1 id="email-subkey">How Do I A Use Sub Key To Sign Emails?<a class="headerlink" href="#email-subkey" title="Permanent link">&para;</a></h1>
+<p>To keep a code signing key <a href="#safe-and-secure">safe and secure</a> it is
+recommended that the key is not kept on a hard disc on a regular
+development machine. This means that the master key should not be used
+directly to sign emails. However, there are occasions when digitally signed
+emails are desirable.</p>
+<p>The recommended approach is to create a sub key for email signing and
+export it to the regular machine. The master key can then be kept safely
+offline. For more details, read:</p>
+<ul>
+<li>
+<p><a href="http://www.gnupg.org/(en)/faq/subkey-cross-certify.html">Subkey cross
+certification</a> </p>
+</li>
+<li>
+<p><a href="http://fortytwo.ch/gpg/subkeys">Signing Subkey HOWTO</a> </p>
+</li>
+</ul>
+<p>Note that some <a href="#keyserver">public key servers</a> do not handle sub keys
+correctly. It may be necessary to use one on the
+<a href="http://www.nongnu.org/sks/">SKS</a> network.</p>
+<h1 id="more-information">How Can I Find Out More?<a class="headerlink" href="#more-information" title="Permanent link">&para;</a></h1>
+<p>See <a href="#reading">this</a>.</p>
+<h1 id="quick-signing">Is There A Quick Way To Sign Several Distributions?<a class="headerlink" href="#quick-signing" title="Permanent link">&para;</a></h1>
+<p>The private <code>https://svn.apache.org/repos/private/committers</code> repository
+contains scripts that assist with batch signing several distributions.</p>
+<h1 id="transfer-secret-keys">How Can I Transfer A Secret Key?<a class="headerlink" href="#transfer-secret-keys" title="Permanent link">&para;</a></h1>
+<p>This is application dependent. Instructions for GnuPG are
+<a href="openpgp.html#secret-key-transfer">available</a>.</p>
+<h1 id="two-keys">Why Do Some People Have Two Keys?<a class="headerlink" href="#two-keys" title="Permanent link">&para;</a></h1>
+<p>When switching from an uncompromised key to another (typically stronger)
+one, it is convenient to use a <a href="#transition">transition period</a>. During a
+transition, both keys are trustworthy but only (the newer) one is actively
+used to sign documents and certify links in the <a href="#web-of-trust">web of
+trust</a>.</p>
+<h1 id="transition">What Is A Transition Period (For Keys)?<a class="headerlink" href="#transition" title="Permanent link">&para;</a></h1>
+<p>When replacing one uncompromised key with a newer (typically longer) one, a
+transition period where both keys are trustworthy and participate in the
+<a href="#web-of-trust">web of trust</a> allows - by <a href="#web-of-trust">trust
+transitivity</a> - links to the old key to be used to trust
+signatures and links created by the new key. During a transition, both keys
+are trustworthy but only (the newer) one is actively used to sign documents
+and certify links in the <a href="#web-of-trust">web of trust</a>.</p>
+<h1 id="how-to-transition">How Should I Transition From A Short To A Longer Key?<a class="headerlink" href="#how-to-transition" title="Permanent link">&para;</a></h1>
+<p>If you have a short but uncompromised key and would like to
+<a href="#transition">transition</a> to a longer one, follow these
+<a href="key-transition.html">instructions</a>.</p>
+<p>If your key has been compromised then you <strong>MUST NOT</strong> transition but
+<a href="#revoke-key">revoke</a> the old key and replace with a new one immediately.
+<strong>DO NOT</strong> use a transition period.</p>
+<h1 id="update-document">I Have A New Key. Which Apache Documents Need To Be Updated?<a class="headerlink" href="#update-document" title="Permanent link">&para;</a></h1>
+<p>A number of Apache documents need to be updated. Follow these
+<a href="openpgp.html#update">instructions</a>.</p>
+<h1 id="rsa">What Is RSA?<a class="headerlink" href="#rsa" title="Permanent link">&para;</a></h1>
+<p>RSA is a well known public key cryptography algorithm which supports
+signing and encryption.</p>
+<p>See <a href="#reading">further reading</a> for more details.</p>
+<h1 id="key-length-how-to">How Do I Find The Length Of A Key?<a class="headerlink" href="#key-length-how-to" title="Permanent link">&para;</a></h1>
+<p>The easiest way to discover the length of a key (with id <code>KEYID</code> ) is to
+use <code>gpg --list-keys KEYID</code>. This will print basic information about the
+key. The first line will include the size in the second column just before
+the id.</p>
+<p>For example:
+<pre>
+$ gpg --list-keys B1313DE2
+pub   1024D/B1313DE2 2003-01-15
+uid                  Robert Burrell Donkin (CODE SIGNING KEY) &lt;rdonkin@apache.org&gt;
+uid                  Robert Burrell Donkin &lt;robertburrelldonkin@gmail.com&gt;
+uid                  Robert Burrell Donkin &lt;robertburrelldonkin@blueyonder.co.uk&gt;
+sub   4096R/40A882CB 2009-06-18 [expires: 2010-06-18]</p>
+<p>$ gpg --list-keys A6EE6908
+pub   8192R/A6EE6908 2009-08-07
+uid                  Robert Burrell Donkin (CODE SIGNING KEY) &lt;rdonkin@apache.org&gt;
+sub   8192R/B800EFC1 2009-08-07
+</pre>
+shows that key B1313DE2 has length 1024 and A6EE6908 length 8192.</p></div>
+
+
+
+
 
 <h2 id="key-basics">Key basics</h2>
 
