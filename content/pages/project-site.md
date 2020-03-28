@@ -7,7 +7,7 @@ This page provides an overview of the tools Apache projects use to manage their 
 <ul>
 <li><a href="#intro">Managing an Apache project's website</a></li>
 <li><a href="#default">Is there a default website template?</a></li>
-<li><a href="#preview">How do I preview my project website?</a></li>
+<li><a href="#preview">Previewing a project website</a></li>
 <li><a href="#configure">Can I control the configuration of my project website?</a></li>
 <li><a href="#logging">How does logging work?</a></li>
 <li><a href="#which-tools-do-i-have-to-use">Which tools do I have to use?</a></li>
@@ -34,21 +34,14 @@ Infra supports these tools for publishing and maintaining Apache project website
   
 <h2 id="default">Is there a default website template?</h2>
 
-Projects are free to choose their own styles and layout for websites.<br />
-However if you'd like a quick way to get started with an easy to use 
-Markdown based site that many other projects started with, 
-see the <a href="https://github.com/apache/apache-website-template">Sample Apache Project website</a> repo, which has 
-many useful features and instructions for using svnpubsub easily.</p>
-<h1 id="preview">How do I preview my project website?<a class="headerlink" href="#preview" title="Permanent link">&para;</a></h1>
-<p>For svnpubsub sites, review the local files in your svn checkout before
-committing them. The changes will be published immediately after you
-commit them.</p>
-<p>For CMS sites, just commit the changes (without "publish"-ing them) and browse
-to <code>http://TLP.staging.apache.org/</code>.  (For example, <a href="http://www.staging.apache.org/dev/project-site">the staging version of
-this page</a>.)  The CMS 
-web interface includes a [Staged] link that will take you there directly.</p>
-<p>There is no preview mode for gitpubsub.  You should ideally have a way
-to locally build and test the website.</p>
+Projects are free to choose their own styles and layout for websites. However if you'd like a quick way to get started with an easy-to-use, Markdown-based site that many other projects started with, see the <a href="https://github.com/apache/apache-website-template">Sample Apache Project website</a> repo, which has many useful features and instructions for using svnpubsub easily.
+
+<h2 id="preview">Previewing a project website</h2>
+
+  - For svnpubsub sites, review the local files in your svn checkout before committing them. The changes will be published immediately after you commit them.</p>
+  - For CMS sites, just commit the changes (without "publish"-ing them) and browse to `>http://TLP.staging.apache.org/`. (For example, <a href="https://www.staging.apache.org/dev/project-site">the staging version of this page</a>.)  The CMS web interface includes a `Staged` link that will take you there directly.
+  - There is no preview mode for gitpubsub. You should ideally have a way to locally build and test the website.
+  
 <h1 id="configure">Can I control the configuration of my project website?<a class="headerlink" href="#configure" title="Permanent link">&para;</a></h1>
 <p>Yes, the central config file allows you to use <code>.htaccess</code> files in your
 website directories to control configuration. Of course, reading and
