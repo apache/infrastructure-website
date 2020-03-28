@@ -26,29 +26,15 @@ The basic requirements for site management are that
   - only committers should be able to modify the site.
   - notifications of all site changes should be sent to the relevant project mailing lists. The Apache CMS allows non-committers to send  patches via a simple web interface by "Mail Diff"ing to the project  mailing list that can be easily published by a committer.
 
-Infra supports two primary tools for publishing and maintaining Apache project websites:
+Infra supports these tools for publishing and maintaining Apache project websites:
 
-<ul>
-<li><strong>Apache CMS</strong>, <em>(being deprecated; don't use for new sites)</em> which provides a simple browser-based user interface
-    for editing, staging and publishing site content in Markdown, HTML
-    or any other source format for which support has been added. See
-    the <a href="cmsref">CMS reference</a> and <a href="cmsadoption">adoption</a> for more details. The Apache CMS
-    uses svnpubsub as the underlying mechanism for publishing a site.</li>
-<li><strong>svnpubsub</strong>, which allows the static contents of a designated svn
-    folder (<a href="http://svn.apache.org/repos/asf/ant/site/ant/production/">example</a>) to automatically published
-    as the project web site at <code>http://project.apache.org/</code>. The project
-    team can use any site build mechanism it wants as long as the above
-    requirements are met.</li>
-<li><strong>gitpubsub</strong>, which allows the static contents of a designated git
-   repository to be served as the website for a project.  git based websites
-   are typically maintained in a asf-site branch to be published as
-   <code>https://project.apache.org</code>.  They can be hosted from your 
-   primary project repo.  Typically these will be built as a jenkins job
-   or a buildbot job.  It is recommended that you only have a single writer to
-   the asf-site branch to avoid potential conflicts.</li>
-</ul>
-<h1 id="default">Is there a default website template?<a class="headerlink" href="#default" title="Permanent link">&para;</a></h1>
-<p>Projects are free to choose their own styles and layout for websites.<br />
+  - **Apache CMS**, _(being deprecated; don't use for new sites)_ provides a simple browser-based user interface for editing, staging and publishing site content in Markdown, HTML or any other source format for which support has been added. See the <a href="cmsref">CMS reference</a> and <a href="cmsadoption">adoption</a> for more details. The Apache CMS uses pypubsub as the underlying mechanism for publishing a site.
+  - **svnpubsub** automatically publishes the static contents of a designated svn folder (<a href="https://svn.apache.org/repos/asf/ant/site/ant/production/" target="_blank">example</a>) as the project web site at `http://project.apache.org`>. The project team can use any site build mechanism it wants as long as the above requirements are met.
+  - **gitpubsub** automatically serves the static contents of a designated git as the website for a project. Git-based websites are typically maintained in a asf-site branch to be published as `https://project.apache.org`. A project can host the site from its primary project repo. Typically these will be built as a jenkins or a buildbot job. We recommend that you only have a single writer to the asf-site branch to avoid potential conflicts.
+  
+<h2 id="default">Is there a default website template?</h2>
+
+Projects are free to choose their own styles and layout for websites.<br />
 However if you'd like a quick way to get started with an easy to use 
 Markdown based site that many other projects started with, 
 see the <a href="https://github.com/apache/apache-website-template">Sample Apache Project website</a> repo, which has 
