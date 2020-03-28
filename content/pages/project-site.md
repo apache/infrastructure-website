@@ -6,7 +6,7 @@ This page provides an overview of the tools Apache projects use to manage their 
 
 <ul>
 <li><a href="#intro">Managing an Apache project's website</a></li>
-<li><a href="#default">Is there a default website template we can use?</a></li>
+<li><a href="#default">Is there a default website template?</a></li>
 <li><a href="#preview">How do I preview my project website?</a></li>
 <li><a href="#configure">Can I control the configuration of my project website?</a></li>
 <li><a href="#logging">How does logging work?</a></li>
@@ -47,7 +47,7 @@ Infra supports two primary tools for publishing and maintaining Apache project w
    or a buildbot job.  It is recommended that you only have a single writer to
    the asf-site branch to avoid potential conflicts.</li>
 </ul>
-<h1 id="default">Is there a default website template we can use?<a class="headerlink" href="#default" title="Permanent link">&para;</a></h1>
+<h1 id="default">Is there a default website template?<a class="headerlink" href="#default" title="Permanent link">&para;</a></h1>
 <p>Projects are free to choose their own styles and layout for websites.<br />
 However if you'd like a quick way to get started with an easy to use 
 Markdown based site that many other projects started with, 
