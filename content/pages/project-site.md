@@ -1,4 +1,4 @@
-Title: Manage your project web site
+Title: Managing your project web site
 
 This page provides an overview of the tools Apache projects use to manage their own websites, and the tools Infra uses to manage the overall `apache.org` website. Everyone, even non-committers, can suggest changes to any Apache project website using these tools; committers on each project can use them to update their website very easily.
 
@@ -9,7 +9,7 @@ This page provides an overview of the tools Apache projects use to manage their 
 <li><a href="#default">Is there a default website template?</a></li>
 <li><a href="#preview">Previewing a project website</a></li>
 <li><a href="#configure">Configuring a project webstie</a></li>
-<li><a href="#logging">How does logging work?</a></li>
+<li><a href="#logging">Logging</a></li>
 <li><a href="#which-tools-do-i-have-to-use">Site support tools</a></li>
 <li><a href="#svnpubsub-revision">Finding the site revision number</a></li>
 <li><a href="#mail">Providing public access to the project mail archive mbox files</a></li>
