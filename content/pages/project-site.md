@@ -8,13 +8,13 @@ This page provides an overview of the tools Apache projects use to manage their 
 <li><a href="#intro">Managing an Apache project's website</a></li>
 <li><a href="#default">Is there a default website template?</a></li>
 <li><a href="#preview">Previewing a project website</a></li>
-<li><a href="#configure">Can I control the configuration of my project website?</a></li>
+<li><a href="#configure">Configuring a project webstie</a></li>
 <li><a href="#logging">How does logging work?</a></li>
-<li><a href="#which-tools-do-i-have-to-use">Which tools do I have to use?</a></li>
-<li><a href="#svnpubsub-revision">What revision of the site is currently being served?</a></li>
-<li><a href="#mail">How to provide public access to our project mail archive mbox files?</a></li>
-<li><a href="#feather">Can my project site use its own favicon instead of just the Apache Feather?</a></li>
-<li><a href="#generated">How can I minimize the number of changes committed in my Maven/JavaDoc/generated site?</a></li>
+<li><a href="#which-tools-do-i-have-to-use">Site support tools</a></li>
+<li><a href="#svnpubsub-revision">Finding the site revision number</a></li>
+<li><a href="#mail">Providing public access to the project mail archive mbox files</a></li>
+<li><a href="#feather">Using the project's favicon instead of the Apache feather</a></li>
+<li><a href="#generated">Minimizing the number of changes committed in the project's Maven- or JavaDoc- generated site</a></li>
 </ul>
 
 <h2 id="intro">Managing an Apache project's website</h2>
@@ -42,46 +42,47 @@ Projects are free to choose their own styles and layout for websites. However if
   - For CMS sites, just commit the changes (without "publish"-ing them) and browse to `>http://TLP.staging.apache.org/`. (For example, <a href="https://www.staging.apache.org/dev/project-site">the staging version of this page</a>.)  The CMS web interface includes a `Staged` link that will take you there directly.
   - There is no preview mode for gitpubsub. You should ideally have a way to locally build and test the website.
   
-<h1 id="configure">Can I control the configuration of my project website?<a class="headerlink" href="#configure" title="Permanent link">&para;</a></h1>
-<p>Yes, the central config file allows you to use <code>.htaccess</code> files in your
-website directories to control configuration. Of course, reading and
-parsing an <code>.htaccess</code> file on each request can slow down the server, so
-you should consider requesting an adjustment in the central config file for
-permanent configuration changes.</p>
-<h1 id="logging">How does logging work?<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h1>
-<p>The build output from your job is available from either buildbot or jenkins, depending on which you use.</p>
-<h1 id="which-tools-do-i-have-to-use">Which tools do I have to use?<a class="headerlink" href="#which-tools-do-i-have-to-use" title="Permanent link">&para;</a></h1>
-<p>Projects can use one of the three options.  Note that if you use CMS you are using svnpubsub under the covers.</p>
-<p>gitpubsub is based on git repos so if you're using that for source control it may make sense to use that over a svnpubsub directory.</p>
-<h1 id="svnpubsub-revision">What revision of the site is currently being served?<a class="headerlink" href="#svnpubsub-revision" title="Permanent link">&para;</a></h1>
-<p>This only applies to SVN based websites.</p>
-<p>Look at the <code>.revision</code> file at the root of your site (for example,
-<a href="http://subversion.apache.org/.revision">http://subversion.apache.org/.revision</a>).  That file is updated after every
-successful <code>svn update</code>.  (If the update is underway or exited abnormally,
-<code>.revision</code> won't have been changed.)</p>
-<h1 id="mail">How to provide public access to our project mail archive mbox files?<a class="headerlink" href="#mail" title="Permanent link">&para;</a></h1>
-<p>Some projects have a "mail" directory at the top of their project website.
-Enable this by creating a symbolic link in svnpubsub or CMS output
-(to <code>/home/apmail/public-arch/$tlp.apache.org</code>).
-Also see other <a href="http://apache.org/dev/#mail">notes</a>.</p>
-<h1 id="feather">Can my project site use its own favicon instead of just the Apache Feather?<a class="headerlink" href="#feather" title="Permanent link">&para;</a></h1>
-<p>Yes, just add a <code>favicon.ico</code> file to your site's root.  The feather is only
-used for project sites that don't have a <code>favicon.ico</code> file.</p>
-<h1 id="generated">How can I minimize the number of changes committed in my Maven/JavaDoc/generated site?<a class="headerlink" href="#generated" title="Permanent link">&para;</a></h1>
-<p>If you are using svnpubsub, the commit will perform very slowly if the number of changes is large - particularly if the number of files is large.
-This is often the case with JavaDoc, and to a lesser extent Maven generated sites.</p>
-<p>You may wish to use the CMS instead of svnpubsub directly. This moves the work to the server-side, but it will still be valuable to minimize the changes committed.</p>
-<p>These are some steps that can be taken:</p>
-<ul>
-<li>Ask infrastructure to store your generated content in the CMS repository, rather than the main ASF repository. While this won't necessarily speed up the commit, it will prevent it from impacting other users.</li>
-<li>When running JavaDoc, pass the <code>-notimestamp</code> option. This will avoid most files from being modified between runs if there haven't been code changes.</li>
-<li>Use a Maven skin that doesn't generate a timestamp into the output. This may require customizing the current skins.</li>
-<li>If you use the Maven dependencies report in the Project Info Reports plugin, use version 2.7+ of the plugin which avoids random strings being generated.</li>
-<li>If you maintain historical versions of documentation, always check-in to a single "trunk", then use an <code>svn copy</code> operation to tag or branch the content, rather than checking in a complete copy</li>
-<li>Minimize uses of "publish date" and "version" in templates to those that are truly necessary or helpful. Consider using a "last modified date" and version in the URL instead (unless "latest" is implied).</li>
-<li>Minimize Subversion keywords in the output that may change frequently without significant meaning. This includes in source code that may be rendered to JavaDoc or a Maven JXR source cross-reference).</li>
-<li>Avoid publishing Maven reports that change constantly to the project site. Code coverage, style reports, static analysis, etc. can be generated into a working copy on the CI server instead for easy developer viewing, and project's can consider utilizing https://analysis.apache.org/ for such reports as well.</li>
-</ul></div>
+<h2 id="configure">Configuring a project website</h2>
 
+The central config file lets you use `.htaccess` files in your website directories to control configuration. Of course, reading and
+parsing an `.htaccess` file on each request can slow down the server, so consider requesting adjustments to the central config file for
+permanent, site-wide configuration changes.
 
-_moving information here from https://www.apache.org/dev/project-site.html_
+<h2 id="logging">Logging</h2>
+
+The build output from your job when you compile your site is available from either buildbot or jenkins, depending on which you use.
+
+<h2 id="which-tools-do-i-have-to-use">Site support tools</h2>
+
+Projects use one of the three options mentioned earlier, although the CMS option is not available for new websites. **Note** that if you use CMS you are using svnpubsub under the covers.
+
+Gitpubsub is based on git repos, so if you're using Git for source control it may make sense to use that instead of a svnpubsub directory.
+
+<h2 id="svnpubsub-revision">Finding the site revision number</h2>
+
+This only applies to _SVN based websites_.
+
+Look at the `.revision` file at the root of your site (for example, <a href="http://subversion.apache.org/.revision" target"_blank">>http://subversion.apache.org/.revision</a>). That file updates after every successful <code>svn update</code>. (If the update is underway or exited abnormally, `.revision` won't have been changed.)
+
+<h2 id="mail">Providing public access to the project's mail archive mbox files</h2>
+
+Some projects have a "mail" directory at the top of their project website. Enable this by creating a symbolic link  to `/home/apmail/public-arch/$tlp.apache.org` in svnpubsub or CMS output.
+
+See more <a href="https://apache.org/dev/#mail" target="_blank">notes aboout project mail</a>.
+
+<h2 id="feather">Using the project's favicon instead of the Apache feather</h2>
+
+To use a custom favicon for your project's website, add the `favicon.ico` file to your site's root directory. The feather only appears for project sites that don't have a `favicon.ico` file.
+
+<h2 id="generated">Minimizing the number of changes committed in the project's Maven- or JavaDoc- generated site</h2>
+
+If you are using svnpubsub, the commit performs very slowly if the number of changes is large, particularly if the number of files is large. This is often the case with JavaDoc, and to a lesser extent with Maven-generated sites. Here is what you can do to speed up the commit:
+
+  - Ask Infra to store your generated content in the CMS repository, rather than the main ASF repository. While this won't necessarily speed up your own commit, it will prevent it from impacting other users.
+  - When running JavaDoc, pass the `-notimestamp` option. This will avoid most files from being modified between runs if there haven't been code changes.
+  - Use a Maven skin that doesn't generate a timestamp into the output. This may require customizing the current skins.
+  - If you use the Maven dependencies report in the Project Info Reports plugin, use version 2.7+ of the plugin to avoid random strings being generated.
+  - If you maintain historical versions of documentation, always check-in to a single "trunk", then use an `svn copy` operation to tag or branch the content, rather than checking in a complete copy.
+  - Minimize use of "publish date" and "version" in templates to those that are truly necessary or helpful. Consider using a "last modified date" and version in the URL instead (unless "latest" is implied).
+  - Minimize Subversion keywords in the output that may change frequently without significant meaning. This includes keywords in source code that may be rendered to JavaDoc or a Maven JXR source cross-reference.
+  - Avoid publishing Maven reports that change constantly to the project site. Code coverage, style reports, static analysis, etc. can be generated into a working copy on the CI server instead for easy developer viewing, and projects can consider using <a href="https://analysis.apache.org/" target="_blank">https://analysis.apache.org/</a> for such reports as well.
