@@ -38,14 +38,11 @@ Information on other Apache-related licenses and updates regarding compatibility
 **Note** that the ASF does not use copyright assignment and that the original authors retain the copyrights for individual parts of the collective work . The method described in the appendix is only suitable for copyright owners, so the ASF uses a variation of
 this method.
 
-<p>Section 4d of the <a href="http://www.apache.org/licenses/LICENSE-2.0.txt">license</a>
-provides for attribution notices to be included with a work in a 
-<a href="http://www.apache.org/licenses/example-NOTICE.txt">NOTICE</a> file, such that 
-the attribution notices will remain, in some form, within any derivative works.
-Apache projects <a href="http://www.apache.org/legal/src-headers.html#notice">MUST</a>
-include correct NOTICE documents in every distribution.  </p>
-<h1 id="new">Applying the license to new software<a class="headerlink" href="#new" title="Permanent link">&para;</a></h1>
-<p>To apply the <abbr title="Apache License, Version 2.0">ALv2</abbr> to a new software distribution, include one copy of the
+Section 4d of the <a href="https://www.apache.org/licenses/LICENSE-2.0.txt" target="_blank">license</a> provides for attribution notices to be included with a work in a <a href="https://www.apache.org/licenses/example-NOTICE.txt" target="_blank">NOTICE</a> file, so the attribution notices remains, in some form, within any derivative works. Apache projects **must** <a href="http://www.apache.org/legal/src-headers.html#notice" target="_blank">include correct NOTICE documents</a> in every distribution.
+  
+<h2 id="new">Applying the license to new software</h2>
+
+To apply the ALv2 to a new software distribution, include one copy of the
 license text by copying the file:</p>
 <p><a href="http://www.apache.org/licenses/LICENSE-2.0.txt">http://www.apache.org/licenses/LICENSE-2.0.txt</a></p>
 <p>into a file called LICENSE in the top directory of your distribution.
