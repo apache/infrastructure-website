@@ -32,8 +32,8 @@ The Apache Infrastructure Team (Infra) operates under the <a href="https://www.a
 
 #### Software release policies and procedures ####
 
-  - [Release creation process](release-creation.html)
-  - Creating optional [Maven releases](maven-releases.html)
+  - [Release creation process](release-publishing.html)
+  - Creating optional [Maven releases](publishing-maven-artifacts.html)
   - [Signing releases](release-signing.html)
   - [Release distribution policy](release-distribution.html)
   - [Release download pages](release-download-pages.html)
