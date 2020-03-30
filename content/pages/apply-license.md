@@ -9,26 +9,11 @@ Information on other Apache-related licenses and updates regarding compatibility
 <ul>
 <li><a href="#license">Understanding the 2.0 license</a></li>
 <li><a href="#new">Applying the license to new software</a></li>
-<li><a href="#existing">Updating Existing Software</a></li>
-<li><a href="#faq-existing">Frequently Asked Questions (Updates)</a><ul>
-<li><a href="#convert_to_2_0">Do I have to convert Apache 1.1 licenses to 2.0 licenses in source code?</a></li>
-<li><a href="#convert-all">When do I have to convert ASF code to the new license?</a></li>
-<li><a href="#conversion">Do I have to convert old versions and branches of code to the new license?</a></li>
-<li><a href="#deadline">Does that mean live branches of code all have to be updated by 1 March 2004?</a></li>
+<li><a href="#existing">Updating existing software</a></li>
+  <li><a href="#faq-existing">Frequently asked questions about updates</a></li>
+<li><a href="#faq">Other frequently asked questions</a></li>
 </ul>
-</li>
-<li><a href="#faq">Frequently Asked Questions (General)</a><ul>
-<li><a href="#info-whereis">Where Can I Find More Information?</a></li>
-<li><a href="#policy-whereis">Where Can I Find Policy?</a></li>
-<li><a href="#license-whereis">Where do I find a copy of the new license?</a></li>
-<li><a href="#copy-per-file">Do I have to have a copy of the license in each source file?</a></li>
-<li><a href="#attribution">In my current source files I have attribution notices for other works. Do I put this in each source file now?</a></li>
-<li><a href="#contributor-copyright">Can/Should individual committers added copyright statements to the NOTICE or source code files?</a></li>
-<li><a href="#license-file-name">Can the LICENSE and NOTICE files be called LICENSE.txt and NOTICE.txt?</a></li>
-<li><a href="#license-include">Should the license be included in source files for documentation (e.g. XML that is transformed to HTML)?</a></li>
-</ul>
-</li>
-</ul>
+  
 
 
 
@@ -42,25 +27,15 @@ Section 4d of the <a href="https://www.apache.org/licenses/LICENSE-2.0.txt" targ
   
 <h2 id="new">Applying the license to new software</h2>
 
-To apply the ALv2 to a new software distribution, include one copy of the
-license text by copying the file:</p>
-<p><a href="http://www.apache.org/licenses/LICENSE-2.0.txt">http://www.apache.org/licenses/LICENSE-2.0.txt</a></p>
-<p>into a file called LICENSE in the top directory of your distribution.
-If the distribution is a jar or tar file, try to add the LICENSE file
-first in order to place it at the top of the archive. This covers
-the collective licensing for the distribution.</p>
-<p>In addition, a correct NOTICE file
-<a href="http://www.apache.org/legal/src-headers.html#notice">MUST</a>
-be included in the same directory as the LICENSE file.</p>
-<p>Each original source document (code and documentation, but excluding the 
-LICENSE and NOTICE files) <a href="http://www.apache.org/legal/src-headers.html#headers">SHOULD</a>
-include a short license header at the top. If the distribution contains 
-documents not covered by <a href="http://www.apache.org/licenses/icla.txt"><abbr title="Individual Contributor License Agreement">CLA</abbr></a>,
-<a href="http://www.apache.org/licenses/cla-corporate.txt"><abbr title="Corporate Contributor License Agreement">CCLA</abbr></a> or
-<a href='http://www.apache.org/licenses/software-grant.txt'>Software Grant</a>
-(such as third-party libraries) then see the
-<a href='http://www.apache.org/legal/resolved.html'>policy guide</a>.</p>
-<h1 id="existing">Updating Existing Software<a class="headerlink" href="#existing" title="Permanent link">&para;</a></h1>
+To apply the ALv2 to a new software distribution, include one copy of the license text by copying the contents of <a href="https://www.apache.org/licenses/LICENSE-2.0.txt" Target="_blank">LICENSE-2.0.txt</a> into a file called LICENSE in the top directory of your distribution. If the distribution is a jar or tar file, try to add the LICENSE file first in order to place it at the top of the archive. This covers the collective licensing for the distribution.
+
+In addition, you **must** include a correct <a href="https://www.apache.org/legal/src-headers.html#notice" target="_blank">NOTICE file</a> in the same directory as the LICENSE file.
+
+Each original source document (code and documentation, but not the LICENSE and NOTICE files) **should** include <a href="https://www.apache.org/legal/src-headers.html#headers" target="_blank"> a short license header</a> at the top. If the distribution contains  documents not covered by an <a href="https://www.apache.org/licenses/icla.txt" target="_blank">ICLA</a>,
+<a href="https://www.apache.org/licenses/cla-corporate.txt" target="_blank">CCLA</a> or <a href="https://www.apache.org/licenses/software-grant.txt" target="_blank">Software Grant</a> (such as third-party libraries), consult the <a href="https://www.apache.org/legal/resolved.html" target="_blank">policy guide</a>.
+
+<h2 id="existing">Updating Existing Software</h2>
+
 <p>In brief, the aim is to achieve a final distribution as described above in
 <a href="#new">applying the license to new software</a>. Some conversion tools are 
 listed <a href="http://www.apache.org/legal/src-headers.html#faq-update-scripts">here</a>.</p>
