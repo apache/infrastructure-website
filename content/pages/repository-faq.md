@@ -34,16 +34,16 @@ If you're a user looking for Apache artifacts from a Maven repository, all relea
 
 <h2 id="faq">FAQs about the ASF Jar repositories<</h2>
   
-<h2 id="m1m2">m1/m2?<a class="headerlink" href="#m1m2" title="Permanent link">&para;</a></h2>
-<p>There are two types of Maven repository. Loosely 'm1' repositories and 'm2'
-repositories - matching the repositories used by Maven-1 and Maven-2,
-though Maven-2 can point to legacy Maven-1 repositories. We support both,
-but are phasing out the m1 repositories.</p>
-<h2 id="deploytoboth">Do I need to deploy to both m1/m2 repositories?<a class="headerlink" href="#deploytoboth" title="Permanent link">&para;</a></h2>
-<p>No, because the Maven2 repository layout is the standard used by most tools,
-including Maven, Ivy and Buildr</p>
-<h2 id="thirdparty">Can we put third party files in the repositories?<a class="headerlink" href="#thirdparty" title="Permanent link">&para;</a></h2>
-<p>You can with the <em>snapshot</em> repositories, but you cannot with the <em>release</em>
+<h4 id="m1m2">m1/m2?</h4>
+There are two types of Maven repository. Loosely, Maven-1 and Maven-2 use 'm1' and 'm2' repositories, though Maven-2 can point to legacy Maven-1 repositories. Apache supports both, but is phasing out the m1 repositories.
+
+<h4 id="deploytoboth">Do I need to deploy to both m1/m2 repositories?</h4>
+
+No, because the Maven2 repository layout is the standard used by most tools, including Maven, Ivy and Buildr.
+
+<h4 id="thirdparty">Can we put third party files in the repositories?</h4>
+
+You can with the <em>snapshot</em> repositories, but you cannot with the <em>release</em>
 repositories. When putting third party files in the <em>snapshot</em>
 repositories, please email the repository mailing list to explain what you
 are doing. Ideally third party files should be uploaded to he 'central'
