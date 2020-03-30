@@ -2,20 +2,11 @@ Title: Apache Maven repositories
 
 Here is an overview of Maven repositories in use at the Apache Software Foundation.
 
-<h2>Contents</h2>
-<ul>
-<li><a href="#basic">Basic information</a></li>
-<li><a href="#rules">A few good rules</a></li>
-<li><a href="#faq">FAQs about the ASF Jar repositories</a></li>
-</ul>
-
-
 <h2 id="basic">Basic information</h2>
 
 The main snapshot and release Maven repositories for Apache are at <a href="https://repository.apache.org" target="_blank">https://repository.apache.org</a>. The repository also proxies Apache's legacy repositories.
 
 If your Apache project would like to use `repository.apache.org`, see [Publishing Maven Releases](publishing-maven-artifacts.html).
-<p id="rules">&nbsp;</p>
 
   - Use the `New` repo and staging process to help prevent accidental releases and ensure that releases meet Apache standards.
   - Subscribe to the repository mailing list via `repository-subscribe@apache.org` for questions, complaints and ideas.
