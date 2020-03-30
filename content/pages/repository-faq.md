@@ -32,7 +32,7 @@ You can with the <em>snapshot</em> repositories, but you cannot with the <em>rel
 
 As long as your project's PMC is happy with the release, you can release a research branch to the snapshot repository; otherwise you should just release in your `people.apache.org` personal space.
 
-<h4 id="repodotapache">What is `repository.apache.org`?</h4>
+<h4 id="repodotapache">What is 'repository.apache.org'?</h4>
 
 Apache operates a repository manager at <a href="https://repository.apache.org/" target="_blank">https://repository.apache.org/</a>. Apache projects can use it to deploying snapshots, releases, or both. See the [Publishing Maven Releases](publishing-maven-artifacts.html) guide for more details.
 
