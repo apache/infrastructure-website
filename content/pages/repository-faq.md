@@ -6,16 +6,7 @@ Here is an overview of Maven repositories in use at the Apache Software Foundati
 <ul>
 <li><a href="#basic">Basic information</a></li>
 <li><a href="#rules">A few good rules</a></li>
-<li><a href="#faq">FAQs about the ASF Jar Repositories</a><ul>
-<li><a href="#m1m2">m1/m2?</a></li>
-<li><a href="#deploytoboth">Do I need to deploy to both m1/m2 repositories?</a></li>
-<li><a href="#thirdparty">Can we put third party files in the repositories?</a></li>
-<li><a href="#revolutioncode">I'm working on a research branch, can I release to the repositories?</a></li>
-<li><a href="#repodotapache">What is repository.apache.org?</a></li>
-<li><a href="#resources">What resources are available?</a></li>
-<li><a href="#rsyncs">How do rsyncs happen?</a></li>
-</ul>
-</li>
+<li><a href="#faq">FAQs about the ASF Jar repositories</a></li>
 </ul>
 
 
@@ -32,9 +23,10 @@ If your Apache project would like to use `repository.apache.org`, see [Publishin
 If you're a user looking for Apache artifacts from a Maven repository, all releases are synced to <a href="https://repo1.maven.org/maven2" target="_blank">Central</a> and snapshots are available here:
 <a href="https://repository.apache.org/snapshots/" target="_blank">http://repository.apache.org/snapshots/</a>.
 
-<h2 id="faq">FAQs about the ASF Jar repositories<</h2>
+<h2 id="faq">FAQs about the ASF Jar repositories</h2>
   
 <h4 id="m1m2">m1/m2?</h4>
+
 There are two types of Maven repository. Loosely, Maven-1 and Maven-2 use 'm1' and 'm2' repositories, though Maven-2 can point to legacy Maven-1 repositories. Apache supports both, but is phasing out the m1 repositories.
 
 <h4 id="deploytoboth">Do I need to deploy to both m1/m2 repositories?</h4>
@@ -43,36 +35,21 @@ No, because the Maven2 repository layout is the standard used by most tools, inc
 
 <h4 id="thirdparty">Can we put third party files in the repositories?</h4>
 
-You can with the <em>snapshot</em> repositories, but you cannot with the <em>release</em>
-repositories. When putting third party files in the <em>snapshot</em>
-repositories, please email the repository mailing list to explain what you
-are doing. Ideally third party files should be uploaded to he 'central'
-Maven repository via the <a href="http://maven.apache.org/guides/mini/guide-central-repository-upload.html">Maven upload
-process.</a> </p>
-<h2 id="revolutioncode">I'm working on a research branch, can I release to the repositories?<a class="headerlink" href="#revolutioncode" title="Permanent link">&para;</a></h2>
-<p>As long as your project (ie PMC) is happy with the release, then they can
-go in the snapshot repository, otherwise you should just release in your
-people.apache.org/~login space.</p>
-<h2 id="repodotapache">What is repository.apache.org?<a class="headerlink" href="#repodotapache" title="Permanent link">&para;</a></h2>
-<p>Apache operates a repository manager at
-<a href="https://repository.apache.org/">https://repository.apache.org/</a>. It can be
-used by Apache projects for deploying snapshots, releases, or both. See the
-<a href="http://www.apache.org/dev/publishing-maven-artifacts.html">Publishing Maven
-Releases</a> guide
-for more details.</p>
-<h2 id="resources">What resources are available?<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h2>
-<ul>
-<li>
-<p>Mailing List: <a href="mailto:repository@apache.org">repository@apache.org</a> [
-<a href="mailto:repository-subscribe@apache.org">Subscribe</a> ]</p>
-</li>
-<li>
-<p>Guides: <a href="http://www.apache.org/dev/publishing-maven-artifacts.html">Publishing Maven
-Releases</a> </p>
-</li>
-</ul>
-<h2 id="rsyncs">How do rsyncs happen?<a class="headerlink" href="#rsyncs" title="Permanent link">&para;</a></h2>
-<p>All the official repositories rsync automatically.</p></div>
+You can with the <em>snapshot</em> repositories, but you cannot with the <em>release</em> repositories. When putting third party files in the <em>snapshot</em> repositories, please email the repository mailing list to explain what you are doing. Ideally, you should upload third party files to the 'central' Maven repository via the <a href="https://maven.apache.org/guides/mini/guide-central-repository-upload.html" target="_blank">Maven upload process</a>.
 
+<h4 id="revolutioncode">Can I release a research branch to the repositories?</h4>
 
-_moving information from https://www.apache.org/dev/repository-faq.html_
+As long as your project's PMC is happy with the release, you can release a research branch to the snapshot repository; otherwise you should just release in your `people.apache.org` personal space.
+
+<h4 id="repodotapache">What is `repository.apache.org`?</h4>
+
+Apache operates a repository manager at <a href="https://repository.apache.org/" target="_blank">https://repository.apache.org/</a>. Apache projects can use it to deploying snapshots, releases, or both. See the [Publishing Maven Releases](publishing-maven-artifacts.html) guide for more details.
+
+<h4 id="resources">What resources are available?</h4>
+
+  - Mailing List: <a href="mailto:repository@apache.org" target="_blank">repository@apache.org</a>
+  - [Publishing Maven Releases](publishing-maven-artifacts.html)
+
+<h4 id="rsyncs">How do rsyncs happen?</h4>
+
+All the official repositories rsync automatically.
