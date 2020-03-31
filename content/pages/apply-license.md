@@ -32,7 +32,7 @@ In addition, you **must** include a correct <a href="https://www.apache.org/lega
 Each original source document (code and documentation, but not the LICENSE and NOTICE files) **should** include <a href="https://www.apache.org/legal/src-headers.html#headers" target="_blank"> a short license header</a> at the top. If the distribution contains  documents not covered by an <a href="https://www.apache.org/licenses/icla.txt" target="_blank">ICLA</a>,
 <a href="https://www.apache.org/licenses/cla-corporate.txt" target="_blank">CCLA</a> or <a href="https://www.apache.org/licenses/software-grant.txt" target="_blank">Software Grant</a> (such as third-party libraries), consult the <a href="https://www.apache.org/legal/resolved.html" target="_blank">policy guide</a>.
 
-<h2 id="existing">Updating Existing Software</h2>
+<h2 id="existing">Updating existing software</h2>
 
 <p>In brief, the aim is to achieve a final distribution as described above in <a href="#new">applying the license to new software</a>. Some conversion tools are listed <a href="http://www.apache.org/legal/src-headers.html#faq-update-scripts">here</a>.</p>
 
@@ -70,12 +70,10 @@ See the <a href="https://www.apache.org/legal/src-headers.html" target="_blank">
 
 No. Though committers retain copyright, Apache asks that they do not add copyright statements. See the <a href="https://www.apache.org/legal/src-headers.html" target="_blank">policy</a> for more details.
 
-<h2 id="license-file-name">Can the LICENSE and NOTICE files be called LICENSE.txt and NOTICE.txt?<a class="headerlink" href="#license-file-name" title="Permanent link">&para;</a></h2>
-<p>This is permitted.  However the preference is that the files be called LICENSE
-and NOTICE.</p>
-<h2 id="license-include">Should the license be included in source files for documentation (e.g. XML that is transformed to HTML)?<a class="headerlink" href="#license-include" title="Permanent link">&para;</a></h2>
-<p>Yes. See the <a href="http://www.apache.org/legal/src-headers.html">policy</a> for more
-details.</p></div>
+<h4 id="license-file-name">Can we call the LICENSE and NOTICE files LICENSE.txt and NOTICE.txt?</h4>
 
-_moving information from https://www.apache.org/dev/apply-license.html_
+You can do this, however we prefer that you call the files LICENSE and NOTICE.
 
+<h4 id="license-include">Should we include the license in source files for documentation (e.g. XML that transforms to HTML)?</h4>
+
+Yes. See the <a href="https://www.apache.org/legal/src-headers.html" target="_blank">policy</a> for more details.
