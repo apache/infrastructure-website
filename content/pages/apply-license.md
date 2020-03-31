@@ -50,7 +50,7 @@ Only if you want the ASF to make a new release of that code. "Dead" branches of 
 
 <h2 id="faq">Other frequently asked questions</h2>
 
-<h4 id="info-whereis">Where can I find mor information?</h4>
+<h4 id="info-whereis">Where can I find more information?</h4>
 
 Start with the <a href="https://www.apache.org/legal" target="_blank">legal affairs home page</a>.
 
@@ -60,15 +60,16 @@ Start with the <a href="https://www.apache.org/legal" target="_blank">legal affa
 
 <h4 id="copy-per-file">Do I have to have a copy of the license in each source file?</h4>
 
-<p>Only one full copy of the license is needed per distribution.
-See the <a href="http://www.apache.org/legal/src-headers.html">policy</a>.</p>
-<h2 id="attribution">In my current source files I have attribution notices for other works. Do I put this in each source file now?<a class="headerlink" href="#attribution" title="Permanent link">&para;</a></h2>
-<p>See the <a href="http://www.apache.org/legal/src-headers.html">policy</a>.</p>
-<h2 id="contributor-copyright">Can/Should individual committers added copyright statements to the NOTICE or source code files?<a class="headerlink" href="#contributor-copyright" title="Permanent link">&para;</a></h2>
-<p>No.</p>
-<p>Though committers retain copyright, Apache asks that they do not add copyright
-statements.  See the <a href="http://www.apache.org/legal/src-headers.html">policy</a>
-for more details.</p>
+You only need to add one full copy of the license per distribution. See the <a href="https://www.apache.org/legal/src-headers.html" target="_blank">policy</a>.
+
+<h4 id="attribution">In my current source files I have attribution notices for other works. Do I put this in each source file now?</h4>
+
+See the <a href="https://www.apache.org/legal/src-headers.html" target="_blank">policy</a>.
+
+<h4 id="contributor-copyright">Should individual committers add copyright statements to the NOTICE or source code files?</h4>
+
+No. Though committers retain copyright, Apache asks that they do not add copyright statements. See the <a href="https://www.apache.org/legal/src-headers.html" target="_blank">policy</a> for more details.
+
 <h2 id="license-file-name">Can the LICENSE and NOTICE files be called LICENSE.txt and NOTICE.txt?<a class="headerlink" href="#license-file-name" title="Permanent link">&para;</a></h2>
 <p>This is permitted.  However the preference is that the files be called LICENSE
 and NOTICE.</p>
