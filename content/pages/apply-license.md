@@ -10,12 +10,10 @@ Information on other Apache-related licenses and updates regarding compatibility
 <li><a href="#license">Understanding the 2.0 license</a></li>
 <li><a href="#new">Applying the license to new software</a></li>
 <li><a href="#existing">Updating existing software</a></li>
-  <li><a href="#faq-existing">Frequently asked questions about updates</a></li>
+<li><a href="#faq-existing">Frequently asked questions about updates</a></li>
 <li><a href="#faq">Other frequently asked questions</a></li>
 </ul>
   
-
-
 
 <h2 id="license">Understanding the 2.0 license</h2>
 <p>The ALv2 is <a href="https://www.apache.org/licenses/LICENSE-2.0.txt" target="_blank">this set</a> of self-documented copyright and patent licensing terms. Anyone can use the license, not just the <abbr title="Apache Software Foundation">ASF</abbr> and its projects, and can be <a href="https://www.apache.org/licenses/LICENSE-2.0.html#apply" target="_blank">applied</a> by reference to the versioned license terms. An appendix to the license describes how to do this.
@@ -36,36 +34,32 @@ Each original source document (code and documentation, but not the LICENSE and N
 
 <h2 id="existing">Updating Existing Software</h2>
 
-<p>In brief, the aim is to achieve a final distribution as described above in
-<a href="#new">applying the license to new software</a>. Some conversion tools are 
-listed <a href="http://www.apache.org/legal/src-headers.html#faq-update-scripts">here</a>.</p>
-<h1 id="faq-existing">Frequently Asked Questions (Updates)<a class="headerlink" href="#faq-existing" title="Permanent link">&para;</a></h1>
-<h2 id="convert_to_2_0">Do I have to convert Apache 1.1 licenses to 2.0 licenses in source code?<a class="headerlink" href="#convert_to_2_0" title="Permanent link">&para;</a></h2>
-<p>If the code is owned or distributed by the Apache Software Foundation, then
-the answer is <strong>Yes</strong>.  The 2.0 license was approved by the <abbr title="Apache Software Foundation">ASF</abbr> board
-in their January 2004 meeting.  As part of that meeting, the board mandated
-that all <abbr title="Apache Software Foundation">ASF</abbr> software distributions must be converted to the new license
-by March 1, 2004.</p>
-<p>If the code is not owned by the <abbr title="Apache Software Foundation">ASF</abbr>, then the decision is up to the copyright
-owner.  Naturally, we strongly recommend that you upgrade to the new license.</p>
-<h2 id="convert-all">When do I have to convert <abbr title="Apache Software Foundation">ASF</abbr> code to the new license?<a class="headerlink" href="#convert-all" title="Permanent link">&para;</a></h2>
-<p>All code released after 1 March 2004 must have been converted.</p>
-<h2 id="conversion">Do I have to convert old versions and branches of code to the new license?<a class="headerlink" href="#conversion" title="Permanent link">&para;</a></h2>
-<p>Only if you want the <abbr title="Apache Software Foundation">ASF</abbr> to make a new release of that code after 1 March 2004.
-"Dead" branches of code do not have to be updated.</p>
-<h2 id="deadline">Does that mean live branches of code all have to be updated by 1 March 2004?<a class="headerlink" href="#deadline" title="Permanent link">&para;</a></h2>
-<p>Code has to be updated prior to any release after 1 March 2004.  However code
-in the source repository can remain under the old 1.1 license until such time
-as you are ready to perform a release.  Note that this applies to <strong>any</strong>
-kind of release after 1 March 2004 - including bug fixes.</p>
-<h1 id="faq">Frequently Asked Questions (General)<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h1>
-<h2 id="info-whereis">Where Can I Find More Information?<a class="headerlink" href="#info-whereis" title="Permanent link">&para;</a></h2>
-<p>The legal affairs <a href="http://www.apache.org/legal">home page</a>.</p>
-<h2 id="policy-whereis">Where Can I Find Policy?<a class="headerlink" href="#policy-whereis" title="Permanent link">&para;</a></h2>
-<p>Follow links from the legal affairs <a href="http://www.apache.org/legal">home page</a>.</p>
-<h2 id="license-whereis">Where do I find a copy of the new license?<a class="headerlink" href="#license-whereis" title="Permanent link">&para;</a></h2>
-<p><a href="http://www.apache.org/licenses/">http://www.apache.org/licenses/</a></p>
-<h2 id="copy-per-file">Do I have to have a copy of the license in each source file?<a class="headerlink" href="#copy-per-file" title="Permanent link">&para;</a></h2>
+<p>In brief, the aim is to achieve a final distribution as described above in <a href="#new">applying the license to new software</a>. Some conversion tools are listed <a href="http://www.apache.org/legal/src-headers.html#faq-update-scripts">here</a>.</p>
+
+<h2 id="faq-existing">Frequently asked questions about updates</h2>
+
+<h4 id="convert_to_2_0">Do I have to convert Apache licenses in source code from 1.1 to 2.0?</h4>
+
+If the Apache Software Foundation owns and distributes the code, then <strong>Yes</strong>. All software distributions were to be converted to the new license by March 1, 2004.
+
+If the ASF does not own the code, the decision is up to the copyright owner.  Naturally, we strongly recommend that you upgrade to the new license.
+
+<h4 id="conversion">Do I have to convert old versions and branches of code to the new license?</h4>
+
+Only if you want the ASF to make a new release of that code. "Dead" branches of code do not have to be updated.
+
+<h2 id="faq">Other frequently asked questions</h2>
+
+<h4 id="info-whereis">Where can I find mor information?</h4>
+
+Start with the <a href="https://www.apache.org/legal" target="_blank">legal affairs home page</a>.
+
+<h4 id="license-whereis">Where do I find a copy of the new license?</h4>
+
+<a href="https://www.apache.org/licenses/" target="_blank">https://www.apache.org/licenses/</a>
+
+<h4 id="copy-per-file">Do I have to have a copy of the license in each source file?</h4>
+
 <p>Only one full copy of the license is needed per distribution.
 See the <a href="http://www.apache.org/legal/src-headers.html">policy</a>.</p>
 <h2 id="attribution">In my current source files I have attribution notices for other works. Do I put this in each source file now?<a class="headerlink" href="#attribution" title="Permanent link">&para;</a></h2>
