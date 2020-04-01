@@ -19,7 +19,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
 <td>anyone</td>
 <td>report a <strong>security vulnerability</strong> in a service that runs on apache.org</td>
 <td>root@apache.org</td>
-<td>You may optionally encrypt the email to the following set of keys: <a href="https://home.apache.org/keys/group/infrastructure-root.asc">https://home.apache.org/keys/group/infrastructure-root.asc</a></td>
+<td>You may optionally encrypt the email to <a href="https://home.apache.org/keys/group/infrastructure-root.asc" target="_blank">this set of keys</a></td>
 </tr>
 <tr>
 <td>anyone</td>
