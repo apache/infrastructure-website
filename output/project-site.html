@@ -156,7 +156,7 @@ permanent, site-wide configuration changes.</p>
 <li>If you maintain historical versions of documentation, always check-in to a single &quot;trunk&quot;, then use an <code>svn copy</code> operation to tag or branch the content, rather than checking in a complete copy.</li>
 <li>Minimize use of &quot;publish date&quot; and &quot;version&quot; in templates to those that are truly necessary or helpful. Consider using a &quot;last modified date&quot; and version in the URL instead (unless &quot;latest&quot; is implied).</li>
 <li>Minimize Subversion keywords in the output that may change frequently without significant meaning. This includes keywords in source code that may be rendered to JavaDoc or a Maven JXR source cross-reference.</li>
-<li>Avoid publishing Maven reports that change constantly to the project site. Code coverage, style reports, static analysis, etc. can be generated into a working copy on the CI server instead for easy developer viewing, and projects can consider using <a href="https://analysis.apache.org/" target="_blank"><a href="https://analysis.apache.org/">https://analysis.apache.org/</a></a> for such reports as well.</li>
+<li>Avoid publishing Maven reports that change constantly to the project site. Code coverage, style reports, static analysis, etc. can be generated into a working copy on the CI server instead for easy developer viewing.</li>
 </ul>
 
         </div>
