@@ -2,9 +2,10 @@ Title: Details on contacting Infra
 
 Here is detailed information on how to contact Infra in a wide range of situations.
 
-<h2 id="how">How should I make contact?<a class="headerlink" href="#how" title="Permanent link">&para;</a></h2>
-<p>That depends on what you want to do. If this chart doesn't help, Infra maintains a publicly accessible <a href="http://infra.chat/">Slack channel</a>, and you can ask there whether to create a bug report or do something else.</p>
-<table class="table">
+<h2 id="how">How should I make contact?</h2>
+
+That depends on your role and what you want to do. If this chart doesn't help, Infra maintains a publicly accessible channel (`#asfinfra`) within the <a href="https://the-asf.slack.com/">ASF presence on Slack</a>, and you can ask there whether to create a bug report or do something else.
+<table width="100%">
 <thead>
 <tr>
 <th>If you are...</th>
