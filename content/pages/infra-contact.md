@@ -84,31 +84,31 @@ That depends on your role and what you want to do. If this chart doesn't help, I
 <tr>
 <td>a committer</td>
 <td>change <strong>your account details</strong></td>
-<td>Selfserve at <a href="https://id.apache.org/">https://id.apache.org/</a></td>
+<td><a href="https://id.apache.org/" target="_blank">Self-serve</a></td>
 <td>Details include forwarding email address, password, and SSH or PGP public keys of record.</td>
 </tr>
 <tr>
 <td>a PMC</td>
 <td>request <strong>account creation</strong> for a newly-elected committer</td>
-<td><a href="https://whimsy.apache.org/officers/acreq">https://whimsy.apache.org/officers/acreq</a></td>
-<td>See <a href="/dev/pmc#newcommitter">docs</a> for details</td>
+<td><a href="https://whimsy.apache.org/officers/acreq" target="_blank">Whimsy</a></td>
+<td>See <a href="https://www.apache.org/dev/pmc#newcommitter" target="_blank">docs</a> for details</td>
 </tr>
 <tr>
 <td>a newly-accepted <strong>podling</strong></td>
-<td>create podling infrastructure (site, lists, etc)</td>
-<td>See <a href="#requesting-podling">below</a></td>
+<td>create podling infrastructure (site, lists, etc.)</td>
+<td><a href="#requesting-podling">Requesting podling</a></td>
 <td></td>
 </tr>
 <tr>
 <td>a <strong>podling</strong> that has just graduated</td>
 <td>migrate resources from Incubator locations to TLP locations</td>
-<td>See <a href="#requesting-graduation">below</a></td>
+<td><a href="#requesting-graduation" target="_blank">requesting graduation</a></td>
 <td></td>
 </tr>
 <tr>
 <td>an existing PMC or podling</td>
 <td>request <strong>mailing list</strong> creation</td>
-<td><a href="https://selfserve.apache.org/mail.html">https://selfserve.apache.org/mail.html</a></td>
+<td><a href="https://selfserve.apache.org/mail.html" target="_blank">Self-server</a></td>
 <td>Only Members and Officers (this includes all PMC chairs) can submit the form.</td>
 </tr>
 <tr>
