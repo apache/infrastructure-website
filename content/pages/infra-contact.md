@@ -100,116 +100,89 @@ That depends on your role and what you want to do. If this chart doesn't help, I
 <td></td>
 </tr>
 <tr>
-<td>a <strong>podling</strong> that has just graduated</td>
+<td>a podling that has just <strong>graduated</strong></td>
 <td>migrate resources from Incubator locations to TLP locations</td>
-<td><a href="#requesting-graduation" target="_blank">requesting graduation</a></td>
+<td><a href="#requesting-graduation">requesting graduation</a></td>
 <td></td>
 </tr>
 <tr>
 <td>an existing PMC or podling</td>
 <td>request <strong>mailing list</strong> creation</td>
-<td><a href="https://selfserve.apache.org/mail.html" target="_blank">Self-server</a></td>
+<td><a href="https://selfserve.apache.org/mail.html" target="_blank">Self-serve</a></td>
 <td>Only Members and Officers (this includes all PMC chairs) can submit the form.</td>
 </tr>
 <tr>
 <td>a committer or PMC</td>
 <td>add/remove mailing list <strong>moderators</strong></td>
-<td><a href="https://issues.apache.org/jira/browse/INFRA">create a JIRA ticket</a></td>
-<td>Feel free to follow up via <a href="http://infra.chat/">Slack</a> channel or file a Jira ticket if no reply after 48 hours or so</td>
+<td><a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">create a JIRA ticket</a></td>
+<td>Feel free to follow up via the Slack channel or file a Jira ticket if no reply after 48 hours</td>
 </tr>
 <tr>
 <td>a committer or PMC</td>
-<td>change <strong>Jenkins</strong> (nee Hudson) build settings</td>
-<td>email builds@apache.org</td>
-<td>Some tasks can be done by project members having <a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins#Jenkins-HowdoIgetanaccount"><code>hudson-jobadmin</code> karma</a>; ask your dev@ list</td>
+<td>change <strong>Jenkins</strong> build settings</td>
+<td>builds@apache.org</td>
+<td>Project members having <a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins#Jenkins-HowdoIgetanaccount" <target="_blank"><code>hudson-jobadmin</code> karma</a> can perform some tasks; ask your dev@ list</td>
 </tr>
 <tr>
 <td>a PMC</td>
-<td>request Infrastructure to <strong>do</strong> something</td>
-<td><a href="https://issues.apache.org/jira/browse/INFRA">create a JIRA ticket</a></td>
-<td>See <a href="#requesting-action">"On Requests"</a> and <a href="#what-we-need-to-know">"Providing needed information"</a>, below.</td>
+<td>request Infra to <strong>do</strong> something</td>
+<td><a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">create a Jira ticket</a></td>
+<td>See <a href="#requesting-action">"On Requests"</a> and <a href="#what-we-need-to-know">"Providing needed information"</a>.</td>
 </tr>
 <tr>
 <td>an <strong>Officer</strong> of the ASF</td>
-<td>ask an organizational question (as opposed to technical)</td>
+<td>ask an organizational (as opposed to technical) question</td>
 <td>VP Infrastructure, or private@infra.apache.org</td>
-<td>The target audience for this item is the Apache Board of Directors, the VP Fundraising, etc.</td>
+<td>The target audience for this item is the Apache Board of Directors, the VP of Fundraising, etc.</td>
 </tr>
 <tr>
 <td>posted to an Apache mailing list</td>
 <td>edit the <strong>mail archives</strong></td>
-<td><a href="/foundation/public-archives">Public Forum Archive Policy</a></td>
+<td><a href="https://www.apache.org/foundation/public-archives" target="_blank">Public Forum Archive Policy</a></td>
 <td>Virtually all requests are denied.</td>
 </tr>
 <tr>
 <td>anyone</td>
-<td><strong>discuss</strong> something publicly with the Crack Infra Team</td>
+<td><strong>discuss</strong> something publicly with Infra</td>
 <td>users@infra.apache.org</td>
-<td>Archives: <a href="https://lists.apache.org/list.html?users@infra.apache.org">https://lists.apache.org/list.html?users@infra.apache.org</a>  - <a href="/foundation/how-it-works.html#asf-members">ASF Members</a> only!</td>
+<td>Archives: <a href="https://lists.apache.org/list.html?users@infra.apache.org" target="_blank">discussion archives</a>  - for <a href="https://www.apache.org/foundation/how-it-works.html#asf-members" target="_blank">ASF Members</a> only!</td>
 </tr>
 <tr>
 <td>anyone</td>
 <td>ask Infra a <strong>question</strong></td>
 <td>users@infra.apache.org</td>
-<td>The users@infra mailing list should be considered a semi-public list as many <a href="/foundation/how-it-works.html#committers">Apache committers</a> --- not only Team members --- are subscribed.</td>
+<td>Consider the users@infra mailing list as a semi-public list as many <a href="https://www.apache.org/foundation/how-it-works.html#committers" target="_blank">Apache committers</a> subscribe to it.</td>
 </tr>
 <tr>
 <td>anyone</td>
 <td>get your IP unblocked</td>
 <td>users@infra.apache.org</td>
-<td>The users@infra mailing list should be considered a semi-public list as many <a href="/foundation/how-it-works.html#committers">Apache committers</a> --- not only Team members --- are subscribed.</td>
+<td>Consider the users@infra mailing list as a semi-public list as many <a href="https://www.apache.org/foundation/how-it-works.html#committers" target="_blank">Apache committers</a> subscribe to it.</td>
 </tr>
 </tbody>
 </table>
-<p>Finally, if you would like to <a href="infra-volunteer">volunteer</a>, please join <a href="http://infra.chat/">Slack</a> channel and introduce yourself. <code>:-)</code></p>
-<h2 id="requesting-podling">Requesting podling creation<a class="headerlink" href="#requesting-podling" title="Permanent link">&para;</a></h2>
-<p>The podling creation process is as follows:</p>
-<ol>
-<li>
-<p>The IPMC vote passes.</p>
-</li>
-<li>
-<p>The podling is added to the IPMC's <code>podlings.xml</code> summary file with <code>status=current</code>.
-(See <a href="http://incubator.apache.org/guides/mentor.html#Overview">notes</a> about that, and other initial tasks.)</p>
-</li>
-<li>
-<p>Request INFRA to create the podling's DNS entry by going to <a href="https://issues.apache.org/jira/browse/INFRA">JIRA</a> and asking for podling DNS for your new podling (include the podling's name)</p>
-</li>
-<li>
-<p>After DNS is created, an ASF Member or PMC chair files <a href="https://selfserve.apache.org/mail.html">mailing list creation requests</a>.</p>
-</li>
-<li>
-<p>Infra creates the lists and which will also notify the IPMC of the mailing list creation.</p>
-</li>
-<li>
-<p>An Incubator PMC member who is also an ASF member or a PMC chair edits
-<a href="https://github.com/apache/infrastructure-puppet/blob/deployment/modules/subversion_server/files/authorization/asf-authorization-template">asf-authorization-template</a> and adds a <code>[/incubator/podling]</code> section.
-If the section refers to an <code>@podling</code> group, a definition of that group, as a
-comma-separated list of availids (usernames), <em>MUST</em> be added to the
-<code>[groups]</code> section.  Alternatively, just set <code>@incubator = rw</code> as the section's
-body.</p>
-</li>
-<li>
-<p>If the podling wants to use SVN, an Incubator PMC member runs <code>svn mkdir ^/incubator/podling</code>.  The commit
-mail will get delivered to the mailing list created earlier.</p>
-</li>
-<li>
-<p>If the podling wants to use GIT, one of the mentors should submit a request via <a href="https://selfserve.apache.org/">https://selfserve.apache.org/</a></p>
-</li>
-<li>
-<p>The podling community sets up a <a href="project-site#intro">project site</a>.</p>
-</li>
-<li>
-<p>An ASF Member or PMC chair files a <a href="http://home.apache.org/committers-by-project.html#infrastructure-root">website creation request</a>.</p>
-</li>
-</ol>
-<p>If additional services (e.g. Issue Tracker, Wiki, Blogs, etc) need to be created (beyond what is listed above),
-file a ticket via <a href="https://issues.apache.org/jira/browse/INFRA">JIRA</a> using appropriate
-categories and as much information as possible.
-To save everyone's time, consult
-<a href="#what-we-need-to-know">"Providing needed information"</a>
-before filing each ticket.</p>
-<h2 id="requesting-graduation">Requesting podling graduation to top level project (TLP)<a class="headerlink" href="#requesting-graduation" title="Permanent link">&para;</a></h2>
+
+<h2 id="requesting-podling">Requesting podling creation</h2>
+
+The podling creation process is as follows:
+
+1. The IPMC vote passes.
+1. The podling is added to the IPMC's <code>podlings.xml</code> summary file with <code>status=current</code>.
+(See <a href="https://incubator.apache.org/guides/mentor.html#Overview" target="_blank">notes</a> about that, and other initial tasks.)
+1. Create a <a href="https://issues.apache.org/jira/browse/INFRA" targe"_blank">Jira ticket</a> asking Infra to create a DNS for your new podling (include the podling's name).
+1. After the DNS is created, an ASF Member or PMC chair files <a href="https://selfserve.apache.org/mail.html" target="_blank">mailing list creation requests</a>.
+1. Infra creates the lists, which also notifies the IPMC of the mailing list creation.
+1. An Incubator PMC member who is also an ASF member or a PMC chair edits the <a href="https://github.com/apache/infrastructure-puppet/blob/deployment/modules/subversion_server/files/authorization/asf-authorization-template" target="_blank">asf-authorization-template</a> and adds an <code>[/incubator/podling]</code> section. If the section refers to an <code>@podling</code> group, add a definition of that group as a comma-separated list of availids (usernames), to the <code>[groups]</code> section.  Alternatively, just set <code>@incubator = rw</code> as the section's body.
+1. If the podling wants to use SVN, an Incubator PMC member runs <code>svn mkdir ^/incubator/podling</code>. The commit
+mail goes to the mailing list created earlier.
+1. If the podling wants to use GIT, one of the mentors submits a request via <a href="https://selfserve.apache.org/" target="_blank">Self-Serve</a>.
+1. The podling community sets up a <a href="https://infra.apache.org/project-site#intro" target="_blank">project site</a>.
+1. An ASF Member or PMC chair files a <a href="https://home.apache.org/committers-by-project.html#infrastructure-root" target="_blank">website creation request</a>.
+
+If the project needs additional services (issue tracker, Wiki, blog, etc.), file a ticket via <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Jira</a> using appropriate categories and providing as much information as possible. To save everyone's time, consult <a href="#what-we-need-to-know">"Providing needed information"</a>
+before filing each ticket.
+
+<h2 id="requesting-graduation">Requesting podling graduation to top level project (TLP)</h2>
 <p>Once your podling has <a href="http://incubator.apache.org/guides/graduation.html#project-first-steps">graduated</a> to a TLP, create the following Jira tickets:</p>
 <ol>
 <li>
