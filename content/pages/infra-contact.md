@@ -4,7 +4,7 @@ Here is detailed information on how to contact Infra in a wide range of situatio
 
 <h2 id="how">How should I make contact?</h2>
 
-That depends on your role and what you want to do. If this chart doesn't help, Infra maintains a publicly accessible channel (`#asfinfra`) within the <a href="https://the-asf.slack.com/">ASF presence on Slack</a>, and you can ask there whether to create a bug report or do something else.
+That depends on your role and what you want to do. If this chart doesn't help, Infra maintains a publicly accessible channel (`#asfinfra`) within the <a href="https://the-asf.slack.com/#asfinfra" target="_blank">ASF presence on Slack</a>, and you can ask there whether to create a bug report or do something else.
 <table width="100%">
 <thead>
 <tr>
@@ -29,56 +29,56 @@ That depends on your role and what you want to do. If this chart doesn't help, I
 </tr>
 <tr>
 <td><!-- TODO: status.a.o is sorted by physical name; would be useful to explain that asomewhere, but not here in the bulleted list --> anyone</td>
-<td>report that a <strong>service is down</strong> (and <a href="http://status.apache.org/">http://status.apache.org/</a> doesn't show that)</td>
-<td><a href="http://infra.chat/">Slack</a> channel</td>
-<td>Slack preferred, email to <code>users@infra.apache.org</code> is an acceptable alternative.  The <a href="http://twitter.com/infrabot/">infrabot twitter feed</a> may contain information about current outages and maintenances.</td>
+<td>report that a <strong>service is down</strong> and <a href="https://status.apache.org/" target="_blank">status.apache.org</a> doesn't show it</td>
+<td><a href="https://the-asf.slack.com/#asfinfra" target="_blank">Slack</a> channel</td>
+<td>Slack preferred, email to `users@infra.apache.org` is an acceptable alternative. The <a href="https://twitter.com/infrabot/" target="_blank">infrabot Twitter feed</a> may contain information about current outages and maintenances.</td>
 </tr>
 <tr>
 <td>a <strong>newly-invited committer</strong></td>
 <td>ask a question about your committership</td>
-<td project="project">private@$</td>
+<td>`private@$project`</td>
 <td></td>
 </tr>
 <tr>
 <td>a committer</td>
-<td>regain <strong>access to your account</strong>; <a href="https://id.apache.org/reset/enter">resetting your password</a> didn't work</td>
-<td>See <a href="#regain-account">"Regaining account access"</a>, below.</td>
-<td>If commits fail, double-check that you are using https:// (not http://).</td>
+<td>regain <strong>access to your account</strong>; <a href="https://id.apache.org/reset/enter" target="_blank">resetting your password</a> didn't work</td>
+<td>See <a href="#regain-account">Regaining account access</a></td>
+<td>If commits fail, double-check that you are using `https://` (not `http://`).</td>
 </tr>
 <tr>
 <td>a <strong>supplier</strong> (you donate or sell hardware or services to Apache)</td>
 <td>anything</td>
-<td>private@infra.apache.org</td>
-<td>Passwords should be <a href="https://home.apache.org/keys/group/infrastructure-root.asc">encrypted</a> or sent by other means (to be coordinated)</td>
+<td>`private@infra.apache.org`</td>
+<td>Passwords should be <a href="https://home.apache.org/keys/group/infrastructure-root.asc" target="_blank">encrypted</a> or sent by other means</td>
 </tr>
 <tr>
 <td><strong>submitted an ICLA</strong> in the past</td>
 <td>change your contact details of record</td>
-<td>secretary@apache.org</td>
-<td>Fax or snail mail are possible too; see <a href="https://www.apache.org/foundation/contact">https://www.apache.org/foundation/contact</a></td>
+<td>`secretary@apache.org`</td>
+<td>Fax or snail mail are possible too; see <a href="https://www.apache.org/foundation/contact" target="_blank">apache.org/foundation/contact</a></td>
 </tr>
 <tr>
 <td>prospective official download mirror</td>
-<td><strong>request being listed</strong> as an official download <strong>mirror</strong></td>
-<td>see <a href="/info/how-to-mirror">the "new mirror" documentation</a></td>
+<td>request being listed as an official download mirror</td>
+<td>see <a href="how-to-mirror.html" target="_blank">the "new mirror" documentation</a></td>
 <td>Please email <code>mirrors@apache.org</code> if you have any questions.</td>
 </tr>
 <tr>
 <td>existing official download mirror</td>
-<td>ask a question <strong>concerning your mirror</strong></td>
-<td>mirrors@apache.org</td>
-<td>Questions not suitable for public discussion may be sent to <code>apmirror@apache.org</code> (currently an alias with limited distribution).</td>
+<td>ask a question concerning your mirror</td>
+<td>`mirrors@apache.org`</td>
+<td>Questions not suitable for public discussion may be sent to `apmirror@apache.org` (an alias with limited distribution).</td>
 </tr>
 <tr>
 <td>anyone</td>
-<td>report a <strong>problem with a download mirror</strong> (other than it being <a href="/mirrors/">out of date</a>)</td>
+<td>report a problem with a download mirror (other than it being out of date</td>
 <td>the Apache project whose product you were trying to download</td>
 <td>The project will escalate to infra if necessary.</td>
 </tr>
 <tr>
 <td>anyone</td>
 <td><strong>unsubscribe</strong> from a mailing list</td>
-<td>See <a href="/foundation/mailinglists#subscribe">unsubscription instructions</a></td>
+<td>See <a href="https://www.apache.org/foundation/mailinglists#subscribe" target="_blank">unsubscription instructions</a></td>
 <td></td>
 </tr>
 <tr>
