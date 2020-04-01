@@ -19,6 +19,5 @@ General inquiries and questions should go to one of our user mailing lists:
 | issues@infra.apache.org | issues-subscribe@infra.apache.org | 
 
 ### What we need to know ###
-Here's a guide to what to tell us so we can respond to your request quickly and appropriately.
 
-_coming soon; moving from `apache.org/dev/infra-contact#what-we-need-to-know`_
+Here's a [guide to what to tell us](infra-contact.html) so we can respond to your request quickly and appropriately.
