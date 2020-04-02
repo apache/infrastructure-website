@@ -183,69 +183,34 @@ If the project needs additional services (issue tracker, Wiki, blog, etc.), file
 before filing each ticket.
 
 <h2 id="requesting-graduation">Requesting podling graduation to top level project (TLP)</h2>
-<p>Once your podling has <a href="http://incubator.apache.org/guides/graduation.html#project-first-steps">graduated</a> to a TLP, create the following Jira tickets:</p>
-<ol>
-<li>
-<p>Create a "Graduate Foo to TLP" parent ticket.</p>
-</li>
-<li>
-<p>Create a "Foo TLP: common tasks" ticket as a sub-task of (1).
-This ticket will handle: DNS entry, Unix/LDAP group creation, PMC Chair karma,
-mailing list migration, native Git repository migrations (but not git-svn
-mirrors), Subversion public tree migration, buildbot config
-changes, website migration.
-<strong>There is no need to file individual tickets for these tasks.</strong>
-<br/>&nbsp;<br/>
-In the ticket, specify <strong>the LDAP name of the TLP</strong> --- that is, the 'foo' in 'dev@foo.apache.org'.</p>
-</li>
-<li>
-<p>For each additional service that needs configuration changes as the result
-of the migration, create another sub-task of (1).  (If you have N services,
-create N sub-tasks.)  "Services" here
-includes everything <a href="#requesting-menu">pointered below</a>, including (but not
-limited to): Subversion private tree, git-svn mirrors, issue trackers,
-wikis, <a href="http://ci.apache.org/">continuous integration</a> (Jenkins, Buildbot, Continuum etc.)</p>
-</li>
-</ol>
-<p>See <a href="https://issues.apache.org/jira/browse/INFRA-5688">Flex's graduation tickets</a> for a good example.</p>
-<p>Note that the new PMC chair is still responsible for using Whimsy as appropriate. 
-The group membership is initialized on a best-guess basis, but the chair must check 
-that it's accurate and add/rm people as needed. The Committee data, however, 
-is initialized directly from the Board resolution and as such should be correct.</p>
-<h2 id="regain-account">Regaining access to a committer account<a class="headerlink" href="#regain-account" title="Permanent link">&para;</a></h2>
-<p>If you forgot your password...</p>
-<ol>
-<li>
-<p>Try to reset it at <a href="https://id.apache.org/reset/enter">https://id.apache.org/reset/enter</a>.  That will email
-your @apache.org address (which forwards to your non-apache email account) 
-a short-lived password reset link.  (The link may be encrypted to <a href="https://home.apache.org/keys/committer/">your PGP
-key</a>.)</p>
-<ul>
-<li>
-<p>Decrypting the e-mail - one way to do this is as follows:</p>
-</li>
-<li>
-<p>Save the e-mail contents as a text file, e.g. password.txt.
-Open a shell command window, and run the following command:</p>
-</li>
-<li>
-<p><code>gpg -d password.txt</code></p>
-</li>
-<li>
-<p>This should decrypt the file and display the output in the window</p>
-</li>
-</ul>
-</li>
-<li>
-<p>If you have lost access to your registered email address, you will need
-to file an additional ICLA with Secretary. Follow the directions for <a href="http://www.apache.org/licenses/#submitting">submitting 
-an ICLA</a>. Include your current
-Apache id on the ICLA and mention in your cover email that you are requesting
-a change to your email address.</p>
-</li>
-<li>
-<p>If that didn't work, you need to email root@.  In your email, mention the
-following information:</p>
+
+Once your podling has <a href="https://incubator.apache.org/guides/graduation.html#project-first-steps" target="_blank">graduated</a> to a TLP, create the following Jira tickets:
+
+1. A "Graduate Foo to TLP" parent ticket.
+1. A "Foo TLP: common tasks" ticket as a sub-task of (1). This ticket handles DNS entry, Unix/LDAP group creation, PMC Chair karma,
+mailing list migration, native Git repository migrations (but not git-svn mirrors), Subversion public tree migration, buildbot config
+changes,  and website migration. <strong>There is no need to file individual tickets for these tasks.</strong> In the ticket, specify <strong>the LDAP name of the TLP</strong> --- that is, the 'foo' in 'dev@foo.apache.org'.
+1. For each additional service that needs configuration changes as the result of the migration, create another sub-task. If you have N services, create N sub-tasks. "Services" here includes everything indicated <a href="#requesting-menu">below</a>, such as Subversion private tree, git-svn mirrors, issue trackers, wikis, and <a href="https://ci.apache.org/" target="_blank">continuous integration</a> (Jenkins, Buildbot, Continuum etc.). See <a href="https://issues.apache.org/jira/browse/INFRA-5688" target="_blank">Flex's graduation tickets</a> for a good example.
+
+Note that the new PMC chair is still responsible for using Whimsy as appropriate. The group membership is initialized on a best-guess basis, but the chair must check that it's accurate and add and remove people as needed. Infra intializes the Committee data directly from the information in the Board resolution.
+
+<h2 id="regain-account">Regaining access to a committer account</h2>
+
+If you forgot your password, try...
+
+  - to reset it at <a href="https://id.apache.org/reset/enter" target="_blank">id.apache.org/reset/enter</a>. That will email
+your @apache.org address (which forwards to your non-apache email account) a short-lived password reset link. The link may be encrypted to <a href="https://home.apache.org/keys/committer/" target="_blank">your PGP key</a>.
+  - decrypting the e-mail - one way to do this is to sve the e-mail contents as a text file, e.g. `password.txt`. Open a shell command window, and run the following command:
+
+```
+gpg -d password.txt</code>
+```
+
+This should decrypt the file and display the output in the window.
+
+If you have lost access to your registered email address, file an additional ICLA with Secretary. Follow the directions for <a href="https://www.apache.org/licenses/#submitting" target="_blank">submitting an ICLA</a>. Include your current Apache ID and mention in your cover email that you are requesting a change to your email address.
+
+If that didn't work, email root@. In your email, mention the following information:</p>
 <ul>
 <li>
 <p>Your username.</p>
