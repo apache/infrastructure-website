@@ -253,6 +253,95 @@ Details on contacting Infra        </a>
 </tr>
 </tbody>
 </table>
+<h2 id="what-we-need-to-know">Providing needed information</h2>
+<table class="table">
+<thead>
+<tr>
+<th>If you ask us to...</th>
+<th>then we need to know...</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Promote a <strong>podling to TLP</strong></td>
+<td>See <a href="#requesting-graduation">requesting podling graduation</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Create a <strong>podling</strong></td>
+<td>See <a href="#requesting-podling">requesting a podling</a></td>
+<td></td>
+</tr>
+<tr>
+<td>Load <strong>Subversion history</strong></td>
+<td>URL and checksum (or PGP signature) of a dumpfile; proof of <a href="https://www.apache.org/legal/resolved#category-a" target="_blank">IP rights</a></td>
+<td>Produce with <code>svnadmin dump --incremental --deltas</code> or <code>svnrdump</code>. The paths within the dumpfile should be relative to the project root (e.g., to <code>/repos/asf/incubator/MyPodling</code>).</td>
+</tr>
+<tr>
+<td>Load <strong>Git history</strong></td>
+<td>URL and of a repository or an export stream; proof of <a href="https://www.apache.org/legal/resolved#category-a" target="_blank"">IP rights</a></td>
+<td>If linking to a file, provide PGP signature or checksum. If to a remote repository, you must review and sign off on the import ("Yes, that is the repository and history we asked to import and have IP rights for") before it will be writable.</td>
+</tr>
+<tr>
+<td>Create an <strong>svnpubsub-based site</strong></td>
+<td>SVN URL of the compiled site (directory containing HTML files)</td>
+<td>Git is not supported by <a href="project-site#intro">svnpubsub</a>. Use the <a href="http://home.apache.org/committers-by-project.html#infrastructure-root">webreq app</a>.</td>
+</tr>
+<tr>
+<td>Create an <strong>svnpubsub-based Dist area</strong></td>
+<td>Create or ask to create dist release dir. Specify release area only or release and dev areas. Mailing list for commits to go, if omitted the default is the  project commits list.</td>
+<td>Any existing release dir will be blown away (archive releases remain). A release or KEYS/NOTICE file will be asked for upon creation.</td>
+</tr>
+<tr>
+<td>Create a <strong>project blog</strong></td>
+<td>project name, brief one-line description of the project, and Apache usernames (and fullnames) of 1+ editors</td>
+<td></td>
+</tr>
+<tr>
+<td>Create a <strong>blog account</strong> (for an editor)</td>
+<td>The Apache username (and fullnames) of the editor</td>
+<td>Non-PMC members need to demonstrate PMC consensus too (link to a lazy consensus thread suffices).</td>
+</tr>
+<tr>
+<td>Create a <strong>moin wiki</strong></td>
+<td>Moin is deprecated and no more Moin wikis are being created.</td>
+<td>Please plan on using Confluence instead.</td>
+</tr>
+<tr>
+<td>Create a <strong>confluence wiki</strong></td>
+<td>wiki name, destination for commit mails, and confluence usernames of two+ community members - volunteer space admins</td>
+<td>Go to <a href="https://selfserve.apache.org/confluence.html">selfserve</a> and follow the prompts.</td>
+</tr>
+<tr>
+<td>Set up your project on <a href="https://reviews.apache.org/"><strong>Review Board</strong></a></td>
+<td>Project name, which svn/git branches to support</td>
+<td></td>
+</tr>
+<tr>
+<td>Create a <strong>JIRA project</strong></td>
+<td>Key name (e.g., <code>INFRA</code>), JIRA usernames of 1-2 project members - volunteer project admins, mailing list address to which JIRA notifications should go</td>
+<td>Go to <a href="https://selfserve.apache.org/jira.html">selfserve</a> and follow the prompts.</td>
+</tr>
+<tr>
+<td>Migrate your project's <strong>SVN to Git</strong></td>
+<td>n/a</td>
+<td>Please use <a href="https://selfserve.apache.org">self-serve</a> to create your intended Git repo(s). Run svn2git locally using this <a href="https://git-wip-us.apache.org/authors.txt">authors file</a> and push once the conversion result is confirmed. File an INFRA ticket to mark your SVN repository readonly. Optionally, file a ticket to temporarily disable commit emails for when you push your converted clone.</td>
+</tr>
+<tr>
+<td>Grant a committer <strong>SSH access to a <code>puppet</code>-ed VM</strong></td>
+<td>committer's availid (username), VM hostname</td>
+<td>The committer <em>must</em> <a href="freebsd-jails#grant-ssh-access">add his key to id.a.o</a> beforehand.</td>
+</tr>
+<tr>
+<td>Grant a committer <strong>root access to a <code>puppet</code>-ed VM</strong></td>
+<td>committer's availid (username), VM hostname</td>
+<td>The committer <em>must</em> already have SSH access, and <em>must</em> <a href="freebsd-jails#opie">set up OPIE</a> beforehand.</td>
+</tr>
+</tbody>
+</table>
+<p>Don't see here what you're looking for?  See above for <a href="#requesting-where">other
+cases</a>.</p>
 <h2 id="requesting-podling">Requesting podling creation</h2>
 <p>The podling creation process is as follows:</p>
 <ol>
@@ -329,103 +418,9 @@ your @apache.org address (which forwards to your non-apache email account) a sho
 <li><strong>CC your PMC</strong> on emails. In Jira tickets, it is helpful to link to a thread that demonstrates PMC consensus. (If you request a significant or major configuration change, we will probably ask for that link if you don't provide it.)</li>
 <li>If you create a Jira ticket, create it in the <strong>right Jira component</strong>. This helps the team spot pending tasks in their areas. If it's not obvious which component is the right one, report a bug in the documentation.</li>
 <li><strong>Be patient</strong>. It may take a few days for someone to respond.</li>
-<li>Research</strong> your topic. See the <a href=".">developer information homepage</a>.</p></li>
+<li><strong>Research your topic</strong>. See the <a href="https://www.apache.org/dev/" target="_blank">developer information section</a>.</li>
 </ul>
-</li>
-<li>
-<p><strong>Thanks</strong>.  Making requests following these guidelines might be a little
-  effort, but saves time for all involved.</p>
-</li>
-</ul>
-<h3 id="what-we-need-to-know">Providing needed information<a class="headerlink" href="#what-we-need-to-know" title="Permanent link">&para;</a></h3>
-<table class="table">
-<thead>
-<tr>
-<th>If you ask us to..</th>
-<th>then we need to know..</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Promote a <strong>podling to TLP</strong></td>
-<td><a href="#requesting-graduation">See above</a></td>
-<td></td>
-</tr>
-<tr>
-<td>Create a <strong>podling</strong></td>
-<td><a href="#requesting-podling">See above</a></td>
-<td></td>
-</tr>
-<tr>
-<td>Load <strong>Subversion history</strong></td>
-<td>URL and checksum (or PGP signature) of a dumpfile; proof of <a href="/legal/resolved#category-a">IP rights</a></td>
-<td>Produce with <code>svnadmin dump --incremental --deltas</code> or <code>svnrdump</code>. The paths within the dumpfile should be relative to the project root (e.g., to <code>/repos/asf/incubator/MyPodling</code>).</td>
-</tr>
-<tr>
-<td>Load <strong>Git history</strong></td>
-<td>URL and of a repository or an export stream; proof of <a href="/legal/resolved#category-a">IP rights</a></td>
-<td>If linking to a file, provide PGP signature or checksum.  If to a remote repository, you will be asked to review and sign off on the import ("Yes, that is the repository and history we asked to import and have IP rights for") before it will be writable.</td>
-</tr>
-<tr>
-<td>Create an <strong>svnpubsub-based site</strong></td>
-<td>SVN URL of the compiled site (directory containing HTML files)</td>
-<td>Git is not supported by <a href="project-site#intro">svnpubsub</a>. Use the <a href="http://home.apache.org/committers-by-project.html#infrastructure-root">webreq app</a>.</td>
-</tr>
-<tr>
-<td>Create an <strong>svnpubsub-based Dist area</strong></td>
-<td>Create or ask to create dist release dir. Specify release area only or release and dev areas. Mailing list for commits to go, if omitted the default is the  project commits list.</td>
-<td>Any existing release dir will be blown away (archive releases remain). A release or KEYS/NOTICE file will be asked for upon creation.</td>
-</tr>
-<tr>
-<td>Create a <strong>project blog</strong></td>
-<td>project name, brief one-line description of the project, and Apache usernames (and fullnames) of 1+ editors</td>
-<td></td>
-</tr>
-<tr>
-<td>Create a <strong>blog account</strong> (for an editor)</td>
-<td>The Apache username (and fullnames) of the editor</td>
-<td>Non-PMC members need to demonstrate PMC consensus too (link to a lazy consensus thread suffices).</td>
-</tr>
-<tr>
-<td>Create a <strong>moin wiki</strong></td>
-<td>Moin is deprecated and no more Moin wikis are being created.</td>
-<td>Please plan on using Confluence instead.</td>
-</tr>
-<tr>
-<td>Create a <strong>confluence wiki</strong></td>
-<td>wiki name, destination for commit mails, and confluence usernames of two+ community members - volunteer space admins</td>
-<td>Go to <a href="https://selfserve.apache.org/confluence.html">selfserve</a> and follow the prompts.</td>
-</tr>
-<tr>
-<td>Set up your project on <a href="https://reviews.apache.org/"><strong>Review Board</strong></a></td>
-<td>Project name, which svn/git branches to support</td>
-<td></td>
-</tr>
-<tr>
-<td>Create a <strong>JIRA project</strong></td>
-<td>Key name (e.g., <code>INFRA</code>), JIRA usernames of 1-2 project members - volunteer project admins, mailing list address to which JIRA notifications should go</td>
-<td>Go to <a href="https://selfserve.apache.org/jira.html">selfserve</a> and follow the prompts.</td>
-</tr>
-<tr>
-<td>Migrate your project's <strong>SVN to Git</strong></td>
-<td>n/a</td>
-<td>Please use <a href="https://selfserve.apache.org">self-serve</a> to create your intended Git repo(s). Run svn2git locally using this <a href="https://git-wip-us.apache.org/authors.txt">authors file</a> and push once the conversion result is confirmed. File an INFRA ticket to mark your SVN repository readonly. Optionally, file a ticket to temporarily disable commit emails for when you push your converted clone.</td>
-</tr>
-<tr>
-<td>Grant a committer <strong>SSH access to a <code>puppet</code>-ed VM</strong></td>
-<td>committer's availid (username), VM hostname</td>
-<td>The committer <em>must</em> <a href="freebsd-jails#grant-ssh-access">add his key to id.a.o</a> beforehand.</td>
-</tr>
-<tr>
-<td>Grant a committer <strong>root access to a <code>puppet</code>-ed VM</strong></td>
-<td>committer's availid (username), VM hostname</td>
-<td>The committer <em>must</em> already have SSH access, and <em>must</em> <a href="freebsd-jails#opie">set up OPIE</a> beforehand.</td>
-</tr>
-</tbody>
-</table>
-<p>Don't see here what you're looking for?  See above for <a href="#requesting-where">other
-cases</a>.</p>
+<p><strong>Thanks</strong>. Making requests following these guidelines might require a little effort, but saves time for all involved.</p>
 <h2 id="reopen">My issue got closed with a request to reopen it.<a class="headerlink" href="#reopen" title="Permanent link">&para;</a></h2>
 <p>Then reopen it.  Usually we ask that you do something as you reopen it, so do
 that too (or say why you didn't).</p>
