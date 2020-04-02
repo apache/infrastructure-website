@@ -169,7 +169,7 @@ The podling creation process is as follows:
 1. The IPMC vote passes.
 1. The podling is added to the IPMC's <code>podlings.xml</code> summary file with <code>status=current</code>.
 (See <a href="https://incubator.apache.org/guides/mentor.html#Overview" target="_blank">notes</a> about that, and other initial tasks.)
-1. Create a <a href="https://issues.apache.org/jira/browse/INFRA" targe"_blank">Jira ticket</a> asking Infra to create a DNS for your new podling (include the podling's name).
+1. Create a <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Jira ticket</a> asking Infra to create a DNS for your new podling (include the podling's name).
 1. After the DNS is created, an ASF Member or PMC chair files <a href="https://selfserve.apache.org/mail.html" target="_blank">mailing list creation requests</a>.
 1. Infra creates the lists, which also notifies the IPMC of the mailing list creation.
 1. An Incubator PMC member who is also an ASF member or a PMC chair edits the <a href="https://github.com/apache/infrastructure-puppet/blob/deployment/modules/subversion_server/files/authorization/asf-authorization-template" target="_blank">asf-authorization-template</a> and adds an <code>[/incubator/podling]</code> section. If the section refers to an <code>@podling</code> group, add a definition of that group as a comma-separated list of availids (usernames), to the <code>[groups]</code> section.  Alternatively, just set <code>@incubator = rw</code> as the section's body.
@@ -189,7 +189,7 @@ Once your podling has <a href="https://incubator.apache.org/guides/graduation.ht
 1. A "Graduate Foo to TLP" parent ticket.
 1. A "Foo TLP: common tasks" ticket as a sub-task of (1). This ticket handles DNS entry, Unix/LDAP group creation, PMC Chair karma,
 mailing list migration, native Git repository migrations (but not git-svn mirrors), Subversion public tree migration, buildbot config
-changes,  and website migration. <strong>There is no need to file individual tickets for these tasks.</strong> In the ticket, specify <strong>the LDAP name of the TLP</strong> --- that is, the 'foo' in 'dev@foo.apache.org'.
+changes, and website migration. <strong>There is no need to file individual tickets for these tasks.</strong> In the ticket, specify <strong>the LDAP name of the TLP</strong> --- that is, the <code>foo</code> in <code>dev@foo.apache.org</code>.
 1. For each additional service that needs configuration changes as the result of the migration, create another sub-task. If you have N services, create N sub-tasks. "Services" here includes everything indicated <a href="#requesting-menu">below</a>, such as Subversion private tree, git-svn mirrors, issue trackers, wikis, and <a href="https://ci.apache.org/" target="_blank">continuous integration</a> (Jenkins, Buildbot, Continuum etc.). See <a href="https://issues.apache.org/jira/browse/INFRA-5688" target="_blank">Flex's graduation tickets</a> for a good example.
 
 Note that the new PMC chair is still responsible for using Whimsy as appropriate. The group membership is initialized on a best-guess basis, but the chair must check that it's accurate and add and remove people as needed. Infra intializes the Committee data directly from the information in the Board resolution.
@@ -198,9 +198,9 @@ Note that the new PMC chair is still responsible for using Whimsy as appropriate
 
 If you forgot your password, try...
 
-  - to reset it at <a href="https://id.apache.org/reset/enter" target="_blank">id.apache.org/reset/enter</a>. That will email
+  1. to reset it at <a href="https://id.apache.org/reset/enter" target="_blank">id.apache.org/reset/enter</a>. That will email
 your @apache.org address (which forwards to your non-apache email account) a short-lived password reset link. The link may be encrypted to <a href="https://home.apache.org/keys/committer/" target="_blank">your PGP key</a>.
-  - decrypting the e-mail - one way to do this is to sve the e-mail contents as a text file, e.g. `password.txt`. Open a shell command window, and run the following command:
+  1. decrypting the e-mail - one way to do this is to sve the e-mail contents as a text file, e.g. `password.txt`. Open a shell command window, and run the following command:
 
 ```
 gpg -d password.txt</code>
@@ -208,55 +208,23 @@ gpg -d password.txt</code>
 
 This should decrypt the file and display the output in the window.
 
-If you have lost access to your registered email address, file an additional ICLA with Secretary. Follow the directions for <a href="https://www.apache.org/licenses/#submitting" target="_blank">submitting an ICLA</a>. Include your current Apache ID and mention in your cover email that you are requesting a change to your email address.
+  3. If you have lost access to your registered email address, file an additional ICLA with Secretary. Follow the directions for <a href="https://www.apache.org/licenses/#submitting" target="_blank">submitting an ICLA</a>. Include your current Apache ID and mention in your cover email that you are requesting a change to your email address.
 
-If that didn't work, email root@. In your email, mention the following information:</p>
-<ul>
-<li>
-<p>Your username.</p>
-</li>
-<li>
-<p>The fact that you have tried a self-service password reset, and why it
-  didn't work.  (Was the mail received?  Did you decrypt it successfully?)</p>
-</li>
-<li>
-<p>Why you need to regain access to your Apache account --- e.g., if it is
-  to work on a <a href="/foundation/">foundation project</a>, name that project; or if
-  you are a <a href="/foundation/members">foundation member</a>, state that.</p>
-</li>
-<li>
-<p>Whether you have SSH access to <code>minotaur.apache.org</code> (or to a PMC
-  jail/zone/VM) via public-key authentication</p>
-</li>
-<li>
-<p>Whether you ever set up OPIE on any <code>*.apache.org</code> box.  (This is only
-  applicable to people who had root on PMC VMs.)</p>
-</li>
-<li>
-<p>Whether you have access to the private part of a PGP key associated with
-  your Apache account.</p>
-</li>
-<li>
-<p>Whether the contact information on your ICLA is valid.</p>
-</li>
-<li>
-<p>(<a href="/foundation/members">ASF Members</a> only) Whether the contact information in your members.txt entry is valid.</p>
-</li>
-<li>
-<p>Whether you are able to send a new ICLA, with the same signature as your
-  original one, which specifies new contact information.</p>
-</li>
-<li>
-<p>Whether there is any other way in which we (infra) might satisfy
-  ourselves that you --- a person asking us to reset the password
-  of a given @apache.org account --- is the legitimate owner of that
-  account.</p>
-</li>
-</ul>
-</li>
-</ol>
-<p>Note: please do not ask other ASF committers or Members to email root@ and
-vouch for you.</p>
+  4. If that didn't work, email root@. In your email, mention the following information:
+ 
+  - Your username.
+  - The fact that you have tried a self-service password reset, and why it didn't work. (Was the mail received? Did you decrypt it successfully?)
+  - Why you need to regain access to your Apache account --- e.g., if it is   to work on a <a href="https://www.apache.org/foundation/" target="_blank">foundation project</a>, name that project; or if you are a <a href="https://www.apache.org/foundation/members" target="_blank">foundation member</a>, state that.
+  - Whether you have SSH access to <code>minotaur.apache.org</code> or to a PMC jail/zone/VM via public-key authentication<
+  - Whether you ever set up OPIE on any `*.apache.org` box. (This is only applicable to people who had root permissions on PMC VMs.)
+  - Whether you have access to the private part of a PGP key associated with your Apache account.
+  - Whether the contact information on your ICLA is valid.
+  - For (<a href="https://www.apache.org/foundation/members" target="_blank">ASF Members</a> only, whether the contact information in your `members.txt` entry is valid.
+  - Whether you are able to send a new ICLA, with the same signature as your original one, which specifies new contact information.
+  - >Whether there is any other way in which we (infra) might satisfy ourselves that you are the legitimate owner of that account.
+
+**Note**: please do not ask other ASF committers or Members to email root@ to vouch for you.
+
 <h2 id="requesting-action">Other Requests<a class="headerlink" href="#requesting-action" title="Permanent link">&para;</a></h2>
 <p>This section applies to everything from "add a moderator" through
 "create an account for a committer" and up to "set up a new TLP".</p>
