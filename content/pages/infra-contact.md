@@ -196,12 +196,12 @@ That depends on your role and what you want to do. If this chart doesn't help, I
 <tr>
 <td>Create an <strong>svnpubsub-based site</strong></td>
 <td>SVN URL of the compiled site (directory containing HTML files)</td>
-<td>Git is not supported by <a href="project-site#intro">svnpubsub</a>. Use the <a href="http://home.apache.org/committers-by-project.html#infrastructure-root">webreq app</a>.</td>
+<td><a href="https://infra.apache.org/project-site.html" target="_blank">SvnPubSub</a> does not support Git. Use the <a href="http://home.apache.org/committers-by-project.html#infrastructure-root" target="_blank">webreq app</a></td>
 </tr>
 <tr>
 <td>Create an <strong>svnpubsub-based Dist area</strong></td>
-<td>Create or ask to create dist release dir. Specify release area only or release and dev areas. Mailing list for commits to go, if omitted the default is the  project commits list.</td>
-<td>Any existing release dir will be blown away (archive releases remain). A release or KEYS/NOTICE file will be asked for upon creation.</td>
+<td>Create or ask Infra to create a dist release directory. Specify release area only or release and dev areas. If you omit a list of emails for commit notices to go to, the default is the  project commits list.</td>
+<td>Any existing release dir will be blown away (archive releases remain). Infra will ask for a release or KEYS/NOTICE file once the directory is in place.</td>
 </tr>
 <tr>
 <td>Create a <strong>project blog</strong></td>
@@ -209,49 +209,38 @@ That depends on your role and what you want to do. If this chart doesn't help, I
 <td></td>
 </tr>
 <tr>
-<td>Create a <strong>blog account</strong> (for an editor)</td>
+<td>Create a <strong>blog account</strong> for an editor</td>
 <td>The Apache username (and fullnames) of the editor</td>
-<td>Non-PMC members need to demonstrate PMC consensus too (link to a lazy consensus thread suffices).</td>
+<td>Non-PMC members need to demonstrate PMC consensus (link to a lazy consensus thread suffices).</td>
 </tr>
 <tr>
 <td>Create a <strong>moin wiki</strong></td>
 <td>Moin is deprecated and no more Moin wikis are being created.</td>
-<td>Please plan on using Confluence instead.</td>
+<td>Plan on using Confluence instead. See the next entry.</td>
 </tr>
 <tr>
-<td>Create a <strong>confluence wiki</strong></td>
-<td>wiki name, destination for commit mails, and confluence usernames of two+ community members - volunteer space admins</td>
-<td>Go to <a href="https://selfserve.apache.org/confluence.html">selfserve</a> and follow the prompts.</td>
+<td>Create a <strong>Confluence wiki</strong></td>
+<td>wiki name, destination for commit mails, and Confluence usernames of two+ community members - volunteer space admins</td>
+<td>Go to <a href="https://selfserve.apache.org/confluence.html" target="_blank">selfserve</a> and follow the prompts.</td>
 </tr>
 <tr>
-<td>Set up your project on <a href="https://reviews.apache.org/"><strong>Review Board</strong></a></td>
+<td>Set up your project on <a href="https://reviews.apache.org/" target="_blank"><strong>Review Board</strong></a></td>
 <td>Project name, which svn/git branches to support</td>
-<td></td>
+<td>Review Board is a web-based collaborative code review tool, available as free software under the MIT License.</td>
 </tr>
 <tr>
-<td>Create a <strong>JIRA project</strong></td>
-<td>Key name (e.g., <code>INFRA</code>), JIRA usernames of 1-2 project members - volunteer project admins, mailing list address to which JIRA notifications should go</td>
-<td>Go to <a href="https://selfserve.apache.org/jira.html">selfserve</a> and follow the prompts.</td>
+<td>Create a <strong>Jira project</strong></td>
+<td>Key name (e.g., <code>INFRA</code>), Jira usernames of 1-2 project members - volunteer project admins, mailing list address to which Jira notifications should go</td>
+<td>Go to <a href="https://selfserve.apache.org/jira.html" target="_blank">selfserve</a> and follow the prompts.</td>
 </tr>
 <tr>
 <td>Migrate your project's <strong>SVN to Git</strong></td>
 <td>n/a</td>
-<td>Please use <a href="https://selfserve.apache.org">self-serve</a> to create your intended Git repo(s). Run svn2git locally using this <a href="https://git-wip-us.apache.org/authors.txt">authors file</a> and push once the conversion result is confirmed. File an INFRA ticket to mark your SVN repository readonly. Optionally, file a ticket to temporarily disable commit emails for when you push your converted clone.</td>
-</tr>
-<tr>
-<td>Grant a committer <strong>SSH access to a <code>puppet</code>-ed VM</strong></td>
-<td>committer's availid (username), VM hostname</td>
-<td>The committer <em>must</em> <a href="freebsd-jails#grant-ssh-access">add his key to id.a.o</a> beforehand.</td>
-</tr>
-<tr>
-<td>Grant a committer <strong>root access to a <code>puppet</code>-ed VM</strong></td>
-<td>committer's availid (username), VM hostname</td>
-<td>The committer <em>must</em> already have SSH access, and <em>must</em> <a href="freebsd-jails#opie">set up OPIE</a> beforehand.</td>
+<td>Please use <a href="https://selfserve.apache.org"  target="_blank">self-serve</a> to create your intended Git repo(s). Run svn2git locally using this <a href="https://git-wip-us.apache.org/authors.txt"  target="_blank">authors file</a> and push once the conversion result is confirmed. File an Infra ticket to mark your SVN repository readonly. Optionally, file a ticket to temporarily disable commit emails for when you push your converted clone.</td>
 </tr>
 </tbody>
 </table>
-<p>Don't see here what you're looking for?  See above for <a href="#requesting-where">other
-cases</a>.</p>
+<p>Don't see here what you're looking for? See above for <a href="#requesting-where">other cases</a>.</p>
 
 <h2 id="requesting-podling">Requesting podling creation</h2>
 
@@ -340,31 +329,22 @@ The more <a href="#how">complete answer</a> is in the table above. Please review
 **Thanks**. Making requests following these guidelines might require a little effort, but saves time for all involved.
 
 
-<h2 id="reopen">My issue got closed with a request to reopen it.<a class="headerlink" href="#reopen" title="Permanent link">&para;</a></h2>
-<p>Then reopen it.  Usually we ask that you do something as you reopen it, so do
-that too (or say why you didn't).</p>
-<p>Background: we tend to close issues that are not actionable upon by us for an
-extended period, since we use the <code>INFRA</code> queue as a todo list.  In our
-workflow, this kind of close/reopen cycle is a matter of ordinary routing 
-(much like <a href="http://subversion.apache.org/docs/community-guide/building#revert">reverting a commit that broke the build
-system</a>).</p>
-<h2 id="ignored">My issue got ignored.<a class="headerlink" href="#ignored" title="Permanent link">&para;</a></h2>
-<p>There could be a few reasons: some areas are staffed mainly by
-volunteers, so may have longer turn-around times (relative to other
-areas); sometimes we're busy on backend projects (e.g., installing new
-hardware via our remote hands) and have little time for user-facing
-tasks; sometimes an issue blocks on prerequisite new hardware to get
-shipped, installed, and configured, which takes time; sometimes
-we're just backlogged and are working on issues ahead of yours in the
-queue; and sometimes we do tickets of a certain category in batch, and
-yours will be done in the next batch in a few days.</p>
-<p>If you'd like to inquire as to the status and ensure your issue
-doesn't get lost, feel free to add a comment to the relevant JIRA issue
-(if any) to that effect, or email the <code>users@infra</code> list with a
-question.  If the matter remains unresolved after that, feel free to
-escalate the matter to <a href="/foundation/">the VP, Infrastructure</a> or to the
-<code>operations@</code> privately-archived mailing list (everyone may post to it).</p>
-<h2 id="emergency">In case of emergency<a class="headerlink" href="#emergency" title="Permanent link">&para;</a></h2>
+<h4 id="reopen">My issue got closed with a request to reopen it.</h4>
+
+Then reopen it. Usually we ask that you do something as you reopen it, so do that too (or say why you didn't).
+
+Background: we tend to close issues that we cannot act on for an extended period, since we use the <code>INFRA</code> queue as a to-do list. In our workflow, this kind of close/reopen cycle is a matter of ordinary routing (much like <a href="https://subversion.apache.org/docs/community-guide/building#revert" target="_blank">reverting a commit that broke the build
+system</a>).
+
+<h4 id="ignored">My issue got ignored.</h4>
+There could be a few reasons: some areas have longer turn-around times than others; sometimes we're busy on backend projects like installing new hardware and have little time for user-facing tasks; sometimes an issue blocks on prerequisite new hardware to get
+shipped, installed, and configured, which takes time; sometimes we're just backlogged and are working on issues ahead of yours in the
+queue; and sometimes we do tickets of a certain category in batch, and yours will be done in the next batch in a few days.
+
+To make sure your issue doesn't get lost, feel free to add a comment to the relevant Jira issue, or email the <code>users@infra</code> list with a question. If the matter remains unresolved after that, feel free to
+escalate it to <a href="/foundation/">the VP, Infrastructure</a> or to the <code>operations@</code> privately-archived mailing list (everyone may post to it).
+
+<h4 id="emergency">In case of emergency</h4>
 <p>The following describes how to page root@ people when there is an absolutely
 urgent problem, such as a malicious cracker having an active root shell on
 archive.apache.org.  <strong>This is only intended for pressing, ASF-wide problems
