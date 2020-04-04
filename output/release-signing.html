@@ -294,7 +294,7 @@ example, copying the <code>GNUPGHOME</code> directory (typically <code>~/.gnupg<
 <h3 id="subkey">What a sub key is</h3>
 <p>Each <a href="#openpgp">OpenPGP</a> keyring has a single master key. This key is for signing only. It may also optionally have a number of sub keys for encryption and signing.</p>
 <p>If you want to sign emails using a key related to one you use to sign code, we recommend that you use a signing <a href="#email-subkey">sub key</a>.</p>
-<h1 id="email-subkey">How to use a sub key to sign emails</h3>
+<h3 id="email-subkey">How to use a sub key to sign emails</h3>
 <p>To keep a code signing key <a href="#safe-and-secure">safe and secure</a> we recommend that you don't keep the key on a drive on a regular development machine. This means that you should not use the master key directly to sign emails. However, there are occasions when digitally signed emails are desirable.</p>
 <p>To do that, create a sub key for email signing and export it to your regular machine. You can then keep the master key safely
 offline. For more details, read <a href="https://www.gnupg.org/(en)/faq/subkey-cross-certify.html" target="_blank">Subkey cross
@@ -315,7 +315,7 @@ certification</a>.</p>
 <p>If your key has been compromised then you <strong>must not</strong> transition. <a href="#revoke-key">Revoke</a> the old key and replace it with a new one immediately. <strong>Do not</strong> use a transition period.</p>
 <h3 id="update-document">I have a new key. What Apache documents do I have to update?</h3>
 <p>There are several Apache documents you have to update when you have a new key. Follow these <a href="openpgp.html#update">instructions</a>.</p>
-<h1 id="rsa">What RSA is</h3>
+<h3 id="rsa">What RSA is</h3>
 <p>RSA is a well known public key cryptography algorithm which supports signing and encryption. See <a href="#reading">further reading</a> for more details.</p>
 <h3 id="key-length-how-to">How to find the length of a key</h3>
 <p>The easiest way to discover the length of a key with id <code>KEYID</code> is to use <code>gpg --list-keys KEYID</code>. This prints basic information about the key. The first line includes the size in the second column, just before the id.
