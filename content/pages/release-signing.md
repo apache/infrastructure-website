@@ -13,7 +13,6 @@ This document is informative and does not constitute policy.
 <h3>For release managers</h3>
 
 <ul>
-<li><a href="#abstract">Introduction</a></li>
 <li><a href="#note">Important notes</a></li>
 <li><a href="#basic-facts">Basic facts</a></li>
 <li><a href="#signing-basics">Signing basics</li>
@@ -37,7 +36,7 @@ This document is informative and does not constitute policy.
 </ul>
 <a href="#help">Add your wisdom</a>
 
-
+<h2>For release managers</h2>
 
 <h2 id="note">Important notes</h2>
 
