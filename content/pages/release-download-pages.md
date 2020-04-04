@@ -1,4 +1,4 @@
-Title: Release Downoload Pages for Projects
+Title: Release Download Pages for Projects
 
 Your project's release download page links the project's content to the mirrors where people can download your latest release(s). This page describes how a release manager can put such a page together.
 
