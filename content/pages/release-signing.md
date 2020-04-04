@@ -310,7 +310,7 @@ Each <a href="#openpgp">OpenPGP</a> keyring has a single master key. This key is
 
 If you want to sign emails using a key related to one you use to sign code, we recommend that you use a signing <a href="#email-subkey">sub key</a>.
 
-<h1 id="email-subkey">How to use a sub key to sign emails</h3>
+<h3 id="email-subkey">How to use a sub key to sign emails</h3>
 
 To keep a code signing key <a href="#safe-and-secure">safe and secure</a> we recommend that you don't keep the key on a drive on a regular development machine. This means that you should not use the master key directly to sign emails. However, there are occasions when digitally signed emails are desirable.
 
@@ -348,7 +348,7 @@ If your key has been compromised then you **must not** transition. <a href="#rev
 
 There are several Apache documents you have to update when you have a new key. Follow these <a href="openpgp.html#update">instructions</a>.
 
-<h1 id="rsa">What RSA is</h3>
+<h3 id="rsa">What RSA is</h3>
 <p>RSA is a well known public key cryptography algorithm which supports signing and encryption. See <a href="#reading">further reading</a> for more details.</p>
 
 <h3 id="key-length-how-to">How to find the length of a key</h3>
