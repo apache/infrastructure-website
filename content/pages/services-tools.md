@@ -60,7 +60,7 @@ Use the ASF <a href="https://repository.apache.org/" target="_blank">Nexus Repos
 
 <a href="https://lists.apache.org" target="_blank">PonyMail</a> lets you browse Apache email archives by certain categories, by user, or by project. You must log in if you want to respond to an email, or write a new one, through this interface.
 
-Infra maintains and uses a series of [mailing lists](infra-mail.html], some of which are open to committers.
+Infra maintains and uses a series of [mailing lists](infra-mail.html), some of which are open to committers.
 
 #### Sharing Snippets
 
