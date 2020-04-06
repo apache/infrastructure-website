@@ -11,7 +11,7 @@ An extensive infrastructure overview for developers is <a href="https://www.apac
 The Apache Infrastructure Team (Infra) operates under the <a href="https://www.apache.org/foundation/policies/conduct.html" target="_blank">ASF Code of Conduct</a>.
 
 - [Mail rejection policy](mail-rejection.html)
-- [Site-wide ban policy](sitewide-ban.html)
+- [Site-wide ban policy](infra-ban.html)
 - [Access to code repositories](repository-access.html)
 - [Applying the Apache 2.0 license](apply-license.html)
 
