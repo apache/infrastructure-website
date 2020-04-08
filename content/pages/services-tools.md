@@ -26,7 +26,7 @@ You can subscribe to notices of infrastructure events that you want to know abou
 
 #### Version Control
 
-Apache provides, and Infra maintains, [code repositories](source-code-repository.html) that Apache projects can use to keep their project code safe, accessible to team members, and under version control.
+Apache provides, and Infra maintains, [code repositories](version-control.html) that Apache projects can use to keep their project code safe, accessible to team members, and under version control.
 
 #### Bug-tracking and feature requests
 
