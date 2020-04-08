@@ -1,6 +1,6 @@
 Title: Git access to Apache Subversion codebases
 
-<p>The Apache Software Foundation projects use <a href="https://subversion.apache.org/" target="_blank">Subversion</a> (SVN) or <a href="https://git-scm.com/" target="_blank">Git</a> for [version control](version-control.html) of their software and documentation assets. This page is about _read-only_ Git mirrors of Apache SVN codebases. [Writable Git repositories](writable-git.html) are also available.
+The Apache Software Foundation projects use <a href="https://subversion.apache.org/" target="_blank">Subversion</a> (SVN) or <a href="https://git-scm.com/" target="_blank">Git</a> for [version control](version-control.html) of their software and documentation assets. This page is about _read-only_ Git mirrors of Apache SVN codebases. [Writable Git repositories](writable-git.html) are also available.
 
 
 <h2 id="git-mirrors">Read-only Git mirrors</h2>
