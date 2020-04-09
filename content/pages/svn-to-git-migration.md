@@ -1,7 +1,11 @@
 Title: SVN to Git migration
 
-SELF SERVICE
-Migrating to git is self-serve now. Please request a bare (empty) git repo via https://selfserve.apache.org/ and then use svn2git to convert your svn repo to git. Once completed, you can push the new repo to gitbox.apache.org (or GitHub) and have infra set the old svn repo to read-only.
+Migrating your project's code repository from Subversion to Git is now **self-serve**.
 
-The svn authors list (required by svn2git for cloning) is at https://gitbox.apache.org/authors.txt
+  1. Request a bare (empty) Git repository via <a href="https://selfserve.apache.org/" target="_blank">selfserve</a>.
+  1. Use <a href="https://github.com/nirvdrum/svn2git" target="_blank">svn2git</a> to convert your SVN repository to Git. 
+  1. When the conversion is complete, push the new repository to `gitbox.apache.org` (or GitHub).
+  1. Ask Infra (using a Jira ticket) to set the old SVN repository to read-only.
+
+The SVN authors' list (required by svn2git for cloning) is at <a href="https://gitbox.apache.org/authors.txt" target="_blank">https://gitbox.apache.org/authors.txt</a>.
 
