@@ -14,55 +14,51 @@ You can subscribe to any repository you like, and get reports on any specific ch
 
 <h2 id="jiras">Reporting on Jira changes</h2>
 
-If your channel is set up for Jira reporting, ASFBot keeps track of the latest changes to a Jira ticket. To view, for instance, the most recent comment pertaining to an issue, type: 
+If your channel is set up for Jira reporting, ASFBot keeps track of the latest changes to a Jira ticket. To view, for instance, the most recent comment pertaining to `INFRA-1234`, type: 
 
-`ASFBot: comment [ticket]` 
+`ASFBot: comment INFRA-1234` 
 
-where `ticket` could be `INFRA-1234`.
 
 <h2 id="issues">Fetching issue information</h2>
 
-ASFBot can help you find the correct information or link related to specific Jira or Bugzilla issues. To use this feature for <code>"issue #52230"</code> 
-to get a link for the Bugzilla issue no. 52230 and a quick summary of the issue. 
-Or you could type <code>"COUCHDB-1234"</code> to get a link to that specific JIRA ticket. 
-Please note that issue summaries are only available for Bugzilla at the moment.</p>
-<h2 id="secretary">Secretary feature<a class="headerlink" href="#secretary" title="Permanent link">&para;</a></h2>
-<p>ASFBot provides a simple secretary feature for all to use. 
-To leave a message for an absent person, simply write: 
-<code>ASFBot: tell [recipient] [message]</code>, and that message will be passed on 
-the next time that person logs onto the channel.</p>
-<h2 id="meetings">Record keeping for meetings<a class="headerlink" href="#meetings" title="Permanent link">&para;</a></h2>
-<p>ASFBot can keep a record of meetings done on IRC and publish these in HTML 
-format with an agenda, actions to be taken and members present.</p>
-<p>Record keeping is only allowed in channels where logging is enabled. 
-To enable logging, please contact the infrastructure team, either via 
-a JIRA ticket or on #asfinfra.</p>
-<p>Record keeping works as follows:</p>
-<ul>
-<li>To initiate a meeting, type <code>"ASFBot: meeting start"</code>.</li>
-<li>To set an agenda, either type <code>"#topic [agenda goes here]"</code> or use the <code>/topic</code> 
-     command to change the channel's topic. ASFBot will keep the original topic of 
-     the channel in memory, and change it back once the meeting is over.</li>
-<li>To add an information to the meeting summary, type <code>"#info [something here]"</code>.</li>
-<li>To add an action to be taken before the next meeting, type <code>"#action [action]"</code>.</li>
-<li>To end a meeting and save a summary of it, type <code>"ASFBot: meeting end"</code>. 
-     This will end the record keeping and produce an HTML document containing 
-     the summary of the meeting as well as a log of everything that was said.</li>
-<li>To send an IRC meeting summary as an email to a recipient, type 
-     <code>"ASFBot: meeting send your@domain.tld"</code>. You will need to have been granted 
-     karma by infrastructure to perform this task.</li>
-</ul>
-<p><em>Anything said with <code>[off]</code> at the beginning will be considered off-the-record 
-and will not be written in the meeting log.</em>
-In most regards, ASFBot will understand the <a href="http://meetbot.debian.net/Manual.html"><code>meetbot</code></a> commands, and as such, 
-<code>#meetingstart</code> or <code>#meetingend</code> will also start or end a recording of a meeting.</p>
-<p>For an example of what a meeting summary may look like, check out <a href="https://comments.apache.org/meetings/couchdb-meeting-16_01_2013-2439.html">this CouchDB meeting</a></p>
-<h2 id="comments">Integration with comments.apache.org<a class="headerlink" href="#comments" title="Permanent link">&para;</a></h2>
-<p><code>ASFBot</code> can relay comments provided via comments.apache.org to your IRC channel. 
-If you have set up a karma list with Infrastructure, you can also reply to comments 
-via IRC.</p>
-<h2 id="sourcecode">Technical Information About ASFBot<a class="headerlink" href="#sourcecode" title="Permanent link">&para;</a></h2>
-<p>There are more <a href="https://wilderness.apache.org/manual.html">documents about how ASFBot</a> works and the <a href="https://svn.apache.org/repos/infra/infrastructure/trunk/projects/asfbot/">ASFBot source code is available</a>. </p></div>
+ASFBot can help you find the correct information or link related to specific Jira or Bugzilla issues. To use this feature for <code>issue #52230</code>, type:
 
+`COUCHDB-1234`
 
-_moving contents from https://www.apache.org/dev/asfbot.html_
+ASFBot returns a link to that Jira ticket or Bugzilla issue and, if available, a short issue summary.
+
+<h2 id="secretary">Secretary feature</h2>
+
+ASFBot provides a simple secretary feature. To leave a message for an absent person, write: 
+
+`ASFBot: tell [recipient] [message]`
+
+ASFBot passees that message to the intended recipient the next time that person logs onto the channel.
+
+<h2 id="meetings">Record keeping for meetings</h2>
+
+ASFBot can keep a record of meetings you hold on IRC and publish these in HTML format with an agenda, actions to be taken and a list of participants. Record keeping is available in channels where logging is enabled. To enable logging, contact Infra.
+
+Record keeping works as follows:
+
+  - To initiate a meeting, type `ASFBot: meeting start`.
+  - To set an agenda,type `#topic [agenda goes here]` or use the `/topic</` command to change the channel's topic. ASFBot will keep the original topic of the channel in memory, and change it back once the meeting is over.
+  - To add information to the meeting summary, type `#info [something here]`.
+  - Anything contributed with `[off]` at the beginning will be considered off-the-record and will not become part of the meeting log.
+  - To add an action to be taken before the next meeting, type `#action [action]`.
+  - To end a meeting and save a summary of it, type `ASFBot: meeting end`. This will end the record keeping and produce an HTML document containing the summary of the meeting and a log of everything participants wrote.
+  - To send an IRC meeting summary as an email to a recipient, type `ASFBot: meeting send your@domain.tld`. You will need to have been granted karma by Infra to perform this task.
+
+ ASFBot understands most <a href="https://meetbot.debian.net/Manual.html" target="_blank">meetbot</a> commands, so 
+`#meetingstart` and `#meetingend` will also start and end a recording of a meeting.
+
+For an example of what a meeting summary may look like, check out this record of a <a href="https://comments.apache.org/meetings/couchdb-meeting-16_01_2013-2439.html" target="_blank">CouchDB meeting</a>.
+
+<h2 id="comments">Integration with comments.apache.org</h2>
+
+ASFBot can relay comments provided via `comments.apache.org` to your IRC channel. If you have set up a karma list with Infra, you can also reply to comments via IRC.
+
+<h2 id="sourcecode">Technical Information About ASFBot</h2>
+
+  - The <a href="https://wilderness.apache.org/manual.html" target="_blank">ASFBot manual</a>
+  = The ASFBot <a href="https://svn.apache.org/repos/infra/infrastructure/trunk/projects/asfbot/" target="_blank">source code</a>
