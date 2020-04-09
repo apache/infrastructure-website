@@ -155,3 +155,7 @@ This problem crops up because the order of the revisions is not identical to the
 `$ svn switch --relocate http://svn.apache.org https://svn.apache.org`
 
 If you still get 403 Forbidden errors, ask your PMC to double-check the authz file and LDAP/Unix group membership.
+
+## Migrating a SVN code repository to Git ##
+
+Instructions are [here](svn-to-git-migration.html).
