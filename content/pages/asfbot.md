@@ -1,6 +1,6 @@
 Title: ASF IRC services and archives
 
-<h2 id="intro">Introduction</h2>
+<p id="intro"> </p>
 
 <a href="https://wilderness.apache.org/manual.html" target="_blank">ASFBot</a> on the <a href="https://freenode.net/" target="_blank">Freenode network</a> offers many services for Apache projects on Internet Relay Chat (IRC). IRC is an application layer protocol that facilitates text communication. The chat process works on a client/server networking model.
 
