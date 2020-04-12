@@ -2,7 +2,7 @@ Title: Details on contacting Infra
 
 Here is detailed information on how to contact Infra in a wide range of situations.
 
-<h2 id="how">How should I make contact?</h2>
+<h2 id="how">How should I make contact?<a class="headerlink" href="#how" title="Permanent link">&para;</a></h2>
 
 That depends on your role and what you want to do. If this chart doesn't help, Infra maintains a publicly accessible channel (`#asfinfra`) within the <a href="https://the-asf.slack.com/#asfinfra" target="_blank">ASF presence on Slack</a>, and you can ask there whether to create a bug report or do something else.
 <table width="100%">
@@ -162,7 +162,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
 </tbody>
 </table>
 
-<h2 id="what-we-need-to-know">Providing needed information</h2>
+<h2 id="what-we-need-to-know">Providing needed information<a class="headerlink" href="#what-we-need-to-know" title="Permanent link">&para;</a></h2>
 
 <table class="table">
 <thead>
@@ -242,7 +242,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
 </table>
 <p>Don't see here what you're looking for? See above for <a href="#requesting-where">other cases</a>.</p>
 
-<h2 id="requesting-podling">Requesting podling creation</h2>
+<h2 id="requesting-podling">Requesting podling creation<a class="headerlink" href="#requesting-podling" title="Permanent link">&para;</a></h2>
 
 The podling creation process is as follows:
 
@@ -262,7 +262,7 @@ mail goes to the mailing list created earlier.
 If the project needs additional services (issue tracker, Wiki, blog, etc.), file a ticket via <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Jira</a> using appropriate categories and providing as much information as possible. To save everyone's time, consult <a href="#what-we-need-to-know">"Providing needed information"</a>
 before filing each ticket.
 
-<h2 id="requesting-graduation">Requesting podling graduation to top level project (TLP)</h2>
+<h2 id="requesting-graduation">Requesting podling graduation to top level project (TLP)<a class="headerlink" href="#requesting-graduation" title="Permanent link">&para;</a></h2>
 
 Once your podling has <a href="https://incubator.apache.org/guides/graduation.html#project-first-steps" target="_blank">graduated</a> to a TLP, create the following Jira tickets:
 
@@ -274,7 +274,7 @@ changes, and website migration. <strong>There is no need to file individual tick
 
 Note that the new PMC chair is still responsible for using Whimsy as appropriate. The group membership is initialized on a best-guess basis, but the chair must check that it's accurate and add and remove people as needed. Infra intializes the Committee data directly from the information in the Board resolution.
 
-<h2 id="regain-account">Regaining access to a committer account</h2>
+<h2 id="regain-account">Regaining access to a committer account<a class="headerlink" href="#regain-account" title="Permanent link">&para;</a></h2>
 
 If you forgot your password, try...
 
@@ -305,19 +305,19 @@ This should decrypt the file and display the output in the window.
 
 **Note**: please do not ask other ASF committers or Members to email root@ to vouch for you.
 
-<h2 id="requesting-action">Other Requests</h2>
+<h2 id="requesting-action">Other Requests<a class="headerlink" href="#requesting-action" title="Permanent link">&para;</a></h2>
 
-<h4 id="requesting-menu">What can I ask for?</h4>
+<h4 id="requesting-menu">What can I ask for?<a class="headerlink" href="#requestin-menu" title="Permanent link">&para;</a></h4>
 
 See the list of [Services and tools](https://infra.apache.org/services-tools.html) Infra provides for projects. If you want something that isn't listed, get in touch. It might be possible to support it, especially if the feature request includes a list of [volunteers](volunteer.html) who will help maintain it hint, hint.</p>
 
-<h4 id="requesting-where">Where should I submit my request?</h4>
+<h4 id="requesting-where">Where should I submit my request?<a class="headerlink" href="#requesting-where" title="Permanent link">&para;</a></h4>
 
 The short answer: If there is a <a href="https://selfserve.apache.org/" target="_blank">dedicated webapp</a>, use it. If not, file a <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Jira ticket</a> for Infra. 
 
 The more <a href="#how">complete answer</a> is in the table above. Please review the table before filing a ticket - often you or someone in your PMC can effect the change without involving infra at all.
 
-<p id="request-checklist">Before you press `Send` on your ticket:</p>
+<h5 id="request-checklist">Before you press `Send` on your ticket:<a class="headerlink" href="#request-checklist" title="Permanent link">&para;</a></h5>
 
   - **Ask** in your project</strong> whether someone has the karma to implement the  requested change. This eases the load on the infra team. The moderators and volunteer admins of the project's issue tracker and wiki can often address issues with those services.
   - **Aggregate requests**: instead of sending five emails, each asking for one more moderator to be added, send one email asking for five moderators to be added.
@@ -329,14 +329,14 @@ The more <a href="#how">complete answer</a> is in the table above. Please review
 **Thanks**. Making requests following these guidelines might require a little effort, but saves time for all involved.
 
 
-<h4 id="reopen">My issue got closed with a request to reopen it</h4>
+<h4 id="reopen">My issue got closed with a request to reopen it<a class="headerlink" href="#reopen" title="Permanent link">&para;</a></h4>
 
 Then reopen it. Usually we ask that you do something as you reopen it, so do that too (or say why you didn't).
 
 Background: we tend to close issues that we cannot act on for an extended period, since we use the <code>INFRA</code> queue as a to-do list. In our workflow, this kind of close/reopen cycle is a matter of ordinary routing (much like <a href="https://subversion.apache.org/docs/community-guide/building#revert" target="_blank">reverting a commit that broke the build
 system</a>).
 
-<h4 id="ignored">My issue got ignored</h4>
+<h4 id="ignored">My issue got ignored<a class="headerlink" href="#ignored" title="Permanent link">&para;</a></h4>
 
 There could be a few reasons: some areas have longer turn-around times than others; sometimes we're busy on backend projects like installing new hardware and have little time for user-facing tasks; sometimes an issue blocks on prerequisite new hardware to get
 shipped, installed, and configured, which takes time; sometimes we're just backlogged and are working on issues ahead of yours in the
@@ -344,7 +344,7 @@ queue; and sometimes we do tickets of a certain category in batch, and yours wil
 
 To make sure your issue doesn't get lost, feel free to add a comment to the relevant Jira issue, or email the <code>users@infra</code> list with a question. If the matter remains unresolved after that, feel free to escalate it to <a href="https://www.apache.org/foundation/" target="_blank">the VP, Infrastructure</a> or to the <code>operations@</code> privately-archived mailing list (everyone may post to it).
 
-<h4 id="emergency">In case of emergency</h4>
+<h4 id="emergency">In case of emergency<a class="headerlink" href="#emergency" title="Permanent link">&para;</a></h4>
 
 The following describes how to page root@ people when there is an absolutely urgent problem, such as a malicious cracker having an active root shell on `archive.apache.org`.  **This is only for urgent, ASF-wide problems
 that must be handled at once, even if that means waking people up in the middle
