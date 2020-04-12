@@ -14,7 +14,7 @@ Material about Apache's policies on releases, mirrors, and download pages is <a 
 <li><a href="#questions">Questions?</a></li>
 </ul>
 
-<h2 id="links">Download links</h2>
+<h2 id="links">Download links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
 
   - Your project's download page can only link to release artifacts that your PMC has approved.
   - Do not link to `dist.apache.org`.
@@ -24,7 +24,7 @@ Material about Apache's policies on releases, mirrors, and download pages is <a 
   - Old releases should be <a href="https://www.apache.org/legal/release-policy.html#how-to-archive" target="_blank">archived</a> and may be linked from the download page.
   - Remove all official pre-releases (e.g. milestones, alphas, betas) in a timely fashion once the project releases the final or GA version.
   
-<h2 id="download-page">Your Apache project's download page</h2>
+<h2 id="download-page">Your Apache project's download page<a class="headerlink" href="#download-page" title="Permanent link">&para;</a></h2>
 
 Your Apache project's download page:
 
@@ -34,7 +34,7 @@ Your Apache project's download page:
   - should have instructions on how to verify downloads. For this you can include a link to the <a href="https://www.apache.org/info/verification.html" target="_blank">Apache documentation on verification</a>.
   - must not include a link to the top level "closer" utility (e.g. `http://www.apache.org/dyn/closer.cgi/PROJECT`) as the KEYS, sigs and hashes are missing, as are any verification instructions.
   
-<h2 id="download-scripts">Download scripts</h2>
+<h2 id="download-scripts">Download scripts<a class="headerlink" href="#download-scripts" title="Permanent link">&para;</a></h2>
 
 Balancing the downloads between mirrors requires the use of a script. You'll find below a standard mechanism to let you easily create scripts that comply with the ASF mirroring distribution policy and take advantage of more advanced features such as intelligent selection of a preferred mirror.
 
@@ -43,7 +43,7 @@ There are two basic options:
   - The <a href="#closer">generic download script</a> is quick to set up but is linked from (rather than integrated with) the project documentation.
   - A <a href="#custom">project-specific script</a> is integrated with a page created in the normal way for the project and uses the project's standard document look and feel. This option takes more time to set up.
   
-<h3 id="closer">Generic download script</h3>
+<h3 id="closer">Generic download script<a class="headerlink" href="#closer" title="Permanent link">&para;</a></h3>
 
 The starting point for a generic script is a download page in the standard documentation which describes the releases. To use the generic script, you need to alter the page so the actual download links to the generic script in the appropriate fashion.
 
@@ -57,7 +57,7 @@ See below for how to generate a customised page of direct links using a mirror.
 
 Note there is some information which every project should include on the download page (e.g. KEYS, sigs, hashes). Please read <a href="#best_practice">best practices</a>.
 
-<h3 id="custom">Project-specific download script</h3>
+<h3 id="custom">Project-specific download script<a class="headerlink" href="#custom" title="Permanent link">&para;</a></h3>
 
 To create a project-specific download page, you need:
 
@@ -136,7 +136,7 @@ Before you commit the download script, make it executable. The CMS will not hono
 
 All that remains is to wait for the main website to sync.
 
-<h2 id="best_practice">Best practices</h2>
+<h2 id="best_practice">Best practices<a class="headerlink" href="#best_practice" title="Permanent link">&para;</a></h2>
 
 <h3 id="remind-users">Remind users to check sums and signatures</h3>
 
@@ -148,11 +148,11 @@ Include a reminder text with links to more information for users. For example:
 
 > Note: when downloading from a mirror please check the <a href="https://www.infra.apache.org/release-signing#md5" target="_blank">md5sum</a> and verify the <a href="https://www.infra.apache.org/release-signing#openpgp" target="_blank">OpenPGP compatible signature</a> from the <a href="https://www.apache.org" target="_blank">main Apache site</a>. Links are provided above (next to the release download link). This <a href="https://downloads.apache.org/ws/axis2/KEYS" target="_blank">KEYS file</a> contains the public keys used for signing release. We recommend that you use a web of trust, if possible to confirm the identity of these keys. For more information, please see the <a href="https://www.apache.org/dev/release.html" target="_blank">Apache Release FAQ</a>.
 
-<h3 id="linked-urls">Make sure the browser displays linked URLs</h3>
+<h3 id="linked-urls">Make sure the browser displays linked URLs<a class="headerlink" href="#linked-urls" title="Permanent link">&para;</a></h3>
 
 Users need to understand the origin of the artifacts, signatures and sums they download. Check that the stylesheets your download site uses do not obscure the linked URLs. It is best to use a simple, plain style for download links. Note that some of the Maven-style sheets may obscure some external links in some browsers.
 
-<h3 id="less-than-24hr">Support for bypassing the 24-hour rule</h3>
+<h3 id="less-than-24hr">Support for bypassing the 24-hour rule<a class="headerlink" href="#less-than-24hr" title="Permanent link">&para;</a></h3>
 
 Normally you should wait 24 hours after uploading a release to `https://downloads.apache.org/` before announcing it, in order to let mirrors catch up.
 
@@ -164,6 +164,6 @@ to request only mirrors that have updated after 2:15pm on July 5, 2004 UTC.
 
 Please use this option sparingly, since it can result in excessive load on particular mirrors. It would be appropriate, for example, in an emailed release announcement for an important security release, but not appropriate as a main website link.
 
-<h2 id="questions">Questions?</h2>
+<h2 id="questions">Questions?<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h2>
 
 If you need assistance in implementing URL redirection to the mirrors, or if you need any other help in implementing this policy, please contact the `users@infra.apache.org` mailing list.
