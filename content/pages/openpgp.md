@@ -17,19 +17,19 @@ Title: Cryptography with OpenPGP
     <li><a href="#wot">How to use the Web of Trust</a></li>
 </ul>
 
-<h2 id="introduction">Introduction</h2>
+<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 
 OpenPGP is encryption software. The program provides cryptographic privacy and authentication for data communication, covering signing, encrypting, and decrypting texts, e-mails, files, directories, and whole disk partitions and increasing the security of e-mail communications.
 
 Reliable cryptography applications follow OpenPGP, an open standard of Pretty Good Privacy (PGP) encryption software, standard (RFC 4880), for encrypting and decrypting data.
 
-<h2 id="gnupg">Gnu Privacy Guard (GPG)</h2>
+<h2 id="gnupg">Gnu Privacy Guard (GPG)<a class="headerlink" href="#gnupg" title="Permanent link">&para;</a></h2>
 
 The Apaches Software Foundation recommends using <a href="https://www.gnupg.org" target="_blank">Gnu Privacy Guard (GPG)</a>, a well-known open source cryptography tool with OpenPGP support. Always use the latest version.
 
 GnuPG has a good set of <a href="https://www.gnupg.org/documentation" target="_blank">documentation</a>. This guide covers only some important points.
 
-<h3 id="home">GnuPG Home</h3>
+<h3 id="home">GnuPG Home<a class="headerlink" href="#home" title="Permanent link">&para;</a></h3>
 
 GnuPG stores important files, including keyrings and configuration files, in a home directory. You can specify your proejct's home directory in an environmental variable or on the command line. This allows different configurations and keys to be used.
 
@@ -47,7 +47,7 @@ Projects generally rely on the default. For `\*nux` (linux, BSD, MaxOSX, Solaris
     $HOME/.gnupg
 ```
 
-<h4 id="switch-home">How to switch Home</h4>
+<h4 id="switch-home">How to switch Home<a class="headerlink" href="#switch-home" title="Permanent link">&para;</a></h4>
 
 You can set Home using an envionmental variable. This lets you select a specific configuration and keyring for the duration of a
 command line session. This is useful when [practicing](release-signing.html#safe-practice) and when using multiple keyrings.
@@ -72,16 +72,16 @@ When switching key rings, check that the required keyring has been selected by e
     ssb   4096R/4A6D5217 2009-08-20
 ```
 
-<h3 id="configuration">Configuration</h3>
+<h3 id="configuration">Configuration<a class="headerlink" href="#configuration" title="Permanent link">&para;</a></h3>
 
 GnuPG supports a wide range of configuration options. You can specify them on the command line, but it is usually more convenient to set them in the `gpg.conf` file. By default, this is located in the [GnuPG Home](#home) directory.
 
-<h3 id="sha1">Avoid SHA-1</h3>
+<h3 id="sha1">Avoid SHA-1<a class="headerlink" href="#sha1" title="Permanent link">&para;</a></h3>
 
 [Avoid](release-signing.html#sha1) using `SHA-1`. Use `SHA512` or `SHA256` instead. `SHA512` is stronger than `SHA256`. Though some old
 clients lack `SHA512` support, we recommend switching to `SHA512` if possible.
 
-<h3 id="sha-defaults">Setting defaults</h3>
+<h3 id="sha-defaults">Setting defaults<a class="headerlink" href="#sha-defaults" title="Permanent link">&para;</a></h3>
 
 To configure `gpg` to avoid SHA-1, edit the options in [`gpg.conf`](#configuration). Options need to be added or given the correct values for:
 
@@ -107,7 +107,7 @@ To use SHA256:
     default-preference-list SHA512 SHA384 SHA256 SHA224 AES256 AES192 AES CAST5 ZLIB BZIP2 ZIP Uncompressed
 ```
     
-<h3 id="key-prefs">Setting preferences for keys</h3>
+<h3 id="key-prefs">Setting preferences for keys<a class="headerlink" href="#key-prefs" title="Permanent link">&para;</a></h3>
 
 The digest preferences for each key (from the [configuration defaults](#sha-defaults) ) are set when the key is generated. Once the
 configuration has been updated to avoid SHA-1, all new keys generated will use these defaults, but keys generated before the configuration won't be affected.
@@ -163,7 +163,7 @@ Then upload the modified public key to a public keyserver. For example:
     $ gpg --send-keys F8B7B4FD
 ```
 
-<h2 id="generate-key">How to generate a strong key</h2>
+<h2 id="generate-key">How to generate a strong key<a class="headerlink" href="#generate-key" title="Permanent link">&para;</a></h2>
 
 The weaknesses found in [SHA-1](release-signing.html#sha1) threaten all DSA keys and those RSA keys with length less than 2048 bits. Though no realistic attack against those keys have been made public and these keys continue to be useful (and do not need to be revoked), Projects should not generate new keys that are exposed to this weakness.
 
@@ -172,7 +172,7 @@ The next generation of [OpenPGP](release-signing.html#openpgp) will use [SHA-3](
 Though 8192 bit keys are stronger, they are slower and may be incompatible with some older clients. For the present, 4096 bit RSA should be strong enough for code signing at Apache. To generate RSA keys with length more
 than 4096 bits, <a href="https://www.jroller.com/robertburrelldonkin/entry/gnupg_8192bit_rsa_keys" target="_blank">changes are needed</a>. Then you can follow the procedure for 4096 bits.
 
-<h3 id="key-gen-install-latest-gnupg">Install and configure GnuPG</h3>
+<h3 id="key-gen-install-latest-gnupg">Install and configure GnuPG<a class="headerlink" href="#key-gen-install-latest-gnupg" title="Permanent link">&para;</a></h3>
 
 <a href="https://www.gnupg.org" target="_blank">GnuPG</a> comes in two flavors. To easily generate a 4096 bit RSA signing and encryption key pair with strong digests, use either GnuPG version:
 
@@ -228,7 +228,7 @@ or
 
 Now confirm that the configuration file is [set up to avoid SHA-1](#sha1).
 
-<h3 id="key-gen-generate-key">Generate a new key</h3>
+<h3 id="key-gen-generate-key">Generate a new key<a class="headerlink" href="#key-gen-generate-key" title="Permanent link">&para;</a></h3>
 
 Versions `2.0.12`and `1.4.10` introduced a new default key generation option - *RSA and RSA*. [RSA](release-signing.html#rsa)
 keys are used for both encryption and signing. Longer key lengths are available. Select or accept this option when generating new keys.
@@ -319,7 +319,7 @@ or
     You need a Passphrase to protect your secret key.
 ```
 
-<h3 id="key-gen-avoid-sha1">Check that the key avoids using SHA-1</h3>
+<h3 id="key-gen-avoid-sha1">Check that the key avoids using SHA-1<a class="headerlink" href="#key-gen-avoid-sha1" title="Permanent link">&para;</a></h3>
 
 Check that the configuration has correctly set the key preferences to avoid SHA-1, using either:
 
@@ -375,15 +375,15 @@ or
 The `Digest` line should list SHA-512 first and SHA-1 last. Instructions for altering the preferences of a key are
 [here](#key-prefs).
 
-<h3 id="final-steps">Final steps</h3>
+<h3 id="final-steps">Final steps<a class="headerlink" href="#final-steps" title="Permanent link">&para;</a></h3>
 
 When you generate a new code signing key, you need to update a number of Apache documents and perform some other tasks.
 
-<p id="generation-final-steps-transition" />
+<h5 id="generation-final-steps-transition">Final transition steps<a class="headerlink" href="#generation-final-steps-transition" title="Permanent link">&para;</a></h5>
 
 If you are generating a key for use in a [transition](release-signing.html#transition), there is more you should do before updating these documents, so [go to the transition instructions now](key-transition.html#ContinueAfterGeneration).
 
-<p id="generation-final-steps-new-key" />
+<h5 id="generation-final-steps-new-key">New key final steps<a class="headerlink" href="#generation-final-steps-new-key" title="Permanent link">&para;</a>Final steps for a new key</h5>
 
 If this is a new code signing key not involved with a transition:
 
@@ -400,7 +400,7 @@ certificates](release-signing.html#revocation-cert) for the new key
   1. Read this [guide](#wot) to the Apache use of the [web of trust](release-signing.html#web-of-trust) and make arrangements for your
 new key to be included at the earliest opportunity.
 
-<h2 id="private-keyring-management">Private keyring management</h2>
+<h2 id="private-keyring-management">Private keyring management<a class="headerlink" href="#private-keyring-management" title="Permanent link">&para;</a></h2>
 
   1. Never transmit your private keyring over the internet!
 
@@ -409,7 +409,7 @@ new key to be included at the earliest opportunity.
   3. Destroy your retired disks appropriately using a disk wiping utility or similar tools to ensure your keyring is no longer available
 on those disks once you are through with them. Failing that, drill through the disk platters so they are physically unusable.
 
-<h2 id="find-key-id">Finding a key ID</h2>
+<h2 id="find-key-id">Finding a key ID<a class="headerlink" href="#find-key-id" title="Permanent link">&para;</a></h2>
 
 There are a number of ways to identify a key. Only one is unique: the [key fingerprint](release-signing.html#fingerprint).
 
@@ -419,11 +419,11 @@ Creating a different key with a matching identity is considered [infeasible](rel
 precise identity matters and that identity is specified on the command line, you should use the key ID to identify the key. Avoid using
 user ID or other information.
 
-<h3 id="find-key-id-from-trusted-source">Find a key ID from a trusted source</h3>
+<h3 id="find-key-id-from-trusted-source">Find a key ID from a trusted source<a class="headerlink" href="#finbd-key-id-from-trusted-source" title="Permanent link">&para;</a></h3>
 
 The best way to find a key ID is to obtain it directly from a trusted source, for example, from a business card you obtain personally from the owner of the key.
 
-<h3 id="find-key-id-with-fingerprint">Find a key ID with its fingerprint</h3>
+<h3 id="find-key-id-with-fingerprint">Find a key ID with its fingerprint<a class="headerlink" href="#find-key-ide-with-fingerprint" title="Permanent link">&para;</a></h3>
 
 If you have a [fingerprint](release-signing.html#fingerprint), the key ID should be the last 8 digits. For example, the ID of the key with this fingerprint:
 
@@ -450,7 +450,7 @@ You can confirm this using:
     sub   4096R/4A6D5217 2009-08-20
 ```
 
-<h3 id="find-key-id-with-secret-key">When you have the secret key</h3>
+<h3 id="find-key-id-with-secret-key">When you have the secret key<a class="headerlink" href="#find-key-id-with-secret-key" title="Permanent link">&para;</a></h3>
 
 When you have the secret key, listing the secret key details allows the key ID to be read from the `sec` lines in the output.
 
@@ -491,7 +491,7 @@ and
 The key ID forms part of the second column, to the right of the key length. In this case the key IDs are `AD741727` and `E2B054B8`. The
 [comments](release-signing.html#key-comment) help Alice identify each key.
 
-<h3 id="find-key-id-otherwise">When you do not have the secret key</h3>
+<h3 id="find-key-id-otherwise">When you do not have the secret key<a class="headerlink" href="#find-key-id-otherwise" title="Permanent link">&para;</a></h3>
 
 Unless you have the [private key](release-signing.html#public-private) or a [fingerprint](release-signing.html#fingerprint), the only safe way to find the key ID is to ask the owner of the key, using a secure communication channel.
 
@@ -499,9 +499,9 @@ Trusting that an import contains only the owner's public key is **not recommende
 
 For example, a <a href="http://home.apache.org/~rdonkin/" target="_blank">web page with an embedded export</a> should also list the key IDs of interest. 
 
-<h2 id="backup">How to back up keys</h2>
+<h2 id="backup">How to back up keys<a class="headerlink" href="#backup" title="Permanent link">&para;</a></h2>
 
-<h3 id="backup-public">Back up public information</h3>
+<h3 id="backup-public">Back up public information<a class="headerlink" href="#backup-public" title="Permanent link">&para;</a></h3>
 
 The [key ID](release-signing.html#key-id) is not confidential but without access to this information from a trusted source, substitution attacks are [feasible](release-signing.html#infeasible) (see this [discussion](#find-key-id)).
 
@@ -512,7 +512,7 @@ So, for each [key pair](release-signing.html#public-private) you generate, the [
   - ASF Members should include the key ID on their Apache business cards
   - Include a text document containing the key ID in your [secure, tamperproof private backups](#backup-private)
   
-<h3 id="backup-private">Back up private information</h3>
+<h3 id="backup-private">Back up private information<a class="headerlink" href="#backup-private" title="Permanent link">&para;</a></h3>
 
 Keep your [private key](release-signing.html#public-private) both safe and away from attackers. If a private key is destroyed or lost, it must be revoked and should no longer be used. Given the effort that's needed to build a strong [web of trust](release-signing.html#web-of-trust), it is important to back up the private key without compromising security.
 
@@ -529,14 +529,14 @@ We recommend a removable medium type with good long term storage characteristics
 
 Make and securely store multiple copies.
 
-<h2 id="export-key">How to export a key</h2>
+<h2 id="export-key">How to export a key<a class="headerlink" href="#export-key" title="Permanent link">&para;</a></h2>
 
 Exporting public keys is a common operation. It is rarely necessary to export a [private key](release-signing.html#public-private) and use of that operation should be kept to a minimum (see [below](#export-secret-key) ). So, the unqualified term *exporting a key*
 almost always means *exporting a public key*.
 
 GnuPG seeks to limit accidental private key exports by using different operations for each export. Both operations share common options.
 
-<h3 id="export-option-output">Output options</h3>
+<h3 id="export-option-output">Output options<a class="headerlink" href="#export-option-output" title="Permanent link">&para;</a></h3>
 
 By default, operations print their results to the command line. For example, to export all public keys (with ASCII encoding) to the command line, do:
 
@@ -554,7 +554,7 @@ The `--output` option followed by the name of a file creates that file and store
 
 Though most of the examples in this guide choose to output to a file, command line output is often useful (for example, the output can be piped into a second command) and is equally valid for most operations. The exception is [secret key export](#export-secret-key), which should always be to a secure temporary file.
 
-<h3 id="export-option-armor">The armor option</h3>
+<h3 id="export-option-armor">The armor option<a class="headerlink" href="#export-option-armor" title="Permanent link">&para;</a></h3>
 
 The *--armor* option encodes the output using [ASCII characters only](release-signing.html#ascii). This permits embedding the output easily in documents and displaying it on the command line.
 
@@ -567,7 +567,7 @@ For example, to export all public keys (to the command line) encoded in ASCII, u
 
 The binary format is shorter but has few other advantages. For all uses at Apache, use ASCII armor.
 
-<h3 id="export-public-key">How to export public keys</h3>
+<h3 id="export-public-key">How to export public keys<a class="headerlink" href="#export-public-key" title="Permanent link">&para;</a></h3>
 
 The `--export` operation exports public keys.
 
@@ -588,7 +588,7 @@ For example, to export to the [command line](#export-option-output) with [ASCII 
     $ gpg --export --armor AD741727
 ```
 
-<h3 id="export-all-or-some-public-keys">Should I export all or some public keys"</h3>
+<h3 id="export-all-or-some-public-keys">Should I export all or some public keys"<a class="headerlink" href="#export-all-or-some-puiblic-keys" title="Permanent link">&para;</a></h3>
 
 This is often a tricky question. An import should not be trusted for key identification (see [discussion](#find-key-id)). So, for an import to be useful, usually the key ID of interest needs to be known.
 
@@ -600,7 +600,7 @@ The risk of exporting all keys is that users who don't understand that they shou
 
 So neither is a very satisfactory solution. Now that global keyserver network works so well, Apache may move away from the use of exports in the future.
 
-<h3 id="export-secret-key">How to export secret keys</h3>
+<h3 id="export-secret-key">How to export secret keys<a class="headerlink" href="#export-secret-key" title="Permanent link">&para;</a></h3>
 
 This is a risky operation. The most vulnerable part of the system is the [passphrase](release-signing.html#passphrase) that encrypts the private key. If an attacker obtains a copy of the encrypted private key file, an attack on the passphrase is likely to be
 [feasible](release-signing.html#infeasible). So it is vital to store the [private key](release-signing.html#public-private) securely at
@@ -612,7 +612,7 @@ To ensure that you do not accidentally expose private keys, the GnuPG `--export`
 
 **Never** export secret keys to the command line. Instead, use a secure temporary file that you can securelyi delete after use. Here is one way to do this:
 
-<h2 id="secret-key-transfer">How to transfer a secret key</h2>
+<h2 id="secret-key-transfer">How to transfer a secret key<a class="headerlink" href="#secret-key-transfer" title="Permanent link">&para;</a></h2>
 
 Start by [switching](#switch-home) GnuPG [home](#home) to the source. To export all secret keys to a temporary file such as `/tmp/new.sec`, do this:
 
@@ -662,20 +662,20 @@ Finally make sure that the temporary file you used cannot be read. We recommend 
 
 Those using encrypted `tmp` should now restart the machine.
 
-<h2 id="transition">How to transition from an old to a new key</h2>
+<h2 id="transition">How to transition from an old to a new key<a class="headerlink" href="#transition" title="Permanent link">&para;</a></h2>
 
 If you have a short but uncompromised key and would like to [transition](release-signing.html#transition) to a longer one, follow these
 [instructions](key-transition.html).
 
 If your key has been compromised, you **must not** transition. Instead, [revoke](release-signing.html#revoke-key) the old key and replace it with a new one immediately. **Do not** use a transition period.
 
-<h2 id="revocation-certs">How to use revocation certificates</h2>
+<h2 id="revocation-certs">How to use revocation certificates<a class="headerlink" href="#revocation-certs" title="Permanent link">&para;</a></h2>
 
 When a private key is lost or compromised, a [revocation certificate](release-signing.html#revocation-cert) should be
 [distributed](release-signing.html#revoke-cert) to [publicly](release-signing.html#keyserver)  [revoke the key](release-signing.html#delete-vs-revoke). In the event of a compromise or loss of the key, it is best to create a new revocation certification including the particulars of the case. Since this may not always be possible, you can [generate](#generate-key) and [securely
 store](release-signing.html#revocation-certificate-storage) generic revocation certificates for each new key pair.
 
-<h3 id="revocation-cert-generic">Generic revocation certificates</h3>
+<h3 id="revocation-cert-generic">Generic revocation certificates<a class="headerlink" href="#revocation-cert-generic" title="Permanent link">&para;</a></h3>
 
 When you create a new [key pair](release-signing.html#public-private), also generate and store generic revocation certificates for that key pair. We recommend that you generate a certificate (following the instructions in the next section) for each appropriate
 revocation reason type:
@@ -691,7 +691,7 @@ Store your generic revocation certificates securely until you need to use them. 
 We recommend that you store these certificates directly onto secure media with good long term stability (for example, an encrypted file
 system on a top end USB drive or a CDROM). Print and store hard copies of the certificates yourself, and with trusted third parties.
 
-<h3 id="revocation-cert-gen">How to generate a revocation certificate</h3>
+<h3 id="revocation-cert-gen">How to generate a revocation certificate<a class="headerlink" href="#revocation-cert-gen" title="Permanent link">&para;</a></h3>
 
 Revocation certificates include a small amount of additional information"
 
@@ -785,7 +785,7 @@ The process for generating a generic certificate is identical, but you should ad
     your machine might store the data and make it available to others!
 ```
 
-<h2 id="symmetric">How to use symmetric encryption</h2>
+<h2 id="symmetric">How to use symmetric encryption<a class="headerlink" href="#symmetric" title="Permanent link">&para;</a></h2>
     
 GnuPG supports symmetric (in addition to public key) cryptography, but the ciphers available sometimes differ. Use `gpg --version` to discover which ciphers are available in the current installation:
 
@@ -831,11 +831,11 @@ The file format contains metadata, including the cipher used. So to decrypt `ENC
     $ gpg --output OUTPUT_FILE --decrypt ENCRYPTED_FILE
 ```
 
-<h2 id="update">How to update Apache documents with details of a new key</h2>
+<h2 id="update">How to update Apache documents with details of a new key<a class="headerlink" href="#update" title="Permanent link">&para;</a></h2>
 
 For the new key, you will need to provide both the [fingerprint](release-signing.html#fingerprint) and the [public key](release-signing.html#public-private) export more than once. We repeat the creation instructions below for each case but you may find it more convenient to create, store then reuse the results.
 
-<h3 id="publish-in-web-space">Publish the new public key</h3>
+<h3 id="publish-in-web-space">Publish the new public key<a class="headerlink" href="#publish-in-web-space" title="Permanent link">&para;</a></h3>
 
 **Note**: you must [upload signing keys to a public key server](release-signing.html#keyserver-upload). You must also add them to your LDAP record using the Apache <a href="https://id.apache.org" target="_blank">self-service app</a>.
 
@@ -882,7 +882,7 @@ Ensure that each `pubkeyAddress` points to the new export [uploaded into your Ap
     </wot:hasKey>
 ```
 
-<h3 id="update-KEYS">Update keys on the next release</h3>
+<h3 id="update-KEYS">Update keys on the next release<a class="headerlink" href="#update-KEYS" title="Permanent link">&para;</a></h3>
 
 Projects maintain [KEYS](release-signing.html#keys-policy) files containing the public keys used to sign Apache releases. These documents need not be updated immediately, but you **must** update your project's file with the new key, with an export, before publishing a release using the new key.
 
@@ -894,13 +894,13 @@ To create an [ASCII armored](release-signing.html#ascii) [export](release-signin
 If there is an older export in the `KEYS` file, only remove it if it has not been used to sign a release. It is important
 that the KEYS file can also be used to check archived releases.
 
-<h3 id="members-details">ASF Members only: update details</h3>
+<h3 id="members-details">ASF Members only: update details<a class="headerlink" href="#members-details" title="Permanent link">&para;</a></h3>
 
 <a href="https://www.apache.org/foundation/members.html" target="_blank">ASF Members</a> should add the new key to their details stored in Subversion.
 
 Update your Apache business card with fingerprints (see `Cards` directory in the members area in Subversion) and place a new order for cards.
 
-<h2 id="wot">How to use the Web of Trust</h2>
+<h2 id="wot">How to use the Web of Trust<a class="headerlink" href="#wot" title="Permanent link">&para;</a></h2>
 
 A link to a new key from a [web of trust](release-signing.html#web-of-trust) is made when a key that is part of that network signs the new key.
 
@@ -908,11 +908,11 @@ Each link is only one way. By signing a key, you indicate that you have verified
 
 You can use directional links to establish trust in the identity of a key whose owner you haven't met.
 
-<h3 id="wot-verifying-links">How to verify identity</h3>
+<h3 id="wot-verifying-links">How to verify identity<a class="headerlink" href="#wot-verifying-links" title="Permanent link">&para;</a></h3>
 
 Verifying identities is usually automated, but here is an example to explain the process. If you already understand the process, free free to [skip forward](#apache-wot).
 
-<h4 id="wot-manual-example">Example - The Hard Way</h4>
+<h4 id="wot-manual-example">Example - the hard way<a class="headerlink" href="#wot-manual-example" title="Permanent link">&para;</a></h4>
 
 Take Alice, Bob and Charlie. Alice has verified Bob's identity in person. Bob has verified Charlie's identity in person. But Alice has
 never met Charlie. So
@@ -987,11 +987,11 @@ The key now has a signature from Bob's key - or so says the key. But Alice has m
 
 Alice finds it signed by `81590910` - the master key for this keyring. Alice can therefore trust that Charlie has signed the file provided so long as Alice trusts Bob to verify Charlie's identity.
 
-<h4 id="wot-automated">Automated trust</h4>
+<h4 id="wot-automated">Automated trust<a class="headerlink" href="#wot-automated" title="Permanent link">&para;</a></h4>
 
 Most clients allow automation of this process of transitive trust resolution. This is easier and more convenient than by hand but clients differ in the amount of human control they provide. Some clients (including GnuPG) are highly configurable (allowing different trust models to be used) and allow finely grained control over trust placed in each signed key. For more details see <a href="https://www.gnupg.org/gph/en/manual.html" target="_blank">The GNU Privacy Handbook</a<
 
-<h3 id="apache-wot">Code signing keys and the Web of Trust</h3>
+<h3 id="apache-wot">Code signing keys and the Web of Trust<a class="headerlink" href="#apache-wot" title="Permanent link">&para;</a></h3>
 
 It is vital that Apache code signing keys are linked into a strong [web of trust](release-signing.html#web-of-trust). This allows independent verification of the fidelity of Apache releases by anyone strongly linked to this web. In particular, this lets two important groups independently verify releases:
 
@@ -1000,25 +1000,25 @@ It is vital that Apache code signing keys are linked into a strong [web of trust
 
 The Apache web of trust is reasonably well connected to the wider-open source web of trust. Though every opportunity should be taken to link into wider networks, the most important action needs to be to plan to exchange signatures with other Apache committers.
 
-<h3 id="apache-wot-link">How to link into the Apache Web of Trust</h3>
+<h3 id="apache-wot-link">How to link into the Apache Web of Trust<a class="headerlink" href="#apache-wot-link" title="Permanent link">&para;</a></h3>
 
 The process (explained below) is the same but the people are different: this means arranging to meet in person with Apache committers. For a global distributed organisation like Apache, this is not always easy and usually takes some planning.
 
-<h4 id="wot-apachecon">Keysigning at ApacheCon</h4>
+<h4 id="wot-apachecon">Keysigning at ApacheCon<a class="headerlink" href="#wot-apachecon" title="Permanent link">&para;</a></h4>
 
 Apache organizes a major [keysigning party](release-signing.html#key-signing-party) at every <a href="https://apachecon.com/" target="_blank">ApacheCon</a>. This is a great opportunity to collect dozens of signatures.
 
-<h4 id="wot-apache-other-events">Keysigning at other Apache events</h4>
+<h4 id="wot-apache-other-events">Keysigning at other Apache events<a class="headerlink" href="#wot-apache-other-events" title="Permanent link">&para;</a></h4>
 
 Other Apache events may also hold keysigning parties (and most will if asked). Typically, these will be smaller and less informal.
 
-<h4 id="wot-apache-party">Informal Apache meetings</h4>
+<h4 id="wot-apache-party">Informal Apache meetings<a class="headerlink" href="#wot-apache-party" title="Permanent link">&para;</a></h4>
 
 Smaller, informal Apache-sponsored meetings are also an opportunity to swap keys (as well as gossip) with other committers.
 
 Subscribe to the party list (see committer documentation) to find out about informal meetings. When you travel, take advantage of this opportunity to meet up with other Apache committers by posting to the party list. The <a href="https://community.zones.apache.org/map.html" target="_blank>committer map</a> shows locations for many committers. If there are committers near you, you can organise an informal meetup.
 
-<h3 id="wot-link-in">How to link into a public web of trust</h3>
+<h3 id="wot-link-in">How to link into a public web of trust<a class="headerlink" href="#wot-link-in" title="Permanent link">&para;</a></h3>
 
 In short, expect that:
 
@@ -1029,11 +1029,11 @@ exchange
 
 Bring the key [fingerprint](release-signing.html#fingerprint) but keep the private key safely at home.
 
-<h4 id="wot-public-preparations">Be prepared</h4>
+<h4 id="wot-public-preparations">Be prepared<a class="headerlink" href="#wot-public-preparations" title="Permanent link">&para;</a></h4>
 
 A small amount of preparation (before attending technical conferences or meetings) lets you exchange keys easily (if the other person is suitably prepared) or get your key signed if the opportunity presents itself. All that is required is suitable identification and the [public key fingerprint](release-signing.html#fingerprint) (which can can be conveniently printed onto a small card).
 
-<h4 id="wot-public-keysigning">Keysigning parties</h4>
+<h4 id="wot-public-keysigning">Keysigning parties<a class="headerlink" href="#wot-public-keysigning" title="Permanent link">&para;</a></h4>
 
 The most effective way to achieve this is to attend a [key signing party](release-signing.html#key-signing-party). Apache and many other open-source organisations organize parties at their conferences. It may also be possible to arrange such a party at other events.
 
