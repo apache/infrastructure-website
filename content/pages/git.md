@@ -3,7 +3,7 @@ Title: Git access to Apache Subversion codebases
 The Apache Software Foundation projects use <a href="https://subversion.apache.org/" target="_blank">Subversion</a> (SVN) or <a href="https://git-scm.com/" target="_blank">Git</a> for [version control](version-control.html) of their software and documentation assets. This page is about _read-only_ Git mirrors of Apache SVN codebases. [Writable Git repositories](writable-git.html) are also available.
 
 
-<h2 id="git-mirrors">Read-only Git mirrors</h2>
+<h2 id="git-mirrors">Read-only Git mirrors<a class="headerlink" href="#git-mirrors" title="Permanent link">&para;</a></h2>
 
 We maintain read-only Git mirrors of many Apache codebases at <a href="https://git.apache.org/" target="_blank">https://git.apache.org/</a>. These mirrors contain the full version histories (including all branches and tags) of the mirrored codebases and are updated in near real time based on the latest svn commits.
 
@@ -17,7 +17,7 @@ Please file an <a href="https://issues.apache.org/jira/browse/INFRA" target="_bl
   - Subversion path of the codebase, for example "/lucene/tika"
   = Subversion layout, in case it is different from the standard "trunk, branches, tags" structure.
 
-<h2 id="workflow">Workflow</h2>
+<h2 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">&para;</a></h2>
 
 Here is how to use Git with an Apache codebase. This workflow is mainly targeted to contributors who don't already have commit
 access to a project.
