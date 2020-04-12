@@ -1,6 +1,6 @@
 Title: How to transition to a new PGP key
 
-<h2 id="status">Introduction</h2>
+<h2 id="status">Introduction<a class="headerlink" href="#status" title="Permanent link">&para;</a></h2>
 
 This document is for project **committers** who wish to change the PGP key they use at Apache (for example to sign releases). It explains how to create a new PGP key and break it in, gradually having it replace the old key.
 
@@ -14,21 +14,21 @@ This document is for project **committers** who wish to change the PGP key they 
 <li><a href="#transition-fingerprints">Fingerprinting new and old keys</a></li>
 </ul>
 
-<h2 id="important">Important note</h2>
+<h2 id="important">Important note<a class="headerlink" href="#important" title="Permanent link">&para;</a></h2>
 
 If your key has been compromised, you **must not** use a transition period as described below. Revoke the compromised key immediately and create a new one. Consider all <a href="https://www.apache.org/dev/release-signing.html#web-of-trust" target="_blank">web of trust</a> links signed by the old key as suspect. You must establish a completely new set of links.
 
-<h2 id="motivation">Why replace a key?</h2>
+<h2 id="motivation">Why replace a key?<a class="headerlink" href="#motivation" title="Permanent link">&para;</a></h2>
 
 When replacing one uncompromised key with a newer (typically longer) one, using a transition period when both keys are trustworthy and participate in the <a href="https://www.apache.org/dev/release-signing.html#web-of-trust" target="_blank">web of trust</a> uses _trust transitivity_ to use links to the old key to trust signatures and links created by the new key. During a transition, both keys are trustworthy but you only use the newer one to sign documents and certify links in the web of trust.
 
 This document describes how to use [GnuPG](openpgp.html) to create a new key and manage both keys during this transition period.
 
-<h2 id="single-keyring">Using a single keyring for two keys</h2>
+<h2 id="single-keyring">Using a single keyring for two keys<a class="headerlink" href="#single-keyring" title="Permanent link">&para;</a></h2>
 
 It is best to use a single keyring containing both keys.
 
-<h3 id="generate-new-key">Generate a new key</h3>
+<h3 id="generate-new-key">Generate a new key<a class="headerlink" href="#generate-new-key" title="Permanent link">&para;</a></h3>
 
 Generate the new key either:
 
@@ -57,7 +57,7 @@ ssb   4096R/4A6D5217 2009-08-20
 
 Both new and old keys should be listed.
 
-<h3 id="open-interaction-edit">Open interactive edit mode</h3>
+<h3 id="open-interaction-edit">Open interactive edit mode<a class="headerlink" href="#open-interaction-edit" title="Permanent link">&para;</a></h3>
 
 You need to perform a number of operations on the new key. Though you can perform them individually, saving and closing after each one, it is more convenient to use _interactive edit_ mode.
 
@@ -83,7 +83,7 @@ sub  4096R/4A6D5217  created: 2009-08-20  expires: never       usage: E
 Command> 
 ```
 
-<h3 id="trust-new-key">Trust the new key</h3>
+<h3 id="trust-new-key">Trust the new key<a class="headerlink" href="#trust-new-key" title="Permanent link">&para;</a></h3>
 
 The new key needs to be marked as ultimately trusted in this keyring. This will ensure that the <a href="release-signing.html#web-of-trust" target="_blank">web of trust</a> links signed by this key will be trusted automatically.
 
@@ -122,7 +122,7 @@ Please note that the shown key validity is not necessarily correct
 unless you restart the program.
 ```
 
-<h/3 id="sign-new-key">Use the old key to sign the new key</h3>
+<h/3 id="sign-new-key">Use the old key to sign the new key<a class="headerlink" href="#sign-new-key" title="Permanent link">&para;</a></h3>
 
 Use the old key (AD741727, say) to sign the new key:
 
@@ -152,11 +152,11 @@ user: "Alice Example (EXAMPLE OF OLD KEY) <alice@example.org>"
 1024-bit DSA key, ID AD741727, created 2009-08-20
 ```
 
-<h3 id="check-sha">Check preferences</h3>
+<h3 id="check-sha">Check preferences<a class="headerlink" href="#check-sha" title="Permanent link">&para;</a></h3>
 
 Make sure you are [avoiding SHA-1](openpgp.html#sha1) in the [key preferences](openpgp.html#key-prefs) of both the new and old keys.
 
-<h3 id="finish-off">Complete the edit</h3>
+<h3 id="finish-off">Complete the edit<a class="headerlink" href="#finish-off" title="Permanent link">&para;</a></h3>
 
 It is convenient to add secondary user ids for current email accounts at this point.
 
@@ -166,11 +166,11 @@ Then save your changes, which will exit you from edit mode:
 Command> save
 ```
 
-<h3 id="sign-old-with-new">Whether to sign the old key with the new</h3>
+<h3 id="sign-old-with-new">Whether to sign the old key with the new<a class="headerlink" href="#sign-old-with-new" title="Permanent link">&para;</a></h3>
 
 Arguments can be made for and against signing the old key with the new. The old key is less trustworthy now and will be revoked in future, so signing with it may be misleading for those unaware of the potential weaknesses. However, without this signature, signers of the new key will not receive the transitive benefit of the links made from the old key. Anyone who chooses not to sign the old key with the new should made efforts to re-sign links made by the old key with the new key.
 
-<h3 id="set-default-to-new">Set the default to the new key</h3>
+<h3 id="set-default-to-new">Set the default to the new key<a class="headerlink" href="#set-default-to-new" title="Permanent link">&para;</a></h3>
 
 Next, change the default key on the keyring to the new. This ensures that all future signatures use the new key. Though you could still use the old key for signing by explicitly specifying it, avoid this since the signatures will be weak.
 
@@ -188,7 +188,7 @@ user: "Alice Example (EXAMPLE NEW KEY) <alice@example.org>"
 
 Verify that the new key has been chosen by default.
 
-<h3 id="update-keys">Upload both keys</h3>
+<h3 id="update-keys">Upload both keys<a class="headerlink" href="#update-keys" title="Permanent link">&para;</a></h3>
 
 Finish the process by uploading the new and old keys to the keyserver:
 
@@ -196,15 +196,15 @@ Finish the process by uploading the new and old keys to the keyserver:
 $ gpg --send-keys E2B054B8 AD741727
 ```
 
-<h3 id="backups">Create backups</h3>
+<h3 id="backups">Create backups<a class="headerlink" href="#backups" title="Permanent link">&para;</a></h3>
 
 Follow [these instructions](openpgp.html#backup).
 
-<h3 id="revocation-certificates">Generate and store revocation certificates</h3>
+<h3 id="revocation-certificates">Generate and store revocation certificates<a class="headerlink" href="#revocation-certificates" title="Permanent link">&para;</a></h3>
 
 Follow [these instructions](openpgp.html#revocation-certs) to create and securely store [generic revocation certificates](release-signing.html#revocation-cert" for the new key.
 
-<h3 id="update-documents">Update documents</h3>
+<h3 id="update-documents">Update documents<a class="headerlink" href="#update-documents" title="Permanent link">&para;</a></h3>
 
 The final stage in the process is to update documents containing references to the old key so that they contain both the new and old keys. For Apache documents, follow [this checklist](openpgp.html#update). Use the instructions for a transition when there is a choice.
 
@@ -213,11 +213,11 @@ For other documents:
   - Update those that contain an [export](release-signing.html#export) with a <a href="#transition-export">dual export</a>.
   - Update those that contain a [fingerprint](release-signing.html#fingerprint") with [both fingerprints](#transition-fingerprints).
   
-<h3 id="wot">Web of trust</h3>
+<h3 id="wot">Web of trust<a class="headerlink" href="#wot" title="Permanent link">&para;</a></h3>
 
 Read this [Guide to Apache use](openpgp.html#wot) of the [web of trust](release-signing.html#web-of-trust) and make arrangements to include your new key at the earliest opportunity.
 
-<h2 id="transition-export">Exporting both new and old keys</h2>
+<h2 id="transition-export">Exporting both new and old keys<a class="headerlink" href="#transition-export" title="Permanent link">&para;</a></h2>
 
 During the transition period, use a single export containing both new and old public keys whenever you need an export. 
 
@@ -229,7 +229,7 @@ $ gpg --export --armor --output FILENAME AD741727 E2B054B8
 
 This exports only the public keys, and so isn't confidential. Replace the old public key with this dual export everywhere it was published.
 
-<h2 id="transition-fingerprints">Fingerprinting new and old keys</h2>
+<h2 id="transition-fingerprints">Fingerprinting new and old keys<a class="headerlink" href="#transition-fingerprints" title="Permanent link">&para;</a></h2>
 
 During the transitions, use both fingerprints. For example, to fingerprint old key `AD741727` and new key `E2B054B8`, use:
 
