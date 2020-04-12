@@ -1,6 +1,6 @@
 Title: Committer SSH Access
 
-<h2 id="contents"">Contents</h2>
+<h2 id="contents"">Contents <a class="headerlink" href="#contents" title="Permanent link">&para;</a></h2>
                   
   - <a href="#intro">Introduction</a>
   - <a href="#openssh">Using OpenSSH to connect to Apache</a>
@@ -11,28 +11,26 @@ Title: Committer SSH Access
   - <a href="#elsewhere">More information</a>
 
 
-<h2 id="intro">Introduction</h2>
+<h2 id="intro">Introduction<a class="headerlink" href="#intro" title="Permanent link">&para;</a></h2>
 
 Apache uses SSH (a cryptographic protocol for operating services securely over an unsecured network) to let committers access their home directories on `people.apache.org`. Remember to keep your client up to date with security patches. When using SSH to connect to `people.apache.org` pay close attention to any <a href="#known-host">known host warnings</a>.
 
-<h2 id="openssh">Using Open SSH to connect to Apache</h2>
+<h2 id="openssh">Using Open SSH to connect to Apache<a class="headerlink" href="#openssh" title="Permanent link">&para;</a></h2>
 
 
-<h2 id="open-ssh2">Configuring OpenSSH to use SSH2 (*nix)</h2>
+<h2 id="open-ssh2">Configuring OpenSSH to use SSH2 (*nix)<a class="headerlink" href="#open-ssh2" title="Permanent link">&para;</a></h2>
 
-<h2 id="debug-ssh">Debugging an Open SSH client connection</h2>
+<h2 id="debug-ssh">Debugging an Open SSH client connection<a class="headerlink" href="#debug-ssh" title="Permanent link">&para;</a></h2>
 
-<h2 id="troubleshooting">Troubleshooting</h2>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 
   - If you encounter a problem with SSH and you are not running the most modern stable release of the client software you are connecting with, please upgrade and retry.
   - Configure the client to use <a href="#ssh2-configuration"> SSH2</a> where possible so the connection to Apache uses the SSH2 protocol. This protocol more secure and lets you use an interactive keyboard (type in password) or <a href="#pki">PKI</a>. If you must use SSH1 then you will need to use PKI.
   - Read <a href="#ssh-debug">the section on debugging SSH</a> and try to diagnose the problem.
   
-<h3 id="common-problems">Some common problems</h3>
+<h3 id="common-problems">Some common problems<a class="headerlink" href="#common-problems" title="Permanent link">&para;</a></h3>
 
-<p id="exposed"> </p>
-
-**Do not expose your private key**. Generate your key on a computer that is in your control, then upload only the public part to the `people.apache.org` server. Do not make the mistake of generating the key on the `people.apache.org` server.
+<h4 id="exposed"><strong>Do not expose your private key</strong>. Generate your key on a computer that is in your control, then upload only the public part to the `people.apache.org` server. Do not make the mistake of generating the key on the `people.apache.org` server.<a class="headerlink" href="#exposed" title="Permanent link">&para;</a></p>
 
 <h3 id="too-many-groups">Too Many Groups<a class="headerlink" href="#too-many-groups" title="Permanent link">&para;</a></h3>
 <p>FreeBSD only allows a user to be in 16 groups. An user who is too popular
