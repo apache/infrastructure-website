@@ -94,12 +94,12 @@ Apache mirroring information        </a>
           <h2>
               Apache mirroring information
           </h2>
-              <h2 id="introduction"> </h2>
+              <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 This page describes the requirements and practices for mirroring Apache Software Foundation releases. If you need clarification on any of the statements here, ask your question on the `users@infra.apache.org` mailing list.
 <p>All ASF project must use the ASF infrastructure to distribute source, binary and documentation builds so that their releases appear in <code>dist.apache.org</code>. This is how ASF keeps track of what releases it has made. Projects may distribute their code through other channels in addition to the ASF infrastructure.</p>
 <p>As of March, 2020, all mirror sites are required to use the secure &quot;https&quot; protocol instead of &quot;http&quot;. Sites using &quot;https&quot; encrypt data and move it through a secure socket layer (SSL) protocol between the website's server and the vistor's browser.</p>
 <p>Projects must adhere to the following guidelines to ensure a consistent way to mirror our distributions, therefore lowering the impact of the enormous amount of bandwidth downloads consume.</p>
-<h2 id="goals">Goals</h2>
+<h2 id="goals">Goals<a class="headerlink" href="#goals" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Current ASF releases must be accessible from participating mirrors.</li>
 <li>The mirrors should be used by default.</li>
@@ -110,7 +110,7 @@ This page describes the requirements and practices for mirroring Apache Software
 <li>PGP/MD5 signature links from project sites may not point to mirrors.</li>
 <li>Only mirror current, recommended releases. Old releases are automatically archived to <code>archive.apache.org/dist/</code> and can be deleted from the main distribution directory.</li>
 </ul>
-<h2 id="location">Location of files on main server</h2>
+<h2 id="location">Location of files on main server<a class="headerlink" href="#location" title="Permanent link">&para;</a></h2>
 <p>Do <strong>not</strong> keep software distributions on the project's website. Move them to one of the two software distribution sites:</p>
 <ul>
 <li>
@@ -120,7 +120,7 @@ This page describes the requirements and practices for mirroring Apache Software
 <p><strong>Older releases</strong> that you no longer recommend to the general public should appear on <code>archive.apache.org/dist/</code>. This site automatically contains all the content of <code>downloads.apache.org/</code>, but nothing is ever deleted. Therefore it should rarely be necessary to touch this site, except during a reorganization. Once your project no longer recommends public use of a particualr release, simply delete it from <code>downloads.apache.org/dist/</code> by removing it from <a href="https://dist.apache.org/repos/dist/release/" target="_blank"><code>https://dist.apache.org/repos/dist/release/</code></a>. It will remain  on the archive site.</p>
 </li>
 </ul>
-<h2 id="use">How a project uses mirrors</h2>
+<h2 id="use">How a project uses mirrors<a class="headerlink" href="#use" title="Permanent link">&para;</a></h2>
 <p>Complete instructions are on <a href="how-to-mirror.html">How to be an Apache Software Foundation download mirror</a>.</p>
 
         </div>
