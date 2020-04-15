@@ -122,7 +122,7 @@ Infra operates an Apache Maven repository manager at `repository.apache.org`. Pr
 
 Projects **must not** point or refer to `repository.apache.org` directly in download pages, release announcements or emails. Instead, any public download links for those releases **should** point to Maven Central.
 
-Read more about [Maven releases for Apache projects](maven-releases.html).
+Read more about [Maven releases for Apache projects](publishing-maven-artifacts.html).
 
 <h2 id="administration">Policy administration<a class="headerlink" href="#administration" title="Permanent link">&para;</a></h2>
 
