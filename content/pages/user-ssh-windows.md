@@ -1,7 +1,5 @@
 Title: Committer SSH configuration on Windows
 
-<h2 id="overview">Committer SSH Configuration on Windows<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
-
 When using SSH (Secure Shell, a cryptographic network protocol)  to access <code>people.apache.org</code>, Windows users have two choices: 
 
   - Install <a href="https://www.cygwin.com" target="_blank">cygwin</a>, a collection of GNU and Open Source tools which provide functionality similar to a Linux distribution on Windows, and use the standard command line tools
