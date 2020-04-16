@@ -72,69 +72,30 @@ You should now be able to log in without being asked for your user name or passw
 
 In the Command Prompt box enter `psftp people.apache.org`.
 
-You should log right in without having to provide your credentials.
+You should be able to log right in without having to provide your credentials.
 
 **Note** that whenever you exit Pageant, or restart your computer, you will need to restart Pageant and add your key in again. Pageant does not keep details of loaded keys between sessions.
 
 <h3 id="configure-putty">Configure Putty to log in using your Keys<a class="headerlink" href="#configure-putty" title="Permanent link">&para;</a></h3>
-<ol>
-<li>
-<p>Open up Putty.</p>
-</li>
-<li>
-<p>Specify <code>people.apache.org</code> as the Hostname.</p>
-</li>
-<li>
-<p>Ensure SSH protocol radio button is checked.</p>
-</li>
-<li>
-<p>Choose the <code>Data</code> sub-category of <code>Connection</code> </p>
-</li>
-<li>
-<p>Fill in your Apache username for auto-login username.</p>
-</li>
-<li>
-<p>Click on the SSH Category.</p>
-</li>
-<li>
-<p>Ensure <code>SSH 2 Only</code> radio button is checked.</p>
-</li>
-<li>
-<p>Click on the <code>Auth</code> sub-category of the SSH Category.</p>
-</li>
-<li>
-<p>Ensure <code>Attempt "Keyboard Interactive" auth (SSH 2)</code> checkbox is ticked.</p>
-</li>
-<li>
-<p>Click the <code>Browse</code> Button and locate and load your <code>Private Key</code> you
-saved earlier as <code>yourapacheusername.ppk</code>.</p>
-</li>
-<li>
-<p>Go back and click on the <code>Session</code> Category and Save this session
-choosing a suitable name.</p>
-</li>
-</ol>
-<p>Good, all the details are now saved for future use. All you need do now is
-click on the <code>Open</code> button to open a secure connection to the server and to
-log in automatically to your personal area of <code>people.apache.org</code>. You will
-still be asked for a password if this is the first time connecting to your
-area, after which you'll just go straight in.</p>
-<h1 id="links">Relevant Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h1>
-<ul>
-<li>
-<p><a href="http://apache.org/dev/user-ssh.html">Apache SSH Guide</a> </p>
-</li>
-<li>
-<p><a href="http://www.wipo.int/pct/edi/en/software/setup/putty-setup.html">Putty Setup
-Guide</a> </p>
-</li>
-<li>
-<p><a href="http://www.cba.uni.edu/buscomm/ElectronicComm/PersonalUNIwebspace-1.htm">Connecting To Unix With
-Putty</a> </p>
-</li>
-<li>
-<p><a href="http://www.indiana.edu/~uitspubs/b017/">Unix Command Quick Reference</a> </p>
-</li>
-</ul></div>
 
-_moving content from https://www.apache.org/dev/user-ssh-windows.html_
+1. Open up Putty.
+2. Specify <code>people.apache.org</code> as the Hostname.
+3. Make sure the SSH protocol radio button is selected.
+4. Choose the `Data` sub-category of `Connection`.
+5. Provide your Apache user name for `auto-login username`.
+6. Select the `SSH` category.
+7. Make sure the `SSH 2 Only` radio button is selected.
+8. Select the `Auth` sub-category of the SSH category.
+1. Make sure the `Attempt "Keyboard Interactive" auth (SSH 2)` checkbox is selected.
+1. Click the `Browse` Button and locate and load your `Private Key` you
+saved earlier as `yourapacheusername.ppk`.
+1. Select the `Session` category and save this session with a suitable name.
+
+All the details are now saved for future use. Now click the <code>Open</code> button to open a secure connection to the server and to
+log in automatically to your personal area of `people.apache.org`. You will have to provide your password if this is the first time connecting to your area.
+
+<h2 id="links">Relevant Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
+
+  - [Apache SSH Guide](user-ssh.html)
+  - <a href="https://www.ssh.com/ssh/putty/putty-manuals/0.68/index.html" target="_blank">Putty Setup Guide</a>
+  - <a href="https://files.fosswire.com/2007/08/fwunixref.pdf" target="_blank">Unix Command Quick Reference</a>
