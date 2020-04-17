@@ -15,7 +15,7 @@ Apache uses SSH (a cryptographic protocol for operating services securely over a
 
 <a href="https://www.openssh.org" target="_blank">OpenSSH</a> is a widely used and trusted suite of software using the SSH family of protocols.
 
-<h3 id="openssh-ssh2">Configuring OpenSSH to use SSH2 (*nix)<a class="headerlink" href="#openssh-ssh2" title="Permanent link">&para;</a></h3>
+<h2 id="openssh-ssh2">Configuring OpenSSH to use SSH2 (*nix)<a class="headerlink" href="#openssh-ssh2" title="Permanent link">&para;</a></h2>
 
 The OpenSSH client uses by default configuration files in the `~/.ssh` directory. The main configuration file is `~/.ssh/config` and is optional. It may exist already. If it does not, you can create it in a simple text format. Group together instructions for a particular host (or group of hosts). Here is a suggested basic configuration:
 
@@ -34,7 +34,7 @@ Host \*
 
 Many other options are available.
 
-<h3 id="debug-ssh">Debugging an OpenSSH client connection<a class="headerlink" href="#debug-ssh" title="Permanent link">&para;</a></h3>
+<h2 id="debug-ssh">Debugging an OpenSSH client connection<a class="headerlink" href="#debug-ssh" title="Permanent link">&para;</a></h2>
 
 To diagnose what's going wrong with an OpenSSH connection, run the client in verbose mode. To do this just add `-v`:
 
@@ -42,43 +42,24 @@ To diagnose what's going wrong with an OpenSSH connection, run the client in ver
 ssh -v -l committer people.apache.org
 ```
 
-<h2 id="openssh">Using Open SSH to connect to Apache<a class="headerlink" href="#openssh" title="Permanent link">&para;</a></h2>
-
-
-<h2 id="open-ssh2">Configuring OpenSSH to use SSH2 (*nix)<a class="headerlink" href="#open-ssh2" title="Permanent link">&para;</a></h2>
-
-<h2 id="debug-ssh">Debugging an Open SSH client connection<a class="headerlink" href="#debug-ssh" title="Permanent link">&para;</a></h2>
-
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 
-  - If you encounter a problem with SSH and you are not running the most modern stable release of the client software you are connecting with, please upgrade and retry.
-  - Configure the client to use <a href="#ssh2-configuration"> SSH2</a> where possible so the connection to Apache uses the SSH2 protocol. This protocol more secure and lets you use an interactive keyboard (type in password) or <a href="#pki">PKI</a>. If you must use SSH1 then you will need to use PKI.
+  - If you encounter a problem with SSH and you are not running the most modern stable release of the client software you are connecting with, upgrade and retry.
+  - Configure the client to use <a href="#ssh2-configuration"> SSH2</a> where possible so the connection to Apache uses the SSH2 protocol. This protocol is more secure and lets you use an interactive keyboard (type in password) or <a href="#pki">PKI</a>. If you must use SSH1, you will need to use PKI.
   - Read <a href="#ssh-debug">the section on debugging SSH</a> and try to diagnose the problem.
   
 <h3 id="common-problems">Some common problems<a class="headerlink" href="#common-problems" title="Permanent link">&para;</a></h3>
 
-<h4 id="exposed"><strong>Do not expose your private key</strong>. Generate your key on a computer that is in your control, then upload only the public part to the `people.apache.org` server. Do not make the mistake of generating the key on the `people.apache.org` server.<a class="headerlink" href="#exposed" title="Permanent link">&para;</a></p>
+<h4 id="exposed">Do not expose your private key<a class="headerlink" href="#exposed" title="Permanent link">&para;</a></h4>. Generate your key on a computer that is in your control, then upload only the public part to the `people.apache.org` server. Do not make the mistake of generating the key on the `people.apache.org` server.</p>
 
-<h3 id="too-many-groups">Too Many Groups<a class="headerlink" href="#too-many-groups" title="Permanent link">&para;</a></h3>
-<p>FreeBSD only allows a user to be in 16 groups. An user who is too popular
-will not be allowed to log on. It is easy to mistake this for a ssh
-problem. If <code>Authentication succeeded</code> is present in the <a href="#ssh-debug">debug
-logs</a> then this indicates that the issue lies on the machine
-login (rather than ssh).</p>
-<h3 id="batch-mode">Batch Mode<a class="headerlink" href="#batch-mode" title="Permanent link">&para;</a></h3>
-<p>Batch mode should only be used by automated scripts. You will not be able
-to login if ssh is configured to use batch mode.</p>
-<h2 id="FAQ">FAQs</h2>
-        
+<h4 id="too-many-groups">Too Many Groups<a class="headerlink" href="#too-many-groups" title="Permanent link">&para;</a></h4>
+FreeBSD only allows a user to be in 16 groups. A user who is too popular will not be allowed to log on. It is easy to mistake this for an ssh problem. If `Authentication succeeded` is present in the <a href="#ssh-debug">debug logs</a>, this indicates that the issue lies on your machine's login rather than with ssh.
 
+<h4 id="batch-mode">Batch Mode<a class="headerlink" href="#batch-mode" title="Permanent link">&para;</a></h4>
 
-<h2 id="elsewhere">More information<a class="headerlink" href="#elsewhere" title="Permanent link">&para;</a></h2>
+Only use batch mode in automated scripts. You will not be able to log in if ssh is configured to use batch mode.
 
-  - See instructions for new committers to <a href="https://www.apache.org/dev/new-committers-guide.html#ssh#ssh" target="_blank">configure your account</a>.
-  - See instructions for setting up [SSH on Windows](user-ssh-windows.html).
-
-
-<h1 id="FAQ">FAQ<a class="headerlink" href="#FAQ" title="Permanent link">&para;</a></h1>
+<h2 id="FAQ">FAQ<a class="headerlink" href="#FAQ" title="Permanent link">&para;</a></h2>
 <h2 id="ssh2">What Is SSH2?<a class="headerlink" href="#ssh2" title="Permanent link">&para;</a></h2>
 <p>The second generation in the ssh family of protocols. It is believed to be
 more secure than the first generation and the implementations are now
@@ -138,12 +119,10 @@ website</a>.</p>
 <p>A class of attacks where the attacker masquerades as the server to the
 client and the client to the server.</p>
 
+<h2 id="elsewhere">More information<a class="headerlink" href="#elsewhere" title="Permanent link">&para;</a></h2>
 
-
-
-  
-
-
+  - <a href="https://www.apache.org/dev/new-committers-guide.html#ssh#ssh" target="_blank">Instructions for new committers</a>
+  - [Setting up SSH on Windows](user-ssh-windows.html)
 
 
 
