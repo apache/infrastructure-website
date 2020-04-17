@@ -137,70 +137,44 @@ FreeBSD only allows a user to be in 16 groups. A user who is too popular will no
 <h4 id="batch-mode">Batch Mode<a class="headerlink" href="#batch-mode" title="Permanent link">&para;</a></h4>
 <p>Only use batch mode in automated scripts. You will not be able to log in if ssh is configured to use batch mode.</p>
 <h2 id="FAQ">FAQ<a class="headerlink" href="#FAQ" title="Permanent link">&para;</a></h2>
-<h2 id="ssh2">What Is SSH2?<a class="headerlink" href="#ssh2" title="Permanent link">&para;</a></h2>
-<p>The second generation in the ssh family of protocols. It is believed to be
-more secure than the first generation and the implementations are now
-mature. Certain flaws exist in the first generation protocols which do not
-exist in the second generation. SSH2 is therefore recommended.</p>
-<p>Most clients can be configured to <a href="#ssh2-configuration">use SSH2</a> (where
-possible).</p>
-<h2 id="ssh-debug">How Can I Debug My Connection?<a class="headerlink" href="#ssh-debug" title="Permanent link">&para;</a></h2>
-<p>The easiest way to diagnose a failing connection is to run your client in
-verbose mode. This will print up descriptions of the actions that the
-client is taking. How to do this using <a href="http://www.openssh.org">OpenSSH</a> is
-<a href="#debug-ssh">here</a> </p>
+<h4 id="ssh2">What is SSH2?<a class="headerlink" href="#ssh2" title="Permanent link">&para;</a></h4>
+<p>The second generation in the ssh family of protocols. It is believed to be more secure than the first generation and the implementations are now mature. Certain flaws exist in the first generation protocols which do not exist in the second generation, so we recommend <a href="#ssh2-configuration">using SSH2</a> where possible.</p>
+<h4 id="ssh-debug">How can I debug my connection?<a class="headerlink" href="#ssh-debug" title="Permanent link">&para;</a></h4>
+<p>The easiest way to diagnose a failing connection is to run your client in verbose mode. This will print up descriptions of the actions that the client is taking. <a href="#debug-ssh">Here</a> is how to do this using <a href="https://www.openssh.org" target="_blank">OpenSSH</a>.</p>
 <p>If <code>Authentication succeeded</code> is present then this indicates that the issue
-lies in the machine login (rather than ssh).</p>
-<h2 id="ssh2-configuration">How Do I Configure My Client To Use SSH2?<a class="headerlink" href="#ssh2-configuration" title="Permanent link">&para;</a></h2>
-<p>If you are using OpenSSH some instructions are <a href="#openssh-ssh2">available</a>.
-Otherwise, please consult the manual.</p>
-<h2 id="what-client">What Client Can I Use?<a class="headerlink" href="#what-client" title="Permanent link">&para;</a></h2>
-<p>Any client that supports the <a href="#ssh2">SSH2</a>. (It is possible to use older
+lies in your machine login rather than in ssh.</p>
+<h4 id="ssh2-configuration">How do I configure my client to use SSH2?<a class="headerlink" href="#ssh2-configuration" title="Permanent link">&para;</a></h4>
+<p>If you are using OpenSSH, <a href="#openssh-ssh2">some instructions</a> are available. Otherwise, please consult the manual.</p>
+<h4 id="what-client">What client can I use?<a class="headerlink" href="#what-client" title="Permanent link">&para;</a></h4>
+<p>You can use any client that supports <a href="#ssh2">SSH2</a>. (It is possible to use older
 clients that support only SSH1 but that requires more knowledge.)</p>
 <p><a href="http://www.openssh.org">OpenSSH</a> is a well known and trusted client that
 is available for most *nixes. Some notes on how to use OpenSSH to connect
-to Apache are given <a href="#openssh">here</a>.</p>
-<h2 id="pki">What Is PKI?<a class="headerlink" href="#pki" title="Permanent link">&para;</a></h2>
-<p>Public key infrastructure (PKI) enables the ssh family of protocols to
-operate without passing a password to the server. A passphrase is used to
-unlock a private key on the client machine. A corresponding public key on
-the server is used for authentication the during the handshake.</p>
-<p>This method of connection is recommended (as the most secure).</p>
-<h2 id="no-connection">Why Can't I Connect Using SSH1?<a class="headerlink" href="#no-connection" title="Permanent link">&para;</a></h2>
-<p>You can connect to <code>people.apache.org</code> using the SSH1 protocols but only
-when using <a href="#pki">PKI</a> </p>
-<h2 id="known-host">What Is A Known Host?<a class="headerlink" href="#known-host" title="Permanent link">&para;</a></h2>
+to Apache are <a href="#openssh">here</a>.</p>
+<h4 id="pki">What is PKI?<a class="headerlink" href="#pki" title="Permanent link">&para;</a></h4>
+<p>Public key infrastructure (PKI) enables the ssh family of protocols to operate without passing a password to the server. You use a passphrase to unlock a private key on the client machine, and a corresponding public key on the server for authentication the during the handshake. We recommend this as the most secure method of connection.</p>
+<h4 id="no-connection">Why can't I connect using SSH1?<a class="headerlink" href="#no-connection" title="Permanent link">&para;</a></h4>
+<p>You can connect to <code>people.apache.org</code> using the SSH1 protocols, but only when using <a href="#pki">PKI</a>.</p>
+<h4 id="known-host">What is a known host?<a class="headerlink" href="#known-host" title="Permanent link">&para;</a></h4>
 <p>SSH employs the <em>known hosts</em> mechanism to prevent <a href="#middle-man-attacks">man in the
-middle</a> attacks. The first time that the client
-connects to a server, the fingerprint of the key used by that server is
-displayed to the user who may to asked to confirm the identity of that
-server. For example:</p>
-<p><code><pre>
-The authenticity of host 'people.apache.org (209.237.237.194)' can't be
-established.
+middle</a> attacks. The first time that the client connects to a server, the fingerprint of the key used by that server is
+displayed to the user, who may to asked to confirm the identity of that server. For example:</p>
+<pre><code>The authenticity of host 'people.apache.org (209.237.237.194)' can't be established.
 RSA key fingerprint is 51:85:7d:8f:57:54:e7:6f:27:26:98:7a:c7:c1:47:87.
 Are you sure you want to continue connecting (yes/no)? 
-</pre></code></p>
+</code></pre>
 <p>The fingerprints for <code>people.apache.org</code> can be found
-<a href="new-committers-guide.html#spoof">here</a>. If the user elects to continue
-then this value will be written to a <code>known_hosts</code> file. In future, when
-the user connects to the same server, this value will be checked and the
-user alerted if it has changed.</p>
-<p>Please do not continue the connection after such an alert: contact
-infrastructure. This is of crucial importance when using keyboard
-interactive authentication.</p>
-<p><strong>Note:</strong> the fingerprint for the key used for ssh is different to the
-fingerprint of the certificate used to <a href="version-control.html#cert">securely serve the
-website</a>.</p>
-<h2 id="middle-man-attacks">What Is A Man-In-The-Middle-Attack?<a class="headerlink" href="#middle-man-attacks" title="Permanent link">&para;</a></h2>
-<p>A class of attacks where the attacker masquerades as the server to the
-client and the client to the server.</p>
+<a href="https://www.apache.org/dev/new-committers-guide.html#spoof">here</a>. If the user elects to continue,
+this value is written to a <code>known_hosts</code> file. In future, when the user connects to the same server, the system checks this value and alerts the user if it has changed. <strong>Do not continue the connection</strong> after such an alert: contact infrastructure. This is of crucial importance when using keyboard interactive authentication.</p>
+<p><strong>Note</strong>: The fingerprint for the key used for ssh is different from the fingerprint of the certificate used to securely serve the
+website.</p>
+<h4 id="middle-man-attacks">What Is a Man-in-the-Middle attack?<a class="headerlink" href="#middle-man-attacks" title="Permanent link">&para;</a></h4>
+<p>A class of attacks where the attacker masquerades as the server to the client and as the client to the server.</p>
 <h2 id="elsewhere">More information<a class="headerlink" href="#elsewhere" title="Permanent link">&para;</a></h2>
 <ul>
 <li><a href="https://www.apache.org/dev/new-committers-guide.html#ssh#ssh" target="_blank">Instructions for new committers</a></li>
 <li><a href="user-ssh-windows.html">Setting up SSH on Windows</a></li>
 </ul>
-<p><em>moving content from <a href="https://www.apache.org/dev/user-ssh.html">https://www.apache.org/dev/user-ssh.html</a></em></p>
 
         </div>
       </div>
