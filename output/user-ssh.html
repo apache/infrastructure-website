@@ -94,9 +94,9 @@ Committer SSH Access        </a>
           <h2>
               Committer SSH Access
           </h2>
-              <h2 id="contents"">Contents <a class="headerlink" href="#contents" title="Permanent link">&para;</a></h2>
+              <p>Apache uses SSH (a cryptographic protocol for operating services securely over an unsecured network) to let committers access their home directories on <code>people.apache.org</code>. Remember to keep your client up to date with security patches. When using SSH to connect to <code>people.apache.org</code> pay close attention to any <a href="#known-host">known host warnings</a>.</p>
+<h2>Contents</h2>
 <ul>
-<li><a href="#intro">Introduction</a></li>
 <li><a href="#openssh">Using OpenSSH to connect to Apache</a></li>
 <li><a href="#openssh-ssh2">Configuring OpenSSH to use SSH2 (*nix)</a></li>
 <li><a href="#debug-ssh">Debugging an OpenSSH client connection</a></li>
@@ -104,8 +104,26 @@ Committer SSH Access        </a>
 <li><a href="#FAQ">FAQs</a></li>
 <li><a href="#elsewhere">More information</a></li>
 </ul>
-<h2 id="intro">Introduction<a class="headerlink" href="#intro" title="Permanent link">&para;</a></h2>
-<p>Apache uses SSH (a cryptographic protocol for operating services securely over an unsecured network) to let committers access their home directories on <code>people.apache.org</code>. Remember to keep your client up to date with security patches. When using SSH to connect to <code>people.apache.org</code> pay close attention to any <a href="#known-host">known host warnings</a>.</p>
+<h2 id="openssh">Using OpenSSH to connect to Apache<a class="headerlink" href="#openssh" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.openssh.org" target="_blank">OpenSSH</a> is a widely used and trusted suite of software using the SSH family of protocols.</p>
+<h3 id="openssh-ssh2">Configuring OpenSSH to use SSH2 (*nix)<a class="headerlink" href="#openssh-ssh2" title="Permanent link">&para;</a></h3>
+<p>The OpenSSH client uses by default configuration files in the <code>~/.ssh</code> directory. The main configuration file is <code>~/.ssh/config</code> and is optional. It may exist already. If it does not, you can create it in a simple text format. Group together instructions for a particular host (or group of hosts). Here is a suggested basic configuration:</p>
+<pre><code>&lt;pre&gt;
+# Apply to all hosts
+
+# Alternatively replace with: 
+
+#Host \*.apache.org
+Host \*
+  FallBackToRsh no
+  Protocol 2,1
+&lt;/pre&gt;
+</code></pre>
+<p>Many other options are available.</p>
+<h3 id="debug-ssh">Debugging an OpenSSH client connection<a class="headerlink" href="#debug-ssh" title="Permanent link">&para;</a></h3>
+<p>To diagnose what's going wrong with an OpenSSH connection, run the client in verbose mode. To do this just add <code>-v</code>:</p>
+<pre><code>ssh -v -l committer people.apache.org
+</code></pre>
 <h2 id="openssh">Using Open SSH to connect to Apache<a class="headerlink" href="#openssh" title="Permanent link">&para;</a></h2>
 <h2 id="open-ssh2">Configuring OpenSSH to use SSH2 (*nix)<a class="headerlink" href="#open-ssh2" title="Permanent link">&para;</a></h2>
 <h2 id="debug-ssh">Debugging an Open SSH client connection<a class="headerlink" href="#debug-ssh" title="Permanent link">&para;</a></h2>
@@ -191,118 +209,6 @@ website</a>.</p>
 <h2 id="middle-man-attacks">What Is A Man-In-The-Middle-Attack?<a class="headerlink" href="#middle-man-attacks" title="Permanent link">&para;</a></h2>
 <p>A class of attacks where the attacker masquerades as the server to the
 client and the client to the server.</p>
-<h1 id="openssh">Using OpenSSH To Connect To Apache<a class="headerlink" href="#openssh" title="Permanent link">&para;</a></h1>
-<p><a href="http://www.openssh.org">OpenSSH</a> is a widely used and trusted suite of
-software using the SSH family of protocols.</p>
-<h2 id="openssh-ssh2">Configuring OpenSSH To Use SSH2 (*nix)<a class="headerlink" href="#openssh-ssh2" title="Permanent link">&para;</a></h2>
-<p>The OpenSSH client uses (by default) configuration files in the <code>~/.ssh</code>
-directory. The main configuration file is <code>~/.ssh/config</code> and is optional.
-In other words, it may or may not exist already. If it does not then it
-should be created.</p>
-<p>A simple text format is used. Instructions for a particular host (or group
-of hosts) are grouped together. The following is a suggested basic
-configuration:</p>
-<p><code></p>
-<pre>
-# Apply to all hosts
-<h1>Alternatively replace with:</h1>
-<p>#Host *.apache.org
-Host *
-FallBackToRsh no
-Protocol 2,1
-</pre></p>
-<p></code></p>
-<p>There are many other options available.</p>
-<h2 id="debug-ssh">Debugging An OpenSSH Client Connection<a class="headerlink" href="#debug-ssh" title="Permanent link">&para;</a></h2>
-<p>To diagnose what's going wrong with an OpenSSH connection, run the client
-in verbose mode. To do this just add <code>-v</code>. For example:</p>
-<div class="codehilite"><pre>$ <span class="n">ssh</span> <span class="o">-</span><span class="n">v</span>  <span class="o">-</span><span class="n">l</span> <span class="n">committer</span> <span class="n">people</span><span class="p">.</span><span class="n">apache</span><span class="p">.</span><span class="n">org</span>
-</pre></div></div>
-  <!-- Footer -->
-  <footer class="bg-primary">
-    <div class="container">
-      <div class="row">
-        <br />
-        <div class="col-sm-1">
-<pre><code>    &lt;/div&gt;
-    &lt;div class=&quot;col-sm-2&quot;&gt;
-      &lt;h5 class=&quot;white&quot;&gt;Community&lt;/h5&gt;
-      &lt;ul class=&quot;list-unstyled white&quot; role=&quot;menu&quot;&gt;
-        &lt;li&gt;&lt;a href=&quot;http://community.apache.org/&quot;&gt;Overview&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;/foundation/conferences.html&quot;&gt;Conferences&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;http://community.apache.org/gsoc.html&quot;&gt;Summer of Code&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;http://community.apache.org/newcomers/&quot;&gt;Getting Started&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;/foundation/how-it-works.html&quot;&gt;The Apache Way&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;/travel/&quot;&gt;Travel Assistance&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;/foundation/getinvolved.html&quot;&gt;Get Involved&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;/foundation/policies/conduct.html&quot;&gt;Code of Conduct&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;http://community.apache.org/newbiefaq.html&quot;&gt;Community FAQ&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;/memorials/&quot;&gt;Memorials&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-
-    &lt;div class=&quot;col-sm-2&quot;&gt;
-      &lt;h5 class=&quot;white&quot;&gt;Innovation&lt;/h5&gt;
-      &lt;ul class=&quot;list-unstyled white&quot; role=&quot;menu&quot;&gt;
-        &lt;li&gt;&lt;a href=&quot;http://incubator.apache.org/&quot;&gt;Incubator&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;http://labs.apache.org/&quot;&gt;Labs&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;/licenses/&quot;&gt;Licensing&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;/foundation/license-faq.html&quot;&gt;Licensing FAQ&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;/foundation/marks/&quot;&gt;Trademark Policy&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;/foundation/contact.html&quot;&gt;Contacts&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-
-    &lt;div class=&quot;col-sm-2&quot;&gt;
-      &lt;h5 class=&quot;white&quot;&gt;Tech Operations&lt;/h5&gt;
-      &lt;ul class=&quot;list-unstyled white&quot; role=&quot;menu&quot;&gt;
-        &lt;li&gt;&lt;a href=&quot;/dev/&quot;&gt;Developer Information&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;/dev/infrastructure.html&quot;&gt;Infrastructure&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;/security/&quot;&gt;Security&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;http://status.apache.org&quot;&gt;Status&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;/foundation/contact.html&quot;&gt;Contacts&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-
-    &lt;div class=&quot;col-sm-2&quot;&gt;
-      &lt;h5 class=&quot;white&quot;&gt;Press&lt;/h5&gt;
-      &lt;ul class=&quot;list-unstyled white&quot; role=&quot;menu&quot;&gt;
-        &lt;li&gt;&lt;a href=&quot;/press/&quot;&gt;Overview&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;https://blogs.apache.org/&quot;&gt;ASF News&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;https://blogs.apache.org/foundation/&quot;&gt;Announcements&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;https://twitter.com/TheASF&quot;&gt;Twitter Feed&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;/press/#contact&quot;&gt;Contacts&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-
-    &lt;div class=&quot;col-sm-2&quot;&gt;
-      &lt;h5 class=&quot;white&quot;&gt;Legal&lt;/h5&gt;
-      &lt;ul class=&quot;list-unstyled white&quot; role=&quot;menu&quot;&gt;
-        &lt;li&gt;&lt;a href=&quot;/legal/&quot;&gt;Legal Affairs&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;/legal/dmca.html&quot;&gt;DMCA&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;/licenses/&quot;&gt;Licensing&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;/foundation/marks/&quot;&gt;Trademark Policy&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;/foundation/records/&quot;&gt;Public Records&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;/foundation/policies/privacy.html&quot;&gt;Privacy Policy&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;/licenses/exports/&quot;&gt;Export Information&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;/foundation/license-faq.html&quot;&gt;Licensing FAQ&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href=&quot;/foundation/contact.html&quot;&gt;Contacts&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-    &lt;/div&gt;
-
-    &lt;div class=&quot;col-sm-1&quot;&gt;
-    &lt;/div&gt;
-
-  &lt;/div&gt;
-  &lt;hr class=&quot;col-lg-12 hr-white&quot; /&gt;
-  &lt;div class=&quot;row&quot;&gt;
-    &lt;div class=&quot;col-lg-12&quot;&gt;
-      &lt;p class=&quot;text-center&quot;&gt;Copyright &amp;#169; 2019 The Apache Software Foundation, Licensed under the &lt;a class=&quot;white&quot; href=&quot;/licenses/LICENSE-2.0&quot;&gt;Apache License, Version 2.0&lt;/a&gt;.&lt;/p&gt;
-      &lt;p class=&quot;text-center&quot;&gt;Apache and the Apache feather logo are trademarks of The Apache Software Foundation. &lt;/p&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
 <p><em>moving content from <a href="https://www.apache.org/dev/user-ssh.html">https://www.apache.org/dev/user-ssh.html</a></em></p>
 
         </div>
