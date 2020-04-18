@@ -17,6 +17,7 @@ jenkins:
     - KibbleDemo
 
 notifications:
-  commits:       commits@infra.apache.org
-  pullrequests:  users@infra.apache.org
-  issues:        users@infra.apache.org
+  commits:              commits@infra.apache.org
+  pullrequests_status:  users@infra.apache.org
+  pullrequests_comment: commits@infra.apache.org
+  issues:               users@infra.apache.org
