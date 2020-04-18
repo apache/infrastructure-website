@@ -15,3 +15,8 @@ github:
 jenkins:
   github_whitelist:
     - KibbleDemo
+
+notifications:
+  commits:       commits@infra.apache.org
+  pullrequests:  commits@infra.apache.org
+  issues:        users@infra.apache.org
