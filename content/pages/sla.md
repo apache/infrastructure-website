@@ -1,7 +1,8 @@
 Title: Service Level Agreement (SLA)
 
+A service-level agreement, or SLA, is a service provider's commitment to its clients. The Infra team commits to these targets for the services it maintains for the Apache community.
 
-For current status, see http://status.apache.org/ and SLA graphs at http://www.apache.org/uptime/
+For current status, see <a href="https://status.apache.org/" target="_blank">the ASF status page</a> and our <a href="https://www.apache.org/uptime/" target="_blank">SLA graphs</a>.
 
 We divide Infra-provided services into four groups:
 
