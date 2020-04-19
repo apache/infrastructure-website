@@ -10,7 +10,7 @@ The ASF Infrastructure team is made up of ASF committers, some of whom are paid 
 The Apache Infrastructure team exists to ensure the day-to-day operations of the technical aspects of the foundation. If you have questions about or require support regarding email, code repositories, web sites, issue trackers and so forth, we are here to [help](help.html)! 
 
 ## How can you help?
-Volunteers are the driving force of the Apache Software Foundation. The Infrastructure team is always looking for people willing to help out at whatever effort level suits you. If you're interested, visit our [volunteer information](volunteer.html) page.
+Volunteers are the driving force of the Apache Software Foundation. The Infrastructure team is always looking for people willing to help out at whatever effort level suits you. If you're interested, visit our [volunteer information](infra-volunteer.html) page.
 
 
 Gnomes.
