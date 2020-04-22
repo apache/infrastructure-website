@@ -16,7 +16,7 @@ Many Git users manage their source code through one of these tools:
 * <a href="https://gitbox.apache.org" target="_blank">GitBox</a>
 * <a href="https://github.com/apache" target="_blank">GitHub</a>
 
-Some projects began using [read-only-mirrors](git.html) of SVN repositories when Apache's support for Git was limited. This is no longer necessary.
+Some projects began using [read-only-mirrors](git.html) of SVN repositories when Apache's support for Git was limited. This is no longer necessary. [Writable Git](writable-git.html) repositories are available to all projects.
 
 ## SVN repositories ##
 Information about SVN is at <a href="https://subversion.apache.org/" target="_blank">the Apache SVN site</a> and <a href="http://svnbook.red-bean.com/" target="_blank">Version Control with Subversion</a>. The website provides links for _SVN clients_ you can download and install to make it easier to work with SVN.
