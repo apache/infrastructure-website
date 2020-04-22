@@ -22,6 +22,7 @@ Some projects began using [read-only-mirrors](git.html) of SVN repositories when
 
 .asf.yaml is a branch-specific file that a project may put in the root of the git repository to control various new features such as
 
+-  notification settings
 -  website staging
 -  github settings
 -  pelican builds
