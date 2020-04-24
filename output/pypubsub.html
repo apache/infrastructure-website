@@ -148,9 +148,23 @@ Subscribe to Apache Software Foundation infrastructure events        </a>
 <h2>Try it yourself</h2>
 <p>To try it out and take a look at the event stream, just use <a href="https://en.wikipedia.org/wiki/CURL">cURL</a> in your terminal:</p>
 <pre><code>curl http://pubsub.apache.org:2069/git/commit
+
 </code></pre>
 <p>A secure version also exists on port 2070:</p>
 <pre><code>curl https://pubsub.apache.org:2070/git/commit
+</code></pre>
+<h2>Using PyPubSub with Python</h2>
+<p>You can listen for an react on payloads in Python using the <a href="https://pypi.org/project/asfpy/">asfpy</a> pip package:</p>
+<pre><code>import asfpy.pubsub
+
+def process_event(payload):
+   print(&quot;Got an event from PyPubSub!&quot;)
+   ...
+
+def main():
+    pubsub = asfpy.pubsub.Listener('http://pubsub.apache.org:2069/')
+    pubsub.attach(process_event)
+
 </code></pre>
 <h2>Want to know more? Have questions?</h2>
 <p>To learn more, or just get some questions answered, please contact us at <code>users@infra.apache.org</code>, and we'll try our best to help you out.</p>
