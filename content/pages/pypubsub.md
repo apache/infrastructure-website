@@ -66,8 +66,9 @@ Payloads vary depending on what they represent, so check both what sub-objects a
 To try it out and take a look at the event stream, just use [cURL](https://en.wikipedia.org/wiki/CURL) in your terminal:
 ~~~
 curl http://pubsub.apache.org:2069/git/commit
-
 ~~~
+
+<br/>
 
 A secure version also exists on port 2070:
 ~~~
