@@ -95,28 +95,17 @@ Managing your project web site        </a>
               Managing your project web site
           </h2>
               <p>Every Apache project or podling has a website hosted at <code>apache.org</code>. Apache provides tools to maintain it. Each project decides how their website looks, its contents, how they maintain it, and what software they use to support it, as long as the result is static files that our public web servers can make available to browsers. We also have limited support for .htaccess files and CGI scripts.</p>
-<p>The basic requirements for site management are that</p>
-<ul>
-<li>only committers should be able to modify the site.</li>
-<li>notifications of all site changes should be sent to the relevant project mailing lists. The Apache CMS allows non-committers to send  patches via a simple web interface by &quot;Mail Diff&quot;ing to the project  mailing list that can be easily published by a committer.</li>
-</ul>
 <h2>Contents</h2>
 <ul>
-<li><a href="#default">Is there a default website template?</a></li>
-<li><a href="#tools">Management tools</a></li>
-<li><a href="#preview">Previewing a project website</a></li>
-<li><a href="#configure">Configuring a project webstie</a></li>
-<li><a href="#logging">Logging</a></li>
-<li><a href="#which-tools-do-i-have-to-use">Site support tools</a></li>
-<li><a href="#svnpubsub-revision">Finding the site revision number</a></li>
-<li><a href="#mail">Providing public access to the project mail archive mbox files</a></li>
-<li><a href="#feather">Using the project's favicon instead of the Apache feather</a></li>
-<li><a href="#generated">Minimizing the number of changes committed in the project's Maven- or JavaDoc- generated site</a></li>
+<li><a href="#default">Creating the website</a></li>
+<li><a href="#sitemanagement">Site management</a></li>
+<li><a href="#configure">Configuring the website</a></li>
+<li><a href="#preview">Previewing the website</a></li>
 </ul>
 <h2 id="default">Creating the website<a class="headerlink" href="#default" title="Permanent link">&para;</a></h2>
 <p>Projects are free to choose their own styles and layout for websites, and have a range of options for actually creating the pages. The goal is to create and informative and useful <strong>static</strong> HTML website that can engage visitors, explain your project to them, and provide download links and documentation so they can use your project's applications.</p>
 <p>If you'd like to get started with an easy-to-use, Markdown-based site that many projects have used, see the <a href="https://github.com/apache/apache-website-template" target="_blank">Sample Apache Project website</a> repository, which has many useful features and instructions for using svnpubsub easily.</p>
-<p>Another good option is <a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a>, a static site generator, written in Python. Highlights include:</p>
+<p>Another good option is <a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a>, a static site generator written in Python. Highlights include:</p>
 <ul>
 <li>Write your content directly with your editor of choice in reStructuredText or Markdown formats</li>
 <li>Includes a simple CLI tool to (re)generate your site</li>
@@ -124,7 +113,13 @@ Managing your project web site        </a>
 <li>Completely static output is easy to host anywhere</li>
 </ul>
 <p>See Infra's <a href="https://cwiki.apache.org/confluence/display/INFRA/Pelican+and+Buildbot+for+websites" target="_blank">instructions</a> for using Pelican to develop and deploy a project website.</p>
-<h2 id="tools">Management tools<a class="headerlink" href="#intro" title="Permanent link">&para;</a></h2>
+<h2 id="sitemanagement">Site management</a>
+<p>The basic requirements for site management are that</p>
+<ul>
+<li>only committers should be able to modify the site.</li>
+<li>notifications of all site changes are sent to the relevant project mailing lists. The Apache CMS allows non-committers to send  patches via a simple web interface by &quot;Mail Diff&quot;ing to the project mailing list that can be easily published by a committer.</li>
+</ul>
+<h3 id="tools">Management tools<a class="headerlink" href="#intro" title="Permanent link">&para;</a></h3>
 <p>Infra supports these tools for publishing and maintaining Apache project websites:</p>
 <ul>
 <li><strong>Apache CMS</strong> <em>(being deprecated; don't use for new sites)</em> provides a simple browser-based user interface for editing, staging and publishing site content in Markdown, HTML or any other source format for which support has been added. See the <a href="cmsref">CMS reference</a> and <a href="cmsadoption">adoption</a> for more details. The Apache CMS uses pypubsub as the underlying mechanism for publishing a site. <strong>Note</strong>: No new projects can use the Apache CMS, and we enccourage projects using it to migrate to another resource for maintaining their websites. Here are <a href="https://cwiki.apache.org/confluence/display/INFRA/Migrate+your+project+website+from+the+Apache+CMS" target="_blank">migration instructions</a>.</li>
@@ -142,31 +137,19 @@ Managing your project web site        </a>
 <p><strong>Buildbot</strong> is a job scheduling system: it queues jobs, executes the jobs when the required resources are available, and reports the results.</p>
 </li>
 </ul>
-<h2 id="preview">Previewing a project website<a class="headerlink" href="#preview" title="Permanent link">&para;</a></h2>
-<ul>
-<li>For svnpubsub sites, review the local files in your svn checkout before committing them. The changes will be published immediately after you commit them.</p></li>
-<li>For CMS sites, just commit the changes (without &quot;publish&quot;-ing them) and browse to <code>&gt;http://TLP.staging.apache.org/</code>. (For example, <a href="https://www.staging.apache.org/dev/project-site">the staging version of this page</a>.)  The CMS web interface includes a <code>Staged</code> link that will take you there directly.</li>
-<li>There is no preview mode for gitpubsub. You should ideally have a way to locally build and test the website.</li>
-</ul>
-<h2 id="configure">Configuring a project website<a class="headerlink" href="#configure" title="Permanent link">&para;</a></h2>
-<p>The central config file lets you use <code>.htaccess</code> files in your website directories to control configuration. Of course, reading and
-parsing an <code>.htaccess</code> file on each request can slow down the server, so consider requesting adjustments to the central config file for
-permanent, site-wide configuration changes.</p>
-<h2 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h2>
-<p>The build output from your job when you compile your site is available from either buildbot or jenkins, depending on which you use.</p>
-<h2 id="which-tools-do-i-have-to-use">Site support tools<a class="headerlink" href="#which-tools-do=i-have-to-use" title="Permanent link">&para;</a></h2>
-<p>Projects use one of the three options mentioned earlier, although the CMS option is not available for new websites. <strong>Note</strong> that if you use CMS you are using svnpubsub under the covers.</p>
-<p>Gitpubsub is based on git repos, so if you're using Git for source control it may make sense to use that instead of a svnpubsub directory.</p>
-<h2 id="svnpubsub-revision">Finding the site revision number<a class="headerlink" href="#svnpubsub-revision" title="Permanent link">&para;</a></h2>
+<h3 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h3>
+<p>The build output from your job when you compile your site is available from either Buildbot or Jenkins, depending on which you use.</p>
+<h3 id="svnpubsub-revision">Finding the site revision number<a class="headerlink" href="#svnpubsub-revision" title="Permanent link">&para;</a></h3>
 <p>This only applies to <em>SVN based websites</em>.</p>
-<p>Look at the <code>.revision</code> file at the root of your site (for example, &lt;a href=&quot;<a href="http://subversion.apache.org/.revision">http://subversion.apache.org/.revision</a>&quot; target&quot;_blank&quot;&gt;&gt;<a href="http://subversion.apache.org/.revision">http://subversion.apache.org/.revision</a></a>). That file updates after every successful <code>svn update</code>. (If the update is underway or exited abnormally, <code>.revision</code> won't have been changed.)</p>
-<h2 id="mail">Providing public access to the project's mail archive mbox files<a class="headerlink" href="#mail" title="Permanent link">&para;</a></h2>
+<p>Look at the <code>.revision</code> file at the root of your site (for example, &lt;a href=&quot;<a href="http://subversion.apache.org/.revision">http://subversion.apache.org/.revision</a>&quot; target&quot;_blank&quot;&gt;&gt;<a href="http://subversion.apache.org/.revision">http://subversion.apache.org/.revision</a></a>). That file updates after every successful svn update. (If the update is underway or exited abnormally, <code>.revision</code> won't have changed.)</p>
+<h3 id="mail">Providing public access to the project's mail archive mbox files<a class="headerlink" href="#mail" title="Permanent link">&para;</a></h3>
 <p>Some projects have a &quot;mail&quot; directory at the top of their project website. Enable this by creating a symbolic link  to <code>/home/apmail/public-arch/$tlp.apache.org</code> in svnpubsub or CMS output.</p>
 <p>See more <a href="https://apache.org/dev/#mail" target="_blank">notes aboout project mail</a>.</p>
-<h2 id="feather">Using the project's favicon instead of the Apache feather<a class="headerlink" href="#feather" title="Permanent link">&para;</a></h2>
-<p>To use a custom favicon for your project's website, add the <code>favicon.ico</code> file to your site's root directory. The feather only appears for project sites that don't have a <code>favicon.ico</code> file.</p>
-<h2 id="generated">Minimizing the number of changes committed in the project's Maven- or JavaDoc- generated site<a class="headerlink" href="#generated" title="Permanent link">&para;</a></h2>
-<p>If you are using svnpubsub, the commit performs very slowly if the number of changes is large, particularly if the number of files is large. This is often the case with JavaDoc, and to a lesser extent with Maven-generated sites. Here is what you can do to speed up the commit:</p>
+<h3 id="feather">Using the project's favicon<a class="headerlink" href="#feather" title="Permanent link">&para;</a></h2>
+<p>To use a custom favicon for your project's website, add the <code>favicon.ico</code> file to your site's root directory. The ASF feather appears for project sites that don't have a <code>favicon.ico</code> file.</p>
+<h3 id="generated">Minimizing the number of changes committed in the project's Maven- or JavaDoc- generated site<a class="headerlink" href="#generated" title="Permanent link">&para;</a></h3>
+<p>If you are using svnpubsub, the commit performs very slowly if the number of changes is large, particularly if the number of files is large. This is often the case with JavaDoc, and to a lesser extent with Maven-generated sites.</p>
+<p>Here is what you can do to speed up the commit:</p>
 <ul>
 <li>Ask Infra to store your generated content in the CMS repository, rather than the main ASF repository. While this won't necessarily speed up your own commit, it will prevent it from impacting other users.</li>
 <li>When running JavaDoc, pass the <code>-notimestamp</code> option. This will avoid most files from being modified between runs if there haven't been code changes.</li>
@@ -176,6 +159,16 @@ permanent, site-wide configuration changes.</p>
 <li>Minimize use of &quot;publish date&quot; and &quot;version&quot; in templates to those that are truly necessary or helpful. Consider using a &quot;last modified date&quot; and version in the URL instead (unless &quot;latest&quot; is implied).</li>
 <li>Minimize Subversion keywords in the output that may change frequently without significant meaning. This includes keywords in source code that may be rendered to JavaDoc or a Maven JXR source cross-reference.</li>
 <li>Avoid publishing Maven reports that change constantly to the project site. Code coverage, style reports, static analysis, etc. can be generated into a working copy on the CI server instead for easy developer viewing.</li>
+</ul>
+<h2 id="configure">Configuring the website<a class="headerlink" href="#configure" title="Permanent link">&para;</a></h2>
+<p>The central config file lets you use <code>.htaccess</code> files in your website directories to control configuration. Of course, reading and
+parsing an <code>.htaccess</code> file on each request can slow down the server, so consider requesting adjustments to the central config file for
+permanent, site-wide configuration changes.</p>
+<h2 id="preview">Previewing the website<a class="headerlink" href="#preview" title="Permanent link">&para;</a></h2>
+<ul>
+<li>For svnpubsub sites, review the local files in your svn checkout before committing them. The changes will be published immediately after you commit them.</p></li>
+<li>For CMS sites, just commit the changes (without &quot;publish&quot;-ing them) and browse to <code>&gt;http://TLP.staging.apache.org/</code>. (For example, <a href="https://www.staging.apache.org/dev/project-site">the staging version of this page</a>.)  The CMS web interface includes a <code>Staged</code> link that will take you there directly.</li>
+<li>There is no preview mode for gitpubsub. You should ideally have a way to locally build and test the website.</li>
 </ul>
 
         </div>
