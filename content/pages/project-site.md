@@ -27,7 +27,7 @@ Another good option is <a href="https://docs.getpelican.com/en/stable/" target="
   
 See Infra's <a href="https://cwiki.apache.org/confluence/display/INFRA/Pelican+and+Buildbot+for+websites" target="_blank">instructions</a> for using Pelican to develop and deploy a project website.
 
-<h2 id="sitemanagement">Site management</a>
+<h2 id="sitemanagement">Site management</a></h2>
   
   The basic requirements for site management are that 
 
