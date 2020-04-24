@@ -68,6 +68,12 @@ To try it out and take a look at the event stream, just use [cURL](https://en.wi
 curl http://pubsub.apache.org:2069/git/commit
 ~~~
 
+A secure version also exists on port 2070:
+~~~
+curl https://pubsub.apache.org:2070/git/commit
+~~~
+
+
 ## Want to know more? Have questions?
 To learn more, or just get some questions answered, please contact us at `users@infra.apache.org`, and we'll try our best to help you out.
 
