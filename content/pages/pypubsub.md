@@ -66,6 +66,7 @@ Payloads vary depending on what they represent, so check both what sub-objects a
 To try it out and take a look at the event stream, just use [cURL](https://en.wikipedia.org/wiki/CURL) in your terminal:
 ~~~
 curl http://pubsub.apache.org:2069/git/commit
+
 ~~~
 
 A secure version also exists on port 2070:
@@ -73,6 +74,20 @@ A secure version also exists on port 2070:
 curl https://pubsub.apache.org:2070/git/commit
 ~~~
 
+## Using PyPubSub with Python
+You can listen for an react on payloads in Python using the [asfpy](https://pypi.org/project/asfpy/) pip package:
+~~~
+import asfpy.pubsub
+
+def process_event(payload):
+   print("Got an event from PyPubSub!")
+   ...
+
+def main():
+    pubsub = asfpy.pubsub.Listener('http://pubsub.apache.org:2069/')
+    pubsub.attach(process_event)
+
+~~~
 
 ## Want to know more? Have questions?
 To learn more, or just get some questions answered, please contact us at `users@infra.apache.org`, and we'll try our best to help you out.
