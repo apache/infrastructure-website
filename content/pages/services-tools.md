@@ -13,7 +13,9 @@ One of Infra's goals is to empower ASF members, PMCs, and committers to do much 
   
 ### Getting notices of infrastructure events
 You can subscribe to notices of infrastructure events that you want to know about, ranging from Subversion commits to emails to specific lists. [Learn more here](pypubsub.html).
-  
+
+### LDAP-enabled services
+Infra supports many ASF <a href="https://cwiki.apache.org/confluence/display/INFRA/LDAP+enabled+services+at+the+ASF" target="_blank">LDAP-enabled services</a>. You can log in to them with your LDAP credentials. 
   
 ### Tools for ASF projects
 
