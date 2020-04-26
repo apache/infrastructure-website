@@ -2,8 +2,6 @@ Title: Services and Tools
 
 Infra maintains a wide range of tools for PMCs, project committers, and the Apache Board to use. Parts of our toolkit are only available to people who have specific duties or roles. Others, like the monitoring tools that show the status of various parts of the Apache infrastructure, are available to everyone.
 
-**Note**: DNS is the only authoritative record of which service is on which machine, so please use the service names ("home.apache.org") instead of the machine names ("minotaur.apache.org") when using the services.
-
 <h2 id="web-sites">Web sites<a class="headerlink" href="#web-sites" title="Permanent link">&para;</a></h2>
 
   - <a href="https://apache.org/dev/#web" targety="_blank">ASF websites</a>.
