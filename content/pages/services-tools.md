@@ -9,7 +9,16 @@ Infra maintains a wide range of tools for PMCs, project committers, and the Apac
   - `www.apache.org` is the main ASF website. Build instructions are <a href="https://apache.org/dev/infra-site" target="_blank">here</a>.
   - Details about individual <a href="https://home.apache.org/" target="_blank">ASF Committers</a>.
   - Notes about committers' <a href="https://apache.org/dev/new-committers-guide.html#public_html" target="_blank">personal web spaces</a>.
+  
+<h2 id="email">Email<a class="headerlink" href="#email" title="Permanent link">&para;</a></h2>
 
+  - Mail server - QMail/QSMTPD
+  - <a href="https://www.apache.org/foundation/mailinglists.html" target="_blank">mailing lists</a> - EZMLM
+  - Searchable <a href="https://lists.apache.org/" target="_blank">private mailing list archives (mod_mbox)</a>. ASF Members have full access; PMC members have access to their PMC's archives only.
+  - Spam control - Spamfilter + SpamAssassin
+  - Mail forwarding: See <a href="https://id.apache.org" target="_blank">id.apache.org</a>
+  - <a href="https://lists.apache.org/" target="_blank">PonyMail</a> lets you browse Apache email archives by certain categories, by user, or by project. You must log in if you want to respond to an email, or write a new one, through this interface.
+  - Infra maintains and uses a series of <a href="https://infra.apache.org/infra-mail.html" target="_blank">mailing lists</a>, some of which are open to committers.
 
 ## ASF Self-Service Platform
 
@@ -36,16 +45,24 @@ Infra supports many ASF <a href="https://cwiki.apache.org/confluence/display/INF
 - The <a href="https://translate.apache.org/" target="_blank">ASF Translation Service</a> provides the Pootle localization tool to help projects that want to provide documentation and user-interface text in multiple languages. *NOTE*: While several ASF projects continue to use Pootle, AFS is not approving new Pootle use. As of March, 2020, Infra is testing a replacement translation service.
 - The Apache <a href="https://creadur.apache.org/rat/" target="_blank">Release Audit Tool (RAT)</a> can help you confirm that your proposed product release complies with all ASF requirements.
 
-#### Version Control
+<h4 id="source-repository">Version control<a class="headerlink" href="#source-repository" title="Permanent link">&para;</a></h2>
 
 Apache provides, and Infra maintains, [code repositories](version-control.html) that Apache projects can use to keep their project code safe, accessible to team members, and under version control.
 
-#### Bug-tracking and feature requests
+  - <a href="https://svn.apache.org/repos/asf/" target="_blank">Subversion (SVN) repositories</a>
+  - <a href="https://svn.apache.org/viewvc/" target="_blank">ViewVC (Browser interface to the main repository)</a>
+  - [Read-only Git mirrors of SVN codebases](git.html)
+  - [Writable Git repositories](wr8taboe-git.html)
+
+
+<h4 id="issue-tracking">Issue tracking and feature requests<a class="headerlink" href="#issue-tracking" title="Permanent link">&para;</a></h4>
 
 Projects can use either of these bug-tracking  and feature request tools:
 
 * <a href="https://issues.apache.org/jira" target="_blank">Jira</a>
 * <a href="https://bz.apache.org/bugzilla/" target="_blank">Bugzilla</a>
+
+For historical reasons, some projects have their own instances of Jira or Bugzilla. See <a href="https://issues.apache.org/" target="_blank">issues.apache.org</a> for a list.
 
 Review Apache's <a href="https://issues.apache.org/bugwritinghelp.html" target="_blank">bug reporting guidelines</a>.
 
@@ -68,11 +85,6 @@ Other tools to consider:
 Use the ASF <a href="https://repository.apache.org/" target="_blank">Nexus Repository Manager</a> to browse for and review code distributions by ASF projects.
 
 
-#### Mailing LIsts
-
-<a href="https://lists.apache.org" target="_blank">PonyMail</a> lets you browse Apache email archives by certain categories, by user, or by project. You must log in if you want to respond to an email, or write a new one, through this interface.
-
-Infra maintains and uses a series of [mailing lists](infra-mail.html), some of which are open to committers.
 
 #### Sharing Snippets
 
