@@ -2,7 +2,18 @@ Title: Services and Tools
 
 Infra maintains a wide range of tools for PMCs, project committers, and the Apache Board to use. Parts of our toolkit are only available to people who have specific duties or roles. Others, like the monitoring tools that show the status of various parts of the Apache infrastructure, are available to everyone.
 
-### ASF Self-Service Platform
+**Note**: DNS is the only authoritative record of which service is on which machine, so please use the service names ("home.apache.org") instead of the machine names ("minotaur.apache.org") when using the services.
+
+<h2 id="web-sites">Web sites<a class="headerlink" href="#web-sites" title="Permanent link">&para;</a></h2>
+
+  - <a href="https://apache.org/dev/#web" targety="_blank">ASF websites</a>.
+  - An index of <a href="https://projects.apache.org/projects.html?name" target="_blank">all ASF projects</a>.
+  - `www.apache.org` is the main ASF website. Build instructions are <a href="https://apache.org/dev/infra-site" target="_blank">here</a>.
+  - Details about individual <a href="https://home.apache.org/" target="_blank">ASF Committers</a>.
+  - Notes about committers' <a href="https://apache.org/dev/new-committers-guide.html#public_html" target="_blank">personal web spaces</a>.
+
+
+## ASF Self-Service Platform
 
 One of Infra's goals is to empower ASF members, PMCs, and committers to do much of what they need to do without having to request help from Infra. The <a href="https://selfserve.apache.org" target="_blank">Self-Service Platform</a>, for example, provides a number of handy tools that **people who have an Apache email address** (basically, project committers, PMC members, and ASF Members) can use:
 
