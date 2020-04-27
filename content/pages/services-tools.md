@@ -52,7 +52,7 @@ Apache provides, and Infra maintains, [code repositories](version-control.html) 
   - <a href="https://svn.apache.org/repos/asf/" target="_blank">Subversion (SVN) repositories</a>
   - <a href="https://svn.apache.org/viewvc/" target="_blank">ViewVC (Browser interface to the main repository)</a>
   - [Read-only Git mirrors of SVN codebases](git.html)
-  - [Writable Git repositories](wr8taboe-git.html)
+  - [Writable Git repositories](writable-git.html)
 
 
 <h4 id="issue-tracking">Issue tracking and feature requests<a class="headerlink" href="#issue-tracking" title="Permanent link">&para;</a></h4>
@@ -63,6 +63,8 @@ Projects can use either of these bug-tracking  and feature request tools:
 * <a href="https://bz.apache.org/bugzilla/" target="_blank">Bugzilla</a>
 
 For historical reasons, some projects have their own instances of Jira or Bugzilla. See <a href="https://issues.apache.org/" target="_blank">issues.apache.org</a> for a list.
+
+Infra can activate a [Subversion and Git integration with Jira tickets](svngit2jira.html) for your project.
 
 Review Apache's <a href="https://issues.apache.org/bugwritinghelp.html" target="_blank">bug reporting guidelines</a>.
 
