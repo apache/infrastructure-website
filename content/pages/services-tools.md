@@ -35,9 +35,9 @@ You can subscribe to notices of infrastructure events that you want to know abou
 ### LDAP-enabled services
 Infra supports many ASF <a href="https://cwiki.apache.org/confluence/display/INFRA/LDAP+enabled+services+at+the+ASF" target="_blank">LDAP-enabled services</a>. You can log in to them with your LDAP credentials. 
   
-### Tools for ASF projects
+## Tools for ASF projects
 
-#### PMC tools
+### PMC tools
 
 - <a href="https://reporter.apache.org/" target="_blank">Reporter</a> provides actvitity statistics and other information about your project, and editing tools to help you write and submit your project's quarterly Board reports.
 - You can create and run a [project blog](project-blogs.html).
@@ -66,7 +66,7 @@ For historical reasons, some projects have their own instances of Jira or Bugzil
 
 Review Apache's <a href="https://issues.apache.org/bugwritinghelp.html" target="_blank">bug reporting guidelines</a>.
 
-#### Build services
+### Build services
 
 Apache supports and models continuous integration and continuous deployment, or *CI/CD*. The <a href="https://ci.apache.org" target="_blank">Apache Build services site</a> provides more information, and links to these build tools:
 
@@ -80,25 +80,25 @@ Other tools to consider:
 * <a href="https://www.appveyor.com" target="_blank">Appveyor</a>
 
 
-#### Code Distribution
+### Code Distribution
 
 Use the ASF <a href="https://repository.apache.org/" target="_blank">Nexus Repository Manager</a> to browse for and review code distributions by ASF projects.
 
 
 
-#### Sharing Snippets
+### Sharing Snippets
 
 <a href="https://paste.apache.org/" target="_blank">Paste</a> is a service that lets ASF members post code snippets or similar file extracts they want to share to illustrate a code issue or make available for reuse, usually with other project members. You can post content as plain text, or formatted for a number of coding and scripting languages.
 
-#### Logging
+### Logging
 
 * <a href="https://uls.apache.org/app/kibana#/discover?_g=()" target="_blank">Kibana</a>
 
-#### Machine List
+### Machine List
 
 * <a href="https://www.apache.org/dev/machines.html" target="_blank">Host Keys and Fingerprints</a>
 
-#### Whimsy
+### Whimsy
 
 * <a href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer search</a>
 
