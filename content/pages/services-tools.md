@@ -64,9 +64,16 @@ Projects can use either of these bug-tracking  and feature request tools:
 
 For historical reasons, some projects have their own instances of Jira or Bugzilla. See <a href="https://issues.apache.org/" target="_blank">issues.apache.org</a> for a list.
 
+Review Apache's <a href="https://issues.apache.org/bugwritinghelp.html" target="_blank">bug reporting guidelines</a>.
+
+<h3 id="repository-to-issue-tracker-integrations">Repository to Issue tracker Integrations<a class="headerlink" href="#repository-to-issue-tracker-integrations" title="Permanent link">&para;</a></h3>
+
 Infra can activate a [Subversion and Git integration with Jira tickets](svngit2jira.html) for your project.
 
-Review Apache's <a href="https://issues.apache.org/bugwritinghelp.html" target="_blank">bug reporting guidelines</a>.
+<h3 id="source-repository-publishersubscriber-services">Source repository publisher/subscriber services<a class="headerlink" href="#source-repository-publishersubscriber-services" title="Permanent link">&para;</a></h3>
+
+  - SvnPubSub
+  - [PyPubSub](pypubsub.html)
 
 ### Build services
 
@@ -81,12 +88,48 @@ Other tools to consider:
 * <a href="https://travis-ci.org/" target="_blank">Travis CI</a>
 * <a href="https://www.appveyor.com" target="_blank">Appveyor</a>
 
-
 ### Code Distribution
 
 Use the ASF <a href="https://repository.apache.org/" target="_blank">Nexus Repository Manager</a> to browse for and review code distributions by ASF projects.
 
+<h3 id="virtual-servers">Virtual servers<a class="headerlink" href="#virtual-servers" title="Permanent link">&para;</a></h3>
 
+Infra can provide [Ubuntu virtual machines](vm-policy.html) for projects.
+
+<h3 id="distributions">Distributions<a class="headerlink" href="#distributions" title="Permanent link">&para;</a></h3>
+
+  - <a href="https://www.apache.org/dyn/closer.cgi" target="_blank">Current distributions</a>
+  - <a href="https://archive.apache.org" target="_blank">Historical distribution archives</a>
+  - [Rsync for distribution mirrors](how-to-mirror.html)
+  - <a href="https://repository.apache.org" target="_blank">Nexus</a>
+  
+<h3 id="build">Build services / CI<a class="headerlink" href="#build" title="Permanent link">&para;</a></h2>
+
+Information about our build and continuous integration tools is on <a href="https://ci.apache.org/" target="_blank">this page</a>.
+
+### Code quality
+
+**SonarQube** is an open-source platform developed by SonarSource for continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities on 20+ programming languages. You can check the status of many Apache project repositories <a href="https://sonarcloud.io/organizations/apache/projects" target="_blank>here</a>.
+
+<a href="https://cwiki.apache.org/confluence/display/INFRA/SonarQube+Analysis" target="_blank">Read more</a>.
+
+### Online voting
+
+Projects can use the <a href="https://steve.apache.org" target="_blank">Apache Steve</a> voting system instance (offline when not in use).
+
+<h2 id="other">Other<a class="headerlink" href="#other" title="Permanent link">&para;</a></h2>
+
+<h3 id="dns">DNS<a class="headerlink" href="#dns" title="Permanent link">&para;</a></h3>
+
+Infra manages the ASF DNS, which is registered with Namecheap.
+
+<h3 id="irc-services">IRC Services<a class="headerlink" href="#irc-services" title="Permanent link">&para;</a></h3>
+
+For IRC Services on the Freenode IRC Network, see <a href="https://wilderness.apache.org" target="_blank">wilderness.apache.org</a>.
+
+### URL shortener
+
+<a href="https://s.apache.org" target="_blank">URL shortener</a>
 
 ### Sharing Snippets
 
@@ -94,13 +137,12 @@ Use the ASF <a href="https://repository.apache.org/" target="_blank">Nexus Repos
 
 ### Logging
 
-* <a href="https://uls.apache.org/app/kibana#/discover?_g=()" target="_blank">Kibana</a>
+<a href="https://uls.apache.org/app/kibana#/discover?_g=()" target="_blank">Kibana</a>
 
 ### Machine List
 
-* <a href="https://www.apache.org/dev/machines.html" target="_blank">Host Keys and Fingerprints</a>
+<a href="https://www.apache.org/dev/machines.html" target="_blank">Host Keys and Fingerprints</a>
 
 ### Whimsy
 
-* <a href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer search</a>
-
+<a href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer search</a>
