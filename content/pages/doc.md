@@ -21,7 +21,7 @@ The Apache Infrastructure Team (Infra) operates under the <a href="https://www.a
 
 ### PMC resources ###
 
-- [Project website guidelines](website-guidelines.html). **Note**: No new projects can use the Apache CMS, and we enccourage projects using it to migrate to another resource for maintaining their websites. 
+- [Project website guidelines](website-guidelines.html). **Note**: No new projects can use the Apache CMS, and we enccourage projects using it to migrate to another resource for maintaining their websites. Here is how one project <a href="https://cwiki.apache.org/confluence/display/INFRA/How+Apache+Jena+migrated+from+the+CMS" target="_blank">did the migration</a>.
 - [Managing your project website](project-site.html)
 - [Project source code repositories](version-control.html)
 - [Repositories for Maven releases and snapshots](repository-faq.html)
