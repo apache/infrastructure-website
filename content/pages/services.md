@@ -2,7 +2,7 @@ Title: Services and Tools
 
 Infra maintains a wide range of tools for PMCs, project committers, and the Apache Board to use. Parts of our toolkit are only available to people who have specific duties or roles. Others, like the monitoring tools that show the status of various parts of the Apache infrastructure, are available to everyone.
 
-<h2 id="web-sites">Web sites<a class="headerlink" href="#web-sites" title="Permanent link">&para;</a></h2>
+<h2 id="web-sites">Websites<a class="headerlink" href="#web-sites" title="Permanent link">&para;</a></h2>
 
   - <a href="https://apache.org/dev/#web" targety="_blank">ASF websites</a>.
   - An index of <a href="https://projects.apache.org/projects.html?name" target="_blank">all ASF projects</a>.
@@ -53,6 +53,7 @@ Apache provides, and Infra maintains, [code repositories](version-control.html) 
   - <a href="https://svn.apache.org/viewvc/" target="_blank">ViewVC (Browser interface to the main repository)</a>
   - [Read-only Git mirrors of SVN codebases](git.html)
   - [Writable Git repositories](writable-git.html)
+  - [Aoache and GitHub](apache-github.html)
 
 
 <h4 id="issue-tracking">Issue tracking and feature requests<a class="headerlink" href="#issue-tracking" title="Permanent link">&para;</a></h4>
@@ -66,7 +67,7 @@ For historical reasons, some projects have their own instances of Jira or Bugzil
 
 Review Apache's <a href="https://issues.apache.org/bugwritinghelp.html" target="_blank">bug reporting guidelines</a>.
 
-<h3 id="repository-to-issue-tracker-integrations">Repository to Issue tracker Integrations<a class="headerlink" href="#repository-to-issue-tracker-integrations" title="Permanent link">&para;</a></h3>
+<h3 id="repository-to-issue-tracker-integrations">Repository to Issue tracker integrations<a class="headerlink" href="#repository-to-issue-tracker-integrations" title="Permanent link">&para;</a></h3>
 
 Infra can activate a [Subversion and Git integration with Jira tickets](svngit2jira.html) for your project.
 
