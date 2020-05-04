@@ -29,6 +29,7 @@ The Apache Infrastructure Team (Infra) operates under the <a href="https://www.a
 - General information about [download mirror sites](mirrors.html)
 - [Project blog](project-blog.html)
 - [Managing project committers](managing-committers.html)
+- <a href="https://cwiki.apache.org/confluence/display/INFRA/Managing+permissions+on+your+project%27s+Confluence+Space" target="_blank">Managing permissions on your project's Confluence space</a>
 - [Virtual machine for your project](vm-policy.html)
 - [Deploying a self-hosted runner](self-hosted-runners.html)
 
