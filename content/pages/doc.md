@@ -50,6 +50,7 @@ lookup for Apache Committers.
 - <a href="https://whimsy.apache.org/" target="_blank">The Whimsy Project</a> provides a number of committer-specific tools for finding information about Apache people.
 - [Transitioning to a new PGP key](key-transition.html)
 - Using [SSH](user-ssh.html) to access services securely over an unsecured network. There are [further instructions for Windows users](user-ssh-windows.html).
+- [Getting started with Git](git-primer.html)
 
 ### Infra Wiki
 
