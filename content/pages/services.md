@@ -63,11 +63,12 @@ Projects can use either of these bug-tracking  and feature request tools:
 * <a href="https://issues.apache.org/jira" target="_blank">Jira</a>
 * <a href="https://bz.apache.org/bugzilla/" target="_blank">Bugzilla</a>
 
+
 For historical reasons, some projects have their own instances of Jira or Bugzilla. See <a href="https://issues.apache.org/" target="_blank">issues.apache.org</a> for a list.
 
 Review Apache's <a href="https://issues.apache.org/bugwritinghelp.html" target="_blank">bug reporting guidelines</a>.
 
-<h3 id="repository-to-issue-tracker-integrations">Repository to Issue tracker integrations<a class="headerlink" href="#repository-to-issue-tracker-integrations" title="Permanent link">&para;</a></h3>
+<h3 id="repository-to-issue-tracker-integrations">Integrating youir repository with Jira tickets<a class="headerlink" href="#repository-to-issue-tracker-integrations" title="Permanent link">&para;</a></h3>
 
 Infra can activate a [Subversion and Git integration with Jira tickets](svngit2jira.html) for your project.
 
