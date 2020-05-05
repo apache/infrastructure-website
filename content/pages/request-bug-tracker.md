@@ -1,4 +1,4 @@
-Requesting a bug tracker for a project
+Title: Requesting a bug tracker for a project
 
 Infrastructure offers two bug and issue tracking systems:
 
