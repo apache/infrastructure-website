@@ -8,4 +8,4 @@ Infra will maintain this VM via our existing configuration management tooling. T
 - The project must designate three committers who agree and have the knowledge to maintain the VM.
 - Infra reserves the right to patch/update/restart the system at will to maintain security.
 
-To request a VM for your project, submit a Jira ticket with the names of the three committers who will maintain the VM.
+Here is the process to [request a VM for your project](vm-for-project.html).
