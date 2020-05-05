@@ -55,4 +55,53 @@ When OPIE works, contact us on #asfinfra, or by commenting on the issue, and sud
 
 ### Obtaining SSH keys ###
 
+To use key-based login, you need to generate a key on your local desktop (do not use a publicly accessible server for this) and then add your public key to LDAP using the self-service app at `https://id.apache.org`.
 
+Once you have done this, wait at least 10 mins. You should then be able to log in as follows:
+
+```
+:::shell $ ssh [username]@$project-vm.apache.org
+```
+
+Depending on your client setup, you may need to run the following command to ensure the key(s) are made available to the SSH client on your system:
+
+```
+:::shell $ ssh-add
+```
+
+If you use PuTTY, make sure it is configured to force SSH v2 protocol. And use keyboard-interactive.
+
+Once you have logged in, there are few tasks best performed right away. Please take care when using your shell account.
+
+Check that your umask is set in a group-friendly fashion. This ensures that the documents you create are editable by your fellow committers. To do this, (depending on which shell you use) edit the `.cshrc` file or `.profile` (sh derivatives) so the umask is set as follows:
+
+```
+umask 002
+```
+
+If a umask line already exists, modify it. Otherwise, add a new line. You will need to use a `*nix` command-line editor such as `vi`.
+
+Tip: You can review the files of some other committer: `ls -al ~mymentor; cat ~mymentor/.cshrc`.
+
+### General maintenance ###
+
+There are no mandatory rules, but here are some suggestions:
+
+  - Keep all changes in Git/Puppet. See: `https://github.com/apache/infrastructure-puppet`
+    - If you do not have karma, please create PRs in a branch against our Github repository.
+    - Keep all application data in `/x1` if possible.
+  - Update Puppet with all extra installed packages.
+    - See `https://github.com/apache/infrastructure-puppet/tree/deployment/modules/<vmname>/manifests/init.pp`
+    - See also the <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+workflow+for+infrastructure-puppet+repo" target="_blank">Git workflow for an Infrastructure Puppet repository</a>.
+    
+### Cautions ###
+
+  - Do not try to change items controlled by puppet, such as:
+    - iptables
+    - sshd
+    - ldap
+    - /root/bin
+    - anything else relevant for security
+  - As sudoer you are expected to know what you do, and are expected to clear any problems you create.
+
+Before doing something, you are always welcome to join #asfinfra on Slack and ask about it.
