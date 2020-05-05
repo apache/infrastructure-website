@@ -96,7 +96,10 @@ Use the ASF <a href="https://repository.apache.org/" target="_blank">Nexus Repos
 
 <h3 id="virtual-servers">Virtual servers<a class="headerlink" href="#virtual-servers" title="Permanent link">&para;</a></h3>
 
-Infra can provide [Ubuntu virtual machines](vm-policy.html) for projects.
+Infra can provide Ubuntu virtual machines for projects. See:
+
+  - [Virtual machine policy](vm-policy.html)
+  - [Process for requesting a vm](vm-for-project.html)
 
 <h3 id="distributions">Distributions<a class="headerlink" href="#distributions" title="Permanent link">&para;</a></h3>
 
