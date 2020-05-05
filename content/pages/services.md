@@ -63,7 +63,7 @@ Projects can use either of these bug-tracking and feature request tools:
 * <a href="https://issues.apache.org/jira" target="_blank">Jira</a>
 * <a href="https://bz.apache.org/bugzilla/" target="_blank">Bugzilla</a>
 
-Here is how to [request a bug and issue tracker for your project](bug-tracker.html).
+Here is how to [request a bug and issue tracker for your project](request-bug-tracker.html).
 
 For historical reasons, some projects have their own instances of Jira or Bugzilla. See <a href="https://issues.apache.org/" target="_blank">issues.apache.org</a> for a list.
 
