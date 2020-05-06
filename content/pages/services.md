@@ -91,6 +91,11 @@ Other tools to consider:
 * <a href="https://travis-ci.org/" target="_blank">Travis CI</a>
 * <a href="https://www.appveyor.com" target="_blank">Appveyor</a>
 
+### Code signing ###
+
+  - Requesting access to the [Digicert code signing service](digicert-access.html)
+  - [Using Digicert](digicert-use.html)
+
 ### Code Distribution
 
 Use the ASF <a href="https://repository.apache.org/" target="_blank">Nexus Repository Manager</a> to browse for and review code distributions by ASF projects.
