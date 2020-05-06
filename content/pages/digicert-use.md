@@ -40,8 +40,24 @@ You can then download the signed files.
 
 You need to specify the name of the signing service to use. The names are shown in the table below:
 
-| Artifact type                           | Text signing service   | Production signing service |
-| Windows binary (.exe, .dll, .cab, etc.) | Microsoft TEST Signing | Microsoft Windows Signing  |
+| Artifact type                             | Text signing service   | Production signing service |
+| ---                                       | ---                    | ---                        |
+| Windows binary (`.exe, .dll, .cab`, etc.) | Microsoft TEST Signing | Microsoft Windows Signing  |
+| Java Signing (`*.jar`)                    | Java TEST Signing      | Java Signing               |
+
+Both SHA1 and SHA256 versions of the Java Signing service are available. Apache recommends using the SHA256 service. However, if you are re-signing JARs that have already been signed, make sure to use the same hash algorithm as the original signature to avoid breaking the original signature.
+
+Java signing is not intended to replace the current requirement for releases to be OpenPGP signed. Neither is it intended to replace the process of providing OpenPGP signatures for JARs uploaded to Maven Central. It is intended for those use cases that require individual JAR files to be signed using the standard Java JAR signing process where the signature is contained within the JAR. Such use cases include Java Web Start, Eclipse plug-ins, etc.
+
+### Signing events ###
+
+A signing event is the process of signing one or more files. Whether you use the web GUI or the SOAP API, the files must have unique names. You may have to rename files prior to signing and change the file names back afterwards. Reverting the name does not affect the signature of the file.
+
+The signing service is particular about file extensions. If you do rename a file, make sure that it retains the correct file extension.
+
+You can revert each signing event individually.
+
+You can request production or test signing on both the production and test systems. Only a production signing event on the production system costs the ASF a code signing credit. We recommend that projects start testing with production signing on the test environment and get their process working there before moving to the production environment.
 
 ### Ant task ###
 
@@ -59,7 +75,7 @@ This Tomcat Ant task uses a fixed buffer of 16MB to store the zipped artifacts f
 
 A Maven plug-in to facilitate code signing is a work in progress.
 
-#### SOAP API ####
+### SOAP API ###
 
 The <a href="https://svn.apache.org/repos/private/foundation/Correspondence/Symantec/" target="_blank">SOAP API documentation</a> is under an NDA, and this link is only availabe to ASF members. Please do not share the documentation outside your PMC, and make sure those you share it with are aware of the NDA. If you need a copy of the API docs, request it via a PMC member who is also an ASF member. If that is not possible, request it from Infra.
 
