@@ -94,7 +94,36 @@ Using the Digicert code signing service        </a>
           <h2>
               Using the Digicert code signing service
           </h2>
-              
+              <p>The Digicert service is available for JARs and Windows executables and code signing for both test and production builds.</p>
+<p>Production signing <strong>costs the ASF real money</strong>. Only use the production signing service once the release process works using test signing.</p>
+<p>Once you have access to the signing service, you receive a personal certificate from Symantec. You need this to access the code signing GUI.</p>
+<p>The production system is available at: <a href="https://securesigning.pki.digicert.com/csportal/" target="blank"><a href="https://securesigning.pki.digicert.com/csportal/">https://securesigning.pki.digicert.com/csportal/</a></a>. When you submit a signing request, you can choose to perform a test or a production signing.</p>
+<h3>Adding users</h3>
+<p>To add users to your PMC's signing organization</p>
+<ol>
+<li>Start at the dashboard</li>
+<li>Click &quot;Users&quot;</li>
+<li>Click &quot;Add user&quot;</li>
+<li>Fill in the form using details (name, asf email, etc.) as shown in Whimsy</li>
+<li>Choose a random enrollment password and send that to the new user</li>
+<li>Normally, set all users as admins</li>
+</ol>
+<h3>Signing files</h3>
+<p>To create a new signing set, you need to have a set of files to sign. The steps below uses the <a href="https://tomcat.apache.org/" target="_blank">Apache Tomcat</a> Windows installer as an example.</p>
+<ol>
+<li>Start at the dashboard</li>
+<li>Select &quot;signing sets&quot;</li>
+<li>Click &quot;Add Signing set&quot;</li>
+<li>Provide a name for the set, e.g &quot;Apache Tomcat 8.5&quot;</li>
+<li>Provide a version e.g. &quot;8.5.4&quot;</li>
+<li>Select the signing service e.g. &quot;Microsoft Windows Signing&quot;</li>
+<li>Upload the file(s) to be signed</li>
+<li>Click &quot;Sign Now&quot;</li>
+<li>Select Test or Production</li>
+<li>Click &quot;Sign&quot;</li>
+</ol>
+<p>You can then download the signed files</p>
+
         </div>
       </div>
     </div>
