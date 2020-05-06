@@ -122,7 +122,24 @@ Using the Digicert code signing service        </a>
 <li>Select Test or Production</li>
 <li>Click &quot;Sign&quot;</li>
 </ol>
-<p>You can then download the signed files</p>
+<p>You can then download the signed files.</p>
+<h3>Signing services</h3>
+<p>You need to specify the name of the signing service to use. The names are shown in the table below:</p>
+<p>| Artifact type                           | Text signing service   | Production signing service |
+| Windows binary (.exe, .dll, .cab, etc.) | Microsoft TEST Signing | Microsoft Windows Signing  |</p>
+<h3>Ant task</h3>
+<p>The Apache Tomcat project has written an Ant task that uses the SOAP interface (see below) to sign release artifacts as part of the build process. To use the SOAP interface, your PMC account needs to be enabled for API access. Open an Infra Jira ticket against the code signing component to request this. Once this is approved you will receive your:</p>
+<ul>
+<li>User name</li>
+<li>Password</li>
+<li>Partner code</li>
+</ul>
+<p>You need all three to access the API.</p>
+<p>This Tomcat Ant task uses a fixed buffer of 16MB to store the zipped artifacts for signing. If your artifacts are larger than that, you need to use a larger buffer. Patches to switch to streaming the artifacts rather than buffering them are welcome.</p>
+<h3>Maven plug-in</h3>
+<p>A Maven plug-in to facilitate code signing is a work in progress.</p>
+<h4>SOAP API</h4>
+<p>The <a href="https://svn.apache.org/repos/private/foundation/Correspondence/Symantec/" target="_blank">SOAP API documentation</a> is under an NDA, and this link is only availabe to ASF members. Please do not share the documentation outside your PMC, and make sure those you share it with are aware of the NDA. If you need a copy of the API docs, request it via a PMC member who is also an ASF member. If that is not possible, request it from Infra.</p>
 
         </div>
       </div>
