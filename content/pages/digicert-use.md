@@ -34,9 +34,33 @@ To create a new signing set, you need to have a set of files to sign. The steps 
 1. Select Test or Production
 1. Click "Sign"
 
-You can then download the signed files
+You can then download the signed files.
 
+### Signing services ###
 
+You need to specify the name of the signing service to use. The names are shown in the table below:
 
+| Artifact type                           | Text signing service   | Production signing service |
+| Windows binary (.exe, .dll, .cab, etc.) | Microsoft TEST Signing | Microsoft Windows Signing  |
+
+### Ant task ###
+
+The Apache Tomcat project has written an Ant task that uses the SOAP interface (see below) to sign release artifacts as part of the build process. To use the SOAP interface, your PMC account needs to be enabled for API access. Open an Infra Jira ticket against the code signing component to request this. Once this is approved you will receive your:
+
+  - User name
+  - Password
+  - Partner code
+
+You need all three to access the API.
+
+This Tomcat Ant task uses a fixed buffer of 16MB to store the zipped artifacts for signing. If your artifacts are larger than that, you need to use a larger buffer. Patches to switch to streaming the artifacts rather than buffering them are welcome.
+
+### Maven plug-in ###
+
+A Maven plug-in to facilitate code signing is a work in progress.
+
+#### SOAP API ####
+
+The <a href="https://svn.apache.org/repos/private/foundation/Correspondence/Symantec/" target="_blank">SOAP API documentation</a> is under an NDA, and this link is only availabe to ASF members. Please do not share the documentation outside your PMC, and make sure those you share it with are aware of the NDA. If you need a copy of the API docs, request it via a PMC member who is also an ASF member. If that is not possible, request it from Infra.
 
 
