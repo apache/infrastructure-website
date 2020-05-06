@@ -25,14 +25,23 @@ Infra maintains a wide range of tools for PMCs, project committers, and the Apac
 One of Infra's goals is to empower ASF members, PMCs, and committers to do much of what they need to do without having to request help from Infra. The <a href="https://selfserve.apache.org" target="_blank">Self-Service Platform</a>, for example, provides a number of handy tools that **people who have an Apache email address** (basically, project committers, PMC members, and ASF Members) can use:
 
   * Create a new Jira or Confluence project, Git repository, or mailing list (PMC Chairs and Infra members).
-  * Edit your ASF identity or update your ASF password.
+  * Edit your ASF identity or update your ASF password. If you are updating your password, you need access to the email account associated with your Apache account. A reset key is only valid for 15 minutes, so be sure to use it as soon as it arrives.
   * Synchronize Git repositories.
   * Use the OTP Calculator to generate passwords for the OTP or S/Key one-time-password systems (generally, PMC members).
   
-### Getting notices of infrastructure events
+### Locked out of the system? ###
+
+If you have forgotten your password and cannot retrieve it, contact Infrastructure via root@apache.org for assistance.
+
+Before asking for a manual password reset or email change, please consider:
+
+  - If you have access to an ASF machine via SSH (with a private key), you can use this to confirm your identity.
+  - If you don't have access to anything to establish your identity, you may be asked to file a new ICLA.
+  
+## Getting notices of infrastructure events ##
 You can subscribe to notices of infrastructure events that you want to know about, ranging from Subversion commits to emails to specific lists. [Learn more here](pypubsub.html).
 
-### LDAP-enabled services
+## LDAP-enabled services ##
 Infra supports many ASF <a href="https://cwiki.apache.org/confluence/display/INFRA/LDAP+enabled+services+at+the+ASF" target="_blank">LDAP-enabled services</a>. You can log in to them with your LDAP credentials. 
   
 ## Tools for ASF projects
