@@ -6,6 +6,7 @@
         <a href="/{%if article%}news/{{article.slug}}.html{%else%}{{page.slug}}.html{%endif%}">
           {%if article%}{{article.title}}{%else%}{{page.title}}{%endif%}
         </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/{%if article%}news/{{article.slug}}.md{%else%}{{page.slug}}.md{%endif%}">edit</a>)
       </div>
     </div>
     
