@@ -13,6 +13,6 @@ github:
   ghp_path:      /docs
 
 notifications:
-  commits:              commits1234@infra.apache.org
+  commits:              commits@infra.apache.org
   pullrequests:         commits@infra.apache.org
   issues:               issues@infra.apache.org
