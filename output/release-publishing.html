@@ -108,7 +108,8 @@ Release Creation Process        </a>
 </ol>
 <p>A release starts when the project community agrees to make a release. However, no release manager can make a valid release unless the community has taken the necessary steps. The source code and build process must comply with the ASF legal and intellectual property requirements for a valid release, and the project must have the infrastructure in place to correctly <strong>sign</strong> the release artifacts (see below).</p>
 <h2>The release manager</h2>
-<p>Most projects designate a committer to be the <em>release manager</em> who takes responsibility for the mechanics of a release. It is a good idea to let several committers take this role on different releases so that more than one person is comfoortable doing a release. Release managers shepherd a release from an initial community consensus to getting the compiled code package to final distribution, and may be involved in publicizing the release to the project's community and the ASF in general.</p>
+<p>Most projects designate a committer to be the <em>release manager</em> who takes responsibility for the mechanics of a release. It is a good idea to let several committers take this role on different releases so that more than one person is comfortable doing a release. Release managers shepherd a release from an initial community consensus to getting the compiled code package to final distribution, and may be involved in publicizing the release to the project's community and the ASF in general.</p>
+<p>Unless otherwise specified, only PMC members can act as release managers. If your project wishes to allow normal committers to release files, please <a href="contact.html">contact infrastructure</a> with your request.</p>
 <p>Release managers do the mechanical work; but the PMC in general, and the PMC chair in particular (as an officer of the Foundation), are responsible for compliance with ASF requirements.</p>
 <p>Any committer may serve as release manager.</p>
 <h2>A valid release package</h2>
@@ -127,6 +128,12 @@ Release Creation Process        </a>
 <li>the mirrored directories on <code>downloads.apache.org</code></li>
 <li>previous releases on <code>archive.apache.org</code></li>
 <li>Maven repository on <code>repository.apache.org</code></li>
+</ul>
+<h3>Uploading packages</h3>
+<ul>
+<li>Upload development packages and snapshots to <code>https://dist.apache.org/dist/dev/$project/</code></li>
+<li>Upload release packages to <code>https://dist.apache.org/dist/release/$project/</code>. If your project uses a Subersion repository, you can use <code>svn mv</code> from the <code>dev</code> folder.</li>
+<li>Incubator projects can find their dev/release folder inside their incubator directory.</li>
 </ul>
 <h3>Normal distribution on the Apache downloads site</h3>
 <p>See the <a href="release-distribution-policy.html">Release Distribution Policy</a> for specific technical requirements.</p>
