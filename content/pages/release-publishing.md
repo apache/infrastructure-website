@@ -20,7 +20,9 @@ A release starts when the project community agrees to make a release. However, n
 
 ## The release manager ##
 
-Most projects designate a committer to be the _release manager_ who takes responsibility for the mechanics of a release. It is a good idea to let several committers take this role on different releases so that more than one person is comfoortable doing a release. Release managers shepherd a release from an initial community consensus to getting the compiled code package to final distribution, and may be involved in publicizing the release to the project's community and the ASF in general.
+Most projects designate a committer to be the _release manager_ who takes responsibility for the mechanics of a release. It is a good idea to let several committers take this role on different releases so that more than one person is comfortable doing a release. Release managers shepherd a release from an initial community consensus to getting the compiled code package to final distribution, and may be involved in publicizing the release to the project's community and the ASF in general.
+
+Unless otherwise specified, only PMC members can act as release managers. If your project wishes to allow normal committers to release files, please [contact infrastructure](contact.html) with your request.
 
 Release managers do the mechanical work; but the PMC in general, and the PMC chair in particular (as an officer of the Foundation), are responsible for compliance with ASF requirements.
 
@@ -53,6 +55,12 @@ Infra maintains the Apache release distribution infrastructure, which has three 
 - the mirrored directories on `downloads.apache.org`
 - previous releases on `archive.apache.org`
 - Maven repository on `repository.apache.org`
+
+### Uploading packages ###
+
+  - Upload development packages and snapshots to `https://dist.apache.org/dist/dev/$project/`
+  - Upload release packages to `https://dist.apache.org/dist/release/$project/`. If your project uses a Subersion repository, you can use `svn mv` from the `dev` folder.
+  - Incubator projects can find their dev/release folder inside their incubator directory.
 
 ### Normal distribution on the Apache downloads site ###
 
