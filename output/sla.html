@@ -90,44 +90,54 @@ Service Level Agreement (SLA)        </a>
               Service Level Agreement (SLA)
           </h2>
               <p>A service-level agreement, or SLA, is a service provider's commitment to its clients. The Infra team commits to these targets for the services it maintains for the Apache community.</p>
-<p>For current status, see <a href="https://status.apache.org/" target="_blank">the ASF status page</a> and our <a href="https://www.apache.org/uptime/" target="_blank">SLA graphs</a>.</p>
-<p>We divide Infra-provided services into four groups:</p>
-<ol>
-<li>
-<p>Critical</p>
-<p>Target: 99.5% uptime</p>
+<h3>Services</h3>
+<p>Currently, Apache services are operating at an uptime rate of over 99%.</p>
+<p>For current status of services, see <a href="https://status.apache.org/" target="_blank">the ASF status page</a> and the Infra <a href="https://www.apache.org/uptime/" target="_blank">SLA graphs</a>.</p>
+<h3>Jira issue reports and service requests</h3>
+<p>Here is how we calculate SLAs and Infra's response for issue reports and service requests submitted as Jira tickets:</p>
+<h4>Blocker</h4>
+<p>A time-sensitive issue that is hindering a project's basic functions.</p>
 <ul>
-<li>email</li>
-<li>version control (svn and git)</li>
-<li>TLP websites</li>
-<li>LDAP</li>
+<li><strong>SLA</strong>: 24 hours to respond, 3 days (72h) to resolve. Weekends count against SLA hours.</li>
+<li><strong>Example</strong>: Web site has been defaced and we just sent out a press release.</li>
+</ul>
+<h4>Critical</h4>
+<p>A time-sensitive issue that causes disruption for a project, but is not hindering basic functionality.</p>
+<ul>
+<li><strong>SLA</strong>: 36 hours to respond, 4 days (96h) to resolve. Weekends count against SLA hours.</li>
+<li><strong>Example</strong>: We just called a new release, but SVN is not allowing us to upload or move the artifacts.</li>
+</ul>
+<h4>Major</h4>
+<p>This is the default Jira issue priority. It fits a large issue that Infra should resolve quickly, but is not time-sensitive or related to basic projct functions. This includes requesting new resources.</p>
+<ul>
+<li><strong>SLA</strong>: 2 days (48h) to respond, 5 days (120h) to resolve. Weekends do not count against SLA hours.</li>
+<li><strong>Examples</strong>:
+<ul>
+<li>Set up a new podling.</li>
+<li>Add a git repository.</li>
+<li>Set up py/svn/git-pubsub.</li>
 </ul>
 </li>
-<li>
-<p>Core</p>
-<p>Target: 99% uptime</p>
+</ul>
+<h4>Minor</h4>
+<p>An issue that Infra should resolve within a reasonable time, is not time-sensitive and is not critical to a project's basic functionas or ongoing daily business.</p>
 <ul>
-<li>issue trackers (Bugzilla and Jira)</li>
-<li>bar</li>
+<li><strong>SLA</strong>: 3 days (72h) to respond, 2 weeks (336h) to resolve. Weekends do not count against SLA hours</li>
+<li><strong>Examples</strong>:
+<ul>
+<li>Retire a project's resources.</li>
+<li>Fix a JavaScript error on a web site.</li>
+<li>Add GitHub integration for a repository.</li>
+<li>Refine Jira settings for a project.</li>
 </ul>
 </li>
-<li>
-<p>Standard</p>
-<p>Target: 95% uptime</p>
-<ul>
-<li>foo</li>
-<li>bar</li>
 </ul>
-</li>
-<li>
-<p>None</p>
-<p>These services have no SLA.</p>
+<h4>Trivial</h4>
+<p>A task that Infra should resolve, but that has minimal or no time constraints.</p>
 <ul>
-<li>foo</li>
-<li>bar</li>
+<li><strong>SLA</strong>: 3 days (72h) to respond, 4 weeks (672h) to resolve. Weekends do not count against SLA hours.</li>
+<li><strong>Example</strong>: Fix copyright year on a web site.</li>
 </ul>
-</li>
-</ol>
 
         </div>
       </div>
