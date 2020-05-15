@@ -35,7 +35,7 @@ See Infra's <a href="https://cwiki.apache.org/confluence/display/INFRA/Pelican+a
   - notifications of all site changes are sent to the relevant project mailing lists. The Apache CMS allows non-committers to send  patches via a simple web interface by "Mail Diff"ing to the project mailing list that can be easily published by a committer.
 
 
-<h3 id="tools">Management tools<a class="headerlink" href="#intro" title="Permanent link">&para;</a></h3>
+<h3 id="tools">Management tools<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h3>
 
 Infra supports these tools for publishing and maintaining Apache project websites:
 
