@@ -48,3 +48,12 @@ A task that Infra should resolve, but that has minimal or no time constraints.
 
   - **SLA**: 3 days (72h) to respond, 4 weeks (672h) to resolve. Weekends do not count against SLA hours.
   - **Example**: Fix copyright year on a web site.
+  
+### Notes ###
+
+  - Response time is counted as first reply (from someone else) or assignment.
+  - Tickets marked as `Planned Work` are not counted towards SLAs.
+  - Tickets marked as `Waiting for user` are paused, SLA-wise, until the user responds.
+  - Weekends do not count for SLA time for all tickets except those marked `Blocker` or `Critical`.
+  - Tickets only count towards the SLA statistics once resolved or if exceeding SLA parameters.
+  - Ticket velocity (user engagement and interaction) is important.
