@@ -5,3 +5,5 @@ Title: Status pages
   - Check the <a href="https://www.apache.org/uptime/" target="_blank">uptime rate of Apache services</a>.
   
   - Review how the ASF <a href="https://apache.org/mirrors/" target="_blank">download mirrors</a> are functioning.
+  
+  - The <a href="https://reporter.apache.org/wizard/" target="_blank">Reporter wizard</a> provides a wide range of interesting information about Apache projects, and can help PMCs assemble their quarterly Board reports.
