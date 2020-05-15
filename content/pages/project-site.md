@@ -48,7 +48,7 @@ Infra supports these tools for publishing and maintaining Apache project website
 
 Infra provides these build tools:
 
-  - **Jenkins** is an open source automation server that supports building, deploying and automating a project. Infra resources on Jenkins start <a herf="https://cwiki.apache.org/confluence/display/INFRA/Jenkins" target="_blank:>here</a>.
+  - **Jenkins** is an open source automation server that supports building, deploying and automating a project. Infra resources on Jenkins start <a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins" target="_blank">here</a>.
   
   - **Buildbot** is a job scheduling system: it queues jobs, executes the jobs when the required resources are available, and reports the results. 
   
@@ -60,7 +60,7 @@ The build output from your job when you compile your site is available from eith
 
 This only applies to _SVN based websites_.
 
-Look at the `.revision` file at the root of your site (for example, <a href="http://subversion.apache.org/.revision" target"_blank">>http://subversion.apache.org/.revision</a>). That file updates after every successful svn update. (If the update is underway or exited abnormally, `.revision` won't have changed.)
+Look at the `.revision` file at the root of your site (for example, <a href="http://subversion.apache.org/.revision" target="_blank">http://subversion.apache.org/.revision</a>). That file updates after every successful svn update. (If the update is underway or exited abnormally, `.revision` won't have changed.)
 
 <h3 id="mail">Providing public access to the project's mail archive mbox files<a class="headerlink" href="#mail" title="Permanent link">&para;</a></h3>
 
