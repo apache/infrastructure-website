@@ -96,6 +96,6 @@ permanent, site-wide configuration changes.
 
 <h2 id="preview">Previewing the website<a class="headerlink" href="#preview" title="Permanent link">&para;</a></h2>
 
-  - For svnpubsub sites, review the local files in your svn checkout before committing them. The changes will be published immediately after you commit them.</p>
+  - For svnpubsub sites, review the local files in your svn checkout before committing them. The changes will be published immediately after you commit them.
   - For CMS sites, just commit the changes (without "publish"-ing them). Then click the `Staged` link that will take you to the staged site.
-  - There is no preview mode for gitpubsub. You should ideally have a way to locally build and test the website.
+  - There is no preview mode for <a href="https://cwiki.apache.org/confluence/display/INFRA/PyPubSub" target="_blank">pypubsub</a>. You should ideally have a way to build and test the website locally.
