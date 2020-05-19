@@ -19,3 +19,5 @@ _Information will go here to outline Infra's backup policies_
 
 **Other**
 
+
+For each category: how often do we do it, how many backups do we retain, who has access to them, and is it a manual or automatic process 
