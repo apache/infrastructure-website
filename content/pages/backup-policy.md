@@ -1,4 +1,4 @@
-Title: Backup policies
+Title: Backup policy
 
 Infra is committed to maintaining backups of critical systems and data for disaster recovery. Infra does not specifically maintain "historical" backups. Changes to ASF data sets are expected to be reflected in SCM commit history as well as email-based records of commits/changes. SCM systems and email are the primary focus of the Infra backup strategy.
 
