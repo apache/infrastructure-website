@@ -1,23 +1,24 @@
 Title: Backup policies
 
-Infra is responsible for creating and preserving backups of digital assets and artifacts of the ASF and its many projects. Here are Infra's backup policies:
+Infra is committed to maintaining backups of critical systems and data for disaster recovery. Infra does not specifically maintain "historical" backups. Changes to ASF data sets are expected to be reflected in SCM commit history as well as email-based records of commits/changes. SCM systems and email are the primary focus of the Infra backup strategy.
 
-_Information will go here to outline Infra's backup policies_
+All Infra-managed systems receive nightly file-level backups via automated BackupPC installation, with a retention of approximately 14 days for fulls. Backups are pruned regularly due to space constraints.
 
-**Software repositories**
+Critical systems receive additional nightly rsync/zfs based snapshots which are retained for approximately 30 days in most cases.
 
+#### Databases ####
+  - MySQL and Postgres databases are backed up nightly using a puppet managed tool to /x1/db_dump
+  - /x1/db_dump is picked up by the rsync or backuppc process
+
+#### Software repositories ####
+  - gitbox.a.o (rsync, backuppc, github mirrors).
+  - svn.a.o (rsync, backuppc, azure DR replica).
+  - archive.a.o (backuppc).
+
+#### Server logs ####
+  - Ephemeral. retained in <a href="https://www.elastic.co/" target="_blank">Elasticsearch</a> for approximately 90 days, but not guaranteed. Not available outside Infra.
+  - Compiled statistics available in some cases.
 
 **Email**
-
-
-
-**Slack channel conversations**
-
-
-**Server logs**
-
-
-**Other**
-
-
-For each category: how often do we do it, how many backups do we retain, who has access to them, and is it a manual or automatic process 
+  - Raw archives (mbox-vm) (rsync/backuppc)
+  - qmail source (hermes) (rsync backup + rsync replica)
