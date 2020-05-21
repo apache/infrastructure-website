@@ -11,7 +11,7 @@ Membership in the ASF Slack workspace is by invitation. If you are a new partici
 Once you are part of the ASF workspace, you can join any open channels you wish to. 
 
  - At the top of your list of channels in the Slack app, click the **+** icon
- - Use the _Browse channels_ option to display a list of existing channels in the workspace; or enter text in the search field.
+ - Use the _Browse channels_ option to display a list of channels in the workspace; or enter text in the search field.
  - Select any channel to add it to your channel list.
  
  Some ASF channels are **private** or **locked**. Someone with the appropriate rights has to join you to such a channel.
@@ -31,7 +31,7 @@ If you _do_ add a channel for your project, make sure you tell the PMC, committe
 
 ## Expectations ##
 
-  - **Behavior**: We expected channel participants to be respectful and supportive of other participants, and make contributions that add to the conversation, rather than blurring it. If a participant makes contributions that are disrespectufl, offensive, or contrary to The Apache Way, please report them to Infra.
+  - **Behavior**: We expect channel participants to be respectful and supportive of other participants, and make contributions that add to the conversation, rather than blurring it. If a participant makes contributions that are disrespectful, offensive, or contrary in other ways to The Apache Way, please report them to Infra.
   - **Decisions**: A thread in a Slack channel can be a great place to work through a knotty question and move toward consensus. However, coming to agreement about something on Slack does not mean the PMC has agreed to or approved something. All formal PMC decisions should take place in one of the project's email lists.
 
 
