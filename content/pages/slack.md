@@ -11,10 +11,10 @@ Membership in the ASF Slack workspace is by invitation. If you are a new partici
 Once you are part of the ASF workspace, you can join any open channels you wish to. 
 
  - At the top of your list of channels in the Slack app, click the **+** icon
- - Use the _Browse channels_ option to display a list of channels in the workspace; or enter text in the search field.
+ - Use the _Browse channels_ option to display a list of open channels in the workspace; or enter text in the search field.
  - Select any channel to add it to your channel list.
  
- Some ASF channels are **private** or **locked**. Someone with the appropriate rights has to join you to such a channel.
+ Some ASF channels are **private** or **locked**, and do not appear on the list of channels you can join. Someone with the appropriate rights has to join you to such a channel.
  
  It is good manners to send a hello message to the channel, possibly with a short statement of why you are there.
 
