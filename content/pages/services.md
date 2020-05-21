@@ -28,6 +28,7 @@ One of Infra's goals is to empower ASF members, PMCs, and committers to do much 
   * Edit your ASF identity or update your ASF password. If you are updating your password, you need access to the email account associated with your Apache account. A reset key is only valid for 15 minutes, so be sure to use it as soon as it arrives.
   * Synchronize Git repositories.
   * Use the OTP Calculator to generate passwords for the OTP or S/Key one-time-password systems (generally, PMC members).
+  * Archive a Confluence Space and make it read-only.
   
 ### Locked out of the system? ###
 
