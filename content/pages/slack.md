@@ -4,10 +4,16 @@ The Apache Software Network has a channel on <a href="https://slack.com/" target
 
 _general information_
 
-## Setting up a Slack channel ##
+## Joining the ASF Slack channel ##
 
 
-## Moderating a project Slack channel ##
+## Joining project threads ##
+
+
+## Setting up a project thread ##
+
+
+## Expectations ##
 
 
 ## Inviting guests ##
