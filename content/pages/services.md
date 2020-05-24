@@ -60,10 +60,11 @@ Infra supports many ASF <a href="https://cwiki.apache.org/confluence/display/INF
 Apache provides, and Infra maintains, [code repositories](version-control.html) that Apache projects can use to keep their project code safe, accessible to team members, and under version control.
 
   - <a href="https://svn.apache.org/repos/asf/" target="_blank">Subversion (SVN) repositories</a>
+    - Information about <a href="https://cwiki.apache.org/confluence/display/INFRA/Using+Subversion" target="_blank">using Subversion</a>
   - <a href="https://svn.apache.org/viewvc/" target="_blank">ViewVC (Browser interface to the main repository)</a>
   - [Read-only Git mirrors of SVN codebases](git.html)
   - [Writable Git repositories](writable-git.html)
-  - [Aoache and GitHub](apache-github.html)
+  - [Apache and GitHub](apache-github.html)
 
 
 <h4 id="issue-tracking">Issue tracking and feature requests<a class="headerlink" href="#issue-tracking" title="Permanent link">&para;</a></h4>
