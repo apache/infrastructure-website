@@ -1,18 +1,18 @@
-Title: Publishing Maven Releases
+Title: Publishing Maven Releases to Maven Central Repository
 
-Apache Maven is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
+[Apache Maven](https://maven.apache.org/) is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
 
-this document describes how to release Maven artifacts. These are optional. Apache project **must** release all software packages through the ASF mirror system. See [Release distribution policy](release-distribution.html) for more details.
+This document describes how to release Maven artifacts for Apache Software Foundation projects to the [Maven Central Repository](https://maven.apache.org/repository/index.html). This is optional. Apache project **must** release all software packages through the ASF mirror system. See [Release distribution policy](release-distribution.html) for more details.
 
 **Note** make sure you are using version 3.0.5 or newer of Maven. You can <a href="https://maven.apache.org/download.cgi" target="_blank">download</a> and install the latest version of Maven before continuing.
 
-## Setting up your project in the Nexus repository ##
+## Setting up your project in the ASF Nexus Repository ##
 
-The Nexus repository enforces security by constraining who can deploy or release a project's artifacts. Nexus maps which artifacts (usually by GroupId) your project produces. This is particularly helpful in preventing accidental releases of a project.
+The [ASF Nexus repository](https://repository.apache.org/) enforces security by constraining who can deploy or release a project's artifacts. Nexus maps which artifacts (usually by GroupId) your project produces. This is particularly helpful in preventing accidental releases of a project.
 
 Before a project can use the repository to release Maven artifacts, it must be configured in Nexus. This is generally a quick and easy process. To get set up, <a href="https://issues.apache.org/jira/secure/CreateIssueDetails!init.jspa?issuetype=3&priority=3&pid=10410&components=12312660&summary=Enable+Nexus+Access+For+[insert+project]&description=Project+URL:%0D%0DSVN+URL:%0D%0DMaven+Group+Ids:%0D%0DManaged+By+This+TLP+Project:" target="_blank">use this link</a> to create a Jira ticket with the following information:
 
-  - **Project URL**: a link to your project page.
+  - **Project URL**: a link to your project page (usually `https://<project>.apache.org/`).
   - **SVN URL**: where you store your source code, in case Infra needs to look up more information.
   - **Maven Group IDs**: a list of the groupIDs for this project. They should all be subgroups of `org.apache`.
   - **Managed By This TLP Project**: if this is a subproject, list the TLP that is responsible. Subprojects usually don't have their own LDAP group, so we need the TLP LDAP group for permissions. 
@@ -27,8 +27,8 @@ Once you file the Jira ticket, Infra will do the following:
   
 Further information about the POM and other Maven matters is <a href="https://maven.apache.org/pom/asf/" target="_blank">here</a>.
 
-## Adjusting your build to use the Maven repository ##
-To use the Maven repository, follow these steps.
+## Adjusting your build to deploy to the ASF Nexus repository ##
+To use the ASF Nexus repository, follow these steps.
 
 ### Inherit the Apache POM ###
 Inherit the Apache Parent POM like this:
@@ -37,7 +37,7 @@ Inherit the Apache Parent POM like this:
 <parent>
   <groupId>org.apache</groupId>
   <artifactId>apache</artifactId>
-  <version>10</version>
+  <version>23</version>
 </parent>
 ```
 
@@ -57,13 +57,13 @@ The <a href="https://cwiki.apache.org/confluence/display/INFRA/hiera-eyaml-gpg+H
 <settings>
 ...
   <servers>
-    <!-- To publish a snapshot of some part of Maven -->
+    <!-- To publish a snapshot of your project -->
     <server>
       <id>apache.snapshots.https</id>
       <username> <!-- YOUR APACHE LDAP USERNAME --> </username>
       <password> <!-- YOUR APACHE LDAP PASSWORD (encrypted) --> </password>
     </server>
-    <!-- To stage a release of some part of Maven -->
+    <!-- To stage a release of your project -->
     <server>
       <id>apache.releases.https</id>
       <username> <!-- YOUR APACHE LDAP USERNAME --> </username>
@@ -76,7 +76,7 @@ The <a href="https://cwiki.apache.org/confluence/display/INFRA/hiera-eyaml-gpg+H
 
 ### Test your settings ###
 
-Try installing locally artifacts with activation apache-release profile:
+Try installing locally artifacts with activation of `apache-release` profile:
 
 `mvn clean install -Papache-release`
 
@@ -106,7 +106,7 @@ mvn deploy
 
   - If you experience an error like a _HTTP 401_ during deployment, check your settings for the required server entries as outlined above.
   - Be sure that the generated artifacts respect the <a href="https://www.apache.org/legal/release-policy.html#distribute-raw-artifact" target="_blank">Apache release rules</a>: NOTICE and LICENSE files should be present in the META-INF directory within the jar.
-  - Verify the deployment under the ASF <a hre"https://repository.apache.org/content/repositories/snapshots/" target="_blank">Maven Snapshot repository</a>.
+  - Verify the deployment under the ASF <a href="https://repository.apache.org/content/repositories/snapshots/" target="_blank">Maven Snapshot repository</a>.
   
 ### 3. Prepare the release ###
 ```
@@ -167,17 +167,17 @@ This likely occured because you're trying to restage the release and you didn't 
 
 ## Procedures for Ant + Ivy ##
 
-<a href="https://ant.apache.org/" target="_blank">Apache Ant</a> is a popular command-line build tool. <a href="https://ant.apache.org/ivy/" targe"_blank">Ivy</a> is a dependency manager designed to work with Ant. 
+<a href="https://ant.apache.org/" target="_blank">Apache Ant</a> is a popular command-line build tool. <a href="https://ant.apache.org/ivy/" target="_blank">Ivy</a> is a dependency manager designed to work with Ant. 
 
 ### 1 Prepare your build ###
 
-Usually your normal build process will create the artifacts you want to publish (typically jars), but you may need to PGP-sign them the same way you sign your normal distribution artifacts. The jars are expected to follow the naming scheme `artifactId - version.jar`.
+Usually your normal build process will create the artifacts you want to publish (typically jars), but you may need to PGP-sign them the same way you sign your normal distribution artifacts. The jars are expected to follow the naming scheme `artifactId-version.jar`.
 
 You will need a minimal POM for your jar. If you are already using Ivy, you can use the `makepom` task to create one from your `ivy.xml` file. Otherwise see the Apache Maven project's <a href="https://maven.apache.org/pom.html" target="_blank">documentation</a> for "minimal" and the Apache Compress Antlib's <a href="https://svn.apache.org/repos/asf/ant/antlibs/compress/trunk/project-template.pom" target="_blank">POM</a> for an example. 
 
 If you are publishing multiple jars you may consider adding a parent POM to encapsulate the common information; see the Maven documentation for details. An example might be <a href="https://svn.apache.org/repos/asf/ant/core/trunk/src/etc/poms/pom.xml" target="_blank">Ant's parent POM</a>, used for the several jars that make up an Ant release.
 
-Users who use your project's jars from the Maven repository rather than using your "normal" distributions will likely want additional artifacts containing the source files or javadocs matching your jars in files named `artifactId - version -sources.jar` and `artifactId - version -javadoc.jar` respectively. Don't forget to sign those jars as well if you provide them.
+Users who use your project's jars from the Maven repository rather than using your "normal" distributions will likely want additional artifacts containing the source files or javadocs matching your jars in files named `artifactId-version-sources.jar` and `artifactId-version-javadoc.jar` respectively. Don't forget to sign those jars as well if you provide them.
 
 ### 2. Create minimal Ivy files for your project ###
 
@@ -189,7 +189,7 @@ You need `artifact` elements for your jar as well as the POM and any PGP signatu
 
 If you are publishing source or javadoc jars as well, you'll need to provide something similar to Maven's classifier. You do so by adding an extra attribute to each artifact element that lives outside of Ivy's XML namespace and referencing this element in your `ivysettings.xml` file (see below). An example which uses this approach is <a href="http://svn.apache.org/repos/asf/ant/antlibs/compress/trunk/project-template.ivy.xml" target="_blank">the Compress Antlib's ivy.xml</a>. It contains additional information and `-sources` as well as `-javadoc` artifacts.
 
-Alternatively you can specify the `-sources` and `-javadoc` artifacts inside your `publish` task rather than your `ivy.xml` file. If you use Ivy 2.2.0 or later you can also configure it to `PGP-sign` your artifacts so you no longer need to specify your signatures as artifacts. Ivy's own <a href="http://svn.apache.org/repos/asf/ant/ivy/core/trunk/ivysettings-release.xml" target="_blank">ivy-settings.xml</a> configures Ivy to sign artifacts and the <a href="http://svn.apache.org/repos/asf/ant/ivy/core/trunk/build-release.xml" target="_blank")publish task inside the upload-nexus target</a> declares the POM as well as `-sources` and `-javadoc` jars as additional artifacts.
+Alternatively you can specify the `-sources` and `-javadoc` artifacts inside your `publish` task rather than your `ivy.xml` file. If you use Ivy 2.2.0 or later, you can also configure it to PGP-sign your artifacts so you no longer need to specify your signatures as artifacts. Ivy's own <a href="http://svn.apache.org/repos/asf/ant/ivy/core/trunk/ivysettings-release.xml" target="_blank">ivy-settings.xml</a> configures Ivy to sign artifacts and the <a href="http://svn.apache.org/repos/asf/ant/ivy/core/trunk/build-release.xml" target="_blank">publish task inside the upload-nexus target</a> declares the POM as well as `-sources` and `-javadoc` jars as additional artifacts.
 
 ### 3. Configure Ivy to use Nexus ###
 
