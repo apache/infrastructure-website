@@ -29,13 +29,13 @@ Some examples:
 ## Event payload examples
 
 Pings are simple objects like this:
-~~~
+~~~ json
 {"stillalive": 1583973410.9620552}
 ~~~
 
 An example of a real event payload, in this case a git commit, could be (emails redacted in this example):
 
-~~~
+~~~ json
 {
 	"commit": {
 		"body": "[maven-release-plugin] prepare for next development iteration\n",
@@ -66,20 +66,21 @@ Payloads vary depending on what they represent, so check both what sub-objects a
 
 ## Try it yourself
 To try it out and take a look at the event stream, just use [cURL](https://en.wikipedia.org/wiki/CURL) in your terminal:
-~~~
+~~~ bash
 curl http://pubsub.apache.org:2069/git/commit
 ~~~
 
 <br/>
 
 A secure version also exists on port 2070:
-~~~
+~~~ bash
 curl https://pubsub.apache.org:2070/git/commit
 ~~~
 
-## Using PyPubSub with Python
+## Using PyPubSub in programming
+### Using PyPubSub with Python
 You can listen for an react on payloads in Python using the [asfpy](https://pypi.org/project/asfpy/) pip package:
-~~~
+~~~ python
 import asfpy.pubsub
 
 def process_event(payload):
@@ -90,6 +91,46 @@ def main():
     pubsub = asfpy.pubsub.Listener('http://pubsub.apache.org:2069/')
     pubsub.attach(process_event, raw=True)
 
+~~~
+
+### Using PyPubSub with node.js
+This sample snippet will allow you to use node.js for listening for pubsub events and process them:
+~~~ javascript
+const http = require("http");
+const https = require("https");
+
+class PyPubSub {
+    constructor(url) {
+        this.url = url;
+        this.getter = url.match(/^https/i) ? https : http;
+    }
+
+    attach(func) {
+        this.getter.get(this.url, res => {
+            res.setEncoding("utf8");
+            res.on("data", data => {
+                let payload = JSON.parse(data);
+                func(payload);
+              });
+        });
+    }
+}
+
+
+// Payload parser
+function process(payload) {
+    // ping-back?
+    if (payload.stillalive) {
+        console.log("Got a ping-back");
+    // Actual payload? process it!
+    } else {
+        console.log("Got a payload from PyPubSub!");
+        console.log(payload);
+    }
+}
+
+const pps = new PyPubSub('http://pubsub.apache.org:2069/');
+pps.attach(process);
 ~~~
 
 ## Want to know more? Have questions?
