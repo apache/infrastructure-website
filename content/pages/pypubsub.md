@@ -7,6 +7,7 @@ Currently, the service streams the following events:
 * Subversion commits
 * Git commits and pushes
 * Emails to publicly archived lists
+* JIRA updates
 * Pull Requests and Issues from GitHub
 * Staging and publishing notifications sent via our [.asf.yaml](https://s.apache.org/asfyaml) offering.
 
@@ -23,6 +24,7 @@ Some examples:
 * To subscribe to all `netbeans.apache.org` emails: `http://pubsub.apache.org:2069/email/netbeans.apache.org`
 * To subscribe to PRs opened against `beam-foo.git`: `http://pubsub.apache.org:2069/github/beam-foo.git/pr`
 * To subscribe to all commits, both Subversion and git: `http://pubsub.apache.org:2069/commit`
+* To subscribe to all JIRA events for the HADOOP JIRA instance: `http://pubsub.apache.org:2069/jira/HADOOP`
 
 ## Event payload examples
 
