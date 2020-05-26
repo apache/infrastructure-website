@@ -114,10 +114,10 @@ Subscribe to Apache Software Foundation infrastructure events        </a>
 </ul>
 <h2>Event payload examples</h2>
 <p>Pings are simple objects like this:</p>
-<pre><code>{&quot;stillalive&quot;: 1583973410.9620552}
+<pre><code class="language-json">{&quot;stillalive&quot;: 1583973410.9620552}
 </code></pre>
 <p>An example of a real event payload, in this case a git commit, could be (emails redacted in this example):</p>
-<pre><code>{
+<pre><code class="language-json">{
 	&quot;commit&quot;: {
 		&quot;body&quot;: &quot;[maven-release-plugin] prepare for next development iteration\n&quot;,
 		&quot;committer&quot;: &quot;sblackmon &lt;s...@apache.org&gt;&quot;,
@@ -145,15 +145,16 @@ Subscribe to Apache Software Foundation infrastructure events        </a>
 <p>Payloads vary depending on what they represent, so check both what sub-objects are present in the payload and the <code>pubsub_path</code> variable, which will show the full payload event path and explain which type is being sent.</p>
 <h2>Try it yourself</h2>
 <p>To try it out and take a look at the event stream, just use <a href="https://en.wikipedia.org/wiki/CURL">cURL</a> in your terminal:</p>
-<pre><code>curl http://pubsub.apache.org:2069/git/commit
+<pre><code class="language-bash">curl http://pubsub.apache.org:2069/git/commit
 </code></pre>
 <br/>
 <p>A secure version also exists on port 2070:</p>
-<pre><code>curl https://pubsub.apache.org:2070/git/commit
+<pre><code class="language-bash">curl https://pubsub.apache.org:2070/git/commit
 </code></pre>
-<h2>Using PyPubSub with Python</h2>
+<h2>Using PyPubSub in programming</h2>
+<h3>Using PyPubSub with Python</h3>
 <p>You can listen for an react on payloads in Python using the <a href="https://pypi.org/project/asfpy/">asfpy</a> pip package:</p>
-<pre><code>import asfpy.pubsub
+<pre><code class="language-python">import asfpy.pubsub
 
 def process_event(payload):
    print(&quot;Got an event from PyPubSub!&quot;)
@@ -163,6 +164,44 @@ def main():
     pubsub = asfpy.pubsub.Listener('http://pubsub.apache.org:2069/')
     pubsub.attach(process_event, raw=True)
 
+</code></pre>
+<h3>Using PyPubSub with node.js</h3>
+<p>This sample snippet will allow you to use node.js for listening for pubsub events and process them:</p>
+<pre><code class="language-javascript">const http = require(&quot;http&quot;);
+const https = require(&quot;https&quot;);
+
+class PyPubSub {
+    constructor(url) {
+        this.url = url;
+        this.getter = url.match(/^https/i) ? https : http;
+    }
+
+    attach(func) {
+        this.getter.get(this.url, res =&gt; {
+            res.setEncoding(&quot;utf8&quot;);
+            res.on(&quot;data&quot;, data =&gt; {
+                let payload = JSON.parse(data);
+                func(payload);
+              });
+        });
+    }
+}
+
+
+// Payload parser
+function process(payload) {
+    // ping-back?
+    if (payload.stillalive) {
+        console.log(&quot;Got a ping-back&quot;);
+    // Actual payload? process it!
+    } else {
+        console.log(&quot;Got a payload from PyPubSub!&quot;);
+        console.log(payload);
+    }
+}
+
+const pps = new PyPubSub('http://pubsub.apache.org:2069/');
+pps.attach(process);
 </code></pre>
 <h2>Want to know more? Have questions?</h2>
 <p>To learn more, or just get some questions answered, please contact us at <code>users@infra.apache.org</code>, and we'll try our best to help you out.</p>
