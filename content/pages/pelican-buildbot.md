@@ -6,8 +6,6 @@ Pelican provides support for importing an existing site that runs on WordPress o
 
 ### Key files and directories ###
 
-Pelican presumes the use of a Git code repository.
-
 The repository structure for your Pelican project website has three key directories and a configuration file.
 
 The directories are:
@@ -65,7 +63,4 @@ Setting up Pelican to work with a Subversion repository requires a bit more hand
 
 Create and update markdown files (.md) in the content/pages and content/articles directories. When you add pages or commit edits, the site automatically updates.
 
-
-
-_moving information from https://cwiki.apache.org/confluence/display/INFRA/Pelican+and+Buildbot+for+websites_
 
