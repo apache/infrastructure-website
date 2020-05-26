@@ -1,4 +1,69 @@
 Title: Build and manage a project website with Pelican and Buildbot
 
+ASF projects can use <a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a> to create and manage the project website. Pelican provides a framework and the option of using templates to display your site pages, which you write in <a href="https://github.github.com/gfm/" target="_blank">Github-flavored-markdown</a> (GFM). Every time someone saves an edited page, <a href="https://buildbot.net/" target="_blank">Buildbot</a> publishes the site.
+
+Pelican provides support for importing an existing site that runs on WordPress or some other service.
+
+### Key files and directories ###
+
+Pelican presumes the use of a Git code repository.
+
+The repository structure for your Pelican project website has three key directories and a configuration file.
+
+The directories are:
+
+  - **content/pages**: holds the static pages for your website. You write and edit them using GFM.
+      - Each page is a `.md` file.
+      - The first line is `Title:` and the name of the page.
+      - the scond line is `Date:` and the date of the current version of the page.
+   - **content/articles**: if your website has a blog or a series of featured articles, they go in this directory and will appear on the front page of the site. They have the same three requirements as the static pages, above.
+   - **theme/plugins**: holds the plugins Pelican and Buildbot use to build and deploy the site.
+
+The configuration file is `pelicanconf.py`.
+
+### Setting up a Pelican website on Git ###
+
+Create the repository for the website content using the <a href="https://gitbox.apache.org/setup/newrepo.html" target="_blank">gitbox self service tool</a> (https://gitbox.apache.org/setup/newrepo.html).
+
+1. Clone the repository to a local workspace
+2. Run `pelican-quickstart` in the root of the repository on the master branch. 
+    - The script asks where you want to create the website. Accept " . ", the default, unless you have a specific location in mind for it.
+    - Use $PROJECTNAME for the site title.
+    - Set the website author as $PROJECTNAME also. This lets all members of the project edit the website.
+    - Accept the default language as English. You can, if you want, provide alternative versions of the website, or of certain pages, in other languages.
+    - Specify a default prefix: `https://$PROJECTNAME.apache.org` (or similar friendly name)
+    - Set article pagination to `No`.
+    - Set time zone to `UTC`.
+    - Set generation of tasks.py / makefile to 'No'.
+    
+3. Site configuration:
+
+In your site repository, run the following commands:
+
+```
+for x in "content/pages content/articles theme/plugins"; do mkdir -p $x; done
+rm -rf output publishconf.py
+echo -e "\nPLUGIN_PATHS=['./theme/plugins']\nPLUGINS=[]\n"  >> pelicanconf.py
+echo -e "pelican\nbeautifulsoup4" >> requirements.txt
+```
+
+4. Commit and push your changes.
+
+#### Setting up continuous integration ####
+
+
+
+### Setting up a Pelican website on Subversion ###
+
+
+
+#### Using a Pelican theme ####
+
+### Updating your website ###
+
+### Related information ###
+
+
+
 _moving information from https://cwiki.apache.org/confluence/display/INFRA/Pelican+and+Buildbot+for+websites_
 
