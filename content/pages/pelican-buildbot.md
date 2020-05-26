@@ -51,17 +51,19 @@ echo -e "pelican\nbeautifulsoup4" >> requirements.txt
 
 #### Setting up continuous integration ####
 
-
-
-### Setting up a Pelican website on Subversion ###
-
-
+Use the <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">asf.yaml</a> mechanism to have Pelican build and, optionally, publish your website.
 
 #### Using a Pelican theme ####
 
+Pelican provides a range of <a href="http://www.pelicanthemes.com/" target="_blank">themes</a> that can help you develop a pleasing site without too much effort. Be sure to specify the directory containing the 'static' and 'templates' directories as `theme:` in the .asf.yaml file.
+
+### Setting up a Pelican website on Subversion ###
+
+Setting up Pelican to work with a Subversion repository requires a bit more hands-on work. If you would like to do this, open a Jira ticket for INFRA to make a request for help.
+
 ### Updating your website ###
 
-### Related information ###
+Create and update markdown files (.md) in the content/pages and content/articles directories. When you add pages or commit edits, the site automatically updates.
 
 
 
