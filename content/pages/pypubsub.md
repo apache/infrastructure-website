@@ -88,7 +88,7 @@ def process_event(payload):
 
 def main():
     pubsub = asfpy.pubsub.Listener('http://pubsub.apache.org:2069/')
-    pubsub.attach(process_event)
+    pubsub.attach(process_event, raw=True)
 
 ~~~
 
