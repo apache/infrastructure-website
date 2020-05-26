@@ -80,7 +80,7 @@ For historical reasons, some projects have their own instances of Jira or Bugzil
 
 Review Apache's <a href="https://issues.apache.org/bugwritinghelp.html" target="_blank">bug reporting guidelines</a>.
 
-<h3 id="repository-to-issue-tracker-integrations">Integrating youir repository with Jira tickets<a class="headerlink" href="#repository-to-issue-tracker-integrations" title="Permanent link">&para;</a></h3>
+<h3 id="repository-to-issue-tracker-integrations">Integrating your repository with Jira tickets<a class="headerlink" href="#repository-to-issue-tracker-integrations" title="Permanent link">&para;</a></h3>
 
 Infra can activate a [Subversion and Git integration with Jira tickets](svngit2jira.html) for your project.
 
