@@ -16,31 +16,42 @@ If you want to invite ASF members who are not on Slack yet to join your project'
   2. Select `Invite people to ASF`
   3. Use the `Members` option and, in the form that appears, provide the person's ASF email address.
 
-Other contributors and interested parties (observers, former members, software evaluators, members of the media) who want to participate in channels in the ASF workspace can use a **guest** membership. There are two ways to do this:
+Other contributors and interested parties (observers, former members, software evaluators, members of the media, those without an @apache.org address) who want to participate in channels in the ASF workspace can use a **guest** account. There are two ways to do this:
 
   1. Someone already part of the workspace invites you to join a particular channel
       - In the Slack app, click the "ASF" header at the top left.
       - Select `Invite people to ASF`.
       - Use the`Single channel guests` option and, in the form that appears, provide the email addresses of the people you would like to invite to a specific channel.
-  2. Share this URL with a person who wants to take part in the Slack discussions: `https://s.apache.org/slack-invite`. The person who joins in this way becomes a guest member with access to all public channels in the workspace. **Note**: When Slack does an update, this URL occasionally stops functioning as it should. If the potential participant uses it and the submission form asks for an Apache email address, let Infra know so we can update the URL.  
+  2. Share this URL with a person who wants to take part in the Slack discussions: `https://s.apache.org/slack-invite`. The person who joins in this way becomes a member with access to all public channels in the workspace. **Note**: When Slack does an update, this URL occasionally stops functioning as it should. If the potential participant uses it and the submission form asks for an Apache email address, let Infra know so we can update the URL. 
+
+### Slack Account Types ###
+
+Slack has three different types of accounts, member, multi-channel guest, and single-channel guest. <a href="https://slack.com/help/articles/201314026-Permissions-on-a-Slack-workspace" target="_blank">Slack has a detailed list of permissions on their site.</a> 
+  - Member
+      - A member has full access to all Slack's features, including inviting others to join the workspace.
+  - Multi-Channel Guest
+      - Limited access inside Slack, however they can join as many channels as they wish. 
+  - Single-Channel Guest
+      - These accounts are only allowed to access the channel they are invited to join.
 
 ### ASF and Slack 'members' ###
+
 Both the ASF and Slack use the term 'member', but in different ways.
 
   - For the Apache Software Foundation:
       - An <a href="https://www.apache.org/foundation/how-it-works.html#asf-members" target="_blank">ASF Member</a> is a "person who was nominated by current members and elected due to merit for the evolution and progress of the foundation."
       - A <a href="https://www.apache.org/foundation/how-it-works.html#pmc-members" target="_blank">PMC member</a> is a "developer or a committer that was elected" to the PMC.
-  - For Slack, a "member" is anyone who can participate in discussions on a channel, or a thread within a channel. This includes guest members who might be part of the conversation for a short time, or for a limited purpose, like a journalist writing a review of a particular project and its app.
+  - For Slack, a "member" is anyone who uses their @apache.org email address to join, the `https://s.apache.org/slack-invite` invite link, or isn't a guest account.
 
 ## Joining project channels ##
 
-Once you are part of the ASF workspace as a member or a full guest member, you can join any open channels you wish to. 
+Once you are part of the ASF workspace as a member or a multi-channel guest, you can join any open channels you wish to. 
 
  - At the top of your list of channels in the Slack app, click the **+** icon.
  - Use the _Browse channels_ option to display a list of open channels in the workspace; or enter text in the search field.
  - Select any channel to add it to your channel list.
  
- Some ASF channels are **private** or **locked**, and do not appear on the list of channels you can join. Someone with the appropriate rights has to join you to such a channel.
+ Some ASF channels are **private** or **locked**, and do not appear on the list of channels you can join. Someone who is already in the channel has to invite you to join such a channel.
  
 If you are a single-channel guest, you cannot join other channels.
  
