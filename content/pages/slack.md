@@ -26,22 +26,21 @@ Other contributors and interested parties (observers, former members, software e
 
 ### Slack Account Types ###
 
-Slack has three different types of accounts, member, multi-channel guest, and single-channel guest. <a href="https://slack.com/help/articles/201314026-Permissions-on-a-Slack-workspace" target="_blank">Slack has a detailed list of permissions on their site.</a> 
-  - Member
-      - A member has full access to all Slack's features, including inviting others to join the workspace.
-  - Multi-Channel Guest
-      - Limited access inside Slack, however they can join as many channels as they wish. 
-  - Single-Channel Guest
-      - These accounts are only allowed to access the channel they are invited to join.
+Slack has three account types:
+  - **Member**: has full access to all Slack's features, including inviting others to join the workspace.
+  - **Multi-Channel Guest**: has limited access inside Slack, but can join as many open channels as they wish. 
+  - **Single-Channel Guest**: can only access the channel they are invited to join.
 
-### ASF and Slack 'members' ###
+Slack has a list of <a href="https://slack.com/help/articles/201314026-Permissions-on-a-Slack-workspace" target="_blank">permissions</a> for these account types. 
 
-Both the ASF and Slack use the term 'member', but in different ways.
+#### ASF and Slack 'members' ####
 
-  - For the Apache Software Foundation:
-      - An <a href="https://www.apache.org/foundation/how-it-works.html#asf-members" target="_blank">ASF Member</a> is a "person who was nominated by current members and elected due to merit for the evolution and progress of the foundation."
-      - A <a href="https://www.apache.org/foundation/how-it-works.html#pmc-members" target="_blank">PMC member</a> is a "developer or a committer that was elected" to the PMC.
-  - For Slack, a "member" is anyone who uses their @apache.org email address to join, the `https://s.apache.org/slack-invite` invite link, or isn't a guest account.
+Both the ASF and Slack use the term 'member', but in different ways. The Slack use of "member" is above.
+
+For the Apache Software Foundation:
+
+- An <a href="https://www.apache.org/foundation/how-it-works.html#asf-members" target="_blank">ASF Member</a> is a "person who was nominated by current members and elected due to merit for the evolution and progress of the foundation."
+ - A <a href="https://www.apache.org/foundation/how-it-works.html#pmc-members" target="_blank">PMC member</a> is a "developer or a committer that was elected" to the PMC.
 
 ## Joining project channels ##
 
@@ -69,4 +68,6 @@ If you _do_ add a channel for your project, make sure you tell the PMC, committe
 
 ## Expectations ##
 
-As with all ASF activities, we expect ASF Members and project participants to conduct themselves according to the ASF <a href="https://www.apache.org/foundation/policies/conduct.html" target="_blank">Code of Conduct</a>. We expect channel participants to be respectful and supportive of other participants, and to make contributions that add to the conversation, rather than blurring it. If a participant makes contributions that are disrespectful, offensive, or contrary in other ways to The Apache Way, please report them to Infra.
+As with all ASF activities, we expect ASF Members and project participants to conduct themselves according to the ASF <a href="https://www.apache.org/foundation/policies/conduct.html" target="_blank">Code of Conduct</a>. 
+
+We expect channel participants to be respectful and supportive of other participants, and to make contributions that add to the conversation, rather than blurring it. If a participant makes contributions that are disrespectful, offensive, or contrary in other ways to The Apache Way, please report them to Infra.
