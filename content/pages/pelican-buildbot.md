@@ -43,6 +43,7 @@ for x in "content/pages content/articles theme/plugins"; do mkdir -p $x; done
 rm -rf output publishconf.py
 echo -e "\nPLUGIN_PATHS=['./theme/plugins']\nPLUGINS=[]\n"  >> pelicanconf.py
 echo -e "pelican\nbeautifulsoup4" >> requirements.txt
+
 ```
 
 4. Commit and push your changes.
