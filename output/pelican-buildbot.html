@@ -142,15 +142,14 @@ echo -e &quot;pelican\nbeautifulsoup4&quot; &gt;&gt; requirements.txt
 </code></pre>
 <ol start="4">
 <li>Commit and push your changes.</li>
+<li>Set up continuous integration (CI): use the <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">asf.yaml</a> mechanism to have Pelican build and, optionally, publish your website.</li>
 </ol>
 <h3>Setting up a Pelican website on Subversion</h3>
 <p>Setting up Pelican to work with a Subversion repository requires a bit more hands-on work. If you would like to do this, open a Jira ticket for INFRA to make a request for help.</p>
-<h3>Setting up continuous integration</h3>
-<p>Use the <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">asf.yaml</a> mechanism to have Pelican build and, optionally, publish your website.</p>
 <h3>Using a Pelican theme</h3>
 <p>Pelican provides a range of <a href="http://www.pelicanthemes.com/" target="_blank">themes</a> that can help you develop a pleasing site without too much effort. Be sure to specify the directory containing the 'static' and 'templates' directories as <code>theme:</code> in the .asf.yaml file.</p>
 <h3>Updating your website</h3>
-<p>Create and update markdown files (.md) in the content/pages and content/articles directories. When you add pages or commit edits, the site automatically updates.</p>
+<p>Create and update markdown files (.md) in the content/pages and content/articles directories. If you have set up continuous integration (step 5, above), when you add pages or commit edits the site automatically updates.</p>
 
         </div>
       </div>
