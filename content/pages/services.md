@@ -91,7 +91,7 @@ Infra can activate a [Subversion and Git integration with Jira tickets](svngit2j
   - SvnPubSub
   - [PyPubSub](pypubsub.html)
 
-<h3 id="build">Build services</a>
+<h3 id="build">Build services</h3>
 
 Apache supports and models continuous integration and continuous deployment, or *CI/CD*. The <a href="https://ci.apache.org" target="_blank">Apache Build services site</a> provides more information, and links to these build tools:
 
