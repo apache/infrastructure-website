@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GitHub Pagex policy - Apache Infrastructure</title>
+    <title>GitHub Pages for projects - Apache Infrastructure</title>
     <link rel="stylesheet" href="/theme/css/foundation.css">
     <link rel="stylesheet" href="/theme/css/app.css">
     <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
@@ -87,9 +87,9 @@
       <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
         <a href="/">Home</a>
         <i class="fa fa-angle-double-right"></i>
-        <a href="/github-pages-policy.html">
-GitHub Pagex policy        </a>
-        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/github-pages-policy.md">edit</a>)
+        <a href="/github-pages.html">
+GitHub Pages for projects        </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/github-pages.md">edit</a>)
       </div>
     </div>
     
@@ -99,9 +99,21 @@ GitHub Pagex policy        </a>
       <div class="large-12 columns">
         <div class="callout">
           <h2>
-              GitHub Pagex policy
+              GitHub Pages for projects
           </h2>
-              <p>This document describes Infra support for and policy related to project use of GitHub Pages.</p>
+              <p>Infra supports ASF projects using <a href="https://pages.github.com/" target="_blank">GitHub pages (gh-pages)</a>.</p>
+<h3>Using gh-pages for staging a website, product preview, or documentation</h3>
+<p>Projects can use GitHub and gh-pages for staging a website for review and improvement before publishing it to TLP servers.</p>
+<p>Ask Infra (in a Jira ticket) to enable 'gh-pages' for your Git repository, and use a 'gh-pages' branch for publishing, or specify a different branch such as 'master' or 'master/docs'.</p>
+<p>There are various ways to build and publish your staging site, including:</p>
+<ul>
+<li>Use Infra's new feature <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_kblank">.asf.yaml.</a></li>
+<li>Use Buildbot in combination with Jekyll and Pelican</li>
+<li>Use your own build tool in combination with gh-pages or .asf.yaml</li>
+</ul>
+<h3>Using gh-pages for the project website</h3>
+<p>Projects are welcome to use GitHub for their source code, and to generate (or collect) website pages host and display them at GitHub instead of using the ASF TLP servers.</p>
+<p>Ask Infra (in a Jira ticket) to enable 'gh-pages' for the project. When that feature is available, prepare and review your website. When you are happy with its look and functions, change the DNS to point to the site on GitHub.</p>
 
         </div>
       </div>
