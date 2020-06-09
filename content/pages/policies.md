@@ -11,3 +11,4 @@ The Apache Infrastructure Team (Infra) operates under the <a href="https://www.a
 - [Operating system upgrade policy](os-upgrade-policy.html)
 - [Backup policy](backup-policy.html) for systems and content
 - [Virtual machine policy](vm-policy.html)
+- [Outreach to committers](committer-outreach.html)
