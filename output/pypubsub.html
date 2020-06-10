@@ -113,7 +113,7 @@ Subscribe to Apache Software Foundation infrastructure events        </a>
 </ul>
 <p>Events are delivered as JSON objects in a <a href="https://en.wikipedia.org/wiki/Chunked_transfer_encoding" target="_blank">chunked response stream</a>, with each new chunk being either an event payload or a keep-alive ping.</p>
 <h2>How to subscribe</h2>
-<p>Subscribers can pick one or multiple topics to subscribe to, with more specific subscriptions getting fewer, but tailored event payloads. Construct subscriptions in the form of: <code>http://pubsub.apache.org:2069/topics/go/here</code>, and separate the topics you want to subscribfe to with forward slashes.</p>
+<p>Subscribers can pick one or multiple topics to subscribe to, with more specific subscriptions getting fewer, but more specific, event payloads. Construct subscriptions in the form of: <code>http://pubsub.apache.org:2069/topics/go/here</code>, and separate the topics you want to subscribe to with forward slashes.</p>
 <p>The service returns events that match <em>all</em> of the topics you are subscribed to.</p>
 <p>Some examples:</p>
 <ul>
@@ -155,7 +155,7 @@ Subscribe to Apache Software Foundation infrastructure events        </a>
 </code></pre>
 <p>Payloads vary depending on what they represent, so check both what sub-objects are present in the payload and the <code>pubsub_path</code> variable, which will show the full payload event path and explain which type is being sent.</p>
 <h2>Try it yourself</h2>
-<p>To try it out and take a look at the event stream, just use <a href="https://en.wikipedia.org/wiki/CURL">cURL</a> in your terminal:</p>
+<p>To try it out and take a look at the event stream, use <a href="https://en.wikipedia.org/wiki/CURL">cURL</a> in your terminal:</p>
 <pre><code class="language-bash">curl http://pubsub.apache.org:2069/git/commit
 </code></pre>
 <br/>
@@ -177,7 +177,7 @@ def main():
 
 </code></pre>
 <h3>Using PyPubSub with node.js</h3>
-<p>This sample snippet will allow you to use node.js for listening for pubsub events and process them:</p>
+<p>This sample snippet lets you use <code>node.js</code> for listening for and processing pubsub events:</p>
 <pre><code class="language-javascript">const http = require(&quot;http&quot;);
 const https = require(&quot;https&quot;);
 
