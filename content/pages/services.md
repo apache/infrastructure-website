@@ -139,7 +139,7 @@ Information about our build and continuous integration tools is on <a href="http
 
 ### Code quality
 
-**SonarQube** is an open-source platform developed by SonarSource for continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities on 20+ programming languages. You can check the status of many Apache project repositories <a href="https://sonarcloud.io/organizations/apache/projects" target="_blank>here</a>.
+**SonarQube** is an open-source platform developed by SonarSource for continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities on 20+ programming languages. You can check the status of many Apache project repositories <a href="https://sonarcloud.io/organizations/apache/projects" target="_blank">here</a>.
 
 <a href="https://cwiki.apache.org/confluence/display/INFRA/SonarQube+Analysis" target="_blank">Read more</a>.
 
