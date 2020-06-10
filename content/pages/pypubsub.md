@@ -14,7 +14,7 @@ Currently, the service streams the following events:
 Events are delivered as JSON objects in a <a href="https://en.wikipedia.org/wiki/Chunked_transfer_encoding" target="_blank">chunked response stream</a>, with each new chunk being either an event payload or a keep-alive ping. 
 
 ## How to subscribe
-Subscribers can pick one or multiple topics to subscribe to, with more specific subscriptions getting fewer, but tailored event payloads. Construct subscriptions in the form of: `http://pubsub.apache.org:2069/topics/go/here`, and separate the topics you want to subscribfe to with forward slashes. 
+Subscribers can pick one or multiple topics to subscribe to, with more specific subscriptions getting fewer, but more specific, event payloads. Construct subscriptions in the form of: `http://pubsub.apache.org:2069/topics/go/here`, and separate the topics you want to subscribe to with forward slashes. 
 
 The service returns events that match _all_ of the topics you are subscribed to.
 
@@ -65,7 +65,7 @@ An example of a real event payload, in this case a git commit, could be (emails 
 Payloads vary depending on what they represent, so check both what sub-objects are present in the payload and the `pubsub_path` variable, which will show the full payload event path and explain which type is being sent.
 
 ## Try it yourself
-To try it out and take a look at the event stream, just use [cURL](https://en.wikipedia.org/wiki/CURL) in your terminal:
+To try it out and take a look at the event stream, use [cURL](https://en.wikipedia.org/wiki/CURL) in your terminal:
 ~~~ bash
 curl http://pubsub.apache.org:2069/git/commit
 ~~~
@@ -94,7 +94,7 @@ def main():
 ~~~
 
 ### Using PyPubSub with node.js
-This sample snippet will allow you to use node.js for listening for pubsub events and process them:
+This sample snippet lets you use `node.js` for listening for and processing pubsub events:
 ~~~ javascript
 const http = require("http");
 const https = require("https");
