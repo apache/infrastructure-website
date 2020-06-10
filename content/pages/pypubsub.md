@@ -79,7 +79,7 @@ curl https://pubsub.apache.org:2070/git/commit
 
 ## Using PyPubSub in programming
 ### Using PyPubSub with Python
-You can listen for an react on payloads in Python using the [asfpy](https://pypi.org/project/asfpy/) pip package:
+You can listen for and react to payloads in Python using the [asfpy](https://pypi.org/project/asfpy/) pip package:
 ~~~ python
 import asfpy.pubsub
 
