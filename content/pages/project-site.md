@@ -27,6 +27,8 @@ Another good option is <a href="https://docs.getpelican.com/en/stable/" target="
   
 See Infra's <a href="https://cwiki.apache.org/confluence/display/INFRA/Pelican+and+Buildbot+for+websites" target="_blank">instructions</a> for using Pelican to develop and deploy a project website.
 
+Projects with a Git code repository can use [GitHub Pages](github-pages.html) to create a staging site for reviewing their website, and to publish the site when it is ready.
+
 <h2 id="sitemanagement">Site management</a></h2>
   
   The basic requirements for site management are that 
