@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hosting a Jenkins or BuildBot agent - Apache Infrastructure</title>
+    <title>Hosting a Jenkins or Buildbot agent - Apache Infrastructure</title>
     <link rel="stylesheet" href="/theme/css/foundation.css">
     <link rel="stylesheet" href="/theme/css/app.css">
     <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
@@ -88,7 +88,7 @@
         <a href="/">Home</a>
         <i class="fa fa-angle-double-right"></i>
         <a href="/hosting-external-agent.html">
-Hosting a Jenkins or BuildBot agent        </a>
+Hosting a Jenkins or Buildbot agent        </a>
         (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/hosting-external-agent.md">edit</a>)
       </div>
     </div>
@@ -99,10 +99,38 @@ Hosting a Jenkins or BuildBot agent        </a>
       <div class="large-12 columns">
         <div class="callout">
           <h2>
-              Hosting a Jenkins or BuildBot agent
+              Hosting a Jenkins or Buildbot agent
           </h2>
               <p><em>here is why someone would want to do this</em></p>
+<p><strong>Notes</strong></p>
+<ul>
+<li>Ubuntu is a core supported OS at the ASF and we do not need any external hosting by individuals at this time.</li>
+<li>Organizations wanting to donate multiple VMs for Jenkins and/or Buildbot use should email <code>private@infra.apache.org</code> to start discussions.</li>
+</ul>
 <h2>Getting ready to host</h2>
+<p>There are a few things you'll need to know and to adhere to.</p>
+<ul>
+<li>Keep up to date with security patches etc,, the obvious stuff; we may want to be added to root alias for security reporting etc.</li>
+<li>Spec requirements:
+<ul>
+<li>minimum 16GB RAM</li>
+<li>500GB Hard disk</li>
+<li>A permanent static IP address</li>
+</ul>
+</li>
+<li>You must be an ASF Committer.</li>
+<li>You must subscribe to the `<a href="mailto:1builds@a.o">1builds@a.o</a>' mailing list.</li>
+<li>Maintain and provide a link to a public page that lists software you add to your agent.</li>
+<li>Open an INFRA Jira ticket so we can complete your hosting set up when you are completely ready.</li>
+</ul>
+<h3>For Buildbot</h3>
+<p>Make sure it's a stock, latest buildbot-worker install for your OS variant.</p>
+<p>When you are ready, liaise with <code>root@&gt;a.o</code> to negotiate connection credentials. Keep your agent secure and only open the one required port.</p>
+<h3>For Jenkins</h3>
+<ul>
+<li>Create a Jenkins user and group using /home/jenkins.</li>
+<li>Add the Jenkins ssh public key into the users' <code>~/.ssh/authorized</code> keys.</li>
+</ul>
 
         </div>
       </div>
