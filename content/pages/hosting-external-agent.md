@@ -1,6 +1,6 @@
 Title: Hosting a Jenkins or Buildbot agent
 
-_here is why someone would want to do this_
+Individuals and organizations can support the work of the ASF and its projects by hosting Jenkins or Buildbot agents on virtual machines in their own systems.
 
 **Notes** 
   - Ubuntu is a core supported OS at the ASF and we do not need any external hosting by individuals at this time.
