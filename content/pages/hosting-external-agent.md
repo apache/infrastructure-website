@@ -1,4 +1,4 @@
-Title: Hosting a Jenkins or Buildbot agent
+Title: Host a Jenkins or Buildbot agent
 
 Individuals and organizations can support the work of the ASF and its projects by hosting Jenkins or Buildbot agents on virtual machines in their own systems.
 
