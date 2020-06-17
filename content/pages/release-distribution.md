@@ -81,7 +81,7 @@ For every artifact distributed to the public through Apache channels, the PMC
 
 For new releases, PMCs **must** supply SHA-256 and/or SHA-512 and **should not** supply MD5 or SHA-1. Existing releases do not need to be changed.
 
-The names of signature and checksum files **must** be formed by adding to the name of the artifact the following suffixes:
+The names of signature and checksum files **must** be formed by adding to the name of the artifact the appropriate suffix:
 
   - .asc for a (ASCII-armored) PGP signature
   - .md5 for a MD5 checksum
@@ -91,7 +91,7 @@ The names of signature and checksum files **must** be formed by adding to the na
 
 Regarding signature and checksum files:
 
-  - Legacy suffix .sha s**should not be** be used and .sha files **should not** be provided.
+  - Legacy suffix .sha **should not be** be used and .sha files **should not** be provided.
   - Binary PGP signature .sig files **must not** be provided.
   - .mds files (containing checksums) **may** be provided.
   - Signature and checksum files for verifying distributed artifacts **should not** be provided, unless named as indicated above.
