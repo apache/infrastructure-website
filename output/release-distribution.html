@@ -163,7 +163,7 @@ Release Distribution Policy        </a>
 <li><strong>SHOULD NOT</strong> supply a MD5 or SHA-1 checksum file because these are deprecated.</li>
 </ul>
 <p>For new releases, PMCs <strong>must</strong> supply SHA-256 and/or SHA-512 and <strong>should not</strong> supply MD5 or SHA-1. Existing releases do not need to be changed.</p>
-<p>The names of signature and checksum files <strong>must</strong> be formed by adding to the name of the artifact the following suffixes:</p>
+<p>The names of signature and checksum files <strong>must</strong> be formed by adding to the name of the artifact the appropriate suffix:</p>
 <ul>
 <li>.asc for a (ASCII-armored) PGP signature</li>
 <li>.md5 for a MD5 checksum</li>
@@ -173,7 +173,7 @@ Release Distribution Policy        </a>
 </ul>
 <p>Regarding signature and checksum files:</p>
 <ul>
-<li>Legacy suffix .sha s<strong>should not be</strong> be used and .sha files <strong>should not</strong> be provided.</li>
+<li>Legacy suffix .sha <strong>should not be</strong> be used and .sha files <strong>should not</strong> be provided.</li>
 <li>Binary PGP signature .sig files <strong>must not</strong> be provided.</li>
 <li>.mds files (containing checksums) <strong>may</strong> be provided.</li>
 <li>Signature and checksum files for verifying distributed artifacts <strong>should not</strong> be provided, unless named as indicated above.</li>
