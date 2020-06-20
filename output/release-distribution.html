@@ -165,17 +165,20 @@ Release Distribution Policy        </a>
 <p>For new releases, PMCs <strong>must</strong> supply SHA-256 and/or SHA-512 and <strong>should not</strong> supply MD5 or SHA-1. Existing releases do not need to be changed.</p>
 <p>The names of signature and checksum files <strong>must</strong> be formed by adding to the name of the artifact the appropriate suffix:</p>
 <ul>
-<li>.asc for a (ASCII-armored) PGP signature</li>
-<li>.md5 for a MD5 checksum</li>
-<li>.sha1 for a SHA-1 checksum</li>
-<li>.sha256 for a SHA-256 checksum</li>
-<li>.sha512 for a SHA-512 checksum</li>
+<li><code>.asc</code> for a (ASCII-armored) PGP signature</li>
+<li><code>.sha256</code> for an SHA-256 checksum</li>
+<li><code>.sha512</code> for an SHA-512 checksum</li>
+</ul>
+<p>Noted for completeness that this specification also applies to <strong>deprecated</strong> file types:</p>
+<ul>
+<li><code>.md5</code> for an MD5 checksum</li>
+<li><code>.sha1</code> for an SHA-1 checksum</li>
 </ul>
 <p>Regarding signature and checksum files:</p>
 <ul>
-<li>Legacy suffix .sha <strong>should not be</strong> be used and .sha files <strong>should not</strong> be provided.</li>
-<li>Binary PGP signature .sig files <strong>must not</strong> be provided.</li>
-<li>.mds files (containing checksums) <strong>may</strong> be provided.</li>
+<li>Legacy suffix <code>.sha</code> <strong>should not be</strong> be used and <code>.sha</code> files <strong>should not</strong> be provided.</li>
+<li>Binary PGP signature <code>.sig</code> files <strong>must not</strong> be provided.</li>
+<li><code>.mds</code> files (containing checksums) <strong>may</strong> be provided for individual files.</li>
 <li>Signature and checksum files for verifying distributed artifacts <strong>should not</strong> be provided, unless named as indicated above.</li>
 </ul>
 <p>Regarding KEYS files:</p>
