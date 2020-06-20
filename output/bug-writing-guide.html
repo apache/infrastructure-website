@@ -1,0 +1,219 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing a good bug report - Apache Infrastructure</title>
+    <link rel="stylesheet" href="/theme/css/foundation.css">
+    <link rel="stylesheet" href="/theme/css/app.css">
+    <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>  </head>
+  <body style="background: #C9B191;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/theme/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+		  <li><a href="https://blogs.apache.org/infra/" target="_blank">The Infra Blog</a></li>			
+		  <li><a href="/roadmap.html">Strategies & Roadmap</a></li>
+	          
+                </ul>
+              </li>
+              <li><a href="/policies.html" target="_blank" style="padding-left: 5px;">Policies</a></li>
+                           
+              <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Services-Tools</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+		<li><a href="/services.html">Services and Tools</a></li>
+                <li><a href="https://www.apache.org/dev/machines.html" target="_blank" >Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" target="_blank" >Blocky</a></li>
+                <li><a href="https://uls.apache.org/app/kibana#/discover?_g=()" target="_blank" >Kibana and Unified Logging System</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" target="_blank" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" target="_blank" >Committer Search</a></li>
+		
+                </ul>
+              </li>
+              <li><a href="/doc.html" target="_blank" style="padding-left: 5px;">Documentation</a></li>
+	       <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Contribute</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">	
+		   <li><a href="/infra-volunteer.html">Volunteer with Infra</a></li>
+		   <li><a href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+			<li><a href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+		 </ul>
+	       </li>
+	      
+              <li><a href="/stats.html" target="_blank" style="padding-left: 5px;">Status</a></li>
+              <li><a href="/contact.html" style="padding-left: 5px;"><i class="fa fa-weixin" style="color: #FFF; font-size: 0.9rem;"></i>Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/bug-writing-guide.html">
+Writing a good bug report        </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/bug-writing-guide.md">edit</a>)
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              Writing a good bug report
+          </h2>
+              <p>When you run into an issue
+Why You Should Read This</p>
+<p>Simply put, the more effectively you report a bug, the more likely an engineer will actually fix it.
+These bug writing guidelines are an attempt at a general tutorial on writing effective bug reports for novice bug writers; not every sentence may precisely apply to your software project.</p>
+<p>How to Write a Useful Bug Report</p>
+<p>Useful bug reports are ones that get bugs fixed. A useful bug report normally has two qualities:</p>
+<p>Reproducible. If an engineer can't see it or conclusively prove that it exists, the engineer will probably stamp it &quot;WORKSFORME&quot; or &quot;INVALID&quot;, and move on to the next bug. Every detail you can provide helps.</p>
+<p>Specific. The quicker the engineer can isolate the issue to a specific problem, the more likely it'll be expediently fixed. (If a programmer or tester has to decypher a bug, they spend more time cursing the submitter than fixing or testing the problem.)
+Let's say the application you're testing is a web browser. You crash at foo.com, and want to write up a bug report:</p>
+<p>BAD: &quot;My browser crashed. I think I was on foo.com. My computer uses Windows. I think that this is a really bad problem and you should fix it now. By the way, your icons really suck. Nobody will use your software if you keep those ugly icons. Oh, and my grandmother's home page doesn't look right, either, it's all messed up. Good luck.&quot;</p>
+<p>GOOD: &quot;I crashed each time when I went to foo.com, using the 10.28.99 build on a Win NT 4.0 (Service Pack 5) system. I also rebooted into Linux, and reproduced this problem using the 10.28.99 Linux build.</p>
+<p>It again crashed each time upon drawing the Foo banner at the top of the page. I broke apart the page, and discovered that the following image link will crash the application reproducibly, unless you remove the &quot;border=0&quot; attribute:</p>
+<p><IMG SRC="http://foo.com/images/topics/topicfoos.gif" width=34 height=44 border=0 alt="News">&quot;</p>
+<p>How to Enter your Useful Bug Report into Bugzilla:</p>
+<p>Before you enter your bug, use the Bugzilla Query Page to determine whether the defect you've discovered is a known bug, and has already been reported. (If your bug is the 37th duplicate of a known issue, you're more likely to annoy the engineer. Annoyed engineers fix fewer bugs.)</p>
+<p>Next, be sure that you've reproduced your bug using a recent build. (Engineers tend to be most interested in problems afflicting the code base that they're actively working on, rather than those in a code base that's hundreds of bug fixes obsolete.)</p>
+<p>If you've discovered a new bug using a current build, report it in Bugzilla:</p>
+<p>From your Bugzilla main page, choose &quot;Enter a new bug&quot;.
+Select the product that you've found a bug in.
+Enter your E-mail address, Password, and press the &quot;Login&quot; button. (If you don't yet have a password, leave the password text box empty, and press the &quot;E-mail me a password&quot; button instead. You'll receive an E-mail message with your password shortly.)
+Now, fill out the form. Here's what it all means:</p>
+<p>Where did you find the bug?</p>
+<p>Product: In which product did you find the bug?
+You just filled this out on the last page.</p>
+<p>Version: In which product version did you find the bug?
+If applicable.</p>
+<p>Component: In which component does the bug exist?
+Bugzilla requires that you select a component to enter a bug. (If they all look meaningless, click on the Component link, which links to descriptions of each component, to help you make the best choice.)</p>
+<p>Platform: On which hardware platform did you find this bug? (e.g. Macintosh, SGI, Sun, PC.)
+If you know the bug happens on all hardware platforms, choose 'All'. Otherwise, select the platform that you found the bug on, or &quot;Other&quot; if your platform isn't listed.</p>
+<p>OS: On which Operating System (OS) did you find this bug? (e.g. Linux, Windows NT, Mac OS 8.5.)
+If you know the bug happens on all OSs, choose 'All'. Otherwise, select the OS that you found the bug on, or &quot;Other&quot; if your OS isn't listed.</p>
+<p>How important is the bug?</p>
+<p>Severity: How damaging is the bug?
+This item defaults to 'normal'. (To determine the most appropriate severity for a particular bug, click on the Severity link for a full explanation of each choice, from Critical to Enhancement.)</p>
+<p>Who will be following up on the bug?</p>
+<p>Assigned To: Which engineer should be responsible for fixing this bug?
+Bugzilla will automatically assign the bug to a default engineer upon submitting a bug report; the text box exists to allow you to manually assign it to a different engineer. (To see the list of default engineers for each component, click on the Component link.)</p>
+<p>Cc: Who else should receive e-mail updates on changes to this bug?
+List the full e-mail addresses of other individuals who should receive an e-mail update upon every change to the bug report. You can enter as many e-mail addresses as you'd like; e-mail addresses must be separated by commas, with no spaces between the addresses.</p>
+<p>What else can you tell the engineer about the bug?</p>
+<p>URL: On what URL did you discover this bug?
+If you encountered the bug on a particular URL, please provide it (or, them) here. If you've isolated the bug to a specific HTML snippet, please also provide a URL for that, too.</p>
+<p>Summary: How would you describe the bug, in approximately 60 or fewer characters?
+A good summary should quickly and uniquely identify a bug report. Otherwise, developers cannot meaningfully query by bug summary, and will often fail to pay attention to your bug report when reviewing a 10 page bug list.</p>
+<p>A summary of &quot;PCMCIA install fails on Tosh Tecra 780DVD w/ 3c589C&quot; is a useful title. &quot;Software fails&quot; or &quot;install problem&quot; would be examples of a bad title.</p>
+<p>Description: What else can you tell the engineer about this bug?
+Please provide as detailed of a problem diagnosis in this field as possible.</p>
+<p>Where applicable, using the following bug report template will help ensure that all relevant information comes through:</p>
+<p>Overview Description: More detailed expansion of summary.</p>
+<p>Drag-selecting any page crashes Mac builds in NSGetFactory
+Steps to Reproduce: The minimal set of steps necessary to trigger the bug. Include any special setup steps.</p>
+<ol>
+<li>View any web page. (I used the default sample page,
+resource:/res/samples/test0.html)</li>
+<li>Drag-select the page. (Specifically, while holding down the
+mouse button, drag the mouse pointer downwards from any point in
+the browser's content region to the bottom of the browser's
+content region.)
+Actual Results: What the application did after performing the above steps.</li>
+</ol>
+<p>The application crashed. Stack crawl appended below from MacsBug.
+Expected Results: What the application should have done, were the bug not present.</p>
+<p>The window should scroll downwards. Scrolled content should
+be selected. (Or, at least, the application should not crash.)
+Build Date &amp; Platform: Date and platform of the build that you first encountered the bug in.</p>
+<p>11/2/99 build on Mac OS (Checked Viewer &amp; Apprunner)
+Additional Builds and Platforms: Whether or not the bug takes place on other platforms or browsers.</p>
+<ul>
+<li>
+<p>Occurs On
+Seamonkey (11/2/99 build on Windows NT 4.0)</p>
+</li>
+<li>
+<p>Doesn't Occur On
+Seamonkey (11/4/99 build on Red Hat Linux; feature not supported)
+Internet Explorer 5.0 (RTM build on Windows NT 4.0)
+Netscape Communicator 4.5 (RTM build on Mac OS)
+Additional Information: Any other debugging information. For crashing bugs:</p>
+</li>
+</ul>
+<p>Win32: if you receive a Dr. Watson error, please note the type of the crash, and the module that the application crashed in. (e.g. access violation in apprunner.exe)
+Mac OS: if you're running MacsBug, please provide the results of a how and an sc.
+Unix: please provide a minimized stack trace, which can be generated by typing gdb apprunner core into a shell prompt.
+*** MACSBUG STACK CRAWL OF CRASH (Mac OS)</p>
+<p>Calling chain using A6/R1 links
+Back chain  ISA  Caller
+00000000    PPC  0BA85E74<br />
+03AEFD80    PPC  0B742248<br />
+03AEFD30    PPC  0B50FDDC  NSGetFactory+027FC
+PowerPC unmapped memory exception at 0B512BD0 NSGetFactory+055F0
+You're done!</p>
+<p>After double-checking your entries for any possible errors, press the &quot;Commit&quot; button, and your bug report will now be in the Bugzilla database.</p>
+<p>(Thanks to Claudius Gayle, Peter Mock, Chris Pratt, Tom Schutter, and Chris Yeh for contributing to this document. Constructive suggestions welcome.)</p>
+
+        </div>
+      </div>
+    </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2020, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    
+    <script src="/theme/js/vendor/jquery.js"></script>
+    <script src="/theme/js/vendor/what-input.js"></script>
+    <script src="/theme/js/vendor/foundation.js"></script>
+    <script src="/theme/js/app.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
