@@ -11,12 +11,9 @@ ASF has two bug-tracking systems:
   - <a href="https://issues.apache.org/jira/" target="_blank">Jira</a>
   - <a href="https://issues.apache.org/bugzilla/" target="_blank">BugZilla</a>
   
-Infra itself uses Jira. Projects can use either system. If the bug you found is in a project's application or website, you need to find out where that project tracks its bugs. 
+Infra itself uses Jira. To submit a ticket for Infra, ...
 
-
-
-
-, so to request a Jira or BugZilla instance for your project, create a <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Jira ticket</a> with the necessary details:, Bugzilla and Jira.
+. Projects can use either system. If the bug you found is in a project's application or website, you need to find out where that project tracks its bugs. 
 
 
 Why You Should Read This
