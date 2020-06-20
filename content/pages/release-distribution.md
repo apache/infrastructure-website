@@ -83,17 +83,20 @@ For new releases, PMCs **must** supply SHA-256 and/or SHA-512 and **should not**
 
 The names of signature and checksum files **must** be formed by adding to the name of the artifact the appropriate suffix:
 
-  - .asc for a (ASCII-armored) PGP signature
-  - .md5 for a MD5 checksum
-  - .sha1 for a SHA-1 checksum
-  - .sha256 for a SHA-256 checksum
-  - .sha512 for a SHA-512 checksum
+  - `.asc` for a (ASCII-armored) PGP signature
+  - `.sha256` for an SHA-256 checksum
+  - `.sha512` for an SHA-512 checksum
+  
+Noted for completeness that this specification also applies to **deprecated** file types:
+
+  - `.md5` for an MD5 checksum
+  - `.sha1` for an SHA-1 checksum
 
 Regarding signature and checksum files:
 
-  - Legacy suffix .sha **should not be** be used and .sha files **should not** be provided.
-  - Binary PGP signature .sig files **must not** be provided.
-  - .mds files (containing checksums) **may** be provided.
+  - Legacy suffix `.sha` **should not be** be used and `.sha` files **should not** be provided.
+  - Binary PGP signature `.sig` files **must not** be provided.
+  - `.mds` files (containing checksums) **may** be provided for individual files.
   - Signature and checksum files for verifying distributed artifacts **should not** be provided, unless named as indicated above.
   
 Regarding KEYS files:
