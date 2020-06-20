@@ -1,6 +1,24 @@
 Title: Writing a good bug report
 
-When you run into an issue
+When you run into an issue with ASF instrastructure, with the software one of the ASF projects produces, or with an ASF-related website, you may be the first person to have noticed the issue. If so, you should report it. The people responsible for the thing that has a bug or other issue will be happy to know about the problem so they can fix it before more people run into it.
+
+For the purposes of this discussion, we'll call any issue, from a calculation error in a function to a punctuation error on a web page, a "bug". Something that you would like to see added to an application or a website to make it better would be an "enhancement request". Both are useful; we are looking at bugs here.
+
+## Where we track bug reports ##
+
+ASF has two bug-tracking systems:
+
+  - <a href="https://issues.apache.org/jira/" target="_blank">Jira</a>
+  - <a href="https://issues.apache.org/bugzilla/" target="_blank">BugZilla</a>
+  
+Infra itself uses Jira. Projects can use either system. If the bug you found is in a project's application or website, you need to find out where that project tracks its bugs. 
+
+
+
+
+, so to request a Jira or BugZilla instance for your project, create a <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Jira ticket</a> with the necessary details:, Bugzilla and Jira.
+
+
 Why You Should Read This
 
 Simply put, the more effectively you report a bug, the more likely an engineer will actually fix it.
@@ -136,4 +154,4 @@ You're done!
 After double-checking your entries for any possible errors, press the "Commit" button, and your bug report will now be in the Bugzilla database.
 
 
-(Thanks to Claudius Gayle, Peter Mock, Chris Pratt, Tom Schutter, and Chris Yeh for contributing to this document. Constructive suggestions welcome.)
+(Thanks to Eli Goldberg, Claudius Gayle, Peter Mock, Chris Pratt, Tom Schutter, and Chris Yeh for contributing to this document. Constructive suggestions welcome.)
