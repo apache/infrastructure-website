@@ -19,7 +19,9 @@ Projects can use either system, or some other method of tracking bugs. If the bu
 
 Before spending the time filing a bug report, it's useful to check whether a report about the bug you found already exists. If so, you can add comments or additional information to the existing report.
 
-If it seems to be a new bug, you get to report it!
+Infra maintains several real-time [status pages](stats.html). If the infrastructure issue you ran into is reported on one of these pages, Infra already knows about it.
+
+If what you found seems to be a new bug, you get to report it!
 
 ## A useful bug report ##
 
