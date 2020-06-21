@@ -8,6 +8,7 @@ An extensive infrastructure overview for developers is <a href="https://www.apac
 
 ### General guides ###
 
+- [Writing a good bug report](bug-writing-guide.html)
 - [Creating a Jira ticket](jira-guidelines.html)
 
 ### PMC resources ###
