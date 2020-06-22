@@ -80,7 +80,7 @@ Here is how to [request a bug and issue tracker for your project](request-bug-tr
 
 For historical reasons, some projects have their own instances of Jira or Bugzilla. See <a href="https://issues.apache.org/" target="_blank">issues.apache.org</a> for a list.
 
-Review Apache's <a href="https://issues.apache.org/bugwritinghelp.html" target="_blank">bug reporting guidelines</a>.
+Here are some guidelines for [writing a good bug report](bug-writing-guide.html).
 
 <h3 id="repository-to-issue-tracker-integrations">Integrating your repository with Jira tickets<a class="headerlink" href="#repository-to-issue-tracker-integrations" title="Permanent link">&para;</a></h3>
 
