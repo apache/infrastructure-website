@@ -7,6 +7,10 @@ pelican:
 staging:
   whoami: favicon-test
   profile: ~
+  
+staging:
+  whoami: favicon-test
+  profile: favicon-test
 
 github:
   ghp_branch:    master
