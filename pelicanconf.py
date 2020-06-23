@@ -26,8 +26,8 @@ PAGE_URL= './{slug}.html'
 
 # Make .htaccess static. Set up to add favicon in 'extra' folder
 STATIC_PATHS = [
-   'pages/.htaccess'
-   'extra'
+   'pages/.htaccess',
+   'extra',
 ]
 
 # Favicon for site
