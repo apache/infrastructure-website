@@ -24,8 +24,16 @@ PATH_METADATA= '.*?(pages/)?(?P<path_no_ext>.*?)\.[a-z]*$'
 PAGE_SAVE_AS= './{slug}.html'
 PAGE_URL= './{slug}.html'
 
-# Make .htaccess static
-STATIC_PATHS = ['pages/.htaccess']
+# Make .htaccess static. Set up to add favicon in 'extra' folder
+STATIC_PATHS = [
+   'pages/.htaccess'
+   'extra'
+]
+
+# Favicon for site
+EXTRA_PATH_METADATA = {
+   'extra/favicon.ico': {'path': 'favicon.ico'},
+}
 
 # Standard behavior:
 #PAGE_SAVE_AS = './{slug}.html'
