@@ -12,6 +12,7 @@ staging:
   whoami: favicon-test
   profile: favicon-test
 
+
 github:
   ghp_branch:    master
   ghp_path:      /docs
