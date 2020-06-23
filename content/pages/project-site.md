@@ -16,7 +16,7 @@ Every Apache project or podling has a website hosted at `apache.org`. Apache pro
 
 Projects are free to choose their own styles and layout for websites, and have a range of options for actually creating the pages. The goal is to create and informative and useful **static** HTML website that can engage visitors, explain your project to them, and provide download links and documentation so they can use your project's applications.
 
-If you'd like to get started with an easy-to-use, Markdown-based site that many projects have used, see the <a href="https://github.com/apache/apache-website-template" target="_blank">Sample Apache Project website</a> repository, which has many useful features and instructions for using svnpubsub easily.
+If you'd like to get started with an easy-to-use, Markdown-based site that many projects have used, see the <a href="https://github.com/apache/apache-website-template" target="_blank">Sample Apache Project website</a> repository which has many useful features and instructions for using svnpubsub.
 
 Another good option is <a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a>, a static site generator written in Python. Highlights include:
 
