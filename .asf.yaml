@@ -5,7 +5,7 @@ pelican:
   whoami:         master
   
 staging:
-  whoami: favicon-test
+  whoami: infra-break-test
   profile: ~
   
 staging:
