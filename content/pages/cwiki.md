@@ -19,7 +19,14 @@ When Infra creates the space, it sets up a $project-committer group (or equivale
   - Each project community manages its own cwiki space and can decide how best to arrange and populate its pages.
   - Your cwiki space has a permissions feature that lets you set access levels for various areas of the space or its individual pages. If your project is using part of the space for end-user documentation, it can leave that section without access restrictions, while restricting access to other areas to project committers.
   - Editing access to your project's space is restricted to Project committers and individuals who have filed a <a href="http://www.apache.org/licenses/" target="_blank">Contributor's License Agreement</a> with the ASF.
+  - You can create user groups in addition to the standard groups:
   
+| **Group** |  |
+| ---- | ---- |
+| confluence-users | Any registered user |
+| confluence-administrators | ASF PMC members helping administer the wiki |
+| asf-cla | Users who have a Contributor's License Agreement on file with the ASF |
+| $PROJECT-committers | Committers to your ASF project |
 
   
 ## Watching a cwiki page ##
@@ -33,5 +40,20 @@ To stop watching a page:
   - The list of pages you are watching appears, and you can remove those you no longer want to watch.
   
 ## FAQs ##
+
+**Can anyone add to a page?** As noted above, editing a page is restricted to people who have submitted a signed CLA to the ASF. This is to make clear that the individual intends to contribute the copyright on the documentation to the ASF.
+
+However, your cwiki space supports comments, and any logged-in page visitor can add suggestions or ask questions.
+
+**What if the site is down?** If the cwiki is down, first check the <a href="http://monitoring.apache.org/status/" target="_blank">ASF Public Network Status page</a>. If the service seems to be down, but Monitoring reports it as OK, then please email `infra@` or post a Jira ticket.
+
+If the Monitoring status shows that the service is offline, then the appropriate people have already been contacted. If the service stays offline for 24 hours, then please file a Jira ticket.
+
+**Is the cwiki backed up?** Yes, we store backups of the cwiki so we can restore all content if something bad crashes the wiki.
+
+
+
+
+
 
 
