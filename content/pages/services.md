@@ -48,8 +48,11 @@ Infra supports many ASF <a href="https://cwiki.apache.org/confluence/display/INF
   
 ## Tools for ASF projects
 
+Infra supports an array of tools and services to help projects develop and support both their applications and their community. They include:
+
 ### PMC tools
 
+- Every project can use a dedicated space on the [Confluence wiki](cwiki.html).
 - <a href="https://reporter.apache.org/" target="_blank">Reporter</a> provides actvitity statistics and other information about your project, and editing tools to help you write and submit your project's quarterly Board reports.
 - You can create and run a [project blog](project-blogs.html).
 - You can establish a [Slack channel](slack.html) for real-time team discussions.
