@@ -20,8 +20,6 @@ When Infra creates the space, it sets up a $project-committer group (or equivale
   - Your cwiki space has a permissions feature that lets you set access levels for various areas of the space or its individual pages. If your project is using part of the space for end-user documentation, it can leave that section without access restrictions, while restricting access to other areas to project committers.
   - Editing access to your project's space is restricted to Project committers and individuals who have filed a <a href="http://www.apache.org/licenses/" target="_blank">Contributor's License Agreement</a> with the ASF.
   - You can create user groups in addition to the standard groups:
-  - Any Confluence Administrator can install a plugin for your space through the administration area in Confluence. Please file a Jira ticket when installing or updating a plugin to keep everyone apprised.
-
   
 ## Watching a cwiki page ##
 
@@ -33,6 +31,8 @@ To stop watching a page:
   - From the dropdown menu that appears, select **Watches**. 
   - The list of pages you are watching appears, and you can remove those you no longer want to watch.
   
+Infra can help you set up a role account that can watch for any changes in your space and send notices about them to an email list. This can lead to a large amount of traffic, so you can choose a digest option that provides a daily summary of changes.
+  
 ## FAQs ##
 
 **Can anyone add to a page?** As noted above, editing a page is restricted to people who have submitted a signed CLA to the ASF. This is to make clear that the individual intends to contribute the copyright on the documentation to the ASF.
@@ -43,4 +43,4 @@ However, your cwiki space supports comments, and any logged-in page visitor can 
 
 If the Monitoring status shows that the service is offline, then the appropriate people have already been contacted. If the service stays offline for 24 hours, then please file a Jira ticket.
 
-**Is the cwiki backed up?** Yes, we store backups of the cwiki so we can restore all content if something bad crashes the wiki.
+**Is the cwiki backed up?** Yes, we store backups of the cwiki so we can restore all content if something bad happens.
