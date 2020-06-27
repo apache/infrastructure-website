@@ -44,6 +44,7 @@ lookup for Apache Committers.
 - [Transitioning to a new PGP key](key-transition.html)
 - Using [SSH](user-ssh.html) to access services securely over an unsecured network. There are [further instructions for Windows users](user-ssh-windows.html).
 - [Getting started with Git](git-primer.html)
+- The ASF has a fee-waiver arrangement so that committers participating in ASF projects can make free use of the [Apple Developer Program](apple-dev-program.html) to prepare and distribute project applications for Apple operating systems.
 
 ### Infra Wiki
 
