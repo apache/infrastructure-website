@@ -216,6 +216,57 @@ function process(payload) {
 const pps = new PyPubSub('http://pubsub.apache.org:2069/');
 pps.attach(process);
 </code></pre>
+<h3>Using PyPubSub with Ruby</h3>
+<p>This sample lets you connect to our pubsub service via Ruby:</p>
+<pre><code class="language-ruby">require 'net/http'
+require 'json'
+require 'thread'
+
+pubsub_URL = 'http://pubsub.apache.org:2069/'
+
+def do_stuff_with(event)
+  print(&quot;Got a pubsub event!:\n&quot;)
+  print(event)
+end
+
+def listen(url)
+  ps_thread = Thread.new do
+    begin
+      uri = URI.parse(url)
+      Net::HTTP.start(uri.host, uri.port) do |http|
+        request = Net::HTTP::Get.new uri.request_uri
+        http.request request do |response|
+          body = ''
+          response.read_body do |chunk|
+            event = JSON.parse(chunk)
+            if event['stillalive']  # pingback
+              print(&quot;ping? PONG!\n&quot;)
+            else
+              do_stuff_with(event)
+            end
+          end
+        end
+      end
+    rescue Errno::ECONNREFUSED =&gt; e
+      restartable = true
+      STDERR.puts e
+      sleep 3
+    rescue Exception =&gt; e
+      STDERR.puts e
+      STDERR.puts e.backtrace
+    end
+  end
+  return ps_thread
+end
+
+begin
+  ps_thread = listen(pubsub_URL)
+  print(&quot;Pubsub thread started, waiting for results...&quot;)
+  while ps_thread.alive?
+    sleep 10
+  end
+end
+</code></pre>
 <h2>Want to know more? Have questions?</h2>
 <p>To learn more, or just get some questions answered, please contact us at <code>users@infra.apache.org</code>, and we'll try our best to help you out.</p>
 <h2>Acknowledgements</h2>
