@@ -1,6 +1,6 @@
 Title: Confluence Wiki space for your project
 
-Every Apache Software Foundation project can establish, manage, and populate a space on the Confluence Wiki (cwiki) that Infra maintains for the ASF. Projects can use this space to share and store important information, code snippets, and project procedures. Some projects use their wiki space to provide product documentation for end users.
+Every Apache Software Foundation project can establish, manage, and populate a space on the <a href="https://cwiki.apache.org/confluence/" target="_blank">Confluence Wiki</a> (cwiki) that Infra maintains for the ASF. Projects can use this space to share and store important information, code snippets, and project procedures. Some projects also use their wiki space to provide product documentation for end users.
 
 Many thanks to <a href="http://www.atlassian.com/" target="_blank">Atlassian Software Systems</a> for providing to the ASF a free license for this service.
 
