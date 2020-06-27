@@ -21,6 +21,7 @@ The service returns events that match _all_ of the topics you are subscribed to.
 Some examples:
 
 * To subscribe to all git commits; `http://pubsub.apache.org:2069/git/commit`
+* To subscribe to all git events (push+commit) for whimsy.git; `http://pubsub.apache.org:2069/git/whimsy`
 * To subscribe to all `netbeans.apache.org` emails: `http://pubsub.apache.org:2069/email/netbeans.apache.org`
 * To subscribe to PRs opened against `beam-foo.git`: `http://pubsub.apache.org:2069/github/beam-foo.git/pr`
 * To subscribe to all commits, both Subversion and git: `http://pubsub.apache.org:2069/commit`
