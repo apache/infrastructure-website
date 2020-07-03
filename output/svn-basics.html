@@ -105,6 +105,7 @@ Subversion basics        </a>
               <p>Our developers are located all around the world. To enable them to work together on our software, we keep the source code in Internet-accessible revision control systems, <a href="git.html">Git</a> and Subversion (SVN).</p>
 <p>Apache committers have write access to the Apache Subversion repository so they can make changes to their project's source code. Everyone has read access to the repositories, so you may download the most up-to-date development version of software that interests you.</p>
 <p>If you are looking for a stable release of a project's source code, you should download it from the <a href="http://www.apache.org/dyn/closer.cgi/" target="_blank">distribution directory</a>. Only download directly from the SVN repository if you want to be on the <em>bleeding-edge</em> of the development effort. The code contained there may fail to work, and may even eat your hard drive.</p>
+<h2>Accessing the Subversion repository</h2>
 <p>There are several ways to access the Subversion repository:</p>
 <p><strong>Web Access</strong></p>
 <p>If you just wish to browse around or download a few individual files, the best tool is the web-based <a href="http://svn.apache.org/viewvc/" target="_blank">ViewVC interface for Subversion</a>. You can also go straight to the <a href="http://svn.apache.org/repos/asf/" target="_blank">public repository</a>.</p>
@@ -114,17 +115,18 @@ Subversion basics        </a>
 <p>You can <a href="http://svn.apache.org/repos/asf/" target="_blank">browse</a> for the project that interests you and check it out. For example, to get the Spamassassin module, use:</p>
 <p><code>$ svn checkout http://svn.apache.org/repos/asf/spamassassin/trunk spamassassin</code></p>
 <p>For more help on using Subversion, consult the <a href="http://subversion.tigris.org/" target="_blank">Subversion website</a> or this free <a href="http://subversion.tigris.org/" target="_blank">Subversion book</a>. The website provides a list of clients and useful links.</p>
-<p>Committer Subversion access
-We currently use HTTPS basic authentication for logging in to Subversion ( certificate info below ). To change your password, visit <a href="https://svn.apache.org/change-password">https://svn.apache.org/change-password</a> .</p>
-<p>This will prompt you to enter a svn password of your choice. Pick a safe password! If you cannot log in, or have lost your password, Visit <a href="https://id.apache.org/">https://id.apache.org/</a> to reset it.</p>
-<p>When you make changes, you can commit them with your username/password combination, i.e.</p>
-<p>$ svn co <a href="https://svn.apache.org/repos/asf/excalibur/trunk/">https://svn.apache.org/repos/asf/excalibur/trunk/</a> excalibur-trunk
+<p><strong>Committer Subversion access</strong></p>
+<p>We currently use HTTPS basic authentication for logging in to Subversion (certificate info below). To change your password, visit <a href="https://svn.apache.org/change-password" target="_blank">svn.apache.org/change-password</a>.</p>
+<p>This will prompt you to enter a svn password of your choice. If you cannot log in, or have lost your password, visit the <a href="https://id.apache.org" target="_blank">Apache Account Utility</a> to reset it.</p>
+<p>When you make changes to the repository, you can commit them with your username/password combination, i.e.</p>
+<pre><code>$ svn co https://svn.apache.org/repos/asf/excalibur/trunk/ excalibur-trunk
 $ cd excalibur-trunk
 $ echo &quot;test&quot; &gt; test.txt
 $ svn add test.txt
-$ svn commit --username your-name --password your-password <br />
---message &quot;Trying out svn&quot;</p>
-<p>svnserve is not supported, nor is svn+ssh.</p>
+$ svn commit --username your-name --password your-password \
+  --message &quot;Trying out svn&quot;
+</code></pre>
+<p><code>svnserve</code> is not supported, nor is <code>svn+ssh</code>.</p>
 <p>Configuring the Subversion client
 Committers need to configure their svn client properly. One particular issue is OS-specific line endings for text files. When you add a new text file, especially when applying patches from Bugzilla, first ensure that the line-endings are appropriate for your system, then do:</p>
 <p>svn add test.txt svn propset svn:eol-style native test.txt</p>
