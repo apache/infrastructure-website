@@ -127,8 +127,8 @@ $ svn commit --username your-name --password your-password \
   --message &quot;Trying out svn&quot;
 </code></pre>
 <p><code>svnserve</code> is not supported, nor is <code>svn+ssh</code>.</p>
-<p>Configuring the Subversion client
-Committers need to configure their svn client properly. One particular issue is OS-specific line endings for text files. When you add a new text file, especially when applying patches from Bugzilla, first ensure that the line-endings are appropriate for your system, then do:</p>
+<h2>Configuring the Subversion client</h2>
+<p>Committers need to configure their svn client properly. One particular issue is OS-specific line endings for text files. When you add a new text file, especially when applying patches from Bugzilla, first ensure that the line-endings are appropriate for your system, then do:</p>
 <p>svn add test.txt svn propset svn:eol-style native test.txt</p>
 <p>Your svn client can be configured to do that automatically for some common file types.</p>
 <p>Add the contents of the file <a href="http://www.apache.org/dev/svn-eol-style.txt">http://www.apache.org/dev/svn-eol-style.txt</a> to the bottom of your ~/.subversion/config file. For Windows this is normally found at C:\Documents and Settings\{username}\Application Data\Subversion\config -or- For Windows 7 at C:\Users\{username}\AppData\Roaming\Subversion\config]</p>
