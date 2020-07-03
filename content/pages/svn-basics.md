@@ -44,7 +44,8 @@ $ svn commit --username your-name --password your-password \
 
 `svnserve` is not supported, nor is `svn+ssh`.
 
-Configuring the Subversion client
+## Configuring the Subversion client ##
+
 Committers need to configure their svn client properly. One particular issue is OS-specific line endings for text files. When you add a new text file, especially when applying patches from Bugzilla, first ensure that the line-endings are appropriate for your system, then do:
 
 svn add test.txt svn propset svn:eol-style native test.txt
