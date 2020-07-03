@@ -6,6 +6,8 @@ Apache committers have write access to the Apache Subversion repository so they 
 
 If you are looking for a stable release of a project's source code, you should download it from the <a href="http://www.apache.org/dyn/closer.cgi/" target="_blank">distribution directory</a>. Only download directly from the SVN repository if you want to be on the *bleeding-edge* of the development effort. The code contained there may fail to work, and may even eat your hard drive.
 
+## Accessing the Subversion repository ##
+
 There are several ways to access the Subversion repository:
 
 **Web Access**
@@ -24,22 +26,23 @@ You can <a href="http://svn.apache.org/repos/asf/" target="_blank">browse</a> fo
 
 For more help on using Subversion, consult the <a href="http://subversion.tigris.org/" target="_blank">Subversion website</a> or this free <a href="http://subversion.tigris.org/" target="_blank">Subversion book</a>. The website provides a list of clients and useful links.
 
-Committer Subversion access
-We currently use HTTPS basic authentication for logging in to Subversion ( certificate info below ). To change your password, visit https://svn.apache.org/change-password .
+**Committer Subversion access**
 
-This will prompt you to enter a svn password of your choice. Pick a safe password! If you cannot log in, or have lost your password, Visit https://id.apache.org/ to reset it.
+We currently use HTTPS basic authentication for logging in to Subversion (certificate info below). To change your password, visit <a href="https://svn.apache.org/change-password" target="_blank">svn.apache.org/change-password</a>.
 
-When you make changes, you can commit them with your username/password combination, i.e.
+This will prompt you to enter a svn password of your choice. If you cannot log in, or have lost your password, visit the <a href="https://id.apache.org" target="_blank">Apache Account Utility</a> to reset it.
 
+When you make changes to the repository, you can commit them with your username/password combination, i.e.
+```
 $ svn co https://svn.apache.org/repos/asf/excalibur/trunk/ excalibur-trunk
 $ cd excalibur-trunk
 $ echo "test" > test.txt
 $ svn add test.txt
 $ svn commit --username your-name --password your-password \
   --message "Trying out svn"
+```
 
-
-svnserve is not supported, nor is svn+ssh.
+`svnserve` is not supported, nor is `svn+ssh`.
 
 Configuring the Subversion client
 Committers need to configure their svn client properly. One particular issue is OS-specific line endings for text files. When you add a new text file, especially when applying patches from Bugzilla, first ensure that the line-endings are appropriate for your system, then do:
