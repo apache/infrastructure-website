@@ -6,7 +6,7 @@ Apache committers have write access to the Apache Subversion repository so they 
 
 If you are looking for a stable release of a project's source code, you should download it from the <a href="http://www.apache.org/dyn/closer.cgi/" target="_blank">distribution directory</a>. Only download directly from the SVN repository if you want to be on the *bleeding-edge* of the development effort. The code contained there may fail to work, and may even eat your hard drive.
 
-## Accessing the Subversion repository ##
+### Accessing the Subversion repository ###
 
 There are several ways to access the Subversion repository:
 
@@ -45,7 +45,7 @@ $ svn commit --username your-name --password your-password \
 
 `svnserve` is not supported, nor is `svn+ssh`.
 
-## Configuring the Subversion client ##
+### Configuring the Subversion client ###
 
 Committers need to configure their svn client properly. One particular issue is OS-specific line endings for text files. When you add a new text file, especially when applying patches from Bugzilla, first ensure that the line-endings are appropriate for your system, then do:
 
@@ -63,7 +63,7 @@ Pay attention to the messages from your svn client when you do `svn commit`.
 
 **Tip**: If you use TortiseSVN, a popular Windows GUI client that integrates with Windows Explorer, you can right-click in Explorer, select `TortiseSVN - Settings`, and select "Edit" to update your Subversion configuration file. Copy the above `svn-eol-style.txt` file's contents into the end of the configuration file that appears, and save the file.
 
-## SSL Server certificate ##
+### SSL Server certificate ###
 The server certificate for `https://svn.apache.org/` is a real SSL certificate. However, Subversion, by default, does not currently ship with a list of trusted CAs. So, here's some information to help you verify the validity of our cert:
 
 ```
@@ -75,7 +75,7 @@ Fingerprint: bc:5f:40:92:fd:6a:49:aa:f8:b8:35:0d:ed:27:5e:a6:64:c1:7a:1b
 
 Note that the SSL certificate for our Subversion repository is different from certificates used when logging into Apache infrastructure - please see the [New Committer's guide](new-committers-guide.html) for more information.
 
-## Problems with Subversion? ##
+### Problems with Subversion? ###
 
 **"Error validating server certificate" errors**
 
@@ -187,7 +187,7 @@ $ svn diff -rHEAD:123911
 
 This occurs is because the order of the revisions is not identical to the order of dates in the repository. This is a side effect of loading CVS repositories whose history includes dates prior to the latest date in the Subversion repository.
 
-## Frequently Asked Questions ##
+### Frequently Asked Questions ###
 
 **We should I use 'svn lock'?**
 
