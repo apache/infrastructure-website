@@ -65,7 +65,7 @@ Infra supports an array of tools and services to help projects develop and suppo
 Apache provides, and Infra maintains, [code repositories](version-control.html) that Apache projects can use to keep their project code safe, accessible to team members, and under version control.
 
   - <a href="https://svn.apache.org/repos/asf/" target="_blank">Subversion (SVN) repositories</a>
-    - Information about <a href="https://cwiki.apache.org/confluence/display/INFRA/Using+Subversion" target="_blank">using Subversion</a>
+    - Information about [using Subversion](svn-basics.html)
   - <a href="https://svn.apache.org/viewvc/" target="_blank">ViewVC (Browser interface to the main repository)</a>
   - [Read-only Git mirrors of SVN codebases](git.html)
   - [Writable Git repositories](writable-git.html)
