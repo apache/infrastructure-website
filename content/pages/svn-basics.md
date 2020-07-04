@@ -55,7 +55,7 @@ svn add test.txt svn propset svn:eol-style native test.txt
 
 Your svn client can be configured to do that automatically for some common file types.
 
-Add the contents of the file `http://www.apache.org/dev/svn-eol-style.txt` to the bottom of your `~/.subversion/config` file. For Windows this is normally found at `C:\\Documents and Settings\\{username}\\Application Data\\Subversion\\config` -or- For Windows 7 at `C:\\Users\\{username}\\AppData\\Roaming\\Subversion\\config]`
+Add the contents of the file `http://www.apache.org/dev/svn-eol-style.txt` to the bottom of your `~/.subversion/config` file. For Windows this is normally found at `C:\\Documents and Settings\\{username}\\Application Data\\Subversion\\config`.
 
 You may need to set additional properties for some files. For example, apply `svn:executable=*` to script files (.bat, .cgi, .cmd, .sh) that are intended to be executed. Since not all such files are necessarily intended to be executed, do not make the executable property an automatic default.
 
