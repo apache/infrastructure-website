@@ -105,7 +105,7 @@ Subversion basics        </a>
               <p>Our developers are located all around the world. To enable them to work together on our software, we keep the source code in Internet-accessible revision control systems, <a href="git.html">Git</a> and Subversion (SVN).</p>
 <p>Apache committers have write access to the Apache Subversion repository so they can make changes to their project's source code. Everyone has read access to the repositories, so you may download the most up-to-date development version of software that interests you.</p>
 <p>If you are looking for a stable release of a project's source code, you should download it from the <a href="http://www.apache.org/dyn/closer.cgi/" target="_blank">distribution directory</a>. Only download directly from the SVN repository if you want to be on the <em>bleeding-edge</em> of the development effort. The code contained there may fail to work, and may even eat your hard drive.</p>
-<h2>Accessing the Subversion repository</h2>
+<h3>Accessing the Subversion repository</h3>
 <p>There are several ways to access the Subversion repository:</p>
 <p><strong>Web Access</strong></p>
 <p>If you just wish to browse around or download a few individual files, the best tool is the web-based <a href="http://svn.apache.org/viewvc/" target="_blank">ViewVC interface for Subversion</a>. You can also go straight to the <a href="http://svn.apache.org/repos/asf/" target="_blank">public repository</a>.</p>
@@ -127,7 +127,7 @@ $ svn commit --username your-name --password your-password \
   --message &quot;Trying out svn&quot;
 </code></pre>
 <p><code>svnserve</code> is not supported, nor is <code>svn+ssh</code>.</p>
-<h2>Configuring the Subversion client</h2>
+<h3>Configuring the Subversion client</h3>
 <p>Committers need to configure their svn client properly. One particular issue is OS-specific line endings for text files. When you add a new text file, especially when applying patches from Bugzilla, first ensure that the line-endings are appropriate for your system, then do:</p>
 <pre><code>svn add test.txt svn propset svn:eol-style native test.txt
 </code></pre>
@@ -136,7 +136,7 @@ $ svn commit --username your-name --password your-password \
 <p>You may need to set additional properties for some files. For example, apply <code>svn:executable=*</code> to script files (.bat, .cgi, .cmd, .sh) that are intended to be executed. Since not all such files are necessarily intended to be executed, do not make the executable property an automatic default.</p>
 <p>Pay attention to the messages from your svn client when you do <code>svn commit</code>.</p>
 <p><strong>Tip</strong>: If you use TortiseSVN, a popular Windows GUI client that integrates with Windows Explorer, you can right-click in Explorer, select <code>TortiseSVN - Settings</code>, and select &quot;Edit&quot; to update your Subversion configuration file. Copy the above <code>svn-eol-style.txt</code> file's contents into the end of the configuration file that appears, and save the file.</p>
-<h2>SSL Server certificate</h2>
+<h3>SSL Server certificate</h3>
 <p>The server certificate for <code>https://svn.apache.org/</code> is a real SSL certificate. However, Subversion, by default, does not currently ship with a list of trusted CAs. So, here's some information to help you verify the validity of our cert:</p>
 <pre><code>Hostname: *.apache.org
 Valid: from Mon, 19 Dec 2011 22:00:00 GMT until Mon, 17 Feb 2014 21:59:59 GMT
@@ -144,7 +144,7 @@ Issuer: Thawte, Inc., US
 Fingerprint: bc:5f:40:92:fd:6a:49:aa:f8:b8:35:0d:ed:27:5e:a6:64:c1:7a:1b
 </code></pre>
 <p>Note that the SSL certificate for our Subversion repository is different from certificates used when logging into Apache infrastructure - please see the <a href="new-committers-guide.html">New Committer's guide</a> for more information.</p>
-<h2>Problems with Subversion?</h2>
+<h3>Problems with Subversion?</h3>
 <p><strong>&quot;Error validating server certificate&quot; errors</strong></p>
 <pre><code>Error validating server certificate for 'https://svn.apache.org:443':
  - The certificate is not issued by a trusted authority. Use the
@@ -218,7 +218,7 @@ remove old requires descriptions
 <pre><code>$ svn diff -rHEAD:123911
 </code></pre>
 <p>This occurs is because the order of the revisions is not identical to the order of dates in the repository. This is a side effect of loading CVS repositories whose history includes dates prior to the latest date in the Subversion repository.</p>
-<h2>Frequently Asked Questions</h2>
+<h3>Frequently Asked Questions</h3>
 <p><strong>We should I use 'svn lock'?</strong></p>
 <p>Very rarely. Commits in subversion are transactional. This means that locks are almost always unnecessary.</p>
 <p>An oft-quoted use case is to prevent concurrent editing of a large unmergeable binary document. However, for open development, good communication is preferable to locking even in this use case. A clear, timely post to the list to let your fellow developers know that you're going to start editing that huge PDF is better than locking the file.</p>
