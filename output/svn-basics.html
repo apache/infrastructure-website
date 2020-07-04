@@ -132,7 +132,7 @@ $ svn commit --username your-name --password your-password \
 <pre><code>svn add test.txt svn propset svn:eol-style native test.txt
 </code></pre>
 <p>Your svn client can be configured to do that automatically for some common file types.</p>
-<p>Add the contents of the file <code>http://www.apache.org/dev/svn-eol-style.txt</code> to the bottom of your <code>~/.subversion/config</code> file. For Windows this is normally found at <code>C:\\Documents and Settings\\{username}\\Application Data\\Subversion\\config</code> -or- For Windows 7 at <code>C:\\Users\\{username}\\AppData\\Roaming\\Subversion\\config]</code></p>
+<p>Add the contents of the file <code>http://www.apache.org/dev/svn-eol-style.txt</code> to the bottom of your <code>~/.subversion/config</code> file. For Windows this is normally found at <code>C:\\Documents and Settings\\{username}\\Application Data\\Subversion\\config</code>.</p>
 <p>You may need to set additional properties for some files. For example, apply <code>svn:executable=*</code> to script files (.bat, .cgi, .cmd, .sh) that are intended to be executed. Since not all such files are necessarily intended to be executed, do not make the executable property an automatic default.</p>
 <p>Pay attention to the messages from your svn client when you do <code>svn commit</code>.</p>
 <p><strong>Tip</strong>: If you use TortiseSVN, a popular Windows GUI client that integrates with Windows Explorer, you can right-click in Explorer, select <code>TortiseSVN - Settings</code>, and select &quot;Edit&quot; to update your Subversion configuration file. Copy the above <code>svn-eol-style.txt</code> file's contents into the end of the configuration file that appears, and save the file.</p>
