@@ -129,87 +129,108 @@ $ svn commit --username your-name --password your-password \
 <p><code>svnserve</code> is not supported, nor is <code>svn+ssh</code>.</p>
 <h2>Configuring the Subversion client</h2>
 <p>Committers need to configure their svn client properly. One particular issue is OS-specific line endings for text files. When you add a new text file, especially when applying patches from Bugzilla, first ensure that the line-endings are appropriate for your system, then do:</p>
-<p>svn add test.txt svn propset svn:eol-style native test.txt</p>
+<pre><code>svn add test.txt svn propset svn:eol-style native test.txt
+</code></pre>
 <p>Your svn client can be configured to do that automatically for some common file types.</p>
-<p>Add the contents of the file <a href="http://www.apache.org/dev/svn-eol-style.txt">http://www.apache.org/dev/svn-eol-style.txt</a> to the bottom of your ~/.subversion/config file. For Windows this is normally found at C:\Documents and Settings\{username}\Application Data\Subversion\config -or- For Windows 7 at C:\Users\{username}\AppData\Roaming\Subversion\config]</p>
-<p>Some files may need additional properties to be set. For example, apply svn:executable=* to those script files (e.g..bat,.cgi,.cmd,.sh) that are intended to be executed. Since not all such files are necessarily intended to be executed, the executable property should not be made an automatic default.</p>
-<p>However, you should still pay attention to the messages from your svn client when you do 'svn commit'.</p>
-<p>Tip: If you use TortiseSVN, a popular Windows GUI client that integrates with Windows Explorer, you can simply right-click in Explorer and select TortiseSVN - Settings, and then press the &quot;Edit&quot; button to update your &quot;Subversion configuration file:&quot;. Copy the above svn-eol-style.txt file's contents into the end of the config editor (usually Notepad) that appears, and save the file.</p>
-<p>SSL Server certificate
-The server certificate for <a href="https://svn.apache.org/">https://svn.apache.org/</a> is a real SSL certificate. However, Subversion, by default, does not currently ship with a list of trusted CAs. So, here's some information to help you verify the validity of our cert:</p>
-<p>Hostname: *.apache.org
+<p>Add the contents of the file <code>http://www.apache.org/dev/svn-eol-style.txt</code> to the bottom of your <code>~/.subversion/config</code> file. For Windows this is normally found at <code>C:\\Documents and Settings\\{username}\\Application Data\\Subversion\\config</code> -or- For Windows 7 at <code>C:\\Users\\{username}\\AppData\\Roaming\\Subversion\\config]</code></p>
+<p>You may need to set additional properties for some files. For example, apply <code>svn:executable=*</code> to script files (.bat, .cgi, .cmd, .sh) that are intended to be executed. Since not all such files are necessarily intended to be executed, do not make the executable property an automatic default.</p>
+<p>Pay attention to the messages from your svn client when you do <code>svn commit</code>.</p>
+<p><strong>Tip</strong>: If you use TortiseSVN, a popular Windows GUI client that integrates with Windows Explorer, you can right-click in Explorer, select <code>TortiseSVN - Settings</code>, and select &quot;Edit&quot; to update your Subversion configuration file. Copy the above <code>svn-eol-style.txt</code> file's contents into the end of the configuration file that appears, and save the file.</p>
+<h2>SSL Server certificate</h2>
+<p>The server certificate for <code>https://svn.apache.org/</code> is a real SSL certificate. However, Subversion, by default, does not currently ship with a list of trusted CAs. So, here's some information to help you verify the validity of our cert:</p>
+<pre><code>Hostname: *.apache.org
 Valid: from Mon, 19 Dec 2011 22:00:00 GMT until Mon, 17 Feb 2014 21:59:59 GMT
 Issuer: Thawte, Inc., US
-Fingerprint: bc:5f:40:92:fd:6a:49:aa:f8:b8:35:0d:ed:27:5e:a6:64:c1:7a:1b</p>
-<p>Note that the SSL certificate for our Subversion repository is different from certificates used when logging into Apache infrastructure - please see the New Committer guide for more information.</p>
-<p>Problems with Subversion?
-&quot;Error validating server certificate&quot; errors
-Error validating server certificate for '<a href="https://svn.apache.org:443">https://svn.apache.org:443</a>':</p>
-<ul>
-<li>The certificate is not issued by a trusted authority. Use the
-fingerprint to validate the certificate manually!
-Certificate information:</li>
-<li>Hostname: *.apache.org</li>
-<li>Valid: from Tue, 20 Dec 2011 00:00:00 GMT until Mon, 17 Feb 2014 23:59:59 GMT</li>
-<li>Issuer: Thawte, Inc., US</li>
-<li>Fingerprint: bc:5f:40:92:fd:6a:49:aa:f8:b8:35:0d:ed:27:5e:a6:64:c1:7a:1b
-(R)eject or accept (t)emporarily</li>
-</ul>
-<p>On some platforms, the root Thawte certificate, used to sign the Apache SSL cert, is not made available to OpenSSL and Subversion. Fix this by downloading the Thawte root certificate, and updating your Subversion servers file accordingly to use it for SSL validation:</p>
-<p>Save the <a href="https://www.thawte.com/roots/thawte_Premium_Server_CA.pem">Thawte root certificate</a> (in .pem format) to a suitable path, for example, in your ~/.subversion/ directory, or on Windows, in %USERPROFILE%\AppData\Roaming\Subversion\ folder.
-In the servers file, found in the same folder, add the following to the [global] section, adding the section if required, and amending the path appropriately:
-[global]
-ssl-authority-files = /full/path/to/thawte_Premium_Server_CA.pem
-ssl-trust-default-ca = true</p>
-<p>Re-trying the Subversion operation should now succeed. In some cases, you may additionally need to move to a more recent svn client. Version 1.6 or higher should be sufficient.</p>
-<p>&quot;svn: No such revision 765287&quot; errors
-If you're getting an error message like the following:</p>
-<p>svn: No such revision 765287</p>
-<p>This may be because of a short lag in the synchronization between Subversion mirrors, and can occur if multiple commits are run immediately after each other. This error will usually only happen if you are located in Europe, or are explicitly using the European mirror.</p>
+Fingerprint: bc:5f:40:92:fd:6a:49:aa:f8:b8:35:0d:ed:27:5e:a6:64:c1:7a:1b
+</code></pre>
+<p>Note that the SSL certificate for our Subversion repository is different from certificates used when logging into Apache infrastructure - please see the <a href="new-committers-guide.html">New Committer's guide</a> for more information.</p>
+<h2>Problems with Subversion?</h2>
+<p><strong>&quot;Error validating server certificate&quot; errors</strong></p>
+<pre><code>Error validating server certificate for 'https://svn.apache.org:443':
+ - The certificate is not issued by a trusted authority. Use the
+   fingerprint to validate the certificate manually!
+Certificate information:
+ - Hostname: *.apache.org
+ - Valid: from Tue, 20 Dec 2011 00:00:00 GMT until Mon, 17 Feb 2014 23:59:59 GMT
+ - Issuer: Thawte, Inc., US
+ - Fingerprint: bc:5f:40:92:fd:6a:49:aa:f8:b8:35:0d:ed:27:5e:a6:64:c1:7a:1b
+(R)eject or accept (t)emporarily
+</code></pre>
+<p>On some platforms, the root Thawte certificate used to sign the Apache SSL certificate is not made available to OpenSSL and Subversion. Fix this by downloading the Thawte root certificate, and updating your Subversion servers file accordingly to use it for SSL validation:</p>
+<ol>
+<li>
+<p>Save the <a href="https://www.thawte.com/roots/thawte_Premium_Server_CA.pem" target="_blank">Thawte root certificate</a> (in .pem format) to a suitable path, for example, in your <code>~/.subversion/</code> directory; or, on Windows, in the <code>%USERPROFILE%\AppData\Roaming\Subversion\</code> folder.</p>
+</li>
+<li>
+<p>In the servers file in the same folder, add the following to the [global] section, adding the section if required, and amending the path appropriately:</p>
+</li>
+</ol>
+<pre><code>  [global]
+  ssl-authority-files = /full/path/to/thawte_Premium_Server_CA.pem
+  ssl-trust-default-ca = true
+</code></pre>
+<p>The Subversion operation should now succeed. In some cases, you may need to move to a more recent svn client.</p>
+<p><strong>&quot;svn: No such revision 765287&quot; errors</strong></p>
+<p>If you're getting an error message like the following:</p>
+<p><code>svn: No such revision 765287</code></p>
+<p>This may be because of a short lag in the synchronization between Subversion mirrors, and can occur if multiple commits run immediately after each other. This error usually only happens if you are located in Europe, or are explicitly using the European mirror.</p>
 <p>Waiting for ten seconds and repeating the command should succeed.</p>
-<p>&quot;specified baseline is not the latest baseline&quot; errors
-If you're getting an error message like the following:</p>
-<p>svn: Commit failed (details follow):
-svn: The specified baseline is not the latest baseline, so it may not be
-checked out.</p>
-<p>This may be because of a short lag in the synchronization between Subversion mirrors, and can occur if multiple commits are run immediately after each other. This error will usually only happen if you are located in Europe, or explicitly using the European mirror.</p>
+<p><strong>&quot;specified baseline is not the latest baseline&quot; errors</strong></p>
+<p>If you're getting an error message like the following:</p>
+<pre><code>svn: Commit failed (details follow):
+svn: The specified baseline is not the latest baseline, so it may not be checked out.
+</code></pre>
+<p>This may be because of a short lag in the synchronization between Subversion mirrors, and can occur if multiple commits run immediately after each other. This error usually only happens if you are located in Europe, or explicitly using the European mirror.</p>
 <p>Waiting for ten seconds and repeating the command should succeed.</p>
-<p>&quot;Compressed stream invalid&quot; errors
-If you're getting an error message like the following:</p>
-<p>svn: PROPFIND of '/repos/asf/foobar':
-Compressed stream invalid (<a href="https://svn.apache.org">https://svn.apache.org</a>)</p>
-<p>That's a known issue in the neon client library which has been fixed in neon 0.24.7. A workaround is to disable compression in your client. Edit ~/.subversion/servers. Uncomment the [global] section if neccessary, and add a line that reads</p>
-<p>http-compression = no</p>
+<p><strong>&quot;Compressed stream invalid&quot; errors</strong></p>
+<p>If you're getting an error message like the following:</p>
+<pre><code>svn: PROPFIND of '/repos/asf/foobar':
+Compressed stream invalid (https://svn.apache.org)
+</code></pre>
+<p>That's a known issue in the neon client library which has been fixed in neon 0.24.7. A workaround is to disable compression in your client. Edit <code>~/.subversion/servers</code>:</p>
+<p>Uncomment the <em>global</em> section if neccessary, and add a line that reads</p>
+<pre><code>http-compression = no
+</code></pre>
 <p>That should &quot;fix&quot; the problem until you can upgrade neon.</p>
-<p>Problems using date revisions
-If you are using a date revision such as -r{2004-09-12}:{2004-08-12} and not getting any or all of the revisions you expected, this is a known problem specific to the ASF repository.</p>
+<p><strong>Problems using date revisions</strong></p>
+<p>If you are using a date revision such as <code>-r{2004-09-12}:{2004-08-12}</code> and not getting any or all of the revisions you expected, this is a known problem specific to the ASF repository.</p>
 <p>Unfortunately, there is nothing that can be done to improve this situation, so you must use a workaround. You can use svn log or ViewVC to locate the first actual revision number after the date you desire, and substitute that into your -r argument to the svn command.</p>
 <p>For example, consider the desired command:</p>
-<p>$ svn diff -rHEAD:{2005-01-01}</p>
+<p><code>$ svn diff -rHEAD:{2005-01-01}</code></p>
 <p>When this produces no output, running svn log alone shows:</p>
-<h2>...</h2>
-<p>r124032 | aheritier | 2005-01-04 09:58:16 +1100 (Tue, 04 Jan 2005) | 1 line</p>
-<h2>Switch to subversion</h2>
-<p>r123911 | brett | 2005-01-03 09:48:57 +1100 (Mon, 03 Jan 2005) | 1 line</p>
-<h2>remove nagoya references</h2>
-<p>r116173 | brett | 2004-10-23 22:11:51 +1000 (Sat, 23 Oct 2004) | 2 lines</p>
-<p>remove old requires descriptions
-...</p>
+<pre><code>------------------------------------------------------------------------
+r124032 | aheritier | 2005-01-04 09:58:16 +1100 (Tue, 04 Jan 2005) | 1 line
+
+
+Switch to subversion
+------------------------------------------------------------------------
+r123911 | brett | 2005-01-03 09:48:57 +1100 (Mon, 03 Jan 2005) | 1 line
+
+
+remove nagoya references
+------------------------------------------------------------------------
+r116173 | brett | 2004-10-23 22:11:51 +1000 (Sat, 23 Oct 2004) | 2 lines
+
+
+remove old requires descriptions
+</code></pre>
 <p>So, the comand above should become:</p>
-<p>$ svn diff -rHEAD:123911</p>
-<p>The particular reason this occurs is because the order of the revisions is not identical to the order of dates in the repository. This is a side effect of loading CVS repositories with history with dates prior to the latest date in the Subversion repository.</p>
-<p>Frequently Asked Questions
-When Do I Need To Use svn lock?
-Very rarely. Commits in subversion are transactional. This means that locks are almost always unnecessary.</p>
+<pre><code>$ svn diff -rHEAD:123911
+</code></pre>
+<p>This occurs is because the order of the revisions is not identical to the order of dates in the repository. This is a side effect of loading CVS repositories whose history includes dates prior to the latest date in the Subversion repository.</p>
+<h2>Frequently Asked Questions</h2>
+<p><strong>We should I use 'svn lock'?</strong></p>
+<p>Very rarely. Commits in subversion are transactional. This means that locks are almost always unnecessary.</p>
 <p>An oft-quoted use case is to prevent concurrent editing of a large unmergeable binary document. However, for open development, good communication is preferable to locking even in this use case. A clear, timely post to the list to let your fellow developers know that you're going to start editing that huge PDF is better than locking the file.</p>
-<p>How frequently can I run a cron that connects to the repository?
-Hourly is fine. Please do not use programs that poll the repository more frequently than hourly. People who run automated scripts that continuously poll the repository wind up getting their access denied, which may impact other folks connecting through the same host. If you need to stay more in-sync than an hourly cron allows, subscribe your script to the relevant commit mailing list.</p>
-<p>How do I mirror the entire SVN repository for my experimental $foo?
-First, ask yourself: do I really want the <em>entire</em> ASF repository? Generally most people really want only a single project. In that case, just check out that source directory from the repo.</p>
-<p>If you really do want the entire ASF repository, <em>don't</em> use svnsync. Instead, start by looking here: [http://svn-master.apache.org/dump/][1] Use that to bootstrap your repo.</p>
-<p>Why Do I Get a 403 When I Try To Commit?
-Run svn info and check that the URL starts with https://. If it starts with http://, run:</p>
-<p>$ svn switch --relocate <a href="http://svn.apache.org">http://svn.apache.org</a> <a href="https://svn.apache.org">https://svn.apache.org</a></p>
+<p><strong>How frequently can I run a cron that connects to the repository?</strong></p>
+<p>Hourly is fine. Please do not use programs that poll the repository more frequently than hourly. People who run automated scripts that continuously poll the repository wind up getting their access denied, which may impact other folks connecting through the same host. If you need to stay more in-sync than an hourly cron allows, subscribe your script to the relevant commit mailing list.</p>
+<p>**How do I mirror the entire SVN repository for my experimental $foo?^^</p>
+<p>First, ask yourself: do I really want the <em>entire</em> ASF repository? Generally most people really want only a single project. In that case, just check out that source directory from the repo.</p>
+<p>If you really do want the entire ASF repository, <em>don't</em> use <code>svnsync</code>. Instead, start by looking here: <code>http://svn-master.apache.org/dump/</code>. Use that to bootstrap your repo.</p>
+<p><strong>Why do I get a 403 error when I try to commit?</strong></p>
+<p>Run <code>svn info</code> and check that the URL starts with <code>https://</code>. If it starts with <code>http://</code>, run:</p>
+<pre><code>$ svn switch --relocate http://svn.apache.org https://svn.apache.org
+</code></pre>
 <p>If you still get 403 Forbidden errors, ask your PMC to double-check the authz file and LDAP/Unix group membership.</p>
 
         </div>
