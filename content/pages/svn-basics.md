@@ -64,132 +64,21 @@ Pay attention to the messages from your svn client when you do `svn commit`.
 **Tip**: If you use TortiseSVN, a popular Windows GUI client that integrates with Windows Explorer, you can right-click in Explorer, select `TortiseSVN - Settings`, and select "Edit" to update your Subversion configuration file. Copy the above `svn-eol-style.txt` file's contents into the end of the configuration file that appears, and save the file.
 
 ### SSL Server certificate ###
-The server certificate for `https://svn.apache.org/` is a real SSL certificate. However, Subversion, by default, does not currently ship with a list of trusted CAs. So, here's some information to help you verify the validity of our cert:
+The server certificate for `https://svn.apache.org/` is a real SSL certificate. However, Subversion, by default, does not currently ship with a list of trusted CAs. So, here's some information to help you verify the validity of our certificate:
 
 ```
-Hostname: *.apache.org
-Valid: from Mon, 19 Dec 2011 22:00:00 GMT until Mon, 17 Feb 2014 21:59:59 GMT
-Issuer: Thawte, Inc., US
-Fingerprint: bc:5f:40:92:fd:6a:49:aa:f8:b8:35:0d:ed:27:5e:a6:64:c1:7a:1b
-```
-
-Note that the SSL certificate for our Subversion repository is different from certificates used when logging into Apache infrastructure - please see the [New Committer's guide](new-committers-guide.html) for more information.
-
-### Problems with Subversion? ###
-
-**"Error validating server certificate" errors**
-
-```
-Error validating server certificate for 'https://svn.apache.org:443':
- - The certificate is not issued by a trusted authority. Use the
-   fingerprint to validate the certificate manually!
-Certificate information:
  - Hostname: *.apache.org
- - Valid: from Tue, 20 Dec 2011 00:00:00 GMT until Mon, 17 Feb 2014 23:59:59 GMT
- - Issuer: Thawte, Inc., US
- - Fingerprint: bc:5f:40:92:fd:6a:49:aa:f8:b8:35:0d:ed:27:5e:a6:64:c1:7a:1b
-(R)eject or accept (t)emporarily
+ - Valid: from Jul  1 00:00:00 2019 GMT until Jun 30 23:59:59 2021 GMT
+ - Issuer: Sectigo RSA Domain Validation Secure Server CA, Sectigo Limited, Salford, Greater Manchester, GB
+ - Fingerprint: 88:A1:77:AC:CE:5E:6C:0D:22:BC:1F:E4:4E:AA:D4:2A:A4:C0:71:4F
 ```
 
-On some platforms, the root Thawte certificate used to sign the Apache SSL certificate is not made available to OpenSSL and Subversion. Fix this by downloading the Thawte root certificate, and updating your Subversion servers file accordingly to use it for SSL validation:
+Note that the SSL certificate for our Subversion repository is different from certificates used when logging into Apache infrastructure. See the [New Committer's guide](new-committers-guide.html) for more information.
 
-  1. Save the <a href="https://www.thawte.com/roots/thawte_Premium_Server_CA.pem" target="_blank">Thawte root certificate</a> (in .pem format) to a suitable path, for example, in your `~/.subversion/` directory; or, on Windows, in the `%USERPROFILE%\AppData\Roaming\Subversion\` folder.
-
-  2. In the servers file in the same folder, add the following to the [global] section, adding the section if required, and amending the path appropriately:
-  
-  ```
-    [global]
-    ssl-authority-files = /full/path/to/thawte_Premium_Server_CA.pem
-    ssl-trust-default-ca = true
-```
-
-The Subversion operation should now succeed. In some cases, you may need to move to a more recent svn client.
-
-**"svn: No such revision 765287" errors**
-
-If you're getting an error message like the following:
-
-`svn: No such revision 765287`
-
-This may be because of a short lag in the synchronization between Subversion mirrors, and can occur if multiple commits run immediately after each other. This error usually only happens if you are located in Europe, or are explicitly using the European mirror.
-
-Waiting for ten seconds and repeating the command should succeed.
-
-**"specified baseline is not the latest baseline" errors**
-
-If you're getting an error message like the following:
-
-```
-svn: Commit failed (details follow):
-svn: The specified baseline is not the latest baseline, so it may not be checked out.
-```
-
-This may be because of a short lag in the synchronization between Subversion mirrors, and can occur if multiple commits run immediately after each other. This error usually only happens if you are located in Europe, or explicitly using the European mirror.
-
-Waiting for ten seconds and repeating the command should succeed.
-
-**"Compressed stream invalid" errors**
-
-If you're getting an error message like the following:
-
-```
-svn: PROPFIND of '/repos/asf/foobar':
-Compressed stream invalid (https://svn.apache.org)
-```
-
-That's a known issue in the neon client library which has been fixed in neon 0.24.7. A workaround is to disable compression in your client. Edit `~/.subversion/servers`: 
-
-Uncomment the _global_ section if neccessary, and add a line that reads
-
-```
-http-compression = no
-```
-
-That should "fix" the problem until you can upgrade neon.
-
-**Problems using date revisions**
-
-If you are using a date revision such as `-r{2004-09-12}:{2004-08-12}` and not getting any or all of the revisions you expected, this is a known problem specific to the ASF repository.
-
-Unfortunately, there is nothing that can be done to improve this situation, so you must use a workaround. You can use svn log or ViewVC to locate the first actual revision number after the date you desire, and substitute that into your -r argument to the svn command.
-
-For example, consider the desired command:
-
-`$ svn diff -rHEAD:{2005-01-01}`
-
-
-When this produces no output, running svn log alone shows:
-
-```
-------------------------------------------------------------------------
-r124032 | aheritier | 2005-01-04 09:58:16 +1100 (Tue, 04 Jan 2005) | 1 line
-
-
-Switch to subversion
-------------------------------------------------------------------------
-r123911 | brett | 2005-01-03 09:48:57 +1100 (Mon, 03 Jan 2005) | 1 line
-
-
-remove nagoya references
-------------------------------------------------------------------------
-r116173 | brett | 2004-10-23 22:11:51 +1000 (Sat, 23 Oct 2004) | 2 lines
-
-
-remove old requires descriptions
-```
-
-
-So, the comand above should become:
-
-```
-$ svn diff -rHEAD:123911
-```
-
-This occurs is because the order of the revisions is not identical to the order of dates in the repository. This is a side effect of loading CVS repositories whose history includes dates prior to the latest date in the Subversion repository.
 
 ### Frequently Asked Questions ###
 
-**We should I use 'svn lock'?**
+**When should I use 'svn lock'?**
 
 Very rarely. Commits in subversion are transactional. This means that locks are almost always unnecessary.
 
