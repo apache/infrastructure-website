@@ -7,18 +7,16 @@ This guide provides tips and suggestions for new <strong>contributors</strong> t
 More information is available in the [guide](new-committers-guide.html) and [FAQs](committers.html) for project committers.
 
 <h2 id="links">Contents<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
-<p><ul>
-  <li><a href="#comdev">Community Development is here to help!</a></li>
-  <li><a href="#mail">Everything happens on mailing lists</a></li>
-  <li><a href="#howitworks">How open-source works at Apache</a></li>
-  <li><a href="#svnbasics">Source code repositories</a><ul>
-     <li><a href="#svn">Using Subversion</a></li>
-     <li><a href="#git">Using Git</a></li>
-     </ul></li>
-  <li><a href="#providingfeedback">Providing feedback to Apache projects</a></i></p>
-</ul>
 
-<hr />
+  - <a href="#comdev">Community Development is here to help!</a>
+  - <a href="#mail">Everything happens on mailing lists</a>
+  - <a href="#howitworks">How open-source works at Apache</a>
+  - <a href="#svnbasics">Source code repositories</a>
+      - <a href="#svn">Using Subversion</a>
+      - <a href="#git">Using Git</a>
+  - <a href="#providingfeedback">Providing feedback to Apache projects</a></i></p>
+
+
 
 <h3 id="comdev">Community Development is here to help!<a class="headerlink" href="#comdev" title="Permanent link">&para;</a></h3>
 
