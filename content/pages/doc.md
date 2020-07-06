@@ -8,6 +8,7 @@ An extensive infrastructure overview for developers is <a href="https://www.apac
 
 ### General guides ###
 
+- [Understanding Opensource](understanding-opensource.html)
 - [Writing a good bug report](bug-writing-guide.html)
 - [Creating a Jira ticket](jira-guidelines.html)
 
