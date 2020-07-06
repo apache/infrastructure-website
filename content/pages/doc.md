@@ -47,6 +47,7 @@ lookup for Apache Committers.
 - [Getting started with Git](git-primer.html)
 - Information on setting up and using <a href="https://cwiki.apache.org/confluence/display/INFRA/OPIE" target="_blank">OPIE (One Password In Everything)</a>
 - The ASF has a fee-waiver arrangement so that committers participating in ASF projects can make free use of the [Apple Developer Program](apple-dev-program.html) to prepare and distribute project applications for Apple operating systems.
+- [Apache mailing list etiquette](contrib-email-tips.html)
 
 ### Infra Wiki
 
