@@ -54,10 +54,6 @@ Record keeping works as follows:
 
 For an example of what a meeting summary may look like, check out this record of a <a href="https://comments.apache.org/meetings/couchdb-meeting-16_01_2013-2439.html" target="_blank">CouchDB meeting</a>.
 
-<h2 id="comments">Integration with comments.apache.org<a class="headerlink" href="#comments" title="Permanent link">&para;</a></h2>
-
-ASFBot can relay comments provided via `comments.apache.org` to your IRC channel. If you have set up a karma list with Infra, you can also reply to comments via IRC.
-
 <h2 id="sourcecode">Technical Information About ASFBot<a class="headerlink" href="#sourcecode" title="Permanent link">&para;</a></h2>
 
   - The <a href="https://wilderness.apache.org/manual.html" target="_blank">ASFBot manual</a>
