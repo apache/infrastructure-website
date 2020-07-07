@@ -6,7 +6,7 @@ This guide provides tips and suggestions for new <strong>contributors</strong> t
 
 More information is available in the [guide](new-committers-guide.html) and [FAQs](committers.html) for project committers.
 
-<h2 id="links">Contents<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
+<h3 id="links">Contents<a class="headerlink" href="#links" title="Permanent link">&para;</a></h3>
 
   - <a href="#comdev">Community Development is here to help!</a>
   - <a href="#mail">Everything happens on mailing lists</a>
