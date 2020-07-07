@@ -38,7 +38,17 @@ With your patch generated, you need to send it to the developers. Different proj
 
 See [Getting started with Git](git-primer.html) for general information.
 
-_this information is coming soon_
+The general pattern for creating and submitting a patch for a project using Git is:
+
+0. Before you start: talk to the project team! Somebody else may be working on the same thing, or there may be some not-obvious reason why what you are proposing would take the project in a different direction from its current path. Usually, you will get a "Great! Go ahead," response; and if you find out your proposed change is not needed for some reason, you will have saved some time for some other initiative.
+1. Create and download a branch of the project.
+2. In that branch, on your local computer, change the source files to incorporate your change or addition. Make sure you provide appropriate source code documentation and follow the project's coding conventions.
+3. Check the software still compiles and runs correctly on your local machine.
+4. Run any unit or regression tests the software may have.
+5. Upload your changes from your local computer to the branch you created.
+6. Create a pull request to merge your branch into the trunk of the project's code.
+
+One or more of the project's committers will review your proposed changes and, if all is well, merge them.
 
 
 ### In general ###
