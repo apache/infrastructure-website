@@ -66,7 +66,7 @@ sure whether a piece of information is relevant, include it.
 
 See [Writing a good bug report](bug-writing-guide.html).
 
-### How to submit a patch ###
+#### How to submit a patch ####
 
 A patch is a computer-generated file that describes differences between different versions of one or more source files, with the intention of improving the current application code. Different software projects have different preferences about how to submit a patch. Check out the project website for more information.
 
