@@ -36,7 +36,7 @@ With your patch generated, you need to send it to the developers. Different proj
 
 ### Using Git ###
 
-See [Getting started with Git](git-primer.html)
+See [Getting started with Git](git-primer.html) for general information.
 
 _this information is coming soon_
 
