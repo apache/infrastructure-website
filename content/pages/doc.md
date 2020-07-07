@@ -53,7 +53,7 @@ lookup for Apache Committers.
 
 ### Contributor resources ###
 
-[New contributor's guide](contributor.html)
+[New contributor's guide](contributors.html)
 
 ### Infra Wiki
 
