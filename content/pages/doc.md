@@ -50,6 +50,10 @@ lookup for Apache Committers.
 - [Apache mailing list etiquette](contrib-email-tips.html)
 - [How to submit a patch for project code](patch.html)
 
+### Contributor resources ###
+
+[New contributor's guide](contributor.html)
+
 ### Infra Wiki
 
 The <a href="https://cwiki.apache.org/confluence/display/INFRA/Documentation+Index" target="_blank">Infra Wiki</a> provides scripts, how-to articles, and code samples. Most support the functions of the Infra team, but a great deal of material has guidance for project committers and PMCs.
