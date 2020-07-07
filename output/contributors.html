@@ -148,34 +148,8 @@ platform, version numbers of the application you were using, error logs, configu
 sure whether a piece of information is relevant, include it.</p>
 <p>See <a href="bug-writing-guide.html">Writing a good bug report</a>.</p>
 <h4>How to submit a patch</h4>
-<p>A patch is a computer-generated file that describes differences between different versions of one or more source files, with the intention of improving the current application code. Different software projects have different preferences about how to submit a patch. Check out the project website for more information.</p>
-<p>For an example of project patch guidelines,see the Apache Subversion project's <a href="https://subversion.apache.org/docs/community-guide/general.html#patches" target="_blank">patch guide</a>.</p>
-<p>To contribute a change or addition to existing source code:</p>
-<ol>
-<li>Check out the latest copy of the source code from the project's code repository.</li>
-<li>Change the source files to incorporate your change or addition. Make sure you provide appropriate source code documentation (like javadoc for
-Java sources), and follow the project's coding conventions.</li>
-<li>Check the software still compiles and runs correctly on your local machine.</li>
-<li>Run any unit or regression tests the software may have.</li>
-</ol>
-<p>If all this works, you can create your patch. Remove all build products and remnants (like any 'build', 'dist' or 'bin' directories) from the module tree, then build the actual patch. Here's how to do it using the command line SVN client under unix:</p>
-<p>Apache projects prefer the unified diff format. The subversion tool creates that automatically. If you use other tools, please refer to their documentation for details on setting the diff format.</p>
-<pre><code>    # location where the modules are stored
-    cd checkout&lt;/p&gt;
-&lt;div class=&quot;codehilite&quot;&gt;&lt;pre&gt;&lt;span class=&quot;c&quot;&gt;# directory of the module&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;cd&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;
-
-&lt;span class=&quot;c&quot;&gt;# creation of the diff&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;svn&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;diff&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;site&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;patch&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-</code></pre>
-<p>The Subversion client now examines all subdirectories for changed files, then compares the changed file to the one on the server. It generates the
-patch.</p>
-<p>The '&gt;' redirection results in the resulting patch being put in a text file named (in this case) <code>site.patch</code>.</p>
-<p>With your patch generated, you need to send it to the developers. Different projects have different preferences for this. Usually you add it as an attachment to the relevant bug report in the bug tracking database. If a relevant bug report doesn't exist yet, create one.</p>
-<p>A very few projects don't use an issue tracker. In that case, send the patch as an attachment to an e-mail with a subject prefixed with &quot;<code>[PATCH]</code>&quot;, to the appropriate development mailing list. If the patch is large, please ask before e-mailing it in case there is a better way to provide it.</p>
-<p>Supply a different patch per issue. A patch can span multiple files but you should normally try not to fix multiple bugs in a single patch, unless those bugs are intimately related.</p>
-<p>Be patient if your patch is not applied as fast as you'd like ( Open source developers are all volunteers, often doing the development in their spare time) or a developer asks you to make changes to the patch. If you do not receive any feedback in a reasonable amount of time (say, a week or two), feel free to send a follow-up e-mail to the developer list.</p>
+<p>A patch is a computer-generated file that describes differences between different versions of one or more source files, with the intention of improving the current application code. Different software projects have different preferences about how to submit a patch. Check out the project website for more information or ask on the <code>dev@</code> project mailing list. For an example of project-specific patch guidelines,see the Apache Subversion project's <a href="https://subversion.apache.org/docs/community-guide/general.html#patches" target="_blank">patch guide</a>.</p>
+<p>See <a href="patch.html">How to submit a patch for project code</a> for further details.</p>
 <h4 id="websites">How to suggest changes to project websites<a class="headerlink" href="#websites" title="Permanent link">&para;</a></h4>
 <p>One of the simplest ways to contribute to Apache projects is by suggesting improvements to the project's website or product documentation. If something doesn't make 
 sense to you, or if you have a better way to explain something, send the project a patch!
