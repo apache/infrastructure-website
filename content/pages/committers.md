@@ -11,7 +11,7 @@ If you are not an Apache committer, but wish to become one, the instructions on 
 <li><a href="#general">General</a></li>
 <li><a href="#technical">Technical</a></li>
 <li><a href="#svn">Version control</a></li>
-<li><a href="#mail">Mail</a></li>
+<li><a href="#mail">Email</a></li>
 <li><a href="#mailmod">Mailing list moderation</a></li>
 <li><a href="#legal">Legal and organizational</a></li>
 </ul>
@@ -114,51 +114,50 @@ Take any message about a change to the host key or any "Error validating server 
 
 Before contacting the Apache infrastructure team, check that you are logging in to the correct machine, and verify the currently published SSH fingerprints for Apache hosts, as described under "Identity theft" in the  [New committers' guide](new-committers-guide.html).
 
-<h4 id="help-i-forgot-my-password">Help, I Forgot My Password!<a class="headerlink" href="#help-i-forgot-my-password" title="Permanent link">&para;</a></h4>
+<h4 id="help-i-forgot-my-password">Help, I forgot my password!<a class="headerlink" href="#help-i-forgot-my-password" title="Permanent link">&para;</a></h4>
 
 See if you get an authorization failure (see below) when accessing SVN, or try the 'forgot password' link on the <a href="https://id.apache.org/" target="_blank">Apache Account site https://id.apache.org/</a>.
 
-<h4 id="nexus-repositoryapacheorg-locked-me-out-when-i-tried-to-stage-a-rc">Nexus (<code>repository.apache.org</code>) locked me out when I tried to stage a RC<a class="headerlink" href="#nexus-repositoryapacheorg-locked-me-out-when-i-tried-to-stage-a-rc" title="Permanent link">&para;</a></h4>
-<p>Nexus is LDAP based authorization. If you have changed your LDAP password recently it is possible
-you have a cached version of your old password stored, perhaps in a <code>settings.xml</code> file 
-locally. Maven makes repeated attempts to try this authorization and within 10 seconds 
-you might find your LDAP account locked as a result.</p>
-<p>Try accessing another LDAP-based service to test the theory.</p>
-<p>The cure is to go to <a href="https://id.apache.org/reset/enter">https://id.apache.org/reset/enter</a> and reset your LDAP password to
-clear the locked account. Change any cached credentials locally and try staging to Nexus again.</p>
-<h2 id="svn">Version control<a class="headerlink" href="#svn" title="Permanent link">&para;</a></h2>
+<h4 id="nexus-repositoryapacheorg-locked-me-out-when-i-tried-to-stage-a-rc">Nexus (`repository.apache.org`) locked me out when I tried to stage a RC<a class="headerlink" href="#nexus-repositoryapacheorg-locked-me-out-when-i-tried-to-stage-a-rc" title="Permanent link">&para;</a></h4>
+
+Nexus uses LDAP-based authorization. If you have changed your LDAP password recently it is possible you have a cached version of your old password stored, perhaps in a `settings.xml` file locally. Maven makes repeated attempts to try this authorization and within 10 seconds you might find your LDAP account locked as a result. Try accessing another LDAP-based service to test the theory.
+
+The cure is to go to <a href="https://id.apache.org/reset/enter" target="_blank">https://id.apache.org/reset/enter</a> and reset your LDAP password to clear the locked account. Change any cached credentials locally and try staging to Nexus again.
+
+<h3 id="svn">Version control<a class="headerlink" href="#svn" title="Permanent link">&para;</a></h3>
+
 <h4 id="svn-authorization-failure">Why do I get an authorization failure when I try to access Subversion?<a class="headerlink" href="#svn-authorization-failure" title="Permanent link">&para;</a></h4>
-<p>The most common reason is that you've forgotten your password!</p>
-<p>The password you use for Subversion is the same as the password you use
-for access to LDAP <code>id.apache.org</code>. You will not be prompted to enter it
-frequently. This makes it is easy to forget.</p>
-<p>Apache employs a number of different HTTP authentication realms. You will
-need to enter your password whenever you access a new realm. (Subversion
-prints information about the realm when you are prompted for the password.)</p>
-<p>Of course, it is also possible that you're accessing a URL which is
-restricted. That's probably for a good reason so unless you know that you
-should have access, don't bother the infrastructure team.</p>
-<p>If you do forget your password please visit <code>https://id.apache.org/</code> to reset it. </p>
+
+The most common reason is that you've forgotten your password! The password you use for Subversion is the same as the password you use for access to LDAP `id.apache.org`. You will not be prompted to enter it frequently. This makes it easy to forget.
+
+Apache employs a number of different HTTP authentication realms. You will need to enter your password whenever you access a new realm. (Subversion prints information about the realm when you are prompted for the password.)
+
+Of course, it is also possible that you're accessing a URL which is restricted. That's probably for a good reason, so unless you know that you should have access, don't bother the infrastructure team about being locked out.
+
+If you do forget your password please visit `https://id.apache.org/` to reset it.
+
 <h4 id="committers-module">Where is the committers/ module?<a class="headerlink" href="#committers-module" title="Permanent link">&para;</a></h4>
-<p>In Subversion, url: <code>https://svn.apache.org/repos/private/committers</code> </p>
-<h4 id="commit-403">Why do I get a 403 When I try to commit?<a class="headerlink" href="#commit-403" title="Permanent link">&para;</a></h4>
-<p>See the <a href="version-control.html">Version Control FAQ</a>.</p>
+
+In Subversion, url: `https://svn.apache.org/repos/private/committers` .
+
 <h4 id="lock">When do I need to use svn lock?<a class="headerlink" href="#lock" title="Permanent link">&para;</a></h4>
-<p>Very rarely if ever. Please read <a href="version-control.html#lock">this</a> for why you shouldn't lock.</p>
-<h4 id="version-control-faq">Where can I find more information?<a class="headerlink" href="#version-control-faq" title="Permanent link">&para;</a></h4>
-<p>The <a href="version-control.html">Version Control FAQ</a>.</p>
-<h2 id="mail">Mail<a class="headerlink" href="#mail" title="Permanent link">&para;</a></h2>
+
+Very rarely if ever. See the [version control FAQ](version-control.html) for more details.
+
+<h2 id="mail">Email<a class="headerlink" href="#mail" title="Permanent link">&para;</a></h2>
+
 <h4 id="email-setup">How do I set up my Apache email account?<a class="headerlink" href="#email-setup" title="Permanent link">&para;</a></h4>
-<p>See these <a href="https://reference.apache.org/committer/email">instructions</a>.</p>
+
+See these [instructions](committer-email.html].
+
 <h4 id="subscribe">How do I subscribe to a mailing list?<a class="headerlink" href="#subscribe" title="Permanent link">&para;</a></h4>
-<p>If it is a public list, email the <code>-subscribe</code> address (such as
-<code>dev-subscribe@httpd.apache.org</code>) from the address you want subscribed, and
-reply to the confirmation mail.  For more information see the 
-<a href="https://www.apache.org/dev/#mail">detailed mailing list guide</a>.</p>
-<p>Private lists use the same procedure, but it's recommended to use <a href="https://whimsy.apache.org/committers/subscribe">the
-self-subscribe app</a> instead;
-that avoids needing to wait for the human moderators to check and green-light
-your subscription request.</p>
+
+If it is a public list, email the `-subscribe` address (such as `dev-subscribe@httpd.apache.org`) from the address you want subscribed, and
+reply to the confirmation mail. For more information see the 
+<a href="https://www.apache.org/dev/#mail" target="_blank">detailed mailing list guide</a>.
+
+Private lists use the same procedure, but it's recommended to use <a href="https://whimsy.apache.org/committers/subscribe" target="_blank">the
+self-subscribe app</a>. That avoids needing to wait for a human moderator to check and green-light your subscription request.
 <p>At the time of writing the self-subscribe app lets <a href="../foundation/members">ASF
 Members</a> subscribe to any ASF list (see
 &lt;../foundation/governance/members&gt; for the rationale behind this) and other
