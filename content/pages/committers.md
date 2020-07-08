@@ -6,7 +6,7 @@ The main information resource for you in this role, apart from the wisdom of you
 
 If you are not an Apache committer, but wish to become one, the instructions on [how to contribute](contributors.html) to Apache projects will be more useful to you.</p>
 
-<h2 id="frequently-asked-questions">Frequently asked questions<a class="headerlink" href="#frequently-asked-questions" title="Permanent link">&para;</a></h2>
+<h3 id="frequently-asked-questions">Frequently asked questions<a class="headerlink" href="#frequently-asked-questions" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="#general">General</a></li>
 <li><a href="#technical">Technical</a></li>
@@ -15,6 +15,7 @@ If you are not an Apache committer, but wish to become one, the instructions on 
 <li><a href="#mailmod">Mailing list moderation</a></li>
 <li><a href="#legal">Legal and organizational</a></li>
 </ul>
+
 <h3 id="general">General<a class="headerlink" href="#general" title="Permanent link">&para;</a></h3>
 
 <h4 id="apachecon">What is ApacheCon?<a class="headerlink" href="#apachecon" title="Permanent link">&para;</a></h4>
@@ -36,7 +37,7 @@ Heed the warnings in these two email threads about what it means to be a committ
   - <a href="https://mail-archives.apache.org/mod_mbox/www-community/200311.mbox/%3c3FC1C5BD.3060406@apache.org%3e" target="_blank">What is a member?</a>
   - <a href="https://mail-archives.apache.org/mod_mbox/www-community/200311.mbox/%3c4A16CAE8-2130-11D8-9668-000393753936@gbiv.com%3e" target="_blank">volunteeritis</a>.
 
-We each need to re-read those two important messages from time to time and remind our communities of the need for self-care and care of others.
+We each need to re-read these important messages from time to time and remind our communities of the need for self-care and care of others.
 
 <h4 id="new-project">How do I start a new ASF project or migrate an existing project?<a class="headerlink" href="#new-project" title="Permanent link">&para;</a></h4>
 
@@ -50,103 +51,73 @@ Contact the <a href="https://incubator.apache.org/" target="_blank">Incubator Pr
 
 As an Apache volunteer, you have the right to set your own priorities and do the work that scratches your own itch. As a Committer, you have a responsibility to the community to help create a product that will outlive the interest of any particular volunteer, including yourself. For example, he code that you commit should be clear enough that others not involved in its current development will be able to maintain and extend it. It also means that you are responsible for helping to grow and maintain the health of the Apache community.
 
-<p>More specific responsibilities of Committers include:</p>
-<ul>
-<li><strong>Deciding on release plans and releases</strong>: A prime responsibility of the Committers is to decide when a branch of
-     code is ready for release. A release is not to be taken lightly; each
-     release must uphold the Apache tradition of quality. Each Project
-     Management Committee PMC) formally authorizes the distribution of releases
-     to the public.</li>
-<li>
-<dl>
-<dt><strong>Applying patches</strong></dt>
-<dd>To grow and maintain healthy communities, committers need to
- discuss, review and apply patches submitted by volunteers. The
- Committers are also responsible for the quality and IP clearance of
- the code that goes into ASF repositories.</dd>
-</dl>
-</li>
-<li>
-<dl>
-<dt><strong>Helping users</strong></dt>
-<dd>Committers should monitor both the <code>dev</code> and <code>user</code> lists for the projects
- that they work on and together provide prompt and useful
- responses to questions from users.  </dd>
-</dl>
-</li>
-<li>
-<dl>
-<dt><strong>Monitoring commits and issues</strong></dt>
-<dd>Committers should review commit email messages for their projects and
- point out anything that looks funny or that may point to IP issues. Committers also monitor Bugzilla and Jira for bug reportss or enhancement requests.</dd>
-</dl>
-</li>
-<li>
-<dl>
-<dt><strong>Helping out with the web site</strong></dt>
-<dd>The main Apache web site and the project web sites are in constant
- need of maintenance. The Committers on a project are expected to
- collectively maintain the project's web site. The Apache Committers as
- a group share the responsibility to maintain the main Apache site.</dd>
-</dl>
-</li>
-</ul>
+More specific responsibilities of Committers include:
+
+  - **Deciding on release plans and releases**: A prime committer responsibility is to help decide when a version of product code is ready for release. A release is not to be taken lightly; each release must uphold the Apache tradition of quality. Each Project Management Committee PMC) formally authorizes the distribution of releases to the public.
+  - **Applying patches**: To grow and maintain healthy communities, committers need to discuss, review and apply patches submitted by contributors and other committers. Committers are also responsible for the quality and IP clearance of the code that goes into ASF repositories.
+  - **Helping users**: Committers should monitor both the `dev` and `user` or `users` email lists for the projects they work on and together provide prompt and useful
+ responses to questions from users and their developer colleagues.
+  - **Monitoring commits and issues**: Committers should review commit email messages for their projects and point out anything that looks funny or that may point to IP issues. Committers also monitor the project's issue-tracking system (Bugzilla or Jira or something else) for bug reportss or enhancement requests.
+  - **Helping out with the website**: The main Apache website and the project websites are in constant need of maintenance. Committers on a project are expected to
+ collectively maintain the project's web site. Apache committers as a group share the responsibility to maintain the main Apache site.
+
 <h4 id="committer-set-term">Is there a set term for acting as a Committer? Will I have to be elected again?<a class="headerlink" href="#committer-set-term" title="Permanent link">&para;</a></h4>
-<p>No - committer status and merit never expire. If you become inactive for a time (usually six months
-or more), your account may be deactivated for security reasons. Most
-projects allow reactivation of committer status by application to the PMC.</p>
-<p>Some projects use the concept of <em>emeritus committer</em> for those who have contributed to the project but can no longer can give much
-time to it.</p>
+
+Committer status and merit never expire. If you become inactive for a time (usually six months or more), your account may be deactivated for security reasons. Most
+projects allow reactivation of committer status by application to the PMC.
+
+Some projects use the concept of <em>emeritus committer</em> for those who have contributed to the project but can no longer can give much time to it.
+
 <h4 id="code-import">How do I bring code developed outside Apache into an existing project?<a class="headerlink" href="#code-import" title="Permanent link">&para;</a></h4>
-<p>For any substantial codebase that has been developed outside the ASF, there is a process to complete before the code can be committed. This
-is managed by the <a href="http://incubator.apache.org">Incubator</a>. The first step
-is to contact your <a href="pmc.html#import">PMC</a>.</p>
+
+For any substantial codebase that has been developed outside the ASF, there is a process to complete before the code can be committed. The <a href="https://incubator.apache.org" target="_blank">Incubator</a> team manages this. The first step is to contact your <a href="https://www.apache.org/dev/pmc.html#import" target="_blank">PMC</a>.
+
 <h4 id="private-or-public">Where should I discuss ASF project business?<a class="headerlink" href="#private-or-public" title="Permanent link">&para;</a></h4>
-<p>Apache project business should almost always be on your public <code>dev@</code> 
-mailing list, unless there is a specific reason to use <code>private@</code>.  </p>
-<p>See the <a href="pmc.html#private-or-public">discussion about private vs. public lists</a>.</p>
+
+Apache project business should almost always be on your public `dev@` mailing list, unless there is a specific reason to use `private@`. See the <a href="https://www.apache.org/dev/pmc.html#private-or-public" target="_blank">discussion about private vs. public lists</a>.
+
 <h4 id="first-commit">I just made my first commit. Why don't I see a commit message?<a class="headerlink" href="#first-commit" title="Permanent link">&para;</a></h4>
-<p>The most likely explanation is that the commit message is awaiting
-moderation. Messages will be delivered promptly without moderation once the
-moderator approves posts from your <code>apache.org</code> address.</p>
-<h2 id="technical">Technical<a class="headerlink" href="#technical" title="Permanent link">&para;</a></h2>
+
+The most likely explanation is that the commit message is awaiting moderation. Messages will be delivered promptly without moderation once the moderator approves posts from your `apache.org` address.
+
+<h3 id="technical">Technical<a class="headerlink" href="#technical" title="Permanent link">&para;</a></h3>
+
 <h4 id="infrastructure-change-request">How do I make infrastructure requests?<a class="headerlink" href="#infrastructure-change-request" title="Permanent link">&para;</a></h4>
-<p>You might notice something that needs changing, for example the
-configuration for a mailing list. The request to the <code>users@infra</code> list
-or the <code>apmail@</code> alias needs to come from your Project Management Committee.
-That ensures that the requests are official, and not just an individual
-user's desire. This is the same for all requests for infrastructure
-changes. However, please try to get your PMC to assist first. There are
-many things that the PMC or PMC chair can do, thereby easing the load on
-the infrastructure team.</p>
+
+You might notice something that needs changing, for example the configuration for a mailing list. The request to the `users@infra` list or the `apmail@` alias needs to come from your Project Management Committee. That ensures that the requests are official, and not just an individual's desire. 
+
+There are many things that the PMC or PMC chair can do directly, thereby easing the load on the infrastructure team (Infra).
+
 <h4 id="infrastructure-public-communications">How does Infra communicate with the public?<a class="headerlink" href="#infrastructure-public-communications" title="Permanent link">&para;</a></h4>
-<p>Infra uses the <code>users@infra.apache.org</code> mailing list to discuss new
-infrastructure developments at the ASF. For service downtime announcements
-and current information on operations, we use
-<a href="https://twitter.com/infrabot">Infrabot</a>. For general
-announcements regarding services and the like, Infra has a <a href="https://blogs.apache.org/infra" target="_blank">blog</a>.</p>
+
+Infra uses the `users@infra.apache.org` mailing list to discuss new infrastructure developments at the ASF. For service downtime announcements and current information on operations, we use <a href="https://twitter.com/infrabot" target="_blank">Infrabot</a>. For general announcements regarding services and the like, Infra has a <a href="https://blogs.apache.org/infra" target="_blank">blog</a>.
+
 <h4 id="machines">What hosts/machines at Apache can I access?<a class="headerlink" href="#machines" title="Permanent link">&para;</a></h4>
-<p>Committers may access <code>home.apache.org</code> (<a href="new-committers-guide#ssh-setup">documentation</a>).
+
+Committers may access `home.apache.org`. See the related information in the [New committers' guide](new-committers-guide.html).
 Note that you do <strong>only</strong> have sftp access.  There is no shell access.</p>
-<p>Here is a <a href="http://apache.org/dev/machines.html">list of other Apache services/hosts and their public keys</a>.</p>
+
+Here is a <a href="https://apache.org/dev/machines.html" target="_blank">list of other Apache services/hosts and their public keys</a>.
+
 <h4 id="can-cant">What can and can't I do on those machines?<a class="headerlink" href="#can-cant" title="Permanent link">&para;</a></h4>
-<p>You can publish a small personal website in <code>public_html</code>, as <a href="new-committers-guide#personal-web-space">described
-elsewhere</a>. You <strong>must never</strong> store
-secret/private keys (the private half of an SSH keypair, or a PGP private key) on any
-ASF machines.</p>
+
+You can publish a small personal website in `public_html`, as described in the [New committers' guide](new-committers-guide.html). **Never** store secret/private keys (the private half of an SSH keypair, or a PGP private key) on any ASF machines.
+
 <h4 id="statistics">Is there a way to see a graph of loads (CPU, I/O, network)?<a class="headerlink" href="#statistics" title="Permanent link">&para;</a></h4>
-<p><a href="http://home.apache.org/~vgritsenko/stats/">Vadim Gritsenko</a> provides statistics and cool charts.</p>
-<p>Apache Infra publishes top-level statistics on the <a href="https://status.apache.org/">status page</a>.</p>
+
+  - Infra publishes top-level statistics on the <a href="https://status.apache.org/" target="_blank">status page</a>.
+  - Vadim Gritsenko provides <a href="http://home.apache.org/~vgritsenko/stats/">statistics and cool charts</a>.
+
 <h4 id="host-key-change">What should I do if Host Key has changed when logging into an Apache server?<a class="headerlink" href="#host-key-change" title="Permanent link">&para;</a></h4>
-<p>Take any message about a change to the host key or any "Error validating server certificate" very seriously:
-it may indicate a man-in-the-middle attack is in progress. <strong>Do not ignore this message and continue.</strong> </p>
-<p>Before contacting the Apache infrastructure team, check that you are
-logging in to the correct machine, and verify the currently published 
-SSH fingerprints for Apache hosts here:
-<a href="new-committers-guide.html#identity-theft">new-committers-guide.html#spoof</a> </p>
+
+Take any message about a change to the host key or any "Error validating server certificate" very seriously: it may indicate a man-in-the-middle attack is in progress. **Do not ignore this message**.
+
+Before contacting the Apache infrastructure team, check that you are logging in to the correct machine, and verify the currently published SSH fingerprints for Apache hosts, as described under "Identity theft" in the  [New committers' guide](new-committers-guide.html).
+
 <h4 id="help-i-forgot-my-password">Help, I Forgot My Password!<a class="headerlink" href="#help-i-forgot-my-password" title="Permanent link">&para;</a></h4>
-<p>See if you <a href="#svn-authorization-failure">get an authorization failure when accessing SVN</a>, 
-or try the forgot password link on the <a href="https://id.apache.org/">Apache Account site https://id.apache.org/</a>.</p>
+
+See if you get an authorization failure (see below) when accessing SVN, or try the 'forgot password' link on the <a href="https://id.apache.org/" target="_blank">Apache Account site https://id.apache.org/</a>.
+
 <h4 id="nexus-repositoryapacheorg-locked-me-out-when-i-tried-to-stage-a-rc">Nexus (<code>repository.apache.org</code>) locked me out when I tried to stage a RC<a class="headerlink" href="#nexus-repositoryapacheorg-locked-me-out-when-i-tried-to-stage-a-rc" title="Permanent link">&para;</a></h4>
 <p>Nexus is LDAP based authorization. If you have changed your LDAP password recently it is possible
 you have a cached version of your old password stored, perhaps in a <code>settings.xml</code> file 
