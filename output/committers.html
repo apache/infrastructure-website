@@ -275,44 +275,40 @@ Your message goes here...
 <p>Send moderation commands from your <strong>moderator address</strong>.  You can tell if you're sending from the right address by emailing the <code>-help</code> address (e.g.,
 <code>dev-help@tlp.apache.org</code>) and checking if the subject of the reply contains the word &quot;Moderator help&quot;.</p>
 <h4 id="missing">Dealing with reports of "missing" mail<a class="headerlink" href="#missing" title="Permanent link">&para;</a></h4>
-<p>If a subscriber reports that they are not receiving some e-mails, check which ones are involved.
-If they are not seeing their own e-mails, note that GMail hides duplicates.
+<p>If a subscriber reports that they are not receiving some e-mails, check which ones are involved. If they are not seeing their own e-mails, note that GMail hides duplicates.
 Also check whether the emails could have been treated as SPAM by their e-mail client.</p>
 <h4 id="bounce">Dealing with reports of message "bounces"<a class="headerlink" href="#bounce" title="Permanent link">&para;</a></h4>
 <p>If a subscriber reports getting a  bounce message from ezmlm, ask them to provide the details.
 For example:</p>
-<p>```</p>
-<div class="codehilite"><pre><span class="n">Hi</span>! <span class="n">This</span> <span class="n">is</span> <span class="n">the</span> <span class="n">ezmlm</span> <span class="n">program</span><span class="p">.</span>
-<span class="n">I</span><span class="o">&#39;</span><span class="n">m</span> <span class="n">managing</span> <span class="n">the</span> <span class="n">user</span><span class="p">@</span><span class="n">tlp</span><span class="p">.</span><span class="n">apache</span><span class="p">.</span><span class="n">org</span> <span class="n">mailing</span> <span class="n">list</span><span class="p">.</span>
-<p><span class="n">Messages</span> <span class="n">to</span> <span class="n">you</span> <span class="n">from</span> <span class="n">the</span> <span class="n">user</span> <span class="n">mailing</span> <span class="n">list</span> <span class="n">seem</span> <span class="n">to</span>
-<span class="n">have</span> <span class="n">been</span> <span class="n">bouncing</span>
-<span class="p">...</span>
-<span class="n">Here</span> <span class="n">are</span> <span class="n">the</span> <span class="n">message</span> <span class="n">numbers</span><span class="p">:</span>
-12345
-</pre></div></p>
-<p>```</p>
-<p>This can occur if the recipient's mail system has strict SPAM detection rules.
-One way to find such emails is to request an index listing from ezmlm, for example
-by sending an email to</p>
-<p><code>dev-index-12345@tlp.apache.org</code></p>
-<p>This will show the subject, timestamp and sender of the email. That may be sufficient to identify it as spam.
+<pre><code>Hi! This is the ezmlm program.
+I'm managing the user@tlp.apache.org mailing list.
+
+Messages to you from the user mailing list seem to
+have been bouncing
+...
+Here are the message numbers:
+    12345
+
+</code></pre>
+<p>This can occur if the recipient's mail system has strict SPAM detection rules.</p>
+<p>One way to find such emails is to request an index listing from ezmlm, for example
+by sending an email to <code>dev-index-12345@tlp.apache.org</code>. This will show the subject, timestamp and sender of the email. That may be sufficient to identify it as spam.
 If not, the subject and date should make it easy to find the email in the archives.</p>
-<h4 id="spam">Dealing with "MODERATE" requests for SPAM<a class="headerlink" href="#spam" title="Permanent link">&para;</a></h4>
-<p>If the content of the MODERATE request is clearly SPAM, the simplest solution
-is just to delete the request. Do not reject it. However, if you are receiving a lot of such requests, it may perhaps be worth taking
-additional action.</p>
-<p>Some SPAM mails have an opt-out link. Whether this will actually do anything useful is another matter, but it might be worth
-trying if the spam seems to be from a legitimate business. </p>
+<h4 id="spam">Dealing with "MODERATE" requests for spam<a class="headerlink" href="#spam" title="Permanent link">&para;</a></h4>
+<p>If the content of the MODERATE request is clearly spam, the simplest solution is just to delete the request. Do not reject it. However, if you are receiving a lot of such requests, it may perhaps be worth taking additional action.</p>
+<p>Some SPAM emails have an opt-out link. Whether this will actually do anything useful is another matter, but it might be worth trying if the spam seems to be from a legitimate business.</p>
 <p>To avoid revealing your personal IP address, you may wish to use an anonymizing service such as Tor.</p>
-<p>If the SPAM mails are all sent from the same address (you can find the sender's address in the ), try adding them to the 'deny' list:</p>
-<p><code>{listname}-deny-subscribe-badposter=menace.com@tlp.apache.org</code></p>
+<p>If the spam emails are all sent from the same address (you can find the sender's address in the ), try adding them to the 'deny' list:</p>
+<pre><code>{listname}-deny-subscribe-badposter=menace.com@tlp.apache.org&lt;/code&gt;
+</code></pre>
 <p>You can find the sender's address in the moderation request in the <code>cc:</code> area:</p>
-<div class="codehilite"><pre><span class="n">Cc</span><span class="p">:</span> <span class="p">{</span><span class="n">listname</span><span class="p">}</span><span class="o">-</span><span class="n">allow</span><span class="o">-</span><span class="n">tc</span><span class="p">.</span><span class="o">&lt;</span><span class="n">digits</span><span class="o">&gt;</span><span class="p">.</span><span class="o">&lt;</span><span class="n">alphanumeric</span><span class="o">&gt;-</span><span class="n">badposter</span><span class="p">=</span><span class="n">menace</span><span class="p">.</span><span class="n">com</span><span class="p">@</span><span class="n">tlp</span><span class="p">.</span><span class="n">apache</span><span class="p">.</span><span class="n">org</span>
-</pre></div>
-<p>The sender e-mail address is contained between the '-' (hyphen) immediately following the "alphanumerics" and the '@' sign.</p>
-<p>This is already in the correct form for use in the 'deny' subscription request, i.e. the '@' has been changed to '='. In the example above this is:</p>
-<p><code>badposter=menace.com</code></p>
-<p>If this address contains random alphanumerics then it is probably a short-lived address, in which case there is no point trying to use the deny list.</p>
+<pre><code>Cc: {listname}-allow-tc.&lt;digits&gt;.&lt;alphanumeric&gt;-badposter=menace.com@tlp.apache.org
+</code></pre>
+<p>The sender e-mail address is contained between the '-' (hyphen) immediately following the &quot;alphanumerics&quot; and the '@' sign.</p>
+<p>This is already in the correct form for use in the 'deny' subscription request, as the '@' has been changed to '='. In the example above this is:</p>
+<pre><code>badposter=menace.com
+</code></pre>
+<p>If this address contains random alphanumerics then it is probably a short-lived address, in which case there is no point trying to use the deny list.</p></p>
 <h2 id="legal">Legal and organizational<a class="headerlink" href="#legal" title="Permanent link">&para;</a></h2>
 <h4 id="apache-way">What are the core beliefs of The Apache Way?<a class="headerlink" href="#apache-way" title="Permanent link">&para;</a></h4>
 <p><strong>Note:</strong> While there is not an official list, the following six
