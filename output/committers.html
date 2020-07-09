@@ -194,89 +194,55 @@ Note that you do <strong>only</strong> have sftp access.  There is no shell acce
 <p>See these [instructions](committer-email.html].</p>
 <h4 id="subscribe">How do I subscribe to a mailing list?<a class="headerlink" href="#subscribe" title="Permanent link">&para;</a></h4>
 <p>If it is a public list, email the <code>-subscribe</code> address (such as <code>dev-subscribe@httpd.apache.org</code>) from the address you want subscribed, and
-reply to the confirmation mail. For more information see the
-<a href="https://www.apache.org/dev/#mail" target="_blank">detailed mailing list guide</a>.</p>
+reply to the confirmation mail. For more information see the <a href="https://www.apache.org/dev/#mail" target="_blank">mailing list guide</a>.</p>
 <p>Private lists use the same procedure, but it's recommended to use <a href="https://whimsy.apache.org/committers/subscribe" target="_blank">the
 self-subscribe app</a>. That avoids needing to wait for a human moderator to check and green-light your subscription request.</p>
-<p>At the time of writing the self-subscribe app lets <a href="../foundation/members">ASF
-Members</a> subscribe to any ASF list (see
-&lt;../foundation/governance/members&gt; for the rationale behind this) and other
-committers to subscribe to a few foundation-wide lists. Committers
-who wish to subscribe to other lists (such as a private@ list of their project)
+<p>At the time of writing the self-subscribe app lets <a href="https://www.apache.org/foundation/members" target="_blank">ASF Members</a> subscribe to any ASF list and other
+committers to subscribe to a few foundation-wide lists. Committers who wish to subscribe to other lists (such as a private@ list of their project)
 should still email the <code>-subscribe</code> address.</p>
 <h4 id="subscriptions">How do I find out my subscriptions?<a class="headerlink" href="#subscriptions" title="Permanent link">&para;</a></h4>
-<p>Committers can use <a href="https://whimsy.apache.org/roster/committer/__self__">Whimsy</a> to check their details, including subscription information.</p>
+<p>Committers can use <a href="https://whimsy.apache.org/roster/committer/__self__" target="_blank">Whimsy</a> to check their details, including subscription information.</p>
 <h4 id="new-mailing-list">How do I request creation of a new mailing list?<a class="headerlink" href="#new-mailing-list" title="Permanent link">&para;</a></h4>
-<p>Mailing lists are the virtual room where the communities live, form and grow.
-It is wiser to keep the number of mailing lists per codebase the smallest
-possible to allow the community to reach that critical mass that is
-necessary to bootstrap a codebase and keep it in good shape.</p>
-<p>At the same time, as communities grow, the need for more specialized mailing
-lists appears. If you think your project requires a new list:</p>
+<p>Mailing lists are the virtual room where ASF communities live, form and grow. It is wiser to keep the number of mailing lists per codebase the smallest possible to allow the community to reach that critical mass that is necessary to bootstrap a codebase and keep it in good shape.</p>
+<p>At the same time, as communities grow, the need for more specialized mailing lists appears. If you think your project requires a new list:</p>
 <ul>
 <li>Float the idea in the <code>dev@</code> or <code>users@</code> mailing list.</li>
 <li>If there seems to be some support for the idea, request a community vote.</li>
-<li>If creation is aporoved, your Project Management Committee needs to
-send in a request (more details <a href="infra-contact#requesting-action">here</a>).</li>
+<li>If creation is aporoved, your Project Management Committee needs to <a href="contact.html">send a request to infra</a>.</li>
 </ul>
-<p><strong>WARNING:</strong> Creating of a user mail list can be a dangerous thing
-for a project community if the developers don't pay attention to their users and if
-users don't have developers who reply to their emails. One would expect a well-behaving user community to reply to one
-another in a civil, adult manner that is focused on whatever the list was created for, but it can take time for a community to learn and take to heart such good behavior.</p>
+<p><strong>WARNING</strong>: Creating a user email list can harm a project community if the developers don't pay attention to their users and reply to their emails. One would expect a well-behaving user community to reply to one another in a civil, adult manner that is focused on whatever the list was created for, but it can take time for a community to learn and take to heart such good behavior.</p>
 <h4 id="list-subscribers">How do I find out who is subscribed to a mailing list?<a class="headerlink" href="#list-subscribers" title="Permanent link">&para;</a></h4>
-<p>Information on list subscriptions is private, so is not available to all committers.</p>
-<p>Moderators can send an email to:</p>
-<p><tt><var>listname</var>-list@<var>tlp</var>.apache.org</tt></p>
-<p>Anyone with
-access to the apmail account can run the following command to get a count
-of the subscribers.</p>
-<p><tt>ezmlm-list ~apmail//lists/<var>project</var>/<var>listname</var>| wc -l</tt></p>
-<p>Remember that there often are people subscribed to the digest version
-too:</p>
-<p><tt>~apmail/lists/<var>project</var>/<var>listname</var>/digest</tt></p>
-<p>However, most committers do not have access to apmail.</p>
+<p>Information on list subscriptions is private, so is not available to all committers. Moderators can send an email to: <code>&lt;var&gt;listname&lt;/var&gt;-list@&lt;var&gt;tlp&lt;/var&gt;.apache.org</code></p>
+<p>Anyone with access to the apmail account can run the following command to get a count of subscribers:</p>
+<p><code>ezmlm-list ~apmail//lists/&lt;var&gt;project&lt;/var&gt;/&lt;var&gt;listname&lt;/var&gt;| wc -l</code></p>
+<p>Remember that there often are people subscribed to the digest version of the list, too:</p>
+<p><code>~apmail/lists/&lt;var&gt;project&lt;/var&gt;/&lt;var&gt;listname&lt;/var&gt;/digest</code></p>
 <h4 id="mail-forward">Mail forwarding<a class="headerlink" href="#mail-forward" title="Permanent link">&para;</a></h4>
-<p>Your forwarding address(es) are now stored in LDAP and maintained by the use of the
-<a href="https://id.apache.org/">Self Serve</a> app. </p>
-<p>Forwarding is now done directly from LDAP.</p>
-<h4 id="mail-download">How can I download my old mail?<a class="headerlink" href="#mail-download" title="Permanent link">&para;</a></h4>
-<p>Some older mailboxes may still exist on the <code>people.apache.org</code> server. Here is how to move the mail from there
-into a <a href="http://www.mozilla.org/products/thunderbird/">Thunderbird</a> mail
-client: </p>
-<p>Copy the mailbox from your <code>people.apache.org</code> directory to your
-local machine. For example:</p>
-<p><code>$ scp USER@people.apache.org:/home/USER/Mailbox /tmp/Mailbox</code></p>
-<p>Then copy it into your Thunderbird Mail folder. For example:</p>
-<p><code>$ mv /tmp/Mailbox "thunderbird/profile/Mail/Local Folders"</code></p>
-<p>The name of the directory might differ depending on your Thunderbird
-version and configuration.</p>
-<h2 id="mailmod">Mailing list moderation<a class="headerlink" href="#mailmod" title="Permanent link">&para;</a></h2>
+<p>Your forwarding address(es) are stored in LDAP and maintained through the <a href="https://id.apache.org/" target="_blank">Self Serve</a> app. Forwarding is done directly from LDAP.</p>
+<h4 id="mail-download">How can I download my old email?<a class="headerlink" href="#mail-download" title="Permanent link">&para;</a></h4>
+<p>Some older mailboxes may still exist on the <code>people.apache.org</code> server. Here is how to move the mail from there into a <a href="https://www.mozilla.org/products/thunderbird/" target="_blank">Thunderbird</a> mail
+client:</p>
+<ul>
+<li>Copy the mailbox from your <code>people.apache.org</code> directory to your
+local machine. For example:</p> <code>$ scp USER@people.apache.org:/home/USER/Mailbox /tmp/Mailbox</code></li>
+<li>Then copy it into your Thunderbird Mail folder. For example: <code>$ mv /tmp/Mailbox &quot;thunderbird/profile/Mail/Local Folders&quot;</code></li>
+</ul>
+<p>The name of the directory might differ depending on your Thunderbird version and configuration.</p>
+<h3 id="mailmod">Mailing list moderation<a class="headerlink" href="#mailmod" title="Permanent link">&para;</a></h3>
 <h4 id="mailing-list-moderators">How do I request changes for moderators?<a class="headerlink" href="#mailing-list-moderators" title="Permanent link">&para;</a></h4>
-<p>File an INFRA Jira ticket or ask your PMC to send a request to the apmail@ alias (apache.org)</p>
-<p>If you have access to apmail, you can just change the list of subscribers
-to list/mod. For example, for the <code>mod_perl</code> developers' list that is in</p>
-<p><code>~apmail/lists/perl.apache.org/dev/mod/</code> </p>
-<p>Use <code>ezmlm-list</code> , <code>ezmlm-sub</code> and <code>ezmlm-unsub</code> to do that.</p>
-<p>To determine who the existing moderators are, any committer can use the
-technique described in the "committers" SVN module at <a href="https://svn.apache.org/repos/private/committers/docs/resources.txt" target="_blank">resources.txt</a>.</p>
+<p>File an INFRA Jira ticket or ask your PMC to send a request to the `apmail@` alias. If you have access to apmail, you can just change the list of subscribers
+to list/mod. For example, for the `mod_perl` developers' list that is in `~apmail/lists/perl.apache.org/dev/mod/`, use 
+`ezmlm-list`, `>ezmlm-sub` and `ezmlm-unsub`.
+<p>To determine who the existing moderators are, any committer can use the technique described in the &quot;committers&quot; SVN module at <a href="https://svn.apache.org/repos/private/committers/docs/resources.txt" target="_blank">resources.txt</a>.</p>
 <h4 id="mail-moderate">What should I do with "MODERATE" emails?<a class="headerlink" href="#mail-moderate" title="Permanent link">&para;</a></h4>
-<p>Review the mail to see if it is spam (or other severely misguided
-mail). If it is spam, just ignore the mail to have it silently dropped
-after 5 days. </p>
-<p>To bounce non-spam with a notice to the sender, reply to the <strong>-reject</strong> address in the mail header. If you wish to include a comment
-with the rejection, the body of the message should look like this:</p>
-<pre>
-%%% Start comment
+<p>Review the mail to see if it is spam (or other severely misguided mail). If it is spam, just ignore the mail to have it silently dropped after 5 days.</p>
+<p>To bounce non-spam with a notice to the sender, reply to the <code>-reject</code> address in the mail header. If you wish to include a comment with the rejection, the body of the message should look like this:</p>
+<pre><code>%%% Start comment
 Your message goes here...
 %%% End comment
-</pre>
-<p>If it is legitimate mail from a non-subscriber (or someone sending with a
-different envelope sender than the one subscribed), reply to the <strong>-accept</strong> address. If you also send mail to the <strong>-allow</strong>
-address (i.e. reply to all), future postings from that address will be
-allowed through automatically.</p>
-<p>If there is no <strong>-allow</strong> address in the moderate requests, the list is
-misconfigured. Contact
-<code>apmail@apache.org</code> and get them to enable remote administration.</p>
+</code></pre>
+<p>If it is legitimate mail from a non-subscriber (or someone sending with a different envelope sender than the one subscribed), reply to the <code>-accept</code> address. If you also send mail to the <code>-allow</code> address (i.e. reply to all), future postings from that address will be allowed through automatically.</p>
+<p>If there is no <code>-allow</code> address in the moderate requests, the list is misconfigured. Contact <code>apmail@apache.org</code> and ask them to enable remote administration.</p>
 <p>See the <a href="http://www.ezmlm.org/">EZMLM</a> "Moderator's and Administrator's
 Manual". You can also send a request for advice to {listname}-help@tlp.apache.org from
 your moderation address (there are extra details for moderators).</p>
