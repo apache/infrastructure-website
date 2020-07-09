@@ -229,32 +229,44 @@ Your message goes here...
 If it is legitimate mail from a non-subscriber (or someone sending with a different envelope sender than the one subscribed), reply to the `-accept` address. If you also send mail to the `-allow` address (i.e. reply to all), future postings from that address will be allowed through automatically.
 
 If there is no `-allow` address in the moderate requests, the list is misconfigured. Contact `apmail@apache.org` and ask them to enable remote administration.
-<p>See the <a href="http://www.ezmlm.org/">EZMLM</a> "Moderator's and Administrator's
-Manual". You can also send a request for advice to {listname}-help@tlp.apache.org from
-your moderation address (there are extra details for moderators).</p>
-<p>Some lists are only open to ASF committers. The moderators have methods to
-ensure that subscribers are committers, so subscribers can use whatever
-email address that they want. Moderators see the tips described in the
-"committers" SVN module at <a href="https://svn.apache.org/repos/private/committers/docs/resources.txt" target="_blank">resources.txt</a>.</p>
+
+See the <a href="http://www.ezmlm.org/" target="_blank">EZMLM</a> "Moderator's and Administrator's Manual". You can also send a request for advice to `{listname}-help@tlp.apache.org` from your moderation address.
+
+Some lists are only open to ASF committers. The moderators have methods to ensure that subscribers are committers, so subscribers can use whatever email address that they want. Moderators see the tips described in the "committers" SVN module at <a href="https://svn.apache.org/repos/private/committers/docs/resources.txt" target="_blank">resources.txt</a>.
+
 <h4 id="allowing_posts">Allowing posts from non-subscribers<a class="headerlink" href="#allowing_posts" title="Permanent link">&para;</a></h4>
-<p>Most lists require people to subscribed in order to post messages. However, subscribers receive copies of all mails (or digests).
-This is obviously unsuitable for bots, or for private lists which need to accept posts from non-subscribers.</p>
-<p>A moderator can fix this by using 'Reply All' to a moderation message from the poster.
-This will both 'accept' the message and 'allow' further posts.</p>
-<p>It's also possible to set this up in advance, by subscribing the poster to the 'allow' list.
-E.g. if you want mailbot@host.com to be able to post, use:</p>
-<p><code>{listname}-allow-subscribe-mailbot=host.com@tlp.apache.org</code></p>
-<p>Note that the '@' in the sender email must be replaced by '='</p>
+
+Most lists require people to subscribe in order to post messages. However, subscribers receive copies of all mails (or digests). This is obviously unsuitable for bots, or for private lists which need to accept posts from non-subscribers.
+
+A moderator can fix this by using 'Reply All' to a moderation message from the poster. This will both 'accept' the message and 'allow' further posts.
+
+It's also possible to set this up in advance, by subscribing the poster to the 'allow' list. For example, if you want `mailbot@host.com` to be able to post, use:
+
+```
+{listname}-allow-subscribe-mailbot=host.com@tlp.apache.org
+```
+
+Replace the '@' in the sender email with '='.
+
 <h4 id="problem_posts">Dealing with problem posts<a class="headerlink" href="#problem_posts" title="Permanent link">&para;</a></h4>
-<p>If you have a troublesome poster, you can un-subscribe them from the
-list using </p>
-<p><code>{listname}-unsubscribe-badboy=menace.com@tlp.apache.org</code></p>
-<p>Send a courtesy email to them to let them know they have been unsubscribed, and why.</p>
-<p>Occasionally you will get someone with a poorly-configured spam filter
-sending automated replies to the list. You can deny their postings using</p>
-<p><code>{listname}-deny-subscribe-badposter=menace.com@tlp.apache.org</code></p>
-<p>Send a courtesy email suggesting how they can resolve the problem.</p>
-<p>If an unsubscribed user was added to the moderation list and is sending spam to
+
+If you have a troublesome poster, you can un-subscribe them from the list using
+
+```
+{listname}-unsubscribe-badboy=menace.com@tlp.apache.org
+```
+
+Send a courtesy email to them to let them know they have been unsubscribed, and why.
+
+Occasionally you will get someone with a poorly-configured spam filter sending automated replies to the list. You can deny their postings using
+
+```
+{listname}-deny-subscribe-badposter=menace.com@tlp.apache.org
+```
+
+Send a courtesy email suggesting how they can resolve the problem.
+
+If an unsubscribed user was added to the moderation list and is sending spam to
 the list, remove them by sending an email to:</p>
 <p><code>{listname}-allow-unsubscribe-badposter=menace.com@tlp.apache.org</code></p>
 <p>To see a list of who is allowed to post on the moderation list, send an email to:</p>
