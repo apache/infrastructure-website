@@ -266,27 +266,30 @@ Occasionally you will get someone with a poorly-configured spam filter sending a
 
 Send a courtesy email suggesting how they can resolve the problem.
 
-If an unsubscribed user was added to the moderation list and is sending spam to
-the list, remove them by sending an email to:</p>
-<p><code>{listname}-allow-unsubscribe-badposter=menace.com@tlp.apache.org</code></p>
-<p>To see a list of who is allowed to post on the moderation list, send an email to:</p>
-<p><code>{listname}-allow-list@tlp.apache.org</code></p>
-<p>There is now an <em>opt-in</em> configuration for problem posters, where you can 
-subscribe him or her to a 'sendsubscribertomod' list. It works in exactly
-the same way as adding or removing someone from an 'allow' or 'deny' list.
-  <strong>File an INFRA ticket to have it enabled for your list</strong> (you don't have to 
-use it, but having it enabled adds an option for you to consider.)</p>
-<p>To use it (once it has been enabled) do this:</p>
-<p><code>{listname}-sendsubscribertomod-subscribe-badposter=menace.com@tlp.apache.org</code></p>
-<p>All emails from this person now go to a moderator for approval before they appear in the mailing list.
-It does not matter if they are already a subscriber of the list 
-or even if they are on the allow list.</p>
-<p>Once a bad poster starts behaving in the proper manner again, feel free to 'unsubscribe' them from the 'sendsubscriberstomod' list so they can resume 
-normal operations.</p>
-<p>You mus send these moderation commands <strong>from your moderator address</strong>.  You can tell if
-you're sending from the right address by emailing the <code>-help</code> address (e.g.,
-<code>dev-help@tlp.apache.org</code>) and checking if the subject of the reply contains
-the word "Moderator help".</p>
+If an unsubscribed user was added to the moderation list and is sending spam to the list, remove them by sending an email to:
+
+```
+{listname}-allow-unsubscribe-badposter=menace.com@tlp.apache.org
+```
+
+To see a list of who is allowed to post on the moderation list, send an email to `{listname}-allow-list@tlp.apache.org`.
+
+There is an <em>opt-in</em> configuration for problem posters, which lets you subscribe him or her to a 'sendsubscribertomod' list. It works in exactly the same way as adding or removing someone from an 'allow' or 'deny' list. File an INFRA ticket to have it enabled for your list (you don't have to use it, but having it enabled adds an option for you to consider.
+
+To use it (once it has been enabled) do this:
+
+```
+{listname}-sendsubscribertomod-subscribe-badposter=menace.com@tlp.apache.org
+
+```
+
+All emails from this person now go to a moderator for approval before they appear in the mailing list.
+
+Once a bad poster starts behaving in the proper manner again, feel free to 'unsubscribe' them from the 'sendsubscriberstomod' list so they can resume normal operations.
+
+Send moderation commands from your **moderator address**.  You can tell if you're sending from the right address by emailing the `-help` address (e.g.,
+`dev-help@tlp.apache.org`) and checking if the subject of the reply contains the word "Moderator help".
+
 <h4 id="missing">Dealing with reports of "missing" mail<a class="headerlink" href="#missing" title="Permanent link">&para;</a></h4>
 <p>If a subscriber reports that they are not receiving some e-mails, check which ones are involved.
 If they are not seeing their own e-mails, note that GMail hides duplicates.
