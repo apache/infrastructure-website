@@ -1,36 +1,30 @@
 Title: Guide for new project committers
 
-Here's how to set up the technical and social environment that will support your work as a committer to an Apache project. Some projects have more specific guidelines which the project website or the PMC provide for you. We also have a thorough [Committers FAQs](commiters.html) for both new and experienced comnmitters.
+Here's how to set up the technical and social environment that will support your work as a committer to an Apache project. Some projects have more specific guidelines which the project website or the PMC provide for you. We also have a thorough [Committers' FAQs](commiters.html) for both new and experienced comnmitters.
 
-<ul>
-<li><a href="#what-is-a-committer">What is a committer?</a></li>
-<li><a href="#becoming-a-committer">Becoming a committer</a></li>
-<li><a href="#the-committers-way">The Committer's Way</a><ul>
-<li><a href="#submitting-your-individual-contributor-license-agreement-icla">Submitting Your Individual Contributor License Agreement (ICLA)</a></li>
-<li><a href="#acceptance-of-your-icla">Acceptance of your ICLA</a></li>
-<li><a href="#apache-committer-account-creation">Apache Committer Account Creation</a></li>
-<li><a href="#set-up-your-apacheorg-email-address">Set up Your @apache.org email address</a></li>
-<li><a href="#set-up-subversion-or-git-access">Set up Subversion or Git access</a></li>
-<li><a href="#set-up-security-and-pgp-keys">Set Up Security And PGP Keys</a></li>
-</ul>
-</li>
-<li><a href="#committer-resources">Committer Resources</a></li>
-<li><a href="#check-out-the-committers-only-subversion-module">Check out The Committers-only Subversion Module</a></li>
-<li><a href="#get-to-know-the-apache-community">Get To Know The Apache Community</a></li>
-<li><a href="#committer-responsibilities">Committer Responsibilities</a></li>
-<li><a href="#attending-apachecon">Attending ApacheCon</a></li>
-<li><a href="#personal-web-space">Personal web space</a></li>
-<li><a href="#identity-theft">Identity theft</a></li>
-<li><a href="#share-your-wisdom">Share your wisdom</a></li>
-</ul>
-</li>
-</ul>
+  - <a href="#what-is-a-committer">What is a committer?</a>
+  - <a href="#becoming-a-committer">Becoming a committer</a>
+      - <a href="#the-committers-way">The Committer's Way</a>
+      - <a href="#submitting-your-individual-contributor-license-agreement-icla">Submitting Your Individual Contributor License Agreement (ICLA)</a>
+      - <a href="#acceptance-of-your-icla">Acceptance of your ICLA</a>
+      - <a href="#apache-committer-account-creation">Apache Committer Account Creation</a>
+      - <a href="#set-up-your-apacheorg-email-address">Set up Your @apache.org email address</a>
+      - <a href="#set-up-subversion-or-git-access">Set up Subversion or Git access</a>
+      - <a href="#set-up-security-and-pgp-keys">Set up Security and PGP Keys</a>
+  - <a href="#committer-resources">Committer resources</a>
+      - <a href="#check-out-the-committers-only-subversion-module">he Committers-only Subversion Module</a>
+  - <a href="#get-to-know-the-apache-community">The Apache Community</a>
+  - <a href="#committer-responsibilities">Committer Responsibilities</a>
+  - <a href="#attending-apachecon">Attending ApacheCon</a>
+  - <a href="#personal-web-space">Personal web space</a>
+  - <a href="#identity-theft">Identity theft</a>
+  - <a href="#share-your-wisdom">Share your wisdom</a>
 
-<h2 id="what-is-a-committer">What is a committer?<a class="headerlink" href="#what-is-a-committer" title="Permanent link">&para;</a></h2>
+<h3 id="what-is-a-committer">What is a committer?<a class="headerlink" href="#what-is-a-committer" title="Permanent link">&para;</a></h3>
 
 The plain sense of the word "committer" is that you have access rights to your project's repository so you can read and write the source code. Rather than creating a patch and submitting it to be actively reviewed and then committed, you can now create a local patch and commit it yourself - or even review and commit patches created by others. Your fellow committers will review your patches, usually after you commit them.
 
-<h2 id="becoming-a-committer">Becoming a committer<a class="headerlink" href="#becoming-a-committer" title="Permanent link">&para;</a></h2>
+<h3 id="becoming-a-committer">Becoming a committer<a class="headerlink" href="#becoming-a-committer" title="Permanent link">&para;</a></h3>
 
 If you are not yet a committer, but would like to become one, review:
 <ul>
