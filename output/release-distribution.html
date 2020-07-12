@@ -131,12 +131,12 @@ Release Distribution Policy        </a>
 <p>Apache Incubator podlings cannot create official ASF releases; see the <a href="http://incubator.apache.org/guides/releasemanagement.html" target="_blank">Incubator documentation</a> for details and discussion.</p>
 <h2 id="release-content">Release content<a class="headerlink" href="#release-content" title="Permanent link">&para;</a></h2>
 <p>The <a href="http://www.apache.org/dev/release#what" target="_blank">Apache Release Policy</a> governs the content of official Apache releases and the process by which projects create valid releases.</p>
-<p>The Policy specifies that binary packages provided by third parties which meet certain criteria may be distributed alongside official source packages. Such packages are sometimes referred to as &quot;convenience binaries&quot; to distinguish them from other binary packages.</p>
+<p>The Policy specifies that binary packages provided by the project or third parties which meet certain criteria may be distributed alongside official source packages. Such packages are sometimes referred to as &quot;convenience binaries&quot; or PMC-approved build artifacts to distinguish them from other binary packages.</p>
 <h2 id="public-distribution">Public distribution channels<a class="headerlink" href="#public-distribution" title="Permanent link">&para;</a></h2>
 <p>Projects <strong>must</strong> upload all official releases to the official distribution channel, <code>downloads.apache.org/</code>. Content suitable for the official distribution channel includes:</p>
 <ul>
 <li>Official releases</li>
-<li>&quot;Convenience binaries&quot;, compiled code anyone can download and install</li>
+<li>PMC-approved build artifacts, compiled code anyone can download and install</li>
 <li>Cryptographic signatures and checksums</li>
 <li>The <a href="#sigs-and-sums">KEYS</a> file</li>
 <li>README, CHANGES and similar documents describing distributed content</li>
@@ -205,6 +205,8 @@ Release Distribution Policy        </a>
 <p>Infra operates an Apache Maven repository manager at <code>repository.apache.org</code>. Projects <strong>may</strong> use the repository system as a downstream channel to redistribute released materials via Maven Central, and <strong>may</strong> use it to distribute snapshots containing unreleased materials directly to consenting members of a project development community.</p>
 <p>Projects <strong>must not</strong> point or refer to <code>repository.apache.org</code> directly in download pages, release announcements or emails. Instead, any public download links for those releases <strong>should</strong> point to Maven Central.</p>
 <p>Read more about <a href="publishing-maven-artifacts.html">Maven releases for Apache projects</a>.</p>
+<h2 id="other-platforms">Other Release Platforms<a class="headerlink" href="#other-platforms" title="Permanent link">&para;</a></h2>
+<p>The ASF manages a number of distribution platforms that projects are welcome to use. Projects can distribute PMC-approved build artifacts on other ASF managed distribution platforms as long as those binaries comply with ASF release, licensing, branding and trademark policies. Currently ASF managed platforms include <a href="https://github.com/apache" target="_blank">github</a> and <a href="https://hub.docker.com/u/apache" target="_blank">docker</a>.</p>
 <h2 id="administration">Policy administration<a class="headerlink" href="#administration" title="Permanent link">&para;</a></h2>
 <p>This policy is <strong>required</strong> for all Apache projects. The <a href="https://whimsy.apache.org/foundation/orgchart/vp-infra" target="_blank">V.P. of Apache Infrastructure</a> <strong>must</strong> approve changes to this policy.</p>
 
