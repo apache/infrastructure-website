@@ -27,43 +27,34 @@ The plain sense of the word "committer" is that you have access rights to your p
 <h3 id="becoming-a-committer">Becoming a committer<a class="headerlink" href="#becoming-a-committer" title="Permanent link">&para;</a></h3>
 
 If you are not yet a committer, but would like to become one, review:
-<ul>
-<li><a href="/foundation/getinvolved.html#become-a-committer">Become a committer</a></li>
-<li><a href="/foundation/how-it-works.html#committers">ASF committers</a></li>
-<li><a href="/foundation/how-it-works.html#meritocracy">Meritocracy</a></li>
-</ul>
-<h2 id="the-committers-way">The Committer's Way<a class="headerlink" href="#the-committers-way" title="Permanent link">&para;</a></h2>
-<p>As a committer, you have access rights to a specific Apache project's repository so you can create and edit source code files, not just read them..
-Instead of having to create and submit a patch which other committers would have to review and approve, you can now create a local patch and commit it
-yourself; you can also review and commit patches that other project contributors and committers create. Your
-patches can still be reviewed by your fellow committers. </p>
-<p>Note that some projects use RTC (Review then Commit) rather than CTR (Commit then Review). Check which pattern your project uses, and then follow it..</p>
-<p>Take more care than you may have done before when working on the code, since you
- can now change things directly, without review. Make sure you understand how your project's committers work and coordinate with each other. Ask your project PMC, or any active committer on the project, for guidance if there are things you are not sure about.</p>
-<p>In general. the more visible and engaged you are in the project, the more fun you will have and the more access you will have to advice and feedback.</p>
-<h3 id="submitting-your-individual-contributor-license-agreement-icla">Submitting Your Individual Contributor License Agreement (ICLA)<a class="headerlink" href="#submitting-your-individual-contributor-license-agreement-icla" title="Permanent link">&para;</a></h3>
-<p>If you are a brand-new committer, you must complete and submit an <a href="../licenses/#clas">Individual Contributor License Agreement</a> (ICLA) before the ASF can active your
-committer account. Note that an account can only be created
-if a PMC (or Incubator podling) has invited you. </p>
-<p>The ICLA is a formal contract that declares the terms under which you will contribute
-intellectual property to the ASF. Note that the ICLA does <strong>not</strong> assign copyright to the ASF; you retain copyright to your own work.
-However it does grant the ASF sufficient rights to release any work you submit under the Apache license.</p>
-<ul>
-<li>Choose an Apache ID before submitting your ICLA. Also select an alternative, in case the ID you want is unsuitable or already taken. Your ID must consist of at least 3 lower-case alphanumeric characters, starting with a letter. (<a href="http://home.apache.org/committer-index.html">This list</a> shows the IDs that are already taken).</li>
-<li>Identify your project (PMC or incubator podling).</li>
-<li><strong>IMPORTANT:</strong> you may need to hold discussions with your employer before signing the ICLA, since your employer may have rights to the coding 
-work you do, even outside of your employment. Your employer might even need to provide a <a href="../licenses/#clas">Corporate CLA</a> - determining that is your
-responsibility. Make sure that you keep up-to-date with this requirement.</li>
-<li>Read and understand the agreements ICLA specifies and strive to meet
-the standards expected. Correct title to code sources is of great importance
-to ASF and it must be to you, too. </li>
-<li>Make sure that any code you contribute is original work, and that you publicly contribute it to the ASF. In the case of any doubt (or when
-a contribution has a complex history) please consult your project PMC before committing it.</li>
-</ul>
-<p>Some procedures may appear a little bureaucratic, but they are there to protect you as well as ASF. For a clearer
-understanding read the <a href="../licenses/">ASF license guide</a>.</p>
-<p>For details on how to submit your ICLA, please see <a href="../licenses/#submitting">Submitting License Agreements</a>.
-Make sure you fill out the ICLA clearly. To minimize the chance of typographical errors, submit the ICLA as an attachment to an email you send from the email address you provide in the ICLA.</p>
+
+  - <a href="https://www.apache.org/foundation/getinvolved.html#become-a-committer" target="_blank">Become a committer</a>
+  - <a href="https://www.apache.org/foundation/how-it-works.html#committers" target="_blank">ASF committers</a>
+  - <a href="https://www.apache.org/foundation/how-it-works.html#meritocracy" target="_blank">Meritocracy</a>
+
+<h3 id="the-committers-way">The Committer's Way<a class="headerlink" href="#the-committers-way" title="Permanent link">&para;</a></h3>
+
+As a committer, you have access to a specific Apache project's repository so you can create and edit source code files, not just read them.. Instead of having to create and submit a patch which other committers would have to review and approve, you can now create a local patch and commit it yourself; you can also review and commit patches that other project contributors and committers create. Your patches can still be reviewed by your fellow committers.
+
+Some projects use **RTC** (Review then Commit) rather than **CTR** (Commit then Review). Check which pattern your project uses, and then follow it.
+
+Take more care than you may have done before when working on the code, since you  can now change things directly, without review. Make sure you understand how your project's committers work and coordinate with each other. Ask your project PMC, or any active committer on the project, for guidance if there are things you are not sure about. In general. the more visible and engaged you are in the project, the more fun you will have and the more access you will have to advice and feedback.
+
+<h3 id="submitting-your-individual-contributor-license-agreement-icla">Submitting Your Individual Contributor License Agreement (ICLA)</h3>
+
+If you are a brand-new committer, you must complete and submit an <a href="https://www.apache.org/licenses/#clas" target="_blank">Individual Contributor License Agreement</a> (ICLA) before the ASF can active your committer account. Note that an account can only be created if a PMC (or Incubator podling) has invited you. The ICLA is a formal contract that declares the terms under which you will contribute intellectual property to the ASF. Note that the ICLA does <strong>not</strong> assign copyright to the ASF; you retain copyright to your own work. However it does grant the ASF sufficient rights to release any work you submit under the Apache license.</p>
+
+  - Choose an Apache ID before submitting your ICLA. Also select an alternative, in case the ID you want is unsuitable or already taken. Your ID must consist of at least three lower-case alphanumeric characters, starting with a letter. (<a href="https://home.apache.org/committer-index.html" target="_blank">This list</a> shows the IDs that are already taken).
+  - Identify your project (PMC or incubator podling).
+  - **IMPORTANT**: you may need to hold discussions with your employer before signing the ICLA, since your employer may have rights to the coding 
+work you do, even outside of your employment. Your employer might even need to provide a <a href="https://www.apache.org/licenses/#clas" target="_blank">Corporate CLA</a> - determining that is your responsibility. Make sure that you keep up-to-date with this requirement.
+  - Read and understand the agreements ICLA specifies and strive to meet the standards expected. Correct title to code sources is of great importance to ASF and it must be to you, too.
+  - Make sure that any code you contribute is original work, and that you publicly contribute it to the ASF. In the case of any doubt (or when a contribution has a complex history) please consult your project PMC before committing it.
+
+Some procedures may appear a little bureaucratic, but they are there to protect you as well as ASF. For a clearer understanding read the <a href="https://www.apache.org/licenses/" target="_blank">ASF license guide</a>.
+
+For details on how to submit your ICLA, please see <a href="https://www.apache.org/licenses/#submitting" target="_blank">Submitting License Agreements</a>. Make sure you fill out the ICLA clearly. To minimize the chance of typographical errors, submit the ICLA as an attachment to an email you send from the email address you provide in the ICLA.</p>
+
 <h3 id="acceptance-of-your-icla">Acceptance of your ICLA<a class="headerlink" href="#acceptance-of-your-icla" title="Permanent link">&para;</a></h3>
 <p>After the ASL Secretary records your ICLA, your PMC can submit your requested ID for activation. The acceptance process may take some time. The ASF will inform you and your PMC chair when the process is complete.</p>
 <p>This quiet lull is a good time to familiarize yourself with the Apache
