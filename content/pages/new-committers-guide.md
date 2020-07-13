@@ -99,36 +99,28 @@ Upload the public key to a public key server, for example the <a href="https://p
 Start to build up a good web of trust now before you need to use it in earnest. Be prepared to exchange key information at face-to-face events where ASF folks may be present. The best practice is to insist on identification before signing another person's key. See the <a href="release-signing.html#link-into-wot">Apache release signing guide</a>.
 
 <h3 id="committer-resources">Committer Resources<a class="headerlink" href="#committer-resources" title="Permanent link">&para;</a></h3>
-<p>The <a href="https://infra.apache.org/doc.html" target="_blank">Infra documentation page</a> provides a list of resources for committers and other Apache folks.</p>
-<h2 id="check-out-the-committers-only-subversion-module">Check out The Committers-only Subversion Module<a class="headerlink" href="#check-out-the-committers-only-subversion-module" title="Permanent link">&para;</a></h2>
-<p>You should do a checkout of the private <code>committers</code> module. This is stored
-in the subversion repository with url
-<code>https://svn.apache.org/repos/private/committers</code>. (See
-<a href="index.html#svn">notes</a> for those unfamiliar with subversion.)</p>
-<p>Once you have checked out this module, you need to read all the documents
-contained in the <code>docs</code> directory, especially the resources.txt file. There
-are a number of private mailing lists you need to know about. Join in the
-Apache community by signing up to every list that interests you. It is
-better to sign up (even if you sign off later) than to miss out! Please
-respect the usage guidelines for these private lists.</p>
-<h2 id="get-to-know-the-apache-community">Get To Know The Apache Community<a class="headerlink" href="#get-to-know-the-apache-community" title="Permanent link">&para;</a></h2>
-<p>The community makes Apache fun. The <a href="http://community.apache.org/">Community Development project</a>
- has a central mailing list for topics that cut across <a href="pmc.html">PMC</a> boundaries. Discussions of all
-kinds are on topic as long as the matter doesn't need to be sensitive or
-confidential.</p>
-<p><a href="http://labs.apache.org/">Apache Labs</a> is a place for innovation where
-committers of the foundation can experiment with new ideas. The aim is to
-provide the necessary resource to promote and maintain the innovative power
-within the Apache community without the burden of community building.</p>
-<p>If you have an idea that you want to explore and collaborate on with other
-committers then come and discuss it at <a href="http://labs.apache.org/">Labs</a>.
-Even if you don't have anything at the moment, then come and take a look at
-what other committers are working on.</p>
-<h2 id="committer-responsibilities">Committer Responsibilities<a class="headerlink" href="#committer-responsibilities" title="Permanent link">&para;</a></h2>
-<p>Join your project's commit@ and dev@ mailing lists to keep up 
-with activity on your project.  Answering questions on users@ is also 
-very much appreciated and noticed by your PMC.</p>
-<p>Each committer has a responsibility to monitor the changes made for
+
+The [Infra documentation page](doc.html) provides a list of resources for committers and other Apache folks.
+
+<h4 id="check-out-the-committers-only-subversion-module">Check out The Committers-only Subversion Module<a class="headerlink" href="#check-out-the-committers-only-subversion-module" title="Permanent link">&para;</a></h4>
+
+Do a checkout of the private `committers` module. This is stored in the subversion repository at `https://svn.apache.org/repos/private/committers`. See [Subversion basics](svn-basics.html) if you are unfamiliar with Subversion.
+
+Once you have checked out this module, read all the documents contained in the `docs` directory, especially the `resources.txt` file. There are a number of private mailing lists you need to know about. Join in the Apache community by signing up to every list that interests you. It is better to sign up (even if you sign off later) than to miss out! Please respect the usage guidelines for these private lists.
+
+<h3 id="get-to-know-the-apache-community">Get To Know The Apache Community<a class="headerlink" href="#get-to-know-the-apache-community" title="Permanent link">&para;</a></h3>
+
+Taking part in the community makes Apache fun. The <a href="https://community.apache.org/" target="_blank">Community Development project</a>  has a central mailing list for topics that cut across PMC boundaries. Discussions of all kinds are on topic as long as the matter isn't sensitive or confidential.
+
+<a href="https://labs.apache.org/">Apache Labs</a> is a place for innovation where ASF committers can experiment with new ideas. The aim is to provide the necessary resources to promote and maintain innovation within the Apache community without the burden of community building.
+
+If you have an idea that you want to explore and collaborate on with other committers, discuss it at <a href="https://labs.apache.org/">Labs</a>. Even if you don't have anything at the moment, come and take a look at what other committers are working on.
+
+<h3 id="committer-responsibilities">Committer Responsibilities<a class="headerlink" href="#committer-responsibilities" title="Permanent link">&para;</a></h3>
+
+Join your project's `commit@` and `dev@` mailing lists to keep up  with project activity. Answering questions on `users@` is also very much appreciated and noticed by your PMC.
+
+Each committer has a responsibility to monitor the changes made for
 potential issues, both coding and legal. If you spot any potential issues
 in a commit, the right course of action is to post a reply (to the email)
 raising your concerns to the dev list. In extreme situations, it may be
