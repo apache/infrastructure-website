@@ -19,6 +19,7 @@ Here's how to set up the technical and social environment that will support your
   - <a href="#personal-web-space">Personal web space</a>
   - <a href="#identity-theft">Identity theft</a>
   - <a href="#share-your-wisdom">Share your wisdom</a>
+  - <a href="#last">The last word</a>
 
 <h3 id="what-is-a-committer">What is a committer?<a class="headerlink" href="#what-is-a-committer" title="Permanent link">&para;</a></h3>
 
@@ -120,49 +121,38 @@ If you have an idea that you want to explore and collaborate on with other commi
 
 Join your project's `commit@` and `dev@` mailing lists to keep up  with project activity. Answering questions on `users@` is also very much appreciated and noticed by your PMC.
 
-Each committer has a responsibility to monitor the changes made for
-potential issues, both coding and legal. If you spot any potential issues
-in a commit, the right course of action is to post a reply (to the email)
-raising your concerns to the dev list. In extreme situations, it may be
-necessary to veto (-1) a commit but please beware that this is an extreme
-sanction and rarely warranted; read the <a href="http://www.apache.org/foundation/voting.html">voting guidelines before a veto</a>.</p>
-<p>Do not be surprised if your first commit has a delayed diff email. It needs
-to go through the human moderators.</p>
-<h2 id="attending-apachecon">Attending ApacheCon<a class="headerlink" href="#attending-apachecon" title="Permanent link">&para;</a></h2>
-<p>If you don't have one already, make a note in your diary about the next
-<a href="http://www.apachecon.com/">ApacheCon</a>. This is a great opportunity to meet
-other Apache folks, hack code and dream about great new open source
-projects. Watch the lists as the conference dates approach for details
-about special deals for committers and opportunities to speak.</p>
-<h2 id="personal-web-space">Personal web space<a class="headerlink" href="#personal-web-space" title="Permanent link">&para;</a></h2>
-<p>Some Apache committers have personal content served from ASF web servers. There are no fixed guidelines
-about appropriate content: committers should know how to behave! In general, people use this option to host ASF-related content or to showcase interesting private
-projects. If you do use this feature, please do so responsibly.</p>
-<p>Material placed in the`public_html directory is available under
-the <code>http://home.apache.org/~<em>username</em>/</code>url (where
-<em>username</em> is your ASF account ID).</p>
-<h2 id="identity-theft">Identity theft<a class="headerlink" href="#identity-theft" title="Permanent link">&para;</a></h2>
-<p>Please be aware that Apache Software Foundation committers are targets for
-identity theft. These spoof attacks resemble the
-<a href="http://en.wikipedia.org/wiki/Phishing">phishing</a> attacks used to gain
-access to bank accounts and other web subscriptions. They typically seek to
-persuade you to enter your access details into a fake website.
-The foundation will <strong>never</strong> solicit such 'verification'.</p>
-<p>Leaking your access to Apache can have very destructive consequences. 
-<strong>Never</strong> disclose your ASF password to anyone.</p>
-<p>The Apache Infrastructure team is clueful about DNS maintenance: do <strong>not</strong> trust any
-redirection by IP address. Your access to Apache will be through the
-machines serving the <code>svn.apache.org</code> domain. The
-ssh/ssl fingerprints of machines are <a href="machines">listed on the machines page</a>
-and our <a href="http://www.apache.org/dev/version-control.html#cert">SVN servers fingerprints</a> are also listed.</p>
-<p>Please use caution. Do not hesitate to ask if you have doubts: post a
-question to infrastructure before taking any action.</p>
-<p><strong>Note:</strong> the fingerprint for the key used for ssh is different to the
-fingerprint of the certificate used to <a href="version-control.html#cert">securely serve the
-website</a>.  A full list of fingerprints is maintained
-on the <a href="machines">machines</a> page.</p>
-<h2 id="share-your-wisdom">Share your wisdom<a class="headerlink" href="#share-your-wisdom" title="Permanent link">&para;</a></h2>
-<p>Please help to improve this document (see <a href="infra-site.html">guidelines</a> for 
-updating this website). <a href="infra-volunteer.html">Subscribe</a> to the Infrastructure
-list if you want to discuss the improvements, or just to find out how the
-good ship Apache is kept afloat (and to help).  Welcome!</p></div>
+Each committer has a responsibility to monitor changes made for potential issues, both coding and legal. If you spot any potential issues in a commit, the right course of action is to post a reply (to the email) raising your concerns to the dev list. In extreme situations, it may be necessary to veto (-1) a commit, but this is an extreme sanction and rarely warranted. Read the <a href="https://www.apache.org/foundation/voting.html">voting guidelines</a> before deploying a veto.
+
+Do not be surprised if your first commit has a delayed diff email. It needs to go through the human moderators.
+
+<h3 id="attending-apachecon">Attending ApacheCon<a class="headerlink" href="#attending-apachecon" title="Permanent link">&para;</a></h3>
+
+If you don't have one already, make a note in your diary about the next <a href="https://www.apachecon.com/">ApacheCon</a>. This is a great opportunity to meet other Apache folks, hack code and learn about great new open source projects. Watch the lists as the conference dates approach for details about special deals for committers and opportunities to speak.
+
+<h3 id="personal-web-space">Personal web space<a class="headerlink" href="#personal-web-space" title="Permanent link">&para;</a></h3>
+
+Some Apache committers have personal content served from ASF web servers. There are no fixed guidelines about appropriate content: committers should know how to behave! In general, people use this option to host ASF-related content or to showcase interesting private projects. If you do use this feature, please do so responsibly.
+
+Material placed in the `public_html` directory is available under the `http://home.apache.org/~username/` url (where **username** is your ASF account ID).
+
+<h3 id="identity-theft">Identity theft<a class="headerlink" href="#identity-theft" title="Permanent link">&para;</a></h3>
+
+Please be aware that Apache Software Foundation committers are targets for identity theft. These spoof attacks resemble <a href="https://en.wikipedia.org/wiki/Phishing" target="_blank">phishing</a> attacks used to gain access to bank accounts and other web subscriptions. They typically seek to persuade you to enter your access details into a fake website. The ASF will **never** solicit such 'verification'.
+
+Leaking your access to Apache can have very destructive consequences. **Never** disclose your ASF password to anyone.
+
+The Apache Infrastructure team is clueful about DNS maintenance: do **not** trust any redirection by IP address. Your access to Apache will be through the
+machines serving the `svn.apache.org` domain. The ssh/ssl fingerprints of machines are listed on the <a href="https://www.apache.org/dev/machines" target="_blank">machines</a> page, and our <a href="https://infra.apache.org/version-control.html#cert">SVN server fingerprints</a> are also listed.
+
+Please use caution. Do not hesitate to ask if you have doubts: post a question to infrastructure before taking any action.
+
+<h3 id="share-your-wisdom">Share your wisdom<a class="headerlink" href="#share-your-wisdom" title="Permanent link">&para;</a></h3>
+
+Please help to improve this document (see <a href="https://www.apache.org/dev/infra-site.html" target="_blank">guidelines</a> for 
+updating this website).
+
+[Volunteer](infra-volunteer.html) if you would like to help the Infrastructure team keep the good ship ASF afloat.
+
+<h3 id="last">The last word</h3>
+
+Welcome!!
