@@ -112,16 +112,23 @@ class PyPubSub {
     attach(func) {
         this.getter.get(this.url, res => {
             res.setEncoding("utf8");
+            let body = ''
             res.on("data", data => {
-                let payload = JSON.parse(data);
-                func(payload);
+	        // Be mindful of proxies that split pubsub chunks into smaller ones,
+		// only load the JSON blob once we hit a newline (\n)
+                body += data;
+                if (data.endsWith("\n")) {
+                    let payload = JSON.parse(body);
+                    body = '';
+                    func(payload);
+                }
               });
         });
     }
 }
 
 
-// Payload parser
+// Test
 function process(payload) {
     // ping-back?
     if (payload.stillalive) {
