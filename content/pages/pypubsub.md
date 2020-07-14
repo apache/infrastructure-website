@@ -150,6 +150,7 @@ pubsub_URL = 'https://pubsub.apache.org:2070/'
 def do_stuff_with(event)
   print("Got a pubsub event!:\n")
   print(event)
+  print("\n")
 end
 
 def listen(url)
@@ -164,7 +165,7 @@ def listen(url)
             body += chunk
 	    # All chunks are terminated with \n. Since 2070 can split events into 64kb sub-chunks
 	    # we wait till we have gotten a newline, before trying to parse the JSON.
-            if chunk.chars.include? "\n"
+            if chunk.end_with? "\n"
               event = JSON.parse(body.chomp)
               body = ''
               if event['stillalive']  # pingback
