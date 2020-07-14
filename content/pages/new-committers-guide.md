@@ -103,7 +103,7 @@ Start to build up a good web of trust now before you need to use it in earnest. 
 
 The [Infra documentation page](doc.html) provides a list of resources for committers and other Apache folks.
 
-<h4 id="check-out-the-committers-only-subversion-module">Check out The Committers-only Subversion Module<a class="headerlink" href="#check-out-the-committers-only-subversion-module" title="Permanent link">&para;</a></h4>
+<h4 id="check-out-the-committers-only-subversion-module">Check out the Committers-only Subversion module<a class="headerlink" href="#check-out-the-committers-only-subversion-module" title="Permanent link">&para;</a></h4>
 
 Do a checkout of the private `committers` module. This is stored in the subversion repository at `https://svn.apache.org/repos/private/committers`. See [Subversion basics](svn-basics.html) if you are unfamiliar with Subversion.
 
