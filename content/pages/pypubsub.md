@@ -112,7 +112,7 @@ class PyPubSub {
     attach(func) {
         this.getter.get(this.url, res => {
             res.setEncoding("utf8");
-            let body = ''
+            let body = '';
             res.on("data", data => {
 	        // Be mindful of proxies that split pubsub chunks into smaller ones,
 		// only load the JSON blob once we hit a newline (\n)
