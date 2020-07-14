@@ -73,10 +73,13 @@ curl http://pubsub.apache.org:2069/git/commit
 
 <br/>
 
-A secure version also exists on port 2070:
+A secure version also exists on port 2070, for use with authenticated event streams:
 ~~~ bash
 curl https://pubsub.apache.org:2070/git/commit
 ~~~
+Please note that due to limitations in our TLS terminator, payloads larger than 64kb are split into 64kb chunks on
+port 2070. If you are using port 2070, you should ensure that the data you receive is terminated with a newline (\n),
+or continue fetching data till you hit a chunk terminated with a newline.
 
 ## Using PyPubSub in programming
 ### Using PyPubSub with Python
