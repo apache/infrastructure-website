@@ -145,7 +145,7 @@ require 'net/http'
 require 'json'
 require 'thread'
 
-pubsub_URL = 'http://pubsub.apache.org:2069/'
+pubsub_URL = 'https://pubsub.apache.org:2070/'
 
 def do_stuff_with(event)
   print("Got a pubsub event!:\n")
@@ -156,16 +156,22 @@ def listen(url)
   ps_thread = Thread.new do
     begin
       uri = URI.parse(url)
-      Net::HTTP.start(uri.host, uri.port) do |http|
+      Net::HTTP.start(uri.host, uri.port, :use_ssl => url.match(/^https:/) ? true : false) do |http|
         request = Net::HTTP::Get.new uri.request_uri
         http.request request do |response|
           body = ''
           response.read_body do |chunk|
-            event = JSON.parse(chunk)
-            if event['stillalive']  # pingback
-              print("ping? PONG!\n")
-            else
-              do_stuff_with(event)
+            body += chunk
+	    # All chunks are terminated with \n. Since 2070 can split events into 64kb sub-chunks
+	    # we wait till we have gotten a newline, before trying to parse the JSON.
+            if chunk.chars.include? "\n"
+              event = JSON.parse(body.chomp)
+              body = ''
+              if event['stillalive']  # pingback
+                print("ping? PONG!\n")
+              else
+                do_stuff_with(event)
+              end
             end
           end
         end
@@ -184,7 +190,7 @@ end
 
 begin
   ps_thread = listen(pubsub_URL)
-  print("Pubsub thread started, waiting for results...")
+  print("Pubsub thread started, waiting for results...\n")
   while ps_thread.alive?
     sleep 10
   end
