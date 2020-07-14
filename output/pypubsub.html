@@ -161,9 +161,12 @@ Subscribe to Apache Software Foundation infrastructure events        </a>
 <pre><code class="language-bash">curl http://pubsub.apache.org:2069/git/commit
 </code></pre>
 <br/>
-<p>A secure version also exists on port 2070:</p>
+<p>A secure version also exists on port 2070, for use with authenticated event streams:</p>
 <pre><code class="language-bash">curl https://pubsub.apache.org:2070/git/commit
 </code></pre>
+<p>Please note that due to limitations in our TLS terminator, payloads larger than 64kb are split into 64kb chunks on
+port 2070. If you are using port 2070, you should ensure that the data you receive is terminated with a newline (\n),
+or continue fetching data till you hit a chunk terminated with a newline.</p>
 <h2>Using PyPubSub in programming</h2>
 <h3>Using PyPubSub with Python</h3>
 <p>You can listen for and react to payloads in Python using the <a href="https://pypi.org/project/asfpy/">asfpy</a> pip package:</p>
