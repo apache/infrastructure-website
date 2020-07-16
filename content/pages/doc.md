@@ -26,6 +26,7 @@ An extensive infrastructure overview for developers is <a href="https://www.apac
 - <a href="https://cwiki.apache.org/confluence/display/INFRA/Managing+permissions+on+your+project%27s+Confluence+Space" target="_blank">Managing permissions on your project's Confluence space</a>
 - [Virtual machine for your project](vm-policy.html)
 - [Deploying a self-hosted runner](self-hosted-runners.html)
+- [Mailing list moderation](mailing-list-moderation.html)
 
 #### Software release policies and procedures ####
 
