@@ -14,13 +14,30 @@ At the same time, as communities grow, the need for more specialized mailing lis
 
 **WARNING**: Creating a user email list can harm a project community if the developers don't pay attention to their users and reply to their emails. One would expect a well-behaving user community to reply to one another in a civil, adult manner that is focused on whatever the list was created for, but it can take time for a community to learn and take to heart such good behavior.
 
-
 <h4 id="mailing-list-moderators">How do I request changes for moderators?<a class="headerlink" href="#mailing-list-moderators" title="Permanent link">&para;</a></h4>
 <p>File an INFRA Jira ticket or ask your PMC to send a request to the `apmail@` alias. If you have access to apmail, you can just change the list of subscribers
 to list/mod. For example, for the `mod_perl` developers' list that is in `~apmail/lists/perl.apache.org/dev/mod/`, use 
 `ezmlm-list`, `>ezmlm-sub` and `ezmlm-unsub`.
 
 To determine who the existing moderators are, any committer can use the technique described in the "committers" SVN module at <a href="https://svn.apache.org/repos/private/committers/docs/resources.txt" target="_blank">resources.txt</a>.
+
+#### How do I find who is subscribed to a list? ####
+
+Moderators can send an email to `listname-list@tlp.apache.org`.
+
+Anyone with access to the apmail account can run the following command to get a count of the subscribers:
+
+```
+ezmlm-list~/lists/project/listname| wc -l
+```
+
+Remember that there often are people subscribed to the digest version of the list. To find them:
+
+```
+~lists/project/listname/digest
+```
+
+However, most committers do not have access to apmail. See the notes in the "committers" SVN module (`https://svn.apache.org/repos/private/committers`) at `/docs/resources.txt` for another way.
 
 <h4 id="mail-moderate">What should I do with "MODERATE" emails?<a class="headerlink" href="#mail-moderate" title="Permanent link">&para;</a></h4>
 
