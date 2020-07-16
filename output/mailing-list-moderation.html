@@ -117,6 +117,15 @@ Mailing list moderation        </a>
 to list/mod. For example, for the `mod_perl` developers' list that is in `~apmail/lists/perl.apache.org/dev/mod/`, use 
 `ezmlm-list`, `>ezmlm-sub` and `ezmlm-unsub`.
 <p>To determine who the existing moderators are, any committer can use the technique described in the &quot;committers&quot; SVN module at <a href="https://svn.apache.org/repos/private/committers/docs/resources.txt" target="_blank">resources.txt</a>.</p>
+<h4>How do I find who is subscribed to a list?</h4>
+<p>Moderators can send an email to <code>listname-list@tlp.apache.org</code>.</p>
+<p>Anyone with access to the apmail account can run the following command to get a count of the subscribers:</p>
+<pre><code>ezmlm-list~/lists/project/listname| wc -l
+</code></pre>
+<p>Remember that there often are people subscribed to the digest version of the list. To find them:</p>
+<pre><code>~lists/project/listname/digest
+</code></pre>
+<p>However, most committers do not have access to apmail. See the notes in the &quot;committers&quot; SVN module (<code>https://svn.apache.org/repos/private/committers</code>) at <code>/docs/resources.txt</code> for another way.</p>
 <h4 id="mail-moderate">What should I do with "MODERATE" emails?<a class="headerlink" href="#mail-moderate" title="Permanent link">&para;</a></h4>
 <p>Review the mail to see if it is spam (or other severely misguided mail). If it is spam, just ignore the mail to have it silently dropped after 5 days.</p>
 <p>To bounce non-spam with a notice to the sender, reply to the <code>-reject</code> address in the mail header. If you wish to include a comment with the rejection, the body of the message should look like this:</p>
