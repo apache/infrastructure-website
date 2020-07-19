@@ -27,6 +27,7 @@ An extensive infrastructure overview for developers is <a href="https://www.apac
 - [Virtual machine for your project](vm-policy.html)
 - [Deploying a self-hosted runner](self-hosted-runners.html)
 - [Mailing list moderation](mailing-list-moderation.html)
+- [Handling cryptopgraphy within an ASF release](crypto.html)
 
 #### Software release policies and procedures ####
 
