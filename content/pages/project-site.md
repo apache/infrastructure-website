@@ -8,7 +8,6 @@ Every Apache project or podling has a website hosted at `apache.org`. Apache pro
 <ul>
 <li><a href="#default">Creating the website</a></li>
 <li><a href="#sitemanagement">Site management</a></li>
-<li><a href="#configure">Configuring the website</a></li>
 <li><a href="#preview">Previewing the website</a></li>
 </ul>
 
