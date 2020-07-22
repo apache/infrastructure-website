@@ -129,7 +129,7 @@ Read more about [Maven releases for Apache projects](publishing-maven-artifacts.
 
 <h2 id="other-platforms">Other Release Platforms<a class="headerlink" href="#other-platforms" title="Permanent link">&para;</a></h2>
 
-The ASF manages a number of distribution platforms that projects are welcome to use. Projects can distribute PMC-approved build artifacts on other ASF managed distribution platforms as long as those binaries comply with ASF release, licensing, branding and trademark policies. Currently ASF managed platforms include <a href="https://github.com/apache" target="_blank">github</a> and <a href="https://hub.docker.com/u/apache" target="_blank">docker</a>.
+The ASF manages a number of distribution platforms that projects are welcome to use. Projects can distribute PMC-approved build artifacts on ASF managed distribution platforms and other distribution platforms as long as those binaries comply with ASF release, licensing, branding and trademark policies. Currently ASF managed platforms include <a href="https://github.com/apache" target="_blank">github</a> and <a href="https://hub.docker.com/u/apache" target="_blank">docker</a>.
 
 <h2 id="administration">Policy administration<a class="headerlink" href="#administration" title="Permanent link">&para;</a></h2>
 
