@@ -89,13 +89,6 @@ Here is what you can do to speed up the commit:
   - Minimize Subversion keywords in the output that may change frequently without significant meaning. This includes keywords in source code that may be rendered to JavaDoc or a Maven JXR source cross-reference.
   - Avoid publishing Maven reports that change constantly to the project site. Code coverage, style reports, static analysis, etc. can be generated into a working copy on the CI server instead for easy developer viewing.
 
-  
-<h2 id="configure">Configuring the website<a class="headerlink" href="#configure" title="Permanent link">&para;</a></h2>
-
-The central config file lets you use `.htaccess` files in your website directories to control configuration. Of course, reading and
-parsing an `.htaccess` file on each request can slow down the server, so consider requesting adjustments to the central config file for
-permanent, site-wide configuration changes.
-
 <h2 id="preview">Previewing the website<a class="headerlink" href="#preview" title="Permanent link">&para;</a></h2>
 
   - For svnpubsub sites, review the local files in your svn checkout before committing them. The changes will be published immediately after you commit them.
