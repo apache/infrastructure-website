@@ -84,7 +84,7 @@ accommodate them <em>only if</em> their bits are bundled.</p>
 differ from those in the source distribution it was built from.</p>
 <p>In any case, the principle remains the same: <code>LICENSE</code> and <code>NOTICE</code> must <strong>exactly</strong> represent the contents of the distribution they reside in.</p></div>
 
-<h3 id="example-notice">Example NOTICE file</a>
+<h3 id="example-notice">Example NOTICE file</h3>
 
 The following is the text of the `NOTICE` file for Apache Royale:
 
