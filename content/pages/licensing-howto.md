@@ -24,34 +24,33 @@ The `LICENSE` and `NOTICE` files must **exactly represent** the contents of the 
 
 To assemble `LICENSE` and `NOTICE` files from scratch for products with complex requirements, follow these steps:
 
-  - Start with standard `LICENSE` and `NOTICE` files. 
-    - Copy the full <a href="https://www.apache.org/licenses/LICENSE-2.0.txt" target="_blank">license file text</a>.
+  - Copy the full <a href="https://www.apache.org/licenses/LICENSE-2.0.txt" target="_blank">Apache 2.0 license</a> text into a `LICENSE` file.
   - Create a 'NOTICE' file specific to your product's details, and complying with the instructions below. An <a href="#example-notice">example `NOTICE` file</a> is at the bottom of this page.
     - Add any <a href="#mod-notice">mandatory</a> legal notifications specific to the IP of your product.
     - For any <a href="#bundled-vs-non-bundled">bundled</a> dependency, consider whether `LICENSE` and/or `NOTICE` need to be modified. **Do not** modify `LICENSE` or `NOTICE` for non-bundled dependencies.
 
 <h3 id="permissive-deps">Bundling permissively-licensed dependencies</h3>
 
-<p>Bundling a dependency which is issued under one of the following licenses is straightforward, assuming that license applies uniformly to all files
-within the dependency:</p>
-<ul>
-<li>BSD (without advertising clause)</li>
-<li>MIT/X11</li>
-</ul>
-<p>In <code>LICENSE</code>, add a <a href="http://s.apache.org/Hqj" target="_blank">pointer</a> to the dependency's
-license within the distribution and a short note summarizing its licensing:</p>
-<blockquote>
-<p>This product bundles SuperWidget 1.2.3, which is available under a
-    "3-clause BSD" license.  For details, see deps/superwidget/.</p>
-</blockquote>
-<p>Under normal circumstances, there is no need to modify <code>NOTICE</code>.</p>
-<p>NOTE: It's also possible to include the text of the 3rd party license within the LICENSE file. This is best reserved for short licenses. It's important to specify the version of the dependency
-as licenses are sometimes changed.</p>
-<p>There are a number of other "permissive" licenses which the ASF Legal Affairs Committee has <a href="https://www.apache.org/legal/resolved.html#category-a" target="_blank"> approved</a> for use. Some of these may require additions to
-<code>NOTICE</code> -- if in doubt, <a href="https://www.apache.org/legal/resolved.html#asking-questions" target="_blank">ask for assistance</a>.</p>
+Bundling a dependency which is issued under one of the following licenses is straightforward, assuming that license applies uniformly to all files within the dependency:
+
+  - BSD (without advertising clause)
+  - MIT/X11
+
+In `LICENSE`, add a <a href="http://s.apache.org/Hqj" target="_blank">pointer</a> to the dependency's license within the distribution and a short note summarizing its licensing:
+
+```
+This product bundles SuperWidget 1.2.3, which is available under a
+"3-clause BSD" license. For details, see deps/superwidget/.
+```
+Under normal circumstances, there is no need to modify `NOTICE` to mention a bundled dependency.
+
+**NOTE**: It's also possible to include the text of the 3rd party license within your product's `LICENSE` file. This is best reserved for short licenses. It's important to specify the version of the dependency as licenses sometimes change as product versions change.
+
+There are a number of other "permissive" licenses which the ASF Legal Affairs Committee has <a href="https://www.apache.org/legal/resolved.html#category-a" target="_blank"> approved</a> for use. Some of these may require additions to `NOTICE` -- if in doubt, <a href="https://www.apache.org/legal/resolved.html#asking-questions" target="_blank">ask for assistance</a>.</p>
+
 <h3 id="alv2-dep">Bundling an Apache-2.0-licensed dependency</h3>
 
-<p>Assuming that that the bundled dependency itself contains no bundled sub-components under other licenses, so the ALv2 applies uniformly to all files, there is no need to modify <code>LICENSE</code>. However, for completeness it is useful
+Assuming that the bundled dependency itself contains no bundled sub-components under other licenses, so the ALv2 applies uniformly to all files, there is no need to modify <code>LICENSE</code>. However, for completeness it is useful
 to list the products and their versions, as is done for products under other licenses.</p>
 <p>If the dependency supplies a <code>NOTICE</code> file, its contents must be analyzed and the relevant portions bubbled up into the top-level <code>NOTICE</code> file.</p>
 <h3 id="bundle-asf-product">Bundling other ASF products</h3>
@@ -86,7 +85,7 @@ differ from those in the source distribution it was built from.</p>
 
 <h3 id="example-notice">Example NOTICE file</h3>
 
-The following is the text of the `NOTICE` file for Apache Royale:
+The following is the text of the `NOTICE` file for <a href="https://royale.apache.org/" target="_blank">Apache Royale</a>:
 
 ```
 Apache Royale
