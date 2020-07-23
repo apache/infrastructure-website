@@ -10,7 +10,7 @@ sometimes more information.
 The `>NOTICE` file is described in <a href="https://www.apache.org/licenses/LICENSE-2.0.html#redistribution" target="_blank"> section 4.4</a> of the Apache License version
 2.0. It is required by <a href="https://www.apache.org/legal/src-headers.html#notice" target="_blank">ASF policy</a>.
 
-The <a href="https://www.apache.org/legal" files" target="_blank">complete requirements</a> for `LICENSE` and `NOTICE` files are available.
+The <a href="https://www.apache.org/legal" target="_blank">complete requirements</a> for `LICENSE` and `NOTICE` files are available.
 
 ### Guiding principle ###
 
