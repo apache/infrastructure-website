@@ -46,42 +46,47 @@ Under normal circumstances, there is no need to modify `NOTICE` to mention a bun
 
 **NOTE**: It's also possible to include the text of the 3rd party license within your product's `LICENSE` file. This is best reserved for short licenses. It's important to specify the version of the dependency as licenses sometimes change as product versions change.
 
-There are a number of other "permissive" licenses which the ASF Legal Affairs Committee has <a href="https://www.apache.org/legal/resolved.html#category-a" target="_blank"> approved</a> for use. Some of these may require additions to `NOTICE` -- if in doubt, <a href="https://www.apache.org/legal/resolved.html#asking-questions" target="_blank">ask for assistance</a>.</p>
+There are a number of other "permissive" licenses which the ASF Legal Affairs Committee has <a href="https://www.apache.org/legal/resolved.html#category-a" target="_blank"> approved</a> for use. Some of these may require additions to `NOTICE` -- if in doubt, <a href="https://www.apache.org/legal/resolved.html#asking-questions" target="_blank">ask for assistance</a>.
 
 <h3 id="alv2-dep">Bundling an Apache-2.0-licensed dependency</h3>
 
-Assuming that the bundled dependency itself contains no bundled sub-components under other licenses, so the ALv2 applies uniformly to all files, there is no need to modify <code>LICENSE</code>. However, for completeness it is useful
-to list the products and their versions, as is done for products under other licenses.</p>
-<p>If the dependency supplies a <code>NOTICE</code> file, its contents must be analyzed and the relevant portions bubbled up into the top-level <code>NOTICE</code> file.</p>
+Assuming that the bundled dependency itself contains no bundled sub-components under other licenses, so the ALv2 applies uniformly to all files, there is no need to modify <code>LICENSE</code>. However, for completeness it is useful to list the products and their versions, as is done for products under other licenses.
+
+If the dependency supplies a <code>NOTICE</code> file, its contents must be analyzed and the relevant portions bubbled up into the top-level <code>NOTICE</code> file.
+
 <h3 id="bundle-asf-product">Bundling other ASF products</h3>
 
-<p>It is not necessary to duplicate the line "This product includes software developed at the Apache Software Foundation...", though the ASF copyright line and any other portions of <code>NOTICE</code> must be considered for propagation.</p>
+It is not necessary to duplicate the line "This product includes software developed at the Apache Software Foundation...", though the ASF copyright line and any other portions of <code>NOTICE</code> must be considered for propagation.
+
 <h3 id="mod-notice">Modifications to NOTICE</h3>
 
-<p><code>NOTICE</code> is reserved for a certain subset of legally required notifications which are not satisfied by either the text of <code>LICENSE</code> or the presence of licensing information embedded within the bundled dependency. Aside from
-Apache-licensed dependencies which supply <code>NOTICE</code> files of their own, it is uncommon for a dependency to require additions to <code>NOTICE</code>.</p>
-<p>Copyright notifications which have been <a href="https://www.apache.org/legal/src-headers.html#headers" target="_blank">relocated</a>, rather than removed, from source files must be preserved in <code>NOTICE</code>.  However, elements
-such as the copyright notifications embedded within BSD and MIT licenses <a href="https://issues.apache.org/jira/browse/LEGAL-59" target="_blank">do not need to be duplicated</a> in <code>NOTICE</code>. You can leave those notices in their original locations.</p>
-<p>It is important to keep <code>NOTICE</code> as brief and simple  as possible, as each addition places a burden on downstream consumers.</p>
-<p><strong>Do not add anything to <code>NOTICE</code> which is not legally required.</strong></p>
+The `NOTICE` file is reserved for a certain subset of legally required notifications which are not satisfied by either the text of `LICENSE` or the presence of licensing information embedded within the bundled dependency. Aside from Apache-licensed dependencies which supply `NOTICE` files of their own, it is uncommon for a dependency to require additions to `NOTICE`.
+
+Copyright notifications which have been <a href="https://www.apache.org/legal/src-headers.html#headers" target="_blank">relocated</a>, rather than removed, from source files must be preserved in `NOTICE`. However, elements such as the copyright notifications embedded within BSD and MIT licenses <a href="https://issues.apache.org/jira/browse/LEGAL-59" target="_blank">do not need to be duplicated</a> in `NOTICE`. You can leave those notices in their original locations.
+
+It is important to keep `NOTICE` as brief and simple as possible, as each addition places a burden on downstream consumers.
+
+**Do not** add anything to `NOTICE` which is not legally required.
+
 <h3 id="bundled=vs-non-bundled">Bundled vs. non-bundled dependencies</h3>
 
-<p>You must customize <code>LICENSE</code> and <code>NOTICE</code> files to the content of the specific distribution they reside within. Do not add to <code>LICENSE</code> and <code>NOTICE</code> dependencies which are not in the distribution. <em>Only bundled bits matter.</em></p>
-<p>Example: If the only difference between <code>apache-foo-1.0.tgz</code> and <code>apache-foo-1.1.tgz</code> is that one bundles SuperWidget while the other forces users to download SuperWidget separately, then <code>LICENSE</code> and <code>NOTICE</code> may need to be modified to account for the different bundled bits.</p>
+You must customize `LICENSE` and `NOTICE` files according to the content of the specific distribution they reside within. Do not add to `LICENSE` and `NOTICE` dependencies which are not in the distribution. **Only bundled bits matter.**
+
+Example: If the only difference between `apache-foo-1.0.tgz` and `apache-foo-1.1.tgz` is that one bundles SuperWidget while the other forces users to download SuperWidget separately, `LICENSE` and `NOTICE` may need to be modified to account for the different bundled bits.
+
 <h3 id="deps-of-deps">Dependencies of dependencies</h3>
 
-<p>Dependencies of dependencies (including so-called "transitive dependencies") are no different from first-order dependencies for the purposes of assembling <code>LICENSE</code> and <code>NOTICE</code>: <code>LICENSE</code> and <code>NOTICE</code> need only be modified to
-accommodate them <em>only if</em> their bits are bundled.</p>
+Dependencies of dependencies (including so-called "transitive dependencies") are no different from first-order dependencies for the purposes of assembling `LICENSE` and `NOTICE`: `LICENSE` and `NOTICE` need only be modified to accommodate them **only if their bits are bundled**.
+
 <h3 id="binary">Binary distributions</h3>
 
-<p>What applies to canonical source distributions also applies to all redistributions, including binary redistributions:</p>
-<blockquote>
-<p>All redistributions must obey the licensing requirements of the contents.</p>
-</blockquote>
-<p>The best way to do that will depend on the binary packaging form. </p>
-<p>When assembling binary distributions, it is common to pull in and bundle additional dependencies which are not bundled with the source distribution. You must account for these additional dependencies in <code>LICENSE</code> and <code>NOTICE</code>. As a result, the <code>LICENSE</code> and <code>NOTICE</code> files for a binary distribution may
-differ from those in the source distribution it was built from.</p>
-<p>In any case, the principle remains the same: <code>LICENSE</code> and <code>NOTICE</code> must <strong>exactly</strong> represent the contents of the distribution they reside in.</p></div>
+What applies to canonical source distributions also applies to all redistributions, including binary redistributions:
+
+**All redistributions must obey the licensing requirements of the contents.**
+
+When assembling binary distributions, it is common to pull in and bundle additional dependencies which are not bundled with the source distribution. You must account for these additional dependencies in `LICENSE` and `NOTICE`. As a result, the `LICENSE` and `NOTICE` files for a binary distribution may differ from those in the source distribution it was built from.
+
+In any case, the principle remains the same: `LICENSE` and `NOTICE` must **exactly** represent the contents of the distribution they reside in.
 
 <h3 id="example-notice">Example NOTICE file</h3>
 
