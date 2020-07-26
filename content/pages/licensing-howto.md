@@ -7,7 +7,7 @@ This is a "how to" guide for Apache Committers assembling `LICENSE` and `NOTICE`
 The `LICENSE` file communicates the licensing of all content in an Apache product distribution. It always contains the text of the Apache License, and
 sometimes more information.
 
-The `>NOTICE` file is described in <a href="https://www.apache.org/licenses/LICENSE-2.0.html#redistribution" target="_blank"> section 4.4</a> of the Apache License version
+The `NOTICE` file is described in <a href="https://www.apache.org/licenses/LICENSE-2.0.html#redistribution" target="_blank"> section 4.4</a> of the Apache License version
 2.0. It is required by <a href="https://www.apache.org/legal/src-headers.html#notice" target="_blank">ASF policy</a>.
 
 The <a href="https://www.apache.org/legal" target="_blank">complete requirements</a> for `LICENSE` and `NOTICE` files are available.
