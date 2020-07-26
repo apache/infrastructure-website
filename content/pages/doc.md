@@ -37,6 +37,7 @@ An extensive infrastructure overview for developers is <a href="https://www.apac
   - [Cryptography with OpenPGP](openpgp.html)
   - [Release distribution policy](release-distribution.html)
   - [Release download pages](release-download-pages.html)
+  - [Assembling LICENSE and NOTICE files](licensing-howto.html)
 
 
 ### Committer resources ###
