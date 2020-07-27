@@ -30,6 +30,15 @@ If you'd like to get started with an easy-to-use, <a href="https://github.github
   - Easy to interface with distributed version control systems and web hooks
   - Completely static output is easy to host anywhere
   
+Pelican has paths to <a href="https://docs.getpelican.com/en/stable/importer.html#import" target="_blank">migrate existing websites from many technologies</a>, including:
+
+  - Blogger
+  - Dotclear
+  - Posterous
+  - Tumblr
+  - WordPress
+  - RSS/Atom
+  
 See a how-to on using [Pelican and Buildbot](pelican-buildbot.html) to develop and deploy a project website.
 
 #### Github Pages ####
