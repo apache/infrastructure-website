@@ -15,25 +15,37 @@ Every Apache project or podling has a website hosted at `apache.org`. Apache pro
 
 Projects are free to choose their own styles and layout for websites, and have a range of options for actually creating the pages. The goal is to create and informative and useful **static** HTML website that can engage visitors, explain your project to them, and provide download links and documentation so they can use your project's applications.
 
-If you'd like to get started with an easy-to-use, Markdown-based site that many projects have used, see the <a href="https://github.com/apache/apache-website-template" target="_blank">Sample Apache Project website</a> repository which has many useful features and instructions for using svnpubsub.
+### Website-building options ###
 
-Another good option is <a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a>, a static site generator written in Python. Highlights include:
+#### Website template in Markdown ####
+
+If you'd like to get started with an easy-to-use, <a href="https://github.github.com/gfm/" target="_blank">Markdown</a>-based site that many projects have used, see the <a href="https://github.com/apache/apache-website-template" target="_blank">sample Apache project website</a> repository which has many useful features and instructions for using svnpubsub.
+
+#### Pelican ####
+
+<a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a> iw a static site generator written in Python. Highlights include:
 
   - Write your content directly with your editor of choice in reStructuredText or Markdown formats
   - Includes a simple CLI tool to (re)generate your site
   - Easy to interface with distributed version control systems and web hooks
   - Completely static output is easy to host anywhere
   
-See Infra's <a href="https://cwiki.apache.org/confluence/display/INFRA/Pelican+and+Buildbot+for+websites" target="_blank">instructions</a> for using Pelican to develop and deploy a project website.
+See a how-to on using [Pelican and Buildbot](pelican-buildbot.html) to develop and deploy a project website.
+
+#### Github Pages ####
 
 Projects with a Git code repository can use [GitHub Pages](github-pages.html) to create a staging site for reviewing their website, and to publish the site when it is ready.
+
+#### Jekyll ####
+
+<a href="https://jekyllrb.com/" target="_blank">Jekyll</a> is a straightforward tool for developing blogs or static websites using Markdown, and it is easy to deploy the resulting website as Github Pages. There are many tutorials for doing this avaiilable online.
 
 <h2 id="sitemanagement">Site management</a></h2>
   
   The basic requirements for site management are that 
 
   - only committers should be able to modify the site.
-  - notifications of all site changes are sent to the relevant project mailing lists. The Apache CMS allows non-committers to send  patches via a simple web interface by "Mail Diff"ing to the project mailing list that can be easily published by a committer.
+  - notifications of all site changes are sent to the relevant project mailing lists. The Apache CMS allows non-committers to send patches via a simple web interface by "Mail Diff"ing to the project mailing list that can be easily published by a committer.
 
 
 <h3 id="tools">Management tools<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h3>
