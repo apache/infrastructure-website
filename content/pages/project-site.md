@@ -49,13 +49,6 @@ Projects with a Git code repository can use [GitHub Pages](github-pages.html) to
 
 <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> is a straightforward tool for developing blogs or static websites using Markdown, and it is easy to deploy the resulting website as Github Pages. There are many tutorials for doing this avaiilable online.
 
-<h2 id="sitemanagement">Site management</a></h2>
-  
-  The basic requirements for site management are that 
-
-  - only committers should be able to modify the site.
-  - notifications of all site changes are sent to the relevant project mailing lists. The Apache CMS allows non-committers to send patches via a simple web interface by "Mail Diff"ing to the project mailing list that can be easily published by a committer.
-
 #### Hugo ####
 
 At least <a href="https://github.com/search?q=topic%3Ahugo+org%3Aapache&type=Repositories" target="_blank">six ASF projects</a> use <a href="https://gohugo.io/" target="_blank">Hugo</a>, an open-source framework for building static web sites.
@@ -64,6 +57,12 @@ At least <a href="https://github.com/search?q=topic%3Ahugo+org%3Aapache&type=Rep
 
 At least <a href="https://github.com/search?q=topic%3Ajbake+org%3Aapache&type=Repositories" target="_blank">two ASF projects</a> use <a href="https://jbake.org/" target="_blank">JBake</a>, a Java-based tool for building static web sites.
 
+<h2 id="sitemanagement">Site management</a></h2>
+  
+  The basic requirements for site management are that 
+
+  - only committers should be able to modify the site.
+  - notifications of all site changes are sent to the relevant project mailing lists. The Apache CMS allows non-committers to send patches via a simple web interface by "Mail Diff"ing to the project mailing list that can be easily published by a committer.
 
 <h3 id="tools">Management tools<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h3>
 
