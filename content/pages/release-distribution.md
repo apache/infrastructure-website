@@ -2,7 +2,7 @@ Title: Release Distribution Policy
 
 <h1 id="policy"> </h1>
 
-This policy governs how Apache software releases are distributed through the technical channels that Infra maintains. It complements the formal <a href="https://www.apache.org/legal/release-policy.html" target="_blank">Apache Release Policy</a>, which defines what must be in a software release, and the [Release Creation Process](release-publishing.html) page, which describes the steps for a PMC to create a release.
+This policy governs how Apache software releases are distributed through the technical channels that Infra maintains and other distribution platforms. It complements the formal <a href="https://www.apache.org/legal/release-policy.html" target="_blank">Apache Release Policy</a>, which defines what must be in a software release, and the [Release Creation Process](release-publishing.html) page, which describes the steps for a PMC to create a release.
 
 <h2 id="links">Contents</h2>
 
