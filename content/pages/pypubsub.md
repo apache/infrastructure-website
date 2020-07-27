@@ -17,6 +17,7 @@ Events are delivered as JSON objects in a <a href="https://en.wikipedia.org/wiki
 Subscribers can pick one or multiple topics to subscribe to, with more specific subscriptions getting fewer, but more specific, event payloads. Construct subscriptions in the form of: `http://pubsub.apache.org:2069/topics/go/here`, and separate the topics you want to subscribe to with forward slashes. 
 
 The service returns events that match _all_ of the topics you are subscribed to.
+To subscribe to multiple topic batches in an OR'ed way, you may use a comma to separate your batches of topics.
 
 Some examples:
 
@@ -26,6 +27,7 @@ Some examples:
 * To subscribe to PRs opened against `beam-foo.git`: `http://pubsub.apache.org:2069/github/beam-foo.git/pr`
 * To subscribe to all commits, both Subversion and git: `http://pubsub.apache.org:2069/commit`
 * To subscribe to all JIRA events for the HADOOP JIRA instance: `http://pubsub.apache.org:2069/jira/HADOOP`
+* To subscribe to *both* JIRA and email streams for tomcat in one go: `http://pubsub.apache.org:2069/jira/TOMCAT,email/tomcat.apache.org`
 
 ## Event payload examples
 
