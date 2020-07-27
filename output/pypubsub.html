@@ -115,7 +115,8 @@ Subscribe to Apache Software Foundation infrastructure events        </a>
 <p>Events are delivered as JSON objects in a <a href="https://en.wikipedia.org/wiki/Chunked_transfer_encoding" target="_blank">chunked response stream</a>, with each new chunk being either an event payload or a keep-alive ping.</p>
 <h2>How to subscribe</h2>
 <p>Subscribers can pick one or multiple topics to subscribe to, with more specific subscriptions getting fewer, but more specific, event payloads. Construct subscriptions in the form of: <code>http://pubsub.apache.org:2069/topics/go/here</code>, and separate the topics you want to subscribe to with forward slashes.</p>
-<p>The service returns events that match <em>all</em> of the topics you are subscribed to.</p>
+<p>The service returns events that match <em>all</em> of the topics you are subscribed to.
+To subscribe to multiple topic batches in an OR'ed way, you may use a comma to separate your batches of topics.</p>
 <p>Some examples:</p>
 <ul>
 <li>To subscribe to all git commits; <code>http://pubsub.apache.org:2069/git/commit</code></li>
@@ -124,6 +125,7 @@ Subscribe to Apache Software Foundation infrastructure events        </a>
 <li>To subscribe to PRs opened against <code>beam-foo.git</code>: <code>http://pubsub.apache.org:2069/github/beam-foo.git/pr</code></li>
 <li>To subscribe to all commits, both Subversion and git: <code>http://pubsub.apache.org:2069/commit</code></li>
 <li>To subscribe to all JIRA events for the HADOOP JIRA instance: <code>http://pubsub.apache.org:2069/jira/HADOOP</code></li>
+<li>To subscribe to <em>both</em> JIRA and email streams for tomcat in one go: <code>http://pubsub.apache.org:2069/jira/TOMCAT,email/tomcat.apache.org</code></li>
 </ul>
 <h2>Event payload examples</h2>
 <p>Pings are simple objects like this:</p>
