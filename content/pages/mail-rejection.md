@@ -19,7 +19,7 @@ The apache.org MX servers reject messages under the following circumstances:
 - Header checks for known spam phrases
 - Sender_access bans per envelope from address
 
-SPF hard fail for the apache.org domain has been implemented for incoming apache.org mail. This will require people using an apache.org mail address in their envelope "from" to be sending from an authorized host via mail-relay.a.o: `https://reference.apache.org/committer/email`
+SPF hard fail for the apache.org domain has been implemented for incoming apache.org mail. This will require people using an apache.org mail address in their envelope "from" to be sending from an authorized host via mail-relay.a.o. See [Committer email](committer-email.html).
 
 Refer to <a href="https://blogs.apache.org/infra/entry/committers_mail_relay_service" target="_blank">this blog post</a> for additional information.
 
