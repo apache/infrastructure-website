@@ -96,7 +96,7 @@ Regarding signature and checksum files:
 
   - Legacy suffix `.sha` **should not be** be used and `.sha` files **should not** be provided.
   - Binary PGP signature `.sig` files **must not** be provided.
-  - `.mds` files (containing checksums) **may** be provided for individual files.
+  - `.mds` files (containing multiple checksums) **may** be provided for individual files as long as the included checksums comply with the above requirements.
   - Signature and checksum files for verifying distributed artifacts **should not** be provided, unless named as indicated above.
   
 Regarding KEYS files:
