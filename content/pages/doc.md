@@ -15,29 +15,34 @@ An extensive infrastructure overview for developers is <a href="https://www.apac
 
 ### PMC resources ###
 
-- [Project website guidelines](website-guidelines.html). **Note**: No new projects can use the Apache CMS, and we enccourage projects using it to migrate to another resource for maintaining their websites. Here is how one project <a href="https://cwiki.apache.org/confluence/display/INFRA/How+Apache+Jena+migrated+from+the+CMS" target="_blank">did the migration</a>.
-- [Managing your project website](project-site.html)
+#### Source code ####
 - [Project source code repositories](version-control.html)
 - [Repositories for Maven releases and snapshots](repository-faq.html)
 - <a href="https://cwiki.apache.org/confluence/display/INFRA/.asf.yaml+features+for+git+repositories" target="_blank">.asf.yaml features for Git repositories</a>.
+- [GitHub Actions and Secrets](github-actions-secrets.html]
+
+#### Build and release ####
+- [Release creation process](release-publishing.html)
+- Creating optional [Maven releases](publishing-maven-artifacts.html) 
+- [Signing releases](release-signing.html)
+- [Cryptography with OpenPGP](openpgp.html)
+- [Release distribution policy](release-distribution.html)
+- [Release download pages](release-download-pages.html)
+- [Assembling LICENSE and NOTICE files](licensing-howto.html)
 - General information about [download mirror sites](mirrors.html)
-- [Project blog](project-blog.html)
-- [Managing project committers](managing-committers.html)
-- <a href="https://cwiki.apache.org/confluence/display/INFRA/Managing+permissions+on+your+project%27s+Confluence+Space" target="_blank">Managing permissions on your project's Confluence space</a>
-- [Virtual machine for your project](vm-policy.html)
+- [Handling cryptography within an ASF release](crypto.html)
 - [Deploying a self-hosted runner](self-hosted-runners.html)
+
+#### Website, blog and wiki ####
+- [Project website guidelines](website-guidelines.html). **Note**: No new projects can use the Apache CMS, and we enccourage projects using it to migrate to another resource for maintaining their websites. Here is how one project <a href="https://cwiki.apache.org/confluence/display/INFRA/How+Apache+Jena+migrated+from+the+CMS" target="_blank">did the migration</a>.
+- [Managing your project website](project-site.html)
+- [Project blog](project-blog.html)
+- <a href="https://cwiki.apache.org/confluence/display/INFRA/Managing+permissions+on+your+project%27s+Confluence+Space" target="_blank">Managing permissions on your project's Confluence space</a>
+
+#### Other ####
+- [Managing project committers](managing-committers.html)
+- [Virtual machine for your project](vm-policy.html)
 - [Mailing list moderation](mailing-list-moderation.html)
-- [Handling cryptopgraphy within an ASF release](crypto.html)
-
-#### Software release policies and procedures ####
-
-  - [Release creation process](release-publishing.html)
-  - Creating optional [Maven releases](publishing-maven-artifacts.html)
-  - [Signing releases](release-signing.html)
-  - [Cryptography with OpenPGP](openpgp.html)
-  - [Release distribution policy](release-distribution.html)
-  - [Release download pages](release-download-pages.html)
-  - [Assembling LICENSE and NOTICE files](licensing-howto.html)
 
 
 ### Committer resources ###
