@@ -1,6 +1,6 @@
 Title: Guide for new project committers
 
-Here's how to set up the technical and social environment that will support your work as a committer to an Apache project. Some projects have more specific guidelines which the project website or the PMC provide for you. We also have a thorough [Committers' FAQs](commiters.html) for both new and experienced comnmitters.
+Here's how to set up the technical and social environment that will support your work as a committer to an Apache project. Some projects have more specific guidelines which the project website or the PMC provide for you. We also have a thorough [Committers' FAQs](committers.html) for both new and experienced comnmitters.
 
   - <a href="#what-is-a-committer">What is a committer?</a>
   - <a href="#becoming-a-committer">Becoming a committer</a>
