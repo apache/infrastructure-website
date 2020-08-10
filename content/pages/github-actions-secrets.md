@@ -8,7 +8,7 @@ A **GitHub <a href="https://docs.github.com/en/developers/apps/about-apps#person
 
 See <a href="https://cwiki.apache.org/confluence/display/INFRA/Github+Secrets+and+Tokens" target="_blank">GitHub secrets and tokens</a>.
 
-### Examples and links ###
+### Examples ###
 
 #### GitHub Secrets ####
 
