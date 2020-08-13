@@ -148,7 +148,7 @@ Very rarely if ever. See the [version control FAQ](version-control.html) for mor
 
 <h4 id="email-setup">How do I set up my Apache email account?<a class="headerlink" href="#email-setup" title="Permanent link">&para;</a></h4>
 
-See these [instructions](committer-email.html].
+See these [instructions](committer-email.html).
 
 <h4 id="subscribe">How do I subscribe to a mailing list?<a class="headerlink" href="#subscribe" title="Permanent link">&para;</a></h4>
 
