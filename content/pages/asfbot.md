@@ -56,5 +56,4 @@ For an example of what a meeting summary may look like, check out this record of
 
 <h2 id="sourcecode">Technical Information About ASFBot<a class="headerlink" href="#sourcecode" title="Permanent link">&para;</a></h2>
 
-  - The <a href="https://wilderness.apache.org/manual.html" target="_blank">ASFBot manual</a>
-  = The ASFBot <a href="https://svn.apache.org/repos/infra/infrastructure/trunk/projects/asfbot/" target="_blank">source code</a>
+The ASFBot <a href="https://svn.apache.org/repos/infra/infrastructure/trunk/projects/asfbot/" target="_blank">source code</a>
