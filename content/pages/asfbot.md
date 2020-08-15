@@ -2,9 +2,9 @@ Title: ASF IRC services and archives
 
 <p id="intro"</p>
 
-<a href="https://wilderness.apache.org/manual.html" target="_blank">ASFBot</a> on the <a href="https://freenode.net/" target="_blank">Freenode network</a> offers many services for Apache projects on Internet Relay Chat (IRC). IRC is an application layer protocol that facilitates text communication. The chat process works on a client/server networking model.
+ASFBo offers many services for Apache projects on Internet Relay Chat (IRC). IRC is an application layer protocol that facilitates text communication. The chat process works on a client/server networking model. To enable these services, contact Infra, either with a <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Jira ticket</a> or through `#asfinfra` on the official <a href="https://the-asf.slack.com/" target="_blank">Apache Slack instance</a>.
 
-To enable these services, contact Infra, either with a <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Jira ticket</a> or through `#asfinfra` on the official <a href="https://the-asf.slack.com/" target="_blank">Apache Slack instance</a>.
+**Note** that ASFBot is being phased out in 2020, to be replaced by a Slack-related service.
 
 <h2 id="commits">Subversion, Git and Jira reporting<a class="headerlink" href="#commits" title="Permanent link">&para;</a></h2>
 
