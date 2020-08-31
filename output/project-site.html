@@ -112,6 +112,10 @@ Managing your project web site        </a>
 <h2 id="default">Creating the website<a class="headerlink" href="#default" title="Permanent link">&para;</a></h2>
 <p>Projects are free to choose their own styles and layout for websites, and have a range of options for actually creating the pages. The goal is to create and informative and useful <strong>static</strong> HTML website that can engage visitors, explain your project to them, and provide download links and documentation so they can use your project's applications.</p>
 <h3>Website-building options</h3>
+<p>If you're managing an ASF website repository in GitHub, please add <code>website</code> and <code>&lt;TOOL&gt;</code> Topics  to it, where <code>&lt;TOOL&gt;</code> is the name of the tool
+used to generate the website, like <code>pelican</code>, <code>hugo</code> etc. This helps others use your repository as an example using queries like
+<a href="https://github.com/search?q=org%3Aapache+topic%3Ahugo" target="_blank">this one</a>.
+You can use the <code>.asf.yaml</code> mechanism to add those Topics.</p>
 <h4>Website template in Markdown</h4>
 <p>If you'd like to get started with an easy-to-use, <a href="https://github.github.com/gfm/" target="_blank">Markdown</a>-based site that many projects have used, see the <a href="https://github.com/apache/apache-website-template" target="_blank">sample Apache project website</a> repository which has many useful features and instructions for using svnpubsub.</p>
 <h4>Pelican</h4>
@@ -124,6 +128,8 @@ Managing your project web site        </a>
 </ul>
 <p>Pelican has paths to <a href="https://docs.getpelican.com/en/stable/importer.html#import" target="_blank">migrate existing websites from many technologies</a>, including Blogger, Dotclear, Posterous, Tumblr, WordPress, and RSS/Atom.</p>
 <p>See a how-to on using <a href="pelican-buildbot.html">Pelican and Buildbot</a> to develop and deploy a project website.</p>
+<p><a href="https://github.com/search?q=topic%3Apelican+org%3Aapache&type=Repositories" target="_blank">This GitHub query</a> returns ASF repositories
+which have the <code>pelican</code> Topic, that should provide a few examples.</p>
 <h4>Github Pages</h4>
 <p>Projects with a Git code repository can use <a href="github-pages.html">GitHub Pages</a> to create a staging site for reviewing their website, and to publish the site when it is ready.</p>
 <h4>Jekyll</h4>
