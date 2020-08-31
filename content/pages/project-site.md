@@ -44,7 +44,7 @@ which have the `pelican` Topic, that should provide a few examples.
 
 #### Github Pages ####
 
-Projects with a Git code repository can use [GitHub Pages](github-pages.html) to create a staging site for reviewing their website, and to publish the site when it is ready.
+*In theory*, projects with a Git code repository can use [GitHub Pages](github-pages.html) to create a staging site for reviewing their website, and to publish the site when it is ready. One project has done this as a proof-of-concept; however Infra does not have a structure in place to fully support using GitHub Pages for project websites.
 
 #### Jekyll ####
 
