@@ -17,6 +17,11 @@ Projects are free to choose their own styles and layout for websites, and have a
 
 ### Website-building options ###
 
+If you're managing an ASF website repository in GitHub, please add `website` and `<TOOL>` Topics  to it, where `<TOOL>` is the name of the tool
+used to generate the website, like `pelican`, `hugo` etc. This helps others use your repository as an example using queries like
+ <a href="https://github.com/search?q=org%3Aapache+topic%3Ahugo" target="_blank">this one</a>.
+You can use the `.asf.yaml` mechanism to add those Topics.
+
 #### Website template in Markdown ####
 
 If you'd like to get started with an easy-to-use, <a href="https://github.github.com/gfm/" target="_blank">Markdown</a>-based site that many projects have used, see the <a href="https://github.com/apache/apache-website-template" target="_blank">sample Apache project website</a> repository which has many useful features and instructions for using svnpubsub.
@@ -33,6 +38,9 @@ If you'd like to get started with an easy-to-use, <a href="https://github.github
 Pelican has paths to <a href="https://docs.getpelican.com/en/stable/importer.html#import" target="_blank">migrate existing websites from many technologies</a>, including Blogger, Dotclear, Posterous, Tumblr, WordPress, and RSS/Atom.
   
 See a how-to on using [Pelican and Buildbot](pelican-buildbot.html) to develop and deploy a project website.
+
+<a href="https://github.com/search?q=topic%3Apelican+org%3Aapache&type=Repositories" target="_blank">This GitHub query</a> returns ASF repositories
+which have the `pelican` Topic, that should provide a few examples.
 
 #### Github Pages ####
 
