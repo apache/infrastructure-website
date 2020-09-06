@@ -28,7 +28,7 @@ If you'd like to get started with an easy-to-use, <a href="https://github.github
 
 #### Pelican ####
 
-<a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a> iw a static site generator written in Python. Highlights include:
+<a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a> is a static site generator written in Python. Highlights include:
 
   - Write your content directly with your editor of choice in reStructuredText or Markdown formats
   - Includes a simple CLI tool to (re)generate your site
