@@ -119,7 +119,7 @@ You can use the <code>.asf.yaml</code> mechanism to add those Topics.</p>
 <h4>Website template in Markdown</h4>
 <p>If you'd like to get started with an easy-to-use, <a href="https://github.github.com/gfm/" target="_blank">Markdown</a>-based site that many projects have used, see the <a href="https://github.com/apache/apache-website-template" target="_blank">sample Apache project website</a> repository which has many useful features and instructions for using svnpubsub.</p>
 <h4>Pelican</h4>
-<p><a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a> iw a static site generator written in Python. Highlights include:</p>
+<p><a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a> is a static site generator written in Python. Highlights include:</p>
 <ul>
 <li>Write your content directly with your editor of choice in reStructuredText or Markdown formats</li>
 <li>Includes a simple CLI tool to (re)generate your site</li>
@@ -150,7 +150,7 @@ which have the <code>pelican</code> Topic, that should provide a few examples.</
 <li><strong><a href="pelican-buildbot.html">Pelican and BuildBot</a></strong> streamline creating and publishing your project website.</li>
 <li><strong>svnpubsub</strong> automatically publishes the static contents of a designated svn folder (<a href="https://svn.apache.org/repos/asf/ant/site/ant/production/" target="_blank">example</a>) as the project web site at <code>http://project.apache.org</code>. The project team can use any site build mechanism it wants as long as the above requirements are met.</li>
 <li><a href="pypubsub.html"><strong>pypubsub</strong></a> automatically serves the static contents of a designated git repository as the website for a project. Git-based websites are typically maintained in a repository branch to be published as <code>https://project.apache.org</code>. A project can host the site from its primary project repository. Typically these will be built as a Jenkins or a Buildbot job (see below). We recommend that you only have a single writer to the asf-site branch to avoid potential conflicts.</li>
-<li>For <strong>websites using a git repository</strong>, you can add a <a href="https://cwiki.apache.org/confluence/display/INFRA/.asf.yaml+features+for+git+repositories" target="_blank">.asf.yaml</a> configuration file. The file lets you set instructions that simplify updating and maintaining the site.</li>
+<li>For <strong>websites using a git repository</strong>, you can add a <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">.asf.yaml</a> configuration file. The file lets you set instructions that simplify updating and maintaining the site.</li>
 <li><strong>Apache CMS</strong> <em>(being deprecated; don't use for new sites)</em> provides a simple browser-based user interface for editing, staging and publishing site content in Markdown, HTML or any other source format for which support has been added. See the <a href="cmsref">CMS reference</a> and <a href="cmsadoption">adoption</a> for more details. The Apache CMS uses pypubsub as the underlying mechanism for publishing a site. <strong>Note</strong>: No new projects can use the Apache CMS, and we enccourage projects using it to migrate to another resource for maintaining their websites. Here are <a href="https://cwiki.apache.org/confluence/display/INFRA/Migrate+your+project+website+from+the+Apache+CMS" target="_blank">migration instructions</a>.</li>
 </ul>
 <h4>Build tools</h4>
