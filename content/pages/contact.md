@@ -1,7 +1,7 @@
 Title: Contact the Infrastructure Team
 
 ### Chat
-Join us on [Slack](http://infra.chat/) for direct messaging!
+Join us on [Slack](https://the-asf.slack.com/) for direct messaging!
 
 ### Request resources/tasks/projects
 Please create a [Jira](https://issues.apache.org/jira/) ticket for your request. 
