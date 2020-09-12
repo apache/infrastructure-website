@@ -10,7 +10,7 @@ A person with a triage role can
   - mark duplicate issues and pull requests
   - request pull-request reviews
   
-This is a more restricted role than "write", "maintain", or "admin". Git recommends the role "for contributors who need to proactively manage issues and pull requests without write access." It is a good role for people who are interesting in supporting and contributing to the project, but who are not ready to be Committers.
+This is a more restricted role than "write", "maintain", or "admin". Git recommends the role "for contributors who need to proactively manage issues and pull requests without write access." It is a good role for people who are interested in supporting and contributing to the project, but who are not ready to be Committers.
 
 Read more at <a href="https://docs.github.com/en/github/setting-up-and-managing-organizations-and-teams/repository-permission-levels-for-an-organization" target="_blank">Permission levels for repositories</a>.
 
