@@ -106,3 +106,4 @@ $ git config remote.origin.url https://gitbox.apache.org/repos/asf/reponame.git
 
   - <a href="https://lab.github.com/" target="_blank">GitHub Learning Lab</a>
   - <a href="https://github.github.com/training-kit/" target="_blank">Git Cheat Sheets</a>
+  - [GitHub roles](github-roles.html)
