@@ -1,12 +1,10 @@
 Title: Roles for project GitHub repositories
 
-Projects can assign roles to people who want access to the project GitHub repositories. Each role gives a different level of access:
+Projects can assign roles to people who want access to the project GitHub repositories. Each role gives a different level of access. For Apache projects, the available roles are:
 
   - Read: View or discuss the project code or documentation
   - Triage (see below): Manage issues and pull requests without having write access
   - Write: For contributors who actively push code updates to the repository
-  - Maintain: for project managers who need to manage the repository without access to sensitive or destructive actions
-  - Admin: Full access to the project, including high-impact actions like managing security and deleting a repository
 
 See <a href="https://docs.github.com/en/articles/managing-access-to-your-organizations-repositories" target="_blank">Managing access to your organization's repositories'</a>.
 
