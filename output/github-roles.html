@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Triage role for project repositories - Apache Infrastructure</title>
+    <title>Roles for project GitHub repositories - Apache Infrastructure</title>
     <link rel="stylesheet" href="/theme/css/foundation.css">
     <link rel="stylesheet" href="/theme/css/app.css">
     <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
@@ -88,9 +88,9 @@
       <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
         <a href="/">Home</a>
         <i class="fa fa-angle-double-right"></i>
-        <a href="/triage-role.html">
-Triage role for project repositories        </a>
-        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/triage-role.md">edit</a>)
+        <a href="/github-roles.html">
+Roles for project GitHub repositories        </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/github-roles.md">edit</a>)
       </div>
     </div>
     
@@ -100,10 +100,20 @@ Triage role for project repositories        </a>
       <div class="large-12 columns">
         <div class="callout">
           <h2>
-              Triage role for project repositories
+              Roles for project GitHub repositories
           </h2>
-              <p>Apache projects can assign the GitHub <em>triage</em> role to PMC members, committers, and others with a vote link, to help with management of their code repository.</p>
-<p>A person with a triage role can</p>
+              <p>Projects can assign roles to people who want access to the project GitHub repositories. Each role gives a different level of access:</p>
+<ul>
+<li>Read: View or discuss the project code or documentation</li>
+<li>Triage (see below): Manage issues and pull requests without having write access</li>
+<li>Write: For contributors who actively push code updates to the repository</li>
+<li>Maintain: for project managers who need to manage the repository without access to sensitive or destructive actions</li>
+<li>Admin: Full access to the project, including high-impact actions like managing security and deleting a repository</li>
+</ul>
+<p>See <a href="https://docs.github.com/en/articles/managing-access-to-your-organizations-repositories" target="_blank">Managing access to your organization's repositories'</a>.</p>
+<h3>Triage</h3>
+<p>As of September, 2020 Apache projects can assign the GitHub <em>triage</em> role to PMC members, committers, and others with a vote link, to help with management of their code repository.</p>
+<p>A person with the triage role can</p>
 <ul>
 <li>apply labels to code</li>
 <li>close, reopen, and assign issues and pull requests</li>
