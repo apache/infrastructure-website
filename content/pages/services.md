@@ -71,6 +71,7 @@ Apache provides, and Infra maintains, [code repositories](version-control.html) 
   - [Read-only Git mirrors of SVN codebases](git.html)
   - [Writable Git repositories](writable-git.html)
   - [Apache and GitHub](apache-github.html)
+  - [Access roles for GitHub repositories](github-roles.html)
 
 
 <h4 id="issue-tracking">Issue tracking and feature requests<a class="headerlink" href="#issue-tracking" title="Permanent link">&para;</a></h4>
