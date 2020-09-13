@@ -12,3 +12,7 @@ If your project is currently hosted on Gitbox then you can push to GitHub.
 1. Visit the Gitbox site and link your GitHub account with your ASF account.
 1. Wait about an hour for things to sync up.
 1. You now have read/write access to both gitbox.apache.org and GitHub!
+
+**Assign roles**
+
+Projects can [assign roles](github-roles.html) to people who want access to the project GitHub repositories. Each role gives a different level of access.
