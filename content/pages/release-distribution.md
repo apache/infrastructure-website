@@ -110,7 +110,7 @@ Regarding KEYS files:
 <h2 id="download-links">Download links<a class="headerlink" href="#download-links" title="Permanent link">&para;</a></h2>
 
   - The website documentation for any Apache product **must** provide public download links where interested parties may obtain current official source releases and accompanying cryptographic files.
-  - Links to mirrored distribution artifacts **must not** reference the main Apache web site. They **should** use the [standard mechanisms](how-to-mirror.html) to distribute the load between the mirrors.
+  - Links to mirrored distribution artifacts **must not** reference the main Apache web site. They **should** use the [standard mechanisms](release-download-pages.html) to distribute the load between the mirrors.
   - All links to checksums, detached signatures and public keys **must** reference `downloads.apache.org/` using `https://` (TLS).
   - Old releases **should** be archived and **MAY** be linked to from public download pages.
   
