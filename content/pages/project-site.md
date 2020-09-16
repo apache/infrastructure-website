@@ -39,6 +39,10 @@ Pelican has paths to <a href="https://docs.getpelican.com/en/stable/importer.htm
   
 See a how-to on using [Pelican and Buildbot](pelican-buildbot.html) to develop and deploy a project website.
 
+Pelican supports both flat websites and those that have subdirectories. For the latter, Pelican provides a <a href="https://github.com/akhayyat/pelican-page-hierarchy" target="_blank">plugin</a>.
+
+Browse a <a href="https://github.com/getpelican/pelican-plugins/" target="_blank">collection of Pelican plugins</a> to find others that support functionality you want to add to your site. 
+
 <a href="https://github.com/search?q=topic%3Apelican+org%3Aapache&type=Repositories" target="_blank">This GitHub query</a> returns ASF repositories
 which have the `pelican` Topic, that should provide a few examples.
 
