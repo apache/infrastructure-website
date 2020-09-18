@@ -1,6 +1,8 @@
 Title: GitHub Pages for projects
 
-Infra supports ASF projects using <a href="https://pages.github.com/" target="_blank">GitHub pages (gh-pages)</a>.
+Projects with a Git repository can _in theory_ use <a href="https://pages.github.com/" target="_blank">GitHub Pages</a> to host and deploy the project website. However, Infra has does not yet have a complete setup for supporting a project's site from GH Pages. One project has used it successfully as a proof of concept.
+
+The material below is theoretical at this point.
 
 ### Using gh-pages for staging a website, product preview, or documentation ###
 
