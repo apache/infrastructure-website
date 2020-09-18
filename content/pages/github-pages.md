@@ -1,6 +1,6 @@
 Title: GitHub Pages for projects
 
-Projects with a Git repository can _in theory_ use <a href="https://pages.github.com/" target="_blank">GitHub Pages</a> to host and deploy the project website. However, Infra has does not yet have a complete setup for supporting a project's site from GH Pages. One project has used it successfully as a proof of concept.
+Projects with a Git repository can _in theory_ use <a href="https://pages.github.com/" target="_blank">GitHub Pages</a> to host and deploy the project website. However, Infra does not yet have a complete setup for supporting a project's site from GH Pages. One project has used it successfully as a proof of concept.
 
 The material below is theoretical at this point.
 
