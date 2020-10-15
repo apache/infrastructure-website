@@ -62,3 +62,9 @@ Every project can have a dedicated space on the Apache Confluence wiki. Project 
 **Website**
 
 Standard practice is to create a web site repository via <a href="https://selfserve.apache.org/" target="_blank_">SelfServe</a>, and then use .asf.yaml for publishing on $project.apache.org.
+
+## Contacting Infra ##
+
+If there is a problem, or you need Infra to do something, the best option is to start a _Jira_ ticket assigned to Infra. That helps us and you track progress on whatever the thing is.
+
+For more informal contact, you can use the _asfinfra_ Slack channel in the Apache Slack workspace, or send an email. Further details are [here](contact.html).
