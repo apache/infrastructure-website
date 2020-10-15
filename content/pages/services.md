@@ -45,6 +45,10 @@ You can subscribe to notices of infrastructure events that you want to know abou
 
 ## LDAP-enabled services ##
 Infra supports many ASF <a href="https://cwiki.apache.org/confluence/display/INFRA/LDAP+enabled+services+at+the+ASF" target="_blank">LDAP-enabled services</a>. You can log in to them with your LDAP credentials. 
+
+## Services for incubating projects ##
+
+Infra supports incubating projects, or podlings. Here is an introduction to [Infra and the Incubator](infra-incubator.html), showing the steps for setting up a new podling.
   
 ## Tools for ASF projects
 
