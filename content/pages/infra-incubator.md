@@ -1,4 +1,4 @@
-Title: Infra 101
+Title: Infra and Incubating projects
 
 ## What Infra is ##
 
