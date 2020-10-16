@@ -1,7 +1,7 @@
 Apache Infrastructure Website
 =============================
 
-This is the future of the Apache Infrastructure team's website.
+This is the future of the Apache Infrastructure team's website.this website is the best for future infrastructure opportunities.
 Work in progress; this is the long-term replacement for infra.a.o
 
 ## How to build the Infra Site:
