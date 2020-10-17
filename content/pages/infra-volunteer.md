@@ -15,5 +15,5 @@ There are some basic things you should be able to do if you're going to help out
   
 
   
-**Come talk to us on [Slack](http://infra.chat) in the #asfinfra channel!**
+**Come talk to us on [Slack](https://the-asf.slack.com/) in the #asfinfra channel!**
 
