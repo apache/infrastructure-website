@@ -53,7 +53,7 @@ For existing repositories on GitHub that needs migration, file a JIRA ticket wit
 
 **Bug tracking**
 
-You can enable GitHub issues (and wikis) via our .asf.yaml service. This is a per-repo feature. The project can request a JIRA instance via <a href="https://selfserve.apache.org/" target="_blank">SelfServe</a>.
+You can enable GitHub issues (and wikis) via our .asf.yaml service (<a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">.asf.yaml</a> is a configuration file that a project may use to control various features such as notification schemes, website staging, GitHub settings, and Pelican builds, if it uses that technology). This is a per-repo feature. The project can request a JIRA instance via <a href="https://selfserve.apache.org/" target="_blank">SelfServe</a>.
 
 **Confluence Wiki**
 
