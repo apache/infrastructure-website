@@ -1,0 +1,173 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project and product names - Apache Infrastructure</title>
+    <link rel="stylesheet" href="/theme/css/foundation.css">
+    <link rel="stylesheet" href="/theme/css/app.css">
+    <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>  </head>
+  <body style="background: #C9B191;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/theme/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+		  <li><a href="https://blogs.apache.org/infra/" target="_blank">The Infra Blog</a></li>			
+		  <li><a href="/roadmap.html">Strategies & Roadmap</a></li>
+	          
+                </ul>
+              </li>
+              <li><a href="/policies.html" target="_blank" style="padding-left: 5px;">Policies</a></li>
+                           
+              <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Services-Tools</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+		<li><a href="/services.html">Services and Tools</a></li>
+                <li><a href="https://www.apache.org/dev/machines.html" target="_blank" >Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" target="_blank" >Blocky</a></li>
+                <li><a href="https://uls.apache.org/app/kibana#/discover?_g=()" target="_blank" >Kibana and Unified Logging System</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" target="_blank" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" target="_blank" >Committer Search</a></li>
+		
+                </ul>
+              </li>
+              <li><a href="/doc.html" target="_blank" style="padding-left: 5px;">Documentation</a></li>
+	       <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Contribute</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">	
+		   <li><a href="/infra-volunteer.html">Volunteer with Infra</a></li>
+		   <li><a href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+			<li><a href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+		 </ul>
+	       </li>
+	      
+              <li><a href="/stats.html" target="_blank" style="padding-left: 5px;">Status</a></li>
+              <li><a href="/contact.html" style="padding-left: 5px;"><i class="fa fa-comments" style="color: #FFF; font-size: 0.9rem;"></i>Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/project-names.html">
+Project and product names        </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/project-names.md">edit</a>)
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              Project and product names
+          </h2>
+              <p>When choosing a name for a new Apache project, or for a new downloadable software product within an existing Apache project, we need to ensure the
+new name will be suitable. We want to ensure that the new name won't infringe on or unduly conflict with any existing software products, and to understand how well the ASF and
+the project will be able to defend our use of the name.</p>
+<p>These are general guidelines for considering new names for podlings undergoing Incubation and for existing projects creating new software products or subprojects. PPMC/PMC members must read the <a href="https://www.apache.org/foundation/marks/naming.html" target="_blank">detailed name search process</a> so they can properly <strong>conduct a search</strong>.</p>
+<h2 id="basic-name-search-considerations">Basic Name Search Considerations<a class="headerlink" href="#basic-name-search-considerations" title="Permanent link">&para;</a></h2>
+<ul>
+<li>&quot;Apache&quot; is our main trademark, or &quot;house mark&quot;, for our overall software development process. All Apache projects and podlings share it.</li>
+<li>All top level projects (TLPs) must use the format <em>Apache Foo</em> for their branding. However, people in informal conversation will refer to your project as just &quot;Foo&quot;, so choose the name carefully.</li>
+<li>Use internet search tools to be sure that there is no &quot;similar&quot; product, i.e. software for a specific purpose.</li>
+<li>When people conduct an internet search after hearing about an ASF project, they will use some technical terms and a name. We want to appear near the top of the search results and not get confused with some other project in the same technical space.</li>
+<li>Avoiding search-results confusion is important for another reason. Apache projects are often very quickly highly ranked. An Apache project with a similar name to another application in the same technical space may quickly come to dominate searches in that space. If someone else holds a related trademark, this may lead to a legal dispute. As a non-profit organization, the ASF and Apache projects have no business conflicting with an existing trademark for software products or related services.</li>
+</ul>
+<li>Even if a product name cannot be found via a search, if you are aware
+that it, or one very like it, is being used for a similar product then we cannot use it.</li>
+<li>You may want to choose a name that is easily remembered, is not too long, and is not
+difficult to spell.</li>
+<li>Be culturally sensitive and avoid names that might offend.</li>
+<li>Consider using functional names, especially for products of existing
+projects, e.g. for an "Apache Foo" project, the product name "Apache Foo
+Pipelines".</li>
+<li>Be good citizens, i.e. do unto others as you would expect that they
+should do unto you. For example, treat the product names of others with
+respect: do not try a twist that is close to the name of a similar
+product.</li>
+<li>Choose a sensible name early in the product's development, before you develop
+mailing lists, package names, logos, and other marketing collateral. Better to spend time now - your project
+will not want to change its product's name later.</li>
+<li>See this as an important marketing opportunity, rather than a bother.</li>
+<li>By carefully validating the uniqueness of our chosen names and clearly
+establishing first use in the field, we reduce the chances of future
+confusion.</li>
+</ul>
+<h2 id="other-trademark-tips">Other Trademark Tips<a class="headerlink" href="#other-trademark-tips" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The purpose of trademarks is to reduce the likelihood of confusion for users 
+attempting to find our software - to distinguish our software from software coming 
+from some other organization or individual.</li>
+<li>Trademarks exist by virtue of use, not just registration. Once we publicly 
+release a downloadable software product called Apache Foo, and refer to it with 
+that name consistently, then Apache Foo is our common law trademark for that software.</li>
+<li>The fact that a word or phrase is not registered as a trademark does not
+necessarily indicate that it is available for our use. If the mark is used by others
+in commerce but not registered, then we still cannot copy it for our goods.</li>
+<li>Trademarks only apply within a specific class of goods - software products - 
+and to a degree, only with products of similar functionalities.</li>
+<li>See also <a href="/foundation/license-FAQ.html#Marks">ASF License FAQ</a> and <a href="../foundation/marks/">ASF
+Trademark and Logo Guidelines</a>.</li>
+</ul></div>
+
+        </div>
+      </div>
+    </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2020, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    
+    <script src="/theme/js/vendor/jquery.js"></script>
+    <script src="/theme/js/vendor/what-input.js"></script>
+    <script src="/theme/js/vendor/foundation.js"></script>
+    <script src="/theme/js/app.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
