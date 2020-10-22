@@ -48,13 +48,16 @@ Infra supports many ASF <a href="https://cwiki.apache.org/confluence/display/INF
 
 ## Services for incubating projects ##
 
-Infra supports incubating projects, or podlings. Here is an introduction to [Infra and the Incubator](infra-incubator.html), showing the steps for setting up a new podling.
+Infra supports incubating projects, or podlings. 
+
+  - An introduction to [Infra and the Incubator](infra-incubator.html), showing the steps for setting up a new podling.
+  - Guidance for [selecting a project or product name](project-names.html)
   
 ## Tools for ASF projects
 
 Infra supports an array of tools and services to help projects develop and support both their applications and their community. They include:
 
-### PMC tools
+### PMC tools ###
 
 - Every project can use a dedicated space on the [Confluence wiki](cwiki.html).
 - <a href="https://reporter.apache.org/" target="_blank">Reporter</a> provides actvitity statistics and other information about your project, and editing tools to help you write and submit your project's quarterly Board reports.
@@ -113,6 +116,10 @@ Other tools to consider:
 * <a href="https://travis-ci.org/" target="_blank">Travis CI</a>
 * <a href="https://www.appveyor.com" target="_blank">Appveyor</a>
 
+### Product naming ###
+
+See [guidance for choosing a product name](product-names.html)
+
 ### Code signing ###
 
   - Digicert
@@ -124,7 +131,7 @@ Other tools to consider:
   
   - More information on <a href="https://cwiki.apache.org/confluence/display/INFRA/Code+Signing+and+Publishing" target="_blank">code signing and publishing</a>
 
-### Code Distribution
+### Code Distribution ###
 
 Use the ASF <a href="https://repository.apache.org/" target="_blank">Nexus Repository Manager</a> to browse for and review code distributions by ASF projects.
 
@@ -146,13 +153,13 @@ Infra can provide Ubuntu virtual machines for projects. See:
 
 Information about our build and continuous integration tools is on <a href="https://ci.apache.org/" target="_blank">this page</a>.
 
-### Code quality
+### Code quality ###
 
 **SonarQube** is an open-source platform developed by SonarSource for continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities on 20+ programming languages. You can check the status of many Apache project repositories <a href="https://sonarcloud.io/organizations/apache/projects" target="_blank">here</a>.
 
 <a href="https://cwiki.apache.org/confluence/display/INFRA/SonarQube+Analysis" target="_blank">Read more</a>.
 
-### Online voting
+### Online voting ###
 
 Projects can use the <a href="https://steve.apache.org" target="_blank">Apache Steve</a> voting system instance (offline when not in use).
 
@@ -166,22 +173,22 @@ Infra manages the ASF DNS, which is registered with Namecheap.
 
 For IRC Services on the Freenode IRC Network, see <a href="https://wilderness.apache.org" target="_blank">wilderness.apache.org</a>.
 
-### URL shortener
+### URL shortener ###
 
 <a href="https://s.apache.org" target="_blank">URL shortener</a>
 
-### Sharing Snippets
+### Sharing Snippets ###
 
 <a href="https://paste.apache.org/" target="_blank">Paste</a> is a service that lets ASF members post code snippets or similar file extracts they want to share to illustrate a code issue or make available for reuse, usually with other project members. You can post content as plain text, or formatted for a number of coding and scripting languages.
 
-### Logging
+### Logging ###
 
 <a href="https://uls.apache.org/app/kibana#/discover?_g=()" target="_blank">Kibana</a>
 
-### Machine List
+### Machine List ###
 
 <a href="https://www.apache.org/dev/machines.html" target="_blank">Host Keys and Fingerprints</a>
 
-### Whimsy
+### Whimsy ###
 
 <a href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer search</a>
