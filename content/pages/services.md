@@ -191,4 +191,6 @@ For IRC Services on the Freenode IRC Network, see <a href="https://wilderness.ap
 
 ### Whimsy ###
 
-<a href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer search</a>
+<a href="https://whimsy.apache.org/" target="_blank">Apache Whimsy</a> describes itself as "providing organizational information about the ASF and our projects in easy to consume ways, and to help automate corporate processes at the ASF to make the paperwork behind the scenes easier for our many volunteers."
+
+There are many Whimsy tools useful for PMCs and individual committers, such as <a href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer search</a>.
