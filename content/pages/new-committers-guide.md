@@ -122,8 +122,8 @@ If you have an idea that you want to explore and collaborate on with other commi
 
 A lot of Apache knowledge-sharing and decision-making takes place on mailing lists. Most of the lists are public, and you can join and participate in any that attract you.
 
-  - Your project probably has a @dev and a @users mailing list, and it is a good idea to join both. Once you are an active committer, you should also ask to join the @private list.
-  - We strongly urge all committers to join the @builds mailing list, where people from many projects, and the Infrastructure team, share insights and solve problems related to building and releasing software packages. People using Jenkins, or interested in CI/CD (continuous intergration and continuous development) find this list invaluable.
+  - Your project probably has a `@dev` and a `@users` mailing list, and it is a good idea to join both. Once you are an active committer, you should also ask to join the `@private` list.
+  - We strongly urge all committers to join the `@builds` mailing list, where people from many projects, and the Infrastructure team, share insights and solve problems related to building and releasing software packages. People using Jenkins, or interested in CI/CD (continuous intergration and continuous development) find this list invaluable.
   
 Instructions for joining and leaving lists, and a browsable list of Apache mailing lists, are <a href="https://www.apache.org/foundation/mailinglists.html" target="_blank">here</a>.
 
