@@ -12,8 +12,9 @@ Here's how to set up the technical and social environment that will support your
       - <a href="#set-up-subversion-or-git-access">Set up Subversion or Git access</a>
       - <a href="#set-up-security-and-pgp-keys">Set up Security and PGP Keys</a>
   - <a href="#committer-resources">Committer resources</a>
-      - <a href="#check-out-the-committers-only-subversion-module">he Committers-only Subversion Module</a>
+      - <a href="#check-out-the-committers-only-subversion-module">the Committers-only Subversion Module</a>
   - <a href="#get-to-know-the-apache-community">The Apache Community</a>
+      - <a href="#mailing-lists">Join mailing lists</a>
   - <a href="#committer-responsibilities">Committer Responsibilities</a>
   - <a href="#attending-apachecon">Attending ApacheCon</a>
   - <a href="#personal-web-space">Personal web space</a>
@@ -116,6 +117,15 @@ Taking part in the community makes Apache fun. The <a href="https://community.ap
 <a href="https://labs.apache.org/">Apache Labs</a> is a place for innovation where ASF committers can experiment with new ideas. The aim is to provide the necessary resources to promote and maintain innovation within the Apache community without the burden of community building.
 
 If you have an idea that you want to explore and collaborate on with other committers, discuss it at <a href="https://labs.apache.org/">Labs</a>. Even if you don't have anything at the moment, come and take a look at what other committers are working on.
+
+<h4 id="mailing-lists">Join mailing lists<a class="headerlink" href="#mailing-lists" title="Permanent link">&para;</a></h4>
+
+A lot of Apache knowledge-sharing and decision-making takes place on mailing lists. Most of the lists are public, and you can join and participate in any that attract you.
+
+  - Your project probably has a @dev and a @users mailing list, and it is a good idea to join both. Once you are an active committer, you should also ask to join the @private list.
+  - We strongly urge all committers to join the @builds mailing list, where people from many projects, and the Infrastructure team, share insights and solve problems related to building and releasing software packages. People using Jenkins, or interested in CI/CD (continuous intergration and continuous development) find this list invaluable.
+  
+Instructions for joining and leaving lists, and a browsable list of Apache mailing lists, are <a href="https://www.apache.org/foundation/mailinglists.html" target="_blank">here</a>.
 
 <h3 id="committer-responsibilities">Committer Responsibilities<a class="headerlink" href="#committer-responsibilities" title="Permanent link">&para;</a></h3>
 
