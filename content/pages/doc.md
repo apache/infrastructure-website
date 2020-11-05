@@ -19,7 +19,7 @@ An extensive infrastructure overview for developers is <a href="https://www.apac
 - [Project source code repositories](version-control.html)
 - [Repositories for Maven releases and snapshots](repository-faq.html)
 - <a href="https://cwiki.apache.org/confluence/display/INFRA/.asf.yaml+features+for+git+repositories" target="_blank">.asf.yaml features for Git repositories</a>.
-- [GitHub Actions and Secrets](github-actions-secrets.html]
+- [GitHub Actions and Secrets](github-actions-secrets.html)
 
 #### Build and release ####
 - [Release creation process](release-publishing.html)
@@ -47,6 +47,7 @@ An extensive infrastructure overview for developers is <a href="https://www.apac
 
 ### Committer resources ###
 
+- [New committer's guide](new-committers-guide.html)
 - [Managing your Apache email address](committer-email.html)
 - <a href="https://people.apache.org" target="_blank">Apache People</a> provides a simple phone book-like 
 lookup for Apache Committers.
