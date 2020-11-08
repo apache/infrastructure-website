@@ -180,9 +180,7 @@ Remember that there often are people subscribed to the digest version of the lis
 
 <h4 id="mail-forward">Mail forwarding<a class="headerlink" href="#mail-forward" title="Permanent link">&para;</a></h4>
 
-Your forwarding address(es) are stored in LDAP and maintained through the <a href="https://whimsy.apache.org/__self__" target="_blank">Whimsy</a> app.
-Doble-click the green label entitled "Email forwarded to"
-Forwarding is done directly from LDAP.
+Your forwarding address(es) are stored in LDAP and maintained through the <a href="https://id.apache.org/" target="_blank">Self Serve</a> app. Forwarding is done directly from LDAP.
 
 <h4 id="mail-download">How can I download my old email?<a class="headerlink" href="#mail-download" title="Permanent link">&para;</a></h4>
 
