@@ -11,7 +11,7 @@ When Infra creates your committer account, it sets the forwarding email address,
 To review and update your forwarding addresses:
 
 - Use the <a href="https://id.apache.org/" target="_blank">Selfserve app</a>.
-- Use <a href="https://whimsy.apache.org/roster/committer/__self" target="_blank">Whimsy</a>. Double-click the green "Email forwarded to" label.
+- Use <a href="https://whimsy.apache.org/roster/committer/__self__" target="_blank">Whimsy</a>. Double-click the green "Email forwarded to" label.
 
 Users of Google's Gmail should note that the app sometimes shows only one copy of an email, even if copies come to several email aliases that all point to the same inbox. If you try to test forwarding by sending a message to your ASF account from the Gmil account that is the target of the .forward, it can be difficult to tell if it has worked. Send the test e-mail from a different account.
 
