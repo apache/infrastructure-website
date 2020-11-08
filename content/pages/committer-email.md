@@ -10,7 +10,8 @@ When Infra creates your committer account, it sets the forwarding email address,
 
 To review and update your forwarding addresses:
 
-- Use <a href="https://whimsy.apache.org/roster/committer/__self__" target="_blank">Whimsy</a>. Double-click the green "Email forwarded to" label.
+- Use the <a href="https://id.apache.org/" target="_blank">Selfserve app</a>.
+- Use <a href="https://whimsy.apache.org/roster/committer/__self" target="_blank">Whimsy</a>. Double-click the green "Email forwarded to" label.
 
 Users of Google's Gmail should note that the app sometimes shows only one copy of an email, even if copies come to several email aliases that all point to the same inbox. If you try to test forwarding by sending a message to your ASF account from the Gmil account that is the target of the .forward, it can be difficult to tell if it has worked. Send the test e-mail from a different account.
 
@@ -18,6 +19,7 @@ Users of Google's Gmail should note that the app sometimes shows only one copy o
 
 To register an email alias, you can:
 
+- Use the <a href="https://id.apache.org/" target="_blank">Selfserve app</a>.
 - Use <a href="https://whimsy.apache.org/roster/committer/__self__" target="_blank">Whimsy</a>. Double-click the green "Email addresses (alt)" label.
 
 You can register multiple email aliases with your committer account. Apache inspects registered e-mail aliases when you subscribe to a restricted mailing list with an email other than your apache.org e-mail address. If you are allowed to subscribe to a restricted Apache mailing list and use an address other than your Apache email address, the Apache system approves the request if you have registered the email as one of your aliases. 
