@@ -7,7 +7,7 @@ Pelican provides support for importing an existing site that runs on WordPress o
 
 ### Sites with sub-directories
 
-Pelican supports both "flat" sites and sites that have sub-directories. For the latter. add the <a href="https://github.com/akhayyat/pelican-page-hierarchy" target="_blank">pelican-page-hierarchy<a> plugin. The plugin creates a website hierarchy that matches the file hierarchy of the material in the repository.
+Pelican supports both "flat" sites and sites that have sub-directories. For the latter, add the <a href="https://github.com/akhayyat/pelican-page-hierarchy" target="_blank">pelican-page-hierarchy</a> plugin. The plugin creates a website hierarchy that matches the file hierarchy of the material in the repository.
 
 ### Key files and directories ###
 
