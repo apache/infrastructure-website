@@ -1,6 +1,8 @@
 Title: Status pages
 
-  - See what services are running well and which are reporting issues on the <a href="https://status.apache.org" target="_blank">Status</a> page. If a problem is showing here, Infra has already received an alert about it.   
+  - See what services are running well and which are reporting issues on the <a href="https://status.apache.org" target="_blank">Status</a> page. If a problem is showing here, Infra has already received an alert about it.
+  
+  - Review the general use and flow of the <a href="https://infra-reports.apache.org/cistats/" target="_blank">continuous integration services</a> at the ASF. The report updates once a day and uses more than 25 charts to show trends over the preceding month.
   
   - Check the <a href="https://www.apache.org/uptime/" target="_blank">uptime rate of Apache services</a>.
   
