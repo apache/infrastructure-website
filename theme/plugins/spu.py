@@ -17,8 +17,11 @@
 
 """
 This is a collection of simple in-page callable tools for pelican.
-To use a function, use the following syntax in your markdown or html:
+To use a function, use the following syntax in your markdown:
 ` spu:command_name("arg1", "arg2", "arg3") `
+
+In HTML, you would do:
+<code> spu:command_name("arg1", "arg2") </code>
 
 command_name must match a respective su_cmd_* command in python.
 """
