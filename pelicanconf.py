@@ -45,7 +45,7 @@ AUTHOR_FEED_RSS = None
 
 # TOC Generator
 PLUGIN_PATHS = ['./theme/plugins']
-PLUGINS = ['toc', 'pelican-gfm']
+PLUGINS = ['toc', 'pelican-gfm', 'spu']
 TOC_HEADERS = r"h[1-6]"
 
 # Blogroll
