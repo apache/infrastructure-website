@@ -18,7 +18,7 @@
 """
 This is a collection of simple in-page callable tools for pelican.
 To use a function, use the following syntax in your markdown or html:
-{{ spu:command_name("arg1", "arg2", "arg3") }}
+` spu:command_name("arg1", "arg2", "arg3") `
 
 command_name must match a respective su_cmd_* command in python.
 """
@@ -39,7 +39,7 @@ def su_parse(instance: pelican.contents.Page):
     my_functions = {k:v for k, v in globals().items() if callable(v) and k.startswith('su_cmd_')}
     if instance._content is not None:
         content = instance._content
-        for call in re.finditer(r"{{\s*spu:([_a-z]+)\(((?:(['\"]?)(.*?)\3(?:,\s*)?)*)\s*?\)\s*}}", content, flags=re.UNICODE):
+        for call in re.finditer(r"<code>\s*spu:([_a-z]+)\(((?:(['\"]?)(.*?)\3(?:,\s*)?)*)\s*?\)\s*<\/code>", content, flags=re.UNICODE):
             errything = call.group(0)
             cmd = call.group(1)
             args = [x[1] for x in re.findall(r"(['\"]?)(.*?)\1(?:,\s*)?", call.group(2)) if x[1]]
