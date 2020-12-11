@@ -22,7 +22,10 @@ To use a function, use the following syntax in your markdown or html:
 
 command_name must match a respective su_cmd_* command in python.
 """
-import pelican.plugins.signals
+try:
+    from pelican.plugins import signals
+except ImportError:
+    from pelican import signals
 import pelican.contents
 import requests
 import re
@@ -53,4 +56,4 @@ def su_parse(instance: pelican.contents.Page):
 
 def register():
     print("Simple Pelican Utils registered.")
-    pelican.plugins.signals.content_object_init.connect(su_parse)
+    signals.content_object_init.connect(su_parse)
