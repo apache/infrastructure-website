@@ -60,7 +60,7 @@ def spu_parse(instance: pelican.contents.Page):
             errything = call.group(0)
             cmd = call.group(1)
             args = [x[1] for x in re.findall(r"(['\"]?)(.*?)\1(?:,\s*)?", call.group(2)) if x[1]]
-            fnc = "su_cmd_" + cmd
+            fnc = "spu_cmd_" + cmd
             if fnc in my_functions:
                 retval = my_functions[fnc](args)
                 content = content.replace(errything, retval, 1)
