@@ -39,7 +39,7 @@ import re
 SPU_FETCH_SAFE_DOMAINS = ("*.apache.org",)
 
 
-def su_cmd_fetch(args: list):
+def spu_cmd_fetch(args: list):
     """Fetches an external URL and put the content where the call was made"""
     url = args[0]
     url_parsed = urllib.parse.urlparse(url)
@@ -52,8 +52,8 @@ def su_cmd_fetch(args: list):
         return ""
 
 
-def su_parse(instance: pelican.contents.Page):
-    my_functions = {k:v for k, v in globals().items() if callable(v) and k.startswith('su_cmd_')}
+def spu_parse(instance: pelican.contents.Page):
+    my_functions = {k:v for k, v in globals().items() if callable(v) and k.startswith('spu_cmd_')}
     if instance._content is not None:
         content = instance._content
         for call in re.finditer(r"<code>\s*spu:([_a-z]+)\(((?:(['\"]?)(.*?)\3(?:,\s*)?)*)\s*?\)\s*<\/code>", content, flags=re.UNICODE):
@@ -70,4 +70,4 @@ def su_parse(instance: pelican.contents.Page):
 
 def register():
     print("Simple Pelican Utils registered.")
-    signals.content_object_init.connect(su_parse)
+    signals.content_object_init.connect(spu_parse)
