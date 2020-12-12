@@ -31,14 +31,25 @@ except ImportError:
     from pelican import signals
 import pelican.contents
 import requests
+import urllib.parse
+import fnmatch
 import re
 
+# List of subdomains deemed safe for spu:fetch()
+SPU_FETCH_SAFE_DOMAINS = ("*.apache.org",)
 
-def su_cmd_fetch(args):
+
+def su_cmd_fetch(args: list):
     """Fetches an external URL and put the content where the call was made"""
     url = args[0]
-    print("Fetching external resource " + url)
-    return requests.get(url).text
+    url_parsed = urllib.parse.urlparse(url)
+    is_safe = any(fnmatch.fnmatch(url_parsed.netloc, pattern) for pattern in SPU_FETCH_SAFE_DOMAINS)
+    if is_safe:
+        print("Fetching external resource " + url)
+        return requests.get(url).text
+    else:
+        print("Not fetching unsafe external resource " + url)
+        return ""
 
 
 def su_parse(instance: pelican.contents.Page):
