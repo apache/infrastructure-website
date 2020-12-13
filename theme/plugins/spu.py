@@ -23,7 +23,7 @@ To use a function, use the following syntax in your markdown:
 In HTML, you would do:
 <code> spu:command_name("arg1", "arg2") </code>
 
-command_name must match a respective su_cmd_* command in python.
+command_name must match a respective spu_cmd_* command in python.
 """
 try:
     from pelican.plugins import signals
