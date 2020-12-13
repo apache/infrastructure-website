@@ -52,20 +52,20 @@ def spu_cmd_fetch(args: list):
         return ""
 
 
+def spu_sub(call):
+    my_functions = {k: v for k, v in globals().items() if callable(v) and k.startswith('spu_cmd_')}
+    cmd = call.group(1)
+    args = [x[1] for x in re.findall(r"(['\"]?)(.*?)\1(?:,\s*)?", call.group(2)) if x[1]]
+    fnc = "spu_cmd_" + cmd
+    if fnc in my_functions:
+        return my_functions[fnc](args)
+    return ""
+
+
 def spu_parse(instance: pelican.contents.Page):
-    my_functions = {k:v for k, v in globals().items() if callable(v) and k.startswith('spu_cmd_')}
     if instance._content is not None:
-        content = instance._content
-        for call in re.finditer(r"<code>\s*spu:([_a-z]+)\(((?:(['\"]?)(.*?)\3(?:,\s*)?)*)\s*?\)\s*<\/code>", content, flags=re.UNICODE):
-            errything = call.group(0)
-            cmd = call.group(1)
-            args = [x[1] for x in re.findall(r"(['\"]?)(.*?)\1(?:,\s*)?", call.group(2)) if x[1]]
-            fnc = "spu_cmd_" + cmd
-            if fnc in my_functions:
-                retval = my_functions[fnc](args)
-                content = content.replace(errything, retval, 1)
-        if content != instance._content:
-            instance._content = content
+        instance._content = re.sub(r"<code>\s*spu:([_a-z]+)\(((?:(['\"]?)(.*?)\3(?:,\s*)?)*)\s*?\)\s*<\/code>", 
+                                   spu_sub, instance._content, flags=re.UNICODE)
 
 
 def register():
