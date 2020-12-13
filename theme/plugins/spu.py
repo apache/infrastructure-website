@@ -53,7 +53,7 @@ def spu_cmd_fetch(args: list):
 
 
 def spu_sub(call):
-    my_functions = {k: v for k, v in globals().items() if callable(v) and k.startswith('spu_cmd_')}
+    my_functions = {k: v for k, v in globals().items() if callable(v) and k.startswith("spu_cmd_")}
     cmd = call.group(1)
     args = [x[1] for x in re.findall(r"(['\"]?)(.*?)\1(?:,\s*)?", call.group(2)) if x[1]]
     fnc = "spu_cmd_" + cmd
@@ -64,8 +64,12 @@ def spu_sub(call):
 
 def spu_parse(instance: pelican.contents.Page):
     if instance._content is not None:
-        instance._content = re.sub(r"<code>\s*spu:([_a-z]+)\(((?:(['\"]?)(.*?)\3(?:,\s*)?)*)\s*?\)\s*<\/code>", 
-                                   spu_sub, instance._content, flags=re.UNICODE)
+        instance._content = re.sub(
+            r"<code>\s*spu:([_a-z]+)\(((?:(['\"]?)(.*?)\3(?:,\s*)?)*)\s*?\)\s*<\/code>",
+            spu_sub,
+            instance._content,
+            flags=re.UNICODE,
+        )
 
 
 def register():
