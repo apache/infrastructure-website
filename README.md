@@ -7,20 +7,25 @@ Work in progress; this is the long-term replacement for infra.a.o
 ## How to build the Infra Site:
 This builds the website and puts its pages in output/
 
-    `virtualenv $venvname`
-    `source $venvname/bin/activate`
-    `pip install -r requirements.txt`
+```bash
+virtualenv $venvname
+source $venvname/bin/activate
+pip install -r requirements.txt
 
-    `git pull origin master`
-    Edit all the markdown! (infrastructure-website/content/pages/)
+git pull origin master
 
-    `pelican -t theme`
+# Edit all the markdown! (infrastructure-website/content/pages/)
+
+pelican -t theme
+```
 
 To preview:
 
-    `cd output/`
-    `python -m pelican.server`
-    Browse to localhost:8000
+```bash
+cd output/
+python -m pelican.server
+# Browse to localhost:8000
+```
 
 ## Technical site documentation:
 Any time you check in a file, the site regenerates:
