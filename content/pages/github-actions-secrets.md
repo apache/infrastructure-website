@@ -1,5 +1,7 @@
 Title: GitHub Actions and Secrets
 
+**Notice**: December 27, 2020: We only Allow actions that are official "Made by GitHub" or local to the Apache org on GitHub, to address a potential security vulnerability. This  is an incident-related policy change. We are researching the situation, and the policy may evolve based on what we learn.
+
 **GitHub <a href="https://help.github.com/en/actions/getting-started-with-github-actions/about-github-actions" target="_blank">Actions</a>** help you automate your software development workflows in the same place you store code and collaborate on pull requests and issues. You can write individual tasks, called actions, and combine them to create a custom workflow. Workflows are custom automated processes that you can set up in your repository to build, test, package, release, or deploy any code project on GitHub.
 
 ***A note on testing***: Some projects would like to use GitHub Actions for complex processes, such as automating their tests of software builds. 
