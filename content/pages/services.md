@@ -169,10 +169,6 @@ Projects can use the <a href="https://steve.apache.org" target="_blank">Apache S
 
 Infra manages the ASF DNS, which is registered with Namecheap.
 
-<h3 id="irc-services">IRC Services<a class="headerlink" href="#irc-services" title="Permanent link">&para;</a></h3>
-
-For IRC Services on the Freenode IRC Network, see <a href="https://wilderness.apache.org" target="_blank">wilderness.apache.org</a>.
-
 ### URL shortener ###
 
 <a href="https://s.apache.org" target="_blank">URL shortener</a>
