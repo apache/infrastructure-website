@@ -108,7 +108,7 @@ Are you sure you want to continue connecting (yes/no)?
 ```
 
 The fingerprints for <code>people.apache.org</code> can be found
-<a href="https://www.apache.org/dev/new-committers-guide.html#spoof">here</a>. If the user elects to continue,
+<a href="https://www.apache.org/dev/new-committers-guide.html#identity-theft">here</a>. If the user elects to continue,
 this value is written to a `known_hosts` file. In future, when the user connects to the same server, the system checks this value and alerts the user if it has changed. **Do not continue the connection** after such an alert: contact infrastructure. This is of crucial importance when using keyboard interactive authentication.
 
 **Note**: The fingerprint for the key used for ssh is different from the fingerprint of the certificate used to securely serve the
