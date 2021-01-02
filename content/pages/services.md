@@ -23,13 +23,13 @@ Infra maintains a wide range of tools for PMCs, project committers, and the Apac
 
 ## ASF Self-Service Platform
 
-One of Infra's goals is to empower ASF members, PMCs, and committers to do much of what they need to do without having to request help from Infra. The <a href="https://selfserve.apache.org" target="_blank">Self-Service Platform</a>, for example, provides a number of handy tools that **people who have an Apache email address** (basically, project committers, PMC members, and ASF Members) can:
+One of Infra's goals is to empower ASF members, PMCs, and committers to do much of what they need to do without having to request help from Infra. The <a href="https://selfserve.apache.org" target="_blank">Self-Service Platform</a>, for example, provides a number of handy tools that **people who have an Apache email address** (basically, project committers, PMC members, and ASF Members) can use to:
 
   * Create a new Jira or Confluence project, Git repository, or mailing list (PMC Chairs and Infra members).
   * Edit your ASF identity or update your ASF password. If you are updating your password, you need access to the email account associated with your Apache account. A reset key is only valid for 15 minutes, so be sure to use it as soon as it arrives.
   * Synchronize Git repositories.
   * Use the OTP Calculator to generate passwords for the OTP or S/Key one-time-password systems (generally, PMC members).
-  * Archive a Confluence Space and make it read-only.
+  * Archive a Confluence Wiki space and make it read-only.
   
 ### Locked out of the system? ###
 
