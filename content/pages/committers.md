@@ -183,17 +183,6 @@ Remember that there often are people subscribed to the digest version of the lis
 
 Your forwarding address(es) are stored in LDAP and maintained through the <a href="https://id.apache.org/" target="_blank">Self Serve</a> app. Forwarding is done directly from LDAP.
 
-<h4 id="mail-download">How can I download my old email?<a class="headerlink" href="#mail-download" title="Permanent link">&para;</a></h4>
-
-Some older mailboxes may still exist on the <code>people.apache.org</code> server. Here is how to move the mail from there into a <a href="https://www.mozilla.org/products/thunderbird/" target="_blank">Thunderbird</a> mail
-client:
-
-  - Copy the mailbox from your <code>people.apache.org</code> directory to your
-local machine. For example:</p> `$ scp USER@people.apache.org:/home/USER/Mailbox /tmp/Mailbox`
-  - Then copy it into your Thunderbird Mail folder. For example: `$ mv /tmp/Mailbox "thunderbird/profile/Mail/Local Folders"`
-
-The name of the directory might differ depending on your Thunderbird version and configuration.
-
 <h3 id="mailmod">Mailing list moderation<a class="headerlink" href="#mailmod" title="Permanent link">&para;</a></h3>
 
 This information has moved [here](mailing-list-moderation.html)
