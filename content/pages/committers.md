@@ -36,9 +36,9 @@ A face-to-face gathering for work on Apache infrastructure by our amazing infra 
 Heed the warnings in these two email threads about what it means to be a committed person at the ASF and how to deal with the pressures that arise from such dedication:
 
   - <a href="https://mail-archives.apache.org/mod_mbox/www-community/200311.mbox/%3c3FC1C5BD.3060406@apache.org%3e" target="_blank">What is a member?</a>
-  - <a href="https://mail-archives.apache.org/mod_mbox/www-community/200311.mbox/%3c4A16CAE8-2130-11D8-9668-000393753936@gbiv.com%3e" target="_blank">volunteeritis</a>.
+  - <a href="https://mail-archives.apache.org/mod_mbox/www-community/200311.mbox/%3c4A16CAE8-2130-11D8-9668-000393753936@gbiv.com%3e" target="_blank">volunteeritis</a>
 
-We each need to re-read these important messages from time to time and remind our communities of the need for self-care and care of others.
+We each need to re-read these important messages from time to time and remind ourselves and our communities of the need for self-care and care of others.
 
 <h4 id="new-project">How do I start a new ASF project or migrate an existing project?<a class="headerlink" href="#new-project" title="Permanent link">&para;</a></h4>
 
