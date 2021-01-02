@@ -16,6 +16,7 @@ If you are not an Apache committer, but wish to become one, the instructions on 
 <li><a href="#legal">Legal and organizational</a></li>
 </ul>
 
+
 <h3 id="general">General<a class="headerlink" href="#general" title="Permanent link">&para;</a></h3>
 
 <h4 id="apachecon">What is ApacheCon?<a class="headerlink" href="#apachecon" title="Permanent link">&para;</a></h4>
@@ -95,7 +96,7 @@ Infra uses the `users@infra.apache.org` mailing list to discuss new infrastructu
 <h4 id="machines">What hosts/machines at Apache can I access?<a class="headerlink" href="#machines" title="Permanent link">&para;</a></h4>
 
 Committers may access `home.apache.org`. See the related information in the [New committers' guide](new-committers-guide.html).
-Note that you do <strong>only</strong> have sftp access.  There is no shell access.</p>
+Note that you do <strong>only</strong> have sftp access. There is no shell access. RSA SSH keys are required for sftp access, which you can update via <a href="https://whimsy.apache.org">Whimsy</a> or <a href="https://id.apache.org">id.apache.org</a>.
 
 Here is a <a href="https://apache.org/dev/machines.html" target="_blank">list of other Apache services/hosts and their public keys</a>.
 
