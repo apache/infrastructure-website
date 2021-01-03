@@ -83,17 +83,18 @@ Apache provides, and Infra maintains, [code repositories](version-control.html) 
 
 <h4 id="issue-tracking">Issue tracking and feature requests<a class="headerlink" href="#issue-tracking" title="Permanent link">&para;</a></h4>
 
-Projects can use any of these bug-tracking and feature request tools:
+The ASF recommends these options for tracking issues and feature requests:
 
 * <a href="https://issues.apache.org/jira" target="_blank">Jira</a>
-* <a href="https://bz.apache.org/bugzilla/" target="_blank">Bugzilla</a>
 * The <a href="https://guides.github.com/features/issues/" target="_blank">GitHub issue tracking feature</a>
-* <a href="https://allura.apache.org/" target="_blank">Apache Allura</a>
 
+For historical reasons, some projects use <a href="https://bz.apache.org/bugzilla/" target="_blank">Bugzilla</a>. We continue to support Bugzilla, but will not set it up for projects that do not already use it.
+
+<a href="https://allura.apache.org/" target="_blank">Apache Allura</a> is another issue-tracking option. If you feel it may meet your project's needs, consult directly with the Allura project through their `users@allura.apache.org` email list.
+
+See <a href="https://issues.apache.org/" target="_blank">issues.apache.org</a> for a list of what each project uses.
 
 Here is how to [request a bug and issue tracker for your project](request-bug-tracker.html).
-
-For historical reasons, some projects have their own instances of Jira or Bugzilla. See <a href="https://issues.apache.org/" target="_blank">issues.apache.org</a> for a list.
 
 Here are some guidelines for [writing a good bug report](bug-writing-guide.html).
 
