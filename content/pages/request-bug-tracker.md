@@ -1,4 +1,4 @@
-Title: Requesting an issue and feature-requedst tracker for a project
+Title: Requesting an issue and feature-request tracker for a project
 
 The ASF recommends these options for tracking issues and feature requests:
 
