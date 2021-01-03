@@ -1,11 +1,11 @@
-Title: Requesting a bug tracker for a project
+Title: Requesting an issue and feature-requedst tracker for a project
 
-Infrastructure offers two bug and issue tracking systems:
+The ASF recommends these options for tracking issues and feature requests:
 
-  - <a href="https://issues.apache.org/jira/" target="_blank">Jira</a>
-  - <a href="https://issues.apache.org/bugzilla/" target="_blank">Bugzilla</a>
+* <a href="https://issues.apache.org/jira" target="_blank">Jira</a>
+* The <a href="https://guides.github.com/features/issues/" target="_blank">GitHub issue tracking feature</a>
   
-Infra itself uses Jira, so to request a Jira or BugZilla instance for your project, create a <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Jira ticket</a> with the necessary details:
+Infra itself uses Jira, so to request a Jira instance for your project, create a <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Jira ticket</a> with the necessary details:
 
 ### Requesting a Jira instance ###
 
@@ -15,15 +15,6 @@ File a Jira ticket with INFRA using the link above, and set the issue type to `N
   - A list of committers who will act as Jira administrators
   - A notification scheme (to which email address do JIRA notifications go?)
   - A name and description for the Jira instance
-
-### Requesting a BugZilla instance ###
-
-The Jira bug tracker has the modern hooks and integrations that make it easier to work with. However, if your project would prefer a BugZilla instance file a Jira (haha) ticket with INFRA using the link above, and set the issue type to `New Bugzilla Project`. Supply at least the following information:
-
-  - A list of committers with access to modify/close tickets
-  - A list of committers who will act as Bugzilla administrators
-  - A notification scheme (to which email address do issue notifications go?)
-  - A name and description for your Bugzilla instance
   
 ### Response ###
 
