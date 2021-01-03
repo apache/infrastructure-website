@@ -83,10 +83,13 @@ Apache provides, and Infra maintains, [code repositories](version-control.html) 
 
 <h4 id="issue-tracking">Issue tracking and feature requests<a class="headerlink" href="#issue-tracking" title="Permanent link">&para;</a></h4>
 
-Projects can use either of these bug-tracking and feature request tools:
+Projects can use any of these bug-tracking and feature request tools:
 
 * <a href="https://issues.apache.org/jira" target="_blank">Jira</a>
 * <a href="https://bz.apache.org/bugzilla/" target="_blank">Bugzilla</a>
+* The <a href="https://guides.github.com/features/issues/" target="_blank">GitHub issue tracking feature</a>
+* <a href="https://allura.apache.org/" target="_blank">Apache Allura</a>
+
 
 Here is how to [request a bug and issue tracker for your project](request-bug-tracker.html).
 
