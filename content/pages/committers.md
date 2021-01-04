@@ -200,7 +200,7 @@ This information has moved [here](mailing-list-moderation.html)
   - faithful implementation of standards
   - security as a mandatory feature
 
-A non-official <a href="http://theapacheway.com/" target=_blank">The Apache Way</a> website is available.</p>
+A non-official <a href="http://theapacheway.com/" target="_blank">The Apache Way</a> website is available.</p>
 
 <h4 id="projectindependence">Are Apache projects really independent?<a class="headerlink" href="#projectindependence" title="Permanent link">&para;</a></h4>
 
