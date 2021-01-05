@@ -12,20 +12,20 @@ Infra maintains a wide range of tools for PMCs, project committers, and the Apac
   
 <h2 id="email">Email<a class="headerlink" href="#email" title="Permanent link">&para;</a></h2>
 
-  - All requests for new mailing lists should go through the <a href="https://selfserve.apache.org/mail.html" target="_blank">self-serve system</a>. Remember not to mark a list as private if you want it publicly archived.
-  - Mail server - QMail/QSMTPD
-  - <a href="https://www.apache.org/foundation/mailinglists.html" target="_blank">mailing lists</a> - EZMLM
-  - Searchable <a href="https://lists.apache.org/" target="_blank">private mailing list archives (mod_mbox)</a>. ASF Members have full access; PMC members have access to their PMC's archives only.
+  - All requests for new emial lists should go through the <a href="https://selfserve.apache.org/mail.html" target="_blank">self-serve system</a>. Remember not to mark a list as private if you want it publicly archived.
+  - Email server - QMail/QSMTPD
+  - <a href="https://www.apache.org/foundation/mailinglists.html" target="_blank">email lists</a> - EZMLM
+  - Searchable <a href="https://lists.apache.org/" target="_blank">private email list archives (mod_mbox)</a>. ASF Members have full access; PMC members have access to their PMC's archives only.
   - Spam control - Spamfilter + SpamAssassin
-  - Mail forwarding: See <a href="https://id.apache.org" target="_blank">id.apache.org</a>
+  - Email forwarding: See <a href="https://id.apache.org" target="_blank">id.apache.org</a>
   - <a href="https://lists.apache.org/" target="_blank">PonyMail</a> lets you browse Apache email archives by certain categories, by user, or by project. You must log in if you want to respond to an email, or write a new one, through this interface.
-  - Infra maintains and uses a series of <a href="https://infra.apache.org/infra-mail.html" target="_blank">mailing lists</a>, some of which are open to committers.
+  - Infra maintains and uses a series of <a href="https://infra.apache.org/infra-mail.html" target="_blank">email lists</a>, some of which are open to committers.
 
 ## ASF Self-Service Platform
 
 One of Infra's goals is to empower ASF members, PMCs, and committers to do much of what they need to do without having to request help from Infra. The <a href="https://selfserve.apache.org" target="_blank">Self-Service Platform</a>, for example, provides a number of handy tools that **people who have an Apache email address** (basically, project committers, PMC members, and ASF Members) can use to:
 
-  * Create a new Jira or Confluence project, Git repository, or mailing list (PMC Chairs and Infra members).
+  * Create a new Jira or Confluence project, Git repository, or email list (PMC Chairs and Infra members).
   * Edit your ASF identity or update your ASF password. If you are updating your password, you need access to the email account associated with your Apache account. A reset key is only valid for 15 minutes, so be sure to use it as soon as it arrives.
   * Synchronize Git repositories.
   * Use the OTP Calculator to generate passwords for the OTP or S/Key one-time-password systems (generally, PMC members).
@@ -33,12 +33,12 @@ One of Infra's goals is to empower ASF members, PMCs, and committers to do much 
   
 ### Locked out of the system? ###
 
-If you have forgotten your password and cannot retrieve it, contact Infrastructure via root@apache.org for assistance.
+If you have forgotten your password and cannot retrieve it, contact Infrastructure via `root@apache.org` for assistance.
 
 Before asking for a manual password reset or email change, please consider:
 
   - If you have access to an ASF machine via SSH (with a private key), you can use this to confirm your identity.
-  - If you don't have access to anything to establish your identity, you may be asked to file a new ICLA.
+  - If you don't have access to anything to establish your identity, you may need to file a new ICLA.
   
 ## Getting notices of infrastructure events ##
 You can subscribe to notices of infrastructure events that you want to know about, ranging from Subversion commits to emails to specific lists. [Learn more here](pypubsub.html).
@@ -63,7 +63,7 @@ Infra supports an array of tools and services to help projects develop and suppo
 - <a href="https://reporter.apache.org/" target="_blank">Reporter</a> provides actvitity statistics and other information about your project, and editing tools to help you write and submit your project's quarterly Board reports.
 - You can create and run a [project blog](project-blogs.html).
 - You can establish a [Slack channel](slack.html) for real-time team discussions.
-- Teams can conduct and record meetings through Internet Relay Chat (IRC) using [ASFBot](asfbot.html).
+- Teams can conduct and record meetings through Internet Relay Chat (IRC) using [ASFBot](asfbot.html). However, you must conduct formal votes on decisions in the appropriate project email list, following the <a href="https://www.apache.org/foundation/voting.html" target="_blank">Apache voting process</a>.
 - [Localization tools](localization.html).
 - The Apache <a href="https://creadur.apache.org/rat/" target="_blank">Release Audit Tool (RAT)</a> can help you confirm that your proposed product release complies with all ASF requirements.
 - The ASF <a href="https://oauth.apache.org/api.html" target="_blank">OAuth</a> system provides a focal point for services wishing to make use of authentication without security implications around storing sensitive user data. Many Apache services use it to validate that the user requesting access is a committer within the project and has lawful access to the systems in question.
