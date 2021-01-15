@@ -20,6 +20,7 @@ An extensive infrastructure overview for developers is <a href="https://www.apac
 - [Repositories for Maven releases and snapshots](repository-faq.html)
 - <a href="https://cwiki.apache.org/confluence/display/INFRA/.asf.yaml+features+for+git+repositories" target="_blank">.asf.yaml features for Git repositories</a>.
 - [GitHub Actions and Secrets](github-actions-secrets.html)
+  - [GitHub Actions policy](github-actions-policy.html)
 
 #### Build and release ####
 - [Release creation process](release-publishing.html)
