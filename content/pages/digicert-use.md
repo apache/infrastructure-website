@@ -1,6 +1,44 @@
 Title: Using the Digicert code signing service
 
-The Digicert service is available for JARs and Windows executables and code signing for both test and production builds.
+## Transition in progress
+We are currently transitioning from the old Symantec service to the new DigiCert service. The Symanetc service will be available until end January 2021 but users should use the Digicert service from 1st January 2021.
+
+## DigiCert Secure Software
+DigiCert Secure Software supports a range of signing tools and formats. For the full list see the client user guide in the <a href="https://svn.apache.org/repos/private/committers/code-signing/digicert/" target="blank">private repository for ASF committers</a>.
+
+Adding a new PMC or a new user to an existing PMC needs to be performed by the infrastructure team. Please open an <a href="https://issues.apache.org/jira/browse/INFRA">INFRA Jira ticket</a> and select code signing as the component.
+
+### Windows Signing
+
+To configure your system for Windows signing
+
+1. Log on to <a href="one.digicert.com">DigiCert ONE</a>.
+1. Select "Secure Software" from the menu in the top right-hand corner.
+1. Select "Resources" in the left-hand menu.
+1. Download and install the "Secure Software Manager Windows Clients Installer".
+1. Return to DigiCert ONE and select "Account" from the menu in the top right-hand corner.
+1. Select "Access" in the left-hand menu.
+1. Select "API token" and create a new API token with your ASF id as the name and an expiry date ~1 year in the future.
+1. Keep a record of the token value
+1. Select "Client Auth" and create a new client certificate with your ASF id as the name and an expiry date ~1 year in the future.
+1. Download the certificate and keep a record of the password
+1. As per sections 4.3 and 4.5 of the client user guide, create the four system environment variables. Note that the URL for `SM_HOST` should be `https://clientauth.one.digicert.com` (no `demo` in the URL)
+1. Test with `smctl.exe keypair ls` (see section 4.6 of the client user guide). You should see at least one certificate listed.
+1. Test with `certutil.exe -csp "DigiCert Signing Manager KSP" -key -user` (see section 4.7 of the client user guide).
+1. Synchronise certificates with `smksp_cert_sync.exe` (see section 4.8 of the client user guide).
+1. Open `certmgr.msc` (see section 4.9 of the client user guide) and you should see your code signing certificate(s) listed under personal certificates. If a new certificate is issued to your PMC you will need to repeat this step.
+
+To sign Windows binaries you will need a copy of SignTool.exe. This can be found in both Visual Studio and the Windows SDK. Very old versions don't support SHA256 signing. Version 6.1.7600.16385 (2009-07-14) does support SHA256 signing.
+
+Signing Windows binary is covered by section 14 of the client user guide. You'll need the fingerprint of the certificate you want to use for signing (view via `certmgr.msc`). You can then sign a file with `signtool.exe sign /sha1 <cert-fingerprint> /fd sha256 /tr http://timestamp.digicert.com <file-to-be-signed>`
+
+### Other signing formats, tools and operating systems
+
+See the client user guide.
+
+
+## Symantec SAS (deprecated)
+The Symantec service is available for JARs and Windows executables and code signing for both test and production builds.
 
 Production signing **costs the ASF real money**. Only use the production signing service once the release process works using test signing.
 
