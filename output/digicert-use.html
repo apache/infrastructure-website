@@ -127,7 +127,8 @@ Using the Digicert code signing service        </a>
 <li>Open <code>certmgr.msc</code> (see section 4.9 of the client user guide) and you should see your code signing certificate(s) listed under personal certificates. If a new certificate is issued to your PMC you will need to repeat this step.</li>
 </ol>
 <p>To sign Windows binaries you will need a copy of SignTool.exe. This can be found in both Visual Studio and the Windows SDK. Very old versions don't support SHA256 signing. Version 6.1.7600.16385 (2009-07-14) does support SHA256 signing.</p>
-<p>Signing Windows binary is covered by section 14 of the client user guide. You'll need the fingerprint of the certificate you want to use for signing (view via <code>certmgr.msc</code>). You can then sign a file with <code>signtool.exe sign /sha1 &lt;cert-fingerprint&gt; /fd sha256 /tr http://timestamp.digicert.com &lt;file-to-be-signed&gt;</code></p>
+<p>Signing Windows binary is covered by section 14 of the client user guide. You'll need the fingerprint of the certificate you want to use for signing (view via <code>certmgr.msc</code>). You can then sign a file with <code>signtool.exe sign /sha1 &lt;cert-fingerprint&gt; /fd sha512 /tr http://timestamp.digicert.com &lt;file-to-be-signed&gt;</code></p>
+<p>To sign a file with SHA-256 rather than SHA-512 use <code>... /fd sha256...</code> rather than <code>... /fd sha512 ...</code>.</p>
 <h3>Other signing formats, tools and operating systems</h3>
 <p>See the client user guide.</p>
 <h2>Symantec SAS (deprecated)</h2>
