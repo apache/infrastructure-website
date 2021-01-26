@@ -8,4 +8,6 @@ Title: Status pages
   
   - Review how the ASF <a href="https://apache.org/mirrors/" target="_blank">download mirrors</a> are functioning.
   
+  - Review how Infra triages incident reports and service requests, and their [response-time goals](responsetime.html).
+  
   - The <a href="https://reporter.apache.org/wizard/" target="_blank">Reporter wizard</a> provides a wide range of interesting information about Apache projects, and can help PMCs assemble their quarterly Board reports.
