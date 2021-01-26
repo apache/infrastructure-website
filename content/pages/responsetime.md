@@ -1,33 +1,33 @@
-Title: Service Level Agreement (SLA)
+Title: Response time
 
-A service-level agreement, or SLA, is a service provider's commitment to its clients. The Infra team commits to these targets for the services it maintains for the Apache community.
+The Infra team takes seriously all reports it receives about issues in the Apache system. We triage reports according to severity, and seek to resolve them in a timely fashion.
 
 ### Services ###
 
 Currently, Apache services are operating at an uptime rate of over 99%.
 
-For current status of services, see <a href="https://status.apache.org/" target="_blank">the ASF status page</a> and the Infra <a href="https://www.apache.org/uptime/" target="_blank">SLA graphs</a>.
+For the current status of services, see <a href="https://status.apache.org/" target="_blank">the ASF status page</a> and the Infra <a href="https://www.apache.org/uptime/" target="_blank">response graphs</a>.
 
 ### Jira issue reports and service requests ###
 
-Here is how we calculate SLAs and Infra's response for issue reports and service requests submitted as Jira tickets:
+Here is how we triage issue reports and service requests submitted as Jira tickets:
 
 #### Blocker ####
 A time-sensitive issue that is hindering a project's basic functions.
 
-  - **SLA**: 24 hours to respond, 3 days (72h) to resolve. Weekends count against SLA hours.
+  - **Goal**: 24 hours to respond, 3 days (72h) to resolve. Weekend hours count against this goal.
   - **Example**: Web site has been defaced and we just sent out a press release.
 
 #### Critical ####
 A time-sensitive issue that causes disruption for a project, but is not hindering basic functionality.
 
-  - **SLA**: 36 hours to respond, 4 days (96h) to resolve. Weekends count against SLA hours.
+  - **Goal**: 36 hours to respond, 4 days (96h) to resolve. Weekend hours count against this goal.
   - **Example**: We just called a new release, but SVN is not allowing us to upload or move the artifacts.
 
 #### Major #### 
 This is the default Jira issue priority. It fits a large issue that Infra should resolve quickly, but is not time-sensitive or related to basic projct functions. This includes requesting new resources.
 
-  - **SLA**: 2 days (48h) to respond, 5 days (120h) to resolve. Weekends do not count against SLA hours.
+  - **Goal**: 2 days (48h) to respond, 5 days (120h) to resolve. Weekends do not count against this goal.
   - **Examples**:
     - Set up a new podling.
     - Add a git repository.
@@ -36,7 +36,7 @@ This is the default Jira issue priority. It fits a large issue that Infra should
 #### Minor #### 
 An issue that Infra should resolve within a reasonable time, is not time-sensitive and is not critical to a project's basic functionas or ongoing daily business.
 
-  - **SLA**: 3 days (72h) to respond, 2 weeks (336h) to resolve. Weekends do not count against SLA hours
+  - **Goal**: 3 days (72h) to respond, 2 weeks (336h) to resolve. Weekends do not count against this goal.
   - **Examples**:
     - Retire a project's resources.
     - Fix a JavaScript error on a web site.
@@ -46,14 +46,14 @@ An issue that Infra should resolve within a reasonable time, is not time-sensiti
 #### Trivial ####
 A task that Infra should resolve, but that has minimal or no time constraints.
 
-  - **SLA**: 3 days (72h) to respond, 4 weeks (672h) to resolve. Weekends do not count against SLA hours.
+  - **Goal**: 3 days (72h) to respond, 4 weeks (672h) to resolve. Weekends do not count against this goal.
   - **Example**: Fix copyright year on a web site.
   
 ### Notes ###
 
   - Response time is counted as first reply (from someone else) or assignment.
-  - Tickets marked as `Planned Work` are not counted towards SLAs.
-  - Tickets marked as `Waiting for user` are paused, SLA-wise, until the user responds.
-  - Weekends do not count for SLA time for all tickets except those marked `Blocker` or `Critical`.
-  - Tickets only count towards the SLA statistics once resolved or if exceeding SLA parameters.
+  - Tickets marked as `Planned Work` do not have a response-time goal.
+  - Tickets marked as `Waiting for user` have no response time goal until the user responds.
+  - Weekends do not count toward response time for all tickets except those marked `Blocker` or `Critical`.
+  - Tickets only appear in response statistics once resolved or if exceeding the goal for their category.
   - Ticket velocity (user engagement and interaction) is important.
