@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Service Level Agreement (SLA) - Apache Infrastructure</title>
+    <title>Response time - Apache Infrastructure</title>
     <link rel="stylesheet" href="/theme/css/foundation.css">
     <link rel="stylesheet" href="/theme/css/app.css">
     <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
@@ -88,9 +88,9 @@
       <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
         <a href="/">Home</a>
         <i class="fa fa-angle-double-right"></i>
-        <a href="/sla.html">
-Service Level Agreement (SLA)        </a>
-        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/sla.md">edit</a>)
+        <a href="/responsetime.html">
+Response time        </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/responsetime.md">edit</a>)
       </div>
     </div>
     
@@ -100,30 +100,30 @@ Service Level Agreement (SLA)        </a>
       <div class="large-12 columns">
         <div class="callout">
           <h2>
-              Service Level Agreement (SLA)
+              Response time
           </h2>
-              <p>A service-level agreement, or SLA, is a service provider's commitment to its clients. The Infra team commits to these targets for the services it maintains for the Apache community.</p>
+              <p>The Infra team takes seriously all reports it receives about issues in the Apache system. We triage reports according to severity, and seek to resolve them in a timely fashion.</p>
 <h3>Services</h3>
 <p>Currently, Apache services are operating at an uptime rate of over 99%.</p>
-<p>For current status of services, see <a href="https://status.apache.org/" target="_blank">the ASF status page</a> and the Infra <a href="https://www.apache.org/uptime/" target="_blank">SLA graphs</a>.</p>
+<p>For the current status of services, see <a href="https://status.apache.org/" target="_blank">the ASF status page</a> and the Infra <a href="https://www.apache.org/uptime/" target="_blank">response graphs</a>.</p>
 <h3>Jira issue reports and service requests</h3>
-<p>Here is how we calculate SLAs and Infra's response for issue reports and service requests submitted as Jira tickets:</p>
+<p>Here is how we triage issue reports and service requests submitted as Jira tickets:</p>
 <h4>Blocker</h4>
 <p>A time-sensitive issue that is hindering a project's basic functions.</p>
 <ul>
-<li><strong>SLA</strong>: 24 hours to respond, 3 days (72h) to resolve. Weekends count against SLA hours.</li>
+<li><strong>Goal</strong>: 24 hours to respond, 3 days (72h) to resolve. Weekend hours count against this goal.</li>
 <li><strong>Example</strong>: Web site has been defaced and we just sent out a press release.</li>
 </ul>
 <h4>Critical</h4>
 <p>A time-sensitive issue that causes disruption for a project, but is not hindering basic functionality.</p>
 <ul>
-<li><strong>SLA</strong>: 36 hours to respond, 4 days (96h) to resolve. Weekends count against SLA hours.</li>
+<li><strong>Goal</strong>: 36 hours to respond, 4 days (96h) to resolve. Weekend hours count against this goal.</li>
 <li><strong>Example</strong>: We just called a new release, but SVN is not allowing us to upload or move the artifacts.</li>
 </ul>
 <h4>Major</h4>
 <p>This is the default Jira issue priority. It fits a large issue that Infra should resolve quickly, but is not time-sensitive or related to basic projct functions. This includes requesting new resources.</p>
 <ul>
-<li><strong>SLA</strong>: 2 days (48h) to respond, 5 days (120h) to resolve. Weekends do not count against SLA hours.</li>
+<li><strong>Goal</strong>: 2 days (48h) to respond, 5 days (120h) to resolve. Weekends do not count against this goal.</li>
 <li><strong>Examples</strong>:
 <ul>
 <li>Set up a new podling.</li>
@@ -135,7 +135,7 @@ Service Level Agreement (SLA)        </a>
 <h4>Minor</h4>
 <p>An issue that Infra should resolve within a reasonable time, is not time-sensitive and is not critical to a project's basic functionas or ongoing daily business.</p>
 <ul>
-<li><strong>SLA</strong>: 3 days (72h) to respond, 2 weeks (336h) to resolve. Weekends do not count against SLA hours</li>
+<li><strong>Goal</strong>: 3 days (72h) to respond, 2 weeks (336h) to resolve. Weekends do not count against this goal.</li>
 <li><strong>Examples</strong>:
 <ul>
 <li>Retire a project's resources.</li>
@@ -148,16 +148,16 @@ Service Level Agreement (SLA)        </a>
 <h4>Trivial</h4>
 <p>A task that Infra should resolve, but that has minimal or no time constraints.</p>
 <ul>
-<li><strong>SLA</strong>: 3 days (72h) to respond, 4 weeks (672h) to resolve. Weekends do not count against SLA hours.</li>
+<li><strong>Goal</strong>: 3 days (72h) to respond, 4 weeks (672h) to resolve. Weekends do not count against this goal.</li>
 <li><strong>Example</strong>: Fix copyright year on a web site.</li>
 </ul>
 <h3>Notes</h3>
 <ul>
 <li>Response time is counted as first reply (from someone else) or assignment.</li>
-<li>Tickets marked as <code>Planned Work</code> are not counted towards SLAs.</li>
-<li>Tickets marked as <code>Waiting for user</code> are paused, SLA-wise, until the user responds.</li>
-<li>Weekends do not count for SLA time for all tickets except those marked <code>Blocker</code> or <code>Critical</code>.</li>
-<li>Tickets only count towards the SLA statistics once resolved or if exceeding SLA parameters.</li>
+<li>Tickets marked as <code>Planned Work</code> do not have a response-time goal.</li>
+<li>Tickets marked as <code>Waiting for user</code> have no response time goal until the user responds.</li>
+<li>Weekends do not count toward response time for all tickets except those marked <code>Blocker</code> or <code>Critical</code>.</li>
+<li>Tickets only appear in response statistics once resolved or if exceeding the goal for their category.</li>
 <li>Ticket velocity (user engagement and interaction) is important.</li>
 </ul>
 
