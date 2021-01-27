@@ -107,8 +107,8 @@ Using the Digicert code signing service        </a>
 <h2>DigiCert Secure Software</h2>
 <p>DigiCert Secure Software supports a range of signing tools and formats. For the full list see the client user guide in the <a href="https://svn.apache.org/repos/private/committers/code-signing/digicert/" target="blank">private repository for ASF committers</a>.</p>
 <p>Adding a new PMC or a new user to an existing PMC needs to be performed by the infrastructure team. Please open an <a href="https://issues.apache.org/jira/browse/INFRA">INFRA Jira ticket</a> and select code signing as the component.</p>
-<h3>Windows Signing</h3>
-<p>To configure your system for Windows signing</p>
+<h3>Obtaining DigiCert ONE credentials</h3>
+<p>Whatever you need to sign and however you choose to sign it, the fist step is to create the necessary credentials via the DigiCert ONE web interface.</p>
 <ol>
 <li>Log on to <a href="one.digicert.com">DigiCert ONE</a>.</li>
 <li>Select &quot;Secure Software&quot; from the menu in the top right-hand corner.</li>
@@ -120,15 +120,22 @@ Using the Digicert code signing service        </a>
 <li>Keep a record of the token value</li>
 <li>Select &quot;Client Auth&quot; and create a new client certificate with your ASF id as the name and an expiry date ~1 year in the future.</li>
 <li>Download the certificate and keep a record of the password</li>
+</ol>
+<h3>Windows binaries on Windows</h3>
+<p>To configure your system for Windows signing:</p>
+<ol>
+<li>Obtain your DigiCert ONE credentials as above.</li>
 <li>As per sections 4.3 and 4.5 of the client user guide, create the four system environment variables. Note that the URL for <code>SM_HOST</code> should be <code>https://clientauth.one.digicert.com</code> (no <code>demo</code> in the URL)</li>
 <li>Test with <code>smctl.exe keypair ls</code> (see section 4.6 of the client user guide). You should see at least one certificate listed.</li>
 <li>Test with <code>certutil.exe -csp &quot;DigiCert Signing Manager KSP&quot; -key -user</code> (see section 4.7 of the client user guide).</li>
 <li>Synchronise certificates with <code>smksp_cert_sync.exe</code> (see section 4.8 of the client user guide).</li>
 <li>Open <code>certmgr.msc</code> (see section 4.9 of the client user guide) and you should see your code signing certificate(s) listed under personal certificates. If a new certificate is issued to your PMC you will need to repeat this step.</li>
 </ol>
-<p>To sign Windows binaries you will need a copy of SignTool.exe. This can be found in both Visual Studio and the Windows SDK. Very old versions don't support SHA256 signing. Version 6.1.7600.16385 (2009-07-14) does support SHA256 signing.</p>
+<p>To sign Windows binaries you will need a copy of SignTool.exe. This can be found in both Visual Studio and the Windows SDK. Very old versions only support SHA-1 signing. Version 6.1.7600.16385 (2009-07-14) supports newer hashes for signing.</p>
 <p>Signing Windows binary is covered by section 14 of the client user guide. You'll need the fingerprint of the certificate you want to use for signing (view via <code>certmgr.msc</code>). You can then sign a file with <code>signtool.exe sign /sha1 &lt;cert-fingerprint&gt; /fd sha512 /tr http://timestamp.digicert.com &lt;file-to-be-signed&gt;</code></p>
 <p>To sign a file with SHA-256 rather than SHA-512 use <code>... /fd sha256...</code> rather than <code>... /fd sha512 ...</code>.</p>
+<h3>Windows binaries on Linux</h3>
+<p>Currently under investigation by the Apache Tomcat project. Looks to be possible via OpenSSL (see section 9 of client user guide) and osslsigncode.</p>
 <h3>Other signing formats, tools and operating systems</h3>
 <p>See the client user guide.</p>
 <h2>Symantec SAS (deprecated)</h2>
