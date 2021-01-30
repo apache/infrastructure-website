@@ -72,14 +72,16 @@ Infra supports an array of tools and services to help projects develop and suppo
 
 Apache provides, and Infra maintains, [code repositories](version-control.html) that Apache projects can use to keep their project code safe, accessible to team members, and under version control.
 
-  - <a href="https://svn.apache.org/repos/asf/" target="_blank">Subversion (SVN) repositories</a>
-    - Information about [using Subversion](svn-basics.html)
-  - <a href="https://svn.apache.org/viewvc/" target="_blank">ViewVC (Browser interface to the main repository)</a>
-  - [Read-only Git mirrors of SVN codebases](git.html)
-  - [Writable Git repositories](writable-git.html)
-  - [Apache and GitHub](apache-github.html)
-  - [Access roles for GitHub repositories](github-roles.html)
-
+  - Information about [using Git](git-primer.html)
+    - [Read-only Git mirrors of SVN codebases](git.html)
+    - [Writable Git repositories](writable-git.html)
+    - [Apache and GitHub](apache-github.html)
+    - [Access roles for GitHub repositories](github-roles.html)
+  
+  - Information about [using Subversion](svn-basics.html)
+    - <a href="https://svn.apache.org/repos/asf/" target="_blank">Subversion (SVN) repositories</a>
+    - <a href="https://svn.apache.org/viewvc/" target="_blank">ViewVC (Browser interface to the main SVN repository)</a>
+  
 
 <h4 id="issue-tracking">Issue tracking and feature requests<a class="headerlink" href="#issue-tracking" title="Permanent link">&para;</a></h4>
 
