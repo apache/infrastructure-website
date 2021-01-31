@@ -10,9 +10,13 @@ The _time_ runners are in use (measured in minutes) is unlimited for public repo
 
 The ASF maxes out its runner allocation quite often, so a project needs to plan carefully to make best use of them for everyone's sake. For example, it would be important not to trigger a full release test with a pull request that is correcting a typo on one page in one module.
 
-If you are considering using GitHub Actions in this way, please subscribe to the `builds@ a.o` mailing list, where there is a continuing discussion on this topic and others related to continuious integration development.
+**Evolving knowledge**
 
-See <a href="https://cwiki.apache.org/confluence/display/INFRA/Github+Actions+to+DockerHub" target="_blank">Apache Airflow's experience</a> with Actions.
+-  If you are considering using GitHub Actions with buildsy, please subscribe to the `builds@ a.o` mailing list, where there is a continuing discussion on this topic and others related to continuious integration development.
+
+- The community is curating a <a href="https://cwiki.apache.org/confluence/display/BUILDS/GitHub+Actions+status" target="_blank">Wiki page</a> about the current state of using GitHub Actions for ASF projects.
+
+- See <a href="https://cwiki.apache.org/confluence/display/INFRA/Github+Actions+to+DockerHub" target="_blank">Apache Airflow's experience</a> with Actions.
 
 **GitHub <a href="https://help.github.com/en/actions/configuring-and-managing-workflows/creating-and-storing-encrypted-secrets" target="_blank">Secrets</a>** are encrypted environment variables that you create in a repository or organization. The secrets you create are available to use in GitHub Actions workflows.
 
