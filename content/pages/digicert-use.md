@@ -16,7 +16,7 @@ When the infrastructure team create your accout you will be sent a password rese
 
 Whatever you need to sign and however you choose to sign it, the fist step is to create the necessary credentials via the DigiCert ONE web interface.
 
-1. Log on to <a href="one.digicert.com">DigiCert ONE</a>.
+1. Log on to [DigiCert ONE](https://one.digicert.com/).
 1. Select "Secure Software" from the menu in the top right-hand corner.
 1. Select "Resources" in the left-hand menu.
 1. Download and install the "Secure Software Manager Windows Clients Installer".
