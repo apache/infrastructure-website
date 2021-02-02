@@ -6,9 +6,13 @@ We are currently transitioning from the old Symantec service to the new DigiCert
 ## DigiCert Secure Software
 DigiCert Secure Software supports a range of signing tools and formats. For the full list see the client user guide in the <a href="https://svn.apache.org/repos/private/committers/code-signing/digicert/" target="blank">private repository for ASF committers</a>.
 
+### Obtaining a DigiCert ONE account
+
 Adding a new PMC or a new user to an existing PMC needs to be performed by the infrastructure team. Please open an <a href="https://issues.apache.org/jira/browse/INFRA">INFRA Jira ticket</a> and select code signing as the component.
 
-### Obtaining DigiCert ONE credentials
+When the infrastructure team create your accout you will be sent a password reset email. The link in that email is only valid for 12 hours. If you are unable to complete the creation of your account in that time you can request a new password reset email by going to [DigiCert ONE](https://one.digicert.com/) and clicking on the password reset link. Your username is the same as your ASF id. You should then receive a new password reset email you can use to set your password. You will also need to configure your OTP token. Officially, only Google authenticator is supported but any similar tool should also work.
+
+### Obtaining credentials for code signing
 
 Whatever you need to sign and however you choose to sign it, the fist step is to create the necessary credentials via the DigiCert ONE web interface.
 
