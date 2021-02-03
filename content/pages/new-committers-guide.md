@@ -122,14 +122,14 @@ If you have an idea that you want to explore and collaborate on with other commi
 
 A lot of Apache knowledge-sharing and decision-making takes place on mailing lists. Most of the lists are public, and you can join and participate in any that attract you.
 
-  - Your project probably has a `@dev` and a `@users` mailing list, and it is a good idea to join both.
-  - We strongly urge all committers to join the `@builds` mailing list, where people from many projects, and the Infrastructure team, share insights and solve problems related to building and releasing software packages. People using Jenkins, or interested in CI/CD (continuous intergration and continuous development) find this list invaluable.
+  - Your project probably has a `dev@` and a `users@` mailing list, and it is a good idea to join both.
+  - We strongly urge all committers to join the `builds@` mailing list, where people from many projects, and the Infrastructure team, share insights and solve problems related to building and releasing software packages. People using Jenkins, or interested in CI/CD (continuous intergration and continuous development) find this list invaluable.
   
 Instructions for joining and leaving lists, and a browsable list of Apache mailing lists, are <a href="https://www.apache.org/foundation/mailinglists.html" target="_blank">here</a>.
 
 <h3 id="committer-responsibilities">Committer Responsibilities<a class="headerlink" href="#committer-responsibilities" title="Permanent link">&para;</a></h3>
 
-Join your project's `commit@` and `dev@` mailing lists to keep up  with project activity. Answering questions on `users@` is also very much appreciated and noticed by your PMC.
+Join your project's `commits@` and `dev@` mailing lists to keep up with project activity. Answering questions on `users@` is also very much appreciated and noticed by your PMC.
 
 Each committer has a responsibility to monitor changes made for potential issues, both coding and legal. If you spot any potential issues in a commit, the right course of action is to post a reply (to the email) raising your concerns to the dev list. In extreme situations, it may be necessary to veto (-1) a commit, but this is an extreme sanction and rarely warranted. Read the <a href="https://www.apache.org/foundation/voting.html">voting guidelines</a> before deploying a veto.
 
