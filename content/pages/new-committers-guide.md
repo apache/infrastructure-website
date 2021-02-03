@@ -118,12 +118,12 @@ Taking part in the community makes Apache fun. The <a href="https://community.ap
 
 If you have an idea that you want to explore and collaborate on with other committers, discuss it at <a href="https://labs.apache.org/">Labs</a>. Even if you don't have anything at the moment, come and take a look at what other committers are working on.
 
-<h4 id="mailing-lists">Join mailing lists<a class="headerlink" href="#mailing-lists" title="Permanent link">&para;</a></h4>
+<h4 id="mailing-lists">Join email lists<a class="headerlink" href="#mailing-lists" title="Permanent link">&para;</a></h4>
 
-A lot of Apache knowledge-sharing and decision-making takes place on mailing lists. Most of the lists are public, and you can join and participate in any that attract you.
+A lot of Apache knowledge-sharing and all formal decision-making takes place on email lists. Most of the lists are public, and you can join and participate in any that attract you.
 
-  - Your project probably has a `dev@` and a `users@` mailing list, and it is a good idea to join both.
-  - We strongly urge all committers to join the `builds@` mailing list, where people from many projects, and the Infrastructure team, share insights and solve problems related to building and releasing software packages. People using Jenkins, or interested in CI/CD (continuous intergration and continuous development) find this list invaluable.
+  - Your project probably has a `dev@` and a `users@` email list, and it is a good idea to join both.
+  - We strongly urge all committers to join the `builds@` email list, where people from many projects, and the Infrastructure team, share insights and solve problems related to building and releasing software packages. People using Jenkins, or interested in CI/CD (continuous intergration and continuous development) find this list invaluable. infra also posts notifications to this list regarding outages, upgrades, app add/removals and more.
   
 Instructions for joining and leaving lists, and a browsable list of Apache mailing lists, are <a href="https://www.apache.org/foundation/mailinglists.html" target="_blank">here</a>.
 
