@@ -2,7 +2,7 @@ Title: Publishing Maven Releases to Maven Central Repository
 
 [Apache Maven](https://maven.apache.org/) is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
 
-This document describes how to release Maven artifacts for Apache Software Foundation projects to the [Maven Central Repository](https://maven.apache.org/repository/index.html). This is optional. Apache project **must** release all software packages through the ASF mirror system. See [Release distribution policy](release-distribution.html) for more details.
+This document describes how to release Maven artifacts for Apache Software Foundation projects to the [Maven Central Repository](https://maven.apache.org/repository/index.html). This is optional. Apache projects **must** release all software packages through the ASF mirror system. See [Release distribution policy](release-distribution.html) for more details.
 
 **Note** make sure you are using version 3.0.5 or newer of Maven. You can <a href="https://maven.apache.org/download.cgi" target="_blank">download</a> and install the latest version of Maven before continuing.
 
@@ -41,7 +41,7 @@ Inherit the Apache Parent POM like this:
 </parent>
 ```
 
-This parent POM sets up the defaults so your `<distributionManagement>` section uses the correct release and snapshot repositories. Be sure to remove those from your POM so they inherit correctly. Keep the entry for deploying your site (if you use Maven to deploy your site). If you do, we suggest you use `apache.website` as the id to better match the settings below and to save the sanity of committers working on multiple projects.
+This parent POM sets up the defaults so your `<distributionManagement>` section uses the correct release and snapshot repositories. Be sure to remove those from your POM so they inherit correctly. Keep the entry for deploying your site (if you use Maven to deploy your site). If you do, we suggest you use `apache.website` as the ID to better match the settings below and to save the sanity of committers working on multiple projects.
 
 The POM also provides a default configuration to make sure that a correct source archive is created for your project. This is separate and in addition to the typical `-sources.jar` that is created.
 
@@ -76,7 +76,7 @@ The <a href="https://cwiki.apache.org/confluence/display/INFRA/hiera-eyaml-gpg+H
 
 ### Test your settings ###
 
-Try installing locally artifacts with activation of `apache-release` profile:
+Try installing locally artifacts with activation of the `apache-release` profile:
 
 `mvn clean install -Papache-release`
 
@@ -116,8 +116,8 @@ mvn release:prepare
 
 **Notes**
 
-  - Don't try to publish `.sha256` or `.sha512` files; Nexus doesn't handle them
-  - `.md5`s in `dist.apache.org/repos/dist/release/` must be removed manually.
+  - Don't try to publish `.sha256` or `.sha512` files; Nexus doesn't handle them.
+  - Remove `.md5`s in `dist.apache.org/repos/dist/release/` manually.
   - Preparing the release will create a new tag in SVN, and automatically check the version in on your behalf.
   - If you're located in Europe, `release:prepare` may fail with `Unable to tag SCM` and `svn: No such revision X`. Wait 10 seconds and run `mvn release:prepare` again.
   
