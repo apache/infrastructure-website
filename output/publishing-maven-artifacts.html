@@ -103,7 +103,7 @@ Publishing Maven Releases to Maven Central Repository        </a>
               Publishing Maven Releases to Maven Central Repository
           </h2>
               <p><a href="https://maven.apache.org/">Apache Maven</a> is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.</p>
-<p>This document describes how to release Maven artifacts for Apache Software Foundation projects to the <a href="https://maven.apache.org/repository/index.html">Maven Central Repository</a>. This is optional. Apache project <strong>must</strong> release all software packages through the ASF mirror system. See <a href="release-distribution.html">Release distribution policy</a> for more details.</p>
+<p>This document describes how to release Maven artifacts for Apache Software Foundation projects to the <a href="https://maven.apache.org/repository/index.html">Maven Central Repository</a>. This is optional. Apache projects <strong>must</strong> release all software packages through the ASF mirror system. See <a href="release-distribution.html">Release distribution policy</a> for more details.</p>
 <p><strong>Note</strong> make sure you are using version 3.0.5 or newer of Maven. You can <a href="https://maven.apache.org/download.cgi" target="_blank">download</a> and install the latest version of Maven before continuing.</p>
 <h2>Setting up your project in the ASF Nexus Repository</h2>
 <p>The <a href="https://repository.apache.org/">ASF Nexus repository</a> enforces security by constraining who can deploy or release a project's artifacts. Nexus maps which artifacts (usually by GroupId) your project produces. This is particularly helpful in preventing accidental releases of a project.</p>
@@ -132,7 +132,7 @@ Publishing Maven Releases to Maven Central Repository        </a>
   &lt;version&gt;23&lt;/version&gt;
 &lt;/parent&gt;
 </code></pre>
-<p>This parent POM sets up the defaults so your <code>&lt;distributionManagement&gt;</code> section uses the correct release and snapshot repositories. Be sure to remove those from your POM so they inherit correctly. Keep the entry for deploying your site (if you use Maven to deploy your site). If you do, we suggest you use <code>apache.website</code> as the id to better match the settings below and to save the sanity of committers working on multiple projects.</p>
+<p>This parent POM sets up the defaults so your <code>&lt;distributionManagement&gt;</code> section uses the correct release and snapshot repositories. Be sure to remove those from your POM so they inherit correctly. Keep the entry for deploying your site (if you use Maven to deploy your site). If you do, we suggest you use <code>apache.website</code> as the ID to better match the settings below and to save the sanity of committers working on multiple projects.</p>
 <p>The POM also provides a default configuration to make sure that a correct source archive is created for your project. This is separate and in addition to the typical <code>-sources.jar</code> that is created.</p>
 <h3>Set up your development environment</h3>
 <p>You must sign all artifacts with a key that is publicly verifiable. Follow the instructions here to get your keys created and environment set up.</p>
@@ -158,7 +158,7 @@ Publishing Maven Releases to Maven Central Repository        </a>
 &lt;/settings&gt;
 </code></pre>
 <h3>Test your settings</h3>
-<p>Try installing locally artifacts with activation of <code>apache-release</code> profile:</p>
+<p>Try installing locally artifacts with activation of the <code>apache-release</code> profile:</p>
 <p><code>mvn clean install -Papache-release</code></p>
 <p>This will build artifacts and sources and sign them.</p>
 <h2>Staging your release</h2>
@@ -189,8 +189,8 @@ mvn release:prepare
 </code></pre>
 <p><strong>Notes</strong></p>
 <ul>
-<li>Don't try to publish <code>.sha256</code> or <code>.sha512</code> files; Nexus doesn't handle them</li>
-<li><code>.md5</code>s in <code>dist.apache.org/repos/dist/release/</code> must be removed manually.</li>
+<li>Don't try to publish <code>.sha256</code> or <code>.sha512</code> files; Nexus doesn't handle them.</li>
+<li>Remove <code>.md5</code>s in <code>dist.apache.org/repos/dist/release/</code> manually.</li>
 <li>Preparing the release will create a new tag in SVN, and automatically check the version in on your behalf.</li>
 <li>If you're located in Europe, <code>release:prepare</code> may fail with <code>Unable to tag SCM</code> and <code>svn: No such revision X</code>. Wait 10 seconds and run <code>mvn release:prepare</code> again.</li>
 </ul>
