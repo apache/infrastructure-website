@@ -121,7 +121,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
 <td>a committer or PMC</td>
 <td>change <strong>Jenkins</strong> build settings</td>
 <td>builds@apache.org</td>
-<td>Project members having <a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins#Jenkins-HowdoIgetanaccount" <target="_blank"><code>hudson-jobadmin</code> karma</a> can perform some tasks; ask your dev@ list</td>
+<td>Project members having <a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins#Jenkins-HowdoIgetanaccount" target="_blank"><code>hudson-jobadmin</code> karma</a> can perform some tasks; ask your dev@ list</td>
 </tr>
 <tr>
 <td>a PMC</td>
