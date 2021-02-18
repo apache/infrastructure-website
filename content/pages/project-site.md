@@ -52,7 +52,7 @@ which have the `pelican` Topic, that should provide a few examples.
 
 #### Jekyll ####
 
-<a href="https://jekyllrb.com/" target="_blank">Jekyll</a> is a straightforward tool for developing blogs or static websites using Markdown, and it is easy to deploy the resulting website as Github Pages. There are many tutorials for doing this avaiilable online.
+<a href="https://jekyllrb.com/" target="_blank">Jekyll</a> is a straightforward tool for developing blogs or static websites using Markdown, and it is easy to deploy the resulting website as Github Pages. There are many tutorials for doing this available online.
 
 #### Hugo ####
 
