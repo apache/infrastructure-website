@@ -7,8 +7,6 @@ so you can insert it after a specific section that need not be
 include in the ToC.
 '''
 
-from __future__ import unicode_literals
-
 import logging
 import re
 
