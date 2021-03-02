@@ -1,0 +1,182 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Build and manage a project website with Pelican and Buildbot - Apache Infrastructure</title>
+    <link rel="stylesheet" href="/theme/css/foundation.css">
+    <link rel="stylesheet" href="/theme/css/app.css">
+    <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>  </head>
+  <body style="background: #C9B191;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/theme/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+		  <li><a href="https://blogs.apache.org/infra/" target="_blank">The Infra Blog</a></li>			
+		  <li><a href="/roadmap.html">Strategies & Roadmap</a></li>
+	          
+                </ul>
+              </li>
+              <li><a href="/policies.html" target="_blank" style="padding-left: 5px;">Policies</a></li>
+                           
+              <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Services-Tools</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+		<li><a href="/services.html">Services and Tools</a></li>
+                <li><a href="/machines.html" target="_blank" >Machines and Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" target="_blank" >Blocky</a></li>
+                <li><a href="https://uls.apache.org/app/kibana#/discover?_g=()" target="_blank" >Kibana and Unified Logging System</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" target="_blank" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" target="_blank" >Committer Search</a></li>
+		
+                </ul>
+              </li>
+              <li><a href="/doc.html" target="_blank" style="padding-left: 5px;">Documentation</a></li>
+	       <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Contribute</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">	
+		   <li><a href="/infra-volunteer.html">Volunteer with Infra</a></li>
+		   <li><a href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+			<li><a href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+		 </ul>
+	       </li>
+	      
+              <li><a href="/stats.html" target="_blank" style="padding-left: 5px;">Status</a></li>
+              <li><a href="/contact.html" style="padding-left: 5px;"><i class="fa fa-comments" style="color: #FFF; font-size: 0.9rem;"></i>Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/build-and-manage-a-project-website-with-pelican-and-buildbot.html">
+Build and manage a project website with Pelican and Buildbot        </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/build-and-manage-a-project-website-with-pelican-and-buildbot.md">edit</a>)
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              Build and manage a project website with Pelican and Buildbot
+          </h2>
+              <p>ASF projects can use <a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a> to create and manage the project website. Pelican provides a framework and the option of using themes to display your site pages, which you write in <a href="https://github.github.com/gfm/" target="_blank">Github-flavored-markdown</a> (GFM). You can set <a href="https://buildbot.net/" target="_blank">Buildbot</a> to build and publish the site every time someone saves updates to a page.</p>
+<p>Pelican provides support for importing an existing site that runs on WordPress or some other service.</p>
+<h3>Sites with sub-directories</h3>
+<p>Pelican supports both "flat" sites and sites that have sub-directories. For the latter, add the <a href="https://github.com/akhayyat/pelican-page-hierarchy" target="_blank">pelican-page-hierarchy</a> plugin. The plugin creates a website hierarchy that matches the file hierarchy of the material in the repository.</p>
+<h3>Key files and directories</h3>
+<p>The repository structure for your Pelican project website has three key directories and a configuration file.</p>
+<p>The directories are:</p>
+<ul>
+<li><strong>content/pages</strong>: holds the static pages for your website. You write and edit them using GFM.<ul>
+<li>Each page is a <code>.md</code> file.</li>
+<li>The first line is <code>Title:</code> and the name of the page.</li>
+<li>the scond line is <code>Date:</code> and the date of the current version of the page.</li>
+</ul>
+</li>
+<li><strong>content/articles</strong>: if your website has a blog or a series of featured articles, they go in this directory and will appear on the front page of the site. They have the same three requirements as the static pages, above.</li>
+<li><strong>theme/plugins</strong>: holds the plugins Pelican and Buildbot use to build and deploy the site.</li>
+</ul>
+<p>The configuration file is <code>pelicanconf.py</code>.</p>
+<h3>Setting up a Pelican website on Git</h3>
+<p>Create the repository for the website content using the <a href="https://gitbox.apache.org/setup/newrepo.html" target="_blank">gitbox self service tool</a> (https://gitbox.apache.org/setup/newrepo.html).</p>
+<ol>
+<li>Clone the repository to a local workspace</li>
+<li>
+<p>Run <code>pelican-quickstart</code> in the root of the repository on the master branch. </p>
+<ul>
+<li>The script asks where you want to create the website. Accept " . ", the default, unless you have a specific location in mind for it.</li>
+<li>Use $PROJECTNAME for the site title.</li>
+<li>Set the website author as $PROJECTNAME also. This lets all members of the project edit the website.</li>
+<li>Accept the default language as English. You can, if you want, provide alternative versions of the website, or of certain pages, in other languages.</li>
+<li>Specify a default prefix: <code>https://$PROJECTNAME.apache.org</code> (or similar friendly name)</li>
+<li>Set article pagination to <code>No</code>.</li>
+<li>Set time zone to <code>UTC</code>.</li>
+<li>Set generation of tasks.py / makefile to 'No'.</li>
+</ul>
+</li>
+<li>
+<p>Site configuration:</p>
+</li>
+</ol>
+<p>In your site repository, run the following commands:</p>
+<div class="highlight"><pre><span></span><code><span class="err">for x in &quot;content/pages content/articles theme/plugins&quot;; do mkdir -p $x; done</span>
+<span class="err">rm -rf output publishconf.py</span>
+<span class="err">echo -e &quot;\nPLUGIN_PATHS=[&#39;./theme/plugins&#39;]\nPLUGINS=[]\n&quot;  &gt;&gt; pelicanconf.py</span>
+<span class="err">echo -e &quot;pelican\nbeautifulsoup4&quot; &gt;&gt; requirements.txt</span>
+</code></pre></div>
+
+<ol>
+<li>Commit and push your changes.</li>
+<li>Set up continuous integration (CI): use the <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">asf.yaml</a> mechanism to have Pelican build and, optionally, publish your website.</li>
+</ol>
+<h3>Setting up a Pelican website on Subversion</h3>
+<p>Setting up Pelican to work with a Subversion repository requires a bit more hands-on work. If you would like to do this, open a Jira ticket for INFRA to make a request for help.</p>
+<h3>Updating your website</h3>
+<p>Create and update markdown files (.md) in the content/pages and content/articles directories. If you have set up continuous integration (step 5, above), when you add pages or commit edits the site automatically updates.</p>
+<h3>Using a Pelican theme</h3>
+<p>Pelican provides a range of <a href="http://www.pelicanthemes.com/" target="_blank">themes</a> that can help you develop a pleasing site without too much effort. Be sure to specify the directory containing the 'static' and 'templates' directories as <code>theme:</code> in the .asf.yaml file.</p>
+<h3>Pelican plugins</h3>
+<p>There is a directory of <a href="https://github.com/getpelican/pelican-plugins/" target="_blank">Pelican plugins</a> that deliver extra functionality for a website.</p>
+        </div>
+      </div>
+    </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2021, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    
+    <script src="/theme/js/vendor/jquery.js"></script>
+    <script src="/theme/js/vendor/what-input.js"></script>
+    <script src="/theme/js/vendor/foundation.js"></script>
+    <script src="/theme/js/app.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

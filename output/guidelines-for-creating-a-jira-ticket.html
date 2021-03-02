@@ -1,0 +1,165 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guidelines for creating a Jira ticket - Apache Infrastructure</title>
+    <link rel="stylesheet" href="/theme/css/foundation.css">
+    <link rel="stylesheet" href="/theme/css/app.css">
+    <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>  </head>
+  <body style="background: #C9B191;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/theme/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+		  <li><a href="https://blogs.apache.org/infra/" target="_blank">The Infra Blog</a></li>			
+		  <li><a href="/roadmap.html">Strategies & Roadmap</a></li>
+	          
+                </ul>
+              </li>
+              <li><a href="/policies.html" target="_blank" style="padding-left: 5px;">Policies</a></li>
+                           
+              <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Services-Tools</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+		<li><a href="/services.html">Services and Tools</a></li>
+                <li><a href="/machines.html" target="_blank" >Machines and Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" target="_blank" >Blocky</a></li>
+                <li><a href="https://uls.apache.org/app/kibana#/discover?_g=()" target="_blank" >Kibana and Unified Logging System</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" target="_blank" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" target="_blank" >Committer Search</a></li>
+		
+                </ul>
+              </li>
+              <li><a href="/doc.html" target="_blank" style="padding-left: 5px;">Documentation</a></li>
+	       <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Contribute</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">	
+		   <li><a href="/infra-volunteer.html">Volunteer with Infra</a></li>
+		   <li><a href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+			<li><a href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+		 </ul>
+	       </li>
+	      
+              <li><a href="/stats.html" target="_blank" style="padding-left: 5px;">Status</a></li>
+              <li><a href="/contact.html" style="padding-left: 5px;"><i class="fa fa-comments" style="color: #FFF; font-size: 0.9rem;"></i>Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/guidelines-for-creating-a-jira-ticket.html">
+Guidelines for creating a Jira ticket        </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/guidelines-for-creating-a-jira-ticket.md">edit</a>)
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              Guidelines for creating a Jira ticket
+          </h2>
+              <h2>Jira tickets</h2>
+<p><a href="https://issues.apache.org/jira" target="_blank">Jira</a> is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management. Atlassian provides Jira services to Apache projects. The tool's name is a short form of the name of the Japanese movie monster, Godzilla, and was an early developer nickname for the application.</p>
+<p>Anyone can review existing Jira tickets, or issues. You must register and log in if you want to create, comment or vote on, or watch issues. Only developers can edit, prioritize, schedule and resolve issues.</p>
+<p>ASF and many of its projects use Jira to keep track of work to be done. The largest group of tickets assigned to Infra are requests for Infra to perform a task of one sort or another. The next largest category is reports of possible bugs in the Infrastructure system:</p>
+<h3>Before you create a ticket</h3>
+<p>Browse the existing Jira tickets to see if others have already reported the bug you noticed or have requested the task or additional feature that you were going to ask for. If you find a ticket that covers what you wanted to report, you can add a comment and maybe some more relevant information to the existing ticket.</p>
+<h3>Writing a good Jira ticket</h3>
+<p>If there is nothing in Jira already that covers what's on your mind, click "Create" to display a form where you can describe your issue or request. Providing as much relevant information as you can helps Infra respond quickly and appropriately.</p>
+<p>The form is pretty clear, so the focus here is on a couple of key fields.</p>
+<h4>Project</h4>
+<p>This is the group you want to take a look at the ticket. Select "Infra" for an infrastructure issue or request. Select a specific project if the issue is something like a problem in the project's documentation or website.</p>
+<h4>Issue type</h4>
+<p>There's a good list of issue types to choose from. Make sure you select the most appropriate one.</p>
+<h4>Project (again)</h4>
+<p>Maybe you want Infra to look at a problem with the Apache Widget project. Then in this field you would select Widget. Most of the time, for an Infra ticket, you will select Infra again.</p>
+<h4>Summary</h4>
+<p>This is your quick statement of your problem or request. "Infra is broken!" would not be a useful statement. Something like "Self-serve site hangs, then crashes" is more likely to get the right person's attention and a prompt resolution to the problem.</p>
+<h4>Priority</h4>
+<p>Make your best guess at how urgent this thing is. Infra triages Jira tickets by their prioritiesm, and may adjust the priority of a ticket if we feel its current setting is too high or too low.</p>
+<p>The options are</p>
+<ul>
+<li><strong>Blocker</strong>: a time-sensitive issue that is hindering a basic function of a project. (<em>example: "We just announced a new release, but SVN is not allowing us to upload or move the artifacts."</em>)</li>
+<li><strong>Critical</strong>: a time-sensitive issue that is disrupting the project, but does not hinder basic functions. (<em>"Our website has been defaced."</em>)</li>
+<li><strong>Major</strong>: this issue needs attention soon, but is not hindering basic functions. Most requests for new resources fall into this category. (<em>"Add a Git repository."</em>)</li>
+<li><strong>Minor</strong>: this issue needs attention, but is not time-sensitive and does not hinder basic functions. (<em>"Fix a JavaScript error on our website."</em>)</li>
+<li><strong>Trivial</strong>: this issue is minimal and has no time constraints. ( <em>"The copyright year on Infra web page bla.html is incorrect."</em>)</li>
+</ul>
+<h4>Component/s</h4>
+<p>Select one or more components that this issue or request relates to. If you cannot figure out what to pick, select "Other/misc".</p>
+<h4>Fix Version/s</h4>
+<p>This an optional field, useful if your issue concerns a specific Infra tool or service and you know the version you are using.</p>
+<h4>Assignee</h4>
+<p>If you specify someone here, that person receives an alert about the issue. You can accept the default (Automatic) to put the issue in the queue for the Infra team.</p>
+<h4>Environment</h4>
+<p>This is an optional field where you can describe your operating system, software platform and/or hardware specifications if they are relevant to the bug, task, or feature request.</p>
+<h4>Description</h4>
+<p>Provide the juicy details here. For example, for a bug report, Infra needs to know how to reproduce the thing you ran into. Describe what you were doing ("I was logged in to bla.html using Firefox"), what you wanted to do ("I wanted to do xxx"), what you expected to happen, and what you actually experienced.</p>
+<p>For a feature request, it helps if you can not only describe the feature, but explain why the project needs it.</p>
+<h4>Other fields</h4>
+<p>There are many more optional fields that you can probably skip.</p>
+<p>When you have completed entering the useful information, click <strong>Create</strong> to create the ticket.</p>
+        </div>
+      </div>
+    </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2021, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    
+    <script src="/theme/js/vendor/jquery.js"></script>
+    <script src="/theme/js/vendor/what-input.js"></script>
+    <script src="/theme/js/vendor/foundation.js"></script>
+    <script src="/theme/js/app.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

@@ -1,0 +1,143 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apache Infrastructure mailing lists - Apache Infrastructure</title>
+    <link rel="stylesheet" href="/theme/css/foundation.css">
+    <link rel="stylesheet" href="/theme/css/app.css">
+    <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>  </head>
+  <body style="background: #C9B191;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/theme/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+		  <li><a href="https://blogs.apache.org/infra/" target="_blank">The Infra Blog</a></li>			
+		  <li><a href="/roadmap.html">Strategies & Roadmap</a></li>
+	          
+                </ul>
+              </li>
+              <li><a href="/policies.html" target="_blank" style="padding-left: 5px;">Policies</a></li>
+                           
+              <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Services-Tools</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+		<li><a href="/services.html">Services and Tools</a></li>
+                <li><a href="/machines.html" target="_blank" >Machines and Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" target="_blank" >Blocky</a></li>
+                <li><a href="https://uls.apache.org/app/kibana#/discover?_g=()" target="_blank" >Kibana and Unified Logging System</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" target="_blank" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" target="_blank" >Committer Search</a></li>
+		
+                </ul>
+              </li>
+              <li><a href="/doc.html" target="_blank" style="padding-left: 5px;">Documentation</a></li>
+	       <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Contribute</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">	
+		   <li><a href="/infra-volunteer.html">Volunteer with Infra</a></li>
+		   <li><a href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+			<li><a href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+		 </ul>
+	       </li>
+	      
+              <li><a href="/stats.html" target="_blank" style="padding-left: 5px;">Status</a></li>
+              <li><a href="/contact.html" style="padding-left: 5px;"><i class="fa fa-comments" style="color: #FFF; font-size: 0.9rem;"></i>Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/apache-infrastructure-mailing-lists.html">
+Apache Infrastructure mailing lists        </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/apache-infrastructure-mailing-lists.md">edit</a>)
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              Apache Infrastructure mailing lists
+          </h2>
+              <p id="infra-lists">Participation in the Infra mailing lists is only available to ASF committers.</p>
+
+<p>You can subscribe in the normal way. The moderators will verify that you are an ASF committer, so please either use your <code>@apache.org</code> address or its forwarding address. There are public archives for issues@ and site-dev@; all other infra@ lists are private. (We often call it "infra@" because that is less typing, but there is no such list.)</p></p>
+<p id="private-lists">The infra@ mailing lists are (mostly) private. You must not forward messages from there to public lists. Forwarding to more private mailing lists (like a pmc mailing list, the board, or the members mailing list) might be appropriate on some occasions. Ask if in doubt.</p>
+
+<h2 id="lists">The lists</h2>
+
+<ul>
+<li><code>users@infra</code>: Infra uses the general discussion list to discuss issues concerning the operation of the Apache Software Foundation systems, and for committers to report problems or issues. <strong>This is not the address for questions about
+the ASF or any of its projects.</strong> It is for communication between ASF committers <em>only</em> to support the infrastructure. Anyone may send mail to report problems with ASF systems, but check <a href="https://status.apache.org/" target="_blank">the status page</a> before mailing to see whether Infra already knows about what you have noticed.</li>
+<li><code>private@infra</code>: For the core infra@ team only. It focuses on the infrastructure team working directly on pressing issues. Infra moderates subscriptions, which are restricted to ASF members and current infra <a href="infra-volunteer.html">volunteers</a>. Only
+subscribers can post. </li>
+<li><code>commits@infra</code>: SVN commit messages for the ASF Infrastructure trunk, and Git commit messages for ASF Infra.</li>
+<li><code>issues@infra</code>: Messages from the INFRA Issue Tracker. Only ASF committers and people invited by the infra@ team can join. To "post" to this list, file a Jira comment which Jira sends to the list.</li>
+<li><code>site-cvs@</code>: Private lists for SVN commit messages for the ASF Infrastructure website.</li>
+<li><code>site-dev@</code>: A list for discussion of every aspect of the small number of websites that are centrally managed by the
+ASF (e.g. /dev/) and for co-ordination of infrastructure needs and publishing methods for all ASF project websites. Participation is open to to any committer or interested party invited by a committer (by sending an email to site-dev-owner). The list is normally low volume.</li>
+<li><code>infrastructure-dev@</code>: This list was closed in October, 2016 and not replaced. Instead please use <code>users@infra</code>. It was dedicated to developing and documenting software tools for potential ASF infrastructure.</li>
+</ul>
+        </div>
+      </div>
+    </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2021, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    
+    <script src="/theme/js/vendor/jquery.js"></script>
+    <script src="/theme/js/vendor/what-input.js"></script>
+    <script src="/theme/js/vendor/foundation.js"></script>
+    <script src="/theme/js/app.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
