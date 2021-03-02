@@ -39,4 +39,4 @@ libraries. The path should be adjusted for your local installation.
 Run `build_cmark.sh` to build the two libraries. It is
 then helpful to create a directory (say, `build_cmark/lib`) with
 two symlinks from the `.so` to the longer, version-specific libraries
-that the above shell script builds.
+that the above shell script builds. 
