@@ -1,4 +1,4 @@
-Title: ASF IRC services and archives
+Title: ASFBot: IRC services and archives
 
 <p id="intro"</p>
 
@@ -6,13 +6,22 @@ ASFBot offers many services for Apache projects on Internet Relay Chat (IRC). IR
 
 **Note** that ASFBot is being phased out in 2021, to be replaced by a Slack-related service.
 
-<h2 id="commits">Subversion, Git and Jira reporting<a class="headerlink" href="#commits" title="Permanent link">&para;</a></h2>
+## Contents ##
+
+  - <a href="#commits">Reporting on repository commits and new Jira tickets</a>
+  - <a href="#jiras">Reporting on changes to Jira tickets</a>
+  - <a href="#issues">Fetching issue information</a>
+  - <a href="#secretary">Secretary feature</a>
+  - <a href="#meetings">Record-keeping for meetings</a>
+  - <a href="#sourcecode">Technical information</a>
+
+<h2 id="commits">Reporting on repository commits and new Jira tickets<a class="headerlink" href="#commits" title="Permanent link">&para;</a></h2>
 
 ASFBot can report on new commits to your Subversion or Git repository and or report when someone creates, updates, or closes a Jira ticket. You can tailor the ASFBot reports to your individual needs, with multiline logs, compacted paragraphs, coloring, different report styles, etc.
 
 You can subscribe to any repository you like, and get reports on any specific changes you prefer, as long as these changes are publicly available. Subscriptions are <em>tag-based</em>, meaning that any one tag will apply to both Subversion and git commits.</p>
 
-<h2 id="jiras">Reporting on Jira changes<a class="headerlink" href="#jiras" title="Permanent link">&para;</a></h2>
+<h2 id="jiras">Reporting on changes to Jira tickets<a class="headerlink" href="#jiras" title="Permanent link">&para;</a></h2>
 
 If your channel is set up for Jira reporting, ASFBot keeps track of the latest changes to a Jira ticket. To view, for instance, the most recent comment pertaining to `INFRA-1234`, type: 
 
@@ -35,7 +44,7 @@ ASFBot provides a simple secretary feature. To leave a message for an absent per
 
 ASFBot passees that message to the intended recipient the next time that person logs onto the channel.
 
-<h2 id="meetings">Record keeping for meetings<a class="headerlink" href="#meetings" title="Permanent link">&para;</a></h2>
+<h2 id="meetings">Record-keeping for meetings<a class="headerlink" href="#meetings" title="Permanent link">&para;</a></h2>
 
 ASFBot can keep a record of meetings you hold on IRC and publish these in HTML format with an agenda, actions to be taken and a list of participants. Record keeping is available in channels where logging is enabled. To enable logging, contact Infra.
 
