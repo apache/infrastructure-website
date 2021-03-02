@@ -1,0 +1,245 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Source Code Repositories at Apache - Apache Infrastructure</title>
+    <link rel="stylesheet" href="/theme/css/foundation.css">
+    <link rel="stylesheet" href="/theme/css/app.css">
+    <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>  </head>
+  <body style="background: #C9B191;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/theme/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+		  <li><a href="https://blogs.apache.org/infra/" target="_blank">The Infra Blog</a></li>			
+		  <li><a href="/roadmap.html">Strategies & Roadmap</a></li>
+	          
+                </ul>
+              </li>
+              <li><a href="/policies.html" target="_blank" style="padding-left: 5px;">Policies</a></li>
+                           
+              <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Services-Tools</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+		<li><a href="/services.html">Services and Tools</a></li>
+                <li><a href="/machines.html" target="_blank" >Machines and Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" target="_blank" >Blocky</a></li>
+                <li><a href="https://uls.apache.org/app/kibana#/discover?_g=()" target="_blank" >Kibana and Unified Logging System</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" target="_blank" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" target="_blank" >Committer Search</a></li>
+		
+                </ul>
+              </li>
+              <li><a href="/doc.html" target="_blank" style="padding-left: 5px;">Documentation</a></li>
+	       <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Contribute</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">	
+		   <li><a href="/infra-volunteer.html">Volunteer with Infra</a></li>
+		   <li><a href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+			<li><a href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+		 </ul>
+	       </li>
+	      
+              <li><a href="/stats.html" target="_blank" style="padding-left: 5px;">Status</a></li>
+              <li><a href="/contact.html" style="padding-left: 5px;"><i class="fa fa-comments" style="color: #FFF; font-size: 0.9rem;"></i>Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/version-control.html">
+Source Code Repositories at Apache        </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/version-control.md">edit</a>)
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              Source Code Repositories at Apache
+          </h2>
+              <p>Apache project contributors are in countries all around the world. To help them work together, projects keep their source code in an Internet-accessible revision control system, either <a href="https://subversion.apache.org/" target="_blank">Subversion (SVN)</a> or <a href="https://git-scm.com/" target="_blank">Git</a>. Apache committers have <em>write access</em> to the repositories for their projects, so they can edit existing code and add new files.</p>
+<p>Everyone has <em>read access</em> to the repositories and can download the most up-to-date development version of any project's software to review or compile.</p>
+<ul>
+<li>If you want a stable release of the source code, download it from the <a href="https://www.apache.org/dyn/closer.cgi/" target="_blank">distribution directory</a>.</li>
+<li>Only download the code directly from your project's code repository if you are participating in the development effort. The latest version of the code is what your colleagues have most recently checked in, and they may or may not have confirmed that it compiles correctly and does what they want it to do.</li>
+<li>If you want a release version of the project's compiled application, visit the project's website and find its download page. It may offer both stable releases and &quot;bleeding-edge&quot; or &quot;nightly&quot; builds that compile properly but include the latest, possibly-unstable, features.</li>
+</ul>
+<h2>Git repositories</h2>
+<p>How-to guides, documentation, and a list of projects using git for revision control are at <a href="https://git.apache.org/" target="_blank">git.apache.org</a>.</p>
+<p>Many Git users manage their source code through one of these tools:</p>
+<ul>
+<li><a href="https://gitbox.apache.org" target="_blank">GitBox</a></li>
+<li><a href="https://github.com/apache" target="_blank">GitHub</a></li>
+</ul>
+<p>Some projects began using <a href="git.html">read-only-mirrors</a> of SVN repositories when Apache's support for Git was limited. This is no longer necessary. <a href="writable-git.html">Writable Git</a> repositories are available to all projects.</p>
+<h3>.asf.yaml for Git repositories</h3>
+<p>.asf.yaml is a branch-specific file that a project may put in the root of the git repository to control various new features such as</p>
+<ul>
+<li>notification settings</li>
+<li>website staging</li>
+<li>github settings</li>
+<li>pelican builds</li>
+</ul>
+<p>Read <a href="https://cwiki.apache.org/confluence/display/INFRA/.asf.yaml+features+for+git+repositories#id-.asf.yamlfeaturesforgitrepositories-Primer" target="_blank">the .asf.yaml primer</a> to learn more.</p>
+<h2>SVN repositories</h2>
+<p>Information about SVN is at <a href="https://subversion.apache.org/" target="_blank">the Apache SVN site</a> and <a href="http://svnbook.red-bean.com/" target="_blank">Version Control with Subversion</a>. The website provides links for <em>SVN clients</em> you can download and install to make it easier to work with SVN.</p>
+<p>To browse the repositories or download a few individual files, you can</p>
+<ul>
+<li>use <a href="https://svn.apache.org/viewvc/" target="_blank">viewvc</a></li>
+<li>find a project repository at <a href="https://svn.apache.org/repos/asf/" target="_blank">the list of SVN repos</a></li>
+</ul>
+<h3>Command-line SVN access</h3>
+<p>You can check out a project repository anonymously once you have installed a SVN client. For example, to get the Spamassassin module, use:</p>
+<pre><code> `$ svn checkout http://svn.apache.org/repos/asf/spamassassin/trunk spamassassin`
+</code></pre>
+<h3>Committing code through the command line</h3>
+<p>If you are a project committer and don't want to use a SVN client like Tortoise, you can commit your new and updated files using the command line. We use HTTPS basic authentication, so you need to specify your user name and password as part of the check-in command.</p>
+<p>For example, if you wanted to add the file 'test.txt', you might follow these steps:</p>
+<pre><code class="language-$">$ cd excalibur-trunk
+$ echo &quot;test&quot; &gt; test.txt
+$ svn add test.txt
+$ svn commit --username your-name --password your-password \
+  --message &quot;Trying out svn&quot;
+</code></pre>
+<p>Apache does not support <code>svnserve</code> or <code>svn+ssh</code>.</p>
+<h3>Configuring the SVN client</h3>
+<p>Committers need to properly configure their svn client. One particular issue is OS-specific line-endings for text files. When you add a new text file, especially when applying patches from Bugzilla, make sure that the line-endings are appropriate for your system, then do (for test.txt)</p>
+<p><code>svn add test.txt svn propset svn:eol-style native test.txt</code></p>
+<p>You can configure your svn client to do that automatically for some common file types. Add the contents of <a href="https://www.apache.org/dev/svn-eol-style.txt" target="_blank">this file</a> to the bottom of your ~/.subversion/config file, normally found at:</p>
+<ul>
+<li>Windows: C:\Documents and Settings{username}\Application Data\Subversion\config</li>
+<li>Windows 7: C:\Users{username}\AppData\Roaming\Subversion\config]</li>
+<li>Linux &amp; Mac OSX: ~/.subversion/config or /etc/subversion/config</li>
+</ul>
+<p>You may need to set additional properties for some files. For example, apply <code>svn:executable=*</code> to script files (e.g. .bat, .cgi, .cmd, .sh) that are intended to be executed. Since not all such files are intended to be executed, do not make the executable property an automatic default.</p>
+<p>Pay attention to the messages from your svn client when you do 'svn commit'.</p>
+<p><strong>Tip</strong>: If you use TortoiseSVN, a popular Windows GUI client that integrates with Windows Explorer, you can right click in Explorer and select TortoiseSVN - Settings, and then press the &quot;Edit&quot; button to update your &quot;Subversion configuration file:&quot;. If you do not see</p>
+<pre><code> `*.c = svn:eol-style=native`
+</code></pre>
+<p>copy the above svn-eol-style.txt file's contents into the end of the config editor that appears, and save the file.</p>
+<h3>SVN SSL server certificate</h3>
+<p>You can check the validity of the server certificate on the <a href="https://www.apache.org/dev/machines.html" target="_blank">Apache host keys listing</a>.</p>
+<h3>Typical SVN error messages</h3>
+<p><strong>Error validating server certificate</strong></p>
+<pre><code class="language-Error"> - The certificate is not issued by a trusted authority. Use the
+   fingerprint to validate the certificate manually!
+Certificate information:
+ - Hostname: *.apache.org
+ - Valid: from Apr 20 00:00:00 2017 GMT until July 20 23:59:59 2019 GMT
+ - Issuer: SSL.com
+ - SHA-1 Fingerprint 2D:97:67:D9:2E:20:EE:07:3D:26:DA:97:A6:43:36:5F:71:8E:94:19
+(R)eject, accept (t)emporarily or accept (p)ermanently?
+</code></pre>
+<p>Check the fingerprint against the list at the link above for server certificates.</p>
+<p><strong>No such revision</strong></p>
+<p>If you get an error like</p>
+<p><code>svn: No such revision 765287</code></p>
+<p>This may be because of a short lag in the synchronization between Subversion mirrors, and can occur if multiple commits run in quick succession. This error usually happens if you are located in Europe, or are explicitly using the European mirror.</p>
+<p>Wait for 10 seconds and repeat the command, and you should have success.</p>
+<p><em>Note</em> that this error can also occur when running <code>mvn release:prepare</code>. The mvn release plugin has a special property to handle this situation: <a href="http://maven.apache.org/maven-release/maven-release-plugin/prepare-mojo.html#waitBeforeTagging" target="_blank">waitBeforeTagging</a>.</p>
+<p><strong>Not the latest baseline</strong></p>
+<p>If you get an error like this:</p>
+<pre><code class="language-svn:">svn: The specified baseline is not the latest baseline, so it may not be
+checked out.
+</code></pre>
+<p>This may be because of a short lag in the synchronization between Subversion mirrors, and can occur if multiple commits run in quick succession. This error usually happens if you are located in Europe, or are explicitly using the European mirror.</p>
+<p>Wait for 10 seconds and repeat the command, and you should have success.</p>
+<p><strong>Problems using date revisions</strong></p>
+<p>If you are using a date revision such as <code>-r{2004-09-12}:{2004-08-12}</code> and not getting any or all of the revisions you expected, this is a known problem specific to the ASF repository.</p>
+<p>Unfortunately, there is nothing that can be done to improve this situation, so you must use a workaround. You can use <code>svn log</code> or ViewVC to locate the actual revision number that is first after the date you desire, and substitute that into your <code>-r</code> argument to the svn command.</p>
+<p>For example, consider the desired command:</p>
+<p><code>$ svn diff -rHEAD:{2005-01-01}</code></p>
+<p>While this produces no results, running <code>svn log</code> alone produces a result like this:</p>
+<pre><code>------------------------------------------------------------------------
+r124032 | aheritier | 2005-01-04 09:58:16 +1100 (Tue, 04 Jan 2005) | 1 line
+
+Switch to subversion
+------------------------------------------------------------------------
+r123911 | brett | 2005-01-03 09:48:57 +1100 (Mon, 03 Jan 2005) | 1 line
+
+remove nagoya references
+------------------------------------------------------------------------
+r116173 | brett | 2004-10-23 22:11:51 +1000 (Sat, 23 Oct 2004) | 2 lines
+
+remove old requires descriptions
+</code></pre>
+<p>So try the command:</p>
+<p><code>$ svn diff -rHEAD:123911</code></p>
+<p>This problem crops up because the order of the revisions is not identical to the order of dates in the repository. This is a side effect of loading CVS repositories with history including dates prior to the earliest date in the Subversion repository.</p>
+<h3>SVN FAQs</h3>
+<ul>
+<li><strong>When should I use svn lock?</strong> Very rarely. Commits in subversion are transactional. This means that locks are almost always unnecessary. An oft-quoted use case is to prevent concurrent editing of a large, unmergeable binary document. However, for open development, good communication is preferable to locking even in this use case. A good, timely post to the list to let your fellow developers know that you're going to start editing that huge PDF is better than locking the file.</li>
+<li><strong>How often can I run a cron job that connects to the repository?</strong> Hourly is fine. Please do not use programs that poll the repository more frequently than hourly. People who run automated scripts that continuously poll the repository wind up getting their access denied, and that may impact other folks connecting through the same host. If you need to stay more in-sync than an hourly cron allows, subscribe your script to the relevant commit mailing list.</li>
+<li><strong>How do I mirror the whole SVN repository for an experiment?</strong>  First, ask yourself whether you really want the entire ASF repository Most people really want only a single project. In that case, just check out that source directory from the repo. If you really do want the entire ASF repository, don't use svnsync. Instead, start by looking <a href="httpa://svn-master.apache.org/dump/" target="_blank">here</a>. Use that to bootstrap your repo.</li>
+<li><strong>Why do I get a 403 error when I try to commit code?</strong> Run <code>svn info</code> and check that the URL starts with <code>https://</code>. If it starts with <code>http://</code>, run:</li>
+</ul>
+<p><code>$ svn switch --relocate http://svn.apache.org https://svn.apache.org</code></p>
+<p>If you still get 403 Forbidden errors, ask your PMC to double-check the authz file and LDAP/Unix group membership.</p>
+<h2>Migrating a SVN code repository to Git</h2>
+<p>Instructions are <a href="svn-to-git-migration.html">here</a>.</p>
+
+        </div>
+      </div>
+    </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2021, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    
+    <script src="/theme/js/vendor/jquery.js"></script>
+    <script src="/theme/js/vendor/what-input.js"></script>
+    <script src="/theme/js/vendor/foundation.js"></script>
+    <script src="/theme/js/app.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
