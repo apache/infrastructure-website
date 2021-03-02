@@ -1,5 +1,5 @@
 Title: Committer documentation
-slug: reference/committer/index
+slug: reference/committer/start
 
 Here you'll find a comprehensive list of topics that covers most of what you will run into
 as a committer at the Apache Software Foundation.
