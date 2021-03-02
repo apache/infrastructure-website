@@ -102,7 +102,7 @@ How To Manage any Apache Project's Website        </a>
           <h2>
               How To Manage any Apache Project's Website
           </h2>
-              <p>[TOC]</p>
+              <div id="toc" style="border-radius: 3px; border: 1px solid #999; background-color: #EEE; padding: 4px;"><h4>Table of Contents:</h4><ul><ul><li><a class="toc-href" href="#preview" title="How do I preview my project website?">How do I preview my project website?</a></li><li><a class="toc-href" href="#configure" title="Can I control the configuration of my project website?">Can I control the configuration of my project website?</a></li><li><a class="toc-href" href="#logging" title="How does logging work?">How does logging work?</a></li><li><a class="toc-href" href="#use-cms" title="Do project sites have to use the CMS?">Do project sites have to use the CMS?</a></li><li><a class="toc-href" href="#svnpubsub" title="Do project sites have to use svnpubsub?">Do project sites have to use svnpubsub?</a><ul><li><a class="toc-href" href="#svnpubsub-revision" title="What revision of the site is currently being served?">What revision of the site is currently being served?</a></li></ul></li><li><a class="toc-href" href="#mail_1" title="How to provide public access to our project mail archive mbox files?">How to provide public access to our project mail archive mbox files?</a></li><li><a class="toc-href" href="#feather" title="Can my project site use its own favicon instead of just the Apache Feather?">Can my project site use its own favicon instead of just the Apache Feather?</a></li><li><a class="toc-href" href="#generated" title="How can I minimize the number of changes committed in my Maven/JavaDoc/generated site?">How can I minimize the number of changes committed in my Maven/JavaDoc/generated site?</a></li></ul></ul></div>
 <p>Every Apache project or podling has a website hosted at apache.org that 
 is maintained by one of these tools.  It is up to each project to decide 
 the details of how their own website is maintained and what software
@@ -167,7 +167,7 @@ tree somewhere.  For CMS users this tree will be the CMS build output tree.)</p>
 <a href="http://subversion.apache.org/.revision">http://subversion.apache.org/.revision</a>).  That file is updated after every
 successful <code>svn update</code>.  (If the update is underway or exited abnormally,
 <code>.revision</code> won't have been changed.)</p>
-<h1 id="mail">How to provide public access to our project mail archive mbox files?</h1>
+<h1 id="mail_1">How to provide public access to our project mail archive mbox files?</h1>
 <p>Some projects have a "mail" directory at the top of their project website.
 Enable this by creating a symbolic link in svnpubsub or CMS output
 (to <code>/home/apmail/public-arch/$tlp.apache.org</code>).
