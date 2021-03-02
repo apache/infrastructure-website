@@ -1,6 +1,18 @@
 Title: Getting started with Git
 
-This document is a primer on using Git for an Apache Software Foundation project. 
+This document is a primer on using Git for an Apache Software Foundation project.
+
+## Contents ##
+
+  - <a href="#repotypes">Repository types</a>
+  - <a href="repocheckout">Repository checkout</a>
+  - <a href="#committers">Committers: getting started</a>
+  - <a href="#windowsusers">Windows users</a>
+  - <a href="#lineendings">Line endings</a>
+  - <a href="#trouble">Troubleshooting</a>
+  - <a href="#further">Further reading</a>
+
+<h2 id="repotypes">Repository types<a class="headerlink" href="#repotypes" title="Permanent link">&para;</a></h2>
 
 There are two forms of Git repositories:
 
@@ -9,7 +21,7 @@ There are two forms of Git repositories:
 
 This document is chiefly about the read/write repositories.
 
-## Repository checkout ##
+<h2 id="repocheckout">Repository checkout<a class="headerlink" href="#repocheckout" title="Permanent link">&para;</a></h2>
 
 The repository URLs are all of the form:
 
@@ -22,7 +34,7 @@ https://gitbox.apache.org/repos/asf/reponame.git
   - **Committers**: `$ git clone https://gitbox.apache.org/repos/asf/reponame.git`
   - **Non-Committers**: `$ git clone http://gitbox.apache.org/repos/asf/reponame.git`
 
-## Committers: getting started ##
+<h2 id="committers">Committers: getting started<a class="headerlink" href="#committers" title="Permanent link">&para;</a></h2>
 
 Set up your name and email that Git will use when you make commits:
 
@@ -67,7 +79,7 @@ $ git clone https://username@gitbox.apache.org/repos/asf/reponame.git
 
 While it's _possible_ to list your password in the URL, we discourage this practice as it leaves your password in plain text in the shell history.
 
-## Windows users ##
+<h2 id="windowsusers">Windows users<a class="headerlink" href="#windowsusers" title="Permanent link">&para;</a></h2>
 
 You can use `git-gui` as part of the `msysgit` package.
 
@@ -76,7 +88,7 @@ Instead of setting up a `~/.netrc` file you need to:
 1. Set up a `%HOME%` environment pointing to `C:\Users\yourloginname\`
 1. Create a `_netrc` file in `%HOME%_netrc` with this text all on one line: `machine gitbox.apache.org login username password mypassword`
 
-## Line endings ##
+<h2 id="lineendings">Line endings<a class="headerlink" href="#lineendings" title="Permanent link">&para;</a></h2>
 
 In general, you should normalize line endings in the Git repository and set them to be platform specific on checkout.
 
@@ -85,7 +97,7 @@ In general, you should normalize line endings in the Git repository and set them
 
 Further details and attributes for handling line endings differently per file type are available at <a href="https://help.github.com/en/github/using-git/configuring-git-to-handle-line-endings" target="_blank">Configuring Git to handle line endings</a>.
 
-## Troubleshooting ##
+<h2 id="trouble">Troubleshooting<a class="headerlink" href="#trouble" title="Permanent link">&para;</a></h2>
 
 #### no DAV locking ####
 
@@ -102,7 +114,7 @@ It means that you're trying to push over **HTTP**, which is disabled. To fix thi
 $ git config remote.origin.url https://gitbox.apache.org/repos/asf/reponame.git
 ```
 
-## Further reading ##
+<h2 id="further">Further reading<a class="headerlink" href="#further" title="Permanent link">&para;</a></h2>
 
   - <a href="https://lab.github.com/" target="_blank">GitHub Learning Lab</a>
   - <a href="https://github.github.com/training-kit/" target="_blank">Git Cheat Sheets</a>
