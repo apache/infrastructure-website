@@ -4,6 +4,7 @@ Title: Writing a good bug report
   - <a href="#systems">Bug-tracking systems</a>
   - <a href="#newbug">Is this a new bug?</a>
   - <a href="#useful">A useful bug report</a>
+  - <a href="#blocked">If your report or comment gets blocked</a>
   - <a href="#followup">Following up</a>
 
 
@@ -68,6 +69,10 @@ Review [Creating a Jira ticket](jira-guidelines.html) for specifics about Jira b
 ### What not to include ###
 
 Adding editorial comments ("what sort of idiot would release a product with such a bug?") is worse than useless. It sets you up as a critic rather than a partner to the people whose help you need.
+
+<h2 id="blocked">If your report or comment gets blocked<a class="headerlink" href="#blocked" title="Permanent link">&para;</a></h2>
+
+Infra uses various tools and techniques to prevent spammers from posting material on Jira. If your new bug report, or comment on an existing report, gets blocked, contact Infra so we can resolve the issue and fine-tune our spam filters.
 
 <h2 id="followup">Following up<a class="headerlink" href="#followup" title="Permanent link">&para;</a></h2>
 
