@@ -92,7 +92,7 @@ PRODUCT NAME/MODEL #: {Apache product name(s) that include the source
                           future versions will use source code found at 
                           the same URL (even if the source is updated at
                           that URL) }
-<p>ECCN:                 5D002
+ECCN:                 5D002
 NOTIFICATION:         http://www.apache.org/licenses/exports/
 ```
 
