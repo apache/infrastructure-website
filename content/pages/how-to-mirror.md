@@ -2,7 +2,14 @@ Title: How to be an Apache Software Foundation download mirror
 
 The Apache Software Foundation has mirror sites all around the world, but we are always looking for additional reliable and well-connected sites that can help us distribute our software by mirroring our main software distribution directory.
 
-## Requirements ##
+  - <a href="#requirements">Requirements</a>
+  - <a href="#techniques">Mirroring techniques</a>
+  - <a href="#sponsorinfo">Sponsor information</a>
+  - <a href="#testing">Testing your mirror</a>
+  - <a href="#ready">Let us know you when are ready</a>
+  - <a href="#questions">Questions?</a>
+
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 
 We have a few requirements for those wishing to run a mirror:
 
@@ -32,7 +39,7 @@ In addition, we require that you run the <a href="https://httpd.apache.org/" tar
 
 Please ensure that the server does not send a `Content-Encoding` header for any of the compressed archives. The hashes and signatures used to check downloads are created for the compressed archives so it is vital that the browser is not told to decompress them. For example, `.tar.gz` and `.tgz` files are compressed TAR files. They should have a suitable Content-Type - e.g. `application/x-gzip` - but no `Content-Encoding` should be sent. If the server incorrectly sends `Content-Encoding: x-gzip` (for example), many browsers will automatically decompress the response. This produces a TAR file which will not verify when checked against the hashes or sigs.
 
-## Mirroring techniques ##
+<h2 id="techniques">Mirroring techniques<a class="headerlink" href="#techniques" title="Permanent link">&para;</a></h2>
 
 We only support <a href="https://rsync.samba.org/" target="_blank">rsync</a> for updating mirrors.
 
@@ -54,7 +61,7 @@ umask 022 ; rsync ...
   - Run the job twice a day; no more than four times a day in any case.
   - Check the output from the rsynch job regularly so you can detect problems like lack of disk space or permission issues.
   
-## Sponsor information ##
+<h2 id="sponsorinfo">Sponsor information<a class="headerlink" href="#sponsorinfo" title="Permanent link">&para;</a></h2>
 
 Here is how to add sponsor information:
 
@@ -76,7 +83,7 @@ Search engines interpret referring to specific services or products as _PageRank
 
 We have noticed that certain sites redirect 404 pages as a form of extra advertising or as a traffic booster. We remove mirrors that do this from our list and then send an email to the maintainer's address to ask them to correct the issue. The top level `/README.html` file, as mentioned, is the **only** local alteration of any part of the mirror we accept for you to provide sponsor information.
 
-## Testing your mirror ##
+<h2 id="testing">Testing your mirror<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
 
 We sometimes get requests to add mirrors that are not working correctly. Please check at least the following:
 
@@ -85,7 +92,7 @@ We sometimes get requests to add mirrors that are not working correctly. Please 
   - Download a couple of files to check that the process works. 
   - Trying to download a missing file should generate a `404 Not Found` error. You can verify this by modifying one of the valid URLs that you tested above.
   
-## Let us know you are ready ##
+<h2 id="ready">Let us know when you are ready<a class="headerlink" href="#ready" title="Permanent link">&para;</a></h2>
 
 Once your site is configured, tested, and updating consistently, subscribe to the mirror-maintainers mailing list by sending an mail to `mirrors-subscribe@apache.org`.
 
@@ -109,7 +116,7 @@ Create an account if you do not already have one, then create a new issue in the
 
 We only use the IP address to check the logs before we add the mirror to the list. Once your mirror is on the list, you can change the IP of the mirror without notifying us.
 
-## Questions? ##
+<h2 id="questions">Questiions?<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h2>
 
 If you have any questions, feel free to raise them in your Jira ticket (component "Mirrors") or on the mirror maintainers' public mailing list `mirrors@apache.org`. You don't need to subscribe to the list in order to post (but a short note in your signature that you request replies to be CC'd to you would help).
 
