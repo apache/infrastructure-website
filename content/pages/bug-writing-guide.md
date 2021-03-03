@@ -72,7 +72,7 @@ Adding editorial comments ("what sort of idiot would release a product with such
 
 <h2 id="blocked">If your report or comment gets blocked<a class="headerlink" href="#blocked" title="Permanent link">&para;</a></h2>
 
-Infra uses various tools and techniques to prevent spammers from posting material on Jira. If your new bug report, or comment on an existing report, gets blocked, contact Infra so we can resolve the issue and fine-tune our spam filters.
+Infra uses various tools and techniques to prevent spammers from posting material on Jira. If your new bug report, or comment on an existing report, gets blocked, [contact Infra](contact.html) so we can resolve the issue and fine-tune our spam filters.
 
 <h2 id="followup">Following up<a class="headerlink" href="#followup" title="Permanent link">&para;</a></h2>
 
