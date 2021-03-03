@@ -103,7 +103,8 @@ Using the Digicert code signing service        </a>
               Using the Digicert code signing service
           </h2>
               <h2>Transition in progress</h2>
-<p>We are currently transitioning from the old Symantec service to the new DigiCert service. The Symanetc service will be available until end January 2021 but users should use the Digicert service from 1st January 2021.</p>
+<p>We are currently transitioning from the old Symantec service to the new DigiCert service. The Symanetc service is no longer supported. While it is currently still available, it may be decommissioned at any time. All new signing should be performed via the DigiCert service.</p>
+<p>If you require assistance migrating to the DigiCert service, please open an <a href="https://issues.apache.org/jira/browse/INFRA">INFRA Jira ticket</a> and select code signing as the component.</p>
 <h2>DigiCert Secure Software</h2>
 <p>DigiCert Secure Software supports a range of signing tools and formats. For the full list see the client user guide in the <a href="https://svn.apache.org/repos/private/committers/code-signing/digicert/" target="blank">private repository for ASF committers</a>.</p>
 <h3>Obtaining a DigiCert ONE account</h3>
@@ -140,77 +141,6 @@ Using the Digicert code signing service        </a>
 <p>Currently under investigation by the Apache Tomcat project. Looks to be possible via OpenSSL (see section 9 of client user guide) and osslsigncode.</p>
 <h3>Other signing formats, tools and operating systems</h3>
 <p>See the client user guide.</p>
-<h2>Symantec SAS (deprecated)</h2>
-<p>The Symantec service is available for JARs and Windows executables and code signing for both test and production builds.</p>
-<p>Production signing <strong>costs the ASF real money</strong>. Only use the production signing service once the release process works using test signing.</p>
-<p>Once you have access to the signing service, you receive a personal certificate from Symantec. You need this to access the code signing GUI.</p>
-<p>The production system is available at: <a href="https://securesigning.pki.digicert.com/csportal/" target="blank"><a href="https://securesigning.pki.digicert.com/csportal/">https://securesigning.pki.digicert.com/csportal/</a></a>. When you submit a signing request, you can choose to perform a test or a production signing.</p>
-<h3>Adding users</h3>
-<p>To add users to your PMC's signing organization</p>
-<ol>
-<li>Start at the dashboard</li>
-<li>Click &quot;Users&quot;</li>
-<li>Click &quot;Add user&quot;</li>
-<li>Fill in the form using details (name, asf email, etc.) as shown in Whimsy</li>
-<li>Choose a random enrollment password and send that to the new user</li>
-<li>Normally, set all users as admins</li>
-</ol>
-<h3>Signing files</h3>
-<p>To create a new signing set, you need to have a set of files to sign. The steps below uses the <a href="https://tomcat.apache.org/" target="_blank">Apache Tomcat</a> Windows installer as an example.</p>
-<ol>
-<li>Start at the dashboard</li>
-<li>Select &quot;signing sets&quot;</li>
-<li>Click &quot;Add Signing set&quot;</li>
-<li>Provide a name for the set, e.g &quot;Apache Tomcat 8.5&quot;</li>
-<li>Provide a version e.g. &quot;8.5.4&quot;</li>
-<li>Select the signing service e.g. &quot;Microsoft Windows Signing&quot;</li>
-<li>Upload the file(s) to be signed</li>
-<li>Click &quot;Sign Now&quot;</li>
-<li>Select Test or Production</li>
-<li>Click &quot;Sign&quot;</li>
-</ol>
-<p>You can then download the signed files.</p>
-<h3>Signing services</h3>
-<p>You need to specify the name of the signing service to use. The names are shown in the table below:</p>
-<table>
-<thead>
-<tr>
-<th>Artifact type</th>
-<th>Text signing service</th>
-<th>Production signing service</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Windows binary (<code>.exe, .dll, .cab</code>, etc.)</td>
-<td>Microsoft TEST Signing</td>
-<td>Microsoft Windows Signing</td>
-</tr>
-<tr>
-<td>Java Signing (<code>*.jar</code>)</td>
-<td>Java TEST Signing</td>
-<td>Java Signing</td>
-</tr></tbody></table>
-<p>Both SHA1 and SHA256 versions of the Java Signing service are available. Apache recommends using the SHA256 service. However, if you are re-signing JARs that have already been signed, make sure to use the same hash algorithm as the original signature to avoid breaking the original signature.</p>
-<p>Java signing is not intended to replace the current requirement for releases to be OpenPGP signed. Neither is it intended to replace the process of providing OpenPGP signatures for JARs uploaded to Maven Central. It is intended for those use cases that require individual JAR files to be signed using the standard Java JAR signing process where the signature is contained within the JAR. Such use cases include Java Web Start, Eclipse plug-ins, etc.</p>
-<h3>Signing events</h3>
-<p>A signing event is the process of signing one or more files. Whether you use the web GUI or the SOAP API, the files must have unique names. You may have to rename files prior to signing and change the file names back afterwards. Reverting the name does not affect the signature of the file.</p>
-<p>The signing service is particular about file extensions. If you do rename a file, make sure that it retains the correct file extension.</p>
-<p>You can revert each signing event individually.</p>
-<p>You can request production or test signing on both the production and test systems. Only a production signing event on the production system costs the ASF a code signing credit. We recommend that projects start testing with production signing on the test environment and get their process working there before moving to the production environment.</p>
-<h3>Ant task</h3>
-<p>The Apache Tomcat project has written an Ant task that uses the SOAP interface (see below) to sign release artifacts as part of the build process. To use the SOAP interface, your PMC account needs to be enabled for API access. Open an Infra Jira ticket against the code signing component to request this. Once this is approved you will receive your:</p>
-<ul>
-<li>User name</li>
-<li>Password</li>
-<li>Partner code</li>
-</ul>
-<p>You need all three to access the API.</p>
-<p>This Tomcat Ant task uses a fixed buffer of 16MB to store the zipped artifacts for signing. If your artifacts are larger than that, you need to use a larger buffer. Patches to switch to streaming the artifacts rather than buffering them are welcome.</p>
-<h3>Maven plug-in</h3>
-<p>A Maven plug-in to facilitate code signing is a work in progress.</p>
-<h3>SOAP API</h3>
-<p>The <a href="https://svn.apache.org/repos/private/foundation/Correspondence/Symantec/" target="_blank">SOAP API documentation</a> is under an NDA, and this link is only availabe to ASF members. Please do not share the documentation outside your PMC, and make sure those you share it with are aware of the NDA. If you need a copy of the API docs, request it via a PMC member who is also an ASF member. If that is not possible, request it from Infra.</p>
 
         </div>
       </div>
