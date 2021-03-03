@@ -11,4 +11,4 @@ To gain access to the service, create a <a href="https://issues.apache.org/jira/
 
 The infra team will then request the account creation and (after a few e-mails and configuring a OTP token) you will have an account that lets you access the <a href="https://one.digicert.com/signingmanager/dashboard" target="_blank">web GUI</a>. Each PMC member must have their own account to access the web GUI.
 
-The code signing is performed locally (no need to upload large files, just the hashes are passed to the central signign service). You can download a client for your preferred tool and platform from the resources section of the web GUI.
+The code signing is performed locally (no need to upload large files, just the hashes are passed to the central signing service). You can download a client for your preferred tool and platform from the resources section of the web GUI.
