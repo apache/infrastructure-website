@@ -70,7 +70,7 @@ See the <a href="http://www.ezmlm.org/" target="_blank">EZMLM</a> "Moderator's a
 
 Some lists are only open to ASF committers. The moderators have methods to ensure that subscribers are committers, so subscribers can use whatever email address that they want. Moderators see the tips described in the "committers" SVN module at <a href="https://svn.apache.org/repos/private/committers/docs/resources.txt" target="_blank">resources.txt</a>.
 
-<h3 id="spam">Dealing with "MODERATE" requests for spam<a class="headerlink" href="#spam" title="Permanent link">&para;</a></h3>
+<h3 id="spam">Dealing with MODERATE requests for spam<a class="headerlink" href="#spam" title="Permanent link">&para;</a></h3>
 
 If the content of the MODERATE request is clearly spam, the simplest solution is just to delete the request. Do not reject it. However, if you are receiving a lot of such requests, it may perhaps be worth taking additional action.
 
