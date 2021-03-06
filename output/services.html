@@ -103,7 +103,45 @@ Services and Tools        </a>
               Services and Tools
           </h2>
               <p>Infra maintains a wide range of tools for PMCs, project committers, and the Apache Board to use. Parts of our toolkit are only available to people who have specific duties or roles. Others, like the monitoring tools that show the status of various parts of the Apache infrastructure, are available to everyone.</p>
-<h2 id="web-sites">Websites<a class="headerlink" href="#web-sites" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="#tlps">Services for Top-Level Projects (TLPs)</a>
+<ul>
+<li><a href="#web-sites">Websites</a></li>
+<li><a href="#email">Email</a></li>
+<li><a href="#self-serve">ASF self-service platform</a></li>
+<li><a href="#notices">Getting notices of infrastructure events</a></li>
+<li><a href="#ldap">LDAP-enabled services</a></li>
+</ul>
+</li>
+<li><a href="#podlings">Services for incubating projects (podlings)</a></li>
+<li><a href="#tools">Tools for ASF projects</a>
+<ul>
+<li><a href="#source-repository">Version control</a></li>
+<li><a href="#issue-tracking">Issue tracking and feature requests</a></li>
+<li><a href="#repository-to-issue-tracker-integrations">Integrating your repository with Jira tickets</a></li>
+<li><a href="#source-repository-publishersubscriber-services">Source repository publisher/subscriber services</a></li>
+<li><a href="#build">Build services</a></li>
+<li><a href="#product-naming">Product naming</a></li>
+<li><a href="#code-signing">Code signing</a></li>
+<li><a href="#qa">Code quality</a></li>
+<li><a href="#code-dist">Code distribution</a></li>
+<li><a href="#virtual-servers">Virtual servers</a></li>
+<li><a href="#voting">Online voting</a></li>
+</ul>
+</li>
+<li><a href="#other">Other tools</a>
+<ul>
+<li><a href="#dns">DNS</a></li>
+<li><a href="#url-shortener">URL shortener</a></li>
+<li><a href="#sharing">Sharing snippets</a></li>
+<li><a href="#logging">Logging</a></li>
+<li><a href="#machines">Machine list</a></li>
+<li><a href="#whimsy">Whimsy</a></li>
+</ul>
+</li>
+</ul>
+<h2 id="tlps">Services for Top-Level Projects (TLPs)<a class="headerlink" href="#tlps" title="Permanent link">&para;</a></h2>
+<h3 id="web-sites">Websites<a class="headerlink" href="#web-sites" title="Permanent link">&para;</a></h3>
 <ul>
 <li><a href="https://apache.org/dev/#web" targety="_blank">ASF websites</a>.</li>
 <li>An index of <a href="https://projects.apache.org/projects.html?name" target="_blank">all ASF projects</a>.</li>
@@ -111,9 +149,9 @@ Services and Tools        </a>
 <li>Details about individual <a href="https://home.apache.org/" target="_blank">ASF Committers</a>.</li>
 <li>Notes about committers' <a href="https://apache.org/dev/new-committers-guide.html#public_html" target="_blank">personal web spaces</a>.</li>
 </ul>
-<h2 id="email">Email<a class="headerlink" href="#email" title="Permanent link">&para;</a></h2>
+<h3 id="email">Email<a class="headerlink" href="#email" title="Permanent link">&para;</a></h3>
 <ul>
-<li>All requests for new emial lists should go through the <a href="https://selfserve.apache.org/mail.html" target="_blank">self-serve system</a>. Remember not to mark a list as private if you want it publicly archived.</li>
+<li>All requests for new email lists should go through the <a href="https://selfserve.apache.org/mail.html" target="_blank">self-serve system</a>. Remember not to mark a list as private if you want it publicly archived.</li>
 <li>Email server - QMail/QSMTPD</li>
 <li><a href="https://www.apache.org/foundation/mailinglists.html" target="_blank">email lists</a> - EZMLM</li>
 <li>Searchable <a href="https://lists.apache.org/" target="_blank">private email list archives (mod_mbox)</a>. ASF Members have full access; PMC members have access to their PMC's archives only.</li>
@@ -122,7 +160,7 @@ Services and Tools        </a>
 <li><a href="https://lists.apache.org/" target="_blank">PonyMail</a> lets you browse Apache email archives by certain categories, by user, or by project. You must log in if you want to respond to an email, or write a new one, through this interface.</li>
 <li>Infra maintains and uses a series of <a href="https://infra.apache.org/infra-mail.html" target="_blank">email lists</a>, some of which are open to committers.</li>
 </ul>
-<h2>ASF Self-Service Platform</h2>
+<h3 id="self-serve">ASF self-service platform<a class="headerlink" href="#self-serve" title="Permanent link">&para;</a></h3>
 <p>One of Infra's goals is to empower ASF members, PMCs, and committers to do much of what they need to do without having to request help from Infra. The <a href="https://selfserve.apache.org" target="_blank">Self-Service Platform</a>, for example, provides a number of handy tools that <strong>people who have an Apache email address</strong> (basically, project committers, PMC members, and ASF Members) can use to:</p>
 <ul>
 <li>Create a new Jira or Confluence project, Git repository, or email list (PMC Chairs and Infra members).</li>
@@ -131,26 +169,26 @@ Services and Tools        </a>
 <li>Use the OTP Calculator to generate passwords for the OTP or S/Key one-time-password systems (generally, PMC members).</li>
 <li>Archive a Confluence Wiki space and make it read-only.</li>
 </ul>
-<h3>Locked out of the system?</h3>
+<h4>Locked out of the system?</h4>
 <p>If you have forgotten your password and cannot retrieve it, contact Infrastructure via <code>root@apache.org</code> for assistance.</p>
 <p>Before asking for a manual password reset or email change, please consider:</p>
 <ul>
 <li>If you have access to an ASF machine via SSH (with a private key), you can use this to confirm your identity.</li>
 <li>If you don't have access to anything to establish your identity, you may need to file a new ICLA.</li>
 </ul>
-<h2>Getting notices of infrastructure events</h2>
-<p>You can subscribe to notices of infrastructure events that you want to know about, ranging from Subversion commits to emails to specific lists. <a href="pypubsub.html">Learn more here</a>.</p>
-<h2>LDAP-enabled services</h2>
+<h3 id="notices">Getting notices of infrastructure events<a class="headerlink" href="#notices" title="Permanent link">&para;</a></h3>
+You can subscribe to notices of infrastructure events that you want to know about, ranging from Subversion commits to emails to specific lists. [Learn more here](pypubsub.html).
+<h3 id="ldap">LDAP-enabled services<a class="headerlink" href="#ldap" title="Permanent link">&para;</a></h3>
 <p>Infra supports many ASF <a href="https://cwiki.apache.org/confluence/display/INFRA/LDAP+enabled+services+at+the+ASF" target="_blank">LDAP-enabled services</a>. You can log in to them with your LDAP credentials.</p>
-<h2>Services for incubating projects</h2>
+<h2 id="podlings">Services for incubating projects (podlings)<a class="headerlink" href="#podlings" title="Permanent link">&para;</a></h2>
 <p>Infra supports incubating projects, or podlings.</p>
 <ul>
 <li>An introduction to <a href="infra-incubator.html">Infra and the Incubator</a>, showing the steps for setting up a new podling.</li>
 <li>Guidance for <a href="project-names.html">selecting a project or product name</a></li>
 </ul>
-<h2>Tools for ASF projects</h2>
+<h2 id="tools">Tools for ASF projects<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h2>
 <p>Infra supports an array of tools and services to help projects develop and support both their applications and their community. They include:</p>
-<h3>PMC tools</h3>
+<h2 id="tools">Tools for ASF projects<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h2>
 <ul>
 <li>Every project can use a dedicated space on the <a href="cwiki.html">Confluence wiki</a>.
 <ul>
@@ -166,7 +204,7 @@ Services and Tools        </a>
 <li>The Apache <a href="https://creadur.apache.org/rat/" target="_blank">Release Audit Tool (RAT)</a> can help you confirm that your proposed product release complies with all ASF requirements.</li>
 <li>The ASF <a href="https://oauth.apache.org/api.html" target="_blank">OAuth</a> system provides a focal point for services wishing to make use of authentication without security implications around storing sensitive user data. Many Apache services use it to validate that the user requesting access is a committer within the project and has lawful access to the systems in question.</li>
 </ul>
-<h4 id="source-repository">Version control<a class="headerlink" href="#source-repository" title="Permanent link">&para;</a></h2>
+<h3 id="source-repository">Version control<a class="headerlink" href="#source-repository" title="Permanent link">&para;</a></he>
 <p>Apache provides, and Infra maintains, <a href="version-control.html">code repositories</a> that Apache projects can use to keep their project code safe, accessible to team members, and under version control.</p>
 <ul>
 <li>
@@ -186,7 +224,7 @@ Services and Tools        </a>
 </ul>
 </li>
 </ul>
-<h4 id="issue-tracking">Issue tracking and feature requests<a class="headerlink" href="#issue-tracking" title="Permanent link">&para;</a></h4>
+<h3 id="issue-tracking">Issue tracking and feature requests<a class="headerlink" href="#issue-tracking" title="Permanent link">&para;</a></h3>
 <p>The ASF recommends these options for tracking issues and feature requests:</p>
 <ul>
 <li><a href="https://issues.apache.org/jira" target="_blank">Jira</a></li>
@@ -204,7 +242,7 @@ Services and Tools        </a>
 <li>SvnPubSub</li>
 <li><a href="pypubsub.html">PyPubSub</a></li>
 </ul>
-<h3 id="build">Build services</h3>
+<h3 id="build">Build services<a class="headerlink" href="#build" title="Permanent link">&para;</a></h3>
 <p>Apache supports and models continuous integration and continuous deployment, or <em>CI/CD</em>. The <a href="https://ci.apache.org" target="_blank">Apache Build services site</a> provides more information, and links to these build tools:</p>
 <ul>
 <li>BuildBot</li>
@@ -216,62 +254,54 @@ Services and Tools        </a>
 <li><a href="https://travis-ci.org/" target="_blank">Travis CI</a></li>
 <li><a href="https://www.appveyor.com" target="_blank">Appveyor</a></li>
 </ul>
-<h3>Product naming</h3>
+<p>More information about our build and continuous integration tools is on <a href="https://ci.apache.org/" target="_blank">this page</a>.</p>
+<h3 id="product-naming">Product naming<a class="headerlink" href="#product-naming" title="Permanent link">&para;</a></h3>
 <p>See <a href="product-names.html">guidance for choosing a product name</a></p>
-<h3>Code signing</h3>
+<h3 id="code-signing">Code signing<a class="headerlink" href="#code-signing" title="Permanent link">&para;</a></h3>
 <ul>
-<li>
-<p>Digicert</p>
+<li>Digicert
 <ul>
 <li>Requesting access to the <a href="digicert-access.html">Digicert code signing service</a></li>
 <li><a href="digicert-use.html">Using Digicert</a></li>
 <li><a href="https://cwiki.apache.org/confluence/display/INFRA/Digicert+code+sign+service+usage+statistics" target="_blank">Digicert use statistics by Apache projects</a></li>
 </ul>
 </li>
-<li>
-<p>For <a href="https://cwiki.apache.org/confluence/display/INFRA/Distribution+via+the+Apple+App+Store" target="_blank">distribution via the Apple App Store</a></p>
-</li>
-<li>
-<p>For the <a href="https://cwiki.apache.org/confluence/display/INFRA/Requesting+access+to+the+Google+code+signing+service" target="_blank">Google code signing service</a> for Android apps</p>
-</li>
-<li>
-<p>More information on <a href="https://cwiki.apache.org/confluence/display/INFRA/Code+Signing+and+Publishing" target="_blank">code signing and publishing</a></p>
-</li>
+<li>For <a href="https://cwiki.apache.org/confluence/display/INFRA/Distribution+via+the+Apple+App+Store" target="_blank">distribution via the Apple App Store</a></li>
+<li>For the <a href="https://cwiki.apache.org/confluence/display/INFRA/Requesting+access+to+the+Google+code+signing+service" target="_blank">Google code signing service</a> for Android apps</li>
+<li>More information on <a href="https://cwiki.apache.org/confluence/display/INFRA/Code+Signing+and+Publishing" target="_blank">code signing and publishing</a></li>
 </ul>
-<h3>Code Distribution</h3>
+<h3 id="qa">Code quality<a class="headerlink" href="#qa" title="Permanent link">&para;</a></h2>
+<p><strong>SonarQube</strong> is an open-source platform developed by SonarSource for continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities on 20+ programming languages. You can check the status of many Apache project repositories <a href="https://sonarcloud.io/organizations/apache/projects" target="_blank">here</a>.</p>
+<p><a href="https://cwiki.apache.org/confluence/display/INFRA/SonarQube+Analysis" target="_blank">Read more</a>.</p>
+<h3 id="code-dist">Code distribution<a class="headerlink" href="#code-dist" title="Permanent link">&para;</a></h3>
 <p>Use the ASF <a href="https://repository.apache.org/" target="_blank">Nexus Repository Manager</a> to browse for and review code distributions by ASF projects.</p>
-<h3 id="virtual-servers">Virtual servers<a class="headerlink" href="#virtual-servers" title="Permanent link">&para;</a></h3>
-<p>Infra can provide Ubuntu virtual machines for projects. See:</p>
-<ul>
-<li><a href="vm-policy.html">Virtual machine policy</a></li>
-<li><a href="vm-for-project.html">Process for requesting a vm</a></li>
-</ul>
-<h3 id="distributions">Distributions<a class="headerlink" href="#distributions" title="Permanent link">&para;</a></h3>
+<h4 id="distributions">Distributions<a class="headerlink" href="#distributions" title="Permanent link">&para;</a></h4>
 <ul>
 <li><a href="https://www.apache.org/dyn/closer.cgi" target="_blank">Current distributions</a></li>
 <li><a href="https://archive.apache.org" target="_blank">Historical distribution archives</a></li>
 <li><a href="how-to-mirror.html">Rsync for distribution mirrors</a></li>
 <li><a href="https://repository.apache.org" target="_blank">Nexus</a></li>
 </ul>
-<h3 id="build">Build services / CI<a class="headerlink" href="#build" title="Permanent link">&para;</a></h2>
-<p>Information about our build and continuous integration tools is on <a href="https://ci.apache.org/" target="_blank">this page</a>.</p>
-<h3>Code quality</h3>
-<p><strong>SonarQube</strong> is an open-source platform developed by SonarSource for continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities on 20+ programming languages. You can check the status of many Apache project repositories <a href="https://sonarcloud.io/organizations/apache/projects" target="_blank">here</a>.</p>
-<p><a href="https://cwiki.apache.org/confluence/display/INFRA/SonarQube+Analysis" target="_blank">Read more</a>.</p>
-<h3>Online voting</h3>
+<h3 id="virtual-servers">Virtual servers<a class="headerlink" href="#virtual-servers" title="Permanent link">&para;</a></h3>
+<p>Infra can provide Ubuntu virtual machines for projects. See:</p>
+<ul>
+<li><a href="vm-policy.html">Virtual machine policy</a></li>
+<li><a href="vm-for-project.html">Process for requesting a vm</a></li>
+</ul>
+<h3 id="voting">Online voting<a class="headerlink" href="#voting" title="Permanent link">&para;</a></h3>
 <p>Projects can use the <a href="https://steve.apache.org" target="_blank">Apache Steve</a> voting system instance (offline when not in use).</p>
-<h2 id="other">Other<a class="headerlink" href="#other" title="Permanent link">&para;</a></h2>
+<h2 id="other">Other tools<a class="headerlink" href="#other" title="Permanent link">&para;</a></h2>
 <h3 id="dns">DNS<a class="headerlink" href="#dns" title="Permanent link">&para;</a></h3>
 <p>Infra manages the ASF DNS, which is registered with Namecheap.</p>
-<h3>URL shortener</h3>
+<h3 id="url-shortener">URL shortener<a class="headerlink" href="#url-shortener" title="Permanent link">&para;</a></h3>
 <p><a href="https://s.apache.org" target="_blank">URL shortener</a></p>
-<h3>Sharing Snippets</h3>
+<h3 id="sharing">Sharing snippets<a class="headerlink" href="#sharing" title="Permanent link">&para;</a></h3>
 <p><a href="https://paste.apache.org/" target="_blank">Paste</a> is a service that lets ASF members post code snippets or similar file extracts they want to share to illustrate a code issue or make available for reuse, usually with other project members. You can post content as plain text, or formatted for a number of coding and scripting languages.</p>
-<h3>Logging</h3>
+<h3 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h3>
 <p><a href="https://uls.apache.org/app/kibana#/discover?_g=()" target="_blank">Kibana</a></p>
-<h3>Machine List</h3>
+<h3 id="machines">Machine list<a class="headerlink" href="#machines" title="Permanent link">&para;</a></h3>
 <p><a href="https://www.apache.org/dev/machines.html" target="_blank">Host Keys and Fingerprints</a></p>
-<h3>Whimsy</h3>
+<h3 id="whimsy">Whimsy<a class="headerlink" href="#whimsy" title="Permanent link">&para;</a></h3>
 <p><a href="https://whimsy.apache.org/" target="_blank">Apache Whimsy</a> describes itself as &quot;providing organizational information about the ASF and our projects in easy to consume ways, and to help automate corporate processes at the ASF to make the paperwork behind the scenes easier for our many volunteers.&quot;</p>
 <p>There are many Whimsy tools useful for PMCs and individual committers, such as <a href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer search</a>.</p>
 
