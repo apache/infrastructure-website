@@ -6,7 +6,12 @@ Apache committers have write access to the Apache Subversion repository so they 
 
 If you are looking for a stable release of a project's source code, you should download it from the <a href="http://www.apache.org/dyn/closer.cgi/" target="_blank">distribution directory</a>. Only download directly from the SVN repository if you want to be on the *bleeding-edge* of the development effort. The code contained there may fail to work, and may even eat your hard drive.
 
-### Accessing the Subversion repository ###
+  - <a href="#accessing">Accessing the Subversion repository</a>
+  - <a href="#configuring">Configuring the Subversion client</a>
+  - <a href="#ssl">SSL server certificate</a>
+  - <a href="#faq">Frequently asked questions</a>
+
+<h3 id="accessing">Accessing the Subversion repository<a class="headerlink" href="#accessing" title="Permanent link">&para;</a></h3>
 
 There are several ways to access the Subversion repository:
 
@@ -45,7 +50,7 @@ $ svn commit --username your-name --password your-password \
 
 `svnserve` is not supported, nor is `svn+ssh`.
 
-### Configuring the Subversion client ###
+<h3 id="configuring">Configuring the Subversion client<a class="headerlink" href="#configuring" title="Permanent link">&para;</a></h3>
 
 Committers need to configure their svn client properly. One particular issue is OS-specific line endings for text files. When you add a new text file, especially when applying patches from Bugzilla, first ensure that the line-endings are appropriate for your system, then do:
 
@@ -63,7 +68,8 @@ Pay attention to the messages from your svn client when you do `svn commit`.
 
 **Tip**: If you use TortiseSVN, a popular Windows GUI client that integrates with Windows Explorer, you can right-click in Explorer, select `TortiseSVN - Settings`, and select "Edit" to update your Subversion configuration file. Copy the above `svn-eol-style.txt` file's contents into the end of the configuration file that appears, and save the file.
 
-### SSL Server certificate ###
+<h3 id="ssl">SSL server certificate<a class="headerlink" href="#ssl" title="Permanent link">&para;</a></h3>
+
 The server certificate for `https://svn.apache.org/` is a real SSL certificate. However, Subversion, by default, does not currently ship with a list of trusted CAs. So, here's some information to help you verify the validity of our certificate:
 
 ```
@@ -75,8 +81,7 @@ The server certificate for `https://svn.apache.org/` is a real SSL certificate. 
 
 Note that the SSL certificate for our Subversion repository is different from certificates used when logging into Apache infrastructure. See the [New Committer's guide](new-committers-guide.html) for more information.
 
-
-### Frequently Asked Questions ###
+<h3 id="faq">Frequently asked questions<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h3>
 
 **When should I use 'svn lock'?**
 
