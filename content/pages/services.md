@@ -100,7 +100,7 @@ Infra supports an array of tools and services to help projects develop and suppo
 - The Apache <a href="https://creadur.apache.org/rat/" target="_blank">Release Audit Tool (RAT)</a> can help you confirm that your proposed product release complies with all ASF requirements.
 - The ASF <a href="https://oauth.apache.org/api.html" target="_blank">OAuth</a> system provides a focal point for services wishing to make use of authentication without security implications around storing sensitive user data. Many Apache services use it to validate that the user requesting access is a committer within the project and has lawful access to the systems in question.
 
-<h3 id="source-repository">Version control<a class="headerlink" href="#source-repository" title="Permanent link">&para;</a></he>
+<h3 id="source-repository">Version control<a class="headerlink" href="#source-repository" title="Permanent link">&para;</a></h3>
 
 Apache provides, and Infra maintains, [code repositories](version-control.html) that Apache projects can use to keep their project code safe, accessible to team members, and under version control.
 
