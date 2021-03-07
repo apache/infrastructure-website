@@ -2,13 +2,29 @@ Title: Source Code Repositories at Apache
 
 Apache project contributors are in countries all around the world. To help them work together, projects keep their source code in an Internet-accessible revision control system, either <a href="https://subversion.apache.org/" target="_blank">Subversion (SVN)</a> or <a href="https://git-scm.com/" target="_blank">Git</a>. Apache committers have _write access_ to the repositories for their projects, so they can edit existing code and add new files. 
 
+## Contents ##
+
+  - <a href="#general">In general</a>
+  - <a href="#git">Git repositories</a>
+    - <a href="#asfyaml">.asf.yaml for Git repositories</a>
+  - <a href="#svn">SVN repositories</a>
+    - <a href="#commandline">Command-line SVN access</a>
+    - <a href="#commandlinecommit">Committing code through the command line</a>
+    - <a href="#configuring">Configuring the SVN client</a>
+    - <a href="#svnssl">SVN SSL server certificate</a>
+    - <a href="#errormessages">Typical SVN error messages</a>
+    - <a href="#svnfaqs">SVN FAQs</a>
+  - <a href="#migrating">Migrating an SVN code repository to Git</a>
+
+<h2 id="general">In general<a class="headerlink" href="#general" title="Permanent link">&para;</a></h2>
 Everyone has _read access_ to the repositories and can download the most up-to-date development version of any project's software to review or compile. 
 
 - If you want a stable release of the source code, download it from the <a href="https://www.apache.org/dyn/closer.cgi/" target="_blank">distribution directory</a>. 
 - Only download the code directly from your project's code repository if you are participating in the development effort. The latest version of the code is what your colleagues have most recently checked in, and they may or may not have confirmed that it compiles correctly and does what they want it to do.
 - If you want a release version of the project's compiled application, visit the project's website and find its download page. It may offer both stable releases and "bleeding-edge" or "nightly" builds that compile properly but include the latest, possibly-unstable, features.
 
-## Git repositories ##
+<h2 id="git">Git repositories<a class="headerlink" href="#git" title="Permanent link">&para;</a></h2>
+
 How-to guides, documentation, and a list of projects using git for revision control are at <a href="https://git.apache.org/" target="_blank">git.apache.org</a>.
 
 Many Git users manage their source code through one of these tools:
@@ -18,9 +34,9 @@ Many Git users manage their source code through one of these tools:
 
 Some projects began using [read-only-mirrors](git.html) of SVN repositories when Apache's support for Git was limited. This is no longer necessary. [Writable Git](writable-git.html) repositories are available to all projects.
 
-### .asf.yaml for Git repositories ###
+<h3 id="asfyaml">.asf.yaml for Git repositories<a class="headerlink" href="#asfyaml" title="Permanent link">&para;</a></h3>
 
-.asf.yaml is a branch-specific file that a project may put in the root of the git repository to control various new features such as
+`.asf.yaml` is a branch-specific file that a project may put in the root of the git repository to control various new features such as
 
 -  notification settings
 -  website staging
@@ -29,7 +45,8 @@ Some projects began using [read-only-mirrors](git.html) of SVN repositories when
 
 Read <a href="https://cwiki.apache.org/confluence/display/INFRA/.asf.yaml+features+for+git+repositories#id-.asf.yamlfeaturesforgitrepositories-Primer" target="_blank">the .asf.yaml primer</a> to learn more.
 
-## SVN repositories ##
+<h2 id="svn">SVN repositories<a class="headerlink" href="#svn" title="Permanent link">&para;</a></h2>
+
 Information about SVN is at <a href="https://subversion.apache.org/" target="_blank">the Apache SVN site</a> and <a href="http://svnbook.red-bean.com/" target="_blank">Version Control with Subversion</a>. The website provides links for _SVN clients_ you can download and install to make it easier to work with SVN.
 
 To browse the repositories or download a few individual files, you can
@@ -37,12 +54,14 @@ To browse the repositories or download a few individual files, you can
 - use <a href="https://svn.apache.org/viewvc/" target="_blank">viewvc</a>
 - find a project repository at <a href="https://svn.apache.org/repos/asf/" target="_blank">the list of SVN repos</a>
 
-### Command-line SVN access ###
+<h3 id="commandline">Command-line SVN access<a class="headerlink" href="#commandline" title="Permanent link">&para;</a></h3>
+
 You can check out a project repository anonymously once you have installed a SVN client. For example, to get the Spamassassin module, use:
 
      `$ svn checkout http://svn.apache.org/repos/asf/spamassassin/trunk spamassassin`
 
-### Committing code through the command line ###
+<h3 id="commandlinecommit">Committing code through the command line<a class="headerlink" href="#commandlinecommit" title="Permanent link">&para;</a></h3>
+
 If you are a project committer and don't want to use a SVN client like Tortoise, you can commit your new and updated files using the command line. We use HTTPS basic authentication, so you need to specify your user name and password as part of the check-in command.
 
 For example, if you wanted to add the file 'test.txt', you might follow these steps:
@@ -57,7 +76,8 @@ $ svn commit --username your-name --password your-password \
 
 Apache does not support `svnserve` or `svn+ssh`.
 
-### Configuring the SVN client ###
+<h3 id="configuring">Configuring the SVN client<a class="headerlink" href="#configuring" title="Permanent link">&para;</a></h3>
+
 Committers need to properly configure their svn client. One particular issue is OS-specific line-endings for text files. When you add a new text file, especially when applying patches from Bugzilla, make sure that the line-endings are appropriate for your system, then do (for test.txt)
 
 `svn add test.txt svn propset svn:eol-style native test.txt` 
@@ -78,10 +98,11 @@ Pay attention to the messages from your svn client when you do 'svn commit'.
 
 copy the above svn-eol-style.txt file's contents into the end of the config editor that appears, and save the file.
 
-### SVN SSL server certificate ###
+<h3 id="svnssl">SVN SSL server certificate<a class="headerlink" href="#svnssl" title="Permanent link">&para;</a></h3>
+
 You can check the validity of the server certificate on the <a href="https://www.apache.org/dev/machines.html" target="_blank">Apache host keys listing</a>.
 
-### Typical SVN error messages ###
+<h3 id="errormessages">Typical SVN error messages<a class="headerlink" href="#errormessages" title="Permanent link">&para;</a></h3>
 
 **Error validating server certificate**
 
@@ -156,7 +177,7 @@ So try the command:
 
 This problem crops up because the order of the revisions is not identical to the order of dates in the repository. This is a side effect of loading CVS repositories with history including dates prior to the earliest date in the Subversion repository.
 
-### SVN FAQs ###
+<h3 id="svnfaqs">SVN FAQs<a class="headerlink" href="#svnfaqs" title="Permanent link">&para;</a></h3>
 
 - **When should I use svn lock?** Very rarely. Commits in subversion are transactional. This means that locks are almost always unnecessary. An oft-quoted use case is to prevent concurrent editing of a large, unmergeable binary document. However, for open development, good communication is preferable to locking even in this use case. A good, timely post to the list to let your fellow developers know that you're going to start editing that huge PDF is better than locking the file. 
 - **How often can I run a cron job that connects to the repository?** Hourly is fine. Please do not use programs that poll the repository more frequently than hourly. People who run automated scripts that continuously poll the repository wind up getting their access denied, and that may impact other folks connecting through the same host. If you need to stay more in-sync than an hourly cron allows, subscribe your script to the relevant commit mailing list.
@@ -167,6 +188,6 @@ This problem crops up because the order of the revisions is not identical to the
 
 If you still get 403 Forbidden errors, ask your PMC to double-check the authz file and LDAP/Unix group membership.
 
-## Migrating a SVN code repository to Git ##
+<h2 id="migrating">Migrating an SVN code repository to Git<a class="headerlink" href="#migrating" title="Permanent link">&para;</a></h2>
 
 Instructions are [here](svn-to-git-migration.html).
