@@ -105,7 +105,13 @@ Subversion basics        </a>
               <p>Our developers are located all around the world. To enable them to work together on our software, we keep the source code in Internet-accessible revision control systems, <a href="git.html">Git</a> and Subversion (SVN).</p>
 <p>Apache committers have write access to the Apache Subversion repository so they can make changes to their project's source code. Everyone has read access to the repositories, so you may download the most up-to-date development version of software that interests you.</p>
 <p>If you are looking for a stable release of a project's source code, you should download it from the <a href="http://www.apache.org/dyn/closer.cgi/" target="_blank">distribution directory</a>. Only download directly from the SVN repository if you want to be on the <em>bleeding-edge</em> of the development effort. The code contained there may fail to work, and may even eat your hard drive.</p>
-<h3>Accessing the Subversion repository</h3>
+<ul>
+<li><a href="#accessing">Accessing the Subversion repository</a></li>
+<li><a href="#configuring">Configuring the Subversion client</a></li>
+<li><a href="#ssl">SSL server certificate</a></li>
+<li><a href="#faq">Frequently asked questions</a></li>
+</ul>
+<h3 id="accessing">Accessing the Subversion repository<a class="headerlink" href="#accessing" title="Permanent link">&para;</a></h3>
 <p>There are several ways to access the Subversion repository:</p>
 <p><strong>Web Access</strong></p>
 <p>If you just wish to browse around or download a few individual files, the best tool is the web-based <a href="http://svn.apache.org/viewvc/" target="_blank">ViewVC interface for Subversion</a>. You can also go straight to the <a href="http://svn.apache.org/repos/asf/" target="_blank">public repository</a>.</p>
@@ -127,7 +133,7 @@ $ svn commit --username your-name --password your-password \
   --message &quot;Trying out svn&quot;
 </code></pre>
 <p><code>svnserve</code> is not supported, nor is <code>svn+ssh</code>.</p>
-<h3>Configuring the Subversion client</h3>
+<h3 id="configuring">Configuring the Subversion client<a class="headerlink" href="#configuring" title="Permanent link">&para;</a></h3>
 <p>Committers need to configure their svn client properly. One particular issue is OS-specific line endings for text files. When you add a new text file, especially when applying patches from Bugzilla, first ensure that the line-endings are appropriate for your system, then do:</p>
 <pre><code>svn add test.txt svn propset svn:eol-style native test.txt
 </code></pre>
@@ -136,7 +142,7 @@ $ svn commit --username your-name --password your-password \
 <p>You may need to set additional properties for some files. For example, apply <code>svn:executable=*</code> to script files (.bat, .cgi, .cmd, .sh) that are intended to be executed. Since not all such files are necessarily intended to be executed, do not make the executable property an automatic default.</p>
 <p>Pay attention to the messages from your svn client when you do <code>svn commit</code>.</p>
 <p><strong>Tip</strong>: If you use TortiseSVN, a popular Windows GUI client that integrates with Windows Explorer, you can right-click in Explorer, select <code>TortiseSVN - Settings</code>, and select &quot;Edit&quot; to update your Subversion configuration file. Copy the above <code>svn-eol-style.txt</code> file's contents into the end of the configuration file that appears, and save the file.</p>
-<h3>SSL Server certificate</h3>
+<h3 id="ssl">SSL server certificate<a class="headerlink" href="#ssl" title="Permanent link">&para;</a></h3>
 <p>The server certificate for <code>https://svn.apache.org/</code> is a real SSL certificate. However, Subversion, by default, does not currently ship with a list of trusted CAs. So, here's some information to help you verify the validity of our certificate:</p>
 <pre><code> - Hostname: *.apache.org
  - Valid: from Jul  1 00:00:00 2019 GMT until Jun 30 23:59:59 2021 GMT
@@ -144,7 +150,7 @@ $ svn commit --username your-name --password your-password \
  - Fingerprint: 88:A1:77:AC:CE:5E:6C:0D:22:BC:1F:E4:4E:AA:D4:2A:A4:C0:71:4F
 </code></pre>
 <p>Note that the SSL certificate for our Subversion repository is different from certificates used when logging into Apache infrastructure. See the <a href="new-committers-guide.html">New Committer's guide</a> for more information.</p>
-<h3>Frequently Asked Questions</h3>
+<h3 id="faq">Frequently asked questions<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h3>
 <p><strong>When should I use 'svn lock'?</strong></p>
 <p>Very rarely. Commits in subversion are transactional. This means that locks are almost always unnecessary.</p>
 <p>An oft-quoted use case is to prevent concurrent editing of a large unmergeable binary document. However, for open development, good communication is preferable to locking even in this use case. A clear, timely post to the list to let your fellow developers know that you're going to start editing that huge PDF is better than locking the file.</p>
