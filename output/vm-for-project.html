@@ -103,8 +103,17 @@ Requesting a virtual machine for a project        </a>
               Requesting a virtual machine for a project
           </h2>
               <p>When you want to run an application that is not part of the offered services (like a demo setup of your project), you need to request a dedicated virtual machine (vm). It is not possible to request a physical machine. Physical machines are shared resources for all ASF projects.</p>
-<p>Infra maintains hosts in different computer centers around the world. Most of these hosts are used to run virtual machines, so your vm can be relocated as requirements change without you having to reinstall anything.</p>
-<h3>Requesting a virtual machine</h3>
+<p>Infra maintains hosts in different computer centers around the world to run virtual machines, so we can relocate your vm as requirements change without you having to reinstall anything.</p>
+<h3>Contents</h3>
+<ul>
+<li><a href="#request">Requesting a virtual machine</a></li>
+<li><a href="#deploy">Deploying the virtual machine</a></li>
+<li><a href="#maintain">Project maintainers</a></li>
+<li><a href="#ssh-keys">Obtaining SSH keys</a></li>
+<li><a href="#maintenance">General maintenance</a></li>
+<li><a href="#cautions">Cautions</a></li>
+</ul>
+<h3 id="request">Requesting a virtual machine<a class="headerlink" href="#request" title="Permanent link">&para;</a></h3>
 <p>To request a virtual machine, open a <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Jira</a> ticket with at least the following information:</p>
 <ol>
 <li>The project's plans for the virtual machine:
@@ -146,16 +155,16 @@ Requesting a virtual machine for a project        </a>
 <p>CPU and RAM are expensive resources, so unless you make a really compelling case we will start the vm with default values. If you/we see problems later we can always add more. We can add CPU cores and RAM can without reinstalling anything.</p>
 <p>The operating system needs to be supported by our standard applications like Puppet, therefore we currently only offer Ubuntu.</p>
 <p>Important: the ticket must be acknowledged by a PMC member.</p>
-<h3>Deploying the virtual machine</h3>
+<h3 id="deploy">Deploying the virtual machine<a class="headerlink" href="#deploy" title="Permanent link">&para;</a></h3>
 <p>Infra may ask questions to clarify the request. When all is clear, we will create the vm according to specifications, install the OS and the mandatory standard (infra) applications. The mandatory application guarantee a level of security and provide ssh access common to all vms.</p>
 <p>Once we have tested the vm, we will ask a project maintainer to do ssh to the vm.</p>
-<h3>Project maintainers</h3>
+<h3 id="maintain">Project maintainers<a class="headerlink" href="#maintain" title="Permanent link">&para;</a></h3>
 <p>The project maintainers are responsible for maintaining the vm. Infra will normally not maintain the vm, but will check on security from time to time.</p>
 <p>Each project maintainer needs to have ssh keys uploaded to <code>id.a.o</code> before requesting the vm. Maintainers use the ssh keys stored in LDAP to log in to the vm.</p>
 <p>When the vm is created, each maintainer gets karma to access the vm (ldap add host to userid). Once that has been tested, it is time to get sudo karma if it is required.</p>
 <p>To prepare for sudo karma follow the <a href="https://reference.apache.org/committer/opie" target="_blank">OPIE guidelines</a>.</p>
 <p>When OPIE works, contact us on #asfinfra, or by commenting on the issue, and sudo karma will be granted (ldap add userid to sudoer group).</p>
-<h3>Obtaining SSH keys</h3>
+<h3 id="ssh-keys">Obtaining SSH keys<a class="headerlink" href="#ssh-keys" title="Permanent link">&para;</a></h3>
 <p>To use key-based login, you need to generate a key on your local desktop (do not use a publicly accessible server for this) and then add your public key to LDAP using the self-service app at <code>https://id.apache.org</code>.</p>
 <p>Once you have done this, wait at least 10 mins. You should then be able to log in as follows:</p>
 <pre><code>:::shell $ ssh [username]@$project-vm.apache.org
@@ -170,7 +179,7 @@ Requesting a virtual machine for a project        </a>
 </code></pre>
 <p>If a umask line already exists, modify it. Otherwise, add a new line. You will need to use a <code>*nix</code> command-line editor such as <code>vi</code>.</p>
 <p>Tip: You can review the files of some other committer: <code>ls -al ~mymentor; cat ~mymentor/.cshrc</code>.</p>
-<h3>General maintenance</h3>
+<h3 id="maintenance">General maintenance<a class="headerlink" href="#maintenance" title="Permanent link">&para;</a></h3>
 <p>There are no mandatory rules, but here are some suggestions:</p>
 <ul>
 <li>Keep all changes in Git/Puppet. See: <code>https://github.com/apache/infrastructure-puppet</code>
@@ -186,7 +195,7 @@ Requesting a virtual machine for a project        </a>
 </ul>
 </li>
 </ul>
-<h3>Cautions</h3>
+<h3 id="cautions">Cautions<a class="headerlink" href="#cautions" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Do not try to change items controlled by puppet, such as:
 <ul>
