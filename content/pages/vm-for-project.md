@@ -2,9 +2,18 @@ Title: Requesting a virtual machine for a project
 
 When you want to run an application that is not part of the offered services (like a demo setup of your project), you need to request a dedicated virtual machine (vm). It is not possible to request a physical machine. Physical machines are shared resources for all ASF projects.
 
-Infra maintains hosts in different computer centers around the world. Most of these hosts are used to run virtual machines, so your vm can be relocated as requirements change without you having to reinstall anything.
+Infra maintains hosts in different computer centers around the world to run virtual machines, so we can relocate your vm as requirements change without you having to reinstall anything.
 
-### Requesting a virtual machine ###
+### Contents ###
+
+  - <a href="#request">Requesting a virtual machine</a>
+  - <a href="#deploy">Deploying the virtual machine</a>
+  - <a href="#maintain">Project maintainers</a>
+  - <a href="#ssh-keys">Obtaining SSH keys</a>
+  - <a href="#maintenance">General maintenance</a>
+  - <a href="#cautions">Cautions</a>
+
+<h3 id="request">Requesting a virtual machine<a class="headerlink" href="#request" title="Permanent link">&para;</a></h3>
 
 To request a virtual machine, open a <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Jira</a> ticket with at least the following information:
 
@@ -35,13 +44,13 @@ The operating system needs to be supported by our standard applications like Pup
 
 Important: the ticket must be acknowledged by a PMC member.
 
-### Deploying the virtual machine ###
+<h3 id="deploy">Deploying the virtual machine<a class="headerlink" href="#deploy" title="Permanent link">&para;</a></h3>
 
 Infra may ask questions to clarify the request. When all is clear, we will create the vm according to specifications, install the OS and the mandatory standard (infra) applications. The mandatory application guarantee a level of security and provide ssh access common to all vms.
 
 Once we have tested the vm, we will ask a project maintainer to do ssh to the vm.
 
-### Project maintainers ###
+<h3 id="maintain">Project maintainers<a class="headerlink" href="#maintain" title="Permanent link">&para;</a></h3>
 
 The project maintainers are responsible for maintaining the vm. Infra will normally not maintain the vm, but will check on security from time to time.
 
@@ -53,7 +62,7 @@ To prepare for sudo karma follow the <a href="https://reference.apache.org/commi
 
 When OPIE works, contact us on #asfinfra, or by commenting on the issue, and sudo karma will be granted (ldap add userid to sudoer group).
 
-### Obtaining SSH keys ###
+<h3 id="ssh-keys">Obtaining SSH keys<a class="headerlink" href="#ssh-keys" title="Permanent link">&para;</a></h3>
 
 To use key-based login, you need to generate a key on your local desktop (do not use a publicly accessible server for this) and then add your public key to LDAP using the self-service app at `https://id.apache.org`.
 
@@ -83,7 +92,7 @@ If a umask line already exists, modify it. Otherwise, add a new line. You will n
 
 Tip: You can review the files of some other committer: `ls -al ~mymentor; cat ~mymentor/.cshrc`.
 
-### General maintenance ###
+<h3 id="maintenance">General maintenance<a class="headerlink" href="#maintenance" title="Permanent link">&para;</a></h3>
 
 There are no mandatory rules, but here are some suggestions:
 
@@ -94,7 +103,7 @@ There are no mandatory rules, but here are some suggestions:
     - See `https://github.com/apache/infrastructure-puppet/tree/deployment/modules/<vmname>/manifests/init.pp`
     - See also the <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+workflow+for+infrastructure-puppet+repo" target="_blank">Git workflow for an Infrastructure Puppet repository</a>.
     
-### Cautions ###
+<h3 id="cautions">Cautions<a class="headerlink" href="#cautions" title="Permanent link">&para;</a></h3>
 
   - Do not try to change items controlled by puppet, such as:
     - iptables
