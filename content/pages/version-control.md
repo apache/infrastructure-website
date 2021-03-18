@@ -17,7 +17,7 @@ Apache project contributors are in countries all around the world. To help them 
   - <a href="#migrating">Migrating an SVN code repository to Git</a>
 
 <h2 id="general">In general<a class="headerlink" href="#general" title="Permanent link">&para;</a></h2>
-Everyone has _read access_ to the repositories and can download the most up-to-date development version of any project's software to review or compile. 
+Everyone has *read access* to the repositories and can download the most up-to-date development version of any project's software to review or compile. 
 
 - If you want a stable release of the source code, download it from the <a href="https://www.apache.org/dyn/closer.cgi/" target="_blank">distribution directory</a>. 
 - Only download the code directly from your project's code repository if you are participating in the development effort. The latest version of the code is what your colleagues have most recently checked in, and they may or may not have confirmed that it compiles correctly and does what they want it to do.
