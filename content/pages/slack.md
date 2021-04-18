@@ -10,7 +10,7 @@ Anyone with an `@apache.org` email address can become a full member of the ASF S
 
 You can also download an app to use on your computer or mobile device.
 
-If you want to invite ASF members who are not on Slack yet to join your project's Slack discussions:
+If you want to invite ASF people (those with an @apache.org address) who are not on Slack yet to join your project's Slack discussions:
 
   1. In the Slack app, click the "ASF" header at the top left.
   2. Select `Invite people to ASF`
