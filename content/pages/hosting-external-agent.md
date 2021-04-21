@@ -16,7 +16,7 @@ There are a few things you'll need to know and to adhere to.
       - 500GB Hard disk 
       - A permanent static IP address
   - You must be an ASF Committer.
-  - You must subscribe to the `1builds@a.o' mailing list.
+  - You must subscribe to the `builds@a.o` email list.
   - Maintain and provide a link to a public page that lists software you add to your agent.
   - Open an INFRA Jira ticket so we can complete your hosting set up when you are completely ready.
 
@@ -24,7 +24,7 @@ There are a few things you'll need to know and to adhere to.
 
 Make sure it's a stock, latest buildbot-worker install for your OS variant.
 
-When you are ready, liaise with `root@>a.o` to negotiate connection credentials. Keep your agent secure and only open the one required port.
+When you are ready, liaise with `root@a.o` to negotiate connection credentials. Keep your agent secure and only open the one required port.
 
 ### For Jenkins ###
 
