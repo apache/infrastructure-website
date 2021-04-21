@@ -51,7 +51,7 @@ The generic script is `closer.cgi`. Paaa in the relative path from the distribut
 
 As an alternative, you can generate a direct download link using the following syntax:
 
-`http://www.apache.org/dyn/closer.cgi?filename=bar/foo/foo-5.5.1.zip&action=download`
+`http://www.apache.org/dyn/closer.cgi/bar/foo/foo-5.5.1.zip?action=download`
 
 See below for how to generate a customised page of direct links using a mirror.
 
