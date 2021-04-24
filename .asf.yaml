@@ -11,6 +11,10 @@ staging:
 github:
   ghp_branch:    master
   ghp_path:      /docs
+  labels:
+    - infrastructure
+    - website
+    - pelican
 
 notifications:
   commits:              commits@infra.apache.org
