@@ -189,10 +189,6 @@ Other mirrors: &lt;select name=&quot;Preferred&quot;&gt;
 &lt;p&gt;You may also consult the &lt;a href=&quot;http://www.apache.org/mirrors/&quot;&gt;complete list of mirrors&lt;/a&gt;.&lt;/p&gt;
 </code></pre>
 <p>More advice on creating a good project page is <a href="#best_practice">below</a>.</p>
-<p>Before you commit the download script, make it executable. The CMS will not honor propset changes post-initial-commit, so if you forget this step please make the needed property changes on both the staging and production svn trees. See <a href="https://cwiki.apache.org/confluence/display/INFRA/Apache+CMS+reference" target="_blank">Apache CMS Reference</a> for details. Of course this caveat only applies to CMS sites; sites that use <a href="pypubsub.html">pypubsub</a> or svnpubsub exclusively will apply propset changes automatically as soon as they are committed. For example:</p>
-<pre><code>% svn propset svn:executable '*' download.cgi
-% svn commit
-</code></pre>
 <p>All that remains is to wait for the main website to sync.</p>
 <h2 id="best_practice">Best practices<a class="headerlink" href="#best_practice" title="Permanent link">&para;</a></h2>
 <h3 id="remind-users">Remind users to check sums and signatures</h3>
