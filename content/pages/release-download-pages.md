@@ -59,22 +59,11 @@ Note there is some information which every project should include on the downloa
 
 <h3 id="custom">Project-specific download script<a class="headerlink" href="#custom" title="Permanent link">&para;</a></h3>
 
-To create a project-specific download page, you need:
+To create a project-specific download page, you will need a project page containing information for the user together with variables the script populates with the correct values.
 
-  - a wrapper cgi script (for the standard python mirroring script)
-  - a project page (containing information for the user together with variables the script populates with the correct values)
+Assuming you have called your download page `download.html`, you can invoke our global download script by using the URI `download.cgi`.
 
-The script takes the path to the project page as an input and passes it to the standard mirroring script. The standard script reads the page and uses information about the mirrors to substitute values for the variables. When you link to the project page (for example, from the rest of the project documentation), it is important to target these links at the script address (and not the page address).
-
-Conventionally, the wrapper script is called `download.cgi`. Create this in the same directory as the project page. This wrapper script sets up the correct directory and calls the mirroring script:
-
-```
-#!/bin/sh
-# Wrapper around the standard mirrors.cgi script
-exec /www/www.apache.org/dyn/mirrors/mirrors.cgi $*
-```
-
-The release download page should be generated in the same way as the rest of the project documentation. By convention, the name of the resulting page is `download.html`.
+This URI takes the path to the page as an input and passes it to the standard global download script. The standard script reads the page and uses information about the mirrors to substitute values for the variables. When you link to the project page (for example, from the rest of the project documentation), it is important to target these links at the script address (and not the html page address).
 
 **Note**: the mirroring script guesses the download release page to be processed by matching file names. There is no requirement to call the script `download.cgi` and the download release page `download.html` but the name of the script must correspond to the name of the download page. For example, `release.cgi` and `release.html` will work but `download.cgi` and `release.html` will not.
 
