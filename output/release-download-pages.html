@@ -146,18 +146,9 @@ Release Download Pages for Projects        </a>
 <p>See below for how to generate a customised page of direct links using a mirror.</p>
 <p>Note there is some information which every project should include on the download page (e.g. KEYS, sigs, hashes). Please read <a href="#best_practice">best practices</a>.</p>
 <h3 id="custom">Project-specific download script<a class="headerlink" href="#custom" title="Permanent link">&para;</a></h3>
-<p>To create a project-specific download page, you need:</p>
-<ul>
-<li>a wrapper cgi script (for the standard python mirroring script)</li>
-<li>a project page (containing information for the user together with variables the script populates with the correct values)</li>
-</ul>
-<p>The script takes the path to the project page as an input and passes it to the standard mirroring script. The standard script reads the page and uses information about the mirrors to substitute values for the variables. When you link to the project page (for example, from the rest of the project documentation), it is important to target these links at the script address (and not the page address).</p>
-<p>Conventionally, the wrapper script is called <code>download.cgi</code>. Create this in the same directory as the project page. This wrapper script sets up the correct directory and calls the mirroring script:</p>
-<pre><code>#!/bin/sh
-# Wrapper around the standard mirrors.cgi script
-exec /www/www.apache.org/dyn/mirrors/mirrors.cgi $*
-</code></pre>
-<p>The release download page should be generated in the same way as the rest of the project documentation. By convention, the name of the resulting page is <code>download.html</code>.</p>
+<p>To create a project-specific download page, you will need a project page containing information for the user together with variables the script populates with the correct values.</p>
+<p>Assuming you have called your download page <code>download.html</code>, you can invoke our global download script by using the URI <code>download.cgi</code>.</p>
+<p>This URI takes the path to the page as an input and passes it to the standard global download script. The standard script reads the page and uses information about the mirrors to substitute values for the variables. When you link to the project page (for example, from the rest of the project documentation), it is important to target these links at the script address (and not the html page address).</p>
 <p><strong>Note</strong>: the mirroring script guesses the download release page to be processed by matching file names. There is no requirement to call the script <code>download.cgi</code> and the download release page <code>download.html</code> but the name of the script must correspond to the name of the download page. For example, <code>release.cgi</code> and <code>release.html</code> will work but <code>download.cgi</code> and <code>release.html</code> will not.</p>
 <p>There are a number of elements that a good project download page should contain. See the content to generate that page <a href="https://svn.apache.org/repos/asf/httpd/site/trunk/content/download.mdtext" target="_blank">here</a>.</p>
 <p>Downloads of artifacts are linked to a mirror by a variable url. The correct mirroring base url will be substituted for the <code>[preferred]</code> variable. The rest of the url should be the path to the artifact relative to the base of the Apache distribution directory.</p>
