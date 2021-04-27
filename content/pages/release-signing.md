@@ -647,7 +647,7 @@ The transitive nature of the web of trust places a responsibility on the owner t
 For more information read the <a href="https://www.gnupg.org/(en)/documentation/guides.html" target="_blank">GNU Privacy Guard User
 Guide</a>.
 
-<h3 id="valid-untrusted-vs-invalid-trusted">What is the difference between a valid signature from an unterusted key an invalid signature from a trusted key?<a class="headerlink" href="#valid-untrusted-vs-invalid-trusted" title="Permanent link">&para;</a></h3>
+<h3 id="valid-untrusted-vs-invalid-trusted">What is the difference between a valid signature from an untrusted key an invalid signature from a trusted key?<a class="headerlink" href="#valid-untrusted-vs-invalid-trusted" title="Permanent link">&para;</a></h3>
 
 Trustfulness and validity are different concepts. You may elect to trust the identity of a key to various degrees (or not at all). For a particular key, a particular signature for a particular file may be valid (created by the private key from an identical file) or invalid
 (either corrupt or created from a different file).
