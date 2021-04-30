@@ -9,7 +9,7 @@ staging:
   profile: ~
 
 github:
-  description:   Infrastructure Website Repository 🍔
+  description:   Infrastructure Website Repository 🍔🍔🍔
 
 notifications:
   commits:              commits@infra.apache.org
