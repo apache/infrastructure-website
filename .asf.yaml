@@ -9,7 +9,8 @@ staging:
   profile: ~
 
 github:
-  description:   Infrastructure Website Repository...
+  description:   Infrastructure Website Source Repository
+  homepage:      https://infra.apache.org
 
 notifications:
   commits:              commits@infra.apache.org
