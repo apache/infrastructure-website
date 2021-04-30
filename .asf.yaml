@@ -9,8 +9,6 @@ staging:
   profile: ~
 
 github:
-  ghp_branch:    master
-  ghp_path:      /docs
   description:   Infrastructure Website Repository
 
 notifications:
