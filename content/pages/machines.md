@@ -12,3 +12,4 @@ You can change the hash type with the option: `ssh -o FingerprintHash=[md5|sha25
 Please note that people.apache.org is an alias and appears in the table as home.apache.org
 
 `spu:fetch('https://infra-reports.apache.org/machines/index.html')`
+
