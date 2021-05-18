@@ -28,7 +28,7 @@ Material about Apache's policies on releases, mirrors, and download pages is <a 
 
 Your Apache project's download page:
 
-  - must have at least one link to the current release. This link must use the "closer" utility. For example: `https://www.apache.org/dyn/closer.lua/PROJECT/VERSION/SOURCE-RELEASE`.
+  - must have at least one link to the current release. This link must use the "closer" utility. For example: `https://www.apache.org/dyn/closer.cgi/PROJECT/VERSION/SOURCE-RELEASE`.
   - must have a link to the checksum and hash for the current release. These links must use direct links to the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/VERSION/HASH-OR-CHECKSUM`.
   - must have a link to the keys file for your project. This link must use direct links to the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/KEYS`.
   - should have instructions on how to verify downloads. For this you can include a link to the <a href="https://www.apache.org/info/verification.html" target="_blank">Apache documentation on verification</a>.
