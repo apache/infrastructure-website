@@ -11,4 +11,7 @@ You can change the hash type with the option: `ssh -o FingerprintHash=[md5|sha25
 
 Please note that people.apache.org is an alias and appears in the table as home.apache.org
 
+**The hashes shown below are what the real machines SHOULD have. If it differs from what you see, please contact infra.**
+
+
 `spu:fetch('https://infra-reports.apache.org/machines/index.html')`
