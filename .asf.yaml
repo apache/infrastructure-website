@@ -1,6 +1,6 @@
 pelican:
   notify:         notifications@infra.apache.org
-  autobuild:      true
+  autobuild:      preview/*
   target:         asf-site
   whoami:         master
   
