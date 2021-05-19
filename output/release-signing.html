@@ -466,7 +466,7 @@ gpg:    new key revocations: 1
 <h3 id="delete-vs-revoke">The difference between deleting and revoking a key<a class="headerlink" href="#delete-vs-revoke" title="Permanent link">&para;</a></h3>
 <p>When you <em>delete</em> a key from a keyring, it is simply removed. You can add it again later.</p>
 <p>When you <em>revoke</em> a key, it is marked in the key ring. Whenever a message signed by this key is verified in the future, the user will get a warning that the key has been revoked.</p>
-<p>For example, when you verify a revoked key, &lt;a href=&quot;<a href="https://www.gnupg.org">https://www.gnupg.org</a>&quot; &lt;target=&quot;_blank&quot;&gt;&gt;GNU Privacy Guard</a> issues the following comment:</p>
+<p>For example, when you verify a revoked key, <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a> issues the following comment:</p>
 <pre><code>$ gpg --verify message.asc.message 
 gpg: Signature made Sat Apr  8 09:28:31 2006 BST using DSA key ID 4A03679A
 gpg: Good signature from &quot;Some User &amp;lt;someuser@example.org&amp;gt;&quot;
