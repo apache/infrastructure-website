@@ -3,6 +3,7 @@ Title: Open-access SVN
 This page collects arguments for and against running our Subversion service in a manner that permits committers the technical
 ability (but not the social privilege) to make commits against any part of the `https://svn.apache.org/repos/asf` repository.
 
+<ul>
 <li><a href="#upsides">Upsides</a></li>
 <li><a href="#downsides">Downsides</a></li>
 <li><a href="#participating-projects">Participating Projects</a></li>

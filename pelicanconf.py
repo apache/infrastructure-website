@@ -3,13 +3,9 @@
 from __future__ import unicode_literals
 from datetime import date
 
-import sys
-import os
-
 
 AUTHOR = u'PonyGnomeBot'
 SITENAME = u'Apache Infrastructure'
-SITEURL = ''
 CURRENTYEAR = date.today().year
 
 PATH = 'content'
