@@ -566,7 +566,7 @@ When you _delete_ a key from a keyring, it is simply removed. You can add it aga
 
 When you _revoke_ a key, it is marked in the key ring. Whenever a message signed by this key is verified in the future, the user will get a warning that the key has been revoked.
 
-For example, when you verify a revoked key, <a href="https://www.gnupg.org" <target="_blank">>GNU Privacy Guard</a> issues the following comment:
+For example, when you verify a revoked key, <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a> issues the following comment:
 
 ```
 $ gpg --verify message.asc.message 
