@@ -7,5 +7,5 @@ The following self-serve tools are currently available:
 - [Edit Apache account](/self-serve/id): Edit your personal Apache account
 - [Mailing list creation](/self-serve/mlreq): Create new mailing lists
 - [Podling Mailing list creation](/self-serve/mlreq/mlreq/incubator): Create Podling mailing lists
-- [New git repository](/self-serve/reporeq): Create new (empty) git repositories. For imports, [contact Infra](/contact.html).
+- [New Git repository](/self-serve/reporeq): Create new (empty) Git repositories. To import an existing repository, [contact Infra](/contact.html).
 
