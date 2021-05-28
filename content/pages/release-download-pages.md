@@ -28,11 +28,11 @@ Material about Apache's policies on releases, mirrors, and download pages is <a 
 
 Your Apache project's download page:
 
-  - must have at least one link to the current release. This link must use the "closer" utility. For example: `https://www.apache.org/dyn/closer.cgi/PROJECT/VERSION/SOURCE-RELEASE`.
+  - must have at least one link to the current release. This link must use the "closer" utility. For example: `https://www.apache.org/dyn/closer.lua/PROJECT/VERSION/SOURCE-RELEASE`.
   - must have a link to the checksum and hash for the current release. These links must use direct links to the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/VERSION/HASH-OR-CHECKSUM`.
   - must have a link to the keys file for your project. This link must use direct links to the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/KEYS`.
   - should have instructions on how to verify downloads. For this you can include a link to the <a href="https://www.apache.org/info/verification.html" target="_blank">Apache documentation on verification</a>.
-  - must not include a link to the top level "closer" utility (e.g. `http://www.apache.org/dyn/closer.cgi/PROJECT`) as the KEYS, sigs and hashes are missing, as are any verification instructions.
+  - must not include a link to the top level "closer" utility (e.g. `http://www.apache.org/dyn/closer.lua/PROJECT`) as the KEYS, sigs and hashes are missing, as are any verification instructions.
   
 <h2 id="download-scripts">Download scripts<a class="headerlink" href="#download-scripts" title="Permanent link">&para;</a></h2>
 
@@ -47,11 +47,11 @@ There are two basic options:
 
 The starting point for a generic script is a download page in the standard documentation which describes the releases. To use the generic script, you need to alter the page so the actual download links to the generic script in the appropriate fashion.
 
-The generic script is `closer.cgi`. Paaa in the relative path from the distribution root to the artifact as a parameter. So if the artifact is `foo-5.5.1.zip` and is located in `bar/foo` relative to `downloads.apache.org`, then `http://www.apache.org/dyn/closer.cgi/bar/foo/foo-5.5.1.zip` will display the mirrored distribution for downloading.
+The generic script is `closer.lua`. Paaa in the relative path from the distribution root to the artifact as a parameter. So if the artifact is `foo-5.5.1.zip` and is located in `bar/foo` relative to `downloads.apache.org`, then `http://www.apache.org/dyn/closer.lua/bar/foo/foo-5.5.1.zip` will display the mirrored distribution for downloading.
 
 As an alternative, you can generate a direct download link using the following syntax:
 
-`http://www.apache.org/dyn/closer.cgi/bar/foo/foo-5.5.1.zip?action=download`
+`http://www.apache.org/dyn/closer.lua/bar/foo/foo-5.5.1.zip?action=download`
 
 See below for how to generate a customised page of direct links using a mirror.
 
