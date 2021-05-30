@@ -182,7 +182,7 @@ Use the ASF <a href="https://repository.apache.org/" target="_blank">Nexus Repos
 
 <h4 id="distributions">Distributions<a class="headerlink" href="#distributions" title="Permanent link">&para;</a></h4>
 
-  - <a href="https://www.apache.org/dyn/closer.cgi" target="_blank">Current distributions</a>
+  - <a href="https://www.apache.org/dyn/closer.lua" target="_blank">Current distributions</a>
   - <a href="https://archive.apache.org" target="_blank">Historical distribution archives</a>
   - [Rsync for distribution mirrors](how-to-mirror.html)
   - <a href="https://repository.apache.org" target="_blank">Nexus</a>
