@@ -12,7 +12,7 @@ to the repositories, so you may download the most up-to-date development
 version of the software.
 If you are looking for a stable release of the source code, you should
 download it from the [distribution
-directory](http://www.apache.org/dyn/closer.cgi/). The Subversion
+directory](http://www.apache.org/dyn/closer.lua/). The Subversion
 repository should only be used if you want to be on the *bleeding-edge* of
 the development effort. The code contained in them may fail to work, or it
 may even eat your hard drive.
