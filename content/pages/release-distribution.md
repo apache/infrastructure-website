@@ -135,4 +135,4 @@ The ASF manages a number of distribution platforms that projects are welcome to 
 
 <h2 id="administration">Policy administration<a class="headerlink" href="#administration" title="Permanent link">&para;</a></h2>
 
-This policy is **required** for all Apache projects. The <a href="https://whimsy.apache.org/foundation/orgchart/vp-infra" target="_blank">V.P. of Apache Infrastructure</a> **must** approve changes to this policy.
+This policy is **required** for all Apache projects. The <a href="https://whimsy.apache.org/foundation/orgchart/vp-infrastructure" target="_blank">V.P. of Apache Infrastructure</a> **must** approve changes to this policy.
