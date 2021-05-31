@@ -59,8 +59,7 @@ At least <a href="https://github.com/search?q=topic%3Ajbake+org%3Aapache&type=Re
 Infra does not have a structure in place to support using [GitHub Pages](github-pages.html) for project websites.
 
 #### Apache CMS
-The Apache CMS, which projects used to build and deploy their websites for many years, is no longer available for new projects. It will shut down completely in summer, 2021, after all remaining projects on it have migrated to other technologies.
-
+The Apache CMS, which projects used to build and deploy their websites since 2010, is no longer available for new projects. It will shut down completely in summer, 2021, after all remaining projects on it have migrated to other technologies.
 
 <h2 id="sitemanagement">Site management</a></h2>
   
