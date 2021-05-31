@@ -3,7 +3,7 @@ Title: Managing your project web site
 Every Apache project or podling has a website hosted at `apache.org`. Apache provides tools to maintain it. Each project decides how their website looks, its contents, how they maintain it, and what software they use to support it, as long as the result is static files that our public web servers can make available to browsers. We also have limited support for .htaccess files and CGI scripts.
 
 
-## Contents ##
+## Contents
 
 <ul>
 <li><a href="#default">Creating the website</a></li>
@@ -15,14 +15,9 @@ Every Apache project or podling has a website hosted at `apache.org`. Apache pro
 
 Projects are free to choose their own styles and layout for websites, and have a range of options for actually creating the pages. The goal is to create and informative and useful **static** HTML website that can engage visitors, explain your project to them, and provide download links and documentation so they can use your project's applications.
 
-### Website-building options ###
+### Website-building options
 
-If you're managing an ASF website repository in GitHub, please add `website` and `<TOOL>` Topics  to it, where `<TOOL>` is the name of the tool
-used to generate the website, like `pelican`, `hugo` etc. This helps others use your repository as an example using queries like
- <a href="https://github.com/search?q=org%3Aapache+topic%3Ahugo" target="_blank">this one</a>.
-You can use the `.asf.yaml` mechanism to add those Topics.
-
-#### Website template in Markdown ####
+#### Basic website template in Markdown ####
 
 If you'd like to get started with an easy-to-use, <a href="https://github.github.com/gfm/" target="_blank">Markdown</a>-based site that many projects have used, see the <a href="https://github.com/apache/apache-website-template" target="_blank">sample Apache project website</a> repository which has many useful features and instructions for using svnpubsub.
 
@@ -46,10 +41,6 @@ Browse a <a href="https://github.com/getpelican/pelican-plugins/" target="_blank
 <a href="https://github.com/search?q=topic%3Apelican+org%3Aapache&type=Repositories" target="_blank">This GitHub query</a> returns ASF repositories
 which have the `pelican` Topic, that should provide a few examples.
 
-#### Github Pages ####
-
-*In theory*, projects with a Git code repository can use [GitHub Pages](github-pages.html) to create a staging site for reviewing their website, and to publish the site when it is ready. One project has done this as a proof-of-concept; however Infra does not have a structure in place to fully support using GitHub Pages for project websites.
-
 #### Jekyll ####
 
 <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> is a straightforward tool for developing blogs or static websites using Markdown, and it is easy to deploy the resulting website as Github Pages. There are many tutorials for doing this available online.
@@ -62,12 +53,22 @@ At least <a href="https://github.com/search?q=topic%3Ahugo+org%3Aapache&type=Rep
 
 At least <a href="https://github.com/search?q=topic%3Ajbake+org%3Aapache&type=Repositories" target="_blank">two ASF projects</a> use <a href="https://jbake.org/" target="_blank">JBake</a>, a Java-based tool for building static web sites.
 
+### Tools not supported
+
+#### Github Pages
+Infra does not have a structure in place to support using [GitHub Pages](github-pages.html) for project websites.
+
+#### Apache CMS
+The Apache CMS, which projects used to build and deploy their websites for many years, is no longer available for new projects. It will shut down completely in summer, 2021, after all remaining projects on it have migrated to other technologies.
+
+
 <h2 id="sitemanagement">Site management</a></h2>
   
   The basic requirements for site management are that 
 
   - only committers should be able to modify the site.
-  - notifications of all site changes are sent to the relevant project mailing lists. The Apache CMS allows non-committers to send patches via a simple web interface by "Mail Diff"ing to the project mailing list that can be easily published by a committer.
+  - notifications of all site changes are sent to the relevant project mailing lists.
+
 
 <h3 id="tools">Management tools<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h3>
 
@@ -77,9 +78,9 @@ Infra supports these tools for publishing and maintaining Apache project website
   - **svnpubsub** automatically publishes the static contents of a designated svn folder (<a href="https://svn.apache.org/repos/asf/ant/site/ant/production/" target="_blank">example</a>) as the project web site at `http://project.apache.org`. The project team can use any site build mechanism it wants as long as the above requirements are met.
   - [**pypubsub**](pypubsub.html) automatically serves the static contents of a designated git repository as the website for a project. Git-based websites are typically maintained in a repository branch to be published as `https://project.apache.org`. A project can host the site from its primary project repository. Typically these will be built as a Jenkins or a Buildbot job (see below). We recommend that you only have a single writer to the asf-site branch to avoid potential conflicts.
   - For **websites using a git repository**, you can add a <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">.asf.yaml</a> configuration file. The file lets you set instructions that simplify updating and maintaining the site.
-  - **Apache CMS** _(being deprecated; don't use for new sites)_ provides a simple browser-based user interface for editing, staging and publishing site content in Markdown, HTML or any other source format for which support has been added. See the <a href="cmsref">CMS reference</a> and <a href="cmsadoption">adoption</a> for more details. The Apache CMS uses pypubsub as the underlying mechanism for publishing a site. **Note**: No new projects can use the Apache CMS, and we enccourage projects using it to migrate to another resource for maintaining their websites. Here are <a href="https://cwiki.apache.org/confluence/display/INFRA/Migrate+your+project+website+from+the+Apache+CMS" target="_blank">migration instructions</a>.
+
   
-#### Build tools ####
+### Build tools
 
 Infra provides these build tools:
 
@@ -96,9 +97,16 @@ This only applies to _SVN based websites_.
 
 Look at the `.revision` file at the root of your site (for example, <a href="http://subversion.apache.org/.revision" target="_blank">http://subversion.apache.org/.revision</a>). That file updates after every successful svn update. (If the update is underway or exited abnormally, `.revision` won't have changed.)
 
+### Topics in GitHub
+
+If you're managing an ASF website repository in GitHub, please add `website` and `<TOOL>` Topics  to it, where `<TOOL>` is the name of the tool you are using to generate the website, like `pelican` or `hugo`. This helps others who are looking for an example of use of that tool to find your repository with queries like
+ <a href="https://github.com/search?q=org%3Aapache+topic%3Ahugo" target="_blank">this one</a>.
+
+You can use the `.asf.yaml` mechanism to add those Topics.
+
 <h3 id="mail">Providing public access to the project's mail archive mbox files<a class="headerlink" href="#mail" title="Permanent link">&para;</a></h3>
 
-Some projects have a "mail" directory at the top of their project website. Enable this by creating a symbolic link  to `/home/apmail/public-arch/$tlp.apache.org` in svnpubsub or CMS output.
+Some projects have a "mail" directory at the top of their project website. Enable this by creating a symbolic link  to `/home/apmail/public-arch/$tlp.apache.org` in svnpubsub.
 
 See more <a href="https://apache.org/dev/#mail" target="_blank">notes aboout project mail</a>.
 
@@ -108,15 +116,14 @@ To use a custom favicon for your project's website, add the `favicon.ico` file t
 
 <h3 id="generated">Minimizing the number of changes committed in the project's Maven- or JavaDoc- generated site<a class="headerlink" href="#generated" title="Permanent link">&para;</a></h3>
 
-If you are using svnpubsub, the commit performs very slowly if the number of changes is large, particularly if the number of files is large. This is often the case with JavaDoc, and to a lesser extent with Maven-generated sites. 
+If you are using svnpubsub, the commit performs very slowly if the number of changes is large, particularly if the number of files is also large. This is often the case with JavaDoc, and to a lesser extent with Maven-generated sites. 
 
-Here is what you can do to speed up the commit:
+To speed up the commit:
 
-  - Ask Infra to store your generated content in the CMS repository, rather than the main ASF repository. While this won't necessarily speed up your own commit, it will prevent it from impacting other users.
   - When running JavaDoc, pass the `-notimestamp` option. This will avoid most files from being modified between runs if there haven't been code changes.
-  - Use a Maven skin that doesn't generate a timestamp into the output. This may require customizing the current skins.
+  - Use a Maven skin that doesn't add a timestamp to the output. This may require customizing the current skins.
   - If you use the Maven dependencies report in the Project Info Reports plugin, use version 2.7+ of the plugin to avoid random strings being generated.
-  - If you maintain historical versions of documentation, always check-in to a single "trunk", then use an `svn copy` operation to tag or branch the content, rather than checking in a complete copy.
+  - If you maintain historical versions of documentation, always check changes in to a single "trunk", then use an `svn copy` operation to tag or branch the content, rather than checking in a complete copy.
   - Minimize use of "publish date" and "version" in templates to those that are truly necessary or helpful. Consider using a "last modified date" and version in the URL instead (unless "latest" is implied).
   - Minimize Subversion keywords in the output that may change frequently without significant meaning. This includes keywords in source code that may be rendered to JavaDoc or a Maven JXR source cross-reference.
   - Avoid publishing Maven reports that change constantly to the project site. Code coverage, style reports, static analysis, etc. can be generated into a working copy on the CI server instead for easy developer viewing.
@@ -124,5 +131,4 @@ Here is what you can do to speed up the commit:
 <h2 id="preview">Previewing the website<a class="headerlink" href="#preview" title="Permanent link">&para;</a></h2>
 
   - For svnpubsub sites, review the local files in your svn checkout before committing them. The changes will be published immediately after you commit them.
-  - For CMS sites, just commit the changes (without "publish"-ing them). Then click the `Staged` link that will take you to the staged site.
   - There is no preview mode for pypubsub. You should ideally have a way to build and test the website locally.
