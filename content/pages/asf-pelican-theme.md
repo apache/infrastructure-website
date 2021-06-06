@@ -1,6 +1,6 @@
 Title: Apache Theme for ASF Pelican
 
-The Apache Theme, created for use with [ASF-Pelican](asf-pelican.html) for project websites, is available at <a href="https://github.com/apache/www-site/tree/main/theme" target="_blank">github.com/apache/www-site/tree/main.theme</a>.
+The Apache Theme, created for use with [ASF-Pelican](asf-pelican.html) for project websites, is available at <a href="https://github.com/apache/template-site/tree/main/theme" target="_blank">github.com/apache/template-site/tree/main.theme</a>.
 
 It has two types of files:
 
