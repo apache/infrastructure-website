@@ -2,7 +2,7 @@ Title: ASF Pelican data model
 
 ## ASF Data
 
-If your site includes the `asfdata.py` plugin, during initialization, the Pelican site generator reads instructions from it and creates shared metadata that is available for all pages. It is particularly critical for **ezmd** pages that contain directives.
+If your site includes the `asfdata.py` plugin, the Pelican site generator reads instructions from it during initialization and creates shared metadata that is available for all pages. It is particularly critical for **ezmd** pages that contain directives.
 
 The `pelicanconf.py` file contains the following:
 
