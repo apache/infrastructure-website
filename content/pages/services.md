@@ -33,9 +33,11 @@ Infra maintains a wide range of tools for PMCs, project committers, and the Apac
 
 <h3 id="web-sites">Websites<a class="headerlink" href="#web-sites" title="Permanent link">&para;</a></h3>
 
-  - <a href="https://apache.org/dev/#web" targety="_blank">ASF websites</a>.
+  - `www.apache.org` is the main ASF website.
+  - <a href="https://apache.org/dev/#web" targety="_blank">ASF project websites</a>.
   - An index of <a href="https://projects.apache.org/projects.html?name" target="_blank">all ASF projects</a>.
-  - `www.apache.org` is the main ASF website. Build instructions are <a href="https://apache.org/dev/infra-site" target="_blank">here</a>.
+  - Documentation for the [ASF-Pelican template](asf-pelican.html) ASF projects can use to build and deploy their project websites.
+  
   - Details about individual <a href="https://home.apache.org/" target="_blank">ASF Committers</a>.
   - Notes about committers' <a href="https://apache.org/dev/new-committers-guide.html#public_html" target="_blank">personal web spaces</a>.
   
