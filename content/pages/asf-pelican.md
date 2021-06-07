@@ -8,16 +8,20 @@ Review the following information to simplify your work with, and get your best r
 
 ## Getting started
 
-_information coming_
+See the [getting-started guide](asf-pelican-gettingstarted.html).
 
 ## For site designers
 
-Information about the [ASF Theme](asf-pelican-theme.html)
+Information about the [ASF Theme](asf-pelican-theme.html).
 
 ## For site developers
 
-_information coming_ 
+-  [Data modeling](asf-pelican-data.html) provides what developers need to know to maintain and expand on the metadata made available to the site.
+-  [Build process](asf-pelican-build.html)Process describes the full end to end build from the developers perspecitve.
+-  Review the [plugins](asf-pelican-plugins.html) that are included in the template repository.
 
-## To update your project site
+## For site committers
 
-_information coming_
+- The template uses [GitHub Flavored Markdown](gfm.html) (GFM) to structure content. It also supports most HTML elements.
+- [Feature branches](asf-pelican-branches.html) focuses on handling major changes.
+- How to develop your site using [local builds](asf-pelican-local.html) on a local Linux or macOS system.
