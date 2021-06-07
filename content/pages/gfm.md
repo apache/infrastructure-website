@@ -57,7 +57,7 @@ SEE INSTEAD: [Trademark Resources Site Map][resources].
 
 If you are moving a project site of the Apache CMS and will be using the ASF-Pelican template:
 
-  - Change any **mdtext** file extension **mdtext** to **md**.
+  - Change any **mdtext** file extension to **md**.
   - Replace the multiple line `notice:` at the top of the file with a one-line reference to the Apache License.
   - Any {#id} and {.class} annotations have any # tags between the annotation and the heading text removed.
   - Only one {#id} or {.class} annotation is allowed on a tag.
