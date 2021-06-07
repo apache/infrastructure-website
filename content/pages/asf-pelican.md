@@ -23,5 +23,5 @@ Information about the [ASF Theme](asf-pelican-theme.html).
 ## For site committers
 
 - The template uses [GitHub Flavored Markdown](gfm.html) (GFM) to structure content. It also supports most HTML elements.
-- [Feature branches](asf-pelican-branches.html) focuses on handling major changes.
+- Handle major site changtes using [feature branches](asf-pelican-branches.html).
 - How to develop your site using [local builds](asf-pelican-local.html) on a local Linux or macOS system.
