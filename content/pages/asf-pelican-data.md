@@ -15,24 +15,24 @@ ASF_DATA = {
 }
 ```
 
-- `data` is a .yaml file of metadata instructions. These are described below:
+- `data` is a .yaml file of metadata instructions. These are described below.
 - `metadata` is a dictionary to contain the shared metadata.
 - `debug`: if `True`, the system outputs more details about processing in `asfdata.py`.
 
 Within the plugin there are three kinds of data transformations:
 
 1. Constant key-value pairs.
-2. Specific sequences - each of these are custom code specific to the datasource:
+2. Specific sequences that are custom code specific to the datasource:
    - Twitter feed uses the Twitter Recent Tweet API
    - Blogs reads a Roller Atom feed in XML
    - ECCN reads export notifications from a .yaml file
 3. Multiple data models derived from a single .yaml or json file:
-   - Committee Info, which has Board, Officer, Committee, and Project information
-   - Podling Info, which has Incubator podling information
+   - Committee info, which has Board, Officer, Committee, and Project information
+   - Podling info, which has Incubator podling information
 
-## Key Value Metadata
+## Key value metadata
 
-These are simply provided in the `ASF_DATA['data']` file.
+These are provided in the `ASF_DATA['data']` file:
 
 ```yaml
 # key-value pairs
@@ -54,9 +54,9 @@ com_mailinglists: 1,400
 com_pageviews: 35M
 ```
 
-## Recent Tweets
+## Recent tweets
 
-This sequence uses specific code.
+This sequence uses specific code:
 
 ```yaml
 # used on index.ezmd
@@ -86,9 +86,9 @@ def process_twitter(handle, count):
     return v
 ```
 
-## Recent Blog Posts
+## Recent blog posts
 
-There are three different feeds used in the `www-site`. We show one in this example.
+The main Apache site uses three different blog feeds. Here is how the site calls one, as an example:
 
 ```yaml
 # used on index.ezmd
@@ -98,7 +98,7 @@ foundation:
   count: 1
 ```
 
-We are only interested in the most recent post's title and id/url.
+The site is only interested in the most recent post's title and id/url.
 
 
 ```python
@@ -131,12 +131,12 @@ def process_blog(feed, count, debug):
              for s in v ]
 ```
 
-Note the use of the `Blog` class. It's definition is included in the code for the next example.
+Note the use of the `Blog` class. Its definition is in the code for the next example.
 
 ## ECCN Data Sequences
 
-The ECCN data matrix is a recording of project's bisnotice emails regarding encryption code.
-It is four layers of sequences - projects, products, versions, and controlled sources.
+The ECCN data matrix is records a project's bisnotice emails regarding encryption code.
+It has four layers: projects, products, versions, and controlled sources. This information is primarily of interest to the main Apache site, but may be useful to those working on project websites in showing how the system secures and processes data.
 
 Here are the ASF_DATA directives
 
@@ -241,7 +241,8 @@ class Blog(wrapper): pass
 
 ## Committee Info
 
-The committee info data contains three different data structure - officers, committees, and the board of directors.
+The committee info data contains three data structures: - officers, committees, and the board of directors. Again, this is primarily of interest to the main Apache site.
+
 From these we derive:
 
 - Board of Directors sequence
@@ -305,7 +306,7 @@ ci:
     path: board.roster
 ```
 
-Here is the python code used select the board roster from committee info.
+Here is the Python code used to select the board roster from committee info.
 
 ```python
     # select sub dictionary
@@ -316,7 +317,7 @@ Here is the python code used select the board roster from committee info.
             reference = reference[part]
 ```
 
-The following procedure is used to convert a dictionary into a sequence of object's with attributes.
+The following procedure converts a dictionary into a sequence of objects with attributes.
 
 ```python
 # convert a dictionary into a sequence (list)
@@ -329,7 +330,7 @@ def sequence_dict(seq, reference):
             reference[refs]['key_id'] = refs
             for item in reference[refs]:
                 if isinstance(reference[refs][item], bool):
-                    # fixup any boolean values to be ezt.boolean - essentially True -> "yes"
+                    # fix up any Boolean values to be ezt.boolean - essentially True -> "yes"
                     reference[refs][item] = ezt.boolean(reference[refs][item])
             # convert the dict into an object with attributes and append to the sequence
             sequence.append(type(seq, (), reference[refs]))
@@ -338,7 +339,7 @@ def sequence_dict(seq, reference):
 
 ### Officers
 
-Foundation officers.
+How the system assembles the list of Foundation officers.
 
 ```json
     "boardchair": {
@@ -386,7 +387,7 @@ Committees / PMC Chairs. Roster and Reporting is omitted.
     ...
 ```
 
-Here are the directives used to create metadata models from the above data.
+Here are the directives that create metadata models from the above data.
 
 
 ```yaml
@@ -411,7 +412,7 @@ Here are the directives used to create metadata models from the above data.
     dictionary: officers,committees
 ```
 
-We've already seen the core for `path` above. Here is the code that invokes `trim` and `asfid`.
+We've already seen the code for `path` above. Here is the code that invokes `trim` and `asfid`:
 
 ```python
     # remove irrelevant keys
@@ -427,7 +428,7 @@ We've already seen the core for `path` above. Here is the code that invokes `tri
         asfid_part(reference, sequence['asfid'])
 ```
 
-Here is the code that trims a key from a dictionary.
+Here is the code that trims a key from a dictionary:
 
 ```python
 # remove parts of a data source we don't want ro access
@@ -440,7 +441,7 @@ def remove_part(reference, part):
             remove_part(reference[refs], part)
 ```
 
-Here is the code that rearranges the chair or officer(roster) so that the dictionary is flattened before sequencing.
+Here is the code that rearranges the chair or officer (roster) so that the dictionary is flattened before sequencing.
 
 ```python
 # rotate a roster list singleton into an name and availid 
@@ -454,7 +455,7 @@ def asfid_part(reference, part):
         reference[refs]['availid'] = availid
 ```
 
-The `ci` data model is a dictionary we need to better show officers on the foundation page.
+The `ci` data model is a dictionary we need to improve the display of officers on the ASF main site.
 
 ```python
     # this dictionary is derived from sub-dictionaries
@@ -472,7 +473,7 @@ The `ci` data model is a dictionary we need to better show officers on the found
 
 ### Projects / PMCs
 
-For sequences about projects we first derive a project list from the committee list. We also supplement with the Project's initial letter for an alphabetic project index. 
+For sequences about projects we first derive a project list from the committee list. We supplement it with each project's initial letter to provide an alphabetical project index. 
 
 ```yaml
   projects:
@@ -502,7 +503,7 @@ def where_parts(reference, part):
         del reference[refs]
 ```
 
-This code provides alphabetic index for a product index derived below.
+This code provides an alphabetical index for the product index derived below.
 
 ```python
 # perform alphabetation. HTTP Server is special and is put before 'A'
@@ -517,9 +518,9 @@ def alpha_part(reference, part):
         reference[refs]['letter'] = letter
 ```
 
-### Featured Projects
+### Featured projects
 
-For the front page we want to feature a random sample of projects. We also want to display a project's logo.
+On the front page on the main ASF site we feature a random sample of projects. We also want to display a project's logo.
 
 ```yaml
   featured_projs:
@@ -533,7 +534,7 @@ For the front page we want to feature a random sample of projects. We also want 
     logo: /logos/res/{}/default.png,/foundation/press/kit/poweredBy/Apache_PoweredBy.svg
 ```
 
-Here is the code to copy another sequence, take a random sample, add the logo (or default), and for featured podling's adjust the name.
+Here is the code to copy a sequence, take a random sample, add the logo (or the ASF feather if there is no product logo), and, for featured podlings, adjust the name:
 
 ```python
     # this sequence is derived from another sequence
@@ -587,9 +588,9 @@ def add_logo(reference, part):
     return reference
 ```
 
-### Project Index
+### Project index
 
-At the bottom of the main page we display a project index that includes headings for each letter of the alphabet.
+At the bottom of the main page of the ASF site we display a project index that includes headings for each letter of the alphabet:
 
 ```yaml
   pl:
@@ -601,7 +602,7 @@ At the bottom of the main page we display a project index that includes headings
     split: 6
 ```
 
-This code derives the six sequences for the columns. The output metadata is `pl_0`, `pl_1`, `pl_2`, `pl_3`, `pl_4`, and `pl_5`, 
+This code derives the sequences for the six columns in the display. The output metadata is `pl_0`, `pl_1`, `pl_2`, `pl_3`, `pl_4`, and `pl_5`: 
 
 ```python
 # split a list into equal sized columns. Adds letter breaks in the alphabetical sequence.
@@ -638,13 +639,15 @@ def split_list(metadata, seq, reference, split):
         print(f'WARNING: {seq} not all of sequence consumed: short {size-nseq} projects')
 ```
 
-## Adding a new Data Source
+## Adding a data source
 
-Before you code for your new data source you will need to evaluate which of the above patterns it fits.
-Is it a bespoke pattern like Twitter, Blogs, and ECCN? Or, can it follow the sequence of directives used for Committee Info?
-If the sequence of directives, does it need a new one?
+Before you code to add a data source, evaluate which of the above patterns it fits.
 
-### Adding a bespoke data source
+  - Is it a custom pattern as for Twitter, blogs, and ECCN?
+  - Can it follow the sequence of directives used for committee iInfo?
+  - If it is a sequence of directives, does it need a new one?
+
+### Adding a custom data source
 
 ```python
     # Lift data from ASF_DATA['data'] into METADATA
@@ -672,7 +675,7 @@ If the sequence of directives, does it need a new one?
                 continue
 ```
 
-For bespoke singletons add your call to your new process_X code here following the pattern for ECCN or Twitter.
+For a custom singletons add your call to your new process_X code here, following the pattern for ECCN or Twitter.
 
 ```python
        	    value = config_data[key]
@@ -693,11 +696,11 @@ For bespoke singletons add your call to your new process_X code here following t
                     continue
 ```
 
-For bespoke non-singletons add your call to your new process_X code here following the pattern for a blog.
+For custom non-singletons add your call to your new process_X code here, following the pattern for a blog feed.
 
-### Adding a new directive to the sequence process
+### Adding a directive to the sequence process
 
-If you are adding a new directive then add it to `process_sequence` in the order needed.
+If you are adding a directive, add it to `process_sequence` in the place you need it (process order can matter):
 
 ```python
 # process sequencing transformations to the data source
@@ -738,7 +741,7 @@ def process_sequence(metadata, seq, sequence, load, debug):
         print(f'asfid: {sequence["asfid"]}')
         asfid_part(reference, sequence['asfid'])
 
-    # add first letter ofr alphabetic categories
+    # add first letter of alphabetic categories
     if 'alpha' in sequence:
         print(f'alpha: {sequence["alpha"]}')
         alpha_part(reference, sequence['alpha'])
