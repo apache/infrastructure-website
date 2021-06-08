@@ -102,15 +102,14 @@ ASF-Pelican build process        </a>
           <h2>
               ASF-Pelican build process
           </h2>
-              <p><em>TEXT MIGRATED BUT NOT EDITED YET</em></p>
-<p>This website is built using <a href="https://blog.getpelican.com">Pelican</a>. Configure the build using the <a href="../pelicanconf.py">pelicanconf.py</a> settings.</p>
-<h2>Pelican Theme</h2>
+              <p>For websites using the ASf-Pelican template and the <a hreff="https://docs.getpelican.com/en/stable/" target="_blank">Pelican static site generator</a>, configure the build using the <code>pelicanconf.py</code> settings.</p>
+<h2>Pelican theme</h2>
 <pre><code class="language-python"># Theme
 THEME = './theme/apache'
 </code></pre>
-<p>See <a href="../theme/apache/templates/.">theme template</a> for details about this site's theme.</p>
+<p>See [ASF-Pelican theme][asf-pelican-theme.html] for details about the ASF Theme.</p>
 <h2>Plugins</h2>
-<p>The Pelican environment is enhanced with plugins. Our environment has its own copy of the <code>asf</code> plugins, while the <code>pelican-build.py</code> script provides <code>pelican-gfm</code>.</p>
+<p>ASF-Pelican enhances the Pelican environment with plugins. Our environment has its own copy of the <code>asf</code> plugins, and the <code>pelican-build.py</code> script provides <code>pelican-gfm</code>.</p>
 <pre><code class="language-python"># Pelican Plugins
 # pelican-gfm is installed in the buildbot as part of build_pelican.py. It is an ASF Infra custom plugin.
 # other plugins are discoverable and can be installed via pip by mentioning them in requirements.txt
@@ -125,10 +124,10 @@ PLUGINS = ['asfgenid', 'asfdata', 'pelican-gfm', 'asfreader']
 <li><a href="#ezmd-reader">EZMD Content</a>. The <code>asfreader.py</code> plugin reads <strong>.ezmd</strong> files, injects data, translates ezt, and converts the GFM Markdown into HTML.</li>
 <li><a href="#generate-id">Generate ID</a>. The <code>asfgenid.py</code> plugin performs a number of enhancements to the HTML.</li>
 </ol>
-<p>See <a href="#process">process</a> for the steps signaled. See <a href="../theme/plugins/.">plugins</a> for the Python code.</p>
-<h2>Tree Structure</h2>
+<p>See [ASF-Pelican build process][asf-pelican-build.html] for the steps signaled. See [plugins][asf-pelican-plugins.html] for the Python code.</p>
+<h2>Tree structure</h2>
 <p>Pages and static content are stored in the same tree. Generated content is output with the same relative path, except with an html extension.
-These are the necessary settings.</p>
+These are the necessary settings:</p>
 <pre><code class="language-python">PATH = 'content'
 # Save pages using full directory preservation
 PAGE_PATHS = ['.']
@@ -144,8 +143,8 @@ READERS = {'html': None}
 IGNORE_FILES = ['README.md','interviews','include']
 </code></pre>
 <h1>Process</h1>
-<p>Pelican uses <a href="https://docs.getpelican.com/en/latest/plugins.html#list-of-signals">signals</a> as it goes through the process of reading and generating content.
-Pages are processed in no particular order. Our plugins provide the following activity:</p>
+<p>Pelican uses <a href="https://docs.getpelican.com/en/latest/plugins.html#list-of-signals" target="_blank">signals</a> as it goes through the process of reading and generating content. It processes pages in no particular order.</p>
+<p>Our plugins provide the following activity:</p>
 <table>
 <thead>
 <tr>
@@ -176,14 +175,14 @@ Pages are processed in no particular order. Our plugins provide the following ac
 <td><a href="#read-source">Read</a></td>
 <td align="center">read_source</td>
 <td align="center">super.read_source</td>
-<td>read page source and metadata</td>
+<td>Read page source and metadata</td>
 </tr>
 <tr>
 <td></td>
 <td><a href="#model-metadata">Model Metadata</a></td>
 <td align="center"></td>
 <td align="center">add_data</td>
-<td>add asf data to the model and expand any <code>[{ reference }]</code></td>
+<td>Add asf data to the model and expand any <code>[{ reference }]</code></td>
 </tr>
 <tr>
 <td></td>
@@ -197,7 +196,7 @@ Pages are processed in no particular order. Our plugins provide the following ac
 <td><a href="#render-gfm">Render GFM</a></td>
 <td align="center">render</td>
 <td align="center">super.render</td>
-<td>render GFM/HTML into HTML</td>
+<td>Render GFM/HTML into HTML</td>
 </tr>
 <tr>
 <td>Content</td>
@@ -213,14 +212,14 @@ Pages are processed in no particular order. Our plugins provide the following ac
 <td align="center">translate</td>
 <td>Create output HTML by pushing the generated content and metadata through the theme's templates</td>
 </tr></tbody></table>
-<p>See <a href="builds.md">local builds</a> for how to install <a href="https://github.com/apache/infrastructure-p6/tree/production/modules/pelican_asf/files">Pelican ASF</a> on your system.</p>
-<h2>Data Model</h2>
-<p>A shared metadata model is used by <strong>ezmd</strong> templates to generate content. There are three types of data:</p>
+<p>See [local builds][asf-pelican-local.html] for how to install ASF-Pelican on your system.</p>
+<h2>Data model</h2>
+<p><strong>ezmd</strong> templates use a shared data model to generate content. There are three types of data:</p>
 <table>
 <thead>
 <tr>
 <th>When refereced</th>
-<th>Data Type</th>
+<th>Data type</th>
 </tr>
 </thead>
 <tbody>
@@ -236,10 +235,10 @@ Pages are processed in no particular order. Our plugins provide the following ac
 <td>EZMD Reader</td>
 <td>Dictionaries - key-value maps where the value may be another dictionary</td>
 </tr></tbody></table>
-<p>The constants are also available to the <a href="#generate-id"><code>asfgenid.py</code></a> plugin and the <a href="../theme/apache/templates/.">theme's templates</a>.</p>
-<p>There are examples of how to <a href="#model-metadata">inject shared metadata below</a>. See <a href="data.md">metadata model</a> for how <code>asfdata.py</code> works to populate the shared metadata.</p>
-<h2>Read Source</h2>
-<p>The <code>read_source</code> method is used to open a file and convert it into a metadata dictionary and text.</p>
+<p>The constants are also available to the <code>asfgenid.py</code> plugin and the [theme's templates][asf-pelican-theme.html].</p>
+<p>There are examples of how to <a href="#model-metadata">inject shared metadata</a> below. See the [metadata model][asf-pelican-data.html] for how <code>asfdata.py</code> works to populate the shared metadata.</p>
+<h2>Read source</h2>
+<p>The systems uses the <code>read_source</code> method to open a file and convert it into a metadata dictionary and text.</p>
 <p>Example:</p>
 <pre><code class="language-md">Title: ASF Export Classifications and Source Links
 license: https://www.apache.org/licenses/LICENSE-2.0
@@ -335,7 +334,7 @@ There is a blank line and the rest is the <code>text</code>.</p>
         return text, metadata
 </code></pre>
 <h2>EZT Translation</h2>
-<p><strong>ezmd</strong> Pages files are <a href="https://github.com/gstein/ezt">ezt</a> templates that create Markdown and HTML output. See <a href="https://github.com/gstein/ezt/blob/wiki/Syntax.md">EZT Syntax</a> for the directives.</p>
+<p><strong>ezmd</strong> page files are <a href="https://github.com/gstein/ezt">ezt</a> templates that create Markdown and HTML output. See <a href="https://github.com/gstein/ezt/blob/wiki/Syntax.md">EZT Syntax</a> for the directives.</p>
 <h3>EZT Examples</h3>
 <p>Project list:</p>
 <pre><code class="language-md">| Office    | Individual  |
@@ -347,7 +346,7 @@ There is a blank line and the rest is the <code>text</code>.</p>
      &lt;a href=&quot;#[featured_projs.key_id]&quot; data-toggle=&quot;tab&quot;&gt;[featured_projs.display_name]&lt;/a&gt;
 &lt;/li&gt;[end]
 </code></pre>
-<p>Insert a file as is into the output:</p>
+<p>Insert a file as-is into the output:</p>
 <pre><code class="language-md">Title: Apache Download Mirrors
 
 [insertfile &quot;include/closer.ezt&quot;]
@@ -365,17 +364,17 @@ There is a blank line and the rest is the <code>text</code>.</p>
             template.generate(fp, metadata)
 </code></pre>
 <h2>Render GFM</h2>
-<p>Content is in <a href="https://guides.github.com/features/mastering-markdown/">GitHub Flavored Markdown</a> (GFM).</p>
-<p>The site uses a version of <a href="https://github.com/github/cmark-gfm">cmark-gfm</a> by <a href="https://github.blog/2017-03-14-a-formal-spec-for-github-markdown/">GitHub</a> through the <a href="#pelican-gfm">pelican-gfm</a> plugin created by Apache Infra.</p>
+<p>Content is in [GitHub Flavored Markdown][gfm.html] (GFM).</p>
+<p>ASF-Pelican uses a version of <a href="https://github.com/github/cmark-gfm" target="_blank">cmark-gfm</a> by <a href="https://github.blog/2017-03-14-a-formal-spec-for-github-markdown/" target="_blank">GitHub</a> through the <code>pelican-gfm</code> plugin created by Apache Infra.</p>
 <ul>
 <li>
-<p><a href="https://guides.github.com/features/mastering-markdown/">Mastering Markdown</a></p>
+<p>&lt;a href=&quot;<a href="https://guides.github.com/features/mastering-markdown/">https://guides.github.com/features/mastering-markdown/</a>&quot; target=&quot;_blank&gt;Mastering Markdown</a></p>
 </li>
 <li>
 <p><a href="https://github.github.com/gfm/">Detailed Specification</a> with many examples</p>
 </li>
 <li>
-<p>Some differences from <code>markdown.pl</code> used in the Apache CMS.</p>
+<p>Many projects used the Apache CMS for their websites. Here are some differences from its <code>markdown.pl</code>.</p>
 <ul>
 <li>
 <p><a href="https://github.github.com/gfm/#html-block">HTML Blocks</a></p>
@@ -500,7 +499,7 @@ Many of these ASF-specific enhancements are controlled in <a href="../pelicancon
 <tr>
 <td>toc</td>
 <td align="center">True</td>
-<td>generate a table of contents if [TOC] is found. If this is set to False then the <code>toc.py</code> plugin may used.</td>
+<td>generate a table of contents if [TOC] is found. If this is set to False then the <code>toc.py</code> plugin may be used.</td>
 <td></td>
 </tr>
 <tr>
@@ -512,7 +511,7 @@ Many of these ASF-specific enhancements are controlled in <a href="../pelicancon
 <tr>
 <td>-</td>
 <td align="center">-</td>
-<td>convert beautiful soup back into HTML</td>
+<td>convert beautiful soup back into HTML.</td>
 <td></td>
 </tr></tbody></table>
 <pre><code class="language-python"># Configure the asfgenid plugin
@@ -548,7 +547,7 @@ SEE INSTEAD: [Trademark Resources Site Map][resources].
 &lt;/div&gt;
 </code></pre>
 <h3>Heading code</h3>
-<p>Code from <code>asfgenid.py</code> uses <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.html?highlight=javascript#">BeautifulSoup 4</a> to manipulate the rendered HTML. Here is an example</p>
+<p>Code from <code>asfgenid.py</code> uses <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.html?highlight=javascript#">BeautifulSoup 4</a> to manipulate the rendered HTML. Here is an example:</p>
 <pre><code class="language-python"># from Apache CMS markdown/extensions/headerid.py - slugify in the same way as the Apache CMS
 def slugify(value, separator):
     &quot;&quot;&quot; Slugify a string, to make it URL friendly. &quot;&quot;&quot;
