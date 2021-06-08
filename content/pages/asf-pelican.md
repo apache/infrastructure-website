@@ -16,8 +16,8 @@ Information about the [ASF Theme](asf-pelican-theme.html).
 
 ## For site developers
 
--  [Data modeling](asf-pelican-data.html) provides what developers need to know to maintain and expand on the metadata made available to the site.
--  [Build process](asf-pelican-build.html)Process describes the full end to end build from the developers perspecitve.
+-  [Data modeling](asf-pelican-data.html) provides what developers need to know to maintain and expand on the data they want to use and disaply on their site.
+-  [Build process](asf-pelican-build.html) describes the full end-to-end build from the developer's perspecitve.
 -  Review the [plugins](asf-pelican-plugins.html) that are included in the template repository, and the plugin architecture.
 
 ## For site committers
