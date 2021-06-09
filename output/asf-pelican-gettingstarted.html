@@ -102,7 +102,125 @@ ASF-Pelican getting-started guide        </a>
           <h2>
               ASF-Pelican getting-started guide
           </h2>
-              <p><em>information coming soon</em></p>
+              <p>Any ASF project can use the <a href="asf-pelican.html">ASF-Pelican template</a> as the basis for their project website.</p>
+<p>Review the <a href="https://template.staged.apache.org/">Apache Template example</a> to see whether the template's features will support the functions you need for your project</p>
+<h2>How to use this template</h2>
+<ol>
+<li>
+<p>Visit the <a href="https://github.com/apache/template-site" target="_blank">code repository for ASF-Pelican</a>.</p>
+</li>
+<li>
+<p>Click <strong>Use this template</strong>.</p>
+</li>
+<li>
+<p>In the screen that appears, name and (optionally) provide a brief description for the repository that Git will create to hold your instance of the template. Indicate whether the repository is public (anybody can see it) or private. Then click <strong>Create repository from template</strong>. The resulting repository will hold all the contents of the template, which your project team can now modify to suit your needs.</p>
+</li>
+<li>
+<p><strong>Note</strong>: we strongly suggest that you do your site development in a branch rather than the trunk of the repository, and then merge the branch into the trunk when you are sure that everything as working as you would like it. Each commit to the trunk triggers an automatic build to update your live site; this is great for trivial changes like correcting typos, but more of a challenge if you are making major changes and it turns out that there is an error in your code that disables your live site.</p>
+<p>Review <a href="asf-pelican-branches.html">ASF Pelican feature branches</a>.</p>
+</li>
+<li>
+<p>In <code>theme/apache/templates</code>, update the theme's <code>base.html</code> to fit your site's requirements.</p>
+<p>The example has the following frameworks.</p>
+<ul>
+<li>JavaScript:
+<ul>
+<li><a href="https://code.jquery.com/jquery-3.6.0.slim.js">JQuery 3.6.0 Slim</a></li>
+<li><a href="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.js">Popper 1.14.7</a></li>
+<li><a href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.js">Bootstrap 4.3.1</a></li>
+</ul>
+</li>
+<li>CSS:
+<ul>
+<li><a href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css">Bootstrap 4.3.1</a></li>
+<li><a href="https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.css">GitHub Markdown 3.0.1</a></li>
+</ul>
+</li>
+</ul>
+<p>For fenced code highlighting, have a look at <a href="https://highlightjs.org">highlightjs</a>.</p>
+<ul>
+<li>The <code>content/images</code> folder holds example logo files. Place your other site image files here.</li>
+</ul>
+</li>
+<li>
+<p>Determine if your site requires a <a href="https://infra.apache.org/asf-pelican-data.html">data model</a>.</p>
+<ul>
+<li>The <code>.ezmd</code> files in the <a href="content">content</a> directory show examples</li>
+<li><a href="asfdata.yaml"><code>asfdata.yaml</code></a> has manuy examples</li>
+<li>Remove the following if you do not need a data model:
+<ol>
+<li><code>asfdata.py</code> and <code>asfreader.py</code> <a href="/theme/plugins">Plugins</a></li>
+<li><code>asfdata.yaml</code></li>
+<li><code>data</code> directory</li>
+</ol>
+</li>
+</ul>
+</li>
+<li>
+<p>Edit your <a href="pelicanconf.py">configuration</a></p>
+<ul>
+<li>Website specific</li>
+<li><code>PLUGINS</code></li>
+<li><code>ASF_DATA</code> - <code>asfdata.py</code> plugin settings</li>
+<li><code>ASF_GENID</code> - <code>asfgenid.py</code> plugin settings
+<code>asfgenid.py</code> performs a series of html fixups including permalinks, heading ids, and table of contents</li>
+</ul>
+</li>
+<li>
+<p>Create your <a href="content">content</a></p>
+<ul>
+<li><code>.md</code> files using Github Flavored Markdown (<a href="https://infra.apache.org/gfm.html"><strong>gfm</strong></a></li>
+<li><code>.ezmd</code> files for templates using <code>ASF_DATA</code></li>
+</ul>
+</li>
+<li>
+<p>Building</p>
+<ul>
+<li><a href="https://infra.apache.org/asf-pelican-local.html">Local build instructions</a></li>
+<li><a href=".asf.yaml">ASF YAML build</a> -- ASF infrastructure instructions</li>
+</ul>
+</li>
+<li>
+<p>Issues and template questions</p>
+</li>
+</ol>
+<ul>
+<li><a href="https://github.com/apache/template-site/issues">Issues</a></li>
+</ul>
+<ol start="11">
+<li>Tools</li>
+</ol>
+<ul>
+<li>
+<p>GitHub Action -- A manual <strong>Lint</strong> action is provided:</p>
+<ul>
+<li>
+<p><a href=".github/workflows/lint.yml">Lint</a> -- <a href="https://docs.github.com/en/actions">GitHub Actions</a> Workflow</p>
+</li>
+<li>
+<p><a href="https://flake8.pycqa.org/en/latest/">Flake8</a> - <a href="https://www.python.org/">Python</a> based tool for style guide enforcement</p>
+</li>
+<li>
+<p><a href="https://github.com/DavidAnson/markdownlint">markdownlint</a> -- using <a href="https://github.com/igorshubovych/markdownlint-cli">markdownlint-cli</a> - <a href="https://nodejs.org/">Node.js</a> style checker and lint tool for <a href="https://daringfireball.net/projects/markdown/">Markdown</a> and CommonMark files</p>
+</li>
+<li>
+<p><a href="https://github.com/client9/misspell">misspell</a> -- <a href="https://golang.org/">Golang</a> library to correct commonly misspelled English words quickly</p>
+</li>
+<li>
+<p><a href="https://yamllint.readthedocs.io/en/stable/">yamllint</a> -- a linter for <a href="https://yaml.org/">YAML</a> files</p>
+<p>For misspellings you can pass in <code>-w</code> to autocorrect misspelled words. You can also autocorrect some markdownlint errors by using the <code>--fix</code> flag.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://editorconfig.org/">EditorConfig</a> -- helps maintain consistent coding styles for multiple developers working on
+the same project across various editors and IDEs.</p>
+<ul>
+<li><a href=".editorconfig">.editorconfig</a></li>
+</ul>
+</li>
+</ul>
+<p>See the <a href="DEVELOPER.md">Developer Tools</a> for tools that may be helpful.</p>
 
         </div>
       </div>
