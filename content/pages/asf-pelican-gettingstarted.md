@@ -80,5 +80,3 @@ Review the [Apache Template example](https://template.staged.apache.org/) to see
      the same project across various editors and IDEs.
 
      - [.editorconfig](.editorconfig)
-
-   See the [Developer Tools](DEVELOPER.md) for tools that may be helpful.
