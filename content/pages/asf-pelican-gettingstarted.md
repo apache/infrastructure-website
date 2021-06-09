@@ -60,11 +60,15 @@ Review the [Apache Template example](https://template.staged.apache.org/) to see
    - [Local build instructions](https://infra.apache.org/asf-pelican-local.html)
    - [ASF YAML build](.asf.yaml) -- ASF infrastructure instructions
 
-10. Issues and template questions
+## Going live
+
+_information about how to take your new website live is coming soon._
+
+## Issues and template questions
 
    - [Issues](https://github.com/apache/template-site/issues)
 
-11. Tools
+## Tools
 
    **Note**: You may know other, or better, tools. This list reflects the experience of the developers of the ASF-Pelican template. Apache does not provide support or training for these tools.
 
