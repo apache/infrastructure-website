@@ -52,7 +52,6 @@ To sign a file with SHA-256 rather than SHA-512 use `... /fd sha256...` rather t
 
 To configure your system:
 
-To configure your system:
 1. Obtain your DigiCert ONE credentials as above.
 1. Return to DigiCert ONE and select "Secure Software" from the menu in the top right-hand corner.
 1. Select "Resources" in the left-hand menu.
