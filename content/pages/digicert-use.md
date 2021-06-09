@@ -1,18 +1,18 @@
 Title: Using the Digicert code signing service
 
-## Transition in progress
-We are currently transitioning from the old Symantec service to the new DigiCert service. The Symanetc service is no longer supported. While it is currently still available, it may be decommissioned at any time. Perform all new signing via the DigiCert service.
+## Transition to DigiCert
+We have moved from the old Symantec service to the new DigiCert service. The Symanetc service is no longer avaialble. All new signing must be via the DigiCert service.
 
 If you require assistance migrating to the DigiCert service, please open an <a href="https://issues.apache.org/jira/browse/INFRA">INFRA Jira ticket</a> and select code signing as the component.
 
 ## DigiCert Secure Software
-DigiCert Secure Software supports a range of signing tools and formats. For the full list see the client user guide in the <a href="https://svn.apache.org/repos/private/committers/code-signing/digicert/" target="blank">private repository for ASF committers</a>.
+DigiCert Secure Software supports a range of signing tools and formats. For the full list see the [client user guide](https://digicert.github.io/snowbird-doc/#/administration-guides/secure-software-manager/index).
 
 ### Obtaining a DigiCert ONE account
 
 Adding a new PMC or a new user to an existing PMC needs to be performed by the infrastructure team. Please open an <a href="https://issues.apache.org/jira/browse/INFRA">INFRA Jira ticket</a> and select code signing as the component.
 
-When the infrastructure team create your accout you will be sent a password reset email. The link in that email is only valid for 12 hours. If you are unable to complete the creation of your account in that time you can request a new password reset email by going to [DigiCert ONE](https://one.digicert.com/) and clicking on the password reset link. Your username is the same as your ASF id. You should then receive a new password reset email you can use to set your password. You will also need to configure your OTP token. Officially, only Google authenticator is supported but any similar tool should also work.
+When the infrastructure team create your accout you will be sent a password reset email. The link in that email is only valid for 12 hours. If you are unable to complete the creation of your account in that time you can request a new password reset email by going to [DigiCert ONE](https://one.digicert.com/) and clicking on the password reset link. Your username is the same as your ASF email address. You should then receive a new password reset email you can use to set your password. You will also need to configure your OTP token. Officially, only Google authenticator is supported but any similar tool should also work.
 
 ### Obtaining credentials for code signing
 
@@ -28,7 +28,9 @@ Whatever you need to sign and however you choose to sign it, the fist step is to
 
 ### Windows binaries on Windows
 
-To configure your system:
+You can sign Windows binaries on Windows with SignTool (the standard MS tool) or with [JSign](https://github.com/ebourg/jsign) (a platform independent tool).
+
+To configure your system to sign with SignTool.exe:
 
 1. Obtain your DigiCert ONE credentials as above.
 1. Return to DigiCert ONE and select "Secure Software" from the menu in the top right-hand corner.
@@ -48,19 +50,31 @@ To sign a file with SHA-256 rather than SHA-512 use `... /fd sha256...` rather t
 
 ### Windows binaries on Linux
 
-Currently working for the Apache Tomcat project. Documentation in progress.
+To configure your system:
 
 To configure your system:
 1. Obtain your DigiCert ONE credentials as above.
 1. Return to DigiCert ONE and select "Secure Software" from the menu in the top right-hand corner.
 1. Select "Resources" in the left-hand menu.
-1. Download and install the "Secure Software Manager Linux Clients Installer (Portable tar.gz)".
-1. Unpack the tar.gz. This guide assumes it is unpacked in `/opt`
-1. As per the DigiCert ONE documentation, create the four required environment variables. You may wish to store your certifcate in `~/.digicertone/`.
+1. Download and install the "Secure Software Manager Linux Clients (Portable tar.gz)".
+1. Unpack the tar.gz. Infra recommends, and this guide assumes, it is unpacked to `/opt`
+1. As per the DigiCert ONE documentation, create the four required environment variables. Infra recommends you store your certifcate in `~/.digicertone/`.
 1. Test with `/opt/smtools-linux-x64/smctl keypair ls`. You should see at least one certificate listed.
-1. Dowbload jsign `wget https://github.com/ebourg/jsign/releases/download/3.1/jsign_3.1_all.deb`
-1. Install jisgn `sudo dpkg --install jsign_3.1_all.deb`
-1. ... TBD
+1. Download jsign `wget https://github.com/ebourg/jsign/releases/download/3.1/jsign_3.1_all.deb`
+1. Install jsign `sudo dpkg --install jsign_3.1_all.deb`
+1. Create the PKCS11 configuration file. Infra recommends saving this as `~/.digicertone/pkcs11properties.cfg`. The contents should be:
+
+        name=DigiCertONE
+        library="/opt/smtools-linux-x64/smpkcs11.so"
+        slotListIndex=0
+
+    `name` can be anything you like (although names with spaces and special characters haven't been tested). `library` must point to where you unpacked the Secure Software Manager Linux Clients.
+1. You should then be able to sign with:
+
+        jsign --keystore ~/.digicertone/pkcs11proeprties.cfg --storepass NONE --storetype PKCS11 --alias "<Your PMC Key alias>" --alg SHA-512 --tsaurl http://timestamp.digicert.com <file-to-be-signed>
+
+JSign may also be used as an Ant task and works equally well on Windows.
+
 
 ### Other signing formats, tools and operating systems
 
