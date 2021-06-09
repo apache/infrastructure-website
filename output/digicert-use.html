@@ -138,7 +138,7 @@ Using the Digicert code signing service        </a>
 <p>Signing Windows binary is covered by section 14 of the client user guide. You'll need the fingerprint of the certificate you want to use for signing (view via <code>certmgr.msc</code>). You can then sign a file with <code>signtool.exe sign /sha1 &lt;cert-fingerprint&gt; /fd sha512 /tr http://timestamp.digicert.com &lt;file-to-be-signed&gt;</code></p>
 <p>To sign a file with SHA-256 rather than SHA-512 use <code>... /fd sha256...</code> rather than <code>... /fd sha512 ...</code>.</p>
 <h3>Windows binaries on Linux</h3>
-<p>Currently under investigation by the Apache Tomcat project. Looks to be possible via OpenSSL (see section 9 of client user guide) and osslsigncode.</p>
+<p>Currently working for the Apache Tomcat project. Documentation in progress.</p>
 <p>To configure your system:</p>
 <ol>
 <li>Obtain your DigiCert ONE credentials as above.</li>
@@ -148,6 +148,8 @@ Using the Digicert code signing service        </a>
 <li>Unpack the tar.gz. This guide assumes it is unpacked in <code>/opt</code></li>
 <li>As per the DigiCert ONE documentation, create the four required environment variables. You may wish to store your certifcate in <code>~/.digicertone/</code>.</li>
 <li>Test with <code>/opt/smtools-linux-x64/smctl keypair ls</code>. You should see at least one certificate listed.</li>
+<li>Dowbload jsign <code>wget https://github.com/ebourg/jsign/releases/download/3.1/jsign_3.1_all.deb</code></li>
+<li>Install jisgn <code>sudo dpkg --install jsign_3.1_all.deb</code></li>
 <li>... TBD</li>
 </ol>
 <h3>Other signing formats, tools and operating systems</h3>
