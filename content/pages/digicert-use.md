@@ -48,7 +48,7 @@ To sign a file with SHA-256 rather than SHA-512 use `... /fd sha256...` rather t
 
 ### Windows binaries on Linux
 
-Currently under investigation by the Apache Tomcat project. Looks to be possible via OpenSSL (see section 9 of client user guide) and osslsigncode.
+Currently working for the Apache Tomcat project. Documentation in progress.
 
 To configure your system:
 1. Obtain your DigiCert ONE credentials as above.
@@ -58,6 +58,8 @@ To configure your system:
 1. Unpack the tar.gz. This guide assumes it is unpacked in `/opt`
 1. As per the DigiCert ONE documentation, create the four required environment variables. You may wish to store your certifcate in `~/.digicertone/`.
 1. Test with `/opt/smtools-linux-x64/smctl keypair ls`. You should see at least one certificate listed.
+1. Dowbload jsign `wget https://github.com/ebourg/jsign/releases/download/3.1/jsign_3.1_all.deb`
+1. Install jisgn `sudo dpkg --install jsign_3.1_all.deb`
 1. ... TBD
 
 ### Other signing formats, tools and operating systems
