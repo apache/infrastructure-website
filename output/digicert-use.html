@@ -114,10 +114,7 @@ Using the Digicert code signing service        </a>
 <p>Whatever you need to sign and however you choose to sign it, the fist step is to create the necessary credentials via the DigiCert ONE web interface.</p>
 <ol>
 <li>Log on to <a href="https://one.digicert.com/">DigiCert ONE</a>.</li>
-<li>Select &quot;Secure Software&quot; from the menu in the top right-hand corner.</li>
-<li>Select &quot;Resources&quot; in the left-hand menu.</li>
-<li>Download and install the &quot;Secure Software Manager Windows Clients Installer&quot;.</li>
-<li>Return to DigiCert ONE and select &quot;Account&quot; from the menu in the top right-hand corner.</li>
+<li>Select &quot;Account&quot; from the menu in the top right-hand corner.</li>
 <li>Select &quot;Access&quot; in the left-hand menu.</li>
 <li>Select &quot;API token&quot; and create a new API token with your ASF id as the name and an expiry date ~1 year in the future.</li>
 <li>Keep a record of the token value</li>
@@ -125,9 +122,12 @@ Using the Digicert code signing service        </a>
 <li>Download the certificate and keep a record of the password</li>
 </ol>
 <h3>Windows binaries on Windows</h3>
-<p>To configure your system for Windows signing:</p>
+<p>To configure your system:</p>
 <ol>
 <li>Obtain your DigiCert ONE credentials as above.</li>
+<li>Return to DigiCert ONE and select &quot;Secure Software&quot; from the menu in the top right-hand corner.</li>
+<li>Select &quot;Resources&quot; in the left-hand menu.</li>
+<li>Download and install the &quot;Secure Software Manager Windows Clients Installer&quot;.</li>
 <li>As per sections 4.3 and 4.5 of the client user guide, create the four system environment variables. Note that the URL for <code>SM_HOST</code> should be <code>https://clientauth.one.digicert.com</code> (no <code>demo</code> in the URL)</li>
 <li>Test with <code>smctl.exe keypair ls</code> (see section 4.6 of the client user guide). You should see at least one certificate listed.</li>
 <li>Test with <code>certutil.exe -csp &quot;DigiCert Signing Manager KSP&quot; -key -user</code> (see section 4.7 of the client user guide).</li>
@@ -139,6 +139,17 @@ Using the Digicert code signing service        </a>
 <p>To sign a file with SHA-256 rather than SHA-512 use <code>... /fd sha256...</code> rather than <code>... /fd sha512 ...</code>.</p>
 <h3>Windows binaries on Linux</h3>
 <p>Currently under investigation by the Apache Tomcat project. Looks to be possible via OpenSSL (see section 9 of client user guide) and osslsigncode.</p>
+<p>To configure your system:</p>
+<ol>
+<li>Obtain your DigiCert ONE credentials as above.</li>
+<li>Return to DigiCert ONE and select &quot;Secure Software&quot; from the menu in the top right-hand corner.</li>
+<li>Select &quot;Resources&quot; in the left-hand menu.</li>
+<li>Download and install the &quot;Secure Software Manager Linux Clients Installer (Portable tar.gz)&quot;.</li>
+<li>Unpack the tar.gz. This guide assumes it is unpacked in <code>/opt</code></li>
+<li>As per the DigiCert ONE documentation, create the four required environment variables. You may wish to store your certifcate in <code>~/.digicertone/</code>.</li>
+<li>Test with <code>/opt/smtools-linux-x64/smctl keypair ls</code>. You should see at least one certificate listed.</li>
+<li>... TBD</li>
+</ol>
 <h3>Other signing formats, tools and operating systems</h3>
 <p>See the client user guide.</p>
 
