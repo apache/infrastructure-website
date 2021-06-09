@@ -66,6 +66,8 @@ Review the [Apache Template example](https://template.staged.apache.org/) to see
 
 11. Tools
 
+   **Note**: You may know other, or better, tools. This list reflects the experience of the developers of the ASF-Pelican template. Apache does not provide support or training for these tools.
+
    - GitHub Action -- A manual **Lint** action is provided:
 
      - [Lint](.github/workflows/lint.yml) -- [GitHub Actions](https://docs.github.com/en/actions) Workflow
