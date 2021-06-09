@@ -70,7 +70,7 @@ To configure your system:
     `name` can be anything you like (although names with spaces and special characters haven't been tested). `library` must point to where you unpacked the Secure Software Manager Linux Clients.
 1. You should then be able to sign with:
 
-        jsign --keystore ~/.digicertone/pkcs11proeprties.cfg --storepass NONE --storetype PKCS11 --alias "<Your PMC Key alias>" --alg SHA-512 --tsaurl http://timestamp.digicert.com <file-to-be-signed>
+        jsign --keystore ~/.digicertone/pkcs11properties.cfg --storepass NONE --storetype PKCS11 --alias "<Your PMC Key alias>" --alg SHA-512 --tsaurl http://timestamp.digicert.com <file-to-be-signed>
 
 JSign may also be used as an Ant task and works equally well on Windows.
 
