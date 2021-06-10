@@ -7,6 +7,8 @@ Review the [Apache Template example](https://template.staged.apache.org/) to see
 
 ## How to use this template
 
+**Note: this information is evolving. Please contact Infra if you would like to use the template immediately, as some of the directions below are no longer correct.**
+
 1. Visit the <a href="https://github.com/apache/template-site" target="_blank">code repository for ASF-Pelican</a>.
 
 2. Click **Use this template**.
