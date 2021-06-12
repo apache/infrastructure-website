@@ -112,8 +112,6 @@ Managing your project web site        </a>
 <h2 id="default">Creating the website<a class="headerlink" href="#default" title="Permanent link">&para;</a></h2>
 <p>Projects are free to choose their own styles and layout for websites, and have a range of options for actually creating the pages. The goal is to create and informative and useful <strong>static</strong> HTML website that can engage visitors, explain your project to them, and provide download links and documentation so they can use your project's applications.</p>
 <h3>Website-building options</h3>
-<h4>Basic website template in Markdown</h4>
-<p>If you'd like to get started with an easy-to-use, <a href="https://github.github.com/gfm/" target="_blank">Markdown</a>-based site that many projects have used, see the <a href="https://github.com/apache/apache-website-template" target="_blank">sample Apache project website</a> repository which has many useful features and instructions for using svnpubsub.</p>
 <h4>Pelican</h4>
 <p><a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a> is a static site generator written in Python. Highlights include:</p>
 <ul>
@@ -123,22 +121,25 @@ Managing your project web site        </a>
 <li>Completely static output is easy to host anywhere</li>
 </ul>
 <p>Pelican has paths to <a href="https://docs.getpelican.com/en/stable/importer.html#import" target="_blank">migrate existing websites from many technologies</a>, including Blogger, Dotclear, Posterous, Tumblr, WordPress, and RSS/Atom.</p>
+<p>Any ASF project can use the <a href="asf-pelican.html"><strong>ASF-Pelican template</strong></a> as the basis for their project website.</p>
 <p>See a how-to on using <a href="pelican-buildbot.html">Pelican and Buildbot</a> to develop and deploy a project website.</p>
 <p>Pelican supports both flat websites and those that have subdirectories. For the latter, Pelican provides a <a href="https://github.com/akhayyat/pelican-page-hierarchy" target="_blank">plugin</a>.</p>
 <p>Browse a <a href="https://github.com/getpelican/pelican-plugins/" target="_blank">collection of Pelican plugins</a> to find others that support functionality you want to add to your site.</p>
-<p><a href="https://github.com/search?q=topic%3Apelican+org%3Aapache&type=Repositories" target="_blank">This GitHub query</a> returns ASF repositories
-which have the <code>pelican</code> Topic, that should provide a few examples.</p>
+<p>This<a href="https://github.com/search?q=topic%3Apelican+org%3Aapache&type=Repositories" target="_blank">GitHub query</a> returns ASF repositories
+which have the <code>pelican</code> Topic. You can review them as examples of Pelican in action.</p>
 <h4>Jekyll</h4>
 <p><a href="https://jekyllrb.com/" target="_blank">Jekyll</a> is a straightforward tool for developing blogs or static websites using Markdown, and it is easy to deploy the resulting website as Github Pages. There are many tutorials for doing this available online.</p>
 <h4>Hugo</h4>
 <p>At least <a href="https://github.com/search?q=topic%3Ahugo+org%3Aapache&type=Repositories" target="_blank">six ASF projects</a> use <a href="https://gohugo.io/" target="_blank">Hugo</a>, an open-source framework for building static web sites.</p>
 <h4>JBake</h4>
 <p>At least <a href="https://github.com/search?q=topic%3Ajbake+org%3Aapache&type=Repositories" target="_blank">two ASF projects</a> use <a href="https://jbake.org/" target="_blank">JBake</a>, a Java-based tool for building static web sites.</p>
+<h4>Basic website template in Markdown</h4>
+<p>If you'd like to get started with an easy-to-use, <a href="https://github.github.com/gfm/" target="_blank">Markdown</a>-based site that many projects have used, see the <a href="https://github.com/apache/apache-website-template" target="_blank">sample Apache project website</a> repository which has many useful features and instructions for using svnpubsub.</p>
 <h3>Tools not supported</h3>
 <h4>Github Pages</h4>
 <p>Infra does not have a structure in place to support using <a href="github-pages.html">GitHub Pages</a> for project websites.</p>
 <h4>Apache CMS</h4>
-<p>The Apache CMS, which projects used to build and deploy their websites since 2010, is no longer available for new projects. It will shut down completely in summer, 2021, after all remaining projects on it have migrated to other technologies.</p>
+<p>The Apache CMS, which projects used to build and deploy their websites since 2010, is no longer available as of July 31, 2021. All projects that used it, including the main Apache website, have moved to other technologies.</p>
 <h2 id="sitemanagement">Site management</a></h2>
 <p>The basic requirements for site management are that</p>
 <ul>
