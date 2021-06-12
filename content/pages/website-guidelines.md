@@ -14,4 +14,6 @@ These guidelines relate to Infra policies on resource consumption, linking, lega
 - All web sites must be available on ASF's git or svn servers, and published using git- or pypubsub (this includes the ASF CMS system).
 - Do not host source releases or convenience binaries directly on the web site. Use the mirror system through `dist.apache.org` (but do NOT link to `dist.apache.org`; use `closer.lua`).
 
+**Note**: Any ASF project can use the [ASF-Pelican template](asf-pelican.html) as the basis for their project website. 
+
 Should you have any questions, feel free to contact us at <a href="mailto:infrastructure@apache.org" target="_blank">infrastructure@apache.org</a> or on our <a href="https://the-asf.slack.com" target="_blank">Slack channel</a>.
