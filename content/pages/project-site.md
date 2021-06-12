@@ -17,10 +17,6 @@ Projects are free to choose their own styles and layout for websites, and have a
 
 ### Website-building options
 
-#### Basic website template in Markdown ####
-
-If you'd like to get started with an easy-to-use, <a href="https://github.github.com/gfm/" target="_blank">Markdown</a>-based site that many projects have used, see the <a href="https://github.com/apache/apache-website-template" target="_blank">sample Apache project website</a> repository which has many useful features and instructions for using svnpubsub.
-
 #### Pelican ####
 
 <a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a> is a static site generator written in Python. Highlights include:
@@ -31,6 +27,8 @@ If you'd like to get started with an easy-to-use, <a href="https://github.github
   - Completely static output is easy to host anywhere
   
 Pelican has paths to <a href="https://docs.getpelican.com/en/stable/importer.html#import" target="_blank">migrate existing websites from many technologies</a>, including Blogger, Dotclear, Posterous, Tumblr, WordPress, and RSS/Atom.
+
+Any ASF project can use the [**ASF-Pelican template**](asf-pelican.html) as the basis for their project website. 
   
 See a how-to on using [Pelican and Buildbot](pelican-buildbot.html) to develop and deploy a project website.
 
@@ -38,8 +36,8 @@ Pelican supports both flat websites and those that have subdirectories. For the 
 
 Browse a <a href="https://github.com/getpelican/pelican-plugins/" target="_blank">collection of Pelican plugins</a> to find others that support functionality you want to add to your site. 
 
-<a href="https://github.com/search?q=topic%3Apelican+org%3Aapache&type=Repositories" target="_blank">This GitHub query</a> returns ASF repositories
-which have the `pelican` Topic, that should provide a few examples.
+This<a href="https://github.com/search?q=topic%3Apelican+org%3Aapache&type=Repositories" target="_blank">GitHub query</a> returns ASF repositories
+which have the `pelican` Topic. You can review them as examples of Pelican in action.
 
 #### Jekyll ####
 
@@ -53,13 +51,17 @@ At least <a href="https://github.com/search?q=topic%3Ahugo+org%3Aapache&type=Rep
 
 At least <a href="https://github.com/search?q=topic%3Ajbake+org%3Aapache&type=Repositories" target="_blank">two ASF projects</a> use <a href="https://jbake.org/" target="_blank">JBake</a>, a Java-based tool for building static web sites.
 
+#### Basic website template in Markdown ####
+
+If you'd like to get started with an easy-to-use, <a href="https://github.github.com/gfm/" target="_blank">Markdown</a>-based site that many projects have used, see the <a href="https://github.com/apache/apache-website-template" target="_blank">sample Apache project website</a> repository which has many useful features and instructions for using svnpubsub.
+
 ### Tools not supported
 
 #### Github Pages
 Infra does not have a structure in place to support using [GitHub Pages](github-pages.html) for project websites.
 
 #### Apache CMS
-The Apache CMS, which projects used to build and deploy their websites since 2010, is no longer available for new projects. It will shut down completely in summer, 2021, after all remaining projects on it have migrated to other technologies.
+The Apache CMS, which projects used to build and deploy their websites since 2010, is no longer available as of July 31, 2021. All projects that used it, including the main Apache website, have moved to other technologies.
 
 <h2 id="sitemanagement">Site management</a></h2>
   
