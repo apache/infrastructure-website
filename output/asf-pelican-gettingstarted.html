@@ -108,13 +108,10 @@ ASF-Pelican getting-started guide        </a>
 <p><strong>Note: this information is evolving. Please contact Infra if you would like to use the template immediately, as some of the directions below are no longer correct.</strong></p>
 <ol>
 <li>
-<p>Visit the <a href="https://github.com/apache/template-site" target="_blank">code repository for ASF-Pelican</a>.</p>
+<p>Review the <a href="https://github.com/apache/template-site" target="_blank">code repository for ASF-Pelican</a> to confirm that it may provide the features your project site needs.</p>
 </li>
 <li>
-<p>Click <strong>Use this template</strong>.</p>
-</li>
-<li>
-<p>In the screen that appears, provide a name and (optionally) a brief description for the repository that Git will create to hold your instance of the template. Indicate whether the repository is public (anybody can see it) or private. Then click <strong>Create repository from template</strong>. The resulting repository will hold all the contents of the template, which your project team can now modify to suit your needs.</p>
+<p>Create a <a href="https://issues.apache.org/jira/Jira" target="_blank">Jira ticket for Infra</a>, requesting Infra to create a repository using this template for your project. Provide a name and short description for the repository. Infra will confirm the repository's location when it is ready for you.</p>
 </li>
 <li>
 <p><strong>Note</strong>: we strongly suggest that you do your site development in a branch rather than the trunk of the repository, and then merge the branch into the trunk when you are sure that everything as working as you would like it. Each commit to the trunk triggers an automatic build to update your live site; this is great for trivial changes like correcting typos, but more of a challenge if you are making major changes and it turns out that there is an error in your code that disables your live site.</p>
@@ -181,10 +178,12 @@ ASF-Pelican getting-started guide        </a>
 <li><a href=".asf.yaml">ASF YAML build</a> -- ASF infrastructure instructions</li>
 </ul>
 </li>
+<li>
+<p>When you are ready to use this repository as the source for your live site, create a Jira ticket to ask Infra to adjust the build process. From then on, changes you make to the trunk of this repository automatically update the live site.</p>
+</li>
 </ol>
-<h2>Going live</h2>
-<p><em>information about how to take your new website live is coming soon.</em></p>
 <h2>Issues and template questions</h2>
+<p>Please let us know if you run into issues with the template.</p>
 <ul>
 <li><a href="https://github.com/apache/template-site/issues">Issues</a></li>
 </ul>
