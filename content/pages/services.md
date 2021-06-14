@@ -197,7 +197,7 @@ Infra can provide Ubuntu virtual machines for projects. See:
 
 <h3 id="voting">Online voting<a class="headerlink" href="#voting" title="Permanent link">&para;</a></h3>
 
-Projects can use the <a href="https://steve.apache.org" target="_blank">Apache Steve</a> voting system instance (offline when not in use).
+Projects can use the <a href="https://steve.apache.org" target="_blank">Apache STeVe</a> voting system instance (offline when not in use). The tool name refers to the <a href="https://en.wikipedia.org/wiki/Single_transferable_vote" target="_blank">single transferable vote</a> system it uses.
 
 <h2 id="other">Other tools<a class="headerlink" href="#other" title="Permanent link">&para;</a></h2>
 
