@@ -12,7 +12,8 @@ See the [getting-started guide](asf-pelican-gettingstarted.html).
 
 ## For site designers
 
-Information about the [ASF Theme](asf-pelican-theme.html).
+-  Information about the [ASF Theme](asf-pelican-theme.html).
+-  The <a href="https://whimsy.apache.org/site/" target="_blank">Apache Project Website Checker</a> periodically reviews all TLP websites and reports whether they comply with Apache's <a href="https://www.apache.org/foundation/marks/pmcs#navigation" target="_blank">policies for TLP websites</a>.
 
 ## For site developers
 
