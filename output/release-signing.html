@@ -121,17 +121,16 @@ Signing Releases        </a>
 </ul>
 <h3>FAQs from those downloading releases</h3>
 <ul>
-  <li><a href="#verifying-signature">What does verifying a signature mean?</a></li>
-  <li><a href="#check-integrity">How can I check the integrity of a release?</a></li>
-  <li><a href="#public-key-not-found">What does 'Public key not found' mean when verifying a signature?</a></li>
-  <li><a href="#trust">What is a trusted key?</a></li>
-  <li><a href="#valid-untrusted-vs-invalid-trusted">What is the difference between a valid signature from an untrusted key and an invalid signature from a trusted key?</a></li>
-  <li><a href="#fingerprint">What is a public key fingerprint?</a></li>
-  <li><a href="#local-sig">Can I mark a key as locally trusted?</a></li>
+<li><a href="#verifying-signature">What does verifying a signature mean?</a></li>
+<li><a href="#check-integrity">How can I check the integrity of a release?</a></li>
+<li><a href="#public-key-not-found">What does 'Public key not found' mean when verifying a signature?</a></li>
+<li><a href="#trust">What is a trusted key?</a></li>
+<li><a href="#valid-untrusted-vs-invalid-trusted">What is the difference between a valid signature from an untrusted key and an invalid signature from a trusted key?</a></li>
+<li><a href="#fingerprint">What is a public key fingerprint?</a></li>
+<li><a href="#local-sig">Can I mark a key as locally trusted?</a></li>
 </ul>
-<a href="#help">Add your wisdom</a>
 <h2>For release managers</h2>
-<h2 id="note">Important notes<a class="headerlink" href="#note" title="Permanent link">&para;</a></h2>
+<h3 id="note">Important notes<a class="headerlink" href="#note" title="Permanent link">&para;</a></h3>
 <p>All new <strong>RSA</strong> keys generated should be at least <strong>4096</strong> bits. <strong>Do not</strong> generate new <strong>DSA</strong> keys.</p>
 <p>Recent research has revealed weaknesses in SHA-1, and thus in the DSA and 1024 bit RSA OpenPGP keys which must use this algorithm. Though no realistic attacks have been made public, experience with similar weaknesses in MD5 suggests that further advances may well lead to practical attacks within the next few years. This accords with current NIST guidance on DSA.</p>
 <p>The impact of this weakness on Apache can be mitigated by action now. What needs to be done is a little involved, so we have provided complete instructions.</p>
@@ -141,7 +140,7 @@ Signing Releases        </a>
 <li>Committers with RSA keys of length 2048 or more do not need to generate a new key yet. They should reconfigure their client to avoid the weakness by following these <a href="openpgp.html#sha1">instructions</a> and wait for the next major OpenPGP revision.</li>
 </ul>
 <p>How to find the length of your key is described <a href="#key-length-how-to">here</a>.</p>
-<h2 id="basic-facts">The basics<a class="headerlink" href="#basic-facts" title="Permanent link">&para;</a></h2>
+<h3 id="basic-facts">The basics<a class="headerlink" href="#basic-facts" title="Permanent link">&para;</a></h3>
 <p>Every artifact distributed by the Apache Software Foundation  <strong>must</strong> be accompanied by one file containing an <a href="#openpgp-ascii-detach-sig">OpenPGP-compatible ASCII armored detached signature</a> and another file containing a <a href="release-signing#sha-checksum">SHA</a> or <a href="release-signing#md5">MD5</a>) checksum.</p>
 <ul>
 <li>MD5 hashes are <strong>deprecated</strong>; please use SHA for new releases.</li>
@@ -167,7 +166,7 @@ Signing Releases        </a>
 <li>Choose a <a href="#passphrase">good passphrase</a></li>
 <li>Opt for a reasonably <a href="#key-length">long key length</a></li>
 </ul>
-<h2 id="signing-basics">Signing basics<a class="headerlink" href="#signing-basics" title="Permanent link">&para;</a></h2>
+<h3 id="signing-basics">Signing basics<a class="headerlink" href="#signing-basics" title="Permanent link">&para;</a></h3>
 <ul>
 <li>Signatures should be <a href="#openpgp-ascii-detach-sig">ASCII armored and detached</a>.</li>
 <li>You should <a href="#export">export</a> your <a href="#public-private">public key</a> and append the result to the appropriate <a href="#keys-policy">KEYS</a> file(s).</li>
@@ -175,7 +174,7 @@ Signing Releases        </a>
 <h3 id="sign-release">How do I sign a release?<a class="headerlink" href="#sign-release" title="Permanent link">&para;</a></h3>
 <p>Create a <a href="#openpgp-ascii-detach-sig">OpenPGP compatible ASCII armored detached signature</a> for the released artifact. Upload the signature with the released artifact. See <a href="#basics">here</a> for a basic overview.</p>
 <h3 id="openpgp-ascii-detach-sig">What Is an OpenPGP compatible ASCII armored detached signature?<a class="headerlink" href="#openpgp-ascii-detach-sig" title="Permanent link">&para;</a></h3>
-It is
+<p>It is</p>
 <ul>
 <li>an <a href="#openpgp">OpenPGP</a> compatible</li>
 <li><a href="#ascii">ASCII armored</a></li>
@@ -242,7 +241,7 @@ then be feasible for an attacker who had gained access to the machine to read th
 <h3 id="sha1">Is SHA-1 still secure?<a class="headerlink" href="#sha1" title="Permanent link">&para;</a></h3>
 <p>Research has revealed weaknesses in this algorithm. Though there are no practical attacks known at the time of writing, experience with similar weaknesses in <a href="#md5-security">MD5</a> suggest that code signers should move away from this algorithm.</p>
 <p>Breaking the longest members of this family (<code>SHA512</code> and <code>SHA256</code>) is still considered <a href="#infeasible">infeasible</a>. Until <a href="#sha3">SHA-3</a> is available, avoid new uses of <code>SHA-1</code> and use <code>SHA512</code> or <code>SHA256</code> instead.</p>
-<h3 id="sha3">What is SHA-3?<a class="headerlink" href="#sha3" title="Permanent link">&para;</a></h1>
+<h4 id="sha3">What is SHA-3?<a class="headerlink" href="#sha3" title="Permanent link">&para;</a></h4>
 <p>SHA-3 is the designation for a new <a href="#message-digest">cryptographic hash algorithm</a> to replace the SHA family. The full standard was issued in 2015, but it hasn't yet been officially introduced into the OpenPGP standard. For that reason GnuPG doesn't support it yet.</p>
 <h3 id="secure-hash-algorithms">Which standard cryptographic hash algorithms are secure?<a class="headerlink" href="#secure-hash-algorithms" title="Permanent link">&para;</a></h3>
 <p><a href="#infeasible">Feasible</a> - though expensive - attacks on MD5 have been made public. Similar weaknesses have been found in the SHA family of hashes, though practical attacks are not yet publically known. However, longer hash sizes offer considerable protection, so larger members of the SHA family still look likely to be secure enough for a number of years.</p>
