@@ -9,3 +9,4 @@ From Infra's point of view:
 1. Each TLP's website must be hosted on ASF-operated hardware.
 2. The website's source code must be stored in an ASF Git or Subversion repository.
 
+See more about [developing your project site](project-site.html).
