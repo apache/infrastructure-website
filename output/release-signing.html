@@ -264,19 +264,17 @@ generate keys for other uses.</p>
 <h3 id="keyserver">What is a public key server?<a class="headerlink" href="#keyserver" title="Permanent link">&para;</a></h3>
 <p>A public key server manages <a href="#public-private">public keys</a>. Available functions may vary but typically include <a href="#keyserver-upload">upload</a>, search, and download.</p>
 <p>Public key servers exist to distribute public keys. They do not vouch for the actual identity of the owner of each key. You must establish this either directly or through a <a href="#web-of-trust">web of trust</a>. Do not trust a key just because it has been downloaded from a key server.</p>
-<p>The major public key servers synchronize their records regularly so a key uploaded to one should be disseminated to the rest. Some well-known public key servers:</p>
+<p>The major public key servers synchronize their records regularly so you only need to upload a key to one and rely on that server to disseminate it to the other key servers. We recommend using:</p>
 <ul>
-<li><a href="https://pgp.mit.edu" target="_blank">MIT</a></li>
-<li><a href="https://pgp.surfnet.nl/" target="_blank">SKS OpenPGP Public Key Server</a></li>
+<li><a href="https://keys.openpgp.org/" target="_blank">OpenPGP Public Key Server</a></li>
 </ul>
-<p>Although <a href="https://keyserver.pgp.com/" target="_blank">PGP Global Directory</a> the following is also well-known, at present it does not synchronise keys with other key servers, so do not use it as the only public server for your key.</p>
 <h3 id="keyserver-upload">How to upload a key to a public key server<a class="headerlink" href="#keyserver-upload" title="Permanent link">&para;</a></h3>
 <p>There are two common ways to upload a key to a <a href="#keyserver">public key server</a>:</p>
 <ul>
 <li>Most key servers let you upload <a href="#export">exports</a> through their websites</li>
 <li>Use automatic facilities built into most <a href="#openpgp">OpenPGP</a> <a href="#openpgp-applications">implementations</a></li>
 </ul>
-<p>For example using <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a>, send the key with <a href="#key-id">ID</a> B1313DE2 to the default public key server by:</p>
+<p>For example, using <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a>, send the key with <a href="#key-id">ID</a> B1313DE2 to the default public key server by:</p>
 <pre><code>$ gpg --send-key B13131DE2
 </code></pre>
 <p>You must export each changed key separately.</p>
