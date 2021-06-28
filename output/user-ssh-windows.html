@@ -1,0 +1,210 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Committer SSH configuration on Windows - Apache Infrastructure</title>
+    <link rel="stylesheet" href="/theme/css/foundation.css">
+    <link rel="stylesheet" href="/theme/css/app.css">
+    <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>  </head>
+  <body style="background: #C9B191;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/theme/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+		  <li><a href="https://blogs.apache.org/infra/" target="_blank">The Infra Blog</a></li>			
+		  <li><a href="/roadmap.html">Strategies & Roadmap</a></li>
+	          
+                </ul>
+              </li>
+              <li><a href="/policies.html" target="_blank" style="padding-left: 5px;">Policies</a></li>
+                           
+              <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Services-Tools</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+		<li><a href="/services.html">Services and Tools</a></li>
+                <li><a href="/machines.html" target="_blank" >Machines and Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" target="_blank" >Blocky</a></li>
+                <li><a href="https://uls.apache.org/app/kibana#/discover?_g=()" target="_blank" >Kibana and Unified Logging System</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" target="_blank" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" target="_blank" >Committer Search</a></li>
+		
+                </ul>
+              </li>
+              <li><a href="/doc.html" target="_blank" style="padding-left: 5px;">Documentation</a></li>
+	       <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Contribute</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">	
+		   <li><a href="/infra-volunteer.html">Volunteer with Infra</a></li>
+		   <li><a href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+			<li><a href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+		 </ul>
+	       </li>
+	      
+              <li><a href="/stats.html" target="_blank" style="padding-left: 5px;">Status</a></li>
+              <li><a href="/contact.html" style="padding-left: 5px;"><i class="fa fa-comments" style="color: #FFF; font-size: 0.9rem;"></i>Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/user-ssh-windows.html">
+Committer SSH configuration on Windows        </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/user-ssh-windows.md">edit</a>)
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              Committer SSH configuration on Windows
+          </h2>
+              <p>When using SSH (Secure Shell, a cryptographic network protocol)  to access <code>people.apache.org</code>, Windows users have two choices:</p>
+<ul>
+<li>Install <a href="https://www.cygwin.com" target="_blank">cygwin</a>, a collection of GNU and Open Source tools which provide functionality similar to a Linux distribution on Windows, and use the standard command line tools</li>
+<li>Use <a href="#setup">Putty</a>, which provides a graphical user interface</li>
+</ul>
+<p><a href="user-ssh.html">Non-Windows-specific documentation</a> is also available, and contains details not repeated in this document.</p>
+<h2>Contents</h2>
+<ul>
+  <li><a href="#setup-cygwin">Setting up Cygwin</a></li>
+  <li><a href="#setup">Setting up Putty</a></li>
+  <li><a href="#links">Relevant Links</a></li>
+</ul>
+<h2 id="setup-cygwin">Setting up Cygwin<a class="headerlink" href="#setup-cygwin" title="Permanent link">&para;</a></h2>
+<ol>
+<li>Download the latest version of <a href="https://www.cygwin.com" target="_blank">cygwin</a>.</li>
+<li>Install the program by running <code>setup-x86_64.exe</code>. Cygwin strongly advises against installing the 32-bit version.</li>
+<li>Consult the <a href="https://www.cygwin.com/cygwin-ug-net.html" target="_blank">user guide</a> to learn how to make use of its many features.</li>
+</ol>
+<h2 id="setup">Setting up Putty<a class="headerlink" href="#setup" title="Permanent link">&para;</a></h2>
+<p>This section describes how to create a public/private key pair and how to configure Putty to use them to access <code>people.apache.org</code>.</p>
+<h3 id="download">Download and install Putty<a class="headerlink" href="#download" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Download the latest version of <a href="https://www.chiark.greenend.org.uk/~sgtatham/putty/" target="_blank">Putty</a>.</li>
+<li>Double-click on the downloaded installer package to install Putty to a suitable location.</li>
+<li>Once the install is complete it will be easier to transfer files using PSFTP if the Putty
+directory is in your <code>Path</code>.</li>
+</ol>
+<p>Putty comes with <strong>Puttygen</strong>, <strong>Pageant</strong> and <strong>PSFTP</strong>, which you will be using.</p>
+<h3 id="keys">Create a public/private key pair with PuttyGen<a class="headerlink" href="#keys" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Double-click <code>Puttygen</code> to start the authentication keys creation process.</li>
+<li>Ensure that <code>Type of key to generate</code> has <code>SSH RSA</code> selected.</li>
+<li>Click &lt;<code>Generate</code> to create a random key (and move the mouse around to supply the required entropy).</li>
+<li>Provide a decscription of the key in the <code>Comment</code> field or accept the default.</li>
+<li>Enter and confirm a <code>&gt;Key Passphrase</code>to protect your private key.</li>
+<li>Click <code>Save Public Key</code> and save it as <code>yourapacheusername.pub&lt;</code>.</li>
+<li>Click <code>Save Private Key</code> and save it as <code>yourapacheusername.ppk</code>.</li>
+<li>To create an <code>authorized_keys</code> file, copy the Public Key information in the top box, paste it into a text file (using a tool like <code>notepad</code>) and save the file as <code>authorized_keys</code>. The file must have that exact name and no extension like <code>.txt</code>. Make sure your text editor did not add an extension when you saved the file.</li>
+<li>Close Puttygen.</li>
+</ol>
+<h3 id="auth-keys">Upload the 'authorized_keys' file with PSFTP<a class="headerlink" href="#auth-keys" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Open a Command Prompt box and navigate to the location where you stored your <code>authoriized_keys</code> file.</li>
+<li>Enter <code>psftp people.apache.org</code>. A connection will be made to <code>people.apache.org</code>.</li>
+<li>The first time you use PSFTP, you will have to provide your Apache login user name and password.</li>
+<li>Create a new directory <code>.ssh</code> in your area.</li>
+<li>Enter <code>chmod 700 .ssh</code>. This ensures only you have access to this directory.</li>
+<li>Enter <code>cd.ssh</code> to navigate into the new directory.</li>
+<li>Enter <code>put authorized_keys</code> to upload your <code>authoriized_keys</code> file.</li>
+<li>Enter <code>exit</code> to log out from your<code>people.apache.org</code> private area and from PSFTP itself.</li>
+</ol>
+<h3 id="pageant">Add Key to Pageant and run Pageant<a class="headerlink" href="#pageant" title="Permanent link">&para;</a></h3>
+<p>This is probably the most overlooked but most important step for Windows users. You need to load a key into Pageant and have Pageant running all the time in memory so other applications can use the keys you created. If Pageant is not running, when you enter <code>people.apache.org</code> Putty or PSFTP will prompt for user and password again regardless of the work you just did.</p>
+<ol>
+<li>Open Pageant and click <code>Add</code> to add a new key.</li>
+<li>Browse to your <code>yourapacheusername.ppk</code> private key file and select it.</li>
+<li>Click <code>Close</code> to close this window.</li>
+</ol>
+<p>Pageant is still running with an icon in the system tray.</p>
+<p>You should now be able to log in without being asked for your user name or password any more. Try it:</p>
+<p>In the Command Prompt box enter <code>psftp people.apache.org</code>.</p>
+<p>You should be able to log right in without having to provide your credentials.</p>
+<p><strong>Note</strong> that whenever you exit Pageant, or restart your computer, you will need to restart Pageant and add your key in again. Pageant does not keep details of loaded keys between sessions.</p>
+<h3 id="configure-putty">Configure Putty to log in using your Keys<a class="headerlink" href="#configure-putty" title="Permanent link">&para;</a></h3>
+<ol>
+<li>Open up Putty.</li>
+<li>Specify <code>people.apache.org</code> as the Hostname.</li>
+<li>Make sure the SSH protocol radio button is selected.</li>
+<li>Choose the <code>Data</code> sub-category of <code>Connection</code>.</li>
+<li>Provide your Apache user name for <code>auto-login username</code>.</li>
+<li>Select the <code>SSH</code> category.</li>
+<li>Make sure the <code>SSH 2 Only</code> radio button is selected.</li>
+<li>Select the <code>Auth</code> sub-category of the SSH category.</li>
+<li>Make sure the <code>Attempt &quot;Keyboard Interactive&quot; auth (SSH 2)</code> checkbox is selected.</li>
+<li>Click the <code>Browse</code> Button and locate and load your <code>Private Key</code> you
+saved earlier as <code>yourapacheusername.ppk</code>.</li>
+<li>Select the <code>Session</code> category and save this session with a suitable name.</li>
+</ol>
+<p>All the details are now saved for future use. Now click the <code>Open</code> button to open a secure connection to the server and to
+log in automatically to your personal area of <code>people.apache.org</code>. You will have to provide your password if this is the first time connecting to your area.</p>
+<h2 id="links">Relevant Links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="user-ssh.html">Apache SSH Guide</a></li>
+<li><a href="https://www.ssh.com/ssh/putty/putty-manuals/0.68/index.html" target="_blank">Putty Setup Guide</a></li>
+<li><a href="https://files.fosswire.com/2007/08/fwunixref.pdf" target="_blank">Unix Command Quick Reference</a></li>
+</ul>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2021, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    
+    <script src="/theme/js/vendor/jquery.js"></script>
+    <script src="/theme/js/vendor/what-input.js"></script>
+    <script src="/theme/js/vendor/foundation.js"></script>
+    <script src="/theme/js/app.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
