@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="generator" content="Pelican" />
+        <title>Release Creation Process</title>
+        <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="https://infra-test.apache.org/">Apache Infrastructure</a></h1>
+                <nav><ul>
+                    <li><a href="https://infra-test.apache.org/./apache-and-github.html">Apache and GitHub</a></li>
+                    <li><a href="https://infra-test.apache.org/./application-upgrades-policy-and-workflow.html">Application upgrades policy and workflow</a></li>
+                    <li><a href="https://infra-test.apache.org/./distributing-through-the-apple-developer-program.html">Distributing through the Apple Developer Program</a></li>
+                    <li><a href="https://infra-test.apache.org/./applying-the-apache-license-version-20.html">Applying the Apache license, version 2.0</a></li>
+                    <li><a href="https://infra-test.apache.org/./asf-pelican-feature-branches.html">ASF Pelican feature branches</a></li>
+                    <li><a href="https://infra-test.apache.org/./asf-pelican-data-model.html">ASF Pelican data model</a></li>
+                    <li><a href="https://infra-test.apache.org/./asf-pelican-getting-started-guide.html">ASF-Pelican getting-started guide</a></li>
+                    <li><a href="https://infra-test.apache.org/./local-pelican-builds.html">Local Pelican builds</a></li>
+                    <li><a href="https://infra-test.apache.org/./asf-pelican-plugins.html">ASF Pelican plugins</a></li>
+                    <li><a href="https://infra-test.apache.org/./apache-theme-for-asf-pelican.html">Apache Theme for ASF Pelican</a></li>
+                    <li><a href="https://infra-test.apache.org/./asf-pelican.html">ASF-Pelican</a></li>
+                    <li><a href="https://infra-test.apache.org/./asfbot-irc-services-and-archives.html">ASFBot: IRC services and archives</a></li>
+                    <li><a href="https://infra-test.apache.org/./backup-policy.html">Backup policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./writing-a-good-bug-report.html">Writing a good bug report</a></li>
+                    <li><a href="https://infra-test.apache.org/./committer-email.html">Committer Email</a></li>
+                    <li><a href="https://infra-test.apache.org/./policy-for-outreach-to-committers.html">Policy for Outreach to Committers</a></li>
+                    <li><a href="https://infra-test.apache.org/./committers-faqs.html">Committers' FAQs</a></li>
+                    <li><a href="https://infra-test.apache.org/./contact-the-infrastructure-team.html">Contact the Infrastructure Team</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/contactinfra.html">Contacting Infrastructure</a></li>
+                    <li><a href="https://infra-test.apache.org/./tips-for-apache-project-email-contributors.html">Tips for Apache project email contributors</a></li>
+                    <li><a href="https://infra-test.apache.org/./guide-for-new-project-contributors.html">Guide for new project contributors</a></li>
+                    <li><a href="https://infra-test.apache.org/./handling-cryptography-within-an-asf-release.html">Handling cryptography within an ASF release</a></li>
+                    <li><a href="https://infra-test.apache.org/./confluence-wiki-space-for-your-project.html">Confluence Wiki space for your project</a></li>
+                    <li><a href="https://infra-test.apache.org/./requesting-access-to-the-digicert-code-signing-service.html">Requesting access to the Digicert code signing service</a></li>
+                    <li><a href="https://infra-test.apache.org/./using-the-digicert-code-signing-service.html">Using the Digicert code signing service</a></li>
+                    <li><a href="https://infra-test.apache.org/./documentation.html">Documentation</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/email.html">Committer e-mail configuration</a></li>
+                    <li><a href="https://infra-test.apache.org/./fingerprints.html">Fingerprints</a></li>
+                    <li><a href="https://infra-test.apache.org/./github-flavored-markdown.html">GitHub Flavored Markdown</a></li>
+                    <li><a href="https://infra-test.apache.org/./getting-started-with-git.html">Getting started with Git</a></li>
+                    <li><a href="https://infra-test.apache.org/./git-access-to-apache-subversion-codebases.html">Git access to Apache Subversion codebases</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/git.html">Getting started with Git</a></li>
+                    <li><a href="https://infra-test.apache.org/./github-actions-policy.html">GitHub Actions Policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./github-actions-and-secrets.html">GitHub Actions and Secrets</a></li>
+                    <li><a href="https://infra-test.apache.org/./github-pages-for-projects.html">GitHub Pages for projects</a></li>
+                    <li><a href="https://infra-test.apache.org/./roles-for-project-github-repositories.html">Roles for project GitHub repositories</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/github.html">Apache and GitHub</a></li>
+                    <li><a href="https://infra-test.apache.org/./host-a-jenkins-or-buildbot-agent.html">Host a Jenkins or Buildbot agent</a></li>
+                    <li><a href="https://infra-test.apache.org/./how-to-be-an-apache-software-foundation-download-mirror.html">How to be an Apache Software Foundation download mirror</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/id.html">Changing your account details (self serve)</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/index.html">Committer Documentation</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/index.html">Reference Documentation</a></li>
+                    <li><a href="https://infra-test.apache.org/./self-serve-tools.html">Self-serve Tools</a></li>
+                    <li><a href="https://infra-test.apache.org/./site-wide-ban-policy.html">Site-wide ban policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./details-on-contacting-infra.html">Details on contacting Infra</a></li>
+                    <li><a href="https://infra-test.apache.org/./infra-and-the-incubator.html">Infra and the Incubator</a></li>
+                    <li><a href="https://infra-test.apache.org/./apache-infrastructure-mailing-lists.html">Apache Infrastructure mailing lists</a></li>
+                    <li><a href="https://infra-test.apache.org/./volunteering-for-apache-infrastructure.html">Volunteering for Apache Infrastructure</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/jenkins-docker.html">Using Docker with builds.apache.org</a></li>
+                    <li><a href="https://infra-test.apache.org/./guidelines-for-creating-a-jira-ticket.html">Guidelines for creating a Jira ticket</a></li>
+                    <li><a href="https://infra-test.apache.org/./how-to-transition-to-a-new-pgp-key.html">How to transition to a new PGP key</a></li>
+                    <li><a href="https://infra-test.apache.org/./assembling-license-and-notice-files.html">Assembling LICENSE and NOTICE files</a></li>
+                    <li><a href="https://infra-test.apache.org/./localization.html">Localization</a></li>
+                    <li><a href="https://infra-test.apache.org/./machines-and-fingerprints.html">Machines and Fingerprints</a></li>
+                    <li><a href="https://infra-test.apache.org/./mail-rejection-policy.html">Mail Rejection Policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./mailing-list-moderation.html">Mailing list moderation</a></li>
+                    <li><a href="https://infra-test.apache.org/./managing-project-committers.html">Managing Project Committers</a></li>
+                    <li><a href="https://infra-test.apache.org/./apache-mirroring-information.html">Apache mirroring information</a></li>
+                    <li><a href="https://infra-test.apache.org/./guide-for-new-project-committers.html">Guide for new project committers</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/newaccount.html">Guide to new committers</a></li>
+                    <li><a href="https://infra-test.apache.org/./open-access-svn.html">Open-access SVN</a></li>
+                    <li><a href="https://infra-test.apache.org/./cryptography-with-openpgp.html">Cryptography with OpenPGP</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/opie.html">Using OPIE</a></li>
+                    <li><a href="https://infra-test.apache.org/./operating-system-upgrade-policy.html">Operating system upgrade policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./how-to-submit-a-patch-for-project-code.html">How to submit a patch for project code</a></li>
+                    <li><a href="https://infra-test.apache.org/./build-and-manage-a-project-website-with-pelican-and-buildbot.html">Build and manage a project website with Pelican and Buildbot</a></li>
+                    <li><a href="https://infra-test.apache.org/./infra-policies.html">Infra policies</a></li>
+                    <li><a href="https://infra-test.apache.org/./project-blog.html">Project Blog</a></li>
+                    <li><a href="https://infra-test.apache.org/./project-and-product-names.html">Project and product names</a></li>
+                    <li><a href="https://infra-test.apache.org/./project-site-policy.html">Project site policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./managing-your-project-web-site.html">Managing your project web site</a></li>
+                    <li><a href="https://infra-test.apache.org/./publishing-maven-releases-to-maven-central-repository.html">Publishing Maven Releases to Maven Central Repository</a></li>
+                    <li><a href="https://infra-test.apache.org/./subscribe-to-apache-software-foundation-infrastructure-events.html">Subscribe to Apache Software Foundation infrastructure events</a></li>
+                    <li><a href="https://infra-test.apache.org/./release-distribution-policy.html">Release Distribution Policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./release-download-pages-for-projects.html">Release Download Pages for Projects</a></li>
+                    <li class="active"><a href="https://infra-test.apache.org/./release-creation-process.html">Release Creation Process</a></li>
+                    <li><a href="https://infra-test.apache.org/./signing-releases.html">Signing Releases</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/release.html">Releasing project packages</a></li>
+                    <li><a href="https://infra-test.apache.org/./repository-access-policy.html">Repository access policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./apache-maven-repositories.html">Apache Maven repositories</a></li>
+                    <li><a href="https://infra-test.apache.org/./requesting-an-issue-and-feature-request-tracker-for-a-project.html">Requesting an issue and feature-request tracker for a project</a></li>
+                    <li><a href="https://infra-test.apache.org/./response-time.html">Response time</a></li>
+                    <li><a href="https://infra-test.apache.org/./roadmap-for-apache-infrastructure.html">Roadmap for Apache Infrastructure</a></li>
+                    <li><a href="https://infra-test.apache.org/./self-hosted-runners.html">Self-hosted runners</a></li>
+                    <li><a href="https://infra-test.apache.org/./services-and-tools.html">Services and Tools</a></li>
+                    <li><a href="https://infra-test.apache.org/./slack-for-asf-projects.html">Slack for ASF projects</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/ssh.html">Setting up SSH for ASF machines</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/start.html">Committer documentation</a></li>
+                    <li><a href="https://infra-test.apache.org/./status-pages.html">Status pages</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/subversion.html">Using Subversion</a></li>
+                    <li><a href="https://infra-test.apache.org/./subversion-basics.html">Subversion basics</a></li>
+                    <li><a href="https://infra-test.apache.org/./svn-to-git-migration.html">SVN to Git migration</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/svngit2jira.html">Subversion and Git integration with JIRA tickets</a></li>
+                    <li><a href="https://infra-test.apache.org/./subversion-and-git-integration-with-jira-tickets.html">Subversion and Git integration with Jira tickets</a></li>
+                    <li><a href="https://infra-test.apache.org/./about-the-apache-infrastructure-team.html">About the Apache Infrastructure Team</a></li>
+                    <li><a href="https://infra-test.apache.org/./understanding-opensource.html">Understanding Opensource</a></li>
+                    <li><a href="https://infra-test.apache.org/./user-documentation-for-project-releases.html">User documentation for project releases</a></li>
+                    <li><a href="https://infra-test.apache.org/./committer-ssh-configuration-on-windows.html">Committer SSH configuration on Windows</a></li>
+                    <li><a href="https://infra-test.apache.org/./committer-ssh-access.html">Committer SSH Access</a></li>
+                    <li><a href="https://infra-test.apache.org/./source-code-repositories-at-apache.html">Source Code Repositories at Apache</a></li>
+                    <li><a href="https://infra-test.apache.org/./requesting-a-virtual-machine-for-a-project.html">Requesting a virtual machine for a project</a></li>
+                    <li><a href="https://infra-test.apache.org/./project-vm-policy.html">Project VM policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./guidelines-for-project-websites.html">Guidelines for project websites</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/website-policy.html">Web Site Guidelines</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/website.html">How To Manage any Apache Project's Website</a></li>
+                    <li><a href="https://infra-test.apache.org/./writable-git-repositories.html">Writable Git repositories</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+    <h1 class="entry-title">Release Creation Process</h1>
+    
+    <p>These best practices help guide a PMC through the steps to create and publish an Apache software product release. It complements the formal <a href="https://www.apache.org/legal/release-policy.html" target="_blank">Apache Release Policy</a>, defining what must be in a software release, and <a href="release-distribution.html">Release Distribution Policy</a>, which describes the technical details of where releases are placed/mirrored.</p>
+<p>Every Apache Software Foundation project software release must meet requirements for content , process , and publication. These requirements ensure that Apache contributors and users benefit from appropriate legal protection the ASF provides, and reflect the Foundation's goals of open, collaborative software development.</p>
+<h2>Contents</h2>
+<ul>
+<li><a href="#definition">An Apache release</a></li>
+<li><a href="#releasemanager">The release manager</a></li>
+<li><a href="#valid">A valid release package</a></li>
+<li><a href="#signing">Signing release artifacts</a></li>
+<li><a href="#voting">Voting whether to approve the release</a></li>
+<li><a href="#distribution">Distribution</a><ul>
+<li><a href="#uploading">Uploading packages</a></li>
+<li><a href="#normal">Normal distribution on the Apache downloads site</a></li>
+<li><a href="#tomaven">Maven distribution</a></li>
+</ul>
+</li>
+<li><a href="#faqs">FAQs</a></li>
+</ul>
+<h2 id="definition">An Apache release<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h2>
+
+<p>An Apache release is a set of <strong>valid</strong>, <strong>signed</strong>, artifacts, <strong>voted on</strong> by the appropriate PMC and <strong>distributed</strong> on the official ASF release infrastructure. See below for discussion of the words in bold, all of which are essential.</p>
+<p>To make a release, an Apache project:</p>
+<ol>
+<li>Has code that complies with the software licensing requirements</li>
+<li>Decides as a community to make a release, and designates a release manager</li>
+<li>The release manager prepares and signs the proposed release materials</li>
+<li>The PMC votes whether to approve the release</li>
+<li>If the vote passes, the release manager copies the artifacts to the distribution infrastructure.</li>
+</ol>
+<p>A release starts when the project community agrees to make a release. However, no release manager can make a valid release unless the community has taken the necessary steps. The source code and build process must comply with the ASF legal and intellectual property requirements for a valid release, and the project must have the infrastructure in place to correctly <strong>sign</strong> the release artifacts (see below).</p>
+<h2 id="releasemanager">The release manager<a class="headerlink" href="#releasemanager" title="Permanent link">&para;</a></h2>
+
+<p>Most projects designate a committer to be the <em>release manager</em> who takes responsibility for the mechanics of a release. It is a good idea to let several committers take this role on different releases so that more than one person is comfortable doing a release. Release managers shepherd a release from an initial community consensus to getting the compiled code package to final distribution, and may be involved in publicizing the release to the project's community and the ASF in general.</p>
+<p>Unless otherwise specified, only PMC members can act as release managers. If your project wishes to allow normal committers to release files, please <a href="contact.html">contact infrastructure</a> with your request.</p>
+<p>Release managers do the mechanical work; but the PMC in general, and the PMC chair in particular (as an officer of the Foundation), are responsible for compliance with ASF requirements.</p>
+<p>Any committer may serve as release manager.</p>
+<h2 id="valid">A valid release package<a class="headerlink" href="#valid" title="Permanent link">&para;</a></h2>
+
+<p>The Apache Software Foundation exists to create open source software, so the fundamental requirement for a release is that it has the necessary source code to build the project. A project may provide compiled binaries of each release for the convenience of users.</p>
+<p>All project source code must be covered by the <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License, version 2.0</a>. The license or appropriate boilerplate text must be included in each source file. For the license to be valid, the code must have been contributed by an individual covered by an appropriate <a href="https://www.apache.org/licenses/contributor-agreements.html" target="_blank">contributor license agreement</a>, or have otherwise been licensed to the Foundation and passed through IP clearance. See <a href="https://www.apache.org/legal/release-policy.html" target="_blank">this page</a> for details on release requirements. When in doubt, contact the Foundation's Legal resources by filing a Jira ticket under the 'LEGAL' project. The Apache <a href="https://creadur.apache.org/rat/" target="_blank">Release Audit Tool (RAT)</a> can help you verify that your proposed release complies with the requirements.</p>
+<p>Many projects have dependencies on non-Apache components. For an Apache release to be valid, it can only depend on non-Apache components that have compatible licenses. For more information on third party licenses allowed, see the <a href="https://www.apache.org/legal/resolved.html" target="_blank">ASF Third Party License Policy</a>.</p>
+<h2 id="signing">Signing release artifacts<a class="headerlink" href="#signing" title="Permanent link">&para;</a></h2>
+
+<p>The files that make up an Apache release always have accompanied by cryptographic signatures. This allows users to ensure that the files have not been tampered with since they were created. The mechanics of signing depend on the project's build technology. Infra strongly recommends that projects set up automated infrastructure to sign the files to simplify the work. Generally, projects set up their build system so that the same process that creates the files for a release also signs them.</p>
+<p>The process of setting up to sign the code is somewhat complicated, and it is described on the <a href="release-signing.html">release signing</a> page. If you plan to serve as a release manager, you should generate a key and publish it well in advance of creating a release.</p>
+<h2 id="voting">Voting whether to approve the release<a class="headerlink" href="#voting" title="Permanent link">&para;</a></h2>
+
+<p>A binding release vote of the PMC is the critical gating step in the release process. Without such a vote, the release is just a set of files prepared by an individual. After such a vote, it is a formal offering of the ASF, backed by the "full faith and credit" of the Foundation.</p>
+<h2 id="distribution">Distribution<a class="headerlink" href="#distribution" title="Permanent link">&para;</a></h2>
+
+<p>The Apache infrastructure <em>must</em> be the primary source for all artifacts officially released by the ASF.</p>
+<p>Infra maintains the Apache release distribution infrastructure, which has three parts:</p>
+<ul>
+<li>the mirrored directories on <code>downloads.apache.org</code></li>
+<li>previous releases on <code>archive.apache.org</code></li>
+<li>Maven repository on <code>repository.apache.org</code></li>
+</ul>
+<h3 id="uploading">Uploading packages<a class="headerlink" href="#uploading" title="Permanent link">&para;</a></h3>
+
+<ul>
+<li>Upload development packages and snapshots to <code>https://dist.apache.org/dist/dev/$project/</code></li>
+<li>Upload release packages to <code>https://dist.apache.org/dist/release/$project/</code>. If your project uses a Subersion repository, you can use <code>svn mv</code> from the <code>dev</code> folder.</li>
+<li>Incubator projects can find their dev/release folder inside their incubator directory.</li>
+</ul>
+<h3 id="normal">Normal distribution on the Apache downloads site<a class="headerlink" href="#normal" title="Permanent link">&para;</a></h3>
+
+<p>See the <a href="release-distribution-policy.html">Release Distribution Policy</a> for specific technical requirements.</p>
+<p>Each Apache TLP has a <code>release/TLP-name</code> directory in the distribution Subversion repository at <code>https://dist.apache.org/repos/dist/</code>. Once a release vote passes, the release manager adds the release artifacts (plus signature and hash files) to this location. Each project is responsible for the structure of its directory. [PyPubSub](pypubsub.html] pushes the contents of these directories to <code>http://downloads.apache.org/</code>. <strong>Note</strong> that only the most recent version of each supported release line should be stored here.</p>
+<p>The contents of the dist/release/ directories are published to the 3rd party mirrors using rsync.</p>
+<ul>
+<li>
+<p><strong>Do not</strong> use the SVN directories under <code>https://dist.apache.org/repos/dist/</code> to link to product releases. Projects must use the ASF mirror system. For details, see <a href="release-download-pages.html">Release Download Pages</a> for further details.</p>
+</li>
+<li>
+<p>A signature (<code>.asc</code>) can become invalid because the signing key is revoked or has expired. Make sure all current signatures for your project in <code>downloads.apache.org/</code> are valid.</p>
+</li>
+<li>
+<p>Hash, signature and KEYS files are not propagated to the mirrors; these files are excluded:</p>
+</li>
+</ul>
+<p><code>*.md5 *.sha *.sha1 *.sha256 *.sha512 *.asc *.sig KEYS *.mds MD5SUM SHA*SUM</code></p>
+<p>The current list is <a href="https://github.com/apache/infrastructure-puppet/blob/deployment/modules/rsync_mirror/manifests/init.pp" target="_blank">here</a>.</p>
+<ul>
+<li><strong>Do not</strong> publish <code>.md5</code> files because MD5 is broken.</li>
+<li><strong>Do not</strong> publish <code>.sig</code> files. Make sure your <code>.asc</code>s are plain-text files.</li>
+<li>
+<p>The download page should use <code>HTTPS:</code> rather than plain <code>HTTP:</code> for linking to KEYS, sigs and hashes (for example: <code>https://downloads.apache.org/httpd/KEYS</code>).</p>
+</li>
+<li>
+<p>In addition to the checksum files required in the <a href="release-distribution-policy.html">Release Distribution Policy</a>, the project can provide an <code>MD5SUM</code> or <code>SHA*SUM</code>. <code>MD5SUM</code> and <code>SHA*SUM</code> must look like the output of <code>md5sum(1)</code>: lines containing a checksum, followed by a filename ; use only plain file names (no slashes). Do not use any other file names for such files.</p>
+</li>
+</ul>
+<p>If the release directory does not yet exist, please create a Jira ticket for INFRA with the required information (see the <a href="contact.html">contact</a> page).</p>
+<p><strong>Note</strong>: By default, only PMC/PPMC members have write access to the <code>dist/release</code> directories. The <code>dist/dev</code> directories by default allow write access by committers.</p>
+<h3 id="tomaven">Maven distribution<a class="headerlink" href="#tomaven" title="Permanent link">&para;</a></h3>
+<p>See <a href="maven-releases.html">Publishing Maven releases</a></p>
+<h2 id="faqs">FAQs<a class="headerlink" href="#faqs" title="Permanent link">&para;</a></h2>
+
+<ul>
+<li><strong>I published a release. Why don't I see it on XYZ yet?</strong> Apache uses <a href="pypubsub.html">PyPubSub</a> internally and rsync mirrroring externally. Files committed to the Subversion repository at <code>https://dist.apache.org/repos/dist/</code> are automatically copied, using PyPubSub, to <code>www.apache.org</code>. Then the external mirrors pick up the files from <code>www.apache.org</code>. It may take up to 24 hours or more for a newly published release to be sync'd to all mirrors. Mirrors are required to check for new releases at least once a day, but most will check for updates more frequently.</li>
+<li><strong>How do I archive an old release?</strong> <code>downloads.apache.org</code> is automatically archived. Therefore, a copy of every official release exists in the archives. Just delete the copy of the release that is in your project's dist directory. Remember to update any links from the download page related to that release.</li>
+</ul>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
