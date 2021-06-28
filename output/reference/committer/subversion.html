@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="generator" content="Pelican" />
+        <title>Using Subversion</title>
+        <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="https://infra-test.apache.org/">Apache Infrastructure</a></h1>
+                <nav><ul>
+                    <li><a href="https://infra-test.apache.org/./apache-and-github.html">Apache and GitHub</a></li>
+                    <li><a href="https://infra-test.apache.org/./application-upgrades-policy-and-workflow.html">Application upgrades policy and workflow</a></li>
+                    <li><a href="https://infra-test.apache.org/./distributing-through-the-apple-developer-program.html">Distributing through the Apple Developer Program</a></li>
+                    <li><a href="https://infra-test.apache.org/./applying-the-apache-license-version-20.html">Applying the Apache license, version 2.0</a></li>
+                    <li><a href="https://infra-test.apache.org/./asf-pelican-feature-branches.html">ASF Pelican feature branches</a></li>
+                    <li><a href="https://infra-test.apache.org/./asf-pelican-data-model.html">ASF Pelican data model</a></li>
+                    <li><a href="https://infra-test.apache.org/./asf-pelican-getting-started-guide.html">ASF-Pelican getting-started guide</a></li>
+                    <li><a href="https://infra-test.apache.org/./local-pelican-builds.html">Local Pelican builds</a></li>
+                    <li><a href="https://infra-test.apache.org/./asf-pelican-plugins.html">ASF Pelican plugins</a></li>
+                    <li><a href="https://infra-test.apache.org/./apache-theme-for-asf-pelican.html">Apache Theme for ASF Pelican</a></li>
+                    <li><a href="https://infra-test.apache.org/./asf-pelican.html">ASF-Pelican</a></li>
+                    <li><a href="https://infra-test.apache.org/./asfbot-irc-services-and-archives.html">ASFBot: IRC services and archives</a></li>
+                    <li><a href="https://infra-test.apache.org/./backup-policy.html">Backup policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./writing-a-good-bug-report.html">Writing a good bug report</a></li>
+                    <li><a href="https://infra-test.apache.org/./committer-email.html">Committer Email</a></li>
+                    <li><a href="https://infra-test.apache.org/./policy-for-outreach-to-committers.html">Policy for Outreach to Committers</a></li>
+                    <li><a href="https://infra-test.apache.org/./committers-faqs.html">Committers' FAQs</a></li>
+                    <li><a href="https://infra-test.apache.org/./contact-the-infrastructure-team.html">Contact the Infrastructure Team</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/contactinfra.html">Contacting Infrastructure</a></li>
+                    <li><a href="https://infra-test.apache.org/./tips-for-apache-project-email-contributors.html">Tips for Apache project email contributors</a></li>
+                    <li><a href="https://infra-test.apache.org/./guide-for-new-project-contributors.html">Guide for new project contributors</a></li>
+                    <li><a href="https://infra-test.apache.org/./handling-cryptography-within-an-asf-release.html">Handling cryptography within an ASF release</a></li>
+                    <li><a href="https://infra-test.apache.org/./confluence-wiki-space-for-your-project.html">Confluence Wiki space for your project</a></li>
+                    <li><a href="https://infra-test.apache.org/./requesting-access-to-the-digicert-code-signing-service.html">Requesting access to the Digicert code signing service</a></li>
+                    <li><a href="https://infra-test.apache.org/./using-the-digicert-code-signing-service.html">Using the Digicert code signing service</a></li>
+                    <li><a href="https://infra-test.apache.org/./documentation.html">Documentation</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/email.html">Committer e-mail configuration</a></li>
+                    <li><a href="https://infra-test.apache.org/./fingerprints.html">Fingerprints</a></li>
+                    <li><a href="https://infra-test.apache.org/./github-flavored-markdown.html">GitHub Flavored Markdown</a></li>
+                    <li><a href="https://infra-test.apache.org/./getting-started-with-git.html">Getting started with Git</a></li>
+                    <li><a href="https://infra-test.apache.org/./git-access-to-apache-subversion-codebases.html">Git access to Apache Subversion codebases</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/git.html">Getting started with Git</a></li>
+                    <li><a href="https://infra-test.apache.org/./github-actions-policy.html">GitHub Actions Policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./github-actions-and-secrets.html">GitHub Actions and Secrets</a></li>
+                    <li><a href="https://infra-test.apache.org/./github-pages-for-projects.html">GitHub Pages for projects</a></li>
+                    <li><a href="https://infra-test.apache.org/./roles-for-project-github-repositories.html">Roles for project GitHub repositories</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/github.html">Apache and GitHub</a></li>
+                    <li><a href="https://infra-test.apache.org/./host-a-jenkins-or-buildbot-agent.html">Host a Jenkins or Buildbot agent</a></li>
+                    <li><a href="https://infra-test.apache.org/./how-to-be-an-apache-software-foundation-download-mirror.html">How to be an Apache Software Foundation download mirror</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/id.html">Changing your account details (self serve)</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/index.html">Committer Documentation</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/index.html">Reference Documentation</a></li>
+                    <li><a href="https://infra-test.apache.org/./self-serve-tools.html">Self-serve Tools</a></li>
+                    <li><a href="https://infra-test.apache.org/./site-wide-ban-policy.html">Site-wide ban policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./details-on-contacting-infra.html">Details on contacting Infra</a></li>
+                    <li><a href="https://infra-test.apache.org/./infra-and-the-incubator.html">Infra and the Incubator</a></li>
+                    <li><a href="https://infra-test.apache.org/./apache-infrastructure-mailing-lists.html">Apache Infrastructure mailing lists</a></li>
+                    <li><a href="https://infra-test.apache.org/./volunteering-for-apache-infrastructure.html">Volunteering for Apache Infrastructure</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/jenkins-docker.html">Using Docker with builds.apache.org</a></li>
+                    <li><a href="https://infra-test.apache.org/./guidelines-for-creating-a-jira-ticket.html">Guidelines for creating a Jira ticket</a></li>
+                    <li><a href="https://infra-test.apache.org/./how-to-transition-to-a-new-pgp-key.html">How to transition to a new PGP key</a></li>
+                    <li><a href="https://infra-test.apache.org/./assembling-license-and-notice-files.html">Assembling LICENSE and NOTICE files</a></li>
+                    <li><a href="https://infra-test.apache.org/./localization.html">Localization</a></li>
+                    <li><a href="https://infra-test.apache.org/./machines-and-fingerprints.html">Machines and Fingerprints</a></li>
+                    <li><a href="https://infra-test.apache.org/./mail-rejection-policy.html">Mail Rejection Policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./mailing-list-moderation.html">Mailing list moderation</a></li>
+                    <li><a href="https://infra-test.apache.org/./managing-project-committers.html">Managing Project Committers</a></li>
+                    <li><a href="https://infra-test.apache.org/./apache-mirroring-information.html">Apache mirroring information</a></li>
+                    <li><a href="https://infra-test.apache.org/./guide-for-new-project-committers.html">Guide for new project committers</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/newaccount.html">Guide to new committers</a></li>
+                    <li><a href="https://infra-test.apache.org/./open-access-svn.html">Open-access SVN</a></li>
+                    <li><a href="https://infra-test.apache.org/./cryptography-with-openpgp.html">Cryptography with OpenPGP</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/opie.html">Using OPIE</a></li>
+                    <li><a href="https://infra-test.apache.org/./operating-system-upgrade-policy.html">Operating system upgrade policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./how-to-submit-a-patch-for-project-code.html">How to submit a patch for project code</a></li>
+                    <li><a href="https://infra-test.apache.org/./build-and-manage-a-project-website-with-pelican-and-buildbot.html">Build and manage a project website with Pelican and Buildbot</a></li>
+                    <li><a href="https://infra-test.apache.org/./infra-policies.html">Infra policies</a></li>
+                    <li><a href="https://infra-test.apache.org/./project-blog.html">Project Blog</a></li>
+                    <li><a href="https://infra-test.apache.org/./project-and-product-names.html">Project and product names</a></li>
+                    <li><a href="https://infra-test.apache.org/./project-site-policy.html">Project site policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./managing-your-project-web-site.html">Managing your project web site</a></li>
+                    <li><a href="https://infra-test.apache.org/./publishing-maven-releases-to-maven-central-repository.html">Publishing Maven Releases to Maven Central Repository</a></li>
+                    <li><a href="https://infra-test.apache.org/./subscribe-to-apache-software-foundation-infrastructure-events.html">Subscribe to Apache Software Foundation infrastructure events</a></li>
+                    <li><a href="https://infra-test.apache.org/./release-distribution-policy.html">Release Distribution Policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./release-download-pages-for-projects.html">Release Download Pages for Projects</a></li>
+                    <li><a href="https://infra-test.apache.org/./release-creation-process.html">Release Creation Process</a></li>
+                    <li><a href="https://infra-test.apache.org/./signing-releases.html">Signing Releases</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/release.html">Releasing project packages</a></li>
+                    <li><a href="https://infra-test.apache.org/./repository-access-policy.html">Repository access policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./apache-maven-repositories.html">Apache Maven repositories</a></li>
+                    <li><a href="https://infra-test.apache.org/./requesting-an-issue-and-feature-request-tracker-for-a-project.html">Requesting an issue and feature-request tracker for a project</a></li>
+                    <li><a href="https://infra-test.apache.org/./response-time.html">Response time</a></li>
+                    <li><a href="https://infra-test.apache.org/./roadmap-for-apache-infrastructure.html">Roadmap for Apache Infrastructure</a></li>
+                    <li><a href="https://infra-test.apache.org/./self-hosted-runners.html">Self-hosted runners</a></li>
+                    <li><a href="https://infra-test.apache.org/./services-and-tools.html">Services and Tools</a></li>
+                    <li><a href="https://infra-test.apache.org/./slack-for-asf-projects.html">Slack for ASF projects</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/ssh.html">Setting up SSH for ASF machines</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/start.html">Committer documentation</a></li>
+                    <li><a href="https://infra-test.apache.org/./status-pages.html">Status pages</a></li>
+                    <li class="active"><a href="https://infra-test.apache.org/./reference/committer/subversion.html">Using Subversion</a></li>
+                    <li><a href="https://infra-test.apache.org/./subversion-basics.html">Subversion basics</a></li>
+                    <li><a href="https://infra-test.apache.org/./svn-to-git-migration.html">SVN to Git migration</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/svngit2jira.html">Subversion and Git integration with JIRA tickets</a></li>
+                    <li><a href="https://infra-test.apache.org/./subversion-and-git-integration-with-jira-tickets.html">Subversion and Git integration with Jira tickets</a></li>
+                    <li><a href="https://infra-test.apache.org/./about-the-apache-infrastructure-team.html">About the Apache Infrastructure Team</a></li>
+                    <li><a href="https://infra-test.apache.org/./understanding-opensource.html">Understanding Opensource</a></li>
+                    <li><a href="https://infra-test.apache.org/./user-documentation-for-project-releases.html">User documentation for project releases</a></li>
+                    <li><a href="https://infra-test.apache.org/./committer-ssh-configuration-on-windows.html">Committer SSH configuration on Windows</a></li>
+                    <li><a href="https://infra-test.apache.org/./committer-ssh-access.html">Committer SSH Access</a></li>
+                    <li><a href="https://infra-test.apache.org/./source-code-repositories-at-apache.html">Source Code Repositories at Apache</a></li>
+                    <li><a href="https://infra-test.apache.org/./requesting-a-virtual-machine-for-a-project.html">Requesting a virtual machine for a project</a></li>
+                    <li><a href="https://infra-test.apache.org/./project-vm-policy.html">Project VM policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./guidelines-for-project-websites.html">Guidelines for project websites</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/website-policy.html">Web Site Guidelines</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/website.html">How To Manage any Apache Project's Website</a></li>
+                    <li><a href="https://infra-test.apache.org/./writable-git-repositories.html">Writable Git repositories</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+    <h1 class="entry-title">Using Subversion</h1>
+    
+    <div id="toc" style="border-radius: 3px; border: 1px solid #999; background-color: #EEE; padding: 4px;"><h4>Table of Contents:</h4><ul><ul><li><a class="toc-href" href="#viewcvs" title="Web Access">Web Access</a></li><li><a class="toc-href" href="#anon-svn" title="Anonymous Subversion">Anonymous Subversion</a></li><li><a class="toc-href" href="#https-svn" title="Committer Subversion Access">Committer Subversion Access</a></li><li><a class="toc-href" href="#https-svn-config" title="Configuring the Subversion client">Configuring the Subversion client</a></li><li><a class="toc-href" href="#cert" title="SSL Server certificate">SSL Server certificate</a></li><li><a class="toc-href" href="#svnproblems_1" title="Problems with Subversion?">Problems with Subversion?</a><ul><li><a class="toc-href" href="#no-trusted-root-cert" title='"Error validating server certificate" errors'>"Error validating server certificate" errors</a></li><li><a class="toc-href" href="#out-of-sync" title='"svn: No such revision 765287" errors'>"svn: No such revision 765287" errors</a></li><li><a class="toc-href" href="#latest-baseline" title='"specified baseline is not the latest baseline" errors'>"specified baseline is not the latest baseline" errors</a></li><li><a class="toc-href" href="#compressed-stream-errors" title='"Compressed stream invalid" errors'>"Compressed stream invalid" errors</a></li><li><a class="toc-href" href="#date-revisions" title="Problems using date revisions">Problems using date revisions</a></li></ul></li><li><a class="toc-href" href="#FAQ_1" title="Frequently Asked Questions">Frequently Asked Questions</a><ul><li><a class="toc-href" href="#lock" title="When Do I Need To Use svn lock?">When Do I Need To Use svn lock?</a></li><li><a class="toc-href" href="#poll" title="How frequently can I run a cron that connects to the repository?">How frequently can I run a cron that connects to the repository?</a></li><li><a class="toc-href" href="#mirror" title="How do I mirror the entire SVN repository for my experimental $foo?">How do I mirror the entire SVN repository for my experimental $foo?</a></li><li><a class="toc-href" href="#commit-403" title="Why Do I Get a 403 When I Try To Commit?">Why Do I Get a 403 When I Try To Commit?</a></li></ul></li></ul></ul></div>
+<p>Our developers are located all around the world. To enable them to work
+together on our software, we keep the source code in an Internet-accessible
+revision control system called <a href="http://subversion.apache.org/">Subversion</a>
+(SVN). Apache committers have write access to the Subversion repository,
+enabling them to make changes to the source code. Everyone has read access
+to the repositories, so you may download the most up-to-date development
+version of the software.
+If you are looking for a stable release of the source code, you should
+download it from the <a href="http://www.apache.org/dyn/closer.lua/">distribution
+directory</a>. The Subversion
+repository should only be used if you want to be on the <em>bleeding-edge</em> of
+the development effort. The code contained in them may fail to work, or it
+may even eat your hard drive.
+There are several ways to access the Subversion repository:</p>
+<h2 id="viewcvs">Web Access</h2>
+<p>If you just wish to browse around or download a few individual files, the
+best tool is the web-based <a href="http://svn.apache.org/viewvc/">ViewVC interface for
+Subversion</a> or go straight to the public
+repository at
+<a href="http://svn.apache.org/repos/asf/">http://svn.apache.org/repos/asf/</a>.</p>
+<h2 id="anon-svn">Anonymous Subversion</h2>
+<p>To access the Subversion repository anonymously, you will need a Subversion
+client. You can also browse for projects via
+<a href="http://svn.apache.org/repos/asf/">http://svn.apache.org/repos/asf/</a>.</p>
+<p>Choose the module you would like and check it out. For example, to get the
+Spamassassin module, use:</p>
+<div class="highlight"><pre><span></span><code>$ svn checkout http://svn.apache.org/repos/asf/spamassassin/trunk spamassassin
+</code></pre></div>
+<p>For more help on using Subversion, consult the <a href="http://subversion.tigris.org/">Subversion
+website</a> or <a href="http://svnbook.red-bean.com/">Subversion
+book</a>. The web site provides a <a href="http://subversion.tigris.org/project_links.html">list of
+clients and useful links</a>
+(including a link to the <a href="http://subclipse.tigris.org/">Eclipse plug-in</a> ).</p>
+<h2 id="https-svn">Committer Subversion Access</h2>
+<p>We currently use HTTPS basic authentication for logging in to Subversion (
+<a href="#cert">certificate info below</a> ). To change your password, visit
+<a href="https://svn.apache.org/change-password">https://svn.apache.org/change-password</a>.</p>
+<p>This will prompt you to enter a svn password of your choice. Pick a safe
+password! If you cannot login, or have lost your password, visit
+<a href="https://id.apache.org/">https://id.apache.org/</a> to reset it.</p>
+<p>Now, when you make changes, you can commit them with your username/password
+combination, i.e.</p>
+<div class="highlight"><pre><span></span><code>$ svn co https://svn.apache.org/repos/asf/excalibur/trunk/ excalibur-trunk
+$ <span class="nb">cd</span> excalibur-trunk
+$ <span class="nb">echo</span> <span class="s2">"test"</span> &gt; test.txt
+$ svn add test.txt
+$ svn commit --username your-name --password your-password <span class="se">\</span>
+  --message <span class="s2">"Trying out svn"</span>
+</code></pre></div>
+<p>svnserve is not supported, nor is svn+ssh.</p>
+<h2 id="https-svn-config">Configuring the Subversion client</h2>
+<p>Committers will need to properly configure their svn client. One particular
+issue is OS-specific line-endings for text files. When you add a new text
+file, especially when applying patches from Bugzilla, first ensure that the
+line-endings are appropriate for <strong>your</strong> system, then do...
+<code>svn add test.txt
+svn propset svn:eol-style native test.txt</code> 
+Your svn client can be configured to do that automatically for some common
+file types. Add the contents of the file
+<a href="svn-eol-style.txt">http://www.apache.org/dev/svn-eol-style.txt</a> to the bottom of your
+~/.subversion/config file.<br/>[Note: for Windows this is normally
+found at C:\Documents and Settings\{username}\Application
+Data\Subversion\config -or-<br/>For Windows 7 at
+C:\Users\{username}\AppData\Roaming\Subversion\config]</p>
+<p>Some files may need additional properties to be set, for example
+svn:executable=* should be applied to those script files
+(e.g..bat,.cgi,.cmd,.sh) that are intended to be executed. Since not all
+such files are necessarily intended to be executed, the executable property
+should not be made an automatic default.</p>
+<p>However, you should still pay attention to the messages from your svn
+client when you do 'svn commit'.</p>
+<p>Tip: If you use TortiseSVN, a popular Windows GUI client that integrates 
+with Windows Explorer, you can simply right click in Explorer and select 
+TortiseSVN - Settings, and then press the "Edit" button to 
+update your "Subversion configuration file:".  Simply copy the 
+above svn-eol-style.txt file's contents into the end of the 
+config editor (usually Notepad) that appears, and save the file.</p>
+<h2 id="cert">SSL Server certificate</h2>
+<p>The server certificate for
+<a href="https://svn.apache.org/">https://svn.apache.org/</a> is a real SSL
+certificate. However, Subversion, by default, does not currently ship with
+a list of trusted CAs. So, here's some information to help you verify the
+validity of our cert:</p>
+<div class="highlight"><pre><span></span><code>Hostname: *.apache.org
+Valid: from Mon, 19 Dec 2011 22:00:00 GMT until Mon, 17 Feb 2014 21:59:59 GMT
+Issuer: Thawte, Inc., US
+Fingerprint: bc:5f:40:92:fd:6a:49:aa:f8:b8:35:0d:ed:27:5e:a6:64:c1:7a:1b
+</code></pre></div>
+<p>Note that the SSL certificate for our Subversion repository is different 
+from certificates used when logging into Apache infrastructure - 
+please <a href="http://www.apache.org/dev/new-committers-guide.html#spoof">see the New Committer guide</a> for more information.</p>
+<h1 id="svnproblems_1">Problems with Subversion?</h1>
+<h2 id="no-trusted-root-cert">"Error validating server certificate" errors</h2>
+<div class="highlight"><pre><span></span><code>Error validating server certificate for 'https://svn.apache.org:443':
+ - The certificate is not issued by a trusted authority. Use the
+   fingerprint to validate the certificate manually!
+Certificate information:
+ - Hostname: *.apache.org
+ - Valid: from Tue, 20 Dec 2011 00:00:00 GMT until Mon, 17 Feb 2014 23:59:59 GMT
+ - Issuer: Thawte, Inc., US
+ - Fingerprint: bc:5f:40:92:fd:6a:49:aa:f8:b8:35:0d:ed:27:5e:a6:64:c1:7a:1b
+(R)eject or accept (t)emporarily
+</code></pre></div>
+<p>On some platforms, the root Thawte certificate, used to sign the Apache
+SSL cert, is not made available to OpenSSL and Subversion. Fix this by
+downloading the Thawte root certificate, and updating your Subversion
+<code>servers</code> file accordingly to use it for SSL validation:</p>
+<ul>
+<li>Save the <a href="https://www.thawte.com/roots/thawte\_Premium\_Server\_CA.pem">Thawte root certificate</a> (in .pem format) to a suitable path,
+    for example, in your <code>~/.subversion/</code> directory, or on Windows, in
+    <code>%USERPROFILE%\AppData\Roaming\Subversion\</code> folder.</li>
+<li>In the servers file, found in the same folder, add the following to
+    the <code>[global]</code> section, adding the section if required, and
+    amending the path appropriately:<div class="highlight"><pre><span></span><code><span class="k">[global]</span>
+<span class="na">ssl-authority-files</span> <span class="o">=</span> <span class="s">/full/path/to/thawte_Premium_Server_CA.pem</span>
+<span class="na">ssl-trust-default-ca</span> <span class="o">=</span> <span class="s">true</span>
+</code></pre></div>
+</li>
+</ul>
+<p>Re-trying the Subversion operation should now succeed. In some cases,
+you may additionally need to move to a more recent svn client, version,
+1.6 or higher should be sufficient.</p>
+<h2 id="out-of-sync">"svn: No such revision 765287" errors</h2>
+<p>If you're getting an error message like the following:</p>
+<div class="highlight"><pre><span></span><code>svn: No such revision 765287
+</code></pre></div>
+<p>This may be because of a short lag in the synchronization between
+Subversion mirrors, and can occur if multiple commits are run immediately
+after each other. This error will usually only happen if you are located in
+Europe, or explicitly using the European mirror.</p>
+<p>Waiting for 10 seconds and repeating the command should succeed.</p>
+<h2 id="latest-baseline">"specified baseline is not the latest baseline" errors</h2>
+<p>If you're getting an error message like the following:</p>
+<div class="highlight"><pre><span></span><code>svn: Commit failed (details follow):
+svn: The specified baseline is not the latest baseline, so it may not be
+checked out.
+</code></pre></div>
+<p>This may be because of a short lag in the synchronization between
+Subversion mirrors, and can occur if multiple commits are run immediately
+after each other. This error will usually only happen if you are located in
+Europe, or explicitly using the European mirror.</p>
+<p>Waiting for 10 seconds and repeating the command should succeed.</p>
+<h2 id="compressed-stream-errors">"Compressed stream invalid" errors</h2>
+<p>If you're getting an error message like the following:</p>
+<div class="highlight"><pre><span></span><code>svn: PROPFIND of '/repos/asf/foobar':
+Compressed stream invalid (https://svn.apache.org)
+</code></pre></div>
+<p>That's a known issue in the neon client library which has been fixed in
+neon 0.24.7. A workaround is to disable compression in your client. Edit
+~/.subversion/servers. Uncomment the [global] section if necessary, and
+add a line that reads</p>
+<div class="highlight"><pre><span></span><code>http-compression = no
+</code></pre></div>
+<p>And that should "fix" the problem until you can upgrade.</p>
+<h2 id="date-revisions">Problems using date revisions</h2>
+<p>If you are using a date revision such as <code>-r{2004-09-12}:{2004-08-12}</code> and
+not getting any or all of the revisions you expected, this is a known
+problem specific to the ASF repository.</p>
+<p>Unfortunately, there is nothing that can be done to improve this situation,
+so you must use a workaround. You can use <code>svn log</code> or ViewVC to locate the
+actual revision number that is first after the date you desire, and
+substitute that into your <code>-r</code> argument to the <code>svn</code> command.</p>
+<p>For example, consider the desired command:</p>
+<div class="highlight"><pre><span></span><code>$ svn diff -rHEAD:<span class="o">{</span><span class="m">2005</span>-01-01<span class="o">}</span>
+</code></pre></div>
+<p>When this produces no output, running <code>svn log</code> alone shows:</p>
+<div class="highlight"><pre><span></span><code>...
+------------------------------------------------------------------------
+r124032 | aheritier | 2005-01-04 09:58:16 +1100 (Tue, 04 Jan 2005) | 1 line
+
+Switch to subversion
+------------------------------------------------------------------------
+r123911 | brett | 2005-01-03 09:48:57 +1100 (Mon, 03 Jan 2005) | 1 line
+
+remove nagoya references
+------------------------------------------------------------------------
+r116173 | brett | 2004-10-23 22:11:51 +1000 (Sat, 23 Oct 2004) | 2 lines
+
+remove old requires descriptions
+...
+</code></pre></div>
+<p>So, the comand above should become:</p>
+<div class="highlight"><pre><span></span><code>$ svn diff -rHEAD:123911
+</code></pre></div>
+<p>The particular reason this occurs is because the order of the revisions is
+not identical to the order of dates in the repository. This is a side
+effect of loading CVS repositories with history with dates prior to the
+latest date in the Subversion repository.</p>
+<h1 id="FAQ_1">Frequently Asked Questions</h1>
+<h2 id="lock">When Do I Need To Use svn lock?</h2>
+<p>Very rarely. Commits in subversion are
+transactional. This means that locks are almost always unnecessary.</p>
+<p>An oft quoted use case is to prevent concurrent editing of a large
+unmergeable binary document. However, for open development, good
+communication is preferable to locking even in this use case. A good timely
+post to the list letting your fellow developers know that you're going to
+start editing that huge PDF is better than locking the file.</p>
+<h2 id="poll">How frequently can I run a cron that connects to the repository?</h2>
+<p>Hourly is fine. Please do not use programs that poll the repository more
+frequently than hourly. People who run automated scripts that continuously
+poll the repository wind up getting their access denied, which may impact
+other folks connecting through the same host. If you need to stay more
+in-sync than an hourly cron allows, subscribe your script to the relevant
+commit mailing list.</p>
+<h2 id="mirror">How do I mirror the entire SVN repository for my experimental $foo?</h2>
+<p>First, ask yourself: do I really want the <em>entire</em> ASF repository?  Generally
+most people really want only a single project.  In that case, just checkout that
+source directory from the repo.</p>
+<p>If you really do want the entire ASF repository, <em>don't</em> use svnsync.  Instead,
+start by looking here: <a href="http://svn-master.apache.org/dump/">http://svn-master.apache.org/dump/</a>  Use that to bootstrap
+your repo.</p>
+<h2 id="commit-403">Why Do I Get a 403 When I Try To Commit?</h2>
+<p>Run <code>svn info</code> and check that the URL starts with https://.  If it starts with
+http://, run:</p>
+<div class="highlight"><pre><span></span><code>$ svn switch --relocate http://svn.apache.org https://svn.apache.org
+</code></pre></div>
+<p>If you still get 403 Forbidden errors, ask your PMC to double-check the authz
+file and LDAP/Unix group membership.</p>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
