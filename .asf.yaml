@@ -11,8 +11,7 @@ staging:
 github:
   description:   Infrastructure Team Website Repository
   homepage:      https://infra.apache.org
-  collaborators:
-    - KibbleDemo
+  collaborators: []
 
 notifications:
   commits:              commits@infra.apache.org
