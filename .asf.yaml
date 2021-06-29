@@ -11,7 +11,8 @@ staging:
 github:
   description:   Infrastructure Team Website Repository
   homepage:      https://infra.apache.org
-  collaborators: []
+  collaborators:
+    - "Invalid|User-[Name]"
 
 notifications:
   commits:              commits@infra.apache.org
