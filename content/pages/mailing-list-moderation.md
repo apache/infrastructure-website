@@ -9,8 +9,8 @@ Mailing lists are the virtual room where ASF communities live, form and grow. Al
 
 Dealing with
 
-   - <a href="#spam">MODERATE requests for spam</a>
-  - <a href="#allowing_posts"allowing posts from non-subscribers</a>
+  - <a href="#spam">MODERATE requests for spam</a>
+  - <a href="#allowing_posts">allowing posts from non-subscribers</a>
   - <a href="#problem_posts">problem posts</a>
   - <a href="#missing">reports of missing mail</a>
   - <a href="#bounce">reports of message bounces</a>
