@@ -63,7 +63,7 @@ If you'd like to get started with an easy-to-use, <a href="https://github.github
 Infra does not have a structure in place to support using [GitHub Pages](github-pages.html) for project websites.
 
 #### Apache CMS
-The Apache CMS, which projects used to build and deploy their websites since 2010, is no longer available as of July 31, 2021. All projects that used it, including the main Apache website, have moved to other technologies.
+The Apache CMS, which projects used to build and deploy their websites since 2010, is no longer available as of July 31, 2021. All projects that used it, including the main Apache website, have moved or must move to other technologies. Those that linger will find at some point that they cna no longer update their website. See the notes in the section on site management tools, below.
 
 <h2 id="sitemanagement">Site management</a></h2>
   
@@ -77,7 +77,8 @@ The Apache CMS, which projects used to build and deploy their websites since 201
 
 Infra supports these tools for publishing and maintaining Apache project websites:
 
-  - **[Pelican and BuildBot](pelican-buildbot.html)** streamline creating and publishing your project website.
+  -  **[Site template](asf-pelican.html)** streamlines migration of an existing project site on the deprecated CMS, and creation of new project sites.
+  -  **[Pelican and BuildBot](pelican-buildbot.html)** streamline creating and publishing your project website.
   - **svnpubsub** automatically publishes the static contents of a designated svn folder (<a href="https://svn.apache.org/repos/asf/ant/site/ant/production/" target="_blank">example</a>) as the project web site at `http://project.apache.org`. The project team can use any site build mechanism it wants as long as the above requirements are met.
   - [**pypubsub**](pypubsub.html) automatically serves the static contents of a designated git repository as the website for a project. Git-based websites are typically maintained in a repository branch to be published as `https://project.apache.org`. A project can host the site from its primary project repository. Typically these will be built as a Jenkins or a Buildbot job (see below). We recommend that you only have a single writer to the asf-site branch to avoid potential conflicts.
   - For **websites using a git repository**, you can add a <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">.asf.yaml</a> configuration file. The file lets you set instructions that simplify updating and maintaining the site.
