@@ -140,7 +140,7 @@ which have the <code>pelican</code> Topic. You can review them as examples of Pe
 <h4>Github Pages</h4>
 <p>Infra does not have a structure in place to support using <a href="github-pages.html">GitHub Pages</a> for project websites.</p>
 <h4>Apache CMS</h4>
-<p>The Apache CMS, which projects used to build and deploy their websites since 2010, is no longer available as of July 31, 2021. All projects that used it, including the main Apache website, have moved to other technologies.</p>
+<p>The Apache CMS, which projects used to build and deploy their websites since 2010, is no longer available as of July 31, 2021. All projects that used it, including the main Apache website, have moved or must move to other technologies. Those that linger will find at some point that they cna no longer update their website. See the notes in the section on site management tools, below.</p>
 <h2 id="sitemanagement">Site management</a></h2>
 <p>The basic requirements for site management are that</p>
 <ul>
@@ -150,6 +150,7 @@ which have the <code>pelican</code> Topic. You can review them as examples of Pe
 <h3 id="tools">Management tools<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h3>
 <p>Infra supports these tools for publishing and maintaining Apache project websites:</p>
 <ul>
+<li><strong><a href="asf-pelican.html">Site template</a></strong> streamlines migration of an existing project site on the deprecated CMS, and creation of new project sites.</li>
 <li><strong><a href="pelican-buildbot.html">Pelican and BuildBot</a></strong> streamline creating and publishing your project website.</li>
 <li><strong>svnpubsub</strong> automatically publishes the static contents of a designated svn folder (<a href="https://svn.apache.org/repos/asf/ant/site/ant/production/" target="_blank">example</a>) as the project web site at <code>http://project.apache.org</code>. The project team can use any site build mechanism it wants as long as the above requirements are met.</li>
 <li><a href="pypubsub.html"><strong>pypubsub</strong></a> automatically serves the static contents of a designated git repository as the website for a project. Git-based websites are typically maintained in a repository branch to be published as <code>https://project.apache.org</code>. A project can host the site from its primary project repository. Typically these will be built as a Jenkins or a Buildbot job (see below). We recommend that you only have a single writer to the asf-site branch to avoid potential conflicts.</li>
