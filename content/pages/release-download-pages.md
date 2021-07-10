@@ -47,7 +47,7 @@ There are two basic options:
 
 The starting point for a generic script is a download page in the standard documentation which describes the releases. To use the generic script, you need to alter the page so the actual download links to the generic script in the appropriate fashion.
 
-The generic script is `closer.lua`. Paaa in the relative path from the distribution root to the artifact as a parameter. So if the artifact is `foo-5.5.1.zip` and is located in `bar/foo` relative to `downloads.apache.org`, then `http://www.apache.org/dyn/closer.lua/bar/foo/foo-5.5.1.zip` will display the mirrored distribution for downloading.
+The generic script is `closer.lua`. Pass in the relative path from the distribution root to the artifact as a parameter. So if the artifact is `foo-5.5.1.zip` and is located in `bar/foo` relative to `downloads.apache.org`, then `http://www.apache.org/dyn/closer.lua/bar/foo/foo-5.5.1.zip` will display the mirrored distribution for downloading.
 
 As an alternative, you can generate a direct download link using the following syntax:
 
@@ -55,25 +55,28 @@ As an alternative, you can generate a direct download link using the following s
 
 See below for how to generate a customised page of direct links using a mirror.
 
-Note there is some information which every project should include on the download page (e.g. KEYS, sigs, hashes). Please read <a href="#best_practice">best practices</a>.
+**Note**: there is some information which every project should include on the download page (e.g. KEYS, sigs, hashes). Please read about <a href="#best_practice">best practices</a> for download pages.
 
 <h3 id="custom">Project-specific download script<a class="headerlink" href="#custom" title="Permanent link">&para;</a></h3>
 
-To create a project-specific download page, you will need a project page containing information for the user together with variables the script populates with the correct values.
+To create a project-specific download page, create a project page containing information for the user together with variables the script populates with the appropriate values.
 
 Assuming you have called your download page `download.html`, you can invoke our global download script by using the URI `download.cgi`.
 
 This URI takes the path to the page as an input and passes it to the standard global download script. The standard script reads the page and uses information about the mirrors to substitute values for the variables. When you link to the project page (for example, from the rest of the project documentation), it is important to target these links at the script address (and not the html page address).
 
-**Note**: the mirroring script guesses the download release page to be processed by matching file names. There is no requirement to call the script `download.cgi` and the download release page `download.html` but the name of the script must correspond to the name of the download page. For example, `release.cgi` and `release.html` will work but `download.cgi` and `release.html` will not.
+**Note**: the mirroring script guesses the download release page process by matching file names. There is no requirement to call the script `download.cgi` and the download release page `download.html`, but the name of the script **must** correspond to the name of the download page. For example:
+
+  - `release.cgi` and `release.html` will work
+  - `download.cgi` and `release.html` will **not** work
 
 There are a number of elements that a good project download page should contain. See the content to generate that page <a href="https://svn.apache.org/repos/asf/httpd/site/trunk/content/download.mdtext" target="_blank">here</a>.
 
-Downloads of artifacts are linked to a mirror by a variable url. The correct mirroring base url will be substituted for the `[preferred]` variable. The rest of the url should be the path to the artifact relative to the base of the Apache distribution directory.
+A variable URL links downloads of artifacts to a mirror. The correct mirroring base URL will be substituted for the `[preferred]` variable. The rest of the URL should be the path to the artifact relative to the base of the Apache distribution directory.
 
 For example, for artifact `foo-1.0.0.tar.gz` contained in `bar/foo` should use `[preferred]/bar/foo/foo-1.0.0.tar.gz`
 
-Provide links to the checksum and signature for the artifact next to the download link. It is important that users check the sum and verify the signature so these links should be close and clear. **Note**: these documents must _not_ be mirrored.
+Provide links to the checksum and signature for the artifact next to the download link. It is important that users check the sum and verify the signature, so these links should be close and clear. **Note**: these documents must _not_ be mirrored.
 
 For example, for artifact foo-1.0.0.tar.gz contained in bar/foo :
 
@@ -83,14 +86,14 @@ For example, for artifact foo-1.0.0.tar.gz contained in bar/foo :
 `<a href='https://downloads.apache.org/bar/foo/foo-1.0.0.tar.gz.asc'>PGP</a>`
 ```
 
-Give users information about the mirrors and the chance to choose a different mirror if they prefer. This is a little complex to describe, so here is a typical script:
+Give users information about the mirrors and the chance to choose a different mirror if they prefer. Here is a typical script to achieve this:
 
 ```
 <p>[if-any logo]
 <a href="[link]"><img align="right" src="[logo]" border="0"
 /></a>[end]
 The currently selected mirror is <b>[preferred]</b>.  If you
-encounter a problem with this mirror, please select another mirror.  If all
+encounter a problem with this mirror, select another mirror.  If all
 mirrors are failing, there are <i>backup</i> mirrors (at the
 end of the mirrors list) that should be available.</p>
 
@@ -116,7 +119,7 @@ Other mirrors: <select name="Preferred">
 ```
 More advice on creating a good project page is [below](#best_practice).
 
-All that remains is to wait for the main website to sync.
+All that remains is to wait for the main website to sync with the new page.
 
 <h2 id="best_practice">Best practices<a class="headerlink" href="#best_practice" title="Permanent link">&para;</a></h2>
 
@@ -124,11 +127,24 @@ All that remains is to wait for the main website to sync.
 
 Users download Apache releases from mirrors. It is therefore important that they understand that they should always check the hash sums and (if possible) also verify the OpenPGP compatible signature of each download. The content of the release download page plays a critical role in this education process.
 
-Please provide clear and easy links to the KEYS, sums and signatures from the download release page or include the information directly in the page itself. The <a href="https://httpd.apache.org/download.cgi" target="_blank">HTTPD page</a> is a good example.
+Provide clear and easy links to the KEYS, sums and signatures from the download release page or include the information directly in the page itself. The <a href="https://httpd.apache.org/download.cgi" target="_blank">HTTPD page</a> is a good example.
 
 Include a reminder text with links to more information for users. For example:
 
-> Note: when downloading from a mirror please check the <a href="https://www.infra.apache.org/release-signing#md5" target="_blank">md5sum</a> and verify the <a href="https://www.infra.apache.org/release-signing#openpgp" target="_blank">OpenPGP compatible signature</a> from the <a href="https://www.apache.org" target="_blank">main Apache site</a>. Links are provided above (next to the release download link). This <a href="https://downloads.apache.org/ws/axis2/KEYS" target="_blank">KEYS file</a> contains the public keys used for signing release. We recommend that you use a web of trust, if possible to confirm the identity of these keys. For more information, please see the <a href="https://www.apache.org/dev/release.html" target="_blank">Apache Release FAQ</a>.
+```
+Note: when downloading from a mirror please check the
+<a href="https://www.infra.apache.org/release-signing#md5" target="_blank">md5sum</a>
+and verify the 
+<a href="https://www.infra.apache.org/release-signing#openpgp" target="_blank">OpenPGP compatible signature</a> 
+from the <a href="https://www.apache.org" target="_blank">main Apache site</a>. 
+Links are provided above (next to the release download link).
+This <a href="https://downloads.apache.org/ws/axis2/KEYS" target="_blank">KEYS file</a> 
+contains the public keys used for signing release. 
+We recommend that you use a web of trust, if possible, 
+to confirm the identity of these keys.
+For more information, please see the
+<a href="https://www.apache.org/dev/release.html" target="_blank">Apache Release FAQ</a>.
+```
 
 <h3 id="linked-urls">Make sure the browser displays linked URLs<a class="headerlink" href="#linked-urls" title="Permanent link">&para;</a></h3>
 
@@ -144,7 +160,7 @@ If you cannot wait, you can pass a date and time to the download script to indic
 
 to request only mirrors that have updated after 2:15pm on July 5, 2004 UTC. 
 
-Please use this option sparingly, since it can result in excessive load on particular mirrors. It would be appropriate, for example, in an emailed release announcement for an important security release, but not appropriate as a main website link.
+Use this option sparingly, since it can result in excessive load on particular mirrors. It would be appropriate, for example, in an emailed release announcement for an important security release, but not appropriate as a main website link.
 
 <h2 id="questions">Questions?<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h2>
 
