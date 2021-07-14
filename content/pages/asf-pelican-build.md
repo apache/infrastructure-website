@@ -1,6 +1,6 @@
 Title: ASF-Pelican build process
 
-For websites using the ASf-Pelican template and the <a hreff="https://docs.getpelican.com/en/stable/" target="_blank">Pelican static site generator</a>, configure the build using the `pelicanconf.py` settings.
+For websites using the ASf-Pelican template and the <a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican static site generator</a>, configure the build using the `pelicanconf.py` settings.
 
 ## Pelican theme
 
