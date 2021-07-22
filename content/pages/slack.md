@@ -16,13 +16,13 @@ If you want to invite ASF people (those with an @apache.org address) who are not
   2. Select `Invite people to ASF`
   3. Use the `Members` option and, in the form that appears, provide the person's ASF email address.
 
-Other contributors and interested parties (observers, former members, software evaluators, members of the media, those without an @apache.org address) who want to participate in channels in the ASF workspace can use a **guest** account. There are two ways to do this:
+Other contributors and interested parties (observers, former members, software evaluators, members of the media, those without an @apache.org address) who want to participate in channels in the ASF workspace can use a **guest** account. To do this, someone already part of the workspace needs to invite the interested party or parties:
 
-  1. Someone already part of the workspace invites you to join a particular channel
-      - In the Slack app, click the "ASF" header at the top left.
-      - Select `Invite people to ASF`.
-      - Use the`Single channel guests` option and, in the form that appears, provide the email addresses of the people you would like to invite to a specific channel.
-  2. Share this URL with a person who wants to take part in the Slack discussions: `https://s.apache.org/slack-invite`. The person who joins in this way becomes a member with access to all public channels in the workspace. **Note**: When Slack does an update, this URL occasionally stops functioning as it should. If the potential participant uses it and the submission form asks for an Apache email address, let Infra know so we can update the URL. 
+  1. In the Slack app, click the "ASF" header at the top left.
+  2. Select `Invite people to ASF`.
+  3. Use the`Single channel guests` option and, in the form that appears, provide the email addresses of the people you would like to invite to a specific channel.
+
+Infra has disabled the option that would let you provide a link to the workspace to anyone who wanted it, as spammers were taking advantage of it.
 
 ### Slack Account Types ###
 
