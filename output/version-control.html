@@ -139,10 +139,10 @@ Everyone has *read access* to the repositories and can download the most up-to-d
 </ul>
 <p>Some projects began using <a href="git.html">read-only-mirrors</a> of SVN repositories when Apache's support for Git was limited. This is no longer necessary. <a href="writable-git.html">Writable Git</a> repositories are available to all projects.</p>
 <h3 id="asfyaml">.asf.yaml for Git repositories<a class="headerlink" href="#asfyaml" title="Permanent link">&para;</a></h3>
-<p><code>.asf.yaml</code> is a branch-specific file that a project may put in the root of the git repository to control various new features such as</p>
+<p><code>.asf.yaml</code> is a branch-specific file. As of July, 2021, projects hosting their websites in a Git repository must use <code>.asf.yaml</code> to build and update their sites. Review <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features#Git.asf.yamlfeatures-WebSiteDeploymentServiceforGitRepositories" target="_blank">this guidance</a>.</p>
+<p>Projects can also place <code>.asf.yaml</code> in the root of a repository to control:</p>
 <ul>
 <li>notification settings</li>
-<li>website staging</li>
 <li>github settings</li>
 <li>pelican builds</li>
 </ul>
