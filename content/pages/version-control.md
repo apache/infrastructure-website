@@ -36,10 +36,11 @@ Some projects began using [read-only-mirrors](git.html) of SVN repositories when
 
 <h3 id="asfyaml">.asf.yaml for Git repositories<a class="headerlink" href="#asfyaml" title="Permanent link">&para;</a></h3>
 
-`.asf.yaml` is a branch-specific file that a project may put in the root of the git repository to control various new features such as
+`.asf.yaml` is a branch-specific file. As of July, 2021, projects hosting their websites in a Git repository must use `.asf.yaml` to build and update their sites. Review <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features#Git.asf.yamlfeatures-WebSiteDeploymentServiceforGitRepositories" target="_blank">this guidance</a>.
+
+Projects can also place `.asf.yaml` in the root of a repository to control:
 
 -  notification settings
--  website staging
 -  github settings
 -  pelican builds
 
