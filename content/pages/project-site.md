@@ -19,7 +19,7 @@ Projects are free to choose their own styles and layout for websites, and have a
 
 ### Website-building options
 
-#### Pelican ####
+#### Pelican
 
 <a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a> is a static site generator written in Python. Highlights include:
 
@@ -41,17 +41,21 @@ Browse a <a href="https://github.com/getpelican/pelican-plugins/" target="_blank
 This<a href="https://github.com/search?q=topic%3Apelican+org%3Aapache&type=Repositories" target="_blank">GitHub query</a> returns ASF repositories
 which have the `pelican` Topic. You can review them as examples of Pelican in action.
 
-#### Jekyll ####
+#### Jekyll
 
 <a href="https://jekyllrb.com/" target="_blank">Jekyll</a> is a straightforward tool for developing blogs or static websites using Markdown, and it is easy to deploy the resulting website as Github Pages. There are many tutorials for doing this available online.
 
-#### Hugo ####
+#### Hugo
 
 At least <a href="https://github.com/search?q=topic%3Ahugo+org%3Aapache&type=Repositories" target="_blank">six ASF projects</a> use <a href="https://gohugo.io/" target="_blank">Hugo</a>, an open-source framework for building static web sites.
   
-#### JBake ####
+#### JBake
 
 At least <a href="https://github.com/search?q=topic%3Ajbake+org%3Aapache&type=Repositories" target="_blank">two ASF projects</a> use <a href="https://jbake.org/" target="_blank">JBake</a>, a Java-based tool for building static web sites.
+
+#### MKDocs
+
+<a href="https://www.mkdocs.org/" target="_blank">MKDocs</a> is a static site generator designed for creating project documentation. However, at least one ASF project uses it to build their entire project website. See [this note](asfyaml-mkdocs.html) on the build sequence to use to preserve your project site's `.asf.yaml` file.
 
 #### Basic website template in Markdown ####
 
