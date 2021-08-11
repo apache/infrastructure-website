@@ -102,15 +102,14 @@ Mail Rejection Policy        </a>
           <h2>
               Mail Rejection Policy
           </h2>
-              <p>People emailing ASF addresses sometimes see this rejection message:</p>
-<p><code>_550 5.7.23 Recipient address rejected: Message rejected due to: Receiver policy for SPF Softfail_</code></p>
-<p>The apache.org MX servers reject messages under the following circumstances:</p>
+              <p>People emailing ASF addresses may see this message:</p>
+<p><code>Recipient address rejected: ASF gnomes rejected your message: SPF fail - not authorized. See https://infra.apache.org/mail-rejection.html</code></p>
+<p>The apache.org MX servers reject messages under many of the following circumstances:</p>
 <ul>
 <li>SPF (Sender Policy Framework) hard fail for domains which have it configured (-all)</li>
 <li>SPF hard fail for major spam targets despite ~all (gmail.com, yahoo.com)</li>
-<li>SPF hard fail for inbound mail from apache.org addresses which do NOT originate from apache.org servers (despite the DNS SPF record currently set to softfail)</li>
-<li>Failed <a href="http://www.postfix.org/POSTSCREEN_README.html" target="_blank">Postscreen checks</a></li>
-<li>Barracuda central RBL match</li>
+<li>SPF hard fail for inbound mail from apache.org addresses which do NOT originate from apache.org servers</li>
+<li>Various RBL provider match</li>
 <li>Invalid HELO hostname (hostname does not exist)</li>
 <li>Invalid HELO domain (domain does not exist)</li>
 <li>Unauthorized destination (no relaying)</li>
@@ -118,10 +117,12 @@ Mail Rejection Policy        </a>
 <li>Reverse DNS does not match sender domain</li>
 <li>Header checks for known spam phrases</li>
 <li>Sender_access bans per envelope from address</li>
+<li>And many more</li>
 </ul>
 <p>SPF hard fail for the apache.org domain has been implemented for incoming apache.org mail. This will require people using an apache.org mail address in their envelope &quot;from&quot; to be sending from an authorized host via mail-relay.a.o. See <a href="committer-email.html">Committer email</a>.</p>
 <p>Refer to <a href="https://blogs.apache.org/infra/entry/committers_mail_relay_service" target="_blank">this blog post</a> for additional information.</p>
 <p><a href="/contact.html">Contact Infra</a> via an alternate email address, or <a href="https://issues.apache.org/jira/" target="_blank">file a Jira ticket</a> with any questions.</p>
+<p>If you feel your email has been blocked or rejected in error, please open a ticket at <a href="https://issues.apache.org/jira">https://issues.apache.org/jira</a> and include your external IP address and the To: header.</p>
 
         </div>
       </div>
