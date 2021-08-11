@@ -108,7 +108,7 @@ New Committers should see the guide for setting up SSH and the brief SSH how-to.
 Note that some hosts may have multiple keys (RSA, ECDSA, ED25519). We only list the RSA fingerprints on this page.</p>
 <p>If SSH warns that the site is not known, and shows a fingerprint that is not in the table below, that could be because SSH is showing something other than RSA. To change the fingerprint to RSA, try the following: <code>ssh -o HostKeyAlgorithms=ssh-rsa foo.apache.org</code> <br/>
 You can change the hash type with the option: <code>ssh -o FingerprintHash=[md5|sha256] ...</code></p>
-<p>Please note that people.apache.org is an alias and appears in the table as home-lw-us.apache.org</p>
+<p>Please note that people.apache.org and home.apache.org are aliases and appear in the table as home-lw-us.</p>
 <p><strong>The hashes shown below are what the real machines SHOULD have. If it differs from what you see, please contact infra.</strong></p>
 <p>
         <style>
@@ -151,7 +151,7 @@ You can change the hash type with the option: <code>ssh -o FingerprintHash=[md5|
 <tr style='background: inherit;'><td><kbd><b>asfbot-vm</b></kbd></td><td><kbd>95.217.217.132</kbd></td><td><kbd>61:7f:ad:67:07:4f:c5:64:fd:a5:e8:5e:85:20:85:2f</kbd></td><td><kbd>iYheDJ+iKkD2B0pNw6MV1Oas8OAHR8KjlSIxSgMJJdc</kbd></td><td>Verified (OK)</td></tr>
 <tr style='background: inherit;'><td><kbd><b>backup01-he-de</b></kbd></td><td><kbd>94.130.139.25</kbd></td><td><kbd>2e:43:1c:ee:bd:79:23:54:72:82:7a:49:b5:7f:c1:e2</kbd></td><td><kbd>9JLUx6J0+hl9yg5uVSjgPiJSJ8EzqhA+jIA1iyRpibk</kbd></td><td>Verified (OK)</td></tr>
 <tr style='background: inherit;'><td><kbd><b>backup02-he-de</b></kbd></td><td><kbd>95.217.78.115</kbd></td><td><kbd>9b:67:4a:e4:1b:69:21:98:70:19:8a:71:47:cf:af:2c</kbd></td><td><kbd>MKz6JChglo3VSxaSOyDkNyY6nAhR/qqRkVN5UGb5WwQ</kbd></td><td>Verified (OK)</td></tr>
-<tr style='background: inherit;'><td><kbd><b>backup03-he-de</b></kbd></td><td><kbd>65.21.139.126</kbd></td><td><kbd>94:ac:bf:58:6d:c0:0e:db:20:e7:32:fa:2c:f2:1a:99</kbd></td><td><kbd>hYKevg6/lx4AQbz1nirUtsdz6az+aBDtxcQXCPNmO3A</kbd></td><td>Unreachable</td></tr>
+<tr style='background: inherit;'><td><kbd><b>backup03-he-de</b></kbd></td><td><kbd>65.21.139.126</kbd></td><td><kbd>94:ac:bf:58:6d:c0:0e:db:20:e7:32:fa:2c:f2:1a:99</kbd></td><td><kbd>hYKevg6/lx4AQbz1nirUtsdz6az+aBDtxcQXCPNmO3A</kbd></td><td>Verified (OK)</td></tr>
 <tr style='background: inherit;'><td><kbd><b>baldr</b></kbd></td><td><kbd>140.211.11.113</kbd></td><td><kbd>1f:7d:b4:10:e0:52:38:09:01:89:8e:c1:44:80:d4:85</kbd></td><td><kbd>RtomXxgtHMTUcLGaQTxTKBU8hooQW4NcIqSUNGD72F4</kbd></td><td>Verified (OK)</td></tr>
 <tr style='background: inherit;'><td><kbd><b>bb-slave10</b></kbd></td><td><kbd>207.244.88.137</kbd></td><td><kbd>9f:70:0a:a1:cb:c3:a3:88:8b:82:cb:68:67:98:1a:a1</kbd></td><td><kbd>p5sJe0ccrnbHs/r/oYoYMsL99PLMnpj4pMJ0wJW5ay8</kbd></td><td>Verified (OK)</td></tr>
 <tr style='background: inherit;'><td><kbd><b>bb-slave11</b></kbd></td><td><kbd>209.188.14.159</kbd></td><td><kbd>6b:14:65:b4:b6:fe:cc:d3:44:d5:7c:d3:16:98:71:8c</kbd></td><td><kbd>w8H42x3nV83uzDiNmkStnXNPRt/OLILEMkn3nAl11Kg</kbd></td><td>Verified (OK)</td></tr>
@@ -191,7 +191,6 @@ You can change the hash type with the option: <code>ssh -o FingerprintHash=[md5|
 <tr style='background: inherit;'><td><kbd><b>gitbox-he-fi</b></kbd></td><td><kbd>95.217.194.153</kbd></td><td><kbd>6c:8a:21:b3:32:f1:27:3e:bc:7a:d1:69:aa:12:5c:b8</kbd></td><td><kbd>2HznqEy9lNV9r5q83l6SS+L59+j8DE2MmSP5AxAkzjE</kbd></td><td>Verified (OK)</td></tr>
 <tr style='background: inherit;'><td><kbd><b>gump-vm2</b></kbd></td><td><kbd>209.188.14.154</kbd></td><td><kbd>8a:fd:e9:f5:b8:ad:f2:39:79:d6:c6:7e:0e:90:c3:e9</kbd></td><td><kbd>yx+VSwGVIXzqB/ghJNjGD2MaE0Nu+/Iay4nnGIsFC10</kbd></td><td>Verified (OK)</td></tr>
 <tr style='background: inherit;'><td><kbd><b>hermes</b></kbd></td><td><kbd>207.244.88.144</kbd></td><td><kbd>d9:e5:9d:61:b0:79:2b:78:0c:db:d1:ab:ef:3b:5a:7e</kbd></td><td><kbd>FE9c0/WVaekBC0ndeI8ynGmaWNkPZ2qGX4N0CE6On8M</kbd></td><td>Verified (OK)</td></tr>
-<tr style='background: inherit;'><td><kbd><b>home</b></kbd></td><td><kbd>163.172.16.173</kbd></td><td><kbd>1c:5d:3f:a2:89:97:2e:39:eb:b0:09:9e:cf:c6:8d:f3</kbd></td><td><kbd>koi7+P78xKncXU/hvPInY3cCpd/KR8NoVIHOZESXRDw</kbd></td><td>Verified (OK)</td></tr>
 <tr style='background: inherit;'><td><kbd><b>home-lw-us</b></kbd></td><td><kbd>207.244.88.131</kbd></td><td><kbd>86:d8:69:36:bf:17:4c:63:e7:5f:6e:22:0e:df:d1:ad</kbd></td><td><kbd>Ek/qjqOOyyX5pNNSkNCIsLIf81X/sRcm7UVkkCSzdgY</kbd></td><td>Verified (OK)</td></tr>
 <tr style='background: inherit;'><td><kbd><b>idm1-ec2-va</b></kbd></td><td><kbd>54.89.1.245</kbd></td><td><kbd>14:4d:37:5e:77:a7:3f:e2:df:02:e5:c8:dd:6b:27:2e</kbd></td><td><kbd>vsLvDISPIs5isU2rz2pyJqiUdpGWaSzgZpgwVZ+cyAI</kbd></td><td>Verified (OK)</td></tr>
 <tr style='background: inherit;'><td><kbd><b>idmtest1-ec2-va</b></kbd></td><td><kbd>204.236.210.53</kbd></td><td><kbd>9f:9d:99:97:d6:4c:88:e9:47:62:29:4c:f6:ed:6b:d6</kbd></td><td><kbd>UdyOWX6NerXtGl5XaG8ynkUobJc4UbY9Qt47/MQ5jKA</kbd></td><td>Verified (OK)</td></tr>
@@ -288,6 +287,7 @@ You can change the hash type with the option: <code>ssh -o FingerprintHash=[md5|
 <tr style='background: inherit;'><td><kbd><b>wiki.trafficserver</b></kbd></td><td><kbd>104.239.143.16</kbd></td><td><kbd>1b:37:60:47:3e:16:40:05:98:c1:16:9c:89:55:a5:a4</kbd></td><td><kbd>4y9k6nb6/cu3OL0GjtJlvO4c9QFns2n6rCsjwrvRws0</kbd></td><td>Verified (OK)</td></tr>
 <tr style='background: inherit;'><td><kbd><b>zeus</b></kbd></td><td><kbd>207.244.88.132</kbd></td><td><kbd>33:66:e1:07:4a:e7:8f:04:77:b4:ec:97:94:e7:c0:94</kbd></td><td><kbd>7/gwx0bW4JpNlFSJfjDKz7CDkiQP+RiSqWK6p3rK9Ec</kbd></td><td>Verified (OK)</td></tr>
 <tr style='background: inherit;'><td><kbd><b>zeus-dr</b></kbd></td><td><kbd>62.210.60.233</kbd></td><td><kbd>5b:cd:fd:d1:90:4e:e7:d3:48:4c:11:b0:7e:51:a4:0e</kbd></td><td><kbd>isEZQNHtKPBIeDSeAbSSKAI1IDg7LigBJWzBa61Bw2E</kbd></td><td>Verified (OK)</td></tr>
+<tr style='background: inherit;'><td><kbd><b>home-old</b></kbd></td><td><kbd>163.172.16.173</kbd></td><td><kbd>N/A</kbd></td><td><kbd>N/A</kbd></td><td>Unreachable</td></tr>
 <tr style='background: inherit;'><td><kbd><b>www</b></kbd></td><td><kbd>151.101.2.132</kbd></td><td><kbd>N/A</kbd></td><td><kbd>N/A</kbd></td><td>Unreachable</td></tr>
 </table></p>
 
