@@ -103,13 +103,31 @@ Managing your project web site        </a>
               Managing your project web site
           </h2>
               <p>Every Apache project or podling has a website hosted at <code>apache.org</code>. Apache provides tools to support it. Each project decides how their website looks, its contents, how they maintain it, and what software they use to support it, as long as the result is static files that our public web servers can make available to browsers. We also have limited support for .htaccess files and CGI scripts.</p>
-<p>Each site must conform with Infra's <a href="project-site-policy.html">project site policy</a>, which includes a reference to the general Apache requirements for such sites.</p>
 <h2>Contents</h2>
 <ul>
+<li><a href="#planning">Planning the project website</a></li>
 <li><a href="#default">Creating the website</a></li>
 <li><a href="#sitemanagement">Site management</a></li>
 <li><a href="#preview">Previewing the website</a></li>
 </ul>
+<h2 id="planning">Planning the project website<a class="headerlink" href="#planning" title="Permanent link">&para;</a></h2>
+<p>Your project team wants to build an excellent application that solves a problem, simplifies a process, or breaks new ground. You also want people to find it, try it, and adopt it. Your project website is key to attracting and engaging both contributors to project development and people and organizations that will become part of your user community.</p>
+<p>Your website <strong>must</strong></p>
+<ul>
+<li>satisfy the <a href="https://www.apache.org/foundation/marks/pmcs" target="_blank">Apache branding requirements</a>, in particular that <a href="https://www.apache.org/foundation/marks/pmcs#navigation" target="_blank">certain links</a> appear on the site's landing page, in whatever navigation structure the site uses. Whimsy's <a href="https://whimsy.apache.org/site/" target="_blank">Apache Project Website Checks</a> tool periodically reviews all top-level project (TLP) websites to provide a report on how well they comply with that policy, and to identify issues that a project may need to address.</li>
+<li>comply with the Infrastructure team's <a href="project-site-policy.html">project site policy</a></li>
+</ul>
+<p>The site also <strong>should</strong></p>
+<ul>
+<li>explain what your project's product does</li>
+<li>pitch how your product solves a problem or creates a new opportunity</li>
+<li>invite people to get involved in the development team</li>
+<li>offer an easy way to download the latest builds of the product that you want the public to use</li>
+<li>provide documentation that will help people not part of the project understand how to get started with the product and how to keep going</li>
+<li>describe how the project team works, and its connection to the Apache Software Foundation</li>
+<li>explain how people can get in touch with the project to provide feedback or ask questions</li>
+</ul>
+<p>Once you have outlined the content that will be on the website, and decided how and where to display it, you need to decide how to build the site.</p>
 <h2 id="default">Creating the website<a class="headerlink" href="#default" title="Permanent link">&para;</a></h2>
 <p>Projects are free to choose their own styles and layout for websites, and have a range of options for actually creating the pages. The goal is to create and informative and useful <strong>static</strong> HTML website that can engage visitors, explain your project to them, and provide download links and documentation so they can use your project's applications.</p>
 <h3>Website-building options</h3>
@@ -138,6 +156,8 @@ which have the <code>pelican</code> Topic. You can review them as examples of Pe
 <p><a href="https://www.mkdocs.org/" target="_blank">MKDocs</a> is a static site generator designed for creating project documentation. However, at least one ASF project uses it to build their entire project website. See <a href="asfyaml-mkdocs.html">this note</a> on the build sequence to use to preserve your project site's <code>.asf.yaml</code> file.</p>
 <h4>Basic website template in Markdown</h4>
 <p>If you'd like to get started with an easy-to-use, <a href="https://github.github.com/gfm/" target="_blank">Markdown</a>-based site that many projects have used, see the <a href="https://github.com/apache/apache-website-template" target="_blank">sample Apache project website</a> repository which has many useful features and instructions for using svnpubsub.</p>
+<h4>HTML files</h4>
+<p>You can use any other tool that generates static HTML pages, or hand-code those pages. You then check them into your project's website repository. The check-in will trigger a site update.</p>
 <h3>Tools not supported</h3>
 <h4>Github Pages</h4>
 <p>Infra does not have a structure in place to support using <a href="github-pages.html">GitHub Pages</a> for project websites.</p>
