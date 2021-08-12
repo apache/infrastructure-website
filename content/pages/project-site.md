@@ -37,7 +37,7 @@ Once you have outlined the content that will be on the website, and decided how 
 
 Projects are free to choose their own styles and layout for websites, and have a range of options for actually creating the pages. The goal is to create and informative and useful **static** HTML website that can engage visitors, explain your project to them, and provide download links and documentation so they can use your project's applications.
 
-### Website-building options
+### 1. Website-building options
 
 #### Pelican
 
@@ -93,7 +93,48 @@ Infra does not have a structure in place to support using [GitHub Pages](github-
 #### Apache CMS
 The Apache CMS, which projects used to build and deploy their websites since 2010, is no longer available as of July 31, 2021. All projects that used it, including the main Apache website, have moved or must move to other technologies. Those that linger will find at some point that they cna no longer update their website. See the notes in the section on site management tools, below.
 
-<h2 id="sitemanagement">Site management</a></h2>
+### 2. Website repository
+
+If you don't have a web site repository for your project yet, you can create one using https://selfserve.apache.org/.
+
+The convention is to name the repository `$project-site.git`, for instance `httpd-site.git`.
+
+Copy whatever you need to start a build into the master branch of the new repository. This will act as the base of the build process.
+
+### 3. The build process
+
+Configure Pelican or Jekyll to build the site automatically when its contents change, using .asf.yaml and Buildbot. See the 
+<a href="https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features#Git.asf.yamlfeatures-Staticwebsitecontentgeneration" target="_blank">.asf.yaml documentation</a>.
+
+### 4. A staging website
+
+Using `.asf.yaml` with a Git repository, once you have your generated web site committed and pushed to a branch, you can set up a staging web site to test your changes before publishing them to your main web site.
+
+To do so, add or edit `.asf.yaml` in the staging branch (where the build output is generated) and add the following (assuming your staging branch is asf-staging):
+
+```
+staging:
+  profile: ~
+  whoami:  asf-staging
+```
+
+Upon commits to this branch, your staging web site will appear with the latest output at: `https://$project.staged.apache.org/`
+For more details on staging via `.asf.yaml`, see the <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">.asf.yaml documentation on staging web sites</a>.
+
+### 5. Publishing
+
+When you are ready to publish a branch of your Git web site repository to your project web site, you can use `.asf.yaml`:
+
+```
+publish:
+  whoami:  asf-site
+```
+
+For more detailed procedures, follow the <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">.asf.yaml documentation for publishing your web site</a>.
+
+
+
+<h2 id="sitemanagement">Site management</h2>
   
   The basic requirements for site management are that 
 
