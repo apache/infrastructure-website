@@ -2,16 +2,36 @@ Title: Managing your project web site
 
 Every Apache project or podling has a website hosted at `apache.org`. Apache provides tools to support it. Each project decides how their website looks, its contents, how they maintain it, and what software they use to support it, as long as the result is static files that our public web servers can make available to browsers. We also have limited support for .htaccess files and CGI scripts.
 
-Each site must conform with Infra's [project site policy](project-site-policy.html), which includes a reference to the general Apache requirements for such sites.
-
 
 ## Contents
 
 <ul>
+<li><a href="#planning">Planning the project website</a></li>
 <li><a href="#default">Creating the website</a></li>
 <li><a href="#sitemanagement">Site management</a></li>
 <li><a href="#preview">Previewing the website</a></li>
 </ul>
+
+<h2 id="planning">Planning the project website<a class="headerlink" href="#planning" title="Permanent link">&para;</a></h2>
+
+Your project team wants to build an excellent application that solves a problem, simplifies a process, or breaks new ground. You also want people to find it, try it, and adopt it. Your project website is key to attracting and engaging both contributors to project development and people and organizations that will become part of your user community.
+
+Your website **must**
+
+  - satisfy the <a href="https://www.apache.org/foundation/marks/pmcs" target="_blank">Apache branding requirements</a>, in particular that <a href="https://www.apache.org/foundation/marks/pmcs#navigation" target="_blank">certain links</a> appear on the site's landing page, in whatever navigation structure the site uses. Whimsy's <a href="https://whimsy.apache.org/site/" target="_blank">Apache Project Website Checks</a> tool periodically reviews all top-level project (TLP) websites to provide a report on how well they comply with that policy, and to identify issues that a project may need to address.
+  - comply with the Infrastructure team's [project site policy](project-site-policy.html)
+
+The site also **should**
+
+  - explain what your project's product does
+  - pitch how your product solves a problem or creates a new opportunity
+  - invite people to get involved in the development team
+  - offer an easy way to download the latest builds of the product that you want the public to use
+  - provide documentation that will help people not part of the project understand how to get started with the product and how to keep going
+  - describe how the project team works, and its connection to the Apache Software Foundation
+  - explain how people can get in touch with the project to provide feedback or ask questions
+
+Once you have outlined the content that will be on the website, and decided how and where to display it, you need to decide how to build the site.
 
 <h2 id="default">Creating the website<a class="headerlink" href="#default" title="Permanent link">&para;</a></h2>
 
@@ -60,6 +80,10 @@ At least <a href="https://github.com/search?q=topic%3Ajbake+org%3Aapache&type=Re
 #### Basic website template in Markdown ####
 
 If you'd like to get started with an easy-to-use, <a href="https://github.github.com/gfm/" target="_blank">Markdown</a>-based site that many projects have used, see the <a href="https://github.com/apache/apache-website-template" target="_blank">sample Apache project website</a> repository which has many useful features and instructions for using svnpubsub.
+
+#### HTML files ####
+
+You can use any other tool that generates static HTML pages, or hand-code those pages. You then check them into your project's website repository. The check-in will trigger a site update.
 
 ### Tools not supported
 
