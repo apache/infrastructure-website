@@ -130,7 +130,7 @@ Managing your project web site        </a>
 <p>Once you have outlined the content that will be on the website, and decided how and where to display it, you need to decide how to build the site.</p>
 <h2 id="default">Creating the website<a class="headerlink" href="#default" title="Permanent link">&para;</a></h2>
 <p>Projects are free to choose their own styles and layout for websites, and have a range of options for actually creating the pages. The goal is to create and informative and useful <strong>static</strong> HTML website that can engage visitors, explain your project to them, and provide download links and documentation so they can use your project's applications.</p>
-<h3>Website-building options</h3>
+<h3>1. Website-building options</h3>
 <h4>Pelican</h4>
 <p><a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a> is a static site generator written in Python. Highlights include:</p>
 <ul>
@@ -163,7 +163,29 @@ which have the <code>pelican</code> Topic. You can review them as examples of Pe
 <p>Infra does not have a structure in place to support using <a href="github-pages.html">GitHub Pages</a> for project websites.</p>
 <h4>Apache CMS</h4>
 <p>The Apache CMS, which projects used to build and deploy their websites since 2010, is no longer available as of July 31, 2021. All projects that used it, including the main Apache website, have moved or must move to other technologies. Those that linger will find at some point that they cna no longer update their website. See the notes in the section on site management tools, below.</p>
-<h2 id="sitemanagement">Site management</a></h2>
+<h3>2. Website repository</h3>
+<p>If you don't have a web site repository for your project yet, you can create one using <a href="https://selfserve.apache.org/">https://selfserve.apache.org/</a>.</p>
+<p>The convention is to name the repository <code>$project-site.git</code>, for instance <code>httpd-site.git</code>.</p>
+<p>Copy whatever you need to start a build into the master branch of the new repository. This will act as the base of the build process.</p>
+<h3>3. The build process</h3>
+<p>Configure Pelican or Jekyll to build the site automatically when its contents change, using .asf.yaml and Buildbot. See the
+<a href="https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features#Git.asf.yamlfeatures-Staticwebsitecontentgeneration" target="_blank">.asf.yaml documentation</a>.</p>
+<h3>4. A staging website</h3>
+<p>Using <code>.asf.yaml</code> with a Git repository, once you have your generated web site committed and pushed to a branch, you can set up a staging web site to test your changes before publishing them to your main web site.</p>
+<p>To do so, add or edit <code>.asf.yaml</code> in the staging branch (where the build output is generated) and add the following (assuming your staging branch is asf-staging):</p>
+<pre><code>staging:
+  profile: ~
+  whoami:  asf-staging
+</code></pre>
+<p>Upon commits to this branch, your staging web site will appear with the latest output at: <code>https://$project.staged.apache.org/</code>
+For more details on staging via <code>.asf.yaml</code>, see the <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">.asf.yaml documentation on staging web sites</a>.</p>
+<h3>5. Publishing</h3>
+<p>When you are ready to publish a branch of your Git web site repository to your project web site, you can use <code>.asf.yaml</code>:</p>
+<pre><code>publish:
+  whoami:  asf-site
+</code></pre>
+<p>For more detailed procedures, follow the <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">.asf.yaml documentation for publishing your web site</a>.</p>
+<h2 id="sitemanagement">Site management</h2>
 <p>The basic requirements for site management are that</p>
 <ul>
 <li>only committers should be able to modify the site.</li>
