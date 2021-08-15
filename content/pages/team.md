@@ -11,8 +11,3 @@ The Apache Infrastructure team exists to ensure the day-to-day operations of the
 
 ## How can you help?
 Volunteers are the driving force of the Apache Software Foundation. The Infrastructure team is always looking for people willing to help out at whatever effort level suits you. If you're interested, visit our [volunteer information](infra-volunteer.html) page.
-
-
-Gnomes.
-GNOMES.
-GNOOOOMES.

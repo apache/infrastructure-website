@@ -4,7 +4,7 @@ Our developers are located all around the world. To enable them to work together
 
 Apache committers have write access to the Apache Subversion repository so they can make changes to their project's source code. Everyone has read access to the repositories, so you may download the most up-to-date development version of software that interests you.
 
-If you are looking for a stable release of a project's source code, you should download it from the <a href="http://www.apache.org/dyn/closer.cgi/" target="_blank">distribution directory</a>. Only download directly from the SVN repository if you want to be on the *bleeding-edge* of the development effort. The code contained there may fail to work, and may even eat your hard drive.
+If you are looking for a stable release of a project's source code, you should download it from the <a href="http://www.apache.org/dyn/closer.lua/" target="_blank">distribution directory</a>. Only download directly from the SVN repository if you want to be on the *bleeding-edge* of the development effort. The code contained there may fail to work, and may even eat your hard drive.
 
   - <a href="#accessing">Accessing the Subversion repository</a>
   - <a href="#configuring">Configuring the Subversion client</a>

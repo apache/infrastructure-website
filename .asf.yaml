@@ -1,6 +1,6 @@
 pelican:
   notify:         notifications@infra.apache.org
-  autobuild:      true
+  autobuild:      preview/*
   target:         asf-site
   whoami:         master
   
@@ -9,9 +9,10 @@ staging:
   profile: ~
 
 github:
-  ghp_branch:    master
-  ghp_path:      /docs
-
+  description:   Infrastructure Team Website Repository
+  homepage:      https://infra.apache.org
+  collaborators: []
+  
 notifications:
   commits:              commits@infra.apache.org
   pullrequests:         commits@infra.apache.org

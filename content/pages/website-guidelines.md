@@ -11,7 +11,9 @@ These guidelines relate to Infra policies on resource consumption, linking, lega
 - If you use cookies or other means of tracking users of an ASF website, state what you are doing explicitly and get the visitor's permission to track and store their data.
 - Web sites must be licensed under Apache License v.2.
 - You must not host or distribute any material that may constitute a felony under US or German law.
-- All web sites must be available on ASF's git or svn servers, and published using git- or pypubsub (this includes the ASF CMS system).
+- All web sites must be available on ASF's git or svn servers, and published using git- or pypubsub. This includes sites that have not migrated off the deprecated Apache CMS system).
 - Do not host source releases or convenience binaries directly on the web site. Use the mirror system through `dist.apache.org` (but do NOT link to `dist.apache.org`; use `closer.lua`).
+
+**Note**: Any ASF project can use the [ASF-Pelican template](asf-pelican.html) as the basis for their project website. 
 
 Should you have any questions, feel free to contact us at <a href="mailto:infrastructure@apache.org" target="_blank">infrastructure@apache.org</a> or on our <a href="https://the-asf.slack.com" target="_blank">Slack channel</a>.

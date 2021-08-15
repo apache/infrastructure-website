@@ -1,32 +1,45 @@
 Title: Managing your project web site
 
-Every Apache project or podling has a website hosted at `apache.org`. Apache provides tools to maintain it. Each project decides how their website looks, its contents, how they maintain it, and what software they use to support it, as long as the result is static files that our public web servers can make available to browsers. We also have limited support for .htaccess files and CGI scripts.
+Every Apache project or podling has a website hosted at `apache.org`. Apache provides tools to support it. Each project decides how their website looks, its contents, how they maintain it, and what software they use to support it, as long as the result is static files that our public web servers can make available to browsers. We also have limited support for .htaccess files and CGI scripts.
 
 
-## Contents ##
+## Contents
 
 <ul>
+<li><a href="#planning">Planning the project website</a></li>
 <li><a href="#default">Creating the website</a></li>
 <li><a href="#sitemanagement">Site management</a></li>
 <li><a href="#preview">Previewing the website</a></li>
 </ul>
 
+<h2 id="planning">Planning the project website<a class="headerlink" href="#planning" title="Permanent link">&para;</a></h2>
+
+Your project team wants to build an excellent application that solves a problem, simplifies a process, or breaks new ground. You also want people to find it, try it, and adopt it. Your project website is key to attracting and engaging both contributors to project development and people and organizations that will become part of your user community.
+
+Your website **must**
+
+  - satisfy the <a href="https://www.apache.org/foundation/marks/pmcs" target="_blank">Apache branding requirements</a>, in particular that <a href="https://www.apache.org/foundation/marks/pmcs#navigation" target="_blank">certain links</a> appear on the site's landing page, in whatever navigation structure the site uses. Whimsy's <a href="https://whimsy.apache.org/site/" target="_blank">Apache Project Website Checks</a> tool periodically reviews all top-level project (TLP) websites to provide a report on how well they comply with that policy, and to identify issues that a project may need to address.
+  - comply with the Infrastructure team's [project site policy](project-site-policy.html)
+
+The site also **should**
+
+  - explain what your project's product does
+  - pitch how your product solves a problem or creates a new opportunity
+  - invite people to get involved in the development team
+  - offer an easy way to download the latest builds of the product that you want the public to use
+  - provide documentation that will help people not part of the project understand how to get started with the product and how to keep going
+  - describe how the project team works, and its connection to the Apache Software Foundation
+  - explain how people can get in touch with the project to provide feedback or ask questions
+
+Once you have outlined the content that will be on the website, and decided how and where to display it, you need to decide how to build the site.
+
 <h2 id="default">Creating the website<a class="headerlink" href="#default" title="Permanent link">&para;</a></h2>
 
 Projects are free to choose their own styles and layout for websites, and have a range of options for actually creating the pages. The goal is to create and informative and useful **static** HTML website that can engage visitors, explain your project to them, and provide download links and documentation so they can use your project's applications.
 
-### Website-building options ###
+### 1. Website-building options
 
-If you're managing an ASF website repository in GitHub, please add `website` and `<TOOL>` Topics  to it, where `<TOOL>` is the name of the tool
-used to generate the website, like `pelican`, `hugo` etc. This helps others use your repository as an example using queries like
- <a href="https://github.com/search?q=org%3Aapache+topic%3Ahugo" target="_blank">this one</a>.
-You can use the `.asf.yaml` mechanism to add those Topics.
-
-#### Website template in Markdown ####
-
-If you'd like to get started with an easy-to-use, <a href="https://github.github.com/gfm/" target="_blank">Markdown</a>-based site that many projects have used, see the <a href="https://github.com/apache/apache-website-template" target="_blank">sample Apache project website</a> repository which has many useful features and instructions for using svnpubsub.
-
-#### Pelican ####
+#### Pelican
 
 <a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a> is a static site generator written in Python. Highlights include:
 
@@ -36,6 +49,8 @@ If you'd like to get started with an easy-to-use, <a href="https://github.github
   - Completely static output is easy to host anywhere
   
 Pelican has paths to <a href="https://docs.getpelican.com/en/stable/importer.html#import" target="_blank">migrate existing websites from many technologies</a>, including Blogger, Dotclear, Posterous, Tumblr, WordPress, and RSS/Atom.
+
+Any ASF project can use the [**ASF-Pelican template**](asf-pelican.html) as the basis for their project website. 
   
 See a how-to on using [Pelican and Buildbot](pelican-buildbot.html) to develop and deploy a project website.
 
@@ -43,43 +58,102 @@ Pelican supports both flat websites and those that have subdirectories. For the 
 
 Browse a <a href="https://github.com/getpelican/pelican-plugins/" target="_blank">collection of Pelican plugins</a> to find others that support functionality you want to add to your site. 
 
-<a href="https://github.com/search?q=topic%3Apelican+org%3Aapache&type=Repositories" target="_blank">This GitHub query</a> returns ASF repositories
-which have the `pelican` Topic, that should provide a few examples.
+This<a href="https://github.com/search?q=topic%3Apelican+org%3Aapache&type=Repositories" target="_blank">GitHub query</a> returns ASF repositories
+which have the `pelican` Topic. You can review them as examples of Pelican in action.
 
-#### Github Pages ####
+#### Jekyll
 
-*In theory*, projects with a Git code repository can use [GitHub Pages](github-pages.html) to create a staging site for reviewing their website, and to publish the site when it is ready. One project has done this as a proof-of-concept; however Infra does not have a structure in place to fully support using GitHub Pages for project websites.
+<a href="https://jekyllrb.com/" target="_blank">Jekyll</a> is a straightforward tool for developing blogs or static websites using Markdown, and it is easy to deploy the resulting website as Github Pages. There are many tutorials for doing this available online.
 
-#### Jekyll ####
-
-<a href="https://jekyllrb.com/" target="_blank">Jekyll</a> is a straightforward tool for developing blogs or static websites using Markdown, and it is easy to deploy the resulting website as Github Pages. There are many tutorials for doing this avaiilable online.
-
-#### Hugo ####
+#### Hugo
 
 At least <a href="https://github.com/search?q=topic%3Ahugo+org%3Aapache&type=Repositories" target="_blank">six ASF projects</a> use <a href="https://gohugo.io/" target="_blank">Hugo</a>, an open-source framework for building static web sites.
   
-#### JBake ####
+#### JBake
 
 At least <a href="https://github.com/search?q=topic%3Ajbake+org%3Aapache&type=Repositories" target="_blank">two ASF projects</a> use <a href="https://jbake.org/" target="_blank">JBake</a>, a Java-based tool for building static web sites.
 
-<h2 id="sitemanagement">Site management</a></h2>
+#### MKDocs
+
+<a href="https://www.mkdocs.org/" target="_blank">MKDocs</a> is a static site generator designed for creating project documentation. However, at least one ASF project uses it to build their entire project website. See [this note](asfyaml-mkdocs.html) on the build sequence to use to preserve your project site's `.asf.yaml` file.
+
+#### Basic website template in Markdown ####
+
+If you'd like to get started with an easy-to-use, <a href="https://github.github.com/gfm/" target="_blank">Markdown</a>-based site that many projects have used, see the <a href="https://github.com/apache/apache-website-template" target="_blank">sample Apache project website</a> repository which has many useful features and instructions for using svnpubsub.
+
+#### HTML files ####
+
+You can use any other tool that generates static HTML pages, or hand-code those pages. You then check them into your project's website repository. The check-in will trigger a site update.
+
+### Tools not supported
+
+#### Github Pages
+Infra does not have a structure in place to support using [GitHub Pages](github-pages.html) for project websites.
+
+#### Apache CMS
+The Apache CMS, which projects used to build and deploy their websites since 2010, is no longer available as of July 31, 2021. All projects that used it, including the main Apache website, have moved or must move to other technologies. Those that linger will find at some point that they cna no longer update their website. See the notes in the section on site management tools, below.
+
+### 2. Website repository
+
+If you don't have a web site repository for your project yet, you can create one using https://selfserve.apache.org/.
+
+The convention is to name the repository `$project-site.git`, for instance `httpd-site.git`.
+
+Copy whatever you need to start a build into the master branch of the new repository. This will act as the base of the build process.
+
+### 3. The build process
+
+Configure Pelican or Jekyll to build the site automatically when its contents change, using .asf.yaml and Buildbot. See the 
+<a href="https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features#Git.asf.yamlfeatures-Staticwebsitecontentgeneration" target="_blank">.asf.yaml documentation</a>.
+
+### 4. A staging website
+
+Using `.asf.yaml` with a Git repository, once you have your generated web site committed and pushed to a branch, you can set up a staging web site to test your changes before publishing them to your main web site.
+
+To do so, add or edit `.asf.yaml` in the staging branch (where the build output is generated) and add the following (assuming your staging branch is asf-staging):
+
+```
+staging:
+  profile: ~
+  whoami:  asf-staging
+```
+
+Upon commits to this branch, your staging web site will appear with the latest output at: `https://$project.staged.apache.org/`
+For more details on staging via `.asf.yaml`, see the <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">.asf.yaml documentation on staging web sites</a>.
+
+### 5. Publishing
+
+When you are ready to publish a branch of your Git web site repository to your project web site, you can use `.asf.yaml`:
+
+```
+publish:
+  whoami:  asf-site
+```
+
+For more detailed procedures, follow the <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">.asf.yaml documentation for publishing your web site</a>.
+
+
+
+<h2 id="sitemanagement">Site management</h2>
   
   The basic requirements for site management are that 
 
   - only committers should be able to modify the site.
-  - notifications of all site changes are sent to the relevant project mailing lists. The Apache CMS allows non-committers to send patches via a simple web interface by "Mail Diff"ing to the project mailing list that can be easily published by a committer.
+  - notifications of all site changes are sent to the relevant project mailing lists.
+
 
 <h3 id="tools">Management tools<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h3>
 
 Infra supports these tools for publishing and maintaining Apache project websites:
 
-  - **[Pelican and BuildBot](pelican-buildbot.html)** streamline creating and publishing your project website.
+  -  **[Site template](asf-pelican.html)** streamlines migration of an existing project site on the deprecated CMS, and creation of new project sites.
+  -  **[Pelican and BuildBot](pelican-buildbot.html)** streamline creating and publishing your project website.
   - **svnpubsub** automatically publishes the static contents of a designated svn folder (<a href="https://svn.apache.org/repos/asf/ant/site/ant/production/" target="_blank">example</a>) as the project web site at `http://project.apache.org`. The project team can use any site build mechanism it wants as long as the above requirements are met.
   - [**pypubsub**](pypubsub.html) automatically serves the static contents of a designated git repository as the website for a project. Git-based websites are typically maintained in a repository branch to be published as `https://project.apache.org`. A project can host the site from its primary project repository. Typically these will be built as a Jenkins or a Buildbot job (see below). We recommend that you only have a single writer to the asf-site branch to avoid potential conflicts.
   - For **websites using a git repository**, you can add a <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">.asf.yaml</a> configuration file. The file lets you set instructions that simplify updating and maintaining the site.
-  - **Apache CMS** _(being deprecated; don't use for new sites)_ provides a simple browser-based user interface for editing, staging and publishing site content in Markdown, HTML or any other source format for which support has been added. See the <a href="cmsref">CMS reference</a> and <a href="cmsadoption">adoption</a> for more details. The Apache CMS uses pypubsub as the underlying mechanism for publishing a site. **Note**: No new projects can use the Apache CMS, and we enccourage projects using it to migrate to another resource for maintaining their websites. Here are <a href="https://cwiki.apache.org/confluence/display/INFRA/Migrate+your+project+website+from+the+Apache+CMS" target="_blank">migration instructions</a>.
+
   
-#### Build tools ####
+### Build tools
 
 Infra provides these build tools:
 
@@ -96,9 +170,16 @@ This only applies to _SVN based websites_.
 
 Look at the `.revision` file at the root of your site (for example, <a href="http://subversion.apache.org/.revision" target="_blank">http://subversion.apache.org/.revision</a>). That file updates after every successful svn update. (If the update is underway or exited abnormally, `.revision` won't have changed.)
 
+### Topics in GitHub
+
+If you're managing an ASF website repository in GitHub, please add `website` and `<TOOL>` Topics  to it, where `<TOOL>` is the name of the tool you are using to generate the website, like `pelican` or `hugo`. This helps others who are looking for an example of use of that tool to find your repository with queries like
+ <a href="https://github.com/search?q=org%3Aapache+topic%3Ahugo" target="_blank">this one</a>.
+
+You can use the `.asf.yaml` mechanism to add those Topics.
+
 <h3 id="mail">Providing public access to the project's mail archive mbox files<a class="headerlink" href="#mail" title="Permanent link">&para;</a></h3>
 
-Some projects have a "mail" directory at the top of their project website. Enable this by creating a symbolic link  to `/home/apmail/public-arch/$tlp.apache.org` in svnpubsub or CMS output.
+Some projects have a "mail" directory at the top of their project website. Enable this by creating a symbolic link  to `/home/apmail/public-arch/$tlp.apache.org` in svnpubsub.
 
 See more <a href="https://apache.org/dev/#mail" target="_blank">notes aboout project mail</a>.
 
@@ -108,15 +189,14 @@ To use a custom favicon for your project's website, add the `favicon.ico` file t
 
 <h3 id="generated">Minimizing the number of changes committed in the project's Maven- or JavaDoc- generated site<a class="headerlink" href="#generated" title="Permanent link">&para;</a></h3>
 
-If you are using svnpubsub, the commit performs very slowly if the number of changes is large, particularly if the number of files is large. This is often the case with JavaDoc, and to a lesser extent with Maven-generated sites. 
+If you are using svnpubsub, the commit performs very slowly if the number of changes is large, particularly if the number of files is also large. This is often the case with JavaDoc, and to a lesser extent with Maven-generated sites. 
 
-Here is what you can do to speed up the commit:
+To speed up the commit:
 
-  - Ask Infra to store your generated content in the CMS repository, rather than the main ASF repository. While this won't necessarily speed up your own commit, it will prevent it from impacting other users.
   - When running JavaDoc, pass the `-notimestamp` option. This will avoid most files from being modified between runs if there haven't been code changes.
-  - Use a Maven skin that doesn't generate a timestamp into the output. This may require customizing the current skins.
+  - Use a Maven skin that doesn't add a timestamp to the output. This may require customizing the current skins.
   - If you use the Maven dependencies report in the Project Info Reports plugin, use version 2.7+ of the plugin to avoid random strings being generated.
-  - If you maintain historical versions of documentation, always check-in to a single "trunk", then use an `svn copy` operation to tag or branch the content, rather than checking in a complete copy.
+  - If you maintain historical versions of documentation, always check changes in to a single "trunk", then use an `svn copy` operation to tag or branch the content, rather than checking in a complete copy.
   - Minimize use of "publish date" and "version" in templates to those that are truly necessary or helpful. Consider using a "last modified date" and version in the URL instead (unless "latest" is implied).
   - Minimize Subversion keywords in the output that may change frequently without significant meaning. This includes keywords in source code that may be rendered to JavaDoc or a Maven JXR source cross-reference.
   - Avoid publishing Maven reports that change constantly to the project site. Code coverage, style reports, static analysis, etc. can be generated into a working copy on the CI server instead for easy developer viewing.
@@ -124,5 +204,4 @@ Here is what you can do to speed up the commit:
 <h2 id="preview">Previewing the website<a class="headerlink" href="#preview" title="Permanent link">&para;</a></h2>
 
   - For svnpubsub sites, review the local files in your svn checkout before committing them. The changes will be published immediately after you commit them.
-  - For CMS sites, just commit the changes (without "publish"-ing them). Then click the `Staged` link that will take you to the staged site.
   - There is no preview mode for pypubsub. You should ideally have a way to build and test the website locally.

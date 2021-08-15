@@ -14,6 +14,9 @@ You **MAY** use all actions internal to the `apache/*`, `github/*` and `actions/
 
 You **MUST** pin all external actions to the specific git hash (SHA1) of the action that has been reviewed for use by the project. For instance, you **MUST** pin `foobar/baz-action@8843d7f92416211de9ebb963ff4ce28125932878`.
 
+### Using self-hosted runners with GitHub Actions
+
+See this guidance on <a href="https://cwiki.apache.org/confluence/display/INFRA/GitHub+-+self-hosted+runners" target="_blank">GitHub - self-hosted runners</a>.
 
 ### Pushing commits to repositories###
 

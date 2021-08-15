@@ -17,9 +17,9 @@ Apache project contributors are in countries all around the world. To help them 
   - <a href="#migrating">Migrating an SVN code repository to Git</a>
 
 <h2 id="general">In general<a class="headerlink" href="#general" title="Permanent link">&para;</a></h2>
-Everyone has _read access_ to the repositories and can download the most up-to-date development version of any project's software to review or compile. 
+Everyone has *read access* to the repositories and can download the most up-to-date development version of any project's software to review or compile. 
 
-- If you want a stable release of the source code, download it from the <a href="https://www.apache.org/dyn/closer.cgi/" target="_blank">distribution directory</a>. 
+- If you want a stable release of the source code, download it from the <a href="https://www.apache.org/dyn/closer.lua/" target="_blank">distribution directory</a>. 
 - Only download the code directly from your project's code repository if you are participating in the development effort. The latest version of the code is what your colleagues have most recently checked in, and they may or may not have confirmed that it compiles correctly and does what they want it to do.
 - If you want a release version of the project's compiled application, visit the project's website and find its download page. It may offer both stable releases and "bleeding-edge" or "nightly" builds that compile properly but include the latest, possibly-unstable, features.
 
@@ -36,10 +36,11 @@ Some projects began using [read-only-mirrors](git.html) of SVN repositories when
 
 <h3 id="asfyaml">.asf.yaml for Git repositories<a class="headerlink" href="#asfyaml" title="Permanent link">&para;</a></h3>
 
-`.asf.yaml` is a branch-specific file that a project may put in the root of the git repository to control various new features such as
+`.asf.yaml` is a branch-specific file. As of July, 2021, projects hosting their websites in a Git repository must use `.asf.yaml` to build and update their sites. Review <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features#Git.asf.yamlfeatures-WebSiteDeploymentServiceforGitRepositories" target="_blank">this guidance</a>.
+
+Projects can also place `.asf.yaml` in the root of a repository to control:
 
 -  notification settings
--  website staging
 -  github settings
 -  pelican builds
 

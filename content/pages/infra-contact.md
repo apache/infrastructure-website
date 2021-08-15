@@ -121,7 +121,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
 <td>a committer or PMC</td>
 <td>change <strong>Jenkins</strong> build settings</td>
 <td>builds@apache.org</td>
-<td>Project members having <a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins#Jenkins-HowdoIgetanaccount" <target="_blank"><code>hudson-jobadmin</code> karma</a> can perform some tasks; ask your dev@ list</td>
+<td>Project members having <a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins#Jenkins-HowdoIgetanaccount" target="_blank"><code>hudson-jobadmin</code> karma</a> can perform some tasks; ask your dev@ list</td>
 </tr>
 <tr>
 <td>a PMC</td>
@@ -190,7 +190,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
 </tr>
 <tr>
 <td>Load <strong>Git history</strong></td>
-<td>URL and of a repository or an export stream; proof of <a href="https://www.apache.org/legal/resolved#category-a" target="_blank"">IP rights</a></td>
+<td>URL and of a repository or an export stream; proof of <a href="https://www.apache.org/legal/resolved#category-a" target="_blank">IP rights</a></td>
 <td>If linking to a file, provide PGP signature or checksum. If to a remote repository, you must review and sign off on the import ("Yes, that is the repository and history we asked to import and have IP rights for") before it will be writable.</td>
 </tr>
 <tr>

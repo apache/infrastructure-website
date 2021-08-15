@@ -35,7 +35,9 @@ An extensive infrastructure overview for developers is <a href="https://www.apac
 - [Deploying a self-hosted runner](self-hosted-runners.html)
 
 #### Website, blog and wiki ####
-- [Project website guidelines](website-guidelines.html). **Note**: No new projects can use the Apache CMS, and we enccourage projects using it to migrate to another resource for maintaining their websites. Here is how one project <a href="https://cwiki.apache.org/confluence/display/INFRA/How+Apache+Jena+migrated+from+the+CMS" target="_blank">did the migration</a>.
+- [Project website guidelines](website-guidelines.html). **Note**: No new projects can use the Apache CMS, all projects using must migrate to another resource for maintaining their websites. Projects that have not migrated their site by mid-summer 2021 may find that they are no longer able to update the site.
+- Here is how one project <a href="https://cwiki.apache.org/confluence/display/INFRA/How+Apache+Jena+migrated+from+the+CMS" target="_blank">did the migration</a>.
+- A [project site template](asf-pelican.html) written in Pelican is available to smooth migration away from the CMS, and to support creation of new project sites.
 - [Managing your project website](project-site.html)
 - [Project blog](project-blog.html)
 - <a href="https://cwiki.apache.org/confluence/display/INFRA/Managing+permissions+on+your+project%27s+Confluence+Space" target="_blank">Managing permissions on your project's Confluence space</a>

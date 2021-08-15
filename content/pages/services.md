@@ -33,11 +33,13 @@ Infra maintains a wide range of tools for PMCs, project committers, and the Apac
 
 <h3 id="web-sites">Websites<a class="headerlink" href="#web-sites" title="Permanent link">&para;</a></h3>
 
-  - <a href="https://apache.org/dev/#web" targety="_blank">ASF websites</a>.
+  - `www.apache.org` is the main ASF website.
+  - <a href="https://apache.org/dev/#web" targety="_blank">ASF project websites</a>.
   - An index of <a href="https://projects.apache.org/projects.html?name" target="_blank">all ASF projects</a>.
-  - `www.apache.org` is the main ASF website. Build instructions are <a href="https://apache.org/dev/infra-site" target="_blank">here</a>.
+  - Any ASF project can use the [ASF-Pelican template](asf-pelican.html) as the basis for their project website.
   - Details about individual <a href="https://home.apache.org/" target="_blank">ASF Committers</a>.
   - Notes about committers' <a href="https://apache.org/dev/new-committers-guide.html#public_html" target="_blank">personal web spaces</a>.
+  - The <a href="https://whimsy.apache.org/site/" target="_blank">Apache Project Website Checker</a> periodically reviews all TLP websites and reports whether they comply with Apache's <a href="https://www.apache.org/foundation/marks/pmcs#navigation" target="_blank">policies for TLP websites</a>.
   
 <h3 id="email">Email<a class="headerlink" href="#email" title="Permanent link">&para;</a></h3>
 
@@ -182,7 +184,7 @@ Use the ASF <a href="https://repository.apache.org/" target="_blank">Nexus Repos
 
 <h4 id="distributions">Distributions<a class="headerlink" href="#distributions" title="Permanent link">&para;</a></h4>
 
-  - <a href="https://www.apache.org/dyn/closer.cgi" target="_blank">Current distributions</a>
+  - <a href="https://www.apache.org/dyn/closer.lua" target="_blank">Current distributions</a>
   - <a href="https://archive.apache.org" target="_blank">Historical distribution archives</a>
   - [Rsync for distribution mirrors](how-to-mirror.html)
   - <a href="https://repository.apache.org" target="_blank">Nexus</a>
@@ -196,7 +198,7 @@ Infra can provide Ubuntu virtual machines for projects. See:
 
 <h3 id="voting">Online voting<a class="headerlink" href="#voting" title="Permanent link">&para;</a></h3>
 
-Projects can use the <a href="https://steve.apache.org" target="_blank">Apache Steve</a> voting system instance (offline when not in use).
+Projects can use the <a href="https://steve.apache.org" target="_blank">Apache STeVe</a> voting system instance (offline when not in use). The tool name refers to the <a href="https://en.wikipedia.org/wiki/Single_transferable_vote" target="_blank">single transferable vote</a> system it uses.
 
 <h2 id="other">Other tools<a class="headerlink" href="#other" title="Permanent link">&para;</a></h2>
 

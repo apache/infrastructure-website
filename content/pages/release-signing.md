@@ -12,33 +12,30 @@ This document is informative and does not constitute policy.
 
 <h3>For release managers</h3>
 
-<ul>
-<li><a href="#note">Important notes</a></li>
-<li><a href="#basic-facts">Basic facts</a></li>
-<li><a href="#signing-basics">Signing basics</li>
-<li><a href="#key-basics">Keys basics</a></li>
-<li><a href="#safe-practice">How can I safely practice using OpenPGP?</a></li>
-<li><a href="#web-of-trust">Web of Trust basics</a></li>
-<li><a href="#passphrase">What is a Passphrase?</a></li>
-<li><a href="#revocation-cert">Revocation Certificate basics</a></li>
-<li><a href="#reading">Further Reading</a></li>
-</ul>
+- <a href="#note">Important notes</a>
+- <a href="#basic-facts">Basic facts</a>
+- <a href="#signing-basics">Signing basics</a>
+- <a href="#key-basics">Keys basics</a>
+- <a href="#safe-practice">How can I safely practice using OpenPGP?</a>
+- <a href="#web-of-trust">Web of Trust basics</a>
+- <a href="#passphrase">What is a Passphrase?</a>
+- <a href="#revocation-cert">Revocation Certificate basics</a>
+- <a href="#reading">Further Reading</a>
 
-<h3>FAQs from those downloading releases</h3>
-<ul>
-  <li><a href="#verifying-signature">What does verifying a signature mean?</a></li>
-  <li><a href="#check-integrity">How can I check the integrity of a release?</a></li>
-  <li><a href="#public-key-not-found">What does 'Public key not found' mean when verifying a signature?</a></li>
-  <li><a href="#trust">What is a trusted key?</a></li>
-  <li><a href="#valid-untrusted-vs-invalid-trusted">What is the difference between a valid signature from an untrusted key and an invalid signature from a trusted key?</a></li>
-  <li><a href="#fingerprint">What is a public key fingerprint?</a></li>
-  <li><a href="#local-sig">Can I mark a key as locally trusted?</a></li>
-</ul>
-<a href="#help">Add your wisdom</a>
 
-<h2>For release managers</h2>
+### FAQs from those downloading releases
 
-<h2 id="note">Important notes<a class="headerlink" href="#note" title="Permanent link">&para;</a></h2>
+  - <a href="#verifying-signature">What does verifying a signature mean?</a>
+  - <a href="#check-integrity">How can I check the integrity of a release?</a>
+  - <a href="#public-key-not-found">What does 'Public key not found' mean when verifying a signature?</a>
+  - <a href="#trust">What is a trusted key?</a>
+  - <a href="#valid-untrusted-vs-invalid-trusted">What is the difference between a valid signature from an untrusted key and an invalid signature from a trusted key?</a>
+  - <a href="#fingerprint">What is a public key fingerprint?</a>
+  - <a href="#local-sig">Can I mark a key as locally trusted?</a>
+
+## For release managers
+
+<h3 id="note">Important notes<a class="headerlink" href="#note" title="Permanent link">&para;</a></h3>
 
 All new **RSA** keys generated should be at least **4096** bits. **Do not** generate new **DSA** keys.
 
@@ -52,7 +49,7 @@ The impact of this weakness on Apache can be mitigated by action now. What needs
 
 How to find the length of your key is described [here](#key-length-how-to).
 
-<h2 id="basic-facts">The basics<a class="headerlink" href="#basic-facts" title="Permanent link">&para;</a></h2>
+<h3 id="basic-facts">The basics<a class="headerlink" href="#basic-facts" title="Permanent link">&para;</a></h3>
 
 Every artifact distributed by the Apache Software Foundation  **must** be accompanied by one file containing an <a href="#openpgp-ascii-detach-sig">OpenPGP-compatible ASCII armored detached signature</a> and another file containing a <a href="release-signing#sha-checksum">SHA</a> or <a href="release-signing#md5">MD5</a>) checksum.
 
@@ -83,7 +80,7 @@ A signature allows anyone to verify that a file is identical to the one your pro
   - Choose a <a href="#passphrase">good passphrase</a>
   - Opt for a reasonably <a href="#key-length">long key length</a>
 
-<h2 id="signing-basics">Signing basics<a class="headerlink" href="#signing-basics" title="Permanent link">&para;</a></h2>
+<h3 id="signing-basics">Signing basics<a class="headerlink" href="#signing-basics" title="Permanent link">&para;</a></h3>
 
   - Signatures should be <a href="#openpgp-ascii-detach-sig">ASCII armored and detached</a>.
   - You should <a href="#export">export</a> your <a href="#public-private">public key</a> and append the result to the appropriate <a href="#keys-policy">KEYS</a> file(s).
@@ -93,6 +90,7 @@ A signature allows anyone to verify that a file is identical to the one your pro
 Create a <a href="#openpgp-ascii-detach-sig">OpenPGP compatible ASCII armored detached signature</a> for the released artifact. Upload the signature with the released artifact. See <a href="#basics">here</a> for a basic overview.
 
 <h3 id="openpgp-ascii-detach-sig">What Is an OpenPGP compatible ASCII armored detached signature?<a class="headerlink" href="#openpgp-ascii-detach-sig" title="Permanent link">&para;</a></h3>
+
 It is
 
   - an <a href="#openpgp">OpenPGP</a> compatible 
@@ -212,7 +210,7 @@ Research has revealed weaknesses in this algorithm. Though there are no practica
 
 Breaking the longest members of this family (`SHA512` and `SHA256`) is still considered <a href="#infeasible">infeasible</a>. Until <a href="#sha3">SHA-3</a> is available, avoid new uses of `SHA-1` and use `SHA512` or `SHA256` instead.
 
-<h3 id="sha3">What is SHA-3?<a class="headerlink" href="#sha3" title="Permanent link">&para;</a></h1>
+<h4 id="sha3">What is SHA-3?<a class="headerlink" href="#sha3" title="Permanent link">&para;</a></h4>
 
 SHA-3 is the designation for a new <a href="#message-digest">cryptographic hash algorithm</a> to replace the SHA family. The full standard was issued in 2015, but it hasn't yet been officially introduced into the OpenPGP standard. For that reason GnuPG doesn't support it yet.
 
@@ -249,12 +247,9 @@ A public key server manages <a href="#public-private">public keys</a>. Available
 
 Public key servers exist to distribute public keys. They do not vouch for the actual identity of the owner of each key. You must establish this either directly or through a <a href="#web-of-trust">web of trust</a>. Do not trust a key just because it has been downloaded from a key server.
 
-The major public key servers synchronize their records regularly so a key uploaded to one should be disseminated to the rest. Some well-known public key servers:
+The major public key servers synchronize their records regularly so you only need to upload a key to one and rely on that server to disseminate it to the other key servers. We recommend using:
 
-  - <a href="https://pgp.mit.edu" target="_blank">MIT</a>
-  - <a href="https://pgp.surfnet.nl/" target="_blank">SKS OpenPGP Public Key Server</a>
-
-Although <a href="https://keyserver.pgp.com/" target="_blank">PGP Global Directory</a> the following is also well-known, at present it does not synchronise keys with other key servers, so do not use it as the only public server for your key.
+  - <a href="https://keys.openpgp.org/" target="_blank">OpenPGP Public Key Server</a>
 
 <h3 id="keyserver-upload">How to upload a key to a public key server<a class="headerlink" href="#keyserver-upload" title="Permanent link">&para;</a></h3>
 
@@ -263,7 +258,7 @@ There are two common ways to upload a key to a <a href="#keyserver">public key s
   - Most key servers let you upload <a href="#export">exports</a> through their websites
   - Use automatic facilities built into most <a href="#openpgp">OpenPGP</a> <a href="#openpgp-applications">implementations</a>
   
-For example using <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a>, send the key with <a href="#key-id">ID</a> B1313DE2 to the default public key server by:
+For example, using <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a>, send the key with <a href="#key-id">ID</a> B1313DE2 to the default public key server by:
 
 ```
 $ gpg --send-key B13131DE2
@@ -566,7 +561,7 @@ When you _delete_ a key from a keyring, it is simply removed. You can add it aga
 
 When you _revoke_ a key, it is marked in the key ring. Whenever a message signed by this key is verified in the future, the user will get a warning that the key has been revoked.
 
-For example, when you verify a revoked key, <a href="https://www.gnupg.org" <target="_blank">>GNU Privacy Guard</a> issues the following comment:
+For example, when you verify a revoked key, <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a> issues the following comment:
 
 ```
 $ gpg --verify message.asc.message 
@@ -647,7 +642,7 @@ The transitive nature of the web of trust places a responsibility on the owner t
 For more information read the <a href="https://www.gnupg.org/(en)/documentation/guides.html" target="_blank">GNU Privacy Guard User
 Guide</a>.
 
-<h3 id="valid-untrusted-vs-invalid-trusted">What is the difference between a valid signature from an unterusted key an invalid signature from a trusted key?<a class="headerlink" href="#valid-untrusted-vs-invalid-trusted" title="Permanent link">&para;</a></h3>
+<h3 id="valid-untrusted-vs-invalid-trusted">What is the difference between a valid signature from an untrusted key an invalid signature from a trusted key?<a class="headerlink" href="#valid-untrusted-vs-invalid-trusted" title="Permanent link">&para;</a></h3>
 
 Trustfulness and validity are different concepts. You may elect to trust the identity of a key to various degrees (or not at all). For a particular key, a particular signature for a particular file may be valid (created by the private key from an identical file) or invalid
 (either corrupt or created from a different file).

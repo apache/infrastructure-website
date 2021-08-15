@@ -2,7 +2,7 @@ Title: Committer SSH Access
 
 Apache uses SSH (a cryptographic protocol for operating services securely over an unsecured network) to let committers access their home directories on `home.apache.org` (formerly `people.apache.org`). 
 
-Remember to keep your client up to date with security patches. When using SSH to connect to `home.apache.org` pay close attention to any <a href="#known-host">known host warnings</a>. 
+Remember to keep your client up to date with security patches. Pay close attention to any <a href="#known-host">known host warnings</a>. 
 
 ## Contents ##
 

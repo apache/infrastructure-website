@@ -9,4 +9,10 @@ Note that some hosts may have multiple keys (RSA, ECDSA, ED25519). We only list 
 If SSH warns that the site is not known, and shows a fingerprint that is not in the table below, that could be because SSH is showing something other than RSA. To change the fingerprint to RSA, try the following: `ssh -o HostKeyAlgorithms=ssh-rsa foo.apache.org` <br/>
 You can change the hash type with the option: `ssh -o FingerprintHash=[md5|sha256] ... `
 
-`spu:fetch('https://uls.apache.org/fingerprints_raw.html')`
+Please note that people.apache.org and home.apache.org are aliases and appear in the table as home-lw-us.
+
+**The hashes shown below are what the real machines SHOULD have. If it differs from what you see, please contact infra.**
+
+
+`spu:fetch('https://infra-reports.apache.org/machines/index.html')`
+

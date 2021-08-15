@@ -4,7 +4,20 @@ These best practices help guide a PMC through the steps to create and publish an
 
 Every Apache Software Foundation project software release must meet requirements for content , process , and publication. These requirements ensure that Apache contributors and users benefit from appropriate legal protection the ASF provides, and reflect the Foundation's goals of open, collaborative software development.
 
-## What makes an Apache release ##
+## Contents ##
+
+  - <a href="#definition">An Apache release</a>
+  - <a href="#releasemanager">The release manager</a>
+  - <a href="#valid">A valid release package</a>
+  - <a href="#signing">Signing release artifacts</a>
+  - <a href="#voting">Voting whether to approve the release</a>
+  - <a href="#distribution">Distribution</a>
+    - <a href="#uploading">Uploading packages</a>
+    - <a href="#normal">Normal distribution on the Apache downloads site</a>
+    - <a href="#tomaven">Maven distribution</a>
+  - <a href="#faqs">FAQs</a>
+
+<h2 id="definition">An Apache release<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h2>
 
 An Apache release is a set of **valid**, **signed**, artifacts, **voted on** by the appropriate PMC and **distributed** on the official ASF release infrastructure. See below for discussion of the words in bold, all of which are essential.
 
@@ -18,7 +31,7 @@ To make a release, an Apache project:
 
 A release starts when the project community agrees to make a release. However, no release manager can make a valid release unless the community has taken the necessary steps. The source code and build process must comply with the ASF legal and intellectual property requirements for a valid release, and the project must have the infrastructure in place to correctly **sign** the release artifacts (see below).
 
-## The release manager ##
+<h2 id="releasemanager">The release manager<a class="headerlink" href="#releasemanager" title="Permanent link">&para;</a></h2>
 
 Most projects designate a committer to be the _release manager_ who takes responsibility for the mechanics of a release. It is a good idea to let several committers take this role on different releases so that more than one person is comfortable doing a release. Release managers shepherd a release from an initial community consensus to getting the compiled code package to final distribution, and may be involved in publicizing the release to the project's community and the ASF in general.
 
@@ -28,7 +41,7 @@ Release managers do the mechanical work; but the PMC in general, and the PMC cha
 
 Any committer may serve as release manager.
 
-## A valid release package ##
+<h2 id="valid">A valid release package<a class="headerlink" href="#valid" title="Permanent link">&para;</a></h2>
 
 The Apache Software Foundation exists to create open source software, so the fundamental requirement for a release is that it has the necessary source code to build the project. A project may provide compiled binaries of each release for the convenience of users.
 
@@ -36,17 +49,17 @@ All project source code must be covered by the <a href="https://www.apache.org/l
 
 Many projects have dependencies on non-Apache components. For an Apache release to be valid, it can only depend on non-Apache components that have compatible licenses. For more information on third party licenses allowed, see the <a href="https://www.apache.org/legal/resolved.html" target="_blank">ASF Third Party License Policy</a>.
 
-## Signing release artifacts ##
+<h2 id="signing">Signing release artifacts<a class="headerlink" href="#signing" title="Permanent link">&para;</a></h2>
 
 The files that make up an Apache release always have accompanied by cryptographic signatures. This allows users to ensure that the files have not been tampered with since they were created. The mechanics of signing depend on the project's build technology. Infra strongly recommends that projects set up automated infrastructure to sign the files to simplify the work. Generally, projects set up their build system so that the same process that creates the files for a release also signs them.
 
 The process of setting up to sign the code is somewhat complicated, and it is described on the [release signing](release-signing.html) page. If you plan to serve as a release manager, you should generate a key and publish it well in advance of creating a release.
 
-## Voting whether to approve the release ##
+<h2 id="voting">Voting whether to approve the release<a class="headerlink" href="#voting" title="Permanent link">&para;</a></h2>
 
 A binding release vote of the PMC is the critical gating step in the release process. Without such a vote, the release is just a set of files prepared by an individual. After such a vote, it is a formal offering of the ASF, backed by the "full faith and credit" of the Foundation.
 
-## Distribution ##
+<h2 id="distribution">Distribution<a class="headerlink" href="#distribution" title="Permanent link">&para;</a></h2>
 
 The Apache infrastructure _must_ be the primary source for all artifacts officially released by the ASF.
 
@@ -56,13 +69,13 @@ Infra maintains the Apache release distribution infrastructure, which has three 
 - previous releases on `archive.apache.org`
 - Maven repository on `repository.apache.org`
 
-### Uploading packages ###
+<h3 id="uploading">Uploading packages<a class="headerlink" href="#uploading" title="Permanent link">&para;</a></h3>
 
   - Upload development packages and snapshots to `https://dist.apache.org/dist/dev/$project/`
   - Upload release packages to `https://dist.apache.org/dist/release/$project/`. If your project uses a Subersion repository, you can use `svn mv` from the `dev` folder.
   - Incubator projects can find their dev/release folder inside their incubator directory.
 
-### Normal distribution on the Apache downloads site ###
+<h3 id="normal">Normal distribution on the Apache downloads site<a class="headerlink" href="#normal" title="Permanent link">&para;</a></h3>
 
 See the [Release Distribution Policy](release-distribution-policy.html) for specific technical requirements.
 
@@ -90,10 +103,10 @@ If the release directory does not yet exist, please create a Jira ticket for INF
 
 **Note**: By default, only PMC/PPMC members have write access to the `dist/release` directories. The `dist/dev` directories by default allow write access by committers.
 
-### Maven distribution ###
+<h3 id="tomaven">Maven distribution<a class="headerlink" href="#tomaven" title="Permanent link">&para;</a></h3>
 See [Publishing Maven releases](maven-releases.html)
 
-## FAQs ##
+<h2 id="faqs">FAQs<a class="headerlink" href="#faqs" title="Permanent link">&para;</a></h2>
 
   - **I published a release. Why don't I see it on XYZ yet?** Apache uses [PyPubSub](pypubsub.html) internally and rsync mirrroring externally. Files committed to the Subversion repository at `https://dist.apache.org/repos/dist/` are automatically copied, using PyPubSub, to `www.apache.org`. Then the external mirrors pick up the files from `www.apache.org`. It may take up to 24 hours or more for a newly published release to be sync'd to all mirrors. Mirrors are required to check for new releases at least once a day, but most will check for updates more frequently.
   - **How do I archive an old release?** `downloads.apache.org` is automatically archived. Therefore, a copy of every official release exists in the archives. Just delete the copy of the release that is in your project's dist directory. Remember to update any links from the download page related to that release.

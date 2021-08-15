@@ -2,18 +2,21 @@ Title: Mailing list moderation
 
 Mailing lists are the virtual room where ASF communities live, form and grow. All formal decisions the project's PMC makes need to have an email thread (possibly with a recorded vote) as an audit trail that this was an official decision.
 
-  - <a href="#new-mailing-list">How do I request creation of a new mailing list?</a>
+  - <a href="#new-mailing-list">How do we create a new mailing list?</a>
   - <a href="#mailing-list-moderators">How do I request changes for moderators?</a>
   - <a href="#subscribers">How do I find who is subscribed to a list?</a>
   - <a href="#mail-moderate">What should I do with MODERATE emails?</a>
-    - <a href="#spam">Dealing with MODERATE requests for spam</a>
-  - <a href="#allowing_posts">Allowing posts from non-subscribers</a>
-  - <a href="#problem_posts">Dealing with problem posts</a>
-  - <a href="#missing">Dealing with reports of missing mail</a>
-  - <a href="#bounce">Dealing with reports of message bounces</a>
+
+Dealing with
+
+  - <a href="#spam">MODERATE requests for spam</a>
+  - <a href="#allowing_posts">allowing posts from non-subscribers</a>
+  - <a href="#problem_posts">problem posts</a>
+  - <a href="#missing">reports of missing mail</a>
+  - <a href="#bounce">reports of message bounces</a>
  
 
-<h3 id="new-mailing-list">How do I request creation of a new mailing list?<a class="headerlink" href="#new-mailing-list" title="Permanent link">&para;</a></h3>
+<h3 id="new-mailing-list">How do we create a new mailing list?<a class="headerlink" href="#new-mailing-list" title="Permanent link">&para;</a></h3>
 
 It is wise to keep the number of mailing lists per codebase the smallest possible to allow the community to reach that critical mass that is necessary to bootstrap a codebase and keep it in good shape.
 
@@ -21,7 +24,7 @@ At the same time, as communities grow, the need for more specialized mailing lis
 
   - Float the idea in the `dev@` or `users@` mailing list.
   - If there seems to be some support for the idea, request a community vote.
-  - If creation is aporoved, your Project Management Committee needs to [send a request to infra](contact.html).
+  - If the community approves adding a mailing list, the PMC chair or another Apache Member on the PMC can do so through the <a href="https://selfserve.apache.org" target="_blank">ASF Self-Service Platform</a>
 
 **WARNING**: Creating a user email list can harm a project community if the developers don't pay attention to their users and reply to their emails. One would expect a well-behaving user community to reply to one another in a civil, adult manner that is focused on whatever the list was created for, but it can take time for a community to learn and take to heart such good behavior.
 
