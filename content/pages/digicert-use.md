@@ -33,6 +33,10 @@ Whatever you need to sign and however you choose to sign it, you will need to cr
 
 ### Step 3: Install the OS integration
 
+#### None
+
+If you use JSign 4.0, you can skip this step.
+
 #### Windows integration
 
 1. Log on to DigiCert ONE and select "Secure Software" from the menu in the top right-hand corner.
@@ -53,6 +57,11 @@ Whatever you need to sign and however you choose to sign it, you will need to cr
 1. As per the DigiCert ONE documentation, create the four required environment variables. These **must** always be set to use the DigiCert signing service. Infra recommends you store your certifcate in `~/.digicertone/`.
 1. Test with `/opt/smtools-linux-x64/smctl keypair ls`. You should see at least one certificate listed.
 
+#### MacOS
+
+The DigiCert ONE client tools are not available for MacOS. Use JSign 4.0 so you can skip this step.
+
+
 ### Step 4: Configure your chosen signing tool
 
 #### Signing Windows binaries on Windows using signtool.exe
@@ -63,47 +72,24 @@ You'll need the fingerprint of the certificate you want to use for signing (view
 
 To sign a file with SHA-256 rather than SHA-512 use `... /fd sha256...` rather than `... /fd sha512 ...`.
 
-#### Signing on Windows binaries on Windows with JSign Ant task
+#### Signing on Windows binaries on Windows or Linux with JSign 4.0+ Ant task
 
 1. Make JSign JAR from [Maven Central](https://search.maven.org/artifact/net.jsign/jsign) available to Ant.
-1. Create the PKCS11 configuration file. Infra recommends saving this as `%USERPROFLE%\.digicertone\pkcs11properties.cfg`. The contents should be:
+1. The DigiCert ONE specific properties for the JSign task in Antshould be configured as follows:
 
-        name=DigiCertONE
-        library="C:/Program Files/DigiCert/DigiCert One Signing Manager Tools/smpkcs11.dll"
-        slotListIndex=0
+          storetype="DIGICERTONE"
+          storepass="<api-key>|<path-to-client-certificate>|<client-certificate-passphrase>"
+          alias="<name-of-signing-certificate>"
+          tsaurl="http://timestamp.digicert.com"
 
-    `name` can be anything you like (although names with spaces and special characters haven't been tested). `library` must point to where you installed the Secure Software Manager Windows Clients. Note the use of `/` rather than `\` in the path even though this is Windows.
 
-When configuring the [JSign Ant task](https://ebourg.github.io/jsign/#ant) `keystore` should be set to the full path of the `pkcs11properties.cfg` file.
+#### Signing Windows binaries on Linux with JSign 4.0+
 
-#### Signing Windows binaries on Linux with JSign
-
-1. Download jsign `wget https://github.com/ebourg/jsign/releases/download/3.1/jsign_3.1_all.deb`
-1. Install jsign `sudo dpkg --install jsign_3.1_all.deb`
-1. Create the PKCS11 configuration file. Infra recommends saving this as `~/.digicertone/pkcs11properties.cfg`. The contents should be:
-
-        name=DigiCertONE
-        library="/opt/smtools-linux-x64/smpkcs11.so"
-        slotListIndex=0
-
-    `name` can be anything you like (although names with spaces and special characters haven't been tested). `library` must point to where you installed the Secure Software Manager Linux Clients.
+1. Download jsign `wget https://github.com/ebourg/jsign/releases/download/4.0/jsign_4.0_all.deb`
+1. Install jsign `sudo dpkg --install jsign_4.0_all.deb`
 1. You should then be able to sign with:
 
-        jsign --keystore ~/.digicertone/pkcs11properties.cfg --storepass NONE --storetype PKCS11 --alias "<Your PMC Key alias>" --alg SHA-512 --tsaurl http://timestamp.digicert.com <file-to-be-signed>
-
-#### Signing Windows binaries on Linux with JSign Ant task
-
-1. Make JSign JAR from [Maven Central](https://search.maven.org/artifact/net.jsign/jsign) available to Ant.
-1. Create the PKCS11 configuration file. Infra recommends saving this as `~/.digicertone/pkcs11properties.cfg`. The contents should be:
-
-        name=DigiCertONE
-        library="/opt/smtools-linux-x64/smpkcs11.so"
-        slotListIndex=0
-
-    `name` can be anything you like (although names with spaces and special characters haven't been tested). `library` must point to where you installed the Secure Software Manager Linux Clients.
-
-When configuring the [JSign Ant task](https://ebourg.github.io/jsign/#ant) `keystore` should be set to the full path of the `pkcs11properties.cfg` file.
-
+        jsign --storetype DIGICERTONE --alias <name-of-signing-certificate> --storepass "<api-key>|<path-to-client-certificate>|<client-certificate-passphrase>" application.exe
 
 #### Other signing formats, tools and operating systems
 
