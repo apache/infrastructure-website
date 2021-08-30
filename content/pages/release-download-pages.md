@@ -1,15 +1,15 @@
 Title: Release Download Pages for Projects
 
-Your project's release download page links the project's content to the mirrors where people can download your latest release(s). This page describes how a release manager can put such a page together.
+Your project's release download page links the project's content to where people can download your latest release(s). This page describes how a release manager can put such a page together.
 
-Material about Apache's policies on releases, mirrors, and download pages is <a href="https://www.apache.org/dev/mirrors" target="_blank">here</a>.
+Apache's policies on releases, mirrors, and download pages are <a href="https://www.apache.org/dev/mirrors" target="_blank">here</a>.
 
 ## Contents ##
 
 <ul>
 <li><a href="#links">Download links</a></li>
 <li><a href="#download-page">Your Apache project's download page</a></li>
-<li><a href="#download-scripts">Download scripts</a></li>
+<li><a href="#download-scripts">Using the closer.lua download script</a></li>
 <li><a href="#best_practice">Best practices</a></li>
 <li><a href="#questions">Questions?</a></li>
 </ul>
@@ -17,9 +17,9 @@ Material about Apache's policies on releases, mirrors, and download pages is <a 
 <h2 id="links">Download links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
 
   - Your project's download page can only link to release artifacts that your PMC has approved.
-  - Do not link to `dist.apache.org`.
-  - The download page must include a link to the source distribution. It may include links to binary distributions.
-  - Links to the mirrored distribution artifacts must not reference the main Apache download server. They should use the standard mechanisms to distribute the load between the mirrors. See below for details.
+  - Do not link directly to `dist.apache.org`.
+  - The download page **must** include a link to the source distribution. It **may** include links to binary distributions.
+  - Links to the mirrored distribution artifacts must not reference the main Apache download server. They should use **closer.lua**, the standard mechanisms to distribute the load between the mirrors. See below for details.
   - All links to checksums, detached signatures and public keys must reference the main Apache web site and should use `https://` (SSL). For example: `https://downloads.apache.org/httpd/KEYS`.
   - Old releases should be <a href="https://www.apache.org/legal/release-policy.html#how-to-archive" target="_blank">archived</a> and may be linked from the download page.
   - Remove all official pre-releases (e.g. milestones, alphas, betas) in a timely fashion once the project releases the final or GA version.
@@ -28,26 +28,29 @@ Material about Apache's policies on releases, mirrors, and download pages is <a 
 
 Your Apache project's download page:
 
-  - must have at least one link to the current release. This link must use the "closer" utility. For example: `https://www.apache.org/dyn/closer.lua/PROJECT/VERSION/SOURCE-RELEASE`. (Note: the `mirrors.cgi` and `closer.cgi` files have been deprecated. Calls to them redirect to `closer.lua`.)
-  - must have a link to the checksum and hash for the current release. These links must use direct links to the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/VERSION/HASH-OR-CHECKSUM`.
-  - must have a link to the keys file for your project. This link must use direct links to the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/KEYS`.
-  - should have instructions on how to verify downloads. For this you can include a link to the <a href="https://www.apache.org/info/verification.html" target="_blank">Apache documentation on verification</a>.
-  - must not include a link to the top level "closer" utility (e.g. `http://www.apache.org/dyn/closer.lua/PROJECT`) as the KEYS, sigs and hashes are missing, as are any verification instructions.
+  - **must** have at least one link to the current release. This link **must** use the `closer.lua` utility. For example: `https://www.apache.org/dyn/closer.lua/PROJECT/VERSION/SOURCE-RELEASE`. (Note: the `mirrors.cgi` and `closer.cgi` scripts have been deprecated. Calls to them redirect to `closer.lua`.)
+  - **must** have a link to the checksum and hash for the current release. These links **must** use direct links to the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/VERSION/HASH-OR-CHECKSUM`.
+  - **must** have a link to the keys file for your project on the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/KEYS`.
+  - **should** have instructions on how to verify downloads. For this you can include a link to the <a href="https://www.apache.org/info/verification.html" target="_blank">Apache documentation on verification</a>.
+  - **must not** include a link to the top level `closer.lua` utility (e.g. `http://www.apache.org/dyn/closer.lua/PROJECT`) as the KEYS, sigs, hashes, and any verification instructions for your release would be missing from the top-level script.
   
-<h2 id="download-scripts">Download scripts<a class="headerlink" href="#download-scripts" title="Permanent link">&para;</a></h2>
+<h2 id="download-scripts">Using the closer.lua download script<a class="headerlink" href="#download-scripts" title="Permanent link">&para;</a></h2>
 
 Balancing the downloads between mirrors requires the use of a script. You'll find below a standard mechanism to let you easily create scripts that comply with the ASF mirroring distribution policy and take advantage of more advanced features such as intelligent selection of a preferred mirror.
 
-There are two basic options:
+There are two options:
 
-  - The <a href="#closer">generic download script</a> is quick to set up but is linked from (rather than integrated with) the project documentation.
+  - The <a href="#closer">generic download script</a> is quick to set up. The project documentation links to it (rather than integrating it).
   - A <a href="#custom">project-specific script</a> is integrated with a page created in the normal way for the project and uses the project's standard document look and feel. This option takes more time to set up.
   
-<h3 id="closer">Generic download script<a class="headerlink" href="#closer" title="Permanent link">&para;</a></h3>
+<h3 id="closer">Generic closer.lua download script<a class="headerlink" href="#closer" title="Permanent link">&para;</a></h3>
 
-The starting point for a generic script is a download page in the standard documentation which describes the releases. To use the generic script, you need to alter the page so the actual download links to the generic script in the appropriate fashion.
+The starting point for using the generic `closer.lua` script is a download page in your project's standard documentation which describes the releases. To use the generic script: 
 
-The generic script is `closer.lua`. Pass in the relative path from the distribution root to the artifact as a parameter. So if the artifact is `foo-5.5.1.zip` and is located in `bar/foo` relative to `downloads.apache.org`, then `http://www.apache.org/dyn/closer.lua/bar/foo/foo-5.5.1.zip` will display the mirrored distribution for downloading.
+  - Alter the page so the download link points to `closer.lua`.
+  - Pass in the relative path from the distribution root to the artifact as a parameter.
+
+If the artifact is `foo-5.5.1.zip` and is located in `bar/foo` relative to `downloads.apache.org`, then the link `http://www.apache.org/dyn/closer.lua/bar/foo/foo-5.5.1.zip` displays the mirrored distribution for downloading.
 
 As an alternative, you can generate a direct download link using the following syntax:
 
@@ -59,7 +62,7 @@ See below for how to generate a customised page of direct links using a mirror.
 
 <h3 id="custom">Project-specific download script<a class="headerlink" href="#custom" title="Permanent link">&para;</a></h3>
 
-To create a project-specific download page, create a project page containing information for the user together with variables the script populates with the appropriate values.
+To use a project-specific download script, create a project page containing information for the user about the release to download, together with variables the script populates with the appropriate values.
 
 Assuming you have called your download page `download.html`, you can invoke our global download script by using the URI `download.cgi`.
 
@@ -72,9 +75,9 @@ This URI takes the path to the page as an input and passes it to the standard gl
 
 There are a number of elements that a good project download page should contain. See the content to generate that page <a href="https://svn.apache.org/repos/asf/httpd/site/trunk/content/download.mdtext" target="_blank">here</a>.
 
-A variable URL links downloads of artifacts to a mirror. The correct mirroring base URL will be substituted for the `[preferred]` variable. The rest of the URL should be the path to the artifact relative to the base of the Apache distribution directory.
+A variable URL links downloads of artifacts to a mirror. The download script substitutes the correct mirroring base URL for the `[preferred]` variable. The rest of the URL should be the path to the artifact relative to the base of the Apache distribution directory.
 
-For example, for artifact `foo-1.0.0.tar.gz` contained in `bar/foo` should use `[preferred]/bar/foo/foo-1.0.0.tar.gz`
+For example, for artifact `foo-1.0.0.tar.gz` contained in `bar/foo`, use `[preferred]/bar/foo/foo-1.0.0.tar.gz`
 
 Provide links to the checksum and signature for the artifact next to the download link. It is important that users check the sum and verify the signature, so these links should be close and clear. **Note**: these documents must _not_ be mirrored.
 
