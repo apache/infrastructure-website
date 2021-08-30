@@ -105,15 +105,15 @@ Guidelines for project websites        </a>
               <p>These guidelines relate to Infra policies on resource consumption, linking, legal use, and site ownership. For policies and guidelines that fall under other committees or directors, please see their respective sites/pages.</p>
 <ul>
 <li>Projects cannot use tools that require write access to the project repository.</li>
-<li>Never link directly to downloads hosted at <code>apache.org</code>. Always use the mirror scripts.</li>
+<li>Never link directly to downloads hosted at <code>apache.org</code>. Always use the mirror scripts like closer.lua.</li>
 <li>Never redirect from the front page of your project's site, <code>$TLP.apache.org</code> to another domain. <code>$TLP.apache.org</code> <strong>must</strong> be your main project site. Links from your project site to other locations are of course okay.</li>
-<li>Never redirect from a <code>$TLP.apache.org</code> site to a non-ASF site unless this is explicitly recognized as an external web site.</li>
+<li>Never redirect from a <code>$TLP.apache.org</code> site to a non-ASF site unless the ASF has explicitly approved this, as for projects that have an existing web presence before joining the ASF.</li>
 <li>Don't cause unnecessary resource use (CPU, RAM, disk space). Use common sense, but Infra will ultimately decide on a case-by-case basis whether there is unnecessary use.</li>
-<li>All official project web sites (including their domain names) must be owned by the ASF and hosted on ASF hardware under Infra control.</li>
+<li>The ASF must own all official project web sites (including their domain names), and you must host them on ASF hardware under Infra control.</li>
 <li>If you use cookies or other means of tracking users of an ASF website, state what you are doing explicitly and get the visitor's permission to track and store their data.</li>
 <li>Web sites must be licensed under Apache License v.2.</li>
 <li>You must not host or distribute any material that may constitute a felony under US or German law.</li>
-<li>All web sites must be available on ASF's git or svn servers, and published using git- or pypubsub. This includes sites that have not migrated off the deprecated Apache CMS system).</li>
+<li>All web sites must be available on ASF's git or svn servers, and published using git- or pypubsub.</li>
 <li>Do not host source releases or convenience binaries directly on the web site. Use the mirror system through <code>dist.apache.org</code> (but do NOT link to <code>dist.apache.org</code>; use <code>closer.lua</code>).</li>
 </ul>
 <p><strong>Note</strong>: Any ASF project can use the <a href="asf-pelican.html">ASF-Pelican template</a> as the basis for their project website.</p>
