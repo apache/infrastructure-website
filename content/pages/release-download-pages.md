@@ -40,8 +40,8 @@ Balancing the downloads between mirrors requires the use of a script. You'll fin
 
 There are two options:
 
-  - The <a href="#closer">generic download script</a> is quick to set up. The project documentation links to it (rather than integrating it).
-  - A <a href="#custom">project-specific script</a> is integrated with a page created in the normal way for the project and uses the project's standard document look and feel. This option takes more time to set up.
+  - The <a href="#closer">closer.lua download script</a> is quick to set up. The project documentation links to it (rather than integrating it).
+  - A <a href="#custom">project-specific script</a>, which in the end calls `closer.lua` integrated with a page created in the normal way for the project and uses the project's standard document look and feel. This option takes more time to set up.
   
 <h3 id="closer">Generic closer.lua download script<a class="headerlink" href="#closer" title="Permanent link">&para;</a></h3>
 
@@ -66,12 +66,13 @@ To use a project-specific download script, create a project page containing info
 
 Assuming you have called your download page `download.html`, you can invoke our global download script by using the URI `download.cgi`.
 
-This URI takes the path to the page as an input and passes it to the standard global download script. The standard script reads the page and uses information about the mirrors to substitute values for the variables. When you link to the project page (for example, from the rest of the project documentation), it is important to target these links at the script address (and not the html page address).
+This URI takes the path to the page as an input and passes it to `closer.lua`. The script reads the page and uses information about the mirrors to substitute values for the variables. When you link to the project page (for example, from the rest of the project documentation), it is important to target these links at the script address (and not the html page address).
 
-**Note**: the mirroring script guesses the download release page process by matching file names. There is no requirement to call the script `download.cgi` and the download release page `download.html`, but the name of the script **must** correspond to the name of the download page. For example:
+**Note**: the mirroring script guesses the download release page process by matching file names. There is no requirement to name the script `download.cgi` and the download release page `download.html`, but the name of the script **must** correspond to the name of the download page. For example:
 
   - `release.cgi` and `release.html` will work
   - `download.cgi` and `release.html` will **not** work
+
 
 There are a number of elements that a good project download page should contain. See the content to generate that page <a href="https://svn.apache.org/repos/asf/httpd/site/trunk/content/download.mdtext" target="_blank">here</a>.
 
