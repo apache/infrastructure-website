@@ -1,5 +1,7 @@
 Title: How to be an Apache Software Foundation download mirror
 
+**NOTE** - as of August, 2021, the ASF is **not accepting further mirror site applications**.
+
 The Apache Software Foundation has mirror sites all around the world, but we are always looking for additional reliable and well-connected sites that can help us distribute our software by mirroring our main software distribution directory.
 
   - <a href="#requirements">Requirements</a>
