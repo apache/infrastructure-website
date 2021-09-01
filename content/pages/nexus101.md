@@ -1,5 +1,11 @@
 Title: Nexus 101
 
-_This page will hold information and tips to help users work with Nexus, and to answer the most frequently-asked questions_.
+_This page will hold information and tips to help users work with `repository.apache.org`, and to answer the most frequently-asked questions_.
 
-Nexus Repository OSS is an open-source repository that supports many artifact formats, including Docker, Java™, and npm. You can use Nexus to publish and retrieve versioned apps and their dependencies by using central repositories that are accessible from other environments.
+The ASF service `repository.apache.org` utilizes Sonatype Nexus Repository Manager to provide signed Java artifact staging and release to Maven Central (https://maven.apache.org/repository/) to ASF projects and committers.
+
+_links to existing resources_
+
+_frequently asked questions_
+
+
