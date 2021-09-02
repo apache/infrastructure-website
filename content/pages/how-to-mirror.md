@@ -7,7 +7,7 @@ Title: How to be an Apache Software Foundation download mirror
 
 **The following information is of historical interest only**
 
-The Apache Software Foundation has mirror sites all around the world, but we are always looking for additional reliable and well-connected sites that can help us distribute our software by mirroring our main software distribution directory.
+The Apache Software Foundation has mirror sites all around the world.
 
   - <a href="#requirements">Requirements</a>
   - <a href="#techniques">Mirroring techniques</a>
@@ -18,7 +18,7 @@ The Apache Software Foundation has mirror sites all around the world, but we are
 
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 
-We have a few requirements for those wishing to run a mirror:
+We have a few requirements for mirror sites:
 
   - We select https mirrors as "preferred" mirrors. We do add ftp mirrors to our list, but we no longer accept http mirrors.
   - At least 150 GB of available disk space. The current distribution directory is around 110 GB, but we wish to leave room for considerable expansion.
