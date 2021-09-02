@@ -126,5 +126,3 @@ We only use the IP address to check the logs before we add the mirror to the lis
 <h2 id="questions">Questions?<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h2>
 
 If you have any questions, feel free to raise them in your Jira ticket (component "Mirrors") or on the mirror maintainers' public mailing list `mirrors@apache.org`. You don't need to subscribe to the list in order to post (but a short note in your signature that you request replies to be CC'd to you would help).
-
-_information will move here from https://www.apache.org/info/how-to-mirror.html_
