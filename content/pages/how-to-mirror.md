@@ -82,8 +82,6 @@ This mirror is donated by www.domain.com [url] to support the Apache open source
 
 Search engines interpret referring to specific services or products as _PageRank manipulation_. This could hurt your site's ranking.
 
-We have noticed that certain sites redirect 404 pages as a form of extra advertising or as a traffic booster. We remove mirrors that do this from our list and send an email to the maintainer's address to ask them to correct the issue. The top level `/README.html` file, as mentioned, is the **only** local alteration of any part of the mirror we accept for you to provide sponsor information.
-
 <h2 id="testing">Testing your mirror<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
 
 If your mirror is not working properly, check the following:
@@ -95,4 +93,4 @@ If your mirror is not working properly, check the following:
 
 <h2 id="questions">Questions?<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h2>
 
-If you have any questions, feel free to raise them in your Jira ticket (component "Mirrors") or on the mirror maintainers' public mailing list `mirrors@apache.org`. You don't need to subscribe to the list in order to post (but a short note in your signature that you request replies to be CC'd to you would help).
+If you have any questions, contact us at `users@infra.apache.org`.
