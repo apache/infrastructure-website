@@ -102,22 +102,23 @@ How to mirror ASF software releases locally        </a>
           <h2>
               How to mirror ASF software releases locally
           </h2>
-              <p>Organizations may wish to create a download mirror that includes the releases of most or all of the Apache Software Foundation's projects. Here is how to set up such a mirror.</p>
+              <p>Organizations may wish to create a download mirror that includes the releases of most or all of the Apache Software Foundation's projects. You may mirror either the full distributions tree, or a reduced tree that excludes a few very resource-intensive (disk-wise and bandwidth-wise) projects (see <a href="#techniques">Mirroring techniques</a>).</p>
+<p>Here is how to set up such a mirror.</p>
 <p><strong>NOTE - as of August, 2021, the ASF itself is not accepting further mirror site applications.</strong></p>
 <ul>
 <li><a href="#requirements">Requirements</a></li>
 <li><a href="#techniques">Mirroring techniques</a></li>
-<li><a href="#sponsorinfo">Sponsor information</a></li>
+<li><a href="#sponsorinfo">Mirror host information</a></li>
 <li><a href="#testing">Testing your mirror</a></li>
+<li><a href="#verifying">Verifying a download</a></li>
 <li><a href="#questions">Questions?</a></li>
 </ul>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 <p>Hosting a mirror has a few requirements:</p>
 <ul>
 <li>You should have at least 150 GB of available disk space. The current distribution directory is around 110 GB, but it is constantly expanding.</li>
-<li>You may mirror either the full distributions tree, or a reduced tree that excludes a few very resource-intensive (disk-wise and bandwidth-wise) projects.</li>
 <li>You should not trim or abridge the mirrored tree in any way.</li>
-<li>You should not modify the mirrored tree in any way. In particular, you should not alter or remove HEADER.html or README.html files. See below for adding sponsor information.</li>
+<li>You should not modify the mirrored tree in any way. In particular, you should not alter or remove HEADER.html or README.html files. See below for adding information about the mirror host.</li>
 </ul>
 <p>We encourage you to</p>
 <ul>
@@ -149,8 +150,8 @@ How to mirror ASF software releases locally        </a>
 <li>Run the job four times a day; no more than six times a day in any case.</li>
 <li>Check the output from the rsynch job regularly so you can detect problems like lack of disk space or permission issues.</li>
 </ul>
-<h2 id="sponsorinfo">Sponsor information<a class="headerlink" href="#sponsorinfo" title="Permanent link">&para;</a></h2>
-<p>Here is how to add sponsor information:</p>
+<h2 id="sponsorinfo">Mirror host information<a class="headerlink" href="#sponsorinfo" title="Permanent link">&para;</a></h2>
+<p>Here is how to add information explaining who is hosting the private download mirror:</p>
 <ol>
 <li>Edit the file <code>/local/path/to/mirror/README.html</code></li>
 <li>Add to your rsync options <code>--exclude &quot;/README.html&quot;</code></li>
@@ -172,6 +173,8 @@ How to mirror ASF software releases locally        </a>
 <li>Download a couple of files to check that the process works.</li>
 <li>Trying to download a missing file should generate a <code>404 Not Found</code> error. You can verify this by modifying one of the valid URLs that you tested above.</li>
 </ul>
+<h2 id="verifying">Verifying the download<a class="headerlink" href="#verifying" title="Permanent link">&para;</a></h2>
+<p>If you want to verify that the download is a true mirror of what the ASF project posted, using KEYS and signatures, THIS INFORMATION IS COMING.</p>
 <h2 id="questions">Questions?<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h2>
 <p>If you have any questions, contact us at <code>users@infra.apache.org</code>.</p>
 
