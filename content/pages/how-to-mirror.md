@@ -2,7 +2,7 @@ Title: How to mirror ASF software releases locally
 
 Organizations may wish to create a download mirror that includes the releases of most or all of the Apache Software Foundation's projects. Here is how to set up such a mirror.
 
-**NOTE - as of August, 2021, the ASF itself is not accepting further mirror site applications.
+**NOTE - as of August, 2021, the ASF itself is not accepting further mirror site applications.**
 
   - <a href="#requirements">Requirements</a>
   - <a href="#techniques">Mirroring techniques</a>
@@ -12,7 +12,7 @@ Organizations may wish to create a download mirror that includes the releases of
 
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 
-We have a few requirements for mirror sites:
+Hosting a mirror has a few requirements:
 
   - You should have at least 150 GB of available disk space. The current distribution directory is around 110 GB, but it is constantly expanding.
   - You may mirror either the full distributions tree, or a reduced tree that excludes a few very resource-intensive (disk-wise and bandwidth-wise) projects.
