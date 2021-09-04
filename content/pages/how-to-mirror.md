@@ -16,9 +16,8 @@ Hosting a mirror has a few requirements:
 
   - You should have at least 150 GB of available disk space. The current distribution directory is around 110 GB, but it is constantly expanding.
   - You may mirror either the full distributions tree, or a reduced tree that excludes a few very resource-intensive (disk-wise and bandwidth-wise) projects.
-  - You must not trim or abridge the mirrored tree in any way.
-  - You must not modify the mirrored tree in any way. In particular, you must not alter or remove HEADER.html or README.html files. See below for adding sponsor information.
-  - Your mirror must not appear "inside" another site using, for instance, frames. 
+  - You should not trim or abridge the mirrored tree in any way.
+  - You should not modify the mirrored tree in any way. In particular, you should not alter or remove HEADER.html or README.html files. See below for adding sponsor information.
 
 We encourage you to 
 
