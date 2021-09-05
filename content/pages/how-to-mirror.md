@@ -43,6 +43,8 @@ Make sure that the server does not send a `Content-Encoding` header for any of t
 
 <h2 id="techniques">Mirroring techniques<a class="headerlink" href="#techniques" title="Permanent link">&para;</a></h2>
 
+### Updating
+
 We only support <a href="https://rsync.samba.org/" target="_blank">rsync</a> for updating mirrors.
 
 Update your mirror with:
@@ -51,7 +53,15 @@ Update your mirror with:
 rsync -avz --delete --safe-links rsync.apache.org::apache-dist /path/to/mirror
 ```
 
+  - Don't rsync "on the hour" (`cronjob minute 0`). Pick a random minute between 5 and 55. Never run cronjobs at minute 0 unless the nature of the job requires it.
+  - Run the job four times a day; no more than six times a day in any case.
+  - Check the output from the rsync job regularly so you can detect problems like lack of disk space or permission issues.
+
+### Excluding resource-intensive projects
+
 To exclude resource-intensive projects, replace `::apache-dist` with `::apache-dist-most`. Do not use `--exclude`.
+
+### Directory permissions
 
 If there is a problem with file/directory permissions, make sure you use a proper umask in your cronjob:
 
@@ -59,10 +69,20 @@ If there is a problem with file/directory permissions, make sure you use a prope
 umask 022 ; rsync ...
 ```
 
-  - Don't rsync "on the hour" (`cronjob minute 0`). Pick a random minute between 5 and 55. Never run cronjobs at minute 0 unless the nature of the job requires it.
-  - Run the job four times a day; no more than six times a day in any case.
-  - Check the output from the rsynch job regularly so you can detect problems like lack of disk space or permission issues.
-  
+### Excluded file types
+
+Mirrors cannot host the following file types:
+
+```
+exclude => ['/tmp/', '*.md5', '*.MD5', '*.sha1', '*.sha',
+           '*.sha256', '*.sha512', '*.asc', 'MD5SUM', 'SHA*SUM*',
+           '*.mds', '*.sha2', '*.sha3', 'META',
+           '*.sig', '*.KEYS', 'KEYS', 'KEYS.txt', 
+           '.svn/', '/.rsync.td/',
+           '/openoffice',
+           '/zzz/rsync-module/apache-dist', '.revision'],
+```
+
 <h2 id="sponsorinfo">Mirror host information<a class="headerlink" href="#sponsorinfo" title="Permanent link">&para;</a></h2>
 
 Here is how to add information explaining who is hosting the private download mirror:
