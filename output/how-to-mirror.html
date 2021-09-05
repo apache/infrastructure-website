@@ -137,19 +137,32 @@ How to mirror ASF software releases locally        </a>
 <p><strong>Note</strong> that our HEADER.html files do not contain the HTML preamble, so it is important <strong>not</strong> to enable the <code>SuppressHTMLPreamble</code> option.</p>
 <p>Make sure that the server does not send a <code>Content-Encoding</code> header for any of the compressed archives. The hashes and signatures used to check downloads are created for the compressed archives so it is vital that the browser is not told to decompress them. For example, <code>.tar.gz</code> and <code>.tgz</code> files are compressed TAR files. They should have a suitable Content-Type - e.g. <code>application/x-gzip</code> - but no <code>Content-Encoding</code> should be sent. If the server incorrectly sends <code>Content-Encoding: x-gzip</code> (for example), many browsers will automatically decompress the response. This produces a TAR file which will not verify when checked against the hashes or sigs.</p>
 <h2 id="techniques">Mirroring techniques<a class="headerlink" href="#techniques" title="Permanent link">&para;</a></h2>
+<h3>Updating</h3>
 <p>We only support <a href="https://rsync.samba.org/" target="_blank">rsync</a> for updating mirrors.</p>
 <p>Update your mirror with:</p>
 <pre><code>rsync -avz --delete --safe-links rsync.apache.org::apache-dist /path/to/mirror
 </code></pre>
-<p>To exclude resource-intensive projects, replace <code>::apache-dist</code> with <code>::apache-dist-most</code>. Do not use <code>--exclude</code>.</p>
-<p>If there is a problem with file/directory permissions, make sure you use a proper umask in your cronjob:</p>
-<pre><code>umask 022 ; rsync ...
-</code></pre>
 <ul>
 <li>Don't rsync &quot;on the hour&quot; (<code>cronjob minute 0</code>). Pick a random minute between 5 and 55. Never run cronjobs at minute 0 unless the nature of the job requires it.</li>
 <li>Run the job four times a day; no more than six times a day in any case.</li>
-<li>Check the output from the rsynch job regularly so you can detect problems like lack of disk space or permission issues.</li>
+<li>Check the output from the rsync job regularly so you can detect problems like lack of disk space or permission issues.</li>
 </ul>
+<h3>Excluding resource-intensive projects</h3>
+<p>To exclude resource-intensive projects, replace <code>::apache-dist</code> with <code>::apache-dist-most</code>. Do not use <code>--exclude</code>.</p>
+<h3>Directory permissions</h3>
+<p>If there is a problem with file/directory permissions, make sure you use a proper umask in your cronjob:</p>
+<pre><code>umask 022 ; rsync ...
+</code></pre>
+<h3>Excluded file types</h3>
+<p>Mirrors cannot host the following file types:</p>
+<pre><code>exclude =&gt; ['/tmp/', '*.md5', '*.MD5', '*.sha1', '*.sha',
+           '*.sha256', '*.sha512', '*.asc', 'MD5SUM', 'SHA*SUM*',
+           '*.mds', '*.sha2', '*.sha3', 'META',
+           '*.sig', '*.KEYS', 'KEYS', 'KEYS.txt', 
+           '.svn/', '/.rsync.td/',
+           '/openoffice',
+           '/zzz/rsync-module/apache-dist', '.revision'],
+</code></pre>
 <h2 id="sponsorinfo">Mirror host information<a class="headerlink" href="#sponsorinfo" title="Permanent link">&para;</a></h2>
 <p>Here is how to add information explaining who is hosting the private download mirror:</p>
 <ol>
