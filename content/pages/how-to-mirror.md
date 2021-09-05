@@ -71,7 +71,7 @@ umask 022 ; rsync ...
 
 ### Excluded file types
 
-Mirrors cannot host the following file types:
+Private mirrors of ASF downloads cannot host the following file types:
 
 ```
 exclude => ['/tmp/', '*.md5', '*.MD5', '*.sha1', '*.sha',
