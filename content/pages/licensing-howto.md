@@ -31,7 +31,7 @@ The `LICENSE` and `NOTICE` files must **exactly represent** the contents of the 
 
 <h3 id="source-tree-location">Location<a class="headerlink" href="#source-tree-location" title="Permanent link">&para;</a></h3>
 
-`LICENSE` and `NOTICE` files belong at the top level of the source tree. ASF prefers that the files have their bare names, but a PMC can opt to call them `LICENSE.txt` and `NOTICE.txt`.
+`LICENSE` and `NOTICE` files belong at the top level of the source tree. ASF prefers that the files have their bare names, but a PMC can opt to call them `LICENSE.txt` and `NOTICE.txt` or `LICENSE.md` and `NOTICE.md`.
 
 <h3 id="step-by-step">Step-by-step instructions<a class="headerlink" href="#step-by-step" title="Permanent link">&para;</a></h3>
 
