@@ -19,7 +19,7 @@ Apache's policies on releases, mirrors, and download pages are <a href="https://
   - Your project's download page can only link to release artifacts that your PMC has approved.
   - Do not link directly to `dist.apache.org`.
   - The download page **must** include a link to the source distribution. It **may** include links to binary distributions.
-  - Links to the mirrored distribution artifacts must not reference the main Apache download server. They should use **closer.lua**, the standard mechanisms to distribute the load between the mirrors. See below for details.
+  - Use **closer.lua**, the standard mechanisms to distribute Apache downloads. See below for details.
   - All links to checksums, detached signatures and public keys must reference the main Apache web site and should use `https://` (SSL). For example: `https://downloads.apache.org/httpd/KEYS`.
   - Old releases should be <a href="https://www.apache.org/legal/release-policy.html#how-to-archive" target="_blank">archived</a> and may be linked from the download page.
   - Remove all official pre-releases (e.g. milestones, alphas, betas) in a timely fashion once the project releases the final or GA version.
@@ -36,7 +36,7 @@ Your Apache project's download page:
   
 <h2 id="download-scripts">Using the closer.lua download script<a class="headerlink" href="#download-scripts" title="Permanent link">&para;</a></h2>
 
-Balancing the downloads between mirrors requires the use of a script. You'll find below a standard mechanism to let you easily create scripts that comply with the ASF mirroring distribution policy and take advantage of more advanced features such as intelligent selection of a preferred mirror.
+Apache project download pages must a closer.lua script. You'll find below a standard mechanism to let you easily create scripts that comply with the ASF distribution policy.
 
 There are two options:
 
@@ -86,7 +86,6 @@ For example, for artifact foo-1.0.0.tar.gz contained in bar/foo :
 
 ```
 `<a href="[preferred]/bar/foo/foo-1.0.0.tar.gz">zip</a>`
-`<a href='https://downloads.apache.org/bar/foo/foo-1.0.0.tar.gz.md5'>MD5</a>`
 `<a href='https://downloads.apache.org/bar/foo/foo-1.0.0.tar.gz.asc'>PGP</a>`
 ```
 
