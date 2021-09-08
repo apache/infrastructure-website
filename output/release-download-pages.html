@@ -117,7 +117,7 @@ Release Download Pages for Projects        </a>
 <li>Your project's download page can only link to release artifacts that your PMC has approved.</li>
 <li>Do not link directly to <code>dist.apache.org</code>.</li>
 <li>The download page <strong>must</strong> include a link to the source distribution. It <strong>may</strong> include links to binary distributions.</li>
-<li>Links to the mirrored distribution artifacts must not reference the main Apache download server. They should use <strong>closer.lua</strong>, the standard mechanisms to distribute the load between the mirrors. See below for details.</li>
+<li>Use <strong>closer.lua</strong>, the standard mechanisms to distribute Apache downloads. See below for details.</li>
 <li>All links to checksums, detached signatures and public keys must reference the main Apache web site and should use <code>https://</code> (SSL). For example: <code>https://downloads.apache.org/httpd/KEYS</code>.</li>
 <li>Old releases should be <a href="https://www.apache.org/legal/release-policy.html#how-to-archive" target="_blank">archived</a> and may be linked from the download page.</li>
 <li>Remove all official pre-releases (e.g. milestones, alphas, betas) in a timely fashion once the project releases the final or GA version.</li>
@@ -132,7 +132,7 @@ Release Download Pages for Projects        </a>
 <li><strong>must not</strong> include a link to the top level <code>closer.lua</code> utility (e.g. <code>http://www.apache.org/dyn/closer.lua/PROJECT</code>) as the KEYS, sigs, hashes, and any verification instructions for your release would be missing from the top-level script.</li>
 </ul>
 <h2 id="download-scripts">Using the closer.lua download script<a class="headerlink" href="#download-scripts" title="Permanent link">&para;</a></h2>
-<p>Balancing the downloads between mirrors requires the use of a script. You'll find below a standard mechanism to let you easily create scripts that comply with the ASF mirroring distribution policy and take advantage of more advanced features such as intelligent selection of a preferred mirror.</p>
+<p>Apache project download pages must a closer.lua script. You'll find below a standard mechanism to let you easily create scripts that comply with the ASF distribution policy.</p>
 <p>There are two options:</p>
 <ul>
 <li>The <a href="#closer">closer.lua download script</a> is quick to set up. The project documentation links to it (rather than integrating it).</li>
@@ -164,7 +164,6 @@ Release Download Pages for Projects        </a>
 <p>Provide links to the checksum and signature for the artifact next to the download link. It is important that users check the sum and verify the signature, so these links should be close and clear. <strong>Note</strong>: these documents must <em>not</em> be mirrored.</p>
 <p>For example, for artifact foo-1.0.0.tar.gz contained in bar/foo :</p>
 <pre><code>`&lt;a href=&quot;[preferred]/bar/foo/foo-1.0.0.tar.gz&quot;&gt;zip&lt;/a&gt;`
-`&lt;a href='https://downloads.apache.org/bar/foo/foo-1.0.0.tar.gz.md5'&gt;MD5&lt;/a&gt;`
 `&lt;a href='https://downloads.apache.org/bar/foo/foo-1.0.0.tar.gz.asc'&gt;PGP&lt;/a&gt;`
 </code></pre>
 <p>Give users information about the mirrors and the chance to choose a different mirror if they prefer. Here is a typical script to achieve this:</p>
