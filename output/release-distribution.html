@@ -121,7 +121,7 @@ Release Distribution Policy        </a>
 </ul>
 <h2 id="channels">Release distribution channels<a class="headerlink" href="#channels" title="Permanent link">&para;</a></h2>
 <ul>
-<li>The Apache Software Foundation's official channel for distribution of current Apache software releases to the general public is <code>downloads.apache.org/</code>. This directory is automatically sync'd out to the ASF mirror network, and most users download releases from one of the ASF mirrors.</li>
+<li>The Apache Software Foundation's official channel for distribution of current Apache software releases to the general public is <code>downloads.apache.org/</code>. This directory is automatically sync'd out to the ASF content distribution network, where most users download releases.</li>
 <li>The public may also obtain Apache software from any number of downstream channels (rpm, deb, homebrew, etc.) which redistribute our releases in either original or derived form. The vast majority of such downstream channels operate independently of Apache.</li>
 <li>Infra maintains a number of developer-only channels which facilitate distribution of unreleased software to consenting members of a development community.</li>
 <li>All historic Apache releases are available from <code>archive.apache.org</code>.</li>
@@ -151,7 +151,7 @@ Release Distribution Policy        </a>
 <li><strong>must not</strong> be distributed through channels which encourage use by anyone outside the project development community</li>
 </ul>
 <h2 id="heads-up">Notify Infra before uploading large artifacts<a class="headerlink" href="#heads-up" title="Permanent link">&para;</a></h2>
-<p>Projects must coordinate with Infra in advance about releases of larger than 1GB of artifacts to mitigate strain on mirroring and download resources.</p>
+<p>Projects must coordinate with Infra in advance about releases of larger than 1GB of artifacts to mitigate strain on content distribution resources.</p>
 <h2 id="sigs-and-sums">Requirements for cryptographic signatures and checksums<a class="headerlink" href="#sigs-and-sums" title="Permanent link">&para;</a></h2>
 <p>For more information, see the <a href="https://www.apache.org/dev/release-signing.html" target="_blank">release signing</a> page.</p>
 <p><strong>Note</strong>: <a href="https://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> describes how <strong>must</strong>, <strong>should</strong>, <strong>should not</strong> and similar terms are to be interpreted.</p>
@@ -192,7 +192,7 @@ Release Distribution Policy        </a>
 <h2 id="download-links">Download links<a class="headerlink" href="#download-links" title="Permanent link">&para;</a></h2>
 <ul>
 <li>The website documentation for any Apache product <strong>must</strong> provide public download links where interested parties may obtain current official source releases and accompanying cryptographic files.</li>
-<li>Links to mirrored distribution artifacts <strong>must not</strong> reference the main Apache web site. They <strong>should</strong> use the <a href="release-download-pages.html">standard mechanisms</a> to distribute the load between the mirrors.</li>
+<li>Links to artifacts <strong>must not</strong> reference the main Apache web site. They <strong>should</strong> use the <a href="release-download-pages.html">standard mechanisms</a>, such as closer.lua, to make the download available through the content distribution system.</li>
 <li>All links to checksums, detached signatures and public keys for current releases <strong>must</strong> reference <code>downloads.apache.org/</code> using <code>https://</code> (TLS)*.</li>
 <li>Old releases <strong>should</strong> be archived and <strong>MAY</strong> be linked to from public download pages.</li>
 </ul>
