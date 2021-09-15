@@ -1,5 +1,7 @@
 Title: Apache mirroring information
 
+**Note**: as of August, 2021, The ASF is not accepting further requests to become a mirror download site.
+
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 This page describes the requirements and practices for mirroring Apache Software Foundation releases. If you need clarification on any of the statements here, ask your question on the `users@infra.apache.org` mailing list.
 
@@ -27,7 +29,3 @@ Do **not** keep software distributions on the project's website. Move them to on
   - **Current public releases** appear on `downloads.apache.org/`. Place current, official releases that the PMC has approved for end-users here, on the main public release site that is mirrored world-wide. Make all changes at <a href="https://dist.apache.org/repos/dist/release/" target="_blank">`https://dist.apache.org/repos/dist/release/`</a>.
 
   - **Older releases** that you no longer recommend to the general public should appear on `archive.apache.org/dist/`. This site automatically contains all the content of `downloads.apache.org/`, but nothing is ever deleted. Therefore it should rarely be necessary to touch this site, except during a reorganization. Once your project no longer recommends public use of a particualr release, simply delete it from `downloads.apache.org/dist/` by removing it from <a href="https://dist.apache.org/repos/dist/release/" target="_blank">`https://dist.apache.org/repos/dist/release/`</a>. It will remain  on the archive site.
-  
-<h2 id="use">How a project uses mirrors<a class="headerlink" href="#use" title="Permanent link">&para;</a></h2>
-
-Complete instructions are on [How to be an Apache Software Foundation download mirror](how-to-mirror.html).
