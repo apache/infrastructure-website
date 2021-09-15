@@ -30,7 +30,7 @@ An extensive infrastructure overview for developers is <a href="https://www.apac
 - [Release distribution policy](release-distribution.html)
 - [Release download pages](release-download-pages.html)
 - [Assembling LICENSE and NOTICE files](licensing-howto.html)
-- General information about [download mirror sites](mirrors.html)
+- General information about [content distribution](mirrors.html)
 - [Handling cryptography within an ASF release](crypto.html)
 - [Deploying a self-hosted runner](self-hosted-runners.html)
 
