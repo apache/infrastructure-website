@@ -24,7 +24,7 @@ This policy governs how Apache software releases are distributed through the tec
 
 <h2 id="channels">Release distribution channels<a class="headerlink" href="#channels" title="Permanent link">&para;</a></h2>
 
-  - The Apache Software Foundation's official channel for distribution of current Apache software releases to the general public is `downloads.apache.org/`. This directory is automatically sync'd out to the ASF mirror network, and most users download releases from one of the ASF mirrors.
+  - The Apache Software Foundation's official channel for distribution of current Apache software releases to the general public is `downloads.apache.org/`. This directory is automatically sync'd out to the ASF content distribution network, where most users download releases.
   - The public may also obtain Apache software from any number of downstream channels (rpm, deb, homebrew, etc.) which redistribute our releases in either original or derived form. The vast majority of such downstream channels operate independently of Apache.
   - Infra maintains a number of developer-only channels which facilitate distribution of unreleased software to consenting members of a development community.
   - All historic Apache releases are available from `archive.apache.org`.
@@ -64,7 +64,7 @@ Unreleased materials, in original or derived form,
 
 <h2 id="heads-up">Notify Infra before uploading large artifacts<a class="headerlink" href="#heads-up" title="Permanent link">&para;</a></h2>
 
-Projects must coordinate with Infra in advance about releases of larger than 1GB of artifacts to mitigate strain on mirroring and download resources.
+Projects must coordinate with Infra in advance about releases of larger than 1GB of artifacts to mitigate strain on content distribution resources.
 
 <h2 id="sigs-and-sums">Requirements for cryptographic signatures and checksums<a class="headerlink" href="#sigs-and-sums" title="Permanent link">&para;</a></h2>
 
@@ -110,7 +110,7 @@ Regarding KEYS files:
 <h2 id="download-links">Download links<a class="headerlink" href="#download-links" title="Permanent link">&para;</a></h2>
 
   - The website documentation for any Apache product **must** provide public download links where interested parties may obtain current official source releases and accompanying cryptographic files.
-  - Links to mirrored distribution artifacts **must not** reference the main Apache web site. They **should** use the [standard mechanisms](release-download-pages.html) to distribute the load between the mirrors.
+  - Links to artifacts **must not** reference the main Apache web site. They **should** use the [standard mechanisms](release-download-pages.html), such as closer.lua, to make the download available through the content distribution system.
   - All links to checksums, detached signatures and public keys for current releases **must** reference `downloads.apache.org/` using `https://` (TLS)*.
   - Old releases **should** be archived and **MAY** be linked to from public download pages.
 
