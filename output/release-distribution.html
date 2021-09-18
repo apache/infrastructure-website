@@ -114,9 +114,11 @@ Release Distribution Policy        </a>
 <li><a href="#unreleased">Distribution of Unreleased Materials</a></li>
 <li><a href="#heads-up">Notify Infra Before Uploading Large (&gt;1GB) artifacts</a></li>
 <li><a href="#sigs-and-sums">Cryptographic Signatures and Checksums Requirements</a></li>
-<li><a href="#download-links">Download Links Requirements</a></li>
+<li><a href="#download-links">Download links Requirements</a></li>
 <li><a href="#archival">Releases Must Be Archived</a></li>
-<li><a href="#maven">Using Maven For Releases</a></li>
+<li><a href="#maven">Using Maven for releases</a></li>
+  <li><a href="#other-platforms">Other platforms</a></li>
+<li><a href="#dockerhub">DockerHub and releases</a></li>
 <li><a href="#administration">Policy Administration</a></li>
 </ul>
 <h2 id="channels">Release distribution channels<a class="headerlink" href="#channels" title="Permanent link">&para;</a></h2>
@@ -206,8 +208,11 @@ Release Distribution Policy        </a>
 <p>Infra operates an Apache Maven repository manager at <code>repository.apache.org</code>. Projects <strong>may</strong> use the repository system as a downstream channel to redistribute released materials via Maven Central, and <strong>may</strong> use it to distribute snapshots containing unreleased materials directly to consenting members of a project development community.</p>
 <p>Projects <strong>must not</strong> point or refer to <code>repository.apache.org</code> directly in download pages, release announcements or emails. Instead, any public download links for those releases <strong>should</strong> point to Maven Central.</p>
 <p>Read more about <a href="publishing-maven-artifacts.html">Maven releases for Apache projects</a>.</p>
-<h2 id="other-platforms">Other Release Platforms<a class="headerlink" href="#other-platforms" title="Permanent link">&para;</a></h2>
+<h2 id="other-platforms">Other release platforms<a class="headerlink" href="#other-platforms" title="Permanent link">&para;</a></h2>
 <p>The ASF manages a number of distribution platforms that projects are welcome to use. Projects can distribute PMC-approved artifacts on ASF managed distribution platforms and other distribution platforms as long as those binaries comply with ASF release, licensing, branding and trademark policies. Currently ASF managed platforms include <a href="https://github.com/apache" target="_blank">github</a> and <a href="https://hub.docker.com/u/apache" target="_blank">docker</a>.</p>
+<h2 id="dockerhub">Docker Hub and releases<a class="headerlink" href="#dockerhub" title="Permanent link">&para;</a></h2>
+<p>The ASF only supports two modes of operation on Docker Hub: automated builds based on tags, and some more generalized access (see notes in the Jira tag INFRA-14586.) Either way, note that Docker Hub is <strong>not</strong> an approved release channel for ASF artifacts. Anything you do on DockerHub requires the description and supporting documentation to be clear that these are not official distribution artifacts.</p>
+<p>Please open a new Infra Jira ticket to describe what you want to do through Docker Hub..</p>
 <h2 id="administration">Policy administration<a class="headerlink" href="#administration" title="Permanent link">&para;</a></h2>
 <p>This policy is <strong>required</strong> for all Apache projects. The <a href="https://whimsy.apache.org/foundation/orgchart/vp-infrastructure" target="_blank">V.P. of Apache Infrastructure</a> <strong>must</strong> approve changes to this policy.</p>
 
