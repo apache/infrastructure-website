@@ -15,9 +15,11 @@ This policy governs how Apache software releases are distributed through the tec
 <li><a href="#unreleased">Distribution of Unreleased Materials</a></li>
 <li><a href="#heads-up">Notify Infra Before Uploading Large (&gt;1GB) artifacts</a></li>
 <li><a href="#sigs-and-sums">Cryptographic Signatures and Checksums Requirements</a></li>
-<li><a href="#download-links">Download Links Requirements</a></li>
+<li><a href="#download-links">Download links Requirements</a></li>
 <li><a href="#archival">Releases Must Be Archived</a></li>
-<li><a href="#maven">Using Maven For Releases</a></li>
+<li><a href="#maven">Using Maven for releases</a></li>
+  <li><a href="#other-platforms">Other platforms</a></li>
+<li><a href="#dockerhub">DockerHub and releases</a></li>
 <li><a href="#administration">Policy Administration</a></li>
 </ul>
 
@@ -129,9 +131,15 @@ Projects **must not** point or refer to `repository.apache.org` directly in down
 
 Read more about [Maven releases for Apache projects](publishing-maven-artifacts.html).
 
-<h2 id="other-platforms">Other Release Platforms<a class="headerlink" href="#other-platforms" title="Permanent link">&para;</a></h2>
+<h2 id="other-platforms">Other release platforms<a class="headerlink" href="#other-platforms" title="Permanent link">&para;</a></h2>
 
 The ASF manages a number of distribution platforms that projects are welcome to use. Projects can distribute PMC-approved artifacts on ASF managed distribution platforms and other distribution platforms as long as those binaries comply with ASF release, licensing, branding and trademark policies. Currently ASF managed platforms include <a href="https://github.com/apache" target="_blank">github</a> and <a href="https://hub.docker.com/u/apache" target="_blank">docker</a>.
+
+<h2 id="dockerhub">Docker Hub and releases<a class="headerlink" href="#dockerhub" title="Permanent link">&para;</a></h2>
+
+The ASF only supports two modes of operation on Docker Hub: automated builds based on tags, and some more generalized access (see notes in the Jira tag INFRA-14586.) Either way, note that Docker Hub is **not** an approved release channel for ASF artifacts. Anything you do on DockerHub requires the description and supporting documentation to be clear that these are not official distribution artifacts.
+
+Please open a new Infra Jira ticket to describe what you want to do through Docker Hub..
 
 <h2 id="administration">Policy administration<a class="headerlink" href="#administration" title="Permanent link">&para;</a></h2>
 
