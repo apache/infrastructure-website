@@ -68,7 +68,7 @@ Assuming you have called your download page `download.html`, you can invoke our 
 
 This URI takes the path to the page as an input and passes it to `closer.lua`. The script reads the page and uses information about the mirrors to substitute values for the variables. When you link to the project page (for example, from the rest of the project documentation), it is important to target these links at the script address (and not the html page address).
 
-**Note**: the mirroring script guesses the download release page process by matching file names. There is no requirement to name the script `download.cgi` and the download release page `download.html`, but the name of the script **must** correspond to the name of the download page. For example:
+There is no requirement to name the script `download.cgi` and the download release page `download.html`, but the name of the script **must** correspond to the name of the download page. For example:
 
   - `release.cgi` and `release.html` will work
   - `download.cgi` and `release.html` will **not** work
@@ -76,7 +76,7 @@ This URI takes the path to the page as an input and passes it to `closer.lua`. T
 
 There are a number of elements that a good project download page should contain. See the content to generate that page <a href="https://svn.apache.org/repos/asf/httpd/site/trunk/content/download.mdtext" target="_blank">here</a>.
 
-A variable URL links downloads of artifacts to a mirror. The download script substitutes the correct mirroring base URL for the `[preferred]` variable. The rest of the URL should be the path to the artifact relative to the base of the Apache distribution directory.
+A variable URL links to downloadable artifacts. The download script substitutes the correct base URL for the `[preferred]` variable. The rest of the URL should be the path to the artifact relative to the base of the Apache distribution directory.
 
 For example, for artifact `foo-1.0.0.tar.gz` contained in `bar/foo`, use `[preferred]/bar/foo/foo-1.0.0.tar.gz`
 
@@ -89,37 +89,6 @@ For example, for artifact foo-1.0.0.tar.gz contained in bar/foo :
 `<a href='https://downloads.apache.org/bar/foo/foo-1.0.0.tar.gz.asc'>PGP</a>`
 ```
 
-Give users information about the mirrors and the chance to choose a different mirror if they prefer. Here is a typical script to achieve this:
-
-```
-<p>[if-any logo]
-<a href="[link]"><img align="right" src="[logo]" border="0"
-/></a>[end]
-The currently selected mirror is <b>[preferred]</b>.  If you
-encounter a problem with this mirror, select another mirror.  If all
-mirrors are failing, there are <i>backup</i> mirrors (at the
-end of the mirrors list) that should be available.</p>
-
-<form action="[location]" method="get" id="SelectMirror">
-Other mirrors: <select name="Preferred">
-[if-any http]
-  [for http]<option value="[http]">[http]</option>[end]
-[end]
-
-[if-any ftp]
-  [for ftp]<option value="[ftp]">[ftp]</option>[end]
-[end]
-[if-any backup]
-  [for backup]<option value="[backup]">[backup]
-  (backup)</option>[end]
-[end]
-</select>
-<input type="submit" value="Change" />
-</form>
-
-
-<p>You may also consult the <a href="http://www.apache.org/mirrors/">complete list of mirrors</a>.</p>
-```
 More advice on creating a good project page is [below](#best_practice).
 
 All that remains is to wait for the main website to sync with the new page.
@@ -128,14 +97,14 @@ All that remains is to wait for the main website to sync with the new page.
 
 <h3 id="remind-users">Remind users to check sums and signatures</h3>
 
-Users download Apache releases from mirrors. It is therefore important that they understand that they should always check the hash sums and (if possible) also verify the OpenPGP compatible signature of each download. The content of the release download page plays a critical role in this education process.
+It important that users understand that they should always check the hash sums and (if possible) also verify the OpenPGP compatible signature of each file they download. The content of the release download page plays a critical role in this education process.
 
 Provide clear and easy links to the KEYS, sums and signatures from the download release page or include the information directly in the page itself. The <a href="https://httpd.apache.org/download.cgi" target="_blank">HTTPD page</a> is a good example.
 
 Include a reminder text with links to more information for users. For example:
 
 ```
-Note: when downloading from a mirror please check the
+Note: when downloading, please check the
 <a href="https://www.infra.apache.org/release-signing#md5" target="_blank">md5sum</a>
 and verify the 
 <a href="https://www.infra.apache.org/release-signing#openpgp" target="_blank">OpenPGP compatible signature</a> 
@@ -151,20 +120,12 @@ For more information, please see the
 
 <h3 id="linked-urls">Make sure the browser displays linked URLs<a class="headerlink" href="#linked-urls" title="Permanent link">&para;</a></h3>
 
-Users need to understand the origin of the artifacts, signatures and sums they download. Check that the stylesheets your download site uses do not obscure the linked URLs. It is best to use a simple, plain style for download links. Note that some of the Maven-style sheets may obscure some external links in some browsers.
+Users need to be able to verify the origin of the artifacts, signatures and sums they download. Check that the stylesheets your download site uses do not obscure the linked URLs. It is best to use a simple, plain style for download links. Note that some of the Maven-style sheets may obscure some external links in some browsers.
 
-<h3 id="less-than-24hr">Support for bypassing the 24-hour rule<a class="headerlink" href="#less-than-24hr" title="Permanent link">&para;</a></h3>
+<h3 id="less-than-24hr">Timing your release announcement<a class="headerlink" href="#less-than-24hr" title="Permanent link">&para;</a></h3>
 
-Normally you should wait 24 hours after uploading a release to `https://downloads.apache.org/` before announcing it, in order to let mirrors catch up.
-
-If you cannot wait, you can pass a date and time to the download script to indicate that only mirrors that have updated since that time should be selected. This works by adding `update=YYYYMMDDhhmm` to the query string. For example, you can use 
-
-`http://httpd.apache.org/download.cgi?update=200407051415` 
-
-to request only mirrors that have updated after 2:15pm on July 5, 2004 UTC. 
-
-Use this option sparingly, since it can result in excessive load on particular mirrors. It would be appropriate, for example, in an emailed release announcement for an important security release, but not appropriate as a main website link.
+Wait at least an hour after uploading a release to `https://downloads.apache.org/` before announcing it.
 
 <h2 id="questions">Questions?<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h2>
 
-If you need assistance in implementing URL redirection to the mirrors, or if you need any other help in implementing this policy, please contact the `users@infra.apache.org` mailing list.
+If you need assistance in implementing  this policy, contact the `users@infra.apache.org` mailing list.
