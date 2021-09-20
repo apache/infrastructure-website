@@ -96,7 +96,7 @@ Infra supports an array of tools and services to help projects develop and suppo
   - How to <a href="https://cwiki.apache.org/confluence/display/INFRA/Giving+a+user+edit+access+to+Confluence" target="_blank">give a user edit access</a> to the wiki space.
 - <a href="https://reporter.apache.org/" target="_blank">Reporter</a> provides actvitity statistics and other information about your project, and editing tools to help you write and submit your project's quarterly Board reports.
 - You can create and run a [project blog](project-blogs.html).
-- You can establish a [Slack channel](slack.html) for real-time team discussions.
+- You can establish a [Slack channel](slack.html) for real-time team discussions. Once you have your Slack channel, Infra can set up a _Slack-Jira bridge_ so that you get notices in your channel of new or updated Jira tickets. open a Jira ticket for INFRA to get this feature for your TLP's Slack channel.
 - Teams can conduct and record meetings through Internet Relay Chat (IRC) using [ASFBot](asfbot.html). However, you must conduct formal votes on decisions in the appropriate project email list, following the <a href="https://www.apache.org/foundation/voting.html" target="_blank">Apache voting process</a>.
 - [Localization tools](localization.html).
 - The Apache <a href="https://creadur.apache.org/rat/" target="_blank">Release Audit Tool (RAT)</a> can help you confirm that your proposed product release complies with all ASF requirements.
