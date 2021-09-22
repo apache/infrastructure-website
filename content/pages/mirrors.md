@@ -5,9 +5,9 @@ Title: Apache mirroring information
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 This page describes the requirements and practices for mirroring Apache Software Foundation releases. If you need clarification on any of the statements here, ask your question on the `users@infra.apache.org` mailing list.
 
-All ASF project must use the ASF infrastructure to distribute source, binary and documentation builds so that their releases appear in `dist.apache.org`. This is how ASF keeps track of what releases it has made. Projects may distribute their code through other channels in addition to the ASF infrastructure.
+All ASF projects must use the ASF infrastructure to distribute source, binary and documentation builds so that their releases appear in `dist.apache.org`. This is how ASF keeps track of what releases it has made. Projects may distribute their code through other channels in addition to the ASF infrastructure.
 
-As of March, 2020, all mirror sites are required to use the secure "https" protocol instead of "http". Sites using "https" encrypt data and move it through a secure socket layer (SSL) protocol between the website's server and the vistor's browser.
+As of March, 2020, all mirror sites must use the secure `https` protocol instead of `http`. Sites using `https` encrypt data and move it through a secure socket layer (SSL) protocol between the website's server and the vistor's browser.
 
 Projects must adhere to the following guidelines to ensure a consistent way to mirror our distributions, therefore lowering the impact of the enormous amount of bandwidth downloads consume.
 
