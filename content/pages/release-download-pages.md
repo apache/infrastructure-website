@@ -2,7 +2,7 @@ Title: Release Download Pages for Projects
 
 Your project's release download page links the project's content to where people can download your latest release(s). This page describes how a release manager can put such a page together.
 
-Apache's policies on releases, mirrors, and download pages are <a href="https://www.apache.org/dev/mirrors" target="_blank">here</a>.
+Apache's policies on releases, mirrors, and download pages are [here](mirrors.html).
 
 ## Contents ##
 
@@ -33,6 +33,14 @@ Your Apache project's download page:
   - **must** have a link to the keys file for your project on the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/KEYS`.
   - **should** have instructions on how to verify downloads. For this you can include a link to the <a href="https://www.apache.org/info/verification.html" target="_blank">Apache documentation on verification</a>.
   - **must not** include a link to the top level `closer.lua` utility (e.g. `http://www.apache.org/dyn/closer.lua/PROJECT`) as the KEYS, sigs, hashes, and any verification instructions for your release would be missing from the top-level script.
+
+### Current and older releases ###
+
+  - Do **not** keep software distributions on your project's website. Move them to one of the two software distribution sites:
+
+  - **Current public releases** appear on `downloads.apache.org/`. Place current, official releases that the PMC has approved for end-users on the main public release site. Make all changes at <a href="https://dist.apache.org/repos/dist/release/" target="_blank">`https://dist.apache.org/repos/dist/release/`</a>.
+
+  - **Older releases** that you no longer recommend to the general public should appear on `archive.apache.org/dist/`. This site automatically contains all the content of `downloads.apache.org/`, but nothing is ever deleted. Therefore it should rarely be necessary to touch this site, except during a reorganization. Once your project no longer recommends public use of a particualr release, simply delete it from `downloads.apache.org/dist/` by removing it from <a href="https://dist.apache.org/repos/dist/release/" target="_blank">`https://dist.apache.org/repos/dist/release/`</a>. It will remain  on the archive site.
   
 <h2 id="download-scripts">Using the closer.lua download script<a class="headerlink" href="#download-scripts" title="Permanent link">&para;</a></h2>
 
