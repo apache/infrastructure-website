@@ -15,3 +15,5 @@ The Apache Infrastructure Team (Infra) operates under the <a href="https://www.a
 - [Outreach to committers](committer-outreach.html)
 - [GitHub Actions](github-actions-policy.html)
 - [Top-Level Project sites](project-site-policy.html)
+- [Release distribution policy](release-distribution.html)
+  - [Release download pages](release-download-pages.html)
