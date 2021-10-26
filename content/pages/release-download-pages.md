@@ -2,8 +2,6 @@ Title: Release Download Pages for Projects
 
 Your project's release download page links the project's content to where people can download your latest release(s). This page describes how a release manager can put such a page together.
 
-Apache's policies on releases, mirrors, and download pages are [here](mirrors.html).
-
 ## Contents ##
 
 <ul>
@@ -21,7 +19,7 @@ Apache's policies on releases, mirrors, and download pages are [here](mirrors.ht
   - The download page **must** include a link to the source distribution. It **may** include links to binary distributions.
   - Use **closer.lua**, the standard mechanisms to distribute Apache downloads. See below for details.
   - All links to checksums, detached signatures and public keys must reference the main Apache web site and should use `https://` (SSL). For example: `https://downloads.apache.org/httpd/KEYS`.
-  - Old releases should be <a href="https://www.apache.org/legal/release-policy.html#how-to-archive" target="_blank">archived</a> and may be linked from the download page.
+  - Old releases are automatically <a href="https://www.apache.org/legal/release-policy.html#how-to-archive" target="_blank">archived</a>. You may continue to link to them from the download page, as a convenience for the user community. You **should** remove links to older releases that you no longer support.
   - Remove all official pre-releases (e.g. milestones, alphas, betas) in a timely fashion once the project releases the final or GA version.
   
 <h2 id="download-page">Your Apache project's download page<a class="headerlink" href="#download-page" title="Permanent link">&para;</a></h2>
@@ -30,7 +28,7 @@ Your Apache project's download page:
 
   - **must** have at least one link to the current release. This link **must** use the `closer.lua` utility. For example: `https://www.apache.org/dyn/closer.lua/PROJECT/VERSION/SOURCE-RELEASE`. (Note: the `mirrors.cgi` and `closer.cgi` scripts have been deprecated. Calls to them redirect to `closer.lua`.)
   - **must** have a link to the checksum and hash for the current release. These links **must** use direct links to the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/VERSION/HASH-OR-CHECKSUM`.
-  - **must** have a link to the keys file for your project on the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/KEYS`.
+  - **must** have a link to the KEYS file for your project on the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/KEYS`.
   - **should** have instructions on how to verify downloads. For this you can include a link to the <a href="https://www.apache.org/info/verification.html" target="_blank">Apache documentation on verification</a>.
   - **must not** include a link to the top level `closer.lua` utility (e.g. `http://www.apache.org/dyn/closer.lua/PROJECT`) as the KEYS, sigs, hashes, and any verification instructions for your release would be missing from the top-level script.
 
@@ -40,11 +38,11 @@ Your Apache project's download page:
 
   - **Current public releases** appear on `downloads.apache.org/`. Place current, official releases that the PMC has approved for end-users on the main public release site. Make all changes at <a href="https://dist.apache.org/repos/dist/release/" target="_blank">`https://dist.apache.org/repos/dist/release/`</a>.
 
-  - **Older releases** that you no longer recommend to the general public should appear on `archive.apache.org/dist/`. This site automatically contains all the content of `downloads.apache.org/`, but nothing is ever deleted. Therefore it should rarely be necessary to touch this site, except during a reorganization. Once your project no longer recommends public use of a particualr release, simply delete it from `downloads.apache.org/dist/` by removing it from <a href="https://dist.apache.org/repos/dist/release/" target="_blank">`https://dist.apache.org/repos/dist/release/`</a>. It will remain  on the archive site.
+  - **Older releases** that you no longer recommend to the general public still appear on `archive.apache.org/dist/`. This site automatically contains all the content that has ever appeared on `downloads.apache.org/. It is rarely necessary to touch this site, except during a reorganization. Once your project no longer recommends public use of a particualr release, delete it from `downloads.apache.org/dist/` by removing it from <a href="https://dist.apache.org/repos/dist/release/" target="_blank">`https://dist.apache.org/repos/dist/release/`</a>, and remove the link to it from your download page. It will remain  on the archive site.
   
 <h2 id="download-scripts">Using the closer.lua download script<a class="headerlink" href="#download-scripts" title="Permanent link">&para;</a></h2>
 
-Apache project download pages must a closer.lua script. You'll find below a standard mechanism to let you easily create scripts that comply with the ASF distribution policy.
+Apache project download pages **must** use a closer.lua script. You'll find below a standard mechanism to let you easily create scripts that comply with the ASF distribution policy.
 
 There are two options:
 
