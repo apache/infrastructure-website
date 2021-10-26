@@ -75,7 +75,7 @@ Some lists are only open to ASF committers. The moderators have methods to ensur
 
 <h3 id="spam">Dealing with MODERATE requests for spam<a class="headerlink" href="#spam" title="Permanent link">&para;</a></h3>
 
-**NOTE**: You may receive a moderation email that contains email identified as spam. Moderation emails containing spam emails are **not spam**. **DO NOT** report mod emails as spam or the ASF as a whole gets blocked based on your actions.
+**NOTE**: You may receive a moderation email that contains email identified as spam. Moderation emails containing spam emails are **not spam**. **DO NOT** report mod emails as spam because this causes our legitimate moderation email and the ASF servers themselves to lose sender reputation. Various email providers may block the ASF as a whole as a result of your action.
 
 If the content of the MODERATE request is clearly spam, the simplest solution is just to delete the request. Do not reject it. However, if you are receiving a lot of such requests, it may perhaps be worth taking additional action.
 
