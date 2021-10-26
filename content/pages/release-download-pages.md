@@ -2,6 +2,8 @@ Title: Release Download Pages for Projects
 
 Your project's release download page links the project's content to where people can download your latest release(s). This page describes how a release manager can put such a page together.
 
+Review the policy on [release distribution](release-distribution.html) if you are unsure of the best way to use the project download page.
+
 ## Contents ##
 
 <ul>
