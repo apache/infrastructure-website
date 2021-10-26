@@ -1,6 +1,6 @@
 Title: Mailing list moderation
 
-Mailing lists are the virtual room where ASF communities live, form and grow. All formal decisions the project's PMC makes need to have an email thread (possibly with a recorded vote) as an audit trail that this was an official decision.
+Mailing lists are the virtual rooms where ASF communities live, form and grow. All formal decisions the project's PMC makes need to have an email thread (possibly with a recorded vote) as an audit trail that this was an official decision.
 
   - <a href="#new-mailing-list">How do we create a new mailing list?</a>
   - <a href="#mailing-list-moderators">How do I request changes for moderators?</a>
