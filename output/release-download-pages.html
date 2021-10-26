@@ -103,7 +103,7 @@ Release Download Pages for Projects        </a>
               Release Download Pages for Projects
           </h2>
               <p>Your project's release download page links the project's content to where people can download your latest release(s). This page describes how a release manager can put such a page together.</p>
-<p>Apache's policies on releases, mirrors, and download pages are <a href="mirrors.html">here</a>.</p>
+<p>Review the policy on <a href="release-distribution.html">release distribution</a> if you are unsure of the best way to use the project download page.</p>
 <h2>Contents</h2>
 <ul>
 <li><a href="#links">Download links</a></li>
@@ -119,7 +119,7 @@ Release Download Pages for Projects        </a>
 <li>The download page <strong>must</strong> include a link to the source distribution. It <strong>may</strong> include links to binary distributions.</li>
 <li>Use <strong>closer.lua</strong>, the standard mechanisms to distribute Apache downloads. See below for details.</li>
 <li>All links to checksums, detached signatures and public keys must reference the main Apache web site and should use <code>https://</code> (SSL). For example: <code>https://downloads.apache.org/httpd/KEYS</code>.</li>
-<li>Old releases should be <a href="https://www.apache.org/legal/release-policy.html#how-to-archive" target="_blank">archived</a> and may be linked from the download page.</li>
+<li>Old releases are automatically <a href="https://www.apache.org/legal/release-policy.html#how-to-archive" target="_blank">archived</a>. You may continue to link to them from the download page, as a convenience for the user community. You <strong>should</strong> remove links to older releases that you no longer support.</li>
 <li>Remove all official pre-releases (e.g. milestones, alphas, betas) in a timely fashion once the project releases the final or GA version.</li>
 </ul>
 <h2 id="download-page">Your Apache project's download page<a class="headerlink" href="#download-page" title="Permanent link">&para;</a></h2>
@@ -127,7 +127,7 @@ Release Download Pages for Projects        </a>
 <ul>
 <li><strong>must</strong> have at least one link to the current release. This link <strong>must</strong> use the <code>closer.lua</code> utility. For example: <code>https://www.apache.org/dyn/closer.lua/PROJECT/VERSION/SOURCE-RELEASE</code>. (Note: the <code>mirrors.cgi</code> and <code>closer.cgi</code> scripts have been deprecated. Calls to them redirect to <code>closer.lua</code>.)</li>
 <li><strong>must</strong> have a link to the checksum and hash for the current release. These links <strong>must</strong> use direct links to the Apache distribution server. For example: <code>https://downloads.apache.org/PROJECT/VERSION/HASH-OR-CHECKSUM</code>.</li>
-<li><strong>must</strong> have a link to the keys file for your project on the Apache distribution server. For example: <code>https://downloads.apache.org/PROJECT/KEYS</code>.</li>
+<li><strong>must</strong> have a link to the KEYS file for your project on the Apache distribution server. For example: <code>https://downloads.apache.org/PROJECT/KEYS</code>.</li>
 <li><strong>should</strong> have instructions on how to verify downloads. For this you can include a link to the <a href="https://www.apache.org/info/verification.html" target="_blank">Apache documentation on verification</a>.</li>
 <li><strong>must not</strong> include a link to the top level <code>closer.lua</code> utility (e.g. <code>http://www.apache.org/dyn/closer.lua/PROJECT</code>) as the KEYS, sigs, hashes, and any verification instructions for your release would be missing from the top-level script.</li>
 </ul>
@@ -140,11 +140,11 @@ Release Download Pages for Projects        </a>
 <p><strong>Current public releases</strong> appear on <code>downloads.apache.org/</code>. Place current, official releases that the PMC has approved for end-users on the main public release site. Make all changes at <a href="https://dist.apache.org/repos/dist/release/" target="_blank"><code>https://dist.apache.org/repos/dist/release/</code></a>.</p>
 </li>
 <li>
-<p><strong>Older releases</strong> that you no longer recommend to the general public should appear on <code>archive.apache.org/dist/</code>. This site automatically contains all the content of <code>downloads.apache.org/</code>, but nothing is ever deleted. Therefore it should rarely be necessary to touch this site, except during a reorganization. Once your project no longer recommends public use of a particualr release, simply delete it from <code>downloads.apache.org/dist/</code> by removing it from <a href="https://dist.apache.org/repos/dist/release/" target="_blank"><code>https://dist.apache.org/repos/dist/release/</code></a>. It will remain  on the archive site.</p>
+<p><strong>Older releases</strong> that you no longer recommend to the general public still appear on <code>archive.apache.org/dist/</code>. This site automatically contains all the content that has ever appeared on <code>downloads.apache.org/. It is rarely necessary to touch this site, except during a reorganization. Once your project no longer recommends public use of a particualr release, delete it from</code>downloads.apache.org/dist/<code>by removing it from &lt;a href=&quot;https://dist.apache.org/repos/dist/release/&quot; target=&quot;_blank&quot;&gt;</code><a href="https://dist.apache.org/repos/dist/release/%60">https://dist.apache.org/repos/dist/release/`</a></a>, and remove the link to it from your download page. It will remain  on the archive site.</p>
 </li>
 </ul>
 <h2 id="download-scripts">Using the closer.lua download script<a class="headerlink" href="#download-scripts" title="Permanent link">&para;</a></h2>
-<p>Apache project download pages must a closer.lua script. You'll find below a standard mechanism to let you easily create scripts that comply with the ASF distribution policy.</p>
+<p>Apache project download pages <strong>must</strong> use a closer.lua script. You'll find below a standard mechanism to let you easily create scripts that comply with the ASF distribution policy.</p>
 <p>There are two options:</p>
 <ul>
 <li>The <a href="#closer">closer.lua download script</a> is quick to set up. The project documentation links to it (rather than integrating it).</li>
