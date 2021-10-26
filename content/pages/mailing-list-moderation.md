@@ -83,7 +83,7 @@ Some SPAM emails have an opt-out link. Whether this will actually do anything us
 
 To avoid revealing your personal IP address, you may wish to use an anonymizing service such as Tor.
 
-If the spam emails are all sent from the same address (you can find the sender's address in the ), try adding them to the 'deny' list:
+If the spam emails are all sent from the same address (you can find the sender's address in the moderation request in the `cc:` area), try adding them to the 'deny' list:
 
 ```
 {listname}-deny-subscribe-badposter=menace.com@tlp.apache.org</code>
