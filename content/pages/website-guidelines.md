@@ -2,6 +2,9 @@ Title: Guidelines for project websites
 
 These guidelines relate to Infra policies on resource consumption, linking, legal use, and site ownership. For policies and guidelines that fall under other committees or directors, please see their respective sites/pages.
 
+**NOTE:**  as of December 1, 2021, all TLP web sites and the main `apache.org` site will start redirecting any pages using `http` to `https` and will set up HTTP Strict Transport Security, or <a href="https://www.globalsign.com/en/blog/what-is-hsts-and-how-do-i-use-it" target="_blank">HSTS</a>. This is at the request of projects and end users and to enhance site security.
+
+
 - Projects cannot use tools that require write access to the project repository.
 - Never link directly to downloads hosted at `apache.org`. Always use the mirror scripts like closer.lua.
 - Never redirect from the front page of your project's site, `$TLP.apache.org` to another domain. `$TLP.apache.org` **must** be your main project site. Links from your project site to other locations are of course okay.
