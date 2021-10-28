@@ -2,7 +2,10 @@ Title: Release Download Pages for Projects
 
 Your project's release download page links the project's content to where people can download your latest release(s). This page describes how a release manager can put such a page together.
 
-Review the policy on [release distribution](release-distribution.html) if you are unsure of the best way to use the project download page.
+Review
+
+  - the policy on [release distribution](release-distribution.html) if you are unsure of the best way to use the project download page
+  - guidelines on [signing releases](release-signing.html)
 
 ## Contents ##
 
@@ -113,7 +116,7 @@ Include a reminder text with links to more information for users. For example:
 
 ```
 Note: when downloading, please check the
-<a href="https://www.infra.apache.org/release-signing#md5" target="_blank">md5sum</a>
+<a href="https://infra.apache.org/release-signing.html#sha-checksum" target="_blank">sha checksum</a>
 and verify the 
 <a href="https://www.infra.apache.org/release-signing#openpgp" target="_blank">OpenPGP compatible signature</a> 
 from the <a href="https://www.apache.org" target="_blank">main Apache site</a>. 
