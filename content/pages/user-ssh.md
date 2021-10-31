@@ -121,4 +121,3 @@ A class of attacks where the attacker masquerades as the server to the client an
 <h2 id="elsewhere">More information<a class="headerlink" href="#elsewhere" title="Permanent link">&para;</a></h2>
 
   - <a href="https://www.apache.org/dev/new-committers-guide.html#ssh#ssh" target="_blank">Instructions for new committers</a>
-  - [Setting up SSH on Windows](user-ssh-windows.html)
