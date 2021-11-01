@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apache mirroring information - Apache Infrastructure</title>
+    <title>Apache download mirror system - Apache Infrastructure</title>
     <link rel="stylesheet" href="/theme/css/foundation.css">
     <link rel="stylesheet" href="/theme/css/app.css">
     <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
@@ -89,7 +89,7 @@
         <a href="/">Home</a>
         <i class="fa fa-angle-double-right"></i>
         <a href="/mirrors.html">
-Apache mirroring information        </a>
+Apache download mirror system        </a>
         (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/mirrors.md">edit</a>)
       </div>
     </div>
@@ -100,35 +100,10 @@ Apache mirroring information        </a>
       <div class="large-12 columns">
         <div class="callout">
           <h2>
-              Apache mirroring information
+              Apache download mirror system
           </h2>
-              <p><strong>Note</strong>: as of August, 2021, The ASF is not accepting further requests to become a mirror download site.</p>
-<h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
-This page describes the requirements and practices for mirroring Apache Software Foundation releases. If you need clarification on any of the statements here, ask your question on the `users@infra.apache.org` mailing list.
-<p>All ASF projects must use the ASF infrastructure to distribute source, binary and documentation builds so that their releases appear in <code>dist.apache.org</code>. This is how ASF keeps track of what releases it has made. Projects may distribute their code through other channels in addition to the ASF infrastructure.</p>
-<p>As of March, 2020, all mirror sites must use the secure <code>https</code> protocol instead of <code>http</code>. Sites using <code>https</code> encrypt data and move it through a secure socket layer (SSL) protocol between the website's server and the vistor's browser.</p>
-<p>Projects must adhere to the following guidelines to ensure a consistent way to mirror our distributions, therefore lowering the impact of the enormous amount of bandwidth downloads consume.</p>
-<h2 id="goals">Goals<a class="headerlink" href="#goals" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Current ASF releases must be accessible from participating mirrors.</li>
-<li>The mirrors should be used by default.</li>
-<li>Only use <code>downloads.apache.org</code> as fallback/backup mirror.</li>
-<li>The download page should perform a best-guess determination of which mirror to use.</li>
-<li>The user should be able to override the mirror selection.</li>
-<li>All releases must be signed by the release manager.</li>
-<li>PGP/MD5 signature links from project sites may not point to mirrors.</li>
-<li>Only mirror current, recommended releases. Old releases are automatically archived to <code>archive.apache.org/dist/</code> and can be deleted from the main distribution directory.</li>
-</ul>
-<h2 id="location">Location of files on main server<a class="headerlink" href="#location" title="Permanent link">&para;</a></h2>
-<p>Do <strong>not</strong> keep software distributions on the project's website. Move them to one of the two software distribution sites:</p>
-<ul>
-<li>
-<p><strong>Current public releases</strong> appear on <code>downloads.apache.org/</code>. Place current, official releases that the PMC has approved for end-users here, on the main public release site that is mirrored world-wide. Make all changes at <a href="https://dist.apache.org/repos/dist/release/" target="_blank"><code>https://dist.apache.org/repos/dist/release/</code></a>.</p>
-</li>
-<li>
-<p><strong>Older releases</strong> that you no longer recommend to the general public should appear on <code>archive.apache.org/dist/</code>. This site automatically contains all the content of <code>downloads.apache.org/</code>, but nothing is ever deleted. Therefore it should rarely be necessary to touch this site, except during a reorganization. Once your project no longer recommends public use of a particualr release, simply delete it from <code>downloads.apache.org/dist/</code> by removing it from <a href="https://dist.apache.org/repos/dist/release/" target="_blank"><code>https://dist.apache.org/repos/dist/release/</code></a>. It will remain  on the archive site.</p>
-</li>
-</ul>
+              <p><strong>Note</strong>: as of August, 2021, The ASF stopped using its download mirror system. It is now using a global content distribution network (CDN).</p>
+<p>Read about <a href="https://apache.org/history/mirror-history.html">the history of the Apache download mirror system</a>.</p>
 
         </div>
       </div>
