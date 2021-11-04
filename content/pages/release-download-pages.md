@@ -1,6 +1,6 @@
 Title: Release Download Pages for Projects
 
-Your project's release download page links the project's content to where people can download your latest release(s). This page describes how a release manager can put such a page together.
+Your project's release download page is where people can download your product's latest release(s). This page describes how a release manager can put such a page together.
 
 Review
 
@@ -22,7 +22,7 @@ Review
   - Your project's download page can only link to release artifacts that your PMC has approved.
   - Do not link directly to `dist.apache.org`.
   - The download page **must** include a link to the source distribution. It **may** include links to binary distributions.
-  - Use **closer.lua**, the standard mechanisms to distribute Apache downloads. See below for details.
+  - Use **closer.lua**, the standard mechanism to distribute Apache downloads. See below for details.
   - All links to checksums, detached signatures and public keys must reference the main Apache web site and should use `https://` (SSL). For example: `https://downloads.apache.org/httpd/KEYS`.
   - Old releases are automatically <a href="https://www.apache.org/legal/release-policy.html#how-to-archive" target="_blank">archived</a>. You may continue to link to them from the download page, as a convenience for the user community. You **should** remove links to older releases that you no longer support.
   - Remove all official pre-releases (e.g. milestones, alphas, betas) in a timely fashion once the project releases the final or GA version.
@@ -61,13 +61,11 @@ The starting point for using the generic `closer.lua` script is a download page 
   - Alter the page so the download link points to `closer.lua`.
   - Pass in the relative path from the distribution root to the artifact as a parameter.
 
-If the artifact is `foo-5.5.1.zip` and is located in `bar/foo` relative to `downloads.apache.org`, then the link `http://www.apache.org/dyn/closer.lua/bar/foo/foo-5.5.1.zip` displays the mirrored distribution for downloading.
+If the artifact is `foo-5.5.1.zip` and it is located in `bar/foo` relative to `downloads.apache.org`, then the link `http://www.apache.org/dyn/closer.lua/bar/foo/foo-5.5.1.zip` provides the link for downloading.
 
 As an alternative, you can generate a direct download link using the following syntax:
 
 `http://www.apache.org/dyn/closer.lua/bar/foo/foo-5.5.1.zip?action=download`
-
-See below for how to generate a customised page of direct links using a mirror.
 
 **Note**: there is some information which every project should include on the download page (e.g. KEYS, sigs, hashes). Please read about <a href="#best_practice">best practices</a> for download pages.
 
@@ -77,7 +75,7 @@ To use a project-specific download script, create a project page containing info
 
 Assuming you have called your download page `download.html`, you can invoke our global download script by using the URI `download.cgi`.
 
-This URI takes the path to the page as an input and passes it to `closer.lua`. The script reads the page and uses information about the mirrors to substitute values for the variables. When you link to the project page (for example, from the rest of the project documentation), it is important to target these links at the script address (and not the html page address).
+This URI takes the path to the page as an input and passes it to `closer.lua`. When you link to the project page (for example, from the rest of the project documentation), it is important to target these links at the script address (and not the html page address).
 
 There is no requirement to name the script `download.cgi` and the download release page `download.html`, but the name of the script **must** correspond to the name of the download page. For example:
 
@@ -91,7 +89,7 @@ A variable URL links to downloadable artifacts. The download script substitutes 
 
 For example, for artifact `foo-1.0.0.tar.gz` contained in `bar/foo`, use `[preferred]/bar/foo/foo-1.0.0.tar.gz`
 
-Provide links to the checksum and signature for the artifact next to the download link. It is important that users check the sum and verify the signature, so these links should be close and clear. **Note**: these documents must _not_ be mirrored.
+Provide links to the checksum and signature for the artifact next to the download link. It is important that users check the sum and verify the signature, so these links should be close and clear.
 
 For example, for artifact foo-1.0.0.tar.gz contained in bar/foo :
 
@@ -108,7 +106,7 @@ All that remains is to wait for the main website to sync with the new page.
 
 <h3 id="remind-users">Remind users to check sums and signatures</h3>
 
-It important that users understand that they should always check the hash sums and (if possible) also verify the OpenPGP compatible signature of each file they download. The content of the release download page plays a critical role in this education process.
+It important that users understand that they should always verify the check sums and (if possible) the OpenPGP compatible signature of each file they download. The content of the release download page plays a critical role in this education process.
 
 Provide clear and easy links to the KEYS, sums and signatures from the download release page or include the information directly in the page itself. The <a href="https://httpd.apache.org/download.cgi" target="_blank">HTTPD page</a> is a good example.
 
@@ -122,11 +120,8 @@ and verify the
 from the <a href="https://www.apache.org" target="_blank">main Apache site</a>. 
 Links are provided above (next to the release download link).
 This <a href="https://downloads.apache.org/ws/axis2/KEYS" target="_blank">KEYS file</a> 
-contains the public keys used for signing release. 
-We recommend that you use a web of trust, if possible, 
-to confirm the identity of these keys.
-For more information, please see the
-<a href="https://www.apache.org/dev/release.html" target="_blank">Apache Release FAQ</a>.
+contains the public keys used for signing release. We recommend that you use a web of trust, if possible, to confirm the identity of these keys.
+For more information, please see the <a href="https://www.apache.org/dev/release.html" target="_blank">Apache Release FAQ</a>.
 ```
 
 <h3 id="linked-urls">Make sure the browser displays linked URLs<a class="headerlink" href="#linked-urls" title="Permanent link">&para;</a></h3>
