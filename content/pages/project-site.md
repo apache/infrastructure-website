@@ -42,7 +42,7 @@ Projects are free to choose their own styles and layout for websites, and have a
 Many TLP sites use JavaScript to provide functions ranging from menu navigation to animations or image galleries. While JS can enhance the site experience for most visitors, it can pose problems:
 
   1. **Visitors who have scripting languages disabled**. General-interest sites can have as much as 10% of their site visitors with JS disabled in their browsers; that percentage is probably lower for sites aimed at a more technical audience. Make sure your site provides access to the essential information it must deliver even if the visitor's browser has disabled scripting languages.
-  2. **Visitors who use assistive devices to read and work with web pages**. A web search on "JavaScript and assistive readers" will provide helpful information on writing and deploying JS in ways that cause the fewest issues for people using assistive devices to access your project website.
+  2. **Visitors who use assistive devices to read and work with web pages**. A web search on "JavaScript and assistive readers" will provide helpful information on writing and deploying JS in ways that cause the fewest issues for people using assistive devices to access your project website. The <a href="http://www.cynthiasays.com/" target="_blank">Cynthia Says</a> site can help you check your website for compliance with accessbility guidelines, including JavaScript issues.
 
 ### 1. Website-building options
 
