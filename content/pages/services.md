@@ -87,9 +87,7 @@ Infra supports incubating projects, or podlings.
   
 <h2 id="tools">Tools for ASF projects<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h2>
 
-Infra supports an array of tools and services to help projects develop and support both their applications and their community. They include:
-
-<h2 id="tools">Tools for ASF projects<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h2>
+Infra supports an array of tools and services to help projects develop and support both their applications and their community, including:
 
 - Every project can use a dedicated space on the [Confluence wiki](cwiki.html).
   - How to <a href="https://cwiki.apache.org/confluence/display/INFRA/Managing+permissions+on+your+project%27s+Confluence+Space" target="_blank">manage user permissions</a> in your project's wiki space.
@@ -119,7 +117,7 @@ Apache provides, and Infra maintains, [code repositories](version-control.html) 
 
 <h3 id="issue-tracking">Issue tracking and feature requests<a class="headerlink" href="#issue-tracking" title="Permanent link">&para;</a></h3>
 
-The ASF recommends these options for tracking issues and feature requests:
+The ASF supports these options for tracking issues and feature requests:
 
 * <a href="https://issues.apache.org/jira" target="_blank">Jira</a>
 * The <a href="https://guides.github.com/features/issues/" target="_blank">GitHub issue tracking feature</a>
