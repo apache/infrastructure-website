@@ -82,6 +82,8 @@ Record any email aliases you use in the 'asf-altEmail' field in your LDAP record
 
 The 'asf-altEmail' field is used to validate subscription requests and correlate subscriptions. (There is no need to duplicate 'mail' entries in `asf-altEmail`.)
 
+**Note**: Please read [Dealing with spam in your ASF email account](spam-reporting.html) and **do not** flag valid ASF-related email as spam.
+
 <h4 id="set-up-subversion-or-git-access">Set up Subversion or Git access<a class="headerlink" href="#set-up-subversion-or-git-access" title="Permanent link">&para;</a></h4>
 
 Read about [source control repositories at Apache](version-control.html).
