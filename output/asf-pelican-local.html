@@ -111,8 +111,8 @@ Local Pelican builds        </a>
 </ol>
 <h1>Installation</h1>
 <ol>
-<li>Download the files from <a href="https://github.com/apache/infrastructure-p6/tree/production/modules/pelican_asf/files">https://github.com/apache/infrastructure-p6/tree/production/modules/pelican_asf/files</a></li>
-</ol>
+<li>
+<p>Download the files from <a href="https://github.com/apache/infrastructure-p6/tree/production/modules/pelican_asf/files">https://github.com/apache/infrastructure-p6/tree/production/modules/pelican_asf/files</a></p>
 <ul>
 <li>build-cmark.sh</li>
 <li>toc.py</li>
@@ -122,28 +122,32 @@ Local Pelican builds        </a>
 </ul>
 <p>Note that the GitHub repostory is private to the ASF, so only ASF committers with an associated GitHub login can access it.
 If you don't have such a login set up, GitHub will respond with status 404 - File not found.</p>
-<ol start="2">
-<li>Build cmark-gfm</li>
-</ol>
+</li>
+<li>
+<p>Build cmark-gfm</p>
 <pre><code class="language-bash">bash build-cmark.sh
 export LIBCMARKDIR=`pwd`/cmark-gfm-0.28.3.gfm.12/lib
 </code></pre>
-<ol start="3">
-<li>Clone the website repository to your system</li>
-</ol>
-<p>The example below assumes this is in <code>~/Dewvelopment/www-site</code>.</p>
-<ol start="4">
-<li>Twitter Bearer Token</li>
-</ol>
+</li>
+<li>
+<p>Clone the website repository to your system</p>
+<p>The example below assumes this is in <code>~/Development/www-site</code>.</p>
+</li>
+<li>
+<p>Twitter Bearer Token</p>
+<blockquote>
+<p>A twitter feed is optional. If you are not interested then make sure that your <code>asfdata.yaml</code> file does not include
+a <code>twitter</code> directive and skip to the next step.</p>
+</blockquote>
 <p>We make use of the Twitter api to retrieve the most recent tweet. A <a href="https://developer.twitter.com/en/docs/authentication/oauth-2-0/bearer-tokens">Bearer Token</a>
 is added to the <code>~/.authtokens</code> file.</p>
 <pre><code>twitter:${BEARER_TOKEN}
 </code></pre>
 <p>If the file is not found or the Twitter key is missing, the tweet returned is a message to configure the file.
 If the Bearer Token is invalid, the API returns a 401 error and the build stops.</p>
-<ol start="5">
-<li>Build the website locally from current local commits</li>
-</ol>
+</li>
+<li>
+<p>Build the website locally from current local commits</p>
 <pre><code class="language-bash">python3 pelican-build.py --sourcetype git --source ~/Development/www-site --sourcebranch main \
  --outputbranch asf-site --project www --theme theme/apache --count 200
 </code></pre>
@@ -183,9 +187,9 @@ If the Bearer Token is invalid, the API returns a 401 error and the build stops.
 <td>--count &lt;min_count&gt;</td>
 <td>to be a successful build the output must have min_count or more html files</td>
 </tr></tbody></table>
-<ol start="5">
-<li>Sample output</li>
-</ol>
+</li>
+<li>
+<p>Sample output</p>
 <pre><code>Setting up virtual python environment in /tmp/www
 Cloning from git repository /Users/davewave/Development/www-site (branch: main)
 Cloning into '/tmp/www/source'...
@@ -332,6 +336,8 @@ Done: Processed 0 articles, 0 drafts, 212 pages, 0 hidden pages and 0 draft page
 222 html files. To test output: cd /tmp/www/build; pelican -l
 Web site successfully generated!
 </code></pre>
+</li>
+</ol>
 
         </div>
       </div>
