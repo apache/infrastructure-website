@@ -102,7 +102,7 @@ Committer SSH Access        </a>
           <h2>
               Committer SSH Access
           </h2>
-              <p>Apache uses SSH (a cryptographic protocol for operating services securely over an unsecured network) to let committers access their home directories on <code>people.apache.org</code>.</p>
+              <p>Apache uses SSH (a cryptographic protocol for operating services securely over an unsecured network) to let committers access their home directories on <code>home.apache.org</code> (formerly <code>people.apache.org</code>).</p>
 <p>Remember to keep your client up to date with security patches. Pay close attention to any <a href="#known-host">known host warnings</a>.</p>
 <h2>Contents</h2>
 <ul>
@@ -131,7 +131,7 @@ Host \*
 <p>Many other options are available.</p>
 <h2 id="debug-ssh">Debugging an OpenSSH client connection<a class="headerlink" href="#debug-ssh" title="Permanent link">&para;</a></h2>
 <p>To diagnose what's going wrong with an OpenSSH connection, run the client in verbose mode. To do this just add <code>-v</code>:</p>
-<pre><code>ssh -v -l committer people.apache.org
+<pre><code>ssh -v -l committer home.apache.org
 </code></pre>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <ul>
@@ -140,7 +140,7 @@ Host \*
 <li>Read <a href="#ssh-debug">the section on debugging SSH</a> and try to diagnose the problem.</li>
 </ul>
 <h3 id="common-problems">Some common problems<a class="headerlink" href="#common-problems" title="Permanent link">&para;</a></h3>
-<h4 id="exposed">Do not expose your private key<a class="headerlink" href="#exposed" title="Permanent link">&para;</a></h4>. Generate your key on a computer that is in your control, then upload only the public part to the `people.apache.org` server. Do not make the mistake of generating the key on the `people.apache.org` server.</p>
+<h4 id="exposed">Do not expose your private key<a class="headerlink" href="#exposed" title="Permanent link">&para;</a></h4>. Generate your key on a computer that is in your control, then upload only the public part to the `home.apache.org` server. Do not make the mistake of generating the key on the `home.apache.org` server.</p>
 <h4 id="too-many-groups">Too Many Groups<a class="headerlink" href="#too-many-groups" title="Permanent link">&para;</a></h4>
 FreeBSD only allows a user to be in 16 groups. A user who is too popular will not be allowed to log on. It is easy to mistake this for an ssh problem. If `Authentication succeeded` is present in the <a href="#ssh-debug">debug logs</a>, this indicates that the issue lies on your machine's login rather than with ssh.
 <h4 id="batch-mode">Batch Mode<a class="headerlink" href="#batch-mode" title="Permanent link">&para;</a></h4>
@@ -163,16 +163,16 @@ to Apache are <a href="#openssh">here</a>.</p>
 <h4 id="pki">What is PKI?<a class="headerlink" href="#pki" title="Permanent link">&para;</a></h4>
 <p>Public key infrastructure (PKI) enables the ssh family of protocols to operate without passing a password to the server. You use a passphrase to unlock a private key on the client machine, and a corresponding public key on the server for authentication the during the handshake. We recommend this as the most secure method of connection.</p>
 <h4 id="no-connection">Why can't I connect using SSH1?<a class="headerlink" href="#no-connection" title="Permanent link">&para;</a></h4>
-<p>You can connect to <code>people.apache.org</code> using the SSH1 protocols, but only when using <a href="#pki">PKI</a>.</p>
+<p>You can connect to <code>home.apache.org</code> using the SSH1 protocols, but only when using <a href="#pki">PKI</a>.</p>
 <h4 id="known-host">What is a known host?<a class="headerlink" href="#known-host" title="Permanent link">&para;</a></h4>
 <p>SSH employs the <em>known hosts</em> mechanism to prevent <a href="#middle-man-attacks">man in the
 middle</a> attacks. The first time that the client connects to a server, the fingerprint of the key used by that server is
 displayed to the user, who may to asked to confirm the identity of that server. For example:</p>
-<pre><code>The authenticity of host 'people.apache.org (209.237.237.194)' can't be established.
-RSA key fingerprint is 51:85:7d:8f:57:54:e7:6f:27:26:98:7a:c7:c1:47:87.
+<pre><code>The authenticity of host 'home.apache.org (209.237.237.194)' can't be established.
+RSA key fingerprint is 1c:5d:3f:a2:89:97:2e:39:eb:b0:09:9e:cf:c6:8d:f3.
 Are you sure you want to continue connecting (yes/no)? 
 </code></pre>
-<p>The fingerprints for <code>people.apache.org</code> can be found
+<p>The fingerprints for <code>home.apache.org</code> can be found
 <a href="https://www.apache.org/dev/new-committers-guide.html#identity-theft">here</a>. If the user elects to continue,
 this value is written to a <code>known_hosts</code> file. In future, when the user connects to the same server, the system checks this value and alerts the user if it has changed. <strong>Do not continue the connection</strong> after such an alert: contact infrastructure. This is of crucial importance when using keyboard interactive authentication.</p>
 <p><strong>Note</strong>: The fingerprint for the key used for ssh is different from the fingerprint of the certificate used to securely serve the
