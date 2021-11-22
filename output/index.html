@@ -1,0 +1,194 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apache Infrastructure</title>
+    <link rel="stylesheet" href="/theme/css/foundation.css">
+    <link rel="stylesheet" href="/theme/css/app.css">
+    <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>      <!-- Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements.  See the NOTICE file distributed with this work for additional information regarding copyright ownership.  The ASF licenses this file to you under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License.  You may obtain a copy of the License at . http://www.apache.org/licenses/LICENSE-2.0 . Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the License for the specific language governing permissions and limitations under the License. -->
+  </head>
+  <body style="background: #C9B191;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/theme/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+		  <li><a href="https://blogs.apache.org/infra/" target="_blank">The Infra Blog</a></li>			
+		  <li><a href="/roadmap.html">Strategies & Roadmap</a></li>
+	          
+                </ul>
+              </li>
+              <li><a href="/policies.html" target="_blank" style="padding-left: 5px;">Policies</a></li>
+                           
+              <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Services-Tools</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+		<li><a href="/services.html">Services and Tools</a></li>
+                <li><a href="/machines.html" target="_blank" >Machines and Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" target="_blank" >Blocky</a></li>
+                <li><a href="https://uls.apache.org/app/kibana#/discover?_g=()" target="_blank" >Kibana and Unified Logging System</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" target="_blank" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" target="_blank" >Committer Search</a></li>
+		
+                </ul>
+              </li>
+              <li><a href="/doc.html" target="_blank" style="padding-left: 5px;">Documentation</a></li>
+	       <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Contribute</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">	
+		   <li><a href="/infra-volunteer.html">Volunteer with Infra</a></li>
+		   <li><a href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+			<li><a href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+		 </ul>
+	       </li>
+	      
+              <li><a href="/stats.html" target="_blank" style="padding-left: 5px;">Status</a></li>
+              <li><a href="/contact.html" style="padding-left: 5px;"><i class="fa fa-comments" style="color: #FFF; font-size: 0.9rem;"></i>Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h3>Welcome to the web site of Infra, the Apache Infrastructure Team!</h3>
+          <p>
+            <q style="font-size: 1.15rem; color: #666; margin-bottom: 15px; font-style: italic;">A distributed team devoted to serving the needs of the Apache Software Foundation and its projects.</q>
+          </p>
+          <div class="row">
+            <!-- how can we help? -->
+            <div class="large-4 medium-4 columns">
+              <div class="frontbox">
+                <a href="/contact.html"></a>
+                <h3 style="text-transform: capitalize; text-align: center;">
+                  <i class="fa fa-question-circle" style="color: #FFF; font-size: 20pt;"></i>
+                  <a href="/contact.html" style="font-size: 90%;">Looking for Help?</a>
+                </h3>
+                <p style="height: 110px; font-size: 0.9rem;">
+                  
+                  The Apache Infrastructure team, or <em>Infra</em>, ensures the
+                  day-to-day operations of the technical aspects of the
+                  foundation. If you have questions or require
+                  support regarding email, code repositories, web sites,
+                  issue trackers and so forth, we are here to help!
+                </p>
+                <p style="text-align: center; margin-bottom: -10px;">
+                  <a href="/contact.html" class="button">Learn More...</a>
+                </p>
+              </div>
+            </div>
+            
+            <!-- services and tools -->
+            <div class="large-4 medium-4 columns">
+              <div class="frontbox">
+                <a href="/services.html"></a>
+                <h3 style="text-transform: capitalize; text-align: center;">
+                  <i class="fa fa-handshake-o" style="color: #FFF; font-size: 20pt;"></i>
+                  <a href="/services.html" style="font-size: 90%;">Services and Tools</a>
+                </h3>
+                <p style="height: 110px; font-size: 0.9rem;">
+                  
+                  Infra supports services for the ASF and its projects,
+                  including GitBox, Jira, Confluence, Jenkins, and Buildbot.
+                  We also have an extensive toolbox we use on a daily basis
+                  that contains both home-brewed solutions and
+                  "off the shelf" offerings. Feel free to check them out.
+                </p>
+                <p style="text-align: center; margin-bottom: -10px;">
+                  <a href="/services.html" class="button">Learn More...</a>
+                </p>
+              </div>
+            </div>
+            
+            <!-- who are we (team etc) -->
+            <div class="large-4 medium-4 columns">
+              <div class="frontbox">
+                <a href="/team.html"></a>
+                <h3 style="text-transform: capitalize; text-align: center;">
+                  <i class="fa fa-group" style="color: #FFF; font-size: 20pt;"></i>
+                  <a href="/team.html" style="font-size: 90%;">Who We Are</a>
+                </h3>
+                <p style="height: 110px; font-size: 0.9rem;">
+                  
+                 Infra manages day-to-day system administration and
+                  operation of the hardware assets that run the many
+                  services at the ASF. Click the button below to learn
+                  more about who we are and how we operate.
+                </p>
+                <p style="text-align: center; margin-bottom: -10px;">
+                  <a href="/team.html" class="button">Learn More...</a>
+                </p>
+              </div>
+            </div>
+            
+        </div>
+      </div>
+    </div>
+    </div>
+    
+    
+    <!-- news -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <div class="callout">
+        <h3>News from Infra</h3>
+        <hr/>
+        <p style="height: 110px; font-size: 0.9rem;"><em>October, 2021:</em> The ASF has long depended on a network of download mirrors to provide access to projects' product releases. We have now moved to a global content distribution network (CDN). The primary change projects and downloaders will experience is a much shorter delay between when a project posts a new release and when it is available world-wide for download. Read about <a href="https://apache.org/history/mirror-history.html" target="_blank">the history of the ASF download mirror system</a>.</p>
+        <p style="height: 110px; font-size: 0.9rem;">We periodically publish updates about Infra's work, successes, and challenges on <a href="https://blogs.apache.org/infra/" target="_blank">the Infra blog</a>.</p>
+          
+        </div>
+      </div>
+    </div>
+    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2021, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    <script src="/theme/js/vendor/jquery.js"></script>
+    <script src="/theme/js/vendor/what-input.js"></script>
+    <script src="/theme/js/vendor/foundation.js"></script>
+    <script src="/theme/js/app.js"></script>
+    
+    <script src="https://v878zkhv9tmg.statuspage.io/embed/script.js"></script>
+  </body>
+</html>

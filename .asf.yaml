@@ -1,0 +1,20 @@
+pelican:
+  notify:         notifications@infra.apache.org
+  autobuild:      preview/*
+  target:         asf-site
+  whoami:         master
+  
+staging:
+  whoami: asf-break-test
+  profile: ~
+  autostage: preview/*
+
+github:
+  description:   Infrastructure Team Website Repository
+  homepage:      https://infra.apache.org
+  collaborators: []
+  
+notifications:
+  commits:              commits@infra.apache.org
+  pullrequests:         commits@infra.apache.org
+  issues:               issues@infra.apache.org
