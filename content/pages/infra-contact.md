@@ -5,6 +5,33 @@ Here is detailed information on how to contact Infra in a wide range of situatio
 <h2 id="how">How should I make contact?<a class="headerlink" href="#how" title="Permanent link">&para;</a></h2>
 
 That depends on your role and what you want to do. If this chart doesn't help, Infra maintains a publicly accessible channel (`#asfinfra`) within the <a href="https://the-asf.slack.com/#asfinfra" target="_blank">ASF presence on Slack</a>, and you can ask there whether to create a bug report or do something else.
+
+| If you are... | and want to... | then contact | Notes |
+|-----|-----|-----|-----|
+| anyone | report a **security vulnerability** in a service that runs on apache.org | `root@apache.org` | You may optionally encrypt the email to this <a href="https://home.apache.org/keys/group/infrastructure-root.asc" target="_blank">set of keys</a>. |
+| anyone | report a **security vulnerability** in an Apache project | the <a href="https://www.apache.org/security/" target="_blank">Apache Security Team</a> | The Security Team is not part of Infra. |
+| anyone | 	report that a **service is down** _if_ <a href="https://status.apache.org/" target="_blank">status.apache.org</a> doesn't show it | Infra's <a href="https://the-asf.slack.com/#asfinfra" target="_blank">Slack channel</a> | Email to `users@infra.apache.org` is an acceptable alternative. The <a href="https://twitter.com/infrabot/" target="_blank">infrabot</a> Twitter feed may contain information about current outages and maintenances. |
+| a **newly-invited** commmitter | ask a question about your committership | `private@$project` |  |
+| a committer |	**regain access** to your account | See <a href="https://infra.apache.org/infra-contact.html#regain-account" target="_blank">Regaining account access</a> | If commits fail, double-check that you are using `https://` (not `http://`). |
+| entry | entry | entry | entry |
+| entry | entry | entry | entry |
+| entry | entry | entry | entry |
+| entry | entry | entry | entry |
+| entry | entry | entry | entry |
+| entry | entry | entry | entry |
+| entry | entry | entry | entry |
+| entry | entry | entry | entry |
+| entry | entry | entry | entry |
+| entry | entry | entry | entry |
+| entry | entry | entry | entry |
+| entry | entry | entry | entry |
+| entry | entry | entry | entry |
+| entry | entry | entry | entry |
+| entry | entry | entry | entry |
+| entry | entry | entry | entry |
+| entry | entry | entry | entry |
+| entry | entry | entry | entry |
+| entry | entry | entry | entry |
 <table width="100%">
 <thead>
 <tr>
