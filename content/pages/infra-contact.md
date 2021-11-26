@@ -33,96 +33,18 @@ That depends on your role and what you want to do. If this chart doesn't help, I
 | If you ask us to... | we need to know... | Notes |
 |-----|-----|-----|
 | **promote** a podling to TLP | see <a href="https://infra.apache.org/infra-contact.html#requesting-graduation" target="_blank">Requesting podling graduation</a> |  |
-| entry | entry | entry |
-| entry | entry | entry |
-| entry | entry | entry |
-| entry | entry | entry |
-| entry | entry | entry |
-| entry | entry | entry |
-| entry | entry | entry |
-| entry | entry | entry |
-| entry | entry | entry |
-| entry | entry | entry |
-| entry | entry | entry |
-| entry | entry | entry |
+| **create** a podling | see <a href="https://infra.apache.org/infra-contact.html#requesting-podling" target="_blank">Requesting a podling</a> |  |
+| load **Subversion history** | URL and checksum (or PGP signature) of a dumpfile; proof of <a href="https://www.apache.org/legal/resolved#category-a" target="_blank">IP rights</a> | Produce with `svnadmin dump --incremental --deltas` or `svnrdump`. The paths within the dumpfile should be relative to the project root (e.g., to `/repos/asf/incubator/MyPodling`). |
+| load **Git history** | URL of a repository or an export stream; proof of <a href="https://www.apache.org/legal/resolved#category-a" target="_blank">IP rights</a> | If linking to a file, provide PGP signature or checksum. If to a remote repository, you must review and sign off on the import ("Yes, that is the repository and history we asked to import and have IP rights for") before it will be writable. |
+| create an **svnpubsub-based site** | SVN URL of the compiled site (directory containing HTML files) | For Git-based web sites, refer to <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features" target="_blank">Git-.asf.yaml features</a> for instructions on publishing. |
+| create a **project blog** | project name, brief one-line description of the project, and Apache usernames (and fullnames) of at least two editors |  |
+| create a **blog account** for an editor | The Apache username (and fullname) of the editor | Non-PMC members need to demonstrate PMC consensus (a link to a lazy consensus thread suffices). |
+| create a project **Confluence wiki** | wiki name, destination for commit mails, and Confluence usernames of at least two community members who will be space admins | Go to <a href="https://selfserve.apache.org/confluence.html" target="_blank">Self-serve</a> and follow the prompts. |
+| set up your project on **Review Board** | project name, which svn/git branches to support | <a href="https://reviews.apache.org/" target="_blank">Review Board</a> is a web-based collaborative code review tool, available as free software under the MIT License. |
+| create a **Jira project** | Key name (e.g., INFRA), Jira user names of 1-2 project members who will be project admins, mailing list address to which Jira notifications should go | Go to <a href="https://selfserve.apache.org/confluence.html" target="_blank">Self-serve</a> and follow the prompts. |
+| migrate your project's SVN repository to Git |  | Use <a href="https://selfserve.apache.org/confluence.html" target="_blank">Self-serve</a> to create your intended Git repo(s). Run `svn2git` locally using this <a href="https://git-wip-us.apache.org/authors.txt" target="_blank">authors file and push once the conversion result is confirmed. Submit a Jira ticket for Infra to mark your SVN repository 'readonly'. Optionally, file a ticket to temporarily disable commit emails for when you push your converted clone. |
 
-<table class="table">
-<thead>
-<tr>
-<th>If you ask us to...</th>
-<th>then we need to know...</th>
-<th>Notes</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>Promote a <strong>podling to TLP</strong></td>
-<td>See <a href="#requesting-graduation">requesting podling graduation</a></td>
-<td></td>
-</tr>
-<tr>
-<td>Create a <strong>podling</strong></td>
-<td>See <a href="#requesting-podling">requesting a podling</a></td>
-<td></td>
-</tr>
-<tr>
-<td>Load <strong>Subversion history</strong></td>
-<td>URL and checksum (or PGP signature) of a dumpfile; proof of <a href="https://www.apache.org/legal/resolved#category-a" target="_blank">IP rights</a></td>
-<td>Produce with <code>svnadmin dump --incremental --deltas</code> or <code>svnrdump</code>. The paths within the dumpfile should be relative to the project root (e.g., to <code>/repos/asf/incubator/MyPodling</code>).</td>
-</tr>
-<tr>
-<td>Load <strong>Git history</strong></td>
-<td>URL and of a repository or an export stream; proof of <a href="https://www.apache.org/legal/resolved#category-a" target="_blank">IP rights</a></td>
-<td>If linking to a file, provide PGP signature or checksum. If to a remote repository, you must review and sign off on the import ("Yes, that is the repository and history we asked to import and have IP rights for") before it will be writable.</td>
-</tr>
-<tr>
-<td>Create an <strong>svnpubsub-based site</strong></td>
-<td>SVN URL of the compiled site (directory containing HTML files)</td>
-<td><a href="https://infra.apache.org/project-site.html" target="_blank">SvnPubSub</a> does not support Git. Use the <a href="http://home.apache.org/committers-by-project.html#infrastructure-root" target="_blank">webreq app</a></td>
-</tr>
-<tr>
-<td>Create an <strong>svnpubsub-based Dist area</strong></td>
-<td>Create or ask Infra to create a dist release directory. Specify release area only or release and dev areas. If you omit a list of emails for commit notices to go to, the default is the  project commits list.</td>
-<td>Any existing release dir will be blown away (archive releases remain). Infra will ask for a release or KEYS/NOTICE file once the directory is in place.</td>
-</tr>
-<tr>
-<td>Create a <strong>project blog</strong></td>
-<td>project name, brief one-line description of the project, and Apache usernames (and fullnames) of 1+ editors</td>
-<td></td>
-</tr>
-<tr>
-<td>Create a <strong>blog account</strong> for an editor</td>
-<td>The Apache username (and fullnames) of the editor</td>
-<td>Non-PMC members need to demonstrate PMC consensus (link to a lazy consensus thread suffices).</td>
-</tr>
-<tr>
-<td>Create a <strong>moin wiki</strong></td>
-<td>Moin is deprecated and no more Moin wikis are being created.</td>
-<td>Plan on using Confluence instead. See the next entry.</td>
-</tr>
-<tr>
-<td>Create a <strong>Confluence wiki</strong></td>
-<td>wiki name, destination for commit mails, and Confluence usernames of two+ community members - volunteer space admins</td>
-<td>Go to <a href="https://selfserve.apache.org/confluence.html" target="_blank">selfserve</a> and follow the prompts.</td>
-</tr>
-<tr>
-<td>Set up your project on <a href="https://reviews.apache.org/" target="_blank"><strong>Review Board</strong></a></td>
-<td>Project name, which svn/git branches to support</td>
-<td>Review Board is a web-based collaborative code review tool, available as free software under the MIT License.</td>
-</tr>
-<tr>
-<td>Create a <strong>Jira project</strong></td>
-<td>Key name (e.g., <code>INFRA</code>), Jira user names of 1-2 project members - volunteer project admins, mailing list address to which Jira notifications should go</td>
-<td>Go to <a href="https://selfserve.apache.org/jira.html" target="_blank">selfserve</a> and follow the prompts.</td>
-</tr>
-<tr>
-<td>Migrate your project's <strong>SVN to Git</strong></td>
-<td>n/a</td>
-<td>Please use <a href="https://selfserve.apache.org"  target="_blank">self-serve</a> to create your intended Git repo(s). Run svn2git locally using this <a href="https://git-wip-us.apache.org/authors.txt"  target="_blank">authors file</a> and push once the conversion result is confirmed. File an Infra ticket to mark your SVN repository readonly. Optionally, file a ticket to temporarily disable commit emails for when you push your converted clone.</td>
-</tr>
-</tbody>
-</table>
-<p>Don't see here what you're looking for? See above for <a href="#requesting-where">other cases</a>.</p>
+Don't see here what you're looking for? See above for <a href="#requesting-where">other cases</a>.
 
 <h2 id="requesting-podling">Requesting podling creation<a class="headerlink" href="#requesting-podling" title="Permanent link">&para;</a></h2>
 
@@ -183,7 +105,7 @@ This should decrypt the file and display the output in the window.
   - Whether the contact information on your ICLA is valid.
   - For (<a href="https://www.apache.org/foundation/members" target="_blank">ASF Members</a> only, whether the contact information in your `members.txt` entry is valid.
   - Whether you are able to send a new ICLA, with the same signature as your original one, which specifies new contact information.
-  - >Whether there is any other way in which we (infra) might satisfy ourselves that you are the legitimate owner of that account.
+  - Whether there is any other way in which we (infra) might satisfy ourselves that you are the legitimate owner of that account.
 
 **Note**: please do not ask other ASF committers or Members to email root@ to vouch for you.
 
