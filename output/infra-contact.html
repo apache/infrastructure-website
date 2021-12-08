@@ -178,14 +178,14 @@ Details on contacting Infra        </a>
 <tr>
 <td>are a newly-accepted <strong>podling</strong></td>
 <td>create podling infrastructure (site, lists, etc.)</td>
-<td><a href="https://infra.apache.org/infra-contact.html#requesting-podling" target="_blank">Requesting podling</a></td>
 <td></td>
+<td>See <a href="infra-incubator.html">Infra and the Incubator</a></td>
 </tr>
 <tr>
 <td>are a podling that has just <strong>graduated</strong></td>
 <td>migrate resources from Incubator locations to TLP locations</td>
-<td><a href="https://infra.apache.org/infra-contact.html#requesting-graduation" target="_blank">Requesting graduation</a></td>
 <td></td>
+<td>See <a href="infra-incubator.html">Infra and the Incubator</a></td>
 </tr>
 <tr>
 <td>are a PMC or podling</td>
@@ -241,13 +241,13 @@ Details on contacting Infra        </a>
 <tbody>
 <tr>
 <td><strong>promote</strong> a podling to TLP</td>
-<td>see <a href="https://infra.apache.org/infra-contact.html#requesting-graduation" target="_blank">Requesting podling graduation</a></td>
 <td></td>
+<td>See <a href="infra-incubator.html">Infra and the Incubator</a></td>
 </tr>
 <tr>
 <td><strong>create</strong> a podling</td>
-<td>see <a href="https://infra.apache.org/infra-contact.html#requesting-podling" target="_blank">Requesting a podling</a></td>
 <td></td>
+<td>See <a href="infra-incubator.html">Infra and the Incubator</a></td>
 </tr>
 <tr>
 <td>load <strong>Subversion history</strong></td>
@@ -295,34 +295,6 @@ Details on contacting Infra        </a>
 <td>Use <a href="https://selfserve.apache.org/confluence.html" target="_blank">Self-serve</a> to create your intended Git repo(s). Run <code>svn2git</code> locally using this <a href="https://git-wip-us.apache.org/authors.txt" target="_blank">authors file and push once the conversion result is confirmed. Submit a Jira ticket for Infra to mark your SVN repository 'readonly'. Optionally, file a ticket to temporarily disable commit emails for when you push your converted clone.</td>
 </tr></tbody></table>
 <p>Don't see here what you're looking for? See above for <a href="#requesting-where">other cases</a>.</p>
-<h2 id="requesting-podling">Requesting podling creation<a class="headerlink" href="#requesting-podling" title="Permanent link">&para;</a></h2>
-<p>The podling creation process is as follows:</p>
-<ol>
-<li>The IPMC vote passes.</li>
-<li>The podling is added to the IPMC's <code>podlings.xml</code> summary file with <code>status=current</code>.
-(See <a href="https://incubator.apache.org/guides/mentor.html#Overview" target="_blank">notes</a> about that, and other initial tasks.)</li>
-<li>Create a <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Jira ticket</a> asking Infra to create a DNS for your new podling (include the podling's name).</li>
-<li>After the DNS is created, an ASF Member or PMC chair files <a href="https://selfserve.apache.org/mail.html" target="_blank">mailing list creation requests</a>.</li>
-<li>Infra creates the lists, which also notifies the IPMC of the mailing list creation.</li>
-<li>An Incubator PMC member who is also an ASF member or a PMC chair edits the <a href="https://github.com/apache/infrastructure-puppet/blob/deployment/modules/subversion_server/files/authorization/asf-authorization-template" target="_blank">asf-authorization-template</a> and adds an <code>[/incubator/podling]</code> section. If the section refers to an <code>@podling</code> group, add a definition of that group as a comma-separated list of availids (usernames), to the <code>[groups]</code> section.  Alternatively, just set <code>@incubator = rw</code> as the section's body.</li>
-<li>If the podling wants to use SVN, an Incubator PMC member runs <code>svn mkdir ^/incubator/podling</code>. The commit
-mail goes to the mailing list created earlier.</li>
-<li>If the podling wants to use GIT, one of the mentors submits a request via <a href="https://selfserve.apache.org/" target="_blank">Self-Serve</a>.</li>
-<li>The podling community sets up a <a href="https://infra.apache.org/project-site#intro" target="_blank">project site</a>.</li>
-<li>An ASF Member or PMC chair files a <a href="https://home.apache.org/committers-by-project.html#infrastructure-root" target="_blank">website creation request</a>.</li>
-</ol>
-<p>If the project needs additional services (issue tracker, Wiki, blog, etc.), file a ticket via <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Jira</a> using appropriate categories and providing as much information as possible. To save everyone's time, consult <a href="#what-we-need-to-know">&quot;Providing needed information&quot;</a>
-before filing each ticket.</p>
-<h2 id="requesting-graduation">Requesting podling graduation to top level project (TLP)<a class="headerlink" href="#requesting-graduation" title="Permanent link">&para;</a></h2>
-<p>Once your podling has <a href="https://incubator.apache.org/guides/graduation.html#project-first-steps" target="_blank">graduated</a> to a TLP, create the following Jira tickets:</p>
-<ol>
-<li>A &quot;Graduate Foo to TLP&quot; parent ticket.</li>
-<li>A &quot;Foo TLP: common tasks&quot; ticket as a sub-task of (1). This ticket handles DNS entry, Unix/LDAP group creation, PMC Chair karma,
-mailing list migration, native Git repository migrations (but not git-svn mirrors), Subversion public tree migration, buildbot config
-changes, and website migration. <strong>There is no need to file individual tickets for these tasks.</strong> In the ticket, specify <strong>the LDAP name of the TLP</strong> --- that is, the <code>foo</code> in <code><a href="mailto:dev@foo.apache.org">dev@foo.apache.org</a></code>.</li>
-<li>For each additional service that needs configuration changes as the result of the migration, create another sub-task. If you have N services, create N sub-tasks. &quot;Services&quot; here includes everything indicated <a href="#requesting-menu">below</a>, such as Subversion private tree, git-svn mirrors, issue trackers, wikis, and <a href="https://ci.apache.org/" target="_blank">continuous integration</a> (Jenkins, Buildbot, Continuum etc.). See <a href="https://issues.apache.org/jira/browse/INFRA-5688" target="_blank">Flex's graduation tickets</a> for a good example.</li>
-</ol>
-<p>Note that the new PMC chair is still responsible for using Whimsy as appropriate. The group membership is initialized on a best-guess basis, but the chair must check that it's accurate and add and remove people as needed. Infra intializes the Committee data directly from the information in the Board resolution.</p>
 <h2 id="regain-account">Regaining access to a committer account<a class="headerlink" href="#regain-account" title="Permanent link">&para;</a></h2>
 <p>Guidance is available at <a href="https://infra.apache.org/account-mgmt.html">ASF account management</a>.</p>
 <h2 id="requesting-action">Other Requests<a class="headerlink" href="#requesting-action" title="Permanent link">&para;</a></h2>
