@@ -18,8 +18,8 @@ That depends on your role and what you want to do. If this chart doesn't help, I
 | are anyone | **unsubscribe** from a mailing list | See <a href="https://www.apache.org/foundation/mailinglists#subscribe" target="_blank">unsubscription instructions</a>. |  |
 | are a **committer** | change your **account details** | <a href="https://id.apache.org/" target="_blank">Self-serve</a> |  |
 | are a **PMC** | request **account creation** for a newly-elected committer | <a href="https://whimsy.apache.org/officers/acreq" target="_blank">Whimsy</a> | Instructions are <a href="https://www.apache.org/dev/pmc#newcommitter" target="_blank">here</a> |
-| are a newly-accepted **podling** | create podling infrastructure (site, lists, etc.) | <a href="https://infra.apache.org/infra-contact.html#requesting-podling" target="_blank">Requesting podling</a> |  |
-| are a podling that has just **graduated** | migrate resources from Incubator locations to TLP locations | <a href="https://infra.apache.org/infra-contact.html#requesting-graduation" target="_blank">Requesting graduation</a> |  |
+| are a newly-accepted **podling** | create podling infrastructure (site, lists, etc.) |  | See [Infra and the Incubator](infra-incubator.html) |
+| are a podling that has just **graduated** | migrate resources from Incubator locations to TLP locations |  | See [Infra and the Incubator](infra-incubator.html) |
 | are a PMC or podling | request **mailing list creation** | <a href="https://selfserve.apache.org/mail.html" target="_blank">Self-serve</a> | Only Members and Officers (including PMC chairs) can submit the form. |
 | are a committer or PMC | change **Jenkins** build settings | `builds@apache.org` | Project members having hudson-jobadmin **karma** can perform some tasks; ask your `dev@` list. |
 | are a PMC | ask Infra to do something | <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Create a Jira ticekt</a> | See <a href="https://infra.apache.org/infra-contact.html#requesting-action" target="_blank">On Requests</a> and <a href="https://infra.apache.org/infra-contact.html#what-we-need-to-know" target="_blank">What we need to know</a>. |
@@ -32,8 +32,8 @@ That depends on your role and what you want to do. If this chart doesn't help, I
 
 | If you ask us to... | we need to know... | Notes |
 |-----|-----|-----|
-| **promote** a podling to TLP | see <a href="https://infra.apache.org/infra-contact.html#requesting-graduation" target="_blank">Requesting podling graduation</a> |  |
-| **create** a podling | see <a href="https://infra.apache.org/infra-contact.html#requesting-podling" target="_blank">Requesting a podling</a> |  |
+| **promote** a podling to TLP |  | See [Infra and the Incubator](infra-incubator.html) |
+| **create** a podling |  | See [Infra and the Incubator](infra-incubator.html) |
 | load **Subversion history** | URL and checksum (or PGP signature) of a dumpfile; proof of <a href="https://www.apache.org/legal/resolved#category-a" target="_blank">IP rights</a> | Produce with `svnadmin dump --incremental --deltas` or `svnrdump`. The paths within the dumpfile should be relative to the project root (e.g., to `/repos/asf/incubator/MyPodling`). |
 | load **Git history** | URL of a repository or an export stream; proof of <a href="https://www.apache.org/legal/resolved#category-a" target="_blank">IP rights</a> | If linking to a file, provide PGP signature or checksum. If to a remote repository, you must review and sign off on the import ("Yes, that is the repository and history we asked to import and have IP rights for") before it will be writable. |
 | create an **svnpubsub-based site** | SVN URL of the compiled site (directory containing HTML files) | For Git-based web sites, refer to <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features" target="_blank">Git-.asf.yaml features</a> for instructions on publishing. |
@@ -45,38 +45,6 @@ That depends on your role and what you want to do. If this chart doesn't help, I
 | migrate your project's SVN repository to Git |  | Use <a href="https://selfserve.apache.org/confluence.html" target="_blank">Self-serve</a> to create your intended Git repo(s). Run `svn2git` locally using this <a href="https://git-wip-us.apache.org/authors.txt" target="_blank">authors file and push once the conversion result is confirmed. Submit a Jira ticket for Infra to mark your SVN repository 'readonly'. Optionally, file a ticket to temporarily disable commit emails for when you push your converted clone. |
 
 Don't see here what you're looking for? See above for <a href="#requesting-where">other cases</a>.
-
-<h2 id="requesting-podling">Requesting podling creation<a class="headerlink" href="#requesting-podling" title="Permanent link">&para;</a></h2>
-
-The podling creation process is as follows:
-
-1. The IPMC vote passes.
-1. The podling is added to the IPMC's <code>podlings.xml</code> summary file with <code>status=current</code>.
-(See <a href="https://incubator.apache.org/guides/mentor.html#Overview" target="_blank">notes</a> about that, and other initial tasks.)
-1. Create a <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Jira ticket</a> asking Infra to create a DNS for your new podling (include the podling's name).
-1. After the DNS is created, an ASF Member or PMC chair files <a href="https://selfserve.apache.org/mail.html" target="_blank">mailing list creation requests</a>.
-1. Infra creates the lists, which also notifies the IPMC of the mailing list creation.
-1. An Incubator PMC member who is also an ASF member or a PMC chair edits the <a href="https://github.com/apache/infrastructure-puppet/blob/deployment/modules/subversion_server/files/authorization/asf-authorization-template" target="_blank">asf-authorization-template</a> and adds an <code>[/incubator/podling]</code> section. If the section refers to an <code>@podling</code> group, add a definition of that group as a comma-separated list of availids (usernames), to the <code>[groups]</code> section.  Alternatively, just set <code>@incubator = rw</code> as the section's body.
-1. If the podling wants to use SVN, an Incubator PMC member runs <code>svn mkdir ^/incubator/podling</code>. The commit
-mail goes to the mailing list created earlier.
-1. If the podling wants to use GIT, one of the mentors submits a request via <a href="https://selfserve.apache.org/" target="_blank">Self-Serve</a>.
-1. The podling community sets up a <a href="https://infra.apache.org/project-site#intro" target="_blank">project site</a>.
-1. An ASF Member or PMC chair files a <a href="https://home.apache.org/committers-by-project.html#infrastructure-root" target="_blank">website creation request</a>.
-
-If the project needs additional services (issue tracker, Wiki, blog, etc.), file a ticket via <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Jira</a> using appropriate categories and providing as much information as possible. To save everyone's time, consult <a href="#what-we-need-to-know">"Providing needed information"</a>
-before filing each ticket.
-
-<h2 id="requesting-graduation">Requesting podling graduation to top level project (TLP)<a class="headerlink" href="#requesting-graduation" title="Permanent link">&para;</a></h2>
-
-Once your podling has <a href="https://incubator.apache.org/guides/graduation.html#project-first-steps" target="_blank">graduated</a> to a TLP, create the following Jira tickets:
-
-1. A "Graduate Foo to TLP" parent ticket.
-1. A "Foo TLP: common tasks" ticket as a sub-task of (1). This ticket handles DNS entry, Unix/LDAP group creation, PMC Chair karma,
-mailing list migration, native Git repository migrations (but not git-svn mirrors), Subversion public tree migration, buildbot config
-changes, and website migration. <strong>There is no need to file individual tickets for these tasks.</strong> In the ticket, specify <strong>the LDAP name of the TLP</strong> --- that is, the <code>foo</code> in <code>dev@foo.apache.org</code>.
-1. For each additional service that needs configuration changes as the result of the migration, create another sub-task. If you have N services, create N sub-tasks. "Services" here includes everything indicated <a href="#requesting-menu">below</a>, such as Subversion private tree, git-svn mirrors, issue trackers, wikis, and <a href="https://ci.apache.org/" target="_blank">continuous integration</a> (Jenkins, Buildbot, Continuum etc.). See <a href="https://issues.apache.org/jira/browse/INFRA-5688" target="_blank">Flex's graduation tickets</a> for a good example.
-
-Note that the new PMC chair is still responsible for using Whimsy as appropriate. The group membership is initialized on a best-guess basis, but the chair must check that it's accurate and add and remove people as needed. Infra intializes the Committee data directly from the information in the Board resolution.
 
 <h2 id="regain-account">Regaining access to a committer account<a class="headerlink" href="#regain-account" title="Permanent link">&para;</a></h2>
 
