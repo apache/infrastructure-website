@@ -12,7 +12,7 @@ Your account includes an Apache email address which is usually `userID@apache.or
 
 Log in to <a href="https://whimsy.apache.org/" target="_blank">Whimsy</a> and, in the _Available to Committers_ section, click `Your personal details`. You can update any information in blue by double-clicking it and making the necessary changes in the form that appears.
 
-<h3 id="regain-account">Regaining access to your committer account<a class="headerlink" href="#regain-account" title="Permanent link">&para;</a></h3>
+### Regaining access to your committer account 
 
 If you forgot your password, try...
 
