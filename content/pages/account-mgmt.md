@@ -1,6 +1,6 @@
-Title: Apache account management
+Title: ASF account management
 
-## Your Apache account
+## Your ASF account
 
 Committers to Apache Software Foundation projects and ASF Members have personal accounts to facilitate their work and communications.
 
