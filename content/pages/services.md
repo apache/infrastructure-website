@@ -6,6 +6,7 @@ Infra maintains a wide range of tools for PMCs, project committers, and the Apac
     - <a href="#web-sites">Websites</a>
     - <a href="#email">Email</a>
     - <a href="#self-serve">ASF self-service platform</a>
+    - <a href="#account-mgmt">ASF account managment</a>
     - <a href="#notices">Getting notices of infrastructure events</a>
     - <a href="#ldap">LDAP-enabled services</a>
   - <a href="#podlings">Services for incubating projects (podlings)</a>
@@ -62,14 +63,9 @@ One of Infra's goals is to empower ASF members, PMCs, and committers to do much 
   * Use the OTP Calculator to generate one-time passwords for the OTP or S/Key one-time-password systems (generally, PMC members).
   * Archive a Confluence Wiki space and make it read-only.
   
-#### Locked out of the system? ####
+<h3 id="account-mgmt">ASF account management<a class="headerlink" href="#account-mgmt" title="Permanent link">&para;</a></h3>
 
-If you have forgotten your password and cannot retrieve it, contact Infrastructure via `root@apache.org` for assistance.
-
-Before asking for a manual password reset or email change, please consider:
-
-  - If you have access to an ASF machine via SSH (with a private key), you can use this to confirm your identity.
-  - If you don't have access to anything to establish your identity, you may need to file a new ICLA.
+[ASF account managment](account-mgmt.html) provides guidance if you want to update your account details, or have lost accces to your account.
   
 <h3 id="notices">Getting notices of infrastructure events<a class="headerlink" href="#notices" title="Permanent link">&para;</a></h3>
 You can subscribe to notices of infrastructure events that you want to know about, ranging from Subversion commits to emails to specific lists. [Learn more here](pypubsub.html).
