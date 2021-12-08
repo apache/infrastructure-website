@@ -1,0 +1,161 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASF account management - Apache Infrastructure</title>
+    <link rel="stylesheet" href="/theme/css/foundation.css">
+    <link rel="stylesheet" href="/theme/css/app.css">
+    <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>
+    <link rel="stylesheet"
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/styles/default.min.css">
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/10.0.0/highlight.min.js"></script>  </head>
+  <body style="background: #C9B191;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/theme/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+		  <li><a href="https://blogs.apache.org/infra/" target="_blank">The Infra Blog</a></li>			
+		  <li><a href="/roadmap.html">Strategies & Roadmap</a></li>
+	          
+                </ul>
+              </li>
+              <li><a href="/policies.html" target="_blank" style="padding-left: 5px;">Policies</a></li>
+                           
+              <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Services-Tools</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+		<li><a href="/services.html">Services and Tools</a></li>
+                <li><a href="/machines.html" target="_blank" >Machines and Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" target="_blank" >Blocky</a></li>
+                <li><a href="https://uls.apache.org/app/kibana#/discover?_g=()" target="_blank" >Kibana and Unified Logging System</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" target="_blank" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" target="_blank" >Committer Search</a></li>
+		
+                </ul>
+              </li>
+              <li><a href="/doc.html" target="_blank" style="padding-left: 5px;">Documentation</a></li>
+	       <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Contribute</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">	
+		   <li><a href="/infra-volunteer.html">Volunteer with Infra</a></li>
+		   <li><a href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+			<li><a href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+		 </ul>
+	       </li>
+	      
+              <li><a href="/stats.html" target="_blank" style="padding-left: 5px;">Status</a></li>
+              <li><a href="/contact.html" style="padding-left: 5px;"><i class="fa fa-comments" style="color: #FFF; font-size: 0.9rem;"></i>Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/account-mgmt.html">
+ASF account management        </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/account-mgmt.md">edit</a>)
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              ASF account management
+          </h2>
+              <h2>Your ASF account</h2>
+<p>Committers to Apache Software Foundation projects and ASF Members have personal accounts to facilitate their work and communications.</p>
+<h3>Your Apache email address</h3>
+<p>Your account includes an Apache email address which is usually <code>userID@apache.org</code>. You can link that mailbox to a personal email address so you can receive mail frp, your Apache address and send mail with your Apache address as the &quot;from&quot; address. See <a href="https://infra.apache.org/committer-email.html">Committer email</a>.</p>
+<h3>Managing your account details</h3>
+<p>Log in to <a href="https://whimsy.apache.org/" target="_blank">Whimsy</a> and, in the <em>Available to Committers</em> section, click <code>Your personal details</code>. You can update any information in blue by double-clicking it and making the necessary changes in the form that appears.</p>
+<h3>Regaining access to your committer account</h3>
+<p>If you forgot your password, try...</p>
+<ol>
+<li>to reset it at <a href="https://id.apache.org/reset/enter" target="_blank">id.apache.org/reset/enter</a>. That will email to
+your <code>@apache.org</code> address (which forwards to your non-apache email account) a short-lived password reset link. The link may be encrypted to <a href="https://home.apache.org/keys/committer/" target="_blank">your PGP key</a>.</li>
+<li>decrypting the e-mail - one way to do this is to save the e-mail contents as a text file, e.g. <code>password.txt</code>. Open a shell command window, and run the following command:</li>
+</ol>
+<pre><code>gpg -d password.txt&lt;/code&gt;
+</code></pre>
+<p>This should decrypt the file and display the output in the window.</p>
+<ol start="3">
+<li>
+<p>If you have lost access to your registered email address, file an additional ICLA with Secretary. Follow the directions for <a href="https://www.apache.org/licenses/#submitting" target="_blank">submitting an ICLA</a>. Include your current Apache ID and mention in your cover email that you are requesting a change to your email address.</p>
+</li>
+<li>
+<p>If that didn't work, email <code>root@</code>. In your email, mention the following information:</p>
+</li>
+</ol>
+<ul>
+<li>Your username.</li>
+<li>The fact that you have tried a self-service password reset, and why it didn't work. (Was the mail received? Did you decrypt it successfully?)</li>
+<li>Why you need to regain access to your Apache account -- e.g., if it is to work on a <a href="https://www.apache.org/foundation/" target="_blank">foundation project</a>, name that project; or if you are a <a href="https://www.apache.org/foundation/members" target="_blank">foundation member</a>, state that.</li>
+<li>Whether you have SSH access to <code>minotaur.apache.org</code> or to a PMC jail/zone/VM via public-key authentication.</li>
+<li>Whether you ever set up OPIE on any <code>*.apache.org</code> box. (This is only applicable to people who had root permissions on PMC VMs.)</li>
+<li>Whether you have access to the private part of a PGP key associated with your Apache account.</li>
+<li>Whether the contact information on your ICLA is valid.</li>
+<li>For (<a href="https://www.apache.org/foundation/members" target="_blank">ASF Members</a> only, whether the contact information in your <code>members.txt</code> entry is valid.</li>
+<li>Whether you are able to send a new ICLA, with the same signature as your original one, which specifies new contact information.</li>
+<li>Whether there is any other way in which we (infra) might satisfy ourselves that you are the legitimate owner of that account.</li>
+</ul>
+<p><strong>Note</strong>: please do not ask other ASF committers or Members to email root@ to vouch for you.</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2021, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    
+    <script src="/theme/js/vendor/jquery.js"></script>
+    <script src="/theme/js/vendor/what-input.js"></script>
+    <script src="/theme/js/vendor/foundation.js"></script>
+    <script src="/theme/js/app.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
