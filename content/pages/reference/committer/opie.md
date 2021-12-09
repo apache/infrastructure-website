@@ -1,6 +1,8 @@
 Title: Using OPIE
 slug: reference/committer/opie
 
+This information is available on the <a href="https://cwiki.apache.org/confluence/display/INFRA/OPIE">Infra Wiki space</a>.
+
 This document covers the setup and use of OPIE (One-time Passwords In Everything). This is 
 a mechanism used by the ASF that ensures that your sudo password is not erroneously intercepted
 or pasted into the wrong prompt on the remote machine.
