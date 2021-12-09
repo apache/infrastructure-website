@@ -10,7 +10,7 @@ collate them and provide a single or primary point of reference.
 * [Getting started with Git](git.html)
 * [Apache and GitHub](github.html)
 * [Changing your account details (self serve)](id.html)
-* [Using Docker with builds.apache.org](jenkins-docker.html)
+* <a href="https://infra.apache.org/release-distribution.html#dockerhub">Using Docker with builds.apache.org</a>
 * [Guide to new committers](newaccount.html)
 * [Using OPIE](opie.html)
 * [Releasing project packages](release.html)
