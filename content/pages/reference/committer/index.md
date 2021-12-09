@@ -2,22 +2,19 @@ Title: Committer Documentation
 slug: reference/committer/index
 For committers (primarily)
 
-As of now we have a couple places for documentation; this new website hopes to
-collate them and provide a single or primary point of reference.
+A more general list of <a href="https://infra.apache.org/services.html">services and tools</a> is available. 
 
-* [Contacting Infrastructure](contactinfra.html)
+* <a href="https://infra.apache.org/infra-contact.html">Contacting Infrastructure</a>
 * [Committer e-mail configuration](email.html)
 * [Getting started with Git](git.html)
 * [Apache and GitHub](github.html)
-* [Changing your account details (self serve)](id.html)
+* <a href="https://infra.apache.org/account-mgmt.html">ASF account management</a>
 * <a href="https://infra.apache.org/release-distribution.html#dockerhub">Using Docker with builds.apache.org</a>
-* [Guide to new committers](newaccount.html)
+* <a href="https://infra.apache.org/new-committers-guide.html">Guide for new committers</a>
 * [Using OPIE](opie.html)
 * [Releasing project packages](release.html)
 * [Setting up SSH for ASF machines](ssh.html)
 * [Committer documentation](start.html)
 * [Using Subversion](subversion.html)
 * [Subversion and Git integration with JIRA tickets](svngit2jira.html)
-* [Web Site Guidelines](website-policy.html)
-* [How To Manage any Apache Project's Website](website.html)
-
+* <a href="https://infra.apache.org/project-site-policy.html">Project website policy</a>
