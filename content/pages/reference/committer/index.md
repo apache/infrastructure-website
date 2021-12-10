@@ -12,7 +12,7 @@ A more general list of <a href="https://infra.apache.org/services.html">services
 * <a href="https://infra.apache.org/release-distribution.html#dockerhub">Using Docker with builds.apache.org</a>
 * <a href="https://infra.apache.org/new-committers-guide.html">Guide for new committers</a>
 * <a href="https://cwiki.apache.org/confluence/display/INFRA/OPIE">Using OPIE</a>
-* [Releasing project packages](release.html)
+* <a href="https://infra.apache.org/release-publishing.html">Release creation process</a>
 * [Setting up SSH for ASF machines](ssh.html)
 * [Committer documentation](start.html)
 * [Using Subversion](subversion.html)
