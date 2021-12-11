@@ -5,8 +5,8 @@ For committers (primarily)
 A more general list of <a href="https://infra.apache.org/services.html">services and tools</a> is available. 
 
 * <a href="https://infra.apache.org/infra-contact.html">Contacting Infrastructure</a>
-* [Committer e-mail configuration](email.html)
-* [Getting started with Git](git.html)
+* <a href="https://infra.apache.org/committer-email.html">Committer e-mail configuration</a>
+* <a href="https://infra.apache.org/git-primer.html">Getting started with Git</a>
 * <a href="https://infra.apache.org/git-primer.html">Apache and GitHub</a>
 * <a href="https://infra.apache.org/account-mgmt.html">ASF account management</a>
 * <a href="https://infra.apache.org/release-distribution.html#dockerhub">Using Docker with builds.apache.org</a>
