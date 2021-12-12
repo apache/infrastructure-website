@@ -12,7 +12,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
 | are anyone | report a **security vulnerability** in an Apache project | the <a href="https://www.apache.org/security/" target="_blank">Apache Security Team</a> | The Security Team is not part of Infra. |
 | are anyone | 	report that a **service is down** _if_ <a href="https://status.apache.org/" target="_blank">status.apache.org</a> doesn't show it | Infra's <a href="https://the-asf.slack.com/#asfinfra" target="_blank">Slack channel</a> | Email to `users@infra.apache.org` is an acceptable alternative. The <a href="https://twitter.com/infrabot/" target="_blank">infrabot</a> Twitter feed may contain information about current outages and maintenances. |
 | are a **newly-invited** commmitter | ask a question about your committership | `private@$project` |  |
-| are a **committer** |	**regain access** to your account | See <a href="https://infra.apache.org/infra-contact.html#regain-account" target="_blank">Regaining account access</a> | If commits fail, double-check that you are using `https://` (not `http://`). |
+| are a **committer** |	**regain access** to your account | See <a href="https://infra.apache.org/account-mgmt.html">ASF account management</a> | If commits fail, double-check that you are using `https://` (not `http://`). |
 | are a **supplier** (you donate or sell hardware or services to Apache) | anything | `private@infra.apache.org` | <a href="https://home.apache.org/keys/group/infrastructure-root.asc" target="_blank">Encrypt</a> passwords or send them by other means. |
 | submitted an **ICLA** in the past | change your **contact details** of record | `secretary@apache.org` | Snail mail is possible too; see <a href="https://www.apache.org/foundation/contact" target="_blank">apache.org/foundation/contact</a>. |
 | are anyone | **unsubscribe** from a mailing list | See <a href="https://www.apache.org/foundation/mailinglists#subscribe" target="_blank">unsubscription instructions</a>. |  |
@@ -45,10 +45,6 @@ That depends on your role and what you want to do. If this chart doesn't help, I
 | migrate your project's SVN repository to Git |  | Use <a href="https://selfserve.apache.org/confluence.html" target="_blank">Self-serve</a> to create your intended Git repo(s). Run `svn2git` locally using this <a href="https://git-wip-us.apache.org/authors.txt" target="_blank">authors file and push once the conversion result is confirmed. Submit a Jira ticket for Infra to mark your SVN repository 'readonly'. Optionally, file a ticket to temporarily disable commit emails for when you push your converted clone. |
 
 Don't see here what you're looking for? See above for <a href="#requesting-where">other cases</a>.
-
-<h2 id="regain-account">Regaining access to a committer account<a class="headerlink" href="#regain-account" title="Permanent link">&para;</a></h2>
-
-Guidance is available at <a href="https://infra.apache.org/account-mgmt.html">ASF account management</a>.
 
 <h2 id="requesting-action">Other Requests<a class="headerlink" href="#requesting-action" title="Permanent link">&para;</a></h2>
 
