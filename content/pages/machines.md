@@ -15,5 +15,3 @@ Please note that people.apache.org and home.apache.org are aliases and appear in
 
 
 `spu:fetch('https://infra-reports.apache.org/machines/index.html')`
-
-
