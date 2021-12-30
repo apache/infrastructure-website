@@ -51,7 +51,7 @@ You must sign all artifacts with a key that is publicly verifiable. Follow the i
 
 **Note**: We recommend that you use <a href="https://maven.apache.org/guides/mini/guide-encryption.html" target="_blank">Maven's password encryption capabilities</a> for your passwords. **Do not** store your signing key in `settings.xml`.
 
-The <a href="https://maven.apache.org/plugins/maven-gpg-plugin/" target="_blank">gpg plugin</a> can prompt for the key (input is masked) or you can configure it to use an agent.
+<!--The <a href="https://maven.apache.org/plugins/maven-gpg-plugin/" target="_blank">gpg plugin</a> can prompt for the key (input is masked) or you can configure it to use an agent. -->
 
 ```
 <settings>
