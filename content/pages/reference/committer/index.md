@@ -2,22 +2,18 @@ Title: Committer Documentation
 slug: reference/committer/index
 For committers (primarily)
 
-As of now we have a couple places for documentation; this new website hopes to
-collate them and provide a single or primary point of reference.
+A more general list of <a href="https://infra.apache.org/services.html">services and tools</a> is available. 
 
-* [Contacting Infrastructure](contactinfra.html)
-* [Committer e-mail configuration](email.html)
-* [Getting started with Git](git.html)
-* [Apache and GitHub](github.html)
-* [Changing your account details (self serve)](id.html)
-* [Using Docker with builds.apache.org](jenkins-docker.html)
-* [Guide to new committers](newaccount.html)
-* [Using OPIE](opie.html)
-* [Releasing project packages](release.html)
-* [Setting up SSH for ASF machines](ssh.html)
+* <a href="https://infra.apache.org/infra-contact.html">Contacting Infrastructure</a>
+* <a href="https://infra.apache.org/committer-email.html">Committer e-mail configuration</a>
+* <a href="https://infra.apache.org/git-primer.html">Getting started with Git</a>
+* <a href="https://infra.apache.org/git-primer.html">Apache and GitHub</a>
+* <a href="https://infra.apache.org/account-mgmt.html">ASF account management</a>
+* <a href="https://infra.apache.org/release-distribution.html#dockerhub">Using Docker with builds.apache.org</a>
+* <a href="https://infra.apache.org/new-committers-guide.html">Guide for new committers</a>
+* <a href="https://cwiki.apache.org/confluence/display/INFRA/OPIE">Using OPIE</a>
+* <a href="https://infra.apache.org/release-publishing.html">Release creation process</a>
 * [Committer documentation](start.html)
-* [Using Subversion](subversion.html)
-* [Subversion and Git integration with JIRA tickets](svngit2jira.html)
-* [Web Site Guidelines](website-policy.html)
-* [How To Manage any Apache Project's Website](website.html)
-
+* <a href="https://infra.apache.org/svn-basics.html">Subversion basics</a>
+* <a href="https://infra.apache.org/svngit2jira.html">Subversion and Git integration with JIRA tickets</a>
+* <a href="https://infra.apache.org/project-site-policy.html">Project website policy</a>

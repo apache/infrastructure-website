@@ -41,4 +41,8 @@ then helpful to create a directory (say, `build_cmark/lib`) with
 two symlinks from the `.so` to the longer, version-specific libraries
 that the above shell script builds.
 
-
+## Preview PRs
+To stage a preview of what a PR would result in, be sure to name your branches 
+using the `preview/$foo` syntax, for instance `preview/cleanup-dec-2021`. This 
+will auto-build and -stage your changes and make them available at 
+`infra-$foo.staged.apache.org`, i.e. `infra-cleanup-dec-2021.staged.apache.org`

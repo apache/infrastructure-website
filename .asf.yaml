@@ -7,6 +7,7 @@ pelican:
 staging:
   whoami: asf-break-test
   profile: ~
+  autostage: preview/*
 
 github:
   description:   Infrastructure Team Website Repository

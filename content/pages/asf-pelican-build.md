@@ -322,7 +322,7 @@ Many of these ASF-specific enhancements are controlled in [pelican settings][con
 
 | ASF_GENID key | default | process | page override |
 |-----|:--------:|---------|----------|
-|  -          | -           | fix up some HTML tags that the GFM autofilter extension marks as unsafe | |
+| unsafe_tags | True        | fix up script, style, and iframe HTML tags that the GFM autofilter extension marks as unsafe | |
 |  -          | -           | convert HTML into beautiful soup    | |
 | metadata    | True        | `{{ metadata }}` include data in the HTML | |
 |  -          | True        | inventory of all ID attributes; duplicates are invalid | |

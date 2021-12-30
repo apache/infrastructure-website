@@ -7,40 +7,35 @@ as a committer at the Apache Software Foundation.
 
 ### Need to contact the infrastructure team?
 
-- [Contacting Infra](contactinfra.html)
+- <a href="https://infra.apache.org/contact.html">Contacting Infra</a>
 
-### Setting up your committer account
+### Your ASF committer account
 
-- [New account guide](newaccount.html)
-- [Changing your account details](id.html)
-- [Resetting your password](id.html#pwd)
-- [Locked out of the system?](id.html#locked)
+- <a href="https://infra.apache.org/new-committers-guide.html">New committer guide</a>
+- <a href="https://infra.apache.org/account-mgmt.html">ASF account management</a>
 
 ### Version Control Systems (Subversion and Git)
 
-- [Using Subversion](subversion.html)
-- [Using Git](git.html)
-- [Releasing packages](release.html)
-- [Joining our GitHub organisation](github.html)
+- <a href="https://infra.apache.org/svn-basics.html">Subversion basics</a>
+- <a href="https://infra.apache.org/git-primer.html">Getting started with Git</a>
+- <a href="https://infra.apache.org/release-publishing.html">Release creation process</a>
 
 ### Email setup
 
-- [Setting up email with the ASF](email.html)
+- <a href="https://infra.apache.org/committer-email.html">Committer email</a>
 
 
-### Using (virtual) machines hosted by the ASF
+### Using ASF virtual machines
 
-- [Setting up SSH](ssh.html)
-- [Using OPIE](opie.html)
+- <a href="https://infra.apache.org/vm-policy.html">Virtual maching policy</a>
+- <a href="https://cwiki.apache.org/confluence/display/INFRA/OPIE" target="_blank">Using OPIE</a>
 
+### Project websites
 
-### Project web sites
-
-- [Editing a project web site](website.html)
-- [Dos and Don'ts for websites](website-policy.html)
+- <a href="https://infra.apache.org/project-site-policy.html">Project website policy</a>
+- <a href="https://infra.apache.org/project-site.html">Managing your project website</a>
 
 
 ### Jenkins
 
-- [Using Docker on builds.apache.org](jenkins-docker.html)
-- [Plugins](jenkins-plugins.html)
+- <a href="https://infra.apache.org/release-distribution.html#dockerhub">Using Docker on builds.apache.org</a>

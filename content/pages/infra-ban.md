@@ -14,7 +14,7 @@ The following actions are **not permitted** on ASF services:
 - More than 100,000 Confluence (`cwiki.apache.org`) page visits per 24 hours.
 - More than 10,000 Bugzilla requests per 24 hours.
 - More than 1,000 Gitbox requests per hour.
-- More than 75,000 `repository.apache.org` visits per 24 hours.
+- More than 25,000 `repository.apache.org` visits per 24 hours.
 - More than 100,000 `builds.apache.org` visits per 12 hours.
 - More than 2,500 code 429 (rate-limited) responses not respected per 12 hours. Services like Gitbox, Jira, Confluence, and Bugzilla have rate limits imposed. Abusing these services will result in a **429 HTTP** response code. Not respecting the HTTP response may result in a permanent ban.
 

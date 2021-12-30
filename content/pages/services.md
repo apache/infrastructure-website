@@ -6,6 +6,7 @@ Infra maintains a wide range of tools for PMCs, project committers, and the Apac
     - <a href="#web-sites">Websites</a>
     - <a href="#email">Email</a>
     - <a href="#self-serve">ASF self-service platform</a>
+    - <a href="#account-mgmt">ASF account managment</a>
     - <a href="#notices">Getting notices of infrastructure events</a>
     - <a href="#ldap">LDAP-enabled services</a>
   - <a href="#podlings">Services for incubating projects (podlings)</a>
@@ -56,20 +57,15 @@ Infra maintains a wide range of tools for PMCs, project committers, and the Apac
 
 One of Infra's goals is to empower ASF members, PMCs, and committers to do much of what they need to do without having to request help from Infra. The <a href="https://selfserve.apache.org" target="_blank">Self-Service Platform</a>, for example, provides a number of handy tools that **people who have an Apache email address** (basically, project committers, PMC members, and ASF Members) can use to:
 
-  * Create a new Jira or Confluence project, Git repository, or email list (PMC Chairs and Infra members).
+  * Create a Jira or Confluence project, Git repository, or email list (PMC Chairs and Infra members).
   * Edit your ASF identity or update your ASF password. If you are updating your password, you need access to the email account associated with your Apache account. A reset key is only valid for 15 minutes, so be sure to use it as soon as it arrives.
   * Synchronize Git repositories.
-  * Use the OTP Calculator to generate passwords for the OTP or S/Key one-time-password systems (generally, PMC members).
+  * Use the OTP Calculator to generate one-time passwords for the OTP or S/Key one-time-password systems (generally, PMC members).
   * Archive a Confluence Wiki space and make it read-only.
   
-#### Locked out of the system? ####
+<h3 id="account-mgmt">ASF account management<a class="headerlink" href="#account-mgmt" title="Permanent link">&para;</a></h3>
 
-If you have forgotten your password and cannot retrieve it, contact Infrastructure via `root@apache.org` for assistance.
-
-Before asking for a manual password reset or email change, please consider:
-
-  - If you have access to an ASF machine via SSH (with a private key), you can use this to confirm your identity.
-  - If you don't have access to anything to establish your identity, you may need to file a new ICLA.
+[ASF account managment](account-mgmt.html) provides guidance if you want to update your account details, or have lost accces to your account.
   
 <h3 id="notices">Getting notices of infrastructure events<a class="headerlink" href="#notices" title="Permanent link">&para;</a></h3>
 You can subscribe to notices of infrastructure events that you want to know about, ranging from Subversion commits to emails to specific lists. [Learn more here](pypubsub.html).
@@ -87,16 +83,14 @@ Infra supports incubating projects, or podlings.
   
 <h2 id="tools">Tools for ASF projects<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h2>
 
-Infra supports an array of tools and services to help projects develop and support both their applications and their community. They include:
-
-<h2 id="tools">Tools for ASF projects<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h2>
+Infra supports an array of tools and services to help projects develop and support both their applications and their community, including:
 
 - Every project can use a dedicated space on the [Confluence wiki](cwiki.html).
   - How to <a href="https://cwiki.apache.org/confluence/display/INFRA/Managing+permissions+on+your+project%27s+Confluence+Space" target="_blank">manage user permissions</a> in your project's wiki space.
   - How to <a href="https://cwiki.apache.org/confluence/display/INFRA/Giving+a+user+edit+access+to+Confluence" target="_blank">give a user edit access</a> to the wiki space.
 - <a href="https://reporter.apache.org/" target="_blank">Reporter</a> provides actvitity statistics and other information about your project, and editing tools to help you write and submit your project's quarterly Board reports.
 - You can create and run a [project blog](project-blogs.html).
-- You can establish a [Slack channel](slack.html) for real-time team discussions.
+- You can establish a [Slack channel](slack.html) for real-time team discussions. Once you have your Slack channel, Infra can set up a _Slack-Jira bridge_ so that you get notices in your channel of new or updated Jira tickets. open a Jira ticket for INFRA to get this feature for your TLP's Slack channel.
 - Teams can conduct and record meetings through Internet Relay Chat (IRC) using [ASFBot](asfbot.html). However, you must conduct formal votes on decisions in the appropriate project email list, following the <a href="https://www.apache.org/foundation/voting.html" target="_blank">Apache voting process</a>.
 - [Localization tools](localization.html).
 - The Apache <a href="https://creadur.apache.org/rat/" target="_blank">Release Audit Tool (RAT)</a> can help you confirm that your proposed product release complies with all ASF requirements.
@@ -119,7 +113,7 @@ Apache provides, and Infra maintains, [code repositories](version-control.html) 
 
 <h3 id="issue-tracking">Issue tracking and feature requests<a class="headerlink" href="#issue-tracking" title="Permanent link">&para;</a></h3>
 
-The ASF recommends these options for tracking issues and feature requests:
+The ASF supports these options for tracking issues and feature requests:
 
 * <a href="https://issues.apache.org/jira" target="_blank">Jira</a>
 * The <a href="https://guides.github.com/features/issues/" target="_blank">GitHub issue tracking feature</a>
@@ -213,10 +207,6 @@ Infra manages the ASF DNS, which is registered with Namecheap.
 <h3 id="sharing">Sharing snippets<a class="headerlink" href="#sharing" title="Permanent link">&para;</a></h3>
 
 <a href="https://paste.apache.org/" target="_blank">Paste</a> is a service that lets ASF members post code snippets or similar file extracts they want to share to illustrate a code issue or make available for reuse, usually with other project members. You can post content as plain text, or formatted for a number of coding and scripting languages.
-
-<h3 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h3>
-
-<a href="https://uls.apache.org/app/kibana#/discover?_g=()" target="_blank">Kibana</a>
 
 <h3 id="machines">Machine list<a class="headerlink" href="#machines" title="Permanent link">&para;</a></h3>
 

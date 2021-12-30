@@ -1,6 +1,6 @@
 Title: Committer SSH Access
 
-Apache uses SSH (a cryptographic protocol for operating services securely over an unsecured network) to let committers access their home directories on `people.apache.org`. 
+Apache uses SSH (a cryptographic protocol for operating services securely over an unsecured network) to let committers access their home directories on `home.apache.org` (formerly `people.apache.org`). 
 
 Remember to keep your client up to date with security patches. Pay close attention to any <a href="#known-host">known host warnings</a>. 
 
@@ -41,7 +41,7 @@ Many other options are available.
 To diagnose what's going wrong with an OpenSSH connection, run the client in verbose mode. To do this just add `-v`:
 
 ```
-ssh -v -l committer people.apache.org
+ssh -v -l committer home.apache.org
 ```
 
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
@@ -52,7 +52,7 @@ ssh -v -l committer people.apache.org
   
 <h3 id="common-problems">Some common problems<a class="headerlink" href="#common-problems" title="Permanent link">&para;</a></h3>
 
-<h4 id="exposed">Do not expose your private key<a class="headerlink" href="#exposed" title="Permanent link">&para;</a></h4>. Generate your key on a computer that is in your control, then upload only the public part to the `people.apache.org` server. Do not make the mistake of generating the key on the `people.apache.org` server.</p>
+<h4 id="exposed">Do not expose your private key<a class="headerlink" href="#exposed" title="Permanent link">&para;</a></h4>. Generate your key on a computer that is in your control, then upload only the public part to the `home.apache.org` server. Do not make the mistake of generating the key on the `home.apache.org` server.</p>
 
 <h4 id="too-many-groups">Too Many Groups<a class="headerlink" href="#too-many-groups" title="Permanent link">&para;</a></h4>
 FreeBSD only allows a user to be in 16 groups. A user who is too popular will not be allowed to log on. It is easy to mistake this for an ssh problem. If `Authentication succeeded` is present in the <a href="#ssh-debug">debug logs</a>, this indicates that the issue lies on your machine's login rather than with ssh.
@@ -93,7 +93,7 @@ Public key infrastructure (PKI) enables the ssh family of protocols to operate w
 
 <h4 id="no-connection">Why can't I connect using SSH1?<a class="headerlink" href="#no-connection" title="Permanent link">&para;</a></h4>
 
-You can connect to `people.apache.org` using the SSH1 protocols, but only when using <a href="#pki">PKI</a>.
+You can connect to `home.apache.org` using the SSH1 protocols, but only when using <a href="#pki">PKI</a>.
 
 <h4 id="known-host">What is a known host?<a class="headerlink" href="#known-host" title="Permanent link">&para;</a></h4>
 
@@ -102,12 +102,12 @@ middle</a> attacks. The first time that the client connects to a server, the fin
 displayed to the user, who may to asked to confirm the identity of that server. For example:
 
 ```
-The authenticity of host 'people.apache.org (209.237.237.194)' can't be established.
-RSA key fingerprint is 51:85:7d:8f:57:54:e7:6f:27:26:98:7a:c7:c1:47:87.
+The authenticity of host 'home.apache.org (209.237.237.194)' can't be established.
+RSA key fingerprint is 1c:5d:3f:a2:89:97:2e:39:eb:b0:09:9e:cf:c6:8d:f3.
 Are you sure you want to continue connecting (yes/no)? 
 ```
 
-The fingerprints for <code>people.apache.org</code> can be found
+The fingerprints for <code>home.apache.org</code> can be found
 <a href="https://www.apache.org/dev/new-committers-guide.html#identity-theft">here</a>. If the user elects to continue,
 this value is written to a `known_hosts` file. In future, when the user connects to the same server, the system checks this value and alerts the user if it has changed. **Do not continue the connection** after such an alert: contact infrastructure. This is of crucial importance when using keyboard interactive authentication.
 
@@ -121,4 +121,3 @@ A class of attacks where the attacker masquerades as the server to the client an
 <h2 id="elsewhere">More information<a class="headerlink" href="#elsewhere" title="Permanent link">&para;</a></h2>
 
   - <a href="https://www.apache.org/dev/new-committers-guide.html#ssh#ssh" target="_blank">Instructions for new committers</a>
-  - [Setting up SSH on Windows](user-ssh-windows.html)

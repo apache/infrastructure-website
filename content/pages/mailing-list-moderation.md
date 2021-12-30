@@ -1,6 +1,6 @@
 Title: Mailing list moderation
 
-Mailing lists are the virtual room where ASF communities live, form and grow. All formal decisions the project's PMC makes need to have an email thread (possibly with a recorded vote) as an audit trail that this was an official decision.
+Mailing lists are the virtual rooms where ASF communities live, form and grow. All formal decisions the project's PMC makes need to have an email thread (possibly with a recorded vote) as an audit trail that this was an official decision.
 
   - <a href="#new-mailing-list">How do we create a new mailing list?</a>
   - <a href="#mailing-list-moderators">How do I request changes for moderators?</a>
@@ -29,7 +29,7 @@ At the same time, as communities grow, the need for more specialized mailing lis
 **WARNING**: Creating a user email list can harm a project community if the developers don't pay attention to their users and reply to their emails. One would expect a well-behaving user community to reply to one another in a civil, adult manner that is focused on whatever the list was created for, but it can take time for a community to learn and take to heart such good behavior.
 
 <h3 id="mailing-list-moderators">How do I request changes for moderators?<a class="headerlink" href="#mailing-list-moderators" title="Permanent link">&para;</a></h3>
-<p>File an INFRA Jira ticket or ask your PMC to send a request to the `apmail@` alias. If you have access to apmail, you can just change the list of subscribers
+<p>File an INFRA Jira ticket or ask your PMC to send a request to the `apmail@apache.org` alias. If you have access to apmail, you can just change the list of subscribers
 to list/mod. For example, for the `mod_perl` developers' list that is in `~apmail/lists/perl.apache.org/dev/mod/`, use 
 `ezmlm-list`, `>ezmlm-sub` and `ezmlm-unsub`.
 
@@ -75,13 +75,15 @@ Some lists are only open to ASF committers. The moderators have methods to ensur
 
 <h3 id="spam">Dealing with MODERATE requests for spam<a class="headerlink" href="#spam" title="Permanent link">&para;</a></h3>
 
+**NOTE**: You may receive a moderation email that contains email identified as spam. Moderation emails containing spam emails are **not spam**. **DO NOT** report mod emails as spam because this causes our legitimate moderation email and the ASF servers themselves to lose sender reputation. Various email providers may block the ASF as a whole as a result of your action.
+
 If the content of the MODERATE request is clearly spam, the simplest solution is just to delete the request. Do not reject it. However, if you are receiving a lot of such requests, it may perhaps be worth taking additional action.
 
 Some SPAM emails have an opt-out link. Whether this will actually do anything useful is another matter, but it might be worth trying if the spam seems to be from a legitimate business.
 
 To avoid revealing your personal IP address, you may wish to use an anonymizing service such as Tor.
 
-If the spam emails are all sent from the same address (you can find the sender's address in the ), try adding them to the 'deny' list:
+If the spam emails are all sent from the same address (you can find the sender's address in the moderation request in the `cc:` area), try adding them to the 'deny' list:
 
 ```
 {listname}-deny-subscribe-badposter=menace.com@tlp.apache.org</code>

@@ -4,7 +4,7 @@ The Apache Software Foundation has a workspace on <a href="https://the-asf.slack
 
 A thread in a Slack channel can be a great place to work through a knotty question and move toward consensus. **However**, coming to agreement about something on Slack does not mean the PMC has agreed to or approved something. All formal PMC decisions should take place in one of the project's email lists, so we all have an audit trail of who decided what, and when.
 
-## Joining the ASF Slack workspace ##
+## Joining the ASF Slack workspace
 
 Anyone with an `@apache.org` email address can become a full member of the ASF Slack workspace. Use the link above to log in to `the-asf.slack.com`. You can then browse for the open channels you want to join.
 
@@ -24,7 +24,7 @@ Other contributors and interested parties (observers, former members, software e
 
 Infra has disabled the option that would let you provide a link to the workspace to anyone who wanted it, as spammers were taking advantage of it.
 
-### Slack Account Types ###
+### Slack Account Types
 
 Slack has three account types:
   - **Member**: has full access to all Slack's features, including inviting others to join the workspace.
@@ -33,7 +33,7 @@ Slack has three account types:
 
 Slack has a list of <a href="https://slack.com/help/articles/201314026-Permissions-on-a-Slack-workspace" target="_blank">permissions</a> for these account types. 
 
-#### ASF and Slack 'members' ####
+#### ASF and Slack 'members'
 
 Both the ASF and Slack use the term 'member', but in different ways. The Slack use of "member" is above.
 
@@ -42,7 +42,7 @@ For the Apache Software Foundation:
 - An <a href="https://www.apache.org/foundation/how-it-works.html#asf-members" target="_blank">ASF Member</a> is a "person who was nominated by current members and elected due to merit for the evolution and progress of the foundation."
  - A <a href="https://www.apache.org/foundation/how-it-works.html#pmc-members" target="_blank">PMC member</a> is a "developer or a committer that was elected" to the PMC.
 
-## Joining project channels ##
+## Joining project channels
 
 Once you are part of the ASF workspace as a member or a multi-channel guest, you can join any open channels you wish to. 
 
@@ -57,7 +57,7 @@ If you are a single-channel guest, you cannot join other channels.
 It is good manners to send a hello message to a channel you join, possibly with a short statement of why you are there.
 
 
-## Setting up a project channel ##
+## Setting up a project channel
 
 Before setting up a new project channel, search the ASF workspace to make sure it does not already exist. If it does not, any member of the workspace can add the channel.
 
@@ -66,7 +66,12 @@ Before setting up a new project channel, search the ASF workspace to make sure i
 
 If you _do_ add a channel for your project, make sure you tell the PMC, committers, and other stakeholders about it so they can find and make use of it.
 
-## Expectations ##
+## Shared channels
+
+Slack shared channels operate like regular channels, except that they are open to participation by people from two different organizations (such as two companies, or a company and a user group). The ASF does not permit shared channels in its space.
+
+
+## Expectations
 
 As with all ASF activities, we expect ASF Members and project participants to conduct themselves according to the ASF <a href="https://www.apache.org/foundation/policies/conduct.html" target="_blank">Code of Conduct</a>. 
 

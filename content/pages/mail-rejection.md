@@ -1,5 +1,7 @@
 Title: Mail Rejection Policy
 
+### "Not authorized" message
+
 People emailing ASF addresses may see this message: 
 
 ``Recipient address rejected: ASF gnomes rejected your message: SPF fail - not authorized. See https://infra.apache.org/mail-rejection.html``
@@ -27,3 +29,6 @@ Refer to <a href="https://blogs.apache.org/infra/entry/committers_mail_relay_ser
 
 If you feel your email has been blocked or rejected in error, please open a ticket at https://issues.apache.org/jira and include your external IP address and the To: header.
 
+### Issue related to reporting ASF mail as spam
+
+Please read [Dealing with spam in your ASF email account](spam-reporting.html) and **do not** flag valid ASF-related email as spam.

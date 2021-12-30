@@ -1,8 +1,11 @@
 Title: Release Download Pages for Projects
 
-Your project's release download page links the project's content to where people can download your latest release(s). This page describes how a release manager can put such a page together.
+Your project's release download page is where people can download your product's latest release(s). This page describes how a release manager can put such a page together.
 
-Apache's policies on releases, mirrors, and download pages are <a href="https://www.apache.org/dev/mirrors" target="_blank">here</a>.
+Review
+
+  - the policy on [release distribution](release-distribution.html) if you are unsure of the best way to use the project download page
+  - guidelines on [signing releases](release-signing.html)
 
 ## Contents ##
 
@@ -19,9 +22,9 @@ Apache's policies on releases, mirrors, and download pages are <a href="https://
   - Your project's download page can only link to release artifacts that your PMC has approved.
   - Do not link directly to `dist.apache.org`.
   - The download page **must** include a link to the source distribution. It **may** include links to binary distributions.
-  - Links to the mirrored distribution artifacts must not reference the main Apache download server. They should use **closer.lua**, the standard mechanisms to distribute the load between the mirrors. See below for details.
+  - Use **closer.lua**, the standard mechanism to distribute Apache downloads. See below for details.
   - All links to checksums, detached signatures and public keys must reference the main Apache web site and should use `https://` (SSL). For example: `https://downloads.apache.org/httpd/KEYS`.
-  - Old releases should be <a href="https://www.apache.org/legal/release-policy.html#how-to-archive" target="_blank">archived</a> and may be linked from the download page.
+  - All releases are automatically <a href="https://www.apache.org/legal/release-policy.html#how-to-archive" target="_blank">archived</a>. You may continue to link to recent releases, as well as the latest one, from the download page, as a convenience for the user community. You **should** remove links to older releases that you no longer support.
   - Remove all official pre-releases (e.g. milestones, alphas, betas) in a timely fashion once the project releases the final or GA version.
   
 <h2 id="download-page">Your Apache project's download page<a class="headerlink" href="#download-page" title="Permanent link">&para;</a></h2>
@@ -30,13 +33,21 @@ Your Apache project's download page:
 
   - **must** have at least one link to the current release. This link **must** use the `closer.lua` utility. For example: `https://www.apache.org/dyn/closer.lua/PROJECT/VERSION/SOURCE-RELEASE`. (Note: the `mirrors.cgi` and `closer.cgi` scripts have been deprecated. Calls to them redirect to `closer.lua`.)
   - **must** have a link to the checksum and hash for the current release. These links **must** use direct links to the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/VERSION/HASH-OR-CHECKSUM`.
-  - **must** have a link to the keys file for your project on the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/KEYS`.
+  - **must** have a link to the KEYS file for your project on the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/KEYS`.
   - **should** have instructions on how to verify downloads. For this you can include a link to the <a href="https://www.apache.org/info/verification.html" target="_blank">Apache documentation on verification</a>.
   - **must not** include a link to the top level `closer.lua` utility (e.g. `http://www.apache.org/dyn/closer.lua/PROJECT`) as the KEYS, sigs, hashes, and any verification instructions for your release would be missing from the top-level script.
+
+### Current and older releases ###
+
+  - Do **not** keep software distributions on your project's website. Move them to one of the two software distribution sites:
+
+  - **Current public releases** appear on `downloads.apache.org/`. Place current, official releases that the PMC has approved for end-users on the main public release site. Make all changes at <a href="https://dist.apache.org/repos/dist/release/" target="_blank">`https://dist.apache.org/repos/dist/release/`</a>.
+
+  - **Older releases** that you no longer recommend to the general public still appear on `archive.apache.org/dist/`. This site automatically contains all the content that has ever appeared on `downloads.apache.org/`. It is rarely necessary to touch this site, except during a reorganization. Once your project no longer recommends public use of a particular release, delete it from `downloads.apache.org/dist/` by removing it from <a href="https://dist.apache.org/repos/dist/release/" target="_blank">https://dist.apache.org/repos/dist/release/</a>, and remove the link to it from your download page. It will remain  on the archive site.
   
 <h2 id="download-scripts">Using the closer.lua download script<a class="headerlink" href="#download-scripts" title="Permanent link">&para;</a></h2>
 
-Balancing the downloads between mirrors requires the use of a script. You'll find below a standard mechanism to let you easily create scripts that comply with the ASF mirroring distribution policy and take advantage of more advanced features such as intelligent selection of a preferred mirror.
+Apache project download pages **must** use a closer.lua script. You'll find below a standard mechanism to let you easily create scripts that comply with the ASF distribution policy.
 
 There are two options:
 
@@ -50,13 +61,11 @@ The starting point for using the generic `closer.lua` script is a download page 
   - Alter the page so the download link points to `closer.lua`.
   - Pass in the relative path from the distribution root to the artifact as a parameter.
 
-If the artifact is `foo-5.5.1.zip` and is located in `bar/foo` relative to `downloads.apache.org`, then the link `http://www.apache.org/dyn/closer.lua/bar/foo/foo-5.5.1.zip` displays the mirrored distribution for downloading.
+If the artifact is `foo-5.5.1.zip` and it is located in `bar/foo` relative to `downloads.apache.org`, then the link `http://www.apache.org/dyn/closer.lua/bar/foo/foo-5.5.1.zip` provides the link for downloading.
 
 As an alternative, you can generate a direct download link using the following syntax:
 
 `http://www.apache.org/dyn/closer.lua/bar/foo/foo-5.5.1.zip?action=download`
-
-See below for how to generate a customised page of direct links using a mirror.
 
 **Note**: there is some information which every project should include on the download page (e.g. KEYS, sigs, hashes). Please read about <a href="#best_practice">best practices</a> for download pages.
 
@@ -66,9 +75,9 @@ To use a project-specific download script, create a project page containing info
 
 Assuming you have called your download page `download.html`, you can invoke our global download script by using the URI `download.cgi`.
 
-This URI takes the path to the page as an input and passes it to `closer.lua`. The script reads the page and uses information about the mirrors to substitute values for the variables. When you link to the project page (for example, from the rest of the project documentation), it is important to target these links at the script address (and not the html page address).
+This URI takes the path to the page as an input and passes it to `closer.lua`. When you link to the project page (for example, from the rest of the project documentation), it is important to target these links at the script address (and not the html page address).
 
-**Note**: the mirroring script guesses the download release page process by matching file names. There is no requirement to name the script `download.cgi` and the download release page `download.html`, but the name of the script **must** correspond to the name of the download page. For example:
+There is no requirement to name the script `download.cgi` and the download release page `download.html`, but the name of the script **must** correspond to the name of the download page. For example:
 
   - `release.cgi` and `release.html` will work
   - `download.cgi` and `release.html` will **not** work
@@ -76,51 +85,19 @@ This URI takes the path to the page as an input and passes it to `closer.lua`. T
 
 There are a number of elements that a good project download page should contain. See the content to generate that page <a href="https://svn.apache.org/repos/asf/httpd/site/trunk/content/download.mdtext" target="_blank">here</a>.
 
-A variable URL links downloads of artifacts to a mirror. The download script substitutes the correct mirroring base URL for the `[preferred]` variable. The rest of the URL should be the path to the artifact relative to the base of the Apache distribution directory.
+A variable URL links to downloadable artifacts. The download script substitutes the correct base URL for the `[preferred]` variable. The rest of the URL should be the path to the artifact relative to the base of the Apache distribution directory.
 
 For example, for artifact `foo-1.0.0.tar.gz` contained in `bar/foo`, use `[preferred]/bar/foo/foo-1.0.0.tar.gz`
 
-Provide links to the checksum and signature for the artifact next to the download link. It is important that users check the sum and verify the signature, so these links should be close and clear. **Note**: these documents must _not_ be mirrored.
+Provide links to the checksum and signature for the artifact next to the download link. It is important that users check the sum and verify the signature, so these links should be close and clear.
 
 For example, for artifact foo-1.0.0.tar.gz contained in bar/foo :
 
 ```
 `<a href="[preferred]/bar/foo/foo-1.0.0.tar.gz">zip</a>`
-`<a href='https://downloads.apache.org/bar/foo/foo-1.0.0.tar.gz.md5'>MD5</a>`
 `<a href='https://downloads.apache.org/bar/foo/foo-1.0.0.tar.gz.asc'>PGP</a>`
 ```
 
-Give users information about the mirrors and the chance to choose a different mirror if they prefer. Here is a typical script to achieve this:
-
-```
-<p>[if-any logo]
-<a href="[link]"><img align="right" src="[logo]" border="0"
-/></a>[end]
-The currently selected mirror is <b>[preferred]</b>.  If you
-encounter a problem with this mirror, select another mirror.  If all
-mirrors are failing, there are <i>backup</i> mirrors (at the
-end of the mirrors list) that should be available.</p>
-
-<form action="[location]" method="get" id="SelectMirror">
-Other mirrors: <select name="Preferred">
-[if-any http]
-  [for http]<option value="[http]">[http]</option>[end]
-[end]
-
-[if-any ftp]
-  [for ftp]<option value="[ftp]">[ftp]</option>[end]
-[end]
-[if-any backup]
-  [for backup]<option value="[backup]">[backup]
-  (backup)</option>[end]
-[end]
-</select>
-<input type="submit" value="Change" />
-</form>
-
-
-<p>You may also consult the <a href="http://www.apache.org/mirrors/">complete list of mirrors</a>.</p>
-```
 More advice on creating a good project page is [below](#best_practice).
 
 All that remains is to wait for the main website to sync with the new page.
@@ -129,43 +106,32 @@ All that remains is to wait for the main website to sync with the new page.
 
 <h3 id="remind-users">Remind users to check sums and signatures</h3>
 
-Users download Apache releases from mirrors. It is therefore important that they understand that they should always check the hash sums and (if possible) also verify the OpenPGP compatible signature of each download. The content of the release download page plays a critical role in this education process.
+It important that users understand that they should always verify the check sums and (if possible) the OpenPGP compatible signature of each file they download. The content of the release download page plays a critical role in this education process.
 
 Provide clear and easy links to the KEYS, sums and signatures from the download release page or include the information directly in the page itself. The <a href="https://httpd.apache.org/download.cgi" target="_blank">HTTPD page</a> is a good example.
 
 Include a reminder text with links to more information for users. For example:
 
 ```
-Note: when downloading from a mirror please check the
-<a href="https://www.infra.apache.org/release-signing#md5" target="_blank">md5sum</a>
+Note: when downloading, please check the
+<a href="https://infra.apache.org/release-signing.html#sha-checksum" target="_blank">sha checksum</a>
 and verify the 
 <a href="https://www.infra.apache.org/release-signing#openpgp" target="_blank">OpenPGP compatible signature</a> 
 from the <a href="https://www.apache.org" target="_blank">main Apache site</a>. 
 Links are provided above (next to the release download link).
 This <a href="https://downloads.apache.org/ws/axis2/KEYS" target="_blank">KEYS file</a> 
-contains the public keys used for signing release. 
-We recommend that you use a web of trust, if possible, 
-to confirm the identity of these keys.
-For more information, please see the
-<a href="https://www.apache.org/dev/release.html" target="_blank">Apache Release FAQ</a>.
+contains the public keys used for signing release. We recommend that you use a web of trust, if possible, to confirm the identity of these keys.
+For more information, please see the <a href="https://www.apache.org/dev/release.html" target="_blank">Apache Release FAQ</a>.
 ```
 
 <h3 id="linked-urls">Make sure the browser displays linked URLs<a class="headerlink" href="#linked-urls" title="Permanent link">&para;</a></h3>
 
-Users need to understand the origin of the artifacts, signatures and sums they download. Check that the stylesheets your download site uses do not obscure the linked URLs. It is best to use a simple, plain style for download links. Note that some of the Maven-style sheets may obscure some external links in some browsers.
+Users need to be able to verify the origin of the artifacts, signatures and sums they download. Check that the stylesheets your download site uses do not obscure the linked URLs. It is best to use a simple, plain style for download links. Note that some of the Maven-style sheets may obscure some external links in some browsers.
 
-<h3 id="less-than-24hr">Support for bypassing the 24-hour rule<a class="headerlink" href="#less-than-24hr" title="Permanent link">&para;</a></h3>
+<h3 id="less-than-24hr">Timing your release announcement<a class="headerlink" href="#less-than-24hr" title="Permanent link">&para;</a></h3>
 
-Normally you should wait 24 hours after uploading a release to `https://downloads.apache.org/` before announcing it, in order to let mirrors catch up.
-
-If you cannot wait, you can pass a date and time to the download script to indicate that only mirrors that have updated since that time should be selected. This works by adding `update=YYYYMMDDhhmm` to the query string. For example, you can use 
-
-`http://httpd.apache.org/download.cgi?update=200407051415` 
-
-to request only mirrors that have updated after 2:15pm on July 5, 2004 UTC. 
-
-Use this option sparingly, since it can result in excessive load on particular mirrors. It would be appropriate, for example, in an emailed release announcement for an important security release, but not appropriate as a main website link.
+Wait at least an hour after uploading a release to `https://downloads.apache.org/` before announcing it.
 
 <h2 id="questions">Questions?<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h2>
 
-If you need assistance in implementing URL redirection to the mirrors, or if you need any other help in implementing this policy, please contact the `users@infra.apache.org` mailing list.
+If you need assistance in implementing  this policy, contact the `users@infra.apache.org` mailing list.

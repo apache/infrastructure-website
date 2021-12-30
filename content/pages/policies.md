@@ -5,6 +5,7 @@ The Apache Infrastructure Team (Infra) operates under the <a href="https://www.a
 ## Policies
 
 - [Mail rejection](mail-rejection.html)
+- [Dealing with spam in your ASF email account](spam-reporting.html)
 - [Site-wide ban](infra-ban.html)
 - [Access to code repositories](repository-access.html)
 - [Applying the Apache 2.0 license](apply-license.html)
@@ -15,3 +16,6 @@ The Apache Infrastructure Team (Infra) operates under the <a href="https://www.a
 - [Outreach to committers](committer-outreach.html)
 - [GitHub Actions](github-actions-policy.html)
 - [Top-Level Project sites](project-site-policy.html)
+- [Release distribution policy](release-distribution.html)
+  - [Release download pages](release-download-pages.html)
+

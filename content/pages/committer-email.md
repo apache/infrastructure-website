@@ -13,7 +13,25 @@ To review and update your forwarding addresses:
 - Use the <a href="https://id.apache.org/" target="_blank">Selfserve app</a>.
 - Use <a href="https://whimsy.apache.org/roster/committer/__self__" target="_blank">Whimsy</a>. Double-click the green "Email forwarded to" label.
 
+*Known Issues*
+
+- GMail
+
 Users of Google's Gmail should note that the app sometimes shows only one copy of an email, even if copies come to several email aliases that all point to the same inbox. If you try to test forwarding by sending a message to your ASF account from the Gmail account that is the target of the .forward, it can be difficult to tell if it has worked. Send the test e-mail from a different account.
+
+- Microsoft
+
+There have been ongoing problems with Microsoft domains partly because many of their users report our legitimate email as spam.
+
+The Infrastructure team have been trying to get the bans removed, but with no success. At present mails from one of the two ASF outbound servers are being rejected; i.e. on average 50% of mails will not be delivered.
+
+The following Microsoft domains are all affected (as of September 2021):
+
+- outlook.com
+- hotmail.com
+- live.com
+- live.cn
+
 
 ### Registering an email alias ###
 
