@@ -137,7 +137,7 @@ Publishing Maven Releases to Maven Central Repository        </a>
 <h3>Set up your development environment</h3>
 <p>You must sign all artifacts with a key that is publicly verifiable. Follow the instructions here to get your keys created and environment set up.</p>
 <p><strong>Note</strong>: We recommend that you use <a href="https://maven.apache.org/guides/mini/guide-encryption.html" target="_blank">Maven's password encryption capabilities</a> for your passwords. <strong>Do not</strong> store your signing key in <code>settings.xml</code>.</p>
-<p>The <a href="https://cwiki.apache.org/confluence/display/INFRA/hiera-eyaml-gpg+How-To+Guide" target="_blank">gpg plugin</a> can prompt for the key (input is masked) or you can configure it to use an agent.</p>
+<p>The <a href="https://maven.apache.org/plugins/maven-gpg-plugin/" target="_blank">gpg plugin</a> can prompt for the key (input is masked) or you can configure it to use an agent.</p>
 <pre><code>&lt;settings&gt;
 ...
   &lt;servers&gt;
