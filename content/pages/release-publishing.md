@@ -1,6 +1,6 @@
 Title: Release Creation Process
 
-These best practices help guide a PMC through the steps to create and publish an Apache software product release. It complements the formal <a href="https://www.apache.org/legal/release-policy.html" target="_blank">Apache Release Policy</a>, defining what must be in a software release, and [Release Distribution Policy](release-distribution.html), which describes the technical details of where releases are placed/mirrored.
+These best practices help guide a PMC through the steps to create and publish an Apache software product release. It complements the formal <a href="https://www.apache.org/legal/release-policy.html" target="_blank">Apache Release Policy</a>, defining what must be in a software release, and [Release Distribution Policy](release-distribution.html).
 
 Every Apache Software Foundation project software release must meet requirements for content , process , and publication. These requirements ensure that Apache contributors and users benefit from appropriate legal protection the ASF provides, and reflect the Foundation's goals of open, collaborative software development.
 
@@ -65,7 +65,7 @@ The Apache infrastructure _must_ be the primary source for all artifacts officia
 
 Infra maintains the Apache release distribution infrastructure, which has three parts:
 
-- the mirrored directories on `downloads.apache.org`
+- the directories of current releases on `downloads.apache.org`
 - previous releases on `archive.apache.org`
 - Maven repository on `repository.apache.org`
 
@@ -79,19 +79,15 @@ Infra maintains the Apache release distribution infrastructure, which has three 
 
 See the [Release Distribution Policy](release-distribution-policy.html) for specific technical requirements.
 
-Each Apache TLP has a `release/TLP-name` directory in the distribution Subversion repository at `https://dist.apache.org/repos/dist/`. Once a release vote passes, the release manager adds the release artifacts (plus signature and hash files) to this location. Each project is responsible for the structure of its directory. [PyPubSub](pypubsub.html] pushes the contents of these directories to `http://downloads.apache.org/`. **Note** that only the most recent version of each supported release line should be stored here.
+Each Apache TLP has a `release/TLP-name` directory in the distribution Subversion repository at `https://dist.apache.org/repos/dist/`. Once a release vote passes, the release manager adds the release artifacts (plus signature and hash files) to this location. Each project is responsible for the structure of its directory. [PyPubSub](pypubsub.html] pushes the contents of these directories to `http://downloads.apache.org/`. **Note** only store the most recent version of each supported release here.
 
-The contents of the dist/release/ directories are published to the 3rd party mirrors using rsync.
-
-  - **Do not** use the SVN directories under `https://dist.apache.org/repos/dist/` to link to product releases. Projects must use the ASF mirror system. For details, see [Release Download Pages](release-download-pages.html) for further details.
+  - **Do not** use the SVN directories under `https://dist.apache.org/repos/dist/` to link to product releases. Projects must use the ASF release system. See [Release Download Pages](release-download-pages.html) for further details.
 
   - A signature (`.asc`) can become invalid because the signing key is revoked or has expired. Make sure all current signatures for your project in `downloads.apache.org/` are valid.
 
-  - Hash, signature and KEYS files are not propagated to the mirrors; these files are excluded:
+  - Hash, signature and KEYS files are excluded from the public release:
 
 `*.md5 *.sha *.sha1 *.sha256 *.sha512 *.asc *.sig KEYS *.mds MD5SUM SHA*SUM`
-
-The current list is <a href="https://github.com/apache/infrastructure-puppet/blob/deployment/modules/rsync_mirror/manifests/init.pp" target="_blank">here</a>.
 
   - **Do not** publish `.md5` files because MD5 is broken.
   - **Do not** publish `.sig` files. Make sure your `.asc`s are plain-text files.
