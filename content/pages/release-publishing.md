@@ -104,5 +104,5 @@ See [Publishing Maven releases](publishing-maven-artifacts.html).
 
 <h2 id="faqs">FAQs<a class="headerlink" href="#faqs" title="Permanent link">&para;</a></h2>
 
-  - **I published a release. When will it be available for download** Apache uses a global content distribution network (CDN) which collects new releases almost as soon as you post them. The files therefore become available for download almost immediately. You probably don't need to wait more than fifteen minutes before announcing a release.
+  - **I published a release. When will it be available for download?** Apache uses a global content distribution network (CDN) which collects new releases almost as soon as you post them. The files therefore become available for download almost immediately. You probably don't need to wait more than fifteen minutes before announcing a release.
   - **How do I archive an old release?** `downloads.apache.org` is automatically archived. Therefore, a copy of every official release exists in the archives. Just delete the copy of the release that is in your project's dist directory. Remember to update any links from the download page related to that release.
