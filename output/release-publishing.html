@@ -102,7 +102,7 @@ Release Creation Process        </a>
           <h2>
               Release Creation Process
           </h2>
-              <p>These best practices help guide a PMC through the steps to create and publish an Apache software product release. It complements the formal <a href="https://www.apache.org/legal/release-policy.html" target="_blank">Apache Release Policy</a>, defining what must be in a software release, and <a href="release-distribution.html">Release Distribution Policy</a>, which describes the technical details of where releases are placed/mirrored.</p>
+              <p>These best practices help guide a PMC through the steps to create and publish an Apache software product release. It complements the formal <a href="https://www.apache.org/legal/release-policy.html" target="_blank">Apache Release Policy</a>, defining what must be in a software release, and <a href="release-distribution.html">Release Distribution Policy</a>.</p>
 <p>Every Apache Software Foundation project software release must meet requirements for content , process , and publication. These requirements ensure that Apache contributors and users benefit from appropriate legal protection the ASF provides, and reflect the Foundation's goals of open, collaborative software development.</p>
 <h2>Contents</h2>
 <ul>
@@ -149,7 +149,7 @@ Release Creation Process        </a>
 <p>The Apache infrastructure <em>must</em> be the primary source for all artifacts officially released by the ASF.</p>
 <p>Infra maintains the Apache release distribution infrastructure, which has three parts:</p>
 <ul>
-<li>the mirrored directories on <code>downloads.apache.org</code></li>
+<li>the directories of current releases on <code>downloads.apache.org</code></li>
 <li>previous releases on <code>archive.apache.org</code></li>
 <li>Maven repository on <code>repository.apache.org</code></li>
 </ul>
@@ -161,21 +161,19 @@ Release Creation Process        </a>
 </ul>
 <h3 id="normal">Normal distribution on the Apache downloads site<a class="headerlink" href="#normal" title="Permanent link">&para;</a></h3>
 <p>See the <a href="release-distribution-policy.html">Release Distribution Policy</a> for specific technical requirements.</p>
-<p>Each Apache TLP has a <code>release/TLP-name</code> directory in the distribution Subversion repository at <code>https://dist.apache.org/repos/dist/</code>. Once a release vote passes, the release manager adds the release artifacts (plus signature and hash files) to this location. Each project is responsible for the structure of its directory. [PyPubSub](pypubsub.html] pushes the contents of these directories to <code>http://downloads.apache.org/</code>. <strong>Note</strong> that only the most recent version of each supported release line should be stored here.</p>
-<p>The contents of the dist/release/ directories are published to the 3rd party mirrors using rsync.</p>
+<p>Each Apache TLP has a <code>release/TLP-name</code> directory in the distribution Subversion repository at <code>https://dist.apache.org/repos/dist/</code>. Once a release vote passes, the release manager adds the release artifacts (plus signature and hash files) to this location. Each project is responsible for the structure of its directory. [PyPubSub](pypubsub.html] pushes the contents of these directories to <code>http://downloads.apache.org/</code>. <strong>Note</strong> only store the most recent version of each supported release here.</p>
 <ul>
 <li>
-<p><strong>Do not</strong> use the SVN directories under <code>https://dist.apache.org/repos/dist/</code> to link to product releases. Projects must use the ASF mirror system. For details, see <a href="release-download-pages.html">Release Download Pages</a> for further details.</p>
+<p><strong>Do not</strong> use the SVN directories under <code>https://dist.apache.org/repos/dist/</code> to link to product releases. Projects must use the ASF release system. See <a href="release-download-pages.html">Release Download Pages</a> for further details.</p>
 </li>
 <li>
 <p>A signature (<code>.asc</code>) can become invalid because the signing key is revoked or has expired. Make sure all current signatures for your project in <code>downloads.apache.org/</code> are valid.</p>
 </li>
 <li>
-<p>Hash, signature and KEYS files are not propagated to the mirrors; these files are excluded:</p>
+<p>Hash, signature and KEYS files are excluded from the public release:</p>
 </li>
 </ul>
 <p><code>*.md5 *.sha *.sha1 *.sha256 *.sha512 *.asc *.sig KEYS *.mds MD5SUM SHA*SUM</code></p>
-<p>The current list is <a href="https://github.com/apache/infrastructure-puppet/blob/deployment/modules/rsync_mirror/manifests/init.pp" target="_blank">here</a>.</p>
 <ul>
 <li>
 <p><strong>Do not</strong> publish <code>.md5</code> files because MD5 is broken.</p>
