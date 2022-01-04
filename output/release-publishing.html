@@ -196,7 +196,7 @@ Release Creation Process        </a>
 See [Publishing Maven releases](maven-releases.html)
 <h2 id="faqs">FAQs<a class="headerlink" href="#faqs" title="Permanent link">&para;</a></h2>
 <ul>
-<li><strong>I published a release. Why don't I see it on XYZ yet?</strong> Apache uses <a href="pypubsub.html">PyPubSub</a> internally and rsync mirrroring externally. Files committed to the Subversion repository at <code>https://dist.apache.org/repos/dist/</code> are automatically copied, using PyPubSub, to <code>www.apache.org</code>. Then the external mirrors pick up the files from <code>www.apache.org</code>. It may take up to 24 hours or more for a newly published release to be sync'd to all mirrors. Mirrors are required to check for new releases at least once a day, but most will check for updates more frequently.</li>
+<li><strong>I published a release. When will it be available for download</strong> Apache uses a global content distribution network (CDN) which collects new releases almost as soon as you post them. The files therefore become available for download almost immediately. You probably don't need to wait more than fifteen minutes before announcing a release.</li>
 <li><strong>How do I archive an old release?</strong> <code>downloads.apache.org</code> is automatically archived. Therefore, a copy of every official release exists in the archives. Just delete the copy of the release that is in your project's dist directory. Remember to update any links from the download page related to that release.</li>
 </ul>
 
@@ -207,7 +207,7 @@ See [Publishing Maven releases](maven-releases.html)
     <div class="row">
       <div class="large-12 medium-12 columns">
         <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
-          Copyright 2021, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Copyright 2022, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
           Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
         </p>
       </div>
