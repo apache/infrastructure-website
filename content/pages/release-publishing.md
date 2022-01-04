@@ -79,7 +79,7 @@ Infra maintains the Apache release distribution infrastructure, which has three 
 
 See the [Release Distribution Policy](release-distribution-policy.html) for specific technical requirements.
 
-Each Apache TLP has a `release/TLP-name` directory in the distribution Subversion repository at `https://dist.apache.org/repos/dist/`. Once a release vote passes, the release manager adds the release artifacts (plus signature and hash files) to this location. Each project is responsible for the structure of its directory. [PyPubSub](pypubsub.html] pushes the contents of these directories to `http://downloads.apache.org/`. **Note** only store the most recent version of each supported release here.
+Each Apache TLP has a `release/TLP-name` directory in the distribution Subversion repository at `https://dist.apache.org/repos/dist/`. Once a release vote passes, the release manager adds the release artifacts (plus signature and hash files) to this location. Each project is responsible for the structure of its directory. [PyPubSub](pypubsub.html) pushes the contents of these directories to `http://downloads.apache.org/`. **Note** only store the most recent version of each supported release here.
 
   - **Do not** use the SVN directories under `https://dist.apache.org/repos/dist/` to link to product releases. Projects must use the ASF release system. See [Release Download Pages](release-download-pages.html) for further details.
 
@@ -100,7 +100,7 @@ If the release directory does not yet exist, please create a Jira ticket for INF
 **Note**: By default, only PMC/PPMC members have write access to the `dist/release` directories. The `dist/dev` directories by default allow write access by committers.
 
 <h3 id="tomaven">Maven distribution<a class="headerlink" href="#tomaven" title="Permanent link">&para;</a></h3>
-See [Publishing Maven releases](publishing-maven-artifacts.html)
+See [Publishing Maven releases](publishing-maven-artifacts.html).
 
 <h2 id="faqs">FAQs<a class="headerlink" href="#faqs" title="Permanent link">&para;</a></h2>
 
