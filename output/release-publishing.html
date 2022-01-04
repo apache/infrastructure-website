@@ -161,7 +161,7 @@ Release Creation Process        </a>
 </ul>
 <h3 id="normal">Normal distribution on the Apache downloads site<a class="headerlink" href="#normal" title="Permanent link">&para;</a></h3>
 <p>See the <a href="release-distribution-policy.html">Release Distribution Policy</a> for specific technical requirements.</p>
-<p>Each Apache TLP has a <code>release/TLP-name</code> directory in the distribution Subversion repository at <code>https://dist.apache.org/repos/dist/</code>. Once a release vote passes, the release manager adds the release artifacts (plus signature and hash files) to this location. Each project is responsible for the structure of its directory. [PyPubSub](pypubsub.html] pushes the contents of these directories to <code>http://downloads.apache.org/</code>. <strong>Note</strong> only store the most recent version of each supported release here.</p>
+<p>Each Apache TLP has a <code>release/TLP-name</code> directory in the distribution Subversion repository at <code>https://dist.apache.org/repos/dist/</code>. Once a release vote passes, the release manager adds the release artifacts (plus signature and hash files) to this location. Each project is responsible for the structure of its directory. <a href="pypubsub.html">PyPubSub</a> pushes the contents of these directories to <code>http://downloads.apache.org/</code>. <strong>Note</strong> only store the most recent version of each supported release here.</p>
 <ul>
 <li>
 <p><strong>Do not</strong> use the SVN directories under <code>https://dist.apache.org/repos/dist/</code> to link to product releases. Projects must use the ASF release system. See <a href="release-download-pages.html">Release Download Pages</a> for further details.</p>
@@ -191,7 +191,7 @@ Release Creation Process        </a>
 <p>If the release directory does not yet exist, please create a Jira ticket for INFRA with the required information (see the <a href="contact.html">contact</a> page).</p>
 <p><strong>Note</strong>: By default, only PMC/PPMC members have write access to the <code>dist/release</code> directories. The <code>dist/dev</code> directories by default allow write access by committers.</p>
 <h3 id="tomaven">Maven distribution<a class="headerlink" href="#tomaven" title="Permanent link">&para;</a></h3>
-See [Publishing Maven releases](publishing-maven-artifacts.html)
+See [Publishing Maven releases](publishing-maven-artifacts.html).
 <h2 id="faqs">FAQs<a class="headerlink" href="#faqs" title="Permanent link">&para;</a></h2>
 <ul>
 <li><strong>I published a release. When will it be available for download</strong> Apache uses a global content distribution network (CDN) which collects new releases almost as soon as you post them. The files therefore become available for download almost immediately. You probably don't need to wait more than fifteen minutes before announcing a release.</li>
