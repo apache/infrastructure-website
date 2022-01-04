@@ -108,6 +108,5 @@ See [Publishing Maven releases](maven-releases.html)
 
 <h2 id="faqs">FAQs<a class="headerlink" href="#faqs" title="Permanent link">&para;</a></h2>
 
-  - **I published a release. Why don't I see it on XYZ yet?** Apache uses [PyPubSub](pypubsub.html) internally and rsync mirrroring externally. Files committed to the Subversion repository at `https://dist.apache.org/repos/dist/` are automatically copied, using PyPubSub, to `www.apache.org`. Then the external mirrors pick up the files from `www.apache.org`. It may take up to 24 hours or more for a newly published release to be sync'd to all mirrors. Mirrors are required to check for new releases at least once a day, but most will check for updates more frequently.
+  - **I published a release. When will it be available for download** Apache uses a global content distribution network (CDN) which collects new releases almost as soon as you post them. The files therefore become available for download almost immediately. You probably don't need to wait more than fifteen minutes before announcing a release.
   - **How do I archive an old release?** `downloads.apache.org` is automatically archived. Therefore, a copy of every official release exists in the archives. Just delete the copy of the release that is in your project's dist directory. Remember to update any links from the download page related to that release.
-
