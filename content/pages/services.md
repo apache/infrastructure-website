@@ -168,9 +168,11 @@ See [guidance for choosing a product name](product-names.html)
 
 <h3 id="qa">Code quality<a class="headerlink" href="#qa" title="Permanent link">&para;</a></h2>
 
-**SonarQube** is an open-source platform developed by SonarSource for continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities on 20+ programming languages. You can check the status of many Apache project repositories <a href="https://sonarcloud.io/organizations/apache/projects" target="_blank">here</a>.
+<a href="https://sonarcloud.io/" target="_blank">**SonarCloud**</a> is a code quality and security tool that is free to open-source projects. It permits continuous inspection of code quality so your project can perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities in 20+ programming languages.
 
-<a href="https://cwiki.apache.org/confluence/display/INFRA/SonarQube+Analysis" target="_blank">Read more</a>.
+You can <a href="https://sonarcloud.io/organizations/apache/projects" target="_blank">check the status of many Apache project repositories</a>.
+
+<a href="https://cwiki.apache.org/confluence/display/INFRA/SonarCloud+for+ASF+projects" target="_blank">Read more</a>.
 
 <h3 id="code-dist">Code distribution<a class="headerlink" href="#code-dist" title="Permanent link">&para;</a></h3>
 
