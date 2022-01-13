@@ -96,11 +96,11 @@ Tip: You can review the files of some other committer: `ls -al ~mymentor; cat ~m
 
 There are no mandatory rules, but here are some suggestions:
 
-  - Keep all changes in Git/Puppet. See: `https://github.com/apache/infrastructure-puppet`
+  - Keep all changes in Git/Puppet. See: `https://github.com/apache/infrastructure-p6`
     - If you do not have karma, please create PRs in a branch against our Github repository.
     - Keep all application data in `/x1` if possible.
   - Update Puppet with all extra installed packages.
-    - See `https://github.com/apache/infrastructure-puppet/tree/deployment/modules/<vmname>/manifests/init.pp`
+    - See `https://github.com/apache/infrastructure-p6/tree/production/modules/<vmname>/manifests/init.pp`
     - See also the <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+workflow+for+infrastructure-puppet+repo" target="_blank">Git workflow for an Infrastructure Puppet repository</a>.
     
 <h3 id="cautions">Cautions<a class="headerlink" href="#cautions" title="Permanent link">&para;</a></h3>
