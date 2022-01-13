@@ -62,7 +62,7 @@ The more <a href="#how">complete answer</a> is in the table above. Please review
 
   - **Ask** in your project</strong> whether someone has the karma to implement the  requested change. This eases the load on the infra team. The moderators and volunteer admins of the project's issue tracker and wiki can often address issues with those services.
   - **Aggregate requests**: instead of sending five emails, each asking for one more moderator to be added, send one email asking for five moderators to be added.
-  - **CC your PMC** on emails. In Jira tickets, it is helpful to link to a thread that demonstrates PMC consensus. (If you request a significant or major configuration change, we will probably ask for that link if you don't provide it.)
+  - **CC your PMC** on emails. When creating Jira tickets, some cases **SHOULD** or even **MUST** demonstrate PMC consensus. In such cases, not succeeding to demonstrate such PMC consensus, Jira tickets will be **closed as invalid** or even **rejected**. For more details, please refer to our [Jira Guidelines](jira-guidelines.html).
   - If you create a Jira ticket, create it in the **right Jira component**. This helps the team spot pending tasks in their areas. If it's not obvious which component is the right one, report a bug in the documentation.
   - **Be patient**. It may take a few days for someone to respond.
   - **Research your topic**. See the <a href="https://www.apache.org/dev/" target="_blank">developer information section</a>.
