@@ -47,7 +47,7 @@ Infra maintains a wide range of tools for PMCs, project committers, and the Apac
   - All requests for new email lists should go through the <a href="https://selfserve.apache.org/mail.html" target="_blank">self-serve system</a>. Remember not to mark a list as private if you want it publicly archived.
   - Email server - QMail/QSMTPD
   - <a href="https://www.apache.org/foundation/mailinglists.html" target="_blank">email lists</a> - EZMLM
-  - Searchable <a href="https://lists.apache.org/" target="_blank">private email list archives (mod_mbox)</a>. ASF Members have full access; PMC members have access to their PMC's archives only.
+  - Searchable <a href="https://lists.apache.org/" target="_blank">email list archives</a>. ASF Members have full access to private emails; PMC members have access to their PMC's archives only.
   - Spam control - Spamfilter + SpamAssassin
   - Email forwarding: See <a href="https://id.apache.org" target="_blank">id.apache.org</a>
   - <a href="https://lists.apache.org/" target="_blank">PonyMail</a> lets you browse Apache email archives by certain categories, by user, or by project. You must log in if you want to respond to an email, or write a new one, through this interface.
