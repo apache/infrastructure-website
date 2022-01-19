@@ -94,7 +94,7 @@ Infra supports an array of tools and services to help projects develop and suppo
 - Teams can conduct and record meetings through Internet Relay Chat (IRC) using [ASFBot](asfbot.html). However, you must conduct formal votes on decisions in the appropriate project email list, following the <a href="https://www.apache.org/foundation/voting.html" target="_blank">Apache voting process</a>.
 - [Localization tools](localization.html).
 - The Apache <a href="https://creadur.apache.org/rat/" target="_blank">Release Audit Tool (RAT)</a> can help you confirm that your proposed product release complies with all ASF requirements.
-- The ASF <a href="https://oauth.apache.org/api.html" target="_blank">OAuth</a> system provides a focal point for services wishing to make use of authentication without security implications around storing sensitive user data. Many Apache services use it to validate that the user requesting access is a committer within the project and has lawful access to the systems in question.
+- The ASF <a href="https://oauth.apache.org/api.html" target="_blank">OAuth</a> system provides a focal point for services wishing to make use of authentication without security implications around storing sensitive user data. Many Apache services use it to validate that the user requesting access is a committer within the project and has lawful access to the systems in question. <a href="https://cwiki.apache.org/confluence/display/INFRA/ASF+OAuth+Service" target="_blank">Read more about Apache OAuth</a>.
 
 <h3 id="source-repository">Version control<a class="headerlink" href="#source-repository" title="Permanent link">&para;</a></h3>
 
