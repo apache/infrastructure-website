@@ -19,8 +19,8 @@ The <a href="https://www.apache.org/legal" target="_blank">complete requirements
     - <a href="#permissive-deps">Bundling permissively-licensed dependencies</a>
     - <a href="#alv2-dep">Bundling an Apache 2-0 licensed dependency</a>
     - <a href="#bundle-asf-product">Bundling other ASF products</a>
-    - <a href="bundled-vs-non-bundled">Bundled vs. non-bundled dependencies</a>
-    - <a href="deps-of-deps">Dependencies of dependencies</a>
+    - <a href="#bundled-vs-non-bundled">Bundled vs. non-bundled dependencies</a>
+    - <a href="#deps-of-deps">Dependencies of dependencies</a>
   - <a href="#mod-notice">Modifications to NOTICE</a>
   - <a href="#binary">Binary distributions</a>
   - <a href="#example-notice">Example NOTICE file</a>
