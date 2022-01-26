@@ -75,12 +75,13 @@ There are many more optional fields that you can probably skip.
 When you have completed entering the useful information, click **Create** to create the ticket.
 
 <h3 id="followup">Follow-up<a class="headerlink" href="#followup" title="Permanent link">&para;</a></h3>
+
 Once you have submitted your ticket, allow a reasonable time for Infra to respond to you. A team member will probably respond within 24 hours for an urgent issue, but might take a great deal longer for a low-priority request. After that time has passed, feel free to write a reminder email to `users@infra.apache.org`, including the Jira ticket number.
 
 Infra may respond in a number of ways, including:
 
   - Closing the ticket as **invalid**. Review "Before you create a ticket", above, for reasons that may generate this response.
   - Asking for **further details**. You may then see that the status of the ticket has changed to _waiting for user_. Provide the details as best you can in a comment, and change the status to _waiting for Infra_.
-  - Reporting the issue **resolved**. Please verify the fix or that the requested service is now avaialable. If all is well, and Infra has not changed the status to _closed_ or one of its variants, feel free to do so yourself.
+  - Reporting the issue **resolved**. Please verify the fix or that the requested service is now available. If all is well, and Infra has not changed the status to _closed_ or one of its variants, feel free to do so yourself.
 
 **Note**: If the ticket's status is _waiting for user_, Infra may ignore it for now and work on other tickets.
