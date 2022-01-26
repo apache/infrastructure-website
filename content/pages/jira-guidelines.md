@@ -76,7 +76,7 @@ When you have completed entering the useful information, click **Create** to cre
 
 <h3 id="followup">Follow-up<a class="headerlink" href="#followup" title="Permanent link">&para;</a></h3>
 
-Once you have submitted your ticket, allow a reasonable time for Infra to respond to you. A team member will probably respond within 24 hours for an urgent issue, but might take a great deal longer for a low-priority request. After that time has passed, feel free to write a reminder email to `users@infra.apache.org`, including the Jira ticket number.
+Here are details about Infra's typical <a href="https://infra.apache.org/responsetime.html" target="_blank">response times</a> to Jira tickets and other requests, which largely depend on the severity of the issue. If a work week has gone by without a response, feel free to write a reminder email to `users@infra.apache.org`, including the Jira ticket number.
 
 Infra may respond in a number of ways, including:
 
