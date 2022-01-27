@@ -172,7 +172,7 @@ See [guidance for choosing a product name](product-names.html)
 
 You can <a href="https://sonarcloud.io/organizations/apache/projects" target="_blank">check the status of many Apache project repositories</a>.
 
-<a href="https://cwiki.apache.org/confluence/display/INFRA/SonarCloud+for+ASF+projects" target="_blank">Read more</a>.
+Guidance for using SonarCloud with an ASF project <a href="https://cwiki.apache.org/confluence/display/INFRA/SonarCloud+for+ASF+projects" target="_blank">is here</a>.
 
 <h3 id="code-dist">Code distribution<a class="headerlink" href="#code-dist" title="Permanent link">&para;</a></h3>
 
