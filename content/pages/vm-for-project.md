@@ -102,6 +102,10 @@ There are no mandatory rules, but here are some suggestions:
   - Update Puppet with all extra installed packages.
     - See `https://github.com/apache/infrastructure-p6/tree/production/modules/<vmname>/manifests/init.pp`
     - See also the <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+workflow+for+infrastructure-puppet+repo" target="_blank">Git workflow for an Infrastructure Puppet repository</a>.
+
+See also [Managing virtual machines](vm-management.html)
+
+
     
 <h3 id="cautions">Cautions<a class="headerlink" href="#cautions" title="Permanent link">&para;</a></h3>
 
