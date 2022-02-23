@@ -106,7 +106,7 @@ All that remains is to wait for the main website to sync with the new page.
 
 <h3 id="remind-users">Remind users to check sums and signatures</h3>
 
-It important that users understand that they should always verify the check sums and (if possible) the OpenPGP compatible signature of each file they download. The content of the release download page plays a critical role in this education process.
+It is important that users understand that they should always verify the check sums and (if possible) the OpenPGP compatible signature of each file they download. The content of the release download page plays a critical role in this education process.
 
 Provide clear and easy links to the KEYS, sums and signatures from the download release page or include the information directly in the page itself. The <a href="https://httpd.apache.org/download.cgi" target="_blank">HTTPD page</a> is a good example.
 
