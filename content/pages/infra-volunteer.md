@@ -13,7 +13,7 @@ There are some basic things you could do if you're going to help out with the AS
   - Add entries to the Issue Tracker for issues raised via e-mail that are not yet being handled. We don't want them slipping through the cracks.
   - Work on in-house tasks. At any time there are several outstanding TODOs involving general documentation, in-house services, patches, and scripts; not everything is recorded on the issue tracker.
   
-
+**Visit** <a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Volunteers+and+Roles" target="_blank">this Wiki</a> page for details about all the lovely infrastruture tasks waiting for volunteers.
   
 **Come talk to us on [Slack](https://the-asf.slack.com/) in the #asfinfra channel!**
 
