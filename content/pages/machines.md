@@ -13,11 +13,4 @@ Please note that people.apache.org and home.apache.org are aliases and appear in
 
 **The hashes shown below are what the real machines SHOULD have. If it differs from what you see, please contact infra.**
 
-
-<script>
-  function resizeIframe(obj) {
-    obj.style.height = obj.contentWindow.document.documentElement.scrollHeight + 'px';
-  }
-</script>
-
-<iframe src="https://infra-reports.apache.org/machines/index.html" frameborder="0" scrolling="no" onload="resizeIframe(this)" />
+`spu:fetch('https://infra-reports.apache.org/machines/index.html')`
