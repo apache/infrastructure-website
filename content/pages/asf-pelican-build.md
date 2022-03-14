@@ -256,7 +256,7 @@ Content is in [GitHub Flavored Markdown][gfm.html] (GFM).
 
 ASF-Pelican uses a version of <a href="https://github.com/github/cmark-gfm" target="_blank">cmark-gfm</a> by <a href="https://github.blog/2017-03-14-a-formal-spec-for-github-markdown/" target="_blank">GitHub</a> through the `pelican-gfm` plugin created by Apache Infra.
 
-- <a href="https://guides.github.com/features/mastering-markdown/" target="_blank>Mastering Markdown</a>
+- <a href="https://guides.github.com/features/mastering-markdown/" target="_blank">Mastering Markdown</a>
 
 - [Detailed Specification][4] with many examples
 
