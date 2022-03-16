@@ -32,10 +32,10 @@ Review
 Your Apache project's download page:
 
   - **must** have at least one link to the current release. This link **must** use the `closer.lua` utility. For example: `https://www.apache.org/dyn/closer.lua/PROJECT/VERSION/SOURCE-RELEASE`. (Note: the `mirrors.cgi` and `closer.cgi` scripts have been deprecated. Calls to them redirect to `closer.lua`.)
-  - **must** have a link to the checksum and hash for the current release. These links **must** use direct links to the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/VERSION/HASH-OR-CHECKSUM`.
+  - **must** have a link to the checksum for the current release. These links **must** use direct links to the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/VERSION/CHECKSUM`.
   - **must** have a link to the KEYS file for your project on the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/KEYS`.
   - **should** have instructions on how to verify downloads. For this you can include a link to the <a href="https://www.apache.org/info/verification.html" target="_blank">Apache documentation on verification</a>.
-  - **must not** include a link to the top level `closer.lua` utility (e.g. `http://www.apache.org/dyn/closer.lua/PROJECT`) as the KEYS, sigs, hashes, and any verification instructions for your release would be missing from the top-level script.
+  - **must not** include a link to the top level `closer.lua` utility (e.g. `http://www.apache.org/dyn/closer.lua/PROJECT`) as the KEYS, signatures, and any verification instructions for your release would be missing from the top-level script.
 
 ### Current and older releases ###
 
@@ -67,7 +67,7 @@ As an alternative, you can generate a direct download link using the following s
 
 `http://www.apache.org/dyn/closer.lua/bar/foo/foo-5.5.1.zip?action=download`
 
-**Note**: there is some information which every project should include on the download page (e.g. KEYS, sigs, hashes). Please read about <a href="#best_practice">best practices</a> for download pages.
+**Note**: there is some information which every project should include on the download page (e.g. KEYS and signatures). Please read about <a href="#best_practice">best practices</a> for download pages.
 
 <h3 id="custom">Project-specific download script<a class="headerlink" href="#custom" title="Permanent link">&para;</a></h3>
 
