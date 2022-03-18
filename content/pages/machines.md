@@ -2,8 +2,6 @@ Title: Machines and Fingerprints
 
 This page serves as a secure source for validating host keys on various ASF servers and services.
 
-New committers should see the guide for setting up SSH and the brief SSH how-to.
-
 Check fingerprints with: `ssh-keygen -t rsa -l -E md5 -lf <(ssh-keyscan foo.apache.org 2>/dev/null)`.
 
 Note that some hosts may have multiple keys (RSA, ECDSA, ED25519). We only list the RSA AND ECDSA fingerprints on this page.
