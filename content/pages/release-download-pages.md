@@ -43,13 +43,13 @@ Your Apache project's download page:
 
   - **Current public releases** appear on `downloads.apache.org/`. Place current, official releases that the PMC has approved for end-users on the main public release site. Make all changes at <a href="https://dist.apache.org/repos/dist/release/" target="_blank">`https://dist.apache.org/repos/dist/release/`</a>.
 
-  - **Older releases** that you no longer recommend to the general public still appear on `archive.apache.org/dist/`. This site automatically contains all the content that has ever appeared on `downloads.apache.org/`. It is rarely necessary to touch this site, except during a reorganization. Once your project no longer recommends public use of a particular release, delete it from `downloads.apache.org/dist/` by removing it from <a href="https://dist.apache.org/repos/dist/release/" target="_blank">https://dist.apache.org/repos/dist/release/</a>, and remove the link to it from your download page. It will remain  on the archive site.
+  - **Older releases** that you no longer recommend to the general public still appear on `archive.apache.org/dist/`. This site automatically contains all the content that has ever appeared on `downloads.apache.org/`. It is rarely necessary to touch this site, except during a reorganization. Once your project no longer recommends public use of a particular release, delete it from `downloads.apache.org/dist/` by removing it from <a href="https://dist.apache.org/repos/dist/release/" target="_blank">https://dist.apache.org/repos/dist/release/</a>, and removing the link to it from your download page. It remain on the archive site.
 
 To remove an old release from the release area, use a command of the form:
 
 ```svn del -m"Archiving release m.n" https://dist.apache.org/repos/dist/release/<project>/etc/m.n```
 
-This can be used for individual release directories or individual files (if multiple releases are present in a single directory).
+You can use this for release directories or individual files (if multiple releases are present in a single directory).
 
 <h2 id="download-scripts">Using the closer.lua download script<a class="headerlink" href="#download-scripts" title="Permanent link">&para;</a></h2>
 
@@ -136,8 +136,8 @@ Users need to be able to verify the origin of the artifacts, signatures and sums
 
 <h3 id="less-than-24hr">Timing your release announcement<a class="headerlink" href="#less-than-24hr" title="Permanent link">&para;</a></h3>
 
-Wait at least an hour after uploading a release to `https://downloads.apache.org/` before announcing it.
+Wait an hour after uploading a release to `https://downloads.apache.org/` before announcing it.
 
 <h2 id="questions">Questions?<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h2>
 
-If you need assistance in implementing  this policy, contact the `users@infra.apache.org` mailing list.
+If you need assistance in implementing this policy, contact the `users@infra.apache.org` mailing list.
