@@ -37,14 +37,20 @@ Your Apache project's download page:
   - **should** have instructions on how to verify downloads. For this you can include a link to the <a href="https://www.apache.org/info/verification.html" target="_blank">Apache documentation on verification</a>.
   - **must not** include a link to the top level `closer.lua` utility (e.g. `http://www.apache.org/dyn/closer.lua/PROJECT`) as the KEYS, signatures, and any verification instructions for your release would be missing from the top-level script.
 
-### Current and older releases ###
+<h3 id="current-and-older-releases">Current and older releases<a class="headerlink" href="#current-and-older-releases" title="Permanent link">&para;</a></h3>
 
   - Do **not** keep software distributions on your project's website. Move them to one of the two software distribution sites:
 
   - **Current public releases** appear on `downloads.apache.org/`. Place current, official releases that the PMC has approved for end-users on the main public release site. Make all changes at <a href="https://dist.apache.org/repos/dist/release/" target="_blank">`https://dist.apache.org/repos/dist/release/`</a>.
 
   - **Older releases** that you no longer recommend to the general public still appear on `archive.apache.org/dist/`. This site automatically contains all the content that has ever appeared on `downloads.apache.org/`. It is rarely necessary to touch this site, except during a reorganization. Once your project no longer recommends public use of a particular release, delete it from `downloads.apache.org/dist/` by removing it from <a href="https://dist.apache.org/repos/dist/release/" target="_blank">https://dist.apache.org/repos/dist/release/</a>, and remove the link to it from your download page. It will remain  on the archive site.
-  
+
+To remove an old release from the release area, use a command of the form:
+
+```svn del -m"Archiving release m.n" https://dist.apache.org/repos/dist/release/<project>/etc/m.n```
+
+This can be used for individual release directories or individual files (if multiple releases are present in a single directory).
+
 <h2 id="download-scripts">Using the closer.lua download script<a class="headerlink" href="#download-scripts" title="Permanent link">&para;</a></h2>
 
 Apache project download pages **must** use a closer.lua script. You'll find below a standard mechanism to let you easily create scripts that comply with the ASF distribution policy.
