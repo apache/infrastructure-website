@@ -136,7 +136,7 @@ Users need to be able to verify the origin of the artifacts, signatures and sums
 
 <h3 id="less-than-24hr">Timing your release announcement<a class="headerlink" href="#less-than-24hr" title="Permanent link">&para;</a></h3>
 
-Wait an hour after uploading a release to `https://downloads.apache.org/` before announcing it.
+Your release will be available almost immediately after you upload it to `https://downloads.apache.org/`, so you only have to wait about fifteen minutes before announcing it.
 
 <h2 id="questions">Questions?<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h2>
 
