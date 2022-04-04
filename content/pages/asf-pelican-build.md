@@ -252,7 +252,7 @@ Code from `asfreader.py`
 
 ## Render GFM
 
-Content is in [GitHub Flavored Markdown][gfm.html] (GFM).
+Content is in [GitHub Flavored Markdown](gfm.html) (GFM).
 
 ASF-Pelican uses a version of <a href="https://github.com/github/cmark-gfm" target="_blank">cmark-gfm</a> by <a href="https://github.blog/2017-03-14-a-formal-spec-for-github-markdown/" target="_blank">GitHub</a> through the `pelican-gfm` plugin created by Apache Infra.
 
@@ -351,7 +351,7 @@ ASF_GENID = {
 
 ### Element examples
 
-Set the heading id and permalink to `#what`
+Set the heading ID and permalink to `#what`
 
 ```md
 ## What is the Apache Software Foundation?  {#what}
@@ -402,7 +402,7 @@ def permalink(soup, mod_element):
 
 ...
 
-# generate id for a heading
+# generate ID for a heading
 def headingid_transform(ids, soup, tag, permalinks, perma_set):
     new_string = tag.string
     if not new_string:
