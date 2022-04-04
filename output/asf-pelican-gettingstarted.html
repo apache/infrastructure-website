@@ -103,18 +103,19 @@ ASF-Pelican getting-started guide        </a>
               <p>Any ASF project can use the <a href="asf-pelican.html">ASF-Pelican template</a> as the basis for their project website.</p>
 <p>Review the <a href="https://template.staged.apache.org/">Apache Template example</a> to see whether the template's features will support the functions you need for your project</p>
 <h2>How to use this template</h2>
-<p><strong>Note: this information is evolving.</strong></p>
 <ol>
 <li>
 <p>Review the <a href="https://github.com/apache/template-site" target="_blank">code repository for ASF-Pelican</a> to confirm that it may provide the features your project site needs.</p>
 </li>
 <li>
-<p>Create a <a href="https://issues.apache.org/jira/Jira" target="_blank">Jira ticket for Infra</a>, requesting Infra to create a repository using this template for your project. Provide a name and short description for the repository. Infra will confirm the repository's location when it is ready for you.</p>
+<p>Create a <a href="https://issues.apache.org/jira/Jira" target="_blank">Jira ticket</a>, requesting Infra to create a repository using this template for your project. Provide a name and short description for the repository. Infra will confirm the repository's location when it is ready for you.</p>
 </li>
 <li>
 <p><strong>Note</strong>: we strongly suggest that you do your site development in a branch rather than the trunk of the repository, and then merge the branch into the trunk when you are sure that everything as working as you would like it. Each commit to the trunk triggers an automatic build to update your live site; this is great for trivial changes like correcting typos, but more of a challenge if you are making major changes and it turns out that there is an error in your code that disables your live site.</p>
-<p>Review <a href="asf-pelican-branches.html">ASF Pelican feature branches</a>.</p>
 </li>
+</ol>
+<!--- Review [ASF Pelican feature branches](asf-pelican-branches.html). --->
+<ol start="4">
 <li>
 <p>In <code>theme/apache/templates</code>, update the theme's <code>base.html</code> to fit your site's requirements.</p>
 <p>The example has the following frameworks.</p>
@@ -165,7 +166,7 @@ ASF-Pelican getting-started guide        </a>
 <li>
 <p>Create your <a href="content">content</a></p>
 <ul>
-<li><code>.md</code> files using Github Flavored Markdown (<a href="https://infra.apache.org/gfm.html"><strong>gfm</strong></a></li>
+<li><code>.md</code> files using Github Flavored Markdown (<a href="https://infra.apache.org/gfm.html"><strong>gfm</strong></a>)</li>
 <li><code>.ezmd</code> files for templates using <code>ASF_DATA</code></li>
 </ul>
 </li>
