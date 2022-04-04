@@ -362,7 +362,7 @@ There is a blank line and the rest is the <code>text</code>.</p>
             template.generate(fp, metadata)
 </code></pre>
 <h2>Render GFM</h2>
-<p>Content is in [GitHub Flavored Markdown][gfm.html] (GFM).</p>
+<p>Content is in <a href="gfm.html">GitHub Flavored Markdown</a> (GFM).</p>
 <p>ASF-Pelican uses a version of <a href="https://github.com/github/cmark-gfm" target="_blank">cmark-gfm</a> by <a href="https://github.blog/2017-03-14-a-formal-spec-for-github-markdown/" target="_blank">GitHub</a> through the <code>pelican-gfm</code> plugin created by Apache Infra.</p>
 <ul>
 <li>
@@ -526,7 +526,7 @@ ASF_GENID = {
 }
 </code></pre>
 <h3>Element examples</h3>
-<p>Set the heading id and permalink to <code>#what</code></p>
+<p>Set the heading ID and permalink to <code>#what</code></p>
 <pre><code class="language-md">## What is the Apache Software Foundation?  {#what}
 
 The Apache Software Foundation (ASF) is a non-profit 501(c)(3) corporation,
@@ -565,7 +565,7 @@ def permalink(soup, mod_element):
 
 ...
 
-# generate id for a heading
+# generate ID for a heading
 def headingid_transform(ids, soup, tag, permalinks, perma_set):
     new_string = tag.string
     if not new_string:
