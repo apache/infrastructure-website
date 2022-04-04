@@ -7,15 +7,13 @@ Review the [Apache Template example](https://template.staged.apache.org/) to see
 
 ## How to use this template
 
-**Note: this information is evolving.**
-
 1. Review the <a href="https://github.com/apache/template-site" target="_blank">code repository for ASF-Pelican</a> to confirm that it may provide the features your project site needs.
 
-2. Create a <a href="https://issues.apache.org/jira/Jira" target="_blank">Jira ticket for Infra</a>, requesting Infra to create a repository using this template for your project. Provide a name and short description for the repository. Infra will confirm the repository's location when it is ready for you.
+2. Create a <a href="https://issues.apache.org/jira/Jira" target="_blank">Jira ticket</a>, requesting Infra to create a repository using this template for your project. Provide a name and short description for the repository. Infra will confirm the repository's location when it is ready for you.
 
 3. **Note**: we strongly suggest that you do your site development in a branch rather than the trunk of the repository, and then merge the branch into the trunk when you are sure that everything as working as you would like it. Each commit to the trunk triggers an automatic build to update your live site; this is great for trivial changes like correcting typos, but more of a challenge if you are making major changes and it turns out that there is an error in your code that disables your live site. 
 
-   Review [ASF Pelican feature branches](asf-pelican-branches.html).
+<!--- Review [ASF Pelican feature branches](asf-pelican-branches.html). --->
 
 4. In `theme/apache/templates`, update the theme's `base.html` to fit your site's requirements.
 
@@ -52,7 +50,7 @@ Review the [Apache Template example](https://template.staged.apache.org/) to see
 
 7. Create your [content](content)
 
-   - `.md` files using Github Flavored Markdown ([**gfm**](https://infra.apache.org/gfm.html)
+   - `.md` files using Github Flavored Markdown ([**gfm**](https://infra.apache.org/gfm.html))
    - `.ezmd` files for templates using `ASF_DATA`
 
 8. Building
