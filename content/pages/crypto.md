@@ -8,6 +8,8 @@ This page provides PMC members with the information they need to ensure U.S. exp
 
 This page describes the process which should be continued until the Apache VP Legal Affairs approves an updated version.
 
+<h1>WARNING: this page is out of date: e.g. the ECCN matrix file has moved to Git and changed name</h1>
+
 <h4 id="updates">Notification of Updates to this Page<a class="headerlink" href="#updates" title="Permanent link">&para;</a></h4>
 
 Notices of updates to this page appear on the <a href="https://www.apache.org/foundation/mailinglists.html#foundation-legal" target="_blank">legal-discuss</a> mailing list.
