@@ -108,7 +108,7 @@ Apache Theme for ASF Pelican        </a>
 </ul>
 <h2>Page templates</h2>
 <ul>
-<li>base.html - the main template. Other templates extend this template automatically, including those in the default Pelican thme.</li>
+<li>base.html - the main template. Other templates extend this template automatically, including those in the default Pelican theme.</li>
 <li>page.html - this overrides Pelican's <code>default/simple page.html</code>, which includes <code>&lt;h1&gt;{{ page.title }}&lt;/h1&gt;</code>. which we do not want.</li>
 </ul>
 <p>Change <code>base.html</code> as necessary. Add new override templates if you need them.</p>
@@ -140,19 +140,18 @@ This is allows the main <code>index.ezmd</code> to have the same template, but w
 </li>
 </ul>
 <h2>Pelican settings</h2>
-<p>Manage Pelican settings in the <code>pelicanconf.py</code> file at the top level of the template.</p>
+<p>Manage Pelican settings in the <a href="https://github.com/apache/template-site/blob/main/pelicanconf.yaml" target="_blank">pelicanconf.yaml</a> file at the top level of the template.</p>
 <p>Some important settings:</p>
-<pre><code class="language-python">SITEURL = 'https://www.apache.org'
-SITEREPOSITORY = 'https://github.com/apache/www-site/blob/main/content/'
-CURRENTYEAR = date.today().year
+<pre><code>
+site:
+  name: NAME OF YOUR SITE
+  description: DESCRIPTION OF YOUR SITE
+  domain: YOURSITE.apache.org
+  logo: images/logo.png
+  repository: https://github.com/apache/YOUR_REPO/blob/main/content/
+  trademarks: Apache, the Apache feather logo, and &quot;Project&quot; are trademarks or registered trademarks
+  
 </code></pre>
-<p>The file contains helpful comments about the settings.</p>
-<ul>
-<li>
-<p>In <code>base.html</code>, use <code>CURRENTYEAR</code> for the copyright.</p>
-<p><code>Copyright &amp;#169; {{ CURRENTYEAR }} The Apache Software Foundation</code></p>
-</li>
-</ul>
 <h2>Pelican theme</h2>
 <p>This is a <a href="https://docs.getpelican.com/en/latest/themes.html">custom theme</a>. Pelican templates use <a href="https://jinja.palletsprojects.com/en/3.0.x/">Jinja</a>.</p>
 
