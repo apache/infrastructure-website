@@ -105,17 +105,15 @@ ASF-Pelican getting-started guide        </a>
 <h2>How to use this template</h2>
 <ol>
 <li>
-<p>Review the <a href="https://github.com/apache/template-site" target="_blank">code repository for ASF-Pelican</a> to confirm that it may provide the features your project site needs.</p>
+<p>Review the <a href="https://github.com/apache/template-site" target="_blank">code repository for ASF-Pelican</a> to confirm that it provides the features your project site needs.</p>
 </li>
 <li>
 <p>Create a <a href="https://issues.apache.org/jira/Jira" target="_blank">Jira ticket</a>, requesting Infra to create a repository using this template for your project. Provide a name and short description for the repository. Infra will confirm the repository's location when it is ready for you.</p>
 </li>
-<li>
-<p><strong>Note</strong>: we strongly suggest that you do your site development in a branch rather than the trunk of the repository, and then merge the branch into the trunk when you are sure that everything as working as you would like it. Each commit to the trunk triggers an automatic build to update your live site; this is great for trivial changes like correcting typos, but more of a challenge if you are making major changes and it turns out that there is an error in your code that disables your live site.</p>
-</li>
 </ol>
+<p><strong>Note</strong>: we strongly suggest that you do your site development in a branch rather than the trunk of the repository, and then merge the branch into the trunk when you are sure that everything as working as you would like it. Each commit to the trunk triggers an automatic build to update your live site; this is great for trivial changes like correcting typos, but more of a challenge if you are making major changes and it turns out that there is an error in your code that disables your live site.</p>
 <!--- Review [ASF Pelican feature branches](asf-pelican-branches.html). --->
-<ol start="4">
+<ol start="3">
 <li>
 <p>In <code>theme/apache/templates</code>, update the theme's <code>base.html</code> to fit your site's requirements.</p>
 <p>The example has the following frameworks.</p>
@@ -134,35 +132,51 @@ ASF-Pelican getting-started guide        </a>
 </ul>
 </li>
 </ul>
-<p>For fenced code highlighting, have a look at <a href="https://highlightjs.org">highlightjs</a>.</p>
+<p>For fenced code highlighting, review &lt;a href=&quot;<a href="https://highlightjs.org">https://highlightjs.org</a>&quot; target=&quot;_blank&quot;)&gt;highlightjs</a>.</p>
 <ul>
-<li>The <code>content/images</code> folder holds example logo files. Place your other site image files here.</li>
+<li>The <code>content/images</code> folder holds example logo files. Place your own site's image files here.</li>
 </ul>
 </li>
 <li>
 <p>Determine if your site requires a <a href="https://infra.apache.org/asf-pelican-data.html">data model</a>.</p>
 <ul>
-<li>The <code>.ezmd</code> files in the <a href="content">content</a> directory show examples</li>
-<li><a href="asfdata.yaml"><code>asfdata.yaml</code></a> has manuy examples</li>
+<li>The <code>.ezmd</code> files in the <a href="https://github.com/apache/template-site/tree/main/content" target="_blank">content</a> directory show examples</li>
+<li><a href="https://github.com/apache/template-site/blob/main/asfdata.yaml" target="_blank">asfdata.yaml</a> has many examples</li>
 <li>Remove the following if you do not need a data model:
 <ol>
-<li><code>asfdata.py</code> and <code>asfreader.py</code> <a href="/theme/plugins">Plugins</a></li>
 <li><code>asfdata.yaml</code></li>
-<li><code>data</code> directory</li>
+<li><code>data/eccn</code> directory</li>
 </ol>
 </li>
 </ul>
 </li>
 <li>
-<p>Edit your <a href="pelicanconf.py">configuration</a></p>
-<ul>
-<li>Website specific</li>
-<li><code>PLUGINS</code></li>
-<li><code>ASF_DATA</code> - <code>asfdata.py</code> plugin settings</li>
-<li><code>ASF_GENID</code> - <code>asfgenid.py</code> plugin settings
-<code>asfgenid.py</code> performs a series of html fixups including permalinks, heading ids, and table of contents</li>
-</ul>
+<p>Edit the <code>asf.yaml</code> configuration file:</p>
 </li>
+</ol>
+<pre><code>pelican:
+  notify: wave@apache.org
+  autobuild: preview/*
+  target: YOUR SITE'S REPOSITORY
+  theme: theme/apache
+  whoami: main
+
+staging:
+  profile: ~
+  whoami: YOUR SITE'S REPOSITORY
+  autostage: preview/*
+</code></pre>
+<ol start="6">
+<li>Update <code>pelicanconfig.yaml</code> with your site's information:</li>
+</ol>
+<pre><code>site:
+  name: YOUR SITE'S NAME
+  description: DESCRIPTION OF YOUR SITE
+  domain: YOUR SITE'S DOMAIN (like projectname.apache.org)
+  logo: images/logo.png 
+  repository: YOUR SITE'S CODE REPOSITORY
+</code></pre>
+<ol start="7">
 <li>
 <p>Create your <a href="content">content</a></p>
 <ul>
@@ -186,6 +200,16 @@ ASF-Pelican getting-started guide        </a>
 <ul>
 <li><a href="https://github.com/apache/template-site/issues">Issues</a></li>
 </ul>
+<h2>Earlier versions</h2>
+<p>Earlier versions of this template made use of a <code>pelicanconf.py</code> configuration file. The current version uses <code>.asf.yaml</code> and <code>pelicanconf.yaml</code>, as noted above. We retain the earlier instruction for the projects using the earlier version of the template; however, any project starting with the template now should use the files and instructions noted above.</p>
+<pre><code> Edit the `pelicanconf.py` configuration file:
+
+   - Website specific
+   - `PLUGINS`
+   - `ASF_DATA` - `asfdata.py` plugin settings
+   - `ASF_GENID` - `asfgenid.py` plugin settings
+     `asfgenid.py` performs a series of html fixups including permalinks, heading ids, and table of contents
+</code></pre>
 
         </div>
       </div>
