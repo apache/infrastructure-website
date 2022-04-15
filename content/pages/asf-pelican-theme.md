@@ -9,7 +9,7 @@ It has two types of files:
 
 ## Page templates
 
-- base.html - the main template. Other templates extend this template automatically, including those in the default Pelican thme.
+- base.html - the main template. Other templates extend this template automatically, including those in the default Pelican theme.
 - page.html - this overrides Pelican's `default/simple page.html`, which includes `<h1>{{ page.title }}</h1>`. which we do not want.
 
 Change `base.html` as necessary. Add new override templates if you need them.
@@ -43,21 +43,21 @@ This theme uses the following metadata:
 
 ## Pelican settings
 
-Manage Pelican settings in the `pelicanconf.py` file at the top level of the template.
+Manage Pelican settings in the <a href="https://github.com/apache/template-site/blob/main/pelicanconf.yaml" target="_blank">pelicanconf.yaml</a> file at the top level of the template.
 
 Some important settings:
 
-~~~python
-SITEURL = 'https://www.apache.org'
-SITEREPOSITORY = 'https://github.com/apache/www-site/blob/main/content/'
-CURRENTYEAR = date.today().year
-~~~
+```
 
-The file contains helpful comments about the settings.
-
-- In `base.html`, use `CURRENTYEAR` for the copyright.
-
-  `Copyright &#169; {{ CURRENTYEAR }} The Apache Software Foundation`
+site:
+  name: NAME OF YOUR SITE
+  description: DESCRIPTION OF YOUR SITE
+  domain: YOURSITE.apache.org
+  logo: images/logo.png
+  repository: https://github.com/apache/YOUR_REPO/blob/main/content/
+  trademarks: Apache, the Apache feather logo, and "Project" are trademarks or registered trademarks
+  
+```
 
 
 ## Pelican theme
