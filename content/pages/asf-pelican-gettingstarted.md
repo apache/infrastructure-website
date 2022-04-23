@@ -97,3 +97,8 @@ Earlier versions of this template made use of a `pelicanconf.py` configuration f
    - `ASF_GENID` - `asfgenid.py` plugin settings
      `asfgenid.py` performs a series of html fixups including permalinks, heading ids, and table of contents
 ```
+
+# EZMD format
+
+The [EZMD](https://infra.apache.org/asf-pelican-build.html#ezmd) format is a markdown extension of [EZT](https://github.com/gstein/ezt/blob/wiki/Syntax.md). 
+It allows for embedding ezt inside markdown with modifications so simplify the process of fetching generated/external data.
