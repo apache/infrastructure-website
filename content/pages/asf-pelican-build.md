@@ -135,7 +135,7 @@ Code from `pelican-gfm` with some parts elided.
             return text, metadata
 ```
 
-## Model Metadata
+## Model Metadata <a id="ezmd"></a>
 
 In `asfreader.py` we extend EZT syntax to do metadata substitution prior to EZT translation. This allows for a more natural and direct representation than with EZT sequences.
 
