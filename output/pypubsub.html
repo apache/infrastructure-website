@@ -117,6 +117,7 @@ Subscribe to Apache Software Foundation infrastructure events        </a>
 To subscribe to multiple topic batches in an OR'ed way, you may use a comma to separate your batches of topics.</p>
 <p>Some examples:</p>
 <ul>
+<li>To subscribe to all svn commits; <code>http://pubsub.apache.org:2069/svn/commit</code></li>
 <li>To subscribe to all git commits; <code>http://pubsub.apache.org:2069/git/commit</code></li>
 <li>To subscribe to all git events (push+commit) for whimsy.git; <code>http://pubsub.apache.org:2069/git/whimsy</code></li>
 <li>To subscribe to all <code>netbeans.apache.org</code> emails: <code>http://pubsub.apache.org:2069/email/netbeans.apache.org</code></li>
@@ -125,6 +126,13 @@ To subscribe to multiple topic batches in an OR'ed way, you may use a comma to s
 <li>To subscribe to all JIRA events for the HADOOP JIRA instance: <code>http://pubsub.apache.org:2069/jira/HADOOP</code></li>
 <li>To subscribe to <em>both</em> JIRA and email streams for tomcat in one go: <code>http://pubsub.apache.org:2069/jira/TOMCAT,email/tomcat.apache.org</code></li>
 </ul>
+<p>Public SVN repo topics consist of 'svn', the first one or two path segments after the /repo/ in the URL, and 'commit'.
+For example, changes to the repository <code>https://dist.apache.org/repos/dist/release/</code> have the topics <code>svn/dist/release/commit</code>.
+A commit that involves changes to both <code>dist/release</code> and <code>dist/dev</code> has the topics <code>svn/dist/commit</code>.
+Note that <code>svn/dist/release/commit</code> will not match, because the topics in the response do not include <code>release</code>.</p>
+<p>Private SVN repos topics are constructed in the same way, but have an additional 'private' topic.
+For example <code>https://pubsub.apache.org:2070/private/svn/private/committers/commit</code> returns commits for
+<code>https://svn.apache.org/repos/private/committers/board/</code></p>
 <h2>Event payload examples</h2>
 <p>Pings are simple objects like this:</p>
 <pre><code class="language-json">{&quot;stillalive&quot;: 1583973410.9620552}
