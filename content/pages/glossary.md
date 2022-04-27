@@ -1,5 +1,7 @@
 Title: Glossary
 
+# {{title}}
+
 _This page will hold definitions of frequently-used technical terms._
 
   - **checksum** - definition coming
