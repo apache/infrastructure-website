@@ -2,7 +2,7 @@ Title: Docker Hub use policy
 
 # {{title}}
 
-**Docker** is an open source containerization platform. Developers can package applications in **containers**, components combining application source code with the operating system (OS) libraries and dependencies required to run that code in any environment.
+**Docker** is an open source containerization platform. Developers can package applications in **containers**, components combining application source code with the operating system (OS) libraries and dependencies required to run that code in any environment. 
 
 <a href="https://hub.docker.com/" target="_blank">Docker Hub</a> is the world's largest public registry for hosting Docker images. It is the default download source when you are working with Docker.
 
