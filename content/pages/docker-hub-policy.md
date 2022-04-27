@@ -1,6 +1,6 @@
 # Docker Hub use policy
 
-<a href="https://hub.docker.com/" target="_blank">Docker Hub</a> is the world's largest public registry for hosting Docker images. It is the default download source when you are working with docker.
+<a href="https://hub.docker.com/" target="_blank">Docker Hub</a> is the world's largest public registry for hosting Docker images. It is the default download source when you are working with Docker.
 
 A **Docker image** is a file with a set of instructions for building a Docker container. It is like a snapshot in virtual machine (VM) environments.
 
