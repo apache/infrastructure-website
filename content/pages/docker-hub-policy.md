@@ -1,4 +1,6 @@
-# Docker Hub use policy
+Title: Docker Hub use policy
+
+# {{title}}
 
 **Docker** is an open source containerization platform. Developers can package applications in **containers**, components combining application source code with the operating system (OS) libraries and dependencies required to run that code in any environment.
 
