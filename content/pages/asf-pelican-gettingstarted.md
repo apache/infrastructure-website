@@ -57,7 +57,7 @@ staging:
 
 6. Update `pelicanconfig.yaml` with your site's information. See [Configuring ASF Pelican](asf-pelican-config.html) for details.
 
-7. Create your [content](content)
+7. Create your [content](content) 
 
    - `.md` files using Github Flavored Markdown ([**gfm**](https://infra.apache.org/gfm.html))
    - `.ezmd` files for templates using `ASF_DATA`
