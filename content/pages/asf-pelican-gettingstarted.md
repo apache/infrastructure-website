@@ -55,16 +55,7 @@ staging:
   autostage: preview/*
 ```
 
-6. Update `pelicanconfig.yaml` with your site's information:
-
-```
-site:
-  name: YOUR SITE'S NAME
-  description: DESCRIPTION OF YOUR SITE
-  domain: YOUR SITE'S DOMAIN (like projectname.apache.org)
-  logo: images/logo.png 
-  repository: YOUR SITE'S CODE REPOSITORY
-```
+6. Update `pelicanconfig.yaml` with your site's information. See [Configuring ASF Pelican](asf-pelican-config.html) for details.
 
 7. Create your [content](content)
 
