@@ -15,7 +15,7 @@ Review the [Apache Template example](https://template.staged.apache.org/) to see
 
 <!--- Review [ASF Pelican feature branches](asf-pelican-branches.html). --->
 
-3. In `theme/apache/templates`, update the theme's `base.html` to fit your site's requirements.
+3. The Apache Theme is at <a href="https://github.com/apache/template-site/tree/main/theme/apache/templates" target="_blank">theme/apache/templates</a>. Review [the theme instructions](asf-pelican-theme.html), then update the theme's `base.html` to fit your site's requirements. 
 
    The example has the following frameworks.
 
@@ -27,7 +27,7 @@ Review the [Apache Template example](https://template.staged.apache.org/) to see
        - [Bootstrap 4.3.1](https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css)
        - [GitHub Markdown 3.0.1](https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.css)
 
-     For fenced code highlighting, review <a href="https://highlightjs.org" target="_blank")>highlightjs</a>.
+     For fenced code highlighting, review <a href="https://highlightjs.org" target="_blank">highlightjs</a>.
 
    - The `content/images` folder holds example logo files. Place your own site's image files here.
 
