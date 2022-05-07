@@ -65,5 +65,23 @@ site:
 This is a [custom theme][1]. Pelican templates use [Jinja][2].
 
 
+<hr />
+
+### Pelican variables set in pelicanconf.py
+
+**Note**: early users of this template worked with `pelicanconf.py`, which is not part of the latest release. This information is for their convenience.
+
+~~~python
+SITENAME = u'Apache <pmc>'
+SITEDOMAIN = '<pmc>.apache.org'
+SITEURL = 'https://<pmc>.apache.org'
+SITELOGO = 'https://<pmc>.apache.org/images/logo.png'
+SITEDESC = u'<pmc desc>'
+SITEREPOSITORY = 'https://github.com/apache/<pmc-site>/blob/<branch>/content/'
+TRADEMARKS = u'Apache, the Apache feather logo, and <pmc> are trademarks or registered trademarks'
+CURRENTYEAR = date.today().year
+~~~
+
+
 [1]: https://docs.getpelican.com/en/latest/themes.html
 [2]: https://jinja.palletsprojects.com/en/3.0.x/
