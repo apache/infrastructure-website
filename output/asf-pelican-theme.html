@@ -154,6 +154,18 @@ site:
 </code></pre>
 <h2>Pelican theme</h2>
 <p>This is a <a href="https://docs.getpelican.com/en/latest/themes.html">custom theme</a>. Pelican templates use <a href="https://jinja.palletsprojects.com/en/3.0.x/">Jinja</a>.</p>
+<hr />
+<h3>Pelican variables set in pelicanconf.py</h3>
+<p><strong>Note</strong>: early users of this template worked with <code>pelicanconf.py</code>, which is not part of the latest release. This information is for their convenience.</p>
+<pre><code class="language-python">SITENAME = u'Apache &lt;pmc&gt;'
+SITEDOMAIN = '&lt;pmc&gt;.apache.org'
+SITEURL = 'https://&lt;pmc&gt;.apache.org'
+SITELOGO = 'https://&lt;pmc&gt;.apache.org/images/logo.png'
+SITEDESC = u'&lt;pmc desc&gt;'
+SITEREPOSITORY = 'https://github.com/apache/&lt;pmc-site&gt;/blob/&lt;branch&gt;/content/'
+TRADEMARKS = u'Apache, the Apache feather logo, and &lt;pmc&gt; are trademarks or registered trademarks'
+CURRENTYEAR = date.today().year
+</code></pre>
 
         </div>
       </div>
