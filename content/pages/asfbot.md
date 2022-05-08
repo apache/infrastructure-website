@@ -6,8 +6,6 @@ ASFBot offers many services for Apache projects on Internet Relay Chat (IRC). IR
 
 **Note**: Infra supports ASFBot primarily for use during ASF members' meetings. If projects want to add extesions so that ASFBot can do other things, they need to support those extensions rather than relying on Infra to do so.
 
-**Note** that ASFBot is being phased out, to be replaced by a Slack-related service.
-
 ## Contents ##
 
   - <a href="#commits">Reporting on repository commits and new Jira tickets</a>
