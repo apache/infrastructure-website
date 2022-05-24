@@ -103,7 +103,11 @@ Getting started with Git        </a>
               <p>This document is a primer on using Git for an Apache Software Foundation project.</p>
 <h2>Contents</h2>
 <ul>
-<li><a href="#repotypes">Repository types</a></li>
+<li><a href="#repotypes">Repository types</a>
+<ul>
+<li><a href="#publicprivate">Public and private repositories</a></li>
+</ul>
+</li>
 <li><a href="repocheckout">Repository checkout</a></li>
 <li><a href="#committers">Committers: getting started</a></li>
 <li><a href="#windowsusers">Windows users</a></li>
@@ -118,6 +122,9 @@ Getting started with Git        </a>
 <li>Read/write repositories hosted at <code>https://gitbox.apache.org/repos/asf</code></li>
 </ol>
 <p>This document is chiefly about the read/write repositories.</p>
+<h3 id="publicprivate">Public and private repositories<a class="headerlink" href="#publicprivate" title="Permanent link">&para;</a></h3>
+<p>Projects can set up as many <strong>public repositories</strong> as their development work requires, using <a href="https://selfserve.apache.org/" target="_blank">SelfServe</a>.</p>
+<p>Each project can also have a <strong>private repository</strong> space for working on sensitive issues such as security patches. Open a Jira ticket for Infra to request a private repository.</p>
 <h2 id="repocheckout">Repository checkout<a class="headerlink" href="#repocheckout" title="Permanent link">&para;</a></h2>
 <p>The repository URLs are all of the form:</p>
 <pre><code>https://gitbox.apache.org/repos/asf/reponame.git
