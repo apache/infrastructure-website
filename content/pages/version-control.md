@@ -33,7 +33,7 @@ Many Git users manage their source code through one of these tools:
 * <a href="https://gitbox.apache.org" target="_blank">GitBox</a>
 * <a href="https://github.com/apache" target="_blank">GitHub</a>
 
-Some projects began using [read-only-mirrors](git.html) of SVN repositories when Apache's support for Git was limited. This is no longer necessary. [Writable Git](writable-git.html) repositories are available to all projects.
+Some projects began using [read-only-mirrors](git.html) of SVN repositories when Apache's support for Git was limited. This is no longer necessary. [Writable Git](project-repo-policy.html) repositories are available to all projects.
 
 <h3 id="create">Creating repositories<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
 
