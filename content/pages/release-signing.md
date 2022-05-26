@@ -216,7 +216,7 @@ SHA-3 is the designation for a new <a href="#message-digest">cryptographic hash 
 
 <h3 id="secure-hash-algorithms">Which standard cryptographic hash algorithms are secure?<a class="headerlink" href="#secure-hash-algorithms" title="Permanent link">&para;</a></h3>
 
-<a href="#infeasible">Feasible</a> - though expensive - attacks on MD5 have been made public. Similar weaknesses have been found in the SHA family of hashes, though practical attacks are not yet publically known. However, longer hash sizes offer considerable protection, so larger members of the SHA family still look likely to be secure enough for a number of years.
+<a href="#infeasible">Feasible</a> - though expensive - attacks on MD5 have been made public. Similar weaknesses have been found in the SHA family of hashes, though practical attacks are not yet publicly known. However, longer hash sizes offer considerable protection, so larger members of the SHA family still look likely to be secure enough for a number of years.
 
 SHA512 is the strongest well-studied, widely-used cryptographic hash. It is therefore the best recommendation until <a href="#sha3">SHA3</a> is available.</p>
 

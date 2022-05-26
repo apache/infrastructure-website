@@ -5,7 +5,6 @@ The Apache Infrastructure Team (Infra) operates under the <a href="https://www.a
 ### Code repositories
 
 - [Project code repositories](project-repo-policy.html)
-- [Access to code repositories](repository-access.html)
 - [GitHub Actions](github-actions-policy.html)
 
 ### Mail management
