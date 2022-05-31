@@ -102,35 +102,32 @@ Project Code Repository Policy        </a>
           </h2>
               <p>Apache projects can have Subversion or Git code repositories for their product code and assets. The majority of projects now use Git.</p>
 <ul>
-<li>Projects can have as many repositories as their work requires.</li>
-<li>Projects can request new, blank Git repositories through <a href="https://selfserve.apache.org" target="_blank">selfserve</a>.</li>
-<li>Each project can also request (using a Jira ticket) that Infra set up <strong>one</strong> private repository for use with tasks, such as fixing security issues in project code, that should not be publicly available. The requestor must provide reasoning for the need of a private repo. Only members of the project's PMC can see this repository or read its contents.</li>
-<li>Review the Repository Access Policy below.</li>
-<li>Private repos must have commit/PR/issues email sent to the projects private@ list.</li>
+<li>Projects can have as many <strong>public repositories</strong> as their work requires.</li>
+<li>Each project can also request (using a Jira ticket) that Infra set up <strong>one private Git repository</strong> for use with tasks, such as fixing security issues in project code, that should not be publicly available. The PMC must explain its need of a private repo in a Jira ticket for Infa. Only members of the project's PMC can see this repository or read its contents.
+<ul>
+<li>Private repos <strong>must</strong> have commit/PR/issues emails sent to the project's <code>private@</code> list.</li>
+</ul>
+</li>
 </ul>
 <h3>Git Repos</h3>
-<p>Many Apache projects have moved to Git as their main source code repository since 2012. This option is available to any project, with the following policies in place:</p>
-<ul>
-<li>We recommend using <a href="https://github.com/apache/" target="_blank">GitHub</a> for your interactions with writable Git repositories. A <a href="http://github.com/apache/" target="_blank">list of those</a> is available.</li>
+<ol>
+<li>We recommend using <a href="https://github.com/apache/" target="_blank">GitHub</a> for your interactions with <a href="http://github.com/apache/" target="_blank">writable Git repositories</a>.</li>
 <li>Those who have reservations about GitHub's terms and conditions can use Apache's <a href="https://gitbox.apache.org/" target="_blank">GitBox</a>, which also gives full access to Apache's writable Git repositories.</li>
 <li>To link your GitHub and Apache IDs, follow <a href="https://gitbox.apache.org/setup/" target="_blank">these instructions</a>.</li>
-<li>Projects can request new, blank repositories through <a href="https://selfserve.apache.org" target="_blank">selfserve</a>.</li>
+<li>Projects can request new, blank, public repositories through <a href="https://selfserve.apache.org" target="_blank">selfserve</a>.</li>
 <li>Apache does not support custom commits or other hooks. All projects get the same hooks. Setting up <a href="https://github.com/apache/infrastructure-puppet/tree/deployment/modules/gitpubsub" target="_blank">gitpubsub</a> should provide sufficient flexibility without impacting the core Git setup.</li>
-</ul>
-<h3>SVN Repos</h3>
-<ul>
-<li>Subversion repos can be found at <a href="https://svn.apache.org/viewvc" target="_blank">svn.apache.org/viewvc</a></li>
-</ul>
-<h3>Repository Access Policy</h3>
-<ul>
-<li>ASF projects are required to house their project code inside ASF supported services (svn, gitbox).</li>
+</ol>
+<h3>Subversion Repos</h3>
+<p>You can find Subversion repos at <a href="https://svn.apache.org/viewvc" target="_blank">svn.apache.org/viewvc</a>.</p>
+<h3>Repository Access</h3>
+<ol>
+<li>ASF projects are required to house their project code in ASF supported services (Subversion, GitBox).</li>
 <li>Only people with an ICLA on file with Apache can create, edit, or update code housed within the ASF. There is no third-party access to create, edit, or delete files.</li>
 <li>Apache software projects are open-source, so everyone has <strong>read</strong> access to all public code housed within the ASF.</li>
-<li>Each Apache project can have one <strong>private repository</strong> for use with tasks, such as fixing security issues in project code, is available only to the project's PMC members.</li>
 <li>Documentation is not code. Projects can host their documentation anywhere (such as on platforms like readthedocs and gitlab) and, if they choose, make them available to the world to create and edit pages.</li>
-<li>However, if projects create and house their documentation inside the ASF, statement 2. applies to it.</li>
-</ul>
-<p>Since the primary presence of an Apache project must be within Apache, there is an argument for storing project documentation in its own repository alongside the project's code repository. This practice also makes it easier for project committers to move from committing new features or updates to existing features, to writing about them for the project's end-users.</p>
+<li>However, if projects create and house their documentation inside the ASF, statement 2 applies to it.</li>
+</ol>
+<p>Since the primary presence of an Apache project must be within Apache, there is an argument for storing project documentation in its own repository alongside the project's code repository. This practice also makes it easier for project committers to move from committing new features, or updates to existing features, to writing about them for the project's users.</p>
 
         </div>
       </div>
