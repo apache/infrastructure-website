@@ -100,16 +100,16 @@ Project Code Repository Policy        </a>
           <h2>
               Project Code Repository Policy
           </h2>
-              <p>Apache projects can have Subversion or Git code repositories for their product code and assets. The majority of projects now use Git.</p>
+              <p>Each Apache project can have a directory in the Apache Subversion repository, or Git repositories, for their product code and assets. The majority of projects now use Git.</p>
 <ul>
-<li>Projects can have as many <strong>public repositories</strong> as their work requires.</li>
-<li>Each project can also request (using a Jira ticket) that Infra set up <strong>one private Git repository</strong> for use with tasks, such as fixing security issues in project code, that should not be publicly available. The PMC must explain its need of a private repo in a Jira ticket for Infa. Only members of the project's PMC can see this repository or read its contents.
+<li>Each project can have a public directory in the Subversion repository, or as many public Git repositories as their work requires.</li>
+<li>Each project can also request (using a Jira ticket) that Infra set up <strong>one private Git repository</strong> for use with tasks, such as fixing security issues in project code, that should not be publicly available. The PMC must explain its need of a private repo in the Jira ticket. Only members of the project's PMC can see this repository or read its contents.
 <ul>
 <li>Private repos <strong>must</strong> have commit/PR/issues emails sent to the project's <code>private@</code> list.</li>
 </ul>
 </li>
 </ul>
-<h3>Git Repos</h3>
+<h3>Git repositories</h3>
 <ol>
 <li>We recommend using <a href="https://github.com/apache/" target="_blank">GitHub</a> for your interactions with <a href="http://github.com/apache/" target="_blank">writable Git repositories</a>.</li>
 <li>Those who have reservations about GitHub's terms and conditions can use Apache's <a href="https://gitbox.apache.org/" target="_blank">GitBox</a>, which also gives full access to Apache's writable Git repositories.</li>
@@ -117,11 +117,12 @@ Project Code Repository Policy        </a>
 <li>Projects can request new, blank, public repositories through <a href="https://selfserve.apache.org" target="_blank">selfserve</a>.</li>
 <li>Apache does not support custom commits or other hooks. All projects get the same hooks. Setting up <a href="https://github.com/apache/infrastructure-puppet/tree/deployment/modules/gitpubsub" target="_blank">gitpubsub</a> should provide sufficient flexibility without impacting the core Git setup.</li>
 </ol>
-<h3>Subversion Repos</h3>
-<p>You can find Subversion repos at <a href="https://svn.apache.org/viewvc" target="_blank">svn.apache.org/viewvc</a>.</p>
-<h3>Repository Access</h3>
+<h3>Subversion directories</h3>
+<p>Typically, the Incubator PMC makes a Jira request to Infra to create an SVN directory for a graduating project, or for a project joining the ASF with an existing SVN directory. If a project needs a subdirectory for a specific purpose, it requests its creation in a Jira ticket to Infra.</p>
+<p>You can find a list of ASF Subversion directories at <a href="https://svn.apache.org/viewvc" target="_blank">svn.apache.org/viewvc</a>.</p>
+<h3>Repository access</h3>
 <ol>
-<li>ASF projects are required to house their project code in ASF supported services (Subversion, GitBox).</li>
+<li>ASF projects <strong>must</strong> house their project code in ASF supported services (Subversion, GitBox).</li>
 <li>Only people with an ICLA on file with Apache can create, edit, or update code housed within the ASF. There is no third-party access to create, edit, or delete files.</li>
 <li>Apache software projects are open-source, so everyone has <strong>read</strong> access to all public code housed within the ASF.</li>
 <li>Documentation is not code. Projects can host their documentation anywhere (such as on platforms like readthedocs and gitlab) and, if they choose, make them available to the world to create and edit pages.</li>
