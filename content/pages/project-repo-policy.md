@@ -6,7 +6,7 @@ Apache projects can have Subversion or Git code repositories for their product c
   - Projects can request new, blank Git repositories through <a href="https://selfserve.apache.org" target="_blank">selfserve</a>.
   - Each project can also request (using a Jira ticket) that Infra set up **one** private repository for use with tasks, such as fixing security issues in project code, that should not be publicly available. The requestor must provide reasoning for the need of a private repo. Only members of the project's PMC can see this repository or read its contents. 
   - Review the Repository Access Policy below.
-  - Private repos must have commit/PR/issues email sent to a private list. 
+  - Private repos must have commit/PR/issues email sent to the projects private@ list. 
 
 ### Git Repos ###
 
