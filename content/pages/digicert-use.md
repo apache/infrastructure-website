@@ -26,9 +26,9 @@ Whatever you need to sign and however you choose to sign it, you will need to cr
 1. Log on to [DigiCert ONE](https://one.digicert.com/).
 1. Select "Account" from the menu in the top right-hand corner.
 1. Select "Access" in the left-hand menu.
-1. Select "API token" and create a new API token with your ASF id as the name and an expiry date ~1 year in the future.
+1. Select "API token" and create a new API token with a unique name (e.g. ASF ID + year) as the name and an expiry date ~1 year in the future.
 1. Keep a record of the token value
-1. Select "Client Auth" and create a new client certificate with your ASF id as the name and an expiry date ~1 year in the future.
+1. Select "Client Auth" and create a new client certificate with a unique name (e.g. ASF ID + year) as the name and an expiry date ~1 year in the future.
 1. Download the certificate and keep a record of the password
 
 ### Step 3: Install the OS integration
