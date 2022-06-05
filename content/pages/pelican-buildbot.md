@@ -26,7 +26,7 @@ The configuration file is `pelicanconf.py`.
 
 ### Setting up a Pelican website on Git ###
 
-Create the repository for the website content using the <a href="https://gitbox.apache.org/setup/newrepo.html" target="_blank">gitbox self service tool</a> (https://gitbox.apache.org/setup/newrepo.html).
+Create the repository for the website content using the <a href="https://gitbox.apache.org/setup/newrepo.html" target="_blank">GitBox's Boxer self service tool</a> (https://gitbox.apache.org/setup/newrepo.html).
 
 1. Clone the repository to a local workspace
 2. Run `pelican-quickstart` in the root of the repository on the master branch. 

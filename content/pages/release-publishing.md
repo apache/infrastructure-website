@@ -100,6 +100,7 @@ If the release directory does not yet exist, please create a Jira ticket for INF
 **Note**: By default, only PMC/PPMC members have write access to the `dist/release` directories. The `dist/dev` directories by default allow write access by committers.
 
 <h3 id="tomaven">Maven distribution<a class="headerlink" href="#tomaven" title="Permanent link">&para;</a></h3>
+
 See [Publishing Maven releases](publishing-maven-artifacts.html).
 
 <h2 id="faqs">FAQs<a class="headerlink" href="#faqs" title="Permanent link">&para;</a></h2>

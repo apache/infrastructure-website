@@ -81,6 +81,6 @@ This is signaled after a reader has processed the site's content. At this point 
 
 ## Apache CMS
 
-Many projects had their websites served by the Apache CMS from 2010. It is deprecated as of the summer of 2021. The CMS was written in Perl. We have a new approach that fits Pelican. 
+Many projects had their websites served by the Apache CMS from 2010. It was deprecated in 2021. The CMS was written in Perl. We have a new approach that fits Pelican. 
 
 If you want to look into the old CMS process, its <a href="http://svn.apache.org/viewvc/infrastructure/site/trunk/lib/views" target="_blank">Subversion repository and history</a> remain available.

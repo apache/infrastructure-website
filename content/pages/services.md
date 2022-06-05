@@ -102,7 +102,7 @@ Apache provides, and Infra maintains, [code repositories](version-control.html) 
 
   - Information about [using Git](git-primer.html)
     - [Read-only Git mirrors of SVN codebases](git.html)
-    - [Writable Git repositories](writable-git.html)
+    - [Writable Git repositories](project-repo-policy.html)
     - [Apache and GitHub](apache-github.html)
     - [Access roles for GitHub repositories](github-roles.html)
   

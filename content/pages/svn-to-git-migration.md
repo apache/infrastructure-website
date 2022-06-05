@@ -8,4 +8,3 @@ Migrating your project's code repository from Subversion to Git is now **self-se
   1. Ask Infra (using a Jira ticket) to set the old SVN repository to read-only.
 
 The SVN authors' list (required by svn2git for cloning) is at <a href="https://gitbox.apache.org/authors.txt" target="_blank">https://gitbox.apache.org/authors.txt</a>.
-
