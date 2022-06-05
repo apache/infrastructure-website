@@ -12,12 +12,8 @@ You can change the hash type with the option: `ssh -o FingerprintHash=sha256 ...
 
 Please note that `people.apache.org` and `home.apache.org` are aliases and appear in the table as `home-lw-us`.
 
-<<<<<<< HEAD
 If you'd like to update this page or learn more about the data, <a href="https://cwiki.apache.org/confluence/display/INFRA/machines.html" target="_blank">we have a docco for that.</a>
 
-**The hashes shown below are what the real machines SHOULD have. If it differs from what you see, please contact infra.**
-=======
 **The hashes shown below are what the real machines SHOULD have. If an entry differs from what you see, please contact infra.**
->>>>>>> f34ca63dd3acbf0b484e4b11010f17c402999a15
 
 `spu:fetch('https://infra-reports.apache.org/machines/index.html')`
