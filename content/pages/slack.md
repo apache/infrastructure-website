@@ -22,7 +22,7 @@ Other contributors and interested parties (observers, former members, software e
   2. Select `Invite people to ASF`.
   3. Use the`Single channel guests` option and, in the form that appears, provide the email addresses of the people you would like to invite to a specific channel.
 
-Infra has disabled the option that would let you provide a link to the workspace to anyone who wanted it, as spammers were taking advantage of it.
+Infra has disabled the option that would let you provide a link to the workspace to anyone who wanted it, as spammers were taking advantage of it. Projects can invite interested parties (via their `@dev` or `@users` lists or a note on their website) to send a request to join the channel either to the `@dev` list or to an email address the project specifies. The PMC can then extend an invitation to that person, if they choose.
 
 ### Slack Account Types
 
