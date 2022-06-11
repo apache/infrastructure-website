@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Apache Infrastructure Mailing List Migration Project - Apache Infrastructure</title>
+    <title>Mailing List Migration Project - Apache Infrastructure</title>
     <link rel="stylesheet" href="/theme/css/foundation.css">
     <link rel="stylesheet" href="/theme/css/app.css">
     <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
@@ -87,7 +87,7 @@
         <a href="/">Home</a>
         <i class="fa fa-angle-double-right"></i>
         <a href="/draft-mail-migration-faq.html">
-Apache Infrastructure Mailing List Migration Project        </a>
+Mailing List Migration Project        </a>
         (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/draft-mail-migration-faq.md">edit</a>)
       </div>
     </div>
@@ -98,27 +98,47 @@ Apache Infrastructure Mailing List Migration Project        </a>
       <div class="large-12 columns">
         <div class="callout">
           <h2>
-              Apache Infrastructure Mailing List Migration Project
+              Mailing List Migration Project
           </h2>
-              <h2 id="migration">Mailing List Migration</h2>
-<p>As part of the Apache Infrastructure team's goals of modernization and
+              <h3 id="migration">Hermes -> Mailgw</h3>
+<p>
+As part of the Apache Infrastructure team's goals of modernization and
 service improvement, we are pleased to announce the general availability
-of &quot;mailgw&quot;, the long-awaited replacement for hermes.</p>
-<p>This document addresses common questions related to the migration of mail
-and mailing lists to the new server.</p>
-<h2 id="faq">Frequently Asked Questions</h2>
-<p>Will any mail be lost?
-No. Despite being migrated to mailgw from hermes, mail which was 'in flight'
-to hermes will still be delivered to the list on hermes. Once fully migrated,
-email will be routed to mailgw automatically.</p>
-<p>Will official archives be affected?
-No. Archival is managed through subscriptions to the PonEE archival service
-as well as the mbox-vm archiver.</p>
-<p>What about unofficial (hermes-based ~/lists/project.a.o/archives) archives?
-These will not be transferred to mailgw in-situ. They will be archived for
-posterity and can be made available upon request.</p>
-<p>Will queued moderation mails be preserved?
-Yes</p>
+of "mailgw", the long-awaited replacement for hermes.
+<p>
+This document addresses common questions related to the migration of mail 
+and mailing lists to the new server.
+<p>
+<h3 id="faq">Frequently Asked Questions</h3>
+<p>
+<h4>Will any mail be lost?</h4>
+<p>
+No. Despite being migrated to mailgw from hermes, mail which was 'in flight' 
+to hermes will still be delivered to the list on hermes. Once fully migrated, 
+email will be routed to mailgw automatically. This process is transparent to 
+users.
+<p>
+<h4>Will official archives be affected?</h4>
+<p>
+No. Archival is managed through subscriptions to the PonEE archival service 
+as well as the mbox-vm archiver.
+<p>
+<h4>What about unofficial mbox archives?</h4>
+<p>
+hermes-based ~/lists/project.a.o/archives acessible via ezmlm's archive 
+commands (get/index/thread/etc) will not be transferred to mailgw. 
+They will be archived for posterity and can be made available upon 
+request. All mailing list archives should be accessed via the official
+URL <a href="https://lists.apache.org">https://lists.apache.org</a>
+<p>
+<h4>Will queued moderation mails be preserved?</h4>
+<p>
+Yes.
+<p>
+<h4>What do I do if there is a problem?</h4>
+<p>
+Email users@infra.apache.org or open an Infra Jira ticket.
+<p>
 
         </div>
       </div>
