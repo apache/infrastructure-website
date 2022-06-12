@@ -111,11 +111,29 @@ and mailing lists to the new server.
 <p>
 <h3 id="faq">Frequently Asked Questions</h3>
 <p>
+<h4>What are hermes and mailgw, and why are we migrating?</h4>
+<p>
+Hermes and mailgw are hostnames for the servers that process mail to
+@apache.org email addresses. They also process mailing list traffic
+for all ASF projects, e.g. "users@httpd.apache.org".
+<p>
+Hermes is a nearly 10 year old legacy system that pre-dates Infra's modern 
+configuration management strategy, and pre-dates many modern email 
+technologies like TLS encryption.
+<p>
+Mailgw is a modern system using currently available technology, and
+under full configuration management, greatly improving reliability and
+reproducibility of the service in case of failures.
+<p>
+The migration process moves @apache.org and @$project.apache.org email 
+services from hermes onto mailgw, ensuring that email services remain 
+compliant with modern standards to the greatest extent possible.
+<p>
 <h4>Will we lose any email?</h4>
 <p>
-No. Despite the list being migrated from hermes to mailgw, mail which was 
+No. Despite a list being migrated from hermes to mailgw, mail which was 
 'in flight' to hermes will still be delivered to the list subscribers on 
-hermes.  Once the list is fully migrated, we will reroute email to mailgw 
+hermes. Once the list is fully migrated, we will reroute email to mailgw 
 automatically. This process is transparent to users.
 <p>
 <h4>Will this affect official archives?</h4>
