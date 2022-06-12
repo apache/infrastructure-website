@@ -17,11 +17,11 @@ Hermes and mailgw are hostnames for the servers that process mail to
 @apache.org email addresses. They also process mailing list traffic
 for all ASF projects, e.g. "users@httpd.apache.org".
 <p>
-Hermes is a nearly 10 year old legacy system that pre-dates Infra's modern 
+Hermes is a nearly 10 year old legacy server that pre-dates Infra's modern 
 configuration management strategy, and pre-dates many modern email 
 technologies like TLS encryption.
 <p>
-Mailgw is a modern system using currently available technology, and
+Mailgw is a modern server using currently available technology, and
 under full configuration management, greatly improving reliability and
 reproducibility of the service in case of failures.
 <p>
