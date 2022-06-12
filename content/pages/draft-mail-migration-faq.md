@@ -11,32 +11,32 @@ and mailing lists to the new server.
 <p>
 <h3 id="faq">Frequently Asked Questions</h3>
 <p>
-<h4>Will any mail be lost?</h4>
+<h4>Will we lose any email?</h4>
 <p>
 No. Despite the list being migrated from hermes to mailgw, mail which was 
 'in flight' to hermes will still be delivered to the list subscribers on 
-hermes.  Once the list is fully migrated, email will be rerouted to mailgw 
+hermes.  Once the list is fully migrated, we will reroute email to mailgw 
 automatically. This process is transparent to users.
 <p>
-<h4>Will official archives be affected?</h4>
+<h4>Will this affect official archives?</h4>
 <p>
-No. Archival is managed through mailing list subscriptions to the PonEE 
-archival service as well list subscriptions to the mbox-vm archiver. Mail
-delivered via hermes or mailgw will make it to the official archives.
+No. We manage archives through mailing list subscriptions to the PonEE 
+archival service and list subscriptions to the mbox-vm archiver. Mail
+delivered via either hermes or mailgw will make it to the official archives.
 <p>
 <h4>What about unofficial mbox archives?</h4>
 <p>
 hermes-based ~apmail/lists/project.a.o/archives acessible via ezmlm's 
 archive commands (get/index/thread/etc) will not be transferred to mailgw. 
-They will be archived for posterity and can be made available upon 
-Member request. All mailing list archives should be accessed via the 
+They will be archived for posterity and we can provide them upon 
+Member request. Access all mailing list archives via the 
 official URL <a href="https://lists.apache.org">https://lists.apache.org</a>.
 <p>
-<h4>Will queued moderation mails be preserved?</h4>
+<h4>Will the system preserve queued moderation mail?</h4>
 <p>
 Yes.
 <p>
-<h4>Will settings and subscribers/mods be preserved?</h4>
+<h4>Will the system preserve settings and subscribers/mods?</h4>
 <p>
 Yes.
 <p>
