@@ -21,6 +21,7 @@ To subscribe to multiple topic batches in an OR'ed way, you may use a comma to s
 
 Some examples:
 
+* To subscribe to all svn commits; `http://pubsub.apache.org:2069/svn/commit`
 * To subscribe to all git commits; `http://pubsub.apache.org:2069/git/commit`
 * To subscribe to all git events (push+commit) for whimsy.git; `http://pubsub.apache.org:2069/git/whimsy`
 * To subscribe to all `netbeans.apache.org` emails: `http://pubsub.apache.org:2069/email/netbeans.apache.org`
@@ -28,6 +29,16 @@ Some examples:
 * To subscribe to all commits, both Subversion and git: `http://pubsub.apache.org:2069/commit`
 * To subscribe to all JIRA events for the HADOOP JIRA instance: `http://pubsub.apache.org:2069/jira/HADOOP`
 * To subscribe to *both* JIRA and email streams for tomcat in one go: `http://pubsub.apache.org:2069/jira/TOMCAT,email/tomcat.apache.org`
+
+Public SVN repo topics consist of 'svn', the first one or two path segments after the /repo/ in the URL, and 'commit'.
+For example, changes to the repository `https://dist.apache.org/repos/dist/release/` have the topics `svn/dist/release/commit`.
+A commit that involves changes to both `dist/release` and `dist/dev` has the topics `svn/dist/commit`.
+Note that `svn/dist/release/commit` will not match, because the topics in the response do not include `release`.
+
+Private SVN repos topics are constructed in the same way, but have an additional 'private' topic.
+For example `https://pubsub.apache.org:2070/private/svn/private/committers/commit` returns commits for
+`https://svn.apache.org/repos/private/committers/board/`
+
 
 ## Event payload examples
 

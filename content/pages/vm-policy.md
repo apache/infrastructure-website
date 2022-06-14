@@ -6,6 +6,10 @@ Infra will maintain this VM via our existing configuration management tooling. T
 
 - Do not "do-release-upgrade" the VM without discussing with Infra.
 - The project must designate three committers who agree and have the knowledge to maintain the VM.
+- Infra will coordinate with the project to do a reboot of the VM at regular intervals.
 - Infra reserves the right to patch/update/restart the system at will to maintain security.
 
-Here is the process to [request a VM for your project](vm-for-project.html).
+See also:
+
+  - the process to [request a VM for your project](vm-for-project.html)
+  - [Managing virtual machines](vm-management.html)

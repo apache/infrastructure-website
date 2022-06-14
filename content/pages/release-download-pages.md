@@ -32,19 +32,25 @@ Review
 Your Apache project's download page:
 
   - **must** have at least one link to the current release. This link **must** use the `closer.lua` utility. For example: `https://www.apache.org/dyn/closer.lua/PROJECT/VERSION/SOURCE-RELEASE`. (Note: the `mirrors.cgi` and `closer.cgi` scripts have been deprecated. Calls to them redirect to `closer.lua`.)
-  - **must** have a link to the checksum and hash for the current release. These links **must** use direct links to the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/VERSION/HASH-OR-CHECKSUM`.
+  - **must** have a link to the checksum for the current release. These links **must** use direct links to the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/VERSION/CHECKSUM`.
   - **must** have a link to the KEYS file for your project on the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/KEYS`.
   - **should** have instructions on how to verify downloads. For this you can include a link to the <a href="https://www.apache.org/info/verification.html" target="_blank">Apache documentation on verification</a>.
-  - **must not** include a link to the top level `closer.lua` utility (e.g. `http://www.apache.org/dyn/closer.lua/PROJECT`) as the KEYS, sigs, hashes, and any verification instructions for your release would be missing from the top-level script.
+  - **must not** include a link to the top level `closer.lua` utility (e.g. `http://www.apache.org/dyn/closer.lua/PROJECT`) as the KEYS, signatures, and any verification instructions for your release would be missing from the top-level script.
 
-### Current and older releases ###
+<h3 id="current-and-older-releases">Current and older releases<a class="headerlink" href="#current-and-older-releases" title="Permanent link">&para;</a></h3>
 
   - Do **not** keep software distributions on your project's website. Move them to one of the two software distribution sites:
 
   - **Current public releases** appear on `downloads.apache.org/`. Place current, official releases that the PMC has approved for end-users on the main public release site. Make all changes at <a href="https://dist.apache.org/repos/dist/release/" target="_blank">`https://dist.apache.org/repos/dist/release/`</a>.
 
-  - **Older releases** that you no longer recommend to the general public still appear on `archive.apache.org/dist/`. This site automatically contains all the content that has ever appeared on `downloads.apache.org/`. It is rarely necessary to touch this site, except during a reorganization. Once your project no longer recommends public use of a particular release, delete it from `downloads.apache.org/dist/` by removing it from <a href="https://dist.apache.org/repos/dist/release/" target="_blank">https://dist.apache.org/repos/dist/release/</a>, and remove the link to it from your download page. It will remain  on the archive site.
-  
+  - **Older releases** that you no longer recommend to the general public still appear on `archive.apache.org/dist/`. This site automatically contains all the content that has ever appeared on `downloads.apache.org/`. It is rarely necessary to touch this site, except during a reorganization. Once your project no longer recommends public use of a particular release, delete it from `downloads.apache.org/dist/` by removing it from <a href="https://dist.apache.org/repos/dist/release/" target="_blank">https://dist.apache.org/repos/dist/release/</a>, and removing the link to it from your download page. It remain on the archive site.
+
+To remove an old release from the release area, use a command of the form:
+
+```svn del -m"Archiving release m.n" https://dist.apache.org/repos/dist/release/<project>/etc/m.n```
+
+You can use this for release directories or individual files (if multiple releases are present in a single directory).
+
 <h2 id="download-scripts">Using the closer.lua download script<a class="headerlink" href="#download-scripts" title="Permanent link">&para;</a></h2>
 
 Apache project download pages **must** use a closer.lua script. You'll find below a standard mechanism to let you easily create scripts that comply with the ASF distribution policy.
@@ -67,7 +73,7 @@ As an alternative, you can generate a direct download link using the following s
 
 `http://www.apache.org/dyn/closer.lua/bar/foo/foo-5.5.1.zip?action=download`
 
-**Note**: there is some information which every project should include on the download page (e.g. KEYS, sigs, hashes). Please read about <a href="#best_practice">best practices</a> for download pages.
+**Note**: there is some information which every project should include on the download page (e.g. KEYS and signatures). Please read about <a href="#best_practice">best practices</a> for download pages.
 
 <h3 id="custom">Project-specific download script<a class="headerlink" href="#custom" title="Permanent link">&para;</a></h3>
 
@@ -106,7 +112,7 @@ All that remains is to wait for the main website to sync with the new page.
 
 <h3 id="remind-users">Remind users to check sums and signatures</h3>
 
-It important that users understand that they should always verify the check sums and (if possible) the OpenPGP compatible signature of each file they download. The content of the release download page plays a critical role in this education process.
+It is important that users understand that they should always verify the check sums and (if possible) the OpenPGP compatible signature of each file they download. The content of the release download page plays a critical role in this education process.
 
 Provide clear and easy links to the KEYS, sums and signatures from the download release page or include the information directly in the page itself. The <a href="https://httpd.apache.org/download.cgi" target="_blank">HTTPD page</a> is a good example.
 
@@ -130,8 +136,8 @@ Users need to be able to verify the origin of the artifacts, signatures and sums
 
 <h3 id="less-than-24hr">Timing your release announcement<a class="headerlink" href="#less-than-24hr" title="Permanent link">&para;</a></h3>
 
-Wait at least an hour after uploading a release to `https://downloads.apache.org/` before announcing it.
+Your release will be available almost immediately after you upload it to `https://downloads.apache.org/`, so you only have to wait about fifteen minutes before announcing it.
 
 <h2 id="questions">Questions?<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h2>
 
-If you need assistance in implementing  this policy, contact the `users@infra.apache.org` mailing list.
+If you need assistance in implementing this policy, contact the `users@infra.apache.org` mailing list.

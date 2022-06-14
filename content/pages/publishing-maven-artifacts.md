@@ -2,7 +2,7 @@ Title: Publishing Maven Releases to Maven Central Repository
 
 [Apache Maven](https://maven.apache.org/) is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
 
-This document describes how to release Maven artifacts for Apache Software Foundation projects to the [Maven Central Repository](https://maven.apache.org/repository/index.html). This is optional. Apache projects **must** release all software packages through the ASF mirror system. See [Release distribution policy](release-distribution.html) for more details.
+This document describes how to release Maven artifacts for Apache Software Foundation projects to the [Maven Central Repository](https://maven.apache.org/repository/index.html). This is optional. Apache projects **must** release all software packages through the ASF distribution system. See [Release distribution policy](release-distribution.html) for more details.
 
 **Note** make sure you are using version 3.0.5 or newer of Maven. You can <a href="https://maven.apache.org/download.cgi" target="_blank">download</a> and install the latest version of Maven before continuing.
 

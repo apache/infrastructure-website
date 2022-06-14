@@ -47,7 +47,7 @@ Infra maintains a wide range of tools for PMCs, project committers, and the Apac
   - All requests for new email lists should go through the <a href="https://selfserve.apache.org/mail.html" target="_blank">self-serve system</a>. Remember not to mark a list as private if you want it publicly archived.
   - Email server - QMail/QSMTPD
   - <a href="https://www.apache.org/foundation/mailinglists.html" target="_blank">email lists</a> - EZMLM
-  - Searchable <a href="https://lists.apache.org/" target="_blank">private email list archives (mod_mbox)</a>. ASF Members have full access; PMC members have access to their PMC's archives only.
+  - Searchable <a href="https://lists.apache.org/" target="_blank">email list archives</a>. ASF Members have full access to private emails; PMC members have access to their PMC's archives only.
   - Spam control - Spamfilter + SpamAssassin
   - Email forwarding: See <a href="https://id.apache.org" target="_blank">id.apache.org</a>
   - <a href="https://lists.apache.org/" target="_blank">PonyMail</a> lets you browse Apache email archives by certain categories, by user, or by project. You must log in if you want to respond to an email, or write a new one, through this interface.
@@ -94,7 +94,7 @@ Infra supports an array of tools and services to help projects develop and suppo
 - Teams can conduct and record meetings through Internet Relay Chat (IRC) using [ASFBot](asfbot.html). However, you must conduct formal votes on decisions in the appropriate project email list, following the <a href="https://www.apache.org/foundation/voting.html" target="_blank">Apache voting process</a>.
 - [Localization tools](localization.html).
 - The Apache <a href="https://creadur.apache.org/rat/" target="_blank">Release Audit Tool (RAT)</a> can help you confirm that your proposed product release complies with all ASF requirements.
-- The ASF <a href="https://oauth.apache.org/api.html" target="_blank">OAuth</a> system provides a focal point for services wishing to make use of authentication without security implications around storing sensitive user data. Many Apache services use it to validate that the user requesting access is a committer within the project and has lawful access to the systems in question.
+- The ASF <a href="https://oauth.apache.org/api.html" target="_blank">OAuth</a> system provides a focal point for services wishing to make use of authentication without security implications around storing sensitive user data. Many Apache services use it to validate that the user requesting access is a committer within the project and has lawful access to the systems in question. <a href="https://cwiki.apache.org/confluence/display/INFRA/ASF+OAuth+Service" target="_blank">Read more about Apache OAuth</a>.
 
 <h3 id="source-repository">Version control<a class="headerlink" href="#source-repository" title="Permanent link">&para;</a></h3>
 
@@ -102,7 +102,7 @@ Apache provides, and Infra maintains, [code repositories](version-control.html) 
 
   - Information about [using Git](git-primer.html)
     - [Read-only Git mirrors of SVN codebases](git.html)
-    - [Writable Git repositories](writable-git.html)
+    - [Writable Git repositories](project-repo-policy.html)
     - [Apache and GitHub](apache-github.html)
     - [Access roles for GitHub repositories](github-roles.html)
   
@@ -168,9 +168,11 @@ See [guidance for choosing a product name](product-names.html)
 
 <h3 id="qa">Code quality<a class="headerlink" href="#qa" title="Permanent link">&para;</a></h2>
 
-**SonarQube** is an open-source platform developed by SonarSource for continuous inspection of code quality to perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities on 20+ programming languages. You can check the status of many Apache project repositories <a href="https://sonarcloud.io/organizations/apache/projects" target="_blank">here</a>.
+<a href="https://sonarcloud.io/" target="_blank">**SonarCloud**</a> is a code quality and security tool that is free to open-source projects. It permits continuous inspection of code quality so your project can perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities in 20+ programming languages.
 
-<a href="https://cwiki.apache.org/confluence/display/INFRA/SonarQube+Analysis" target="_blank">Read more</a>.
+You can <a href="https://sonarcloud.io/organizations/apache/projects" target="_blank">check the status of many Apache project repositories</a>.
+
+Guidance for using SonarCloud with an ASF project <a href="https://cwiki.apache.org/confluence/display/INFRA/SonarCloud+for+ASF+projects" target="_blank">is here</a>.
 
 <h3 id="code-dist">Code distribution<a class="headerlink" href="#code-dist" title="Permanent link">&para;</a></h3>
 
@@ -192,7 +194,7 @@ Infra can provide Ubuntu virtual machines for projects. See:
 
 <h3 id="voting">Online voting<a class="headerlink" href="#voting" title="Permanent link">&para;</a></h3>
 
-Projects can use the <a href="https://steve.apache.org" target="_blank">Apache STeVe</a> voting system instance (offline when not in use). The tool name refers to the <a href="https://en.wikipedia.org/wiki/Single_transferable_vote" target="_blank">single transferable vote</a> system it uses.
+Projects can use the <a href="https://steve.apache.org" target="_blank">Apache STeVe</a> voting system instance (offline when not in use). The tool name refers to the <a href="https://en.wikipedia.org/wiki/Single_transferable_vote" target="_blank">single transferable vote</a> system that is one of its voting options. Open a Jira ticket for Infra to provide assistance in preparing STeVe for your project's use.
 
 <h2 id="other">Other tools<a class="headerlink" href="#other" title="Permanent link">&para;</a></h2>
 

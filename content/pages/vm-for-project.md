@@ -19,7 +19,7 @@ To request a virtual machine, open a <a href="https://issues.apache.org/jira/bro
 
 1. The project's plans for the virtual machine:
     - Why the project needs a dedicated vm
-    - Is logging in usedin the project's application (HTTPS is mandatory for use of login)?
+    - Is logging in used in the project's application (HTTPS is mandatory for use of login)?
     - Do any special ports need to be opened?
 2. VM resources requested (the operating system will be the latest Ubuntu LTS release):
     - CPU cores (default is 1)
@@ -30,9 +30,9 @@ To request a virtual machine, open a <a href="https://issues.apache.org/jira/bro
 3. Application resources:
     - Database (infra has central sql servers that support postgresql and mysql)
     - Httpd (installed pr default, configuration is to be agreed upon)
-    - Non-standard packages (will be maintained by puppet)
+    - Non-standard packages (will be maintained by infra-p6)
     - DNS names needed (default is to create `vmname` only)
-    - Backup needed (default is **no** backups other than what is in Puppet)
+    - Backup needed (default is **no** backups other than what is in Infra-p6)
 4. Maintainers:
     - Provide the name, Apache ID, and contact info for at least three PMC members who will maintain the vm.
 5. Acknowledgement:
@@ -40,7 +40,7 @@ To request a virtual machine, open a <a href="https://issues.apache.org/jira/bro
 
 CPU and RAM are expensive resources, so unless you make a really compelling case we will start the vm with default values. If you/we see problems later we can always add more. We can add CPU cores and RAM can without reinstalling anything.
 
-The operating system needs to be supported by our standard applications like Puppet, therefore we currently only offer Ubuntu.
+The operating system needs to be supported by our standard applications, therefore we currently only offer Ubuntu.
 
 Important: the ticket must be acknowledged by a PMC member.
 
@@ -96,12 +96,16 @@ Tip: You can review the files of some other committer: `ls -al ~mymentor; cat ~m
 
 There are no mandatory rules, but here are some suggestions:
 
-  - Keep all changes in Git/Puppet. See: `https://github.com/apache/infrastructure-puppet`
+  - Keep all changes in Git/Puppet. See: `https://github.com/apache/infrastructure-p6`
     - If you do not have karma, please create PRs in a branch against our Github repository.
     - Keep all application data in `/x1` if possible.
   - Update Puppet with all extra installed packages.
-    - See `https://github.com/apache/infrastructure-puppet/tree/deployment/modules/<vmname>/manifests/init.pp`
+    - See `https://github.com/apache/infrastructure-p6/tree/production/modules/<vmname>/manifests/init.pp`
     - See also the <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+workflow+for+infrastructure-puppet+repo" target="_blank">Git workflow for an Infrastructure Puppet repository</a>.
+
+See also [Managing virtual machines](vm-management.html)
+
+
     
 <h3 id="cautions">Cautions<a class="headerlink" href="#cautions" title="Permanent link">&para;</a></h3>
 

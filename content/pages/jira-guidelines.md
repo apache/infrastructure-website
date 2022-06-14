@@ -2,18 +2,29 @@ Title: Guidelines for creating a Jira ticket
 
 ## Jira tickets
 
-<a href="https://issues.apache.org/jira" target="_blank">Jira</a> is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management. Atlassian provides Jira services to Apache projects. The tool's name is a short form of the name of the Japanese movie monster, Godzilla, and was an early developer nickname for the application.
+<a href="https://issues.apache.org/jira" target="_blank">Jira</a> is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management. Atlassian provides Jira services to Apache projects. The tool's name is a short form of the name of the Japanese movie monster, Godzilla, which was an early developer nickname for the application.
 
-Anyone can review existing Jira tickets, or issues. You must register and log in if you want to create, comment or vote on, or watch issues. Only developers can edit, prioritize, schedule and resolve issues.
+Anyone can review existing Jira tickets, or issues. You must register and log in if you want to create, comment or vote on, or watch issues. Only developers can edit, prioritize, schedule or resolve issues.
 
-ASF and many of its projects use Jira to keep track of work to be done. The largest group of tickets assigned to Infra are requests for Infra to perform a task of one sort or another. The next largest category is reports of possible bugs in the Infrastructure system:
+ASF and many of its projects use Jira to keep track of work to be done. The largest group of tickets assigned to Infra are requests for Infra to perform a task of one sort or another. The next largest category is reports of possible bugs in the Infrastructure system.
 
-### Before you create a ticket
+<ul>
+<li><a href="#before">Before you create a ticket</a></li>
+<li><a href="#writing">Writing a good Jira ticket</a></li>
+<li><a href="#followup">Follow-up</a></li>
+
+</ul>
+
+
+<h3 id="before">Before you create a ticket<a class="headerlink" href="#before" title="Permanent link">&para;</a></h3>
 
   1. Browse the existing Jira tickets to see if others have already reported the bug you noticed or have requested the task or additional feature that you were going to ask for. If you find a ticket that covers what you wanted to report, you can add a comment and maybe some more relevant information to the existing ticket.
-  2. Decide whether an Apache Jira ticket is the proper venue for your concern. For example, the Infrastructure team installs and operates multiple third party services on behalf of the ASF and its projects. Examples include Jira itself, GitHub, TravisCI, JFrog, LastPass, PonEE, Okta, Nexus, Confluence, and Statuspage. If you have a problem with the core functions of a third party service, it will be more efficient to file a bug report with that service, rather than with Infra or any ASF project. Infra will close as invalid any bug report or enhancement request about a third party service that does not relate to the ASF's interaction with or configuration of that service.
+  2. Decide whether an Apache Jira ticket is the proper venue for your concern. For example, the Infrastructure team installs and operates multiple third party services on behalf of the ASF and its projects. Examples include Jira itself, GitHub, TravisCI, JFrog, LastPass, PonEE, Okta, Nexus, Confluence, and Statuspage. If you have a problem with the core functions of a third party service, it will be more efficient to file a bug report with that service, rather than with Infra or any ASF project. Infra will **close as invalid** any bug report or enhancement request about a third party service that does not relate to the ASF's interaction with or configuration of that service.
+  3. If the ticket is not to report an issue, but to request that Infra make a configuration change, add a service, create a virtual machine, or perform some other work for your project, _unless you are a committer or a PMC member of the project_, include in the ticket a reference to the email thread in which the PMC agreed to that request. Infra will **reject** Jira tickets submitted on behalf of a PMC by someone who is not a committer for that project and cannot in some other way establish a) their connection to the project and b) PMC approval for the request.
 
-### Writing a good Jira ticket
+**Note**: If the ticket is for a major request, such as to set up a virtual machine for the project, the ticket **should** demonstrate PMC approval of the request, no matter what status the ticket-creator has.
+
+<h3 id="writing">Writing a good Jira ticket<a class="headerlink" href="#writing" title="Permanent link">&para;</a></h3>
 If there is nothing in Jira already that covers what's on your mind, and the topic seems related to Apache services or an Apache project rather than a third party, click "Create" to display a form where you can describe your issue or request. Providing as much relevant information as you can helps Infra respond quickly and appropriately.
 
 The form is pretty clear, so the focus here is on a couple of key fields.
@@ -62,3 +73,15 @@ For a feature request, it helps if you can not only describe the feature, but ex
 There are many more optional fields that you can probably skip.
 
 When you have completed entering the useful information, click **Create** to create the ticket.
+
+<h3 id="followup">Follow-up<a class="headerlink" href="#followup" title="Permanent link">&para;</a></h3>
+
+Here are details about Infra's typical <a href="https://infra.apache.org/responsetime.html" target="_blank">response times</a> to Jira tickets and other requests, which largely depend on the severity of the issue. If a work week has gone by without a response, feel free to write a reminder email to `users@infra.apache.org`, including the Jira ticket number.
+
+Infra may respond in a number of ways, including:
+
+  - Closing the ticket as **invalid**. Review "Before you create a ticket", above, for reasons that may generate this response.
+  - Asking for **further details**. You may then see that the status of the ticket has changed to _waiting for user_. Provide the details as best you can in a comment, and change the status to _waiting for Infra_.
+  - Reporting the issue **resolved**. Please verify the fix or that the requested service is now available. If all is well, and Infra has not changed the status to _closed_ or one of its variants, feel free to do so yourself.
+
+**Note**: If the ticket's status is _waiting for user_, Infra may ignore it for now and work on other tickets.

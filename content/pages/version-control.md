@@ -6,6 +6,7 @@ Apache project contributors are in countries all around the world. To help them 
 
   - <a href="#general">In general</a>
   - <a href="#git">Git repositories</a>
+    - <a href="#create">Creating repositories</a>
     - <a href="#asfyaml">.asf.yaml for Git repositories</a>
   - <a href="#svn">SVN repositories</a>
     - <a href="#commandline">Command-line SVN access</a>
@@ -25,18 +26,31 @@ Everyone has *read access* to the repositories and can download the most up-to-d
 
 <h2 id="git">Git repositories<a class="headerlink" href="#git" title="Permanent link">&para;</a></h2>
 
-How-to guides, documentation, and a list of projects using git for revision control are at <a href="https://git.apache.org/" target="_blank">git.apache.org</a>.
+How-to guides, documentation, and a list of projects using Git for revision control are at <a href="https://git.apache.org/" target="_blank">git.apache.org</a>.
 
 Many Git users manage their source code through one of these tools:
 
 * <a href="https://gitbox.apache.org" target="_blank">GitBox</a>
 * <a href="https://github.com/apache" target="_blank">GitHub</a>
 
-Some projects began using [read-only-mirrors](git.html) of SVN repositories when Apache's support for Git was limited. This is no longer necessary. [Writable Git](writable-git.html) repositories are available to all projects.
+Some projects began using [read-only-mirrors](git.html) of SVN repositories when Apache's support for Git was limited. This is no longer necessary. [Writable Git](project-repo-policy.html) repositories are available to all projects.
+
+<h3 id="create">Creating repositories<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
+
+Apache projects can have as many **public** Git repositories as their product development work requires. Use the <a href="http://selfserve.apache.org/" target="_blank">Self Serve tool</a> to create an additional repository.
+
+Some projects require a **private** Git repository, for reasons like:
+
+  - Developing security patches.
+  - Preparing the quarterly Bzoard reports when it is necessary to include information in a  `<private>` section of the report.
+  - Maintaining the details of legal contracts, Memorandums of Understanding (MOUs) and similar arrangements with third parties. PMCs can enter into such arrangements if they are directly required for the development of the project's product or products.
+  - Keeping information that should not be public.
+
+Each PMC can have **one** private Git repository. Open a Jira ticket for Infra to request one, explaining the reasons the project needs it.
 
 <h3 id="asfyaml">.asf.yaml for Git repositories<a class="headerlink" href="#asfyaml" title="Permanent link">&para;</a></h3>
 
-`.asf.yaml` is a branch-specific file. As of July, 2021, projects hosting their websites in a Git repository must use `.asf.yaml` to build and update their sites. Review <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features#Git.asf.yamlfeatures-WebSiteDeploymentServiceforGitRepositories" target="_blank">this guidance</a>.
+`.asf.yaml` is a branch-specific file. Projects hosting their websites in a Git repository must use `.asf.yaml` to build and update their sites. Review <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features#Git.asf.yamlfeatures-WebSiteDeploymentServiceforGitRepositories" target="_blank">this guidance</a>.
 
 Projects can also place `.asf.yaml` in the root of a repository to control:
 
