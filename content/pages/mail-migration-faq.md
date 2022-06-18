@@ -62,3 +62,26 @@ Yes.
 <p>
 Email users@infra.apache.org or open an Infra Jira ticket.
 <p>
+### APMAIL Volunteer Specific Information
+
+#### Will apmail volunteers be able to access the new server?
+
+Yes, apmail access will be re-granted upon request. Ask Infra if you
+wish to continue as an apmail volunteer, and we will add you to the new
+server.
+
+#### What is the actual hostname of the new server?
+
+mailgw-he-de.apache.org
+
+#### How do we know if a list has been migrated?
+
+The list will exist on mailgw-he-de.apache.org, and the list directory 
+on hermes will contain a flag file called 'migrated-to-mailgw'.
+
+#### Do apmail processes remain the same?
+
+For the most part, tools in ~apmail/bin will perform as expected, and 
+ezmlm commands (subscriptions, moderation, etc.,) work as expected. 
+Contact Infra if anything doesn't work.
+
