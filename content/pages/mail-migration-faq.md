@@ -62,7 +62,8 @@ Yes.
 <p>
 Email users@infra.apache.org or open an Infra Jira ticket.
 <p>
-### APMAIL Volunteer Specific Information
+<hr>
+<h3> APMAIL Volunteer Specific Information</h3>
 
 #### Will apmail volunteers be able to access the new server?
 
