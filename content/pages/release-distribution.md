@@ -2,7 +2,7 @@ Title: Release Distribution Policy
 
 <h1 id="policy"> </h1>
 
-This policy governs how Apache software releases are distributed through the technical channels that Infra maintains, and through other distribution platforms. It complements the formal <a href="https://www.apache.org/legal/release-policy.html" target="_blank">Apache Release Policy</a>, which defines what must be in a software release, and the [Release Creation Process](release-publishing.html) page, which describes the steps for a PMC to create a release.
+This policy governs how Apache Top Level Projects (TLPs) distribute releases of their software through the technical channels that Infra maintains, and through other distribution platforms. It complements the formal <a href="https://www.apache.org/legal/release-policy.html" target="_blank">Apache Release Policy</a>, which defines what must be in a software release; and the [Release Creation Process](release-publishing.html) page, which describes the steps for a PMC to create a release.
 
 <h2 id="links">Contents</h2>
 
@@ -28,9 +28,9 @@ This policy governs how Apache software releases are distributed through the tec
 <h2 id="channels">Release distribution channels<a class="headerlink" href="#channels" title="Permanent link">&para;</a></h2>
 
   - The Apache Software Foundation's official channel for distribution of current Apache software releases to the general public is `downloads.apache.org/`. This directory provides access for current releases to the ASF content distribution network (CDN), through which most users download releases.
-  - The public may also obtain Apache software from any number of downstream channels (rpm, deb, homebrew, etc.) which redistribute our releases in original or derived form. The vast majority of such downstream channels operate independently of Apache.
+  - The public may also obtain Apache software from downstream channels (rpm, deb, homebrew, etc.) which redistribute our releases in original or derived form. The vast majority of such downstream channels operate independently of Apache.
   - Infra maintains a number of developer-only channels which facilitate distribution of unreleased software to consenting members of a development community.
-  - All historic Apache releases are available from `archive.apache.org`.
+  - All historical Apache releases are available from `archive.apache.org`.
   
 <h2 id="dist-dir">Release distribution directory<a class="headerlink" href="#dist-dir" title="Permanent link">&para;</a></h2>
 
@@ -42,7 +42,7 @@ Apache Incubator podlings cannot create official ASF releases; see the <a href="
 
 The <a href="http://www.apache.org/dev/release#what" target="_blank">Apache Release Policy</a> governs the content of official Apache releases and the process by which projects create valid releases.
 
-The Policy specifies that binary packages provided by the project or third parties which meet certain criteria may be distributed alongside official source packages. Such packages are sometimes referred to as "convenience binaries" or "PMC-approved artifacts", to distinguish them from other binary packages.
+The Policy specifies that TLPs may distribute binary packages, provided by the project or third parties which meet certain criteria, may be distributed alongside official source packages. Such packages are sometimes referred to as "convenience binaries" or "PMC-approved artifacts", to distinguish them from other binary packages.
 
 <h2 id="public-distribution">Public distribution channels<a class="headerlink" href="#public-distribution" title="Permanent link">&para;</a></h2>
 
@@ -82,7 +82,7 @@ For every artifact distributed to the public through Apache channels, the PMC
 
 For new releases, PMCs **must** supply SHA-256 and/or SHA-512 and **should not** supply MD5 or SHA-1. You do not need to change existing releases.
 
-The names of individual signature and checksum files **must** be formed by adding to the name of the artifact the appropriate suffix:
+You **must** form the names of individual signature and checksum files by adding to the name of the artifact the appropriate suffix:
 
   - `.asc` for a (ASCII-armored) PGP signature
   - `.sha256` for an SHA-256 checksum
