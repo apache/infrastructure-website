@@ -15,7 +15,7 @@ These guidelines relate to Infra policies on resource consumption, linking, lega
 - Web sites must be licensed under Apache License v.2.
 - You must not host or distribute any material that may constitute a felony under US or German law.
 - All web sites must be available on ASF's git or svn servers, and published using git- or pypubsub.
-- Do not host source releases or convenience binaries directly on the web site. Use the mirror system through `dist.apache.org` (but do NOT link to `dist.apache.org`; use `closer.lua`). See [Release download pages for projects](release-download-pages.html).
+- Do not host source releases or convenience binaries directly on the web site. See [Release download pages for projects](release-download-pages.html).
 
 **Note**: Any ASF project can use the [ASF-Pelican template](asf-pelican.html) as the basis for their project website. 
 
