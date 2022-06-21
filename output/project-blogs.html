@@ -1,0 +1,153 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Blog - Apache Infrastructure</title>
+    <link rel="stylesheet" href="/theme/css/foundation.css">
+    <link rel="stylesheet" href="/theme/css/app.css">
+    <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>
+    <link rel="stylesheet"
+          href="/theme/highlight/default.min.css">
+    <script src="/theme/highlight/highlight.min.js"></script>  </head>
+  <body style="background: #C1C1C1;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/theme/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+		  <li><a href="https://blogs.apache.org/infra/" target="_blank">The Infra Blog</a></li>	
+	          
+                </ul>
+              </li>
+              <li><a href="/policies.html" target="_blank" style="padding-left: 5px;">Policies</a></li>
+                           
+              <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Services-Tools</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+		<li><a href="/services.html">Services and Tools</a></li>
+                <li><a href="/machines.html" target="_blank" >Machines and Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" target="_blank" >Blocky</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" target="_blank" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" target="_blank" >Committer Search</a></li>
+		
+                </ul>
+              </li>
+              <li><a href="/doc.html" target="_blank" style="padding-left: 5px;">Documentation</a></li>
+	       <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Contribute</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">	
+		   <li><a href="/infra-volunteer.html">Volunteer with Infra</a></li>
+		   <li><a href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+			<li><a href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+		 </ul>
+	       </li>
+	      
+              <li><a href="/stats.html" target="_blank" style="padding-left: 5px;">Status</a></li>
+              <li><a href="/contact.html" style="padding-left: 5px;"><i class="fa fa-comments" style="color: #FFF; font-size: 0.9rem;"></i>Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/project-blogs.html">
+Project Blog        </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/project-blogs.md">edit</a>)
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              Project Blog
+          </h2>
+              <p>Apache projects and podlings can get a blog at <a href="https://blogs.apache.org" target="_blank">Apache blogs</a> just by asking. A blog can be a great way of announcing new milestones and features, sharing tips and tricks, and putting a &quot;face&quot; on your project for your developer and user communities. The project's PMC is responsible for the blog's content, and for granting write access to PPMC members.</p>
+<p>The application that makes your blog possible is <a href="https://roller.apache.org/" target="_blank">Apache Roller</a>. The website has information about the project and general application documentation.</p>
+<p>It is good practice to discuss the content of blog posts on the project's dev list before publishing.</p>
+<h3>Requesting a project blog</h3>
+<p>To request a blog, create a Jira ticket for Infra using <em>Blogs</em> as its component name. Indicate the project name and the Apache ID of at least one initial blog user who will have Admin access and responsibilities. The Roller <a href="https://github.com/apache/roller/tree/roller-5.2.0/docs" target="_blank">help documentation</a> outlines user roles, and extensive details about working with Roller.</p>
+<h3>Getting editor access</h3>
+<p>The Admins you identify in the Jira ticket also have editor access to your new blog. They should be able to log in with their Apache IDs at <a href="https://blogs.apache.org/" target="_blank">blogs.apache.org</a>. Your project blog is at <code>blogs.apache.org/$project</code>, and the login link is at the bottom of the right column. The Admins can give other people editor or limited writing access.</p>
+<p>Your project PMC &quot;owns&quot; the blog and can choose who gets access to it.</p>
+<h3>Working with your blog</h3>
+<p>This is not a personal blog; it is part of the way your project presents itself to the world. The PMC should approve a plan that covers</p>
+<ul>
+<li>Who is responsible for the blog. It will not write itself!</li>
+<li>Frequency (such as &quot;at least one blog entry a month, with more entries as events require&quot;)</li>
+<li>Topics (&quot;Let's have a series of tips for new users, a post describing each new release, and...&quot;)</li>
+<li>Whether a PMC needs to review a draft of the new blog post before the writer publishes it.</li>
+</ul>
+<h3>Writing a new blog entry</h3>
+<p>When you log in, you see the form for creating a new blog entry. Give the entry a title and some relevant tags (separated by commas), and start writing in the intuitive editor. You can save the entry as a draft at any time and come back to it later.</p>
+<ul>
+<li>You can add a short <em>summary</em> that appears in the list of blog entries so a visitor can decide whether to read the full post.</li>
+<li><em>Plugins</em> are available to provide emoticons, obfuscate email addresses, and convert line breaks if you are pasting in text you have copies from some other document.</li>
+<li>In the Advanced Settings section you can schedule when to publish this entry.</li>
+<li><strong>Important</strong>: you also have the option, under Advanced Settings, of allowing comments on the entry, and for how long. ALthough commenting is on by default, we <strong>strongly advise that you turn it off</strong>. There is a steady stream of spam comments that show up on even the most innocent blog posting.</li>
+</ul>
+<h3>Working with drafts</h3>
+<p>A list of unpublished drafts appears in the left column, above the list of recent blog posts. Click any draft to open it in the editing menu.</p>
+<ul>
+<li><strong>Preview</strong>: Tthe <em>Full Preview</em> button appears once the blog entry has been saved at least once. Click it to see, in a new window, the entry as it will appear when published.</li>
+<li><strong>Publish</strong>: Click the  <em>Publish to Weblog</em> button to publish the draft to your project's blog. It should appear almost immediately.</li>
+<li><strong>Delete</strong>: Click the <em>Delete Entry</em> button.</li>
+</ul>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2022, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    
+    <script src="/theme/js/vendor/jquery.js"></script>
+    <script src="/theme/js/vendor/what-input.js"></script>
+    <script src="/theme/js/vendor/foundation.js"></script>
+    <script src="/theme/js/app.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
