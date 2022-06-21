@@ -1,0 +1,177 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Response time - A Pelican Blog</title>
+    <link rel="stylesheet" href="/theme/css/foundation.css">
+    <link rel="stylesheet" href="/theme/css/app.css">
+    <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>
+    <link rel="stylesheet"
+          href="/theme/highlight/default.min.css">
+    <script src="/theme/highlight/highlight.min.js"></script>  </head>
+  <body style="background: #C1C1C1;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/theme/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+		  <li><a href="https://blogs.apache.org/infra/" target="_blank">The Infra Blog</a></li>	
+	          
+                </ul>
+              </li>
+              <li><a href="/policies.html" target="_blank" style="padding-left: 5px;">Policies</a></li>
+                           
+              <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Services-Tools</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+		<li><a href="/services.html">Services and Tools</a></li>
+                <li><a href="/machines.html" target="_blank" >Machines and Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" target="_blank" >Blocky</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" target="_blank" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" target="_blank" >Committer Search</a></li>
+		
+                </ul>
+              </li>
+              <li><a href="/doc.html" target="_blank" style="padding-left: 5px;">Documentation</a></li>
+	       <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Contribute</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">	
+		   <li><a href="/infra-volunteer.html">Volunteer with Infra</a></li>
+		   <li><a href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+			<li><a href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+		 </ul>
+	       </li>
+	      
+              <li><a href="/stats.html" target="_blank" style="padding-left: 5px;">Status</a></li>
+              <li><a href="/contact.html" style="padding-left: 5px;"><i class="fa fa-comments" style="color: #FFF; font-size: 0.9rem;"></i>Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/response-time.html">
+Response time        </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/response-time.md">edit</a>)
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              Response time
+          </h2>
+              <p>The Infra team takes seriously all reports it receives about issues in the Apache system. We triage reports according to severity, and seek to resolve them in a timely fashion.</p>
+<h3>Services</h3>
+<p>Currently, Apache services are operating at an uptime rate of over 99%.</p>
+<p>For the current status of services, see <a href="https://status.apache.org/" target="_blank">the ASF status page</a> and the Infra <a href="https://www.apache.org/uptime/" target="_blank">response graphs</a>.</p>
+<h3>Jira issue reports and service requests</h3>
+<p>Here is how we triage issue reports and service requests submitted as Jira tickets:</p>
+<h4>Blocker</h4>
+<p>A time-sensitive issue that is hindering a project's basic functions.</p>
+<ul>
+<li><strong>Goal</strong>: 24 hours to respond, 3 days (72h) to resolve. Weekend hours count against this goal.</li>
+<li><strong>Example</strong>: Web site has been defaced and we just sent out a press release.</li>
+</ul>
+<h4>Critical</h4>
+<p>A time-sensitive issue that causes disruption for a project, but is not hindering basic functionality.</p>
+<ul>
+<li><strong>Goal</strong>: 36 hours to respond, 4 days (96h) to resolve. Weekend hours count against this goal.</li>
+<li><strong>Example</strong>: We just called a new release, but SVN is not allowing us to upload or move the artifacts.</li>
+</ul>
+<h4>Major ####</h4>
+<p>This is the default Jira issue priority. It fits a large issue that Infra should resolve quickly, but is not time-sensitive or related to basic projct functions. This includes requesting new resources.</p>
+<ul>
+<li><strong>Goal</strong>: 2 days (48h) to respond, 5 days (120h) to resolve. Weekends do not count against this goal.</li>
+<li><strong>Examples</strong>:<ul>
+<li>Set up a new podling.</li>
+<li>Add a git repository.</li>
+<li>Set up py/svn/git-pubsub.</li>
+</ul>
+</li>
+</ul>
+<h4>Minor ####</h4>
+<p>An issue that Infra should resolve within a reasonable time, is not time-sensitive and is not critical to a project's basic functionas or ongoing daily business.</p>
+<ul>
+<li><strong>Goal</strong>: 3 days (72h) to respond, 2 weeks (336h) to resolve. Weekends do not count against this goal.</li>
+<li><strong>Examples</strong>:<ul>
+<li>Retire a project's resources.</li>
+<li>Fix a JavaScript error on a web site.</li>
+<li>Add GitHub integration for a repository.</li>
+<li>Refine Jira settings for a project.</li>
+</ul>
+</li>
+</ul>
+<h4>Trivial</h4>
+<p>A task that Infra should resolve, but that has minimal or no time constraints.</p>
+<ul>
+<li><strong>Goal</strong>: 3 days (72h) to respond, 4 weeks (672h) to resolve. Weekends do not count against this goal.</li>
+<li><strong>Example</strong>: Fix copyright year on a web site.</li>
+</ul>
+<h3>Notes</h3>
+<ul>
+<li>Response time is counted as first reply (from someone else) or assignment.</li>
+<li>Tickets marked as <code>Planned Work</code> do not have a response-time goal.</li>
+<li>Tickets marked as <code>Waiting for user</code> have no response time goal until the user responds.</li>
+<li>Weekends do not count toward response time for all tickets except those marked <code>Blocker</code> or <code>Critical</code>.</li>
+<li>Tickets only appear in response statistics once resolved or if exceeding the goal for their category.</li>
+<li>Ticket velocity (user engagement and interaction) is important.</li>
+</ul>
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright , <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    
+    <script src="/theme/js/vendor/jquery.js"></script>
+    <script src="/theme/js/vendor/what-input.js"></script>
+    <script src="/theme/js/vendor/foundation.js"></script>
+    <script src="/theme/js/app.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
