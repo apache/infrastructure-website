@@ -1,6 +1,6 @@
 site:
   name: Apache Infrastructure
-  description: The Website of the Apache Infra Team
+  description: The Website of the Apache Infrastructure Team
   domain: infra.apache.org
   logo: extra/favicon.ico
   repository: https://github.com/apache/infrastructure-website/blob/main/content/
