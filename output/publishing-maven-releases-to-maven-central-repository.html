@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+        <meta charset="utf-8" />
+        <meta name="generator" content="Pelican" />
+        <title>Publishing Maven Releases to Maven Central Repository</title>
+        <link rel="stylesheet" href="https://infra-test.apache.org/theme/css/main.css" />
+</head>
+
+<body id="index" class="home">
+        <header id="banner" class="body">
+                <h1><a href="https://infra-test.apache.org/">Apache Infrastructure</a></h1>
+                <nav><ul>
+                    <li><a href="https://infra-test.apache.org/./oauth-two-factor-authentication.html">OAuth Two-Factor Authentication</a></li>
+                    <li><a href="https://infra-test.apache.org/./asf-account-management.html">ASF account management</a></li>
+                    <li><a href="https://infra-test.apache.org/./apache-and-github.html">Apache and GitHub</a></li>
+                    <li><a href="https://infra-test.apache.org/./application-upgrades-policy-and-workflow.html">Application upgrades policy and workflow</a></li>
+                    <li><a href="https://infra-test.apache.org/./distributing-through-the-apple-developer-program.html">Distributing through the Apple Developer Program</a></li>
+                    <li><a href="https://infra-test.apache.org/./applying-the-apache-license-version-20.html">Applying the Apache license, version 2.0</a></li>
+                    <li><a href="https://infra-test.apache.org/./asf-pelican-build-process.html">ASF-Pelican build process</a></li>
+                    <li><a href="https://infra-test.apache.org/./configuring-asf-pelican.html">Configuring ASF Pelican</a></li>
+                    <li><a href="https://infra-test.apache.org/./asf-pelican-data-model.html">ASF Pelican data model</a></li>
+                    <li><a href="https://infra-test.apache.org/./asf-pelican-getting-started-guide.html">ASF-Pelican getting-started guide</a></li>
+                    <li><a href="https://infra-test.apache.org/./local-pelican-builds.html">Local Pelican builds</a></li>
+                    <li><a href="https://infra-test.apache.org/./asf-pelican-plugins.html">ASF Pelican plugins</a></li>
+                    <li><a href="https://infra-test.apache.org/./apache-theme-for-asf-pelican.html">Apache Theme for ASF Pelican</a></li>
+                    <li><a href="https://infra-test.apache.org/./asf-pelican.html">ASF-Pelican</a></li>
+                    <li><a href="https://infra-test.apache.org/./asfbot-irc-services-and-archives.html">ASFBot: IRC services and archives</a></li>
+                    <li><a href="https://infra-test.apache.org/./project-sites-using-mkdocs.html">Project sites using MKDocs</a></li>
+                    <li><a href="https://infra-test.apache.org/./backup-policy.html">Backup policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./writing-a-good-bug-report.html">Writing a good bug report</a></li>
+                    <li><a href="https://infra-test.apache.org/./committer-email.html">Committer Email</a></li>
+                    <li><a href="https://infra-test.apache.org/./policy-for-outreach-to-committers.html">Policy for Outreach to Committers</a></li>
+                    <li><a href="https://infra-test.apache.org/./committers-faqs.html">Committers' FAQs</a></li>
+                    <li><a href="https://infra-test.apache.org/./contact-the-infrastructure-team.html">Contact the Infrastructure Team</a></li>
+                    <li><a href="https://infra-test.apache.org/./tips-for-apache-project-email-contributors.html">Tips for Apache project email contributors</a></li>
+                    <li><a href="https://infra-test.apache.org/./guide-for-new-project-contributors.html">Guide for new project contributors</a></li>
+                    <li><a href="https://infra-test.apache.org/./handling-cryptography-within-an-asf-release.html">Handling cryptography within an ASF release</a></li>
+                    <li><a href="https://infra-test.apache.org/./confluence-wiki-space-for-your-project.html">Confluence Wiki space for your project</a></li>
+                    <li><a href="https://infra-test.apache.org/./requesting-access-to-the-digicert-code-signing-service.html">Requesting access to the Digicert code signing service</a></li>
+                    <li><a href="https://infra-test.apache.org/./using-the-digicert-code-signing-service.html">Using the Digicert code signing service</a></li>
+                    <li><a href="https://infra-test.apache.org/./documentation.html">Documentation</a></li>
+                    <li><a href="https://infra-test.apache.org/./docker-hub-use-policy.html">Docker Hub use policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/email.html">Committer e-mail configuration</a></li>
+                    <li><a href="https://infra-test.apache.org/./fingerprints.html">Fingerprints</a></li>
+                    <li><a href="https://infra-test.apache.org/./github-flavored-markdown.html">GitHub Flavored Markdown</a></li>
+                    <li><a href="https://infra-test.apache.org/./getting-started-with-git.html">Getting started with Git</a></li>
+                    <li><a href="https://infra-test.apache.org/./git-access-to-apache-subversion-codebases.html">Git access to Apache Subversion codebases</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/git.html">Getting started with Git</a></li>
+                    <li><a href="https://infra-test.apache.org/./github-actions-policy.html">GitHub Actions Policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./github-actions-and-secrets.html">GitHub Actions and Secrets</a></li>
+                    <li><a href="https://infra-test.apache.org/./github-pages-for-projects.html">GitHub Pages for projects</a></li>
+                    <li><a href="https://infra-test.apache.org/./roles-for-project-github-repositories.html">Roles for project GitHub repositories</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/github.html">Apache and GitHub</a></li>
+                    <li><a href="https://infra-test.apache.org/./glossary.html">Glossary</a></li>
+                    <li><a href="https://infra-test.apache.org/./host-a-jenkins-or-buildbot-agent.html">Host a Jenkins or Buildbot agent</a></li>
+                    <li><a href="https://infra-test.apache.org/./how-to-mirror-asf-software-releases-locally.html">How to mirror ASF software releases locally</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/id.html">Changing your account details (self serve)</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/index.html">Committer Documentation</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/index.html">Reference Documentation</a></li>
+                    <li><a href="https://infra-test.apache.org/./site-wide-ban-policy.html">Site-wide ban policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./details-on-contacting-infra.html">Details on contacting Infra</a></li>
+                    <li><a href="https://infra-test.apache.org/./infra-and-the-incubator.html">Infra and the Incubator</a></li>
+                    <li><a href="https://infra-test.apache.org/./apache-infrastructure-mailing-lists.html">Apache Infrastructure mailing lists</a></li>
+                    <li><a href="https://infra-test.apache.org/./volunteering-for-apache-infrastructure.html">Volunteering for Apache Infrastructure</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/jenkins-docker.html">Using Docker with builds.apache.org</a></li>
+                    <li><a href="https://infra-test.apache.org/./guidelines-for-creating-a-jira-ticket.html">Guidelines for creating a Jira ticket</a></li>
+                    <li><a href="https://infra-test.apache.org/./how-to-transition-to-a-new-pgp-key.html">How to transition to a new PGP key</a></li>
+                    <li><a href="https://infra-test.apache.org/./assembling-license-and-notice-files.html">Assembling LICENSE and NOTICE files</a></li>
+                    <li><a href="https://infra-test.apache.org/./localization.html">Localization</a></li>
+                    <li><a href="https://infra-test.apache.org/./machines-and-fingerprints.html">Machines and Fingerprints</a></li>
+                    <li><a href="https://infra-test.apache.org/./mailing-list-migration-project.html">Mailing List Migration Project</a></li>
+                    <li><a href="https://infra-test.apache.org/./mail-rejection-policy.html">Mail Rejection Policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./mailing-list-moderation.html">Mailing list moderation</a></li>
+                    <li><a href="https://infra-test.apache.org/./managing-project-committers.html">Managing Project Committers</a></li>
+                    <li><a href="https://infra-test.apache.org/./apache-download-mirror-system.html">Apache download mirror system</a></li>
+                    <li><a href="https://infra-test.apache.org/./guide-for-new-project-committers.html">Guide for new project committers</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/newaccount.html">Guide to new committers</a></li>
+                    <li><a href="https://infra-test.apache.org/./nexus-101.html">Nexus 101</a></li>
+                    <li><a href="https://infra-test.apache.org/./open-access-svn.html">Open-access SVN</a></li>
+                    <li><a href="https://infra-test.apache.org/./cryptography-with-openpgp.html">Cryptography with OpenPGP</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/opie.html">Using OPIE</a></li>
+                    <li><a href="https://infra-test.apache.org/./operating-system-upgrade-policy.html">Operating system upgrade policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./how-to-submit-a-patch-for-project-code.html">How to submit a patch for project code</a></li>
+                    <li><a href="https://infra-test.apache.org/./build-and-manage-a-project-website-with-pelican-and-buildbot.html">Build and manage a project website with Pelican and Buildbot</a></li>
+                    <li><a href="https://infra-test.apache.org/./infra-policies.html">Infra policies</a></li>
+                    <li><a href="https://infra-test.apache.org/./project-blog.html">Project Blog</a></li>
+                    <li><a href="https://infra-test.apache.org/./project-and-product-names.html">Project and product names</a></li>
+                    <li><a href="https://infra-test.apache.org/./project-code-repository-policy.html">Project Code Repository Policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./project-site-policy.html">Project site policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./managing-your-project-web-site.html">Managing your project web site</a></li>
+                    <li class="active"><a href="https://infra-test.apache.org/./publishing-maven-releases-to-maven-central-repository.html">Publishing Maven Releases to Maven Central Repository</a></li>
+                    <li><a href="https://infra-test.apache.org/./subscribe-to-apache-software-foundation-infrastructure-events.html">Subscribe to Apache Software Foundation infrastructure events</a></li>
+                    <li><a href="https://infra-test.apache.org/./release-distribution-policy.html">Release Distribution Policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./release-download-pages-for-projects.html">Release Download Pages for Projects</a></li>
+                    <li><a href="https://infra-test.apache.org/./release-creation-process.html">Release Creation Process</a></li>
+                    <li><a href="https://infra-test.apache.org/./signing-releases.html">Signing Releases</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/release.html">Releasing project packages</a></li>
+                    <li><a href="https://infra-test.apache.org/./apache-maven-repositories.html">Apache Maven repositories</a></li>
+                    <li><a href="https://infra-test.apache.org/./requesting-an-issue-and-feature-request-tracker-for-a-project.html">Requesting an issue and feature-request tracker for a project</a></li>
+                    <li><a href="https://infra-test.apache.org/./response-time.html">Response time</a></li>
+                    <li><a href="https://infra-test.apache.org/./roadmap-for-apache-infrastructure.html">Roadmap for Apache Infrastructure</a></li>
+                    <li><a href="https://infra-test.apache.org/./self-hosted-runners.html">Self-hosted runners</a></li>
+                    <li><a href="https://infra-test.apache.org/./services-and-tools.html">Services and Tools</a></li>
+                    <li><a href="https://infra-test.apache.org/./slack-for-asf-projects.html">Slack for ASF projects</a></li>
+                    <li><a href="https://infra-test.apache.org/./dealing-with-spam-in-your-asf-email-account.html">Dealing with spam in your ASF email account</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/start.html">Committer documentation</a></li>
+                    <li><a href="https://infra-test.apache.org/./status-pages.html">Status pages</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/subversion.html">Using Subversion</a></li>
+                    <li><a href="https://infra-test.apache.org/./subversion-basics.html">Subversion basics</a></li>
+                    <li><a href="https://infra-test.apache.org/./svn-to-git-migration.html">SVN to Git migration</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/svngit2jira.html">Subversion and Git integration with JIRA tickets</a></li>
+                    <li><a href="https://infra-test.apache.org/./subversion-and-git-integration-with-jira-tickets.html">Subversion and Git integration with Jira tickets</a></li>
+                    <li><a href="https://infra-test.apache.org/./about-the-apache-infrastructure-team.html">About the Apache Infrastructure Team</a></li>
+                    <li><a href="https://infra-test.apache.org/./understanding-opensource.html">Understanding Opensource</a></li>
+                    <li><a href="https://infra-test.apache.org/./user-documentation-for-project-releases.html">User documentation for project releases</a></li>
+                    <li><a href="https://infra-test.apache.org/./committer-ssh-access.html">Committer SSH Access</a></li>
+                    <li><a href="https://infra-test.apache.org/./source-code-repositories-at-apache.html">Source Code Repositories at Apache</a></li>
+                    <li><a href="https://infra-test.apache.org/./requesting-a-virtual-machine-for-a-project.html">Requesting a virtual machine for a project</a></li>
+                    <li><a href="https://infra-test.apache.org/./managing-virtual-machines.html">Managing virtual machines</a></li>
+                    <li><a href="https://infra-test.apache.org/./project-vm-policy.html">Project VM policy</a></li>
+                    <li><a href="https://infra-test.apache.org/./guidelines-for-project-websites.html">Guidelines for project websites</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/website-policy.html">Web Site Guidelines</a></li>
+                    <li><a href="https://infra-test.apache.org/./reference/committer/website.html">How To Manage any Apache Project's Website</a></li>
+                </ul></nav>
+        </header><!-- /#banner -->
+<section id="content" class="body">
+    <h1 class="entry-title">Publishing Maven Releases to Maven Central Repository</h1>
+    
+    <p><a href="https://maven.apache.org/">Apache Maven</a> is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.</p>
+<p>This document describes how to release Maven artifacts for Apache Software Foundation projects to the <a href="https://maven.apache.org/repository/index.html">Maven Central Repository</a>. This is optional. Apache projects <strong>must</strong> release all software packages through the ASF distribution system. See <a href="release-distribution.html">Release distribution policy</a> for more details.</p>
+<p><strong>Note</strong> make sure you are using version 3.0.5 or newer of Maven. You can <a href="https://maven.apache.org/download.cgi" target="_blank">download</a> and install the latest version of Maven before continuing.</p>
+<h2>Setting up your project in the ASF Nexus Repository</h2>
+<p>The <a href="https://repository.apache.org/">ASF Nexus repository</a> enforces security by constraining who can deploy or release a project's artifacts. Nexus maps which artifacts (usually by GroupId) your project produces. This is particularly helpful in preventing accidental releases of a project.</p>
+<p>Before a project can use the repository to release Maven artifacts, it must be configured in Nexus. This is generally a quick and easy process. To get set up, <a href="https://issues.apache.org/jira/secure/CreateIssueDetails!init.jspa?issuetype=3&priority=3&pid=10410&components=12312660&summary=Enable+Nexus+Access+For+[insert+project]&description=Project+URL:%0D%0DSVN+URL:%0D%0DMaven+Group+Ids:%0D%0DManaged+By+This+TLP+Project:" target="_blank">use this link</a> to create a Jira ticket with the following information:</p>
+<ul>
+<li><strong>Project URL</strong>: a link to your project page (usually <code>https://&lt;project&gt;.apache.org/</code>).</li>
+<li><strong>SVN URL</strong>: where you store your source code, in case Infra needs to look up more information.</li>
+<li><strong>Maven Group IDs</strong>: a list of the groupIDs for this project. They should all be subgroups of <code>org.apache</code>.</li>
+<li><strong>Managed By This TLP Project</strong>: if this is a subproject, list the TLP that is responsible. Subprojects usually don't have their own LDAP group, so we need the TLP LDAP group for permissions. </li>
+</ul>
+<p>If you have specific questions or concerns, please call them out in the ticket.</p>
+<p>Once you file the Jira ticket, Infra will do the following:</p>
+<ul>
+<li><strong>Set up the project in Nexus</strong>: We configure your groupIds in Nexus and link them to the appropriate LDAP group for authorization.</li>
+<li><strong>Move Existing Artifacts</strong>: To maintain the proper <code>maven-metadata.xml</code> files and prevent rsync conflicts in Central, we must move all your artifacts to the new repository. We will mark the folder in the old repository as read-only to prevent accidental deployments.</li>
+<li><strong>Check POMs</strong>: If your project is Maven-based, we will check your POM for any obvious problems.</li>
+</ul>
+<p>Further information about the POM and other Maven matters is <a href="https://maven.apache.org/pom/asf/" target="_blank">here</a>.</p>
+<h2>Adjusting your build to deploy to the ASF Nexus repository</h2>
+<p>To use the ASF Nexus repository, follow these steps.</p>
+<h3>Inherit the Apache POM</h3>
+<p>Inherit the Apache Parent POM like this:</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;parent&gt;</span>
+  <span class="nt">&lt;groupId&gt;</span>org.apache<span class="nt">&lt;/groupId&gt;</span>
+  <span class="nt">&lt;artifactId&gt;</span>apache<span class="nt">&lt;/artifactId&gt;</span>
+  <span class="nt">&lt;version&gt;</span>23<span class="nt">&lt;/version&gt;</span>
+<span class="nt">&lt;/parent&gt;</span>
+</code></pre></div>
+
+<p>This parent POM sets up the defaults so your <code>&lt;distributionManagement&gt;</code> section uses the correct release and snapshot repositories. Be sure to remove those from your POM so they inherit correctly. Keep the entry for deploying your site (if you use Maven to deploy your site). If you do, we suggest you use <code>apache.website</code> as the ID to better match the settings below and to save the sanity of committers working on multiple projects.</p>
+<p>The POM also provides a default configuration to make sure that a correct source archive is created for your project. This is separate and in addition to the typical <code>-sources.jar</code> that is created.</p>
+<h3>Set up your development environment</h3>
+<p>You must sign all artifacts with a key that is publicly verifiable. Follow the instructions here to get your keys created and environment set up.</p>
+<p><strong>Note</strong>: We recommend that you use <a href="https://maven.apache.org/guides/mini/guide-encryption.html" target="_blank">Maven's password encryption capabilities</a> for your passwords. <strong>Do not</strong> store your signing key in <code>settings.xml</code>.</p>
+<p>The <a href="https://maven.apache.org/plugins/maven-gpg-plugin/" target="_blank">gpg plugin</a> can prompt for the key (input is masked) or you can configure it to use an agent.</p>
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;settings&gt;</span>
+...
+  <span class="nt">&lt;servers&gt;</span>
+    <span class="c">&lt;!-- To publish a snapshot of your project --&gt;</span>
+    <span class="nt">&lt;server&gt;</span>
+      <span class="nt">&lt;id&gt;</span>apache.snapshots.https<span class="nt">&lt;/id&gt;</span>
+      <span class="nt">&lt;username&gt;</span> <span class="c">&lt;!-- YOUR APACHE LDAP USERNAME --&gt;</span> <span class="nt">&lt;/username&gt;</span>
+      <span class="nt">&lt;password&gt;</span> <span class="c">&lt;!-- YOUR APACHE LDAP PASSWORD (encrypted) --&gt;</span> <span class="nt">&lt;/password&gt;</span>
+    <span class="nt">&lt;/server&gt;</span>
+    <span class="c">&lt;!-- To stage a release of your project --&gt;</span>
+    <span class="nt">&lt;server&gt;</span>
+      <span class="nt">&lt;id&gt;</span>apache.releases.https<span class="nt">&lt;/id&gt;</span>
+      <span class="nt">&lt;username&gt;</span> <span class="c">&lt;!-- YOUR APACHE LDAP USERNAME --&gt;</span> <span class="nt">&lt;/username&gt;</span>
+      <span class="nt">&lt;password&gt;</span> <span class="c">&lt;!-- YOUR APACHE LDAP PASSWORD (encrypted) --&gt;</span> <span class="nt">&lt;/password&gt;</span>
+    <span class="nt">&lt;/server&gt;</span>
+   ...
+  <span class="nt">&lt;/servers&gt;</span>
+<span class="nt">&lt;/settings&gt;</span>
+</code></pre></div>
+
+<h3>Test your settings</h3>
+<p>Try installing locally artifacts with activation of the <code>apache-release</code> profile:</p>
+<p><code>mvn clean install -Papache-release</code></p>
+<p>This will build artifacts and sources and sign them.</p>
+<h2>Staging your release</h2>
+<h3>1. Prepare your POMs</h3>
+<ol>
+<li>Make sure there are no dependencies on snapshots in the POMs to be released. However, the project you want to stage must be a SNAPSHOT version.</li>
+<li>Check that your POMs will not lose content when they are rewritten during the release process:</li>
+<li>Verify that all pom.xml files have an SCM definition.</li>
+<li>Do a dryRun release: <code>mvn release:prepare -DdryRun=true</code> You may also wish to pass <code>-DautoVersionSubmodules=true</code> as this will save you time if your project is multi-moduled.</li>
+<li>Diff the original file <code>pom.xml</code> with the one called <code>pom.xml.tag</code> to see if the license or any other info has been removed. This has been known to happen if the starting <code>&lt;project&gt;</code> tag is not on a single line. The only things that should be different between these files are the <code>&lt;version&gt;</code> and <code>&lt;scm&gt;</code> elements. Backport any other changes you find to the original <code>pom.xml</code> file and commit it before proceeding with the release.</li>
+</ol>
+<h3>2. Publish a snapshot</h3>
+<div class="highlight"><pre><span></span><code><span class="n">mvn</span><span class="w"> </span><span class="n">deploy</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="n">deploy:deploy</span><span class="o">]</span><span class="w"></span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">Retrieving</span><span class="w"> </span><span class="n">previous</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">apache</span><span class="p">.</span><span class="n">snapshots</span><span class="p">.</span><span class="n">https</span><span class="w"></span>
+<span class="p">...</span><span class="w"></span>
+</code></pre></div>
+
+<p><strong>Notes</strong></p>
+<ul>
+<li>If you experience an error like a <em>HTTP 401</em> during deployment, check your settings for the required server entries as outlined above.</li>
+<li>Be sure that the generated artifacts respect the <a href="https://www.apache.org/legal/release-policy.html#distribute-raw-artifact" target="_blank">Apache release rules</a>: NOTICE and LICENSE files should be present in the META-INF directory within the jar.</li>
+<li>Verify the deployment under the ASF <a href="https://repository.apache.org/content/repositories/snapshots/" target="_blank">Maven Snapshot repository</a>.</li>
+</ul>
+<h3>3. Prepare the release</h3>
+<div class="highlight"><pre><span></span><code><span class="err">mvn release:clean</span>
+<span class="err">mvn release:prepare</span>
+</code></pre></div>
+
+<p><strong>Notes</strong></p>
+<ul>
+<li>Don't try to publish <code>.sha256</code> or <code>.sha512</code> files; Nexus doesn't handle them.</li>
+<li>Remove <code>.md5</code>s in <code>dist.apache.org/repos/dist/release/</code> manually.</li>
+<li>Preparing the release will create a new tag in SVN, and automatically check the version in on your behalf.</li>
+<li>If you're located in Europe, <code>release:prepare</code> may fail with <code>Unable to tag SCM</code> and <code>svn: No such revision X</code>. Wait 10 seconds and run <code>mvn release:prepare</code> again.</li>
+</ul>
+<h3>4. Stage the release for a vote</h3>
+<p><code>mvn release:perform</code></p>
+<p>Maven automatically inserts the release into a temporary staging repository for you. See <a href="https://help.sonatype.com/repomanager2/staging-releases" target="_blank">the Nexus staging documentation</a> for full details.</p>
+<p>Now you must close the staging repository to indicate to Nexus that the build is done and to make the artifacts available. Follow the steps in <strong>Closing the Staged Repository</strong>, later in this document. This will allow your community to <strong>vote</strong> on the staged artifacts.</p>
+<h2>Troubleshooting</h2>
+<ol>
+<li>If you get an <strong>error message</strong> like this:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">Unable</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="n">SCM</span><span class="w"></span>
+<span class="n">Provider</span><span class="w"> </span><span class="nl">message</span><span class="p">:</span><span class="w"></span>
+<span class="n">The</span><span class="w"> </span><span class="n">svn</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="n">failed</span><span class="p">.</span><span class="w"></span>
+<span class="n">Command</span><span class="w"> </span><span class="k">output</span><span class="err">:</span><span class="w"></span>
+<span class="nl">svn</span><span class="p">:</span><span class="w"> </span><span class="k">Commit</span><span class="w"> </span><span class="n">failed</span><span class="w"> </span><span class="p">(</span><span class="n">details</span><span class="w"> </span><span class="n">follow</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
+<span class="nl">svn</span><span class="p">:</span><span class="w"> </span><span class="k">File</span><span class="w"></span>
+<span class="s1">&#39;/repos/asf/maven/plugins/tags/maven-eclipse-plugin-2.7/.../EclipsePlugin.java&#39;</span><span class="w"></span>
+<span class="n">already</span><span class="w"> </span><span class="ow">exists</span><span class="w"></span>
+</code></pre></div>
+
+<p>Then use a Subversion client 1.6 or newer and run <code>svn update</code>.</p>
+<ol>
+<li>If you get an <strong>error message</strong> similar to:</li>
+</ol>
+<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="n">ERROR</span><span class="o">]</span><span class="w"> </span><span class="n">BUILD</span><span class="w"> </span><span class="n">FAILURE</span><span class="w"></span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"></span>
+<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">Unable</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="n">SCM</span><span class="w"></span>
+<span class="n">Provider</span><span class="w"> </span><span class="nl">message</span><span class="p">:</span><span class="w"></span>
+<span class="n">The</span><span class="w"> </span><span class="n">svn</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="n">failed</span><span class="p">.</span><span class="w"></span>
+<span class="n">Command</span><span class="w"> </span><span class="k">output</span><span class="err">:</span><span class="w"></span>
+<span class="nl">svn</span><span class="p">:</span><span class="w"> </span><span class="k">Path</span><span class="w"></span>
+<span class="s1">&#39;https://svn.apache.org/repos/asf/maven/plugins/tags/maven-eclipse-plugin-2.7&#39;</span><span class="w"></span>
+<span class="n">already</span><span class="w"> </span><span class="ow">exists</span><span class="w"></span>
+</code></pre></div>
+
+<p>Delete the tag using </p>
+<p><code>svn del -m "re-releasing build" {svn path}</code></p>
+<p>This likely occured because you're trying to restage the release and you didn't roll back the changes that created the previous tag, or you're trying to release a version that already exists. If that is the case, you need to adjust the versions in your POM and start over.</p>
+<h2>Procedures for Ant + Ivy</h2>
+<p><a href="https://ant.apache.org/" target="_blank">Apache Ant</a> is a popular command-line build tool. <a href="https://ant.apache.org/ivy/" target="_blank">Ivy</a> is a dependency manager designed to work with Ant. </p>
+<h3>1 Prepare your build</h3>
+<p>Usually your normal build process will create the artifacts you want to publish (typically jars), but you may need to PGP-sign them the same way you sign your normal distribution artifacts. The jars are expected to follow the naming scheme <code>artifactId-version.jar</code>.</p>
+<p>You will need a minimal POM for your jar. If you are already using Ivy, you can use the <code>makepom</code> task to create one from your <code>ivy.xml</code> file. Otherwise see the Apache Maven project's <a href="https://maven.apache.org/pom.html" target="_blank">documentation</a> for "minimal" and the Apache Compress Antlib's <a href="https://svn.apache.org/repos/asf/ant/antlibs/compress/trunk/project-template.pom" target="_blank">POM</a> for an example. </p>
+<p>If you are publishing multiple jars you may consider adding a parent POM to encapsulate the common information; see the Maven documentation for details. An example might be <a href="https://svn.apache.org/repos/asf/ant/core/trunk/src/etc/poms/pom.xml" target="_blank">Ant's parent POM</a>, used for the several jars that make up an Ant release.</p>
+<p>Users who use your project's jars from the Maven repository rather than using your "normal" distributions will likely want additional artifacts containing the source files or javadocs matching your jars in files named <code>artifactId-version-sources.jar</code> and <code>artifactId-version-javadoc.jar</code> respectively. Don't forget to sign those jars as well if you provide them.</p>
+<h3>2. Create minimal Ivy files for your project</h3>
+<p>If you are not already using Ivy in your project you'll need to create a minimal <code>ivy.xml</code> file for it. The syntax is described in <a href="https://ant.apache.org/ivy/history/latest-milestone/ivyfile.html" target="_blank">Ivy's documentation</a>. Since you will only use the file to publish your artifacts, all you need to provide are the organization, module and revision definitions and an entry for each artifact you want to publish; see <a href="http://svn.apache.org/repos/asf/ant/core/trunk/release/ivy.xml" target="_blank">Ant's ivy.xml file</a> for a minimal version.</p>
+<p><code>organization</code> and <code>module</code> combined must match your Maven <code>groupId</code>.</p>
+<p>You need <code>artifact</code> elements for your jar as well as the POM and any PGP signature file. You don't need artifacts for your checksum files (if you create any) since Nexus creates MD5 and SHA1 checksums for you.</p>
+<p>If you are publishing source or javadoc jars as well, you'll need to provide something similar to Maven's classifier. You do so by adding an extra attribute to each artifact element that lives outside of Ivy's XML namespace and referencing this element in your <code>ivysettings.xml</code> file (see below). An example which uses this approach is <a href="http://svn.apache.org/repos/asf/ant/antlibs/compress/trunk/project-template.ivy.xml" target="_blank">the Compress Antlib's ivy.xml</a>. It contains additional information and <code>-sources</code> as well as <code>-javadoc</code> artifacts.</p>
+<p>Alternatively you can specify the <code>-sources</code> and <code>-javadoc</code> artifacts inside your <code>publish</code> task rather than your <code>ivy.xml</code> file. If you use Ivy 2.2.0 or later, you can also configure it to PGP-sign your artifacts so you no longer need to specify your signatures as artifacts. Ivy's own <a href="http://svn.apache.org/repos/asf/ant/ivy/core/trunk/ivysettings-release.xml" target="_blank">ivy-settings.xml</a> configures Ivy to sign artifacts and the <a href="http://svn.apache.org/repos/asf/ant/ivy/core/trunk/build-release.xml" target="_blank">publish task inside the upload-nexus target</a> declares the POM as well as <code>-sources</code> and <code>-javadoc</code> jars as additional artifacts.</p>
+<h3>3. Configure Ivy to use Nexus</h3>
+<p>If you are already using Ivy you may need to adapt your <code>resolvers</code> configuration by adding an url resolver for Nexus and referencing that in a module matching your <code>ivy.xml</code>.</p>
+<p>You usually need to adapt the <code>ivysettings.xml</code> file used by Ant by using the same values for <code>organization</code> and <code>name</code> on the module element that you used in your <code>ivy.xml</code> file (where <code>name</code> on the module element in <code>ivysettings.xml</code> corresponds to <code>module</code> in <code>ivy.xml</code>).</p>
+<p>Ant's <code>ivysettings.xml</code> uses Ant properties for the authentication information and Nexus' URL which will be expanded by the <code>ivy:configure</code> task. It also shows how to use the <code>classifier</code> extra attribute.</p>
+<h3>4. Upload the artifacts</h3>
+<p>Uploading involves three Ivy tasks.</p>
+<ol>
+<li><code>ivy:configure</code> uses your <code>ivysettings.xml</code> file to configure Ivy (what else?).</li>
+<li><code>ivy:resolve</code> reads your <code>ivy.xml</code> and doesn't do much beyond that if you are only using Ivy to upload your artifacts.</li>
+<li><code>ivy:publish</code> publishes the artifacts to Nexus.</li>
+</ol>
+<p>Here is a link to an <a href="http://svn.apache.org/repos/asf/ant/antlibs/common/trunk/upload.xml" target="_blank">example build file combining those steps</a> that expects you to provide the authentication information via the command line (i.e. <code>ant -Dupload.user=YOUR-ASF_ID -Dupload.password=YOUR-PASSWORD</code>).</p>
+<h2>Common procedures</h2>
+<p>How to manage your staged release, no matter which build tool you used.</p>
+<h3>Close the staged repository</h3>
+<p>Your artifacts should now exist in a new staging repository. See <a href="http://central.sonatype.org/pages/releasing-the-deployment.html#locate-and-examine-your-staging-repository" target="_blank">Locate and Examine</a> for instructions on how to "close" this repository to trigger the quality checks and prepare it for a vote.</p>
+<p>Now you go call your vote. Based on the results you will either promote (yay!) or drop and restage the release. If you are an <strong>incubating project</strong>, don't forget the IPMC vote before promoting. The actual Vote process is project=specific, but if you're looking for some examples, the Maven project has thorough <a href="http://maven.apache.org/developers/release/maven-project-release-procedure.html" target="_blank">documentation on their voting process</a>.</p>
+<h3>Drop a repository</h3>
+<p>If you bungled the release or your vote failed, follow <a href="http://central.sonatype.org/pages/releasing-the-deployment.html#close-and-drop-or-release-your-staging-repository" target="_blank">these instructions</a> to drop your repo. <em>Don't forget to roll back any SCM changes</em>.</p>
+<h3>Promote a repository</h3>
+<p>Congratulations, your vote was successful. The last step is to <a href="http://central.sonatype.org/pages/releasing-the-deployment.html#close-and-drop-or-release-your-staging-repository" target="_blank">promote the artifacts</a> to the release repository where they will get picked up by Central.</p>
+</section>
+        <section id="extras" class="body">
+                <div class="blogroll">
+                        <h2>links</h2>
+                        <ul>
+                            <li><a href="http://getpelican.com/">Pelican</a></li>
+                            <li><a href="http://python.org/">Python.org</a></li>
+                            <li><a href="http://jinja.pocoo.org/">Jinja2</a></li>
+                            <li><a href="#">You can modify those links in your config file</a></li>
+                        </ul>
+                </div><!-- /.blogroll -->
+                <div class="social">
+                        <h2>social</h2>
+                        <ul>
+
+                            <li><a href="#">You can add links in your config file</a></li>
+                            <li><a href="#">Another social link</a></li>
+                        </ul>
+                </div><!-- /.social -->
+        </section><!-- /#extras -->
+
+        <footer id="contentinfo" class="body">
+                <address id="about" class="vcard body">
+                Proudly powered by <a href="https://getpelican.com/">Pelican</a>, which takes great advantage of <a href="https://www.python.org/">Python</a>.
+                </address><!-- /#about -->
+
+                <p>The theme is by <a href="https://www.smashingmagazine.com/2009/08/designing-a-html-5-layout-from-scratch/">Smashing Magazine</a>, thanks!</p>
+        </footer><!-- /#contentinfo -->
+
+</body>
+</html>
