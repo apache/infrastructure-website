@@ -39,6 +39,8 @@ TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
 
+THEME = './theme'
+
 # TOC Generator
 PLUGIN_PATHS = ['./theme/plugins']
 PLUGINS = ['toc', 'spu']
