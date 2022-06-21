@@ -1,0 +1,3 @@
+pelican
+beautifulsoup4
+requests
