@@ -13,7 +13,7 @@ PATH = 'content'
 TIMEZONE = 'UTC'
 DEFAULT_DATE = 'fs'
 DEFAULT_LANG = u'en'
-SITEURL = 'https://infra.apache.org'
+SITEURL = 'https://infra-test.apache.org'
 
 # Save pages using full directory preservation
 PATH_METADATA= '.*?(pages/)?(?P<path_no_ext>.*?)\.[a-z]*$'
@@ -38,8 +38,6 @@ CATEGORY_FEED_ATOM = None
 TRANSLATION_FEED_ATOM = None
 AUTHOR_FEED_ATOM = None
 AUTHOR_FEED_RSS = None
-
-THEME = './theme'
 
 # TOC Generator
 PLUGIN_PATHS = ['./theme/plugins']
