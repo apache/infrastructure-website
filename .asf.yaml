@@ -19,4 +19,3 @@ notifications:
   pullrequests:         commits@infra.apache.org
   issues:               issues@infra.apache.org
   discussions:          issues@infra.apache.org
-  
