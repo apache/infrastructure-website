@@ -1,0 +1,164 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to submit a patch for project code - Apache Infrastructure</title>
+    <link rel="stylesheet" href="/theme/css/foundation.css">
+    <link rel="stylesheet" href="/theme/css/app.css">
+    <link rel="stylesheet" href="/theme/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>
+    <link rel="stylesheet"
+          href="/theme/highlight/default.min.css">
+    <script src="/theme/highlight/highlight.min.js"></script>  </head>
+  <body style="background: #C1C1C1;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/theme/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+		  <li><a href="https://blogs.apache.org/infra/" target="_blank">The Infra Blog</a></li>	
+	          
+                </ul>
+              </li>
+              <li><a href="/policies.html" target="_blank" style="padding-left: 5px;">Policies</a></li>
+                           
+              <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Services-Tools</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+		<li><a href="/services.html">Services and Tools</a></li>
+                <li><a href="/machines.html" target="_blank" >Machines and Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" target="_blank" >Blocky</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" target="_blank" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" target="_blank" >Committer Search</a></li>
+		
+                </ul>
+              </li>
+              <li><a href="/doc.html" target="_blank" style="padding-left: 5px;">Documentation</a></li>
+	       <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Contribute</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">	
+		   <li><a href="/infra-volunteer.html">Volunteer with Infra</a></li>
+		   <li><a href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+			<li><a href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+		 </ul>
+	       </li>
+	      
+              <li><a href="/stats.html" target="_blank" style="padding-left: 5px;">Status</a></li>
+              <li><a href="/contact.html" style="padding-left: 5px;"><i class="fa fa-comments" style="color: #FFF; font-size: 0.9rem;"></i>Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/how-to-submit-a-patch-for-project-code.html">
+How to submit a patch for project code        </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/how-to-submit-a-patch-for-project-code.md">edit</a>)
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              How to submit a patch for project code
+          </h2>
+              <p>To contribute a change or addition to existing source code:</p>
+<h3>Using Subversion</h3>
+<p>See <a href="subversion-basics.html">Subversion basics</a></p>
+<ol>
+<li>Check out the latest copy of the source code from the project's code repository.</li>
+<li>Change the source files to incorporate your change or addition. Make sure you provide appropriate source code documentation (like javadoc for
+Java sources), and follow the project's coding conventions.</li>
+<li>Check the software still compiles and runs correctly on your local machine.</li>
+<li>Run any unit or regression tests the software may have.</li>
+</ol>
+<p>If all this works, you can create your patch. Remove all build products and remnants (like any 'build', 'dist' or 'bin' directories) from the module tree, then build the actual patch. Here's how to do it using the command line SVN client under unix:</p>
+<p>Apache projects prefer the unified diff format. The subversion tool creates that automatically. If you use other tools, please refer to their documentation for details on setting the diff format.</p>
+<div class="highlight"><pre><span></span><code>    # location where the modules are stored
+    cd checkout<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;codehilite&quot;</span><span class="nt">&gt;&lt;pre&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;c&quot;</span><span class="nt">&gt;</span># directory of the module<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;n&quot;</span><span class="nt">&gt;</span>cd<span class="nt">&lt;/span&gt;</span> <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;n&quot;</span><span class="nt">&gt;</span>site<span class="nt">&lt;/span&gt;</span>
+
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;c&quot;</span><span class="nt">&gt;</span># creation of the diff<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;n&quot;</span><span class="nt">&gt;</span>svn<span class="nt">&lt;/span&gt;</span> <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;nb&quot;</span><span class="nt">&gt;</span>diff<span class="nt">&lt;/span&gt;</span> <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;o&quot;</span><span class="nt">&gt;</span><span class="ni">&amp;gt;</span><span class="nt">&lt;/span&gt;</span> <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;n&quot;</span><span class="nt">&gt;</span>site<span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;p&quot;</span><span class="nt">&gt;</span>.<span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;nb&quot;</span><span class="nt">&gt;</span>patch<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/pre&gt;&lt;/div&gt;</span>
+</code></pre></div>
+
+<p>The Subversion client now examines all subdirectories for changed files, then compares the changed file to the one on the server. It generates the
+patch.</p>
+<p>The '&gt;' redirection results in the resulting patch being put in a text file named (in this case) <code>site.patch</code>.</p>
+<p>With your patch generated, you need to send it to the developers. Different projects have different preferences for this. Usually you add it as an attachment to the relevant bug report in the bug tracking database. If a relevant bug report doesn't exist yet, create one.</p>
+<h3>Using Git</h3>
+<p>See <a href="git-primer.html">Getting started with Git</a> for general information.</p>
+<p>The general pattern for creating and submitting a patch for a project using Git is:</p>
+<ol>
+<li>Before you start: talk to the project team! Somebody else may be working on the same thing, or there may be some not-obvious reason why what you are proposing would take the project in a different direction from its current path. Usually, you will get a "Great! Go ahead," response; and if you find out your proposed change is not needed for some reason, you will have saved some time for some other initiative.</li>
+<li>Create and download a branch of the project.</li>
+<li>In that branch, on your local computer, change the source files to incorporate your change or addition. Make sure you provide appropriate source code documentation and follow the project's coding conventions.</li>
+<li>Check the software still compiles and runs correctly on your local machine.</li>
+<li>Run any unit or regression tests the software may have.</li>
+<li>Upload your changes from your local computer to the branch you created.</li>
+<li>Create a pull request to merge your branch into the trunk of the project's code.</li>
+</ol>
+<p>One or more of the project's committers will review your proposed changes and, if all is well, merge them.</p>
+<h3>In general</h3>
+<p>A very few projects don't use an issue tracker. In that case, send the patch as an attachment to an e-mail with a subject prefixed with "<code>[PATCH]</code>", to the appropriate development mailing list. If the patch is large, please ask before e-mailing it in case there is a better way to provide it.</p>
+<p>Supply a different patch per issue. A patch can span multiple files but you should normally try not to fix multiple bugs in a single patch, unless those bugs are intimately related.</p>
+<p>Be patient if your patch is not applied as fast as you'd like (open source developers are all volunteers, often doing the development in their spare time) or a developer asks you to make changes to the patch. If you do not receive any feedback in a reasonable amount of time (say, a week or two), feel free to send a follow-up e-mail to the developer list.</p>
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2022, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    
+    <script src="/theme/js/vendor/jquery.js"></script>
+    <script src="/theme/js/vendor/what-input.js"></script>
+    <script src="/theme/js/vendor/foundation.js"></script>
+    <script src="/theme/js/app.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
