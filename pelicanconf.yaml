@@ -1,0 +1,12 @@
+site:
+  name: Apache Infrastructure
+  description: Provides a template for projects wishing to use the Pelican ASF static content system
+  domain: infra-test.apache.org
+  logo: images/favicon.ico 
+  repository: https://github.com/apache/infrastructure-website/blob/main/content/
+  trademarks: Apache, the Apache feather logo, and "Project" are trademarks or registered trademarks
+theme: theme
+plugins:
+  use:
+    - toc
+    - spu
