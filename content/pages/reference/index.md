@@ -8,4 +8,5 @@ collate them and provide a single or primary point of reference.
 other projects we use Confluence for How-To's, meeting notes and other tidbits.
 
 This directory contains various reference articles for Committers, PMC members and Infrastructure:
+
 - [Confluence Documentation for Committers and PMC members](https://cwiki.apache.org/confluence/display/INFRA/Index)
