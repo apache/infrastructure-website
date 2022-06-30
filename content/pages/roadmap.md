@@ -1,3 +1,3 @@
 Title: Roadmap for Apache Infrastructure
 
-![Roadmap](/theme/images/roadmap.gif)
+![Roadmap](/images/roadmap.gif)
