@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <meta name="generator" content="Pelican" />
-        <title>A Pelican Blog - Categories</title>
+        <title>Self-hosted runners</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
 </head>
@@ -102,7 +102,7 @@
                     <li><a href="/pages/requesting-an-issue-and-feature-request-tracker-for-a-project.html">Requesting an issue and feature-request tracker for a project</a></li>
                     <li><a href="/pages/response-time.html">Response time</a></li>
                     <li><a href="/pages/roadmap-for-apache-infrastructure.html">Roadmap for Apache Infrastructure</a></li>
-                    <li><a href="/pages/self-hosted-runners.html">Self-hosted runners</a></li>
+                    <li class="active"><a href="/pages/self-hosted-runners.html">Self-hosted runners</a></li>
                     <li><a href="/pages/services-and-tools.html">Services and Tools</a></li>
                     <li><a href="/pages/slack-for-asf-projects.html">Slack for ASF projects</a></li>
                     <li><a href="/pages/dealing-with-spam-in-your-asf-email-account.html">Dealing with spam in your ASF email account</a></li>
@@ -126,9 +126,18 @@
                     <li><a href="/pages/reference/committer/website.html">How To Manage any Apache Project's Website</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
-    <h1>Categories on A Pelican Blog</h1>
-    <ul>
-    </ul>
+<section id="content" class="body">
+    <h1 class="entry-title">Self-hosted runners</h1>
+    
+    <p>In GitHub, the runner is the application that runs a job from a GitHub Actions workflow. The runner can run on the hosted machine pools or on self-hosted environments.</p>
+<p>A project may want to use a self-hosted runner which, according to GitHub, offers</p>
+<blockquote>
+<p>more control of hardware, operating system, and software tools than GitHub-hosted runners provide. With self-hosted runners, you can choose to create a custom hardware configuration with more processing power or memory to run larger jobs, install software available on your local network, and choose an operating system not offered by GitHub-hosted runners. Self-hosted runners can be physical, virtual, container, on-premises, or in a cloud.</p>
+</blockquote>
+<p>Read the GitHub <a href="https://help.github.com/en/actions/hosting-your-own-runners/about-self-hosted-runners#self-hosted-runner-security-with-public-repositories" target="_blank">documentation</a> about self-hosted runners if you are evaluating this option.</p>
+<p>Apache permits projects to use self-hosted runners, but does <strong>not recommend</strong> them because of significant security issues they introduce.</p>
+<p>If your project, after careful consideration, wants to use a self-hosted runner, open an Infra Jira ticket to ask Infra to do the required configuration work to enable your project's runner.</p>
+</section>
         <section id="extras" class="body">
                 <div class="social">
                         <h2>social</h2>

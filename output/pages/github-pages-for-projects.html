@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <meta name="generator" content="Pelican" />
-        <title>A Pelican Blog - Categories</title>
+        <title>GitHub Pages for projects</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
 </head>
@@ -50,7 +50,7 @@
                     <li><a href="/pages/reference/committer/git.html">Getting started with Git</a></li>
                     <li><a href="/pages/github-actions-policy.html">GitHub Actions Policy</a></li>
                     <li><a href="/pages/github-actions-and-secrets.html">GitHub Actions and Secrets</a></li>
-                    <li><a href="/pages/github-pages-for-projects.html">GitHub Pages for projects</a></li>
+                    <li class="active"><a href="/pages/github-pages-for-projects.html">GitHub Pages for projects</a></li>
                     <li><a href="/pages/roles-for-project-github-repositories.html">Roles for project GitHub repositories</a></li>
                     <li><a href="/pages/reference/committer/github.html">Apache and GitHub</a></li>
                     <li><a href="/pages/glossary.html">Glossary</a></li>
@@ -126,9 +126,24 @@
                     <li><a href="/pages/reference/committer/website.html">How To Manage any Apache Project's Website</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
-    <h1>Categories on A Pelican Blog</h1>
-    <ul>
-    </ul>
+<section id="content" class="body">
+    <h1 class="entry-title">GitHub Pages for projects</h1>
+    
+    <p>Projects with a Git repository can <em>in theory</em> use <a href="https://pages.github.com/" target="_blank">GitHub Pages</a> to host and deploy the project website. However, Infra does not yet have a complete setup for supporting a project's site from GH Pages. One project has used it successfully as a proof of concept.</p>
+<p>The material below is theoretical at this point.</p>
+<h3>Using gh-pages for staging a website, product preview, or documentation</h3>
+<p>Projects can use GitHub and gh-pages for staging a website for review and improvement before publishing it to TLP servers.</p>
+<p>Ask Infra (in a Jira ticket) to enable 'gh-pages' for your Git repository, and use a 'gh-pages' branch for publishing, or specify a different branch such as 'master' or 'master/docs'.</p>
+<p>There are various ways to build and publish your staging site, including:</p>
+<ul>
+<li>Use Infra's new feature <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_kblank">.asf.yaml.</a></li>
+<li>Use Buildbot in combination with Jekyll and Pelican</li>
+<li>Use your own build tool in combination with gh-pages or .asf.yaml</li>
+</ul>
+<h3>Using gh-pages for the project website</h3>
+<p>Projects are welcome to use GitHub for their source code, and to generate (or collect) website pages host and display them at GitHub instead of using the ASF TLP servers.</p>
+<p>Ask Infra (in a Jira ticket) to enable 'gh-pages' for the project. When that feature is available, prepare and review your website. When you are happy with its look and functions, change the DNS to point to the site on GitHub.</p>
+</section>
         <section id="extras" class="body">
                 <div class="social">
                         <h2>social</h2>

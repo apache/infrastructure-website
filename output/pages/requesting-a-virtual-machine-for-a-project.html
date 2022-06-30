@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <meta name="generator" content="Pelican" />
-        <title>A Pelican Blog - Categories</title>
+        <title>Requesting a virtual machine for a project</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
 </head>
@@ -118,7 +118,7 @@
                     <li><a href="/pages/user-documentation-for-project-releases.html">User documentation for project releases</a></li>
                     <li><a href="/pages/committer-ssh-access.html">Committer SSH Access</a></li>
                     <li><a href="/pages/source-code-repositories-at-apache.html">Source Code Repositories at Apache</a></li>
-                    <li><a href="/pages/requesting-a-virtual-machine-for-a-project.html">Requesting a virtual machine for a project</a></li>
+                    <li class="active"><a href="/pages/requesting-a-virtual-machine-for-a-project.html">Requesting a virtual machine for a project</a></li>
                     <li><a href="/pages/managing-virtual-machines.html">Managing virtual machines</a></li>
                     <li><a href="/pages/project-vm-policy.html">Project VM policy</a></li>
                     <li><a href="/pages/guidelines-for-project-websites.html">Guidelines for project websites</a></li>
@@ -126,9 +126,119 @@
                     <li><a href="/pages/reference/committer/website.html">How To Manage any Apache Project's Website</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
-    <h1>Categories on A Pelican Blog</h1>
-    <ul>
-    </ul>
+<section id="content" class="body">
+    <h1 class="entry-title">Requesting a virtual machine for a project</h1>
+    
+    <p>When you want to run an application that is not part of the offered services (like a demo setup of your project), you need to request a dedicated virtual machine (vm). It is not possible to request a physical machine. Physical machines are shared resources for all ASF projects.</p>
+<p>Infra maintains hosts in different computer centers around the world to run virtual machines, so we can relocate your vm as requirements change without you having to reinstall anything.</p>
+<h3>Contents</h3>
+<ul>
+<li><a href="#request">Requesting a virtual machine</a></li>
+<li><a href="#deploy">Deploying the virtual machine</a></li>
+<li><a href="#maintain">Project maintainers</a></li>
+<li><a href="#ssh-keys">Obtaining SSH keys</a></li>
+<li><a href="#maintenance">General maintenance</a></li>
+<li><a href="#cautions">Cautions</a></li>
+</ul>
+<h3 id="request">Requesting a virtual machine<a class="headerlink" href="#request" title="Permanent link">&para;</a></h3>
+
+<p>To request a virtual machine, open a <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Jira</a> ticket with at least the following information:</p>
+<ol>
+<li>The project's plans for the virtual machine:<ul>
+<li>Why the project needs a dedicated vm</li>
+<li>Is logging in used in the project's application (HTTPS is mandatory for use of login)?</li>
+<li>Do any special ports need to be opened?</li>
+</ul>
+</li>
+<li>VM resources requested (the operating system will be the latest Ubuntu LTS release):<ul>
+<li>CPU cores (default is 1)</li>
+<li>RAM (default is 1Gb)</li>
+<li>Disk capacity (default is 20Gb)</li>
+<li>Name (default is <code>&lt;project&gt;-vm.a.o</code>)</li>
+<li>Apache ID of project administrator</li>
+</ul>
+</li>
+<li>Application resources:<ul>
+<li>Database (infra has central sql servers that support postgresql and mysql)</li>
+<li>Httpd (installed pr default, configuration is to be agreed upon)</li>
+<li>Non-standard packages (will be maintained by infra-p6)</li>
+<li>DNS names needed (default is to create <code>vmname</code> only)</li>
+<li>Backup needed (default is <strong>no</strong> backups other than what is in Infra-p6)</li>
+</ul>
+</li>
+<li>Maintainers:<ul>
+<li>Provide the name, Apache ID, and contact info for at least three PMC members who will maintain the vm.</li>
+</ul>
+</li>
+<li>Acknowledgement:<ul>
+<li>Name of a PMC member who acknowledges this request on behalf of the project.</li>
+</ul>
+</li>
+</ol>
+<p>CPU and RAM are expensive resources, so unless you make a really compelling case we will start the vm with default values. If you/we see problems later we can always add more. We can add CPU cores and RAM can without reinstalling anything.</p>
+<p>The operating system needs to be supported by our standard applications, therefore we currently only offer Ubuntu.</p>
+<p>Important: the ticket must be acknowledged by a PMC member.</p>
+<h3 id="deploy">Deploying the virtual machine<a class="headerlink" href="#deploy" title="Permanent link">&para;</a></h3>
+
+<p>Infra may ask questions to clarify the request. When all is clear, we will create the vm according to specifications, install the OS and the mandatory standard (infra) applications. The mandatory application guarantee a level of security and provide ssh access common to all vms.</p>
+<p>Once we have tested the vm, we will ask a project maintainer to do ssh to the vm.</p>
+<h3 id="maintain">Project maintainers<a class="headerlink" href="#maintain" title="Permanent link">&para;</a></h3>
+
+<p>The project maintainers are responsible for maintaining the vm. Infra will normally not maintain the vm, but will check on security from time to time.</p>
+<p>Each project maintainer needs to have ssh keys uploaded to <code>id.a.o</code> before requesting the vm. Maintainers use the ssh keys stored in LDAP to log in to the vm.</p>
+<p>When the vm is created, each maintainer gets karma to access the vm (ldap add host to userid). Once that has been tested, it is time to get sudo karma if it is required.</p>
+<p>To prepare for sudo karma follow the <a href="https://reference.apache.org/committer/opie" target="_blank">OPIE guidelines</a>.</p>
+<p>When OPIE works, contact us on #asfinfra, or by commenting on the issue, and sudo karma will be granted (ldap add userid to sudoer group).</p>
+<h3 id="ssh-keys">Obtaining SSH keys<a class="headerlink" href="#ssh-keys" title="Permanent link">&para;</a></h3>
+
+<p>To use key-based login, you need to generate a key on your local desktop (do not use a publicly accessible server for this) and then add your public key to LDAP using the self-service app at <code>https://id.apache.org</code>.</p>
+<p>Once you have done this, wait at least 10 mins. You should then be able to log in as follows:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<p>Depending on your client setup, you may need to run the following command to ensure the key(s) are made available to the SSH client on your system:</p>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
+<p>If you use PuTTY, make sure it is configured to force SSH v2 protocol. And use keyboard-interactive.</p>
+<p>Once you have logged in, there are few tasks best performed right away. Please take care when using your shell account.</p>
+<p>Check that your umask is set in a group-friendly fashion. This ensures that the documents you create are editable by your fellow committers. To do this, (depending on which shell you use) edit the <code>.cshrc</code> file or <code>.profile</code> (sh derivatives) so the umask is set as follows:</p>
+<div class="highlight"><pre><span></span><code><span class="err">umask 002</span>
+</code></pre></div>
+
+<p>If a umask line already exists, modify it. Otherwise, add a new line. You will need to use a <code>*nix</code> command-line editor such as <code>vi</code>.</p>
+<p>Tip: You can review the files of some other committer: <code>ls -al ~mymentor; cat ~mymentor/.cshrc</code>.</p>
+<h3 id="maintenance">General maintenance<a class="headerlink" href="#maintenance" title="Permanent link">&para;</a></h3>
+
+<p>There are no mandatory rules, but here are some suggestions:</p>
+<ul>
+<li>Keep all changes in Git/Puppet. See: <code>https://github.com/apache/infrastructure-p6</code><ul>
+<li>If you do not have karma, please create PRs in a branch against our Github repository.</li>
+<li>Keep all application data in <code>/x1</code> if possible.</li>
+</ul>
+</li>
+<li>Update Puppet with all extra installed packages.<ul>
+<li>See <code>https://github.com/apache/infrastructure-p6/tree/production/modules/&lt;vmname&gt;/manifests/init.pp</code></li>
+<li>See also the <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+workflow+for+infrastructure-puppet+repo" target="_blank">Git workflow for an Infrastructure Puppet repository</a>.</li>
+</ul>
+</li>
+</ul>
+<p>See also <a href="vm-management.html">Managing virtual machines</a></p>
+<h3 id="cautions">Cautions<a class="headerlink" href="#cautions" title="Permanent link">&para;</a></h3>
+
+<ul>
+<li>Do not try to change items controlled by puppet, such as:<ul>
+<li>iptables</li>
+<li>sshd</li>
+<li>ldap</li>
+<li>/root/bin</li>
+<li>anything else relevant for security</li>
+</ul>
+</li>
+<li>As sudoer you are expected to know what you do, and are expected to clear any problems you create.</li>
+</ul>
+<p>Before doing something, you are always welcome to join #asfinfra on Slack and ask about it.</p>
+</section>
         <section id="extras" class="body">
                 <div class="social">
                         <h2>social</h2>

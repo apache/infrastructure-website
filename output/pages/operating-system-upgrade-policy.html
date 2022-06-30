@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <meta name="generator" content="Pelican" />
-        <title>A Pelican Blog - Categories</title>
+        <title>Operating system upgrade policy</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
 </head>
@@ -82,7 +82,7 @@
                     <li><a href="/pages/open-access-svn.html">Open-access SVN</a></li>
                     <li><a href="/pages/cryptography-with-openpgp.html">Cryptography with OpenPGP</a></li>
                     <li><a href="/pages/reference/committer/opie.html">Using OPIE</a></li>
-                    <li><a href="/pages/operating-system-upgrade-policy.html">Operating system upgrade policy</a></li>
+                    <li class="active"><a href="/pages/operating-system-upgrade-policy.html">Operating system upgrade policy</a></li>
                     <li><a href="/pages/how-to-submit-a-patch-for-project-code.html">How to submit a patch for project code</a></li>
                     <li><a href="/pages/build-and-manage-a-project-website-with-pelican-and-buildbot.html">Build and manage a project website with Pelican and Buildbot</a></li>
                     <li><a href="/pages/infra-policies.html">Infra policies</a></li>
@@ -126,9 +126,18 @@
                     <li><a href="/pages/reference/committer/website.html">How To Manage any Apache Project's Website</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
-    <h1>Categories on A Pelican Blog</h1>
-    <ul>
-    </ul>
+<section id="content" class="body">
+    <h1 class="entry-title">Operating system upgrade policy</h1>
+    
+    <p>Infra supports Ubuntu long-term support (LTS) releases and Windows platforms. </p>
+<p>Some services are on a virtual machine (VM) on a host physical server, and some services run on "bare metal". </p>
+<ul>
+<li>When we move to a new machine running Ubuntu, we install the current stable version of the operating system.</li>
+<li>Windows servers typically run Windows Server 2016 Standard. As we replace older physical machines with newer ones, we install the most recent stable version of Windows Server Standard that is available at the time of migration.</li>
+<li>ASF Windows desktops typically run Windows 10 Professional. The migration pattern is as for the servers.</li>
+<li>For builds, we run <a href="https://cwiki.apache.org/confluence/display/INFRA/Buildbot" target="_blank">Buildbot</a> on Windows desktops and <a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins" target="_blank">Jenkins</a> on Windows servers.</li>
+</ul>
+</section>
         <section id="extras" class="body">
                 <div class="social">
                         <h2>social</h2>

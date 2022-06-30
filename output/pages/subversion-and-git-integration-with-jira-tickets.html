@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <meta name="generator" content="Pelican" />
-        <title>A Pelican Blog - Categories</title>
+        <title>Subversion and Git integration with Jira tickets</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
 </head>
@@ -112,7 +112,7 @@
                     <li><a href="/pages/subversion-basics.html">Subversion basics</a></li>
                     <li><a href="/pages/svn-to-git-migration.html">SVN to Git migration</a></li>
                     <li><a href="/pages/reference/committer/svngit2jira.html">Subversion and Git integration with JIRA tickets</a></li>
-                    <li><a href="/pages/subversion-and-git-integration-with-jira-tickets.html">Subversion and Git integration with Jira tickets</a></li>
+                    <li class="active"><a href="/pages/subversion-and-git-integration-with-jira-tickets.html">Subversion and Git integration with Jira tickets</a></li>
                     <li><a href="/pages/about-the-apache-infrastructure-team.html">About the Apache Infrastructure Team</a></li>
                     <li><a href="/pages/understanding-opensource.html">Understanding Opensource</a></li>
                     <li><a href="/pages/user-documentation-for-project-releases.html">User documentation for project releases</a></li>
@@ -126,9 +126,35 @@
                     <li><a href="/pages/reference/committer/website.html">How To Manage any Apache Project's Website</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
-    <h1>Categories on A Pelican Blog</h1>
-    <ul>
-    </ul>
+<section id="content" class="body">
+    <h1 class="entry-title">Subversion and Git integration with Jira tickets</h1>
+    
+    <p>Many projects use Jira for managing tracking bugs, milestones, feature requests and so on, and many of these projects keep track of which commit affects which ticket. To make things even easier, we have a service called <code>svngit2jira</code>, which integrates
+Subversion and Git commits with Jira tickets.</p>
+<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
+
+<p>Simply mention a Jira ticket in a commit, and the specific ticket receives an update indicating that the commit has been made in reference it. For example, scroll down in <a href="https://issues.apache.org/jira/browse/CLOUDSTACK-1638" target="_blank">this CloudStack ticket</a> to see the commit mentioned.</p>
+<p>This service also plugs into the <a href="https://reviews.apache.org/r/" target="_blank">ReviewBoard</a> instance if you use Jira ticket names there, as the CloudStack project does.</p></p>
+<h2 id="general-use-of-the-service">General use<a class="headerlink" href="#general-use-of-the-service" title="Permanent link">&para;</a></h2>
+
+<p>The most common scenario is to mention a Jira ticket in your commit, and the service updates the ticket to reflect your new commit. Some 
+projects have a trigger set so that it only updates a ticket if the first  sentence is the Jira ticket number, but we can tailor this to suit your project's needs.</p>
+<h2 id="getting-set-up-for-svngit2jira">Setting up svngit2jira<a class="headerlink" href="#getting-set-up-for-svngit2jira" title="Permanent link">&para;</a></h2>
+
+<p>To enable the service for your project, create an 
+<a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Infra Jira ticket</a>. Include this information:</p>
+<ul>
+<li>The name of the project.</li>
+<li>Has the PMC agreed to use this? (Make sure of this before requesting the feature, as it does tend to add quite a lot of new information to a Jira ticket.)</li>
+<li>What Jira name does your project use?</li>
+<li>Does the project use Git or Subversion?</li>
+<li>How would you like commits to trigger an update of a JIRA ticket. This can be anything from the standard catch-all FOO-1234 trigger to more specific rules you thought of yourself.</li>
+<li>If you are using Git, are there any specific branches you'd like the service to ignore?</li>
+</ul>
+<h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
+
+<p>The source for this feature is <a href="https://svn.apache.org/repos/infra/infrastructure/trunk/projects/svngit2jira/" target="_blank">freely available</a>.</p>
+</section>
         <section id="extras" class="body">
                 <div class="social">
                         <h2>social</h2>

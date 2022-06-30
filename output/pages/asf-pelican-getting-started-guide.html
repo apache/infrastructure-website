@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <meta name="generator" content="Pelican" />
-        <title>A Pelican Blog - Categories</title>
+        <title>ASF-Pelican getting-started guide</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
 </head>
@@ -21,7 +21,7 @@
                     <li><a href="/pages/asf-pelican-build-process.html">ASF-Pelican build process</a></li>
                     <li><a href="/pages/configuring-asf-pelican.html">Configuring ASF Pelican</a></li>
                     <li><a href="/pages/asf-pelican-data-model.html">ASF Pelican data model</a></li>
-                    <li><a href="/pages/asf-pelican-getting-started-guide.html">ASF-Pelican getting-started guide</a></li>
+                    <li class="active"><a href="/pages/asf-pelican-getting-started-guide.html">ASF-Pelican getting-started guide</a></li>
                     <li><a href="/pages/local-pelican-builds.html">Local Pelican builds</a></li>
                     <li><a href="/pages/asf-pelican-plugins.html">ASF Pelican plugins</a></li>
                     <li><a href="/pages/apache-theme-for-asf-pelican.html">Apache Theme for ASF Pelican</a></li>
@@ -126,9 +126,119 @@
                     <li><a href="/pages/reference/committer/website.html">How To Manage any Apache Project's Website</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
-    <h1>Categories on A Pelican Blog</h1>
-    <ul>
-    </ul>
+<section id="content" class="body">
+    <h1 class="entry-title">ASF-Pelican getting-started guide</h1>
+    
+    <p>Any ASF project can use the <a href="asf-pelican.html">ASF-Pelican template</a> as the basis for their project website. </p>
+<p>Review the <a href="https://template.staged.apache.org/">Apache Template example</a> to see whether the template's features will support the functions you need for your project</p>
+<h2>How to use this template</h2>
+<ol>
+<li>
+<p>Review the <a href="https://github.com/apache/template-site" target="_blank">code repository for ASF-Pelican</a> to confirm that it provides the features your project site needs.</p>
+</li>
+<li>
+<p>Create a <a href="https://issues.apache.org/jira/Jira" target="_blank">Jira ticket</a>, requesting Infra to create a repository using this template for your project. Provide a name and short description for the repository. Infra will confirm the repository's location when it is ready for you.</p>
+</li>
+</ol>
+<p><strong>Note</strong>: we strongly suggest that you do your site development in a branch rather than the trunk of the repository, and then merge the branch into the trunk when you are sure that everything as working as you would like it. Each commit to the trunk triggers an automatic build to update your live site; this is great for trivial changes like correcting typos, but more of a challenge if you are making major changes and it turns out that there is an error in your code that disables your live site. </p>
+<!--- Review [ASF Pelican feature branches](asf-pelican-branches.html). --->
+
+<ol>
+<li>The Apache Theme is at <a href="https://github.com/apache/template-site/tree/main/theme/apache/templates" target="_blank">theme/apache/templates</a>. Review <a href="asf-pelican-theme.html">the theme instructions</a>, then update the theme's <code>base.html</code> to fit your site's requirements. </li>
+</ol>
+<p>The example has the following frameworks.</p>
+<div class="highlight"><pre><span></span><code> - JavaScript:
+   - [JQuery 3.6.0 Slim](https://code.jquery.com/jquery-3.6.0.slim.js)
+   - [Popper 1.14.7](https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.js)
+   - [Bootstrap 4.3.1](https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.js)
+ - CSS:
+   - [Bootstrap 4.3.1](https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css)
+   - [GitHub Markdown 3.0.1](https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.css)
+
+ For fenced code highlighting, review <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://highlightjs.org&quot;</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span><span class="nt">&gt;</span>highlightjs<span class="nt">&lt;/a&gt;</span>.
+</code></pre></div>
+
+<ul>
+<li>
+<p>The <code>content/images</code> folder holds example logo files. Place your own site's image files here.</p>
+</li>
+<li>
+<p>Determine if your site requires a <a href="https://infra.apache.org/asf-pelican-data.html">data model</a>.</p>
+</li>
+<li>
+<p>The <code>.ezmd</code> files in the <a href="https://github.com/apache/template-site/tree/main/content" target="_blank">content</a> directory show examples</p>
+</li>
+<li><a href="https://github.com/apache/template-site/blob/main/asfdata.yaml" target="_blank">asfdata.yaml</a> has many examples</li>
+<li>
+<p>Remove the following if you do not need a data model:</p>
+<ol>
+<li><code>asfdata.yaml</code></li>
+<li><code>data/eccn</code> directory</li>
+</ol>
+</li>
+<li>
+<p>Edit the <code>asf.yaml</code> configuration file:</p>
+</li>
+</ul>
+<div class="highlight"><pre><span></span><code><span class="n">pelican</span><span class="o">:</span>
+  <span class="n">notify</span><span class="o">:</span> <span class="n">wave</span><span class="err">@</span><span class="n">apache</span><span class="o">.</span><span class="na">org</span>
+  <span class="n">autobuild</span><span class="o">:</span> <span class="n">preview</span><span class="o">/*</span>
+  <span class="n">target</span><span class="o">:</span> <span class="n">YOUR</span> <span class="n">SITE</span><span class="s1">&#39;S REPOSITORY</span>
+<span class="s1">  theme: theme/apache</span>
+<span class="s1">  whoami: main</span>
+
+<span class="s1">staging:</span>
+<span class="s1">  profile: ~</span>
+<span class="s1">  whoami: YOUR SITE&#39;</span><span class="n">S</span> <span class="n">REPOSITORY</span>
+  <span class="n">autostage</span><span class="o">:</span> <span class="n">preview</span><span class="o">/*</span>
+</code></pre></div>
+
+<ol>
+<li>
+<p>Update <code>pelicanconfig.yaml</code> with your site's information. See <a href="asf-pelican-config.html">Configuring ASF Pelican</a> for details.</p>
+</li>
+<li>
+<p>Create your <a href="content">content</a> </p>
+</li>
+<li>
+<p><code>.md</code> files using Github Flavored Markdown (<a href="https://infra.apache.org/gfm.html"><strong>gfm</strong></a>)</p>
+</li>
+<li>
+<p><code>.ezmd</code> files for templates using <code>ASF_DATA</code></p>
+</li>
+<li>
+<p>Building</p>
+</li>
+<li>
+<p><a href="https://infra.apache.org/asf-pelican-local.html">Local build instructions</a></p>
+</li>
+<li>
+<p><a href=".asf.yaml">ASF YAML build</a> -- ASF infrastructure instructions</p>
+</li>
+<li>
+<p>When you are ready to use this repository as the source for your live site, create a Jira ticket to ask Infra to adjust the build process. From then on, changes you make to the trunk of this repository automatically update the live site.</p>
+</li>
+</ol>
+<h2>Issues and template questions</h2>
+<p>Please let us know if you run into issues with the template.</p>
+<ul>
+<li><a href="https://github.com/apache/template-site/issues">Issues</a></li>
+</ul>
+<h2>Earlier versions</h2>
+<p>Earlier versions of this template made use of a <code>pelicanconf.py</code> configuration file. The current version uses <code>.asf.yaml</code> and <code>pelicanconf.yaml</code>, as noted above. We retain the earlier instruction for the projects using the earlier version of the template; however, any project starting with the template now should use the files and instructions noted above.</p>
+<div class="highlight"><pre><span></span><code> <span class="n">Edit</span> <span class="n">the</span> <span class="ss">`pelicanconf.py`</span> <span class="n">configuration</span> <span class="n">file</span><span class="p">:</span>
+
+   <span class="o">-</span> <span class="n">Website</span> <span class="k">specific</span>
+   <span class="o">-</span> <span class="ss">`PLUGINS`</span>
+   <span class="o">-</span> <span class="ss">`ASF_DATA`</span> <span class="o">-</span> <span class="ss">`asfdata.py`</span> <span class="n">plugin</span> <span class="n">settings</span>
+   <span class="o">-</span> <span class="ss">`ASF_GENID`</span> <span class="o">-</span> <span class="ss">`asfgenid.py`</span> <span class="n">plugin</span> <span class="n">settings</span>
+     <span class="ss">`asfgenid.py`</span> <span class="n">performs</span> <span class="n">a</span> <span class="n">series</span> <span class="n">of</span> <span class="n">html</span> <span class="n">fixups</span> <span class="n">including</span> <span class="n">permalinks</span><span class="p">,</span> <span class="n">heading</span> <span class="n">ids</span><span class="p">,</span> <span class="k">and</span> <span class="k">table</span> <span class="n">of</span> <span class="n">contents</span>
+</code></pre></div>
+
+<h1>EZMD format</h1>
+<p>The <a href="https://infra.apache.org/asf-pelican-build.html#ezmd">EZMD</a> format is a markdown extension of <a href="https://github.com/gstein/ezt/blob/wiki/Syntax.md">EZT</a>. 
+It allows for embedding ezt inside markdown with modifications so simplify the process of fetching generated/external data.</p>
+</section>
         <section id="extras" class="body">
                 <div class="social">
                         <h2>social</h2>

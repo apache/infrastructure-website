@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <meta name="generator" content="Pelican" />
-        <title>A Pelican Blog - Categories</title>
+        <title>Writing a good bug report</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
 </head>
@@ -29,7 +29,7 @@
                     <li><a href="/pages/asfbot-irc-services-and-archives.html">ASFBot: IRC services and archives</a></li>
                     <li><a href="/pages/project-sites-using-mkdocs.html">Project sites using MKDocs</a></li>
                     <li><a href="/pages/backup-policy.html">Backup policy</a></li>
-                    <li><a href="/pages/writing-a-good-bug-report.html">Writing a good bug report</a></li>
+                    <li class="active"><a href="/pages/writing-a-good-bug-report.html">Writing a good bug report</a></li>
                     <li><a href="/pages/committer-email.html">Committer Email</a></li>
                     <li><a href="/pages/policy-for-outreach-to-committers.html">Policy for Outreach to Committers</a></li>
                     <li><a href="/pages/committers-faqs.html">Committers' FAQs</a></li>
@@ -126,9 +126,71 @@
                     <li><a href="/pages/reference/committer/website.html">How To Manage any Apache Project's Website</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
-    <h1>Categories on A Pelican Blog</h1>
+<section id="content" class="body">
+    <h1 class="entry-title">Writing a good bug report</h1>
+    
     <ul>
-    </ul>
+<li><a href="#overview">Bug reporting</a></li>
+<li><a href="#systems">Bug-tracking systems</a></li>
+<li><a href="#newbug">Is this a new bug?</a></li>
+<li><a href="#useful">A useful bug report</a></li>
+<li><a href="#blocked">If your report or comment gets blocked</a></li>
+<li><a href="#followup">Following up</a></li>
+</ul>
+<h2 id="overview">Bug reporting<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+
+<p>When you run into an issue with ASF instrastructure, with the software one of the ASF projects produces, or with an ASF-related website, you may be the first person to have noticed the issue. If so, you should report it. The people responsible for the thing that has a bug or other issue will be happy to know about the problem so they can fix it before more people run into it.</p>
+<p>For the purposes of this discussion, we'll call any issue, from a calculation error in a function to a punctuation error on a web page, a "bug". Something that you would like to see added to an application or a website to make it better would be an "enhancement request". Both are useful; we are looking at bugs here.</p>
+<h2 id="systems">Bug-tracking systems<a class="headerlink" href="#systems" title="Permanent link">&para;</a></h2>
+
+<p>ASF has two bug-tracking systems:</p>
+<ul>
+<li><a href="https://issues.apache.org/jira/" target="_blank">Jira</a></li>
+<li><a href="https://issues.apache.org/bugzilla/" target="_blank">Bugzilla</a></li>
+</ul>
+<p>Infra itself uses Jira. To submit a ticket for Infra, search for the INFRA project.</p>
+<p>Projects can use either system, or some other method of tracking bugs. If the bug you found is in a project's application or website, you need to find out where that project wants to hear about it. If you cannot find the project in either Jira or Bugzilla, ask for advice on the project's <code>dev@</code> or <code>users@</code> mailing list.</p>
+<h2 id="newbug">Is this a new bug?<a class="headerlink" href="#newbug" title="Permanent link">&para;</a></h2>
+
+<p>Before spending the time filing a bug report, it's useful to check whether a report about the bug you found already exists. If so, you can add comments or additional information to the existing report.</p>
+<p>Infra maintains several real-time <a href="stats.html">status pages</a>. If the infrastructure issue you ran into is reported on one of these pages, Infra already knows about it.</p>
+<p>If what you found seems to be a new bug, you get to report it!</p>
+<h2 id="useful">A useful bug report<a class="headerlink" href="#useful" title="Permanent link">&para;</a></h2>
+
+<p>Useful bug reports get bugs fixed. A useful bug report is usually:</p>
+<ul>
+<li>Reproducible. If a developer or sysadmin can't see it or conclusively prove that it exists, they may stamp it "WORKSFORME" or "INVALID", and move on to the next bug. Every detail you can provide helps.</li>
+<li>Specific. The quicker the the person looking at your report can connect your issue to a specific problem, the quicker they can fix it.</li>
+</ul>
+<p>Let's say the application you're testing is a web browser. You crash at foo.com, and want to write up a bug report:</p>
+<p><strong>A bad report</strong>: "My browser crashed. I think I was on foo.com. My computer uses Windows. I think that this is a really bad problem and you should fix it now. By the way, your icons really suck. Nobody will use your software if you keep those ugly icons. Oh, and my grandmother's home page doesn't look right, either, it's all messed up. Good luck.</p>
+<p><strong>A good report</strong>: "I crashed each time when I went to foo.com, using the 10.28.99 build on a Win NT 4.0 (Service Pack 5) system. I also rebooted into Linux, and reproduced this problem using the 10.28.99 Linux build. The browser crashed each time while drawing the Foo banner at the top of the page. I broke apart the page, and discovered that the following image link will crash the application reproducibly, unless you remove the "border=0" attribute: <code>&lt;IMG SRC="http://foo.com/images/topics/topicfoos.gif" width=34 height=44 border=0 alt="News"&gt;</code>"</p>
+<p>When you enter a bug report, both Bugzilla and Jira provide some helpful fields where you can select things like your operating system. If you are reporting a bug via email to a project, you need to remember to provide all the relevant information that could help identify the source of the problem.</p>
+<p>Once you have established the conditions (operating system, web browser, and so on), include the steps to reproduce the problem:</p>
+<ol>
+<li>What you wanted to do.</li>
+<li>The steps you took to do it.</li>
+<li>What you expected to happen.</li>
+<li>What actually happened.</li>
+</ol>
+<p>If you can capture onscreen error messaages, extracts from logs, or relevant screen shots, include them in the report.</p>
+<p>The bug-tracking systems allow you to suggest a <strong>severity</strong> for the bug. If you are reporting by email, explain the urgency of getting the bug fixed.</p>
+<p>Make sure you provide a useful <strong>title</strong> for the report:</p>
+<ul>
+<li>Userful: "PCMCIA install fails on Tosh Tecra 780DVD w/ 3c589"</li>
+<li>Not useful: "Browser crashes" or "Install problem"</li>
+</ul>
+<p>Review <a href="jira-guidelines.html">Creating a Jira ticket</a> for specifics about Jira bug reports.</p>
+<h3>What not to include</h3>
+<p>Adding editorial comments ("what sort of idiot would release a product with such a bug?") is worse than useless. It sets you up as a critic rather than a partner to the people whose help you need.</p>
+<h2 id="blocked">If your report or comment gets blocked<a class="headerlink" href="#blocked" title="Permanent link">&para;</a></h2>
+
+<p>Infra uses various tools and techniques to prevent spammers from posting material on Jira. If your new bug report, or comment on an existing report, gets blocked, <a href="contact.html">contact Infra</a> so we can resolve the issue and fine-tune our spam filters.</p>
+<h2 id="followup">Following up<a class="headerlink" href="#followup" title="Permanent link">&para;</a></h2>
+
+<p>In either bug tracking system you can arrange to get updates whenever the status of the bug report changes. If you are reporting by email and want to get updates sent to one or more email addresses, specify them.</p>
+<p><em>Based on contributions from Eli Goldberg, Claudius Gayle, Peter Mock, Chris Pratt, Tom Schutter, and Chris Yeh.</em></p>
+</section>
         <section id="extras" class="body">
                 <div class="social">
                         <h2>social</h2>

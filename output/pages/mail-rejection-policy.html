@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <meta name="generator" content="Pelican" />
-        <title>A Pelican Blog - Categories</title>
+        <title>Mail Rejection Policy</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
 </head>
@@ -72,7 +72,7 @@
                     <li><a href="/pages/localization.html">Localization</a></li>
                     <li><a href="/pages/machines-and-fingerprints.html">Machines and Fingerprints</a></li>
                     <li><a href="/pages/mailing-list-migration-project.html">Mailing List Migration Project</a></li>
-                    <li><a href="/pages/mail-rejection-policy.html">Mail Rejection Policy</a></li>
+                    <li class="active"><a href="/pages/mail-rejection-policy.html">Mail Rejection Policy</a></li>
                     <li><a href="/pages/mailing-list-moderation.html">Mailing list moderation</a></li>
                     <li><a href="/pages/managing-project-committers.html">Managing Project Committers</a></li>
                     <li><a href="/pages/apache-download-mirror-system.html">Apache download mirror system</a></li>
@@ -126,9 +126,34 @@
                     <li><a href="/pages/reference/committer/website.html">How To Manage any Apache Project's Website</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
-    <h1>Categories on A Pelican Blog</h1>
-    <ul>
-    </ul>
+<section id="content" class="body">
+    <h1 class="entry-title">Mail Rejection Policy</h1>
+    
+    <h3>"Not authorized" message</h3>
+<p>People emailing ASF addresses may see this message: </p>
+<p><code>Recipient address rejected: ASF gnomes rejected your message: SPF fail - not authorized. See https://infra.apache.org/mail-rejection.html</code></p>
+<p>The apache.org MX servers reject messages under many of the following circumstances:</p>
+<ul>
+<li>SPF (Sender Policy Framework) hard fail for domains which have it configured (-all)</li>
+<li>SPF hard fail for major spam targets despite ~all (gmail.com, yahoo.com)</li>
+<li>SPF hard fail for inbound mail from apache.org addresses which do NOT originate from apache.org servers </li>
+<li>Various RBL provider match</li>
+<li>Invalid HELO hostname (hostname does not exist)</li>
+<li>Invalid HELO domain (domain does not exist)</li>
+<li>Unauthorized destination (no relaying)</li>
+<li>Unauthorized SMTP pipelining (common spam-burst technique)</li>
+<li>Reverse DNS does not match sender domain</li>
+<li>Header checks for known spam phrases</li>
+<li>Sender_access bans per envelope from address</li>
+<li>And many more</li>
+</ul>
+<p>SPF hard fail for the apache.org domain has been implemented for incoming apache.org mail. This will require people using an apache.org mail address in their envelope "from" to be sending from an authorized host via mail-relay.a.o. See <a href="committer-email.html">Committer email</a>.</p>
+<p>Refer to <a href="https://blogs.apache.org/infra/entry/committers_mail_relay_service" target="_blank">this blog post</a> for additional information.</p>
+<p><a href="/contact.html">Contact Infra</a> via an alternate email address, or <a href="https://issues.apache.org/jira/" target="_blank">file a Jira ticket</a> with any questions.</p>
+<p>If you feel your email has been blocked or rejected in error, please open a ticket at https://issues.apache.org/jira and include your external IP address and the To: header.</p>
+<h3>Issue related to reporting ASF mail as spam</h3>
+<p>Please read <a href="spam-reporting.html">Dealing with spam in your ASF email account</a> and <strong>do not</strong> flag valid ASF-related email as spam.</p>
+</section>
         <section id="extras" class="body">
                 <div class="social">
                         <h2>social</h2>

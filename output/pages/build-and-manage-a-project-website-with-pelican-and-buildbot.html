@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <meta name="generator" content="Pelican" />
-        <title>A Pelican Blog - Categories</title>
+        <title>Build and manage a project website with Pelican and Buildbot</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
 </head>
@@ -84,7 +84,7 @@
                     <li><a href="/pages/reference/committer/opie.html">Using OPIE</a></li>
                     <li><a href="/pages/operating-system-upgrade-policy.html">Operating system upgrade policy</a></li>
                     <li><a href="/pages/how-to-submit-a-patch-for-project-code.html">How to submit a patch for project code</a></li>
-                    <li><a href="/pages/build-and-manage-a-project-website-with-pelican-and-buildbot.html">Build and manage a project website with Pelican and Buildbot</a></li>
+                    <li class="active"><a href="/pages/build-and-manage-a-project-website-with-pelican-and-buildbot.html">Build and manage a project website with Pelican and Buildbot</a></li>
                     <li><a href="/pages/infra-policies.html">Infra policies</a></li>
                     <li><a href="/pages/project-blog.html">Project Blog</a></li>
                     <li><a href="/pages/project-and-product-names.html">Project and product names</a></li>
@@ -126,9 +126,68 @@
                     <li><a href="/pages/reference/committer/website.html">How To Manage any Apache Project's Website</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
-    <h1>Categories on A Pelican Blog</h1>
-    <ul>
-    </ul>
+<section id="content" class="body">
+    <h1 class="entry-title">Build and manage a project website with Pelican and Buildbot</h1>
+    
+    <p>ASF projects can use <a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a> to create and manage the project website. Pelican provides a framework and the option of using themes to display your site pages, which you write in <a href="https://github.github.com/gfm/" target="_blank">Github-flavored-markdown</a> (GFM). You can set <a href="https://buildbot.net/" target="_blank">Buildbot</a> to build and publish the site every time someone saves updates to a page.</p>
+<p>Pelican provides support for importing an existing site that runs on WordPress or some other service.</p>
+<h3>Sites with sub-directories</h3>
+<p>Pelican supports both "flat" sites and sites that have sub-directories. For the latter, add the <a href="https://github.com/akhayyat/pelican-page-hierarchy" target="_blank">pelican-page-hierarchy</a> plugin. The plugin creates a website hierarchy that matches the file hierarchy of the material in the repository.</p>
+<h3>Key files and directories</h3>
+<p>The repository structure for your Pelican project website has three key directories and a configuration file.</p>
+<p>The directories are:</p>
+<ul>
+<li><strong>content/pages</strong>: holds the static pages for your website. You write and edit them using GFM.<ul>
+<li>Each page is a <code>.md</code> file.</li>
+<li>The first line is <code>Title:</code> and the name of the page.</li>
+<li>the scond line is <code>Date:</code> and the date of the current version of the page.</li>
+</ul>
+</li>
+<li><strong>content/articles</strong>: if your website has a blog or a series of featured articles, they go in this directory and will appear on the front page of the site. They have the same three requirements as the static pages, above.</li>
+<li><strong>theme/plugins</strong>: holds the plugins Pelican and Buildbot use to build and deploy the site.</li>
+</ul>
+<p>The configuration file is <code>pelicanconf.py</code>.</p>
+<h3>Setting up a Pelican website on Git</h3>
+<p>Create the repository for the website content using the <a href="https://gitbox.apache.org/setup/newrepo.html" target="_blank">GitBox's Boxer self service tool</a> (https://gitbox.apache.org/setup/newrepo.html).</p>
+<ol>
+<li>Clone the repository to a local workspace</li>
+<li>
+<p>Run <code>pelican-quickstart</code> in the root of the repository on the master branch. </p>
+<ul>
+<li>The script asks where you want to create the website. Accept " . ", the default, unless you have a specific location in mind for it.</li>
+<li>Use $PROJECTNAME for the site title.</li>
+<li>Set the website author as $PROJECTNAME also. This lets all members of the project edit the website.</li>
+<li>Accept the default language as English. You can, if you want, provide alternative versions of the website, or of certain pages, in other languages.</li>
+<li>Specify a default prefix: <code>https://$PROJECTNAME.apache.org</code> (or similar friendly name)</li>
+<li>Set article pagination to <code>No</code>.</li>
+<li>Set time zone to <code>UTC</code>.</li>
+<li>Set generation of tasks.py / makefile to 'No'.</li>
+</ul>
+</li>
+<li>
+<p>Site configuration:</p>
+</li>
+</ol>
+<p>In your site repository, run the following commands:</p>
+<div class="highlight"><pre><span></span><code><span class="err">for x in &quot;content/pages content/articles theme/plugins&quot;; do mkdir -p $x; done</span>
+<span class="err">rm -rf output publishconf.py</span>
+<span class="err">echo -e &quot;\nPLUGIN_PATHS=[&#39;./theme/plugins&#39;]\nPLUGINS=[]\n&quot;  &gt;&gt; pelicanconf.py</span>
+<span class="err">echo -e &quot;pelican\nbeautifulsoup4&quot; &gt;&gt; requirements.txt</span>
+</code></pre></div>
+
+<ol>
+<li>Commit and push your changes.</li>
+<li>Set up continuous integration (CI): use the <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">asf.yaml</a> mechanism to have Pelican build and, optionally, publish your website.</li>
+</ol>
+<h3>Setting up a Pelican website on Subversion</h3>
+<p>Setting up Pelican to work with a Subversion repository requires a bit more hands-on work. If you would like to do this, open a Jira ticket for INFRA to make a request for help.</p>
+<h3>Updating your website</h3>
+<p>Create and update markdown files (.md) in the content/pages and content/articles directories. If you have set up continuous integration (step 5, above), when you add pages or commit edits the site automatically updates.</p>
+<h3>Using a Pelican theme</h3>
+<p>Pelican provides a range of <a href="http://www.pelicanthemes.com/" target="_blank">themes</a> that can help you develop a pleasing site without too much effort. Be sure to specify the directory containing the 'static' and 'templates' directories as <code>theme:</code> in the .asf.yaml file.</p>
+<h3>Pelican plugins</h3>
+<p>There is a directory of <a href="https://github.com/getpelican/pelican-plugins/" target="_blank">Pelican plugins</a> that deliver extra functionality for a website.</p>
+</section>
         <section id="extras" class="body">
                 <div class="social">
                         <h2>social</h2>

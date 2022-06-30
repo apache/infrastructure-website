@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <meta name="generator" content="Pelican" />
-        <title>A Pelican Blog - Categories</title>
+        <title>Project VM policy</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
 </head>
@@ -120,15 +120,29 @@
                     <li><a href="/pages/source-code-repositories-at-apache.html">Source Code Repositories at Apache</a></li>
                     <li><a href="/pages/requesting-a-virtual-machine-for-a-project.html">Requesting a virtual machine for a project</a></li>
                     <li><a href="/pages/managing-virtual-machines.html">Managing virtual machines</a></li>
-                    <li><a href="/pages/project-vm-policy.html">Project VM policy</a></li>
+                    <li class="active"><a href="/pages/project-vm-policy.html">Project VM policy</a></li>
                     <li><a href="/pages/guidelines-for-project-websites.html">Guidelines for project websites</a></li>
                     <li><a href="/pages/reference/committer/website-policy.html">Web Site Guidelines</a></li>
                     <li><a href="/pages/reference/committer/website.html">How To Manage any Apache Project's Website</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
-    <h1>Categories on A Pelican Blog</h1>
-    <ul>
-    </ul>
+<section id="content" class="body">
+    <h1 class="entry-title">Project VM policy</h1>
+    
+    <p>Projects may request from Infra <strong>one</strong> Ubuntu virtual machine for use as they see fit.</p>
+<p>Infra will maintain this VM via our existing configuration management tooling. The project's designated committers can obtain sudo access. The project may either maintain the system <em>in situ</em>, or provide PR updates to the Infra <a href="https://cwiki.apache.org/confluence/display/INFRA/Puppet" target="_blank">Puppet</a> code if they wish to use configuration management.</p>
+<ul>
+<li>Do not "do-release-upgrade" the VM without discussing with Infra.</li>
+<li>The project must designate three committers who agree and have the knowledge to maintain the VM.</li>
+<li>Infra will coordinate with the project to do a reboot of the VM at regular intervals.</li>
+<li>Infra reserves the right to patch/update/restart the system at will to maintain security.</li>
+</ul>
+<p>See also:</p>
+<ul>
+<li>the process to <a href="vm-for-project.html">request a VM for your project</a></li>
+<li><a href="vm-management.html">Managing virtual machines</a></li>
+</ul>
+</section>
         <section id="extras" class="body">
                 <div class="social">
                         <h2>social</h2>

@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <meta name="generator" content="Pelican" />
-        <title>A Pelican Blog - Categories</title>
+        <title>Guidelines for project websites</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
 </head>
@@ -121,14 +121,32 @@
                     <li><a href="/pages/requesting-a-virtual-machine-for-a-project.html">Requesting a virtual machine for a project</a></li>
                     <li><a href="/pages/managing-virtual-machines.html">Managing virtual machines</a></li>
                     <li><a href="/pages/project-vm-policy.html">Project VM policy</a></li>
-                    <li><a href="/pages/guidelines-for-project-websites.html">Guidelines for project websites</a></li>
+                    <li class="active"><a href="/pages/guidelines-for-project-websites.html">Guidelines for project websites</a></li>
                     <li><a href="/pages/reference/committer/website-policy.html">Web Site Guidelines</a></li>
                     <li><a href="/pages/reference/committer/website.html">How To Manage any Apache Project's Website</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
-    <h1>Categories on A Pelican Blog</h1>
-    <ul>
-    </ul>
+<section id="content" class="body">
+    <h1 class="entry-title">Guidelines for project websites</h1>
+    
+    <p>These guidelines relate to Infra policies on resource consumption, linking, legal use, and site ownership. For policies and guidelines that fall under other committees or directors, please see their respective sites/pages.</p>
+<p><strong>NOTE:</strong>  In December, 2021 all TLP web sites and the main <code>apache.org</code> site started redirecting any pages using <code>http</code> to <code>https</code> and set up HTTP Strict Transport Security, or <a href="https://www.globalsign.com/en/blog/what-is-hsts-and-how-do-i-use-it" target="_blank">HSTS</a>. This was at the request of projects and end users, to enhance site security.</p>
+<ul>
+<li>Projects cannot use tools that require write access to the project repository.</li>
+<li>Never link directly to downloads hosted at <code>apache.org</code>. Always use the mirror scripts like closer.lua.</li>
+<li>Never redirect from the front page of your project's site, <code>$TLP.apache.org</code> to another domain. <code>$TLP.apache.org</code> <strong>must</strong> be your main project site. Links from your project site to other locations are of course okay.</li>
+<li>Never redirect from a <code>$TLP.apache.org</code> site to a non-ASF site unless the ASF has explicitly approved this, as for projects that have an existing web presence before joining the ASF.</li>
+<li>Don't cause unnecessary resource use (CPU, RAM, disk space). Use common sense, but Infra will ultimately decide on a case-by-case basis whether there is unnecessary use.</li>
+<li>The ASF must own all official project web sites (including their domain names), and you must host them on ASF hardware under Infra control.</li>
+<li>If you use cookies or other means of tracking users of an ASF website, state what you are doing explicitly and get the visitor's permission to track and store their data.</li>
+<li>Web sites must be licensed under Apache License v.2.</li>
+<li>You must not host or distribute any material that may constitute a felony under US or German law.</li>
+<li>All web sites must be available on ASF's git or svn servers, and published using git- or pypubsub.</li>
+<li>Do not host source releases or convenience binaries directly on the web site. See <a href="release-download-pages.html">Release download pages for projects</a>.</li>
+</ul>
+<p><strong>Note</strong>: Any ASF project can use the <a href="asf-pelican.html">ASF-Pelican template</a> as the basis for their project website. </p>
+<p>Should you have any questions, feel free to contact us at <a href="mailto:infrastructure@apache.org" target="_blank">infrastructure@apache.org</a> or on our <a href="https://the-asf.slack.com" target="_blank">Slack channel</a>.</p>
+</section>
         <section id="extras" class="body">
                 <div class="social">
                         <h2>social</h2>

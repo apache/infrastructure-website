@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <meta name="generator" content="Pelican" />
-        <title>A Pelican Blog - Categories</title>
+        <title>Apache Maven repositories</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
 </head>
@@ -98,7 +98,7 @@
                     <li><a href="/pages/release-creation-process.html">Release Creation Process</a></li>
                     <li><a href="/pages/signing-releases.html">Signing Releases</a></li>
                     <li><a href="/pages/reference/committer/release.html">Releasing project packages</a></li>
-                    <li><a href="/pages/apache-maven-repositories.html">Apache Maven repositories</a></li>
+                    <li class="active"><a href="/pages/apache-maven-repositories.html">Apache Maven repositories</a></li>
                     <li><a href="/pages/requesting-an-issue-and-feature-request-tracker-for-a-project.html">Requesting an issue and feature-request tracker for a project</a></li>
                     <li><a href="/pages/response-time.html">Response time</a></li>
                     <li><a href="/pages/roadmap-for-apache-infrastructure.html">Roadmap for Apache Infrastructure</a></li>
@@ -126,9 +126,47 @@
                     <li><a href="/pages/reference/committer/website.html">How To Manage any Apache Project's Website</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
-    <h1>Categories on A Pelican Blog</h1>
-    <ul>
-    </ul>
+<section id="content" class="body">
+    <h1 class="entry-title">Apache Maven repositories</h1>
+    
+    <p>Here is an overview of Maven repositories in use at the Apache Software Foundation.</p>
+<h2 id="basic">Basic information<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
+
+<p>The main snapshot and release Maven repositories for Apache are at <a href="https://repository.apache.org" target="_blank">https://repository.apache.org</a>. The repository also proxies Apache's legacy repositories.</p>
+<p>If your Apache project would like to use <code>repository.apache.org</code>, see <a href="publishing-maven-artifacts.html">Publishing Maven Releases</a>.</p>
+<ul>
+<li>Use the <code>New</code> repo and staging process to help prevent accidental releases and ensure that releases meet Apache standards.</li>
+<li>Subscribe to the repository mailing list via <code>repository-subscribe@apache.org</code> for questions, complaints and ideas.</li>
+</ul>
+<p>If you're a user looking for Apache artifacts from a Maven repository, all releases are synced to <a href="https://repo1.maven.org/maven2" target="_blank">Central</a> and snapshots are available here:
+<a href="https://repository.apache.org/snapshots/" target="_blank">http://repository.apache.org/snapshots/</a>.</p>
+<h2 id="faq">FAQs about the ASF Jar repositories<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
+
+<h4 id="m1m2">m1/m2?<a class="headerlink" href="#m1m2" title="Permanent link">&para;</a></h4>
+
+<p>There are two types of Maven repository. Loosely, Maven-1 and Maven-2 use 'm1' and 'm2' repositories, though Maven-2 can point to legacy Maven-1 repositories. Apache supports both, but is phasing out the m1 repositories.</p>
+<h4 id="deploytoboth">Do I need to deploy to both m1/m2 repositories?<a class="headerlink" href="#deploytoboth" title="Permanent link">&para;</a></h4>
+
+<p>No, because the Maven2 repository layout is the standard used by most tools, including Maven, Ivy and Buildr.</p>
+<h4 id="thirdparty">Can we put third party files in the repositories?<a class="headerlink" href="#thirdparty" title="Permanent link">&para;</a></h4>
+
+<p>You can with the <em>snapshot</em> repositories, but you cannot with the <em>release</em> repositories. When putting third party files in the <em>snapshot</em> repositories, please email the repository mailing list to explain what you are doing. Ideally, you should upload third party files to the 'central' Maven repository via the <a href="https://maven.apache.org/guides/mini/guide-central-repository-upload.html" target="_blank">Maven upload process</a>.</p>
+<h4 id="revolutioncode">Can I release a research branch to the repositories?<a class="headerlink" href="#revolutioncode" title="Permanent link">&para;</a></h4>
+
+<p>As long as your project's PMC is happy with the release, you can release a research branch to the snapshot repository; otherwise you should just release in your <code>home.apache.org</code> personal space.</p>
+<h4 id="repodotapache">What is 'repository.apache.org'?<a class="headerlink" href="#repodotapache" title="Permanent link">&para;</a></h4>
+
+<p>Apache operates a repository manager at <a href="https://repository.apache.org/" target="_blank">https://repository.apache.org/</a>. Apache projects can use it to deploying snapshots, releases, or both. See the <a href="publishing-maven-artifacts.html">Publishing Maven Releases</a> guide for more details.</p>
+<h4 id="resources">What resources are available?<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h4>
+
+<ul>
+<li>Mailing List: <code>repository@apache.org</code></li>
+<li><a href="publishing-maven-artifacts.html">Publishing Maven Releases</a></li>
+</ul>
+<h4 id="rsyncs">How do rsyncs happen?<a class="headerlink" href="#rsyncs" title="Permanent link">&para;</a></h4>
+
+<p>All the official repositories rsync automatically.</p>
+</section>
         <section id="extras" class="body">
                 <div class="social">
                         <h2>social</h2>

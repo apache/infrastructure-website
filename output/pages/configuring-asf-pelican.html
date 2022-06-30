@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <meta name="generator" content="Pelican" />
-        <title>A Pelican Blog - Categories</title>
+        <title>Configuring ASF Pelican</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
 </head>
@@ -19,7 +19,7 @@
                     <li><a href="/pages/distributing-through-the-apple-developer-program.html">Distributing through the Apple Developer Program</a></li>
                     <li><a href="/pages/applying-the-apache-license-version-20.html">Applying the Apache license, version 2.0</a></li>
                     <li><a href="/pages/asf-pelican-build-process.html">ASF-Pelican build process</a></li>
-                    <li><a href="/pages/configuring-asf-pelican.html">Configuring ASF Pelican</a></li>
+                    <li class="active"><a href="/pages/configuring-asf-pelican.html">Configuring ASF Pelican</a></li>
                     <li><a href="/pages/asf-pelican-data-model.html">ASF Pelican data model</a></li>
                     <li><a href="/pages/asf-pelican-getting-started-guide.html">ASF-Pelican getting-started guide</a></li>
                     <li><a href="/pages/local-pelican-builds.html">Local Pelican builds</a></li>
@@ -126,9 +126,67 @@
                     <li><a href="/pages/reference/committer/website.html">How To Manage any Apache Project's Website</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
-    <h1>Categories on A Pelican Blog</h1>
-    <ul>
-    </ul>
+<section id="content" class="body">
+    <h1 class="entry-title">Configuring ASF Pelican</h1>
+    
+    <p>Review <a href="https://github.com/apache/template-site" target="_blank">github.com/apache/template-site</a> to inspect a full <code>pelicanconf.yaml</code> file.</p>
+<p>These are the sections to configure in <code>pelicanconf.yaml</code> for your website: </p>
+<h2>Required</h2>
+<div class="highlight"><pre><span></span><code><span class="n">site</span><span class="o">:</span>
+  <span class="n">name</span><span class="o">:</span> <span class="n">Apache</span> <span class="n">Template</span>
+  <span class="n">description</span><span class="o">:</span> <span class="n">Provides</span> <span class="n">a</span> <span class="n">template</span> <span class="k">for</span> <span class="n">projects</span> <span class="n">wishing</span> <span class="n">to</span> <span class="n">use</span> <span class="n">the</span> <span class="n">Pelican</span> <span class="n">ASF</span> <span class="kd">static</span> <span class="n">content</span> <span class="n">system</span>
+  <span class="n">domain</span><span class="o">:</span> <span class="n">template</span><span class="o">.</span><span class="na">apache</span><span class="o">.</span><span class="na">org</span>
+  <span class="n">logo</span><span class="o">:</span> <span class="n">images</span><span class="o">/</span><span class="n">logo</span><span class="o">.</span><span class="na">png</span>
+  <span class="n">repository</span><span class="o">:</span> <span class="n">https</span><span class="o">://</span><span class="n">github</span><span class="o">.</span><span class="na">com</span><span class="sr">/apache/template-site/blob/main/content/</span>
+  <span class="n">trademarks</span><span class="o">:</span> <span class="n">Apache</span><span class="o">,</span> <span class="n">the</span> <span class="n">Apache</span> <span class="n">feather</span> <span class="n">logo</span><span class="o">,</span> <span class="n">and</span> <span class="s2">&quot;Project&quot;</span> <span class="n">are</span> <span class="n">trademarks</span> <span class="n">or</span> <span class="n">registered</span> <span class="n">trademarks</span>
+
+<span class="n">theme</span><span class="o">:</span> <span class="n">theme</span><span class="o">/</span><span class="n">apache</span>
+</code></pre></div>
+
+<h2>Options</h2>
+<h3>Plugins</h3>
+<p>If you are using the standard plugins included in Pelican ASF, you can leave this section out.
+Your build will automatically include the <code>gfm</code> plugin.</p>
+<div class="highlight"><pre><span></span><code><span class="n">plugins</span><span class="o">:</span>
+  <span class="n">paths</span><span class="o">:</span>
+    <span class="o">-</span> <span class="n">theme</span><span class="o">/</span><span class="n">plugins</span>
+  <span class="n">use</span><span class="o">:</span>
+    <span class="o">-</span> <span class="n">gfm</span>
+</code></pre></div>
+
+<h3>Special setup</h3>
+<p>To configure four special features:</p>
+<div class="highlight"><pre><span></span><code><span class="n">setup</span><span class="o">:</span>
+  <span class="n">data</span><span class="o">:</span> <span class="n">asfdata</span><span class="o">.</span><span class="na">yaml</span>
+  <span class="n">run</span><span class="o">:</span>
+    <span class="o">-</span> <span class="sr">/bin/</span><span class="n">bash</span> <span class="n">shell</span><span class="o">.</span><span class="na">sh</span>
+  <span class="n">ignore</span><span class="o">:</span>
+    <span class="o">-</span> <span class="n">README</span><span class="o">.</span><span class="na">md</span>
+    <span class="o">-</span> <span class="k">include</span>
+    <span class="o">-</span> <span class="n">docs</span>
+  <span class="n">copy</span><span class="o">:</span>
+    <span class="o">-</span> <span class="n">docs</span>
+</code></pre></div>
+
+<ol>
+<li>data - uses <code>asfdata</code> plugin to build a data model to use in <code>ezmd</code> files. www-site is the best example.</li>
+<li>run - uses <code>asfshell</code> plugin to run scripts. httpd-site's security vulnerability processing is the best example.</li>
+<li>ignore - sets Pelican's IGNORE_FILES setting.</li>
+<li>copy - uses <code>asfcopy</code> plugin to copy static files outside of the pelican process. Include these in ignore as well.
+   This is useful if you have large files or many static files.</li>
+</ol>
+<h2>Generate ID</h2>
+<p>The <code>asfgenid</code> plugin performs a number of fixups and enhancements.</p>
+<div class="highlight"><pre><span></span><code><span class="n">genid</span><span class="o">:</span>
+  <span class="n">unsafe</span><span class="o">:</span> <span class="n">yes</span>
+  <span class="n">metadata</span><span class="o">:</span> <span class="n">yes</span>
+  <span class="n">elements</span><span class="o">:</span> <span class="n">yes</span>
+  <span class="n">headings_depth</span><span class="o">:</span> <span class="mi">4</span>
+  <span class="n">permalinks</span><span class="o">:</span> <span class="n">yes</span>
+  <span class="n">toc_depth</span><span class="o">:</span> <span class="mi">4</span>
+  <span class="n">tables</span><span class="o">:</span> <span class="n">yes</span>
+</code></pre></div>
+</section>
         <section id="extras" class="body">
                 <div class="social">
                         <h2>social</h2>

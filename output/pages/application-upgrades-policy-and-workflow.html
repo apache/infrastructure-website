@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <meta name="generator" content="Pelican" />
-        <title>A Pelican Blog - Categories</title>
+        <title>Application upgrades policy and workflow</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
 </head>
@@ -15,7 +15,7 @@
                     <li><a href="/pages/oauth-two-factor-authentication.html">OAuth Two-Factor Authentication</a></li>
                     <li><a href="/pages/asf-account-management.html">ASF account management</a></li>
                     <li><a href="/pages/apache-and-github.html">Apache and GitHub</a></li>
-                    <li><a href="/pages/application-upgrades-policy-and-workflow.html">Application upgrades policy and workflow</a></li>
+                    <li class="active"><a href="/pages/application-upgrades-policy-and-workflow.html">Application upgrades policy and workflow</a></li>
                     <li><a href="/pages/distributing-through-the-apple-developer-program.html">Distributing through the Apple Developer Program</a></li>
                     <li><a href="/pages/applying-the-apache-license-version-20.html">Applying the Apache license, version 2.0</a></li>
                     <li><a href="/pages/asf-pelican-build-process.html">ASF-Pelican build process</a></li>
@@ -126,9 +126,47 @@
                     <li><a href="/pages/reference/committer/website.html">How To Manage any Apache Project's Website</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
-    <h1>Categories on A Pelican Blog</h1>
-    <ul>
-    </ul>
+<section id="content" class="body">
+    <h1 class="entry-title">Application upgrades policy and workflow</h1>
+    
+    <p>This policy encompasses Infra's approach to upgrades of Jenkins, Confluence and Jira and their respective plugins.</p>
+<h2>Upgrades</h2>
+<h3>Jenkins</h3>
+<h4>Main Jenkins instance</h4>
+<p><em>Upgrades once a quarter</em></p>
+<p>Infra follows the <a href="https://jenkins.io/download/lts/" target="_blank">LTS line of releases</a>, which the Jenkins Project releases on a 12 week cycle. Once every three months, on the last Saturday or Sunday of the month following the Jenkins LTS release, ASF Infra upgrades the main instance. </p>
+<h4>Jenkins plugins</h4>
+<p><em>Upgrades once a month</em></p>
+<p>We upgrade all plugins (there are more than 200!) before and after the main instance upgrade, as appropriate, and at the end of each month when there is no main instance upgrade to perform.</p>
+<h3>Jira</h3>
+<h4>Main Jira instance</h4>
+<p><em>Upgrades every six months</em></p>
+<p>Jira gets a new release every two to six weeks, far too often (and unpredictable) for us to upgrade every release they make. Infra upgrades our Jira instance to whatever the latest release is every six months.</p>
+<h4>Jira plugins</h4>
+<p><em>Upgrades every two months</em></p>
+<p>We upgrade Jira plugins before or after each main instance upgrade, as appropriate, and once every two months between main instance upgrades. </p>
+<h3>Confluence</h3>
+<h4>Main Confluence instance</h4>
+<p><em>Upgrades every six months</em></p>
+<p>Our goal is to upgrade Confluence to the latest version twice a year.</p>
+<h4>Confluence plugins</h4>
+<p><em>Upgrades every two months</em></p>
+<p>Every two months we perform upgrades to plugins that are compatible with the version of the main Confluence instance we are running.</p>
+<h2>Documentation</h2>
+<p>Infra documents what we upgraded and when, from what version to what version, on these pages:</p>
+<ul>
+<li><a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins+Upgrades" target="_blank">Jenkins upgrades</a></li>
+<li><a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins+Plugin+Upgrades" target="_blank">Jenkins plugin upgrades</a></li>
+<li><a href="https://cwiki.apache.org/confluence/display/INFRA/Jira+Upgrades" target="_blank">Jira upgrades</a></li>
+<li><a href="https://cwiki.apache.org/confluence/display/INFRA/Jira+Plugin+Upgrades" target="_blank">Jira plugin upgrades</a></li>
+<li><a href="https://cwiki.apache.org/confluence/display/INFRA/Confluence+Upgrades" target="_blank">Confluence upgrades</a></li>
+<li><a href="https://cwiki.apache.org/confluence/display/INFRA/Confluence+Plugin+Upgrades" target="_blank">Confluence plugin upgrades</a></li>
+</ul>
+<h2>Notifications</h2>
+<p>Since Jenkins, Jira and Confluence are <strong>Core Services</strong>, Infra issues a notice of a planned upgrade at least 72 hours ahead of the event on the wiki or a web page and by emails to the <code>builds@apache.org</code> and <code>users@infra.apache.org</code> mailing lists. We add a Twitter notification by <code>ASF Infrabot</code> one hour before upgrades begin.</p>
+<h2>In case of emergencies</h2>
+<p>Occasionally things go wrong with a main or plugin upgrade, and security issues may arise. If we determine that there is an issue, we will work on it immediately until we resolve it. We will send an email to the relevant list and a Twitter notice about any unexpected downtime.</p>
+</section>
         <section id="extras" class="body">
                 <div class="social">
                         <h2>social</h2>

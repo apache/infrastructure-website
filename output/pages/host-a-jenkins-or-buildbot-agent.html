@@ -3,7 +3,7 @@
 <head>
         <meta charset="utf-8" />
         <meta name="generator" content="Pelican" />
-        <title>A Pelican Blog - Categories</title>
+        <title>Host a Jenkins or Buildbot agent</title>
         <link rel="stylesheet" href="/theme/css/main.css" />
         <link href="/feeds/all.atom.xml" type="application/atom+xml" rel="alternate" title="A Pelican Blog Atom Feed" />
 </head>
@@ -54,7 +54,7 @@
                     <li><a href="/pages/roles-for-project-github-repositories.html">Roles for project GitHub repositories</a></li>
                     <li><a href="/pages/reference/committer/github.html">Apache and GitHub</a></li>
                     <li><a href="/pages/glossary.html">Glossary</a></li>
-                    <li><a href="/pages/host-a-jenkins-or-buildbot-agent.html">Host a Jenkins or Buildbot agent</a></li>
+                    <li class="active"><a href="/pages/host-a-jenkins-or-buildbot-agent.html">Host a Jenkins or Buildbot agent</a></li>
                     <li><a href="/pages/how-to-mirror-asf-software-releases-locally.html">How to mirror ASF software releases locally</a></li>
                     <li><a href="/pages/reference/committer/id.html">Changing your account details (self serve)</a></li>
                     <li><a href="/pages/infra.html">Infra</a></li>
@@ -126,9 +126,37 @@
                     <li><a href="/pages/reference/committer/website.html">How To Manage any Apache Project's Website</a></li>
                 </ul></nav>
         </header><!-- /#banner -->
-    <h1>Categories on A Pelican Blog</h1>
-    <ul>
-    </ul>
+<section id="content" class="body">
+    <h1 class="entry-title">Host a Jenkins or Buildbot agent</h1>
+    
+    <p>Individuals and organizations can support the work of the ASF and its projects by hosting Jenkins or Buildbot agents on virtual machines in their own systems. Donors often provide this service to make available extra build resources for a project that needs more than Infra can easily provide.</p>
+<p><strong>Notes</strong> 
+  - Ubuntu is a core supported OS at the ASF and we do not need any external hosting by individuals at this time.
+  - Organizations wanting to donate multiple VMs for Jenkins and/or Buildbot use should email <code>private@infra.apache.org</code> to start discussions.</p>
+<h2>Getting ready to host</h2>
+<p>There are a few things you'll need to know and to adhere to.</p>
+<ul>
+<li>Keep up to date with security patches etc,, the obvious stuff; we may want to be added to root alias for security reporting etc.</li>
+<li>Spec requirements: <ul>
+<li>minimum 16GB RAM</li>
+<li>500GB Hard disk </li>
+<li>A permanent static IP address</li>
+</ul>
+</li>
+<li>You must be an ASF Committer.</li>
+<li>You must subscribe to the <code>builds@a.o</code> email list.</li>
+<li>Maintain and provide a link to a public page that lists software you add to your agent.</li>
+<li>Open an INFRA Jira ticket so we can complete your hosting set up when you are completely ready.</li>
+</ul>
+<h3>For Buildbot</h3>
+<p>Make sure it's a stock, latest buildbot-worker install for your OS variant.</p>
+<p>When you are ready, liaise with <code>root@a.o</code> to negotiate connection credentials. Keep your agent secure and only open the one required port.</p>
+<h3>For Jenkins</h3>
+<ul>
+<li>Create a Jenkins user and group using /home/jenkins.</li>
+<li>Add the Jenkins ssh public key into the users' <code>~/.ssh/authorized</code> keys.</li>
+</ul>
+</section>
         <section id="extras" class="body">
                 <div class="social">
                         <h2>social</h2>
