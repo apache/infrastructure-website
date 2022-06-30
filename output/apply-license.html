@@ -1,0 +1,165 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applying the Apache license, version 2.0 - Apache Infrastructure Website</title>
+    <link rel="stylesheet" href="/css/foundation.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>
+    <link rel="stylesheet"
+          href="/highlight/default.min.css">
+    <script src="/highlight/highlight.min.js"></script>  </head>
+  <body style="background: #C1C1C1;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+		  <li><a href="https://blogs.apache.org/infra/" target="_blank">The Infra Blog</a></li>	
+	          
+                </ul>
+              </li>
+              <li><a href="/policies.html" target="_blank" style="padding-left: 5px;">Policies</a></li>
+                           
+              <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Services-Tools</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+		<li><a href="/services.html">Services and Tools</a></li>
+                <li><a href="/machines.html" target="_blank" >Machines and Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" target="_blank" >Blocky</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" target="_blank" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" target="_blank" >Committer Search</a></li>
+		
+                </ul>
+              </li>
+              <li><a href="/doc.html" target="_blank" style="padding-left: 5px;">Documentation</a></li>
+	       <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Contribute</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">	
+		   <li><a href="/infra-volunteer.html">Volunteer with Infra</a></li>
+		   <li><a href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+			<li><a href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+		 </ul>
+	       </li>
+	      
+              <li><a href="/stats.html" target="_blank" style="padding-left: 5px;">Status</a></li>
+              <li><a href="/contact.html" style="padding-left: 5px;"><i class="fa fa-comments" style="color: #FFF; font-size: 0.9rem;"></i>Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/apply-license.html">
+Applying the Apache license, version 2.0        </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/apply-license.md">edit</a>)
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              Applying the Apache license, version 2.0
+          </h2>
+              <p>This document is to help Apache developers understand what they need to do to apply the <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License, Version 2.0</a> or <em>ALv2</em> to Apache software, including source code, documentation, and binary distributions. It is descriptive guidance, and does not supplant or otherwise modify any of the terms within the license itself. In case of uncertainty, consult <a href="https://www.apache.org/legal" target="_blank">general Apache policy</a>.</p>
+<p>Information on other Apache-related licenses and updates regarding compatibility with other <a href="https://www.opensource.org" taarget="_blank">open source</a> licenses appears in the <a href="https://www.apache.org/licenses/" target="_blank">Licenses</a> section.</p>
+<h2>Contents</h2>
+<ul>
+<li><a href="#license">Understanding the 2.0 license</a></li>
+<li><a href="#new">Applying the license to new software</a></li>
+<li><a href="#existing">Updating existing software</a></li>
+<li><a href="#faq-existing">Frequently asked questions about updates</a></li>
+<li><a href="#faq">Other frequently asked questions</a></li>
+</ul>
+<h2 id="license">Understanding the 2.0 license<a class="headerlink" href="#license" title="Permanent link">&para;</a></h2>
+<p>The ALv2 is <a href="https://www.apache.org/licenses/LICENSE-2.0.txt" target="_blank">this set</a> of self-documented copyright and patent licensing terms. Anyone can use the license, not just the <abbr title="Apache Software Foundation">ASF</abbr> and its projects, and can be <a href="https://www.apache.org/licenses/LICENSE-2.0.html#apply" target="_blank">applied</a> by reference to the versioned license terms. An appendix to the license describes how to do this.
+<p><strong>Note</strong> that the ASF does not use copyright assignment and that the original authors retain the copyrights for individual parts of the collective work . The method described in the appendix is only suitable for copyright owners, so the ASF uses a variation of
+this method.</p>
+<p>Section 4d of the <a href="https://www.apache.org/licenses/LICENSE-2.0.txt" target="_blank">license</a> provides for attribution notices to be included with a work in a <a href="https://www.apache.org/licenses/example-NOTICE.txt" target="_blank">NOTICE</a> file, so the attribution notices remains, in some form, within any derivative works. Apache projects <strong>must</strong> <a href="http://www.apache.org/legal/src-headers.html#notice" target="_blank">include correct NOTICE documents</a> in every distribution.</p>
+<h2 id="new">Applying the license to new software<a class="headerlink" href="#new" title="Permanent link">&para;</a></h2>
+<p>To apply the ALv2 to a new software distribution, include one copy of the license text by copying the contents of <a href="https://www.apache.org/licenses/LICENSE-2.0.txt" Target="_blank">LICENSE-2.0.txt</a> into a file called LICENSE in the top directory of your distribution. If the distribution is a jar or tar file, try to add the LICENSE file first in order to place it at the top of the archive. This covers the collective licensing for the distribution.</p>
+<p>In addition, you <strong>must</strong> include a correct <a href="https://www.apache.org/legal/src-headers.html#notice" target="_blank">NOTICE file</a> in the same directory as the LICENSE file.</p>
+<p>Each original source document (code and documentation, but not the LICENSE and NOTICE files) <strong>should</strong> include <a href="https://www.apache.org/legal/src-headers.html#headers" target="_blank"> a short license header</a> at the top. If the distribution contains  documents not covered by an <a href="https://www.apache.org/licenses/icla.txt" target="_blank">ICLA</a>,
+<a href="https://www.apache.org/licenses/cla-corporate.txt" target="_blank">CCLA</a> or <a href="https://www.apache.org/licenses/software-grant.txt" target="_blank">Software Grant</a> (such as third-party libraries), consult the <a href="https://www.apache.org/legal/resolved.html" target="_blank">policy guide</a>.</p>
+<h2 id="existing">Updating existing software<a class="headerlink" href="#existing" title="Permanent link">&para;</a></h2>
+<p>In brief, the aim is to achieve a final distribution as described above in <a href="#new">applying the license to new software</a>. Some conversion tools are listed <a href="http://www.apache.org/legal/src-headers.html#faq-update-scripts">here</a>.</p>
+<h2 id="faq-existing">Frequently asked questions about updates<a class="headerlink" href="#faq-existing" title="Permanent link">&para;</a></h2>
+<h4 id="convert_to_2_0">Do I have to convert Apache licenses in source code from 1.1 to 2.0?<a class="headerlink" href="#convert_to_2_0" title="Permanent link">&para;</a></h4>
+<p>If the Apache Software Foundation owns and distributes the code, then <strong>Yes</strong>. All software distributions were to be converted to the new license by March 1, 2004.</p>
+<p>If the ASF does not own the code, the decision is up to the copyright owner.  Naturally, we strongly recommend that you upgrade to the new license.</p>
+<h4 id="conversion">Do I have to convert old versions and branches of code to the new license?<a class="headerlink" href="#conversion" title="Permanent link">&para;</a></h4>
+<p>Only if you want the ASF to make a new release of that code. &quot;Dead&quot; branches of code do not have to be updated.</p>
+<h2 id="faq">Other frequently asked questions<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
+<h4 id="info-whereis">Where can I find more information?<a class="headerlink" href="#info-whereis" title="Permanent link">&para;</a></h4>
+<p>Start with the <a href="https://www.apache.org/legal" target="_blank">legal affairs home page</a>.</p>
+<h4 id="license-whereis">Where do I find a copy of the new license?<a class="headerlink" href="#license-whereis" title="Permanent link">&para;</a></h4>
+<p><a href="https://www.apache.org/licenses/" target="_blank">apache.org/licenses/</a></p>
+<h4 id="copy-per-file">Do I have to have a copy of the license in each source file?<a class="headerlink" href="#copy-per-file" title="Permanent link">&para;</a></h4>
+<p>You only need to add one full copy of the license per distribution. See the <a href="https://www.apache.org/legal/src-headers.html" target="_blank">policy</a>.</p>
+<h4 id="attribution">In my current source files I have attribution notices for other works. Do I put this in each source file now?<a class="headerlink" href="#attribution" title="Permanent link">&para;</a></h4>
+<p>See the <a href="https://www.apache.org/legal/src-headers.html" target="_blank">policy</a>.</p>
+<h4 id="contributor-copyright">Should individual committers add copyright statements to the NOTICE or source code files?<a class="headerlink" href="#contributor-copyright" title="Permanent link">&para;</a></h4>
+<p>No. Though committers retain copyright, Apache asks that they do not add copyright statements. See the <a href="https://www.apache.org/legal/src-headers.html" target="_blank">policy</a> for more details.</p>
+<h4 id="license-file-name">Can we call the LICENSE and NOTICE files LICENSE.txt and NOTICE.txt?<a class="headerlink" href="#license-file-name" title="Permanent link">&para;</a></h4>
+<p>You can do this, however we prefer that you call the files LICENSE and NOTICE.</p>
+<h4 id="license-include">Should we include the license in source files for documentation (e.g. XML that transforms to HTML)?<a class="headerlink" href="#license-include" title="Permanent link">&para;</a></h4>
+<p>Yes. See the <a href="https://www.apache.org/legal/src-headers.html" target="_blank">policy</a> for more details.</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2022, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    
+    <script src="/js/vendor/jquery.js"></script>
+    <script src="/js/vendor/what-input.js"></script>
+    <script src="/js/vendor/foundation.js"></script>
+    <script src="/js/app.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

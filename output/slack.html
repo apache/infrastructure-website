@@ -1,0 +1,177 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Slack for ASF projects - Apache Infrastructure Website</title>
+    <link rel="stylesheet" href="/css/foundation.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>
+    <link rel="stylesheet"
+          href="/highlight/default.min.css">
+    <script src="/highlight/highlight.min.js"></script>  </head>
+  <body style="background: #C1C1C1;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+		  <li><a href="https://blogs.apache.org/infra/" target="_blank">The Infra Blog</a></li>	
+	          
+                </ul>
+              </li>
+              <li><a href="/policies.html" target="_blank" style="padding-left: 5px;">Policies</a></li>
+                           
+              <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Services-Tools</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+		<li><a href="/services.html">Services and Tools</a></li>
+                <li><a href="/machines.html" target="_blank" >Machines and Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" target="_blank" >Blocky</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" target="_blank" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" target="_blank" >Committer Search</a></li>
+		
+                </ul>
+              </li>
+              <li><a href="/doc.html" target="_blank" style="padding-left: 5px;">Documentation</a></li>
+	       <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Contribute</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">	
+		   <li><a href="/infra-volunteer.html">Volunteer with Infra</a></li>
+		   <li><a href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+			<li><a href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+		 </ul>
+	       </li>
+	      
+              <li><a href="/stats.html" target="_blank" style="padding-left: 5px;">Status</a></li>
+              <li><a href="/contact.html" style="padding-left: 5px;"><i class="fa fa-comments" style="color: #FFF; font-size: 0.9rem;"></i>Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/slack.html">
+Slack for ASF projects        </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/slack.md">edit</a>)
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              Slack for ASF projects
+          </h2>
+              <p>The Apache Software Foundation has a workspace on <a href="https://the-asf.slack.com/" target="_blank">Slack</a> to provide channels on which people working on the same ASF project, or in the same area of the Foundation, can discuss issues, solve problems, and build community in real-time.</p>
+<p>A thread in a Slack channel can be a great place to work through a knotty question and move toward consensus. <strong>However</strong>, coming to agreement about something on Slack does not mean the PMC has agreed to or approved something. All formal PMC decisions should take place in one of the project's email lists, so we all have an audit trail of who decided what, and when.</p>
+<h2>Joining the ASF Slack workspace</h2>
+<p>Anyone with an <code>@apache.org</code> email address can become a full member of the ASF Slack workspace. Use the link above to log in to <code>the-asf.slack.com</code>. You can then browse for the open channels you want to join.</p>
+<p>You can also download an app to use on your computer or mobile device.</p>
+<p>If you want to invite ASF people (those with an @apache.org address) who are not on Slack yet to join your project's Slack discussions:</p>
+<ol>
+<li>In the Slack app, click the &quot;ASF&quot; header at the top left.</li>
+<li>Select <code>Invite people to ASF</code></li>
+<li>Use the <code>Members</code> option and, in the form that appears, provide the person's ASF email address.</li>
+</ol>
+<p>Other contributors and interested parties (observers, former members, software evaluators, members of the media, those without an @apache.org address) who want to participate in channels in the ASF workspace can use a <strong>guest</strong> account. To do this, someone already part of the workspace needs to invite the interested party or parties:</p>
+<ol>
+<li>In the Slack app, click the &quot;ASF&quot; header at the top left.</li>
+<li>Select <code>Invite people to ASF</code>.</li>
+<li>Use the<code>Single channel guests</code> option and, in the form that appears, provide the email addresses of the people you would like to invite to a specific channel.</li>
+</ol>
+<p>Infra has disabled the option that would let you provide a link to the workspace to anyone who wanted it, as spammers were taking advantage of it. Projects can invite interested parties (via their <code>@dev</code> or <code>@users</code> lists or a note on their website) to send a request to join the channel either to the <code>@dev</code> list or to an email address the project specifies. The PMC can then extend an invitation to that person, if they choose.</p>
+<h3>Slack Account Types</h3>
+<p>Slack has three account types:</p>
+<ul>
+<li><strong>Member</strong>: has full access to all Slack's features, including inviting others to join the workspace.</li>
+<li><strong>Multi-Channel Guest</strong>: has limited access inside Slack, but can join as many open channels as they wish.</li>
+<li><strong>Single-Channel Guest</strong>: can only access the channel they are invited to join.</li>
+</ul>
+<p>Slack has a list of <a href="https://slack.com/help/articles/201314026-Permissions-on-a-Slack-workspace" target="_blank">permissions</a> for these account types.</p>
+<h4>ASF and Slack 'members'</h4>
+<p>Both the ASF and Slack use the term 'member', but in different ways. The Slack use of &quot;member&quot; is above.</p>
+<p>For the Apache Software Foundation:</p>
+<ul>
+<li>An <a href="https://www.apache.org/foundation/how-it-works.html#asf-members" target="_blank">ASF Member</a> is a &quot;person who was nominated by current members and elected due to merit for the evolution and progress of the foundation.&quot;</li>
+<li>A <a href="https://www.apache.org/foundation/how-it-works.html#pmc-members" target="_blank">PMC member</a> is a &quot;developer or a committer that was elected&quot; to the PMC.</li>
+</ul>
+<h2>Joining project channels</h2>
+<p>Once you are part of the ASF workspace as a member or a multi-channel guest, you can join any open channels you wish to.</p>
+<ul>
+<li>At the top of your list of channels in the Slack app, click the <strong>+</strong> icon.</li>
+<li>Use the <em>Browse channels</em> option to display a list of open channels in the workspace; or enter text in the search field.</li>
+<li>Select any channel to add it to your channel list.</li>
+</ul>
+<p>Some ASF channels are <strong>private</strong> or <strong>locked</strong>, and do not appear on the list of channels you can join. Someone who is already in the channel has to invite you to join such a channel.</p>
+<p>If you are a single-channel guest, you cannot join other channels.</p>
+<p>It is good manners to send a hello message to a channel you join, possibly with a short statement of why you are there.</p>
+<h2>Setting up a project channel</h2>
+<p>Before setting up a new project channel, search the ASF workspace to make sure it does not already exist. If it does not, any member of the workspace can add the channel.</p>
+<ul>
+<li>At the top of your list of channels in the Slack app, click the <strong>+</strong> icon</li>
+<li>Use the <em>Browse channels</em> option to see if the channel you are thinking of already exists. If you can't find it, click <em>Create Channel</em> at the top of the channels list; or use the <em>Create a channel</em> option under the + icon.</li>
+</ul>
+<p>If you <em>do</em> add a channel for your project, make sure you tell the PMC, committers, and other stakeholders about it so they can find and make use of it.</p>
+<h2>Shared channels</h2>
+<p>Slack shared channels operate like regular channels, except that they are open to participation by people from two different organizations (such as two companies, or a company and a user group). The ASF does not permit shared channels in its space.</p>
+<h2>Expectations</h2>
+<p>As with all ASF activities, we expect ASF Members and project participants to conduct themselves according to the ASF <a href="https://www.apache.org/foundation/policies/conduct.html" target="_blank">Code of Conduct</a>.</p>
+<p>We expect channel participants to be respectful and supportive of other participants, and to make contributions that add to the conversation, rather than blurring it. If a participant makes contributions that are disrespectful, offensive, or contrary in other ways to The Apache Way, please report them to Infra.</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2022, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    
+    <script src="/js/vendor/jquery.js"></script>
+    <script src="/js/vendor/what-input.js"></script>
+    <script src="/js/vendor/foundation.js"></script>
+    <script src="/js/app.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
