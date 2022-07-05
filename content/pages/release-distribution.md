@@ -136,9 +136,9 @@ The ASF manages a number of distribution platforms that projects are welcome to 
 
 <h2 id="dockerhub">Docker Hub and releases<a class="headerlink" href="#dockerhub" title="Permanent link">&para;</a></h2>
 
-The ASF only supports two modes of operation on Docker Hub: automated builds based on tags, and some more generalized access (see notes in the Jira ticket INFRA-14586.) Note that Docker Hub is **not** an approved release channel for ASF artifacts. Anything you do on Docker Hub requires the description and supporting documentation to be clear that these are not official distribution artifacts.
+The ASF only supports two modes of operation on Docker Hub: automated builds based on tags, and some more generalized access (see notes in the Jira ticket INFRA-14586.) Note that Docker Hub is **not** an approved release channel for ASF artifacts. Anything you do on Docker Hub requires the description and supporting documentation to be clear that these are _convenience releases_, not official distribution artifacts.
 
-Open a new Infra Jira ticket to describe what you want to do through Docker Hub..
+See the [Docker Hub policy](docker-hub-policy.html) for further information.
 
 <h2 id="administration">Policy administration<a class="headerlink" href="#administration" title="Permanent link">&para;</a></h2>
 
