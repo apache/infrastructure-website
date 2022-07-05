@@ -12,8 +12,10 @@ setup:
     - theme
 
 plugins:
-  - toc
-  - spu
+  use:
+    - toc
+    - spu
+    - gfm
 
 content:
   pages: pages
