@@ -144,7 +144,7 @@ lengths (256 and 512 bits respectively). These longer variations are less vulner
 To create a `SHA512` checksum use:
 
 ```
-  $ gpg --print-md SHA512 [fileName] &gt; [fileName].sha512
+  $ sha512sum [fileName] &gt; [fileName].sha512
 ```
 
 Run the command in the same directory as the file so the output only contains the file name with no directory prefixes.
