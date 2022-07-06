@@ -203,7 +203,7 @@ digest algorithm</a>. Many tools are available to calculate these sums. For exam
 <p><strong>Avoid</strong> further use of <a href="#sha1">SHA-1</a>. <code>SHA256</code> and <code>SHA512</code> use the same <code>SHA</code> algorithm family with longer hash
 lengths (256 and 512 bits respectively). These longer variations are less vulnerable to the weaknesses found in the algorithm family than <code>SHA1</code>. Apache recommends using <a href="#sha1">SHA512</a>.</p>
 <p>To create a <code>SHA512</code> checksum use:</p>
-<pre><code>  $ sha512sum [fileName] &amp;gt; [fileName].sha512
+<pre><code>  $ sha512sum [fileName] &gt; [fileName].sha512
 </code></pre>
 <p>Run the command in the same directory as the file so the output only contains the file name with no directory prefixes.</p>
 <p>There are other members of the <code>SHA</code> family that are rarely used.</p>
@@ -325,13 +325,14 @@ certification</a>.</p>
 For example:</p>
 <pre><code>$ gpg --list-keys B1313DE2
 pub   1024D/B1313DE2 2003-01-15
-uid                  Robert Burrell Donkin (CODE SIGNING KEY) &amp;lt;rdonkin@apache.org&amp;gt;
-uid                  Robert Burrell Donkin &amp;lt;robertburrelldonkin@gmail.com&amp;gt;
-uid                  Robert Burrell Donkin &amp;lt;robertburrelldonkin@blueyonder.co.uk&amp;gt;
+uid                  Robert Burrell Donkin (CODE SIGNING KEY) &lt;rdonkin@apache.org&gt;
+uid                  Robert Burrell Donkin &lt;robertburrelldonkin@gmail.com&gt;
+uid                  Robert Burrell Donkin &lt;robertburrelldonkin@blueyonder.co.uk&gt;
 sub   4096R/40A882CB 2009-06-18 [expires: 2010-06-18]&lt;/p&gt;
-&lt;p&gt;$ gpg --list-keys A6EE6908
+
+$ gpg --list-keys A6EE6908
 pub   8192R/A6EE6908 2009-08-07
-uid                  Robert Burrell Donkin (CODE SIGNING KEY) &amp;lt;rdonkin@apache.org&amp;gt;
+uid                  Robert Burrell Donkin (CODE SIGNING KEY) &lt;rdonkin@apache.org&gt;
 sub   8192R/B800EFC1 2009-08-07
 </code></pre>
 <p>shows that key <code>B1313DE2</code> has length 1024 and <code>A6EE6908</code> length 8192.</p>
@@ -341,16 +342,16 @@ sub   8192R/B800EFC1 2009-08-07
 <p>The KEYS file is a plain-text file containing the public key signatures of the release managers (and optionally other committers) for the project. A good example is the <a href="https://downloads.apache.org/ant/KEYS" target="_blank">Apache Ant KEYS file</a>.</p>
 <p>It is traditional to include the following header to explain how to use the file. These commands generate a descriptive comment describing the key, followed by the key itself. Key handling software ignores the comments when importing a key file:</p>
 <pre><code>This file contains the PGP keys of various developers.&lt;/p&gt;
-&lt;p&gt;Users: pgp &amp;lt; KEYS
+Users: pgp &lt; KEYS
 or
-       gpg --import KEYS&lt;/p&gt;
-&lt;p&gt;Developers: 
-    pgp -kxa &amp;lt;your name&amp;gt; and append it to this file.
+       gpg --import KEYS
+       
+Developers: 
+    pgp -kxa &lt;your name&gt; and append it to this file.
 or
-    (pgpk -ll &amp;lt;your name&amp;gt; &amp;amp;&amp;amp; pgpk -xa &amp;lt;your name&amp;gt;) &amp;gt;&amp;gt; this file.
+    (pgpk -ll &lt;your name&gt; &amp;&amp; pgpk -xa &lt;your name&gt;) &gt;&gt; this file.
 or
-    (gpg --list-sigs &amp;lt;your name&amp;gt;
-    &amp;amp;&amp;amp; gpg --armor --export &amp;lt;your name&amp;gt;) &amp;gt;&amp;gt; this file.
+    (gpg --list-sigs &lt;your name&gt; &amp;&amp; gpg --armor --export &lt;your name&gt;) &gt;&gt; this file.
 </code></pre>
 <p>Store the KEYS file with the release archives to which it applies at the top level of the ASF mirror area for the project. This makes it  available for users to download, and for automatic archiving with its release. For example, the Ant KEYS file is in the directory <code>https://downloads.apache.org/ant</code>. The corresponding SVN area is at <code>https://dist.apache.org/repos/dist/release/ant</code></p>
 <p>Since users may need the KEYS file to check signatures for archived releases, it is important to retain in the file all keys that have ever been used to sign releases. Add entries with eadch new key the project uses, but do not remove entries.</p>
@@ -443,7 +444,7 @@ media failure or some other reason), assume that the key has been potentially co
 <h3 id="revoke-key">Revoking a key<a class="headerlink" href="#revoke-key" title="Permanent link">&para;</a></h3>
 <p>To revoke a key with a <a href="#revocation-cert">revocation certificate</a> using <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a>, import the certificate:</p>
 <pre><code>$ gpg --import revoke.asc 
-gpg: key 4A03679A: &quot;Some User &amp;lt;someuser@example.org&amp;gt;&quot; revocation
+gpg: key 4A03679A: &quot;Some User&lt;someuser@example.org&gt;&quot; revocation
 certificate imported
 gpg: Total number processed: 1
 gpg:    new key revocations: 1
@@ -464,7 +465,7 @@ gpg:    new key revocations: 1
 <p>For example, when you verify a revoked key, <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a> issues the following comment:</p>
 <pre><code>$ gpg --verify message.asc.message 
 gpg: Signature made Sat Apr  8 09:28:31 2006 BST using DSA key ID 4A03679A
-gpg: Good signature from &quot;Some User &amp;lt;someuser@example.org&amp;gt;&quot;
+gpg: Good signature from &quot;Some User &lt;someuser@example.org&gt;&quot;
 gpg: checking the trustdb
 gpg: checking at depth 0 signed=0 ot(-/q/n/m/f/u)=0/0/0/0/0/1
 gpg: WARNING: This key has been revoked by its owner!
