@@ -110,7 +110,7 @@ MD5 is a <a href="http://www.faqs.org/rfcs/rfc1321.html" target="_blank">well kn
 digest algorithm</a>. Many tools are available to calculate these sums. For example, you can use <a href="https://www.openssl.org/" target="_blank">OpenSSL</a>:
 
 ```
-$ openssl md5 &lt; file
+$ openssl md5 < file
 ```
 
 Platform-specific applications are also common, such as `md5sum` on linux:
@@ -122,7 +122,7 @@ $ md5sum file
 With GnuPG:
 
 ```
-$ gpg --print-md MD5 [fileName] &gt; [fileName].md5
+$ gpg --print-md MD5 [fileName] > [fileName].md5
 
 ```
 
@@ -135,7 +135,7 @@ Run the command in the same directory as the file so the output only contains th
 Like <a href="#md5">MD5</a>, <a href="http://www.ietf.org/rfc/rfc3174.txt">SHA</a> is a <a href="#message-digest">message digest</a> algorithm. Using GnuPG, you can create a SHA1 signature as follows:
 
 ```
-  $ gpg --print-md SHA1 [fileName] &gt; [fileName].sha1
+  $ gpg --print-md SHA1 [fileName] > [fileName].sha1
 ```
 
 **Avoid** further use of <a href="#sha1">SHA-1</a>. `SHA256` and `SHA512` use the same `SHA` algorithm family with longer hash
