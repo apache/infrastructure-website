@@ -203,7 +203,7 @@ digest algorithm</a>. Many tools are available to calculate these sums. For exam
 <p><strong>Avoid</strong> further use of <a href="#sha1">SHA-1</a>. <code>SHA256</code> and <code>SHA512</code> use the same <code>SHA</code> algorithm family with longer hash
 lengths (256 and 512 bits respectively). These longer variations are less vulnerable to the weaknesses found in the algorithm family than <code>SHA1</code>. Apache recommends using <a href="#sha1">SHA512</a>.</p>
 <p>To create a <code>SHA512</code> checksum use:</p>
-<pre><code>  $ gpg --print-md SHA512 [fileName] &amp;gt; [fileName].sha512
+<pre><code>  $ sha512sum [fileName] &amp;gt; [fileName].sha512
 </code></pre>
 <p>Run the command in the same directory as the file so the output only contains the file name with no directory prefixes.</p>
 <p>There are other members of the <code>SHA</code> family that are rarely used.</p>
