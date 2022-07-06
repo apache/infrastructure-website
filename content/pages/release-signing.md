@@ -144,7 +144,7 @@ lengths (256 and 512 bits respectively). These longer variations are less vulner
 To create a `SHA512` checksum use:
 
 ```
-  $ sha512sum [fileName] &gt; [fileName].sha512
+  $ sha512sum [fileName] > [fileName].sha512
 ```
 
 Run the command in the same directory as the file so the output only contains the file name with no directory prefixes.
@@ -353,13 +353,14 @@ For example:
 ```
 $ gpg --list-keys B1313DE2
 pub   1024D/B1313DE2 2003-01-15
-uid                  Robert Burrell Donkin (CODE SIGNING KEY) &lt;rdonkin@apache.org&gt;
-uid                  Robert Burrell Donkin &lt;robertburrelldonkin@gmail.com&gt;
-uid                  Robert Burrell Donkin &lt;robertburrelldonkin@blueyonder.co.uk&gt;
+uid                  Robert Burrell Donkin (CODE SIGNING KEY) <rdonkin@apache.org>
+uid                  Robert Burrell Donkin <robertburrelldonkin@gmail.com>
+uid                  Robert Burrell Donkin <robertburrelldonkin@blueyonder.co.uk>
 sub   4096R/40A882CB 2009-06-18 [expires: 2010-06-18]</p>
-<p>$ gpg --list-keys A6EE6908
+
+$ gpg --list-keys A6EE6908
 pub   8192R/A6EE6908 2009-08-07
-uid                  Robert Burrell Donkin (CODE SIGNING KEY) &lt;rdonkin@apache.org&gt;
+uid                  Robert Burrell Donkin (CODE SIGNING KEY) <rdonkin@apache.org>
 sub   8192R/B800EFC1 2009-08-07
 ```
 
@@ -378,16 +379,16 @@ It is traditional to include the following header to explain how to use the file
 
 ```
 This file contains the PGP keys of various developers.</p>
-<p>Users: pgp &lt; KEYS
+Users: pgp < KEYS
 or
-       gpg --import KEYS</p>
-<p>Developers: 
-    pgp -kxa &lt;your name&gt; and append it to this file.
+       gpg --import KEYS
+       
+Developers: 
+    pgp -kxa <your name> and append it to this file.
 or
-    (pgpk -ll &lt;your name&gt; &amp;&amp; pgpk -xa &lt;your name&gt;) &gt;&gt; this file.
+    (pgpk -ll <your name> && pgpk -xa <your name>) >> this file.
 or
-    (gpg --list-sigs &lt;your name&gt;
-    &amp;&amp; gpg --armor --export &lt;your name&gt;) &gt;&gt; this file.
+    (gpg --list-sigs <your name> && gpg --armor --export <your name>) >> this file.
 ```
 
 Store the KEYS file with the release archives to which it applies at the top level of the ASF mirror area for the project. This makes it  available for users to download, and for automatic archiving with its release. For example, the Ant KEYS file is in the directory `https://downloads.apache.org/ant`. The corresponding SVN area is at `https://dist.apache.org/repos/dist/release/ant`
@@ -536,7 +537,7 @@ To revoke a key with a <a href="#revocation-cert">revocation certificate</a> usi
 
 ```
 $ gpg --import revoke.asc 
-gpg: key 4A03679A: "Some User &lt;someuser@example.org&gt;" revocation
+gpg: key 4A03679A: "Some User<someuser@example.org>" revocation
 certificate imported
 gpg: Total number processed: 1
 gpg:    new key revocations: 1
@@ -566,7 +567,7 @@ For example, when you verify a revoked key, <a href="https://www.gnupg.org" targ
 ```
 $ gpg --verify message.asc.message 
 gpg: Signature made Sat Apr  8 09:28:31 2006 BST using DSA key ID 4A03679A
-gpg: Good signature from "Some User &lt;someuser@example.org&gt;"
+gpg: Good signature from "Some User <someuser@example.org>"
 gpg: checking the trustdb
 gpg: checking at depth 0 signed=0 ot(-/q/n/m/f/u)=0/0/0/0/0/1
 gpg: WARNING: This key has been revoked by its owner!
