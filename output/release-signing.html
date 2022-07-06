@@ -185,20 +185,20 @@ Signing Releases        </a>
 <h3 id="md5">What is an MD5 checksum?<a class="headerlink" href="#md5" title="Permanent link">&para;</a></h3>
 <p>MD5 is a <a href="http://www.faqs.org/rfcs/rfc1321.html" target="_blank">well known</a>  <a href="#message-digest">message
 digest algorithm</a>. Many tools are available to calculate these sums. For example, you can use <a href="https://www.openssl.org/" target="_blank">OpenSSL</a>:</p>
-<pre><code>$ openssl md5 &amp;lt; file
+<pre><code>$ openssl md5 &lt; file
 </code></pre>
 <p>Platform-specific applications are also common, such as <code>md5sum</code> on linux:</p>
 <pre><code>$ md5sum file
 </code></pre>
 <p>With GnuPG:</p>
-<pre><code>$ gpg --print-md MD5 [fileName] &amp;gt; [fileName].md5
+<pre><code>$ gpg --print-md MD5 [fileName] &gt; [fileName].md5
 
 </code></pre>
 <p>Run the command in the same directory as the file so the output only contains the file name with no directory prefixes.</p>
 <p><strong>Note</strong> that the security of MD5 is now <a href="#md5-security">questionable</a> and is only useful as part of a defense in depth.</p>
 <h3 id="sha-checksum">What is an SHA checksum?<a class="headerlink" href="#sha-checksum" title="Permanent link">&para;</a></h3>
 <p>Like <a href="#md5">MD5</a>, <a href="http://www.ietf.org/rfc/rfc3174.txt">SHA</a> is a <a href="#message-digest">message digest</a> algorithm. Using GnuPG, you can create a SHA1 signature as follows:</p>
-<pre><code>  $ gpg --print-md SHA1 [fileName] &amp;gt; [fileName].sha1
+<pre><code>  $ gpg --print-md SHA1 [fileName] &gt; [fileName].sha1
 </code></pre>
 <p><strong>Avoid</strong> further use of <a href="#sha1">SHA-1</a>. <code>SHA256</code> and <code>SHA512</code> use the same <code>SHA</code> algorithm family with longer hash
 lengths (256 and 512 bits respectively). These longer variations are less vulnerable to the weaknesses found in the algorithm family than <code>SHA1</code>. Apache recommends using <a href="#sha1">SHA512</a>.</p>
