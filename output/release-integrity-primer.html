@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Handling of Release Artifact Integrity Errors at the ASF - Apache Infrastructure Website</title>
+    <title>Handling Release Artifact Integrity Errors at the ASF - Apache Infrastructure Website</title>
     <link rel="stylesheet" href="/css/foundation.css">
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
@@ -87,7 +87,7 @@
         <a href="/">Home</a>
         <i class="fa fa-angle-double-right"></i>
         <a href="/release-integrity-primer.html">
-Handling of Release Artifact Integrity Errors at the ASF        </a>
+Handling Release Artifact Integrity Errors at the ASF        </a>
         (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/release-integrity-primer.md">edit</a>)
       </div>
     </div>
@@ -98,10 +98,10 @@ Handling of Release Artifact Integrity Errors at the ASF        </a>
       <div class="large-12 columns">
         <div class="callout">
           <h2>
-              Handling of Release Artifact Integrity Errors at the ASF
+              Handling Release Artifact Integrity Errors at the ASF
           </h2>
-              <p>This page acts as a primer for resolving <a href="https://infra.apache.org/release-distribution">release distribution policy</a> errors discovered by our <a href="https://github.com/apache/infrastructure-download-integrity-checker">Download Integrity Checker</a>.
-Each reported error has an accompanying error code (<code>CHKxx</code>), allowing you to resolve issues by using the matrix below:</p>
+              <p>This page will help you resolve <a href="https://infra.apache.org/release-distribution">release distribution policy</a> errors that our <a href="https://github.com/apache/infrastructure-download-integrity-checker">Download Integrity Checker</a> discovers.
+Each reported error has an accompanying error code (<code>CHKxx</code>). The code will help you resolve issues by using the matrix below:</p>
 <table>
 <thead>
 <tr>
@@ -114,32 +114,32 @@ Each reported error has an accompanying error code (<code>CHKxx</code>), allowin
 <tr>
 <td><code>CHK01</code></td>
 <td>Key used for signing artifact is missing from the <a href="https://infra.apache.org/release-signing.html#key-basics"><code>KEYS</code></a> file</td>
-<td>Make sure the key that signed the release was expected. <br/>Update your <a href="https://infra.apache.org/release-signing.html#key-basics"><code>KEYS</code></a> file to include the key. Remember to also move your updated <code>KEYS</code> file from <code>/dev/</code> to <code>/release/</code> on dist.apache.org when releasing with new keys.</td>
+<td>Make sure the key that signed the release was expected. <br/>Update your <a href="https://infra.apache.org/release-signing.html#key-basics"><code>KEYS</code></a> file to include the key. Remember to move your updated <code>KEYS</code> file from <code>/dev/</code> to <code>/release/</code> on dist.apache.org when releasing with new keys.</td>
 </tr>
 <tr>
 <td><code>CHK02</code></td>
 <td>Weak or missing checksum file(s)</td>
-<td><ul><li>If the release artifact has a valid signature: generate a <a href="https://infra.apache.org/release-signing.html#sha-checksum">conforming checksum</a> and add it, you can leave the old hash file</li><li>Otherwise: treat as if <code>CHK05</code></li></ul></td>
+<td><ul><li>If the release artifact has a valid signature, generate a <a href="https://infra.apache.org/release-signing.html#sha-checksum">conforming checksum</a> and add it. You can leave the old hash file.</li><li>Otherwise, see <code>CHK05</code>.</li></ul></td>
 </tr>
 <tr>
 <td><code>CHK03</code></td>
 <td>No <a href="https://infra.apache.org/release-signing.html#key-basics"><code>KEYS</code></a> file was found in the project's distribution directory</td>
-<td>Make sure the project directory has at least one KEYS file containing all signing keys used for distribution. Projects may have more than one <a href="https://infra.apache.org/release-signing.html#key-basics"><code>KEYS</code></a> file (per-component, per-version etc) but they <em>MUST</em> be called <code>KEYS</code> and exist within the project's dist directory.</td>
+<td>Make sure the project directory has at least one KEYS file containing all signing keys used for distribution. Projects may have more than one <a href="https://infra.apache.org/release-signing.html#key-basics"><code>KEYS</code></a> file (per-component, per-version, etc.) but they <em>MUST</em> be called <code>KEYS</code> and exist within the project's dist directory.</td>
 </tr>
 <tr>
 <td><code>CHK04</code></td>
 <td>The signature used for signing expired before signing the file</td>
-<td><ul><li>It’s possible the expiry has been changed, check and make sure the <a href="https://infra.apache.org/release-signing.html#key-basics"><code>KEYS</code></a> file is updated</li><li>If key has really expired treat as if it has no signature (<code>CHK05</code>)</td>
+<td><ul><li>It’s possible the expiry has been changed. Make sure the <a href="https://infra.apache.org/release-signing.html#key-basics"><code>KEYS</code></a> file is updated.</li><li>If the key has really expired treat the file as if it has no signature (<code>CHK05</code>).</td>
 </tr>
 <tr>
 <td><code>CHK05</code></td>
 <td>No (or invalid) signature found for the release artifact</td>
-<td>Check: <ul><li>Is there a signature file for this artifact?:<ul><li>If the signature is valid but has the wrong filename or extension, just rename it to the appropriate .asc filename</li><li>If the signature is invalid: See <a href="#invalid-sig">handling invalid or missing signatures</a>.</li></ul></li><li>If there is no signature file at all: See <a href="#invalid-sig">handling invalid or missing signatures</a>.</td>
+<td>Check: <ul><li>Is there a signature file for this artifact?:<ul><li>If the signature is valid but has the wrong file name or extension, rename it to the appropriate .asc file name.</li><li>If the signature is invalid, see <a href="#invalid-sig">handling invalid or missing signatures</a>.</li></ul></li><li>If there is no signature file at all, see <a href="#invalid-sig">handling invalid or missing signatures</a>.</td>
 </tr>
 <tr>
 <td><code>CHK06</code></td>
 <td>Checksum mismatch</td>
-<td>Try to spot what the problem was (why are you generating the wrong checksum?): <ul><li>If the file has a valid signature (no <code>CHK04</code> or <code>CHK05</code> errors for this file): generate a <a href="https://infra.apache.org/release-signing.html#sha-checksum">conforming checksum</a> and add it, remove the broken one</li><li>Otherwise: treat as if <code>CHK05</code></li></ul></td>
+<td>Try to spot what the problem was (why are you generating the wrong checksum?): <ul><li>If the file has a valid signature (no <code>CHK04</code> or <code>CHK05</code> errors for this file), generate a <a href="https://infra.apache.org/release-signing.html#sha-checksum">conforming checksum</a>, add it, and remove the broken one.</li><li>Otherwise: treat as if <code>CHK05</code>.</li></ul></td>
 </tr></tbody></table>
 <h2><a id="invalid-sig">Handling invalid or missing signatures</a></h2>
 <p>In case of an invalid or missing signature for a release artifact, the project MUST choose one of the following actions:</p>
@@ -147,11 +147,11 @@ Each reported error has an accompanying error code (<code>CHKxx</code>), allowin
 <li>Remove the artifact(s)</li>
 <li>Re-assert that the artifact is valid, sign and upload the correct .asc signature file (and fix any missing/invalid checksum files)</li>
 </ul>
-<p>Both decisions MUST be accompanied by informing the ASF Infrastructure and Security Team
-at <code>private@infra.apache.org</code> and <code>security@apache.org</code> with clear evidence that the action
-has been discussed and agreed upon (a link to a lists.apache.org thread will suffice)</p>
-<p>If you have any further questions about the error reports, this page, or our release distribution polices in general,
-feel free to reach out to us at: <a href="mailto:users@infra.apache.org">users@infra.apache.org</a></p>
+<p>In either case, the project MUST inform the ASF Infrastructure and Security Team
+at <code>private@infra.apache.org</code> and <code>security@apache.org</code> of their action, with clear evidence that the action
+has been discussed and agreed upon (a link to a lists.apache.org thread will suffice).</p>
+<p>If you have questions about the error reports, this page, or our release distribution polices in general,
+feel free to reach out to us at <code>users@infra.apache.org</code>.</p>
 
         </div>
       </div>
