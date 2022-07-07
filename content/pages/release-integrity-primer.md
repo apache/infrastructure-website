@@ -15,7 +15,7 @@ Each reported error has an accompanying error code (`CHKxx`), allowing you to re
 | `CHK06`    | Checksum mismatch | Try to spot what the problem was (why are you generating the wrong checksum?): <ul><li>If the file has a valid signature (no `CHK04` or `CHK05` errors for this file): generate a [conforming checksum](https://infra.apache.org/release-signing.html#sha-checksum) and add it, remove the broken one</li><li>Otherwise: treat as if `CHK05`</li></ul> |
 
 ## <a id="invalid-sig">Handling invalid or missing signatures</a>
-In case of an invalid or missing signature for a release artifact, the project MAY choose one of the following actions:
+In case of an invalid or missing signature for a release artifact, the project MUST choose one of the following actions:
  - Remove the artifact(s)
  - Re-assert that the artifact is valid, sign and upload the correct .asc signature file (and fix any missing/invalid checksum files)
  
