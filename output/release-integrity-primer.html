@@ -114,7 +114,7 @@ Each reported error has an accompanying error code (<code>CHKxx</code>), allowin
 <tr>
 <td><code>CHK01</code></td>
 <td>Key used for signing artifact is missing from the <a href="https://infra.apache.org/release-signing.html#key-basics"><code>KEYS</code></a> file</td>
-<td>Make sure the key that signed the release was expected. <br/>Update your <a href="https://infra.apache.org/release-signing.html#key-basics"><code>KEYS</code></a> file to include the key</td>
+<td>Make sure the key that signed the release was expected. <br/>Update your <a href="https://infra.apache.org/release-signing.html#key-basics"><code>KEYS</code></a> file to include the key. Remmber to also move your updated <code>KEYS</code> file from <code>/dev/</code> to <code>/release/</code> on dist.apache.org when releasing with new keys.</td>
 </tr>
 <tr>
 <td><code>CHK02</code></td>
