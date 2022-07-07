@@ -142,7 +142,7 @@ Each reported error has an accompanying error code (<code>CHKxx</code>), allowin
 <td>Try to spot what the problem was (why are you generating the wrong checksum?): <ul><li>If the file has a valid signature (no <code>CHK04</code> or <code>CHK05</code> errors for this file): generate a <a href="https://infra.apache.org/release-signing.html#sha-checksum">conforming checksum</a> and add it, remove the broken one</li><li>Otherwise: treat as if <code>CHK05</code></li></ul></td>
 </tr></tbody></table>
 <h2><a id="invalid-sig">Handling invalid or missing signatures</a></h2>
-<p>In case of an invalid or missing signature for a release artifact, the project MAY choose one of the following actions:</p>
+<p>In case of an invalid or missing signature for a release artifact, the project MUST choose one of the following actions:</p>
 <ul>
 <li>Remove the artifact(s)</li>
 <li>Re-assert that the artifact is valid, sign and upload the correct .asc signature file (and fix any missing/invalid checksum files)</li>
