@@ -7,18 +7,17 @@ This policy governs how Apache Top Level Projects (TLPs) distribute releases of 
 <h2 id="links">Contents</h2>
 
 <ul>
-<li><a href="#policy">Release distribution policy</a></li>
 <li><a href="#channels">Release distribution channels</a></li>
 <li><a href="#dist-dir">Release distribution directory</a></li>
 <li><a href="#release-content">Release content</a></li>
-<li><a href="#public-distribution">Public distribution</a></li>
+<li><a href="#public-distribution">Public distribution channels</a></li>
 <li><a href="#unreleased">Distribution of unreleased materials</a></li>
 <li><a href="#heads-up">Notify Infra before oploading large (&gt;1GB) artifacts</a></li>
-<li><a href="#sigs-and-sums">Cryptographic signature and checksum requirements</a></li>
-<li><a href="#download-links">Download links requirements</a></li>
+<li><a href="#sigs-and-sums">Requirements for cryptographic signature and checksum requirements</a></li>
+<li><a href="#download-links">Download links</a></li>
 <li><a href="#archival">Releases are archived</a></li>
 <li><a href="#maven">Using Maven for releases</a></li>
-  <li><a href="#other-platforms">Other platforms</a></li>
+  <li><a href="#other-platforms">Other release platforms</a></li>
 <li><a href="#dockerhub">DockerHub and releases</a></li>
 <li><a href="#administration">Policy Administration</a></li>
 </ul>
