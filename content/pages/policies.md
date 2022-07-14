@@ -27,4 +27,5 @@ The Apache Infrastructure Team (Infra) operates under the <a href="https://www.a
 - [Two Factor Authentication](2fa-policy.html)
 - [Release distribution policy](release-distribution.html)
   - [Release download pages](release-download-pages.html)
+- [Project use of nightlies.a.o](nightlies.html)
 - [Virtual machines for projects](vm-policy.html)
