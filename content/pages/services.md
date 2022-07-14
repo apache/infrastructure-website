@@ -192,6 +192,10 @@ Infra can provide Ubuntu virtual machines for projects. See:
   - [Virtual machine policy](vm-policy.html)
   - [Process for requesting a vm](vm-for-project.html)
 
+<h3>Use of nightlies.a.o</h3>
+
+nightlies, as implied by its name, is designed as a 'short term' storage solution. See the [nightlies use policy](nightlies.html).
+
 <h3 id="voting">Online voting<a class="headerlink" href="#voting" title="Permanent link">&para;</a></h3>
 
 Projects can use the <a href="https://steve.apache.org" target="_blank">Apache STeVe</a> voting system instance (offline when not in use). The tool name refers to the <a href="https://en.wikipedia.org/wiki/Single_transferable_vote" target="_blank">single transferable vote</a> system that is one of its voting options. Open a Jira ticket for Infra to provide assistance in preparing STeVe for your project's use.
