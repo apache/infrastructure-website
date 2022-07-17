@@ -2,8 +2,7 @@ Title: Policy for nightlies.apache.org
 
 **Note**: this policy may evolve in the course of a larger review of release and download strategies for The ASF.
 
-This document explains `nightlies.apache.org`: how it is to be used and the amount of data that can be stored there for how long, and explains
-expectations of the user versus what Infra delivers as a service.
+This document explains `nightlies.apache.org`: how to use the service and how much data data you can store there for how long, and what Infra expects of users of the service.
 
 ## History
 The service was created to replace previous storage services at `ci.apache.org/projects` (Buildbot) and is also a replacement for artifacts and logs that
