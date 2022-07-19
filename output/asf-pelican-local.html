@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local Pelican builds - Apache Infrastructure Website</title>
+    <title>Local builds of your Pelican-template website - Apache Infrastructure Website</title>
     <link rel="stylesheet" href="/css/foundation.css">
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/font-awesome.min.css">
@@ -87,7 +87,7 @@
         <a href="/">Home</a>
         <i class="fa fa-angle-double-right"></i>
         <a href="/asf-pelican-local.html">
-Local Pelican builds        </a>
+Local builds of your Pelican-template website        </a>
         (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/asf-pelican-local.md">edit</a>)
       </div>
     </div>
@@ -98,244 +98,24 @@ Local Pelican builds        </a>
       <div class="large-12 columns">
         <div class="callout">
           <h2>
-              Local Pelican builds
+              Local builds of your Pelican-template website
           </h2>
-              <p>These instructions are for building the your project site locally on either Linux or macOS.</p>
-<h1>Prerequisites</h1>
-<ol>
-<li>Python 3.6 or greater</li>
-<li>Pip</li>
-<li>CMake</li>
-</ol>
-<h1>Installation</h1>
-<ol>
-<li>
-<p>Download the files from <a href="https://github.com/apache/infrastructure-p6/tree/production/modules/pelican_asf/files">https://github.com/apache/infrastructure-p6/tree/production/modules/pelican_asf/files</a></p>
+              <p>Once your infrastructure-pelican site is deployed to GitHub, you can easily edit it locally in a clone of the GitHub repo, and test your changes locally (on OSX or Linux) before uploading them to GitHub. Once you upload the changes, the CI/CD system will automatically use them to update the project website (depending on your configuration, the update will go either to a staging area or to the live site).</p>
+<p><strong>Note</strong>: the tool mentioned below <em>may</em> work on <a href="https://docs.microsoft.com/en-us/windows/wsl/about" target="_blank">WSL</a> or <a href="https://www.cygwin.com/" target="_blank">cygwin</a>, but will <strong>not</strong> work under native Windows.</p>
+<h2>Preparation</h2>
+<p>Make sure you have installed:</p>
 <ul>
-<li>build-cmark.sh</li>
-<li>toc.py</li>
-<li>pelican-gfm/<strong>init</strong>.py</li>
-<li>pelican-gfm/gfm.py</li>
-<li>pelican-build.py</li>
+<li>cmake</li>
+<li>python3 or greater</li>
+<li>pip3</li>
 </ul>
-<p>Note that the GitHub repostory is private to the ASF, so only ASF committers with an associated GitHub login can access it.
-If you don't have such a login set up, GitHub will respond with status 404 - File not found.</p>
-</li>
-<li>
-<p>Build cmark-gfm</p>
-<pre><code class="language-bash">bash build-cmark.sh
-export LIBCMARKDIR=`pwd`/cmark-gfm-0.28.3.gfm.12/lib
-</code></pre>
-</li>
-<li>
-<p>Clone the website repository to your system</p>
-<p>The example below assumes this is in <code>~/Development/www-site</code>.</p>
-</li>
-<li>
-<p>Twitter Bearer Token</p>
-<blockquote>
-<p>A twitter feed is optional. If you are not interested then make sure that your <code>asfdata.yaml</code> file does not include
-a <code>twitter</code> directive and skip to the next step.</p>
-</blockquote>
-<p>We make use of the Twitter api to retrieve the most recent tweet. A <a href="https://developer.twitter.com/en/docs/authentication/oauth-2-0/bearer-tokens">Bearer Token</a>
-is added to the <code>~/.authtokens</code> file.</p>
-<pre><code>twitter:${BEARER_TOKEN}
-</code></pre>
-<p>If the file is not found or the Twitter key is missing, the tweet returned is a message to configure the file.
-If the Bearer Token is invalid, the API returns a 401 error and the build stops.</p>
-</li>
-<li>
-<p>Build the website locally from current local commits</p>
-<pre><code class="language-bash">python3 pelican-build.py --sourcetype git --source ~/Development/www-site --sourcebranch main \
- --outputbranch asf-site --project www --theme theme/apache --count 200
-</code></pre>
-<table>
-<thead>
-<tr>
-<th>Arguments</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>--sourcetype git</td>
-<td>must be <code>git</code></td>
-</tr>
-<tr>
-<td>--source &lt;local_git_repos&gt;</td>
-<td>where you checked in your changes</td>
-</tr>
-<tr>
-<td>--sourcebranch <mybranch></td>
-<td>the branch. eg. main or preview/feature</td>
-</tr>
-<tr>
-<td>--outputbranch <whatever></td>
-<td>not used in local builds</td>
-</tr>
-<tr>
-<td>--project <project></td>
-<td>the project code</td>
-</tr>
-<tr>
-<td>--theme theme/apache</td>
-<td>the path to the theme. One level above the templates directory</td>
-</tr>
-<tr>
-<td>--count &lt;min_count&gt;</td>
-<td>to be a successful build the output must have min_count or more html files</td>
-</tr></tbody></table>
-</li>
-<li>
-<p>Sample output</p>
-<pre><code>Setting up virtual python environment in /tmp/www
-Cloning from git repository /Users/davewave/Development/www-site (branch: main)
-Cloning into '/tmp/www/source'...
-done.
-Checking out files: 100% (2358/2358), done.
-Installing pips
-Requirement already satisfied: pelican in /usr/local/lib/python3.9/site-packages (from -r source/requirements.txt (line 1)) (4.6.0)
-Requirement already satisfied: pelican-sitemap in /usr/local/lib/python3.9/site-packages (from -r source/requirements.txt (line 2)) (1.0.2)
-Requirement already satisfied: BeautifulSoup4 in /usr/local/lib/python3.9/site-packages (from -r source/requirements.txt (line 3)) (4.9.3)
-Requirement already satisfied: ezt in /usr/local/lib/python3.9/site-packages (from -r source/requirements.txt (line 4)) (1.1)
-Requirement already satisfied: PyYAML in /usr/local/lib/python3.9/site-packages (from -r source/requirements.txt (line 5)) (5.4.1)
-Requirement already satisfied: requests in /usr/local/lib/python3.9/site-packages (from -r source/requirements.txt (line 6)) (2.25.1)
-Requirement already satisfied: jinja2&gt;=2.7 in /usr/local/lib/python3.9/site-packages (from pelican-&gt;-r source/requirements.txt (line 1)) (3.0.1)
-Requirement already satisfied: feedgenerator&gt;=1.9 in /usr/local/lib/python3.9/site-packages (from pelican-&gt;-r source/requirements.txt (line 1)) (1.9.1)
-Requirement already satisfied: blinker&gt;=1.4 in /usr/local/lib/python3.9/site-packages (from pelican-&gt;-r source/requirements.txt (line 1)) (1.4)
-Requirement already satisfied: pytz&gt;=2020.1 in /usr/local/lib/python3.9/site-packages (from pelican-&gt;-r source/requirements.txt (line 1)) (2021.1)
-Requirement already satisfied: unidecode&gt;=1.1 in /usr/local/lib/python3.9/site-packages (from pelican-&gt;-r source/requirements.txt (line 1)) (1.2.0)
-Requirement already satisfied: docutils&gt;=0.16 in /usr/local/lib/python3.9/site-packages (from pelican-&gt;-r source/requirements.txt (line 1)) (0.17.1)
-Requirement already satisfied: pygments&gt;=2.6 in /usr/local/lib/python3.9/site-packages (from pelican-&gt;-r source/requirements.txt (line 1)) (2.9.0)
-Requirement already satisfied: python-dateutil&gt;=2.8 in /usr/local/lib/python3.9/site-packages (from pelican-&gt;-r source/requirements.txt (line 1)) (2.8.1)
-Requirement already satisfied: six in /usr/local/lib/python3.9/site-packages (from feedgenerator&gt;=1.9-&gt;pelican-&gt;-r source/requirements.txt (line 1)) (1.16.0)
-Requirement already satisfied: MarkupSafe&gt;=2.0 in /usr/local/lib/python3.9/site-packages (from jinja2&gt;=2.7-&gt;pelican-&gt;-r source/requirements.txt (line 1)) (2.0.1)
-Requirement already satisfied: soupsieve&gt;1.2 in /usr/local/lib/python3.9/site-packages (from BeautifulSoup4-&gt;-r source/requirements.txt (line 3)) (2.2.1)
-Requirement already satisfied: chardet&lt;5,&gt;=3.0.2 in /usr/local/lib/python3.9/site-packages (from requests-&gt;-r source/requirements.txt (line 6)) (4.0.0)
-Requirement already satisfied: certifi&gt;=2017.4.17 in /usr/local/lib/python3.9/site-packages (from requests-&gt;-r source/requirements.txt (line 6)) (2020.12.5)
-Requirement already satisfied: idna&lt;3,&gt;=2.5 in /usr/local/lib/python3.9/site-packages (from requests-&gt;-r source/requirements.txt (line 6)) (2.10)
-Requirement already satisfied: urllib3&lt;1.27,&gt;=1.21.1 in /usr/local/lib/python3.9/site-packages (from requests-&gt;-r source/requirements.txt (line 6)) (1.26.4)
-WARNING: You are using pip version 21.1.1; however, version 21.1.2 is available.
-You should consider upgrading via the '/usr/local/opt/python@3.9/bin/python3.9 -m pip install --upgrade pip' command.
-TOOLS: /Users/davewave/Development/pelican
-Using theme directory /tmp/www/source/theme/apache...
-Building web site with: ('/bin/bash', '-c', 'source bin/activate; cd source &amp;&amp; (pelican content -t /tmp/www/source/theme/apache -o /tmp/www/build/output)')
------
-asfdata
-...
------
-metadata[site_url] = &quot;https://www.apache.org&quot;
-metadata[code_lines] = &quot;227M&quot;
-metadata[code_changed] = &quot;4.2B&quot;
-metadata[code_commits] = &quot;4.1M&quot;
-metadata[asf_members] = 820
-metadata[asf_members_rounded] = 800
-metadata[asf_committers] = &quot;8,100&quot;
-metadata[asf_contributors] = &quot;40,000&quot;
-metadata[asf_people] = &quot;488,000&quot;
-metadata[com_initiatives] = 350
-metadata[com_projects] = 300
-metadata[com_podlings] = 37
-metadata[com_downloads] = &quot;~2 Petabytes&quot;
-metadata[com_emails] = &quot;24M&quot;
-metadata[com_mailinglists] = &quot;1,400&quot;
-metadata[com_pageviews] = &quot;35M&quot;
-metadata[board] is a sequence.
-metadata[officers] is a sequence.
-metadata[committees] is a sequence.
-metadata[ci] is a dictionary.
-metadata[projects] is a sequence.
-metadata[featured_projs] is a sequence.
-metadata[pl_0] is a sequence.
-metadata[pl_1] is a sequence.
-metadata[pl_2] is a sequence.
-metadata[pl_3] is a sequence.
-metadata[pl_4] is a sequence.
-metadata[pl_5] is a sequence.
-metadata[podlings] is a sequence.
-metadata[featured_pods] is a sequence.
-metadata[eccn] is a sequence.
-metadata[twitter] is a sequence.
-metadata[foundation] is a sequence.
-metadata[planet] is a sequence.
-metadata[conferences] is a sequence.
------
-licenses/index.md - Licenses
-    #apache-licenses
-    #distributions
-    #clas
-    #2.0
-    #grants
-    #trademarks
-    #1.0
-    #contributor-license-agreements
-    #crypto
-    #questions
-    #other-legal-info
-    #submitting
-    #1.1
-...
-{{board[0].name}} -&gt; Bertrand Delacretaz
-{{board[1].name}} -&gt; Roy T. Fielding
-{{board[2].name}} -&gt; Sharan Foga
-{{board[3].name}} -&gt; Justin Mclean
-{{board[4].name}} -&gt; Sam Ruby
-{{board[5].name}} -&gt; Craig L Russell
-{{board[6].name}} -&gt; Roman Shaposhnik
-{{board[7].name}} -&gt; Sander Striker
-{{board[8].name}} -&gt; Sheng Wu
-{{ci[boardchair][roster]}} -&gt; Sander Striker
-{{ci[vicechair][roster]}} -&gt; Shane Curcuru
-{{ci[president][roster]}} -&gt; David Nalley
-{{ci[execvp][roster]}} -&gt; Ruth Suehle
-{{ci[treasurer][roster]}} -&gt; Myrle Krantz
-{{ci[assistanttreasurer][roster]}} -&gt; Trevor Grant
-{{ci[secretary][roster]}} -&gt; Matt Sicker
-{{ci[assistantsecretary][roster]}} -&gt; Craig L Russell
-{{ci[legal][chair]}} -&gt; Roman Shaposhnik
-{{ci[assistantvplegalaffairs][roster]}} -&gt; Justin Mclean
-{{ci[security][chair]}} -&gt; Mark J. Cox
-{{ci[dataprivacy][chair]}} -&gt; Christian Grobmeier
-{{ci[w3crelations][roster]}} -&gt; Andy Seaborne
-{{ci[brand][chair]}} -&gt; Mark Thomas
-{{ci[concom][chair]}} -&gt; Rich Bowen
-{{ci[diversity][chair]}} -&gt; Griselda Cuevas
-{{ci[fundraising][chair]}} -&gt; Daniel Ruggeri
-{{ci[infrastructure][roster]}} -&gt; David Nalley
-{{ci[marketingandpublicity][chair]}} -&gt; Sally Khudairi
-{{ci[tac][chair]}} -&gt; Gavin McDonald
-{{ci[infrastructureadministrator][roster]}} -&gt; Greg Stein
-{{ci[sponsorrelations][roster]}} -&gt; Sally Khudairi
-foundation/index.ezmd - Foundation Project
-    #how-are-the-asf-and-apache-projects-governed
-    #officers
-    #how-did-the-asf-and-apache-projects-grow
-    #pmc-chairs
-    #what-is-the-role-of-asf-members
-    #what-is-the-asf
-    #who-runs-the-asf
-    #board-members
-...
-dev/project-requirements.md - Apache Project Minimum Requirements
-  ToC
-    #brand
-    #governance
-    #legal
-    #incubator
-    #community
-    #funding
-    #technical
-    #other
-    #press
-dev/git.md - Git access to Apache codebases
-info/referer-dotcom.md - Welcome
-    #welcome-to-the-apache-software-foundation
-Done: Processed 0 articles, 0 drafts, 212 pages, 0 hidden pages and 0 draft pages in 16.86 seconds.
-222 html files. To test output: cd /tmp/www/build; pelican -l
-Web site successfully generated!
-</code></pre>
-</li>
-</ol>
+<p>Download the <a href="https://raw.githubusercontent.com/apache/infrastructure-pelican/master/bin/local-pelican-site.sh">automatic build tool</a>, and run it, providing the name of your GitHub website repo.</p>
+<p>Example:</p>
+<p><code>./local-pelican-website.sh infrastructure-website</code></p>
+<p>Once the process has completed, you should be able to see the rendered site by opening a web browser to <a href="http://localhost:8000/">http://localhost:8000/</a>.</p>
+<h2>Use</h2>
+<p>After you have done local edits on the source files for the website, you can test them locally by running the script again as above.</p>
+<p>When you are satisfied that your edits are correct, merge them into the online repository with a pull request. That will trigger an update to the staging or live locations, depending on how you have configured the .asf.yaml file.</p>
 
         </div>
       </div>
