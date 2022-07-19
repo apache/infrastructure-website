@@ -22,3 +22,5 @@ Once the process has completed, you should be able to see the rendered site by o
 ## Use
 
 After you have done local edits on the source files for the website, you can test them locally by running the script again as above.
+
+When you are satisfied that your edits are correct, merge them into the online repository with a pull request. That will trigger an update to the staging or live locations, depending on how you have configured the .asf.yaml file.
