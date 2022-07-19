@@ -6,11 +6,16 @@ Once your infrastructure-pelican site is deployed to GitHub, you can easily edit
 
 ## Preparation
 
+Make sure you have installed:
+  - cmake
+  - python3 or greater
+  - pip3
+
 Download the [automatic build tool](https://raw.githubusercontent.com/apache/infrastructure-pelican/master/bin/local-pelican-site.sh), and run it, providing the name of your GitHub website repo. 
 
 Example:
 
-./local-pelican-website.sh infrastructure-website
+`./local-pelican-website.sh infrastructure-website`
 
 Once the process has completed, you should be able to see the rendered site by opening a web browser to http://localhost:8000/.
 
