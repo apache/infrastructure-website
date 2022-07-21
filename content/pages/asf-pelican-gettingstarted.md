@@ -13,7 +13,7 @@ First, review the <a href="https://github.com/apache/template-site" target="_bla
 
 If you wish to try out the template:
 
-  1. Using <a href="https://selfserve.apache.org/" target="_blank"self-serve</a>, create a new repo for the code and resources for your project’s website.
+  1. Using <a href="https://selfserve.apache.org/" target="_blank">self-serve</a>, create a new repo for the code and resources for your project’s website.
   2. Clone the empty repo to a location on your computer.
   3. Download the <a href="https://github.com/apache/infrastructure-website/archive/refs/heads/master.zip">template zipfile</a>.
   4. Unzip `master.zip` and copy `infrastructure-website-master/*`  to the root of your new repository.
