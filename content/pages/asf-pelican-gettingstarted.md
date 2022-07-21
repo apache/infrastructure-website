@@ -1,6 +1,6 @@
 Title: ASF-Pelican getting-started guide
 
-Any ASF project using a Git repository can use the [ASF-Pelican template](asf-pelican.html) as the basis for their project website. 
+Any ASF project using a Git repository for their website code and resources can use the [ASF-Pelican template](asf-pelican.html) as the basis for their project website. Building a site in this way simplifies both development and integration into the ASF automated build system, while helping ensure that your site satisfies the ASF's <a href="https://infra.apache.org/project-site.html" target="_blank">guidelines for project websites</a>.
 
 Review the [Apache Template example](https://template.staged.apache.org/) to see whether the template's features will support the functions you need for your project.
 
