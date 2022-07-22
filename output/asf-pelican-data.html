@@ -102,18 +102,12 @@ ASF Pelican data model        </a>
           </h2>
               <h2>ASF Data</h2>
 <p>If your site includes the <code>asfdata.py</code> plugin, the Pelican site generator reads instructions from it during initialization and creates shared metadata that is available for all pages. It is particularly critical for <strong>ezmd</strong> pages that contain directives.</p>
-<p>The <code>pelicanconf.py</code> file contains the following:</p>
-<pre><code class="language-python">ASF_DATA_YAML = &quot;asfdata.yaml&quot;
-ASF_DATA = {
-    'data': ASF_DATA_YAML,
-    'metadata': { },
-    'debug': False
-}
+<p>The <code>pelicanconf.yaml</code> file contains the following:</p>
+<pre><code>setup:
+  data: asfdata.yaml
 </code></pre>
 <ul>
-<li><code>data</code> is a .yaml file of metadata instructions. These are described below.</li>
-<li><code>metadata</code> is a dictionary to contain the shared metadata.</li>
-<li><code>debug</code>: if <code>True</code>, the system outputs more details about processing in <code>asfdata.py</code>.</li>
+<li><code>data</code> is a .yaml file of metadata instructions.</li>
 </ul>
 <p>Within the plugin there are three kinds of data transformations:</p>
 <ol>
