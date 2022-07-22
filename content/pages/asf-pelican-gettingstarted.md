@@ -1,49 +1,24 @@
 Title: ASF-Pelican getting-started guide
 
-Any ASF project can use the [ASF-Pelican template](asf-pelican.html) as the basis for their project website. 
+Any ASF project using a Git repository for their website code and resources can use the [ASF-Pelican template](asf-pelican.html) as the basis for their project website. Building a site in this way simplifies both development and integration into the ASF automated build system, while helping ensure that your site satisfies the ASF's <a href="https://infra.apache.org/project-site.html" target="_blank">guidelines for project websites</a>.
 
-Review the [Apache Template example](https://template.staged.apache.org/) to see whether the template's features will support the functions you need for your project
-
+Review the [Apache Template example](https://template.staged.apache.org/) to see whether the template's features will support the functions you need for your project.
 
 ## How to use this template
 
-1. Review the <a href="https://github.com/apache/template-site" target="_blank">code repository for ASF-Pelican</a> to confirm that it provides the features your project site needs.
+First, review the <a href="https://github.com/apache/template-site" target="_blank">code repository for ASF-Pelican</a> to confirm that it provides the features your project site needs. The template builds a copy of the full Apaches Software Foundation website, which has features your site does not need, and lacks features, such as a download page for product releases, that you will need to add. (During the summer of 2022 we will update the template contents to better reflect the features a project website should have.
 
-2. Create a <a href="https://issues.apache.org/jira/Jira" target="_blank">Jira ticket</a>, requesting Infra to create a repository using this template for your project. Provide a name and short description for the repository. Infra will confirm the repository's location when it is ready for you.
+If you wish to try out the template:
 
-**Note**: we strongly suggest that you do your site development in a branch rather than the trunk of the repository, and then merge the branch into the trunk when you are sure that everything as working as you would like it. Each commit to the trunk triggers an automatic build to update your live site; this is great for trivial changes like correcting typos, but more of a challenge if you are making major changes and it turns out that there is an error in your code that disables your live site. 
-
-<!--- Review [ASF Pelican feature branches](asf-pelican-branches.html). --->
-
-3. The Apache Theme is at <a href="https://github.com/apache/template-site/tree/main/theme/apache/templates" target="_blank">theme/apache/templates</a>. Review [the theme instructions](asf-pelican-theme.html), then update the theme's `base.html` to fit your site's requirements. 
-
-   The example has the following frameworks.
-
-     - JavaScript:
-       - [JQuery 3.6.0 Slim](https://code.jquery.com/jquery-3.6.0.slim.js)
-       - [Popper 1.14.7](https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.js)
-       - [Bootstrap 4.3.1](https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.js)
-     - CSS:
-       - [Bootstrap 4.3.1](https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css)
-       - [GitHub Markdown 3.0.1](https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.css)
-
-     For fenced code highlighting, review <a href="https://highlightjs.org" target="_blank">highlightjs</a>.
-
-   - The `content/images` folder holds example logo files. Place your own site's image files here.
-
-4. Determine if your site requires a [data model](https://infra.apache.org/asf-pelican-data.html).
-
-   - The `.ezmd` files in the <a href="https://github.com/apache/template-site/tree/main/content" target="_blank">content</a> directory show examples
-   - <a href="https://github.com/apache/template-site/blob/main/asfdata.yaml" target="_blank">asfdata.yaml</a> has many examples
-   - Remove the following if you do not need a data model:
-     1. `asfdata.yaml`
-     2. `data/eccn` directory
-
-5. Edit the `asf.yaml` configuration file:
+  1. Using <a href="https://selfserve.apache.org/" target="_blank">self-serve</a>, create a new repo for the code and resources for your project’s website.
+  2. Clone the empty repo to a location on your computer.
+  3. Download the <a href="https://github.com/apache/infrastructure-website/archive/refs/heads/master.zip">template zipfile</a>.
+  4. Unzip `master.zip` and copy `infrastructure-website-master/*`  to the root of your new repository.
+  5. Configure <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features" target="_blank">.asf.yaml</a>:
 
 ```
 pelican:
-  notify: wave@apache.org
+  notify: EMAIL of a person on your team to receive error messages related to Pelican
   autobuild: preview/*
   target: YOUR SITE'S REPOSITORY
   theme: theme/apache
@@ -55,25 +30,46 @@ staging:
   autostage: preview/*
 ```
 
-6. Update `pelicanconfig.yaml` with your site's information. See [Configuring ASF Pelican](asf-pelican-config.html) for details.
+  6. Configure <a href="https://infra.apache.org/asf-pelican-config.html" target="_blank">pelicanconf.yaml</a>.
+  7. Commit and push your new website repository. This should trigger the automatic build to staging (`REPONAME.staged.apache.org`).
+  8. Review the site to confirm that the template materials display and function correctly.
+  9. Add your own content, updating, replacing, and removing template content elements as appropriate. With each commit / push of content, visit the staging site to confirm that the site displays as you expect it to.
+     - `.md` files support Github Flavored Markdown ([**gfm**](gfm.html)) and html.
+     - `.ezmd` files are for templates using `ASF_DATA`. .ezmd is a markdown extension of <a href="https://github.com/gstein/ezt/blob/wiki/Syntax.md" target="_blank">EZT</a>. It lets you embed ezt inside markdown with modifications to simplify the process of fetching generated/external data.
+  11. If you want to work on and test the site offline, see <a href="https://github.com/apache/infrastructure-website/blob/master/content/pages/asf-pelican-local.html" target="_blank">Local builds of your Pelican-template website</a>.
+  12. <a href="https://infra.apache.org/asf-pelican-theme.html" target="_blank">Adjust the theme</a> by editing `base.html` and making any other style changes that will help the site present your project and product well. Don't forget to provide your product's logo in the `content/images` folder.
+  13. When you are ready to publish the site, create a pull request to merge the content in staging into the trunk of the repo. That will trigger a build of the live site.
+  14. Visit `YourProject.apache.org` after every update to make sure it displays and functions correctly.
 
-7. Create your [content](content) 
+**Note**: we strongly suggest that you do your site development in a branch rather than the trunk of the repository, and then merge the branch into the trunk when you are sure that everything is working as you would like it. Each commit to the trunk triggers an automatic build to update your live site; this is great for trivial changes like correcting typos, but more of a challenge if you are making major changes and it turns out that there is an error in your code that disables your live site. 
 
-   - `.md` files using Github Flavored Markdown ([**gfm**](https://infra.apache.org/gfm.html))
-   - `.ezmd` files for templates using `ASF_DATA`
+### Frameworks
 
-8. Building
+The example has the following frameworks.
 
-   - [Local build instructions](https://infra.apache.org/asf-pelican-local.html)
-   - [ASF YAML build](.asf.yaml) -- ASF infrastructure instructions
+     - JavaScript:
+       - [JQuery 3.6.0 Slim](https://code.jquery.com/jquery-3.6.0.slim.js)
+       - [Popper 1.14.7](https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.js)
+       - [Bootstrap 4.3.1](https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.js)
+     - CSS:
+       - [Bootstrap 4.3.1](https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css)
+       - [GitHub Markdown 3.0.1](https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.css)
 
-9. When you are ready to use this repository as the source for your live site, create a Jira ticket to ask Infra to adjust the build process. From then on, changes you make to the trunk of this repository automatically update the live site.
+For fenced code highlighting, consider <a href="https://highlightjs.org" target="_blank">highlightjs</a>.
+
+### Data model
+
+Determine whether your site requires a [data model](asf-pelican-data.html).
+
+The `.ezmd` files in the template's `content` directory show examples, and <a href="https://github.com/apache/template-site/blob/main/asfdata.yaml" target="_blank">asfdata.yaml</a> has many examples.
+
+Remove the following if you do not need a data model:
+  - `asfdata.yaml`
+  - `data/eccn` directory
 
 ## Issues and template questions
 
-Please let us know if you run into issues with the template.
-
-   - [Issues](https://github.com/apache/template-site/issues)
+Please let us know if you run into [issues](https://github.com/apache/template-site/issues) with the template.
 
 ## Earlier versions
 
@@ -88,8 +84,3 @@ Earlier versions of this template made use of a `pelicanconf.py` configuration f
    - `ASF_GENID` - `asfgenid.py` plugin settings
      `asfgenid.py` performs a series of html fixups including permalinks, heading ids, and table of contents
 ```
-
-# EZMD format
-
-The [EZMD](https://infra.apache.org/asf-pelican-build.html#ezmd) format is a markdown extension of [EZT](https://github.com/gstein/ezt/blob/wiki/Syntax.md). 
-It allows for embedding ezt inside markdown with modifications so simplify the process of fetching generated/external data.
