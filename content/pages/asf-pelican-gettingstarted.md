@@ -20,13 +20,13 @@ If you wish to try out the template:
 pelican:
   notify: EMAIL of a person on your team to receive error messages related to Pelican
   autobuild: preview/*
-  target: YOUR SITE'S REPOSITORY
+  target: YOUR SITE'S GENERATED CONTENT BRANCH
   theme: theme/apache
   whoami: main
 
 staging:
   profile: ~
-  whoami: YOUR SITE'S REPOSITORY
+  whoami: YOUR SITE'S GENERATED CONTENT BRANCH
   autostage: preview/*
 ```
 
