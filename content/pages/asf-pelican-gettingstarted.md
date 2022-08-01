@@ -36,7 +36,7 @@ staging:
   9. Add your own content, updating, replacing, and removing template content elements as appropriate. With each commit / push of content, visit the staging site to confirm that the site displays as you expect it to.
      - `.md` files support Github Flavored Markdown ([**gfm**](gfm.html)) and html.
      - `.ezmd` files are for templates using `ASF_DATA`. .ezmd is a markdown extension of <a href="https://github.com/gstein/ezt/blob/wiki/Syntax.md" target="_blank">EZT</a>. It lets you embed ezt inside markdown with modifications to simplify the process of fetching generated/external data.
-  11. If you want to work on and test the site offline, see <a href="https://github.com/apache/infrastructure-website/blob/master/content/pages/asf-pelican-local.html" target="_blank">Local builds of your Pelican-template website</a>.
+  11. If you want to work on and test the site offline, see <a href="https://infra.apache.org/asf-pelican-local.html" target="_blank">Local builds of your Pelican-template website</a>.
   12. <a href="https://infra.apache.org/asf-pelican-theme.html" target="_blank">Adjust the theme</a> by editing `base.html` and making any other style changes that will help the site present your project and product well. Don't forget to provide your product's logo in the `content/images` folder.
   13. When you are ready to publish the site, create a pull request to merge the content in staging into the trunk of the repo. That will trigger a build of the live site.
   14. Visit `YourProject.apache.org` after every update to make sure it displays and functions correctly.
