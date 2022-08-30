@@ -119,6 +119,7 @@ Mail Rejection Policy        </a>
 <li>And many more</li>
 </ul>
 <p>SPF hard fail for the apache.org domain has been implemented for incoming apache.org mail. This will require people using an apache.org mail address in their envelope &quot;from&quot; to be sending from an authorized host via mail-relay.a.o. See <a href="committer-email.html">Committer email</a>.</p>
+<p>Infra takes a hard-line approach to prolific spammers, and will block all mail traffic from spam domains with a rejection message of <code>550 Domain Blocked - Spam. Contact abuse@infra.apache.org</code>. If you receive this message, you may contact that address (using a different domain) to request review.</p>
 <p>Refer to <a href="https://blogs.apache.org/infra/entry/committers_mail_relay_service" target="_blank">this blog post</a> for additional information.</p>
 <p><a href="/contact.html">Contact Infra</a> via an alternate email address, or <a href="https://issues.apache.org/jira/" target="_blank">file a Jira ticket</a> with any questions.</p>
 <p>If you feel your email has been blocked or rejected in error, please open a ticket at <a href="https://issues.apache.org/jira">https://issues.apache.org/jira</a> and include your external IP address and the To: header.</p>
