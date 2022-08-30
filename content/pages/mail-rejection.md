@@ -23,6 +23,8 @@ The apache.org MX servers reject messages under many of the following circumstan
 
 SPF hard fail for the apache.org domain has been implemented for incoming apache.org mail. This will require people using an apache.org mail address in their envelope "from" to be sending from an authorized host via mail-relay.a.o. See [Committer email](committer-email.html).
 
+Infra takes a hard-line approach to prolific spammers, and will block all mail traffic from spam domains with a rejection message of ``550 Domain Blocked - Spam. Contact abuse@infra.apache.org``. If you receive this message, you may contact that address (using a different domain) to request review.
+
 Refer to <a href="https://blogs.apache.org/infra/entry/committers_mail_relay_service" target="_blank">this blog post</a> for additional information.
 
 [Contact Infra](/contact.html) via an alternate email address, or <a href="https://issues.apache.org/jira/" target="_blank">file a Jira ticket</a> with any questions.
