@@ -26,7 +26,7 @@ No, because the Maven2 repository layout is the standard used by most tools, inc
 
 <h4 id="thirdparty">Can we put third party files in the repositories?<a class="headerlink" href="#thirdparty" title="Permanent link">&para;</a></h4>
 
-You can with the <em>snapshot</em> repositories, but you cannot with the <em>release</em> repositories. When putting third party files in the <em>snapshot</em> repositories, please email the repository mailing list to explain what you are doing. Ideally, you should upload third party files to the 'central' Maven repository via the <a href="https://maven.apache.org/guides/mini/guide-central-repository-upload.html" target="_blank">Maven upload process</a>.
+You can with the <em>snapshot</em> repositories, but you cannot with the <em>release</em> repositories. When putting third party files in the snapshot repositories, please email the repository mailing list to explain what you are doing. Ideally, you should upload third party files to the 'central' Maven repository via the <a href="https://maven.apache.org/guides/mini/guide-central-repository-upload.html" target="_blank">Maven upload process</a>.
 
 <h4 id="revolutioncode">Can I release a research branch to the repositories?<a class="headerlink" href="#revolutioncode" title="Permanent link">&para;</a></h4>
 
@@ -43,4 +43,4 @@ Apache operates a repository manager at <a href="https://repository.apache.org/"
 
 <h4 id="rsyncs">How do rsyncs happen?<a class="headerlink" href="#rsyncs" title="Permanent link">&para;</a></h4>
 
-All the official repositories rsync automatically.
+All official repositories rsync automatically.
