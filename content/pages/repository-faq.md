@@ -1,7 +1,5 @@
 Title: Apache Maven repositories
 
-Here is an overview of Maven repositories in use at the Apache Software Foundation.
-
 <h2 id="basic">Basic information<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
 
 The main snapshot and release Maven repositories for Apache are at <a href="https://repository.apache.org" target="_blank">https://repository.apache.org</a>. The repository also proxies Apache's legacy repositories.
@@ -15,14 +13,6 @@ If you're a user looking for Apache artifacts from a Maven repository, all relea
 <a href="https://repository.apache.org/snapshots/" target="_blank">http://repository.apache.org/snapshots/</a>.
 
 <h2 id="faq">FAQs about the ASF Jar repositories<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
-  
-<h4 id="m1m2">m1/m2?<a class="headerlink" href="#m1m2" title="Permanent link">&para;</a></h4>
-
-There are two types of Maven repository. Loosely, Maven-1 and Maven-2 use 'm1' and 'm2' repositories, though Maven-2 can point to legacy Maven-1 repositories. Apache supports both, but is phasing out the m1 repositories.
-
-<h4 id="deploytoboth">Do I need to deploy to both m1/m2 repositories?<a class="headerlink" href="#deploytoboth" title="Permanent link">&para;</a></h4>
-
-No, because the Maven2 repository layout is the standard used by most tools, including Maven, Ivy and Buildr.
 
 <h4 id="thirdparty">Can we put third party files in the repositories?<a class="headerlink" href="#thirdparty" title="Permanent link">&para;</a></h4>
 
@@ -35,11 +25,6 @@ As long as your project's PMC is happy with the release, you can release a resea
 <h4 id="repodotapache">What is 'repository.apache.org'?<a class="headerlink" href="#repodotapache" title="Permanent link">&para;</a></h4>
 
 Apache operates a repository manager at <a href="https://repository.apache.org/" target="_blank">https://repository.apache.org/</a>. Apache projects can use it to deploying snapshots, releases, or both. See the [Publishing Maven Releases](publishing-maven-artifacts.html) guide for more details.
-
-<h4 id="resources">What resources are available?<a class="headerlink" href="#resources" title="Permanent link">&para;</a></h4>
-
-  - Mailing List: `repository@apache.org`
-  - [Publishing Maven Releases](publishing-maven-artifacts.html)
 
 <h4 id="rsyncs">How do rsyncs happen?<a class="headerlink" href="#rsyncs" title="Permanent link">&para;</a></h4>
 
