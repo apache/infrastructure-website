@@ -12,7 +12,19 @@ Each Apache project can have a directory in the Apache Subversion repository, or
   1. Those who have reservations about GitHub's terms and conditions can use Apache's <a href="https://gitbox.apache.org/" target="_blank">GitBox</a>, which also gives full access to Apache's writable Git repositories.
   1. To link your GitHub and Apache IDs, follow <a href="https://gitbox.apache.org/setup/" target="_blank">these instructions</a>.
   1. Projects can request new, blank, public repositories through <a href="https://selfserve.apache.org" target="_blank">selfserve</a>.
-  1. Apache does not support custom commits or other hooks. All projects get the same hooks. Setting up <a href="https://github.com/apache/infrastructure-puppet/tree/deployment/modules/gitpubsub" target="_blank">gitpubsub</a> should provide sufficient flexibility without impacting the core Git setup. 
+  1. Apache does not support custom commits or other hooks. All projects get the same hooks. Setting up <a href="https://github.com/apache/infrastructure-puppet/tree/deployment/modules/gitpubsub" target="_blank">gitpubsub</a> should provide sufficient flexibility without impacting the core Git setup.
+
+#### Git customizations
+
+Git offers a number of customizations for committing code to a repository. Apache does not support all of them for its projects. For instance:
+
+  - **supported**
+    -  <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-the-automatic-deletion-of-branches" target="_blank">head branches automatically deleted after pull requests are merged</a>.
+
+  - **not supported**
+    - <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-auto-merge-for-pull-requests-in-your-repository" target="_blank">auto-merge of pull requests</a>.
+
+To deploy one of these customizations for your project's repository, ask Infra for help via a Jira ticket.
 
 ### Subversion directories
 
