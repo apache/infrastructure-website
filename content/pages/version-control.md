@@ -73,7 +73,7 @@ To browse the repositories or download a few individual files, you can
 
 You can check out a project repository anonymously once you have installed a SVN client. For example, to get the Spamassassin module, use:
 
-     `$ svn checkout http://svn.apache.org/repos/asf/spamassassin/trunk spamassassin`
+     $ svn checkout http://svn.apache.org/repos/asf/spamassassin/trunk spamassassin
 
 <h3 id="commandlinecommit">Committing code through the command line<a class="headerlink" href="#commandlinecommit" title="Permanent link">&para;</a></h3>
 
@@ -109,7 +109,7 @@ Pay attention to the messages from your svn client when you do 'svn commit'.
 
 **Tip**: If you use TortoiseSVN, a popular Windows GUI client that integrates with Windows Explorer, you can right click in Explorer and select TortoiseSVN - Settings, and then press the "Edit" button to update your "Subversion configuration file:". If you do not see 
 
-     `*.c = svn:eol-style=native`
+     *.c = svn:eol-style=native
 
 copy the above svn-eol-style.txt file's contents into the end of the config editor that appears, and save the file.
 
