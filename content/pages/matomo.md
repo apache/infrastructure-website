@@ -31,4 +31,4 @@ _details here_
 
 ### Using Matomo analytics
 
-_Where to find the analytics. What they may tell you_
+The analytics reports for all ASF projects using Matomo are at <a href="https://analytics.apache.org/index.php?module=MultiSites&action=index&idSite=1&period=day&date=yesterday" target="_blank">analytics.apache.org</a>. Click a project name to see detailed information on visits and page views for that project.
