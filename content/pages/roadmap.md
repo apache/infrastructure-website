@@ -2,7 +2,7 @@ Title: Roadmap for Apache Infrastructure
 
 This roadmap is not yet operational, we are testing things out.
 
-`spu:fetch('https://cwiki.apache.org/confluence/plugins/viewsource/viewpagesrc.action?pageId=231116197)')`
+`spu:fetch('https://cwiki.apache.org/confluence/plugins/viewsource/viewpagesrc.action?pageId=231116197')`
 
 <script type="text/ecmascript">
 // Change from local to external sources (fetched from cwiki)
