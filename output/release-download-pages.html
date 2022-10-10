@@ -147,7 +147,7 @@ Release Download Pages for Projects        </a>
 </li>
 </ul>
 <p>To remove an old release from the release area, use a command of the form:</p>
-<p><code>svn del -m&quot;Archiving release m.n&quot; https://dist.apache.org/repos/dist/release/&lt;project&gt;/etc/m.n</code></p>
+<p><code>svn del -m"Archiving release m.n" https://dist.apache.org/repos/dist/release/&lt;project&gt;/etc/m.n</code></p>
 <p>You can use this for release directories or individual files (if multiple releases are present in a single directory).</p>
 <h2 id="download-scripts">Using the closer.lua download script<a class="headerlink" href="#download-scripts" title="Permanent link">&para;</a></h2>
 <p>Apache project download pages <strong>must</strong> use a closer.lua script. You'll find below a standard mechanism to let you easily create scripts that comply with the ASF distribution policy.</p>
@@ -180,7 +180,7 @@ Release Download Pages for Projects        </a>
 <p>For example, for artifact <code>foo-1.0.0.tar.gz</code> contained in <code>bar/foo</code>, use <code>[preferred]/bar/foo/foo-1.0.0.tar.gz</code></p>
 <p>Provide links to the checksum and signature for the artifact next to the download link. It is important that users check the sum and verify the signature, so these links should be close and clear.</p>
 <p>For example, for artifact foo-1.0.0.tar.gz contained in bar/foo :</p>
-<pre><code>`&lt;a href=&quot;[preferred]/bar/foo/foo-1.0.0.tar.gz&quot;&gt;zip&lt;/a&gt;`
+<pre><code>`&lt;a href="[preferred]/bar/foo/foo-1.0.0.tar.gz"&gt;zip&lt;/a&gt;`
 `&lt;a href='https://downloads.apache.org/bar/foo/foo-1.0.0.tar.gz.asc'&gt;PGP&lt;/a&gt;`
 </code></pre>
 <p>More advice on creating a good project page is <a href="#best_practice">below</a>.</p>
@@ -191,14 +191,14 @@ Release Download Pages for Projects        </a>
 <p>Provide clear and easy links to the KEYS, sums and signatures from the download release page or include the information directly in the page itself. The <a href="https://httpd.apache.org/download.cgi" target="_blank">HTTPD page</a> is a good example.</p>
 <p>Include a reminder text with links to more information for users. For example:</p>
 <pre><code>Note: when downloading, please check the
-&lt;a href=&quot;https://infra.apache.org/release-signing.html#sha-checksum&quot; target=&quot;_blank&quot;&gt;sha checksum&lt;/a&gt;
+&lt;a href="https://infra.apache.org/release-signing.html#sha-checksum" target="_blank"&gt;sha checksum&lt;/a&gt;
 and verify the 
-&lt;a href=&quot;https://www.infra.apache.org/release-signing#openpgp&quot; target=&quot;_blank&quot;&gt;OpenPGP compatible signature&lt;/a&gt; 
-from the &lt;a href=&quot;https://www.apache.org&quot; target=&quot;_blank&quot;&gt;main Apache site&lt;/a&gt;. 
+&lt;a href="https://www.infra.apache.org/release-signing#openpgp" target="_blank"&gt;OpenPGP compatible signature&lt;/a&gt; 
+from the &lt;a href="https://www.apache.org" target="_blank"&gt;main Apache site&lt;/a&gt;. 
 Links are provided above (next to the release download link).
-This &lt;a href=&quot;https://downloads.apache.org/ws/axis2/KEYS&quot; target=&quot;_blank&quot;&gt;KEYS file&lt;/a&gt; 
+This &lt;a href="https://downloads.apache.org/ws/axis2/KEYS" target="_blank"&gt;KEYS file&lt;/a&gt; 
 contains the public keys used for signing release. We recommend that you use a web of trust, if possible, to confirm the identity of these keys.
-For more information, please see the &lt;a href=&quot;https://www.apache.org/dev/release.html&quot; target=&quot;_blank&quot;&gt;Apache Release FAQ&lt;/a&gt;.
+For more information, please see the &lt;a href="https://www.apache.org/dev/release.html" target="_blank"&gt;Apache Release FAQ&lt;/a&gt;.
 </code></pre>
 <h3 id="linked-urls">Make sure the browser displays linked URLs<a class="headerlink" href="#linked-urls" title="Permanent link">&para;</a></h3>
 <p>Users need to be able to verify the origin of the artifacts, signatures and sums they download. Check that the stylesheets your download site uses do not obscure the linked URLs. It is best to use a simple, plain style for download links. Note that some of the Maven-style sheets may obscure some external links in some browsers.</p>

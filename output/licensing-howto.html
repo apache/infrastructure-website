@@ -100,7 +100,7 @@ Assembling LICENSE and NOTICE files        </a>
           <h2>
               Assembling LICENSE and NOTICE files
           </h2>
-              <p>This is a &quot;how to&quot; guide for Apache Committers assembling <code>LICENSE</code> and <code>NOTICE</code> files for their project's product.</p>
+              <p>This is a "how to" guide for Apache Committers assembling <code>LICENSE</code> and <code>NOTICE</code> files for their project's product.</p>
 <h3>Overview</h3>
 <p>The <code>LICENSE</code> file communicates the licensing of all content in an Apache product distribution. It always contains the text of the Apache License, and
 sometimes more information.</p>
@@ -147,21 +147,21 @@ sometimes more information.</p>
 </ul>
 <p>In <code>LICENSE</code>, add a <a href="http://s.apache.org/Hqj" target="_blank">pointer</a> to the dependency's license within the distribution and a short note summarizing its licensing:</p>
 <pre><code>This product bundles SuperWidget 1.2.3, which is available under a
-&quot;3-clause BSD&quot; license. For details, see deps/superwidget/.
+"3-clause BSD" license. For details, see deps/superwidget/.
 </code></pre>
 <p>Under normal circumstances, there is no need to modify <code>NOTICE</code> to mention a bundled dependency.</p>
 <p><strong>NOTE</strong>: It's also possible to include the text of the 3rd party license within your product's <code>LICENSE</code> file. This is best reserved for short licenses. It's important to specify the version of the dependency as licenses sometimes change as product versions change.</p>
-<p>There are a number of other &quot;permissive&quot; licenses which the ASF Legal Affairs Committee has <a href="https://www.apache.org/legal/resolved.html#category-a" target="_blank"> approved</a> for use. Some of these may require additions to <code>NOTICE</code> -- if in doubt, <a href="https://www.apache.org/legal/resolved.html#asking-questions" target="_blank">ask for assistance</a>.</p>
+<p>There are a number of other "permissive" licenses which the ASF Legal Affairs Committee has <a href="https://www.apache.org/legal/resolved.html#category-a" target="_blank"> approved</a> for use. Some of these may require additions to <code>NOTICE</code> -- if in doubt, <a href="https://www.apache.org/legal/resolved.html#asking-questions" target="_blank">ask for assistance</a>.</p>
 <h3 id="alv2-dep">Bundling an Apache 2-0-licensed dependency<a class="headerlink" href="#alv2-dep" title="Permanent link">&para;</a></h3>
 <p>Assuming that the bundled dependency itself contains no bundled sub-components under other licenses, so the ALv2 applies uniformly to all files, there is no need to modify <code>LICENSE</code>. However, for completeness it is useful to list the products and their versions, as is done for products under other licenses.</p>
 <p>If the dependency supplies a <code>NOTICE</code> file, its contents must be analyzed and the relevant portions bubbled up into the top-level <code>NOTICE</code> file.</p>
 <h3 id="bundle-asf-product">Bundling other ASF products<a class="headerlink" href="#bundle-asf-product" title="Permanent link">&para;</a></h3>
-<p>It is not necessary to duplicate the line &quot;This product includes software developed at the Apache Software Foundation...&quot;, though the ASF copyright line and any other portions of <code>NOTICE</code> must be considered for propagation.</p>
+<p>It is not necessary to duplicate the line "This product includes software developed at the Apache Software Foundation...", though the ASF copyright line and any other portions of <code>NOTICE</code> must be considered for propagation.</p>
 <h3 id="bundled-vs-non-bundled">Bundled vs. non-bundled dependencies<a class="headerlink" href="#bundled-vs-non-bundled" title="Permanent link">&para;</a></h3>
 <p>You must customize <code>LICENSE</code> and <code>NOTICE</code> files according to the content of the specific distribution they reside within. Do not add to <code>LICENSE</code> and <code>NOTICE</code> dependencies which are not in the distribution. <strong>Only bundled bits matter.</strong></p>
 <p>Example: If the only difference between <code>apache-foo-1.0.tgz</code> and <code>apache-foo-1.1.tgz</code> is that one bundles SuperWidget while the other forces users to download SuperWidget separately, <code>LICENSE</code> and <code>NOTICE</code> may need to be modified to account for the different bundled bits.</p>
 <h3 id="deps-of-deps">Dependencies of dependencies<a class="headerlink" href="#deps-of-deps" title="Permanent link">&para;</a></h3>
-<p>Dependencies of dependencies (including so-called &quot;transitive dependencies&quot;) are no different from first-order dependencies for the purposes of assembling <code>LICENSE</code> and <code>NOTICE</code>: <code>LICENSE</code> and <code>NOTICE</code> need only be modified to accommodate them <strong>only if their bits are bundled</strong>.</p>
+<p>Dependencies of dependencies (including so-called "transitive dependencies") are no different from first-order dependencies for the purposes of assembling <code>LICENSE</code> and <code>NOTICE</code>: <code>LICENSE</code> and <code>NOTICE</code> need only be modified to accommodate them <strong>only if their bits are bundled</strong>.</p>
 <h3 id="mod-notice">Modifications to NOTICE<a class="headerlink" href="#mod-notice" title="Permanent link">&para;</a></h3>
 <p>The <code>NOTICE</code> file is reserved for a certain subset of legally required notifications which are not satisfied by either the text of <code>LICENSE</code> or the presence of licensing information embedded within the bundled dependency. Aside from Apache-licensed dependencies which supply <code>NOTICE</code> files of their own, it is uncommon for a dependency to require additions to <code>NOTICE</code>.</p>
 <p>Copyright notifications which have been <a href="https://www.apache.org/legal/src-headers.html#headers" target="_blank">relocated</a>, rather than removed, from source files must be preserved in <code>NOTICE</code>. However, elements such as the copyright notifications embedded within BSD and MIT licenses <a href="https://issues.apache.org/jira/browse/LEGAL-59" target="_blank">do not need to be duplicated</a> in <code>NOTICE</code>. You can leave those notices in their original locations.</p>

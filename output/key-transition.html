@@ -196,7 +196,7 @@ sub  4096R/4A6D5217  created: 2009-08-20  expires: never       usage: E
 Please note that the shown key validity is not necessarily correct
 unless you restart the program.
 </code></pre>
-<p>&lt;h/3 id=&quot;sign-new-key&quot;&gt;Use the old key to sign the new key<a class="headerlink" href="#sign-new-key" title="Permanent link">¶</a></h3></p>
+<p>&lt;h/3 id="sign-new-key"&gt;Use the old key to sign the new key<a class="headerlink" href="#sign-new-key" title="Permanent link">&para;</a></p>
 <p>Use the old key (AD741727, say) to sign the new key:</p>
 <pre><code>Command&gt; sign AD741727
 
@@ -211,7 +211,7 @@ Primary key fingerprint: FF96 6261 C995 1DDE BF34  5150 D5D2 BDB5 E2B0 54B8
 
 
 Are you sure that you want to sign this key with your
-key &quot;Alice Example (EXAMPLE OF OLD KEY) &lt;alice@example.org&gt;&quot;
+key "Alice Example (EXAMPLE OF OLD KEY) &lt;alice@example.org&gt;"
 (AD741727)
 
 
@@ -219,7 +219,7 @@ Really sign? (y/N) y
 
 
 You need a passphrase to unlock the secret key for
-user: &quot;Alice Example (EXAMPLE OF OLD KEY) &lt;alice@example.org&gt;&quot;
+user: "Alice Example (EXAMPLE OF OLD KEY) &lt;alice@example.org&gt;"
 1024-bit DSA key, ID AD741727, created 2009-08-20
 </code></pre>
 <h3 id="check-sha">Check preferences<a class="headerlink" href="#check-sha" title="Permanent link">&para;</a></h3>
@@ -239,7 +239,7 @@ This setting can be tested by creating a test signature:
 $ gpg --detach-sig --armor document
 
 You need a passphrase to unlock the secret key for
-user: &quot;Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;&quot;
+user: "Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;"
 4096-bit RSA key, ID E2B054B8, created 2009-08-20
 </code></pre>
 <p>Verify that the new key has been chosen by default.</p>
@@ -250,7 +250,7 @@ user: &quot;Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;&quot;
 <h3 id="backups">Create backups<a class="headerlink" href="#backups" title="Permanent link">&para;</a></h3>
 <p>Follow <a href="openpgp.html#backup">these instructions</a>.</p>
 <h3 id="revocation-certificates">Generate and store revocation certificates<a class="headerlink" href="#revocation-certificates" title="Permanent link">&para;</a></h3>
-<p>Follow <a href="openpgp.html#revocation-certs">these instructions</a> to create and securely store [generic revocation certificates](release-signing.html#revocation-cert&quot; for the new key.</p>
+<p>Follow <a href="openpgp.html#revocation-certs">these instructions</a> to create and securely store [generic revocation certificates](release-signing.html#revocation-cert" for the new key.</p>
 <h3 id="update-documents">Update documents<a class="headerlink" href="#update-documents" title="Permanent link">&para;</a></h3>
 <p>The final stage in the process is to update documents containing references to the old key so that they contain both the new and old keys. For Apache documents, follow <a href="openpgp.html#update">this checklist</a>. Use the instructions for a transition when there is a choice.</p>
 <p>For other documents:</p>

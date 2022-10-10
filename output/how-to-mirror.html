@@ -141,7 +141,7 @@ How to mirror ASF software releases locally        </a>
 <pre><code>rsync -avz --delete --safe-links rsync.apache.org::apache-dist /path/to/mirror
 </code></pre>
 <ul>
-<li>Don't rsync &quot;on the hour&quot; (<code>cronjob minute 0</code>). Pick a random minute between 5 and 55. Never run cronjobs at minute 0 unless the nature of the job requires it.</li>
+<li>Don't rsync "on the hour" (<code>cronjob minute 0</code>). Pick a random minute between 5 and 55. Never run cronjobs at minute 0 unless the nature of the job requires it.</li>
 <li>Run the job four times a day; no more than six times a day in any case.</li>
 <li>Check the output from the rsync job regularly so you can detect problems like lack of disk space or permission issues.</li>
 </ul>
@@ -165,12 +165,12 @@ How to mirror ASF software releases locally        </a>
 <p>Here is how to add information explaining who is hosting the private download mirror:</p>
 <ol>
 <li>Edit the file <code>/local/path/to/mirror/README.html</code></li>
-<li>Add to your rsync options <code>--exclude &quot;/README.html&quot;</code></li>
+<li>Add to your rsync options <code>--exclude "/README.html"</code></li>
 </ol>
 <p>The contents of README.html appear near the bottom of your mirror's home page.</p>
 <ul>
 <li>Only customize the home-page (top-level) README.html. Do not change any other README.html files.</li>
-<li>Don't omit the '/' in <code>&quot;/README.html&quot;</code>.</li>
+<li>Don't omit the '/' in <code>"/README.html"</code>.</li>
 </ul>
 <p>Please limit the contents of the README.html to something like:</p>
 <pre><code>This mirror is donated by www.domain.com [url] to support the Apache open source community.

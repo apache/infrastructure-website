@@ -118,11 +118,11 @@ Using the Digicert code signing service        </a>
 <p>Whatever you need to sign and however you choose to sign it, you will need to create credentials to use the signing API. You create these via the DigiCert ONE web interface.</p>
 <ol>
 <li>Log on to <a href="https://one.digicert.com/">DigiCert ONE</a>.</li>
-<li>Select &quot;Account&quot; from the menu in the top right-hand corner.</li>
-<li>Select &quot;Access&quot; in the left-hand menu.</li>
-<li>Select &quot;API token&quot; and create a new API token with a unique name (e.g. ASF ID + year) as the name and an expiry date ~1 year in the future.</li>
+<li>Select "Account" from the menu in the top right-hand corner.</li>
+<li>Select "Access" in the left-hand menu.</li>
+<li>Select "API token" and create a new API token with a unique name (e.g. ASF ID + year) as the name and an expiry date ~1 year in the future.</li>
 <li>Keep a record of the token value</li>
-<li>Select &quot;Client Auth&quot; and create a new client certificate with a unique name (e.g. ASF ID + year) as the name and an expiry date ~1 year in the future.</li>
+<li>Select "Client Auth" and create a new client certificate with a unique name (e.g. ASF ID + year) as the name and an expiry date ~1 year in the future.</li>
 <li>Download the certificate and keep a record of the password</li>
 </ol>
 <h3>Step 3: Install the OS integration</h3>
@@ -130,20 +130,20 @@ Using the Digicert code signing service        </a>
 <p>If you use JSign 4.0, you can skip this step.</p>
 <h4>Windows integration</h4>
 <ol>
-<li>Log on to DigiCert ONE and select &quot;Secure Software&quot; from the menu in the top right-hand corner.</li>
-<li>Select &quot;Resources&quot; in the left-hand menu.</li>
-<li>Download and install the &quot;Secure Software Manager Windows Clients Installer&quot;.</li>
+<li>Log on to DigiCert ONE and select "Secure Software" from the menu in the top right-hand corner.</li>
+<li>Select "Resources" in the left-hand menu.</li>
+<li>Download and install the "Secure Software Manager Windows Clients Installer".</li>
 <li>As per the <a href="https://digicert.github.io/snowbird-doc/#/administration-guides/secure-software-manager/windows-configuration">Windows Configuration</a> section of the client user guide, create the four system environment variables. These <strong>must</strong> always be set to use the DigiCert signing service.</li>
 <li>Test with <code>smctl.exe keypair ls</code>. You should see at least one certificate listed. (smctl.exe is installed as part of the DigiCert client and won't be on your path.)</li>
-<li>Test with <code>certutil.exe -csp &quot;DigiCert Signing Manager KSP&quot; -key -user</code>. You should see at least one key listed. (certutil.exe will be on your path.)</li>
+<li>Test with <code>certutil.exe -csp "DigiCert Signing Manager KSP" -key -user</code>. You should see at least one key listed. (certutil.exe will be on your path.)</li>
 <li>Synchronise certificates with <code>smksp_cert_sync.exe</code>.</li>
 <li>Open <code>certmgr.msc</code> (it will be on your path) and you should see your code signing certificate(s) listed under personal certificates. If a new certificate is issued to your PMC you will need to repeat this step.</li>
 </ol>
 <h4>Linux integration</h4>
 <ol>
-<li>Log on to DigiCert ONE and select &quot;Secure Software&quot; from the menu in the top right-hand corner.</li>
-<li>Select &quot;Resources&quot; in the left-hand menu.</li>
-<li>Download and install the &quot;Secure Software Manager Linux Clients (Portable tar.gz)&quot;.</li>
+<li>Log on to DigiCert ONE and select "Secure Software" from the menu in the top right-hand corner.</li>
+<li>Select "Resources" in the left-hand menu.</li>
+<li>Download and install the "Secure Software Manager Linux Clients (Portable tar.gz)".</li>
 <li>Unpack the tar.gz. Infra recommends, and this guide assumes, it is unpacked to <code>/opt</code></li>
 <li>As per the DigiCert ONE documentation, create the four required environment variables. These <strong>must</strong> always be set to use the DigiCert signing service. Infra recommends you store your certifcate in <code>~/.digicertone/</code>.</li>
 <li>Test with <code>/opt/smtools-linux-x64/smctl keypair ls</code>. You should see at least one certificate listed.</li>
@@ -162,10 +162,10 @@ Using the Digicert code signing service        </a>
 </li>
 <li>
 <p>The DigiCert ONE specific properties for the JSign task in Antshould be configured as follows:</p>
-<pre><code>   storetype=&quot;DIGICERTONE&quot;
-   storepass=&quot;&lt;api-key&gt;|&lt;path-to-client-certificate&gt;|&lt;client-certificate-passphrase&gt;&quot;
-   alias=&quot;&lt;name-of-signing-certificate&gt;&quot;
-   tsaurl=&quot;http://timestamp.digicert.com&quot;
+<pre><code>   storetype="DIGICERTONE"
+   storepass="&lt;api-key&gt;|&lt;path-to-client-certificate&gt;|&lt;client-certificate-passphrase&gt;"
+   alias="&lt;name-of-signing-certificate&gt;"
+   tsaurl="http://timestamp.digicert.com"
 </code></pre>
 </li>
 </ol>
@@ -179,7 +179,7 @@ Using the Digicert code signing service        </a>
 </li>
 <li>
 <p>You should then be able to sign with:</p>
-<pre><code> jsign --storetype DIGICERTONE --alias &lt;name-of-signing-certificate&gt; --storepass &quot;&lt;api-key&gt;|&lt;path-to-client-certificate&gt;|&lt;client-certificate-passphrase&gt;&quot; application.exe
+<pre><code> jsign --storetype DIGICERTONE --alias &lt;name-of-signing-certificate&gt; --storepass "&lt;api-key&gt;|&lt;path-to-client-certificate&gt;|&lt;client-certificate-passphrase&gt;" application.exe
 </code></pre>
 </li>
 </ol>

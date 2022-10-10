@@ -118,7 +118,7 @@ Apache Theme for ASF Pelican        </a>
 There are site- or template-specific overrides to the stylesheet frameworks, but these are not done as Pelican specifies.</p>
 <ul>
 <li><code>styles.css</code> - consists of custom site CSS overrides. Edit as needed. Here we include the CSS for the ASF permalink style.
-This file is in the same directory as the html and is included inline with <code>{% include &quot;styles.css&quot; %}</code>.</li>
+This file is in the same directory as the html and is included inline with <code>{% include "styles.css" %}</code>.</li>
 </ul>
 <h2>Page metadata</h2>
 <p>This theme uses the following metadata:</p>
@@ -149,12 +149,12 @@ site:
   domain: YOURSITE.apache.org
   logo: images/logo.png
   repository: https://github.com/apache/YOUR_REPO/blob/main/content/
-  trademarks: Apache, the Apache feather logo, and &quot;Project&quot; are trademarks or registered trademarks
+  trademarks: Apache, the Apache feather logo, and "Project" are trademarks or registered trademarks
   
 </code></pre>
 <h2>Pelican theme</h2>
 <p>This is a <a href="https://docs.getpelican.com/en/latest/themes.html">custom theme</a>. Pelican templates use <a href="https://jinja.palletsprojects.com/en/3.0.x/">Jinja</a>.</p>
-<hr />
+<hr/>
 <h3>Pelican variables set in pelicanconf.py</h3>
 <p><strong>Note</strong>: early users of this template worked with <code>pelicanconf.py</code>, which is not part of the latest release. This information is for their convenience.</p>
 <pre><code class="language-python">SITENAME = u'Apache &lt;pmc&gt;'

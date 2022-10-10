@@ -249,7 +249,7 @@ asf_headings: False
 There is a blank line and the rest is the <code>text</code>.</p>
 <p>Code from <code>pelican-gfm</code> with some parts elided.</p>
 <pre><code class="language-python">    def read_source(self, source_path):
-        &quot;Read metadata and content from the source.&quot;
+        "Read metadata and content from the source."
 	...
 	# Fetch the source content, with a few appropriate tweaks
         with pelican.utils.pelican_open(source_path) as text:
@@ -309,7 +309,7 @@ There is a blank line and the rest is the <code>text</code>.</p>
 <h3>EZMD Reader</h3>
 <p>The <code>asfreader.py</code> plugin is responsible for <a href="#read-source">reading the source</a>, adding metadata, <a href="#ezt-translation">ezt translation</a>, and <a href="#render-gfm">rendering GFM</a></p>
 <pre><code class="language-python">    def add_data(self, text, metadata):
-        &quot;Mix in ASF data as metadata&quot;
+        "Mix in ASF data as metadata"
 
         asf_metadata = self.settings.get('ASF_DATA', { }).get('metadata')
         if asf_metadata:
@@ -340,14 +340,14 @@ There is a blank line and the rest is the <code>text</code>.</p>
 | V.P., [if-any projects.site][[][end]Apache [projects.display_name][if-any projects.site]]([projects.site])[end] | [projects.chair] |[end]
 </code></pre>
 <p>Featured projects:</p>
-<pre><code class="language-html">[for featured_projs]&lt;li [if-index featured_projs first]class=&quot;active&quot;[end]&gt;
-     &lt;a href=&quot;#[featured_projs.key_id]&quot; data-toggle=&quot;tab&quot;&gt;[featured_projs.display_name]&lt;/a&gt;
+<pre><code class="language-html">[for featured_projs]&lt;li [if-index featured_projs first]class="active"[end]&gt;
+     &lt;a href="#[featured_projs.key_id]" data-toggle="tab"&gt;[featured_projs.display_name]&lt;/a&gt;
 &lt;/li&gt;[end]
 </code></pre>
 <p>Insert a file as-is into the output:</p>
 <pre><code class="language-md">Title: Apache Download Mirrors
 
-[insertfile &quot;include/closer.ezt&quot;]
+[insertfile "include/closer.ezt"]
 </code></pre>
 <h3>EZT Code</h3>
 <p>Code from <code>asfreader.py</code></p>
@@ -412,7 +412,7 @@ There is a blank line and the rest is the <code>text</code>.</p>
 </code></pre>
 <p>From <code>pelican-gfm</code>:</p>
 <pre><code class="language-python">    def render(self, text):
-      &quot;Use cmark-gfm to render the Markdown into an HTML fragment.&quot;
+      "Use cmark-gfm to render the Markdown into an HTML fragment."
 
       parser = F_cmark_parser_new(OPTS)
       assert parser
@@ -520,7 +520,7 @@ ASF_GENID = {
     'headings_re': r'^h[1-4]',
     'permalinks': True,
     'toc': True,
-    'toc_headers': r&quot;h[1-4]&quot;,
+    'toc_headers': r"h[1-4]",
     'tables': True,
     'debug': False
 }
@@ -538,7 +538,7 @@ formed in 1995 to develop the Apache HTTP Server.
 <pre><code class="language-md">![Logo](images/logo.svg) {.float-right}
 </code></pre>
 <p>An HTML fragment is also feasible for a similar purpose</p>
-<pre><code class="language-html">&lt;div class=&quot;.pull-right&quot; style=&quot;float:right; border-style:dotted; width:200px; padding:5px; margin:5px&quot;&gt;
+<pre><code class="language-html">&lt;div class=".pull-right" style="float:right; border-style:dotted; width:200px; padding:5px; margin:5px"&gt;
 
 SEE INSTEAD: [Trademark Resources Site Map][resources].
 
@@ -548,7 +548,7 @@ SEE INSTEAD: [Trademark Resources Site Map][resources].
 <p>Code from <code>asfgenid.py</code> uses <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.html?highlight=javascript#">BeautifulSoup 4</a> to manipulate the rendered HTML. Here is an example:</p>
 <pre><code class="language-python"># from Apache CMS markdown/extensions/headerid.py - slugify in the same way as the Apache CMS
 def slugify(value, separator):
-    &quot;&quot;&quot; Slugify a string, to make it URL friendly. &quot;&quot;&quot;
+    """ Slugify a string, to make it URL friendly. """
     value = unicodedata.normalize('NFKD', value).encode('ascii', 'ignore')
     value = re.sub('[^\\w\\s-]', '', value.decode('ascii')).strip().lower()
     return re.sub('[%s\\s]+' % separator, separator, value)

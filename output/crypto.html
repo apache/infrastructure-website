@@ -125,11 +125,11 @@ Handling cryptography within an ASF release        </a>
 <ul>
 <li>the encryption source code is controlled by ECCN 5D002.</li>
 <li>the encryption source code will be publicly available (published and made available to the public without restrictions upon its further dissemination).</li>
-<li>a notification is sent to the U.S. Government's Bureau of Industry and Security (BIS) and the ENC Encryption Request Coordinator at or before making the code publicly available. Current ASF processes satisfy the &quot;publicly available&quot; requirement. The notification requirement is described <a href="#notify">below</a>. However, it is important to ensure the included cryptographic functionality meets the definition of <a href="https://cr.yp.to/export/ear2001/ccl5-pt2.pdf" target="_blank">ECCN D002</a>, which can be summarized as:
+<li>a notification is sent to the U.S. Government's Bureau of Industry and Security (BIS) and the ENC Encryption Request Coordinator at or before making the code publicly available. Current ASF processes satisfy the "publicly available" requirement. The notification requirement is described <a href="#notify">below</a>. However, it is important to ensure the included cryptographic functionality meets the definition of <a href="https://cr.yp.to/export/ear2001/ccl5-pt2.pdf" target="_blank">ECCN D002</a>, which can be summarized as:
 <ul>
 <li>Software specially designed or modified for the development, production or use of any of the other software of this list, or software designed to certify other software on this list; or</li>
-<li>Software using a &quot;symmetric algorithm&quot; employing a key length in excess of 56-bits; or</li>
-<li>Software using an &quot;asymmetric algorithm&quot; where the security of the algorithm is based on: factorization of integers in excess of 512 bits (e.g., RSA), computation of discrete logarithms in a multiplicative group of a finite field of size greater than 512 bits (e.g., Diffie-Hellman over Z/pZ), or other discrete logarithms in a group in excess of 112 bits (e.g., Diffie-Hellman over an elliptic curve).</li>
+<li>Software using a "symmetric algorithm" employing a key length in excess of 56-bits; or</li>
+<li>Software using an "asymmetric algorithm" where the security of the algorithm is based on: factorization of integers in excess of 512 bits (e.g., RSA), computation of discrete logarithms in a multiplicative group of a finite field of size greater than 512 bits (e.g., Diffie-Hellman over Z/pZ), or other discrete logarithms in a group in excess of 112 bits (e.g., Diffie-Hellman over an elliptic curve).</li>
 <li>Software designed or modified to perform cryptanalytic functions If the cryptographic functionality is limited to one of the above definitions, it should be classified as ECCN 5D002, and the remaining two steps should be taken (described below). If the release may contain cryptographic functionality beyond what is described above, please contact
 the <a href="/foundation/">ASF Vice President for Legal Affairs</a>.</li>
 </ul>
@@ -138,7 +138,7 @@ the <a href="/foundation/">ASF Vice President for Legal Affairs</a>.</li>
 <h3 id="sources">Update the Exports Page with Source Links<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h3>
 <p>To satisfy the BIS requirements to make source code available for inspection, while minimizing the number of <a href="#notify">notification emails</a> needed to be sent, the ASF maintains a single web page at <a href="https://www.apache.org/licenses/exports/" target="_blank"><a href="https://www.apache.org/licenses/exports/">https://www.apache.org/licenses/exports/</a></a> with links to the applicable source code for each version of each ASF product classified as ECCN 5D002.</p>
 <p>To make updates to this ASF-wide Exports page as simple and consistent as possible, the <a href="https://github.com/apache/www-site/blob/main/data/eccn/eccnmatrix.yaml" target="_blank">source matrix</a> is a .yaml file that anyone with site-dev karma (which includes all PMC chairs) can update. The exports web page is generated from this .yaml file.</p>
-<p>Test any edits to the exports page using both the site build process (view <code>index.html</code> before committing any changes) and by running the <code>bisnotice.xsl</code> transform on the product added/changed (see below). You can probably figure out how to format the information for your project's product by following the example of other projects and reading the page. If you have any further questions about the content, or if you are not sure that a BIS notice is required, please check the <a href="#faq">FAQs</a> first and then bring any remaining questions to the <code>legal-discuss</code> mailing list. Note that the product data should only be version-specific if the classification changes (e.g., Apache HTTP Server version 1.3 vs 2.0) or if the link to the controlled source code needs to change, such as if the encryption library included in the product for different releases came from different manufacturers. In addition, it is possible to include both controlled and non-controlled (ECCN &quot;n/a&quot;) products in the list, but a BIS notice is only necessary for the products that have at least one version classified as ECCN 5D002.</p>
+<p>Test any edits to the exports page using both the site build process (view <code>index.html</code> before committing any changes) and by running the <code>bisnotice.xsl</code> transform on the product added/changed (see below). You can probably figure out how to format the information for your project's product by following the example of other projects and reading the page. If you have any further questions about the content, or if you are not sure that a BIS notice is required, please check the <a href="#faq">FAQs</a> first and then bring any remaining questions to the <code>legal-discuss</code> mailing list. Note that the product data should only be version-specific if the classification changes (e.g., Apache HTTP Server version 1.3 vs 2.0) or if the link to the controlled source code needs to change, such as if the encryption library included in the product for different releases came from different manufacturers. In addition, it is possible to include both controlled and non-controlled (ECCN "n/a") products in the list, but a BIS notice is only necessary for the products that have at least one version classified as ECCN 5D002.</p>
 <h3 id="notify">Notify the U.S. Government of the release<a class="headerlink" href="#notify" title="Permanent link">&para;</a></h3>
 <p>After ensuring the distribution's cryptography qualifies for an exemption  under Section 742.15(b) and after ensuring the applicable source code is linked from the
 ASF-wide export page, but <strong>before publicly posting the distribution or committing the controlled code</strong>, send an email using the template below.</p>
@@ -164,7 +164,7 @@ SUBMITTED BY:         {PMC member sending email}
 SUBMITTED FOR:        Apache Software Foundation
 POINT OF CONTACT:     Secretary, Apache Software Foundation
 MANUFACTURER(S)       {list of origin of all crypto code, e.g.
-                         &quot;OpenSSL Project&quot; or &quot;Apache Software Foundation.&quot;
+                         "OpenSSL Project" or "Apache Software Foundation."
                          If product includes multiple crypto items from 
                          different origins, list all origins.}
 PRODUCT NAME/MODEL #: {Apache product name(s) that include the source
@@ -191,7 +191,7 @@ The Apache Software Foundation has classified this software as Export Commodity
    Control Number (ECCN) 5D002, which includes information security
    software using or performing cryptographic functions with asymmetric
    algorithms. The form and manner of this Apache Software Foundation
-   distribution makes it eligible for export under the &quot;publicly available&quot;
+   distribution makes it eligible for export under the "publicly available"
    Section 742.15(b) exemption (see the BIS Export Administration Regulations, 
    Section 742.15(b)) for both object code and source code.
 The following provides more details on the included cryptographic
@@ -200,7 +200,7 @@ The following provides more details on the included cryptographic
 <p>Be sure to add some information at the bottom of the notice about the components of the release including cryptography.</p>
 <h2 id="faq">Frequently Asked Questions<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
 <h4 id="faq-productname">What is the "PRODUCT NAME/MODEL #" for my product?<a class="headerlink" href="#faq-productname" title="Permanent link">&para;</a></h4>
-<p>The product name is the name of the ASF product (e.g. &quot;Apache Foo&quot;), even if the notification is being made about another manufacturer's cryptography included in the ASF product. Do not list the ASF product's version number.</p>
+<p>The product name is the name of the ASF product (e.g. "Apache Foo"), even if the notification is being made about another manufacturer's cryptography included in the ASF product. Do not list the ASF product's version number.</p>
 <h4 id="faq-manufacturer">What is the MANUFACTURER?<a class="headerlink" href="#faq-manufacturer" title="Permanent link">&para;</a></h4>The manufacture is the name of the individual/organization that built the crypto item included in the ASF product, whether that is the ASF itself or some other open source project or organization.
 <h4 id="faq-notification">What is the NOTIFICATION?<a class="headerlink" href="#faq-notification" title="Permanent link">&para;</a></h4>
 <p>the notification is a URL that directly or indirectly points to the source code for the crypto item built by the listed <a href="#faq-manufacturer">manufacturer</a> that is

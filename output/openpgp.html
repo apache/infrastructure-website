@@ -210,7 +210,7 @@ configuration has been updated to avoid SHA-1, all new keys generated will use t
     Really update the preferences? (y/N) y
 
     You need a passphrase to unlock the secret key for
-    user: &quot;Example Key (NOT FOR DISTRIBUTION) &lt;bogus@example.org&gt;&quot;
+    user: "Example Key (NOT FOR DISTRIBUTION) &lt;bogus@example.org&gt;"
     1024-bit DSA key, ID F8B7B4FD, created 2009-08-12
 
     pub  1024D/F8B7B4FD  created: 2009-08-12  expires: 2009-09-11  usage: SC  
@@ -309,13 +309,13 @@ keys are used for both encryption and signing. Longer key lengths are available.
     You need a user ID to identify your key; the software constructs the user
     ID
     from the Real Name, Comment and Email Address in this form:
-        &quot;Heinrich Heine (Der Dichter) &lt;heinrichh@duesseldorf.de&gt;&quot;
+        "Heinrich Heine (Der Dichter) &lt;heinrichh@duesseldorf.de&gt;"
 
     Real name: Robert Burrell Donkin 
     Email address: rdonkin@apache.org
     Comment: CODE SIGNING KEY
     You selected this USER-ID:
-        &quot;Robert Burrell Donkin (CODE SIGNING KEY) &lt;rdonkin@apache.org&gt;&quot;
+        "Robert Burrell Donkin (CODE SIGNING KEY) &lt;rdonkin@apache.org&gt;"
 
     Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O
     You need a Passphrase to protect your secret key.
@@ -352,7 +352,7 @@ keys are used for both encryption and signing. Longer key lengths are available.
     Email address: rdonkin@apache.org
     Comment: CODE SIGNING KEY
     You selected this USER-ID:
-        &quot;Robert Burrell Donkin (CODE SIGNING KEY) &lt;rdonkin@apache.org&gt;&quot;
+        "Robert Burrell Donkin (CODE SIGNING KEY) &lt;rdonkin@apache.org&gt;"
 
     Change (N)ame, (C)omment, (E)mail or (O)kay/(Q)uit? O
     You need a Passphrase to protect your secret key.
@@ -577,8 +577,8 @@ all times.</p>
 <pre><code>    :::console
     $ gpg --import /tmp/new.sec 
     gpg: key E2B054B8: secret key imported
-    gpg: key E2B054B8: public key &quot;Alice Example (EXAMPLE NEW KEY)
-    &lt;alice@example.org&gt;&quot; imported
+    gpg: key E2B054B8: public key "Alice Example (EXAMPLE NEW KEY)
+    &lt;alice@example.org&gt;" imported
     gpg: Total number processed: 1
     gpg:               imported: 1  (RSA: 1)
     gpg:       secret keys read: 1
@@ -609,7 +609,7 @@ all times.</p>
 <p>If your key has been compromised, you <strong>must not</strong> transition. Instead, <a href="release-signing.html#revoke-key">revoke</a> the old key and replace it with a new one immediately. <strong>Do not</strong> use a transition period.</p>
 <h2 id="revocation-certs">How to use revocation certificates<a class="headerlink" href="#revocation-certs" title="Permanent link">&para;</a></h2>
 <p>When a private key is lost or compromised, a <a href="release-signing.html#revocation-cert">revocation certificate</a> should be
-<a href="release-signing.html#revoke-cert">distributed</a> to <a href="release-signing.html#keyserver">publicly</a>  <a href="release-signing.html#delete-vs-revoke">revoke the key</a>. In the event of a compromise or loss of the key, it is best to create a new revocation certification including the particulars of the case. Since this may not always be possible, you can <a href="#generate-key">generate</a> and <a href="release-signing.html#revocation-certificate-storage">securely
+<a href="release-signing.html#revoke-cert">distributed</a> to <a href="release-signing.html#keyserver">publicly</a> <a href="release-signing.html#delete-vs-revoke">revoke the key</a>. In the event of a compromise or loss of the key, it is best to create a new revocation certification including the particulars of the case. Since this may not always be possible, you can <a href="#generate-key">generate</a> and <a href="release-signing.html#revocation-certificate-storage">securely
 store</a> generic revocation certificates for each new key pair.</p>
 <h3 id="revocation-cert-generic">Generic revocation certificates<a class="headerlink" href="#revocation-cert-generic" title="Permanent link">&para;</a></h3>
 <p>When you create a new <a href="release-signing.html#public-private">key pair</a>, also generate and store generic revocation certificates for that key pair. We recommend that you generate a certificate (following the instructions in the next section) for each appropriate
@@ -624,7 +624,7 @@ revocation reason type:</p>
 <p>We recommend that you store these certificates directly onto secure media with good long term stability (for example, an encrypted file
 system on a top end USB drive or a CDROM). Print and store hard copies of the certificates yourself, and with trusted third parties.</p>
 <h3 id="revocation-cert-gen">How to generate a revocation certificate<a class="headerlink" href="#revocation-cert-gen" title="Permanent link">&para;</a></h3>
-<p>Revocation certificates include a small amount of additional information&quot;</p>
+<p>Revocation certificates include a small amount of additional information"</p>
 <p>One of four machine readable reason types:</p>
 <ul>
 <li>No reason specified - <em>a catch-all category</em></li>
@@ -659,7 +659,7 @@ ease of handling) revocation certificate for key <code>AD741727</code> like this
     Is this okay? (y/N) y
 
     You need a passphrase to unlock the secret key for
-    user: &quot;Alice Example (EXAMPLE OF OLD KEY) &lt;alice@example.org&gt;&quot;
+    user: "Alice Example (EXAMPLE OF OLD KEY) &lt;alice@example.org&gt;"
     1024-bit DSA key, ID AD741727, created 2009-08-20
 
     Revocation certificate created.
@@ -696,7 +696,7 @@ cannot include the specifics and so should indicate this.</p>
     Is this okay? (y/N) y
 
     You need a passphrase to unlock the secret key for
-    user: &quot;Alice Example (EXAMPLE OF OLD KEY) &lt;alice@example.org&gt;&quot;
+    user: "Alice Example (EXAMPLE OF OLD KEY) &lt;alice@example.org&gt;"
     1024-bit DSA key, ID AD741727, created 2009-08-20
 
     Revocation certificate created.
@@ -749,7 +749,7 @@ line. For example, to encrypt a document <code>INPUT_FILENAME</code> using <code
 <p>The suffix <code>.asc</code> is conventional for ASCII armored public key exports. So, for example, <code>A6EE6908.asc</code> is a reasonable choice for the export of key <code>A6EE6908</code>. Record the URL (for example <code>http://home.apache.org/~rdonkin/A6EE6908.asc</code> ) for use later in your
 <a href="#foaf">FOAF</a>.</p>
 <p>If your Apache home page contains details of your keys (recommended), update the <a href="release-signing.html#fingerprint">fingerprints</a> and the <a href="release-signing.html#ascii">ASCII armored</a> <a href="release-signing.html#public-private">public key</a> <a href="release-signing.html#export">export</a>. Any browser with a suitable <a href="release-signing.html#openpgp">OpenPGP</a> plugin (for example, <a href="https://www.mozilla.com/firefox/" target="_blank">Firefox</a> with the <a href="https://www.getfiregpg.org" target="_blank">FireGPG plugin</a>) will let you download the key into the local keyring.</p>
-<p>For example, <a href="https://home.apache.org/~rdonkin/" target="_blank">this home page contains a section with fingerprints and a for exporting them. At the bottom, the export has been inlined so browsers with <a href="release-signing.html#opengpg">OpenPGP</a> support can import the keys.</p>
+<p>For example, <a href="https://home.apache.org/~rdonkin/" target="_blank">this home page contains a section with fingerprints and a for exporting them. At the bottom, the export has been inlined so browsers with <a href="release-signing.html#opengpg">OpenPGP</a> support can import the keys.</a></p>
 <p>To create an <a href="release-signing.html#ascii">ASCII armored</a> <a href="release-signing.html#public-private">public key</a> <a href="release-signing.html#export">export</a>:</p>
 <ul>
 <li>When using a <a href="release-signing.html#transition">transition</a>, follow these <a href="key-transition.html#transition-export">instructions</a>.</li>
@@ -768,13 +768,13 @@ line. For example, to encrypt a document <code>INPUT_FILENAME</code> using <code
         &lt;wot:hex_id&gt;A6EE6908&lt;/wot:hex_id&gt;
         &lt;wot:fingerprint&gt;597C729B02371932E77CB9D5EDB8C082A6EE6908&lt;/wot:fingerprint&gt;
         &lt;wot:pubkeyAddress
-            rdf:resource=&quot;http://home.apache.org/~rdonkin/A6EE6908.asc&quot;/&gt;
+            rdf:resource="http://home.apache.org/~rdonkin/A6EE6908.asc"/&gt;
       &lt;/wot:PubKey&gt;
       &lt;wot:PubKey&gt;
         &lt;wot:hex_id&gt;B1313DE2&lt;/wot:hex_id&gt;
         &lt;wot:fingerprint&gt;EA6141E8E49E560C224B2F74D5334E75B1313DE2&lt;/wot:fingerprint&gt;
         &lt;wot:pubkeyAddress
-            rdf:resource=&quot;http://home.apache.org/~rdonkin/A6EE6908.asc&quot;/&gt;
+            rdf:resource="http://home.apache.org/~rdonkin/A6EE6908.asc"/&gt;
       &lt;/wot:PubKey&gt;
     &lt;/wot:hasKey&gt;
 </code></pre>
@@ -819,8 +819,8 @@ never met Charlie. So</p>
     gpg: 3 marginal(s) needed, 1 complete(s) needed, PGP trust model
     gpg: depth: 0  valid:   1  signed:   1  trust: 0-, 0q, 0n, 0m, 0f, 1u
     gpg: depth: 1  valid:   1  signed:   0  trust: 1-, 0q, 0n, 0m, 0f, 0u
-    gpg: Good signature from &quot;Charlie (EXAMPLE ONLY NOT FOR DISTRIBUTION)
-    &lt;charlie@example.org&gt;&quot;
+    gpg: Good signature from "Charlie (EXAMPLE ONLY NOT FOR DISTRIBUTION)
+    &lt;charlie@example.org&gt;"
     gpg: WARNING: This key is not certified with a trusted signature!
     gpg:          There is no indication that the signature belongs to the
     owner.
@@ -852,7 +852,7 @@ never met Charlie. So</p>
 </code></pre>
 <p>Alice finds it signed by <code>81590910</code> - the master key for this keyring. Alice can therefore trust that Charlie has signed the file provided so long as Alice trusts Bob to verify Charlie's identity.</p>
 <h4 id="wot-automated">Automated trust<a class="headerlink" href="#wot-automated" title="Permanent link">&para;</a></h4>
-<p>Most clients allow automation of this process of transitive trust resolution. This is easier and more convenient than by hand but clients differ in the amount of human control they provide. Some clients (including GnuPG) are highly configurable (allowing different trust models to be used) and allow finely grained control over trust placed in each signed key. For more details see <a href="https://www.gnupg.org/gph/en/manual.html" target="_blank">The GNU Privacy Handbook&lt;/a&lt;</p>
+<p>Most clients allow automation of this process of transitive trust resolution. This is easier and more convenient than by hand but clients differ in the amount of human control they provide. Some clients (including GnuPG) are highly configurable (allowing different trust models to be used) and allow finely grained control over trust placed in each signed key. For more details see <a href="https://www.gnupg.org/gph/en/manual.html" target="_blank">The GNU Privacy Handbook&lt;/a&lt;</a></p>
 <h3 id="apache-wot">Code signing keys and the Web of Trust<a class="headerlink" href="#apache-wot" title="Permanent link">&para;</a></h3>
 <p>It is vital that Apache code signing keys are linked into a strong <a href="release-signing.html#web-of-trust">web of trust</a>. This allows independent verification of the fidelity of Apache releases by anyone strongly linked to this web. In particular, this lets two important groups independently verify releases:</p>
 <ul>
@@ -868,7 +868,7 @@ never met Charlie. So</p>
 <p>Other Apache events may also hold keysigning parties (and most will if asked). Typically, these will be smaller and less informal.</p>
 <h4 id="wot-apache-party">Informal Apache meetings<a class="headerlink" href="#wot-apache-party" title="Permanent link">&para;</a></h4>
 <p>Smaller, informal Apache-sponsored meetings are also an opportunity to swap keys (as well as gossip) with other committers.</p>
-<p>Subscribe to the party list (see committer documentation) to find out about informal meetings. When you travel, take advantage of this opportunity to meet up with other Apache committers by posting to the party list. The &lt;a href=&quot;<a href="https://community.zones.apache.org/map.html">https://community.zones.apache.org/map.html</a>&quot; target=&quot;_blank&gt;committer map</a> shows locations for many committers. If there are committers near you, you can organise an informal meetup.</p>
+<p>Subscribe to the party list (see committer documentation) to find out about informal meetings. When you travel, take advantage of this opportunity to meet up with other Apache committers by posting to the party list. The &lt;a href="<a href="https://community.zones.apache.org/map.html">https://community.zones.apache.org/map.html</a>" target="_blank&gt;committer map shows locations for many committers. If there are committers near you, you can organise an informal meetup.</p>
 <h3 id="wot-link-in">How to link into a public web of trust<a class="headerlink" href="#wot-link-in" title="Permanent link">&para;</a></h3>
 <p>In short, expect that:</p>
 <ul>

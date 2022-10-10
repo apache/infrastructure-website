@@ -135,32 +135,32 @@ For example <code>https://pubsub.apache.org:2070/private/svn/private/committers/
 <code>https://svn.apache.org/repos/private/committers/board/</code></p>
 <h2>Event payload examples</h2>
 <p>Pings are simple objects like this:</p>
-<pre><code class="language-json">{&quot;stillalive&quot;: 1583973410.9620552}
+<pre><code class="language-json">{"stillalive": 1583973410.9620552}
 </code></pre>
 <p>An example of a real event payload, in this case a git commit, could be (emails redacted in this example):</p>
 <pre><code class="language-json">{
-	&quot;commit&quot;: {
-		&quot;body&quot;: &quot;[maven-release-plugin] prepare for next development iteration\n&quot;,
-		&quot;committer&quot;: &quot;sblackmon &lt;s...@apache.org&gt;&quot;,
-		&quot;hash&quot;: &quot;8e6f956&quot;,
-		&quot;log&quot;: &quot;[maven-release-plugin] prepare for next development iteration&quot;,
-		&quot;repository&quot;: &quot;git&quot;,
-		&quot;sha&quot;: &quot;8e6f956c2eda06ca9debf21634cedcecc96293ff&quot;,
-		&quot;author&quot;: &quot;sblackmon&quot;,
-		&quot;files&quot;: [&quot;pom.xml&quot;, &quot;streams-cli/pom.xml&quot;, &quot;streams-components/pom.xml&quot;],
-		&quot;server&quot;: &quot;gitbox&quot;,
-		&quot;project&quot;: &quot;streams&quot;,
-		&quot;autopublish&quot;: false,
-		&quot;date&quot;: &quot;Wed Mar 11 19:25:06 2020 -0500&quot;,
-		&quot;commited&quot;: &quot;Wed Mar 11 19:25:06 2020 -0500&quot;,
-		&quot;subject&quot;: &quot;[maven-release-plugin] prepare for next development iteration&quot;,
-		&quot;ref&quot;: &quot;refs/heads/master&quot;,
-		&quot;email&quot;: &quot;s...@apache.org&quot;,
-		&quot;authored&quot;: &quot;Wed Mar 11 19:25:06 2020 -0500&quot;,
-		&quot;ref_names&quot;: &quot;&quot;
+	"commit": {
+		"body": "[maven-release-plugin] prepare for next development iteration\n",
+		"committer": "sblackmon &lt;s...@apache.org&gt;",
+		"hash": "8e6f956",
+		"log": "[maven-release-plugin] prepare for next development iteration",
+		"repository": "git",
+		"sha": "8e6f956c2eda06ca9debf21634cedcecc96293ff",
+		"author": "sblackmon",
+		"files": ["pom.xml", "streams-cli/pom.xml", "streams-components/pom.xml"],
+		"server": "gitbox",
+		"project": "streams",
+		"autopublish": false,
+		"date": "Wed Mar 11 19:25:06 2020 -0500",
+		"commited": "Wed Mar 11 19:25:06 2020 -0500",
+		"subject": "[maven-release-plugin] prepare for next development iteration",
+		"ref": "refs/heads/master",
+		"email": "s...@apache.org",
+		"authored": "Wed Mar 11 19:25:06 2020 -0500",
+		"ref_names": ""
 	},
-	&quot;pubsub_topics&quot;: [&quot;git&quot;, &quot;streams&quot;, &quot;commit&quot;],
-	&quot;pubsub_path&quot;: &quot;/git/streams/commit&quot;
+	"pubsub_topics": ["git", "streams", "commit"],
+	"pubsub_path": "/git/streams/commit"
 }
 </code></pre>
 <p>Payloads vary depending on what they represent, so check both what sub-objects are present in the payload and the <code>pubsub_path</code> variable, which will show the full payload event path and explain which type is being sent.</p>
@@ -181,7 +181,7 @@ or continue fetching data till you hit a chunk terminated with a newline.</p>
 <pre><code class="language-python">import asfpy.pubsub
 
 def process_event(payload):
-   print(&quot;Got an event from PyPubSub!&quot;)
+   print("Got an event from PyPubSub!")
    ...
 
 def main():
@@ -191,8 +191,8 @@ def main():
 </code></pre>
 <h3>Using PyPubSub with node.js</h3>
 <p>This sample snippet lets you use <code>node.js</code> for listening for and processing pubsub events:</p>
-<pre><code class="language-javascript">const http = require(&quot;http&quot;);
-const https = require(&quot;https&quot;);
+<pre><code class="language-javascript">const http = require("http");
+const https = require("https");
 
 class PyPubSub {
     constructor(url) {
@@ -202,13 +202,13 @@ class PyPubSub {
 
     attach(func) {
         this.getter.get(this.url, res =&gt; {
-            res.setEncoding(&quot;utf8&quot;);
+            res.setEncoding("utf8");
             let body = '';
-            res.on(&quot;data&quot;, data =&gt; {
+            res.on("data", data =&gt; {
 	        // Be mindful of proxies that split pubsub chunks into smaller ones,
 		// only load the JSON blob once we hit a newline (\n)
                 body += data;
-                if (data.endsWith(&quot;\n&quot;)) {
+                if (data.endsWith("\n")) {
                     let payload = JSON.parse(body);
                     body = '';
                     func(payload);
@@ -223,10 +223,10 @@ class PyPubSub {
 function process(payload) {
     // ping-back?
     if (payload.stillalive) {
-        console.log(&quot;Got a ping-back&quot;);
+        console.log("Got a ping-back");
     // Actual payload? process it!
     } else {
-        console.log(&quot;Got a payload from PyPubSub!&quot;);
+        console.log("Got a payload from PyPubSub!");
         console.log(payload);
     }
 }
@@ -243,9 +243,9 @@ require 'thread'
 pubsub_URL = 'https://pubsub.apache.org:2070/'
 
 def do_stuff_with(event)
-  print(&quot;Got a pubsub event!:\n&quot;)
+  print("Got a pubsub event!:\n")
   print(event)
-  print(&quot;\n&quot;)
+  print("\n")
 end
 
 def listen(url)
@@ -260,11 +260,11 @@ def listen(url)
             body += chunk
 	    # All chunks are terminated with \n. Since 2070 can split events into 64kb sub-chunks
 	    # we wait till we have gotten a newline, before trying to parse the JSON.
-            if chunk.end_with? &quot;\n&quot;
+            if chunk.end_with? "\n"
               event = JSON.parse(body.chomp)
               body = ''
               if event['stillalive']  # pingback
-                print(&quot;ping? PONG!\n&quot;)
+                print("ping? PONG!\n")
               else
                 do_stuff_with(event)
               end
@@ -286,7 +286,7 @@ end
 
 begin
   ps_thread = listen(pubsub_URL)
-  print(&quot;Pubsub thread started, waiting for results...\n&quot;)
+  print("Pubsub thread started, waiting for results...\n")
   while ps_thread.alive?
     sleep 10
   end

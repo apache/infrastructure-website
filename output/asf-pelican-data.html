@@ -319,34 +319,34 @@ class Blog(wrapper): pass
 <h3>Board of Directors</h3>
 <p>The Board of Directors sequence is derived first.</p>
 <pre><code class="language-json">  ...
-  &quot;board&quot;: {
-    &quot;roster&quot;: {
-      &quot;bdelacretaz&quot;: {
-        &quot;name&quot;: &quot;Bertrand Delacretaz&quot;
+  "board": {
+    "roster": {
+      "bdelacretaz": {
+        "name": "Bertrand Delacretaz"
       },
-      &quot;fielding&quot;: {
-        &quot;name&quot;: &quot;Roy T. Fielding&quot;
+      "fielding": {
+        "name": "Roy T. Fielding"
       },
-      &quot;sharan&quot;: {
-        &quot;name&quot;: &quot;Sharan Foga&quot;
+      "sharan": {
+        "name": "Sharan Foga"
       },
-      &quot;jmclean&quot;: {
-        &quot;name&quot;: &quot;Justin Mclean&quot;
+      "jmclean": {
+        "name": "Justin Mclean"
       },
-      &quot;rubys&quot;: {
-        &quot;name&quot;: &quot;Sam Ruby&quot;
+      "rubys": {
+        "name": "Sam Ruby"
       },
-      &quot;clr&quot;: {
-        &quot;name&quot;: &quot;Craig L Russell&quot;
+      "clr": {
+        "name": "Craig L Russell"
       },
-      &quot;rvs&quot;: {
-        &quot;name&quot;: &quot;Roman Shaposhnik&quot;
+      "rvs": {
+        "name": "Roman Shaposhnik"
       },
-      &quot;striker&quot;: {
-        &quot;name&quot;: &quot;Sander Striker&quot;
+      "striker": {
+        "name": "Sander Striker"
       },
-      &quot;wusheng&quot;: {
-        &quot;name&quot;: &quot;Sheng Wu&quot;
+      "wusheng": {
+        "name": "Sheng Wu"
       }
     }
   }
@@ -365,7 +365,7 @@ class Blog(wrapper): pass
 <p>Here is the Python code used to select the board roster from committee info.</p>
 <pre><code class="language-python">    # select sub dictionary
     if 'path' in sequence:
-        print(f'path: {sequence[&quot;path&quot;]}')
+        print(f'path: {sequence["path"]}')
         parts = sequence['path'].split('.')
         for part in parts:
             reference = reference[part]
@@ -381,7 +381,7 @@ def sequence_dict(seq, reference):
             reference[refs]['key_id'] = refs
             for item in reference[refs]:
                 if isinstance(reference[refs][item], bool):
-                    # fix up any Boolean values to be ezt.boolean - essentially True -&gt; &quot;yes&quot;
+                    # fix up any Boolean values to be ezt.boolean - essentially True -&gt; "yes"
                     reference[refs][item] = ezt.boolean(reference[refs][item])
             # convert the dict into an object with attributes and append to the sequence
             sequence.append(type(seq, (), reference[refs]))
@@ -389,44 +389,44 @@ def sequence_dict(seq, reference):
 </code></pre>
 <h3>Officers</h3>
 <p>How the system assembles the list of Foundation officers.</p>
-<pre><code class="language-json">    &quot;boardchair&quot;: {
-      &quot;display_name&quot;: &quot;Board Chair&quot;,
-      &quot;paragraph&quot;: &quot;Executive Officers&quot;,
-      &quot;roster&quot;: {
-        &quot;striker&quot;: {
-          &quot;name&quot;: &quot;Sander Striker&quot;
+<pre><code class="language-json">    "boardchair": {
+      "display_name": "Board Chair",
+      "paragraph": "Executive Officers",
+      "roster": {
+        "striker": {
+          "name": "Sander Striker"
         }
       }
     },
 </code></pre>
 <p>Committees / PMC Chairs. Roster and Reporting is omitted.</p>
 <pre><code class="language-json">    ...
-    &quot;zookeeper&quot;: {
-      &quot;display_name&quot;: &quot;ZooKeeper&quot;,
-      &quot;site&quot;: &quot;http://zookeeper.apache.org/&quot;,
-      &quot;description&quot;: &quot;Centralized service for maintaining configuration information&quot;,
-      &quot;mail_list&quot;: &quot;zookeeper&quot;,
-      &quot;established&quot;: &quot;11/2010&quot;,
-      &quot;chair&quot;: {
-        &quot;fpj&quot;: {
-          &quot;name&quot;: &quot;Flavio Junqueira&quot;
+    "zookeeper": {
+      "display_name": "ZooKeeper",
+      "site": "http://zookeeper.apache.org/",
+      "description": "Centralized service for maintaining configuration information",
+      "mail_list": "zookeeper",
+      "established": "11/2010",
+      "chair": {
+        "fpj": {
+          "name": "Flavio Junqueira"
         }
       },
-      &quot;pmc&quot;: true
+      "pmc": true
     },
-    &quot;legal&quot;: {
-      &quot;display_name&quot;: &quot;Legal Affairs&quot;,
-      &quot;site&quot;: null,
-      &quot;description&quot;: null,
-      &quot;mail_list&quot;: &quot;legal&quot;,
-      &quot;established&quot;: &quot;03/2007&quot;,
-      &quot;chair&quot;: {
-        &quot;rvs&quot;: {
-          &quot;name&quot;: &quot;Roman Shaposhnik&quot;
+    "legal": {
+      "display_name": "Legal Affairs",
+      "site": null,
+      "description": null,
+      "mail_list": "legal",
+      "established": "03/2007",
+      "chair": {
+        "rvs": {
+          "name": "Roman Shaposhnik"
         }
       },
-      &quot;pmc&quot;: false,
-      &quot;paragraph&quot;: &quot;Board Committees&quot;
+      "pmc": false,
+      "paragraph": "Board Committees"
     },
     ...
 </code></pre>
@@ -454,14 +454,14 @@ def sequence_dict(seq, reference):
 <p>We've already seen the code for <code>path</code> above. Here is the code that invokes <code>trim</code> and <code>asfid</code>:</p>
 <pre><code class="language-python">    # remove irrelevant keys
     if 'trim' in sequence:
-        print(f'trim: {sequence[&quot;trim&quot;]}')
+        print(f'trim: {sequence["trim"]}')
         parts = sequence['trim'].split(',')
         for part in parts:
             remove_part(reference, part)
 
     # transform roster and chair patterns
     if 'asfid' in sequence:
-        print(f'asfid: {sequence[&quot;asfid&quot;]}')
+        print(f'asfid: {sequence["asfid"]}')
         asfid_part(reference, sequence['asfid'])
 </code></pre>
 <p>Here is the code that trims a key from a dictionary:</p>
@@ -488,7 +488,7 @@ def asfid_part(reference, part):
 <p>The <code>ci</code> data model is a dictionary we need to improve the display of officers on the ASF main site.</p>
 <pre><code class="language-python">    # this dictionary is derived from sub-dictionaries
     if 'dictionary' in sequence:
-        print(f'dictionary: {sequence[&quot;dictionary&quot;]}')
+        print(f'dictionary: {sequence["dictionary"]}')
         reference = { }
         paths = sequence['dictionary'].split(',')
         # create a dictionary from the keys in one or more sub-dictionaries
@@ -550,14 +550,14 @@ def alpha_part(reference, part):
 <p>Here is the code to copy a sequence, take a random sample, add the logo (or the ASF feather if there is no product logo), and, for featured podlings, adjust the name:</p>
 <pre><code class="language-python">    # this sequence is derived from another sequence
     if 'sequence' in sequence:
-        print(f'sequence: {sequence[&quot;sequence&quot;]}')
+        print(f'sequence: {sequence["sequence"]}')
         reference = metadata[sequence['sequence']]
         # sequences derived from prior sequences do not need to be converted to a sequence
         is_sequence = True
 
     # this sequence is a random sample of another sequence
     if 'random' in sequence:
-        print(f'random: {sequence[&quot;random&quot;]}')
+        print(f'random: {sequence["random"]}')
         if is_sequence:
             reference = random.sample(reference, sequence['random'])
         else:
@@ -565,12 +565,12 @@ def alpha_part(reference, part):
 
     # for a project or podling see if the logo exists w/HEAD and set the relative path.
     if 'logo' in sequence:
-        print(f'logo: {sequence[&quot;logo&quot;]}')
+        print(f'logo: {sequence["logo"]}')
         if is_sequence:
             # determine the project or podling logo
             reference = add_logo(reference, sequence['logo'])
             if seq == 'featured_pods':
-                # for podlings strip &quot;Apache&quot; from the beginning and &quot;(incubating)&quot; from the end.
+                # for podlings strip "Apache" from the beginning and "(incubating)" from the end.
                 # this is Sally's request
                 for item in reference:
                     setattr(item, 'name', ' '.join(item.name.split(' ')[1:-1]))
@@ -649,7 +649,7 @@ def split_list(metadata, seq, reference, split):
 <h3>Adding a custom data source</h3>
 <pre><code class="language-python">    # Lift data from ASF_DATA['data'] into METADATA
     if 'data' in asf_data:
-        print(f'Processing {asf_data[&quot;data&quot;]}')
+        print(f'Processing {asf_data["data"]}')
         config_data = read_config(asf_data['data'])
         for key in config_data:
             # first check for data that is a singleton with special handling
@@ -704,40 +704,40 @@ def process_sequence(metadata, seq, sequence, load, debug):
 
     # description
     if 'description' in sequence:
-        print(f'{seq}: {sequence[&quot;description&quot;]}')
+        print(f'{seq}: {sequence["description"]}')
 
     # select sub dictionary
     if 'path' in sequence:
-        print(f'path: {sequence[&quot;path&quot;]}')
+        print(f'path: {sequence["path"]}')
         parts = sequence['path'].split('.')
         for part in parts:
             reference = reference[part]
 
     # filter dictionary by attribute value. if filter is false discard
     if 'where' in sequence:
-        print(f'where: {sequence[&quot;where&quot;]}')
+        print(f'where: {sequence["where"]}')
         where_parts(reference, sequence['where'])
 
     # remove irrelevant keys
     if 'trim' in sequence:
-        print(f'trim: {sequence[&quot;trim&quot;]}')
+        print(f'trim: {sequence["trim"]}')
         parts = sequence['trim'].split(',')
         for part in parts:
             remove_part(reference, part)
 
     # transform roster and chair patterns
     if 'asfid' in sequence:
-        print(f'asfid: {sequence[&quot;asfid&quot;]}')
+        print(f'asfid: {sequence["asfid"]}')
         asfid_part(reference, sequence['asfid'])
 
     # add first letter of alphabetic categories
     if 'alpha' in sequence:
-        print(f'alpha: {sequence[&quot;alpha&quot;]}')
+        print(f'alpha: {sequence["alpha"]}')
         alpha_part(reference, sequence['alpha'])
 
     # this dictionary is derived from sub-dictionaries
     if 'dictionary' in sequence:
-        print(f'dictionary: {sequence[&quot;dictionary&quot;]}')
+        print(f'dictionary: {sequence["dictionary"]}')
         reference = { }
         paths = sequence['dictionary'].split(',')
         # create a dictionary from the keys in one or more sub-dictionaries
@@ -749,14 +749,14 @@ def process_sequence(metadata, seq, sequence, load, debug):
 
     # this sequence is derived from another sequence
     if 'sequence' in sequence:
-        print(f'sequence: {sequence[&quot;sequence&quot;]}')
+        print(f'sequence: {sequence["sequence"]}')
         reference = metadata[sequence['sequence']]
         # sequences derived from prior sequences do not need to be converted to a sequence
         is_sequence = True
 
     # this sequence is a random sample of another sequence
     if 'random' in sequence:
-        print(f'random: {sequence[&quot;random&quot;]}')
+        print(f'random: {sequence["random"]}')
         if is_sequence:
             reference = random.sample(reference, sequence['random'])
         else:
@@ -764,12 +764,12 @@ def process_sequence(metadata, seq, sequence, load, debug):
 
     # for a project or podling see if the logo exists w/HEAD and set the relative path.
     if 'logo' in sequence:
-        print(f'logo: {sequence[&quot;logo&quot;]}')
+        print(f'logo: {sequence["logo"]}')
         if is_sequence:
             # determine the project or podling logo
             reference = add_logo(reference, sequence['logo'])
             if seq == 'featured_pods':
-                # for podlings strip &quot;Apache&quot; from the beginning and &quot;(incubating)&quot; from the end.
+                # for podlings strip "Apache" from the beginning and "(incubating)" from the end.
                 # this is Sally's request
                 for item in reference:
                     setattr(item, 'name', ' '.join(item.name.split(' ')[1:-1]))
@@ -778,7 +778,7 @@ def process_sequence(metadata, seq, sequence, load, debug):
 
     # this sequence is a sorted list divided into multiple columns
     if 'split' in sequence:
-        print(f'split: {sequence[&quot;split&quot;]}')
+        print(f'split: {sequence["split"]}')
         if is_sequence:
             # create a sequence for each column
             split_list(metadata, seq, reference, sequence['split'])
