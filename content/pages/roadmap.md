@@ -18,3 +18,4 @@ for (let element of document.querySelectorAll("link, img")) {
     }
 }
 </script>
+
