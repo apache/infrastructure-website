@@ -25,3 +25,6 @@ content:
     - highlight
     - images
     - fonts
+
+genid:
+  unsafe: yes
