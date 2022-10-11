@@ -120,20 +120,26 @@ Project Code Repository Policy        </a>
 <h4>Git customizations</h4>
 <p>Git offers a number of customizations for committing code to a repository. Apache does not support all of them for its projects. For instance:</p>
 <ul>
-<li>
-<p><strong>supported</strong></p>
+<li><strong>supported</strong>
 <ul>
-<li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-the-automatic-deletion-of-branches" target="_blank">head branches automatically deleted after pull requests are merged</a>.</li>
-</ul>
-</li>
-<li>
-<p><strong>not supported</strong></p>
-<ul>
-<li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-auto-merge-for-pull-requests-in-your-repository" target="_blank">auto-merge of pull requests</a>.</li>
+<li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-the-automatic-deletion-of-branches" target="_blank">Head branches automatically deleted after pull requests are merged</a>.</li>
+<li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-squashing-for-pull-requests" target="_blank">Commit squashing for pull requests</a>.</li>
+<li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-squashing-for-pull-requests" target="_blank">Default to pull request titles for squash commits</a>.</li>
+<li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-merging-for-pull-requests" target="_blank">Commit merging for pull requests</a>.</li>
+<li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-rebasing-for-pull-requests" target="_blank">Commit rebasing for pull requests</a>.</li>
+<li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-suggestions-to-update-pull-request-branches" target="_blank">Always update a pull request branch when it is not up to date with the base branch</a>.</li>
 </ul>
 </li>
 </ul>
 <p>To deploy one of these customizations for your project's repository, ask Infra for help via a Jira ticket.</p>
+<ul>
+<li><strong>not supported</strong>
+<ul>
+<li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-auto-merge-for-pull-requests-in-your-repository" target="_blank">Auto-merge of pull requests</a>.</li>
+<li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue" target="_blank">Merge queues</a>. This feature is in limited beta.</li>
+</ul>
+</li>
+</ul>
 <h3>Subversion directories</h3>
 <p>Typically, the Incubator PMC makes a Jira request to Infra to create an SVN directory for a graduating project, or for a project joining the ASF with an existing SVN directory. If a project needs a subdirectory for a specific purpose, it requests its creation in a Jira ticket to Infra.</p>
 <p>You can find a list of ASF Subversion directories at <a href="https://svn.apache.org/viewvc" target="_blank">svn.apache.org/viewvc</a>.</p>
