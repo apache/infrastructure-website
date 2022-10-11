@@ -19,12 +19,19 @@ Each Apache project can have a directory in the Apache Subversion repository, or
 Git offers a number of customizations for committing code to a repository. Apache does not support all of them for its projects. For instance:
 
   - **supported**
-    -  <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-the-automatic-deletion-of-branches" target="_blank">head branches automatically deleted after pull requests are merged</a>.
-
-  - **not supported**
-    - <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-auto-merge-for-pull-requests-in-your-repository" target="_blank">auto-merge of pull requests</a>.
+    -  <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-the-automatic-deletion-of-branches" target="_blank">Head branches automatically deleted after pull requests are merged</a>.
+    -  <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-squashing-for-pull-requests" target="_blank">Commit squashing for pull requests</a>.
+    -  <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-squashing-for-pull-requests" target="_blank">Default to pull request titles for squash commits</a>.
+    -  <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-merging-for-pull-requests" target="_blank">Commit merging for pull requests</a>.
+    -  <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-rebasing-for-pull-requests" target="_blank">Commit rebasing for pull requests</a>.
+    -  <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-suggestions-to-update-pull-request-branches" target="_blank">Always update a pull request branch when it is not up to date with the base branch</a>.
 
 To deploy one of these customizations for your project's repository, ask Infra for help via a Jira ticket.
+
+  - **not supported**
+    - <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-auto-merge-for-pull-requests-in-your-repository" target="_blank">Auto-merge of pull requests</a>.
+    - <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue" target="_blank">Merge queues</a>. This feature is in limited beta.
+
 
 ### Subversion directories
 
