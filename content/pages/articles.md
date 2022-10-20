@@ -1,6 +1,8 @@
 Title: Articles
 Date: '2022-10-19T02:28:20+00:00'
 
+{% block content %}
+
 {% for article in articles %}
     <!-- Post -->
     <article class="post">
@@ -11,3 +13,5 @@ Date: '2022-10-19T02:28:20+00:00'
         </div>
     </article>
 {% endfor %}
+
+{% endblock content %}
