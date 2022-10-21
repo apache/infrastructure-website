@@ -1,6 +1,6 @@
 
 layout: post
-title: 'Apache CMS: New features for anonymous users'
+title: Apache CMS: New features for anonymous users
 date: '2012-06-24T13:37:50+00:00'
 permalink: apache_cms_new_features_for
 

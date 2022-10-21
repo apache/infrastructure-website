@@ -1,6 +1,6 @@
 
 layout: post
-title: 'Position Available: Infrastructure Systems Administrator/Architect'
+title: Position Available: Infrastructure Systems Administrator Architect
 date: '2016-07-25T20:07:36+00:00'
 permalink: position_available_infrastructure_systems_administrator
 

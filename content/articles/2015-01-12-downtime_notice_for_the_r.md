@@ -1,6 +1,6 @@
 
 layout: post
-title: Downtime notice for the R/W git repositoies
+title: Downtime notice for the RW git repositoies
 date: '2015-01-12T15:02:12+00:00'
 permalink: downtime_notice_for_the_r
 

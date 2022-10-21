@@ -1,6 +1,6 @@
 
 layout: post
-title: '1 million commits and still going strong. '
+title: 1 million commits and still going strong.
 date: '2010-09-23T11:55:55+00:00'
 permalink: 1_million_commits_and_still
 
