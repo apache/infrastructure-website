@@ -30,17 +30,18 @@
           <header>
             <div class="title">
                 <h2><a href="/articles/{{ article.slug }}.html">{{ article.title }}</a></h2>
-              <p>{{ article.summary }}</p>
-              <footer>
-                <ul class="actions">
-                    <div style="text-align: right"><a href="/articles/{{ article.slug }}.html" class="button medium">Continue Reading</a></div>
-                </ul>
-                <ul class="stats">
-                  {% for tag in article.tags %}
-                  <li><a href="#">{{ tag.name }}</a></li>
-                  {% endfor %}
-                </ul>
-              </footer>       
+                <p>Posted on: {{ article.date }}</p>
+                <p>{{ article.summary }}</p>
+                <footer>
+                  <ul class="actions">
+                      <div style="text-align: right"><a href="/articles/{{ article.slug }}.html" class="button medium">Continue Reading</a></div>
+                  </ul>
+                  <ul class="stats">
+                    {% for tag in article.tags %}
+                    <li><a href="#">{{ tag.name }}</a></li>
+                    {% endfor %}
+                  </ul>
+                </footer>       
         </article>
       </div>
     </div>
