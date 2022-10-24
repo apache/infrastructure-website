@@ -3,7 +3,15 @@ pelican:
   autobuild:      preview/*
   target:         asf-site
   whoami:         master
-  
+
+
+pelican:
+  whoami: asf-blogtest
+
+publish:
+  whoami: asf-blogtest
+  type: blog
+
 staging:
   whoami: asf-break-test
   profile: ~
