@@ -1,0 +1,207 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using the Digicert code signing service - Apache Infrastructure Website</title>
+    <link rel="stylesheet" href="/css/foundation.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>
+    <link rel="stylesheet"
+          href="/highlight/default.min.css">
+    <script src="/highlight/highlight.min.js"></script>  </head>
+  <body style="background: #C1C1C1;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+		  <li><a href="https://blogs.apache.org/infra/" target="_blank">The Infra Blog</a></li>	
+	          
+                </ul>
+              </li>
+              <li><a href="/policies.html" target="_blank" style="padding-left: 5px;">Policies</a></li>
+                           
+              <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Services-Tools</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+		<li><a href="/services.html">Services and Tools</a></li>
+                <li><a href="/machines.html" target="_blank" >Machines and Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" target="_blank" >Blocky</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" target="_blank" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" target="_blank" >Committer Search</a></li>
+		
+                </ul>
+              </li>
+              <li><a href="/doc.html" target="_blank" style="padding-left: 5px;">Documentation</a></li>
+	       <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Contribute</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">	
+		   <li><a href="/infra-volunteer.html">Volunteer with Infra</a></li>
+		   <li><a href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+			<li><a href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+		 </ul>
+	       </li>
+	      
+              <li><a href="/stats.html" target="_blank" style="padding-left: 5px;">Status</a></li>
+              <li><a href="/contact.html" style="padding-left: 5px;"><i class="fa fa-comments" style="color: #FFF; font-size: 0.9rem;"></i>Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/digicert-use.html">
+Using the Digicert code signing service        </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/digicert-use.md">edit</a>)
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              Using the Digicert code signing service
+          </h2>
+              <h2>Transition to DigiCert</h2>
+<p>We have moved from the old Symantec service to the new DigiCert service. The Symanetc service is no longer avaialble. All new signing must be via the DigiCert service.</p>
+<p>If you require assistance migrating to the DigiCert service, please open an <a href="https://issues.apache.org/jira/browse/INFRA">INFRA Jira ticket</a> and select code signing as the component.</p>
+<h2>DigiCert Secure Software</h2>
+<p>DigiCert Secure Software supports a range of signing tools and formats. For the full list see the <a href="https://digicert.github.io/snowbird-doc/#/administration-guides/secure-software-manager/index">client user guide</a>. Whichever signing option you choose, you will need to complete four steps:</p>
+<ol>
+<li>Obtain a DigiCert ONE account</li>
+<li>Obtain credentials for code signing</li>
+<li>Install the OS integration for your chosen OS (Windows or Linux)</li>
+<li>Configure your chosen signing tool.</li>
+</ol>
+<h3>Step 1: Obtaining a DigiCert ONE account</h3>
+<p>Adding a new PMC or a new user to an existing PMC needs to be performed by the infrastructure team. Please open an <a href="https://issues.apache.org/jira/browse/INFRA">INFRA Jira ticket</a> and select code signing as the component.</p>
+<p>When the infrastructure team create your accout you will be sent a password reset email. The link in that email is only valid for 12 hours. If you are unable to complete the creation of your account in that time you can request a new password reset email by going to <a href="https://one.digicert.com/">DigiCert ONE</a> and clicking on the password reset link. Your username is the same as your ASF email address. You should then receive a new password reset email you can use to set your password. You will also need to configure your OTP token. Officially, only Google authenticator is supported but any similar tool should also work.</p>
+<h3>Step 2: Obtaining credentials for code signing</h3>
+<p>Whatever you need to sign and however you choose to sign it, you will need to create credentials to use the signing API. You create these via the DigiCert ONE web interface.</p>
+<ol>
+<li>Log on to <a href="https://one.digicert.com/">DigiCert ONE</a>.</li>
+<li>Select "Account" from the menu in the top right-hand corner.</li>
+<li>Select "Access" in the left-hand menu.</li>
+<li>Select "API token" and create a new API token with a unique name (e.g. ASF ID + year) as the name and an expiry date ~1 year in the future.</li>
+<li>Keep a record of the token value</li>
+<li>Select "Client Auth" and create a new client certificate with a unique name (e.g. ASF ID + year) as the name and an expiry date ~1 year in the future.</li>
+<li>Download the certificate and keep a record of the password</li>
+</ol>
+<h3>Step 3: Install the OS integration</h3>
+<h4>None</h4>
+<p>If you use JSign 4.0, you can skip this step.</p>
+<h4>Windows integration</h4>
+<ol>
+<li>Log on to DigiCert ONE and select "Secure Software" from the menu in the top right-hand corner.</li>
+<li>Select "Resources" in the left-hand menu.</li>
+<li>Download and install the "Secure Software Manager Windows Clients Installer".</li>
+<li>As per the <a href="https://digicert.github.io/snowbird-doc/#/administration-guides/secure-software-manager/windows-configuration">Windows Configuration</a> section of the client user guide, create the four system environment variables. These <strong>must</strong> always be set to use the DigiCert signing service.</li>
+<li>Test with <code>smctl.exe keypair ls</code>. You should see at least one certificate listed. (smctl.exe is installed as part of the DigiCert client and won't be on your path.)</li>
+<li>Test with <code>certutil.exe -csp "DigiCert Signing Manager KSP" -key -user</code>. You should see at least one key listed. (certutil.exe will be on your path.)</li>
+<li>Synchronise certificates with <code>smksp_cert_sync.exe</code>.</li>
+<li>Open <code>certmgr.msc</code> (it will be on your path) and you should see your code signing certificate(s) listed under personal certificates. If a new certificate is issued to your PMC you will need to repeat this step.</li>
+</ol>
+<h4>Linux integration</h4>
+<ol>
+<li>Log on to DigiCert ONE and select "Secure Software" from the menu in the top right-hand corner.</li>
+<li>Select "Resources" in the left-hand menu.</li>
+<li>Download and install the "Secure Software Manager Linux Clients (Portable tar.gz)".</li>
+<li>Unpack the tar.gz. Infra recommends, and this guide assumes, it is unpacked to <code>/opt</code></li>
+<li>As per the DigiCert ONE documentation, create the four required environment variables. These <strong>must</strong> always be set to use the DigiCert signing service. Infra recommends you store your certifcate in <code>~/.digicertone/</code>.</li>
+<li>Test with <code>/opt/smtools-linux-x64/smctl keypair ls</code>. You should see at least one certificate listed.</li>
+</ol>
+<h4>MacOS</h4>
+<p>The DigiCert ONE client tools are not available for MacOS. Use JSign 4.0 so you can skip this step.</p>
+<h3>Step 4: Configure your chosen signing tool</h3>
+<h4>Signing Windows binaries on Windows using signtool.exe</h4>
+<p>To sign Windows binaries you will need a copy of SignTool.exe. This can be found in both Visual Studio and the Windows SDK. Very old versions only support SHA-1 signing. Version 6.1.7600.16385 (2009-07-14) supports newer hashes for signing.</p>
+<p>You'll need the fingerprint of the certificate you want to use for signing (view via <code>certmgr.msc</code>). You can then sign a file with <code>signtool.exe sign /sha1 &lt;cert-fingerprint&gt; /fd sha512 /tr http://timestamp.digicert.com &lt;file-to-be-signed&gt;</code></p>
+<p>To sign a file with SHA-256 rather than SHA-512 use <code>... /fd sha256...</code> rather than <code>... /fd sha512 ...</code>.</p>
+<h4>Signing on Windows binaries on Windows or Linux with JSign 4.0+ Ant task</h4>
+<ol>
+<li>
+<p>Make JSign JAR from <a href="https://search.maven.org/artifact/net.jsign/jsign">Maven Central</a> available to Ant.</p>
+</li>
+<li>
+<p>The DigiCert ONE specific properties for the JSign task in Antshould be configured as follows:</p>
+<pre><code>   storetype="DIGICERTONE"
+   storepass="&lt;api-key&gt;|&lt;path-to-client-certificate&gt;|&lt;client-certificate-passphrase&gt;"
+   alias="&lt;name-of-signing-certificate&gt;"
+   tsaurl="http://timestamp.digicert.com"
+</code></pre>
+</li>
+</ol>
+<h4>Signing Windows binaries on Linux with JSign 4.0+</h4>
+<ol>
+<li>
+<p>Download jsign <code>wget https://github.com/ebourg/jsign/releases/download/4.0/jsign_4.0_all.deb</code></p>
+</li>
+<li>
+<p>Install jsign <code>sudo dpkg --install jsign_4.0_all.deb</code></p>
+</li>
+<li>
+<p>You should then be able to sign with:</p>
+<pre><code> jsign --storetype DIGICERTONE --alias &lt;name-of-signing-certificate&gt; --storepass "&lt;api-key&gt;|&lt;path-to-client-certificate&gt;|&lt;client-certificate-passphrase&gt;" application.exe
+</code></pre>
+</li>
+</ol>
+<h4>Other signing formats, tools and operating systems</h4>
+<p>See the client user guide.</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2022, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    
+    <script src="/js/vendor/jquery.js"></script>
+    <script src="/js/vendor/what-input.js"></script>
+    <script src="/js/vendor/foundation.js"></script>
+    <script src="/js/app.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

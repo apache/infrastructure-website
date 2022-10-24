@@ -1,0 +1,236 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mailing list moderation - Apache Infrastructure Website</title>
+    <link rel="stylesheet" href="/css/foundation.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>
+    <link rel="stylesheet"
+          href="/highlight/default.min.css">
+    <script src="/highlight/highlight.min.js"></script>  </head>
+  <body style="background: #C1C1C1;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+		  <li><a href="https://blogs.apache.org/infra/" target="_blank">The Infra Blog</a></li>	
+	          
+                </ul>
+              </li>
+              <li><a href="/policies.html" target="_blank" style="padding-left: 5px;">Policies</a></li>
+                           
+              <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Services-Tools</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+		<li><a href="/services.html">Services and Tools</a></li>
+                <li><a href="/machines.html" target="_blank" >Machines and Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" target="_blank" >Blocky</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" target="_blank" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" target="_blank" >Committer Search</a></li>
+		
+                </ul>
+              </li>
+              <li><a href="/doc.html" target="_blank" style="padding-left: 5px;">Documentation</a></li>
+	       <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Contribute</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">	
+		   <li><a href="/infra-volunteer.html">Volunteer with Infra</a></li>
+		   <li><a href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+			<li><a href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+		 </ul>
+	       </li>
+	      
+              <li><a href="/stats.html" target="_blank" style="padding-left: 5px;">Status</a></li>
+              <li><a href="/contact.html" style="padding-left: 5px;"><i class="fa fa-comments" style="color: #FFF; font-size: 0.9rem;"></i>Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/mailing-list-moderation.html">
+Mailing list moderation        </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/mailing-list-moderation.md">edit</a>)
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              Mailing list moderation
+          </h2>
+              <p>Mailing lists are the virtual rooms where ASF communities live, form and grow. All formal decisions the project's PMC makes need to have an email thread (possibly with a recorded vote) as an audit trail that this was an official decision.</p>
+<ul>
+<li><a href="#new-mailing-list">How do we create a new mailing list?</a></li>
+<li><a href="#mailing-list-moderators">How do I request changes for moderators?</a></li>
+<li><a href="#subscribers">How do I find who is subscribed to a list?</a></li>
+<li><a href="#mail-moderate">What should I do with MODERATE emails?</a></li>
+</ul>
+<p>Dealing with</p>
+<ul>
+<li><a href="#spam">MODERATE requests for spam</a></li>
+<li><a href="#allowing_posts">allowing posts from non-subscribers</a></li>
+<li><a href="#problem_posts">problem posts</a></li>
+<li><a href="#missing">reports of missing mail</a></li>
+<li><a href="#bounce">reports of message bounces</a></li>
+</ul>
+<h3 id="new-mailing-list">How do we create a new mailing list?<a class="headerlink" href="#new-mailing-list" title="Permanent link">&para;</a></h3>
+<p>It is wise to keep the number of mailing lists per codebase the smallest possible to allow the community to reach that critical mass that is necessary to bootstrap a codebase and keep it in good shape.</p>
+<p>At the same time, as communities grow, the need for more specialized mailing lists appears. If you think your project requires a new list:</p>
+<ul>
+<li>Float the idea in the <code>dev@</code> or <code>users@</code> mailing list.</li>
+<li>If there seems to be some support for the idea, request a community vote.</li>
+<li>If the community approves adding a mailing list, the PMC chair or another Apache Member on the PMC can do so through the <a href="https://selfserve.apache.org" target="_blank">ASF Self-Service Platform</a></li>
+</ul>
+<p><strong>WARNING</strong>: Creating a user email list can harm a project community if the developers don't pay attention to their users and reply to their emails. One would expect a well-behaving user community to reply to one another in a civil, adult manner that is focused on whatever the list was created for, but it can take time for a community to learn and take to heart such good behavior.</p>
+<h3 id="mailing-list-moderators">How do I request changes for moderators?<a class="headerlink" href="#mailing-list-moderators" title="Permanent link">&para;</a></h3>
+<p>File an INFRA Jira ticket or ask your PMC to send a request to the `apmail@apache.org` alias. If you have access to apmail, you can just change the list of subscribers
+to list/mod. For example, for the `mod_perl` developers' list that is in `~apmail/lists/perl.apache.org/dev/mod/`, use 
+`ezmlm-list`, `&gt;ezmlm-sub` and `ezmlm-unsub`.
+<p>To determine who the existing moderators are, any committer can use the technique described in the "committers" SVN module at <a href="https://svn.apache.org/repos/private/committers/docs/resources.txt" target="_blank">resources.txt</a>.</p>
+<h3 id="subscribers">How do I find who is subscribed to a list?<a class="headerlink" href="#subscribers" title="Permanent link">&para;</a></h3>
+<p>Moderators can send an email to <code>listname-list@tlp.apache.org</code>.</p>
+<p>Anyone with access to the apmail account can run the following command to get a count of the subscribers:</p>
+<pre><code>ezmlm-list~/lists/project/listname| wc -l
+</code></pre>
+<p>Remember that there often are people subscribed to the digest version of the list. To find them:</p>
+<pre><code>~lists/project/listname/digest
+</code></pre>
+<p>However, most committers do not have access to apmail. See the notes in the "committers" SVN module (<code>https://svn.apache.org/repos/private/committers</code>) at <code>/docs/resources.txt</code> for another way.</p>
+<h3 id="mail-moderate">What should I do with "MODERATE" emails?<a class="headerlink" href="#mail-moderate" title="Permanent link">&para;</a></h3>
+<p>Review the mail to see if it is spam (or other severely misguided mail). If it is spam, just ignore the mail to have it silently dropped after 5 days.</p>
+<p>To bounce non-spam with a notice to the sender, reply to the <code>-reject</code> address in the mail header. If you wish to include a comment with the rejection, the body of the message should look like this:</p>
+<pre><code>%%% Start comment
+Your message goes here...
+%%% End comment
+</code></pre>
+<p>If it is legitimate mail from a non-subscriber (or someone sending with a different envelope sender than the one subscribed), reply to the <code>-accept</code> address. If you also send mail to the <code>-allow</code> address (i.e. reply to all), future postings from that address will be allowed through automatically.</p>
+<p>If there is no <code>-allow</code> address in the moderate requests, the list is misconfigured. Contact <code>apmail@apache.org</code> and ask them to enable remote administration.</p>
+<p>See the <a href="http://www.ezmlm.org/" target="_blank">EZMLM</a> "Moderator's and Administrator's Manual". You can also send a request for advice to <code>{listname}-help@tlp.apache.org</code> from your moderation address.</p>
+<p>Some lists are only open to ASF committers. The moderators have methods to ensure that subscribers are committers, so subscribers can use whatever email address that they want. Moderators see the tips described in the "committers" SVN module at <a href="https://svn.apache.org/repos/private/committers/docs/resources.txt" target="_blank">resources.txt</a>.</p>
+<h3 id="spam">Dealing with MODERATE requests for spam<a class="headerlink" href="#spam" title="Permanent link">&para;</a></h3>
+<p><strong>NOTE</strong>: You may receive a moderation email that contains email identified as spam. Moderation emails containing spam emails are <strong>not spam</strong>. <strong>DO NOT</strong> report mod emails as spam because this causes our legitimate moderation email and the ASF servers themselves to lose sender reputation. Various email providers may block the ASF as a whole as a result of your action.</p>
+<p>If the content of the MODERATE request is clearly spam, the simplest solution is just to delete the request. Do not reject it. However, if you are receiving a lot of such requests, it may perhaps be worth taking additional action.</p>
+<p>Some SPAM emails have an opt-out link. Whether this will actually do anything useful is another matter, but it might be worth trying if the spam seems to be from a legitimate business.</p>
+<p>To avoid revealing your personal IP address, you may wish to use an anonymizing service such as Tor.</p>
+<p>If the spam emails are all sent from the same address (you can find the sender's address in the moderation request in the <code>cc:</code> area), try adding them to the 'deny' list:</p>
+<pre><code>{listname}-deny-subscribe-badposter=menace.com@tlp.apache.org&lt;/code&gt;
+</code></pre>
+<p>You can find the sender's address in the moderation request in the <code>cc:</code> area:</p>
+<pre><code>Cc: {listname}-allow-tc.&lt;digits&gt;.&lt;alphanumeric&gt;-badposter=menace.com@tlp.apache.org
+</code></pre>
+<p>The sender e-mail address is contained between the '-' (hyphen) immediately following the "alphanumerics" and the '@' sign.</p>
+<p>This is already in the correct form for use in the 'deny' subscription request, as the '@' has been changed to '='. In the example above this is:</p>
+<pre><code>badposter=menace.com
+</code></pre>
+<p>If this address contains random alphanumerics then it is probably a short-lived address, in which case there is no point trying to use the deny list.</p></p>
+<h3 id="allowing_posts">Allowing posts from non-subscribers<a class="headerlink" href="#allowing_posts" title="Permanent link">&para;</a></h3>
+<p>Most lists require people to subscribe in order to post messages. However, subscribers receive copies of all mails (or digests). This is obviously unsuitable for bots, or for private lists which need to accept posts from non-subscribers.</p>
+<p>A moderator can fix this by using 'Reply All' to a moderation message from the poster. This will both 'accept' the message and 'allow' further posts.</p>
+<p>It's also possible to set this up in advance, by subscribing the poster to the 'allow' list. For example, if you want <code>mailbot@host.com</code> to be able to post, use:</p>
+<pre><code>{listname}-allow-subscribe-mailbot=host.com@tlp.apache.org
+</code></pre>
+<p>Replace the '@' in the sender email with '='.</p>
+<h3 id="problem_posts">Dealing with problem posts<a class="headerlink" href="#problem_posts" title="Permanent link">&para;</a></h3>
+<p>If you have a troublesome poster, you can un-subscribe them from the list using</p>
+<pre><code>{listname}-unsubscribe-badboy=menace.com@tlp.apache.org
+</code></pre>
+<p>Send a courtesy email to them to let them know they have been unsubscribed, and why.</p>
+<p>Occasionally you will get someone with a poorly-configured spam filter sending automated replies to the list. You can deny their postings using</p>
+<pre><code>{listname}-deny-subscribe-badposter=menace.com@tlp.apache.org
+</code></pre>
+<p>Send a courtesy email suggesting how they can resolve the problem.</p>
+<p>If an unsubscribed user was added to the moderation list and is sending spam to the list, remove them by sending an email to:</p>
+<pre><code>{listname}-allow-unsubscribe-badposter=menace.com@tlp.apache.org
+</code></pre>
+<p>To see a list of who is allowed to post on the moderation list, send an email to <code>{listname}-allow-list@tlp.apache.org</code>.</p>
+<p>There is an <em>opt-in</em> configuration for problem posters, which lets you subscribe him or her to a 'sendsubscribertomod' list. It works in exactly the same way as adding or removing someone from an 'allow' or 'deny' list. File an INFRA ticket to have it enabled for your list (you don't have to use it, but having it enabled adds an option for you to consider.</p>
+<p>To use it (once it has been enabled) do this:</p>
+<pre><code>{listname}-sendsubscribertomod-subscribe-badposter=menace.com@tlp.apache.org
+
+</code></pre>
+<p>All emails from this person now go to a moderator for approval before they appear in the mailing list.</p>
+<p>Once a bad poster starts behaving in the proper manner again, feel free to 'unsubscribe' them from the 'sendsubscriberstomod' list so they can resume normal operations.</p>
+<p>Send moderation commands from your <strong>moderator address</strong>.  You can tell if you're sending from the right address by emailing the <code>-help</code> address (e.g.,
+<code>dev-help@tlp.apache.org</code>) and checking if the subject of the reply contains the word "Moderator help".</p>
+<h3 id="missing">Dealing with reports of missing mail<a class="headerlink" href="#missing" title="Permanent link">&para;</a></h3>
+<p>If a subscriber reports that they are not receiving some e-mails, check which ones are involved. If they are not seeing their own e-mails, note that GMail hides duplicates.
+Also check whether the emails could have been treated as SPAM by their e-mail client.</p>
+<h3 id="bounce">Dealing with reports of message bounces<a class="headerlink" href="#bounce" title="Permanent link">&para;</a></h3>
+<p>If a subscriber reports getting a  bounce message from ezmlm, ask them to provide the details.
+For example:</p>
+<pre><code>Hi! This is the ezmlm program.
+I'm managing the user@tlp.apache.org mailing list.
+
+Messages to you from the user mailing list seem to
+have been bouncing
+...
+Here are the message numbers:
+    12345
+
+</code></pre>
+<p>This can occur if the recipient's mail system has strict SPAM detection rules.</p>
+<p>One way to find such emails is to request an index listing from ezmlm, for example
+by sending an email to <code>dev-index-12345@tlp.apache.org</code>. This will show the subject, timestamp and sender of the email. That may be sufficient to identify it as spam.
+If not, the subject and date should make it easy to find the email in the archives.</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2022, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    
+    <script src="/js/vendor/jquery.js"></script>
+    <script src="/js/vendor/what-input.js"></script>
+    <script src="/js/vendor/foundation.js"></script>
+    <script src="/js/app.js"></script>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

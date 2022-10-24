@@ -1,0 +1,139 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infrastructure Team Adopting an On-Call Rotation - Apache Infrastructure Website</title>
+    <link rel="stylesheet" href="/css/foundation.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>
+    <link rel="stylesheet"
+          href="/highlight/default.min.css">
+    <script src="/highlight/highlight.min.js"></script>  </head>
+  <body style="background: #C1C1C1;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+		  <li><a href="https://blogs.apache.org/infra/" target="_blank">The Infra Blog</a></li>	
+	          
+                </ul>
+              </li>
+              <li><a href="/policies.html" target="_blank" style="padding-left: 5px;">Policies</a></li>
+                           
+              <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Services-Tools</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+		<li><a href="/services.html">Services and Tools</a></li>
+                <li><a href="/machines.html" target="_blank" >Machines and Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" target="_blank" >Blocky</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" target="_blank" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" target="_blank" >Committer Search</a></li>
+		
+                </ul>
+              </li>
+              <li><a href="/doc.html" target="_blank" style="padding-left: 5px;">Documentation</a></li>
+	       <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Contribute</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">	
+		   <li><a href="/infra-volunteer.html">Volunteer with Infra</a></li>
+		   <li><a href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+			<li><a href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+		 </ul>
+	       </li>
+	      
+              <li><a href="/stats.html" target="_blank" style="padding-left: 5px;">Status</a></li>
+              <li><a href="/contact.html" style="padding-left: 5px;"><i class="fa fa-comments" style="color: #FFF; font-size: 0.9rem;"></i>Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/news/infrastructure team adopting an on-call rotation.html">
+Infrastructure Team Adopting an On-Call Rotation        </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/news/infrastructure team adopting an on-call rotation.md">edit</a>)
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              Infrastructure Team Adopting an On-Call Rotation
+          </h2>
+              <p>As the Apache Software Foundation (ASF) has grown, the infrastructure required to support its diverse set of projects has grown as well. To care for the infrastructure that the ASF depends on, the foundation has hired several contractors to supplement the dedicated cadre of volunteers who help maintain the ASFs hardware and services. To best utilize the time of our paid contractors and volunteers, the Infrastructure team will be adopting an on-call rotation to meet requests and resolve outages in a timely fashion.&nbsp;</p>
+<h3>Why We're Establishing an On-Call Rotation
+</h3>
+<p>
+In groups, especially groups that are charged with overlapping duties, there's occasionally a sense of <a href="http://en.wikipedia.org/wiki/Diffusion_of_responsibility" target="_blank">diffusion of responsibility</a>. There tends to be a good number of tasks or incidents that routinely occur that need a clear owner. We've also tried to set expectations around our service levels relative to the importance of a service. In example, a new mailing list can be set up as convenient, but a failing mail service needs to be addressed immediately.
+</p>
+<p>The technical side of this has been that we have historically alerted via email and/or SMS about any urgent issues that came up. Of course those alerts went to everyone on the team. If the alert occurs at an inconvenient time, either everyone responds, which is likely wasteful, or no one responds thinking someone else will.
+</p>
+<p>At the Infrastructure team's face to face meeting in July we decided we'd adopt an on-call rotation for the contractors so that everyone wasn't responsible for everything all of the time.  We then went looking for something to let us sanely (and without building it ourselves) deal with that. </p>
+<p>
+<p>We ended up choosing <a href="https://pagerduty.com" target="_blank">PagerDuty</a>, which has a number of ways of receiving alerts. More importantly, it allows us to set a schedule, easily override it for holidays or illnesses, and do so programmatically. It also seamlessly integrates with <a href="https://hipchat.com">HipChat</a>, which Infrastructure is running a trial of and communicates with our mobile devices. </p></p>
+<p>
+<p>PagerDuty also supports a clear escalation path that begins alerting other people about issues if the person on-call fails to respond in a timely manner. Additionally, PagerDuty's mobile apps are built with <a href="https://cordova.apache.org">Apache Cordova</a>, which is an interesting circle. We've finished our trial and decided to adopt PagerDuty. PagerDuty&nbsp;was especially gracious and made our account gratis.</p>
+</p>
+<p>Adopting an on-call rotation will allow us to provide a better service and response time, while also clearly setting expectations around contractor availability so they can relax on their off weeks. </p>
+<p>
+<p>If you have questions or want to get involved, feel free to join us on the infrastructure mailing list <a href="mailto:infrastructure@apache.org">infrastructure@apache.org</a> or joining us in our <a href="http://www.hipchat.com/gw4Cfp7JY" target="_blank">Hipchat room</a>.</p>
+</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2022, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    
+    <script src="/js/vendor/jquery.js"></script>
+    <script src="/js/vendor/what-input.js"></script>
+    <script src="/js/vendor/foundation.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>
