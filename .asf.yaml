@@ -4,11 +4,6 @@ pelican:
   target:         asf-site
   whoami:         master
 
-
-pelican:
-  whoami: asf-blogtest
-  target: asf-blogtest
-
 publish:
   whoami: asf-blogtest
   type: blog
