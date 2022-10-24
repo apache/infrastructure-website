@@ -29,12 +29,12 @@
         <article class="post">
           <header>
             <div class="title">
-                <h2><a href="/articles/{{ article.slug }}.html">{{ article.title }}</a></h2>
+                <h2><a href="/blog/{{ article.slug }}.html">{{ article.title }}</a></h2>
                 <p>Posted on: {{ article.date }}</p>
                 <p>{{ article.summary }}</p>
                 <footer>
                   <ul class="actions">
-                      <div style="text-align: right"><a href="/articles/{{ article.slug }}.html" class="button medium">Continue Reading</a></div>
+                      <div style="text-align: right"><a href="/blog/{{ article.slug }}.html" class="button medium">Continue Reading</a></div>
                   </ul>
                   <ul class="stats">
                     {% for tag in article.tags %}
