@@ -1,0 +1,211 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASF Buildbot svn setup - Apache Infrastructure Website</title>
+    <link rel="stylesheet" href="/css/foundation.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>
+    <link rel="stylesheet"
+          href="/highlight/default.min.css">
+    <script src="/highlight/highlight.min.js"></script>  </head>
+  <body style="background: #C1C1C1;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+		  <li><a href="https://blogs.apache.org/infra/" target="_blank">The Infra Blog</a></li>	
+	          
+                </ul>
+              </li>
+              <li><a href="/policies.html" target="_blank" style="padding-left: 5px;">Policies</a></li>
+                           
+              <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Services-Tools</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+		<li><a href="/services.html">Services and Tools</a></li>
+                <li><a href="/machines.html" target="_blank" >Machines and Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" target="_blank" >Blocky</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" target="_blank" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" target="_blank" >Committer Search</a></li>
+		
+                </ul>
+              </li>
+              <li><a href="/doc.html" target="_blank" style="padding-left: 5px;">Documentation</a></li>
+	       <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Contribute</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">	
+		   <li><a href="/infra-volunteer.html">Volunteer with Infra</a></li>
+		   <li><a href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+			<li><a href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+		 </ul>
+	       </li>
+	      
+              <li><a href="/stats.html" target="_blank" style="padding-left: 5px;">Status</a></li>
+              <li><a href="/contact.html" style="padding-left: 5px;"><i class="fa fa-comments" style="color: #FFF; font-size: 0.9rem;"></i>Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/news/2010-03-29-asf_buildbot_svn_setup.html">
+ASF Buildbot svn setup        </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/news/2010-03-29-asf_buildbot_svn_setup.md">edit</a>)
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              ASF Buildbot svn setup
+          </h2>
+              <p>Here at the ASF we have a subversion setup with all our projects code in one repository, with each of those projects having their own style of trunk/branches/tags/site etc.. This works well for us, but did present us with some initial problems when setting up our Buildbot instance to work with it.</p>
+<p>Knowing that others have the same or similar arrangement with their svn instance, we thought we would share how we got Buildbot working well for us. Note that this is not a tutorial on Buildbot, more of a quick mini guide with more code than explanation, hoping you'll work out the rest for your needs.We will be working with four files:- svn_buildbot.py, post-commit, buildbot_project_paths and master.cfg.</p>
+<p>First off, we needed to alter a section of the svn_buildbot.py file that comes in the buildbot/contrib directory. We copied this file to our svn host machine and edited this section:</p>
+<pre>def split_file_branches(changed_file, project_paths):
+<pre><code>pieces = changed_file.split(os.sep)
+#Assume the layout is something like :
+# trunk =&amp;gt; foo/bar/baz/trunk/file
+# branches/test  =&amp;gt; foo/bar/baz/branches/test/file
+# Slurp everything up to one of these 2 'markers' and call that the branch
+found = False
+
+f = open(project_paths, 'r')
+for line in f.readlines():
+    line = line.strip()
+    regexp = re.compile(line)
+    m = regexp.match(changed_file)
+    if m:
+        branch = m.group(1)
+        path =   m.group(2)
+        print &amp;gt;&amp;gt; sys.stderr, &amp;quot;branch=%s, path=%s&amp;quot; % (branch, path)
+        return (branch, path)
+
+
+i = 0
+for piece in pieces:
+    i = i + 1	
+    # Find trunk, we are done
+    if piece == 'trunk':
+        found = True
+        break
+    elif piece == 'branches':
+        i = i + 1
+        found = True
+        break
+    
+# We found a layout we know, so send it to buildbot
+if found:
+    branch = os.path.join(*pieces[0:i]) 
+    path =   os.path.join(*pieces[i:])
+else:        
+    branch = pieces[0]
+    path = os.path.join(*pieces[1:])
+        
+print &amp;gt;&amp;gt; sys.stderr, &amp;quot;branch=%s, path=%s&amp;quot; % (branch, path)
+return (branch, path)     
+   
+#return (pieces[0], os.path.join(*pieces[1:]))
+
+raise RuntimeError(&amp;quot;cannot determine branch for '%s'&amp;quot; % changed_file)
+</code></pre>
+<p>split_file = split_file_branches
+</p></pre>
+<p>Next up , the relevant entry in our subversion/hooks/post-commit file looks like this (with&nbsp;constants defined earlier in the file): </p>
+<pre>    $SVNLOOK dirs-changed -r "$REV" "$REPOS" | egrep -qf "$BUILDBOT_PROJECT_PATHS" &amp;&amp; 
+( $BUILDBOT --repository "$REPOS" --revision "$REV" --bbserver "$BBSERVER" --bbport "$BBPORT" 
+--project-paths "$BUILDBOT_PROJECT_PATHS" &gt;&gt;/var/log/svn_buildbot.log 2&gt;&amp;1 &amp; )
+</pre>
+<p>And, last but not least for the svn host side of things, our buildbot_project_paths file which contains entries such as :</p>
+<pre>^(<strong>incubator/wookie/trunk</strong>)/(.*)
+^(stdcxx/trunk)/(.*)
+^(incubator/trafficserver/traffic/trunk)/(.*)
+^(incubator/trafficserver/traffic/branches/2.0.x)/(.*)
+^(subversion/trunk)/(.*)
+</pre>
+<p>So you create an entry from the svn base directory for each projects trunk or branch that you want Buildbot to take notice of, the rest being ignored.</p>
+<p>Now, we match those buildbot_project_paths entries in our master.cfg file with an AnyBranchScheduler like this:</p>
+<pre># schedulers
+from buildbot.scheduler import AnyBranchScheduler
+<p>c['schedulers'].append(AnyBranchScheduler(name="on-wookie-commit",
+branches=["<strong>incubator/wookie/trunk</strong>"],
+treeStableTimer=2,
+builderNames=["wookie-trunk"]))</p>
+<p>#builders</p>
+<p>f28 = factory.BuildFactory()
+f28.addStep(SVN(
+mode="clobber",
+baseURL="<a href="http://svn.apache.org/repos/asf/">http://svn.apache.org/repos/asf/</a>",
+defaultBranch="<strong>incubator/wookie/trunk</strong>",
+haltOnFailure=True,
+))</p>
+<p>etc...
+</p></pre>
+<h4>Summary</h4>
+<p>So, to tie it all together, what we have done is created a workflow like this:-</p>
+<ol>
+<li>A commit happens, the post-commit file checks the buildbot_project_paths file to see if it is relevant to any of our projects. If not, nothing else happens. </li>
+<li>If we have a match then svn_buildbot.py is called, and uses the entry in buildbot_project_paths as the branch with the root dir of svn as the base, then sends these two pieces of information over to the Buildbot master. </li>
+<li>The Buildbot master checks its config, finds a match in the 'branches' entry for our AnyBranchScheduler and triggers the appropriate build. </li>
+</ol>
+<p>I hope that helps someone out there , at least, until Buildbot project changes again, it is a fast moving project currently! - 0.80 for instance has introduced the 'project' property and the 'repository' property for schedulers which may negate the need for some of this, but I haven't investigated to date. (See&nbsp;<a href="http://github.com/djmitche/buildbot/blob/buildbot-0.8.0/NEWS">http://github.com/djmitche/buildbot/blob/buildbot-0.8.0/NEWS</a>&nbsp;for more info on that.)</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2022, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    
+    <script src="/js/vendor/jquery.js"></script>
+    <script src="/js/vendor/what-input.js"></script>
+    <script src="/js/vendor/foundation.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

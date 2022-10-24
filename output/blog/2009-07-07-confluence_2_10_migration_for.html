@@ -1,0 +1,123 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Confluence 2.10 migration for cwiki.a.o 11 July1 - Apache Infrastructure Website</title>
+    <link rel="stylesheet" href="/css/foundation.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>
+    <link rel="stylesheet"
+          href="/highlight/default.min.css">
+    <script src="/highlight/highlight.min.js"></script>  </head>
+  <body style="background: #C1C1C1;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+		  <li><a href="https://blogs.apache.org/infra/" target="_blank">The Infra Blog</a></li>	
+	          
+                </ul>
+              </li>
+              <li><a href="/policies.html" target="_blank" style="padding-left: 5px;">Policies</a></li>
+                           
+              <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Services-Tools</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+		<li><a href="/services.html">Services and Tools</a></li>
+                <li><a href="/machines.html" target="_blank" >Machines and Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" target="_blank" >Blocky</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" target="_blank" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" target="_blank" >Committer Search</a></li>
+		
+                </ul>
+              </li>
+              <li><a href="/doc.html" target="_blank" style="padding-left: 5px;">Documentation</a></li>
+	       <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Contribute</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">	
+		   <li><a href="/infra-volunteer.html">Volunteer with Infra</a></li>
+		   <li><a href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+			<li><a href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+		 </ul>
+	       </li>
+	      
+              <li><a href="/stats.html" target="_blank" style="padding-left: 5px;">Status</a></li>
+              <li><a href="/contact.html" style="padding-left: 5px;"><i class="fa fa-comments" style="color: #FFF; font-size: 0.9rem;"></i>Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/news/2009-07-07-confluence_2_10_migration_for.html">
+Confluence 2.10 migration for cwiki.a.o 11 July1        </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/news/2009-07-07-confluence_2_10_migration_for.md">edit</a>)
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              Confluence 2.10 migration for cwiki.a.o 11 July1
+          </h2>
+              <p>
+The ASF Infrastructure Team will be upgrading the Confluence instance powering <a href="http://cwiki.apache.org">http://cwiki.apache.org</a> from Confluence 2.2.9 to <a href="http://confluence.atlassian.com/display/DOC/Confluence%202.10%20Release%20Notes">Confluence 2.10.3</a> on July 11 at 0400 UTC, or July 10 at 2100 PST.&nbsp; The migration is expected to take several hours. &nbsp;<br/><br/>If you haven't already, this would be a good time to check the test migration instance at:<br/><br/><a href="http://confluence-test.zones.apache.org:8080">http://confluence-test.zones.apache.org:8080</a><br/><br/>Exported pages can be found at http://confluence-test.zones.apache.org:8080/export/SPACE_KEY/PAGE_TITLE.html&nbsp;&nbsp; If in doubt, find your existing exported pages at <a href="http://cwiki.apache.org/">http://cwiki.apache.org/</a>, so:<br/><br/><a href="http://cwiki.apache.org/WW/home.html">http://cwiki.apache.org/WW/home.html</a><br/><br/>will become<br/><br/><a href="http://confluence-test.zones.apache.org:8080/export/WW/home.html">http://confluence-test.zones.apache.org:8080/export/WW/home.html</a><br/><br/>As much as possible, the space export templates will be preserved in the migration, although changes to the Confluence UI will mean the exports will look different.<br/><br/>Further updates with regards to the Confluence 2.10.3 migration will posted to this blog.</p><h4>Update 11-07-2009</h4><p>The Confluence 2.10.3 upgrade has been completed and all spaces have been exported.&nbsp; There are a few things to note:</p><ol><li>The Gliffy license is out of date.&nbsp; I'll try to track down a new one.</li><li>The visibility plugin doesn't support Confluence 2.10.3.&nbsp; Not sure if anyone uses it, however.</li><li>The exported html, as warned, generally looks a bit different.&nbsp; Let me know if you have any issues tweaking your template.</li></ol><h4>Update 11-07-2009 part 2</h4><p>If, for some reason, your templates didn't get copied over or the exported site is so messed up you need the old version, the old files are available:</p><ul><li><i>Autoexport templates</i> - <a href="http://cwiki.apache.org/autoexport-2.2.9-templates">http://cwiki.apache.org/autoexport-2.2.9-templates</a></li><li><i>Autoexport-generated html</i> - <a href="http://cwiki.apache.org/autoexport-2.2.9">http://cwiki.apache.org/autoexport-2.2.9</a></li></ul><h4>Update 14-07-2009</h4>The Gliffy folks were kind enough to give us a new license.&nbsp; Please re-export any applicable spaces.<br/>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2022, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    
+    <script src="/js/vendor/jquery.js"></script>
+    <script src="/js/vendor/what-input.js"></script>
+    <script src="/js/vendor/foundation.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

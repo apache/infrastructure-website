@@ -1,0 +1,136 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>paste.apache.org sees the light of day - Apache Infrastructure Website</title>
+    <link rel="stylesheet" href="/css/foundation.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>
+    <link rel="stylesheet"
+          href="/highlight/default.min.css">
+    <script src="/highlight/highlight.min.js"></script>  </head>
+  <body style="background: #C1C1C1;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+		  <li><a href="https://blogs.apache.org/infra/" target="_blank">The Infra Blog</a></li>	
+	          
+                </ul>
+              </li>
+              <li><a href="/policies.html" target="_blank" style="padding-left: 5px;">Policies</a></li>
+                           
+              <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Services-Tools</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+		<li><a href="/services.html">Services and Tools</a></li>
+                <li><a href="/machines.html" target="_blank" >Machines and Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" target="_blank" >Blocky</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" target="_blank" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" target="_blank" >Committer Search</a></li>
+		
+                </ul>
+              </li>
+              <li><a href="/doc.html" target="_blank" style="padding-left: 5px;">Documentation</a></li>
+	       <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Contribute</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">	
+		   <li><a href="/infra-volunteer.html">Volunteer with Infra</a></li>
+		   <li><a href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+			<li><a href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+		 </ul>
+	       </li>
+	      
+              <li><a href="/stats.html" target="_blank" style="padding-left: 5px;">Status</a></li>
+              <li><a href="/contact.html" style="padding-left: 5px;"><i class="fa fa-comments" style="color: #FFF; font-size: 0.9rem;"></i>Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/news/2013-03-06-paste_apache_org_sees_the.html">
+paste.apache.org sees the light of day        </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/news/2013-03-06-paste_apache_org_sees_the.md">edit</a>)
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              paste.apache.org sees the light of day
+          </h2>
+              <p>Today, the Apache Infrastructure team launched <a href="http://paste.apache.org">http://paste.apache.org</a>, a new ASF-driven site for posting snippets, scripts, logging output, configurations and much more and sharing them with the world.
+</p>
+<p><br/><b><i>&nbsp;Why yet another paste bin, you ask?</i></b></p>
+<p>Well, for starters, this site is different in that is it run by the ASF, for the ASF, in that we fully control what happens to your data when you post it, or perhaps more important, what does NOT happen to it. The site enforces a "from committers to everyone" policy, meaning only <u>committers</u> may post new data on the site, but everyone is invited to watch the result. While this is not a blanket guarantee that the data is accurate or true, it is nonetheless a guarantee that <i><b>what you see is data posted by an Apache committer</b></i>.</p>
+<p>Secondly, committers have the option to post something as being "committers only", meaning only committers within the ASF can see the paste. This is much like the "private" pastes offered by many other sites, but with the added benefit that it prevents anyone snooping around from watching whatever you paste, unless they are actually a committer.</p>
+<p> </p>
+<p><b><i>&nbsp;Great, so how does it work?</i></b></p>
+<p> It works like most other paste sites, in that you go to <a href="http://paste.apache.org">http://paste.apache.org,</a>&nbsp; paste your data, select which type of highlighting to use, and you get an URL with your paste. For text-only clients, raw data will be displayed, while regular browsers will enjoy a full web page with the ability to download or edit a paste. Currently we have support for httpd configurations, C/C++, Java, Lua, Erlang, XML/HTML, PHP, Shell scripts, Diff/Patch, Python and Perl syntax highlighting. If you want to have any other type of highlighting added, don't hesitate to ask!<br/></p>
+<p>Since this site enforces the "from committers to everyone" policy, you are required to use your LDAP credentials when making a paste. To allow for the use of the service within console applications (shells etc) that might not (or should not) provide authentication credentials (on public machines you'd want to avoid storing your committer credentials for instance!), we have equipped the site with a token generator, that both allows you to pipe any output you may have directly to the site as well as gives you some hints on how you may achieve this.</p>
+<p>Imagine you have a directory listing that you'd only want your fellow committers to see. Publishing this, using the token system, is as easy as doing:<br/><span style="background-color: #b5ffb4;">$&gt; ls -la | privpaste&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <br/>http://paste.apache.org/p/1234</span><br/></p>
+<p>And there you have it, the command returns a URL ready for sharing with your fellow committers. Had you wanted for eveyone to be able to see it, you could have used the <i>pubpaste</i> alias instead (click on "generate token" on the site to get more information about tokens and the useful aliases).</p>
+<p> </p>
+<p> We hope you'll enjoy this new service, and use it wisely as well as often. Should you have any questions or suggestions, we'd be most happy to receive them through any infra channel you want to use. <br/></p>
+<p><br/></p>
+<p> <br/></p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2022, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    
+    <script src="/js/vendor/jquery.js"></script>
+    <script src="/js/vendor/what-input.js"></script>
+    <script src="/js/vendor/foundation.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>
