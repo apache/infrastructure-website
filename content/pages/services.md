@@ -166,7 +166,7 @@ See [guidance for choosing a product name](product-names.html)
   - For the <a href="https://cwiki.apache.org/confluence/display/INFRA/Requesting+access+to+the+Google+code+signing+service" target="_blank">Google code signing service</a> for Android apps
   - More information on <a href="https://cwiki.apache.org/confluence/display/INFRA/Code+Signing+and+Publishing" target="_blank">code signing and publishing</a>
 
-<h3 id="qa">Code quality<a class="headerlink" href="#qa" title="Permanent link">&para;</a></h2>
+<h3 id="qa">Code quality<a class="headerlink" href="#qa" title="Permanent link">&para;</a></h3>
 
 <a href="https://sonarcloud.io/" target="_blank">**SonarCloud**</a> is a code quality and security tool that is free to open-source projects. It permits continuous inspection of code quality so your project can perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities in 20+ programming languages.
 
