@@ -48,4 +48,4 @@ Infra provides two-factor authentication (2FA) for account logins via the <a hre
 
 The documentation for ASF 2FA is <a href="https://oauth.apache.org/api.html" target="_blank">here</a>.
 
-**Note**: If you are using GitHub, you must also use GitHub's 2FA, which is separate from the Apache OAuth System.
+**Note**: If you are using GitHub, you must also use GitHub's 2FA, which is separate from the Apache 2FA. If you are having trouble logging in to GitHub (or some other service) or to Apache, make sure you are using the correct entries for the 2FA in question.
