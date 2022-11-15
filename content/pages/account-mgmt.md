@@ -43,3 +43,9 @@ This should decrypt the file and display the output in the window.
 
 **Note**: please do not ask other ASF committers or Members to email root@ to vouch for you.
 
+### Two Factor Authentication
+Infra provides two-factor authentication (2FA) for account logins via the <a href="https://oauth.apache.org" target="_blank">Apache OAuth System</a>. You can opt to enable it, however, **note** that, if you enable @FA, you cannot later disable it. 
+
+The documentation for ASF 2FA is <a href="https://oauth.apache.org/api.html" target="_blank">here</a>.
+
+**Note**: If you are using GitHub, you must also use GitHub's 2FA, which is separate from the Apache OAuth System.
