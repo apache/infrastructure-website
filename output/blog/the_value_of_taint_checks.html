@@ -1,0 +1,157 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The value of taint checks in CGI scripts - Apache Infrastructure Website</title>
+    <link rel="stylesheet" href="/css/foundation.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>
+    <link rel="stylesheet"
+          href="/highlight/default.min.css">
+    <script src="/highlight/highlight.min.js"></script>  </head>
+  <body style="background: #C1C1C1;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+		  <li><a href="https://blogs.apache.org/infra/" target="_blank">The Infra Blog</a></li>	
+	          
+                </ul>
+              </li>
+              <li><a href="/policies.html" target="_blank" style="padding-left: 5px;">Policies</a></li>
+                           
+              <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Services-Tools</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+		<li><a href="/services.html">Services and Tools</a></li>
+                <li><a href="/machines.html" target="_blank" >Machines and Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" target="_blank" >Blocky</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" target="_blank" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" target="_blank" >Committer Search</a></li>
+		
+                </ul>
+              </li>
+              <li><a href="/doc.html" target="_blank" style="padding-left: 5px;">Documentation</a></li>
+	       <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Contribute</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">	
+		   <li><a href="/infra-volunteer.html">Volunteer with Infra</a></li>
+		   <li><a href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+			<li><a href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+		 </ul>
+	       </li>
+	      
+              <li><a href="/stats.html" target="_blank" style="padding-left: 5px;">Status</a></li>
+              <li><a href="/contact.html" style="padding-left: 5px;"><i class="fa fa-comments" style="color: #FFF; font-size: 0.9rem;"></i>Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/news/the_value_of_taint_checks.html">
+The value of taint checks in CGI scripts        </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/news/the_value_of_taint_checks.md">edit</a>)
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              The value of taint checks in CGI scripts
+          </h2>
+              <p>Consider the following snippet taken from a live CGI script running on the host that serves www.apache.org:</p>
+<pre>#!/usr/bin/perl
+<p>use strict;
+use warnings;</p>
+<p>print "Content-Type: text/html\n\n";
+my $artifact = "/apache-tomee/1.0.1-SNAPSHOT/";
+$artifact = $ENV{PATH_INFO} if $ENV{PATH_INFO};</p>
+<p>$artifact = "/$artifact/";
+$artifact =~ s,/+,/,g;
+$artifact =~ s,[^a-zA-Z.[0-9]-],,g;
+$artifact =~ s,../,,g;</p>
+<p>my $content = <code>wget -q -O - http://repository.apache.org/snapshots/org/apache/openejb$artifact</code>;
+...
+</p></pre>
+<p> </p><hr size="2" width="100%"/>
+<p> </p>
+<p>Looks pretty good right?&nbsp; Any questionable characters are removed from $artifact before exposing it to the shell via backticks... hmm, well turns out that's not so easy to determine.</p>
+<p>The first warning sign that was given to the author of this script was that he hadn't enabled taint checks- if he had this is how things probably would have looked:</p>
+<pre>#!/usr/bin/perl -T
+<p>use strict;
+use warnings;</p>
+<p>print "Content-Type: text/html\n\n";
+my $artifact = "/apache-tomee/1.0.1-SNAPSHOT/";
+$artifact = $ENV{PATH_INFO} if $ENV{PATH_INFO};</p>
+<p>$artifact = "/$artifact/";
+$artifact =~ s,/+,/,g;
+$artifact =~ m,^([a-zA-Z.[0-9]-]*)$, or die "Detainting regexp failed!";
+$artifact = $1;
+$artifact =~ s,../,,g;</p>
+<p>my $content = <code>wget -q -O - http://repository.apache.org/snapshots/org/apache/openejb$artifact</code>;
+... </p></pre><hr size="2" width="100%"/>
+<p>Which doesn't look like much of a change, but the impact on the actual logic is massive: we've gone from a substitution that strips unwanted chars to a fully-anchored pattern that matches only a string full of wanted chars only, and dies on pattern match failure.&nbsp; Sadly the developer in question did not heed this early advice.<br/></p>
+<p>As it turns out, there is a bug (well several) in the core pattern that renders the original substitution ineffective.&nbsp; However the impact on the taint-checked version causes the detainting match to fail and renders the script harmless!&nbsp; The practical difference is that instead of a script with a working remote shell exploit, we have script that serves no useful purpose.&nbsp; To the Apache sysadmins this is a superior outcome, even though to the developer the original, essentially working script is preferable- worlds are colliding here, but guess who wins?<br/></p>
+<p>At the ASF the sysadmins almost invariably refuse to run perl or ruby CGI scripts without taint-checking enabled, and will always prefer CGI scripts be written in languages that support taint checks as they tend to enforce good practice in dealing with untrusted input.&nbsp; This example, which is in fact one of the first times we've even considered allowing Apache devs to deploy non-download CGI scripts on the <a href="http://www.apache.org">www.apache.org</a>&nbsp; server, serves as a useful reminder to Apache devs as to why using languages that support taint checks is an essential component of scripting on the web.</p>
+<p><br/></p>
+<p><br/></p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2022, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    
+    <script src="/js/vendor/jquery.js"></script>
+    <script src="/js/vendor/what-input.js"></script>
+    <script src="/js/vendor/foundation.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

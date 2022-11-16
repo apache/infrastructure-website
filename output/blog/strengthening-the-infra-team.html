@@ -1,0 +1,122 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Strengthening the Infra team - Apache Infrastructure Website</title>
+    <link rel="stylesheet" href="/css/foundation.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>
+    <link rel="stylesheet"
+          href="/highlight/default.min.css">
+    <script src="/highlight/highlight.min.js"></script>  </head>
+  <body style="background: #C1C1C1;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+		  <li><a href="https://blogs.apache.org/infra/" target="_blank">The Infra Blog</a></li>	
+	          
+                </ul>
+              </li>
+              <li><a href="/policies.html" target="_blank" style="padding-left: 5px;">Policies</a></li>
+                           
+              <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Services-Tools</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+		<li><a href="/services.html">Services and Tools</a></li>
+                <li><a href="/machines.html" target="_blank" >Machines and Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" target="_blank" >Blocky</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" target="_blank" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" target="_blank" >Committer Search</a></li>
+		
+                </ul>
+              </li>
+              <li><a href="/doc.html" target="_blank" style="padding-left: 5px;">Documentation</a></li>
+	       <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Contribute</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">	
+		   <li><a href="/infra-volunteer.html">Volunteer with Infra</a></li>
+		   <li><a href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+			<li><a href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+		 </ul>
+	       </li>
+	      
+              <li><a href="/stats.html" target="_blank" style="padding-left: 5px;">Status</a></li>
+              <li><a href="/contact.html" style="padding-left: 5px;"><i class="fa fa-comments" style="color: #FFF; font-size: 0.9rem;"></i>Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/news/strengthening-the-infra-team.html">
+Strengthening the Infra team        </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/news/strengthening-the-infra-team.md">edit</a>)
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              Strengthening the Infra team
+          </h2>
+              <p>Since before the start of COVID-19, the Infrastructure team had one open staff position. We have been able to fill it this year with a strong addition to the team, <b>Chris Wells</b>.</p><p><i>Where do you live?</i></p><p>Birch Run, Michigan, USA. I was born in Flint, Michigan, but I have moved around a bit between then and now. I lived in Southern California and Per&uacute; for a little while and attended school at Northern Michigan University in Michigan&rsquo;s Upper Peninsula. After all that, I realized that I&rsquo;ve always felt most comfortable in Mid-Michigan, so, here I am.</p><p><i>Family members?</i></p><p>A wife, four children, three cats, three budgies, and a dog.</p><p><i>What was your start date?</i><br/></p><p>January 1st, 2022</p><p><i>Where were you working before here?</i><br/></p><p>The Genesee District Library. I served as the IT Manager for the library, which is the third largest in Michigan by total population served. I used to tell people that &ldquo;if it blinked or beeped, and it stopped doing either, we would fix it.&rdquo; Across the 19 buildings of the library system our three-person team took care of public/staff workstations, phones, surveillance cameras, printers, and all the servers and networking equipment required to connect them. We also did staff training programs and liaised with outside vendors.</p><p><i>Is this your first time working as part of a remote team?</i></p><p>This is the first time I&rsquo;ve worked asynchronously with a remote team, but not the first time I&rsquo;ve worked remotely. Before working at the library I worked with a small hosting company doing sysadmin type work. While at the library I advocated for a rotating hybrid schedule (2 days onsite, 3 remote) for my team in an effort to reduce the chance of our whole department being quarantined/sick simultaneously.&nbsp;<br/></p><p><i>What was the attraction of the ASF for you?</i><br/></p><p>The ASF is the nexus point to so many projects that get used in so many places. Knowing I could help move that work along was very exciting.</p><p><i>Have you been involved in the open-source world before now?</i><br/></p><p>I have been using open-source software since the mid-90s, when I discovered Linux. I have only begun contributing to open-source projects within the last 10 years, and even those contributions were pretty minor. It feels really good to change that.</p><p><i>What do you bring to the work?&nbsp;</i></p><p>I have a strong distaste for miscommunication, so I try to be an effective communicator. Additionally, I love solving problems and helping people get the resources they need.</p><p><i>Any big surprises so far?</i><br/></p><p>I think the biggest surprise so far has been how nice it is to work in an environment where I don&rsquo;t have to know everything and the work is spread out. In my last job I managed a very small team and we were stretched pretty thin most days.</p><p><i>Will you be at ApacheCon North America 2022, and can people meet you there?</i></p><p>I am planning to attend ACNA 2022 and look forward to meeting a bunch of people.&nbsp;</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2022, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    
+    <script src="/js/vendor/jquery.js"></script>
+    <script src="/js/vendor/what-input.js"></script>
+    <script src="/js/vendor/foundation.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>

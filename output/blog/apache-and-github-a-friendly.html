@@ -1,0 +1,129 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apache and GitHub - a friendly PSA about awesomeness - Apache Infrastructure Website</title>
+    <link rel="stylesheet" href="/css/foundation.css">
+    <link rel="stylesheet" href="/css/app.css">
+    <link rel="stylesheet" href="/css/font-awesome.min.css">
+    <style type="text/css">
+      .frontbox {
+        border-radius: 8%;
+        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
+      }
+      .frontbox:hover {
+        border-top: 4px solid #1583CC;
+        margin-top: 0px;
+        cursor: pointer;
+      }
+      .clickable {
+	/* height was reduced by 40% */	
+	height: 60%;
+        width: 30%;
+        position: absolute;     
+        z-index: 1;
+      }
+    </style>
+    <link rel="stylesheet"
+          href="/highlight/default.min.css">
+    <script src="/highlight/highlight.min.js"></script>  </head>
+  <body style="background: #C1C1C1;">
+    <!-- Menu bar --->
+    <div class="row">
+      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
+        <div class="hide-for-small-only">
+          <div class="top-bar-left">
+            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
+              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
+                <img style="vertical-align: middle;" src='/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="top-bar-right">
+            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
+              <li class="is-dropdown-submenu-parent">
+                <a href="#" target="_self" style="padding-left: 7px;">About</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+                  <li><a href="/team.html">About the team</a></li>
+		  <li><a href="https://blogs.apache.org/infra/" target="_blank">The Infra Blog</a></li>	
+	          
+                </ul>
+              </li>
+              <li><a href="/policies.html" target="_blank" style="padding-left: 5px;">Policies</a></li>
+                           
+              <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Services-Tools</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
+		<li><a href="/services.html">Services and Tools</a></li>
+                <li><a href="/machines.html" target="_blank" >Machines and Fingerprints</a></li>
+                <li><a href="https://blocky.apache.org" target="_blank" >Blocky</a></li>
+		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" target="_blank" >DataDog</a></li>
+		<li><a href="https://whimsy.apache.org/roster/committer/" target="_blank" >Committer Search</a></li>
+		
+                </ul>
+              </li>
+              <li><a href="/doc.html" target="_blank" style="padding-left: 5px;">Documentation</a></li>
+	       <li class="is-dropdown-submenu-parent">
+                 <a href="#" target="_self" style="padding-left: 0px;">Contribute</a>
+                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">	
+		   <li><a href="/infra-volunteer.html">Volunteer with Infra</a></li>
+		   <li><a href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+			<li><a href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+		 </ul>
+	       </li>
+	      
+              <li><a href="/stats.html" target="_blank" style="padding-left: 5px;">Status</a></li>
+              <li><a href="/contact.html" style="padding-left: 5px;"><i class="fa fa-comments" style="color: #FFF; font-size: 0.9rem;"></i>Contact us</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>    
+    <!-- bread crumb -->
+    <div class="row">
+      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
+        <a href="/">Home</a>
+        <i class="fa fa-angle-double-right"></i>
+        <a href="/news/apache-and-github-a-friendly.html">
+Apache and GitHub - a friendly PSA about awesomeness        </a>
+        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/news/apache-and-github-a-friendly.md">edit</a>)
+      </div>
+    </div>
+    
+    
+    <!-- contents -->
+    <div class="row">
+      <div class="large-12 columns">
+        <div class="callout">
+          <h2>
+              Apache and GitHub - a friendly PSA about awesomeness
+          </h2>
+              <p> <em>With the <a href="https://blogs.apache.org/foundation/entry/the-apache-software-foundation-expands">news of the Apache Software Foundation teaming up more closely with GitHub</a>, we feel it natural to elaborate a bit on what has been going on and what this means for you as a committer and/or user of Apache software.</em><br/><br/> </p>
+<h2>A little bit of history</h2>The Apache Software Foundation started experimenting with git as a source code repository system in 2008, and ventured into GitHub in 2010, where we were graciously offered whatever resources we needed.<br/><br/>At first, this was merely a mirror of our existing git and subversion repositories, but as time went on, and projects expressed an interest in utilizing the many user-friendly features of GitHub, we started work on enabling projects to make proper use of GitHub some three years ago in the middle of 2016. This project, aptly named `gitbox`, ensured that committers could make full use of the GitHub features, while we kept a place within our own infrastructure for people inclined to continue using our infrastructure for their work. As git is decentralized by its very nature, we were able to use GitHub to augment rather than replace our git workflow, bringing our software development to the millions of users on GitHub in addition to the existing Apache community and committers, on a case-by-case basis.<br/><br/>In 2018, we made the decision to combine the two different git service offerings we had into one service, allowing all Apache projects to use GitHub if they so desired. Before then, we had two distinct git services: gitbox and git-wip-us, the initial git service that had been available since 2010. We coordinated the move from git-wip to gitbox with the various Apache projects, and in early 2019 we had migrated all projects to the new service, enabling GitHub features for all git-based Apache projects.<br/><br/>With Microsoft's acquisition of GitHub in 2018, and their commitment to help strengthen open source development, we have received additional resources to help lower the bar for contributions, and we'd like to thank GitHub for their support of the Apache Software Foundation through all nine years of using their platform.<br/><br/>
+<h2>What this means for you as a committer</h2><br/>As stated above, our GitHub integration is an augmentation of our existing service. It is available to all committers on git-based projects to make use of, should they so wish. All new git repositories will automatically be available on both GitHub and Gitbox.<br/><br/>For those wishing to take full advantage of GitHub's features, one can link their GitHub and Apache accounts through <a href="https://gitbox.apache.org/setup/">https://gitbox.apache.org/setup/</a> which will grant their GitHub account write access to the repositories you'd traditionally have access to at Apache.<br/><br/>People that wish to continue using their Apache committer accounts to commit code may continue doing so on gitbox.apache.org with their Apache credentials. Nothing has changed in that respect.<br/><br/>As Apache is a very email-centered organization, all GitHub activity is naturally linked to our mailing lists to ensure the same level of openness in the development of our software.<br/><br/>
+<h2>What this means for you as a user of Apache software</h2>
+<p><br/>For many projects, the move to GitHub means a lower bar to both contributing as well as troubleshooting and submitting issues to the projects, through the GitHub issue and pull request features.<br/><br/>Our commitment to provenance, quality and open governance remains the same, and with our tight integration with GitHub through our linked account service, we are able to bring what made Apache a mark of quality to the many users and contributors on GitHub.</p>
+<p><br/></p>
+<p> </p>
+<p>As always, if you have any questions, comments, remarks or feedback about this, we welcome you to reach out to the Apache Infrastructure Team at: <a href="mailto:users@infra.apache.org">users@infra.apache.org</a> <br/></p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2022, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>    
+    <script src="/js/vendor/jquery.js"></script>
+    <script src="/js/vendor/what-input.js"></script>
+    <script src="/js/vendor/foundation.js"></script>
+    <script src="/js/app.js"></script>
+  </body>
+</html>
