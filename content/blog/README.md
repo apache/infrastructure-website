@@ -5,7 +5,7 @@
 
 ### Creating a blog entry
 
-To create an entry, create an .md file in this folder. It probably should be like the permalink for the entry.
+To create an entry, create an .md file in this folder. The file's name should probably be like the permalink for the entry.
   - give the file a meaningful title that does not duplicate one we have used already.
   - The first line of the file should look like `layout: post title: THE ENTRY'S TITLE date: '2010-01-01' permalink: KEY WORDS FROM THE TITLE`. Note that the title does not need a period at its end.
   - Write your entry using Markdown.
