@@ -71,8 +71,8 @@ Infra maintains the Apache release distribution infrastructure, which has three 
 
 <h3 id="uploading">Uploading packages<a class="headerlink" href="#uploading" title="Permanent link">&para;</a></h3>
 
-  - Upload development packages and snapshots to `https://dist.apache.org/dist/dev/$project/`
-  - Upload release packages to `https://dist.apache.org/dist/release/$project/`. If your project uses a Subersion repository, you can use `svn mv` from the `dev` folder.
+  - Upload development packages and snapshots to `https://dist.apache.org/repos/dist/dev/$project/`
+  - Upload release packages to `https://dist.apache.org/repos/dist/release/$project/`. If your project uses a Subersion repository, you can use `svn mv` from the `dev` folder.
   - Incubator projects can find their dev/release folder inside their incubator directory.
 
 <h3 id="normal">Normal distribution on the Apache downloads site<a class="headerlink" href="#normal" title="Permanent link">&para;</a></h3>
