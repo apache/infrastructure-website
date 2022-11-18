@@ -5,13 +5,57 @@
 
 ### Blog entry metadata
 
-_this sections will cover the metadata fields available, per https://docs.getpelican.com/en/latest/content.html#publishing-drafts and indicate the minimum metadata each entry should have._
+Metadata includes the title of the entry and the date it was published. Pelican supports a large number of metadata fields, some of which support searching and filtering when you are looking for specific information.
+
+Required metadata: For each blog entry, make sure you provide the following metadata at the top of the file:
+
+  - layout: post
+  - title: the article's title
+  - date: the date the post first appeared (yyyy-mm-dd)
+  - permalink: a short phrase identifying the post
+
+These metadata fields are available, but are currently optional for the Infra blog:
+
+  - author: content author, when there is just one
+  - authors: separate the names of multiple content authors with commas
+  - category: content categlry. Only provide ONE for each blog post.
+  - keywords: content keywords, separated by commas (HTML content only)
+  - modified: the most recent date of changes to the post (yyyy-mm-dd)
+  - slug: identifier used in URLs and translations
+  - status: options are `draft`, `hidden`, or `published`
+  - summary: brief description for use on index pages
+  - tags: content tags, separated by commas
+  - url: url to use for this article
+
+Pelican supports these tags, which the Infra blog does not use:
+
+  - lang: content language ID
+  - save_as: save content to this relative file path
+  - template: template to use to generate content
+  - translation (true or false)
+
+The first line of the file should have this metadata, at a minimum: 
+```
+layout: post title: THE ENTRY'S TITLE date: 2010-01-01 permalink: KEY WORDS FROM THE TITLE`
+```
+
+Note that the title does not need a period at its end.
+
+For better readability as you are editing, you can lay out the metadata using multiple lines:
+
+```
+layout: post
+title: THE ENTRY'S TITLE
+date: 2010-01-01
+permalink: KEY WORDS FROM THE TITLE
+```
 
 ### Creating a blog entry
 
 To create an entry, create an .md file in this folder. The file's name should probably be like the permalink for the entry.
   - give the file a meaningful title that does not duplicate one we have used already.
-  - The first line of the file should have this metadata, at a minimum: `layout: post title: THE ENTRY'S TITLE date: '2010-01-01' permalink: KEY WORDS FROM THE TITLE`. Note that the title does not need a period at its end.
+  - Starting at the first line of the file, add metadata for the entry, as described above.
+
   - Write your entry using Markdown.
   - If you do not want to publish the blog post as soon as you commit it to the repository, set the metadata `status: draft`. When you are ready to publish the post, change the status to `published` or remove the `status` metadata altogether. Then commit the file.
   - You can edit the entry at any time. Updating an older entry does not move it to the top of the blog's display.
