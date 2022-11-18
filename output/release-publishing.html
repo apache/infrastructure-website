@@ -157,7 +157,7 @@ Release Creation Process        </a>
 <li>Incubator projects can find their dev/release folder inside their incubator directory.</li>
 </ul>
 <h3 id="normal">Normal distribution on the Apache downloads site<a class="headerlink" href="#normal" title="Permanent link">&para;</a></h3>
-<p>See the <a href="release-distribution-policy.html">Release Distribution Policy</a> for specific technical requirements.</p>
+<p>See the <a href="release-distribution.html">Release Distribution Policy</a> for specific technical requirements.</p>
 <p>Each Apache TLP has a <code>release/TLP-name</code> directory in the distribution Subversion repository at <code>https://dist.apache.org/repos/dist/</code>. Once a release vote passes, the release manager adds the release artifacts (plus signature and hash files) to this location. Each project is responsible for the structure of its directory. <a href="pypubsub.html">PyPubSub</a> pushes the contents of these directories to <code>http://downloads.apache.org/</code>. <strong>Note</strong> only store the most recent version of each supported release here.</p>
 <ul>
 <li>
@@ -182,7 +182,7 @@ Release Creation Process        </a>
 <p>The download page should use <code>HTTPS:</code> rather than plain <code>HTTP:</code> for linking to KEYS, sigs and hashes (for example: <code>https://downloads.apache.org/httpd/KEYS</code>).</p>
 </li>
 <li>
-<p>In addition to the checksum files required in the <a href="release-distribution-policy.html">Release Distribution Policy</a>, the project can provide an <code>MD5SUM</code> or <code>SHA*SUM</code>. <code>MD5SUM</code> and <code>SHA*SUM</code> must look like the output of <code>md5sum(1)</code>: lines containing a checksum, followed by a filename ; use only plain file names (no slashes). Do not use any other file names for such files.</p>
+<p>In addition to the checksum files required in the <a href="release-distribution.html">Release Distribution Policy</a>, the project can provide an <code>MD5SUM</code> or <code>SHA*SUM</code>. <code>MD5SUM</code> and <code>SHA*SUM</code> must look like the output of <code>md5sum(1)</code>: lines containing a checksum, followed by a filename ; use only plain file names (no slashes). Do not use any other file names for such files.</p>
 </li>
 </ul>
 <p>If the release directory does not yet exist, please create a Jira ticket for INFRA with the required information (see the <a href="contact.html">contact</a> page).</p>
