@@ -77,7 +77,7 @@ Infra maintains the Apache release distribution infrastructure, which has three 
 
 <h3 id="normal">Normal distribution on the Apache downloads site<a class="headerlink" href="#normal" title="Permanent link">&para;</a></h3>
 
-See the [Release Distribution Policy](release-distribution-policy.html) for specific technical requirements.
+See the [Release Distribution Policy](release-distribution.html) for specific technical requirements.
 
 Each Apache TLP has a `release/TLP-name` directory in the distribution Subversion repository at `https://dist.apache.org/repos/dist/`. Once a release vote passes, the release manager adds the release artifacts (plus signature and hash files) to this location. Each project is responsible for the structure of its directory. [PyPubSub](pypubsub.html) pushes the contents of these directories to `http://downloads.apache.org/`. **Note** only store the most recent version of each supported release here.
 
@@ -93,7 +93,7 @@ Each Apache TLP has a `release/TLP-name` directory in the distribution Subversio
   - **Do not** publish `.sig` files. Make sure your `.asc`s are plain-text files.
   - The download page should use `HTTPS:` rather than plain `HTTP:` for linking to KEYS, sigs and hashes (for example: `https://downloads.apache.org/httpd/KEYS`).
 
-  - In addition to the checksum files required in the [Release Distribution Policy](release-distribution-policy.html), the project can provide an `MD5SUM` or `SHA*SUM`. `MD5SUM` and `SHA*SUM` must look like the output of `md5sum(1)`: lines containing a checksum, followed by a filename ; use only plain file names (no slashes). Do not use any other file names for such files.
+  - In addition to the checksum files required in the [Release Distribution Policy](release-distribution.html), the project can provide an `MD5SUM` or `SHA*SUM`. `MD5SUM` and `SHA*SUM` must look like the output of `md5sum(1)`: lines containing a checksum, followed by a filename ; use only plain file names (no slashes). Do not use any other file names for such files.
 
 If the release directory does not yet exist, please create a Jira ticket for INFRA with the required information (see the [contact](contact.html) page).
 
