@@ -22,8 +22,8 @@
               {{ page.title }}
             {% endif %}
           </h2>
-          Posted on: {{ article.date }}
           {% if article %}
+              <p>Posted on: {{ article.date }}</p>
               {{ article.content }}
             {% else %}
               {{ page.content }}
