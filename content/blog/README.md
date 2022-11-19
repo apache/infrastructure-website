@@ -18,7 +18,7 @@ These metadata fields are available, but are currently optional for the Infra bl
 
   - author: content author, when there is just one
   - authors: separate the names of multiple content authors with commas
-  - category: content categlry. Only provide ONE for each blog post.
+  - category: content category. Only provide ONE for each blog post. Current options are `event`, `infra`, `policy`, `projects`, `security`, `service`, 'tools'.
   - keywords: content keywords, separated by commas (HTML content only)
   - modified: the most recent date of changes to the post (yyyy-mm-dd)
   - slug: identifier used in URLs and translations
