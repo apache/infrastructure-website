@@ -1,7 +1,7 @@
 Title: Using the Digicert code signing service
 
 ## Transition to DigiCert
-We have moved from the old Symantec service to the new DigiCert service. The Symanetc service is no longer avaialble. All new signing must be via the DigiCert service.
+We have moved from the old Symantec service for signing certificates to the new DigiCert service. The Symanetec service is no longer avaialble. All new signing must be via the DigiCert service.
 
 If you require assistance migrating to the DigiCert service, please open an <a href="https://issues.apache.org/jira/browse/INFRA">INFRA Jira ticket</a> and select code signing as the component.
 
