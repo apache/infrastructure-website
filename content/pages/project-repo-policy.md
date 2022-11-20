@@ -5,6 +5,7 @@ Each Apache project can have a directory in the Apache Subversion repository, or
   - Each project can have a public directory in the Subversion repository, or as many public Git repositories as their work requires.
   - Each project can also request (using a Jira ticket) that Infra set up **one private Git repository** for use with tasks, such as fixing security issues in project code, that should not be publicly available. The PMC must explain its need of a private repo in the Jira ticket. Only members of the project's PMC can see this repository or read its contents.
     - Private repos **must** have commit/PR/issues emails sent to the project's `private@` list.  
+  - To follow the Infra convention, name project repos in the pattern `$project-$reponame` in order to map the project LDAP group to the permissions scheme.
 
 ### Git repositories
 
