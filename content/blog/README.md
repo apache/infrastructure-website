@@ -13,12 +13,12 @@ Required metadata: For each blog entry, make sure you provide the following meta
   - title: the article's title
   - date: the date the post first appeared (yyyy-mm-dd)
   - permalink: a short phrase identifying the post
+  - category: content category. Only provide ONE for each blog post. Current options are `event`, `general`, `infra`, `policy`, `projects`, `security`, `service`, `tools`. _note: filtering is not enabled yet._
 
 These metadata fields are available, but are currently optional for the Infra blog:
 
   - author: content author, when there is just one
   - authors: separate the names of multiple content authors with commas
-  - category: content category. Only provide ONE for each blog post. Current options are `event`, `infra`, `policy`, `projects`, `security`, `service`, `tools`.
   - keywords: content keywords, separated by commas (HTML content only)
   - modified: the most recent date of changes to the post (yyyy-mm-dd)
   - slug: identifier used in URLs and translations
@@ -36,7 +36,7 @@ Pelican supports these tags, which the Infra blog does not use:
 
 The first line of the file should have this metadata, at a minimum: 
 ```
-layout: post title: THE ENTRY'S TITLE date: 2010-01-01 permalink: KEY WORDS FROM THE TITLE`
+  layout: post title: THE ENTRY'S TITLE date: 2010-01-01 permalink: KEY WORDS FROM THE TITLE category CATEGORY
 ```
 
 Note that the title does not need a period at its end.
@@ -48,6 +48,7 @@ layout: post
 title: THE ENTRY'S TITLE
 date: 2010-01-01
 permalink: KEY WORDS FROM THE TITLE
+category CATEGORY
 ```
 
 ### Creating a blog entry
