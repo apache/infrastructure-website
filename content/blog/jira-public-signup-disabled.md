@@ -23,9 +23,9 @@ users can email to ask for an account.
 Once an account has been created, that user is then automatically whitelisted to create issues anywhere within our Jira instance.
 
 We appreciate that this is not as convenient as having public signups on, but we must do this in order to move forward and to
-stop the spam in its entirety
+stop the spam in its entirety.
 
-.Any questions or concerns please feel free to email users@infra.apache.org
+Any questions or concerns please feel free to email users@infra.apache.org
 
 Kind Regards
 
