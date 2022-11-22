@@ -16,8 +16,8 @@ the Jira account requests that come in. Projects are encouraged but not required
 users can email to ask for an account.&lt;/p&gt;
 &lt;p&gt;Once an account has been created, that user is then automatically whitelisted to create issues anywhere within our Jira instance.&lt;/p&gt;
 &lt;p&gt;We appreciate that this is not as convenient as having public signups on, but we must do this in order to move forward and to
-stop the spam in its entirety&lt;/p&gt;
-&lt;p&gt;.Any questions or concerns please feel free to email &lt;a href="mailto:users@infra.apache.org"&gt;users@infra.apache.org&lt;/a&gt;&lt;/p&gt;
+stop the spam in its entirety.&lt;/p&gt;
+&lt;p&gt;Any questions or concerns please feel free to email &lt;a href="mailto:users@infra.apache.org"&gt;users@infra.apache.org&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;Kind Regards&lt;/p&gt;
 &lt;p&gt;The ASF Infrastructure Team&lt;/p&gt;
 </content><category term="blog"></category></entry><entry><title>Infra blogs has a new home</title><link href="https://infra.apache.org/blog/Blogs%20has%20a%20new%20home.html" rel="alternate"></link><published>2022-10-24T12:54:00+00:00</published><updated>2022-10-24T12:54:00+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2022-10-24:/blog/Blogs has a new home.html</id><content type="html">&lt;p&gt;Just moved posts over from blogs.apache.org/infra. New posts all go through the infrastructure-website repo and it should be as easy as posting some markdown.&lt;/p&gt;
