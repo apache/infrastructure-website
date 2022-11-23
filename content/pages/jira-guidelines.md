@@ -41,7 +41,7 @@ To provide an ASF Jira account for someone who is not a part of the ASF communit
   - On the screen that appears, provide the username, display name, and email address for the new account. Then click the `submit` button.
   - If the account is created, a success message appears onscreen.
 
-The user receives an email with a link to where they can 'reset' their password. they then can create Jira tickets for ASF projects, for Infra, or for the ASF in general.
+The user receives an email with a link to where they can have their password sent to them. They then can create Jira tickets for ASF projects, for Infra, or for the ASF in general.
 
 <h3 id="before">Before you create a ticket<a class="headerlink" href="#before" title="Permanent link">&para;</a></h3>
 
