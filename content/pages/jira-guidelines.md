@@ -33,7 +33,7 @@ To provide an ASF Jira account for someone who is not a part of the ASF communit
 
   - Gather this information from the requestor:
     - email address
-    - preferred username
+    - preferred username (N.B. hyphens not allowed)
     - alternate username (in case the preferred one is already in use)
     - display name, if it is different from the username
   - Go to <a href="https://selfserve.apache.org/" target="_blank">selfserve.apache.org</a> and select ‘Create a Jira user account’.
