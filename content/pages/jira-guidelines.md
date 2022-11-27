@@ -24,7 +24,7 @@ Any person with an ASF Jira account can open a ticket for any ASF project.
 In November, 2022, due to an influx of false Jira accounts creating a flood of spam tickets, Infra ended public signups to ASF Jira accounts. This <a href="https://infra.apache.org/blog/jira-public-signup-disabled.html" target="_blank">blog post</a> discusses the decision.
 
 
-<b>If you need to open a Jira ticket for a particular project and do not have an ASF Jira account, ask the project to create a Jira account you can use by emailing the project's private mailing list</b>. This information can often be found on the web at <project>.apache.org under a "Contact" or "Communication" link, and is typically private@<project>.apache.org. Some projects may have alternate communication methods, be sure to check their web pages first.
+<b>If you need to open a Jira ticket for a particular project and do not have an ASF Jira account, ask the project to create a Jira account you can use by emailing the project's private mailing list</b>. This information can often be found on the web at [project].apache.org under a "Contact" or "Communication" link, and is typically private@[project].apache.org. For example, to report a bug or issue for the example Apache Foo project, contact private@foo.apache.org to have a Jira account created. Some projects may have alternate communication methods, be sure to check their web pages first.
 
 <h3 id="account">Creating an account for a non-ASF reporter<a class="headerlink" href="#account" title="Permanent link">&para;</a></h3>
 
@@ -103,12 +103,12 @@ When you have completed entering the useful information, click **Create** to cre
 
 The largest group of tickets assigned to Infra are requests for Infra to perform a task of one sort or another. The next largest category is reports of possible bugs in the Infrastructure system.
 
-Here are details about Infra's typical <a href="https://infra.apache.org/responsetime.html" target="_blank">response times</a> to Jira tickets and other requests, which largely depend on the severity of the issue. If a work week has gone by without a response, feel free to write a reminder email to `users@infra.apache.org`, including the Jira ticket number.
-
 Infra may respond in a number of ways, including:
 
   - Closing the ticket as **invalid**. Review "Before you create a ticket", above, for reasons that may generate this response.
   - Asking for **further details**. You may then see that the status of the ticket has changed to _waiting for user_. Provide the details as best you can in a comment, and change the status to _waiting for Infra_.
   - Reporting the issue **resolved**. Please verify the fix or that the requested service is now available. If all is well, and Infra has not changed the status to _closed_ or one of its variants, feel free to do so yourself.
 
-**Note**: If the ticket's status is _waiting for user_, Infra may ignore it for now and work on other tickets.
+**Note**: A ticket in the status of _Waiting for User_, will not generally be worked on until the ticket status is set to _Waiting for Infra_. Be sure to set the ticket to _Waiting for Infra_ if the ticket needs follow-up!
+
+Here are details about Infra's typical <a href="https://infra.apache.org/responsetime.html" target="_blank">response times</a> to Jira tickets and other requests, which largely depend on the severity of the issue. 
