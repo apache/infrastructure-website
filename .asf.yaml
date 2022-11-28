@@ -13,6 +13,8 @@ github:
   description:   Infrastructure Team Website Repository
   homepage:      https://infra.apache.org
   collaborators: []
+  autolink_jira:
+    - INFRA
   
 notifications:
   commits:              commits@infra.apache.org
