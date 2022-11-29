@@ -25,6 +25,8 @@ In November, 2022, due to an influx of false Jira accounts creating a flood of s
 
 
 <b>If you need to open a Jira ticket for a particular project and do not have an ASF Jira account, ask the project to create a Jira account you can use by emailing the project's private mailing list</b>. This information can often be found on the web at [project].apache.org under a "Contact" or "Communication" link, and is typically private@[project].apache.org. For example, to report a bug or issue for the example Apache Foo project, contact private@foo.apache.org to have a Jira account created. Some projects may have alternate communication methods, be sure to check their web pages first.
+<br>
+<b>IMPORTANT:</b>Please give projects time to respond and create your account. If you have not received an update or notification of account creation after seven days, reach out to the project's private list again asking for an update.
 
 <h3 id="account">Creating an account for a non-ASF reporter<a class="headerlink" href="#account" title="Permanent link">&para;</a></h3>
 
