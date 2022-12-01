@@ -1,5 +1,39 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Apache Infrastructure Website</title><link href="https://infra.apache.org/" rel="alternate"></link><link href="https://infra.apache.org/feeds/all-en.atom.xml" rel="self"></link><id>https://infra.apache.org/</id><updated>2022-11-21T00:00:00+00:00</updated><subtitle></subtitle><entry><title>New Jenkins Nodes running Windows</title><link href="https://infra.apache.org/blog/new-jenkins-nodes-running-windows.html" rel="alternate"></link><published>2022-11-21T00:00:00+00:00</published><updated>2022-11-21T00:00:00+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2022-11-21:/blog/new-jenkins-nodes-running-windows.html</id><summary type="html">&lt;p&gt;This afternoon, we rolled out two new Shared Jenkins Nodes, jenkins-win-azr-7 and 8. They are both in rotation, using the labels Windows and Windows-Docker. The second label was put in place as the older nodes can't run Docker Desktop. I've also tried setting these up by cloning disks instead of …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This afternoon, we rolled out two new Shared Jenkins Nodes, jenkins-win-azr-7 and 8. They are both in rotation, using the labels Windows and Windows-Docker. The second label was put in place as the older nodes can't run Docker Desktop. I've also tried setting these up by cloning disks instead of from the ground up.
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Apache Infrastructure Website</title><link href="https://infra.apache.org/" rel="alternate"></link><link href="https://infra.apache.org/feeds/all-en.atom.xml" rel="self"></link><id>https://infra.apache.org/</id><updated>2022-12-01T00:00:00+00:00</updated><subtitle></subtitle><entry><title>The Joy of Feedback (2022 Infra Survey)</title><link href="https://infra.apache.org/blog/2022%20Survey.html" rel="alternate"></link><published>2022-12-01T00:00:00+00:00</published><updated>2022-12-01T00:00:00+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2022-12-01:/blog/2022 Survey.html</id><summary type="html">&lt;p&gt;In discussions at ApacheCon in New Orleans, we learned that the three standard methods of communicating with Infra:&amp;nbsp;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;opening a Jira ticket&amp;nbsp;&lt;/li&gt;
+&lt;li&gt;sending an email&amp;nbsp;&lt;/li&gt;
+&lt;li&gt;posting a message on the #asfinfra Slack channel&amp;nbsp;
+&amp;nbsp;
+are not ideal for many conversations folks would like to have about The ASF's infrastructure.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Roundtable Discussions …&lt;/h2&gt;</summary><content type="html">&lt;p&gt;In discussions at ApacheCon in New Orleans, we learned that the three standard methods of communicating with Infra:&amp;nbsp;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;opening a Jira ticket&amp;nbsp;&lt;/li&gt;
+&lt;li&gt;sending an email&amp;nbsp;&lt;/li&gt;
+&lt;li&gt;posting a message on the #asfinfra Slack channel&amp;nbsp;
+&amp;nbsp;
+are not ideal for many conversations folks would like to have about The ASF's infrastructure.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2&gt;Roundtable Discussions&lt;/h2&gt;
+&lt;p&gt;Infra is proposing to hold a monthly roundtable of free-flowing discussion.&lt;/p&gt;
+&lt;p&gt;Our idea right now is that each roundtable event will take place in a Slack huddle and will last an hour.&amp;nbsp;
+&amp;nbsp;
+The first (shorter) part will be Infra talking about a topic of interest, something we are planning, or a problem we are facing.
+Then we'll open the floor for everyone to talk about that topic... and about anything else infrastructure-related.&lt;/p&gt;
+&lt;p&gt;We'll create a bullet-point summary of what we talked about, and will make the summaries available in our CWiki space.&lt;/p&gt;
+&lt;h2&gt;Surveys&lt;/h2&gt;
+&lt;p&gt;We'd also like to start using regular surveys to get to understand the heart of the problems that our projects and podlings face.&lt;/p&gt;
+&lt;p&gt;Our plan with surveys is two fold.&lt;/p&gt;
+&lt;p&gt;First, to get a finger on the pulse of projects and a "2022 year in review" baseline. Being this is the first time we're trying this it's likely that future surveys will contain different questions.&lt;/p&gt;
+&lt;p&gt;Secondly, we'll be sending out another survey on a regular basis, something like every six months or so just to keep a feedback loop going.&lt;/p&gt;
+&lt;p&gt;Surveys will be anonymous and results will be posted on the Infra blog. Depending on timing, they will also be discussed in the roundtables if the data is pertinent.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://infra.apache.org/surveys/survey-1.html"&gt;You can find the survey here&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;Cheers,&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ASF Infra&lt;/li&gt;
+&lt;/ul&gt;
+</content><category term="blog"></category></entry><entry><title>New Jenkins Nodes running Windows</title><link href="https://infra.apache.org/blog/new-jenkins-nodes-running-windows.html" rel="alternate"></link><published>2022-11-21T00:00:00+00:00</published><updated>2022-11-21T00:00:00+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2022-11-21:/blog/new-jenkins-nodes-running-windows.html</id><summary type="html">&lt;p&gt;This afternoon, we rolled out two new Shared Jenkins Nodes, jenkins-win-azr-7 and 8. They are both in rotation, using the labels Windows and Windows-Docker. The second label was put in place as the older nodes can't run Docker Desktop. I've also tried setting these up by cloning disks instead of …&lt;/p&gt;</summary><content type="html">&lt;p&gt;This afternoon, we rolled out two new Shared Jenkins Nodes, jenkins-win-azr-7 and 8. They are both in rotation, using the labels Windows and Windows-Docker. The second label was put in place as the older nodes can't run Docker Desktop. I've also tried setting these up by cloning disks instead of from the ground up.
 Feel free to test them out, all the usual tools are in place (as well as Docker).&lt;/p&gt;
 </content><category term="blog"></category></entry><entry><title>Jira Public Signup Disabled</title><link href="https://infra.apache.org/blog/jira-public-signup-disabled.html" rel="alternate"></link><published>2022-11-11T16:48:00+00:00</published><updated>2022-11-11T16:48:00+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2022-11-11:/blog/jira-public-signup-disabled.html</id><summary type="html">&lt;p&gt;Today, the Infrastructure Team took the step to disable public signups to ASF Jira&lt;/p&gt;
 &lt;p&gt;This was not done lightly. The main reason for this is the amount of spam and spam accounts that are created every day, it has
