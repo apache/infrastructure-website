@@ -14,6 +14,8 @@ In The ASF workspace on Slack, enter this command:
 
 (qbot is an Infra tool to simplify actions within the ASF Slack workspace.)
 
+`roundtable` is now in your list of channels. In the future, you will can just click on its link rather than asking to join it again.
+
 When you are in the channel, you can share messages with others as a sort of pre-meeting. At some point an infra staffer will post a message inviting people to join the channel **huddle**. Te link to join the huddle looks like a white dot beside the outline of a headset. Click the link to join the huddle.
 
 ### What happens in the roundtable
