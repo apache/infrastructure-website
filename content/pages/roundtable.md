@@ -21,8 +21,8 @@ When you are in the channel, you can share messages with others as a sort of pre
 ### What happens in the roundtable
 
   - An Infra team member will normally open the meeting with a short presentation related to the advertised topic, and then throw the floor open to discussion. 
-  - Please mute your microphone when not speaking, to cut down on ambient noise.
-  - If you want to speak, just unmute and start speaking. We will all try to practice good meeting manners, which include not talking over others.
+  - If Using a mic: please mute your microphone when not speaking, to cut down on ambient noise.
+  - If you want to speak: either type your message in the meeting thread or unmute and start speaking. We will all try to practice good meeting manners, which include not talking over others.
   - When you are done with what you want to ask or say, remember to mute yourself again.
 
 #### Questions
