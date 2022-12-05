@@ -21,9 +21,8 @@ When you are in the channel, you can share messages with others as a sort of pre
 ### What happens in the roundtable
 
   - An Infra team member will normally open the meeting with a short presentation related to the advertised topic, and then throw the floor open to discussion. 
-  - If Using a mic: please mute your microphone when not speaking, to cut down on ambient noise.
-  - If you want to speak: either type your message in the meeting thread or unmute and start speaking. We will all try to practice good meeting manners, which include not talking over others.
-  - When you are done with what you want to ask or say, remember to mute yourself again.
+  - If you are using a microphone, please mute your mic when not speaking, to cut down on ambient noise.
+  - To contribute to the discussion, either type your message in the meeting thread or unmute and start speaking. We will all try to practice good meeting manners, which include not talking over others.
 
 #### Questions
 Each roundtable has a unique question queue which lives in a thread. The queue is interactive to reduce channel chatter during the meeting. The meeting addresses questions according to the number of **upvotes** they receive: if question 1 has one upvote and question 2 has six, we will address question 2 before question 1.
