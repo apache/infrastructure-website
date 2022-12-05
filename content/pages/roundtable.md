@@ -37,4 +37,6 @@ When you want to leave, click the huddle button to leave the huddle. Then move t
 
 ### After the roundtable
 
-Infra posts a summary of each roundtable's discussion on a page in the Infra CWiki space. Check back soon to find a link to those summaries here.
+Infra posts a summary of each roundtable's discussion on <a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable" target="_blank">here</a>. Check back soon to find a link to those summaries here.
+
+If the meeting does not get to discuss a question you submitted, feel free to ask it in the `asfinfra` Slack channel, or bring it up again at the next roundtable. 
