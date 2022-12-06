@@ -6,6 +6,8 @@ To provide a space for conversations on issues related to the ASF's infrastructu
   - Infra will post the general topic for each month's meeting.
   - The roundtables are available to anyone who can access the ASF workspace on Slack: basically, committers and Members.
 
+Roundtables differ from conversation modes such as IRC or an email thread, in which everyone types what they want to say. During the roundtable, people can either **speak or type** their comments, and the opening presentation and the discussion presume participants are listening, rather than reading. If you follow the chat screen only, with no audio, you will miss significant parts of the meeting. Turning on a webcam, on the other hand, is optional.
+
 ### To join the roundtable
 
 In The ASF workspace on Slack, enter this command:
