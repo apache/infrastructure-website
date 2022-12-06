@@ -27,11 +27,15 @@ When you are in the channel, you can share messages with others as a sort of pre
   - To contribute to the discussion, either type your message in the meeting thread or unmute and start speaking. We will all try to practice good meeting manners, which include not talking over others.
 
 #### Questions
-Each roundtable has a unique question queue which lives in a thread. The queue is interactive to reduce channel chatter during the meeting. The meeting addresses questions according to the number of **upvotes** they receive: if question 1 has one upvote and question 2 has six, we will address question 2 before question 1.
+Each roundtable has a unique question queue which lives at the very **top of the huddle's chat screen**. Add there any questions you want to put to the meeting. 
+
+The meeting addresses questions according to the number of **upvotes** they receive: if question 1 has one upvote and question 2 has six, we will address question 2 before question 1.
   - To see the thread, click the **show thread** icon (it looks like a speech balloon). 
-  - The question queue appears in a new window within the huddle.
-  - To **ask a question**, click the `Ask a Question` button and write out your question. You will be able to explain your question when we get to it, so you can keep the question short.
+  - The question queue is at the top of the thread.
+  - To **ask a question**, scroll to the top of the thread, click the `Ask a Question` button and write out your question. You will be able to explain your question when we get to it, so you can keep the question short.
   - To **upvote a question**, click its `upvote` button. **Note**: you can't remove an upvote once you have voted, so only upvote the questions you really are interested in, rather than, say, upvoting everything.
+
+When the meeting addresses a question, it remains in the list, but with a line through it.
 
 ### To leave the roundtable
 
