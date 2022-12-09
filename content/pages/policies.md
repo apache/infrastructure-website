@@ -24,6 +24,7 @@ The Apache Infrastructure Team (Infra) operates under the <a href="https://www.a
 - [Outreach to committers](committer-outreach.html)
 - [Site-wide ban](infra-ban.html)
 - [Top-Level Project sites](project-site-policy.html)
+- [Password requirements](password-policy.html)
 - [Two Factor Authentication](2fa-policy.html)
 - [Release distribution policy](release-distribution.html)
   - [Release download pages](release-download-pages.html)
