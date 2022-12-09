@@ -31,7 +31,7 @@ order to simplify or otherwise optimize an attempt at cracking a password.
 
 The exact formula we use is as follows:
 
-$complexity=1-\frac{2}{3}(2^{(-\frac{-\log_{2}(\frac{1-h}{1-\frac{1}{3}})}{90}*(entropy-30)})$
+$complexity=1-\frac{2}{3}(2^{(-\frac{-\log_{2}(\frac{1-0.950}{1-\frac{1}{3}})}{90}*(entropy-30)})$
 
 
 Our self-serve page for (re)setting passwords at https://id.apache.org/ will provide you with 
