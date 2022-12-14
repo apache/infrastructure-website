@@ -116,7 +116,7 @@ Guide for new project committers        </a>
 </li>
 <li><a href="#committer-resources">Committer resources</a>
 <ul>
-<li><a href="#check-out-the-committers-only-subversion-module">the Committers-only Subversion Module</a></li>
+<li><a href="#check-out-the-committers-only-subversion-module">the Committers-only Subversion module</a></li>
 </ul>
 </li>
 <li><a href="#get-to-know-the-apache-community">The Apache Community</a>
@@ -124,7 +124,7 @@ Guide for new project committers        </a>
 <li><a href="#mailing-lists">Join mailing lists</a></li>
 </ul>
 </li>
-<li><a href="#committer-responsibilities">Committer Responsibilities</a></li>
+<li><a href="#committer-responsibilities">Committer responsibilities</a></li>
 <li><a href="#attending-apachecon">Attending ApacheCon</a></li>
 <li><a href="#personal-web-space">Personal web space</a></li>
 <li><a href="#identity-theft">Identity theft</a></li>
@@ -175,9 +175,20 @@ work you do, even outside of your employment. Your employer might even need to p
 <p><strong>Note</strong>: Please read <a href="spam-reporting.html">Dealing with spam in your ASF email account</a> and <strong>do not</strong> flag valid ASF-related email as spam.</p>
 <h4 id="set-up-subversion-or-git-access">Set up Subversion or Git access<a class="headerlink" href="#set-up-subversion-or-git-access" title="Permanent link">&para;</a></h4>
 <p>Read about <a href="version-control.html">source control repositories at Apache</a>.</p>
-<p>If your project has a page for its developers and committers, add your name and information to it This is a great way to make your first commit, and helps your team get to know you. <p>It also serves another purpose: you will learn how to add documentation to your project's website and the technology used to build it. Documentation is vital, and being able to improve the project's web site is a skill that you will need. If your project has not documented how to rebuild the website, then ask on your dev mailing list and use the answer to create a document describing how to do that. It will be gratefully received! Every team has a lot of "tribal" knowledge" that team members hold in their heads or in private notes, but that the whole team needs to know in order to function well and survive a disaster like a key team member suddenly becoming unavailable.</p>
-<p>From 2010 Apache projects used the Apache CMS system to manager their project sites. The CMS is deprecated as of the summer of 2021. Projects that have not moved their website to a recommended tool may find that they are no longer able to update the site. A <a href="asf-pelican.html">site template using Pelican</a> is available to make site migrations, and the creation of new sites, convenient. <a href="project-site.html">This page</a> has additional useful information.</p>
-<h4 id="set-up-security-and-pgp-keys">Set Up Security And PGP Keys<a class="headerlink" href="#set-up-security-and-pgp-keys" title="Permanent link">&para;</a></h4>
+<h3>Configuring your access to project Git repositories</h3>
+<p>If your project uses Git to store and deploy its product code, you need to integrate your GitHub ID with your Apache account, so that you can merge pull requests and perform other Git tasks.</p>
+<ol>
+<li>Verify you have a GitHub ID enabled with <a href="https://help.github.com/articles/securing-your-account-with-two-factor-authentication-2fa/" target="_blank">two factor authentication (2FA)</a>.</li>
+<li>Add your GitHub ID to your <a href="https://id.apache.org/" target="_blank">Apache ID profile</a>.</li>
+<li>Merge your Apache and GitHub accounts using <a href="https://gitbox.apache.org/setup/" target="_blank">GitBox</a>, the Apache account linking utility. You should see three green checks in GitBox.</li>
+<li>Wait for an email inviting you to the Apache GitHub organization. When it arrives (this may take 30 minutes), accept the invitation.</li>
+<li>Verify that you are a member of the <a href="https://github.com/orgs/apache/teams" target="_blank">committers team for your project or projects on GitHub</a>.</li>
+</ol>
+<h4>Your first commit to a Git repository</h4>
+<p>If your project has a page for its developers and committers on its website, add your name and information to it. This is a great way to make your first commit, and helps your team get to know you.</p>
+<p>It also serves another purpose: you will learn how to add documentation to your project's website and the technology used to build it. Documentation is vital, and being able to improve the project's web site is a skill that you will need. If your project has not documented how to rebuild the website, then ask on your dev mailing list and use the answer to create a document describing how to do that. It will be gratefully received!</p>
+<p>Every team has a lot of "tribal" knowledge" that team members hold in their heads or in private notes, but that the whole team needs to know in order to function well and survive a disaster like a key team member suddenly becoming unavailable. You can help migrate tribal knowledge into the documentation, by noting where you have to ask a team member for guidance that you cannot find in the docs.</p>
+<h3 id="set-up-security-and-pgp-keys">Set Up Security And PGP Keys<a class="headerlink" href="#set-up-security-and-pgp-keys" title="Permanent link">&para;</a></h3>
 <p>Security is vital and Apache pays great attention to it. Remember that at all times, and ensure that all your Apache passwords are sufficiently secure, and that any code you check in is safe.</p>
 <p><a href="https://www.openpgp.org/" target="_blank">OpenPGP</a> is a <a href="https://www.ietf.org/rfc/rfc2440.txt" target="_blank">standard</a> that provides (among other things) methods to create digital signatures for documents ranging from emails to ASF releases. Many applications provide OpenPGP compatible signatures, including the well-known <a href="https://gnupg.org/" target="_blank">GPG</a>. We recommend that you create a PGP key for your <code>apache.org</code> address (or add that address to an existing key). <strong>DO NOT</strong> create this key on any machine to which many users have access and <strong>DO NOT</strong> ever copy your private key to any other shared machine. Release managers need to take particular <a href="https://infra.apache.org/release-signing.html#private-key-protection" target="_blank">care of keys used to sign releases</a>.</p>
 <p>Upload the public key to a public key server, for example the <a href="https://pgp.mit.edu/" target="_blank">MIT PGP Public Key Server</a>. Then add your keys' primary fingerprints to <a href="https://id.apache.org/" target="_blank">your LDAP profile</a>. The system adds your key to the <a href="https://home.apache.org/keys/" target="_blank">individual and per-project pre-fetched KEYS files</a>, and lets automated tools encrypt communications to you.</p>
@@ -219,7 +230,7 @@ updating this website).</p>
 <p><a href="infra-volunteer.html">Volunteer</a> if you would like to help the Infrastructure team keep the good ship ASF afloat.</p>
 <h3 id="last">The last word</h3>
 <p>Welcome!!</p>
-</p>
+
         </div>
       </div>
     </div>    
