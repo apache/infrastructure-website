@@ -10,6 +10,7 @@ Here's how to set up the technical and social environment that will support your
       - <a href="#apache-committer-account-creation">Apache Committer Account Creation</a>
       - <a href="#set-up-your-apacheorg-email-address">Set up Your @apache.org email address</a>
       - <a href="#set-up-subversion-or-git-access">Set up Subversion or Git access</a>
+      - <a href="#config-access">Configure your access to project Git repositories</a>
       - <a href="#set-up-security-and-pgp-keys">Set up Security and PGP Keys</a>
   - <a href="#committer-resources">Committer resources</a>
       - <a href="#check-out-the-committers-only-subversion-module">the Committers-only Subversion module</a>
@@ -84,11 +85,11 @@ The 'asf-altEmail' field is used to validate subscription requests and correlate
 
 **Note**: Please read [Dealing with spam in your ASF email account](spam-reporting.html) and **do not** flag valid ASF-related email as spam.
 
-<h4 id="set-up-subversion-or-git-access">Set up Subversion or Git access<a class="headerlink" href="#set-up-subversion-or-git-access" title="Permanent link">&para;</a></h4>
+<h3 id="set-up-subversion-or-git-access">Set up Subversion or Git access<a class="headerlink" href="#set-up-subversion-or-git-access" title="Permanent link">&para;</a></h3>
 
 Read about [source control repositories at Apache](version-control.html).
 
-### Configuring your access to project Git repositories
+<h3 id="config-access">Configure your access to project Git repositories<a class="headerlink" href="#config-access" title="Permanent link">&para;</a></h3>
 
 If your project uses Git to store and deploy its product code, you need to integrate your GitHub ID with your Apache account, so that you can merge pull requests and perform other Git tasks.
 
