@@ -91,7 +91,11 @@ Read about [source control repositories at Apache](version-control.html).
 
 <h3 id="config-access">Configure your access to project Git repositories<a class="headerlink" href="#config-access" title="Permanent link">&para;</a></h3>
 
-If your project uses Git to store and deploy its product code, you need to integrate your GitHub ID with your Apache account, so that you can merge pull requests and perform other Git tasks.
+If your project uses Git to store, develop, and deploy its product code, you can use either GitHub or Apache's Gitbox for actions such as merging pull requests.
+
+#### Using GitHub
+
+To use GitHub, you need to integrate your GitHub ID with your Apache account, so that you can merge pull requests and perform other Git tasks.
 
 1. Verify you have a GitHub ID enabled with <a href="https://help.github.com/articles/securing-your-account-with-two-factor-authentication-2fa/" target="_blank">two factor authentication (2FA)</a>.
 2. Add your GitHub ID to your <a href="https://id.apache.org/" target="_blank">Apache ID profile</a>.
@@ -99,7 +103,10 @@ If your project uses Git to store and deploy its product code, you need to integ
 4. Wait for an email inviting you to the Apache GitHub organization. When it arrives (this may take 30 minutes), accept the invitation.
 5. Verify that you are a member of the <a href="https://github.com/orgs/apache/teams" target="_blank">committers team for your project or projects on GitHub</a>. 
 
-#### Your first commit to a Git repository
+#### Using Gitbox
+To connect to Git repositories through Gitbox, visit <a href="https://gitbox.apache.org" target="_blank">Gitbox</a> and follow the onscreen instructions.
+
+### Your first commit to a Git repository
 If your project has a page for its developers and committers on its website, add your name and information to it. This is a great way to make your first commit, and helps your team get to know you. 
 
 It also serves another purpose: you will learn how to add documentation to your project's website and the technology used to build it. Documentation is vital, and being able to improve the project's web site is a skill that you will need. If your project has not documented how to rebuild the website, then ask on your dev mailing list and use the answer to create a document describing how to do that. It will be gratefully received! 
