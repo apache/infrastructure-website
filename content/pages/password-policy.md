@@ -18,7 +18,7 @@ meaning the number of unique characters in the password.
 In the example password `I am Groot`, there are 10 characters in the string, and 8 unique 
 characters in total (`I,a,m,G,r,o,t, and a whitespace), thus the entropy size is:
 
-![entropy=10*\log{2}(8) => entropy=10 * 3 => entropy=30](/images/pwdpolicy-1.png)
+![entropy=10*\log{2}(8) => entropy=10 * 3 => entropy=30](../images/pwdpolicy-1.svg)
 
 At the ASF, we require a minimum entropy size of **54 bits**, meaning it should require more than 
 approximately 18 quadrillion attempts to brute-force a password.
@@ -32,7 +32,7 @@ order to simplify or otherwise optimize an attempt at cracking a password.
 
 The exact formula we use is as follows:
 
-![complexity=1-\frac{2}{3}(2^{(-\frac{-\log_{2}(\frac{1-0.950}{1-\frac{1}{3}})}{90}*(entropy-30)})](/images/pwdpolicy-2.png)
+![complexity=1-\frac{2}{3}(2^{(-\frac{-\log_{2}(\frac{1-0.950}{1-\frac{1}{3}})}{90}*(entropy-30)})](../images/pwdpolicy-2.svg)
 
 Our <a href="https://id.apache.org" target="_blank">self-serve page for (re)setting passwords</a> can provide you with 
 an instant assessment of your password strength using these requirements, to help you find a 
