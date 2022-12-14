@@ -10,7 +10,7 @@ staging:
   autostage: preview/*
 
 github:
-  description:   Infrastructure Team Website Repository
+  description:   ASF Infrastructure Team Website Repository
   homepage:      https://infra.apache.org/
   collaborators: []
   autolink_jira:
