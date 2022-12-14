@@ -98,10 +98,8 @@ If your project uses Git to store, develop, and deploy its product code, you can
 To use GitHub, you need to integrate your GitHub ID with your Apache account, so that you can merge pull requests and perform other Git tasks.
 
 1. Verify you have a GitHub ID enabled with <a href="https://help.github.com/articles/securing-your-account-with-two-factor-authentication-2fa/" target="_blank">two factor authentication (2FA)</a>.
-2. Add your GitHub ID to your <a href="https://id.apache.org/" target="_blank">Apache ID profile</a>.
-3. Merge your Apache and GitHub accounts using <a href="https://gitbox.apache.org/setup/" target="_blank">GitBox</a>, the Apache account linking utility. You should see three green checks in GitBox.
-4. Wait for an email inviting you to the Apache GitHub organization. When it arrives (this may take 30 minutes), accept the invitation.
-5. Verify that you are a member of the <a href="https://github.com/orgs/apache/teams" target="_blank">committers team for your project or projects on GitHub</a>. 
+2. Merge your Apache and GitHub accounts using <a href="https://gitbox.apache.org/boxer/" target="_blank">Boxer</a>, the Apache account linking utility for GitHub. Follow the steps outlined in the linking process. You should see three green checks in Boxer when your account has been fully linked.
+3. After about two to five minutes, you should have access to your project's repositories on GitHub. 
 
 #### Using Gitbox
 To connect to Git repositories through Gitbox, visit <a href="https://gitbox.apache.org" target="_blank">Gitbox</a> and follow the onscreen instructions.
