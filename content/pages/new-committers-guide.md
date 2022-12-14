@@ -12,10 +12,10 @@ Here's how to set up the technical and social environment that will support your
       - <a href="#set-up-subversion-or-git-access">Set up Subversion or Git access</a>
       - <a href="#set-up-security-and-pgp-keys">Set up Security and PGP Keys</a>
   - <a href="#committer-resources">Committer resources</a>
-      - <a href="#check-out-the-committers-only-subversion-module">the Committers-only Subversion Module</a>
+      - <a href="#check-out-the-committers-only-subversion-module">the Committers-only Subversion module</a>
   - <a href="#get-to-know-the-apache-community">The Apache Community</a>
       - <a href="#mailing-lists">Join mailing lists</a>
-  - <a href="#committer-responsibilities">Committer Responsibilities</a>
+  - <a href="#committer-responsibilities">Committer responsibilities</a>
   - <a href="#attending-apachecon">Attending ApacheCon</a>
   - <a href="#personal-web-space">Personal web space</a>
   - <a href="#identity-theft">Identity theft</a>
@@ -88,11 +88,24 @@ The 'asf-altEmail' field is used to validate subscription requests and correlate
 
 Read about [source control repositories at Apache](version-control.html).
 
-If your project has a page for its developers and committers, add your name and information to it This is a great way to make your first commit, and helps your team get to know you. <p>It also serves another purpose: you will learn how to add documentation to your project's website and the technology used to build it. Documentation is vital, and being able to improve the project's web site is a skill that you will need. If your project has not documented how to rebuild the website, then ask on your dev mailing list and use the answer to create a document describing how to do that. It will be gratefully received! Every team has a lot of "tribal" knowledge" that team members hold in their heads or in private notes, but that the whole team needs to know in order to function well and survive a disaster like a key team member suddenly becoming unavailable.
+### Configuring your access to project Git repositories
 
-From 2010 Apache projects used the Apache CMS system to manager their project sites. The CMS is deprecated as of the summer of 2021. Projects that have not moved their website to a recommended tool may find that they are no longer able to update the site. A [site template using Pelican](asf-pelican.html) is available to make site migrations, and the creation of new sites, convenient. [This page](project-site.html) has additional useful information.
+If your project uses Git to store and deploy its product code, you need to integrate your GitHub ID with your Apache account, so that you can merge pull requests and perform other Git tasks.
 
-<h4 id="set-up-security-and-pgp-keys">Set Up Security And PGP Keys<a class="headerlink" href="#set-up-security-and-pgp-keys" title="Permanent link">&para;</a></h4>
+1. Verify you have a GitHub ID enabled with <a href="https://help.github.com/articles/securing-your-account-with-two-factor-authentication-2fa/" target="_blank">two factor authentication (2FA)</a>.
+2. Add your GitHub ID to your <a href="https://id.apache.org/" target="_blank">Apache ID profile</a>.
+3. Merge your Apache and GitHub accounts using <a href="https://gitbox.apache.org/setup/" target="_blank">GitBox</a>, the Apache account linking utility. You should see three green checks in GitBox.
+4. Wait for an email inviting you to the Apache GitHub organization. When it arrives (this may take 30 minutes), accept the invitation.
+5. Verify that you are a member of the <a href="https://github.com/orgs/apache/teams" target="_blank">committers team for your project or projects on GitHub</a>. 
+
+#### Your first commit to a Git repository
+If your project has a page for its developers and committers on its website, add your name and information to it. This is a great way to make your first commit, and helps your team get to know you. 
+
+It also serves another purpose: you will learn how to add documentation to your project's website and the technology used to build it. Documentation is vital, and being able to improve the project's web site is a skill that you will need. If your project has not documented how to rebuild the website, then ask on your dev mailing list and use the answer to create a document describing how to do that. It will be gratefully received! 
+
+Every team has a lot of "tribal" knowledge" that team members hold in their heads or in private notes, but that the whole team needs to know in order to function well and survive a disaster like a key team member suddenly becoming unavailable. You can help migrate tribal knowledge into the documentation, by noting where you have to ask a team member for guidance that you cannot find in the docs.
+
+<h3 id="set-up-security-and-pgp-keys">Set Up Security And PGP Keys<a class="headerlink" href="#set-up-security-and-pgp-keys" title="Permanent link">&para;</a></h3>
 
 Security is vital and Apache pays great attention to it. Remember that at all times, and ensure that all your Apache passwords are sufficiently secure, and that any code you check in is safe.
 
