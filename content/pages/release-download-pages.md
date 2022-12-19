@@ -137,7 +137,7 @@ Users need to be able to verify the origin of the artifacts, signatures and sums
 
 <h3 id="less-than-24hr">Timing your release announcement<a class="headerlink" href="#less-than-24hr" title="Permanent link">&para;</a></h3>
 
-Your release will be available almost immediately after you upload it to `https://downloads.apache.org/`, so you only have to wait about fifteen minutes before announcing it.
+Your release will be available almost immediately after you upload it to `https://downloads.apache.org/`, please refer to this [release distribution timeline](release-publishins.html#timeline) document for details.
 
 <h2 id="stats">Download statistics<a class="headerlink" href="#stats" title="Permanent link">&para;</a></h2>
 
