@@ -15,6 +15,7 @@ Every Apache Software Foundation project software release must meet requirements
     - <a href="#uploading">Uploading packages</a>
     - <a href="#normal">Normal distribution on the Apache downloads site</a>
     - <a href="#tomaven">Maven distribution</a>
+  - <a href="#timeline">Release distribution availability schedule</a>
   - <a href="#faqs">FAQs</a>
 
 <h2 id="definition">An Apache release<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h2>
@@ -103,7 +104,30 @@ If the release directory does not yet exist, please create a Jira ticket for INF
 
 See [Publishing Maven releases](publishing-maven-artifacts.html).
 
+<h2 id="timeline">Release distribution availability schedule<a class="headerlink" href="#timeline" title="Permanent link">&para;</a></h2>
+
+Releases pushed to the `dist/release` subversion directory will be available for download almost immediately after the push/move operation has completed, 
+though the exact speed depends on the size of the artifact(s) that have been uploaded. Generally speaking, releases should be available on 
+[downloads.apache.org](https://downloads.apache.org/) within 15 minutes of publishing them to `dist/release`.
+
+
+Our global content delivery network (CDN) at [dlcdn.apache.org](https://dlcdn.apache.org/) will have files available for download within 
+seconds of them appearing on downloads.apache.org. However, due to our current caching algorithms, they may not appear in the raw directory listings 
+for up to two hours even though the files are present on the service. We are currently working on ways to improve this experience, and will 
+update this page when/if the process has changed.
+
+
+Our [download helper script](release-download-pages.html#download-scripts) also employ caching to help speed up processing, and its findings 
+(whether or not a release is present on the CDN) may be delayed by up to an hour in some circumstances. We therefore advise projects to wait 
+for one hour after publishing a release before announcing it ot the wider public.
+
+As a rule of thumb, projects should currently:
+
+1. upload or move the release to the `dist/release` space in subversion
+2. after a few minutes, check [downloads.apache.org](https://downloads.apache.org/) for whether their release has been published on our download server
+3. when the download is present, wait one hour for any caching to reset, then announce the general availability of the release
+
+
 <h2 id="faqs">FAQs<a class="headerlink" href="#faqs" title="Permanent link">&para;</a></h2>
 
-  - **I published a release. When will it be available for download?** Apache uses a global content distribution network (CDN) which collects new releases almost as soon as you post them. The files therefore become available for download almost immediately. You probably don't need to wait more than fifteen minutes before announcing a release.
-  - **How do I archive an old release?** `downloads.apache.org` is automatically archived. Therefore, a copy of every official release exists in the archives. Just delete the copy of the release that is in your project's dist directory. Remember to update any links from the download page related to that release.
+  - **How do I archive an old release?** `downloads.apache.org` is automatically archived every four hours. Therefore, a copy of every official release exists in the archives. Just delete the copy of the release that is in your project's dist directory. Remember to update any links from the download page related to that release.
