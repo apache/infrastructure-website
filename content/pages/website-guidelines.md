@@ -20,3 +20,5 @@ These guidelines relate to Infra policies on resource consumption, linking, lega
 **Note**: Any ASF project can use the [ASF-Pelican template](asf-pelican.html) as the basis for their project website. 
 
 Should you have any questions, feel free to contact us at <a href="mailto:infrastructure@apache.org" target="_blank">infrastructure@apache.org</a> or on our <a href="https://the-asf.slack.com" target="_blank">Slack channel</a>.
+
+
