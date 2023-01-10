@@ -7,8 +7,8 @@ Here's how to set up the technical and social environment that will support your
       - <a href="#the-committers-way">The Committer's Way</a>
       - <a href="#submitting-your-individual-contributor-license-agreement-icla">Submitting Your Individual Contributor License Agreement (ICLA)</a>
       - <a href="#acceptance-of-your-icla">Acceptance of your ICLA</a>
-      - <a href="#apache-committer-account-creation">Apache Committer Account Creation</a>
-      - <a href="#set-up-your-apacheorg-email-address">Set up Your @apache.org email address</a>
+      - <a href="#apache-committer-account-creation">Apache Committer account creation</a>
+      - <a href="#set-up-your-apacheorg-email-address">Set up your @apache.org email address</a>
       - <a href="#set-up-subversion-or-git-access">Set up Subversion or Git access</a>
       - <a href="#config-access">Configure your access to project Git repositories</a>
       - <a href="#set-up-security-and-pgp-keys">Set up Security and PGP Keys</a>
@@ -71,7 +71,7 @@ Key Committer resources:
   - the <a href="https://incubator.apache.org/learn/" target="_blank">Incubator Learn</a> pages
   - the <a href="https://www.apache.org/foundation/bylaws.html" target="_blank">ASF Bylaws</a>
 
-<h3 id="apache-committer-account-creation">Apache Committer Account Creation<a class="headerlink" href="#apache-committer-account-creation" title="Permanent link">&para;</a></h3>
+<h3 id="apache-committer-account-creation">Apache Committer account creation<a class="headerlink" href="#apache-committer-account-creation" title="Permanent link">&para;</a></h3>
 
 You will receive an email when your account has been created. (This may take a week or two.) It is now time to do several general tasks, and possibly take some other steps specific to your project that your PMC will share with you.
 
@@ -131,13 +131,9 @@ Do a checkout of the private `committers` module. This is stored in the subversi
 
 Once you have checked out this module, read all the documents contained in the `docs` directory, especially the `resources.txt` file. There are a number of private mailing lists you need to know about. Join in the Apache community by signing up to every list that interests you. It is better to sign up (even if you sign off later) than to miss out! Please respect the usage guidelines for these private lists.
 
-<h3 id="get-to-know-the-apache-community">Get To Know The Apache Community<a class="headerlink" href="#get-to-know-the-apache-community" title="Permanent link">&para;</a></h3>
+<h3 id="get-to-know-the-apache-community">Get to know the Apache community<a class="headerlink" href="#get-to-know-the-apache-community" title="Permanent link">&para;</a></h3>
 
 Taking part in the community makes Apache fun. The <a href="https://community.apache.org/" target="_blank">Community Development project</a>  has a central mailing list for topics that cut across PMC boundaries. Discussions of all kinds are on topic as long as the matter isn't sensitive or confidential.
-
-<a href="https://labs.apache.org/">Apache Labs</a> is a place for innovation where ASF committers can experiment with new ideas. The aim is to provide the necessary resources to promote and maintain innovation within the Apache community without the burden of community building.
-
-If you have an idea that you want to explore and collaborate on with other committers, discuss it at <a href="https://labs.apache.org/">Labs</a>. Even if you don't have anything at the moment, come and take a look at what other committers are working on.
 
 <h4 id="mailing-lists">Join email lists<a class="headerlink" href="#mailing-lists" title="Permanent link">&para;</a></h4>
 
