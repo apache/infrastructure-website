@@ -17,7 +17,7 @@ github:
     - INFRA
     - FOOTEST
   ghp_branch: foobar
-  ghp_path: /content/pages
+  ghp_path: /content
   
 notifications:
   commits:              commits@infra.apache.org
