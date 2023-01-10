@@ -5,7 +5,7 @@ Here's how to set up the technical and social environment that will support your
   - <a href="#what-is-a-committer">What is a committer?</a>
   - <a href="#becoming-a-committer">Becoming a committer</a>
       - <a href="#the-committers-way">The Committer's Way</a>
-      - <a href="#submitting-your-individual-contributor-license-agreement-icla">Submitting Your Individual Contributor License Agreement (ICLA)</a>
+      - <a href="#submitting-your-individual-contributor-license-agreement-icla">Submitting your Individual Contributor License Agreement (ICLA)</a>
       - <a href="#acceptance-of-your-icla">Acceptance of your ICLA</a>
       - <a href="#apache-committer-account-creation">Apache Committer account creation</a>
       - <a href="#set-up-your-apacheorg-email-address">Set up your @apache.org email address</a>
@@ -43,7 +43,7 @@ Some projects use **RTC** (Review then Commit) rather than **CTR** (Commit then 
 
 Take more care than you may have done before when working on the code, since you  can now change things directly, without review. Make sure you understand how your project's committers work and coordinate with each other. Ask your project PMC, or any active committer on the project, for guidance if there are things you are not sure about. In general. the more visible and engaged you are in the project, the more fun you will have and the more access you will have to advice and feedback.
 
-<h3 id="submitting-your-individual-contributor-license-agreement-icla">Submitting Your Individual Contributor License Agreement (ICLA)</h3>
+<h3 id="submitting-your-individual-contributor-license-agreement-icla">Submitting your Individual Contributor License Agreement (ICLA)</h3>
 
 If you are a brand-new committer, you must complete and submit an <a href="https://www.apache.org/licenses/#clas" target="_blank">Individual Contributor License Agreement</a> (ICLA) before the ASF can active your committer account. Note that an account can only be created if a PMC (or Incubator podling) has invited you. The ICLA is a formal contract that declares the terms under which you will contribute intellectual property to the ASF. Note that the ICLA does <strong>not</strong> assign copyright to the ASF; you retain copyright to your own work. However it does grant the ASF sufficient rights to release any work you submit under the Apache license.</p>
 
