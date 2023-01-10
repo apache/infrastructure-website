@@ -16,8 +16,8 @@ github:
   autolink_jira:
     - INFRA
     - FOOTEST
-  ghp_branch: foobar
-  ghp_path: /content
+  ghp_branch: master
+  ghp_path: /
   
 notifications:
   commits:              commits@infra.apache.org
