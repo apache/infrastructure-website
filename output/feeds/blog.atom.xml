@@ -5,20 +5,27 @@
 &lt;h3&gt;Summary of Results&lt;/h3&gt;
 &lt;p&gt;We sent the survey to 4109 people (and anyone who went to the blog post would also have been able to complete the survey) and received 80 responses. While that isn't a huge number of results, it's a very manageable dataset to parse through. I also presume that some people submitting responses were conveying information gathered from other participants in their project. There weren't many surprises in responses, as we all know a lot of the pain points. However, it's vital for the Infra team to have data to back up our work and the resources we offer.&lt;/p&gt;
 &lt;p&gt;Here are the top subjects that were referred to:&lt;/p&gt;
-&lt;pre&gt;&lt;code&gt;1. Public Jira access is a problem
-2. Communication is a problem
-    1. Open/Public Slack
-    2. General Infra communications
-3. CI/CD is a problem
-    1. Capacity/Speed
-    2. Platforms (Jenkins, Buildbot, GHA, etc.)
-4. Release process is a problem
-&lt;/code&gt;&lt;/pre&gt;
+&lt;ol&gt;
+&lt;li&gt;Public Jira access is a problem&lt;/li&gt;
+&lt;li&gt;Communication is a problem
+&lt;ul&gt;
+&lt;li&gt;Open/Public Slack&lt;/li&gt;
+&lt;li&gt;General Infra communications&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;CI/CD is a problem
+&lt;ul&gt;
+&lt;li&gt;Capacity/Speed&lt;/li&gt;
+&lt;li&gt;Platforms (Jenkins, Buildbot, GHA, etc.)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Release process is a problem&lt;/li&gt;
+&lt;/ol&gt;
 &lt;p&gt;The charts reflect the data above:&lt;/p&gt;
-&lt;p&gt;&lt;img alt="improvement" src="../images/image1.png"/&gt;
-&lt;img alt="services" src="../images/image2.png"/&gt;
-&lt;img alt="rating" src="../images/image3.png"/&gt;
-&lt;img alt="comms" src="../images/image4.png"/&gt;&lt;/p&gt;
+&lt;img src="../image1.png" width="300"/&gt;
+&lt;img src="../image2.png" width="300"/&gt;
+&lt;img src="../image3.png" width="300"/&gt;
+&lt;img src="../image4.png" width="300"/&gt;
 &lt;h3&gt;Next Steps&lt;/h3&gt;
 &lt;p&gt;The easy thing would be to say, &amp;ldquo;Let&amp;rsquo;s fix all the things!&amp;rdquo; To be honest, there is on-going work with all the above issues, but most of them are not subject to a quick fix or a short answer. Now that we have data and a baseline, we&amp;rsquo;ll evaluate and discuss how we&amp;rsquo;re going to address your concerns. Since that I&amp;rsquo;ve never done one of these surveys before, I do not have the next steps laid out, so we&amp;rsquo;ll have to take them together.&lt;/p&gt;
 </content><category term="blog"></category></entry><entry><title>The Joy of Feedback (2022 Infra Survey)</title><link href="https://infra.apache.org/blog/the_joy_of_feedback.html" rel="alternate"></link><published>2022-12-01T00:00:00+00:00</published><updated>2022-12-01T00:00:00+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2022-12-01:/blog/the_joy_of_feedback.html</id><summary type="html">&lt;p&gt;In discussions at ApacheCon in New Orleans, we learned that the three standard methods of communicating with Infra:&amp;nbsp;&lt;/p&gt;
