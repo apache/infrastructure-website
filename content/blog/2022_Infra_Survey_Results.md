@@ -24,6 +24,7 @@ Here are the top subjects that were referred to repeatedly:
 
 
 The charts reflect the data above:
+
 ![improvement](../images/image1.png)
 ![services](../images/image2.png)
 ![rating](../images/image3.png)
