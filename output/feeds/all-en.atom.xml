@@ -22,10 +22,10 @@
 &lt;li&gt;Release process is a problem&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;The charts reflect the data above:&lt;/p&gt;
-&lt;img src="../image1.png" width="300"/&gt;
-&lt;img src="../image2.png" width="300"/&gt;
-&lt;img src="../image3.png" width="300"/&gt;
-&lt;img src="../image4.png" width="300"/&gt;
+&lt;img src="../images/image1.png" width="300"/&gt;
+&lt;img src="../images/image2.png" width="300"/&gt;
+&lt;img src="../images/image3.png" width="300"/&gt;
+&lt;img src="../images/image4.png" width="300"/&gt;
 &lt;h3&gt;Next Steps&lt;/h3&gt;
 &lt;p&gt;The easy thing would be to say, &amp;ldquo;Let&amp;rsquo;s fix all the things!&amp;rdquo; To be honest, there is on-going work with all the above issues, but most of them are not subject to a quick fix or a short answer. Now that we have data and a baseline, we&amp;rsquo;ll evaluate and discuss how we&amp;rsquo;re going to address your concerns. Since that I&amp;rsquo;ve never done one of these surveys before, I do not have the next steps laid out, so we&amp;rsquo;ll have to take them together.&lt;/p&gt;
 </content><category term="blog"></category></entry><entry><title>The Joy of Feedback (2022 Infra Survey)</title><link href="https://infra.apache.org/blog/the_joy_of_feedback.html" rel="alternate"></link><published>2022-12-01T00:00:00+00:00</published><updated>2022-12-01T00:00:00+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2022-12-01:/blog/the_joy_of_feedback.html</id><summary type="html">&lt;p&gt;In discussions at ApacheCon in New Orleans, we learned that the three standard methods of communicating with Infra:&amp;nbsp;&lt;/p&gt;
