@@ -25,10 +25,10 @@ Here are the top subjects that were referred to:
 
 The charts reflect the data above:
 
-<img src="../images/image1.png" width="300">
-<img src="../images/image2.png" width="300">
-<img src="../images/image3.png" width="300">
-<img src="../images/image4.png" width="300">
+<img src="../images/image1.png" width="450">
+<img src="../images/image2.png" width="450">
+<img src="../images/image3.png" width="450">
+<img src="../images/image4.png" width="450">
 
 
 ### Next Steps
