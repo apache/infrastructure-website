@@ -13,22 +13,23 @@ We sent the survey to 4109 people (and anyone who went to the blog post would al
 
 Here are the top subjects that were referred to:
 
-    1. Public Jira access is a problem
-    2. Communication is a problem
-        1. Open/Public Slack
-        2. General Infra communications
-    3. CI/CD is a problem
-        1. Capacity/Speed
-        2. Platforms (Jenkins, Buildbot, GHA, etc.)
-    4. Release process is a problem
+1. Public Jira access is a problem
+1. Communication is a problem
+   * Open/Public Slack
+   * General Infra communications
+1. CI/CD is a problem
+   * Capacity/Speed
+   * Platforms (Jenkins, Buildbot, GHA, etc.)
+1. Release process is a problem
 
 
 The charts reflect the data above:
 
-![improvement](../images/image1.png)
-![services](../images/image2.png)
-![rating](../images/image3.png)
-![comms](../images/image4.png)
+<img src="../image1.png" width="300">
+<img src="../image2.png" width="300">
+<img src="../image3.png" width="300">
+<img src="../image4.png" width="300">
+
 
 ### Next Steps
 The easy thing would be to say, “Let’s fix all the things!” To be honest, there is on-going work with all the above issues, but most of them are not subject to a quick fix or a short answer. Now that we have data and a baseline, we’ll evaluate and discuss how we’re going to address your concerns. Since that I’ve never done one of these surveys before, I do not have the next steps laid out, so we’ll have to take them together.
