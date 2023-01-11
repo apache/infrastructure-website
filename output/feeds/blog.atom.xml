@@ -1,5 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Apache Infrastructure Website - blog</title><link href="https://infra.apache.org/" rel="alternate"></link><link href="https://infra.apache.org/feeds/blog.atom.xml" rel="self"></link><id>https://infra.apache.org/</id><updated>2022-12-01T00:00:00+00:00</updated><subtitle></subtitle><entry><title>The Joy of Feedback (2022 Infra Survey)</title><link href="https://infra.apache.org/blog/the_joy_of_feedback.html" rel="alternate"></link><published>2022-12-01T00:00:00+00:00</published><updated>2022-12-01T00:00:00+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2022-12-01:/blog/the_joy_of_feedback.html</id><summary type="html">&lt;p&gt;In discussions at ApacheCon in New Orleans, we learned that the three standard methods of communicating with Infra:&amp;nbsp;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Apache Infrastructure Website - blog</title><link href="https://infra.apache.org/" rel="alternate"></link><link href="https://infra.apache.org/feeds/blog.atom.xml" rel="self"></link><id>https://infra.apache.org/</id><updated>2023-01-11T00:00:00+00:00</updated><subtitle></subtitle><entry><title>2022 Infra Survey Results</title><link href="https://infra.apache.org/blog/2022_Infra_Survey_Results.html" rel="alternate"></link><published>2023-01-11T00:00:00+00:00</published><updated>2023-01-11T00:00:00+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2023-01-11:/blog/2022_Infra_Survey_Results.html</id><summary type="html">&lt;h3&gt;Intro&lt;/h3&gt;
+&lt;p&gt;I'd like to thank everyone who took time to take the survey. This is the first time that I know of that we've tried something like this, and feedback is very important. I'd also like to take a second to clarify my tone for this article. I'm presenting as …&lt;/p&gt;</summary><content type="html">&lt;h3&gt;Intro&lt;/h3&gt;
+&lt;p&gt;I'd like to thank everyone who took time to take the survey. This is the first time that I know of that we've tried something like this, and feedback is very important. I'd also like to take a second to clarify my tone for this article. I'm presenting as Chris T. the Infra person, not as an ASF Member or committer. So when I say "we" or "us", I'm referring to the other Infra folks, not specifically the Foundation as a whole or any Members. I am not posting the full results, but a summary of the data, as we had some responses that used enough information to identify the person being discussed. Those responses are 100% valid and I don't want to post an incomplete dataset with them removed.&lt;/p&gt;
+&lt;h3&gt;Summary of Results&lt;/h3&gt;
+&lt;p&gt;We sent the survey to 4109 people (and anyone who went to the blog post would also have been able to complete the survey) and received 80 responses. While that isn't a huge number of results, it's a very manageable dataset to parse through. I also presume that some people submitting responses were conveying information gathered from other participants in their project. There weren't many surprises in responses, as we all know a lot of the pain points. However, it's vital for the Infra team to have data to back up our work and the resources we offer.&lt;/p&gt;
+&lt;p&gt;Here are the top subjects that were referred to:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;1. Public Jira access is a problem
+2. Communication is a problem
+    1. Open/Public Slack
+    2. General Infra communications
+3. CI/CD is a problem
+    1. Capacity/Speed
+    2. Platforms (Jenkins, Buildbot, GHA, etc.)
+4. Release process is a problem
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;The charts reflect the data above:&lt;/p&gt;
+&lt;p&gt;&lt;img alt="improvement" src="../images/image1.png"/&gt;
+&lt;img alt="services" src="../images/image2.png"/&gt;
+&lt;img alt="rating" src="../images/image3.png"/&gt;
+&lt;img alt="comms" src="../images/image4.png"/&gt;&lt;/p&gt;
+&lt;h3&gt;Next Steps&lt;/h3&gt;
+&lt;p&gt;The easy thing would be to say, &amp;ldquo;Let&amp;rsquo;s fix all the things!&amp;rdquo; To be honest, there is on-going work with all the above issues, but most of them are not subject to a quick fix or a short answer. Now that we have data and a baseline, we&amp;rsquo;ll evaluate and discuss how we&amp;rsquo;re going to address your concerns. Since that I&amp;rsquo;ve never done one of these surveys before, I do not have the next steps laid out, so we&amp;rsquo;ll have to take them together.&lt;/p&gt;
+</content><category term="blog"></category></entry><entry><title>The Joy of Feedback (2022 Infra Survey)</title><link href="https://infra.apache.org/blog/the_joy_of_feedback.html" rel="alternate"></link><published>2022-12-01T00:00:00+00:00</published><updated>2022-12-01T00:00:00+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2022-12-01:/blog/the_joy_of_feedback.html</id><summary type="html">&lt;p&gt;In discussions at ApacheCon in New Orleans, we learned that the three standard methods of communicating with Infra:&amp;nbsp;&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;opening a Jira ticket&amp;nbsp;&lt;/li&gt;
 &lt;li&gt;sending an email&amp;nbsp;&lt;/li&gt;
