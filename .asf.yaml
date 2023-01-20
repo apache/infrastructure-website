@@ -17,8 +17,8 @@ github:
     - INFRA
     - FOOTEST
   custom_subjects:
-    new_pr: "{repository}/#{issue_id} created"
-    close_pr: "{repository}/#{issue_id} closed"
+    new_issue: "{repository}/#{issue_id} created"
+    close_issue: "{repository}/#{issue_id} closed"
     catchall: "{repository}/#{issue_id} updated"
   
 notifications:
