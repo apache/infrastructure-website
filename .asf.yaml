@@ -16,6 +16,9 @@ github:
   autolink_jira:
     - INFRA
     - FOOTEST
+  custom_subjects:
+    new_pr: "{repository}/#{issue_id} created"
+    catchall: "{repository}/#{issue_id} updated"
   
 notifications:
   commits:              commits@infra.apache.org
