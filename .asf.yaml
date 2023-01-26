@@ -20,7 +20,7 @@ github:
     new_issue: "{repository}/#{issue_id} created"
     close_issue: "{repository}/#{issue_id} closed"
     catchall: "{repository}/#{issue_id} updated"
-   labels:
+  labels:
     - infrastructure
     - website
     - pelican
