@@ -5,17 +5,18 @@ Here's how to set up the technical and social environment that will support your
   - <a href="#what-is-a-committer">What is a committer?</a>
   - <a href="#becoming-a-committer">Becoming a committer</a>
       - <a href="#the-committers-way">The Committer's Way</a>
-      - <a href="#submitting-your-individual-contributor-license-agreement-icla">Submitting Your Individual Contributor License Agreement (ICLA)</a>
+      - <a href="#submitting-your-individual-contributor-license-agreement-icla">Submitting your Individual Contributor License Agreement (ICLA)</a>
       - <a href="#acceptance-of-your-icla">Acceptance of your ICLA</a>
-      - <a href="#apache-committer-account-creation">Apache Committer Account Creation</a>
-      - <a href="#set-up-your-apacheorg-email-address">Set up Your @apache.org email address</a>
+      - <a href="#apache-committer-account-creation">Apache Committer account creation</a>
+      - <a href="#set-up-your-apacheorg-email-address">Set up your @apache.org email address</a>
       - <a href="#set-up-subversion-or-git-access">Set up Subversion or Git access</a>
+      - <a href="#config-access">Configure your access to project Git repositories</a>
       - <a href="#set-up-security-and-pgp-keys">Set up Security and PGP Keys</a>
   - <a href="#committer-resources">Committer resources</a>
-      - <a href="#check-out-the-committers-only-subversion-module">the Committers-only Subversion Module</a>
+      - <a href="#check-out-the-committers-only-subversion-module">the Committers-only Subversion module</a>
   - <a href="#get-to-know-the-apache-community">The Apache Community</a>
       - <a href="#mailing-lists">Join mailing lists</a>
-  - <a href="#committer-responsibilities">Committer Responsibilities</a>
+  - <a href="#committer-responsibilities">Committer responsibilities</a>
   - <a href="#attending-apachecon">Attending ApacheCon</a>
   - <a href="#personal-web-space">Personal web space</a>
   - <a href="#identity-theft">Identity theft</a>
@@ -42,7 +43,7 @@ Some projects use **RTC** (Review then Commit) rather than **CTR** (Commit then 
 
 Take more care than you may have done before when working on the code, since you  can now change things directly, without review. Make sure you understand how your project's committers work and coordinate with each other. Ask your project PMC, or any active committer on the project, for guidance if there are things you are not sure about. In general. the more visible and engaged you are in the project, the more fun you will have and the more access you will have to advice and feedback.
 
-<h3 id="submitting-your-individual-contributor-license-agreement-icla">Submitting Your Individual Contributor License Agreement (ICLA)</h3>
+<h3 id="submitting-your-individual-contributor-license-agreement-icla">Submitting your Individual Contributor License Agreement (ICLA)</h3>
 
 If you are a brand-new committer, you must complete and submit an <a href="https://www.apache.org/licenses/#clas" target="_blank">Individual Contributor License Agreement</a> (ICLA) before the ASF can active your committer account. Note that an account can only be created if a PMC (or Incubator podling) has invited you. The ICLA is a formal contract that declares the terms under which you will contribute intellectual property to the ASF. Note that the ICLA does <strong>not</strong> assign copyright to the ASF; you retain copyright to your own work. However it does grant the ASF sufficient rights to release any work you submit under the Apache license.</p>
 
@@ -70,7 +71,7 @@ Key Committer resources:
   - the <a href="https://incubator.apache.org/learn/" target="_blank">Incubator Learn</a> pages
   - the <a href="https://www.apache.org/foundation/bylaws.html" target="_blank">ASF Bylaws</a>
 
-<h3 id="apache-committer-account-creation">Apache Committer Account Creation<a class="headerlink" href="#apache-committer-account-creation" title="Permanent link">&para;</a></h3>
+<h3 id="apache-committer-account-creation">Apache Committer account creation<a class="headerlink" href="#apache-committer-account-creation" title="Permanent link">&para;</a></h3>
 
 You will receive an email when your account has been created. (This may take a week or two.) It is now time to do several general tasks, and possibly take some other steps specific to your project that your PMC will share with you.
 
@@ -84,15 +85,33 @@ The 'asf-altEmail' field is used to validate subscription requests and correlate
 
 **Note**: Please read [Dealing with spam in your ASF email account](spam-reporting.html) and **do not** flag valid ASF-related email as spam.
 
-<h4 id="set-up-subversion-or-git-access">Set up Subversion or Git access<a class="headerlink" href="#set-up-subversion-or-git-access" title="Permanent link">&para;</a></h4>
+<h3 id="set-up-subversion-or-git-access">Set up Subversion or Git access<a class="headerlink" href="#set-up-subversion-or-git-access" title="Permanent link">&para;</a></h3>
 
 Read about [source control repositories at Apache](version-control.html).
 
-If your project has a page for its developers and committers, add your name and information to it This is a great way to make your first commit, and helps your team get to know you. <p>It also serves another purpose: you will learn how to add documentation to your project's website and the technology used to build it. Documentation is vital, and being able to improve the project's web site is a skill that you will need. If your project has not documented how to rebuild the website, then ask on your dev mailing list and use the answer to create a document describing how to do that. It will be gratefully received! Every team has a lot of "tribal" knowledge" that team members hold in their heads or in private notes, but that the whole team needs to know in order to function well and survive a disaster like a key team member suddenly becoming unavailable.
+<h3 id="config-access">Configure your access to project Git repositories<a class="headerlink" href="#config-access" title="Permanent link">&para;</a></h3>
 
-From 2010 Apache projects used the Apache CMS system to manager their project sites. The CMS is deprecated as of the summer of 2021. Projects that have not moved their website to a recommended tool may find that they are no longer able to update the site. A [site template using Pelican](asf-pelican.html) is available to make site migrations, and the creation of new sites, convenient. [This page](project-site.html) has additional useful information.
+If your project uses Git to store, develop, and deploy its product code, you can use either GitHub or Apache's Gitbox for actions such as merging pull requests.
 
-<h4 id="set-up-security-and-pgp-keys">Set Up Security And PGP Keys<a class="headerlink" href="#set-up-security-and-pgp-keys" title="Permanent link">&para;</a></h4>
+#### Using GitHub
+
+To use GitHub, you need to integrate your GitHub ID with your Apache account, so that you can merge pull requests and perform other Git tasks.
+
+1. Verify you have a GitHub ID enabled with <a href="https://help.github.com/articles/securing-your-account-with-two-factor-authentication-2fa/" target="_blank">two factor authentication (2FA)</a>.
+2. Merge your Apache and GitHub accounts using <a href="https://gitbox.apache.org/boxer/" target="_blank">Boxer</a>, the Apache account linking utility for GitHub. Follow the steps outlined in the linking process. You should see three green checks in Boxer when your account has been fully linked.
+3. After about two to five minutes, you should have access to your project's repositories on GitHub. 
+
+#### Using Gitbox
+To connect to Git repositories through Gitbox, visit <a href="https://gitbox.apache.org" target="_blank">Gitbox</a> and follow the onscreen instructions.
+
+### Your first commit to a Git repository
+If your project has a page for its developers and committers on its website, add your name and information to it. This is a great way to make your first commit, and helps your team get to know you. 
+
+It also serves another purpose: you will learn how to add documentation to your project's website and the technology used to build it. Documentation is vital, and being able to improve the project's web site is a skill that you will need. If your project has not documented how to rebuild the website, then ask on your dev mailing list and use the answer to create a document describing how to do that. It will be gratefully received! 
+
+Every team has a lot of "tribal" knowledge" that team members hold in their heads or in private notes, but that the whole team needs to know in order to function well and survive a disaster like a key team member suddenly becoming unavailable. You can help migrate tribal knowledge into the documentation, by noting where you have to ask a team member for guidance that you cannot find in the docs.
+
+<h3 id="set-up-security-and-pgp-keys">Set Up Security And PGP Keys<a class="headerlink" href="#set-up-security-and-pgp-keys" title="Permanent link">&para;</a></h3>
 
 Security is vital and Apache pays great attention to it. Remember that at all times, and ensure that all your Apache passwords are sufficiently secure, and that any code you check in is safe.
 
@@ -112,13 +131,9 @@ Do a checkout of the private `committers` module. This is stored in the subversi
 
 Once you have checked out this module, read all the documents contained in the `docs` directory, especially the `resources.txt` file. There are a number of private mailing lists you need to know about. Join in the Apache community by signing up to every list that interests you. It is better to sign up (even if you sign off later) than to miss out! Please respect the usage guidelines for these private lists.
 
-<h3 id="get-to-know-the-apache-community">Get To Know The Apache Community<a class="headerlink" href="#get-to-know-the-apache-community" title="Permanent link">&para;</a></h3>
+<h3 id="get-to-know-the-apache-community">Get to know the Apache community<a class="headerlink" href="#get-to-know-the-apache-community" title="Permanent link">&para;</a></h3>
 
 Taking part in the community makes Apache fun. The <a href="https://community.apache.org/" target="_blank">Community Development project</a>  has a central mailing list for topics that cut across PMC boundaries. Discussions of all kinds are on topic as long as the matter isn't sensitive or confidential.
-
-<a href="https://labs.apache.org/">Apache Labs</a> is a place for innovation where ASF committers can experiment with new ideas. The aim is to provide the necessary resources to promote and maintain innovation within the Apache community without the burden of community building.
-
-If you have an idea that you want to explore and collaborate on with other committers, discuss it at <a href="https://labs.apache.org/">Labs</a>. Even if you don't have anything at the moment, come and take a look at what other committers are working on.
 
 <h4 id="mailing-lists">Join email lists<a class="headerlink" href="#mailing-lists" title="Permanent link">&para;</a></h4>
 

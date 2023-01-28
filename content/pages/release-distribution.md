@@ -2,23 +2,22 @@ Title: Release Distribution Policy
 
 <h1 id="policy"> </h1>
 
-This policy governs how Apache software releases are distributed through the technical channels that Infra maintains, and through other distribution platforms. It complements the formal <a href="https://www.apache.org/legal/release-policy.html" target="_blank">Apache Release Policy</a>, which defines what must be in a software release, and the [Release Creation Process](release-publishing.html) page, which describes the steps for a PMC to create a release.
+This policy governs how Apache Top Level Projects (TLPs) distribute releases of their software through the technical channels that Infra maintains, and through other distribution platforms. It complements the formal <a href="https://www.apache.org/legal/release-policy.html" target="_blank">Apache Release Policy</a>, which defines what must be in a software release; and the [Release Creation Process](release-publishing.html) page, which describes the steps for a PMC to create a release.
 
 <h2 id="links">Contents</h2>
 
 <ul>
-<li><a href="#policy">Release distribution policy</a></li>
 <li><a href="#channels">Release distribution channels</a></li>
 <li><a href="#dist-dir">Release distribution directory</a></li>
 <li><a href="#release-content">Release content</a></li>
-<li><a href="#public-distribution">Public distribution</a></li>
+<li><a href="#public-distribution">Public distribution channels</a></li>
 <li><a href="#unreleased">Distribution of unreleased materials</a></li>
 <li><a href="#heads-up">Notify Infra before oploading large (&gt;1GB) artifacts</a></li>
-<li><a href="#sigs-and-sums">Cryptographic signature and checksum requirements</a></li>
-<li><a href="#download-links">Download links requirements</a></li>
+<li><a href="#sigs-and-sums">Requirements for cryptographic signature and checksum requirements</a></li>
+<li><a href="#download-links">Download links</a></li>
 <li><a href="#archival">Releases are archived</a></li>
 <li><a href="#maven">Using Maven for releases</a></li>
-  <li><a href="#other-platforms">Other platforms</a></li>
+  <li><a href="#other-platforms">Other release platforms</a></li>
 <li><a href="#dockerhub">DockerHub and releases</a></li>
 <li><a href="#administration">Policy Administration</a></li>
 </ul>
@@ -28,9 +27,9 @@ This policy governs how Apache software releases are distributed through the tec
 <h2 id="channels">Release distribution channels<a class="headerlink" href="#channels" title="Permanent link">&para;</a></h2>
 
   - The Apache Software Foundation's official channel for distribution of current Apache software releases to the general public is `downloads.apache.org/`. This directory provides access for current releases to the ASF content distribution network (CDN), through which most users download releases.
-  - The public may also obtain Apache software from any number of downstream channels (rpm, deb, homebrew, etc.) which redistribute our releases in original or derived form. The vast majority of such downstream channels operate independently of Apache.
+  - The public may also obtain Apache software from downstream channels (rpm, deb, homebrew, etc.) which redistribute our releases in original or derived form. The vast majority of such downstream channels operate independently of Apache.
   - Infra maintains a number of developer-only channels which facilitate distribution of unreleased software to consenting members of a development community.
-  - All historic Apache releases are available from `archive.apache.org`.
+  - All historical Apache releases are available from `archive.apache.org`.
   
 <h2 id="dist-dir">Release distribution directory<a class="headerlink" href="#dist-dir" title="Permanent link">&para;</a></h2>
 
@@ -42,7 +41,7 @@ Apache Incubator podlings cannot create official ASF releases; see the <a href="
 
 The <a href="http://www.apache.org/dev/release#what" target="_blank">Apache Release Policy</a> governs the content of official Apache releases and the process by which projects create valid releases.
 
-The Policy specifies that binary packages provided by the project or third parties which meet certain criteria may be distributed alongside official source packages. Such packages are sometimes referred to as "convenience binaries" or "PMC-approved artifacts", to distinguish them from other binary packages.
+The Policy specifies that TLPs may distribute binary packages, provided by the project or third parties which meet certain criteria, may be distributed alongside official source packages. Such packages are sometimes referred to as "convenience binaries" or "PMC-approved artifacts", to distinguish them from other binary packages.
 
 <h2 id="public-distribution">Public distribution channels<a class="headerlink" href="#public-distribution" title="Permanent link">&para;</a></h2>
 
@@ -82,7 +81,7 @@ For every artifact distributed to the public through Apache channels, the PMC
 
 For new releases, PMCs **must** supply SHA-256 and/or SHA-512 and **should not** supply MD5 or SHA-1. You do not need to change existing releases.
 
-The names of individual signature and checksum files **must** be formed by adding to the name of the artifact the appropriate suffix:
+You **must** form the names of individual signature and checksum files by adding to the name of the artifact the appropriate suffix:
 
   - `.asc` for a (ASCII-armored) PGP signature
   - `.sha256` for an SHA-256 checksum
@@ -112,10 +111,10 @@ Regarding KEYS files:
 
   - Website documentation for any Apache product **must** provide public download links where interested parties may obtain current official source releases and accompanying cryptographic files.
   - Links to artifacts **must not** reference the main Apache web site. They **should** use the [standard mechanisms](release-download-pages.html), such as closer.lua, to make the download available through the content distribution system.
-  - All links to checksums, detached signatures and public keys for current releases **must** reference `downloads.apache.org/` using `https://` (TLS)*.
+  - All links to checksums, detached signatures and public keys for current releases **must** reference `downloads.apache.org/` using `https://`. 
+    - Legacy links to `https://[www.]apache.org/dist/...` still work, but new links should use `downloads.apache.org`.
+    - Older release checksums are on `archive.apache.org`, and you **may** also link to them.
   - All releases, including old releases, are archived automatically. You **may** link from your PMC's download page to archived older releases for community convenience.
-
-<i>* Older release checksums are on archive.apache.org, and you **may** also link to them.</i>
   
 <h2 id="archival">Releases are archived<a class="headerlink" href="#archival" title="Permanent link">&para;</a></h2>
 
@@ -136,9 +135,9 @@ The ASF manages a number of distribution platforms that projects are welcome to 
 
 <h2 id="dockerhub">Docker Hub and releases<a class="headerlink" href="#dockerhub" title="Permanent link">&para;</a></h2>
 
-The ASF only supports two modes of operation on Docker Hub: automated builds based on tags, and some more generalized access (see notes in the Jira ticket INFRA-14586.) Note that Docker Hub is **not** an approved release channel for ASF artifacts. Anything you do on Docker Hub requires the description and supporting documentation to be clear that these are not official distribution artifacts.
+The ASF only supports two modes of operation on Docker Hub: automated builds based on tags, and some more generalized access (see notes in the Jira ticket INFRA-14586.) Note that Docker Hub is **not** an approved release channel for ASF artifacts. Anything you do on Docker Hub requires the description and supporting documentation to be clear that these are _convenience releases_, not official distribution artifacts.
 
-Open a new Infra Jira ticket to describe what you want to do through Docker Hub..
+See the [Docker Hub policy](docker-hub-policy.html) for further information.
 
 <h2 id="administration">Policy administration<a class="headerlink" href="#administration" title="Permanent link">&para;</a></h2>
 

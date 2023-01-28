@@ -43,6 +43,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
 | set up your project on **Review Board** | project name, which svn/git branches to support | <a href="https://reviews.apache.org/" target="_blank">Review Board</a> is a web-based collaborative code review tool, available as free software under the MIT License. |
 | create a **Jira project** | Key name (e.g., INFRA), Jira user names of 1-2 project members who will be project admins, mailing list address to which Jira notifications should go | Go to <a href="https://selfserve.apache.org/confluence.html" target="_blank">Self-serve</a> and follow the prompts. |
 | migrate your project's SVN repository to Git |  | Use <a href="https://selfserve.apache.org/confluence.html" target="_blank">Self-serve</a> to create your intended Git repo(s). Run `svn2git` locally using this <a href="https://git-wip-us.apache.org/authors.txt" target="_blank">authors file and push once the conversion result is confirmed. Submit a Jira ticket for Infra to mark your SVN repository 'readonly'. Optionally, file a ticket to temporarily disable commit emails for when you push your converted clone. |
+| Become an email list moderator | As well as the list id, we need your ASF id and the email address to be enabled as moderator. Note that moderation requests initiated by you must be sent from that address, and the address must be registered in LDAP so we know it is yours. | Submit a Jira ticket for Infra |
 
 Don't see here what you're looking for? See above for <a href="#requesting-where">other cases</a>.
 

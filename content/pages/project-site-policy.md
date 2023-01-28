@@ -6,7 +6,7 @@ Whimsy's <a href="https://whimsy.apache.org/site/" target="_blank">Apache Projec
 
 From Infra's point of view:
 
-1. Each TLP's website must be hosted on ASF-operated hardware. 
+1. Each TLP's website **must** be hosted on ASF-operated hardware, or on an approved alternative such as WordPress or GitHub Pages. Consult with Infra if you are considering a host not mentioned here. 
 2. The website's source code must be stored in an ASF Git or Subversion repository to track the site's change history and so the source code is available for download.
 3. The website's source code must be available under the current <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache license</a>.
 

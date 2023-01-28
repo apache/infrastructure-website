@@ -2,7 +2,7 @@ Title: Guidelines for project websites
 
 These guidelines relate to Infra policies on resource consumption, linking, legal use, and site ownership. For policies and guidelines that fall under other committees or directors, please see their respective sites/pages.
 
-**NOTE:**  as of December 1, 2021, all TLP web sites and the main `apache.org` site will start redirecting any pages using `http` to `https` and will set up HTTP Strict Transport Security, or <a href="https://www.globalsign.com/en/blog/what-is-hsts-and-how-do-i-use-it" target="_blank">HSTS</a>. This is at the request of projects and end users and to enhance site security.
+**NOTE:**  In December, 2021 all TLP web sites and the main `apache.org` site started redirecting any pages using `http` to `https` and set up HTTP Strict Transport Security, or <a href="https://www.globalsign.com/en/blog/what-is-hsts-and-how-do-i-use-it" target="_blank">HSTS</a>. This was at the request of projects and end users, to enhance site security.
 
 
 - Projects cannot use tools that require write access to the project repository.
@@ -15,7 +15,7 @@ These guidelines relate to Infra policies on resource consumption, linking, lega
 - Web sites must be licensed under Apache License v.2.
 - You must not host or distribute any material that may constitute a felony under US or German law.
 - All web sites must be available on ASF's git or svn servers, and published using git- or pypubsub.
-- Do not host source releases or convenience binaries directly on the web site. Use the mirror system through `dist.apache.org` (but do NOT link to `dist.apache.org`; use `closer.lua`). See [Release download pages for projects](release-download-pages.html).
+- Do not host source releases or convenience binaries directly on the web site. See [Release download pages for projects](release-download-pages.html).
 
 **Note**: Any ASF project can use the [ASF-Pelican template](asf-pelican.html) as the basis for their project website. 
 

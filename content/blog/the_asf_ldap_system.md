@@ -1,0 +1,7 @@
+
+layout: post
+title: The ASF LDAP system
+date: '2010-02-22T22:17:39+00:00'
+permalink: the_asf_ldap_system
+
+<p>When we decided some time ago to start using LDAP for auth{n,z} we had to come up with a sane structure, this is what we have thus far.&nbsp;</p><p>&nbsp;dc=apache,dc=org<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp; ou=people,dc=apache,dc=org <br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp; ou=groups,dc=apache,dc=org<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp; ou=people,ou=groups,dc=apache,dc=org<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp; ou=committees,ou=groups,dc=apache,dc=org</p><p>&nbsp;As well as other OUs that contain infrastructure related objects.<br /><br />So with &quot;dc=apache,dc=org&quot; being our basedn, we decided we needed to keep the structure as simple as possible and placed the following objects in the respective OUs:</p><ul><li>User accounts -&nbsp; &quot;ou=groups,dc=apache,dc=org&quot;</li><li>POSIX groups - &quot;ou=groups,dc=apache,dc=org&quot;</li><li>User Groups&nbsp; - &quot;ou=people,ou=groups,dc=apache,dc=org&quot;</li><li>PMC/Committee groups - &quot;ou=committees,ou=groups,dc=apache,dc=org&quot;</li></ul>Access to the LDAP infrastructure is connection limited to hosts within our co-location sites.&nbsp; This is essentially to help prevent unauthorised data leaving our network.&nbsp; <br /><br />

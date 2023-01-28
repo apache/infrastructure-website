@@ -4,7 +4,7 @@ Title: ASFBot: IRC services and archives
 
 ASFBot offers many services for Apache projects on Internet Relay Chat (IRC). IRC is an application layer protocol that facilitates text communication. The chat process works on a client/server networking model. To enable these services, contact Infra, either with a <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Jira ticket</a> or through `#asfinfra` on the official <a href="https://the-asf.slack.com/" target="_blank">Apache Slack instance</a>.
 
-**Note** that ASFBot is being phased out in 2021, to be replaced by a Slack-related service.
+**Note**: Infra supports ASFBot primarily for use during ASF members' meetings. If projects want to add extesions so that ASFBot can do other things, they need to support those extensions rather than relying on Infra to do so.
 
 ## Contents ##
 

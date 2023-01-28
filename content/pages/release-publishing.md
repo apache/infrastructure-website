@@ -15,6 +15,7 @@ Every Apache Software Foundation project software release must meet requirements
     - <a href="#uploading">Uploading packages</a>
     - <a href="#normal">Normal distribution on the Apache downloads site</a>
     - <a href="#tomaven">Maven distribution</a>
+  - <a href="#timeline">Release distribution availability schedule</a>
   - <a href="#faqs">FAQs</a>
 
 <h2 id="definition">An Apache release<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h2>
@@ -71,13 +72,13 @@ Infra maintains the Apache release distribution infrastructure, which has three 
 
 <h3 id="uploading">Uploading packages<a class="headerlink" href="#uploading" title="Permanent link">&para;</a></h3>
 
-  - Upload development packages and snapshots to `https://dist.apache.org/dist/dev/$project/`
-  - Upload release packages to `https://dist.apache.org/dist/release/$project/`. If your project uses a Subersion repository, you can use `svn mv` from the `dev` folder.
+  - Upload development packages and snapshots to `https://dist.apache.org/repos/dist/dev/$project/`
+  - Upload release packages to `https://dist.apache.org/repos/dist/release/$project/`. If your project uses a Subersion repository, you can use `svn mv` from the `dev` folder.
   - Incubator projects can find their dev/release folder inside their incubator directory.
 
 <h3 id="normal">Normal distribution on the Apache downloads site<a class="headerlink" href="#normal" title="Permanent link">&para;</a></h3>
 
-See the [Release Distribution Policy](release-distribution-policy.html) for specific technical requirements.
+See the [Release Distribution Policy](release-distribution.html) for specific technical requirements.
 
 Each Apache TLP has a `release/TLP-name` directory in the distribution Subversion repository at `https://dist.apache.org/repos/dist/`. Once a release vote passes, the release manager adds the release artifacts (plus signature and hash files) to this location. Each project is responsible for the structure of its directory. [PyPubSub](pypubsub.html) pushes the contents of these directories to `http://downloads.apache.org/`. **Note** only store the most recent version of each supported release here.
 
@@ -93,16 +94,40 @@ Each Apache TLP has a `release/TLP-name` directory in the distribution Subversio
   - **Do not** publish `.sig` files. Make sure your `.asc`s are plain-text files.
   - The download page should use `HTTPS:` rather than plain `HTTP:` for linking to KEYS, sigs and hashes (for example: `https://downloads.apache.org/httpd/KEYS`).
 
-  - In addition to the checksum files required in the [Release Distribution Policy](release-distribution-policy.html), the project can provide an `MD5SUM` or `SHA*SUM`. `MD5SUM` and `SHA*SUM` must look like the output of `md5sum(1)`: lines containing a checksum, followed by a filename ; use only plain file names (no slashes). Do not use any other file names for such files.
+  - In addition to the checksum files required in the [Release Distribution Policy](release-distribution.html), the project can provide an `MD5SUM` or `SHA*SUM`. `MD5SUM` and `SHA*SUM` must look like the output of `md5sum(1)`: lines containing a checksum, followed by a filename ; use only plain file names (no slashes). Do not use any other file names for such files.
 
 If the release directory does not yet exist, please create a Jira ticket for INFRA with the required information (see the [contact](contact.html) page).
 
 **Note**: By default, only PMC/PPMC members have write access to the `dist/release` directories. The `dist/dev` directories by default allow write access by committers.
 
 <h3 id="tomaven">Maven distribution<a class="headerlink" href="#tomaven" title="Permanent link">&para;</a></h3>
+
 See [Publishing Maven releases](publishing-maven-artifacts.html).
+
+<h2 id="timeline">Release distribution availability schedule<a class="headerlink" href="#timeline" title="Permanent link">&para;</a></h2>
+
+Releases pushed to the `dist/release` subversion directory will be available for download almost immediately after the push/move operation has completed, 
+though the exact speed depends on the size of the artifact(s) that have been uploaded. Generally speaking, releases should be available on 
+[downloads.apache.org](https://downloads.apache.org/) within 15 minutes of publishing them to `dist/release`.
+
+
+Our global content delivery network (CDN) at [dlcdn.apache.org](https://dlcdn.apache.org/) will have files available for download within 
+seconds of them appearing on downloads.apache.org. However, due to our current caching algorithms, they may not appear in the raw directory listings 
+for up to two hours even though the files are present on the service. We are currently working on ways to improve this experience, and will 
+update this page when/if the process has changed.
+
+
+Our [download helper script](release-download-pages.html#download-scripts) also employ caching to help speed up processing, and its findings 
+(whether or not a release is present on the CDN) may be delayed by up to an hour in some circumstances. We therefore advise projects to wait 
+for one hour after publishing a release before announcing it ot the wider public.
+
+As a rule of thumb, projects should currently:
+
+1. upload or move the release to the `dist/release` space in subversion
+2. after a few minutes, check [downloads.apache.org](https://downloads.apache.org/) for whether their release has been published on our download server
+3. when the download is present, wait one hour for any caching to reset, then announce the general availability of the release
+
 
 <h2 id="faqs">FAQs<a class="headerlink" href="#faqs" title="Permanent link">&para;</a></h2>
 
-  - **I published a release. When will it be available for download?** Apache uses a global content distribution network (CDN) which collects new releases almost as soon as you post them. The files therefore become available for download almost immediately. You probably don't need to wait more than fifteen minutes before announcing a release.
-  - **How do I archive an old release?** `downloads.apache.org` is automatically archived. Therefore, a copy of every official release exists in the archives. Just delete the copy of the release that is in your project's dist directory. Remember to update any links from the download page related to that release.
+  - **How do I archive an old release?** `downloads.apache.org` is automatically archived every four hours. Therefore, a copy of every official release exists in the archives. Just delete the copy of the release that is in your project's dist directory. Remember to update any links from the download page related to that release.

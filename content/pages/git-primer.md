@@ -5,6 +5,7 @@ This document is a primer on using Git for an Apache Software Foundation project
 ## Contents ##
 
   - <a href="#repotypes">Repository types</a>
+    -  <a href="#publicprivate">Public and private repositories</a>
   - <a href="repocheckout">Repository checkout</a>
   - <a href="#committers">Committers: getting started</a>
   - <a href="#windowsusers">Windows users</a>
@@ -20,6 +21,12 @@ There are two forms of Git repositories:
 2. Read/write repositories hosted at `https://gitbox.apache.org/repos/asf`
 
 This document is chiefly about the read/write repositories.
+
+<h3 id="publicprivate">Public and private repositories<a class="headerlink" href="#publicprivate" title="Permanent link">&para;</a></h3>
+
+Projects can set up as many **public repositories** as their development work requires, using <a href="https://selfserve.apache.org/" target="_blank">SelfServe</a>. 
+
+Each project can also have a **private repository** space for working on sensitive issues such as security patches. Open a Jira ticket for Infra to request a private repository.
 
 <h2 id="repocheckout">Repository checkout<a class="headerlink" href="#repocheckout" title="Permanent link">&para;</a></h2>
 
