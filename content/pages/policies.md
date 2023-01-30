@@ -19,7 +19,6 @@ The Apache Infrastructure Team (Infra) operates under the <a href="https://www.a
 - [Applying the Apache 2.0 license](apply-license.html)
 - [Release distribution policy](release-distribution.html)
 - [Release download pages policy](release-download-pages.html)
-- [Release distribution policy](release-distribution.html)
 - [Docker Hub policy](docker-hub-policy.html)
 - [Project use of nightlies.a.o](nightlies.html)
 
