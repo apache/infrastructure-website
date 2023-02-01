@@ -2,7 +2,7 @@ Title: The Infra Roundtable
 
 To provide a space for conversations on issues related to the ASF's infrastructure, Infra holds a monthly roundtable of free-flowing discussion, with the first meeting set for early December, 2022.
 
-  - The roundtable takes place on the first Wednesday of each month for an hour, starting at 15:30 UTC, in a huddle on Slack's `#roundtable` channel in the ASF workspace.
+  - The roundtable takes place on the first Wednesday of each month for an hour, starting at 1800 UTC, in a huddle on Slack's `#roundtable` channel in the ASF workspace.
   - Infra will post the general topic for each month's meeting.
   - The roundtables are available to anyone who can access the ASF workspace on Slack: basically, committers and Members.
 
