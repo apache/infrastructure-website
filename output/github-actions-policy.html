@@ -102,14 +102,14 @@ GitHub Actions Policy        </a>
           </h2>
               <p>This page documents the policies for using <a href="github-actions-secrets.html">GitHub Actions</a> at the Apache Software Foundation.</p>
 <p>For details on the use of requirement level terms, see the <a href="https://www.ietf.org/rfc/rfc2119.txt" target="_blank">requirements levels</a> standard.</p>
-<h3>Triggers:</h3>
+<h3>Triggers</h3>
 <p>You <strong>MUST NOT</strong> use <code>pull_request_target</code> as a trigger on <strong>ANY</strong> action that exports <strong>ANY</strong> confidential credentials or tokens such as <code>GITHUB_TOKEN</code> or <code>NPM_TOKEN</code>.</p>
 <h3>External actions</h3>
 <p>You <strong>MAY</strong> use all actions internal to the <code>apache/*</code>, <code>github/*</code> and <code>actions/*</code> namespaces without restrictions.</p>
 <p>You <strong>MUST</strong> pin all external actions to the specific git hash (SHA1) of the action that has been reviewed for use by the project. For instance, you <strong>MUST</strong> pin <code>foobar/baz-action@8843d7f92416211de9ebb963ff4ce28125932878</code>.</p>
 <h3>Using self-hosted runners with GitHub Actions</h3>
 <p>See this guidance on <a href="https://cwiki.apache.org/confluence/display/INFRA/GitHub+-+self-hosted+runners" target="_blank">GitHub - self-hosted runners</a>.</p>
-<h3>Pushing commits to repositories###</h3>
+<h3>Pushing commits to repositories</h3>
 <p>In general, only committers <strong>MAY</strong> push commits to repositories.</p>
 <p>Automated services such as GitHub Actions (and Jenkins, BuildBot, etc.) <strong>MAY</strong> work on website content and other non-released data such as documentation and convenience binaries.
 Automated services <strong>MUST NOT</strong> push data to a repository or branch that is subject to official release as a software package by the project, <strong>unless</strong> the project secures specific prior authorization of the workflow from Infrastructure.</p>
