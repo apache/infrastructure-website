@@ -4,11 +4,11 @@ This page documents the policies for using [GitHub Actions](github-actions-secre
 
 For details on the use of requirement level terms, see the <a href="https://www.ietf.org/rfc/rfc2119.txt" target="_blank">requirements levels</a> standard.
 
-### Triggers: ###
+### Triggers
 
 You **MUST NOT** use `pull_request_target` as a trigger on **ANY** action that exports **ANY** confidential credentials or tokens such as `GITHUB_TOKEN` or `NPM_TOKEN`.
 
-### External actions ###
+### External actions
 
 You **MAY** use all actions internal to the `apache/*`, `github/*` and `actions/*` namespaces without restrictions.
 
@@ -18,7 +18,7 @@ You **MUST** pin all external actions to the specific git hash (SHA1) of the act
 
 See this guidance on <a href="https://cwiki.apache.org/confluence/display/INFRA/GitHub+-+self-hosted+runners" target="_blank">GitHub - self-hosted runners</a>.
 
-### Pushing commits to repositories###
+### Pushing commits to repositories
 
 In general, only committers **MAY** push commits to repositories.
 
