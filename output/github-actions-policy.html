@@ -113,6 +113,10 @@ GitHub Actions Policy        </a>
 <p>In general, only committers <strong>MAY</strong> push commits to repositories.</p>
 <p>Automated services such as GitHub Actions (and Jenkins, BuildBot, etc.) <strong>MAY</strong> work on website content and other non-released data such as documentation and convenience binaries.
 Automated services <strong>MUST NOT</strong> push data to a repository or branch that is subject to official release as a software package by the project, <strong>unless</strong> the project secures specific prior authorization of the workflow from Infrastructure.</p>
+<h3>Non-committer contributors and GitHub Actions</h3>
+<p>GitHub provides an option to allow a non-committer contributor to use GitHub Actions if a previous pull request by that person has been approved. This raises security concerns, and could cause issues with overall use of GitHub Actions.</p>
+<p>Infra is setting the default for this option to &ldquo;always require approval for external contributors&rdquo;.</p>
+<p>Projects that have a strong desire to use the &ldquo;only need approval first time&rdquo; option should communicate that, explaining their reasons, in a Jira ticket for Infra.</p>
 
         </div>
       </div>
