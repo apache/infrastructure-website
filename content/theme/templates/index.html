@@ -96,20 +96,13 @@
         <h3>News from Infra</h3>
         <i>More information and longer-form articles appear on <a href="https://infra.apache.org/blog/">the Infra Blog</a>.</i>
         <hr/>
+          <p><b>February 3, 2023</b>: The Infrastructure team has been working on decommissioning Travis CI support since late 2022, due to changes in the Travis Open Source policy. We are now 10 days prior to the announced cut off date of February 15, and some projects still have one or more builds configured to use Travis CI. While we understand that not all projects may be finished migrating their builds to a supported platform, we will be doing the cut-off on the 15th. Any PMC with concerns regarding its projects should state them in an Infra Jira ticket so that we can track build migration and provide assistance / direction to folks who request it.</p>
           <p><b>December 5, 2002</b>: The first meeting of the <b>Infra Roundtable</b> takes place Wednesday, December 7. Learn more about the Roundtable, and how to take part, <a href="https://infra.apache.org/roundtable.html" target="_blank">here</a>.
           <p><b>November 11, 2022</b>: The Infra team has disabled public signups to the ASF Jira service. The rationale and implications are <a href="https://blogs.apache.org/infra/entry/jira-public-signup-disabled" target="_blank">here</a>.</p>
           <p>On <b>August  9, 2022</b> Infra cut over the production LDAP servers to new virtual machines. LDAP configuration (ACLs, etc.) have not changed, but the certificates have. Replacing the ancient, self-signed certificate, Letsencrypt provisions the certificate on the new servers. Please contact Infra if you have any questions about this change.</p>
           <p><b>July 13, 2022:</b> On July 12 an essential part of the Apache email infrastructure failed, interrupting mail delivery throughout the Foundation. The service is active again after a seven-hour outage, as the Infrastructure team accelerated plans to migrate all email services to <b>mailgw</b>, as noted below. A fuller report is available on <a href="https://blogs.apache.org/infra/entry/email-service-interruption-and-restoration" target="_blank">our blog</a>.</p> 
           <p><b>June 15, 2022:</b> As part of the Apache Infrastructure team's goals of modernization and service improvement, we are pleased to announce the general availability of "mailgw", the long-awaited replacement for the venerable Hermes FreeBSD mailing list server. See our <a href="https://infra.apache.org/mail-migration-faq.html" target="_blank">mail migration FAQ</a> for further details.</p>          
           <p><b>April, 2022:</b> Infra's April Fool's prank, the <b>interactive voice response service</b>, is still available to explore and enjoy at <b>1-717-7-APACHE</b> (1-717-727-2243).</p>
-          <p><b>January, 2022:</b>
-            <ul>
-              <li>The ASF has decomissioned the venerable FreeBSD host, minotaur.apache.org. The primary functions of this host have long since moved to <i>people.apache.org</i>, also known as <i>home.apache.org</i>.</li>
-              <li> Infra has enabled 2FA (two-factor authentication support on oauth.apache.org (used for sites such as lists.apache.org and cveprocess.apache.org, etc). You can couple a Google Authenticator or other TOTP (Time-based One Time Password apps) to your login process for added security. To enable 2FA, click the <b>2FA</b> link next time you have to use oauth.apache.org for a login.</li>
-              <li> ci.apache.org - Buildbot 0.8 has been turned off. The DNS now points to ci2.apache.org, its 3.2 replacement.</li>
-              <li> The CMS has been turned off. All projects have moved their websites to a different publishing method.</li>
-            </ul>
-          </p>
         <hr/>
         <p style="height: 60px; font-size: 0.9rem;">We periodically publish updates about Infra's work, successes, and challenges on <a href="https://blogs.apache.org/infra/" target="_blank">the Infra blog</a>.</p>
           
