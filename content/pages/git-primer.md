@@ -26,7 +26,17 @@ This document is chiefly about the read/write repositories.
 
 Projects can set up as many **public repositories** as their development work requires, using <a href="https://selfserve.apache.org/" target="_blank">SelfServe</a>. 
 
-Each project can also have a **private repository** space for working on sensitive issues such as security patches. Open a Jira ticket for Infra to request a private repository. See the [Project Code Repository Policy](project-repo-policy.html) for further details.
+Each project can also have a **private repository** space for working on sensitive issues such as:
+
+  - security patches
+  - writing a draft of the project Board report when there is a section that will appear in a `<private>` tag
+  - sharing credentials
+
+The private repository is **not** for uses such as project code development not related to a security issue.
+
+See the [Project Code Repository Policy](project-repo-policy.html) for further details.
+
+Open a Jira ticket for Infra to request a private repository. 
 
 <h2 id="repocheckout">Repository checkout<a class="headerlink" href="#repocheckout" title="Permanent link">&para;</a></h2>
 
