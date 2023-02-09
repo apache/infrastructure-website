@@ -14,22 +14,22 @@ This document is a primer on using Git for an Apache Software Foundation project
 
 <h2 id="repos">Apache git repositories<a class="headerlink" href="#repos" title="Permanent link">&para;</a></h2>
 
-This page is about Apache read/write repositories hosted at `http://github.com/apache/`.
+This page is about Apache read/write repositories hosted at `http://gitbox.com/apache/`.
 
-Access a repository through <a href="https://github.com/apache/" target="_blank">GitHub</a>. If you have concerns about GitHub's terms and conditions, use Apache's <a href="https://gitbox.apache.org/" target="_blank">gitbox</a>, which also gives full access to Apache's writable Git repositories. 
+Access a repository through <a href="https://github.com/apache/" target="_blank">GitHub</a>. If you have concerns about GitHub's terms and conditions, use Apache's <a href="https://gitbox.apache.org/" target="_blank">GitBox</a>, which also gives full access to Apache's writable Git repositories. 
 
 <h2 id="repocheckout">Repository checkout<a class="headerlink" href="#repocheckout" title="Permanent link">&para;</a></h2>
 
 The repository URLs are all of the form:
 
 ```
-https://github.apache.org/repos/asf/reponame.git
+https://gitbox.apache.org/repos/asf/reponame.git
 ```
 
 ### Cloning a repository ###
 
-  - **Committers**: `$ git clone https://github.apache.org/repos/asf/reponame.git`
-  - **Non-Committers**: `$ git clone http://github.apache.org/repos/asf/reponame.git`
+  - **Committers**: `$ git clone https://gitbox.apache.org/repos/asf/reponame.git`
+  - **Non-Committers**: `$ git clone http://gitbox.apache.org/repos/asf/reponame.git`
 
 <h2 id="committers">Committers: getting started<a class="headerlink" href="#committers" title="Permanent link">&para;</a></h2>
 
@@ -40,14 +40,14 @@ $ git config --global user.name "My Name Here"
 $ git config --global user.email myusername@apache.org
 ```
 
-If you're a long-time GitHub user you can set these configuration variables on a per-repository basis:
+If you're a long-time Git user you can set these configuration variables on a per-repository basis:
 
 ```
 $ git config user.name "My Name Here"
 $ git config user.email myusername@apache.org
 ```
 
-You can also add your `apache.org` email address to your GitHub account so that the Apache mirrors on GitHub link to your Gravatar and user account.
+You can also add your `apache.org` email address to your GitHub account so that the Apache mirrors on GitHub link to your Gravatar and user accounts.
 
 To push to a repository you need to authenticate. More recent versions of Git prompt for a user name and password, and in some cases will cache the credentials in your operating system's default credential store.
 
@@ -61,7 +61,7 @@ If you do not see an authentication prompt, you need to set up a `~/.netrc` file
 
 ```
 $ (umask 0277; cat >> ~/.netrc <<EOF)
-machine github.apache.org
+machine gitbox.apache.org
 login username
 password mypassword
 EOF
@@ -71,7 +71,7 @@ chmod 0600 ~/.netrc
 You can list your user name in the Git repository URL, but this requires that you provide your password for every fetch and push. You can simplify this step by cloning a URL like:
 
 ```
-$ git clone https://username@github.apache.org/repos/asf/reponame.git
+$ git clone https://username@gitbox.apache.org/repos/asf/reponame.git
 ```
 
 While it's _possible_ to list your password in the URL, we discourage this practice as it leaves your password in plain text in the shell history.
@@ -83,7 +83,7 @@ You can use `git-gui` as part of the `msysgit` package.
 Instead of setting up a `~/.netrc` file you need to:
 
 1. Set up a `%HOME%` environment pointing to `C:\Users\yourloginname\`
-1. Create a `_netrc` file in `%HOME%_netrc` with this text all on one line: `machine github.apache.org login username password mypassword`
+1. Create a `_netrc` file in `%HOME%_netrc` with this text all on one line: `machine gitbox.apache.org login username password mypassword`
 
 <h2 id="lineendings">Line endings<a class="headerlink" href="#lineendings" title="Permanent link">&para;</a></h2>
 
@@ -101,14 +101,14 @@ Further details and attributes for handling line endings differently per file ty
 If you get an error like this:
 
 ```
-error: no DAV locking support on http://github.apache.org/repos/asf/reponame.git/
+error: no DAV locking support on http://gitbox.apache.org/repos/asf/reponame.git/
 fatal: git-http-push failed
 ```
 
 It means that you're trying to push over **HTTP**, which is disabled. To fix this error change the remote repository URL to use **HTTPS**. You can edit the `.git/config` file to update the URL variable, or use:
 
 ```
-$ git config remote.origin.url https://github.apache.org/repos/asf/reponame.git
+$ git config remote.origin.url https://gitbox.apache.org/repos/asf/reponame.git
 ```
 
 <h2 id="further">Further reading<a class="headerlink" href="#further" title="Permanent link">&para;</a></h2>
