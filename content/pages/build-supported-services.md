@@ -17,6 +17,7 @@ an official 'release channel'.
 -  <a href="#sonarcloud">Sonarcloud</a>
 
 <h2 id="jenkins">Jenkins<a class="headerlink" href="#jenkins" title="Permanent link">&para;</a></h2>
+
 Infra operates a Cloudbees Core cluster comprising a single <a href="https://jenkins-ccos.apache.org/" target="_blank">Operations Center</a> and several Controllers. These comprise a shared Controller <a href="https://ci-builds.apache.org/" target="_blank">ci-builds instance</a> which many projects share, and some individual project Controllers (listed on the main Operations Center <a href="https://jenkins-ccos.apache.org/job/controllers" target="_blank">Controllers</a> page).
 
 #### Access control
@@ -31,6 +32,7 @@ Jenkins has integrations with Github Actions (GHA), nightlies.apache.org, and Ne
 The Infra Confluence wiki space has <a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins" target="_blank">more information about Jenkins</a>.
 
 <h2 id="buildbot">Buildbot<a class="headerlink" href="#buildbot" title="Permanent link">&para;</a></h2>
+
 ASF Infra runs an instance of the open source Buildbot software. Buildbot runs on a single controller and hosts many Ubuntu and Windows nodes, or 'workers' in current Buildbot terminology.
 
 #### Adding/configuring Buildbot jobs
@@ -53,6 +55,7 @@ IRC: Currently irc integration is disabled. We have an open Jira ticket tracking
 The Infra Confluence wiki has <a href="https://cwiki.apache.org/confluence/display/INFRA/Buildbot" target="_blank">more about Buildbot</a>.
 
 <h2 id="gump">Apache Gump<a class="headerlink" href="#gump" title="Permanent link">&para;</a></h2>
+
 The <a href="https://gump.apache.org/" target="_blank">Apache Gump project</a> runs <a href="http://vmgump.apache.org/" target="_blank">this instance</a>. Projects are welcome to ask them directly for access.
 
 Gump is a cross-project continuous integration server. It is different from the "usual" CI servers in that it expects the individual project builds to succeed;
@@ -67,6 +70,7 @@ Gump is written in Python and supports several build tools (including shell scri
 Gump started in the Java part of the Foundation but also builds projects like APR, HTTPd and log4net. 
 
 <h2 id="gha">GitHub Actions<a class="headerlink" href="#gha" title="Permanent link">&para;</a></h2>
+
 The ASF supports and recommends the use of GitHub Actions (GHA).
 
 #### Integrations
@@ -82,6 +86,7 @@ All Committers have access to GHA and their workflows via `commit` using their L
 In addition to the official Github documentation, Infra has placed some <a href="https://infra.apache.org/github-actions-secrets.html" target="_blank">notes</a> on a  Confluence wiki page.
 
 <h2 id="artifactory">Artifactory<a class="headerlink" href="#artifactory" title="Permanent link">&para;</a></h2>
+
 The folks at Jfrog provide us an <a href="https://apache.jfrog.io/" target="_blank">instance of Artifactory</a> for all ASF projects to use. Projects are free to publish debs, rpms, Helm Charts and more. Use a Jira ticekt to ask Infra to set up the project's initial repository type.
 
 #### Access Control
@@ -94,6 +99,7 @@ Many possibilities here for upload/download via the use of a PAT token.
 A <a href="https://cwiki.apache.org/confluence/display/INFRA/Artifactory" target="_blank">Confluence wiki page</a> will soon contain some more Artifactory information.
 
 <h2 id="nexus">Nexus<a class="headerlink" href="#nexus" title="Permanent link">&para;</a></h2>
+
 The ASF has a Nexus instance at <a href="https://repository.apache.org/" target="_blank">repository.apache.org</a> , maintained by the Maven community in conjunction with people from Sonatype.
 
 #### Access control
@@ -113,6 +119,7 @@ See <a href="https://infra.apache.org/publishing-maven-artifacts.html">Publishin
 Infra runs a server at <a href="https://nightlies.apache.org/" target="_blank">nightlies.apache.org</a> where projects can store various build output such as snapshot builds, versioned website documentation, artifacts (jars, etc.), and apidocs. Jenkins, Buildbot and Github Actions all integrate with nightlies. Committers also have PUT access via their LDAP credentials.
 
 <h2 id="dockerhub">DockerHub<a class="headerlink" href="#dockerhub" title="Permanent link">&para;</a></h2>
+
 The ASF has an 'apache' account at <a href="https://hub.docker.com/orgs/apache" target="_blank">DockerHub</a> for all projects to use.
 
 #### Access control
@@ -134,6 +141,7 @@ The ASF tokens/credentials in GHA, Jenkins and Buildbot for projects to use when
   - <a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins+and+Dockerhub" target="_blank">Jenkins and Dockerhub</a>
 
 <h2 id="sonarcloud">Sonarcloud<a class="headerlink" href="#sonarcloud" title="Permanent link">&para;</a></h2>
+
 The ASF has an 'apache' account at <a href="https://sonarcloud.io/organizations/apache" target="_blank">sonarcloud.io</a> where projects can have their code analyzed.
 
 #### Access control
@@ -144,5 +152,4 @@ appear as a member of the ASF organization on GitHub. That is how Sonarcloud ide
 The ASF has auth tokens available under a role account for use via GHA and Jenkins.
 
 #### More information
-
 <a href="https://cwiki.apache.org/confluence/display/INFRA/SonarCloud+for+ASF+projects" target="_blank">SonarCloud for ASF projects</a>
