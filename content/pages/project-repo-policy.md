@@ -3,9 +3,10 @@ Title: Project Code Repository Policy
 Each Apache project can have a directory in the Apache Subversion repository, or Git repositories, for their product code and assets. The majority of projects now use Git.
 
   - Each project can have a public directory in the Subversion repository, or as many public Git repositories as their work requires.
-  - Each project can also request (using a Jira ticket) that Infra set up **one private Git repository** for use with tasks, such as fixing security issues in project code, that should not be publicly available. The PMC must explain its need of a private repo in the Jira ticket. Only members of the project's PMC can see this repository or read its contents.
+  - Each project can request (using a Jira ticket) that Infra set up **a temporary private Git repository fork** for use with tasks, such as fixing security issues in project code, that should not be publicly available. The PMC must explain its need of a private fork in the Jira ticket. Forks will be tied to Jira tickets or CVEs such that upon completion of the work, the private fork can be decommissioned.
     - Private repos **must** have commit/PR/issues emails sent to the project's `private@` list.  
   - To follow the Infra convention, name project repos in the pattern `$project-$reponame` in order to map the project LDAP group to the permissions scheme.
+    - Private repo forks should also have a note tying the fork to a statement of work (Jira ticket, CVE, etc.).
 
 ### Git repositories
 
