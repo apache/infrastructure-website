@@ -18,6 +18,9 @@ Apache project contributors are in countries all around the world. To help them 
   - <a href="#migrating">Migrating an SVN code repository to Git</a>
 
 <h2 id="general">In general<a class="headerlink" href="#general" title="Permanent link">&para;</a></h2>
+
+**Note**: please review the [Project Code Repository Policy](project-repo-policy.html).
+
 Everyone has *read access* to the repositories and can download the most up-to-date development version of any project's software to review or compile. 
 
 - If you want a stable release of the source code, download it from the <a href="https://www.apache.org/dyn/closer.lua/" target="_blank">distribution directory</a>. 
