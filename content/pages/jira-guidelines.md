@@ -27,21 +27,13 @@ In November, 2022, due to an influx of false Jira accounts creating a flood of s
 
 If you need to open a Jira ticket for a particular project and do not have an ASF Jira account, you can use the <a href="https://selfserve.apache.org/jira-account.html" target="_blank">Jira account request</a> feature in our <a href="https://selfserve.apache.org" target="_blank">self-serve portal</a> to request an account. The project which you specify in your request will review your information and either approve or reject the application. You will get a notification of their decision.
 
+If your application is approved, you receive an email with a link to where you can request a password for your Jira account. Once you have logged in, you can create Jira tickets for ASF projects, for Infra, or for the ASF in general.
+
 <h3 id="account">Creating an account for a non-ASF reporter<a class="headerlink" href="#account" title="Permanent link">&para;</a></h3>
 
-To provide an ASF Jira account for someone who is not a part of the ASF community but wants to create Jira tickets related to a project's product, someone on the project's PMC can follow these steps:
+When someone who is not part of the ASF community requests a Jira account so they can submit tickets related to a project's product, the PMC of the project they specify in their application receives a notice that the application is pending.
 
-  - Gather this information from the requestor:
-    - email address
-    - preferred username (N.B. hyphens not allowed)
-    - alternate username (in case the preferred one is already in use)
-    - display name, if it is different from the username
-  - Go to <a href="https://selfserve.apache.org/" target="_blank">selfserve.apache.org</a> and select ‘Create a Jira user account’.
-    - If you need to log in, make sure you are using your ldap credentials that you use for logging into to other Apache services.
-  - On the screen that appears, provide the username, display name, and email address for the new account. Then click the `submit` button.
-  - If the account is created, a success message appears onscreen.
-
-The user receives an email with a link to where they can have their password sent to them. They then can create Jira tickets for ASF projects, for Infra, or for the ASF in general.
+Review the applicant's information and either approve or deny the request. If you deny the request, you have the option of adding an explanation for the denial. The system sends an email with your decision (including any explanation you provide for a denial) to the applicant.
 
 <h3 id="before">Before you create a ticket<a class="headerlink" href="#before" title="Permanent link">&para;</a></h3>
 
