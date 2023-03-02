@@ -25,12 +25,7 @@ Any person with an ASF Jira account can open a ticket for any ASF project.
 
 In November, 2022, due to an influx of false Jira accounts creating a flood of spam tickets, Infra ended public signups to ASF Jira accounts. This <a href="https://infra.apache.org/blog/jira-public-signup-disabled.html" target="_blank">blog post</a> discusses the decision.
 
-If you need to open a Jira ticket for a particular project and do not have an ASF Jira account, you can use the [Jira account request](https://selfserve.apache.org/jira-account.html) page in our self-serve portal. Your account will then be created once the project has 
-reviewed your request.
-
-
-<br>
-<b>IMPORTANT:</b>Please give projects time to respond and create your account. If you have not received an update or notification of account creation after seven days, reach out to the project's private list again asking for an update.
+If you need to open a Jira ticket for a particular project and do not have an ASF Jira account, you can use the <a href="https://selfserve.apache.org/jira-account.html" target="_blank">Jira account request</a> feature in our <a href="https://selfserve.apache.org" target="_blank">self-serve portal</a> to request an account. The project which you specify in your request will review your information and either approve or reject the application. You will get a notification of their decision.
 
 <h3 id="account">Creating an account for a non-ASF reporter<a class="headerlink" href="#account" title="Permanent link">&para;</a></h3>
 
