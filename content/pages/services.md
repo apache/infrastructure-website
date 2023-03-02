@@ -62,6 +62,8 @@ One of Infra's goals is to empower ASF members, PMCs, and committers to do much 
   * Synchronize Git repositories.
   * Use the OTP Calculator to generate one-time passwords for the OTP or S/Key one-time-password systems (generally, PMC members).
   * Archive a Confluence Wiki space and make it read-only.
+
+People who are not part of the ASF community but wish to file a Jira ticket about an ASF project's product can use the platform to <a href="https://infra.apache.org/jira-guidelines.html#who" target="_blank">request a Jira account</a>.
   
 <h3 id="account-mgmt">ASF account management<a class="headerlink" href="#account-mgmt" title="Permanent link">&para;</a></h3>
 
