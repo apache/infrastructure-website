@@ -25,7 +25,7 @@ Your project is responsible for maintenance tasks like
   - addressing security issues in software configured by the project in a timely and appropriate manner
   - replying to Infra and Security queries regarding the VM in a timely and appropriate manner
 
-You do not need to worry about upgrading the base operating system or other packages Infra installed when setting up the VM. They receive upgrades automatically.
+You do not need to worry about upgrading the base operating system or other packages Infra installed when setting up the VM. They receive upgrades automatically, and the system will be rebooted automatically when a security patch requires it.
 
 ## What Infra will do
 

@@ -6,8 +6,8 @@ Infra will maintain this VM via our existing configuration management tooling. T
 
 - Do not "do-release-upgrade" the VM without discussing with Infra.
 - The project must designate three committers who agree and have the knowledge to maintain the VM.
-- Infra will coordinate with the project to do a reboot of the VM at regular intervals.
-- Infra reserves the right to patch/update/restart the system at will to maintain security.
+- Infra can coordinate with the project to perform reboots of the VM for security patching upon request, otherwise the system will be rebooted automatically to apply security updates. To request an opt-out of automated patch reboots, you may open an Infra Jira ticket with your justification, but it is unlikely to be granted.
+- Infra reserves the right to patch/update/restart the system regardless of the opt-out policy as needed to maintain current patch levels and security.
 
 See also:
 
