@@ -125,9 +125,9 @@ Mailing list moderation        </a>
 </ul>
 <p><strong>WARNING</strong>: Creating a user email list can harm a project community if the developers don't pay attention to their users and reply to their emails. One would expect a well-behaving user community to reply to one another in a civil, adult manner that is focused on whatever the list was created for, but it can take time for a community to learn and take to heart such good behavior.</p>
 <h3 id="mailing-list-moderators">How do I request changes for moderators?<a class="headerlink" href="#mailing-list-moderators" title="Permanent link">&para;</a></h3>
-<p>File an INFRA Jira ticket or ask your PMC to send a request to the `apmail@apache.org` alias. If you have access to apmail, you can just change the list of subscribers
-to list/mod. For example, for the `mod_perl` developers' list that is in `~apmail/lists/perl.apache.org/dev/mod/`, use 
-`ezmlm-list`, `&gt;ezmlm-sub` and `ezmlm-unsub`.
+<p>File an INFRA Jira ticket or ask your PMC to send a request to the <code>apmail@apache.org</code> alias. If you have access to apmail, you can just change the list of subscribers
+to list/mod. For example, for the <code>mod_perl</code> developers' list that is in <code>~apmail/lists/perl.apache.org/dev/mod/</code>, use
+<code>ezmlm-list</code>, <code>&gt;ezmlm-sub</code> and <code>ezmlm-unsub</code>.</p>
 <p>To determine who the existing moderators are, any committer can use the technique described in the "committers" SVN module at <a href="https://svn.apache.org/repos/private/committers/docs/resources.txt" target="_blank">resources.txt</a>.</p>
 <h3 id="subscribers">How do I find who is subscribed to a list?<a class="headerlink" href="#subscribers" title="Permanent link">&para;</a></h3>
 <p>Moderators can send an email to <code>listname-list@tlp.apache.org</code>.</p>
@@ -164,7 +164,7 @@ Your message goes here...
 <p>This is already in the correct form for use in the 'deny' subscription request, as the '@' has been changed to '='. In the example above this is:</p>
 <pre><code>badposter=menace.com
 </code></pre>
-<p>If this address contains random alphanumerics then it is probably a short-lived address, in which case there is no point trying to use the deny list.</p></p>
+<p>If this address contains random alphanumerics then it is probably a short-lived address, in which case there is no point trying to use the deny list.</p>
 <h3 id="allowing_posts">Allowing posts from non-subscribers<a class="headerlink" href="#allowing_posts" title="Permanent link">&para;</a></h3>
 <p>Most lists require people to subscribe in order to post messages. However, subscribers receive copies of all mails (or digests). This is obviously unsuitable for bots, or for private lists which need to accept posts from non-subscribers.</p>
 <p>A moderator can fix this by using 'Reply All' to a moderation message from the poster. This will both 'accept' the message and 'allow' further posts.</p>
