@@ -29,7 +29,8 @@ At the same time, as communities grow, the need for more specialized mailing lis
 **WARNING**: Creating a user email list can harm a project community if the developers don't pay attention to their users and reply to their emails. One would expect a well-behaving user community to reply to one another in a civil, adult manner that is focused on whatever the list was created for, but it can take time for a community to learn and take to heart such good behavior.
 
 <h3 id="mailing-list-moderators">How do I request changes for moderators?<a class="headerlink" href="#mailing-list-moderators" title="Permanent link">&para;</a></h3>
-<p>File an INFRA Jira ticket or ask your PMC to send a request to the `apmail@apache.org` alias. If you have access to apmail, you can just change the list of subscribers
+
+File an INFRA Jira ticket or ask your PMC to send a request to the `apmail@apache.org` alias. If you have access to apmail, you can just change the list of subscribers
 to list/mod. For example, for the `mod_perl` developers' list that is in `~apmail/lists/perl.apache.org/dev/mod/`, use 
 `ezmlm-list`, `>ezmlm-sub` and `ezmlm-unsub`.
 
@@ -103,7 +104,7 @@ This is already in the correct form for use in the 'deny' subscription request, 
 badposter=menace.com
 ```
 
-If this address contains random alphanumerics then it is probably a short-lived address, in which case there is no point trying to use the deny list.</p>
+If this address contains random alphanumerics then it is probably a short-lived address, in which case there is no point trying to use the deny list.
 
 
 <h3 id="allowing_posts">Allowing posts from non-subscribers<a class="headerlink" href="#allowing_posts" title="Permanent link">&para;</a></h3>
