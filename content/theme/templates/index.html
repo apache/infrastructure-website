@@ -1,120 +1,31 @@
 {% block head %}
-<!doctype html>
-<html class="no-js" lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{SITENAME}}</title>
-    {% include "styles.html" %}
-      <!-- Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements.  See the NOTICE file distributed with this work for additional information regarding copyright ownership.  The ASF licenses this file to you under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License.  You may obtain a copy of the License at . http://www.apache.org/licenses/LICENSE-2.0 . Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the License for the specific language governing permissions and limitations under the License. -->
-  </head>
-  <body style="background: #C1C1C1;">
-    {% include "menu.html" %}
-    
-    <div class="row">
-      <div class="large-12 columns">
-        <div class="callout">
-          <h3>Welcome to the web site of Infra, the Apache Infrastructure Team!</h3>
-          <p><i>A distributed team devoted to serving the needs of the Apache Software Foundation and its projects</i></p>
-          <div class="row">
-            <!-- how can we help? -->
-            <div class="large-4 medium-4 columns">
-              <div class="frontbox">
-                <a href="/contact.html"></a>
-                <h3 style="text-transform: capitalize; text-align: center;">
-                  <i class="fa fa-question-circle" style="color: #FFF; font-size: 20pt;"></i>
-                  <a href="/contact.html" style="font-size: 90%;">Looking for Help?</a>
-                </h3>
-                <p style="height: 110px; font-size: 0.9rem;">
-                  
-                  The Apache Infrastructure team, or <em>Infra</em>, ensures the
-                  day-to-day operations of the technical aspects of the
-                  foundation. If you have questions or require
-                  support regarding email, code repositories, web sites,
-                  issue trackers and so forth, we are here to help!
-                </p>
-                <p style="text-align: center; margin-bottom: -10px;">
-                  <a href="/contact.html" class="button">Learn More...</a>
-                </p>
-              </div>
+    <!doctype html>
+    <html class="no-js" lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>{{SITENAME}}</title>
+        {% include "styles.html" %}
+    </head>
+    <body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+        <div>
+
+            {% include "menu.html" %}
+
+            <div id="contents">
+                <div class="bg-white p-5 rounded">
+                    <div class="col-sm-8 mx-auto">
+                        {% include "frontpage.html" %}
+                    </div>
+                </div>
             </div>
-            
-            <!-- services and tools -->
-            <div class="large-4 medium-4 columns">
-              <div class="frontbox">
-                <a href="/services.html"></a>
-                <h3 style="text-transform: capitalize; text-align: center;">
-                  <i class="fa fa-handshake-o" style="color: #FFF; font-size: 20pt;"></i>
-                  <a href="/services.html" style="font-size: 90%;">Services and Tools</a>
-                </h3>
-                <p style="height: 110px; font-size: 0.9rem;">
-                  
-                  Infra supports services for the ASF and its projects,
-                  including GitBox, Jira, Confluence, Jenkins, and Buildbot.
-                  We also have an extensive toolbox we use on a daily basis
-                  that contains both home-brewed solutions and
-                  "off the shelf" offerings. Feel free to check them out.
-                </p>
-                <p style="text-align: center; margin-bottom: -10px;">
-                  <a href="/services.html" class="button">Learn More...</a>
-                </p>
-              </div>
-            </div>
-            
-            <!-- who are we (team etc) -->
-            <div class="large-4 medium-4 columns">
-              <div class="frontbox">
-                <a href="/team.html"></a>
-                <h3 style="text-transform: capitalize; text-align: center;">
-                  <i class="fa fa-group" style="color: #FFF; font-size: 20pt;"></i>
-                  <a href="/team.html" style="font-size: 90%;">Who We Are</a>
-                </h3>
-                <p style="height: 110px; font-size: 0.9rem;">
-                  
-                 Infra manages day-to-day system administration and
-                  operation of the hardware assets that run the many
-                  services at the ASF. Click the button below to learn
-                  more about who we are and how we operate.
-                </p>
-                <p style="text-align: center; margin-bottom: -10px;">
-                  <a href="/team.html" class="button">Learn More...</a>
-                </p>
-              </div>
-            </div>
-            
+
+            {% include "footer.html" %}
         </div>
-      </div>
-    </div>
-    </div>
-    
-    
-    <!-- news -->
-    <div class="row">
-      <div class="large-12 medium-12 columns">
-        <div class="callout">
-        <h3>News from Infra</h3>
-        <i>More information and longer-form articles appear on <a href="https://infra.apache.org/blog/">the Infra Blog</a>.</i>
-        <hr/>
-          <p><b>February 3, 2023</b>: The Infrastructure team has been working on decommissioning Travis CI support since late 2022, due to changes in the Travis Open Source policy. We are now 10 days prior to the announced cut off date of February 15, and some projects still have one or more builds configured to use Travis CI. While we understand that not all projects may be finished migrating their builds to a supported platform, we will be doing the cut-off on the 15th. Any PMC with concerns regarding its projects should state them in an Infra Jira ticket so that we can track build migration and provide assistance / direction to folks who request it.</p>
-          <p><b>December 5, 2002</b>: The first meeting of the <b>Infra Roundtable</b> takes place Wednesday, December 7. Learn more about the Roundtable, and how to take part, <a href="https://infra.apache.org/roundtable.html" target="_blank">here</a>.
-          <p><b>November 11, 2022</b>: The Infra team has disabled public signups to the ASF Jira service. The rationale and implications are <a href="https://blogs.apache.org/infra/entry/jira-public-signup-disabled" target="_blank">here</a>.</p>
-          <p>On <b>August  9, 2022</b> Infra cut over the production LDAP servers to new virtual machines. LDAP configuration (ACLs, etc.) have not changed, but the certificates have. Replacing the ancient, self-signed certificate, Letsencrypt provisions the certificate on the new servers. Please contact Infra if you have any questions about this change.</p>
-          <p><b>July 13, 2022:</b> On July 12 an essential part of the Apache email infrastructure failed, interrupting mail delivery throughout the Foundation. The service is active again after a seven-hour outage, as the Infrastructure team accelerated plans to migrate all email services to <b>mailgw</b>, as noted below. A fuller report is available on <a href="https://blogs.apache.org/infra/entry/email-service-interruption-and-restoration" target="_blank">our blog</a>.</p> 
-          <p><b>June 15, 2022:</b> As part of the Apache Infrastructure team's goals of modernization and service improvement, we are pleased to announce the general availability of "mailgw", the long-awaited replacement for the venerable Hermes FreeBSD mailing list server. See our <a href="https://infra.apache.org/mail-migration-faq.html" target="_blank">mail migration FAQ</a> for further details.</p>          
-          <p><b>April, 2022:</b> Infra's April Fool's prank, the <b>interactive voice response service</b>, is still available to explore and enjoy at <b>1-717-7-APACHE</b> (1-717-727-2243).</p>
-        <hr/>
-        <p style="height: 60px; font-size: 0.9rem;">We periodically publish updates about Infra's work, successes, and challenges on <a href="https://blogs.apache.org/infra/" target="_blank">the Infra blog</a>.</p>
-          
-          {% endblock %}
-        </div>
-      </div>
-    </div>
-    
-    {% include "footer.html" %}
-    <script src="/js/vendor/jquery.js"></script>
-    <script src="/js/vendor/what-input.js"></script>
-    <script src="/js/vendor/foundation.js"></script>
-    <script src="/js/app.js"></script>
-  </body>
-</html>
+    </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+    </html>
+{% endblock %}

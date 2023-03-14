@@ -1,66 +1,27 @@
 {% block head %}
-<!doctype html>
-<html class="no-js" lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{SITENAME}}</title>
-    {% include "styles.html" %}
-      <!-- Licensed to the Apache Software Foundation (ASF) under one or more contributor license agreements.  See the NOTICE file distributed with this work for additional information regarding copyright ownership.  The ASF licenses this file to you under the Apache License, Version 2.0 (the &quot;License&quot;); you may not use this file except in compliance with the License.  You may obtain a copy of the License at . http://www.apache.org/licenses/LICENSE-2.0 . Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on an &quot;AS IS&quot; BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.  See the License for the specific language governing permissions and limitations under the License. -->
-  </head>
-  <body style="background: #C1C1C1;">
-    {% include "menu.html" %}
-    <div class="row">
-      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
-        <a href="/">Home</a>
-        <i class="fa fa-angle-double-right"></i>
-        <a href="/{%if article%}blog/{{article.slug}}.html{%else%}{{page.slug}}.html{%endif%}">
-          {%if article%}{{article.title}}{%else%}{{page.title}}{%endif%}
-        </a>
-        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/{%if article%}blog/{{article.slug}}.md{%else%}{{page.slug}}.md{%endif%}">edit</a>)
-      </div>
-    </div>
+    <!doctype html>
+    <html class="no-js" lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Blogs - {{SITENAME}}</title>
+        {% include "styles.html" %}
+    </head>
+    <body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+        <div>
 
-    <div class="row">
-      <div class="large-12 columns">
-        <div class="callout">
-          <h3>Welcome to the Infra Blog!</h3>
-          <p><i>Here you can find all kinds of wonderful information about Infra projects and infrastructure updates</i></p>
+            {% include "menu.html" %}
+            {% include "breadcrumbs.html" %}
+
+            {% include "blogindex.html" %}
+
+            {% include "footer.html" %}
         </div>
-      </div>
-    </div>
-
-    {% for article in articles %}
-    <!-- Post -->
-    <div class="row">
-      <div class="callout">
-        <article class="post">
-          <header>
-            <div class="title">
-                <h2><a href="/blog/{{ article.slug }}.html">{{ article.title }}</a></h2>
-                <p>Posted on: {{ article.date }}</p>
-                <p>{{ article.summary }}</p>
-                <footer>
-                  <ul class="actions">
-                      <div style="text-align: right"><a href="/blog/{{ article.slug }}.html" class="button medium">Continue Reading</a></div>
-                  </ul>
-                  <ul class="stats">
-                    {% for tag in article.tags %}
-                    <li><a href="#">{{ tag.name }}</a></li>
-                    {% endfor %}
-                  </ul>
-                </footer>       
-        </article>
-      </div>
-    </div>
-    {% endfor %}
-    
-    {% include "footer.html" %}
-    <script src="/js/vendor/jquery.js"></script>
-    <script src="/js/vendor/what-input.js"></script>
-    <script src="/js/vendor/foundation.js"></script>
-    <script src="/js/app.js"></script>
-  </body>
-</html>
+    </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+    </html>
 {% endblock %}
+
