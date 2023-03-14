@@ -6,7 +6,7 @@ Infra will maintain this VM via our existing configuration management tooling. T
 
 - Do not "do-release-upgrade" the VM without discussing with Infra.
 - The project must designate three committers who agree and have the knowledge to maintain the VM.
-- Infra can coordinate with the project to perform reboots of the VM for security patching upon request, otherwise the system will be rebooted automatically to apply security updates. To request an opt-out of automated patch reboots, you may open an Infra Jira ticket with your justification, but it is unlikely to be granted.
+- Project VMs will be rebooted automatically to apply security updates at 0200 UTC when necessary, based on the Ubuntu unattended-upgrades software determination. To request an opt-out of automated patch reboots, you may open an Infra Jira ticket with your justification, but it is unlikely to be granted without a compelling rationale. Notifications of reboot completion can be sent to a project list if desired. Infra is planning on making the reboot time configurable in the future.
 - Infra reserves the right to patch/update/restart the system regardless of the opt-out policy as needed to maintain current patch levels and security.
 
 See also:
