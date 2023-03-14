@@ -5,98 +5,70 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Roadmap for Apache Infrastructure - Apache Infrastructure Website</title>
-    <link rel="stylesheet" href="/css/foundation.css">
-    <link rel="stylesheet" href="/css/app.css">
-    <link rel="stylesheet" href="/css/font-awesome.min.css">
-    <style type="text/css">
-      .frontbox {
-        border-radius: 8%;
-        border: 1px solid #999; background: #444; color: #EEE; padding: 6px; margin: 3px;
-      }
-      .frontbox:hover {
-        border-top: 4px solid #1583CC;
-        margin-top: 0px;
-        cursor: pointer;
-      }
-      .clickable {
-	/* height was reduced by 40% */	
-	height: 60%;
-        width: 30%;
-        position: absolute;     
-        z-index: 1;
-      }
-    </style>
-    <link rel="stylesheet"
-          href="/highlight/default.min.css">
-    <script src="/highlight/highlight.min.js"></script>  </head>
-  <body style="background: #C1C1C1;">
-    <!-- Menu bar --->
-    <div class="row">
-      <div class="top-bar" style="padding: 0; margin-bottom: 10px; background: #222; border: 1px solid #DDD; border-bottom-right-radius: 4px; border-bottom-left-radius: 4px;">
-        <div class="hide-for-small-only">
-          <div class="top-bar-left">
-            <ul class="menu" style="background: #222; padding: 0px; line-height: 1; border-bottom-left-radius: 4px;">
-              <li class="notable-logo"><a href="/" target="_self" style="padding: 3px; padding-left: 7px;">
-                <img style="vertical-align: middle;" src='/images/feather.png' width='18'/><span style="font-size: 1.30rem; color: #1583CC; text-transform: uppercase;">Apache Infrastructure</span></a>
-              </li>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="/machines.html">Machines and Fingerprints</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Contribute</a></li>
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
             </ul>
-          </div>
-          <div class="top-bar-right">
-            <ul class="dropdown menu horizontal" data-dropdown-menu style="background: #222; font-size: 0.8rem; text-transform: uppercase; padding-top: 5px;">
-              <li class="is-dropdown-submenu-parent">
-                <a href="#" target="_self" style="padding-left: 7px;">About</a>
-                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
-                  <li><a href="/team.html">About the team</a></li>
-		  <li><a href="/roundtable.html">The Infra Roundtable</a></li>
-		  <li><a href="https://infra.apache.org/blog" target="_blank">The Infra Blog</a></li>
-                </ul>
-              </li>
-              <li><a href="/policies.html" target="_blank" style="padding-left: 5px;">Policies</a></li>
-                           
-              <li class="is-dropdown-submenu-parent">
-                 <a href="#" target="_self" style="padding-left: 0px;">Services-Tools</a>
-                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">
-		<li><a href="/services.html">Services and Tools</a></li>
-                <li><a href="/machines.html" target="_blank" >Machines and Fingerprints</a></li>
-                <li><a href="https://blocky.apache.org" target="_blank" >Blocky</a></li>
-		<li><a href="https://app.datadoghq.com/account/login?next=%2Finfrastructure" target="_blank" >DataDog</a></li>
-		<li><a href="https://whimsy.apache.org/roster/committer/" target="_blank" >Committer Search</a></li>
-		
-                </ul>
-              </li>
-              <li><a href="/doc.html" target="_blank" style="padding-left: 5px;">Documentation</a></li>
-	       <li class="is-dropdown-submenu-parent">
-                 <a href="#" target="_self" style="padding-left: 0px;">Contribute</a>
-                <ul class="menu" style="background: #222; font-size: 0.7rem; text-transform: uppercase; padding-top: 5px; margin-top: 5px;">	
-		   <li><a href="/infra-volunteer.html">Volunteer with Infra</a></li>
-		   <li><a href="/how-to-mirror.html">Become an ASF download mirror</a></li>
-			<li><a href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
-		 </ul>
-	       </li>
-	      
-              <li><a href="/stats.html" target="_blank" style="padding-left: 5px;">Status</a></li>
-              <li><a href="/contact.html" style="padding-left: 5px;"><i class="fa fa-comments" style="color: #FFF; font-size: 0.9rem;"></i>Contact us</a></li>
-            </ul>
-          </div>
         </div>
-      </div>
-    </div>    
-    <!-- bread crumb -->
-    <div class="row">
-      <div class="large-12 columns" style="font-size: 0.8rem; background-color: rgba(255,255,255,0.75); margin-bottom: 5px;">
-        <a href="/">Home</a>
-        <i class="fa fa-angle-double-right"></i>
-        <a href="/roadmap.html">
-Roadmap for Apache Infrastructure        </a>
-        (<a href="https://github.com/apache/infrastructure-website/tree/master/content/pages/roadmap.md">edit</a>)
-      </div>
     </div>
-    
-    
-    <!-- contents -->
-    <div class="row">
-      <div class="large-12 columns">
-        <div class="callout">
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
           <h2>
               Roadmap for Apache Infrastructure
           </h2>
@@ -118,7 +90,7 @@ if(window.WRM._dataArrived)window.WRM._dataArrived();</script>
 <link data-wrm-batch-type="context" data-wrm-key="editor-content,-_super" href="/confluence/s/48c9012a6b607d513dc999a8106fcbf7-CDN/lcp9k7/8804/1tgy0xz/4c9d179f61511fcc57f93e0f28b56636/_/download/contextbatch/css/editor-content,-_super/batch.css?frontend.editor.v4=true" media="all" rel="stylesheet"/>
 </head>
 <body class="mceContentBody aui-theme-default wiki-content fullsize">
-<p>&nbsp;</p> <p><img class="editor-inline-macro" data-macro-id="127e83c9-5b7c-430b-99f8-be9d9cb8362c" data-macro-name="roadmap" data-macro-parameters="hash=65755f4d10fab750fdc2a18af96b2532|maplinks=|pagelinks=|source=%7B%22title%22%3A%22Roadmap%20Planner%22%2C%22timeline%22%3A%7B%22startDate%22%3A%222022-10-10%2000%3A00%3A00%22%2C%22endDate%22%3A%222023-09-10%2000%3A00%3A00%22%2C%22displayOption%22%3A%22MONTH%22%7D%2C%22lanes%22%3A[%7B%22title%22%3A%22WebMod%22%2C%22color%22%3A%7B%22lane%22%3A%22%23f6c342%22%2C%22bar%22%3A%22%23fadb8e%22%2C%22text%22%3A%22%23594300%22%2C%22count%22%3A1%7D%2C%22bars%22%3A[%7B%22title%22%3A%22Public%20beta%20phase%22%2C%22description%22%3A%22This%20is%20the%20second%20bar.%22%2C%22startDate%22%3A%222022-10-01%2007%3A21%3A58%22%2C%22duration%22%3A2%2C%22rowIndex%22%3A0%2C%22id%22%3A%22e5e69e04-7a1d-41d8-a851-ed5c2c8b7d9b%22%2C%22pageLink%22%3A%7B%7D%7D]%7D%2C%7B%22title%22%3A%22Artifacts%20Platform%22%2C%22color%22%3A%7B%22lane%22%3A%22%233b7fc4%22%2C%22bar%22%3A%22%236c9fd3%22%2C%22text%22%3A%22%23ffffff%22%2C%22count%22%3A1%7D%2C%22bars%22%3A[%7B%22title%22%3A%22Prototyping%22%2C%22description%22%3A%22This%20is%20the%20third%20bar.%22%2C%22startDate%22%3A%222022-10-01%2000%3A00%3A00%22%2C%22duration%22%3A1.00990099009901%2C%22rowIndex%22%3A0%2C%22id%22%3A%22d292a636-283a-4bf6-85f4-b65d2faea92e%22%2C%22pageLink%22%3A%7B%7D%7D%2C%7B%22rowIndex%22%3A0%2C%22startDate%22%3A%222022-11-02%2018%3A46%3A20%22%2C%22id%22%3A%22d809893d-cf8c-437f-9d11-c1da47f62d87%22%2C%22title%22%3A%22Internal%20Testing%22%2C%22description%22%3A%22%22%2C%22duration%22%3A1.9207920792079207%2C%22pageLink%22%3A%7B%7D%7D]%7D]%2C%22markers%22%3A[%7B%22markerDate%22%3A%222022-12-01%2022%3A05%3A56%22%2C%22title%22%3A%22WebMod%20General%20Availability%20Announcement%22%7D]%7D|timeline=true|title=Roadmap%20Planner" data-macro-schema-version="1" src="/confluence/plugins/servlet/roadmap/image/placeholder?hash=65755f4d10fab750fdc2a18af96b2532&amp;width=1000&amp;height=300&amp;timeline=true"/></p><p><br/></p>
+<p>&nbsp;</p> <p><br/></p><p><br/></p><p><img class="editor-inline-macro" data-macro-id="127e83c9-5b7c-430b-99f8-be9d9cb8362c" data-macro-name="roadmap" data-macro-parameters="hash=65755f4d10fab750fdc2a18af96b2532|maplinks=|pagelinks=|source=%7B%22title%22%3A%22Roadmap%20Planner%22%2C%22timeline%22%3A%7B%22startDate%22%3A%222022-10-10%2000%3A00%3A00%22%2C%22endDate%22%3A%222023-09-10%2000%3A00%3A00%22%2C%22displayOption%22%3A%22MONTH%22%7D%2C%22lanes%22%3A[%7B%22title%22%3A%22WebMod%22%2C%22color%22%3A%7B%22lane%22%3A%22%23f6c342%22%2C%22bar%22%3A%22%23fadb8e%22%2C%22text%22%3A%22%23594300%22%2C%22count%22%3A1%7D%2C%22bars%22%3A[%7B%22title%22%3A%22Public%20beta%20phase%22%2C%22description%22%3A%22This%20is%20the%20second%20bar.%22%2C%22startDate%22%3A%222022-10-01%2007%3A21%3A58%22%2C%22duration%22%3A2%2C%22rowIndex%22%3A0%2C%22id%22%3A%22e5e69e04-7a1d-41d8-a851-ed5c2c8b7d9b%22%2C%22pageLink%22%3A%7B%7D%7D]%7D%2C%7B%22title%22%3A%22Artifacts%20Platform%22%2C%22color%22%3A%7B%22lane%22%3A%22%233b7fc4%22%2C%22bar%22%3A%22%236c9fd3%22%2C%22text%22%3A%22%23ffffff%22%2C%22count%22%3A1%7D%2C%22bars%22%3A[%7B%22title%22%3A%22Prototyping%22%2C%22description%22%3A%22This%20is%20the%20third%20bar.%22%2C%22startDate%22%3A%222022-10-01%2000%3A00%3A00%22%2C%22duration%22%3A1.00990099009901%2C%22rowIndex%22%3A0%2C%22id%22%3A%22d292a636-283a-4bf6-85f4-b65d2faea92e%22%2C%22pageLink%22%3A%7B%7D%7D%2C%7B%22rowIndex%22%3A0%2C%22startDate%22%3A%222022-11-02%2018%3A46%3A20%22%2C%22id%22%3A%22d809893d-cf8c-437f-9d11-c1da47f62d87%22%2C%22title%22%3A%22Internal%20Testing%22%2C%22description%22%3A%22%22%2C%22duration%22%3A1.9207920792079207%2C%22pageLink%22%3A%7B%7D%7D]%7D]%2C%22markers%22%3A[%7B%22markerDate%22%3A%222022-12-01%2022%3A05%3A56%22%2C%22title%22%3A%22WebMod%20General%20Availability%20Announcement%22%7D]%7D|timeline=true|title=Roadmap%20Planner" data-macro-schema-version="1" src="/confluence/plugins/servlet/roadmap/image/placeholder?hash=65755f4d10fab750fdc2a18af96b2532&amp;width=1000&amp;height=300&amp;timeline=true"/></p>
 <p>&nbsp;</p>
 </body>
 </html>
@@ -150,11 +122,9 @@ for (let element of document.querySelectorAll("link, img")) {
           Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
         </p>
       </div>
-    </div>    
-    <script src="/js/vendor/jquery.js"></script>
-    <script src="/js/vendor/what-input.js"></script>
-    <script src="/js/vendor/foundation.js"></script>
-    <script src="/js/app.js"></script>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
     <script>hljs.initHighlightingOnLoad();</script>
   </body>
 </html>
