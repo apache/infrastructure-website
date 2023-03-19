@@ -72,7 +72,7 @@
           <h2>
               Requesting a virtual machine for a project
           </h2>
-              <p>When you want to run an application that is not part of the offered services (like a demo setup of your project), you need to request a dedicated virtual machine (vm). It is not possible to request a physical machine. Physical machines are shared resources for all ASF projects.</p>
+              <p>When your PMC wants to run an application that is not part of the offered services (like a demo setup of your project), you need to request a dedicated virtual machine (vm). It is not possible to request a physical machine. Physical machines are shared resources for all ASF projects.</p>
 <p>Infra maintains hosts in different computer centers around the world to run virtual machines, so we can relocate your vm as requirements change without you having to reinstall anything.</p>
 <h3>Contents</h3>
 <ul>
@@ -97,14 +97,14 @@
 <ul>
 <li>CPU cores (default is 1)</li>
 <li>RAM (default is 1Gb)</li>
-<li>Disk capacity (default is 20Gb)</li>
+<li>Disk capacity (default is 40Gb)</li>
 <li>Name (default is <code>&lt;project&gt;-vm.a.o</code>)</li>
-<li>Apache ID of project administrator</li>
+<li>Apache ID of project administrator (one of the maintainers you specify below)</li>
 </ul>
 </li>
 <li>Application resources:
 <ul>
-<li>Database (infra has central sql servers that support postgresql and mysql)</li>
+<li>Database (Infra recommends SQLite, given the small size, but can configure an an on-box mySQL or PostgresSQL database for the vm.)</li>
 <li>Httpd (installed pr default, configuration is to be agreed upon)</li>
 <li>Non-standard packages (will be maintained by infra-p6)</li>
 <li>DNS names needed (default is to create <code>vmname</code> only)</li>
@@ -124,9 +124,9 @@
 </ol>
 <p>CPU and RAM are expensive resources, so unless you make a really compelling case we will start the vm with default values. If you/we see problems later we can always add more. We can add CPU cores and RAM can without reinstalling anything.</p>
 <p>The operating system needs to be supported by our standard applications, therefore we currently only offer Ubuntu.</p>
-<p>Important: the ticket must be acknowledged by a PMC member.</p>
+<p><strong>Important</strong>: a PMC member must acknowledge the request ticket.</p>
 <h3 id="deploy">Deploying the virtual machine<a class="headerlink" href="#deploy" title="Permanent link">&para;</a></h3>
-<p>Infra may ask questions to clarify the request. When all is clear, we will create the vm according to specifications, install the OS and the mandatory standard (infra) applications. The mandatory application guarantee a level of security and provide ssh access common to all vms.</p>
+<p>Infra may ask questions to clarify the request. When all is clear, we will create the vm according to specifications, install the OS and the mandatory standard (Infra) applications. The mandatory application guarantee a level of security and provide ssh access common to all vms.</p>
 <p>Once we have tested the vm, we will ask a project maintainer to do ssh to the vm.</p>
 <h3 id="maintain">Project maintainers<a class="headerlink" href="#maintain" title="Permanent link">&para;</a></h3>
 <p>The project maintainers are responsible for maintaining the vm. Infra will normally not maintain the vm, but will check on security from time to time.</p>
