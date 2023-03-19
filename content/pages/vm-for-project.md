@@ -1,6 +1,6 @@
 Title: Requesting a virtual machine for a project
 
-When you want to run an application that is not part of the offered services (like a demo setup of your project), you need to request a dedicated virtual machine (vm). It is not possible to request a physical machine. Physical machines are shared resources for all ASF projects.
+When your PMC wants to run an application that is not part of the offered services (like a demo setup of your project), you need to request a dedicated virtual machine (vm). It is not possible to request a physical machine. Physical machines are shared resources for all ASF projects.
 
 Infra maintains hosts in different computer centers around the world to run virtual machines, so we can relocate your vm as requirements change without you having to reinstall anything.
 
@@ -24,11 +24,11 @@ To request a virtual machine, open a <a href="https://issues.apache.org/jira/bro
 2. VM resources requested (the operating system will be the latest Ubuntu LTS release):
     - CPU cores (default is 1)
     - RAM (default is 1Gb)
-    - Disk capacity (default is 20Gb)
+    - Disk capacity (default is 40Gb)
     - Name (default is `<project>-vm.a.o`)
-    - Apache ID of project administrator
+    - Apache ID of project administrator (one of the maintainers you specify below)
 3. Application resources:
-    - Database (infra has central sql servers that support postgresql and mysql)
+    - Database (Infra recommends SQLite, given the small size, but can configure an an on-box mySQL or PostgresSQL database for the vm.)
     - Httpd (installed pr default, configuration is to be agreed upon)
     - Non-standard packages (will be maintained by infra-p6)
     - DNS names needed (default is to create `vmname` only)
@@ -42,11 +42,11 @@ CPU and RAM are expensive resources, so unless you make a really compelling case
 
 The operating system needs to be supported by our standard applications, therefore we currently only offer Ubuntu.
 
-Important: the ticket must be acknowledged by a PMC member.
+**Important**: a PMC member must acknowledge the request ticket.
 
 <h3 id="deploy">Deploying the virtual machine<a class="headerlink" href="#deploy" title="Permanent link">&para;</a></h3>
 
-Infra may ask questions to clarify the request. When all is clear, we will create the vm according to specifications, install the OS and the mandatory standard (infra) applications. The mandatory application guarantee a level of security and provide ssh access common to all vms.
+Infra may ask questions to clarify the request. When all is clear, we will create the vm according to specifications, install the OS and the mandatory standard (Infra) applications. The mandatory application guarantee a level of security and provide ssh access common to all vms.
 
 Once we have tested the vm, we will ask a project maintainer to do ssh to the vm.
 
