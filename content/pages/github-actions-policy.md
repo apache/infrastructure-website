@@ -29,7 +29,7 @@ Automated services **MUST NOT** push data to a repository or branch that is subj
 
 GitHub provides an option to allow a non-committer contributor to use GitHub Actions if a previous pull request by that person has been approved. This raises security concerns, and could cause issues with overall use of GitHub Actions. 
 
-Infra is setting the default for this option to “always require approval for external contributors”.
+The default for this option is to “always require approval for external contributors”.
 
 Projects that have a strong desire to use the “only require approval first time” option should communicate that, explaining their reasons, in a Jira ticket for Infra.
 
