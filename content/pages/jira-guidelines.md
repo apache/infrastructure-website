@@ -94,6 +94,8 @@ When you have completed entering the useful information, click **Create** to cre
 
 <h3 id="followup">Jira tickets for Infra<a class="headerlink" href="#followup" title="Permanent link">&para;</a></h3>
 
+Infra does not accept anonymous Jira ticekts. As when you are creating a ticket for a PMC's project, you have to log in with your Apache credentials. See the "Who can create a ticket" section, at the top of this page, for details.
+
 The largest group of tickets assigned to Infra are requests for Infra to perform a task of one sort or another. The next largest category is reports of possible bugs in the Infrastructure system.
 
 Infra may respond in a number of ways, including:
