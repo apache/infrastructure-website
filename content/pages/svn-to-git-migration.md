@@ -1,6 +1,10 @@
 Title: SVN to Git migration
 
-Migrating your project's code repository from Subversion to Git is now **self-serve**.
+If your project has an existing SVN mirror on Github, and it is up to date, you can request that Infra make the mirror primary/canonical. Open an Infra Jira ticket include a link to project consensus from your mailing list. Infra will mark your SVN repo as read-only and convert the Github mirror to a writable repository.
+
+If your project has an existing SVN mirror on Github and it is NOT up to date, please open an Infra Jira ticket to discuss your options.
+
+If you do not have an existing Github mirror, you can self-serve your migration using the following steps:
 
   1. Request a bare (empty) Git repository via <a href="https://selfserve.apache.org/" target="_blank">selfserve</a>.
   1. Use <a href="https://github.com/nirvdrum/svn2git">svn2git</a> to convert your SVN repository to Git. 
@@ -8,3 +12,5 @@ Migrating your project's code repository from Subversion to Git is now **self-se
   1. Ask Infra (using a Jira ticket) to set the old SVN repository to read-only.
 
 The SVN authors' list (required by svn2git for cloning) is at <a href="https://gitbox.apache.org/authors.txt" target="_blank">https://gitbox.apache.org/authors.txt</a>.
+
+
