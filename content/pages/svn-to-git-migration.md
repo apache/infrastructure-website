@@ -1,6 +1,6 @@
 Title: SVN to Git migration
 
-If your project has an existing SVN mirror on Github, and it is up to date, you can request that Infra make the mirror primary/canonical. Open an Infra Jira ticket include a link to project consensus from your mailing list. Infra will mark your SVN repo as read-only and convert the Github mirror to a writable repository.
+If your project has an existing SVN mirror on Github, and it is up to date, you can request that Infra make the mirror primary/canonical. Open an Infra Jira ticket and include a link to project consensus from your mailing list. Infra will mark your SVN repo as read-only and convert the Github mirror to a writable repository.
 
 If your project has an existing SVN mirror on Github and it is NOT up to date, please open an Infra Jira ticket to discuss your options.
 
