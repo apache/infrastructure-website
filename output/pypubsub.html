@@ -147,6 +147,11 @@ For example <code>https://pubsub.apache.org:2070/private/svn/private/committers/
 <p>Please note that due to limitations in our TLS terminator, payloads larger than 64kb are split into 64kb chunks on
 port 2070. If you are using port 2070, you should ensure that the data you receive is terminated with a newline (\n),
 or continue fetching data till you hit a chunk terminated with a newline.</p>
+<p>N.B. the following curl switches may be added:</p>
+<ul>
+<li>-N - non-buffered output; used when piping into another command (e.g. tail)</li>
+<li>-sS - silent mode (-s) but still shows error messages (-S)</li>
+</ul>
 <h2>Using PyPubSub in programming</h2>
 <h3>Using PyPubSub with Python</h3>
 <p>You can listen for and react to payloads in Python using the <a href="https://pypi.org/project/asfpy/">asfpy</a> pip package:</p>
