@@ -94,6 +94,12 @@ Please note that due to limitations in our TLS terminator, payloads larger than 
 port 2070. If you are using port 2070, you should ensure that the data you receive is terminated with a newline (\n),
 or continue fetching data till you hit a chunk terminated with a newline.
 
+N.B. the following curl switches may be added:
+
+* -N - non-buffered output; used when piping into another command (e.g. tail)
+* -sS - silent mode (-s) but still shows error messages (-S)
+
+
 ## Using PyPubSub in programming
 ### Using PyPubSub with Python
 You can listen for and react to payloads in Python using the [asfpy](https://pypi.org/project/asfpy/) pip package:
