@@ -20,15 +20,15 @@ This file is <a href="https://svn.apache.org/repos/asf/incubator/public/trunk/co
 
 **DNS**
 
-DNS entry ($projectname.apache.org) is required for the podling website and mailing lists to work. Request this once podlings.xml has been updated, by filing a Jira ticket with Infra. See the next point before completing the ticket.
-
 The Domain Name System (DNS) is a hierarchical and decentralized naming system for computers, services, or other resources connected to the Internet or a private network. It associates information with domain names assigned to each of the participating entities.
+
+DNS entry ($projectname.apache.org) is required for the podling website and mailing lists to work. Request this once podlings.xml has been updated, by filing a Jira ticket with Infra. See the next point before completing the ticket.
 
 **LDAP**
 
-Activate LDAP for the project by filing a JIRA ticket with Infra. Typically you can request both LDAP and DNS in the same ticket.
-
 The Lightweight Directory Access Protocol (LDAP) is an open, vendor-neutral, industry standard application protocol for accessing and maintaining distributed directory information services over an Internet Protocol network.
+
+Activate LDAP for the project by filing a JIRA ticket with Infra. Typically you can request both LDAP and DNS in the same ticket.
 
 ### Phase 2: Mailing lists
 
