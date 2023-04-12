@@ -10,7 +10,7 @@ Your mentor is your first stop in figuring out technical issues for your incubat
 
 <img src="https://cwiki.apache.org/confluence/rest/gliffy/1.0/embeddedDiagrams/7df21120-01db-421e-bb47-353b7977097a.png" />
 
-### Phase 1: The first steps to establish a new podling
+### Phase 1: Establishing a podling
 
 **Podling bootstrap file**
 
