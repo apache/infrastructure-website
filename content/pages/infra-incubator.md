@@ -2,7 +2,7 @@ Title: Infra and the Incubator
 
 ## What Infra is
 
-The Infrastructure team (Infra) manages the systems and hardware that run the services that the ASF and its projects depend on. Infra also reviews requests to install new systems or software on ASF machines. It's a small team, distributed across many time zones. Someone is on duty at all hours to respond to emergency issues.
+The Infrastructure team (Infra) manages the systems and hardware that run the services that the ASF and its projects depend on. Infra also reviews requests to install new systems or software on ASF machines, and provides virtual machines (VMs) for projectrs. It's a small team, distributed across many time zones. Someone is on duty at all hours to respond to emergency issues.
 
 ## Infra and incubating projects
 
@@ -26,7 +26,7 @@ DNS entry ($projectname.apache.org) is required for the podling website and mail
 
 **LDAP**
 
-The Lightweight Directory Access Protocol (LDAP) is an open, vendor-neutral, industry standard application protocol for accessing and maintaining distributed directory information services over an Internet Protocol network.
+The Lightweight Directory Access Protocol (LDAP) is an open, vendor-neutral, industry-standard application protocol for accessing and maintaining distributed directory information services over an Internet Protocol (IP) network.
 
 Activate LDAP for the project by filing a JIRA ticket with Infra. Typically you can request both LDAP and DNS in the same ticket.
 
@@ -36,15 +36,13 @@ Mailing lists are an integral part of the decision-making process for projects a
 
 Typically, a project will need three lists
 
-  - private@ for podling PMC communications and discussion of security issues
+  - private@ for podling PMC communications, including recording formal decisions and discussion of security issues
   - dev@ for development discussions
   - commits@ for code commit notifications
 
 Projects may also request separate lists for issues, pull requests, and users (this is very important once you do your first software release and begin to develop a user community) at any time.
 
-The project's mentor(s) can can request mailing lists once DNS and LDAP are set up, through <a href="https://selfserve.apache.org/" target="_blank">SelfServe</a>.
-
-It takes about twelve hours after the mentor makes the request before the mailing lists become active. This gives Infra time to catch and deal with any errors in the requests.
+The project's mentors can can request mailing lists once DNS and LDAP are set up, through <a href="https://selfserve.apache.org/" target="_blank">SelfServe</a>.
 
 ### Phase 3: Requesting new project resources or moving existing ones
 
@@ -57,7 +55,10 @@ If you wish to copy existing code without transferring github stars, etc., your 
 
 **Bug tracking**
 
-You can enable GitHub issues (and wikis) via our (<a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">.asf.yaml</a> service, a configuration file that a project may use to control features such as notification schemes, website staging, GitHub settings, and Pelican builds. This is a per-repo feature. The project can request a Jira instance for issue tracking via <a href="https://selfserve.apache.org/" target="_blank">SelfServe</a>.
+You can enable GitHub issues (and wikis) via our (<a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">.asf.yaml</a> service, a configuration file that controls features such as notification schemes, website staging, GitHub settings, and Pelican builds. This is a per-repo feature. 
+
+The project can request a Jira instance for issue tracking via <a href="https://selfserve.apache.org/" target="_blank">SelfServe</a>.
+
 
 **Confluence Wiki**
 
