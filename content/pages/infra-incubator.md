@@ -44,6 +44,8 @@ Projects may also request separate lists for issues, pull requests, and users (t
 
 The project's mentors can can request mailing lists once DNS and LDAP are set up, through <a href="https://selfserve.apache.org/" target="_blank">SelfServe</a>.
 
+It takes about twelve hours after the mentor makes the request before the mailing lists become active. This gives Infra time to catch and deal with any errors in the requests.
+
 ### Phase 3: Requesting new project resources or moving existing ones
 
 **Code repositories**
