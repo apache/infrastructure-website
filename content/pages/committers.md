@@ -179,7 +179,7 @@ Remember that there often are people subscribed to the digest version of the lis
 
 `~apmail/lists/<var>project</var>/<var>listname</var>/digest`
 
-Note that moderators can get a log of changes to the subscriber list by emailing `<var>listname</var>-list@<var>tlp</var>.apache.org`.
+Note that moderators can get a log of changes to the subscriber list by emailing `<var>listname</var>-log@<var>tlp</var>.apache.org`.
 
 <h4 id="mail-forward">Mail forwarding<a class="headerlink" href="#mail-forward" title="Permanent link">&para;</a></h4>
 
