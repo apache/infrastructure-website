@@ -173,7 +173,7 @@ Information on list subscriptions is private, so is not available to all committ
 
 Anyone with access to the apmail account can run the following command to get a count of subscribers:
 
-`ezmlm-list ~apmail//lists/<var>project</var>/<var>listname</var>| wc -l`
+`ezmlm-list ~apmail/lists/<var>project</var>/<var>listname</var>| wc -l`
 
 Remember that there often are people subscribed to the digest version of the list, too:
 
