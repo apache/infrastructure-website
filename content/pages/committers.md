@@ -179,6 +179,8 @@ Remember that there often are people subscribed to the digest version of the lis
 
 `~apmail/lists/<var>project</var>/<var>listname</var>/digest`
 
+Note that moderators can get a log of changes to the subscriber list by emailing `<var>listname</var>-list@<var>tlp</var>.apache.org`.
+
 <h4 id="mail-forward">Mail forwarding<a class="headerlink" href="#mail-forward" title="Permanent link">&para;</a></h4>
 
 Your forwarding address(es) are stored in LDAP and maintained through the <a href="https://id.apache.org/" target="_blank">Self Serve</a> app. Forwarding is done directly from LDAP.
