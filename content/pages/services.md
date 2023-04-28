@@ -151,7 +151,7 @@ Other tools to consider:
 
 <h3 id="product-naming">Product naming<a class="headerlink" href="#product-naming" title="Permanent link">&para;</a></h3>
 
-See [guidance for choosing a product name](product-names.html)
+See [guidance for choosing a product name](project-names.html)
 
 <h3 id="code-signing">Code signing<a class="headerlink" href="#code-signing" title="Permanent link">&para;</a></h3>
 
