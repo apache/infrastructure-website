@@ -1,10 +1,14 @@
 Title: Apache and GitHub
 
-The ASF has a <a href="https://github.com/apache" target="_blank">presence on GitHub</a>. If you wish to join the organization as a member on GitHub, visit `https://id.apache.org` and set your githubUsername LDAP field to your GitHub ID. You should be added to the organisation within four hours.
+The ASF has a <a href="https://github.com/apache" target="_blank">presence on GitHub</a>.
 
 **Can I write to repositories at GitHub**?
 
 If your project is currently hosted on Gitbox then you can push to GitHub.
+In order to get write access to repositories, you will need to visit our <a href="https://gitbox.apache.org/boxer/">Boxer</a> 
+portal, which will guide you through the process of linking your ASF and GitHub accounts. The process only takes 
+a minute or two, and will automatically grant you access to all the repositories owned by the projects 
+you are active on.
 
 **To move to GitHub as master follow the steps below:**
 
