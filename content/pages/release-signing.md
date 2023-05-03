@@ -20,6 +20,7 @@ This document is informative and does not constitute policy.
 - <a href="#web-of-trust">Web of Trust basics</a>
 - <a href="#passphrase">What is a Passphrase?</a>
 - <a href="#revocation-cert">Revocation Certificate basics</a>
+- <a href="#automated-release-signing">Automated Release Signing</a>
 - <a href="#reading">Further Reading</a>
 
 
@@ -689,6 +690,21 @@ For example, with <a href="https://www.gnupg.org" target="_blank">GNU Privacy Gu
 ```
 $ gpg --lsign-key someuser
 ```
+
+<h3 id="automated-release-signing">Automated Release Signing<a class="headerlink" href="#automated-release-signing" title="Permanent link">&para;</a></h3>
+<p>
+Projects may make use of automated signing for (reproducible) artifacts built by a CI system such as GitHub actions. 
+The project must request a signing key through an Infra Jira ticket, and Infra will provide a signing key for the project:
+</p>
+
+- The key will be 4096 bit RSA
+- It will be a signing-only key
+- Infra will put a PGP-encrypted revocation key in the project's private svn/git dir
+- The private key will never be shared with the project or anyone outside of the infra-root team, but will be available to the chosen CI system
+- The public key will be sent to the project or added to their KEYS file
+
+The Apache Security Team should be notified of any pending requests for CI signing keys, and should approve the workflow before it is being put into use.
+See [INFRA-23996](https://issues.apache.org/jira/browse/INFRA-23996) for background on this.
 
 
 <h2 id="reading">Further reading<a class="headerlink" href="#reading" title="Permanent link">&para;</a></h2>
