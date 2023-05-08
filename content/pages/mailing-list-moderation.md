@@ -3,7 +3,7 @@ Title: Mailing list moderation
 Mailing lists are the virtual rooms where ASF communities live, form and grow. All formal decisions the project's PMC makes need to have an email thread (possibly with a recorded vote) as an audit trail that this was an official decision.
 
   - <a href="#new-mailing-list">How do we create a new mailing list?</a>
-  - <a href="#mailing-list-moderators">How do I request changes for moderators?</a>
+  - <a href="#mailing-list-moderators">How do I change moderators?</a>
   - <a href="#subscribers">How do I find who is subscribed to a list?</a>
   - <a href="#mail-moderate">What should I do with MODERATE emails?</a>
 
@@ -28,11 +28,23 @@ At the same time, as communities grow, the need for more specialized mailing lis
 
 **WARNING**: Creating a user email list can harm a project community if the developers don't pay attention to their users and reply to their emails. One would expect a well-behaving user community to reply to one another in a civil, adult manner that is focused on whatever the list was created for, but it can take time for a community to learn and take to heart such good behavior.
 
-<h3 id="mailing-list-moderators">How do I request changes for moderators?<a class="headerlink" href="#mailing-list-moderators" title="Permanent link">&para;</a></h3>
+<h3 id="mailing-list-moderators">How do I change moderators?<a class="headerlink" href="#mailing-list-moderators" title="Permanent link">&para;</a></h3>
 
-File an INFRA Jira ticket or ask your PMC to send a request to the `apmail@apache.org` alias. If you have access to apmail, you can just change the list of subscribers
-to list/mod. For example, for the `mod_perl` developers' list that is in `~apmail/lists/perl.apache.org/dev/mod/`, use 
-`ezmlm-list`, `>ezmlm-sub` and `ezmlm-unsub`.
+You can manage the list of moderators for a project's email list if you are:
+
+  - a Foundation member and on the PMC of the project
+  - chair of the project
+  - an existing moderator of the list
+ 
+    - Log in to <a href="https://webmod.apache.org/" target="_blank">WebMod</a> with your ASF credentials. 
+    - Select the 'List moderator management' tab.
+    - In the dropdown list, select the project which has the email list in question.
+    - In the list of email lists that appears, select the list whose moderators you want to manage.
+
+The current list of moderators for this list appears. You can:
+
+  - **Remove a moderator**: Click the `Remove as moderator` link beside their name.
+  - **Add a moderator**: In the `Add a moderator` field, enter the email address of the new moderator. Make sure this is an address that the person has registered with the ASF.
 
 To determine who the existing moderators are, any committer can use the technique described in the "committers" SVN module at <a href="https://svn.apache.org/repos/private/committers/docs/resources.txt" target="_blank">resources.txt</a>.
 
