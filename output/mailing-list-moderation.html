@@ -131,6 +131,16 @@
 </code></pre>
 <p>However, most committers do not have access to apmail. See the notes in the "committers" SVN module (<code>https://svn.apache.org/repos/private/committers</code>) at <code>/docs/resources.txt</code> for another way.</p>
 <h3 id="mail-moderate">What should I do with "MODERATE" emails?<a class="headerlink" href="#mail-moderate" title="Permanent link">&para;</a></h3>
+<p>You can review and manage email that is waiting for moderation in two ways:</p>
+<h4>WebMod</h4>
+<p><a href="https://webmod.apache.org/" target="_blank">WebMod</a> simplifies reviewing and responding to emails that require moderation.</p>
+<ul>
+<li>Log in to WebMod using your Apache credentials.</li>
+<li>A tab appears for each email list for which you are a moderator and that has emails needing review. Select a tab.</li>
+<li>You can approve or reject multiple emails in one action by checking the checkboxes to the left of the email titles and selecting either <code>accept</code> or <code>spam</code> from the bulk-actions dropdown list.</li>
+<li>You have many options for reviewing each individual email, including displaying just the text body or viewing the source. The options appear as links to the right of the email title.</li>
+</ul>
+<h4>Manual moderation</h4>
 <p>Review the mail to see if it is spam (or other severely misguided mail). If it is spam, just ignore the mail to have it silently dropped after 5 days.</p>
 <p>To bounce non-spam with a notice to the sender, reply to the <code>-reject</code> address in the mail header. If you wish to include a comment with the rejection, the body of the message should look like this:</p>
 <pre><code>%%% Start comment
