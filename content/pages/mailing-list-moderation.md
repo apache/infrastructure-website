@@ -68,6 +68,18 @@ However, most committers do not have access to apmail. See the notes in the "com
 
 <h3 id="mail-moderate">What should I do with "MODERATE" emails?<a class="headerlink" href="#mail-moderate" title="Permanent link">&para;</a></h3>
 
+You can review and manage email that is waiting for moderation in two ways:
+
+#### WebMod 
+
+<a href="https://webmod.apache.org/" target="_blank">WebMod</a> simplifies reviewing and responding to emails that require moderation.
+
+  - Log in to WebMod using your Apache credentials.
+  - A tab appears for each email list for which you are a moderator and that has emails needing review. Select a tab.
+  - You can approve or reject multiple emails in one action by checking the checkboxes to the left of the email titles and selecting either `accept` or `spam` from the bulk-actions dropdown list.
+  - You have many options for reviewing each individual email, including displaying just the text body or viewing the source. The options appear as links to the right of the email title.
+
+#### Manual moderation
 Review the mail to see if it is spam (or other severely misguided mail). If it is spam, just ignore the mail to have it silently dropped after 5 days.
 
 To bounce non-spam with a notice to the sender, reply to the `-reject` address in the mail header. If you wish to include a comment with the rejection, the body of the message should look like this:
