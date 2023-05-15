@@ -39,4 +39,3 @@ notifications:
   issues:               issues@infra.apache.org
   discussions:          issues@infra.apache.org
   pullrequests_bot_dependabot: gnomes@infra.apache.org
-
