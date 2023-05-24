@@ -46,7 +46,7 @@ If you use JSign 4.0, you can skip this step.
 1. Log on to DigiCert ONE and select "Secure Software" from the menu in the top right-hand corner.
 1. Select "Resources" in the left-hand menu.
 1. Download and install the "Secure Software Manager Windows Clients Installer".
-1. As per the <a href="https://digicert.github.io/snowbird-doc/#/administration-guides/secure-software-manager/windows-configuration" target="_blank">Windows Configuration</a> section of the client user guide, create the four system environment variables. These **must** always be set to use the DigiCert signing service.
+1. As per the <a href="https://docs.digicert.com/en/digicert-one/software-trust-manager/general/secure-credentials/set-up-secure-credentials-for-windows.html" target="_blank">Windows Configuration</a> section of the client user guide, create the four system environment variables. These **must** always be set to use the DigiCert signing service.
 1. Test with `smctl.exe keypair ls`. You should see at least one certificate listed. (smctl.exe is installed as part of the DigiCert client and won't be on your path.)
 1. Test with `certutil.exe -csp "DigiCert Signing Manager KSP" -key -user`. You should see at least one key listed. (certutil.exe will be on your path.)
 1. Synchronise certificates with `smksp_cert_sync.exe`.
@@ -72,7 +72,7 @@ The DigiCert ONE client tools are not available for MacOS. Use JSign 4.0 so you 
 
 To sign Windows binaries you need a copy of SignTool.exe. This utility is in both Visual Studio and the Windows SDK. Very old versions only support SHA-1 signing. Version 6.1.7600.16385 (2009-07-14) supports newer hashes for signing.
 
-You need the fingerprint of the certificate you want to use for signing (view via `certmgr.msc`). You can then sign a file with `signtool.exe sign /sha1 <cert-fingerprint> /fd sha512 /tr http://timestamp.digicert.com <file-to-be-signed>`.
+You need the fingerprint of the certificate you want to use for signing (view via `certmgr.msc`). You can then sign a file with `signtool.exe sign /sha1 <cert-fingerprint> /td sha1 /fd sha512 /tr http://timestamp.digicert.com <file-to-be-signed>`.
 
 To sign a file with SHA-256 rather than SHA-512 use `... /fd sha256...` rather than `... /fd sha512 ...`.
 
