@@ -16,9 +16,8 @@ see https://privacy.apache.org/.
 
 ## Accidental exposure of credentials or company-sensitive data
 
-**TL;DR:** If your company experiences accidental exposure of sensitive data or credentials in one of the types of content listed above, 
+**TL;DR:** If you or your company experience accidental exposure of sensitive data or credentials in one of the types of content listed above, 
 you should always assume that the data is now public, and immediately invalidate those credentials.
-
 
 Depending on the context and circumstances of your request, we _may_ be able to remove the 
 following items:
@@ -34,3 +33,11 @@ We are **not** able to, and will not spend time with the following:
 
 - Deleting pull requests from GitHub (cannot be done)
 - Deleting LDAP or other governance records that pertain to existing committers to ASF project repositories
+
+## Dealing with spam
+
+If you have an ASF email account and are receiving what you believe to be spam on it, report the issue to `users@infra.apache.org`.
+
+If you seem to be receiving spam from an ASF email account, report the issue to `abuse@infra.apache.org`.
+
+We make a good-faith effort to remove obvious spam from our email archives; however, given that our mailing lists are archived in many places, 100% certainty of spam removal is impossible.
