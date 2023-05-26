@@ -15,6 +15,7 @@ Dealing with
   - <a href="#missing">reports of missing mail</a>
   - <a href="#bounce">reports of message bounces</a>
  
+See also Infra's general guidelines on <a href="https://infra.apache.org/content-moderation.html" target="_blank">content moderation</a>.
 
 <h3 id="new-mailing-list">How do we create a new mailing list?<a class="headerlink" href="#new-mailing-list" title="Permanent link">&para;</a></h3>
 
