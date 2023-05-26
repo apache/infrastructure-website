@@ -9,6 +9,8 @@ policies at ASF Infrastructure, including, but not limited to:
 
 The content the Infrastructure team can moderate includes text on ASF web pages, in Jira tickets, in emails to and from ASF addresses, in code comments, and in comments on commits to Git or Subversion code repositories.
 
+See also the guidelines for <a href="https://infra.apache.org/mailing-list-moderation" target="_blank">mailing list moderation</a>.
+
 ## Personal Data Privacy Requests
 Requests regarding exposure of PII (Personal Identifiable Information) **MUST** be sent to our 
 Data Privacy Officer at `privacy@apache.org`. For more information on personal data privacy, 
@@ -35,6 +37,8 @@ We are **not** able to, and will not spend time with the following:
 - Deleting LDAP or other governance records that pertain to existing committers to ASF project repositories
 
 ## Dealing with spam
+
+If you are a mailing list moderator, see this <a href="https://infra.apache.org/mailing-list-moderation#spam">guidance on spam management</a>.
 
 If you have an ASF email account and are receiving what you believe to be spam on it, report the issue to `users@infra.apache.org`.
 
