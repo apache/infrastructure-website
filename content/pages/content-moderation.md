@@ -38,9 +38,12 @@ We are **not** able to, and will not spend time with the following:
 
 ## Dealing with spam
 
-If you are a mailing list moderator, see this <a href="https://infra.apache.org/mailing-list-moderation#spam">guidance on spam management</a>.
+If you are a **mailing list moderator**, see this <a href="https://infra.apache.org/mailing-list-moderation#spam">guidance on spam management</a>.
 
-If you have an ASF email account and are receiving what you believe to be spam on it, report the issue to `users@infra.apache.org`.
+If you have an ASF email account and are receiving what you believe to be spam on it:
+
+  - Review <a href="https://infra.apache.org/spam-reporting.html" target="_blank">this guidance on possible spam</a>. 
+  - If you still have an issue, report it to `users@infra.apache.org`.
 
 If you seem to be receiving spam from an ASF email account, report the issue to `abuse@infra.apache.org`.
 
