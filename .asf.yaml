@@ -32,6 +32,8 @@ github:
     - infrastructure
     - website
     - pelican
+  protected_tags:
+    - "v*.*"
 
 notifications:
   commits:              commits@infra.apache.org
