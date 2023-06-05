@@ -2,7 +2,7 @@ Title: Assembling LICENSE and NOTICE files
 
 This is a "how to" guide for Apache Committers assembling `LICENSE` and `NOTICE` files for their project's product.
 
-### Overview ###
+### Overview
 
 The `LICENSE` file communicates the licensing of all content in an Apache product distribution. It always contains the text of the Apache License, and
 sometimes more information.
