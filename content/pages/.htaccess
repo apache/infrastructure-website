@@ -1,1 +1,2 @@
 RedirectMatch /?([^/]+)\.html$ /$1.html
+Redirect /apply-license.html https://www.apache.org/legal/apply-license.html
