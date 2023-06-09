@@ -1,5 +1,8 @@
 Title: Project Blog
 
+**Change to blogs under way**: _As of June, 2023, the ASF is no longer supporting Apache Roller for project blogs. This page is being updated with more relevant information._
+
+
 Apache projects and podlings can get a blog at <a href="https://blogs.apache.org" target="_blank">Apache blogs</a> just by asking. A blog can be a great way of announcing new milestones and features, sharing tips and tricks, and putting a "face" on your project for your developer and user communities. The project's PMC is responsible for the blog's content, and for granting write access to PPMC members.
 
 The application that makes your blog possible is <a href="https://roller.apache.org/" target="_blank">Apache Roller</a>. The website has information about the project and general application documentation.
