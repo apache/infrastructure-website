@@ -6,7 +6,7 @@ Title: Status pages
   
   - Check the <a href="https://www.apache.org/uptime/" target="_blank">uptime rate of Apache services</a>.
   
-  - Review how the ASF <a href="https://apache.org/mirrors/" target="_blank">download mirrors</a> are functioning.
+  - To view download stats for your project, visit <a href="https://logging1-he-de.apache.org/stats/" target="_blank">the download stats page</a>.
   
   - Review how Infra triages incident reports and service requests, and their [response-time goals](responsetime.html).
   
