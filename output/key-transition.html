@@ -84,9 +84,9 @@
 <li><a href="#transition-fingerprints">Fingerprinting new and old keys</a></li>
 </ul>
 <h2 id="important">Important note<a class="headerlink" href="#important" title="Permanent link">&para;</a></h2>
-<p>If your key has been compromised, you <strong>must not</strong> use a transition period as described below. Revoke the compromised key immediately and create a new one. Consider all <a href="https://www.apache.org/dev/release-signing.html#web-of-trust" target="_blank">web of trust</a> links signed by the old key as suspect. You must establish a completely new set of links.</p>
+<p>If your key has been compromised, you <strong>must not</strong> use a transition period as described below. Revoke the compromised key immediately and create a new one. Consider all <a href="/release-signing.html#web-of-trust" target="_blank">web of trust</a> links signed by the old key as suspect. You must establish a completely new set of links.</p>
 <h2 id="motivation">Why replace a key?<a class="headerlink" href="#motivation" title="Permanent link">&para;</a></h2>
-<p>When replacing one uncompromised key with a newer (typically longer) one, using a transition period when both keys are trustworthy and participate in the <a href="https://www.apache.org/dev/release-signing.html#web-of-trust" target="_blank">web of trust</a> uses <em>trust transitivity</em> to use links to the old key to trust signatures and links created by the new key. During a transition, both keys are trustworthy but you only use the newer one to sign documents and certify links in the web of trust.</p>
+<p>When replacing one uncompromised key with a newer (typically longer) one, using a transition period when both keys are trustworthy and participate in the <a href="/release-signing.html#web-of-trust" target="_blank">web of trust</a> uses <em>trust transitivity</em> to use links to the old key to trust signatures and links created by the new key. During a transition, both keys are trustworthy but you only use the newer one to sign documents and certify links in the web of trust.</p>
 <p>This document describes how to use <a href="openpgp.html">GnuPG</a> to create a new key and manage both keys during this transition period.</p>
 <h2 id="single-keyring">Using a single keyring for two keys<a class="headerlink" href="#single-keyring" title="Permanent link">&para;</a></h2>
 <p>It is best to use a single keyring containing both keys.</p>
@@ -163,7 +163,7 @@ Do you really want to set this key to ultimate trust? (y/N) y
 pub  4096R/E2B054B8  created: 2009-08-20  expires: never       usage: SC
 
                      trust: ultimate      validity: unknown
-sub  4096R/4A6D5217  created: 2009-08-20  expires: never       usage: E 
+sub  4096R/4A6D5217  created: 2009-08-20  expires: never       usage: E
 
 [ unknown] (1). Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;
 Please note that the shown key validity is not necessarily correct
