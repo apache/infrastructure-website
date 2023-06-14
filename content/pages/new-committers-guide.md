@@ -141,7 +141,7 @@ A lot of Apache knowledge-sharing and all formal decision-making takes place on 
 
   - Your project probably has a `dev@` and a `users@` email list, and it is a good idea to join both.
   - We strongly urge all committers to join the `builds@` email list, where people from many projects, and the Infrastructure team, share insights and solve problems related to building and releasing software packages. People using Jenkins, or interested in CI/CD (continuous intergration and continuous development) find this list invaluable. Infra also posts notifications to this list regarding outages, upgrades, app add/removals and more.
-  
+
 Instructions for joining and leaving lists, and a browsable list of Apache mailing lists, are <a href="https://www.apache.org/foundation/mailinglists.html" target="_blank">here</a>.
 
 <h3 id="committer-responsibilities">Committer Responsibilities<a class="headerlink" href="#committer-responsibilities" title="Permanent link">&para;</a></h3>
@@ -169,7 +169,7 @@ Please be aware that Apache Software Foundation committers are targets for ident
 Leaking your access to Apache can have very destructive consequences. **Never** disclose your ASF password to anyone.
 
 The Apache Infrastructure team is clueful about DNS maintenance: do **not** trust any redirection by IP address. Your access to Apache will be through the
-machines serving the `svn.apache.org` domain. The ssh/ssl fingerprints of machines are listed on the <a href="https://www.apache.org/dev/machines" target="_blank">machines</a> page, and our <a href="https://infra.apache.org/version-control.html#cert">SVN server fingerprints</a> are also listed.
+machines serving the `svn.apache.org` domain. The ssh/ssl fingerprints of machines are listed on the <a href="/machines" target="_blank">machines</a> page, and our <a href="https://infra.apache.org/version-control.html#cert">SVN server fingerprints</a> are also listed.
 
 Please use caution. Do not hesitate to ask if you have doubts: post a question to infrastructure before taking any action.
 

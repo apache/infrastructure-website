@@ -40,7 +40,7 @@ Infra maintains a wide range of tools for PMCs, project committers, and the Apac
   - An index of <a href="https://projects.apache.org/projects.html?name" target="_blank">all ASF projects</a> (if they have set up a DOAP).
   - Any ASF project can use the [ASF-Pelican template](asf-pelican.html) as the basis for their project website.
   - Details about individual <a href="https://home.apache.org/" target="_blank">ASF Committers</a>.
-  - Notes about committers' <a href="https://apache.org/dev/new-committers-guide.html#public_html" target="_blank">personal web spaces</a>.
+  - Notes about committers' <a href="/new-committers-guide.html#public_html" target="_blank">personal web spaces</a>.
   - The <a href="https://whimsy.apache.org/site/" target="_blank">Apache Project Website Checker</a> periodically reviews all TLP websites and reports whether they comply with Apache's <a href="https://www.apache.org/foundation/marks/pmcs#navigation" target="_blank">policies for TLP websites</a>.
   
 <h3 id="email">Email<a class="headerlink" href="#email" title="Permanent link">&para;</a></h3>
@@ -213,7 +213,7 @@ Infra manages the ASF DNS, which is registered with Namecheap.
 
 <h3 id="machines">Machine list<a class="headerlink" href="#machines" title="Permanent link">&para;</a></h3>
 
-<a href="https://www.apache.org/dev/machines.html" target="_blank">Host Keys and Fingerprints</a>
+<a href="/machines.html" target="_blank">Host Keys and Fingerprints</a>
 
 <h3 id="whimsy">Whimsy<a class="headerlink" href="#whimsy" title="Permanent link">&para;</a></h3>
 

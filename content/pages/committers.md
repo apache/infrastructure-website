@@ -98,7 +98,7 @@ Infra uses the `users@infra.apache.org` mailing list to discuss new infrastructu
 Committers may access `home.apache.org`. See the related information in the [New committers' guide](new-committers-guide.html).
 Note that you do <strong>only</strong> have sftp access. There is no shell access. RSA SSH keys are required for sftp access, which you can update via <a href="https://whimsy.apache.org">Whimsy</a> or <a href="https://id.apache.org">id.apache.org</a>.
 
-Here is a <a href="https://apache.org/dev/machines.html" target="_blank">list of other Apache services/hosts and their public keys</a>.
+Here is a <a href="/machines.html" target="_blank">list of other Apache services/hosts and their public keys</a>.
 
 <h4 id="can-cant">What can and can't I do on those machines?<a class="headerlink" href="#can-cant" title="Permanent link">&para;</a></h4>
 

@@ -21,7 +21,7 @@ Apache values "Community over code", and is full of volunteers who want to help 
 
 <h3 id="mail">Everything happens on mailing lists<a class="headerlink" href="#mail" title="Permanent link">&para;</a></h3>
 
-Virtually everything at Apache happens on one of our publicly archived mailing lists. Find the <a href="https://www.apache.org/dev/#mail" target="_blank">right Apache mailing list</a> and read some <a href="https://www.apache.org/dev/contrib-email-tips" target="_blank">tips</a> on asking questions and making comments.
+Virtually everything at Apache happens on one of our publicly archived mailing lists. Find the <a href="https://www.apache.org/dev/#mail" target="_blank">right Apache mailing list</a> and read some <a href="/contrib-email-tips" target="_blank">tips</a> on asking questions and making comments.
 
 <h3 id="howitworks">How open-source works at Apache<a class="headerlink" href="#howitworks" title="Permanent link">&para;</a></h3>
 
@@ -50,7 +50,7 @@ Getting the source directly from the source repository usually gives you the lat
 A valuable way to contribute to ASF projects is to use the project's software and then provide feedback about it to its developers. Different Apache software
 projects have different preferences about how you should submit feedback. Check out the project website for more information. In the absence of project-specific information on how to provide feedback, follow these guidelines.
 
-A vital part of the ASF projects are the project mailing lists. Most projects have a users' list named `users@${project}.apache.org` or `user@${project}.apache.org`. Subscribe to it by sending an e-mail to `users-subscribe@${project}.apache.org`, then follow the instructions. We have many <a href="https://www.apache.org/dev/contrib-email-tips" target="_blank">tips on asking questions</a> in a way that gets answers.
+A vital part of the ASF projects are the project mailing lists. Most projects have a users' list named `users@${project}.apache.org` or `user@${project}.apache.org`. Subscribe to it by sending an e-mail to `users-subscribe@${project}.apache.org`, then follow the instructions. We have many <a href="/contrib-email-tips" target="_blank">tips on asking questions</a> in a way that gets answers.
 
 Tell the developer and user community about your use of the software product, your experiences in setting it up, issues you encountered, and any general feedback you may have. Don't forget to include any positive observations that will show you appreciate the effort the team is making. Your story will likely be very welcome if you write it clearly, in a friendly tone, and Read The Manual before asking for answers that you could find there. You'll probably receive enthusiastic responses from some of the developers and other users (although responses may not appear right away: everybody is busy). 
 

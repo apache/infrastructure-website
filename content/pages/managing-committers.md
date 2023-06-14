@@ -1,6 +1,6 @@
 Title: Managing Project Committers
 
-The PMC of each project encourages and guides their new committers, ensures that they have access to the proper resources, advises them about relevant ASF documentation such as the <a href="https://www.apache.org/dev/new-committers-guide.html" target="_blank">Guide for New Committers</a>, and generally eases their way.
+The PMC of each project encourages and guides their new committers, ensures that they have access to the proper resources, advises them about relevant ASF documentation such as the <a href="/new-committers-guide.html" target="_blank">Guide for New Committers</a>, and generally eases their way.
 
 ### Account creation ###
 

@@ -229,4 +229,4 @@ To learn more, or just get some questions answered, please contact us at `users@
 
 ## Acknowledgements
 PyPubSub is based on [SvnPubSub](https://paul.querna.org/articles/2010/10/22/evolution-of-apaches-websites/)
-and [gitpubsub](https://www.apache.org/dev/gitpubsub.html). We wish to thank the Subversion project for building the precursor to this service.
+and [gitpubsub](/gitpubsub.html). We wish to thank the Subversion project for building the precursor to this service.

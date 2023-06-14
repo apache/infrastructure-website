@@ -16,11 +16,11 @@ This document is for project **committers** who wish to change the PGP key they 
 
 <h2 id="important">Important note<a class="headerlink" href="#important" title="Permanent link">&para;</a></h2>
 
-If your key has been compromised, you **must not** use a transition period as described below. Revoke the compromised key immediately and create a new one. Consider all <a href="https://www.apache.org/dev/release-signing.html#web-of-trust" target="_blank">web of trust</a> links signed by the old key as suspect. You must establish a completely new set of links.
+If your key has been compromised, you **must not** use a transition period as described below. Revoke the compromised key immediately and create a new one. Consider all <a href="/release-signing.html#web-of-trust" target="_blank">web of trust</a> links signed by the old key as suspect. You must establish a completely new set of links.
 
 <h2 id="motivation">Why replace a key?<a class="headerlink" href="#motivation" title="Permanent link">&para;</a></h2>
 
-When replacing one uncompromised key with a newer (typically longer) one, using a transition period when both keys are trustworthy and participate in the <a href="https://www.apache.org/dev/release-signing.html#web-of-trust" target="_blank">web of trust</a> uses _trust transitivity_ to use links to the old key to trust signatures and links created by the new key. During a transition, both keys are trustworthy but you only use the newer one to sign documents and certify links in the web of trust.
+When replacing one uncompromised key with a newer (typically longer) one, using a transition period when both keys are trustworthy and participate in the <a href="/release-signing.html#web-of-trust" target="_blank">web of trust</a> uses _trust transitivity_ to use links to the old key to trust signatures and links created by the new key. During a transition, both keys are trustworthy but you only use the newer one to sign documents and certify links in the web of trust.
 
 This document describes how to use [GnuPG](openpgp.html) to create a new key and manage both keys during this transition period.
 
@@ -115,7 +115,7 @@ Do you really want to set this key to ultimate trust? (y/N) y
 pub  4096R/E2B054B8  created: 2009-08-20  expires: never       usage: SC
 
                      trust: ultimate      validity: unknown
-sub  4096R/4A6D5217  created: 2009-08-20  expires: never       usage: E 
+sub  4096R/4A6D5217  created: 2009-08-20  expires: never       usage: E
 
 [ unknown] (1). Alice Example (EXAMPLE NEW KEY) <alice@example.org>
 Please note that the shown key validity is not necessarily correct

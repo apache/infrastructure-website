@@ -70,7 +70,7 @@ Projects **must** coordinate with Infra in advance about releases larger than 1G
 
 <h2 id="sigs-and-sums">Requirements for cryptographic signatures and checksums<a class="headerlink" href="#sigs-and-sums" title="Permanent link">&para;</a></h2>
 
-See the <a href="https://www.apache.org/dev/release-signing.html" target="_blank">release signing</a> page.
+See the <a href="/release-signing.html" target="_blank">release signing</a> page.
 
 For every artifact distributed to the public through Apache channels, the PMC
 

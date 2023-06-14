@@ -49,7 +49,7 @@ ssh -v -l committer home.apache.org
   - If you encounter a problem with SSH and you are not running the most modern stable release of the client software you are connecting with, upgrade and retry.
   - Configure the client to use <a href="#ssh2-configuration"> SSH2</a> where possible so the connection to Apache uses the SSH2 protocol. This protocol is more secure and lets you use an interactive keyboard (type in password) or <a href="#pki">PKI</a>. If you must use SSH1, you will need to use PKI.
   - Read <a href="#ssh-debug">the section on debugging SSH</a> and try to diagnose the problem.
-  
+
 <h3 id="common-problems">Some common problems<a class="headerlink" href="#common-problems" title="Permanent link">&para;</a></h3>
 
 <h4 id="exposed">Do not expose your private key<a class="headerlink" href="#exposed" title="Permanent link">&para;</a></h4>. Generate your key on a computer that is in your control, then upload only the public part to the `home.apache.org` server. Do not make the mistake of generating the key on the `home.apache.org` server.</p>
@@ -108,7 +108,7 @@ Are you sure you want to continue connecting (yes/no)?
 ```
 
 The fingerprints for <code>home.apache.org</code> can be found
-<a href="https://www.apache.org/dev/new-committers-guide.html#identity-theft">here</a>. If the user elects to continue,
+<a href="/new-committers-guide.html#identity-theft">here</a>. If the user elects to continue,
 this value is written to a `known_hosts` file. In future, when the user connects to the same server, the system checks this value and alerts the user if it has changed. **Do not continue the connection** after such an alert: contact infrastructure. This is of crucial importance when using keyboard interactive authentication.
 
 **Note**: The fingerprint for the key used for ssh is different from the fingerprint of the certificate used to securely serve the
@@ -120,4 +120,4 @@ A class of attacks where the attacker masquerades as the server to the client an
 
 <h2 id="elsewhere">More information<a class="headerlink" href="#elsewhere" title="Permanent link">&para;</a></h2>
 
-  - <a href="https://www.apache.org/dev/new-committers-guide.html#ssh#ssh" target="_blank">Instructions for new committers</a>
+  - <a href="/new-committers-guide.html#ssh#ssh" target="_blank">Instructions for new committers</a>
