@@ -120,4 +120,4 @@ A class of attacks where the attacker masquerades as the server to the client an
 
 <h2 id="elsewhere">More information<a class="headerlink" href="#elsewhere" title="Permanent link">&para;</a></h2>
 
-  - <a href="/new-committers-guide.html#ssh#ssh" target="_blank">Instructions for new committers</a>
+  - <a href="/new-committers-guide.html#identity-theft" target="_blank">Identity theft</a>
