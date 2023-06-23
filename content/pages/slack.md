@@ -73,7 +73,7 @@ Slack shared channels operate like regular channels, except that they are open t
 
 ## Making information on private channels public
 
-People participate in a private channel with the understanding that it is, well, private. They may share material there that they would not want, or do not have the right to, make generally available. Therefore, Infra's policy is **not** to make private channels public.
+People participate in a private channel with the understanding that it is, and will continue to be, private. They may share material there that they would not want, or do not have the right to, make generally available. Therefore, Infra's policy is **not** to make private channels public.
 
 If there is information on a private channel that a project now would like to share publicly, Infra recommends that you:
 
