@@ -44,7 +44,7 @@ For the Apache Software Foundation:
 
 ## Joining project channels
 
-Once you are part of the ASF workspace as a member or a multi-channel guest, you can join any open channels you wish to. 
+Once you are part of the ASF workspace as a member or a multi-channel guest, you can join any public channels you wish to. 
 
  - At the top of your list of channels in the Slack app, click the **+** icon.
  - Use the _Browse channels_ option to display a list of open channels in the workspace; or enter text in the search field.
@@ -63,6 +63,7 @@ Before setting up a new project channel, search the ASF workspace to make sure i
 
   - At the top of your list of channels in the Slack app, click the **+** icon
   - Use the _Browse channels_ option to see if the channel you are thinking of already exists. If you can't find it, click _Create Channel_ at the top of the channels list; or use the _Create a channel_ option under the + icon.
+  - After you provide a name for the channel, you can set it as **public**, so any member of the ASF can see and join it, or **private**, as noted above. People can only join a private channel by invitation.
 
 If you _do_ add a channel for your project, make sure you tell the PMC, committers, and other stakeholders about it so they can find and make use of it.
 
@@ -70,6 +71,15 @@ If you _do_ add a channel for your project, make sure you tell the PMC, committe
 
 Slack shared channels operate like regular channels, except that they are open to participation by people from two different organizations (such as two companies, or a company and a user group). The ASF does not permit shared channels in its space.
 
+## Making information on private channels public
+
+People participate in a private channel with the understanding that it is, well, private. They may share material there that they would not want, or do not have the right to, make generally available. Therefore, Infra's policy is **not** to make private channels public.
+
+If there is information on a private channel that a project now would like to share publicly, Infra recommends that you:
+
+  1. Create a summary of the material to be shared in a text document, removing all personally identifiable information (PII) and third-party information, and summarizing the information and conclusions reached without copying and pasting. **Note** that PMCs must take any formal decisions and votes on the project's mailing list, not in a Slack channel.
+  2. Copy the material in the summary document and paste it in a comment in a public channel for the project (create a new public channel if you do not have one for which the information would be relevant). OR
+  3. Save the summary document to your project wiki or some other accesible space and use the "add a bookmark" tool at the top of the public channel display to provide a link to the document so readers can find it easily.
 
 ## Expectations
 
