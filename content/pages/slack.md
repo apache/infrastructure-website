@@ -75,7 +75,7 @@ Slack shared channels operate like regular channels, except that they are open t
 
 People participate in a private channel with the understanding that it is, and will continue to be, private. They may share material there that they would not want, or do not have the right to, make generally available. Therefore, Infra's policy is **not** to make private channels public.
 
-If there is information on a private channel that a project now would like to share publicly, Infra recommends that you:
+If there is information on a private channel that the channel members, **without exception**, would like to share publicly with the whole project, Infra recommends that you:
 
   1. Create a summary of the material to be shared in a text document, removing all personally identifiable information (PII) and third-party information, and summarizing the information and conclusions reached without copying and pasting. **Note** that PMCs must take any formal decisions and votes on the project's mailing list, not in a Slack channel.
   2. Copy the material in the summary document and paste it in a comment in a public channel for the project (create a new public channel if you do not have one for which the information would be relevant). OR
