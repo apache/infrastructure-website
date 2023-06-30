@@ -51,7 +51,7 @@ setup:
 ```
 
 1. data - uses `asfdata` plugin to build a data model to use in `ezmd` files. www-site is the best example.
-2. run - uses `asfshell` plugin to run scripts. httpd-site's security vulnerability processing is the best example.
+2. run - uses `asfrun` plugin to run scripts. httpd-site's security vulnerability processing is the best example.
 3. ignore - sets Pelican's IGNORE_FILES setting.
 4. copy - uses `asfcopy` plugin to copy static files outside of the Pelican process. Include these in `ignore` as well.
    This is useful if you have large files or many static files.
