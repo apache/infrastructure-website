@@ -52,9 +52,11 @@ Many projects have dependencies on non-Apache components. For an Apache release 
 
 <h2 id="signing">Signing release artifacts<a class="headerlink" href="#signing" title="Permanent link">&para;</a></h2>
 
-The files that make up an Apache release always have accompanied by cryptographic signatures. This allows users to ensure that the files have not been tampered with since they were created. The mechanics of signing depend on the project's build technology. Infra strongly recommends that projects set up automated infrastructure to sign the files to simplify the work. Generally, projects set up their build system so that the same process that creates the files for a release also signs them.
+The files that make up an Apache release always are accompanied by cryptographic signatures. This allows users to ensure that the files have not been tampered with since they were created. The mechanics of signing depend on the project's build technology. Infra strongly recommends that projects set up automated infrastructure to sign the files to simplify the work. Generally, projects set up their build system so that the same process that creates the files for a release also signs them.
 
-The process of setting up to sign the code is somewhat complicated, and it is described on the [release signing](release-signing.html) page. If you plan to serve as a release manager, you should generate a key and publish it well in advance of creating a release.
+The process of setting up to sign the code is somewhat complicated, and is described on the [release signing](release-signing.html) page. If you plan to serve as a release manager, you should generate a key and publish it well in advance of creating a release.
+
+**Note** while your project can create and review as many release candidates as it wishes, and can use any automated build process that makes it easier and more reliable to create them, the project cannot publish any release candidate as an official release until it is approved by the voting process described below, and signed by a legal person. The ASF has **not** authorized a completely-automated process for both building and releasing artifacts that does not involve review and approval by the project's PMC and the signature of a human in the release artifact bundle.
 
 <h2 id="voting">Voting whether to approve the release<a class="headerlink" href="#voting" title="Permanent link">&para;</a></h2>
 
