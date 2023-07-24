@@ -692,10 +692,14 @@ $ gpg --lsign-key someuser
 ```
 
 <h3 id="automated-release-signing">Automated Release Signing<a class="headerlink" href="#automated-release-signing" title="Permanent link">&para;</a></h3>
-<p>
-Projects may make use of automated signing for (reproducible) artifacts built by a CI system such as GitHub actions. 
+
+Projects may make use of automated signing for artifacts built by a CI system such as GitHub Actions, provided that:
+
+- All artifacts being signed can be built [reproducibly](https://reproducible-builds.org)
+- CI deploys the artifacts to a staging environment
+- The release procedure contains a validation step where all artifacts are reproduced on [trusted hardware](https://www.apache.org/legal/release-policy.html#owned-controlled-hardware) before publication to pages intended for end users
+
 The project must request a signing key through an Infra Jira ticket, and Infra will provide a signing key for the project:
-</p>
 
 - The key will be 4096 bit RSA
 - It will be a signing-only key
