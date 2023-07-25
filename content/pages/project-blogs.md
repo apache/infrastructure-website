@@ -11,7 +11,7 @@ It is good practice to discuss the content of blog posts on the project's dev li
 
 ### Requesting a project blog ###
 
-You no longer have to request a blog from Infra.
+You no longer have to request a blog from Infra. If your project doesn't currently have a blog, you should discuss this on the project mailing lists before moving forward.
 
 ### Getting editor access ###
 
