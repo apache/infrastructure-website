@@ -74,14 +74,13 @@
               Project Blog
           </h2>
               <p><strong>Change to blogs under way</strong>: <em>As of June, 2023, the ASF is no longer using Apache Roller for project blogs. This page is being updated with more relevant information.</em></p>
-<p>Apache projects and podlings can get a blog at <a href="https://blogs.apache.org" target="_blank">Apache blogs</a> just by asking. A blog can be a great way of announcing new milestones and features, sharing tips and tricks, and putting a "face" on your project for your developer and user communities. The project's PMC is responsible for the blog's content, and for granting write access to PPMC members.</p>
-<p>The application that makes your blog possible is <a href="https://roller.apache.org/" target="_blank">Apache Roller</a>. The website has information about the project and general application documentation.</p>
+<p>Apache projects and podlings can create a blog on their own. If you're building your site via Pelican, Hugo, or other static site generator it's as easy as following their steps to create posts. For instance, infra.apache.org is using Pelican builds hosted by the ASF. Posts just need to be markdown and created under a directory named "blog". All project blogs should be accessible via $projectName.apache.org/blog. A blog can be a great way of announcing new milestones and features, sharing tips and tricks, and putting a "face" on your project for your developer and user communities. The project's PMC is responsible for the blog's content, and for granting write access to PPMC members.</p>
+<p>There are some resources avaiable if you're using <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features#Git.asf.yamlfeatures-BlogdeploymentserviceforGitrepositories" target="_blank"> .asf.yaml</a></p>
 <p>It is good practice to discuss the content of blog posts on the project's dev list before publishing.</p>
 <h3>Requesting a project blog</h3>
-<p>To request a blog, create a Jira ticket for Infra using <em>Blogs</em> as its component name. Indicate the project name and the Apache ID of at least one initial blog user who will have Admin access and responsibilities. The Roller <a href="https://github.com/apache/roller/tree/roller-5.2.0/docs" target="_blank">help documentation</a> outlines user roles, and extensive details about working with Roller.</p>
+<p>You no longer have to request a blog from Infra. If your project doesn't currently have a blog, you should discuss this on the project mailing lists before moving forward.</p>
 <h3>Getting editor access</h3>
-<p>The Admins you identify in the Jira ticket also have editor access to your new blog. They should be able to log in with their Apache IDs at <a href="https://blogs.apache.org/" target="_blank">blogs.apache.org</a>. Your project blog is at <code>blogs.apache.org/$project</code>, and the login link is at the bottom of the right column. The Admins can give other people editor or limited writing access.</p>
-<p>Your project PMC "owns" the blog and can choose who gets access to it.</p>
+<p>Your blog code should be in your project's website repo or another separate GitHub/GitBox repo. Access is controlled via the same process as committing code to any other ASF repo. Contributors can use PRs to create new content that can be approved by the project.</p>
 <h3>Working with your blog</h3>
 <p>This is not a personal blog; it is part of the way your project presents itself to the world. The PMC should approve a plan that covers</p>
 <ul>
@@ -90,21 +89,8 @@
 <li>Topics ("Let's have a series of tips for new users, a post describing each new release, and...")</li>
 <li>Whether a PMC needs to review a draft of the new blog post before the writer publishes it.</li>
 </ul>
-<h3>Writing a new blog entry</h3>
-<p>When you log in, you see the form for creating a new blog entry. Give the entry a title and some relevant tags (separated by commas), and start writing in the intuitive editor. You can save the entry as a draft at any time and come back to it later.</p>
-<ul>
-<li>You can add a short <em>summary</em> that appears in the list of blog entries so a visitor can decide whether to read the full post.</li>
-<li><em>Plugins</em> are available to provide emoticons, obfuscate email addresses, and convert line breaks if you are pasting in text you have copies from some other document.</li>
-<li>In the Advanced Settings section you can schedule when to publish this entry.</li>
-<li><strong>Important</strong>: you also have the option, under Advanced Settings, of allowing comments on the entry, and for how long. ALthough commenting is on by default, we <strong>strongly advise that you turn it off</strong>. There is a steady stream of spam comments that show up on even the most innocent blog posting.</li>
-</ul>
-<h3>Working with drafts</h3>
-<p>A list of unpublished drafts appears in the left column, above the list of recent blog posts. Click any draft to open it in the editing menu.</p>
-<ul>
-<li><strong>Preview</strong>: Tthe <em>Full Preview</em> button appears once the blog entry has been saved at least once. Click it to see, in a new window, the entry as it will appear when published.</li>
-<li><strong>Publish</strong>: Click the  <em>Publish to Weblog</em> button to publish the draft to your project's blog. It should appear almost immediately.</li>
-<li><strong>Delete</strong>: Click the <em>Delete Entry</em> button.</li>
-</ul>
+<h3>What's next for blogs.apache.org?</h3>
+<p>Moving forward Infra will setup an aggregator which will resemble a planet-like view. Similar to how Roller would gather latest posts from each blog into one page.</p>
 
         </div>
       </div>
