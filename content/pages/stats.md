@@ -4,7 +4,7 @@ Title: Status pages
  
   - Our <a href="https://infra-reports.apache.org/" target="_blank">ASF Infrastructure Reporting Dashboard</a> has a variety of live reports, including uptime statistics, website source scans, and more.
   
-  - To view download stats for your project, visit <a href="https://logging1-he-de.apache.org/stats/" target="_blank">the download stats page</a>.
+  - To view download stats for your project, visit <a href="https://logs.apache.org/stats/" target="_blank">the download stats page</a>.
   
   - Review how Infra triages incident reports and service requests, and their [response-time goals](responsetime.html).
   
