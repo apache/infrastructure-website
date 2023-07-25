@@ -18,9 +18,14 @@ You no longer have to request a blog from Infra. If your project doesn't current
 Your blog code should be in your project's website repo or another separate GitHub/GitBox repo. Access is controlled via the same process as committing code to any other ASF repo. Contributors can use PRs to create new content that can be approved by the project. 
 
 ### Working with your blog ###
+
 This is not a personal blog; it is part of the way your project presents itself to the world. The PMC should approve a plan that covers
 
 - Who is responsible for the blog. It will not write itself!
 - Frequency (such as "at least one blog entry a month, with more entries as events require")
 - Topics ("Let's have a series of tips for new users, a post describing each new release, and...")
 - Whether a PMC needs to review a draft of the new blog post before the writer publishes it.
+
+### What's next for blogs.apache.org? ###
+
+Moving forward Infra will setup an aggregator which will resemble a planet-like view. Similar to how Roller would gather latest posts from each blog into one page.
