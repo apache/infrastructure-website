@@ -141,7 +141,7 @@ Your release will be available almost immediately after you upload it to `https:
 
 <h2 id="stats">Download statistics<a class="headerlink" href="#stats" title="Permanent link">&para;</a></h2>
 
-You can review downloads of your project's releases by day, week, month or quarter at our <a href="https://logging1-he-de.apache.org/stats/">download statistics site</a>. Only project committers can access the page, but they can view download statistics for any Apache project.
+You can review downloads of your project's releases by day, week, month or quarter at our <a href="https://logs.apache.org/stats/">download statistics site</a>. Only project committers can access the page, but they can view download statistics for any Apache project.
 
 <h2 id="questions">Questions?<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h2>
 
