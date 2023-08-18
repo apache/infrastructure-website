@@ -1,7 +1,7 @@
 Apache Infrastructure Website
 =============================
 
-This is the source of of the Apache Infrastructure team's website, 
+This is the source of the Apache Infrastructure team's website, 
 found at https://infra.apache.org/
 
 ## How to build the Infra Site:
