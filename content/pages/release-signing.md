@@ -431,7 +431,7 @@ For example, using <a href="http://www.gnupg.org" target="_blank">GNU Privacy Gu
   - (First time only)Create a directory to contain the keyring
   - Open the shell to be configured to use this keyring
   - Change to the directory
-  - (First time only) `$ mkdir -m 700.gnupg`
+  - (First time only) `$ mkdir -m 700 .gnupg`
   - Set up the environment: `export GNUPGHOME=.gnupg`
 
 <h2 id="web-of-trust">What is a Web Of Trust?<a class="headerlink" href="#web-of-trust" title="Permanent link">&para;</a></h2>
