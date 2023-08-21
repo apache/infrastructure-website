@@ -6,7 +6,7 @@ Review the [Apache Template example](https://template.staged.apache.org/) to see
 
 ## How to use this template
 
-First, review the <a href="https://github.com/apache/template-site" target="_blank">code repository for ASF-Pelican</a> to confirm that it provides the features your project site needs. The template builds a copy of the full Apaches Software Foundation website, which has features your site does not need, and lacks features, such as a download page for product releases, that you will need to add. (During the summer of 2022 we will update the template contents to better reflect the features a project website should have.
+First, review the <a href="https://github.com/apache/template-site" target="_blank">code repository for ASF-Pelican</a> to confirm that it provides the features your project site needs. The template builds a copy of the full Apaches Software Foundation website, which has features your site does not need, and lacks features, such as a download page for product releases, that you will need to add.
 
 If you wish to try out the template:
 
