@@ -1,6 +1,6 @@
 Title: Committers' FAQs
 
-A committer is an individual who has write access to the codebase of an Apache project. 
+A committer is an individual who has write access to the codebase of an Apache project.
 
 The main information resource for you in this role, apart from the wisdom of your project colleagues, is the [New Committers Guide](new-committers-guide.html).
 
@@ -56,9 +56,9 @@ More specific responsibilities of Committers include:
 
   - **Deciding on release plans and releases**: A prime committer responsibility is to help decide when a version of product code is ready for release. A release is not to be taken lightly; each release must uphold the Apache tradition of quality. Each Project Management Committee PMC) formally authorizes the distribution of releases to the public.
   - **Applying patches**: To grow and maintain healthy communities, committers need to discuss, review and apply patches submitted by contributors and other committers. Committers are also responsible for the quality and IP clearance of the code that goes into ASF repositories.
-  - **Helping users**: Committers should monitor both the `dev` and `user` or `users` email lists for the projects they work on and together provide prompt and useful
+  - **Helping users**: Committers should monitor both the `dev@` and `user@` or `users@` email lists for the projects they work on and together provide prompt and useful
  responses to questions from users and their developer colleagues.
-  - **Monitoring commits and issues**: Committers should review commit email messages for their projects and point out anything that looks funny or that may point to IP issues. Committers also monitor the project's issue-tracking system (Bugzilla or Jira or something else) for bug reportss or enhancement requests.
+  - **Monitoring commits and issues**: Committers should review commit email messages for their projects and point out anything that looks funny or that may point to IP issues. Committers also monitor the project's issue-tracking system (Bugzilla or Jira or something else) for bug reports or enhancement requests.
   - **Helping out with the website**: The main Apache website and the project websites are in constant need of maintenance. Committers on a project are expected to
  collectively maintain the project's web site. Apache committers as a group share the responsibility to maintain the main Apache site.
 
@@ -85,7 +85,7 @@ The most likely explanation is that the commit message is awaiting moderation. M
 
 <h4 id="infrastructure-change-request">How do I make infrastructure requests?<a class="headerlink" href="#infrastructure-change-request" title="Permanent link">&para;</a></h4>
 
-You might notice something that needs changing, for example the configuration for a mailing list. The request to the `users@infra` list or the `apmail@` alias needs to come from your Project Management Committee. That ensures that the requests are official, and not just an individual's desire. 
+You might notice something that needs changing, for example the configuration for a mailing list. The request to the `users@infra` list or the `apmail@` alias needs to come from your Project Management Committee. That ensures that the requests are official, and not just an individual's desire.
 
 There are many things that the PMC or PMC chair can do directly, thereby easing the load on the infrastructure team (Infra).
 
@@ -96,7 +96,7 @@ Infra uses the `users@infra.apache.org` mailing list to discuss new infrastructu
 <h4 id="machines">What hosts/machines at Apache can I access?<a class="headerlink" href="#machines" title="Permanent link">&para;</a></h4>
 
 Committers may access `home.apache.org`. See the related information in the [New committers' guide](new-committers-guide.html).
-Note that you do <strong>only</strong> have sftp access. There is no shell access. RSA SSH keys are required for sftp access, which you can update via <a href="https://whimsy.apache.org">Whimsy</a> or <a href="https://id.apache.org">id.apache.org</a>.
+Note that you do <strong>only</strong> have SFTP access. There is no shell access. RSA SSH keys are required for SFTP access, which you can update via <a href="https://whimsy.apache.org" target="_blank">Whimsy</a> or <a href="https://id.apache.org" target="_blank">id.apache.org</a>.
 
 Here is a <a href="/machines.html" target="_blank">list of other Apache services/hosts and their public keys</a>.
 
@@ -107,13 +107,13 @@ You can publish a small personal website in `public_html`, as described in the [
 <h4 id="statistics">Is there a way to see a graph of loads (CPU, I/O, network)?<a class="headerlink" href="#statistics" title="Permanent link">&para;</a></h4>
 
   - Infra publishes top-level statistics on the <a href="https://status.apache.org/" target="_blank">status page</a>.
-  - Vadim Gritsenko provides <a href="http://home.apache.org/~vgritsenko/stats/">statistics and cool charts</a>.
+  - Vadim Gritsenko provides <a href="http://home.apache.org/~vgritsenko/stats/" target="_blank">statistics and cool charts</a>.
 
 <h4 id="host-key-change">What should I do if Host Key has changed when logging into an Apache server?<a class="headerlink" href="#host-key-change" title="Permanent link">&para;</a></h4>
 
-Take any message about a change to the host key or any "Error validating server certificate" very seriously: it may indicate a man-in-the-middle attack is in progress. **Do not ignore this message**.
+Take any message about a change to the host key or any "Error validating server certificate" very seriously: it may indicate a <a href="https://en.wikipedia.org/wiki/Man-in-the-middle_attack" target="_blank">man-in-the-middle attack</a> is in progress. **Do not ignore this message**.
 
-Before contacting the Apache infrastructure team, check that you are logging in to the correct machine, and verify the currently published SSH fingerprints for Apache hosts, as described under "Identity theft" in the  [New committers' guide](new-committers-guide.html).
+Before contacting the Apache infrastructure team, check that you are logging in to the correct machine, and verify the currently published SSH fingerprints for Apache hosts, as described under "Identity theft" in the [New committers' guide](new-committers-guide.html).
 
 <h4 id="help-i-forgot-my-password">Help, I forgot my password!<a class="headerlink" href="#help-i-forgot-my-password" title="Permanent link">&para;</a></h4>
 
@@ -139,9 +139,9 @@ If you do forget your password please visit `https://id.apache.org/` to reset it
 
 <h4 id="committers-module">Where is the committers/ module?<a class="headerlink" href="#committers-module" title="Permanent link">&para;</a></h4>
 
-In Subversion, url: `https://svn.apache.org/repos/private/committers` .
+In Subversion, URL: `https://svn.apache.org/repos/private/committers` .
 
-<h4 id="lock">When do I need to use svn lock?<a class="headerlink" href="#lock" title="Permanent link">&para;</a></h4>
+<h4 id="lock">When do I need to use `svn lock`?<a class="headerlink" href="#lock" title="Permanent link">&para;</a></h4>
 
 Very rarely if ever. See the [version control FAQ](version-control.html) for more details.
 
@@ -153,15 +153,12 @@ See these [instructions](committer-email.html).
 
 <h4 id="subscribe">How do I subscribe to a mailing list?<a class="headerlink" href="#subscribe" title="Permanent link">&para;</a></h4>
 
-If it is a public list, email the `-subscribe` address (such as `dev-subscribe@httpd.apache.org`) from the address you want subscribed, and
-reply to the confirmation mail. For more information see the <a href="https://www.apache.org/dev/#mail" target="_blank">mailing list guide</a>.
+If it is a public list, email the `-subscribe` address (such as `dev-subscribe@httpd.apache.org`) from the address you want subscribed, and reply to the confirmation mail. For more information see the <a href="https://www.apache.org/dev/#mail" target="_blank">mailing list guide</a>.
 
 Private lists use the same procedure, but it's recommended to use <a href="https://whimsy.apache.org/committers/subscribe" target="_blank">the
 self-subscribe app</a>. That avoids needing to wait for a human moderator to check and green-light your subscription request.
 
-At the time of writing the self-subscribe app lets <a href="https://www.apache.org/foundation/members" target="_blank">ASF Members</a> subscribe to any ASF list and other
-committers to subscribe to a few foundation-wide lists. Committers who wish to subscribe to other lists (such as a private@ list of their project)
-should still email the `-subscribe` address.
+At the time of writing the self-subscribe app lets <a href="https://www.apache.org/foundation/members" target="_blank">ASF Members</a> subscribe to any ASF list and other committers to subscribe to a few foundation-wide lists. Committers who wish to subscribe to other lists (such as a `private@` list of their project) should still email the `-subscribe` address.
 
 <h4 id="subscriptions">How do I find out my subscriptions?<a class="headerlink" href="#subscriptions" title="Permanent link">&para;</a></h4>
 
@@ -187,7 +184,7 @@ Your forwarding address(es) are stored in LDAP and maintained through the <a hre
 
 <h3 id="mailmod">Mailing list moderation<a class="headerlink" href="#mailmod" title="Permanent link">&para;</a></h3>
 
-This information has moved [here](mailing-list-moderation.html)
+This information has moved [here](mailing-list-moderation.html).
 
 <h3 id="legal">Legal and organizational<a class="headerlink" href="#legal" title="Permanent link">&para;</a></h3>
 
@@ -214,17 +211,17 @@ Yes, the software products Apache produce are always available to download and u
 
 <h4 id="applying-patches">How should I apply patches from a contributor?<a class="headerlink" href="#applying-patches" title="Permanent link">&para;</a></h4>
 
-Consult with the PMC of the product involved, and see [How to submit a patch for project code](patch.html)
+Consult with the PMC of the product involved, and see [how to submit a patch for project code](patch.html).
 
 <h4 id="cla-registration">How long does it take to register a CLA?<a class="headerlink" href="#cla-registration" title="Permanent link">&para;</a></h4>
 
 It depends on variables including staff workload. You shouldn't be worried until a week or two has passed since the date you expected the document to arrive.
 
-When a <a href="https://www.apache.org/licenses/#clas" target="_blank">CLA</a> is submitted, there are several stages to the approval process.
+When a <a href="https://www.apache.org/licenses/#contributor-license-agreements" target="_blank">CLA</a> is submitted, there are several stages to the approval process.
 
 1. It has to arrive in the hands of an Officer of the ASF. For emailed and faxed documents, this is quick. For snail-mailed documents, this is sometimes slow and often very slow if the mail is posted from outside the US.
 2. Second, the ASF Secretary has to acknowledge the document in the appropriate file in the Foundation repository.
-3. You you wait until you know that the ASF has registered the document. ASF members can watch the commit records or check the file. PMC members can watch their `private@` list for a notice from `secretary@` (this only happens if the ICLA mentioned which TLP to notify). Others will need to check the <a href="https://home.apache.org/unlistedclas.html" target="_blank">list of ICLAs</a>. This is automatically generated, about once an hour, from the file maintained by the Secretary.
+3. Wait until you know that the ASF has registered the document. ASF members can watch the commit records or check the file. PMC members can watch their `private@` list for a notice from `secretary@` (this only happens if the ICLA mentioned which TLP to notify). Others will need to check the <a href="https://whimsy.apache.org/officers/unlistedclas.cgi" target="_blank">list of ICLAs</a>. This is automatically generated, about once an hour, from the file maintained by the Secretary.
 
 <h4 id="trademarks">How can I report issues with Apache brand or trademark use?<a class="headerlink" href="#trademarks" title="Permanent link">&para;</a></h4>
 
