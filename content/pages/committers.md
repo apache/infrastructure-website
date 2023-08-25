@@ -219,7 +219,7 @@ It depends on variables including staff workload. You shouldn't be worried until
 
 When a <a href="https://www.apache.org/licenses/#contributor-license-agreements" target="_blank">CLA</a> is submitted, there are several stages to the approval process.
 
-1. It has to arrive in the hands of an Officer of the ASF. For emailed and faxed documents, this is quick. For snail-mailed documents, this is sometimes slow and often very slow if the mail is posted from outside the US.
+1. It has to arrive in the hands of an Officer of the ASF. As it happens via email, that is usually quick.
 2. Second, the ASF Secretary has to acknowledge the document in the appropriate file in the Foundation repository.
 3. Wait until you know that the ASF has registered the document. ASF members can watch the commit records or check the file. PMC members can watch their `private@` list for a notice from `secretary@` (this only happens if the ICLA mentioned which TLP to notify). Others will need to check the <a href="https://whimsy.apache.org/officers/unlistedclas.cgi" target="_blank">list of ICLAs</a>. This is automatically generated, about once an hour, from the file maintained by the Secretary.
 
