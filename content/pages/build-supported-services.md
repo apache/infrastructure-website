@@ -43,6 +43,9 @@ Projects can add/edit/remove their configuration files via Subversion or Git.
 
 Use the standard naming `$projectname.py` for your config file. You may place multiple build jobs in this file.
 
+Once committed, changes should be picked up automatically.
+If this does not happen, please contact Infrastructure.
+
 #### Access control
 Log in to <a href="https://ci2.apache.org/" target="_blank">ci2.apache.org</a> with your LDAP creds. Use `$username@apache.org` for the user and your LDAP password.
 
