@@ -29,3 +29,4 @@ The Apache Infrastructure Team (Infra) operates under the <a href="https://www.a
 - [Operating system upgrades](os-upgrade-policy.html)
 - [Top-Level Project sites](project-site-policy.html)
 - [Virtual machines for projects](vm-policy.html)
+- [Approving Jira account requests](jira-approve-account.html)
