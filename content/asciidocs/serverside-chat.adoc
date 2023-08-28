@@ -1,0 +1,93 @@
+= Serverside Chat
+
+== Services for Projects
+
+=== Content distribution
+  * websites
+  * blog posts
+  * logo server
+  * Atlassian Confluence
+[.notes]
+--
+--
+
+=== Code Distribution 
+  * artifacts
+  * distribution
+
+[.notes]
+--
+--
+
+=== Version Control Systems
+  * github / gitbox
+  * svn
+
+[.notes]
+--
+--
+
+=== Bug tracking
+  * Atlassian Jira
+  * GitHub Issues
+  * BugZilla
+
+[.notes]
+--
+--
+
+=== CI / CD systems
+  * Buildbot
+  * Jenkins
+  * 3rd party builders like GitHub Actions
+
+[.notes]
+--
+--
+
+=== Project VMs
+  * servers are available for projects upon request
+
+[.notes]
+--
+--
+
+== Foundation Services
+
+=== Communications
+  * Email Archives
+  * Mailing lists / ponymail
+  * Slack
+[.notes]
+--
+--
+
+=== Core Infrastructure 
+    * LDAP
+    * DNS
+[.notes]
+--
+--
+    
+== User Services and Tools
+
+=== Self-Serve
+  * identity management
+  * other self serve things
+[.notes]
+--
+--
+
+=== id.apache.org
+  * update LDAP Identity fields
+[.notes]
+--
+--
+
+== Upcoming projects
+  * ADP
+  * keycloak
+[.notes]
+--
+--
+
