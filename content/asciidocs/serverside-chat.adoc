@@ -1,19 +1,75 @@
 = Serverside Chat
 
-== Services for Projects
+[.notes]
+--
+Greetings all! Today we'd like to do a brief overview of our service catalog.
 
+We're gonna start at the top and work our way down in scope from foundation
+critical services and tools to user services and tools.
+
+--
+
+== Foundation Services
+[.notes]
+--
+--
+
+=== Communications
+[%step]
+  * Email Archives
+  * Mailing lists / ponymail
+  * Slack
+[.notes]
+--
+Because the entire foundation is run via email, maintaining the mail archives for
+providence is among the most important things we do. Ensuring that email maintains
+its integrity through upgrades, migrations, and disasters is our responsibility.
+
+Mailing lists are the way that the foundation interacts with itself and is the only
+official forum for discourse. It's important to ensure that we don't get spammed, 
+that our mail isn't marked as spam, and that we've got good uptime.
+
+Infrastructure helps you in real time by providing slack. What used to be hipchat is
+now a 3rd party donation given to infrastructure on behalf of the whole foundation.
+
+--
+
+=== Core Infrastructure 
+[%step]
+    * LDAP
+    * DNS
+[.notes]
+--
+Identity management is important at a foundation where we tie logins together and use
+them to sign code artifacts.
+
+Additionally it's important froma security perspective to ensure that our domains are 
+configured appropriately.
+--
+== Services for Projects
+[.notes]
+--
+The bulk of our services are aimed at projects. Being our primary service consumer
+much of our responsibility is enabling you.
+--
 === Content distribution
+[%step]
   * websites
   * blog posts
   * logo server
   * Atlassian Confluence
 [.notes]
 --
+a note about websites
+a note about blogs
+a note about the logo server
+a note about our wiki
 --
 
 === Code Distribution 
   * artifacts
   * distribution
+  * archives
 
 [.notes]
 --
@@ -52,22 +108,6 @@
 --
 --
 
-== Foundation Services
-
-=== Communications
-  * Email Archives
-  * Mailing lists / ponymail
-  * Slack
-[.notes]
---
---
-
-=== Core Infrastructure 
-    * LDAP
-    * DNS
-[.notes]
---
---
     
 == User Services and Tools
 
