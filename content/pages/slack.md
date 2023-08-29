@@ -6,7 +6,7 @@ A thread in a Slack channel can be a great place to work through a knotty questi
 
 ## Joining the ASF Slack workspace
 
-Anyone with an `@apache.org` email address can become a full member of the ASF Slack workspace. Use the link above to log in to `the-asf.slack.com`. You can then browse for the open channels you want to join.
+Anyone with an `@apache.org` email address can become a full member of the ASF Slack workspace. Use that email address and the link above to log in to `the-asf.slack.com`. You can then browse for the open channels you want to join.
 
 You can also download an app to use on your computer or mobile device.
 
