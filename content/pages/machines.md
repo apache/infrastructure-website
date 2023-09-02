@@ -4,7 +4,7 @@ This page serves as a secure source for validating host keys on various ASF serv
 
 Check fingerprints with: `ssh-keygen -t rsa -l -E md5 -lf <(ssh-keyscan foo.apache.org 2>/dev/null)`.
 
-Note that some hosts may have multiple keys (RSA, ECDSA, ED25519). We only list the RSA AND ECDSA fingerprints on this page.
+Note that some hosts may have multiple keys (RSA, ECDSA, ED25519). We only list the RSA and ECDSA fingerprints on this page.
 
 If SSH warns that the site is not known, and shows a fingerprint that is not in the table below, that could be because SSH is showing something other than RSA/ECDSA. To change the fingerprint to RSA, try the following: `ssh -o HostKeyAlgorithms=ssh-rsa foo.apache.org` <br/>
 
