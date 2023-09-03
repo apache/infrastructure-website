@@ -18,6 +18,22 @@ Infra itself uses Jira, so to request a Jira instance for your project, create a
 
 Infra will respond within a couple of days, either with a request for clarification of some point or to let you know that the instance is set up and ready for your project to use.
 
+### Using GitHub Issue tracking
+Enabling GitHub Issue tracking for your project is self-serve. In the .asf.yaml file for your repository, locate the `github` section and set the `issues` option to true, as in the example below. 
+
+```
+github:
+  features:
+    # Enable wiki for documentation
+    wiki: true
+    # Enable issue management
+    issues: true
+    # Enable projects for project management boards
+    projects: true
+```
+
+You can review your .asf.yaml settings for Git at <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features" target="_blank">Git .asf.yaml features</a>.
+
 ### Switching from Jira to GitHub Issue tracking
 
 If your project switches from Jira to GitHub for receiving issue reports and feature requests, you will want to change the existing Jira tickets to read-only, and prevent people from trying to open new tickets. This will eliminate time and effort you will otherwise have to spend on rejecting new tickets and explaining the change.
