@@ -1,0 +1,14 @@
+= Developer Gains with Gradle
+:author: Drew Foulks (ASFInfra) and Clay Johnson
+
+== Caching and the Need for speed.
+
+[.notes]
+Local and Remote build caching enables savings of 75-100 build days per week.
+we run  
+
+
+
+== De-Mystifying Flaky tests
+
+== better resource utilization. 
