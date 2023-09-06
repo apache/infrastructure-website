@@ -1,14 +1,24 @@
 = Developer Gains with Gradle
-:author: Drew Foulks (ASFInfra) and Clay Johnson
+:author: Drew Foulks (ASFInfra) and Clay Johnson (Gradle)
+
+== Terms
+[%step]
+* build-time
+* flaky tests
+
+[.notes]
+In this talk build-time refers to the time a build spends occupying build resources.
+1 build day is 24 hours of non-stop work for a worker node. whether it's 1 24 hour
+build or 24 1 hour builds doesn't matter. it's 24 hours of build-time.
+
+Flaky tests are tests that _may_ pass on a second (or third) run.
 
 == Caching and the Need for speed.
 
 [.notes]
-Local and Remote build caching enables savings of 75-100 build days per week.
-we run  
-
-
+Local and Remote build caching enables savings of an average of over 13 minutes per build.
+or 90-100 build-days per calendar week.
 
 == De-Mystifying Flaky tests
 
-== better resource utilization. 
+== Better resource utilization. 

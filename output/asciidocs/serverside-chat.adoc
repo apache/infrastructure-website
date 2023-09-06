@@ -2,28 +2,28 @@
 
 [.notes]
 --
-dfoulks:
 Hi everyone! 
 
 we're the ASF Infrastructure team, for those of you who don't know us
 * Introductions
 
-Today we'd like to do a brief overview of what it is we offer exactly.
+Today we'd like to do a brief overview of what it is we do and offer exactly.
 
 We're gonna start at the top and work our way down in scope from foundation
 critical services and tools to user services and tools.
+
+First some context around Infra:
+
+Infra is a President's committee of the ASF responsible for management and day-to-day
+administration of the hardware and software vital to the smooth operation 
+of the Foundation. Infra also reviews requests to install, deploy, or create new
+systems and services for Foundation-wide consumption.
 
 --
 
 == Foundation Services
 [.notes]
 --
-In case you didn't know:
-
-Infra is a presidents committee responsible for the management and day-to-day 
-system administration of the hardware that runs services vital to the 
-foundation. Infra also reviews requests to install new systems or software 
-on ASF machines.
 
 --
 
