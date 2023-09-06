@@ -20,7 +20,7 @@ For example, `ssh-keygen -lf <(ssh-keyscan home.apache.org 2>/dev/null)` current
 256 SHA256:Oz9+wOnlHvjYYXE06xENo3Z2l09ULBT3TO7gHHhdNnM home.apache.org (ECDSA)
 ```
 
-The order of lines may differ, but the hashes should agree with the entry for `home-lw-us`` in the table below.
+The order of lines may differ, but the hashes should agree with the entry for `home-lw-us` in the table below.
 
 **The hashes shown below are what the real machines SHOULD have. If an entry differs from what you see, please contact infra.**
 
