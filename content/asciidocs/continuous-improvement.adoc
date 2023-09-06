@@ -133,7 +133,7 @@ for the service and we've found:
 ###### FACT: 
 
 Gradle reports an average time savings of 16 minutes per build over the
-last 10K builds.
+last 10K builds due to local and remote caching alone.
 
 16 minutes of savings doesn't sound like a lot on its face, but beam
 is running well over 10K builds a week. 10K builds @ 16 minutes is 
