@@ -8,6 +8,8 @@ Hi I'm Drew Foulks, You might have seen me before at a convention or on
 a Jira Ticket, I'm a member of the Apache Infrastructure Team and have 
 been since 2019. I've been a member of the Foundation for about 3 years.
 
+gmcdonald:
+
 --
 
 == Before we get started
@@ -27,6 +29,10 @@ foundations and I want to ensure that we include more than subtle nod to
 all of the effort they've put in and perspective that they've provided to us.
 
 thank you builds@ crew
+
+
+
+gmcdonald:
 
 --
 
@@ -71,17 +77,27 @@ have presented to us.
 [.notes]
 --
 dfoulks:
+Early 2023 saw the wrapping up of our exit from TravisCI. At the time
 GitHub actions presented an easy, well documented path for exiting travis.
 which at the time was our primary goal, and it really appealed to many of
-our users / Infra at the time of the exodus.
+our users / Infra.
 
-it's easy to pick up / migrate to, the vendor was trustworthy
+It's easy to pick up / migrate to, the vendor was trustworthy
 and many people already undertstood the processes under the hood.
 
-since then adoption has only increased which has given rise to new processes.
+Since then adoption has only increased which has given rise to new processes.
+
+The uptick of GitHub Actions usage brought with it the concerns of security and
+scalability. The current situation is that actions are managed by whitelist and
+require an infra ticket for new actions to be approved for use.
+
+We're currently looking at streamlining this process.
 
 
-speak to the uptick of GitHub Actions usage and how we're working to make that process easie
+
+gmcdonald:
+* Can you discuss how the self hosted runners in Azure extend scalability?
+* is there anything else that you'd like to say about this?
 --
 
 == Buildbot
@@ -110,6 +126,11 @@ groundwork for this for some time with the pelican and jekyll builder work
 changes to .asf.yaml have further streamlined the blogs changes into a
 relatively simple self-serve offering. for more information on how this
 gets done exactly, see us or our blogs expert after the presentation.
+
+
+
+gmcdonald:
+* is there anything you wanted to say here?
 --
 
 == Jenkins
@@ -130,7 +151,7 @@ we are working to make build caching available to any project that wants it.
 We've been working with beam and a few other projects as a pilot program
 for the service and we've found:
 
-###### FACT: 
+### FACT: 
 
 Gradle reports an average time savings of 16 minutes per build over the
 last 10K builds due to local and remote caching alone.
@@ -139,13 +160,13 @@ last 10K builds due to local and remote caching alone.
 is running well over 10K builds a week. 10K builds @ 16 minutes is 
 111 days of time saved.
 
-that's a lot of build cycle time.
+that's a lot of build cycle time!
 
 Additionally, Gradle supports Maven and we look forward to rolling out
 gradle integration to projects using maven so that they also can leverage
 the time savings.
 
-##### Ephemeral nodes in Jenkins
+### Ephemeral nodes in Jenkins
 
 We've further expanded Jenkins capbility by configuring ephemeral build 
 nodes for jenkins.

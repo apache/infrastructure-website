@@ -4,54 +4,50 @@
 --
 Hi everyone! 
 
-we're the ASF Infrastructure team, for those of you who don't know us
-* Introductions
+We're the ASF Infrastructure team, for those of you who don't know us
+_do introductions_
 
-Today we'd like to do a brief overview of what it is we do and offer exactly.
+Today we'd like to put some things straight:
+* how we fit into the foundation at large
+* how we support our larger community
+* and how it is we do that
 
 We're gonna start at the top and work our way down in scope from foundation
 critical services and tools to user services and tools.
+--
+ 
+== ASF Infra
 
-First some context around Infra:
+* We are a Presidents committee, 
+* There are 6 of us.
+* we are all employees, not volunteers.
 
-Infra is a President's committee of the ASF responsible for management and day-to-day
-administration of the hardware and software vital to the smooth operation 
-of the Foundation. Infra also reviews requests to install, deploy, or create new
+[.notes]
+--
+TODO
+* What other context do we want to give our EUs
+
+Infra is a President's committee responsible for the management and day-to-day
+administration of the hardware and software vital to the smooth operation of the 
+Foundation. Infra also reviews requests to install, deploy, or create new
 systems and services for Foundation-wide consumption.
 
+
+We are a small committee comprised of only 7. Our Committer to IT staffer ratio is ~1300:1
+
+as employees out time works a little different.
 --
 
 == Foundation Services
 [.notes]
 --
-
---
-
-=== Core Infrastructure 
-[%step]
-  * LDAP
-  * DNS
-  * PubSub
-
-[.notes]
---
-Identity management is important at a foundation where we tie logins together and use
-them to sign code artifacts. Our public trust is built on the idea that we verify 
-some things and sign our releases. In order for that web of trust to work properly
-we need to be able to verify who is contributing.
-
-It's also important, from a security perspective, to ensure that our domains are 
-configured appropriately. We steward $PROJECTS_NUMBER worth of websites, documentation,
-build systems, tickets (both public and private) and emails. It's absolutely critical 
-to ensure that we're not putting a bullseye on our back.
-
-shoutout to the security team, without them the world would be that much less safe.
+To make sure we don't miss anything we're going to start at the top. 
 
 --
 
 === Communications
 [%step]
-  * Mailing lists / Ponymail
+  * Mailing lists / Ponymailb
   * Email Archives
   * Slack
 
@@ -69,12 +65,43 @@ Infrastructure helps you in real time by providing slack. What used to be hipcha
 now a 3rd party donation given to infrastructure on behalf of the whole foundation.
 --
 
+=== Core Infrastructure 
+[%step]
+  * LDAP (User Management)
+  * DNS (Name Management)
+  * PubSub (Event Management)
+  * Puppet (Configuration Management)
+
+[.notes]
+--
+User / Identity Management is important at a foundation where we tie logins together
+and use them to sign code artifacts. Our public trust is built on the idea that we
+verify and sign our releases. In order for that web of trust to work properly we need
+to be able to verify who is contributing.
+
+It's also important, from a security perspective, to ensure that our domain names are 
+configured appropriately. We steward 100s of websites, documentation, services, CVEs,
+build systems, tickets (both public and private) and emails. It's absolutely critical 
+to ensure that we're not putting a bullseye on our back.
+
+shoutout to the security team, without them the world would be that much less safe.
+
+Additionally, PubSub servers to automate things and chain events together to create
+meaningful, useful, processes
+
+and finally we use Puppet internally to reduce the number of configurtaion variances
+present across our systems
+
+--
 
 == Services for Projects
 [.notes]
 --
-The bulk of our services are aimed at projects. Being our primary service consumer
-much of our responsibility is enabling you.
+Not that we've gotten the important stuff out of the way, let's discuss the fun and
+useful stuff. The bulk of our services are aimed at projects.
+
+Being our primary service consumers much of our responsibility is enabling you, committers, 
+to do that voodoo that you do so well.
 --
 
 === Content distribution
@@ -86,6 +113,14 @@ much of our responsibility is enabling you.
 
 [.notes]
 --
+If Infra had a second biggest thing it does: it'd be content distribution.
+
+fun facts: 
+* sometime in 2011 the ASF had almost 300 active download mirrors in over 40 countries.
+* a decade later in 2021 each hosted mirror synced 180GB of content available for download.
+TODO: need a stat on how much content the CDN has served in teh last calendar year.
+
+
 We support over $WEBSITES_NUM websites across 5 continents. Every project has one
 and we here for that. We offer several different flavors of builder in house including
 pelican and jenkins. 
@@ -116,6 +151,8 @@ a note about our wiki
 
 [.notes]
 --
+Infrastructure oversees the 2.5k repositories present in GitHub and mirrors them onto GitBox.
+Subversion is also a thing we support.
 --
 
 === Bug tracking
@@ -136,6 +173,7 @@ a note about our wiki
 
 [.notes]
 --
+
 --
 
 === Project VMs
