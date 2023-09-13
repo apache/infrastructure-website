@@ -5,6 +5,7 @@
 Hi everyone! 
 
 We're the ASF Infrastructure team, for those of you who don't know us
+
 _do introductions_
 
 Today we'd like to put some things straight:
@@ -17,8 +18,8 @@ critical services and tools to user services and tools.
 --
  
 == ASF Infra
-
-* We are a Presidents committee, 
+[%step]
+* Infra is a Presidents committee, 
 * There are 6 of us.
 * we are all employees, not volunteers.
 
@@ -32,37 +33,47 @@ administration of the hardware and software vital to the smooth operation of the
 Foundation. Infra also reviews requests to install, deploy, or create new
 systems and services for Foundation-wide consumption.
 
+We don't directly report to the board, and don't have the same kinds of governance
+that TLPs do. Generally speaking we're tasked with something and given the leeway to
+implement as we see fit.
 
-We are a small committee comprised of only 7. Our Committer to IT staffer ratio is ~1300:1
+We are a small committee comprised of only 7.
 
-as employees out time works a little different.
+FACT: Our Committer to IT staffer ratio is ~1300:1
+
 --
 
 == Foundation Services
 [.notes]
 --
-To make sure we don't miss anything we're going to start at the top. 
-
+To make sure we don't miss anything we're going to start at the top.
+TODO fix this intro
 --
 
 === Communications
 [%step]
-  * Mailing lists / Ponymailb
+  * Mailing lists / Ponymail
   * Email Archives
-  * Slack
+  * Slack and GitHub Discussions
 
 [.notes]
 --
 Mailing lists are the way that the foundation interacts with itself and is the only
 official forum for discourse. It's important to ensure that we don't get spammed, 
-that our mail isn't marked as spam, and that we've got good uptime.
+that our mail isn't marked as spam, and that we've got good uptime
+
+FACT: Email has 99.99% (4 9s) uptime over the last year.
 
 Because the entire foundation is run via email, maintaining the mail archives for
 providence is among the most important things we do. Ensuring that email maintains
 its integrity through upgrades, migrations, and disasters is our responsibility.
 
-Infrastructure helps you in real time by providing slack. What used to be hipchat is
-now a 3rd party donation given to infrastructure on behalf of the whole foundation.
+FACT: Our archives currently hold $number-of-emails / dating back to $time-when
+
+Infrastructure also supports real time communications via slack and GitHub discussions. 
+
+Slack is a 3rd party tool given to infrastructure to steward for the whole foundation.
+
 --
 
 === Core Infrastructure 
@@ -74,10 +85,13 @@ now a 3rd party donation given to infrastructure on behalf of the whole foundati
 
 [.notes]
 --
+
 User / Identity Management is important at a foundation where we tie logins together
 and use them to sign code artifacts. Our public trust is built on the idea that we
-verify and sign our releases. In order for that web of trust to work properly we need
+verify contributors / code artifacts. In order for that trust to work properly we need
 to be able to verify who is contributing.
+
+FACT: there are over 9k registered committers at the ASF.
 
 It's also important, from a security perspective, to ensure that our domain names are 
 configured appropriately. We steward 100s of websites, documentation, services, CVEs,
