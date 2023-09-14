@@ -1,0 +1,48 @@
+== How-to Infra
+With Chris Wells And Chris Thistlethwaite from your ASF Infra Team
+
+== ASF Infra
+* Infra is a Presidents committee
+* There are 8 of us, 6 full-time 2 part-time
+* We are all employees, not volunteers
+* Located in the EU and US, covering +2 UTC to -7 UTC
+* 1 team member on-call 24/7, shift is year round
+
+== Infra's Structure
+image::infra_structure.png[]
+
+== Probably some other company
+image::other_company.png[]
+
+== A Day in the Life of Infra
+* Jira tickets
+* Project work
+* Monitoring Slack chat (#asfinfra) and email
+
+== Infra On-Call
+* Whoop whoop something’s busted
+* 24/7 for a week, rotation, etc
+* What we monitor and why.
+
+== Infra and ASF Policies
+* Infra handles operational policy
+   - Traffic on our services (things like bans)
+* The Foundation handles legal policy
+   - Members help shape policy that Infra enforces. Things like how releases are handled, how voting happens, etc.
+
+== Being a bad guy, doesn't mean you're a "bad guy"
+* We’re kind and loving systems administrators.
+* We enforce the policy created by members, committers, the board, us, gnomes, dogs, cats, etc.
+* How can we improve? 
+
+== Effectively using Infra
+* How to change policy
+* How to introduce a new $thing
+* How to face rejection when we tell you no
+
+== Questions?
+* Contact us
+  - Slack	
+  - users@infra.apache.org
+  - builds@apache.org (for builds stuff)
+  - Roundtables
