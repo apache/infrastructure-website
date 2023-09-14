@@ -41,6 +41,7 @@ We are a small committee comprised of only 7.
 
 FACT: Our Committer to IT staffer ratio is ~1300:1
 
+TODO: reference our value
 --
 
 == Foundation Services
@@ -50,7 +51,7 @@ To make sure we don't miss anything we're going to start at the top.
 TODO fix this intro
 --
 
-=== Communications
+=== Communication Tools
 [%step]
   * Mailing lists / Ponymail
   * Email Archives
@@ -68,12 +69,28 @@ Because the entire foundation is run via email, maintaining the mail archives fo
 providence is among the most important things we do. Ensuring that email maintains
 its integrity through upgrades, migrations, and disasters is our responsibility.
 
-FACT: Our archives currently hold $number-of-emails / dating back to $time-when
+TODO: FACT: Our archives currently hold $number-of-emails / dating back to $time-when
 
 Infrastructure also supports real time communications via slack and GitHub discussions. 
 
-Slack is a 3rd party tool given to infrastructure to steward for the whole foundation.
+Slack is a 3rd party tool stewarded by infrastructure for the benefit of the foundation.
+--
 
+=== Foundation Tools
+[%step]
+  * STeVe Voting instance
+  * 
+[.notes]
+--
+When it comes to doing the foundations business, Infra staffers can be found
+behind the scenes supporting the foundation with tools to make our obligations easier
+to fulfill.
+
+When it comes to voting we're fairly progressive, Infra runs an internal Apache STeVe 
+instance every year, offering a variety of voting styles to ensure that every member of
+the foundation is represented equitably.
+
+TODO: Need more foundation services
 --
 
 === Core Infrastructure 
@@ -116,46 +133,75 @@ useful stuff. The bulk of our services are aimed at projects.
 
 Being our primary service consumers much of our responsibility is enabling you, committers, 
 to do that voodoo that you do so well.
+
+first of all, for the purposes of keeping this easy to conceptualize, we're going to address code
+and content as separate things, not because the contribution is of a different value, but because they
+use different processes and flow through our environment differently.
 --
 
 === Content distribution
 [%step]
-  * websites
-  * blog posts
-  * logo server
-  * Atlassian Confluence
+  * Project Websites
+  * Blog posts
+  * Logo Server
+  * Confluence
 
 [.notes]
 --
-If Infra had a second biggest thing it does: it'd be content distribution.
 
-fun facts: 
-* sometime in 2011 the ASF had almost 300 active download mirrors in over 40 countries.
-* a decade later in 2021 each hosted mirror synced 180GB of content available for download.
-TODO: need a stat on how much content the CDN has served in teh last calendar year.
+Let's start with content:
 
+Infra is responsible for at least 437 project and subproject websites that employ a variety
+of site generators and version control systems.
 
-We support over $WEBSITES_NUM websites across 5 continents. Every project has one
-and we here for that. We offer several different flavors of builder in house including
-pelican and jenkins. 
+FACT: We support over $WEBSITES_NUM websites across 5 continents. 
 
-We now leverage these builders to help your project build easy to use blogs hosted right on your
-website
+Every project has one and we here for that. 
 
+We offer several different flavors of builders in house including pelican and jekyll to enable
+projects to get a site off the ground with minimal friction using our .asf.yaml self-serve automation
+mechanism.
+
+added bonus: The same mechanisms that we use to create webistes are now also used to create and publish
+project blogs.
+
+we've even got a logo server to help with your projects branding.
 @wells -- a note about the logo server
 
-a note about our wiki
+Need an internal wiki? we've got you covered with Atlassian Confluence.
+
 --
 
 === Code Distribution 
 [%step]
-  * artifacts
-  * distribution
-  * archives
-  * repository
+  * Nexus
+  * Nightlies
+  * Archives
+  * dlcdn
 
 [.notes]
 --
+For managing components and artifacts we have a variety of solutions
+
+TODO: note about Nexus
+
+For build artifacts we have nightlies: a repository designed for short-lived
+data like snapshots, job logs, etc.
+
+FACT: We will serve all of your projects releases... Forever.
+
+Archives is literally an archive of _all_ public software releases of the ASF.
+This is again a call back to archival and maintaining the history as being one
+of the most important things we do. 
+
+In 2021 the ASF moved away from the mirror network in favor of a more manageable 
+CDN based approach, and the amount of data we're serving up is only growing.
+
+FACT: at that time each mirror in the mirror system held 180G content available for download
+and served up roughly 2P of data in 2020. now a days we're using the CDN and serving up
+$amount_of_data per year.
+
+TODO: need a stat on how much content the CDN has served in the last calendar year.
 --
 
 === Version Control Systems
@@ -165,8 +211,11 @@ a note about our wiki
 
 [.notes]
 --
-Infrastructure oversees the 2.5k repositories present in GitHub and mirrors them onto GitBox.
-Subversion is also a thing we support.
+Infrastructure oversees / and manages the 2.5k repositories present in the Apache GitHub org.
+We mirror them to GitBox where we have automation tools that allow you to configure your repo
+manage builds and automate standardized tasks like website building.
+
+We also support Apache Subversion for projects who request it.
 --
 
 === Bug tracking
@@ -177,17 +226,32 @@ Subversion is also a thing we support.
 
 [.notes]
 --
+Tracking issues and tasks is vital to any sane workflow, and we've got several options to 
+ensure that your project is taken care of. From the flexibility of Atlassian Jira to the
+Integration that GitHub Issues provides, your project will get what it needs.
+
+FACT: there are currently 670 Projects in our Jira instance
+
+TODO: a note about BZ
 --
 
 === CI / CD systems
 [%step]
-  * Buildbot
-  * Jenkins
+  * Buildbot & Jenkins
   * 3rd party builders like GitHub Actions
+  * Gradle & Maven
+  * Release Audit Tool
 
 [.notes]
 --
+Infrastructure supports all manner of builders from 3rd party CI tools that integrate
+with GitHub to our own hosted Buildbot, Jenkins
 
+Additional build analysis and stats can be found in our Gradle and Maven tools. so that you not
+only have access to builds but the data required to effectively optimize them.
+
+Finally we have our own Release Audit Tool (RAT) that will help ensure that code stays compliant
+with the apache framework.
 --
 
 === Project VMs
@@ -196,26 +260,32 @@ Subversion is also a thing we support.
 
 [.notes]
 --
+Infrastructure is capable of providing 1 virtual machine per project to be used at the discretion
+of the project. These VMs have historically been used for wide range of purposes from acting as a
+dedicated build-node, to hosting software demos, to hosting documentation.
+
+all we ask is that there be 3 (three) people who make the effort to administer the systems on the
+behalf of the project and to coordinate system needs with Infrastructure.
 --
 
     
 == User Services and Tools
-
-=== Self-Serve
-[%step]
-  * identity management
-  * other self serve things
-
+[%step]  
+  * Selfserve options
+  * URL Shortner
+  * Snippet Sharing
+  * Member Spaces
+  * OTP Generator
 [.notes]
 --
---
+Finally, we get to the tools and services that you, the member would use.
+these include many few and far between tasks such as resetting passwords
+but also some useful day to day items:
+* a web hosted OTP generator for use with our PAM implementation
+* a URL shortner for creating friendly, short URLs for sharing
+* secure snippet sharing, with LDAP integration so you can share content with your project or the world
+* and member spaces, a place for Members to put their apache digital calling card.
 
-=== id.apache.org
-[%step]
-  * update LDAP Identity fields
-
-[.notes]
---
 --
 
 == Upcoming projects
