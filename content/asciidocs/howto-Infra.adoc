@@ -8,6 +8,12 @@ With Chris Wells And Chris Thistlethwaite from your ASF Infra Team
 * Located in the EU and US, covering +2 UTC to -7 UTC
 * 1 team member on-call 24/7, shift is year round
 
+[.notes]
+--
+These are some notes.
+--
+
+
 == Infra's Structure
 image::infra_structure.png[]
 
