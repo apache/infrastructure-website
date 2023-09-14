@@ -241,6 +241,7 @@ TODO: a note about BZ
   * 3rd party builders like GitHub Actions
   * Gradle & Maven
   * Release Audit Tool
+  * SonarQube
 
 [.notes]
 --
@@ -250,8 +251,9 @@ with GitHub to our own hosted Buildbot, Jenkins
 Additional build analysis and stats can be found in our Gradle and Maven tools. so that you not
 only have access to builds but the data required to effectively optimize them.
 
-Finally we have our own Release Audit Tool (RAT) that will help ensure that code stays compliant
-with the apache framework.
+Finally we have a suite of tools for auditing code. our Release Audit Tool (RAT) that helps ensure that
+code stays compliant with the apache framework while solutions like SonarQube help sus out bugs and
+code smells.
 --
 
 === Project VMs
