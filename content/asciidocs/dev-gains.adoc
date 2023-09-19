@@ -1,6 +1,7 @@
 = Developer Gains with Gradle
 :author: Drew Foulks (ASFInfra) and Clay Johnson (Gradle)
-
+[.notes]
+--
 while we're not racecar drivers, we do depend on high end machines to help us
 cross the finish line of releasing software. CI and Build systems have bubbles to the
 top of the list of ASF Infra offerings of interest. most if not all of the projects here use
@@ -8,6 +9,7 @@ a build system of some sort.
 
 Gradle and ASF Infra have partnered to ensure that you're getting the most out of what
 we're able to offer.
+--
 
 == Terms
 [%step]
@@ -16,6 +18,7 @@ we're able to offer.
 * 
 
 [.notes]
+--
 I understand that many of you already know these terms, but just in case I'd like to ensure
 that we're all reading from the same dictionary. so I'm going to define a few things
 
@@ -25,12 +28,14 @@ build-time refers to the time a build spends occupying build resources.
 
 Flaky tests are tests that _may_ pass on a second (or third) run.
 * 
+--
 
 == The Need for Speed.
 
 [%step]
 
 [.notes]
+--
 Right now, We're seeing an average savings of 12 minutes per build. which admittedly doesn't
 sound like a lot on its face but that's 81 days worth of build time over the course of the last
 10K builds.
@@ -44,15 +49,22 @@ using Gradle. As we onboard more projects we expect to see even more time saving
 
 Local and Remote build caching enables savings of an average of over 13 minutes per build.
 or 90-100 build-days per calendar week.
+--
 
 == Enhanced Introspection
 [.notes]
+--
 TODO: explain how to use gradle enterpsie to diagnose builds isues
 
+--
 
 == Better resource utilization.
-* Time savings directly correlate to build queue time.
+[%step]
+* Build time aviodance savings correlate directly to build queue times.
 * Efficient Ephemeral Node usage.
+    
+All of this to say: builds are getting done faster, sooner.
 
-All of this to say: we're not just spinning our wheels anymore! 
+== How do I use this?
+* the GE instance is publicly available at ge.apache.org
 

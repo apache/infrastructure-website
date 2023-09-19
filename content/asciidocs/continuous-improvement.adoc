@@ -8,7 +8,7 @@ Hi I'm Drew Foulks, You might have seen me before at a convention or on
 a Jira Ticket, I'm a member of the Apache Infrastructure Team and have 
 been since 2019. I've been a member of the Foundation for about 3 years.
 
-gmcdonald:
+TODO: gmcdonald:
 
 --
 
@@ -32,7 +32,7 @@ thank you builds@ crew
 
 
 
-gmcdonald:
+TODO: gmcdonald:
 
 --
 
