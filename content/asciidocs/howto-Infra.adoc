@@ -1,4 +1,5 @@
-== How-to Infra
+= How-to Infra
+:imagesdir: images
 With Chris Wells And Chris Thistlethwaite from your ASF Infra Team
 
 == ASF Infra
@@ -14,10 +15,10 @@ These are some notes.
 
 
 == Infra's Structure
-image::images/how_to_infra-infra_structure.png[]
+image::how_to_infra-infra_structure.png[]
 
 == Probably some other company
-image::images/how_to_infra-other_company.png[]
+image::how_to_infra-other_company.png[]
 
 == A Day in the Life of Infra
 * Jira tickets
