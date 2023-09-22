@@ -15,10 +15,10 @@ These are some notes.
 
 
 == Infra's Structure
-image::infra_structure.png[]
+image::images/how_to_infra-infra_structure.png[]
 
 == Probably some other company
-image::other_company.png[]
+image::images/how_to_infra-other_company.png[]
 
 == A Day in the Life of Infra
 * Jira tickets
