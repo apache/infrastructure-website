@@ -39,4 +39,4 @@ notifications:
   pullrequests:         commits@infra.apache.org
   issues:               issues@infra.apache.org
   discussions:          issues@infra.apache.org
-  pullrequests_bot_dependabot: gnomes@infra.apache.org
+  pullrequests_bot_dependabot: notifications@infra.apache.org
