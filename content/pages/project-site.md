@@ -19,27 +19,27 @@ Your project team wants to build an excellent application that solves a problem,
 Your website **must**
 
   - satisfy the <a href="https://www.apache.org/foundation/marks/pmcs" target="_blank">Apache branding requirements</a>, in particular that <a href="https://www.apache.org/foundation/marks/pmcs#navigation" target="_blank">certain links</a> appear on the site's landing page, in whatever navigation structure the site uses. Whimsy's <a href="https://whimsy.apache.org/site/" target="_blank">Apache Project Website Checks</a> tool periodically reviews all top-level project (TLP) websites to provide a report on how well they comply with that policy, and to identify issues that a project may need to address.
-  - comply with the Infrastructure team's [project site policy](project-site-policy.html)
+  - comply with the Infrastructure team's [project site policy](project-site-policy.html).
 
 The site also **should**
 
-  - explain what your project's product does
-  - pitch how your product solves a problem or creates a new opportunity
-  - invite people to get involved in the development team
-  - offer an easy way to download the latest builds of the product that you want the public to use
-  - provide documentation that will help people not part of the project understand how to get started with the product and how to keep going
-  - describe how the project team works, and its connection to the Apache Software Foundation
-  - explain how people can get in touch with the project to provide feedback or ask questions
+  - explain what your project's product does.
+  - pitch how your product solves a problem or creates a new opportunity.
+  - invite people to get involved in the development team.
+  - offer an easy way to download the latest builds of the product that you want the public to use.
+  - provide documentation that will help people not part of the project understand how to get started with the product and how to keep going.
+  - describe how the project team works, and its connection to the Apache Software Foundation.
+  - explain how people can get in touch with the project to provide feedback or ask questions.
 
 Once you have outlined the content that will be on the website, and decided how and where to display it, you need to decide how to build the site.
 
 <h2 id="default">Creating the website<a class="headerlink" href="#default" title="Permanent link">&para;</a></h2>
 
-Projects are free to choose their own styles and layout for websites, and have a range of options for actually creating the pages. The goal is to create and informative and useful **static** HTML website that can engage visitors, explain your project to them, and provide download links and documentation so they can use your project's applications.
+Projects are free to choose their own styles and layout for websites, and have a range of options for actually creating the pages. The goal is to create an informative and useful **static** HTML website that can engage visitors, explain your project to them, and provide download links and documentation so they can use your project's applications.
 
 ### JavaScript issues
 
-Many TLP sites use JavaScript to provide functions ranging from menu navigation to animations or image galleries. While JS can enhance the site experience for most visitors, it can pose problems:
+Many TLP sites use JavaScript (JS) to provide functions ranging from menu navigation to animations and image galleries. While JS can enhance the site experience for most visitors, it can pose problems:
 
   1. **Visitors who have scripting languages disabled**. General-interest sites can have as much as 10% of their site visitors with JS disabled in their browsers; that percentage is probably lower for sites aimed at a more technical audience. Make sure your site provides access to the essential information it must deliver even if the visitor's browser has disabled scripting languages.
   2. **Visitors who use assistive devices to read and work with web pages**. A web search on "JavaScript and assistive readers" will provide helpful information on writing and deploying JS in ways that cause the fewest issues for people using assistive devices to access your project website. The <a href="http://www.cynthiasays.com/" target="_blank">Cynthia Says</a> site can help you check your website for compliance with accessbility guidelines, including JavaScript issues.
@@ -50,10 +50,10 @@ Many TLP sites use JavaScript to provide functions ranging from menu navigation 
 
 <a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a> is a static site generator written in Python. Highlights include:
 
-  - Write your content directly with your editor of choice in reStructuredText or Markdown formats
-  - Includes a simple CLI tool to (re)generate your site
-  - Easy to interface with distributed version control systems and web hooks
-  - Completely static output is easy to host anywhere
+  - Write your content directly with your editor of choice in reStructuredText or Markdown formats.
+  - Includes a simple CLI tool to (re)generate your site.
+  - Easy to interface with distributed version control systems and web hooks.
+  - Completely static output is easy to host anywhere.
   
 Pelican has paths to <a href="https://docs.getpelican.com/en/stable/importer.html#import" target="_blank">migrate existing websites from many technologies</a>, including Blogger, Dotclear, Posterous, Tumblr, WordPress, and RSS/Atom.
 
@@ -65,12 +65,12 @@ Pelican supports both flat websites and those that have subdirectories. For the 
 
 Browse a <a href="https://github.com/getpelican/pelican-plugins/" target="_blank">collection of Pelican plugins</a> to find others that support functionality you want to add to your site. 
 
-This<a href="https://github.com/search?q=topic%3Apelican+org%3Aapache&type=Repositories" target="_blank">GitHub query</a> returns ASF repositories
+This <a href="https://github.com/search?q=topic%3Apelican+org%3Aapache&type=Repositories" target="_blank">GitHub query</a> returns ASF repositories
 which have the `pelican` Topic. You can review them as examples of Pelican in action.
 
 #### Jekyll
 
-<a href="https://jekyllrb.com/" target="_blank">Jekyll</a> is a straightforward tool for developing blogs or static websites using Markdown, and it is easy to deploy the resulting website as Github Pages. There are many tutorials for doing this available online.
+<a href="https://jekyllrb.com/" target="_blank">Jekyll</a> is a straightforward tool for developing blogs or static websites using Markdown, and it is easy to deploy the resulting website as GitHub Pages. There are many tutorials online about doing this.
 
 #### Hugo
 
@@ -86,7 +86,7 @@ At least <a href="https://github.com/search?q=topic%3Ajbake+org%3Aapache&type=Re
 
 #### Basic website template in Markdown ####
 
-If you'd like to get started with an easy-to-use, <a href="https://github.github.com/gfm/" target="_blank">Markdown</a>-based site that many projects have used, see the <a href="https://github.com/apache/apache-website-template" target="_blank">sample Apache project website</a> repository which has many useful features and instructions for using svnpubsub.
+If you'd like to get started with an easy-to-use, <a href="https://github.github.com/gfm/" target="_blank">Markdown</a>-based site that many projects have used, see the <a href="https://github.com/apache/apache-website-template" target="_blank">sample Apache project website</a> repository, which has many useful features and instructions for using `svnpubsub`.
 
 #### HTML files ####
 
@@ -102,7 +102,7 @@ The Apache CMS, which projects used to build and deploy their websites since 201
 
 ### 2. Website repository
 
-If you don't have a web site repository for your project yet, you can create one using https://selfserve.apache.org/.
+If you don't have a web site repository for your project yet, you can create one using [a href="https://selfserve.apache.org/" target="_blank">Self-serve</a>.
 
 The convention is to name the repository `$project-site.git`, for instance `httpd-site.git`.
 
@@ -137,7 +137,7 @@ publish:
   whoami:  asf-site
 ```
 
-For more detailed procedures, follow the <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">.asf.yaml documentation for publishing your web site</a>.
+For more detailed procedures, follow the <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">.asf.yaml documentation</a>.
 
 
 
@@ -156,15 +156,15 @@ Infra supports these tools for publishing and maintaining Apache project website
   -  **[Site template](asf-pelican.html)** streamlines migration of an existing project site on the deprecated CMS, and creation of new project sites.
   -  **[Pelican and BuildBot](pelican-buildbot.html)** streamline creating and publishing your project website.
   - **svnpubsub** automatically publishes the static contents of a designated svn folder (<a href="https://svn.apache.org/repos/asf/ant/site/ant/production/" target="_blank">example</a>) as the project web site at `http://project.apache.org`. The project team can use any site build mechanism it wants as long as the above requirements are met.
-  - [**pypubsub**](pypubsub.html) automatically serves the static contents of a designated git repository as the website for a project. Git-based websites are typically maintained in a repository branch to be published as `https://project.apache.org`. A project can host the site from its primary project repository. Typically these will be built as a Jenkins or a Buildbot job (see below). We recommend that you only have a single writer to the asf-site branch to avoid potential conflicts.
-  - For **websites using a git repository**, you can add a <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">.asf.yaml</a> configuration file. The file lets you set instructions that simplify updating and maintaining the site.
+  - [**pypubsub**](pypubsub.html) automatically serves the static contents of a designated Git repository as the website for a project. Git-based websites are typically maintained in a repository branch to be published as `https://project.apache.org`. A project can host the site from its primary project repository. Typically these will be built as a Jenkins or a Buildbot job (see below). We recommend that you only have a single writer to the asf-site branch to avoid potential conflicts.
+  - For **websites using a Git repository**, you can add a <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">.asf.yaml</a> configuration file. The file lets you set instructions that simplify updating and maintaining the site.
 
   
 ### Build tools
 
 Infra provides these build tools:
 
-  - **Jenkins** is an open source automation server that supports building, deploying and automating a project. Infra resources on Jenkins start <a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins" target="_blank">here</a>. 
+  - **Jenkins** is an open-source automation server that supports building, deploying and automating a project. Infra resources on Jenkins start <a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins" target="_blank">here</a>. 
   - **Buildbot** is a job scheduling system: it queues jobs, executes the jobs when the required resources are available, and reports the results. 
   
 <h3 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h3>
@@ -179,14 +179,14 @@ Look at the `.revision` file at the root of your site (for example, <a href="htt
 
 ### Topics in GitHub
 
-If you're managing an ASF website repository in GitHub, please add `website` and `<TOOL>` Topics  to it, where `<TOOL>` is the name of the tool you are using to generate the website, like `pelican` or `hugo`. This helps others who are looking for an example of use of that tool to find your repository with queries like
+If you're managing an ASF website repository in GitHub, please add `website` and `<TOOL>` Topics  to it, where `<TOOL>` is the name of the tool you are using to generate the website, like `pelican` or `hugo`. This helps others who are looking for an example of use of that tool find your repository, with queries like
  <a href="https://github.com/search?q=org%3Aapache+topic%3Ahugo" target="_blank">this one</a>.
 
 You can use the `.asf.yaml` mechanism to add those Topics.
 
 <h3 id="mail">Providing public access to the project's mail archive mbox files<a class="headerlink" href="#mail" title="Permanent link">&para;</a></h3>
 
-Some projects have a "mail" directory at the top of their project website. Enable this by creating a symbolic link  to `/home/apmail/public-arch/$tlp.apache.org` in svnpubsub.
+Some projects have a "mail" directory at the top of their project website. Enable this by creating a symbolic link  to `/home/apmail/public-arch/$tlp.apache.org` in `svnpubsub`.
 
 See more <a href="https://apache.org/dev/#mail" target="_blank">notes aboout project mail</a>.
 
@@ -196,7 +196,7 @@ To use a custom favicon for your project's website, add the `favicon.ico` file t
 
 <h3 id="generated">Minimizing the number of changes committed in the project's Maven- or JavaDoc- generated site<a class="headerlink" href="#generated" title="Permanent link">&para;</a></h3>
 
-If you are using svnpubsub, the commit performs very slowly if the number of changes is large, particularly if the number of files is also large. This is often the case with JavaDoc, and to a lesser extent with Maven-generated sites. 
+If you are using `svnpubsub`, the commit performs very slowly if the number of changes is large, particularly if the number of files is also large. This is often the case with JavaDoc, and to a lesser extent with Maven-generated sites. 
 
 To speed up the commit:
 
@@ -206,9 +206,9 @@ To speed up the commit:
   - If you maintain historical versions of documentation, always check changes in to a single "trunk", then use an `svn copy` operation to tag or branch the content, rather than checking in a complete copy.
   - Minimize use of "publish date" and "version" in templates to those that are truly necessary or helpful. Consider using a "last modified date" and version in the URL instead (unless "latest" is implied).
   - Minimize Subversion keywords in the output that may change frequently without significant meaning. This includes keywords in source code that may be rendered to JavaDoc or a Maven JXR source cross-reference.
-  - Avoid publishing Maven reports that change constantly to the project site. Code coverage, style reports, static analysis, etc. can be generated into a working copy on the CI server instead for easy developer viewing.
+  - Avoid publishing Maven reports that change constantly to the project site. Code coverage, style reports, static analysis, etc. can be generated into working copies on the CI server instead for easy developer viewing.
 
 <h2 id="preview">Previewing the website<a class="headerlink" href="#preview" title="Permanent link">&para;</a></h2>
 
   - For svnpubsub sites, review the local files in your svn checkout before committing them. The changes will be published immediately after you commit them.
-  - There is no preview mode for pypubsub. You should ideally have a way to build and test the website locally.
+  - There is no preview mode for `pypubsub`. You should ideally have a way to build and test the website locally.
