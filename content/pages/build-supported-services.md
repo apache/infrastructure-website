@@ -14,6 +14,7 @@ an official 'release channel'.
 -  <a href="#nexus">Nexus</a>
 -  <a href="#nightlies">Nightlies</a>
 -  <a href="#dockerhub">DockerHub</a>
+-  <a href="#gradle">Gradle Enterprise</a>
 -  <a href="#sonarcloud">Sonarcloud</a>
 
 <h2 id="jenkins">Jenkins<a class="headerlink" href="#jenkins" title="Permanent link">&para;</a></h2>
@@ -136,12 +137,17 @@ Committers need to sign up for a personal account, then create a Jira ticket ask
 Infra adds DockeHub user IDs to a project 'team', which has read/write access to the project repositories.
 
 #### Integrations
-The ASF tokens/credentials in GHA, Jenkins and Buildbot for projects to use when pushing to Dockerhub using a role account.
+The ASF has tokens/credentials in GHA, Jenkins and Buildbot for projects to use when pushing to Dockerhub using a role account.
 
 #### More information
 
   - <a href="https://cwiki.apache.org/confluence/display/INFRA/Github+Actions+to+DockerHub" target="_blank">Github Actions to DockerHub</a>
   - <a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins+and+Dockerhub" target="_blank">Jenkins and Dockerhub</a>
+
+<h2 id="gradle">Gradle Enterprise<a class="headerlink" href="#gradle" title="Permanent link">&para;</a></h2>
+Gradle is a suite of acceleration and analytics technologies for CI/CD systems to help projects identify and analyze trends while optimizing build resources. The result is faster builds, with fewer failures, The ASF instance of Gradle enterprise is at <a href="https://ge.apache.org/" target="_blank">ge.apache.org</a>.
+
+More information is available at the [Gradle page](gradle.html).
 
 <h2 id="sonarcloud">Sonarcloud<a class="headerlink" href="#sonarcloud" title="Permanent link">&para;</a></h2>
 
