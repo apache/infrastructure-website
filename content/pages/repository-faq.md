@@ -4,9 +4,9 @@ Title: Apache Maven repositories
 
 **Reminder**: Apache projects **must** release all software packages through the ASF distribution system. See [Release distribution policy](release-distribution.html) for more details.
 
-Projects can also opt to release artifacts publicly through the [Maven Central Repository](https://maven.apache.org/repository/index.html), which is primarily for Java artifacts.
+The ASF maintains internal snapshot and release Maven repositories at <a href="https://repository.apache.org" target="_blank">https://repository.apache.org</a>. The repository also proxies Apache's legacy repositories. 
 
-The ASF maintains internal snapshot and release Maven repositories at <a href="https://repository.apache.org" target="_blank">https://repository.apache.org</a>. The repository also proxies Apache's legacy repositories. **Note**: these repos are intended for internal ASF project use, not for public distribution of artifacts. Except in the rare situation when a project needs external testing of preproduction artifacts, **do not** provide download links to 'repository.apache.org' assets to users external to The ASF.
+**Note**: these repos are intended for internal ASF project use, not for public distribution of artifacts. Except in the rare situation when a project needs external testing of preproduction artifacts, **do not** provide download links to 'repository.apache.org' assets to users external to The ASF.
 
 If your Apache project would like to use `repository.apache.org`, see [Publishing Maven Releases](publishing-maven-artifacts.html).
 
