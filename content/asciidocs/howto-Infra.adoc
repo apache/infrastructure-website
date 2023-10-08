@@ -2,9 +2,8 @@
 With Chris Wells And Chris Thistlethwaite from your ASF Infra Team
 
 == ASF Infra
-* Infra is a Presidents committee
-* There are 8 of us, 6 full-time 2 part-time
-* We are all employees, not volunteers
+* There are 9 of us, 6 full-time, 2 part-time, 1 VP
+* We are all employees, not volunteers (except Myrle)
 * Located in the EU, US, and Canada covering +2 UTC to -7 UTC
 * 1 team member on-call 24/7, shift is year round
 

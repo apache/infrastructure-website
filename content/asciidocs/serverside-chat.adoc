@@ -4,14 +4,16 @@
 --
 Hi everyone! 
 
-We're the ASF Infrastructure team, for those of you who don't know us
-
-_do introductions_
+We're the ASF Infrastructure team.
+Myrle (VP Infra), Chris L (Fluxo), Drew, and Andrew Wetmore weren't able to make it. 
+Have everyone introduce themselves.
 
 Today we'd like to put some things straight:
 * how we fit into the foundation at large
 * how we support our larger community
 * and how it is we do that
+
+Some of this info overlaps with the How-To Infra talk, however we're going to focus on the services we offer versus How the Infra team works
 
 We're gonna start at the top and work our way down in scope from foundation
 critical services and tools to user services and tools.
@@ -19,16 +21,17 @@ critical services and tools to user services and tools.
  
 == ASF Infra
 [%step]
-* Infra is a Presidents committee, 
-* There are 6 of us.
-* we are all employees, not volunteers.
+* There are 9 of us, 6 full-time, 2 part-time, 1 VP
+* We are all employees, not volunteers (except Myrle)
+* Located in the EU, US, and Canada covering +2 UTC to -7 UTC
+* 1 team member on-call 24/7, shift is year round
 
 [.notes]
 --
 TODO
 * What other context do we want to give our EUs
 
-Infra is a President's committee responsible for the management and day-to-day
+Infra is responsible for the management and day-to-day
 administration of the hardware and software vital to the smooth operation of the 
 Foundation. Infra also reviews requests to install, deploy, or create new
 systems and services for Foundation-wide consumption.
@@ -36,8 +39,6 @@ systems and services for Foundation-wide consumption.
 We don't directly report to the board, and don't have the same kinds of governance
 that TLPs do. Generally speaking we're tasked with something and given the leeway to
 implement as we see fit.
-
-We are a small committee comprised of only 7.
 
 FACT: Our Committer to IT staffer ratio is ~1300:1
 
@@ -51,7 +52,7 @@ To make sure we don't miss anything we're going to start at the top.
 TODO fix this intro
 --
 
-=== Communication Tools
+== Communication Tools
 [%step]
   * Mailing lists / Ponymail
   * Email Archives
@@ -76,10 +77,10 @@ Infrastructure also supports real time communications via slack and GitHub discu
 Slack is a 3rd party tool stewarded by infrastructure for the benefit of the foundation.
 --
 
-=== Foundation Tools
+== Foundation Tools
 [%step]
   * STeVe Voting instance
-  * 
+
 [.notes]
 --
 When it comes to doing the foundations business, Infra staffers can be found
@@ -93,7 +94,7 @@ the foundation is represented equitably.
 TODO: Need more foundation services
 --
 
-=== Core Infrastructure 
+== Core Infrastructure 
 [%step]
   * LDAP (User Management)
   * DNS (Name Management)
@@ -139,7 +140,7 @@ and content as separate things, not because the contribution is of a different v
 use different processes and flow through our environment differently.
 --
 
-=== Content distribution
+== Content distribution
 [%step]
   * Project Websites
   * Blog posts
@@ -172,7 +173,7 @@ Need an internal wiki? we've got you covered with Atlassian Confluence.
 
 --
 
-=== Code Distribution 
+== Code Distribution 
 [%step]
   * Nexus
   * Nightlies
@@ -204,7 +205,7 @@ $amount_of_data per year.
 TODO: need a stat on how much content the CDN has served in the last calendar year.
 --
 
-=== Version Control Systems
+== Version Control Systems
 [%step]
   * github / gitbox
   * svn
@@ -218,7 +219,7 @@ manage builds and automate standardized tasks like website building.
 We also support Apache Subversion for projects who request it.
 --
 
-=== Bug tracking
+== Bug tracking
 [%step]
   * Atlassian Jira
   * GitHub Issues
@@ -235,7 +236,7 @@ FACT: there are currently 670 Projects in our Jira instance
 TODO: a note about BZ
 --
 
-=== CI / CD systems
+== CI / CD systems
 [%step]
   * Buildbot & Jenkins
   * 3rd party builders like GitHub Actions
@@ -256,7 +257,7 @@ code stays compliant with the apache framework while solutions like SonarQube he
 code smells.
 --
 
-=== Project VMs
+== Project VMs
 [%step]
   * servers are available for projects upon request
 
@@ -272,12 +273,13 @@ behalf of the project and to coordinate system needs with Infrastructure.
 
     
 == User Services and Tools
-[%step]  
+[%step]
   * Selfserve options
   * URL Shortner
   * Snippet Sharing
   * Member Spaces
   * OTP Generator
+
 [.notes]
 --
 Finally, we get to the tools and services that you, the member would use.
