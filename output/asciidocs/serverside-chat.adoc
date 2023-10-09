@@ -20,6 +20,7 @@ critical services and tools to user services and tools.
 --
  
 == ASF Infra
+
 [%step]
 * There are 9 of us, 6 full-time, 2 part-time, 1 VP
 * We are all employees, not volunteers (except Myrle)
@@ -46,6 +47,7 @@ TODO: reference our value
 --
 
 == Foundation Services
+
 [.notes]
 --
 To make sure we don't miss anything we're going to start at the top.
@@ -53,6 +55,7 @@ TODO fix this intro
 --
 
 == Communication Tools
+
 [%step]
   * Mailing lists / Ponymail
   * Email Archives
@@ -78,6 +81,7 @@ Slack is a 3rd party tool stewarded by infrastructure for the benefit of the fou
 --
 
 == Foundation Tools
+
 [%step]
   * STeVe Voting instance
 
@@ -95,6 +99,7 @@ TODO: Need more foundation services
 --
 
 == Core Infrastructure 
+
 [%step]
   * LDAP (User Management)
   * DNS (Name Management)
@@ -127,6 +132,7 @@ present across our systems
 --
 
 == Services for Projects
+
 [.notes]
 --
 Not that we've gotten the important stuff out of the way, let's discuss the fun and
@@ -141,6 +147,7 @@ use different processes and flow through our environment differently.
 --
 
 == Content distribution
+
 [%step]
   * Project Websites
   * Blog posts
@@ -174,6 +181,7 @@ Need an internal wiki? we've got you covered with Atlassian Confluence.
 --
 
 == Code Distribution 
+
 [%step]
   * Nexus
   * Nightlies
@@ -206,6 +214,7 @@ TODO: need a stat on how much content the CDN has served in the last calendar ye
 --
 
 == Version Control Systems
+
 [%step]
   * github / gitbox
   * svn
@@ -220,6 +229,7 @@ We also support Apache Subversion for projects who request it.
 --
 
 == Bug tracking
+
 [%step]
   * Atlassian Jira
   * GitHub Issues
@@ -237,6 +247,7 @@ TODO: a note about BZ
 --
 
 == CI / CD systems
+
 [%step]
   * Buildbot & Jenkins
   * 3rd party builders like GitHub Actions
@@ -258,6 +269,7 @@ code smells.
 --
 
 == Project VMs
+
 [%step]
   * servers are available for projects upon request
 
@@ -273,6 +285,7 @@ behalf of the project and to coordinate system needs with Infrastructure.
 
     
 == User Services and Tools
+
 [%step]
   * Selfserve options
   * URL Shortner
@@ -293,6 +306,7 @@ but also some useful day to day items:
 --
 
 == Upcoming projects
+
 [%step]
   * ADP
   * keycloak
