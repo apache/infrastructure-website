@@ -158,17 +158,17 @@ Your message goes here...
 <p>If the content of the MODERATE request is clearly spam, the simplest solution is just to delete the request. Do not reject it. However, if you are receiving a lot of such requests, it may perhaps be worth taking additional action.</p>
 <p>Some SPAM emails have an opt-out link. Whether this will actually do anything useful is another matter, but it might be worth trying if the spam seems to be from a legitimate business.</p>
 <p>To avoid revealing your personal IP address, you may wish to use an anonymizing service such as Tor.</p>
-<p>If the spam emails are all sent from the same address (you can find the sender's address in the moderation request in the <code>cc:</code> area), try adding them to the 'deny' list:</p>
+<p>If the spam emails are all sent from the same address, try adding them to the 'deny' list:</p>
 <pre><code>{listname}-deny-subscribe-badposter=menace.com@tlp.apache.org&lt;/code&gt;
 </code></pre>
 <p>You can find the sender's address in the moderation request in the <code>cc:</code> area:</p>
 <pre><code>Cc: {listname}-allow-tc.&lt;digits&gt;.&lt;alphanumeric&gt;-badposter=menace.com@tlp.apache.org
 </code></pre>
-<p>The sender e-mail address is contained between the '-' (hyphen) immediately following the "alphanumerics" and the '@' sign.</p>
+<p>The sender's e-mail address is contained between the '-' (hyphens) immediately following the "alphanumerics" and the '@' sign.</p>
 <p>This is already in the correct form for use in the 'deny' subscription request, as the '@' has been changed to '='. In the example above this is:</p>
 <pre><code>badposter=menace.com
 </code></pre>
-<p>If this address contains random alphanumerics then it is probably a short-lived address, in which case there is no point trying to use the deny list.</p>
+<p>If this address contains random alphanumerics, it is probably a short-lived address, in which case there is no point trying to use the deny list.</p>
 <h3 id="allowing_posts">Allowing posts from non-subscribers<a class="headerlink" href="#allowing_posts" title="Permanent link">&para;</a></h3>
 <p>Most lists require people to subscribe in order to post messages. However, subscribers receive copies of all mails (or digests). This is obviously unsuitable for bots, or for private lists which need to accept posts from non-subscribers.</p>
 <p>A moderator can fix this by using 'Reply All' to a moderation message from the poster. This will both 'accept' the message and 'allow' further posts.</p>
@@ -189,7 +189,7 @@ Your message goes here...
 <pre><code>{listname}-allow-unsubscribe-badposter=menace.com@tlp.apache.org
 </code></pre>
 <p>To see a list of who is allowed to post on the moderation list, send an email to <code>{listname}-allow-list@tlp.apache.org</code>.</p>
-<p>There is an <em>opt-in</em> configuration for problem posters, which lets you subscribe him or her to a 'sendsubscribertomod' list. It works in exactly the same way as adding or removing someone from an 'allow' or 'deny' list. File an INFRA ticket to have it enabled for your list (you don't have to use it, but having it enabled adds an option for you to consider.</p>
+<p>There is an <em>opt-in</em> configuration for problem posters, which lets you subscribe him or her to a 'sendsubscribertomod' list. It works in exactly the same way as adding or removing someone from an 'allow' or 'deny' list. File an INFRA ticket to have it enabled for your list (you don't have to use it, but having it enabled adds an option for you to consider).</p>
 <p>To use it (once it has been enabled) do this:</p>
 <pre><code>{listname}-sendsubscribertomod-subscribe-badposter=menace.com@tlp.apache.org
 
