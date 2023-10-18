@@ -109,7 +109,7 @@ Some SPAM emails have an opt-out link. Whether this will actually do anything us
 
 To avoid revealing your personal IP address, you may wish to use an anonymizing service such as Tor.
 
-If the spam emails are all sent from the same address (you can find the sender's address in the moderation request in the `cc:` area), try adding them to the 'deny' list:
+If the spam emails are all sent from the same address, try adding them to the 'deny' list:
 
 ```
 {listname}-deny-subscribe-badposter=menace.com@tlp.apache.org</code>
@@ -121,7 +121,7 @@ You can find the sender's address in the moderation request in the `cc:` area:
 Cc: {listname}-allow-tc.<digits>.<alphanumeric>-badposter=menace.com@tlp.apache.org
 ```
 
-The sender e-mail address is contained between the '-' (hyphen) immediately following the "alphanumerics" and the '@' sign.
+The sender's e-mail address is contained between the '-' (hyphens) immediately following the "alphanumerics" and the '@' sign.
 
 This is already in the correct form for use in the 'deny' subscription request, as the '@' has been changed to '='. In the example above this is:
 
@@ -129,7 +129,7 @@ This is already in the correct form for use in the 'deny' subscription request, 
 badposter=menace.com
 ```
 
-If this address contains random alphanumerics then it is probably a short-lived address, in which case there is no point trying to use the deny list.
+If this address contains random alphanumerics, it is probably a short-lived address, in which case there is no point trying to use the deny list.
 
 
 <h3 id="allowing_posts">Allowing posts from non-subscribers<a class="headerlink" href="#allowing_posts" title="Permanent link">&para;</a></h3>
@@ -172,7 +172,7 @@ If an unsubscribed user was added to the moderation list and is sending spam to 
 
 To see a list of who is allowed to post on the moderation list, send an email to `{listname}-allow-list@tlp.apache.org`.
 
-There is an <em>opt-in</em> configuration for problem posters, which lets you subscribe him or her to a 'sendsubscribertomod' list. It works in exactly the same way as adding or removing someone from an 'allow' or 'deny' list. File an INFRA ticket to have it enabled for your list (you don't have to use it, but having it enabled adds an option for you to consider.
+There is an <em>opt-in</em> configuration for problem posters, which lets you subscribe him or her to a 'sendsubscribertomod' list. It works in exactly the same way as adding or removing someone from an 'allow' or 'deny' list. File an INFRA ticket to have it enabled for your list (you don't have to use it, but having it enabled adds an option for you to consider).
 
 To use it (once it has been enabled) do this:
 
