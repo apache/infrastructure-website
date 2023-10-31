@@ -1,6 +1,6 @@
 Title: Committer SSH Access
 
-Apache uses SSH (a cryptographic protocol for operating services securely over an unsecured network) to let committers access their home directories on `home.apache.org` (formerly `people.apache.org`). 
+Apache uses SSH (a cryptographic protocol for operating services securely over an unsecured network) to let committers access their project VMs (if configured). 
 
 Remember to keep your client up to date with security patches. Pay close attention to any <a href="#known-host">known host warnings</a>. 
 
@@ -41,7 +41,7 @@ Many other options are available.
 To diagnose what's going wrong with an OpenSSH connection, run the client in verbose mode. To do this just add `-v`:
 
 ```
-ssh -v -l committer home.apache.org
+ssh -v -l yourApacheID some-project-server.apache.org
 ```
 
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
@@ -52,7 +52,7 @@ ssh -v -l committer home.apache.org
 
 <h3 id="common-problems">Some common problems<a class="headerlink" href="#common-problems" title="Permanent link">&para;</a></h3>
 
-<h4 id="exposed">Do not expose your private key<a class="headerlink" href="#exposed" title="Permanent link">&para;</a></h4>. Generate your key on a computer that is in your control, then upload only the public part to the `home.apache.org` server. Do not make the mistake of generating the key on the `home.apache.org` server.</p>
+<h4 id="exposed">Do not expose your private key<a class="headerlink" href="#exposed" title="Permanent link">&para;</a></h4>. Generate your key on a computer that is in your control, then upload only the public part to id.apache.org (use your ApacheID on the site). Do not make the mistake of generating the key on the an ASF server.</p>
 
 <h4 id="too-many-groups">Too Many Groups<a class="headerlink" href="#too-many-groups" title="Permanent link">&para;</a></h4>
 FreeBSD only allows a user to be in 16 groups. A user who is too popular will not be allowed to log on. It is easy to mistake this for an ssh problem. If `Authentication succeeded` is present in the <a href="#ssh-debug">debug logs</a>, this indicates that the issue lies on your machine's login rather than with ssh.
@@ -93,7 +93,7 @@ Public key infrastructure (PKI) enables the ssh family of protocols to operate w
 
 <h4 id="no-connection">Why can't I connect using SSH1?<a class="headerlink" href="#no-connection" title="Permanent link">&para;</a></h4>
 
-You can connect to `home.apache.org` using the SSH1 protocols, but only when using <a href="#pki">PKI</a>.
+Because it has been deprectated in OpenSSH.
 
 <h4 id="known-host">What is a known host?<a class="headerlink" href="#known-host" title="Permanent link">&para;</a></h4>
 
