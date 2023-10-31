@@ -73,7 +73,7 @@
           <h2>
               Committer SSH Access
           </h2>
-              <p>Apache uses SSH (a cryptographic protocol for operating services securely over an unsecured network) to let committers access their home directories on <code>home.apache.org</code> (formerly <code>people.apache.org</code>).</p>
+              <p>Apache uses SSH (a cryptographic protocol for operating services securely over an unsecured network) to let committers access their project VMs (if configured).</p>
 <p>Remember to keep your client up to date with security patches. Pay close attention to any <a href="#known-host">known host warnings</a>.</p>
 <h2>Contents</h2>
 <ul>
@@ -102,7 +102,7 @@ Host \*
 <p>Many other options are available.</p>
 <h2 id="debug-ssh">Debugging an OpenSSH client connection<a class="headerlink" href="#debug-ssh" title="Permanent link">&para;</a></h2>
 <p>To diagnose what's going wrong with an OpenSSH connection, run the client in verbose mode. To do this just add <code>-v</code>:</p>
-<pre><code>ssh -v -l committer home.apache.org
+<pre><code>ssh -v -l yourApacheID some-project-server.apache.org
 </code></pre>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <ul>
@@ -111,7 +111,7 @@ Host \*
 <li>Read <a href="#ssh-debug">the section on debugging SSH</a> and try to diagnose the problem.</li>
 </ul>
 <h3 id="common-problems">Some common problems<a class="headerlink" href="#common-problems" title="Permanent link">&para;</a></h3>
-<h4 id="exposed">Do not expose your private key<a class="headerlink" href="#exposed" title="Permanent link">&para;</a></h4>. Generate your key on a computer that is in your control, then upload only the public part to the `home.apache.org` server. Do not make the mistake of generating the key on the `home.apache.org` server.
+<h4 id="exposed">Do not expose your private key<a class="headerlink" href="#exposed" title="Permanent link">&para;</a></h4>. Generate your key on a computer that is in your control, then upload only the public part to id.apache.org (use your ApacheID on the site). Do not make the mistake of generating the key on the an ASF server.
 <h4 id="too-many-groups">Too Many Groups<a class="headerlink" href="#too-many-groups" title="Permanent link">&para;</a></h4>
 FreeBSD only allows a user to be in 16 groups. A user who is too popular will not be allowed to log on. It is easy to mistake this for an ssh problem. If `Authentication succeeded` is present in the <a href="#ssh-debug">debug logs</a>, this indicates that the issue lies on your machine's login rather than with ssh.
 <h4 id="batch-mode">Batch Mode<a class="headerlink" href="#batch-mode" title="Permanent link">&para;</a></h4>
@@ -134,7 +134,7 @@ to Apache are <a href="#openssh">here</a>.</p>
 <h4 id="pki">What is PKI?<a class="headerlink" href="#pki" title="Permanent link">&para;</a></h4>
 <p>Public key infrastructure (PKI) enables the ssh family of protocols to operate without passing a password to the server. You use a passphrase to unlock a private key on the client machine, and a corresponding public key on the server for authentication the during the handshake. We recommend this as the most secure method of connection.</p>
 <h4 id="no-connection">Why can't I connect using SSH1?<a class="headerlink" href="#no-connection" title="Permanent link">&para;</a></h4>
-<p>You can connect to <code>home.apache.org</code> using the SSH1 protocols, but only when using <a href="#pki">PKI</a>.</p>
+<p>Because it has been deprectated in OpenSSH.</p>
 <h4 id="known-host">What is a known host?<a class="headerlink" href="#known-host" title="Permanent link">&para;</a></h4>
 <p>SSH employs the <em>known hosts</em> mechanism to prevent <a href="#middle-man-attacks">man in the
 middle</a> attacks. The first time that the client connects to a server, the fingerprint of the key used by that server is
