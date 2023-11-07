@@ -26,6 +26,7 @@ If you break one of these rules, **your IP will be banned** from all services ac
   - More than 25,000 visits to archive.apache.org per 24 hours.
   - More than 40GB downloaded from archive.apache.org per week.
   - More than 100 mebibits/second sustained traffic for an hour or more.
+  - More than 25,000 JIRA pageviews per hour
   - More than 2,000 viewvc requests per 24 hours.
   - More than 100,000 Confluence (`cwiki.apache.org`) page visits per 24 hours.
   - More than 10,000 Bugzilla requests per 24 hours.
