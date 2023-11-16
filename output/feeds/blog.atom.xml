@@ -193,7 +193,10 @@ The Infrastructure team (Infra) works behind the scenes to make it possible for 
 &lt;p&gt;Rate limits are applied across IP blocks to discourage distributed abuse, thus if you have 1.2.3.4 abusing a service, 1.2.3.5 would potentially also be affected by the rate limits till they expire.&lt;/p&gt;
 &lt;p&gt;Later this year, we will be rolling out rate limits on more services, and we encourage people automating tasks to honor the 429 responses across all ASF services.&lt;/p&gt;
 &lt;p&gt;We would also like to point out that there are, as before, additional global limits in place regarding the use of our services, which can be found at: &lt;a href="http://www.apache.org/dev/infra-ban.html"&gt;https://www.apache.org/dev/infra-ban.html&lt;/a&gt; &lt;br/&gt;&lt;/p&gt;
-</content><category term="blog"></category></entry><entry><title>Roller updated to 5.2.2</title><link href="https://infra.apache.org/blog/roller-updated-to-5-2.html" rel="alternate"></link><published>2019-01-10T05:08:48+00:00</published><updated>2019-01-10T05:08:48+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2019-01-10:/blog/roller-updated-to-5-2.html</id><content type="html">&lt;p&gt;We've updated blogs.a.o to the latest version of Roller, 5.2.2!!&lt;/p&gt;
+</content><category term="blog"></category></entry><entry><title>Roller updated to 5.2.2</title><link href="https://infra.apache.org/blog/roller-updated-to-5-2.html" rel="alternate"></link><published>2019-01-10T05:08:48+00:00</published><updated>2019-01-10T05:08:48+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2019-01-10:/blog/roller-updated-to-5-2.html</id><content type="html">&lt;hr/&gt;
+**Note**: Until June, 2023, the ASF supported using Apache Roller for project blogs. That support has ended. Please visit &lt;a href="https://infra.apache.org/project-blogs.html" target="_blank"&gt;Project Blog&lt;/a&gt; for more information about blogs for projects.
+&lt;hr/&gt;
+&lt;p&gt;We've updated blogs.a.o to the latest version of Roller, 5.2.2!!&lt;/p&gt;
 &lt;p&gt; &lt;/p&gt;
 &lt;p&gt; &lt;/p&gt;
 &lt;p&gt;&lt;br/&gt;&lt;/p&gt;
