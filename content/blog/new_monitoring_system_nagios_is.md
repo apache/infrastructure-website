@@ -8,7 +8,7 @@ permalink: new_monitoring_system_nagios_is
   <p>The new monitoring system is sponsored by circonus and most of the monitoring as well as the central database runs on <a href="www.circonus.com" target="_blank">www.circonus.com</a>. The infrastructure team have built and deployed logic around the standard circonus system:<br />
 - A private broker, to monitor internal services&nbsp; without exposing them on internet<br /> - A dedicated broker (inhouse development) that monitor special ASF systems (like svn compare US - EU)<br />
 - A configuration system, that are based on svn.<br />
-- A new status page <a target="_blank" href="status.apache.org">status.apache.org</a> <br />
+- A new status page <a href="status.apache.org" target="_blank" >status.apache.org</a> <br />
 - A new team structure (all committers with sudo karma on a vm, get an email when something happens with the vm)<br /> </p> 
   <p> </p> 
   <p>The new system is a lot faster and we can therefore offer projects monitoring of project URLs, of course the project also need to have a team that handles the alerts.</p> 
