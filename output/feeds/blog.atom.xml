@@ -919,8 +919,16 @@ This policy has been implemented at the LDAP infrastructure level and will affec
 &lt;/ul&gt;
 &lt;p&gt;We are enabling this to try and prevent any brute force attempt at guessing passwords.  It will also highlight potential issues with accounts. &lt;/p&gt;
 &lt;p&gt;As with all account related queries, you should be contacting root@ - We will be able to unlock your account for you, allowing you to gain access.&lt;/p&gt;
-</content><category term="blog"></category></entry><entry><title>The ASF CMS</title><link href="https://infra.apache.org/blog/the_asf_cms.html" rel="alternate"></link><published>2010-12-02T04:25:43+00:00</published><updated>2010-12-02T04:25:43+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2010-12-02:/blog/the_asf_cms.html</id><summary type="html">&lt;p&gt;
-Over the past 3 months, the Infrastructure Team has developed and deployed a custom CMS for Apache projects to use to manage their websites.  There is a  &lt;a href="http://www.apache.org/dev/cms.html"&gt;document&lt;/a&gt; available which explains the rationale, role, and future plans for the CMS.  We have opened up the ACLs for the &lt;a href="http://www.apache.org/"&gt;www.apache …&lt;/a&gt;&lt;/p&gt;</summary><content type="html">&lt;p&gt;
+</content><category term="blog"></category></entry><entry><title>The ASF CMS</title><link href="https://infra.apache.org/blog/the_asf_cms.html" rel="alternate"></link><published>2010-12-02T04:25:43+00:00</published><updated>2010-12-02T04:25:43+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2010-12-02:/blog/the_asf_cms.html</id><summary type="html">&lt;hr/&gt;
+**Note**: Projects and the ASF itself used the Apache Content Management System from 2010 to 2021. It is no longer available.
+&lt;p&gt;Links to suggestions for setting up a project website, and website guidelines, are available under "PMC resources" in the &lt;a href="https://infra.apache.org/doc.html" target="_blank"&gt;general Infrastructure documentation page&lt;/a&gt;.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;
+Over the past 3 months, the …&lt;/p&gt;</summary><content type="html">&lt;hr/&gt;
+**Note**: Projects and the ASF itself used the Apache Content Management System from 2010 to 2021. It is no longer available.
+&lt;p&gt;Links to suggestions for setting up a project website, and website guidelines, are available under "PMC resources" in the &lt;a href="https://infra.apache.org/doc.html" target="_blank"&gt;general Infrastructure documentation page&lt;/a&gt;.&lt;/p&gt;
+&lt;hr/&gt;
+&lt;p&gt;
 Over the past 3 months, the Infrastructure Team has developed and deployed a custom CMS for Apache projects to use to manage their websites.  There is a  &lt;a href="http://www.apache.org/dev/cms.html"&gt;document&lt;/a&gt; available which explains the rationale, role, and future plans for the CMS.  We have opened up the ACLs for the &lt;a href="http://www.apache.org/"&gt;www.apache.org&lt;/a&gt; site for all committers to now be able to edit content on the site using the cms (while still restricting live publication to the Apache membership and the Infrastructure Team).
 &lt;/p&gt;
 &lt;p&gt;
