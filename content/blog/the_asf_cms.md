@@ -4,6 +4,11 @@ title: The ASF CMS
 date: '2010-12-02T04:25:43+00:00'
 permalink: the_asf_cms
 
+<hr/>
+**Note**: Projects and the ASF itself used the Apache Content Management System from 2010 to 2021. It is no longer available.
+
+Links to suggestions for setting up a project website, and website guidelines, are available under "PMC resources" in the <a href="https://infra.apache.org/doc.html" target="_blank">general Infrastructure documentation page</a>.
+<hr/>
 <p>
 Over the past 3 months, the Infrastructure Team has developed and deployed a custom CMS for Apache projects to use to manage their websites.  There is a  <a href="http://www.apache.org/dev/cms.html">document</a> available which explains the rationale, role, and future plans for the CMS.  We have opened up the ACLs for the <a href="http://www.apache.org/">www.apache.org</a> site for all committers to now be able to edit content on the site using the cms (while still restricting live publication to the Apache membership and the Infrastructure Team).
 </p>
