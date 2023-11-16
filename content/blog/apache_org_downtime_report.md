@@ -5,7 +5,9 @@ date: '2009-09-02T08:56:09+00:00'
 permalink: apache_org_downtime_report
 
 <p>Last week we <a href="https://blogs.apache.org/infra/entry/apache_org_downtime_initial_report">posted about the security breach</a> that caused us to temporarily suspend some services.&nbsp; All services
-have now been restored. We have analyzed the events that led to the breach, and continued to work on improving the security of our systems.<br /></p><h3>NOTE: At
+have now been restored. We have analyzed the events that led to the breach, and continued to work on improving the security of our systems.<br /></p>
+
+**NOTE**: At
 no time were any Apache Software Foundation code repositories, downloads, or users put at risk by this intrusion. However, we believe that providing a detailed account
 of what happened will make the internet a better place, by allowing others to learn from our mistakes.</h3>
 
