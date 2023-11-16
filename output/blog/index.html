@@ -1151,7 +1151,8 @@ The read-only mirror …</p></p>
                     <div class="title">
                         <h2><a href="/blog/dmarc_filtering_on_lists_that.html">DMARC filtering on lists that munge messages</a></h2>
                         <p>Posted on: 2014-06-03 21:57:08+00:00</p>
-                        <p><p>Since Yahoo! switched their DMARC policy in mid-April, we've seen an increase in undeliverable messages sent from our mail server for Yahoo! accounts subscribed to our lists. &nbsp; Roughly half of Apache's mailing lists do some form of message munging, whether it be Subject header prefixes, appended message trailers, or removed …</p></p>
+                        <p><hr/>
+**Note**: The solution described below has been incorporated into ezmlm. However, it creates a new problem, generating double 'Reply-To:' headers in the case of lists with a `reply-to` set to something other than the list name. A complete rewrite of this function is under consideration. You can follow the discussion …</p>
                         <footer>
                             <ul class="actions">
                                 <div style="text-align: right"><a href="/blog/dmarc_filtering_on_lists_that.html" class="button medium">Continue Reading</a></div>
