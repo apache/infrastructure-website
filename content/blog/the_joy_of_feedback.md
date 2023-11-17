@@ -5,10 +5,11 @@ date: '2022-12-01'
 permalink: the_joy_of_feedback
 
 In discussions at ApacheCon in New Orleans, we learned that the three standard methods of communicating with Infra: 
-* opening a Jira ticket 
-* sending an email 
-* posting a message on the #asfinfra Slack channel 
- 
+
+  * opening a Jira ticket 
+  * sending an email 
+  * posting a message on the `#asfinfra` Slack channel
+
 are not ideal for many conversations folks would like to have about The ASF's infrastructure.
 
 
@@ -27,11 +28,11 @@ We'll create a bullet-point summary of what we talked about, and will make the s
 
 We'd also like to start using regular surveys to get to understand the heart of the problems that our projects and podlings face.
 
-Our plan with surveys is two fold.
+Our plan with surveys is two-fold.
 
-First, to get a finger on the pulse of projects and a "2022 year in review" baseline. Being this is the first time we're trying this it's likely that future surveys will contain different questions.
+First, to get a finger on the pulse of projects and a "2022 year in review" baseline. Since this is the first time we're trying this. it's likely that future surveys will contain different questions.
 
-Secondly, we'll be sending out another survey on a regular basis, something like every six months or so just to keep a feedback loop going.
+Second, we'll be sending out surveys on a regular basis, something like every six months or so, just to keep a feedback loop going.
 
 Surveys will be anonymous and results will be posted on the Infra blog. Depending on timing, they will also be discussed in the roundtables if the data is pertinent.
 
