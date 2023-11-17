@@ -1,4 +1,7 @@
-layout: post title: Add your wisdom to Infra date: '2023-11-17T01:55:55+00:00' permalink: add_wisdom
+layout: post 
+title: Add your wisdom to Infra 
+date: '2023-11-17T01:55:55+00:00' 
+permalink: add_wisdom
 
 Committers, contributors, and ASF Members have a wealth of information about every aspect of software and community development. When we share our knowledge, its reach multiplies and our effectiveness increases.
 
