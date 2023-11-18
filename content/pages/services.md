@@ -160,7 +160,6 @@ See [guidance for choosing a product name](project-names.html)
       - [Using Digicert](digicert-use.html)
       - <a href="https://cwiki.apache.org/confluence/display/INFRA/Digicert+code+sign+service+usage+statistics" target="_blank">Digicert use statistics by Apache projects</a>
   - For <a href="https://cwiki.apache.org/confluence/display/INFRA/Distribution+via+the+Apple+App+Store" target="_blank">distribution via the Apple App Store</a>
-  - For the <a href="https://cwiki.apache.org/confluence/display/INFRA/Requesting+access+to+the+Google+code+signing+service" target="_blank">Google code signing service</a> for Android apps
   - More information on <a href="https://cwiki.apache.org/confluence/display/INFRA/Code+Signing+and+Publishing" target="_blank">code signing and publishing</a>
 
 <h3 id="qa">Code quality<a class="headerlink" href="#qa" title="Permanent link">&para;</a></h3>
