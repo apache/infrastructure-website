@@ -81,9 +81,9 @@ It's official, we now have LDAP running!            </a></li>
 <div id="contents">
     <div class="bg-white p-5 rounded">
         <div class="col-sm-8 mx-auto">
-          <h2>
+          <h1>
               It's official, we now have LDAP running!
-          </h2>
+          </h1>
               <p>Posted on: 2009-05-21 16:01:19+00:00</p>
               <p>Earlier this week the Infrastructure team rolled out phase one of the planned LDAP services. &nbsp;</p><p>We are using LDAP for authentication of shell accounts. &nbsp;For now this is the extent of the implementation, however the next phase should follow this quite quickly. </p><p>The next phase will involve moving to LDAP to manage access to our subversion repositories. This is a slightly more complicated migration as we currently use an SVNAuthz file, that contains the appropriate groups and their memberships. &nbsp;We are currently working on a new template system where by changes to LDAP will trigger a build of the SVNAuthz file based on groups in LDAP. &nbsp;This means we must watch LDAP changes, work on a template system, and if a new version of the template is checked into Subversion we need to trigger a build again. &nbsp;This is a work in progress at the moment.&nbsp;</p><p>If you find yourself in the position of needing to change your shell account password you can do it by doing this on the command line "ldappasswd -W -S -A -D uid=availid,ou=people,dc=apache,dc=org" &nbsp;-- Where availid is your ASF username. &nbsp; For example &nbsp;"ldappasswd -W -S -A -D uid=pctony,ou=people,dc=apache,dc=org". &nbsp;This is far from an elegant solution, but for now it works. &nbsp;You will be required to enter and confirm your current password, and then enter and confirm your new password choice, followed by your LDAP password (this is your old password) .</p><p>We are working on a web portal that will allow users to edit attributes, such as forwarding address, password, etc. &nbsp;This will be made available as soon as it is ready. &nbsp;If you don't know your current password, then you will need to email &nbsp;root@ as per usual.&nbsp;</p><p>You can follow the trials and tribulations of the rollout on my personal <a href="http://blog.pc-tony.com">blog</a> &nbsp;</p>
 

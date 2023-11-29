@@ -81,9 +81,9 @@ LDAP, groups and SVN - Coupled together            </a></li>
 <div id="contents">
     <div class="bg-white p-5 rounded">
         <div class="col-sm-8 mx-auto">
-          <h2>
+          <h1>
               LDAP, groups and SVN - Coupled together
-          </h2>
+          </h1>
               <p>Posted on: 2010-02-22 22:03:20+00:00</p>
               <p>The infrastructure team have now completed the next stage of the planned LDAP migration.<br/>We have migrated our old SVN authorisation file, and POSIX groups into LDAP data.&nbsp; SVN access control is now managed using these groups.</p><p>This means to change access the Subversion repositories is now as simple as changing group membership. We use some custom perl scripts that build the equivalent authorisation file meaning that we dont need to use the &lt;location&gt; blocks nasty hack to do this.&nbsp; It also means that all changes, including adding new groups and extending access control is made simple. <br/><br/>ASF PMC chairs, are now able to make changes to their POSIX, and SVN groups whilst logged into people.apache.org - using a selection of scripts:</p><ul><li>/usr/local/bin/list_unix_groups.pl</li><li>/usr/local/bin/list_committees.pl</li><li>/usr/local/bin/modify_unix_groups.pl</li><li>/usr/local/bin/modify_committees.pl</li></ul><p>All of these scripts have a '--help' option to show you how to use them. <br/><br/>What's next?&nbsp; We are now working on adding a custom ASF LDAP schema, that will allow us to record ASF specific data such as ICLA files and date of membership etc.<br/>We will also be looking at adding support for 3rd party applications such as Hudson, and building an identity management portal where people can manage their own account.<br/></p>
 

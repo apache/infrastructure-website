@@ -81,9 +81,9 @@ The ASF LDAP system            </a></li>
 <div id="contents">
     <div class="bg-white p-5 rounded">
         <div class="col-sm-8 mx-auto">
-          <h2>
+          <h1>
               The ASF LDAP system
-          </h2>
+          </h1>
               <p>Posted on: 2010-02-22 22:17:39+00:00</p>
               <p>When we decided some time ago to start using LDAP for auth{n,z} we had to come up with a sane structure. This is what we have thus far:&nbsp;</p><p>&nbsp;dc=apache,dc=org<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp; ou=people,dc=apache,dc=org <br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp; ou=groups,dc=apache,dc=org<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp; ou=people,ou=groups,dc=apache,dc=org<br/>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | &nbsp; ou=committees,ou=groups,dc=apache,dc=org</p><p>&nbsp;As well as other OUs that contain infrastructure related objects.<br/><br/>So with "dc=apache,dc=org" being our basedn, we decided we needed to keep the structure as simple as possible and placed the following objects in the respective OUs:</p><ul><li>User accounts -&nbsp; "ou=groups,dc=apache,dc=org"</li><li>POSIX groups - "ou=groups,dc=apache,dc=org"</li><li>User Groups&nbsp; - "ou=people,ou=groups,dc=apache,dc=org"</li><li>PMC/Committee groups - "ou=committees,ou=groups,dc=apache,dc=org"</li></ul>Access to the LDAP infrastructure is connection limited to hosts within our co-location sites.&nbsp; This is essentially to help prevent unauthorised data leaving our network.&nbsp; <br/><br/>
 

@@ -81,9 +81,9 @@ ASF Buildbot svn setup            </a></li>
 <div id="contents">
     <div class="bg-white p-5 rounded">
         <div class="col-sm-8 mx-auto">
-          <h2>
+          <h1>
               ASF Buildbot svn setup
-          </h2>
+          </h1>
               <p>Posted on: 2010-03-29 10:25:59+00:00</p>
               <p>Here at the ASF we have a subversion setup with all our projects code in one repository, with each of those projects having their own style of trunk/branches/tags/site etc.. This works well for us, but did present us with some initial problems when setting up our Buildbot instance to work with it.</p>
 <p>Knowing that others have the same or similar arrangement with their svn instance, we thought we would share how we got Buildbot working well for us. Note that this is not a tutorial on Buildbot, more of a quick mini guide with more code than explanation, hoping you'll work out the rest for your needs.We will be working with four files:- svn_buildbot.py, post-commit, buildbot_project_paths and master.cfg.</p>
