@@ -4,13 +4,13 @@
 <div id="contents">
     <div class="bg-white p-5 rounded">
         <div class="col-sm-8 mx-auto">
-          <h2>
+          <h1>
             {% if article %}
               {{ article.title }}
             {% else %}
               {{ page.title }}
             {% endif %}
-          </h2>
+          </h1>
           {% if article %}
               <p>Posted on: {{ article.date }}</p>
               {{ article.content }}
