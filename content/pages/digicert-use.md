@@ -93,7 +93,7 @@ To sign a file with SHA-256 rather than SHA-512 use `... /fd sha256...` rather t
 1. Install jsign `sudo dpkg --install jsign_4.0_all.deb`.
 1. You should then be able to sign with:
 
-        jsign --storetype DIGICERTONE --alias <name-of-signing-certificate> --storepass "<api-key>|<path-to-client-certificate>|<client-certificate-passphrase>" application.exe
+        jsign --storetype DIGICERTONE --alias <name-of-signing-certificate> --storepass "<api-key>|<path-to-client-certificate>|<client-certificate-passphrase>" --tsaurl="http://timestamp.digicert.com" application.exe
 
 #### Other signing formats, tools and operating systems
 
