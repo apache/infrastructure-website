@@ -50,7 +50,7 @@ Contact the <a href="https://incubator.apache.org/" target="_blank">Incubator Pr
 
 **Note**: this is an incomplete collection and not authoritative.
 
-As an Apache volunteer, you have the right to set your own priorities and do the work that scratches your own itch. As a Committer, you have a responsibility to the community to help create a product that will outlive the interest of any particular volunteer, including yourself. For example, he code that you commit should be clear enough that others not involved in its current development will be able to maintain and extend it. It also means that you are responsible for helping to grow and maintain the health of the Apache community.
+As an Apache volunteer, you have the right to set your own priorities and do the work that scratches your own itch. As a Committer, you have a responsibility to the community to help create a product that will outlive the interest of any particular volunteer, including yourself. For example, the code that you commit should be clear enough that others not involved in its current development will be able to maintain and extend it. It also means that you are responsible for helping to grow and maintain the health of the Apache community.
 
 More specific responsibilities of Committers include:
 
