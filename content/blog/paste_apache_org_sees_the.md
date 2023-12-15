@@ -4,8 +4,8 @@ title: paste.apache.org sees the light of day
 date: '2013-03-06T18:37:42+00:00'
 permalink: paste_apache_org_sees_the
 
-## Note ## December, 2023: this post discusses a 'token' system within Apache Paste. The token system is not currently available.
-
+<em>Note</em> December, 2023: this post discusses a 'token' system within Apache Paste. The token system is not currently available.
+<hr/>
 <p>Today, the Apache Infrastructure team launched <a href="http://paste.apache.org">http://paste.apache.org</a>, a new ASF-driven site for posting snippets, scripts, logging output, configurations and much more and sharing them with the world.
 </p> 
   <p><br /><b><i>&nbsp;Why yet another paste bin, you ask?</i></b></p> 
