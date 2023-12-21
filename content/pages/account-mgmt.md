@@ -49,3 +49,10 @@ Infra provides two-factor authentication (2FA) for account logins via the <a hre
 The documentation for ASF 2FA is <a href="https://oauth.apache.org/api.html" target="_blank">here</a>.
 
 **Note**: If you are using GitHub, you must also use GitHub's 2FA, which is separate from the Apache 2FA. If you are having trouble logging in to GitHub (or some other service) or to Apache, make sure you are using the correct entries for the 2FA in question.
+
+## Account removal 
+Occasionally we need to remove an account - either by request or because the committer is deceased or, in rare cases, because the ASF is forcibly removing the committer. 
+
+In practice, we almost never actually remove an LDAP account; we just remove the committer from all LDAP groups and mailing lists they have belonged to.
+
+An exception would be responding to a GDPR/PII request by a committer. If you wish to make such a request, open an Infra Jira ticket, state the circumstances, and provide your account information (not the password).
