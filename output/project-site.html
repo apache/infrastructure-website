@@ -195,7 +195,7 @@ For more details on staging via <code>.asf.yaml</code>, see the <a href="https:/
 <h3 id="mail">Providing public access to the project's mail archive mbox files<a class="headerlink" href="#mail" title="Permanent link">&para;</a></h3>
 <p>Some projects have a "mail" directory at the top of their project website. Enable this by creating a symbolic link  to <code>/home/apmail/public-arch/$tlp.apache.org</code> in <code>svnpubsub</code>.</p>
 <p>See more <a href="https://apache.org/dev/#mail" target="_blank">notes aboout project mail</a>.</p>
-<h3 id="feather">Using the project's favicon<a class="headerlink" href="#feather" title="Permanent link">&para;</a>
+<h3 id="feather">Using the project's favicon<a class="headerlink" href="#feather" title="Permanent link">&para;</a></h3>
 <p>To use a custom favicon for your project's website, add the <code>favicon.ico</code> file to your site's root directory. The ASF feather appears for project sites that don't have a <code>favicon.ico</code> file.</p>
 <h3 id="generated">Minimizing the number of changes committed in the project's Maven- or JavaDoc- generated site<a class="headerlink" href="#generated" title="Permanent link">&para;</a></h3>
 <p>If you are using <code>svnpubsub</code>, the commit performs very slowly if the number of changes is large, particularly if the number of files is also large. This is often the case with JavaDoc, and to a lesser extent with Maven-generated sites.</p>
@@ -214,7 +214,7 @@ For more details on staging via <code>.asf.yaml</code>, see the <a href="https:/
 <li>For svnpubsub sites, review the local files in your svn checkout before committing them. The changes will be published immediately after you commit them.</li>
 <li>There is no preview mode for <code>pypubsub</code>. You should ideally have a way to build and test the website locally.</li>
 </ul>
-</h3>
+
         </div>
       </div>
     </div>    
