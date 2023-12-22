@@ -190,7 +190,7 @@ Some projects have a "mail" directory at the top of their project website. Enabl
 
 See more <a href="https://apache.org/dev/#mail" target="_blank">notes aboout project mail</a>.
 
-<h3 id="feather">Using the project's favicon<a class="headerlink" href="#feather" title="Permanent link">&para;</a></h2>
+<h3 id="feather">Using the project's favicon<a class="headerlink" href="#feather" title="Permanent link">&para;</a></h3>
 
 To use a custom favicon for your project's website, add the `favicon.ico` file to your site's root directory. The ASF feather appears for project sites that don't have a `favicon.ico` file.
 
