@@ -110,7 +110,7 @@ Regarding KEYS files:
 <h2 id="download-links">Download links<a class="headerlink" href="#download-links" title="Permanent link">&para;</a></h2>
 
   - Website documentation for any Apache product **must** provide public download links where interested parties may obtain current official source releases and accompanying cryptographic files.
-  - Links to artifacts **must not** reference the main Apache web site. They **should** use the [standard mechanisms](release-download-pages.html), such as closer.lua, to make the download available through the content distribution system.
+  - Links to artifacts **must not** reference the main Apache web site. They **must** use the [standard procedure](release-download-pages.html) to make downloads available through the content distribution system.
   - All links to checksums, detached signatures and public keys for current releases **must** reference `downloads.apache.org/` using `https://`. 
     - Legacy links to `https://[www.]apache.org/dist/...` still work, but new links should use `downloads.apache.org`.
     - Older release checksums are on `archive.apache.org`, and you **may** also link to them.
