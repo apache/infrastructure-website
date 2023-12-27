@@ -24,7 +24,7 @@ Review
   - Do not link directly to `dist.apache.org`.
   - The download page **must** include a link to the source distribution. It **may** include links to binary distributions.
   - Use **closer.lua**, the standard mechanism to distribute Apache downloads. See below for details.
-  - All links to checksums, detached signatures and public keys must reference the main Apache web site and should use `https://` (SSL). For example: `https://downloads.apache.org/httpd/KEYS`.
+  - All links to checksums, detached signatures and public keys **must** reference the Apache Distribution Directory (<a href="https://downloads.apache.org/" target="_blank">downloads.apache.org</a>) and use `https://` (SSL). For example: `https://downloads.apache.org/httpd/KEYS`.
   - All releases are automatically <a href="https://www.apache.org/legal/release-policy.html#how-to-archive" target="_blank">archived</a>. You may continue to link to recent releases, as well as the latest one, from the download page, as a convenience for the user community. You **should** remove links to older releases that you no longer support.
   - Remove all official pre-releases (e.g. milestones, alphas, betas) in a timely fashion once the project releases the final or GA version.
   
