@@ -64,7 +64,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
     <td></td>
   </tr>
   <tr>
-    <td>are a <b>supplier</b></td> (you donate or sell hardware or services to Apache)</td>
+    <td>are a <b>supplier</b> (you donate or sell hardware or services to Apache)</td>
     <td>anything</td>
     <td><code>private@infra.apache.org</code></td>
     <td><a href="https://home.apache.org/keys/group/infrastructure-root.asc" target="_blank">Encrypt</a> passwords or send them by other means.</td>
