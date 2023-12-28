@@ -6,7 +6,7 @@ Here is detailed information on how to contact Infra in a wide range of situatio
 
 That depends on your role and what you want to do. If this chart doesn't help, Infra maintains a publicly accessible channel (`#asfinfra`) within the <a href="https://the-asf.slack.com/#asfinfra" target="_blank">ASF presence on Slack</a>, and you can ask there whether to create a bug report or do something else.
 
-<table>
+<table style="border: 1px solid black;">
   <tr>
       <th>If you...</th><th>and want to...</th><th>then contact...</th><th>Notes</th>    
   </tr>
@@ -120,9 +120,9 @@ That depends on your role and what you want to do. If this chart doesn't help, I
 
 <h2 id="what-we-need-to-know">What we need to know<a class="headerlink" href="#what-we-need-to-know" title="Permanent link">&para;</a></h2>
 
-<table>
+<table style="border: 1px solid black;">
   <tr>
-      <th>If you ask us to...</th><th>we need to know...</th><th>Notes</th>    
+      <th style="border: 1px solid black;">If you ask us to...</th><thstyle="border: 1px solid black;">we need to know...</th><thstyle="border: 1px solid black;">Notes</th>    
   </tr>
   <tr>
     <td><b>create</b> a podling</td>
