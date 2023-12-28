@@ -8,7 +8,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
 
 <table style="border: 1px solid black;">
   <tr>
-      <th>If you...</th><th>and want to...</th><th>then contact...</th><th>Notes</th>    
+      <th style="padding:10px">If you...</th><th style="padding:10px">and want to...</th><th style="padding:10px">then contact...</th><th style="padding:10px">Notes</th>    
   </tr>
   <tr>
     <td rowspan="7">are anyone</td>
