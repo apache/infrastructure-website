@@ -7,10 +7,10 @@ Here is detailed information on how to contact Infra in a wide range of situatio
 That depends on your role and what you want to do. If this chart doesn't help, Infra maintains a publicly accessible channel (`#asfinfra`) within the <a href="https://the-asf.slack.com/#asfinfra" target="_blank">ASF presence on Slack</a>, and you can ask there whether to create a bug report or do something else.
 
 | If you... | and want to... | then contact... | Notes |
-|-----|-----|-----|-----|
+|:-----|:-----|:-----:|:-----|
 | are anyone | report a **security vulnerability** in a service that runs on apache.org | `root@apache.org` | You may optionally encrypt the email to this <a href="https://home.apache.org/keys/group/infrastructure-root.asc" target="_blank">set of keys</a>. |
 | are anyone | report a **security vulnerability** in an Apache project | the <a href="https://www.apache.org/security/" target="_blank">Apache Security Team</a> | The Security Team is not part of Infra. |
-| are anyone | 	report that a **service is down** _if_ <a href="https://status.apache.org/" target="_blank">status.apache.org</a> doesn't show it | Infra's <a href="https://the-asf.slack.com/#asfinfra" target="_blank">Slack channel</a> | Email to `users@infra.apache.org` is an acceptable alternative. The <a href="https://twitter.com/infrabot/" target="_blank">infrabot</a> Twitter feed may contain information about current outages and maintenances. |
+| are anyone | 	report that a **service is down** _if_ <a href="https://status.apache.org/" target="_blank">status.apache.org</a> doesn't show it | Infra's <a href="https://the-asf.slack.com/#asfinfra" target="_blank">Slack channel</a> | Email to `users@infra.apache.org` is an acceptable alternative. The <a href="https://twitter.com/infrabot/" target="_blank">infrabot</a> feed on X (formerly Twitter) may contain information about current outages and maintenances. |
 | are a **newly-invited** commmitter | ask a question about your committership | `private@$project` |  |
 | are a **committer** |	**regain access** to your account | See <a href="https://infra.apache.org/account-mgmt.html">ASF account management</a> | If commits fail, double-check that you are using `https://` (not `http://`). |
 | are a **supplier** (you donate or sell hardware or services to Apache) | anything | `private@infra.apache.org` | <a href="https://home.apache.org/keys/group/infrastructure-root.asc" target="_blank">Encrypt</a> passwords or send them by other means. |
@@ -31,7 +31,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
 <h2 id="what-we-need-to-know">What we need to know<a class="headerlink" href="#what-we-need-to-know" title="Permanent link">&para;</a></h2>
 
 | If you ask us to... | we need to know... | Notes |
-|-----|-----|-----|
+|:-----|:-----|:-----|
 | **promote** a podling to TLP |  | See [Infra and the Incubator](infra-incubator.html) |
 | **create** a podling |  | See [Infra and the Incubator](infra-incubator.html) |
 | load **Subversion history** | URL and checksum (or PGP signature) of a dumpfile; proof of <a href="https://www.apache.org/legal/resolved#category-a" target="_blank">IP rights</a> | Produce with `svnadmin dump --incremental --deltas` or `svnrdump`. The paths within the dumpfile should be relative to the project root (e.g., to `/repos/asf/incubator/MyPodling`). |
