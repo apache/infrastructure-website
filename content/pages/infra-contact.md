@@ -11,37 +11,43 @@ That depends on your role and what you want to do. If this chart doesn't help, I
       <th style="padding:10px">If you...</th><th style="padding:10px">and want to...</th><th style="padding:10px">then contact...</th><th style="padding:10px">Notes</th>    
   </tr>
   <tr>
-    <td rowspan="7" style="padding:10px">are anyone</td>
+    <td style="padding:10px">are anyone</td>
     <td style="padding:10px">report a <b>security vulnerability</b> in a service that runs on apache.org</td> 
     <td style="padding:10px"><code>root@apache.org</code></td> 
     <td style="padding:10px">You may also encrypt the email to this <a href="https://home.apache.org/keys/group/infrastructure-root.asc" target="_blank">set of keys</a>.</td>
   </tr>
   <tr>
+    <td style="padding:10px">are anyone</td>
     <td style="padding:10px">report a <b>security vulnerability</b> in an Apache project</td>
     <td style="padding:10px"> the <a href="https://www.apache.org/security/" target="_blank">Apache Security Team</a></td>
     <td style="padding:10px">The Security Team is not part of Infra.</td>
   </tr>
   <tr>
+    <td style="padding:10px">are anyone</td>
     <td style="padding:10px">report that a <b>service is down</b> <em>and</em> <a href="https://status.apache.org/" target="_blank">status.apache.org</a> doesn't show it</td>
     <td style="padding:10px">Infra's <a href="https://the-asf.slack.com/#asfinfra" target="_blank">Slack channel</a></td>
     <td style="padding:10px">Email to <code>users@infra.apache.org`</code> is an acceptable alternative. The <a href="https://twitter.com/infrabot/" target="_blank">infrabot</a> feed on X (formerly Twitter) may contain information about current outages and maintenances.</td>    
   </tr>
   <tr>
+    <td style="padding:10px">are anyone</td>
     <td style="padding:10px"><b>unsubscribe</b> from a mailing list</td>
     <td style="padding:10px">See <a href="https://www.apache.org/foundation/mailinglists#subscribe" target="_blank">unsubscription instructions</a></td>
     <td></td>
   </tr>
   <tr>
+    <td style="padding:10px">are anyone</td>
     <td style="padding:10px">discuss something publicly with Infra, or ask Infra a question</td>
     <td style="padding:10px"><code>users@infra.apache.or</code></td>
     <td style="padding:10px">Consider this a semi-public list, as many people subscribe to it. The discussion archives are available for ASF Members only.</td>    
   </tr>
   <tr style="padding:10px">
+    <td style="padding:10px">are anyone</td>
     <td style="padding:10px">get your <b>IP</b> unblocked</td>
     <td style="padding:10px"><code>users@infra.apache.org</code></td>
     <td style="padding:10px"></td>    
   </tr>
   <tr style="padding:10px">
+    <td style="padding:10px">are anyone</td>
     <td style="padding:10px"><b>edit</b> the mail archives of a mailing list you posted to</td>
     <td style="padding:10px"><a href="https://www.apache.org/foundation/public-archives" target="_blank">Public forum archive policy</a></td>
     <td style="padding:10px">We deny almost all requests.</td>
@@ -53,21 +59,22 @@ That depends on your role and what you want to do. If this chart doesn't help, I
     <td></td>
   </tr>
   <tr>
-    <td rowspan="2">are a <b>committer</b></td>
+    <td>are a <b>committer</b></td>
     <td style="padding:10px"><b>regain access</b> to your account</td>
     <td style="padding:10px">See <a href="https://infra.apache.org/account-mgmt.html" target="_blank">ASF account management</a></td>
     <td style="padding:10px">If commits fail, double-check that you are using <code>https://</code>, not <code>http://</code>.</td>
   </tr>
   <tr>
+    <td>are a <b>committer</b></td>
     <td style="padding:10px">change your <b>account details</b></td>
     <td style="padding:10px"><a href="https://id.apache.org/" target="_blank">Self-serve</a></td>
     <td style="padding:10px"></td>
   </tr>
   <tr>
-    <td style="padding:10px">are a <b>supplier</b> (you donate or sell hardware or services to Apache)</td>
+    <td style="padding:10px">are a <b>supplier</b></td>
     <td style="padding:10px">anything</td>
     <td style="padding:10px"><code>private@infra.apache.org</code></td>
-    <td style="padding:10px"><a href="https://home.apache.org/keys/group/infrastructure-root.asc" target="_blank">Encrypt</a> passwords or send them by other means.</td>
+    <td style="padding:10px">Suppliers donate or sell hardware or services to Apache. <a href="https://home.apache.org/keys/group/infrastructure-root.asc" target="_blank">Encrypt</a> passwords or send them by other means.</td>
   </tr>
   <tr>
     <td style="padding:10px">submitted an <b>ICLA</b> in the past</td>
@@ -76,17 +83,18 @@ That depends on your role and what you want to do. If this chart doesn't help, I
     <td style="padding:10px">Snail mail is possible too; see <a href="https://www.apache.org/foundation/contact.html" target="_blank">apache.org/foundation/contact.html</a>.</td>
   </tr>
   <tr>
-    <td style="padding:10px" rowspan="2">are a <b>PMC</b></td>
+    <td style="padding:10px" >are part of a <b>PMC</b></td>
     <td style="padding:10px">request <b>account creation</b> for a newly-elected committer</td>
     <td style="padding:10px"><a href="https://whimsy.apache.org/officers/acreq" target="_blank">Whimsy</a></td>
     <td style="padding:10px">Instructions are <a href="https://www.apache.org/dev/pmc#newcommitter" target="_blank">here</a></td>
   </tr>
   <tr>
+    <td style="padding:10px" >are part of a <b>PMC</b></td>
     <td style="padding:10px">ask Infra to do something</td>
     <td style="padding:10px"><a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Create a Jira ticket</a></td>
     <td style="padding:10px">See <a href="https://infra.apache.org/infra-contact.html#requesting-action" target="_blank">On Requests</a> and <a href="https://infra.apache.org/infra-contact.html#what-we-need-to-know" target="_blank">What we need to know</a>.</td>
   <tr>
-    <td style="padding:10px">are a <b>committer</b> or a <b>PMC</b></td>
+    <td style="padding:10px">are a <b>committer</b> or part of a <b>PMC</b></td>
     <td style="padding:10px">change <b>Jenkins</b> build settings</td>
     <td style="padding:10px"><code>builds@apache.org</code></td>
     <td style="padding:10px">Project members having hudson-jobadmin <em>karma</em> can perform some tasks; ask your <code>dev@</code> list.</td>
@@ -99,7 +107,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
   </tr>
     <tr>
     <td style="padding:10px">are part of a <b>podling</b> that has just <b>graduated</b></td>
-    <td style="padding:10px">migrate resources from Incubator locations to top-level-project (TLP) locations</td>
+    <td style="padding:10px"><b>migrate resources</b> from Incubator locations to top-level-project (TLP) locations</td>
     <td style="padding:10px">See <a href="https://infra.apache.org/infra-incubator.html" target="_blank">Infra and the Incubator</a></td>
     <td></td>
   </tr>
@@ -170,7 +178,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
     <td style="padding:10px">Go to <a href="https://selfserve.apache.org/confluence.html" target="_blank">Self-serve</a> and follow the prompts</td>
   </tr>
   <tr>
-    <td style="padding:10px">migrate your project's SVN repository to Git</td>
+    <td style="padding:10px"><b>migrate</b> your project's SVN repository to Git</td>
     <td style="padding:10px"></td>
     <td style="padding:10px">Use <a href="https://selfserve.apache.org/confluence.html" target="_blank">Self-serve</a> to create your intended Git repo(s). Run <code>svn2git</code> locally using this <a href="https://git-wip-us.apache.org/authors.txt" target="_blank">authors file</a> and push once the conversion result is confirmed. Submit a Jira ticket for Infra to mark your SVN repository <code>readonly</code>. Optionally, submit a Jira ticket to temporarily disable commit emails while you push your converted clone.</td>
   </tr>
