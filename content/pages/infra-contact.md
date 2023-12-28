@@ -122,7 +122,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
 
 <table >
   <tr>
-      <th style="border: 1px solid black;">If you ask us to...</th><th style="border: 1px solid black;">we need to know...</th><th style="border: 1px solid black;">Notes</th>    
+      <th style="padding:10px">If you ask us to...</th><th style="padding:10px" >we need to know...</th><th style="padding:10px">Notes</th>    
   </tr>
   <tr>
     <td style="padding:10px"><b>create</b> a podling</td>
