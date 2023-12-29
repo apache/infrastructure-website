@@ -33,7 +33,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
   </tr>
   <tr valign="top">
     <td style="padding:10px">discuss something publicly with Infra, or ask Infra a question</td>
-    <td style="padding:10px"><code>users@infra.apache.or</code></td>
+    <td style="padding:10px"><code>users@infra.apache.org</code></td>
     <td style="padding:10px">Consider this a semi-public list, as many people subscribe to it. The discussion archives are available for ASF Members only.</td>    
   </tr>
   <tr valign="top">
