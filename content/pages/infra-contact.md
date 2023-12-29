@@ -1,6 +1,6 @@
 Title: Details on contacting Infra
 
-Here is detailed information on how to contact Infra in a wide range of situations.
+Here is how to contact Infra in a wide range of situations.
 
 <h2 id="how">How should I make contact?<a class="headerlink" href="#how" title="Permanent link">&para;</a></h2>
 
@@ -103,7 +103,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
     <td style="padding:10px">See <a href="https://infra.apache.org/infra-incubator.html" target="_blank">Infra and the Incubator</a></td>
     <td></td>
   <tr valign="top">
-    <tr>
+    <tr valign="top">
     <td style="padding:10px">are part of a PMC or a podling</td>
     <td style="padding:10px">request <b>mailing list creation</b></td>
     <td style="padding:10px"><a href="https://selfserve.apache.org/mail.html" target="_blank">Self-serve</a></td>
