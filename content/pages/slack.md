@@ -79,7 +79,7 @@ If there is information on a private channel that the channel members, **without
 
   1. Create a summary of the material to be shared in a text document, removing all personally identifiable information (PII) and third-party information, and summarizing the information and conclusions reached without copying and pasting. **Note** that PMCs must take any formal decisions and votes on the project's mailing list, not in a Slack channel.
   2. Copy the material in the summary document and paste it in a comment in a public channel for the project (create a new public channel if you do not have one for which the information would be relevant). OR
-  3. Save the summary document to your project wiki or some other accesible space and use the "add a bookmark" tool at the top of the public channel display to provide a link to the document so readers can find it easily.
+  3. Save the summary document to your project wiki or some other accessible space and use the "add a bookmark" tool at the top of the public channel display to provide a link to the document so readers can find it easily.
 
 ## Expectations
 

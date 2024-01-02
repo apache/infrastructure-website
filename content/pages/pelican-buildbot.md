@@ -18,7 +18,7 @@ The directories are:
   - **content/pages**: holds the static pages for your website. You write and edit them using GFM.
       - Each page is a `.md` file.
       - The first line is `Title:` and the name of the page.
-      - the scond line is `Date:` and the date of the current version of the page.
+      - the second line is `Date:` and the date of the current version of the page.
    - **content/articles**: if your website has a blog or a series of featured articles, they go in this directory and will appear on the front page of the site. They have the same three requirements as the static pages, above.
    - **theme/plugins**: holds the plugins Pelican and Buildbot use to build and deploy the site.
 

@@ -29,7 +29,7 @@ A time-sensitive issue that causes disruption for a project, but is not hinderin
   - **Example**: We just called a new release, but SVN is not allowing us to upload or move the artifacts.
 
 #### Major
-This is the default Jira issue priority. It fits a large issue that Infra should resolve quickly, but is not time-sensitive or related to basic projct functions. This includes requesting new resources.
+This is the default Jira issue priority. It fits a large issue that Infra should resolve quickly, but is not time-sensitive or related to basic project functions. This includes requesting new resources.
 
   - **Goal**: 2 days (48h) to respond, 5 days (120h) to resolve. Weekends do not count against this goal.
   - **Examples**:

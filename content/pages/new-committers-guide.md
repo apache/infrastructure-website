@@ -139,7 +139,7 @@ Taking part in the community makes Apache fun. The <a href="https://community.ap
 A lot of Apache knowledge-sharing and all formal decision-making takes place on email lists. Most of the lists are public, and you can join and participate in any that attract you.
 
   - Your project probably has a `dev@` and a `users@` email list, and it is a good idea to join both.
-  - We strongly urge all committers to join the `builds@` email list, where people from many projects, and the Infrastructure team, share insights and solve problems related to building and releasing software packages. People using Jenkins, or interested in CI/CD (continuous intergration and continuous development) find this list invaluable. Infra also posts notifications to this list regarding outages, upgrades, app add/removals and more.
+  - We strongly urge all committers to join the `builds@` email list, where people from many projects, and the Infrastructure team, share insights and solve problems related to building and releasing software packages. People using Jenkins, or interested in CI/CD (continuous integration and continuous development) find this list invaluable. Infra also posts notifications to this list regarding outages, upgrades, app add/removals and more.
 
 Instructions for joining and leaving lists, and a browsable list of Apache mailing lists, are <a href="https://www.apache.org/foundation/mailinglists.html" target="_blank">here</a>.
 
