@@ -28,7 +28,7 @@ To request a virtual machine, open a <a href="https://issues.apache.org/jira/bro
     - Name (default is `<project>-vm.a.o`)
     - Apache ID of project administrator (one of the maintainers you specify below)
 3. Application resources:
-    - Database (Infra recommends SQLite, given the small size, but can configure an an on-box mySQL or PostgresSQL database for the vm.)
+    - Database (Infra recommends SQLite, given the small size, but can configure an on-box mySQL or PostgreSQL database for the vm.)
     - Httpd (installed pr default, configuration is to be agreed upon)
     - Non-standard packages (will be maintained by infra-p6)
     - DNS names needed (default is to create `vmname` only)

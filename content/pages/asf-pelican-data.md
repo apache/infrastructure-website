@@ -318,7 +318,7 @@ The following procedure converts a dictionary into a sequence of objects with at
 def sequence_dict(seq, reference):
     sequence = [ ]
     for refs in reference:
-        # converting dicts into objects with attrributes. Ignore non-dict content.
+        # converting dicts into objects with attributes. Ignore non-dict content.
         if isinstance(reference[refs], dict):
             # put the key of the dict  into the dictionary
             reference[refs]['key_id'] = refs

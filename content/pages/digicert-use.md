@@ -58,7 +58,7 @@ If you use JSign 4.0, you can skip this step.
 1. Select "Resources" in the left-hand menu.
 1. Download and install the "Secure Software Manager Linux Clients (Portable tar.gz)".
 1. Unpack the tar.gz. Infra recommends, and this guide assumes, it is unpacked to `/opt`
-1. As per the DigiCert ONE documentation, create the four required environment variables. These **must** always be set to use the DigiCert signing service. Infra recommends you store your certifcate in `~/.digicertone/`.
+1. As per the DigiCert ONE documentation, create the four required environment variables. These **must** always be set to use the DigiCert signing service. Infra recommends you store your certificate in `~/.digicertone/`.
 1. Test with `/opt/smtools-linux-x64/smctl keypair ls`. You should see at least one certificate listed.
 
 #### MacOS

@@ -2,7 +2,7 @@ Title: Understanding Opensource
 
 _Cameron Riley originally posted this on the Apache Jakarta website. As that project has been retired, it now appears here._
 
-With the opensource system, if you find any deficiency in the project, the onus is on you to redress that deficiency. Opensource projects provide you with the means and mechanism to not only remove inadequecies in any part of the project but also to improve the project. Without this positive feedback loop an opensource project dies. Opensource doesnt improve by advocacy, mindshare, or by having 10 million users; it improves by participation and contributions from the user community.
+With the opensource system, if you find any deficiency in the project, the onus is on you to redress that deficiency. Opensource projects provide you with the means and mechanism to not only remove inadequecies in any part of the project but also to improve the project. Without this positive feedback loop an opensource project dies. Opensource doesn't improve by advocacy, mindshare, or by having 10 million users; it improves by participation and contributions from the user community.
 
 What that boils down to is, if you see something wrong and do nothing about it, the opensource system hasnt failed you. **You** have failed the opensource system.
 
@@ -12,4 +12,4 @@ As a rule marketers count bodies lol. With a proprietary product, if I like it, 
 
 Using <a href="https://turbine.apache.org/" target="_blank">Apache Turbine</a> as an opensource example, its continued improvement and success is directly proportional to the *participation* of its user community. If I contribute something to Turbine, 100% of my "something" has gone to improve Turbine, rather than a tiny percentage of the purchase price I paid for a proprietary product. One contributing user in an opensource project is worth 10,000 sold units of a proprietary product, in terms of the amount and value of improvements that would result.
 
-For the above reason, "more users" isn't important in opensource. In our example, every Turbine user has their own reasons for using it. But contributing and participating are definately important for the improvement of any opensource project.
+For the above reason, "more users" isn't important in opensource. In our example, every Turbine user has their own reasons for using it. But contributing and participating are definitely important for the improvement of any opensource project.
