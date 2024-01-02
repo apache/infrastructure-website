@@ -19,7 +19,7 @@ permalink: svn_service_outage_postmortem
     <li style="margin: 0px; font-stretch: normal; font-family: Arial; -webkit-text-stroke-color: #000000; -webkit-text-stroke-width: initial;"><span style="font-kerning: none;">DNS (geo) updates were problematic - Daniel will be posting a proposal on Thursday, which will outline our concerns around DNS and a viable way forward that meets our needs and is not reliant on us storing all the data in SVN to be able to effect changes to zones. (This proposal was not created as a tiger of this event, it has been worked on for a number of weeks now).</span></li> 
   </ul> 
   <ul> 
-    <li style="margin: 0px; font-stretch: normal; font-family: Arial; -webkit-text-stroke-color: #000000; -webkit-text-stroke-width: initial;"><span style="font-kerning: none;">architectural problems for availablility</span></li> 
+    <li style="margin: 0px; font-stretch: normal; font-family: Arial; -webkit-text-stroke-color: #000000; -webkit-text-stroke-width: initial;"><span style="font-kerning: none;">architectural problems for availability</span></li> 
   </ul> 
   <ul> 
     <li style="margin: 0px; font-stretch: normal; font-family: Arial; -webkit-text-stroke-color: #000000; -webkit-text-stroke-width: initial;"><span style="font-kerning: none;">We couldn't promote svn-eu to master - data differences/corruption&nbsp;<span style="font-kerning: none; color: #042eee; -webkit-text-stroke-color: #042eee;"><u><a href="https://issues.apache.org/jira/browse/INFRA-6236">https://issues.apache.org/jira/browse/INFRA-6236</a><br /><br /></u></span></span></li> 

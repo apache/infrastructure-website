@@ -61,7 +61,7 @@ The bug-tracking systems allow you to suggest a **severity** for the bug. If you
 
 Make sure you provide a useful **title** for the report:
 
-   - Userful: "PCMCIA install fails on Tosh Tecra 780DVD w/ 3c589"
+   - Useful: "PCMCIA install fails on Tosh Tecra 780DVD w/ 3c589"
    - Not useful: "Browser crashes" or "Install problem"
    
 Review [Creating a Jira ticket](jira-guidelines.html) for specifics about Jira bug reports.
