@@ -44,7 +44,7 @@ delivered via either hermes or mailgw will make it to the official archives.
 <p>
 <h4>What about unofficial mbox archives?</h4>
 <p>
-hermes-based ~apmail/lists/project.a.o/archives acessible via ezmlm's 
+hermes-based ~apmail/lists/project.a.o/archives accessible via ezmlm's 
 archive commands (get/index/thread/etc) will not be transferred to mailgw. 
 They will be archived for posterity and we can provide them upon 
 Member request. Access all mailing list archives via the 
