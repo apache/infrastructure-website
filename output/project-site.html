@@ -105,7 +105,7 @@
 <p>Many TLP sites use JavaScript (JS) to provide functions ranging from menu navigation to animations and image galleries. While JS can enhance the site experience for most visitors, it can pose problems:</p>
 <ol>
 <li><strong>Visitors who have scripting languages disabled</strong>. General-interest sites can have as much as 10% of their site visitors with JS disabled in their browsers; that percentage is probably lower for sites aimed at a more technical audience. Make sure your site provides access to the essential information it must deliver even if the visitor's browser has disabled scripting languages.</li>
-<li><strong>Visitors who use assistive devices to read and work with web pages</strong>. A web search on "JavaScript and assistive readers" will provide helpful information on writing and deploying JS in ways that cause the fewest issues for people using assistive devices to access your project website. The <a href="http://www.cynthiasays.com/" target="_blank">Cynthia Says</a> site can help you check your website for compliance with accessbility guidelines, including JavaScript issues.</li>
+<li><strong>Visitors who use assistive devices to read and work with web pages</strong>. A web search on "JavaScript and assistive readers" will provide helpful information on writing and deploying JS in ways that cause the fewest issues for people using assistive devices to access your project website. The <a href="http://www.cynthiasays.com/" target="_blank">Cynthia Says</a> site can help you check your website for compliance with accessibility guidelines, including JavaScript issues.</li>
 </ol>
 <h3>1. Website-building options</h3>
 <h4>Pelican</h4>
@@ -139,7 +139,7 @@ which have the <code>pelican</code> Topic. You can review them as examples of Pe
 <h4>Github Pages</h4>
 <p>Infra does not have a structure in place to support using <a href="github-pages.html">GitHub Pages</a> for project websites.</p>
 <h4>Apache CMS</h4>
-<p>The Apache CMS, which projects used to build and deploy their websites since 2010, is no longer available as of July 31, 2021. All projects that used it, including the main Apache website, have moved or must move to other technologies. Those that linger will find at some point that they cna no longer update their website. See the notes in the section on site management tools, below.</p>
+<p>The Apache CMS, which projects used to build and deploy their websites since 2010, is no longer available as of July 31, 2021. All projects that used it, including the main Apache website, have moved or must move to other technologies. Those that linger will find at some point that they can no longer update their website. See the notes in the section on site management tools, below.</p>
 <h3>2. Website repository</h3>
 <p>If you don't have a web site repository for your project yet, you can create one using [a href="https://selfserve.apache.org/" target="_blank"&gt;Self-serve.</p>
 <p>The convention is to name the repository <code>$project-site.git</code>, for instance <code>httpd-site.git</code>.</p>
@@ -194,7 +194,7 @@ For more details on staging via <code>.asf.yaml</code>, see the <a href="https:/
 <p>You can use the <code>.asf.yaml</code> mechanism to add those Topics.</p>
 <h3 id="mail">Providing public access to the project's mail archive mbox files<a class="headerlink" href="#mail" title="Permanent link">&para;</a></h3>
 <p>Some projects have a "mail" directory at the top of their project website. Enable this by creating a symbolic link  to <code>/home/apmail/public-arch/$tlp.apache.org</code> in <code>svnpubsub</code>.</p>
-<p>See more <a href="https://apache.org/dev/#mail" target="_blank">notes aboout project mail</a>.</p>
+<p>See more <a href="https://apache.org/dev/#mail" target="_blank">notes about project mail</a>.</p>
 <h3 id="feather">Using the project's favicon<a class="headerlink" href="#feather" title="Permanent link">&para;</a></h3>
 <p>To use a custom favicon for your project's website, add the <code>favicon.ico</code> file to your site's root directory. The ASF feather appears for project sites that don't have a <code>favicon.ico</code> file.</p>
 <h3 id="generated">Minimizing the number of changes committed in the project's Maven- or JavaDoc- generated site<a class="headerlink" href="#generated" title="Permanent link">&para;</a></h3>
