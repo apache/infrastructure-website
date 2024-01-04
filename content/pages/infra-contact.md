@@ -53,7 +53,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
     <td></td>
   </tr>
   <tr valign="top">
-    <td rowspan="2">are a <b>committer</b></td>
+    <td rowspan="2" style="padding:10px">are a <b>committer</b></td>
     <td style="padding:10px"><b>regain access</b> to your account</td>
     <td style="padding:10px">See <a href="https://infra.apache.org/account-mgmt.html" target="_blank">ASF account management</a></td>
     <td style="padding:10px">If commits fail, double-check that you are using <code>https://</code>, not <code>http://</code>.</td>
