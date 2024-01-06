@@ -4,7 +4,7 @@ Title: Signing Releases
 
 The first part of this document gives release managers a basic introduction to release signing. See under [Further reading](#reading) for links to authoritative sources of deeper information.
 
-The second part answers some frequently-asked questions from people who downlaod releases from Apache projects.
+The second part answers some frequently-asked questions from people who download releases from Apache projects.
 
 This document is informative and does not constitute policy.
 

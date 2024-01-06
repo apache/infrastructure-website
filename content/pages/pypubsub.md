@@ -64,7 +64,7 @@ An example of a real event payload, in this case a git commit, could be (emails 
 		"project": "streams",
 		"autopublish": false,
 		"date": "Wed Mar 11 19:25:06 2020 -0500",
-		"commited": "Wed Mar 11 19:25:06 2020 -0500",
+		"committed": "Wed Mar 11 19:25:06 2020 -0500",
 		"subject": "[maven-release-plugin] prepare for next development iteration",
 		"ref": "refs/heads/master",
 		"email": "s...@apache.org",

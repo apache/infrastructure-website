@@ -27,7 +27,7 @@ as a committer at the Apache Software Foundation.
 
 ### Using ASF virtual machines
 
-- <a href="https://infra.apache.org/vm-policy.html">Virtual maching policy</a>
+- <a href="https://infra.apache.org/vm-policy.html">Virtual machine policy</a>
 - <a href="https://cwiki.apache.org/confluence/display/INFRA/OPIE" target="_blank">Using OPIE</a>
 
 ### Project websites

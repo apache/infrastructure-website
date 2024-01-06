@@ -185,7 +185,7 @@ we added GPU (G4dn.16xlarge) nodes for GPU support with the `gpu` tag
 we added ARM (T4g.Small) nodes for ARM support with the `arm` tag
 
 and we custom built the image so that all of the tools that your builds
-are already configured to use are in the excact same place.
+are already configured to use are in the exact same place.
 
 we're also working on getting these images integrated with the new build
 systems so that it's a one and done process.

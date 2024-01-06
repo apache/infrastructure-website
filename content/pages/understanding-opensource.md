@@ -4,7 +4,7 @@ _Cameron Riley originally posted this on the Apache Jakarta website. As that pro
 
 With the opensource system, if you find any deficiency in the project, the onus is on you to redress that deficiency. Opensource projects provide you with the means and mechanism to not only remove inadequecies in any part of the project but also to improve the project. Without this positive feedback loop an opensource project dies. Opensource doesn't improve by advocacy, mindshare, or by having 10 million users; it improves by participation and contributions from the user community.
 
-What that boils down to is, if you see something wrong and do nothing about it, the opensource system hasnt failed you. **You** have failed the opensource system.
+What that boils down to is, if you see something wrong and do nothing about it, the opensource system hasn't failed you. **You** have failed the opensource system.
 
 So if I am missing a needed feature in a project and I do nothing about it, it is my own fault for not getting off my lazy arse and taking advantage of the participation opensource allows. One of the things that really annoys me is the continual slagging of some of the other opensource projects that get more media time. It is okay slagging a proprietary product since you often have no other way of getting your neck into the user-development feedback loop. But slagging an opensource project is ignorant. The whole mechanism exists to empower the user. If there is something that would cause that person to slag a project then it means enough to them to do something about it. In simpler words, fix it! :)
 

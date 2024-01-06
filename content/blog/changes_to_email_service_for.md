@@ -21,5 +21,5 @@ Historically we have allowed users to choose how to handle their apache.org emai
 
 <p>We are doing this to simplify the email infrastructure, and to help reduce the current level of complexity of maintaining people.apache.org.  Also, making LDAP authoritative means we can move some of the work straight out to the MXs, and thus avoid sending it through several mail servers.  In the new architecture if someone emails you directly at your apache.org mail address it will only be handled by one apache.org MX. </p>
 
-<p>Of course, we wont delete any email you currently have on people.apache.org.  Should you want to edit your LDAP record you should use <a href="https://id.apache.org">https://id.apache.org</a> to do this.</p>
+<p>Of course, we won't delete any email you currently have on people.apache.org.  Should you want to edit your LDAP record you should use <a href="https://id.apache.org">https://id.apache.org</a> to do this.</p>
 
