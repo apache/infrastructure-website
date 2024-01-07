@@ -99,17 +99,17 @@
 <p>The Apaches Software Foundation recommends using <a href="https://www.gnupg.org" target="_blank">Gnu Privacy Guard (GPG)</a>, a well-known open source cryptography tool with OpenPGP support. Always use the latest version.</p>
 <p>GnuPG has a good set of <a href="https://www.gnupg.org/documentation" target="_blank">documentation</a>. This guide covers only some important points.</p>
 <h3 id="home">GnuPG Home<a class="headerlink" href="#home" title="Permanent link">&para;</a></h3>
-<p>GnuPG stores important files, including keyrings and configuration files, in a home directory. You can specify your proejct's home directory in an environmental variable or on the command line. This allows different configurations and keys to be used.</p>
+<p>GnuPG stores important files, including keyrings and configuration files, in a home directory. You can specify your project's home directory in an environmental variable or on the command line. This allows different configurations and keys to be used.</p>
 <p>For example:</p>
 <pre><code>    ::console
     $ gpg --homedir /home/alice/keys --list-keys
 </code></pre>
-<p>Projects generally rely on the default. For <code>\*nux</code> (linux, BSD, MaxOSX, Solaris, AIX) this is:</p>
+<p>Projects generally rely on the default. For <code>\*nux</code> (linux, BSD, MacOSX, Solaris, AIX) this is:</p>
 <pre><code>    :::shell
     $HOME/.gnupg
 </code></pre>
 <h4 id="switch-home">How to switch Home<a class="headerlink" href="#switch-home" title="Permanent link">&para;</a></h4>
-<p>You can set Home using an envionmental variable. This lets you select a specific configuration and keyring for the duration of a
+<p>You can set Home using an environmental variable. This lets you select a specific configuration and keyring for the duration of a
 command line session. This is useful when <a href="release-signing.html#safe-practice">practicing</a> and when using multiple keyrings.</p>
 <p>For example, to set home directory to <code>alice</code> when using Linux:</p>
 <pre><code>    :::console
@@ -209,7 +209,7 @@ than 4096 bits, <a href="https://www.jroller.com/robertburrelldonkin/entry/gnupg
 <li><code>1.4.10</code> or higher (version with advanced features)</li>
 </ul>
 <p>Once you generate the key, you can use it with the widely available <code>1.4.9</code> and <code>2.x</code> releases.</p>
-<p>If the right version of GnuPG is not currently distributed for your platform, you need to <a href="http://www.gnupg.org/download/index.en.html" target="_blank">install it</a>. You only need this version to generate keys, so you do not need to repace the version distributed with your platform. You can install the new version into a working directory.</p>
+<p>If the right version of GnuPG is not currently distributed for your platform, you need to <a href="http://www.gnupg.org/download/index.en.html" target="_blank">install it</a>. You only need this version to generate keys, so you do not need to replace the version distributed with your platform. You can install the new version into a working directory.</p>
 <p>Checking that the installation has worked and that the version is correct, using either</p>
 <pre><code>    :::console
     $ gpg  --version 
@@ -419,7 +419,7 @@ on those disks once you are through with them. Failing that, drill through the d
 </ol>
 <h2 id="find-key-id">Finding a key ID<a class="headerlink" href="#find-key-id" title="Permanent link">&para;</a></h2>
 <p>There are a number of ways to identify a key. Only one is unique: the <a href="release-signing.html#fingerprint">key fingerprint</a>.</p>
-<p>Attackers can easily create new keys similar to yours with identical user IDs and comments. Such a public key may be introduced to your keyring when you download keys from a <a href="release-signing.html#keyserver">public keyserver</a> or as part of an import. If this information is used to identify public keys then you may be misled into believing that another public key is yours. A cunning attacker may even introduce a matching secret key taht lets you sign with that key.</p>
+<p>Attackers can easily create new keys similar to yours with identical user IDs and comments. Such a public key may be introduced to your keyring when you download keys from a <a href="release-signing.html#keyserver">public keyserver</a> or as part of an import. If this information is used to identify public keys then you may be misled into believing that another public key is yours. A cunning attacker may even introduce a matching secret key that lets you sign with that key.</p>
 <p>Creating a different key with a matching identity is considered <a href="release-signing.html#infeasible">infeasible</a>. For all operations where
 precise identity matters and that identity is specified on the command line, you should use the key ID to identify the key. Avoid using
 user ID or other information.</p>
@@ -485,7 +485,7 @@ user ID or other information.</p>
 </ul>
 <h3 id="backup-private">Back up private information<a class="headerlink" href="#backup-private" title="Permanent link">&para;</a></h3>
 <p>Keep your <a href="release-signing.html#public-private">private key</a> both safe and away from attackers. If a private key is destroyed or lost, it must be revoked and should no longer be used. Given the effort that's needed to build a strong <a href="release-signing.html#web-of-trust">web of trust</a>, it is important to back up the private key without compromising security.</p>
-<p>The best way to back up a private key is to securely archive the entire <a href="#home">GnuPG home</a> by copying the contents into secure, encrypted storage. We recommended that you version each archived copy and store it permenantly.</p>
+<p>The best way to back up a private key is to securely archive the entire <a href="#home">GnuPG home</a> by copying the contents into secure, encrypted storage. We recommended that you version each archived copy and store it permanently.</p>
 <p>Full disk encryption is the best storage solution for disks containing the private key. How to encrypt a full disc is platform dependent and is beyond the scope of this guide, but many major platforms now support this.</p>
 <p>Choose a strong passphrase. If this is not possible then use strong, <a href="#symmetric">symmetric</a> encryption to protect a compressed archive.</p>
 <p>We recommend a removable medium type with good long term storage characteristics:</p>
@@ -539,7 +539,7 @@ line</a> with <a href="#export-option-armor">ASCII encoding</a>:</p>
 all times.</p>
 <p>There are very few occasions when this risk is justified. When people talk about exporting keys, this means the export of the <em>public</em> key only (unless the secret key is mentioned explicitly). Whenever a private key export is necessary for a task covered in this guide,  we describe the process completely in the section. We do not recommend secret key export in other circumstances.</p>
 <p>To ensure that you do not accidentally expose private keys, the GnuPG <code>--export</code> operation exports only public keys.</p>
-<p><strong>Never</strong> export secret keys to the command line. Instead, use a secure temporary file that you can securelyi delete after use. Here is one way to do this:</p>
+<p><strong>Never</strong> export secret keys to the command line. Instead, use a secure temporary file that you can securely delete after use. Here is one way to do this:</p>
 <h2 id="secret-key-transfer">How to transfer a secret key<a class="headerlink" href="#secret-key-transfer" title="Permanent link">&para;</a></h2>
 <p>Start by <a href="#switch-home">switching</a> GnuPG <a href="#home">home</a> to the source. To export all secret keys to a temporary file such as <code>/tmp/new.sec</code>, do this:</p>
 <pre><code>    :::console
@@ -768,7 +768,7 @@ that the KEYS file can also be used to check archived releases.</p>
 <p>Each link is only one way. By signing a key, you indicate that you have verified the identity of the owner of that key. Links are established in both directions once the owner of that key also signs your key. When the owner has suitable identification, expect the owner to ask you to sign their key in return.</p>
 <p>You can use directional links to establish trust in the identity of a key whose owner you haven't met.</p>
 <h3 id="wot-verifying-links">How to verify identity<a class="headerlink" href="#wot-verifying-links" title="Permanent link">&para;</a></h3>
-<p>Verifying identities is usually automated, but here is an example to explain the process. If you already understand the process, free free to <a href="#apache-wot">skip forward</a>.</p>
+<p>Verifying identities is usually automated, but here is an example to explain the process. If you already understand the process, feel free to <a href="#apache-wot">skip forward</a>.</p>
 <h4 id="wot-manual-example">Example - the hard way<a class="headerlink" href="#wot-manual-example" title="Permanent link">&para;</a></h4>
 <p>Take Alice, Bob and Charlie. Alice has verified Bob's identity in person. Bob has verified Charlie's identity in person. But Alice has
 never met Charlie. So</p>
