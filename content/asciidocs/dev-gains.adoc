@@ -54,7 +54,7 @@ or 90-100 build-days per calendar week.
 == Enhanced Introspection
 [.notes]
 --
-TODO: explain how to use gradle enterpsie to diagnose builds isues
+TODO: explain how to use gradle enterprise to diagnose builds issues
 
 --
 

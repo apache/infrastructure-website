@@ -76,8 +76,8 @@ See [local builds][asf-pelican-local.html] for how to install ASF-Pelican on you
 
 **ezmd** templates use a shared data model to generate content. There are three types of data:
 
-| When refereced  | Data type                        |
-|-----------------|----------------------------------|
+| When referenced                 | Data type                        |
+|---------------------------------|----------------------------------|
 | EZMD Reader, Content, Generator | Constants - either integer or string values |
 | EZMD Reader                     | Sequences - arrays of objects with attributes where an attribute may be another sequence |
 | EZMD Reader                     | Dictionaries - key-value maps where the value may be another dictionary |

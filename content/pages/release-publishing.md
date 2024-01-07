@@ -121,7 +121,7 @@ update this page when/if the process has changed.
 
 Our [download helper script](release-download-pages.html#download-scripts) also employ caching to help speed up processing, and its findings 
 (whether or not a release is present on the CDN) may be delayed by up to an hour in some circumstances. We therefore advise projects to wait 
-for one hour after publishing a release before announcing it ot the wider public.
+for one hour after publishing a release before announcing it to the wider public.
 
 As a rule of thumb, projects should currently:
 

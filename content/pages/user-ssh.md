@@ -93,7 +93,7 @@ Public key infrastructure (PKI) enables the ssh family of protocols to operate w
 
 <h4 id="no-connection">Why can't I connect using SSH1?<a class="headerlink" href="#no-connection" title="Permanent link">&para;</a></h4>
 
-Because it has been deprectated in OpenSSH.
+Because it has been deprecated in OpenSSH.
 
 <h4 id="known-host">What is a known host?<a class="headerlink" href="#known-host" title="Permanent link">&para;</a></h4>
 

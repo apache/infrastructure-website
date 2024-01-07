@@ -163,7 +163,7 @@ Delete the tag using
 
 `svn del -m "re-releasing build" {svn path}`
 
-This likely occured because you're trying to restage the release and you didn't roll back the changes that created the previous tag, or you're trying to release a version that already exists. If that is the case, you need to adjust the versions in your POM and start over.
+This likely occurred because you're trying to restage the release and you didn't roll back the changes that created the previous tag, or you're trying to release a version that already exists. If that is the case, you need to adjust the versions in your POM and start over.
 
 ## Procedures for Ant + Ivy ##
 

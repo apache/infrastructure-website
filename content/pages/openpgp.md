@@ -34,7 +34,7 @@ GnuPG has a good set of <a href="https://www.gnupg.org/documentation" target="_b
 
 <h3 id="home">GnuPG Home<a class="headerlink" href="#home" title="Permanent link">&para;</a></h3>
 
-GnuPG stores important files, including keyrings and configuration files, in a home directory. You can specify your proejct's home directory in an environmental variable or on the command line. This allows different configurations and keys to be used.
+GnuPG stores important files, including keyrings and configuration files, in a home directory. You can specify your project's home directory in an environmental variable or on the command line. This allows different configurations and keys to be used.
 
 For example:
 
@@ -43,7 +43,7 @@ For example:
     $ gpg --homedir /home/alice/keys --list-keys
 ```
 
-Projects generally rely on the default. For `\*nux` (linux, BSD, MaxOSX, Solaris, AIX) this is:
+Projects generally rely on the default. For `\*nux` (linux, BSD, MacOSX, Solaris, AIX) this is:
 
 ```
     :::shell
@@ -52,7 +52,7 @@ Projects generally rely on the default. For `\*nux` (linux, BSD, MaxOSX, Solaris
 
 <h4 id="switch-home">How to switch Home<a class="headerlink" href="#switch-home" title="Permanent link">&para;</a></h4>
 
-You can set Home using an envionmental variable. This lets you select a specific configuration and keyring for the duration of a
+You can set Home using an environmental variable. This lets you select a specific configuration and keyring for the duration of a
 command line session. This is useful when [practicing](release-signing.html#safe-practice) and when using multiple keyrings.
 
 For example, to set home directory to `alice` when using Linux:
@@ -184,7 +184,7 @@ than 4096 bits, <a href="https://www.jroller.com/robertburrelldonkin/entry/gnupg
 
 Once you generate the key, you can use it with the widely available `1.4.9` and `2.x` releases. 
 
-If the right version of GnuPG is not currently distributed for your platform, you need to <a href="http://www.gnupg.org/download/index.en.html" target="_blank">install it</a>. You only need this version to generate keys, so you do not need to repace the version distributed with your platform. You can install the new version into a working directory.
+If the right version of GnuPG is not currently distributed for your platform, you need to <a href="http://www.gnupg.org/download/index.en.html" target="_blank">install it</a>. You only need this version to generate keys, so you do not need to replace the version distributed with your platform. You can install the new version into a working directory.
 
 Checking that the installation has worked and that the version is correct, using either
 
@@ -416,7 +416,7 @@ on those disks once you are through with them. Failing that, drill through the d
 
 There are a number of ways to identify a key. Only one is unique: the [key fingerprint](release-signing.html#fingerprint).
 
-Attackers can easily create new keys similar to yours with identical user IDs and comments. Such a public key may be introduced to your keyring when you download keys from a [public keyserver](release-signing.html#keyserver) or as part of an import. If this information is used to identify public keys then you may be misled into believing that another public key is yours. A cunning attacker may even introduce a matching secret key taht lets you sign with that key.
+Attackers can easily create new keys similar to yours with identical user IDs and comments. Such a public key may be introduced to your keyring when you download keys from a [public keyserver](release-signing.html#keyserver) or as part of an import. If this information is used to identify public keys then you may be misled into believing that another public key is yours. A cunning attacker may even introduce a matching secret key that lets you sign with that key.
 
 Creating a different key with a matching identity is considered [infeasible](release-signing.html#infeasible). For all operations where
 precise identity matters and that identity is specified on the command line, you should use the key ID to identify the key. Avoid using
@@ -519,7 +519,7 @@ So, for each [key pair](release-signing.html#public-private) you generate, the [
 
 Keep your [private key](release-signing.html#public-private) both safe and away from attackers. If a private key is destroyed or lost, it must be revoked and should no longer be used. Given the effort that's needed to build a strong [web of trust](release-signing.html#web-of-trust), it is important to back up the private key without compromising security.
 
-The best way to back up a private key is to securely archive the entire [GnuPG home](#home) by copying the contents into secure, encrypted storage. We recommended that you version each archived copy and store it permenantly.
+The best way to back up a private key is to securely archive the entire [GnuPG home](#home) by copying the contents into secure, encrypted storage. We recommended that you version each archived copy and store it permanently.
 
 Full disk encryption is the best storage solution for disks containing the private key. How to encrypt a full disc is platform dependent and is beyond the scope of this guide, but many major platforms now support this.
 
@@ -613,7 +613,7 @@ There are very few occasions when this risk is justified. When people talk about
 
 To ensure that you do not accidentally expose private keys, the GnuPG `--export` operation exports only public keys.
 
-**Never** export secret keys to the command line. Instead, use a secure temporary file that you can securelyi delete after use. Here is one way to do this:
+**Never** export secret keys to the command line. Instead, use a secure temporary file that you can securely delete after use. Here is one way to do this:
 
 <h2 id="secret-key-transfer">How to transfer a secret key<a class="headerlink" href="#secret-key-transfer" title="Permanent link">&para;</a></h2>
 
@@ -913,7 +913,7 @@ You can use directional links to establish trust in the identity of a key whose 
 
 <h3 id="wot-verifying-links">How to verify identity<a class="headerlink" href="#wot-verifying-links" title="Permanent link">&para;</a></h3>
 
-Verifying identities is usually automated, but here is an example to explain the process. If you already understand the process, free free to [skip forward](#apache-wot).
+Verifying identities is usually automated, but here is an example to explain the process. If you already understand the process, feel free to [skip forward](#apache-wot).
 
 <h4 id="wot-manual-example">Example - the hard way<a class="headerlink" href="#wot-manual-example" title="Permanent link">&para;</a></h4>
 
