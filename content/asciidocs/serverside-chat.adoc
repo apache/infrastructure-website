@@ -126,7 +126,7 @@ shoutout to the security team, without them the world would be that much less sa
 Additionally, PubSub servers to automate things and chain events together to create
 meaningful, useful, processes
 
-and finally we use Puppet internally to reduce the number of configurtaion variances
+and finally we use Puppet internally to reduce the number of configuration variances
 present across our systems
 
 --
@@ -170,7 +170,7 @@ We offer several different flavors of builders in house including pelican and je
 projects to get a site off the ground with minimal friction using our .asf.yaml self-serve automation
 mechanism.
 
-added bonus: The same mechanisms that we use to create webistes are now also used to create and publish
+added bonus: The same mechanisms that we use to create websites are now also used to create and publish
 project blogs.
 
 we've even got a logo server to help with your projects branding.

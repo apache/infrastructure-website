@@ -13,6 +13,6 @@ Roller was installed today for the use of ASF Projects. Those committers with pe
 
 Still a few things to sort out, but blogs.apache.org is mostly ready.
 
-Any project that wants a blog, please can a PMC member email infra or create a jira issuse.
+Any project that wants a blog, please can a PMC member email infra or create a jira issue.
 
 Thanks and Enjoy!

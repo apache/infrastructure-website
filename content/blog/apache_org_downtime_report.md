@@ -44,7 +44,7 @@ over. Doing so enabled us to bring the EU server back online, and to rapidly res
 aurora.apache.org we determined that the most likely route of the breach was
 the backup routine from dv35.apachecon.com. We grabbed all the
 available logs from dv35.apachecon.com, and promptly shut it down.<br /></p><p>Analysis continued on minotaur.apache.org and eos.apache.org (our US
-server), until we were confident that all remants of the attackers had been removed. As each server was declared clean, it was brought back online.<br /></p><h2>What worked?</h2><ul><li>The use of ZFS snapshots enabled us to restore the EU production web server to a known-good state.</li><li>Redundant
+server), until we were confident that all remnants of the attackers had been removed. As each server was declared clean, it was brought back online.<br /></p><h2>What worked?</h2><ul><li>The use of ZFS snapshots enabled us to restore the EU production web server to a known-good state.</li><li>Redundant
 services in two locations allowed us to run services from an alternate
 location while continuing to work on the affected servers and services.</li><li>A non-uniform set of compromised machines
 (Linux/CentOS i386, FreeBSD-7 amd_64, and Solaris 10 on sparc) made it
