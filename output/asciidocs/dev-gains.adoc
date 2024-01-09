@@ -60,7 +60,7 @@ TODO: explain how to use gradle enterprise to diagnose builds issues
 
 == Better resource utilization.
 [%step]
-* Build time aviodance savings correlate directly to build queue times.
+* Build time avoidance savings correlate directly to build queue times.
 * Efficient Ephemeral Node usage.
     
 All of this to say: builds are getting done faster, sooner.
