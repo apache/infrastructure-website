@@ -97,7 +97,7 @@ Tip: You can review the files of some other committer: `ls -al ~mymentor; cat ~m
 There are no mandatory rules, but here are some suggestions:
 
   - Keep all changes in Git/Puppet. See: `https://github.com/apache/infrastructure-p6`
-    - If you do not have karma, please create PRs in a branch against our Github repository.
+    - If you do not have karma, please create PRs in a branch against our GitHub repository.
     - Keep all application data in `/x1` if possible.
   - Update Puppet with all extra installed packages.
     - See `https://github.com/apache/infrastructure-p6/tree/production/modules/<vmname>/manifests/init.pp`

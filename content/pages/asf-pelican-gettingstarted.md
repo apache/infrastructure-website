@@ -34,7 +34,7 @@ staging:
   7. Commit and push your new website repository. This should trigger the automatic build to staging (`REPONAME.staged.apache.org`).
   8. Review the site to confirm that the template materials display and function correctly.
   9. Add your own content, updating, replacing, and removing template content elements as appropriate. With each commit / push of content, visit the staging site to confirm that the site displays as you expect it to.
-     - `.md` files support Github Flavored Markdown ([**gfm**](gfm.html)) and html.
+     - `.md` files support GitHub Flavored Markdown ([**gfm**](gfm.html)) and html.
      - `.ezmd` files are for templates using `ASF_DATA`. .ezmd is a markdown extension of <a href="https://github.com/gstein/ezt/blob/wiki/Syntax.md" target="_blank">EZT</a>. It lets you embed ezt inside markdown with modifications to simplify the process of fetching generated/external data.
   11. If you want to work on and test the site offline, see <a href="https://infra.apache.org/asf-pelican-local.html" target="_blank">Local builds of your Pelican-template website</a>.
   12. <a href="https://infra.apache.org/asf-pelican-theme.html" target="_blank">Adjust the theme</a> by editing `base.html` and making any other style changes that will help the site present your project and product well. Don't forget to provide your product's logo in the `content/images` folder.

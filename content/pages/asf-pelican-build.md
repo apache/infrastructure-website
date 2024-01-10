@@ -320,19 +320,19 @@ From `pelican-gfm`:
 We use the `asfgenid` plugin to perform modifications on the generated content that mimics the markdown extensions in the Apache CMS.
 Many of these ASF-specific enhancements are controlled in [pelican settings][configure] in the `ASF_GENID` dictionary.
 
-| ASF_GENID key | default | process | page override |
-|-----|:--------:|---------|----------|
-| unsafe_tags | True        | fix up script, style, and iframe HTML tags that the GFM autofilter extension marks as unsafe | |
-|  -          | -           | convert HTML into beautiful soup    | |
-| metadata    | True        | `{{ metadata }}` include data in the HTML | |
-|  -          | True        | inventory of all ID attributes; duplicates are invalid | |
-| elements    | True        | find all `{#id}` and `{.class}` texts and assign attributes | |
-| headings    | True        | assign IDs to all headings w/o IDs already present or assigned with `{#id}` text | asf_headings |
-| headings_re | `r'^h[1-6]'` | regex for finding headings that require IDs | |
-| tables      | True        | tables with a class attribute are assgned `class=table` | |
-| toc         | True        | generate a table of contents if [TOC] is found. If this is set to False then the `toc.py` plugin may be used. | |
-| toc_headers | `r'h[1-6]'` | headings to include in the [TOC] | |
-|  -          | -           | convert beautiful soup back into HTML. | |
+| ASF_GENID key |   default    | process                                                                                                       | page override |
+|---------------|:------------:|---------------------------------------------------------------------------------------------------------------|---------------|
+| unsafe_tags   |     True     | fix up script, style, and iframe HTML tags that the GFM autofilter extension marks as unsafe                  |               |
+| -             |      -       | convert HTML into beautiful soup                                                                              |               |
+| metadata      |     True     | `{{ metadata }}` include data in the HTML                                                                     |               |
+| -             |     True     | inventory of all ID attributes; duplicates are invalid                                                        |               |
+| elements      |     True     | find all `{#id}` and `{.class}` texts and assign attributes                                                   |               |
+| headings      |     True     | assign IDs to all headings w/o IDs already present or assigned with `{#id}` text                              | asf_headings  |
+| headings_re   | `r'^h[1-6]'` | regex for finding headings that require IDs                                                                   |               |
+| tables        |     True     | tables with a class attribute are assigned `class=table`                                                      |               |
+| toc           |     True     | generate a table of contents if [TOC] is found. If this is set to False then the `toc.py` plugin may be used. |               |
+| toc_headers   | `r'h[1-6]'`  | headings to include in the [TOC]                                                                              |               |
+| -             |      -       | convert beautiful soup back into HTML.                                                                        |               |
 
 ```python
 # Configure the asfgenid plugin

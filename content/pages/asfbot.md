@@ -42,7 +42,7 @@ ASFBot provides a simple secretary feature. To leave a message for an absent per
 
 `ASFBot: tell [recipient] [message]`
 
-ASFBot passees that message to the intended recipient the next time that person logs onto the channel.
+ASFBot passes that message to the intended recipient the next time that person logs onto the channel.
 
 <h2 id="meetings">Record-keeping for meetings<a class="headerlink" href="#meetings" title="Permanent link">&para;</a></h2>
 
