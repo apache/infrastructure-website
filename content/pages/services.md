@@ -45,7 +45,7 @@ Infra maintains a wide range of tools for PMCs, project committers, and the Apac
   
 <h3 id="email">Email<a class="headerlink" href="#email" title="Permanent link">&para;</a></h3>
 
-  - All requests for new email lists should go through the <a href="https://selfserve.apache.org/mail.html" target="_blank">self-serve system</a>. Remember not to mark a list as private if you want it publicly archived.
+  - All requests for new email lists should go through the <a href="https://selfserve.apache.org/mailinglist-new.html" target="_blank">self-serve system</a>. Remember not to mark a list as private if you want it publicly archived.
   - Email server - QMail/QSMTPD
   - <a href="https://www.apache.org/foundation/mailinglists.html" target="_blank">email lists</a> - EZMLM
   - Searchable <a href="https://lists.apache.org/" target="_blank">email list archives</a>. ASF Members have full access to private emails; PMC members have access to their PMC's archives only.
