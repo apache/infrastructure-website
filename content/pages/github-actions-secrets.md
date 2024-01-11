@@ -12,7 +12,7 @@ The ASF maxes out its runner allocation quite often, so a project needs to plan 
 
 **Evolving knowledge**
 
--  If you are considering using GitHub Actions with buildsy, please subscribe to the `builds@ a.o` mailing list, where there is a continuing discussion on this topic and others related to continuious integration development.
+-  If you are considering using GitHub Actions with buildsy, please subscribe to the `builds@ a.o` mailing list, where there is a continuing discussion on this topic and others related to continuous integration development.
 
 - The community is curating a <a href="https://cwiki.apache.org/confluence/display/BUILDS/GitHub+Actions+status" target="_blank">Wiki page</a> about the current state of using GitHub Actions for ASF projects.
 
