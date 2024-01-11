@@ -12,8 +12,8 @@ Review the [guidelines for creating a Jira ticket](jira-guidelines).
 ### For general inquiries
 General inquiries and questions should go to:
 
-| Mailing list      | Subscribe address | 
-|:-------------------|:------------------|
+| Mailing list           | Subscribe address                | 
+|:-----------------------|:---------------------------------|
 | users@infra.apache.org | users-subscribe@infra.apache.org | 
 
 

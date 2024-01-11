@@ -38,7 +38,7 @@ If what you found seems to be a new bug, you get to report it!
 Useful bug reports get bugs fixed. A useful bug report is usually:
 
   - Reproducible. If a developer or sysadmin can't see it or conclusively prove that it exists, they may stamp it "WORKSFORME" or "INVALID", and move on to the next bug. Every detail you can provide helps.
-  - Specific. The quicker the the person looking at your report can connect your issue to a specific problem, the quicker they can fix it.
+  - Specific. The quicker the person looking at your report can connect your issue to a specific problem, the quicker they can fix it.
 
 Let's say the application you're testing is a web browser. You crash at foo.com, and want to write up a bug report:
 
@@ -55,7 +55,7 @@ Once you have established the conditions (operating system, web browser, and so 
   3. What you expected to happen.
   4. What actually happened.
   
-If you can capture onscreen error messaages, extracts from logs, or relevant screen shots, include them in the report.
+If you can capture onscreen error messages, extracts from logs, or relevant screen shots, include them in the report.
 
 The bug-tracking systems allow you to suggest a **severity** for the bug. If you are reporting by email, explain the urgency of getting the bug fixed.
 

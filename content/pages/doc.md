@@ -70,6 +70,6 @@ lookup for Apache Committers.
 
 ### Infra Wiki
 
-The <a href="https://cwiki.apache.org/confluence/display/INFRA/Documentation+Index" target="_blank">Infra Wiki</a> provides scripts, how-to articles, and code samples. Most pages support the functions of the Infra team, but a great deal of material has guidance for project committers and PMCs.
+The <a href="https://cwiki.apache.org/confluence/display/INFRA/" target="_blank">Infra Wiki</a> provides scripts, how-to articles, and code samples. Most pages support the functions of the Infra team, but a great deal of material has guidance for project committers and PMCs.
 
 You can also browse the complete <a href="https://cwiki.apache.org/" target="_blank" >ASF Wiki</a>.

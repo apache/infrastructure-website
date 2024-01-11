@@ -94,7 +94,7 @@ You can use any other tool that generates static HTML pages, or hand-code those 
 
 ### Tools not supported
 
-#### Github Pages
+#### GitHub Pages
 Infra does not have a structure in place to support using [GitHub Pages](github-pages.html) for project websites.
 
 #### Apache CMS
