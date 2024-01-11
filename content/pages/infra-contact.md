@@ -209,10 +209,9 @@ Please review the tables above before filing a ticket - often you or someone in 
 
 <h4 id="reopen">My issue got closed with a request to reopen it<a class="headerlink" href="#reopen" title="Permanent link">&para;</a></h4>
 
-Then reopen it. Usually we ask that you do something as you reopen it, so do that too (or say why you didn't or can't).
+The closed ticket may have a note indicating why we closed it. For instance, the ticket may have lacked information required to confirm or adddress the issue.
 
-Background: we tend to close issues that we cannot act on for an extended period, since we use the <code>INFRA</code> queue as a to-do list. In our workflow, this kind of close/reopen cycle is a matter of ordinary routing (much like <a href="https://subversion.apache.org/docs/community-guide/building#revert" target="_blank">reverting a commit that broke the build
-system</a>).
+If you have additional information that would help us understand and respond to your issue, please include it in a new INFRA Jira ticket and we will give it a look.
 
 <h4 id="ignored">My issue got ignored<a class="headerlink" href="#ignored" title="Permanent link">&para;</a></h4>
 
@@ -220,7 +219,7 @@ There could be a few reasons: some areas have longer turn-around times than othe
 shipped, installed, and configured; sometimes we're just backlogged and are working on issues ahead of yours in the
 queue; and sometimes we do tickets of a certain category in batch, and yours will be done in the next batch in a few days.
 
-To make sure your issue doesn't get lost, feel free to add a comment to the relevant Jira issue, or email the `users@infra` list with a question. If the matter remains unresolved after that, feel free to escalate it to <a href="https://www.apache.org/foundation/" target="_blank">the VP, Infrastructure</a> or to the <code>operations@</code> privately-archived mailing list (everyone may post to it).
+To make sure your issue doesn't get lost, feel free to add a comment to the relevant Jira issue, or email the `users@infra` list with a question. If the matter remains unresolved after that, feel free to escalate it to <a href="https://www.apache.org/foundation/" target="_blank">the VP-Infrastructure</a> or to the <code>operations@</code> privately-archived mailing list (everyone may post to it).
 
 <h4 id="emergency">In case of emergency<a class="headerlink" href="#emergency" title="Permanent link">&para;</a></h4>
 
@@ -228,12 +227,9 @@ The following describes how to page `root@` people when there is an absolutely u
 that must be handled at once, even if that means waking people up in the middle
 of the night or having them miss their flight**
 
-Normally, pinging <code>#asfinfra</code> or emailing <code>root@</code> or <code>private@infra</code> suffices. We discourage pinging people privately (via email, Slack, or Twitter) as then only a single person is aware of a request. 
+**Reminder**: this facility is for emergency use only. We are in many time zones, and it will inevitably wake someone up.
 
-If you have exhausted these options, the last resort is to look 
-up root@ people the list of names (see <a href="https://home.apache.org/committers-by-project.html#infrastructure-root" target="_blank">here</a> or <a href="https://svn.apache.org/repos/private/committers/board/committee-info.txt" target="_blank">here</a>) and call them or SMS them.
+Normally, pinging <code>#asfinfra</code> or emailing <code>root@</code> or <code>private@infra</code> suffices. We discourage pinging people privately (via email, Slack, or X (formerly Twitter)) as then only a single person is aware of a request. 
 
-Finally, the VP-Infrastructure has the authority to contact third parties directly. The contact information for him is available
-at <code>docs/vp/littleblackbook.txt</code>.
-
-**Reminder**: this facility is for emergency use only. It wakes people up.
+Finally, the VP-Infrastructure has the authority to contact third parties directly. The contact information for the VP is available
+at <a href="https://svn.apache.org/repos/infra/infrastructure/trunk/docs/vp/littleblackbook.txt" target="_blank">littleblackbook.txt</a>.
