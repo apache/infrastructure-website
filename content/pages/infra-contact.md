@@ -219,7 +219,7 @@ There could be a few reasons: some areas have longer turn-around times than othe
 shipped, installed, and configured; sometimes we're just backlogged and are working on issues ahead of yours in the
 queue; and sometimes we do tickets of a certain category in batch, and yours will be done in the next batch in a few days.
 
-To make sure your issue doesn't get lost, feel free to add a comment to the relevant Jira issue, or email the `users@infra` list with a question. If the matter remains unresolved after that, feel free to escalate it to <a href="https://www.apache.org/foundation/" target="_blank">the VP, Infrastructure</a> or to the <code>operations@</code> privately-archived mailing list (everyone may post to it).
+To make sure your issue doesn't get lost, feel free to add a comment to the relevant Jira issue, or email the `users@infra` list with a question. If the matter remains unresolved after that, feel free to escalate it to <a href="https://www.apache.org/foundation/" target="_blank">the VP-Infrastructure</a> or to the <code>operations@</code> privately-archived mailing list (everyone may post to it).
 
 <h4 id="emergency">In case of emergency<a class="headerlink" href="#emergency" title="Permanent link">&para;</a></h4>
 
@@ -227,12 +227,9 @@ The following describes how to page `root@` people when there is an absolutely u
 that must be handled at once, even if that means waking people up in the middle
 of the night or having them miss their flight**
 
-Normally, pinging <code>#asfinfra</code> or emailing <code>root@</code> or <code>private@infra</code> suffices. We discourage pinging people privately (via email, Slack, or Twitter) as then only a single person is aware of a request. 
+**Reminder**: this facility is for emergency use only. We are in many time zones, and it will inevitably wake someone up.
 
-If you have exhausted these options, the last resort is to look 
-up root@ people the list of names (see <a href="https://home.apache.org/committers-by-project.html#infrastructure-root" target="_blank">here</a> or <a href="https://svn.apache.org/repos/private/committers/board/committee-info.txt" target="_blank">here</a>) and call them or SMS them.
+Normally, pinging <code>#asfinfra</code> or emailing <code>root@</code> or <code>private@infra</code> suffices. We discourage pinging people privately (via email, Slack, or X (formerly Twitter)) as then only a single person is aware of a request. 
 
-Finally, the VP-Infrastructure has the authority to contact third parties directly. The contact information for him is available
-at <code>docs/vp/littleblackbook.txt</code>.
-
-**Reminder**: this facility is for emergency use only. It wakes people up.
+Finally, the VP-Infrastructure has the authority to contact third parties directly. The contact information for the VP is available
+at <a href="https://svn.apache.org/repos/infra/infrastructure/trunk/docs/vp/littleblackbook.txt" target="_blank">littleblackbook.txt</a>.
