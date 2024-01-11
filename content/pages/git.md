@@ -8,7 +8,7 @@ The Apache Software Foundation projects use <a href="https://subversion.apache.o
 We maintain read-only Git mirrors of many Apache codebases at <a href="https://git.apache.org/" target="_blank">https://git.apache.org/</a>. These mirrors contain the full version histories (including all branches and tags) of the mirrored codebases and are updated in near real time based on the latest svn commits.
 
 You can clone the mirrors or download them using both the Git and HTTP protocols. Less frequently updated copies of the
-mirrors are also available on Github.
+mirrors are also available on GitHub.
 
 Please file an <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">INFRA</a> ticket (component: Git) to request a new codebase to be mirrored or to change the settings of an existing mirror. When requesting a new mirror, please include the following information:
 

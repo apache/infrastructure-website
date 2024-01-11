@@ -27,7 +27,7 @@ Folder level for the shared ci-builds shared instance. If your project has a Fol
 a project without a Folder then an Infra Jira ticket will get you the Folder you need.
 
 #### Integrations
-Jenkins has integrations with Github Actions (GHA), nightlies.apache.org, and Nexus for snapshot deployments. More information on this will appear here soon.
+Jenkins has integrations with GitHub Actions (GHA), nightlies.apache.org, and Nexus for snapshot deployments. More information on this will appear here soon.
 
 #### More information
 The Infra Confluence wiki space has <a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins" target="_blank">more information about Jenkins</a>.
@@ -40,7 +40,7 @@ ASF Infra runs an instance of the open source Buildbot software. Buildbot runs o
 Projects can add/edit/remove their configuration files via Subversion or Git.
 
   - <a href="https://svn.apache.org/repos/infra/infrastructure/buildbot2/projects" target="_blank">Subversion</a> 
-  - <a href="https://github.com/apache/infrastructure-bb2" target="_blank">Git/Github</a> 
+  - <a href="https://github.com/apache/infrastructure-bb2" target="_blank">Git/GitHub</a> 
 
 Use the standard naming `$projectname.py` for your config file. You may place multiple build jobs in this file.
 
@@ -87,11 +87,11 @@ GHA integrates with nightlies.apache.org, Dockerhub, Artifactory, Jenkins and mo
 All Committers have access to GHA and their workflows via `commit` using their LDAP credentials.
 
 #### More information
-In addition to the official Github documentation, Infra has placed some <a href="https://infra.apache.org/github-actions-secrets.html" target="_blank">notes</a> on a  Confluence wiki page.
+In addition to the official GitHub documentation, Infra has placed some <a href="https://infra.apache.org/github-actions-secrets.html" target="_blank">notes</a> on a  Confluence wiki page.
 
 <h2 id="artifactory">Artifactory<a class="headerlink" href="#artifactory" title="Permanent link">&para;</a></h2>
 
-The folks at Jfrog provide us an <a href="https://apache.jfrog.io/" target="_blank">instance of Artifactory</a> for all ASF projects to use. Projects are free to publish debs, rpms, Helm Charts and more. Use a Jira ticekt to ask Infra to set up the project's initial repository type.
+The folks at Jfrog provide us an <a href="https://apache.jfrog.io/" target="_blank">instance of Artifactory</a> for all ASF projects to use. Projects are free to publish debs, rpms, Helm Charts and more. Use a Jira ticket to ask Infra to set up the project's initial repository type.
 
 #### Access Control
 Access is via LDAP credentials. Infra needs to set up the project's initial repository/group access.
@@ -120,7 +120,7 @@ Experimental signing and push to Staging (in readiness for a manual promotion to
 See <a href="https://infra.apache.org/publishing-maven-artifacts.html">Publishing Maven artifacts</a>.
 
 <h2 id="nightlies">Nightlies<a class="headerlink" href="#nightlies" title="Permanent link">&para;</a></h2>
-Infra runs a server at <a href="https://nightlies.apache.org/" target="_blank">nightlies.apache.org</a> where projects can store various build output such as snapshot builds, versioned website documentation, artifacts (jars, etc.), and apidocs. Jenkins, Buildbot and Github Actions all integrate with nightlies. Committers also have PUT access via their LDAP credentials.
+Infra runs a server at <a href="https://nightlies.apache.org/" target="_blank">nightlies.apache.org</a> where projects can store various build output such as snapshot builds, versioned website documentation, artifacts (jars, etc.), and apidocs. Jenkins, Buildbot and GitHub Actions all integrate with nightlies. Committers also have PUT access via their LDAP credentials.
 
 <h2 id="dockerhub">DockerHub<a class="headerlink" href="#dockerhub" title="Permanent link">&para;</a></h2>
 
@@ -131,17 +131,17 @@ Committers need to sign up for a personal account, then create a Jira ticket ask
 
   - dockerhub_id : asf_id
   - project name
-  - reposotory name(s)
+  - repository name(s)
   - team name
 
-Infra adds DockeHub user IDs to a project 'team', which has read/write access to the project repositories.
+Infra adds DockerHub user IDs to a project 'team', which has read/write access to the project repositories.
 
 #### Integrations
 The ASF has tokens/credentials in GHA, Jenkins and Buildbot for projects to use when pushing to Dockerhub using a role account.
 
 #### More information
 
-  - <a href="https://cwiki.apache.org/confluence/display/INFRA/Github+Actions+to+DockerHub" target="_blank">Github Actions to DockerHub</a>
+  - <a href="https://cwiki.apache.org/confluence/display/INFRA/Github+Actions+to+DockerHub" target="_blank">GitHub Actions to DockerHub</a>
   - <a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins+and+Dockerhub" target="_blank">Jenkins and Dockerhub</a>
 
 <h2 id="gradle">Gradle Enterprise<a class="headerlink" href="#gradle" title="Permanent link">&para;</a></h2>
@@ -154,7 +154,7 @@ More information is available at the [Gradle page](gradle.html).
 The ASF has an 'apache' account at <a href="https://sonarcloud.io/organizations/apache" target="_blank">sonarcloud.io</a> where projects can have their code analyzed.
 
 #### Access control
-Committers must log in to Sonarcloud with their Github ID. In addition you must have your ASF account and your Github accounts linked so that you then
+Committers must log in to Sonarcloud with their GitHub ID. In addition you must have your ASF account and your GitHub accounts linked so that you then
 appear as a member of the ASF organization on GitHub. That is how Sonarcloud identifies you as belonging to the 'apache' organization on their system.
 
 #### Integrations
