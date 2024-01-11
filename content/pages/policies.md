@@ -3,7 +3,7 @@ Title: Infra policies
 The Apache Infrastructure Team (Infra) operates under the <a href="https://www.apache.org/foundation/policies/conduct.html" target="_blank">ASF Code of Conduct</a>.
 
 ## Foundation-wide
-<hr>
+
 
 - [Site-wide ban](infra-ban.html)
 - [Outreach to committers](committer-outreach.html)
@@ -13,7 +13,7 @@ The Apache Infrastructure Team (Infra) operates under the <a href="https://www.a
 - [Password requirements](password-policy.html)
 
 ## Projects
-<hr>
+
 
 ### Code repositories
 - [Project code repositories](project-repo-policy.html)
