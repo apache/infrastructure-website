@@ -209,10 +209,9 @@ Please review the tables above before filing a ticket - often you or someone in 
 
 <h4 id="reopen">My issue got closed with a request to reopen it<a class="headerlink" href="#reopen" title="Permanent link">&para;</a></h4>
 
-Then reopen it. Usually we ask that you do something as you reopen it, so do that too (or say why you didn't or can't).
+The closed ticket may have a note indicating why we closed it. For instance, the ticket may have lacked information required to confirm or adddress the issue.
 
-Background: we tend to close issues that we cannot act on for an extended period, since we use the <code>INFRA</code> queue as a to-do list. In our workflow, this kind of close/reopen cycle is a matter of ordinary routing (much like <a href="https://subversion.apache.org/docs/community-guide/building#revert" target="_blank">reverting a commit that broke the build
-system</a>).
+If you have additional information that would help us understand and respond to your issue, please include it in a new INFRA Jira ticket and we will give it a look.
 
 <h4 id="ignored">My issue got ignored<a class="headerlink" href="#ignored" title="Permanent link">&para;</a></h4>
 
