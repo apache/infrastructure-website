@@ -1,7 +1,5 @@
 Title: Infra policies
 
-The Apache Infrastructure Team (Infra) operates under the <a href="https://www.apache.org/foundation/policies/conduct.html" target="_blank">ASF Code of Conduct</a>.
-
 ## Foundation-wide
 
 - [Site-wide ban](infra-ban.html)
@@ -31,3 +29,6 @@ The Apache Infrastructure Team (Infra) operates under the <a href="https://www.a
 - [Top-Level Project sites](project-site-policy.html)
 - [Virtual machines for projects](vm-policy.html)
 - [Approving Jira account requests](jira-approve-account.html)
+
+## Infrastructure team
+The Apache Infrastructure Team (Infra) operates under the <a href="https://www.apache.org/foundation/policies/conduct.html" target="_blank">ASF Code of Conduct</a>.
