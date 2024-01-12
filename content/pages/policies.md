@@ -13,18 +13,18 @@ The Apache Infrastructure Team (Infra) operates under the <a href="https://www.a
 
 ## Projects
 
-#### Code repositories
+1. #### Code repositories
 - [Project code repositories](project-repo-policy.html)
 - [GitHub Actions](github-actions-policy.html)
 
-#### Releases
+2. #### Releases
 - <a href="https://www.apache.org/legal/apply-license.html" target="_blank">Applying the Apache 2.0 license</a>
 - [Docker Hub policy](docker-hub-policy.html)
 - [Release distribution policy](release-distribution.html)
 - [Release download pages policy](release-download-pages.html)
 - [Project use of nightlies.a.o](nightlies.html)
 
-#### Other
+3. #### Other
 - [Application upgrades](app-upgrade-policy.html)
 - [Backups](backup-policy.html) for systems and content
 - [Operating system upgrades](os-upgrade-policy.html)
