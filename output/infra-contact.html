@@ -273,13 +273,12 @@ shipped, installed, and configured; sometimes we're just backlogged and are work
 queue; and sometimes we do tickets of a certain category in batch, and yours will be done in the next batch in a few days.</p>
 <p>To make sure your issue doesn't get lost, feel free to add a comment to the relevant Jira issue, or email the <code>users@infra</code> list with a question. If the matter remains unresolved after that, feel free to escalate it to <a href="https://www.apache.org/foundation/" target="_blank">the VP-Infrastructure</a> or to the <code>operations@</code> privately-archived mailing list (everyone may post to it).</p>
 <h4 id="emergency">In case of emergency<a class="headerlink" href="#emergency" title="Permanent link">&para;</a></h4>
-<p>The following describes how to page <code>root@</code> people when there is an absolutely urgent problem, such as a malicious hacker having an active root through shell on <code>archive.apache.org</code>.  <strong>This is only for urgent, ASF-wide problems
-that must be handled at once, even if that means waking people up in the middle
-of the night or having them miss their flight</strong></p>
-<p><strong>Reminder</strong>: this facility is for emergency use only. We are in many time zones, and it will inevitably wake someone up.</p>
-<p>Normally, pinging <code>#asfinfra</code> or emailing <code>root@</code> or <code>private@infra</code> suffices. We discourage pinging people privately (via email, Slack, or X (formerly Twitter)) as then only a single person is aware of a request.</p>
-<p>Finally, the VP-Infrastructure has the authority to contact third parties directly. The contact information for the VP is available
-at <a href="https://svn.apache.org/repos/infra/infrastructure/trunk/docs/vp/littleblackbook.txt" target="_blank">littleblackbook.txt</a>.</p>
+<p>If there is an absolutely urgent problem that must be handled <strong>at once</strong>, such as a malicious hacker having an active root through shell on <code>archive.apache.org</code>, follow this escalation path:</p>
+<ol>
+<li>Send an email to <code>root@</code> and <code>private@infra</code> describing the issue. If you get no response within fifteen minutes...</li>
+<li>Create a message on the <code>#asfinfra</code> channel in the Slack Apache space. If you get no response within ten minutes...</li>
+<li>Open a Jira ticket for INFRA, with a priority of <strong>blocker</strong>.</li>
+</ol>
 
         </div>
       </div>
