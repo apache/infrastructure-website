@@ -223,13 +223,7 @@ To make sure your issue doesn't get lost, feel free to add a comment to the rele
 
 <h4 id="emergency">In case of emergency<a class="headerlink" href="#emergency" title="Permanent link">&para;</a></h4>
 
-The following describes how to page `root@` people when there is an absolutely urgent problem, such as a malicious hacker having an active root through shell on `archive.apache.org`.  **This is only for urgent, ASF-wide problems
-that must be handled at once, even if that means waking people up in the middle
-of the night or having them miss their flight**
-
-**Reminder**: this facility is for emergency use only. We are in many time zones, and it will inevitably wake someone up.
-
-Normally, pinging <code>#asfinfra</code> or emailing <code>root@</code> or <code>private@infra</code> suffices. We discourage pinging people privately (via email, Slack, or X (formerly Twitter)) as then only a single person is aware of a request. 
-
-Finally, the VP-Infrastructure has the authority to contact third parties directly. The contact information for the VP is available
-at <a href="https://svn.apache.org/repos/infra/infrastructure/trunk/docs/vp/littleblackbook.txt" target="_blank">littleblackbook.txt</a>.
+If there is an absolutely urgent problem that must be handled **at once**, such as a malicious hacker having an active root through shell on `archive.apache.org`, follow this escalation path:
+  1. Send an email to <code>root@</code> and <code>private@infra</code> describing the issue. If you get no response within fifteen minutes...
+  2. Create a message on the <code>#asfinfra</code> channel in the Slack Apache space. If you get no response within ten minutes...
+  3. Open a Jira ticket for INFRA, with a priority of **blocker**.
