@@ -24,7 +24,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
   <tr valign="top" style="border: 1px solid">
     <td style="padding:10px;border: 1px solid">report that a <b>service is down</b> <em>and</em> <a href="https://status.apache.org/" target="_blank">status.apache.org</a> doesn't show it</td>
     <td style="padding:10px;border: 1px solid">Infra's <a href="https://the-asf.slack.com/#asfinfra" target="_blank">Slack channel</a></td>
-    <td style="padding:10px;border: 1px solid">Email to <code>users@infra.apache.org`</code> is an acceptable alternative. The <a href="https://twitter.com/infrabot/" target="_blank">infrabot</a> feed on X (formerly Twitter) may contain information about current outages and maintenances.</td>    
+    <td style="padding:10px;border: 1px solid">Email to <code>users@infra.apache.org</code> is an acceptable alternative. The <a href="https://twitter.com/infrabot/" target="_blank">infrabot</a> feed on X (formerly Twitter) may contain information about current outages and maintenances.</td>    
   </tr>
   <tr valign="top" style="border: 1px solid">
     <td style="padding:10px;border: 1px solid"><b>unsubscribe</b> from a mailing list</td>
