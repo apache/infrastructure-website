@@ -220,10 +220,3 @@ shipped, installed, and configured; sometimes we're just backlogged and are work
 queue; and sometimes we do tickets of a certain category in batch, and yours will be done in the next batch in a few days.
 
 To make sure your issue doesn't get lost, feel free to add a comment to the relevant Jira issue, or email the `users@infra` list with a question. If the matter remains unresolved after that, feel free to escalate it to <a href="https://www.apache.org/foundation/" target="_blank">the VP-Infrastructure</a> or to the <code>operations@</code> privately-archived mailing list (everyone may post to it).
-
-<h4 id="emergency">In case of emergency<a class="headerlink" href="#emergency" title="Permanent link">&para;</a></h4>
-
-If there is an absolutely urgent problem that must be handled **at once**, such as a malicious hacker having an active root through shell on `archive.apache.org`, follow this escalation path:
-  1. Send an email to <code>root@</code> and <code>private@infra</code> describing the issue. If you get no response within fifteen minutes...
-  2. Create a message on the <code>#asfinfra</code> channel in the Slack Apache space. If you get no response within ten minutes...
-  3. Open a Jira ticket for INFRA, with a priority of **blocker**.
