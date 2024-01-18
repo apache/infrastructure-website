@@ -11,7 +11,7 @@ Expect to see a new installment of the newsletter toward the end of each month. 
 ## The Infra year-end survey
 As we start 2024, we're using a survey to review infrastructure developments and plans for the ASF. We will compile responses into an anonymized report to share with the whole ASF community and to provide the Infrastructure team with insights that may help us improve our work in the new year. 
 
-If you have not had a chance to fill out the survey yet, <a href="https://forms.gle/rQwYykCuP3Z1ij5Z9" target="_blank">it is here</a>. It will be active until **February 2**.
+If you have not had a chance to fill out the survey yet, <a href="https://forms.gle/rQwYykCuP3Z1ij5Z9" target="_blank">it is here</a>. It will be active until **February 2, 2024**.
 
 ## The Infra Roundtable
 Last year the Infrastructure team started holding monthly **Roundtable** meetings, in response to requests for a way to discuss infrastructure issues and initiatives. In 2023, we held ten such meetings, usually on the first Wednesday of each month. One meeting was face-to-face, as a part of Community Over Code North America.
@@ -30,4 +30,4 @@ While Infra will be taking part in both **Community over Code Europe** and **CoC
 ## What's in a name?
 What should we call this thing? "The Infra Newsletter" is straightforward, but maybe not all that catchy. "Infractions", while being a cute mashup of "Infra" and "actions", may not be clear to readers for whom English is not their best language.
 
-Use <a href="https://forms.gle/TCEDGdE9VHM45CGJA" target="_blank">this link</a> to vote for a name you prefer for the Infra newsletter: The poll is on Google Drive, but you do not have to log in to use it. The poll will stay open until February 5, 2024.
+Use <a href="https://forms.gle/TCEDGdE9VHM45CGJA" target="_blank">this link</a> to vote for a name you prefer for the Infra newsletter: The poll is on Google Drive, but you do not have to log in to use it. The poll will stay open until **February 5, 2024**.
