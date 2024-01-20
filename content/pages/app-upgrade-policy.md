@@ -36,7 +36,7 @@ _Upgrades every six months_
 Our goal is to upgrade Confluence to the latest version twice a year.
 
 **Confluence plugins**
-_Upgrades every two months_
+_Upgrades every two months_ 
 
 Every two months we perform upgrades to plugins that are compatible with the version of the main Confluence instance we are running.
 
