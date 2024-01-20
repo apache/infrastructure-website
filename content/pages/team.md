@@ -7,7 +7,7 @@ The ASF Infrastructure team, known as **Infra**, provides and manages all infras
 Infra has a core team made up of an administrator and a number of paid contractors, most of whom are system administrators; and volunteers who are generally also committers to ASF projects. The core team collaborates to respond to issues and assign development and maintenance tasks for the best benefit of the entire ASF community. The volunteers bring their skills to bear on their areas of interest, reducing the load on the core team.
 
 ## How we help
-Infra is responsible for ASF system administration and security, and supports existing projects at The ASF. Infra works hard to provide services and setup for each new project that joins the Foundation via the Apache Incubator. If you have questions about or require support regarding email, code repositories, web sites, issue trackers and so forth, we are here to [help](help.html). 
+Infra is responsible for ASF system administration and security, and supports existing projects at The ASF. Infra works hard to provide services and setup for each new project that joins the Foundation via the Apache Incubator. If you have questions about or require support regarding email, code repositories, web sites, issue trackers and so forth, we are here to [help](contact.html). 
 
 ## How can you help?
 Volunteers are the driving force of the ASF. The Infrastructure team is always looking for people willing to help out at whatever effort level suits you. If you're interested, visit our [volunteer information](infra-volunteer.html) page.
