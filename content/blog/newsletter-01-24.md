@@ -22,10 +22,10 @@ The roundtables last an hour and take place in a huddle in the Infra channel in 
 
 Links to summaries of all meetings are at <a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable" target="_blank">cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable</a>.
 
-The next Roundtable will be **Wednesday, February 7, 2024 1700 UTC**, and we will focus on Key cloak and two factor authentication.
+The next Roundtable will be **Wednesday, February 7, 2024 1700 UTC**, and we will focus on <a href="https://www.keycloak.org" target="_blank">Keycloak</a> and two factor authentication.
 
 ## Infra and conferences in 2024
-While Infra will be taking part in both **Community over Code Europe** and **CoC North America** in 2024, we will not be able to send team members to **CoC Asia**. It would be great if anyone attending could pass on to us, by email or through our Slack channel, insights or issues discussed at the conference that are relevant to Infra.
+While Infra will be taking part in both **Community over Code** (CoC) **Europe** and **CoC North America** in 2024, we will not be able to send team members to **CoC Asia**. It would be great if anyone attending could pass on to us, by email or through our Slack channel, insights or issues discussed at the conference that are relevant to Infra.
 
 ## What's in a name?
 What should we call this thing? "The Infra Newsletter" is straightforward, but maybe not all that catchy. "Infractions", while being a cute mashup of "Infra" and "actions", may not be clear to readers for whom English is not their best language.
