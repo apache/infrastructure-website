@@ -16,10 +16,18 @@ Infra has a core team made up of an administrator and a number of paid contracto
 
 **Infra Admin**:
 
+  - **Greg Stein** ...
+
 **SysAdmins**:
 
+  - **Daniel Gruno** ...
+  - **Drew Foulks** ...
+  - **Gavin McDonald** ,,,
+  - **Chris Lambertus** ...
+  - **Chris Thistlethwaite** ...
+  - **Chris Wells** ...
 
 
 **Editor-Writer**: 
 
-**Andrew Wetmore** joined his first software company in 1999, when he thought "QA" might mean "Questions and Answers" (as it sort of does). He has built several successful apps using Adobe Flex, the precursor to Apache Royale. He helps the team deliver policies, information and guidance in clear and useful language. He is a playwright and works as the editor of a small publishing house when he is not correcting typos (often his own) for The ASF.
+  - **Andrew Wetmore** (@andreww) joined his first software company in 1999, when he thought "QA" might mean "Questions and Answers" (as it sort of does). He has built several successful apps using Adobe Flex, the precursor to Apache Royale. He helps the team deliver policies, information and guidance in clear and useful language. He is a playwright and works as the editor of a small publishing house when he is not correcting typos (often his own) for The ASF.
