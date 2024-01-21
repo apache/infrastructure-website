@@ -187,7 +187,7 @@ Don't see here what you're looking for? See above for <a href="#requesting-where
 
 <h4 id="requesting-menu">What can I ask for?<a class="headerlink" href="#requestin-menu" title="Permanent link">&para;</a></h4>
 
-See the list of [Services and tools](https://infra.apache.org/services-tools.html) Infra provides for projects. If you want something that isn't listed, get in touch with a Jira ticket for Infra. It might be possible to support it, especially if the feature request includes a list of [volunteers](infra-volunteer.html) who will help maintain it hint, hint.</p>
+See the list of [Services and tools](https://infra.apache.org/services.html) Infra provides for projects. If you want something that isn't listed, get in touch with a Jira ticket for Infra. It might be possible to support it, especially if the feature request includes a list of [volunteers](infra-volunteer.html) who will help maintain it hint, hint.</p>
 
 <h4 id="requesting-where">Where should I submit my request?<a class="headerlink" href="#requesting-where" title="Permanent link">&para;</a></h4>
 
