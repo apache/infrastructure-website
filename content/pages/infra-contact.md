@@ -38,13 +38,13 @@ That depends on your role and what you want to do. If this chart doesn't help, I
   </tr>
   <tr valign="top" style="border: 1px solid">
     <td style="padding:10px;border: 1px solid">get your <b>IP</b> unblocked</td>
-    <td style="padding:10px;border: 1px solid"><code>users@infra.apache.org</code></td>
+    <td style="padding:10px;border: 1px solid"><code>abuse@infra.apache.org</code></td>
     <td style="padding:10px;border: 1px solid"></td>    
   </tr>
   <tr valign="top" style="border: 1px solid">
     <td style="padding:10px;border: 1px solid"><b>edit</b> the mail archives of a mailing list you posted to</td>
     <td style="padding:10px;border: 1px solid"><a href="https://www.apache.org/foundation/public-archives" target="_blank">Public forum archive policy</a></td>
-    <td style="padding:10px;border: 1px solid">We deny almost all requests.</td>
+    <td style="padding:10px;border: 1px solid">Contact <code>privacy@apache.org</code>. We deny almost all requests.</td>
   </tr>
   <tr valign="top" style="border: 1px solid">
     <td style="padding:10px;border: 1px solid">are a <b>newly-invited committer</b></td>
@@ -112,7 +112,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
   <tr valign="top" style="border: 1px solid">
     <td style="padding:10px;border: 1px solid">are an <b>Officer</b> of the ASF</td>
     <td style="padding:10px;border: 1px solid">ask an organizational (as opposed to technical) question</td>
-    <td style="padding:10px;border: 1px solid">VP Infrastructure, or <code3>private@infra.apache.org</code3></td>
+    <td style="padding:10px;border: 1px solid">VP Infrastructure, or <code>private@infra.apache.org</code></td>
     <td style="padding:10px;border: 1px solid">The target audience for this item is members of the Apache Board of Directors, the VPs of Fundraising and Marketing, etc.</td>
   </tr>
 </table>
