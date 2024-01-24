@@ -172,7 +172,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
   <tr valign="top"style="border: 1px solid">
     <td style="padding:10px;border: 1px solid"><b>migrate</b> your project's SVN repository to Git</td>
     <td style="padding:10px;border: 1px solid"></td>
-    <td style="padding:10px;border: 1px solid">Use <a href="https://selfserve.apache.org/" target="_blank">Self-serve</a> to create your intended Git repo(s). Run <code>svn2git</code> locally using this <a href="https://git-wip-us.apache.org/authors.txt" target="_blank">authors file</a> and push once the conversion result is confirmed. Submit a Jira ticket for Infra to mark your SVN repository <code>readonly</code>. Optionally, submit a Jira ticket to temporarily disable commit emails while you push your converted clone.</td>
+    <td style="padding:10px;border: 1px solid">Use <a href="https://selfserve.apache.org/" target="_blank">Self-serve</a> to create your intended Git repo(s). Run <code>svn2git</code> locally using this <a href="https://gitbox.apache.org/authors.txt" target="_blank">authors file</a> and push once the conversion result is confirmed. Submit a Jira ticket for Infra to mark your SVN repository <code>readonly</code>. Optionally, submit a Jira ticket to temporarily disable commit emails while you push your converted clone.</td>
   </tr>
   <tr valign="top" style="border: 1px solid">
     <td style="padding:10px;border: 1px solid">become an email list moderator</td>
