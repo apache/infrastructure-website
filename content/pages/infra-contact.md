@@ -106,7 +106,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
     <tr valign="top">
     <td style="padding:10px;border: 1px solid">are part of a PMC or a podling</td>
     <td style="padding:10px;border: 1px solid">request <b>mailing list creation</b></td>
-    <td style="padding:10px;border: 1px solid"><a href="https://selfserve.apache.org/mail.html" target="_blank">Self-serve</a></td>
+    <td style="padding:10px;border: 1px solid"><a href="https://selfserve.apache.org/mailinglist-new.html" target="_blank">Self-serve</a></td>
     <td style="padding:10px;border: 1px solid">Only ASF Members and Officers (including PMC chairs) can submit the form</td>
   </tr>
   <tr valign="top" style="border: 1px solid">
