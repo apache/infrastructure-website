@@ -92,6 +92,10 @@ If you'd like to get started with an easy-to-use, <a href="https://github.github
 
 You can use any other tool that generates static HTML pages, or hand-code those pages. You then check them into your project's website repository. The check-in will trigger a site update.
 
+#### Custom website directives using .htaccess files ####
+Project websites can make use of .htaccess files for setting up custom redirects and other tweaks to the handling of requests. The default [AllowOverride](https://httpd.apache.org/docs/2.4/mod/core.html#allowoverride) setting is `All`, 
+which generally enables any sort of redirects or rewrites (using `RewriteRule`, `Redirect`, etc.). Some project websites have custom settings in their dedicated virtual host configuration, which may require asking the Infrastructure Team for assistance. If you are in doubt, ask.
+
 ### Tools not supported
 
 #### GitHub Pages
