@@ -106,7 +106,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
     <tr valign="top">
     <td style="padding:10px;border: 1px solid">are part of a PMC or a podling</td>
     <td style="padding:10px;border: 1px solid">request <b>mailing list creation</b></td>
-    <td style="padding:10px;border: 1px solid"><a href="https://selfserve.apache.org/mail.html" target="_blank">Self-serve</a></td>
+    <td style="padding:10px;border: 1px solid"><a href="https://selfserve.apache.org/mailinglist-new.html" target="_blank">Self-serve</a></td>
     <td style="padding:10px;border: 1px solid">Only ASF Members and Officers (including PMC chairs) can submit the form</td>
   </tr>
   <tr valign="top" style="border: 1px solid">
@@ -157,7 +157,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
   <tr valign="top" style="border: 1px solid">
     <td style="padding:10px;border: 1px solid">create a project <b>Confluence wiki space</b></td>
     <td style="padding:10px;border: 1px solid">wiki name, destination for commit mails, and Confluence usernames of at least two community members who will be space admins</td>
-    <td style="padding:10px;border: 1px solid">Go to <a href="https://selfserve.apache.org/confluence.html" target="_blank">Self-serve</a> and follow the prompts.</td>
+    <td style="padding:10px;border: 1px solid">Go to <a href="https://selfserve.apache.org/confluence-new.html" target="_blank">Self-serve</a> and follow the prompts.</td>
   </tr>
   <tr valign="top" style="border: 1px solid">
     <td style="padding:10px;border: 1px solid">set up your project on <b>Review Board</b></td>
