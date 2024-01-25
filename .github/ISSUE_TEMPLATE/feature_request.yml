@@ -1,0 +1,35 @@
+name: 🌱 New Feature Request
+description: Request a new feature be added.
+labels: [ Feature Request ]
+body:
+  - type: textarea
+    attributes:
+      label: Increasing Access
+      validations:
+      required: true
+
+  - type: dropdown
+    attributes:
+      label: Most appropriate sub-area of infra-apache?
+      options:
+        - Home
+        - Download
+        - Donate
+        - Get Started
+        - Reference
+        - Libraries
+        - Learn
+        - Teach
+        - Examples
+        - Books
+        - Community
+        - Showcase
+        - Other (specify if possible)
+    validations:
+      required: true
+
+  - type: textarea
+    attributes:
+      label: Feature request details
+    validations:
+      required: true
