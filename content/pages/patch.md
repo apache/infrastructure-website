@@ -4,7 +4,7 @@ To contribute a change or addition to existing source code:
 
 ### Using Subversion ###
 
-See [Subversion basics](subversion-basics.html)
+See [Subversion basics](svn-basics.html)
 
 1. Check out the latest copy of the source code from the project's code repository.
 2. Change the source files to incorporate your change or addition. Make sure you provide appropriate source code documentation (like javadoc for
