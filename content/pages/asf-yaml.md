@@ -18,25 +18,41 @@ It operates on a per-branch basis, meaning you can have different settings for d
   - Before using a feature in .asf.yaml, make sure that you have discussed what you propose with the entire project team, and have understood what the configuration changes will do to the team's workflow and project resources.
   - You can add configuration blocks to an .asf.yaml file in any order; they do not depend on each other or flow from one to the next.
 
+## Contents
+<ul>
+  <li>Notification settings for repositories
+    <ul>
+      <li>Taking a look at your old (pre-.asf.yaml) configuration</li>
+      <li>Splitting email notifications based on context</li>
+      <li>by-path commit emails</li>
+      <li>Special schemes for bots</li>
+      <li>Jira notification options</li>
+    </ul></li>
+  <li>Web site deployment service for Git repositories
+    <ul>
+      <li>Primer</li>
+      <li>Staging a web site preview domain</li>
+      <li>Automatically staging new branches with a dynamic profile</li>
+      <li>Publishing a branch to your project web site</li>
+      <li>Specifying a non-default hostname</li>
+      <li>Specifying a sub-directory to publish to</li>
+      <li>Pelican sub-directories for static output</li>
+    </ul></li>
+  <li>Blog deployment service for Git repositories</li>
+  <li>GitHub settings</li>
+</ul>
 
-Development
-Implemented Features
-Notification settings for repositories
-Taking a look at your old (pre-.asf.yaml) configuration
-Splitting email notifications based on context
-by-path commit emails
-Special schemes for bots
-Jira notification options
-Web site deployment service for Git repositories
-Primer
-Staging a web site preview domain
-Automatically staging new branches with a dynamic profile
-Publishing a branch to your project web site
-Specifying a non-default hostname
-Specifying a sub-directory to publish to
-Pelican sub-directories for static output
-Blog deployment service for Git repositories
-GitHub settings
+
+
+
+
+
+
+
+
+
+
+
 Repository metadata
 Repository features
 Merge buttons
@@ -60,14 +76,15 @@ Requiring minimum page count
 Configuring Notifications
 Building and publishing at the same time
 Upcoming features
-Introduction
 
+Development
 
 Development
 If you would like to add some features you are free to open a Pull Request and propose your changes, the whole logic is defined in the asfyaml.py file.
 
 Implemented Features
-Notification settings for repositories
+
+[Notification settings for repositories](#){name=notif-settings}
 Projects can set their notification targets for commits and GitHub issues/PRs/actions and discussions via .asf.yaml. Note that Jira issue email notification schemes are separate and require an Infra Jira ticket to change.
 
 notifications:
