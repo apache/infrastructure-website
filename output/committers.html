@@ -171,12 +171,14 @@ self-subscribe app</a>. That avoids needing to wait for a human moderator to che
 <h4 id="subscriptions">How do I find out my subscriptions?<a class="headerlink" href="#subscriptions" title="Permanent link">&para;</a></h4>
 <p>Committers can use <a href="https://whimsy.apache.org/roster/committer/__self__" target="_blank">Whimsy</a> to check their details, including subscription information.</p>
 <h4 id="list-subscribers">How do I find out who is subscribed to a mailing list?<a class="headerlink" href="#list-subscribers" title="Permanent link">&para;</a></h4>
-<p>Information on list subscriptions is private, so is not available to all committers. Moderators can send an email to: <code>&lt;var&gt;listname&lt;/var&gt;-list@&lt;var&gt;tlp&lt;/var&gt;.apache.org</code></p>
+<p>Information on list subscriptions is private, so is not available to all committers.</p>
+<p><strong>Note</strong>: to use the examples below, replace <code>listname</code> with the name of the mailing list, and <code>tlp</code> with the name of the ASF project the list belongs to.</p>
+<p>Moderators can send an email to: <code>listname-list@tlp.apache.org</code></p>
 <p>Anyone with access to the apmail account can run the following command to get a count of subscribers:</p>
-<p><code>ezmlm-list ~apmail/lists/&lt;var&gt;project&lt;/var&gt;/&lt;var&gt;listname&lt;/var&gt;| wc -l</code></p>
+<p><code>ezmlm-list ~apmail/lists/tlp/listname| wc -l</code></p>
 <p>Remember that there often are people subscribed to the digest version of the list, too:</p>
-<p><code>~apmail/lists/&lt;var&gt;project&lt;/var&gt;/&lt;var&gt;listname&lt;/var&gt;/digest</code></p>
-<p>Note that moderators can get a log of changes to the subscriber list by emailing <code>&lt;var&gt;listname&lt;/var&gt;-log@&lt;var&gt;tlp&lt;/var&gt;.apache.org</code>.</p>
+<p><code>~apmail/lists/tlp/listname/digest</code></p>
+<p>Note that moderators can get a log of changes to the subscriber list by emailing <code>listname-log@tlp.apache.org</code>.</p>
 <h4 id="mail-forward">Mail forwarding<a class="headerlink" href="#mail-forward" title="Permanent link">&para;</a></h4>
 <p>Your forwarding address(es) are stored in LDAP and maintained through the <a href="https://id.apache.org/" target="_blank">Self Serve</a> app. Forwarding is done directly from LDAP.</p>
 <h3 id="mailmod">Mailing list moderation<a class="headerlink" href="#mailmod" title="Permanent link">&para;</a></h3>
