@@ -32,11 +32,11 @@ It operates on a per-branch basis, meaning you can have different settings for d
     </ul></li>
   <li><a href="#deploy">Web site deployment service for Git repositories</a>
     <ul>
-      <li>Primer</li>
-      <li>Staging a web site preview domain</li>
-      <li>Automatically staging new branches with a dynamic profile</li>
-      <li>Publishing a branch to your project web site</li>
-      <li>Specifying a non-default hostname</li>
+      <li><a href="#primer">Primer</a></li>
+      <li><a href="#staging">Staging a web site preview domain</a></li>
+      <li><a href="#autostage">Automatically staging new branches with a dynamic profile</a></li>
+      <li><a href="#publish">Publishing a branch to your project web site</a></li>
+      <li><a href="#nondefault">Specifying a non-default hostname</a></li>
       <li>Specifying a sub-directory to publish to</li>
       <li>Pelican sub-directories for static output</li>
     </ul></li>
@@ -170,9 +170,11 @@ The staging and publish features of the .asf.yaml file in a Git repository manag
 
 **NOTE**: Web site staging and publishing features are specific to the branch in which the .asf.yaml file resides and will not run without an accompanying `whoami`.
 
-Primer
+<h3 id="primer">Primer</h3>
+
 A basic staging and publishing profile could be:
 
+```
 # Staging and publishing profile for yourproject-website.git:
 staging:
   profile: ~
@@ -180,69 +182,93 @@ staging:
  
 publish:
   whoami:  asf-site
-This configuration enables a staging (live preview) web site at yourproject.staged.apache.org using the asf-staging branch of your repository, and deploys the asf-site branch of the repository to your main web site at yourproject.apache.org. Details below:
+```
 
-Staging a web site preview domain
-To enable staging (live preview) of your project's web site,  add a staging entry to the site repository's .asf.yaml file.
-As an example, take the imaginary yourproject-website.git with an .asf.yaml file containing the following entry:
+This configuration enables a staging (live preview) web site at `yourproject.staged.apache.org` using the `asf-staging` branch of your repository, and deploys the `asf-site` branch of the repository to your main web site at `yourproject.apache.org`. Details below:
 
+<h3 id="staging">Staging a web site preview domain</h3>
+
+To enable staging a live preview of your project's web site, add a `staging` entry to the site repository's .asf.yaml file.
+This example uses the imaginary `yourproject-website.git` with an `.asf.yaml` file containing the following entry:
+
+```
 staging:
   profile: beta
-This would stage the current branch at https://yourproject-beta.staged.apache.org/ . You can add multiple staging profiles and thus multiple branches staged for preview. This can be helpful when doing A/B evaluations of website contents and features.
+```
 
-You can also omit the profile value, and stage directly at https://yourproject.staged.apache.org/ ( "~" (tilde) means "no value" in YAML):
+This would stage the current branch at `yourproject-beta.staged.apache.org`. 
 
+You can add multiple staging profiles and thus stage multiple branches for preview. This can be helpful when doing A/B evaluations of website contents and features.
+
+You can also omit the profile value, and stage directly at `yourproject.staged.apache.org`: 
+
+```
 staging:
   profile: ~
+```
+`~` (tilde) means "no value" in YAML.
 
+**Preventing branch-override on cloning a branch**
 
+Set a protection on multi-tenancy by specifying a `whoami` setting. If the setting's value does not match the name of the current branch, no checkout/update happens. You can have this in the `.asf.yaml` file on the `asf-staging` branch:
 
-Preventing branch-override on cloning a branch
-Set a protection on multi-tenancy by specifying a whoami setting. If the setting's value does not match the current branch, no checkout/update happens. You can have this in the .asf.yaml file on the asf-staging branch:
-
+```
 staging:
   profile: ~
   whoami:  asf-staging
-When you clone that branch to a new branch like asf-staging-copy, the staging web site server will notice that the value of whoami does not match asf-staging-copy, and will ignore that branch until you update the whoami to match it.
+```
 
-Automatically staging new branches with a dynamic profile
-If you use features such as autobuild, you can also automatically stage branches on staged.apache.org with the autostage keyword.
+When you clone that branch to a new branch like `asf-staging-copy`, the staging website server will notice that the value of `whoami` does not match `asf-staging-copy`, and will ignore that branch until you update the `whoami` to match it.
 
-As with autobuild, it must match the branches you wish to autostage:
+<h3 id="autostage">Automatically staging new branches with a dynamic profile</h3>
 
+If you use features such as `autobuild`, you can automatically stage branches on `staged.apache.org` with the `autostage` keyword.
+
+As with `autobuild`, it must match the branches you wish to autostage:
+
+```
 staging:
   profile: ~
   whoami:  asf-staging
   autostage: site/*
-The autostaging feature derives a profile from the branch name, thus site/* would stage all branches matching site/*-staging as <project>-*.staged.apache.org. For instance:
+```
 
-Branch site/foo is autobuilt and the output goes to site/foo-staging
-site/foo-staging matches site/* in the autostage command
-the site is staged as $project-foo.staged.apache.org, for instance tomcat-foo.staged.apache.org
-Publishing a branch to your project web site
-Note: if you have previously used gitwcsub for web site publishing, your first publish action using .asf.yaml will cause any existing gitwcsub or svnwcsub subscription to stop working. This ensures that there are no race conditions or "repository fights" going on when you publish.
+The autostaging feature derives a profile from the branch name, thus `site/*` would stage all branches matching `site/*`-staging as `<project>-*.staged.apache.org`. For instance:
 
-Note: although publishing the asf-site branch used to work without .asf.yaml being present, since May 2021 that file MUST be present at the root of the branch you wish to publish. for everything (including soft purging the CDN cache on updates) to work correctly.
+  - Branch `site/foo` is autobuilt and the output goes to `site/foo-staging`.
+  - `site/foo-staging` matches `site/*` in the `autostage` command.
+  - The site is staged as `$project-foo.staged.apache.org`, for instance `tomcat-foo.staged.apache.org`.
 
-To publish a branch to your project web site sub-domain (yourproject.apache.org), set up a configuration block called publish in your .asf.yaml file. Enable branch-protection through the whoami parameter, like so:
+<h3 id="publish">Publishing a branch to your project web site</h3>
 
+**Note**: if you have previously used `gitwcsub` for website publishing, your first publish action using `.asf.yaml` will cause any existing `gitwcsub` or `svnwcsub` subscription to stop working. This ensures that there are no race conditions or "repository fights" going on when you publish.
+
+**Note**: although publishing the asf-site branch used to work without `.asf.yaml` being present, since May 2021 that file **must** be present at the root of the branch you wish to publish for everything (including soft purging the CDN cache on updates) to work correctly.
+
+To publish a branch to your project website sub-domain (`yourproject.apache.org`), set up a configuration block called `publish` in your `.asf.yaml` file. Enable branch-protection through the `whoami` parameter, like so:
+
+```
 publish:
   whoami: asf-site
-If, for whatever reason, a project wishes to revert to gitwcsub for publishing, remove the publish feature in your .asf.yaml file.
+```
 
-Specifying a non-default hostname
-By default, web sites are published at $project.apache.org, where $project is the sub-domain name of your project as determined by the repository name.
+If, for whatever reason, a project wishes to revert to `gitwcsub` for publishing, remove the publish feature in your `.asf.yaml` file.
 
-Some projects, like openoffice.org, have special domains and may publish to these by specifying a hostname attribute in the publish configuration block, as shown below.
+<h3 id="nondefault">Specifying a non-default hostname</h3>
 
-This is also useful when a PMC manages several websites, like comdev-site and comdev-events-site.
+By default, web sites are published at `$project.apache.org`, where `$project` is the sub-domain name of your project as determined by the repository name.
 
+Some projects, like `openoffice.org`, have special domains and may publish to these by specifying a `hostname` attribute in the publish configuration block, as shown below.
+
+This is also useful when a PMC manages several websites, like `comdev-site` and `comdev-events-site`.
+
+```
 publish:
   whoami:   asf-site
   hostname: www.openoffice.org
-NOTE: You cannot specify your $project.apache.org hostname with this setting. It has to be inferred to prevent abuse. Also, please do not abuse this feature in any other way, thanks!
+```
 
-
+**NOTE**: You cannot specify your `$project.apache.org` hostname with this setting. It has to be inferred to prevent abuse. Also, please do not abuse this feature in any other way. (Thanks!)
 
 Specifying a sub-directory to publish to
 To publish to a sub-directory of the web site URL, specify a subdir value. Such checkouts can be useful for sub-projects.
