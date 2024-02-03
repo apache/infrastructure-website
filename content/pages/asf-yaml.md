@@ -1,6 +1,5 @@
 Title: Working with .asf.yaml
 
-## Introduction
 .asf.yaml is a branch-specific <a href="https://en.wikipedia.org/wiki/YAML" target="_blank">YAML</a> configuration file that a project may create (using a text editor of your choice) and put in the root of a Git repository to control features such as
 
   - notification schemes
@@ -10,25 +9,28 @@ Title: Working with .asf.yaml
 
 It operates on a per-branch basis, meaning you can have different settings for different branches, and only those with an active .asf.yaml file will kick off a feature. Metadata settings (repo settings, features, labels) are not branch-dependent and should exist in the main (default) branch.
 
-## Before you start using .asf.yaml
-  - .asf.yaml only works with Git repositories. There is no equivalent at the moment for Subversion repositories.
-  - Do not use the document separator `--` in your .asf.yaml file. It will cause parsing to fail.
-  - The configuration file is specific to the branch in which it resides and only code blocks with a `whoami` matching the branch name will run.
-  - The configuration file holds a great deal of power, as it controls a host of automated systems.
-  - Before using a feature in .asf.yaml, make sure that you have discussed what you propose with the entire project team, and have understood what the configuration changes will do to the team's workflow and project resources.
-  - You can add configuration blocks to an .asf.yaml file in any order; they do not depend on each other or flow from one to the next.
+<h2 id="top">Before you start using .asf.yaml</h2>
+<ul>
+ <li>.asf.yaml only works with Git repositories. There is no equivalent at the moment for Subversion repositories.</li>
+<li>Do <b>not</b> use the document separator <code>--</code> in your .asf.yaml file. It will cause parsing to fail.</li>
+  <li>The configuration file is specific to the branch in which it resides and only code blocks with a `whoami` matching the branch name will run.</li>
+  <li>The configuration file holds a great deal of power, as it controls a host of automated systems.</li>
+  <li>Before using a feature in .asf.yaml, make sure that you have discussed what you propose with the entire project team, and have understood what the configuration changes will do to the team's workflow and project resources.</li>
+  <li>You can add configuration blocks to an .asf.yaml file in any order; they do not depend on each other or flow from one to the next.</li>  
+</ul>
+ 
 
 ## Contents
 <ul>
-  <li>Notification settings for repositories
+  <li><a href="#notif">Notification settings for repositories</a>
     <ul>
-      <li>Taking a look at your old (pre-.asf.yaml) configuration</li>
-      <li>Splitting email notifications based on context</li>
-      <li>by-path commit emails</li>
-      <li>Special schemes for bots</li>
-      <li>Jira notification options</li>
+      <li><a href="#review">Reviewing your old (pre-.asf.yaml) configuration</a></li>
+      <li><a href="#split">Splitting email notifications based on context</a></li>
+      <li><a href="#bypath">by-path commit emails</a></li>
+      <li><a href="#botschemes">Special schemes for bots</a></li>
+      <li><a href="#jiraoptions">Jira notification options</a></li>
     </ul></li>
-  <li>Web site deployment service for Git repositories
+  <li><a href="#deploy">Web site deployment service for Git repositories</a>
     <ul>
       <li>Primer</li>
       <li>Staging a web site preview domain</li>
@@ -39,131 +41,134 @@ It operates on a per-branch basis, meaning you can have different settings for d
       <li>Pelican sub-directories for static output</li>
     </ul></li>
   <li>Blog deployment service for Git repositories</li>
-  <li>GitHub settings</li>
+  <li>GitHub settings
+    <ul>
+      <li>Assigning the 'triage' role to external collaborators</li>
+      <li>Autolinks for Jira</li>
+      <li>Branch protection</li>
+      <li>Custom subject lines for GitHub events</li>
+      <li>Default branch</li>
+      <li>Delete branch on merge</li>
+      <li>Dependabot alerts and updates</li>
+      <li>GitHub Actions build status emails</li>
+      <li>GitHub Discussions</li>
+      <li>GitHub Pages</li>
+      <li>Jenkins PR whitelisting</li>
+      <li>Merge buttons</li>
+      <li>Repository features</li>
+      <li>Repository metadata</li>
+      <li>Tag protection</li>      
+    </ul>
+  </li>
+  <li>Generating static website content
+    <ul>
+      <li>Automatically building new branches</li>
+      <li>Building and publishing at the same time</li>
+      <li>Configuring notifications</li>
+      <li>Jekyll CMS</li>
+      <li>Pelican CMS</li>
+      <li>Requiring minimum page count</li>
+    </ul>
+  </li>
+  <li>Features in development</li>
 </ul>
 
+<hr/>
 
+<h2 id="notif">Notification settings for repositories</h2>
 
-
-
-
-
-
-
-
-
-
-Repository metadata
-Repository features
-Merge buttons
-Dependabot Alerts and Updates
-GitHub Pages
-GitHub Actions build status emails
-Default branch
-Branch protection
-Delete branch on merge
-Tag protection
-Jenkins PR whitelisting
-Assigning external collaborators with the triage role on GitHub
-Autolinks for Jira
-GitHub Discussions
-Custom subject lines for GitHub events
-Static web site content generation
-Jekyll CMS
-Pelican CMS
-Automatically building new branches
-Requiring minimum page count
-Configuring Notifications
-Building and publishing at the same time
-Upcoming features
-
-Development
-
-Development
-If you would like to add some features you are free to open a Pull Request and propose your changes, the whole logic is defined in the asfyaml.py file.
-
-Implemented Features
-
-[Notification settings for repositories](#){name=notif-settings}
 Projects can set their notification targets for commits and GitHub issues/PRs/actions and discussions via .asf.yaml. Note that Jira issue email notification schemes are separate and require an Infra Jira ticket to change.
 
-notifications:
-  commits:      commits@foo.apache.org
-  issues:       issues@foo.apache.org
-  pullrequests: dev@foo.apache.org
-  jira_options: link label worklog
-  jobs:         dev@foo.apache.org
-  discussions:  issues@foo.apache.org
-NOTE: Setting up notification schemes via .asf.yaml can only happen in the default (i.e. main/master/trunk etc.) branch of a repository, and each configuration change will cause your project's private@ list to receive a notification of the change, for review purposes.
+| Notifications | |
+| ----------------- | -------------------- |
+| commits | `commits@foo.apache.org` |
+| issues | `issues@foo.apache.org` |
+| pullrequests | `dev@foo.apache.org` |
+| jira_options | `link label worklog` |
+| jobs | `dev@foo.apache.org` |
+| discussions | `issues@foo.apache.org` |
+ 
+**NOTE**: Setting up notification schemes via .asf.yaml can only happen in the default (i.e. main/master/trunk etc.) branch of a repository, and each configuration change will cause your project's `private@` list to receive a notification of the change, for review purposes.
 
-Settings made in .asf.yaml takes precedence over the original legacy mail targets (entered when setting up the repository). If a specific target scheme is not found in .asf.yaml, the legacy defaults will be used instead.
+Settings made in .asf.yaml takes precedence over the original legacy mail targets (entered when you set up the repository). If a specific target scheme is not found in .asf.yaml, the legacy defaults will be used instead.
 
-Taking a look at your old (pre-.asf.yaml) configuration
-If you wish to take a look at the default (old style) configuration for a repository, visit https://gitbox.apache.org/schemes.cgi?$repository-name-here , for instance https://gitbox.apache.org/schemes.cgi?lucene-solr
+<h3 id="review">Reviewing your old (pre-.asf.yaml) configuration</h3>
+If you wish to take a look at the default (old style) configuration for a repository, visit `gitbox.apache.org/schemes.cgi?$repository-name-here` , for instance `gitbox.apache.org/schemes.cgi?lucene-solr`.
 
-Splitting email notifications based on context
+<h3 id="split">Splitting email notifications based on context</h3>
+
 You can divide pull requests and issues into sub-categories to split up the open/close emails and the comments/code review parts.
-For instance, if a project wants new PRs to send an email to dev@foo, but wants any comments on that PR to go to issues@foo, employ the following configuration:
+For instance, if a project wants new PRs to send an email to `dev@foo`, but wants any comments on that PR to go to `issues@foo`, employ the following configuration:
 
-notifications:
-  commits:              commits@foo.apache.org
-  # Send all issue emails (new, closed, comments) to issues@
-  issues:               issues@foo.apache.org
-  # Send new/closed PR notifications to dev@
-  pullrequests_status:  dev@foo.apache.org
-  # Send individual PR comments/reviews to issues@
-  pullrequests_comment: issues@foo.apache.org
-Likewise, you can split issues into issues_status and issues_comment for sending issue emails to the appropriate targets.
+| notifications      | email           | notes          |
+| -------------------- | -------------------- | -------------------- |
+| commits | `commits@foo.apache.org` | |
+| issues | `issues@foo.apache.org` | Send all issue emails (new, closed, comments) to `issues@` |
+| pullrequests_status | `dev@foo.apache.org` | Send new/closed PR notifications to `dev@` |
+| pullrequests_comment | `issues@foo.apache.org` | Send individual PR comments/reviews to `issues@` |
+            
+You can split `issues` into `issues_status` and `issues_comment` for sending issue emails to the appropriate targets.
 
 The hierarchy for determining the email target for an action is:
 
-If a specific status or comment target is specified, use that
-otherwise, if a global issue/pull request target exists, use that
-otherwise, fall back to the targets that were configured when the repository was set up
-finally, fall back to dev@project for issues/PRs and commits@ for commits
-by-path commit emails
+  1. If a specific status or comment target is specified, use that.
+  2. Otherwise, if a global issue/pull request target exists, use that.
+  3. Otherwise, fall back to the targets that were configured when the repository was set up.
+  4. Finally, fall back to dev@project for issues/PRs and commits@ for commits.
+
+<h3 id="bypath">by-path commit emails</h3>
+
 Projects may specify that commits to a repository that touches on specific paths will have a copy of the commit email sent to one or more specific addresses.
 These paths are glob-enabled.
 
+```
+
 notifications:
-  commits:              commits@foo.apache.org
+  commits:  commits@foo.apache.org
   commits_by_path:
     "sub-folder/*": foo@bar.apache.org
     "docs/README.md":
       - foo@bar.apache.org
       - janedoe@apache.org
-Special schemes for bots
-Projects may create special rules for bots on GitHub, such as dependabot, to have PR and issue activity from these directed to a distinct mailing list. The general syntax for this is done by appending "_bot_$botname" to the scheme, for instance:
+```
 
-notifications:
-  commits:                     commits@foo.apache.org
-  # Send all PR emails (new, closed, comments) to issues@
-  pullrequests:                issues@foo.apache.org
-  # Send depandabot PRs to private@ instead
-  pullrequests_bot_dependabot: private@foo.apache.org
+<h3 id="botschemes">Special schemes for bots</h3>
+Projects may create special rules for bots such as dependabot on GitHub to have PR and issue activity from these directed to a distinct mailing list. The general syntax for this is to append `_bot_$botname` to the scheme, for instance:
+
+| notifications       | email       | notes    |
+| ---------------------------- | -------------------- | -------------------- |
+| commits | `commits@foo.apache.org` | |
+| pullrequests | `issues@foo.apache.org` | Send all PR emails (new, closed, comments) to `issues@` |
+| pullrequests_bot_dependabot | `private@foo.apache.org` | Send depandabot PRs to `private@` instead |
+
 These special schemes are currently only available for pull requests and issues.
 
-Jira notification options
-You can use the file to enable Jira notifications that will fire when a GitHub issue or pull request has a ticket in its title, such as "[TICKET-1234] Improve foo bar".
+<h3 id="jiraoptions">Jira notification options</h3>
+
+You can enable Jira notifications that will fire when a GitHub issue or pull request has a ticket in its title, such as `[TICKET-1234] Improve foo bar`.
 You can set one or more of these options:
 
-comment: Add the PR/issue event as a comment in the referenced Jira ticket.
-worklog: Add the event as a worklog entry instead of a comment in the Jira ticket you reference.
-label: Add a 'pull-request-available' label to referenced tickets. NOTE: Some Jira projects have set limitations on who can add labels to tickets. If labels are not being added, you can address this by granting the Jira user githubbot access to your Jira space as a committer.
-link: When you create a GitHub PR/issue, embed a link to the PR or issue in the Jira ticket you reference. 
-Concatenate the options you want to use as a string list, like this:
+  - `comment`: Add the PR/issue event as a comment in the referenced Jira ticket.
+  - `worklog`: Add the event as a worklog entry instead of a comment in the Jira ticket you reference.
+  - `label`: Add a 'pull-request-available' label to referenced tickets. **NOTE**: Some Jira projects have set limitations on who can add labels to tickets. If labels are not being added, you can address this by granting the Jira user `githubbot` access to your Jira space as a committer.
+  - `link`: When you create a GitHub PR/issue, embed a link to the PR or issue in the Jira ticket you reference. 
 
+You can concatenate the options you want to use as a string list, like this:
+
+```
 notifications:
   ...
   jira_options: link label comment
+```
+<p align="right"><a href="#top">Return to top</a></p>
 
+<h2 id="deploy">Web site deployment service for Git repositories</h2>
 
-Web site deployment service for Git repositories
-The staging and publish features of the .asf.yaml file in a git repository manage web site deployment.
+The staging and publish features of the .asf.yaml file in a Git repository manage web site deployment.
 
-NOTE : Web site staging and publishing features are applied for the repository in which you have specified staging and publishing . Thus, only specify them within the repository that contains your web site material, or you could end up just seeing a list of source code files from your source repository.
+**NOTE**: Web site staging and publishing features are applied for the repository in which you have specified staging and publishing. Thus, only specify them within the repository that contains your web site material, or you could end up seeing a list of source code files from your source repository on your site.
 
-NOTE : Web site staging and publishing features are specific to the branch in which the .asf.yaml resides and will not run without an accompanying whoami.
+**NOTE**: Web site staging and publishing features are specific to the branch in which the .asf.yaml file resides and will not run without an accompanying `whoami`.
 
 Primer
 A basic staging and publishing profile could be:
@@ -355,7 +360,13 @@ github:
         dismiss_stale_reviews: true
         require_code_owner_reviews: true
         required_approving_review_count: 3
-       
+
+       Upcoming features
+
+Development
+
+Development
+If you would like to add some features you are free to open a Pull Request and propose your changes, the whole logic is defined in the asfyaml.py file.
       # squash or rebase must be allowed in the repo for this setting to be set to true.
       required_linear_history: false
   
