@@ -215,9 +215,13 @@ If you wish to take a look at the default (old style) configuration for a reposi
 <tr>
 <td>pullrequests_comment</td>
 <td><code>issues@foo.apache.org</code></td>
-<td>Send individual PR comments/reviews to <code>issues@</code></td>
+<td>Send individual PR comments/reviews to <code>issues@</code>. You can split <code>issues</code> into <code>issues_status</code> and <code>issues_comment</code> for sending issue emails to the appropriate targets.</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td></td>
 </tr></tbody></table>
-<p>You can split <code>issues</code> into <code>issues_status</code> and <code>issues_comment</code> for sending issue emails to the appropriate targets.</p>
 <p>The hierarchy for determining the email target for an action is:</p>
 <ol>
 <li>If a specific status or comment target is specified, use that.</li>
@@ -237,7 +241,8 @@ If you wish to take a look at the default (old style) configuration for a reposi
       - janedoe@apache.org
 </code></pre>
 <h3 id="botschemes">Special schemes for bots</h3>
-Projects may create special rules for bots such as dependabot on GitHub to have PR and issue activity from these directed to a distinct mailing list. The general syntax for this is to append `_bot_$botname` to the scheme, for instance:
+<p>Projects may create special rules for bots such as dependabot on GitHub to have PR and issue activity from these directed to a distinct mailing list. These special schemes are currently only available for pull requests and issues.</p>
+<p>The general syntax for this is to append <code>_bot_$botname</code> to the scheme, for instance:</p>
 <table>
 <thead>
 <tr>
@@ -262,7 +267,6 @@ Projects may create special rules for bots such as dependabot on GitHub to have 
 <td><code>private@foo.apache.org</code></td>
 <td>Send depandabot PRs to <code>private@</code> instead</td>
 </tr></tbody></table>
-<p>These special schemes are currently only available for pull requests and issues.</p>
 <h3 id="jiraoptions">Jira notification options</h3>
 <p>You can enable Jira notifications that will fire when a GitHub issue or pull request has a ticket in its title, such as <code>[TICKET-1234] Improve foo bar</code>.</p>
 <p>You can set one or more of these options:</p>
