@@ -130,7 +130,7 @@ which have the <code>pelican</code> Topic. You can review them as examples of Pe
 <h4>JBake</h4>
 <p>At least <a href="https://github.com/search?q=topic%3Ajbake+org%3Aapache&amp;type=Repositories" target="_blank">two ASF projects</a> use <a href="https://jbake.org/" target="_blank">JBake</a>, a Java-based tool for building static web sites.</p>
 <h4>MKDocs</h4>
-<p><a href="https://www.mkdocs.org/" target="_blank">MKDocs</a> is a static site generator designed for creating project documentation. However, at least one ASF project uses it to build their entire project website. See <a href="asfyaml-mkdocs.html">this note</a> on the build sequence to use to preserve your project site's <code>.asf.yaml</code> file.</p>
+<p><a href="https://www.mkdocs.org/" target="_blank">MKDocs</a> is a static site generator designed for creating project documentation. However, at least one ASF project uses it to build their entire project website. See <a href="asfyaml-mkdocs.html">this note</a> on the build sequence to use to preserve your project site's <a href="asf-yaml.html">.asf.yaml</a> file.</p>
 <h4>Basic website template in Markdown</h4>
 <p>If you'd like to get started with an easy-to-use, <a href="https://github.github.com/gfm/" target="_blank">Markdown</a>-based site that many projects have used, see the <a href="https://github.com/apache/apache-website-template" target="_blank">sample Apache project website</a> repository, which has many useful features and instructions for using <code>svnpubsub</code>.</p>
 <h4>HTML files</h4>
@@ -144,27 +144,26 @@ which generally enables any sort of redirects or rewrites (using <code>RewriteRu
 <h4>Apache CMS</h4>
 <p>The Apache CMS, which projects used to build and deploy their websites since 2010, is no longer available as of July 31, 2021. All projects that used it, including the main Apache website, have moved or must move to other technologies. Those that linger will find at some point that they can no longer update their website. See the notes in the section on site management tools, below.</p>
 <h3>2. Website repository</h3>
-<p>If you don't have a web site repository for your project yet, you can create one using [a href="https://selfserve.apache.org/" target="_blank"&gt;Self-serve.</p>
+<p>If you don't have a web site repository for your project yet, you can create one using <a href="https://selfserve.apache.org/" target="_blank">Self-serve</a>.</p>
 <p>The convention is to name the repository <code>$project-site.git</code>, for instance <code>httpd-site.git</code>.</p>
 <p>Copy whatever you need to start a build into the master branch of the new repository. This will act as the base of the build process.</p>
 <h3>3. The build process</h3>
-<p>Configure Pelican or Jekyll to build the site automatically when its contents change, using .asf.yaml and Buildbot. See the
-<a href="https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features#Git.asf.yamlfeatures-Staticwebsitecontentgeneration" target="_blank">.asf.yaml documentation</a>.</p>
+<p>Configure Pelican or Jekyll to build the site automatically when its contents change, using <a href="asf-yaml.html">.asf.yaml</a> and Buildbot.</p>
 <h3>4. A staging website</h3>
-<p>Using <code>.asf.yaml</code> with a Git repository, once you have your generated web site committed and pushed to a branch, you can set up a staging web site to test your changes before publishing them to your main web site.</p>
+<p>Using <a href="asf-yaml.html">.asf.yaml</a> with a Git repository, once you have your generated web site committed and pushed to a branch, you can set up a staging web site to test your changes before publishing them to your main web site.</p>
 <p>To do so, add or edit <code>.asf.yaml</code> in the staging branch (where the build output is generated) and add the following (assuming your staging branch is asf-staging):</p>
 <pre><code>staging:
   profile: ~
   whoami:  asf-staging
 </code></pre>
 <p>Upon commits to this branch, your staging web site will appear with the latest output at: <code>https://$project.staged.apache.org/</code>
-For more details on staging via <code>.asf.yaml</code>, see the <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">.asf.yaml documentation on staging web sites</a>.</p>
+For more details, see <a href="asf-yaml.html">.asf.yaml</a>.</p>
 <h3>5. Publishing</h3>
 <p>When you are ready to publish a branch of your Git web site repository to your project web site, you can use <code>.asf.yaml</code>:</p>
 <pre><code>publish:
   whoami:  asf-site
 </code></pre>
-<p>For more detailed procedures, follow the <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">.asf.yaml documentation</a>.</p>
+<p>For more detailed procedures, see see <a href="asf-yaml.html">.asf.yaml</a>.</p>
 <h2 id="sitemanagement">Site management</h2>
 <p>The basic requirements for site management are that</p>
 <ul>
@@ -178,7 +177,7 @@ For more details on staging via <code>.asf.yaml</code>, see the <a href="https:/
 <li><strong><a href="pelican-buildbot.html">Pelican and BuildBot</a></strong> streamline creating and publishing your project website.</li>
 <li><strong>svnpubsub</strong> automatically publishes the static contents of a designated svn folder (<a href="https://svn.apache.org/repos/asf/ant/site/ant/production/" target="_blank">example</a>) as the project web site at <code>http://project.apache.org</code>. The project team can use any site build mechanism it wants as long as the above requirements are met.</li>
 <li><a href="pypubsub.html"><strong>pypubsub</strong></a> automatically serves the static contents of a designated Git repository as the website for a project. Git-based websites are typically maintained in a repository branch to be published as <code>https://project.apache.org</code>. A project can host the site from its primary project repository. Typically these will be built as a Jenkins or a Buildbot job (see below). We recommend that you only have a single writer to the asf-site branch to avoid potential conflicts.</li>
-<li>For <strong>websites using a Git repository</strong>, you can add a <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">.asf.yaml</a> configuration file. The file lets you set instructions that simplify updating and maintaining the site.</li>
+<li>For <strong>websites using a Git repository</strong>, you can add an <a href="asf-yaml.html">.asf.yaml</a> configuration file. The file lets you set instructions that simplify updating and maintaining the site.</li>
 </ul>
 <h3>Build tools</h3>
 <p>Infra provides these build tools:</p>
@@ -194,7 +193,7 @@ For more details on staging via <code>.asf.yaml</code>, see the <a href="https:/
 <h3>Topics in GitHub</h3>
 <p>If you're managing an ASF website repository in GitHub, please add <code>website</code> and <code>&lt;TOOL&gt;</code> Topics  to it, where <code>&lt;TOOL&gt;</code> is the name of the tool you are using to generate the website, like <code>pelican</code> or <code>hugo</code>. This helps others who are looking for an example of use of that tool find your repository, with queries like
 <a href="https://github.com/search?q=org%3Aapache+topic%3Ahugo" target="_blank">this one</a>.</p>
-<p>You can use the <code>.asf.yaml</code> mechanism to add those Topics.</p>
+<p>You can use the <a href="asf-yaml.html">.asf.yaml</a> mechanism to add those Topics.</p>
 <h3 id="mail">Providing public access to the project's mail archive mbox files<a class="headerlink" href="#mail" title="Permanent link">&para;</a></h3>
 <p>Some projects have a "mail" directory at the top of their project website. Enable this by creating a symbolic link  to <code>/home/apmail/public-arch/$tlp.apache.org</code> in <code>svnpubsub</code>.</p>
 <p>See more <a href="https://apache.org/dev/#mail" target="_blank">notes about project mail</a>.</p>
