@@ -7,18 +7,16 @@ Title: Working with .asf.yaml
   - GitHub settings
   - Pelican builds
 
-It operates on a per-branch basis, meaning you can have different settings for different branches, and only those with an active .asf.yaml file will kick off a feature. Metadata settings (repo settings, features, labels) are not branch-dependent and should exist in the main (default) branch.
+It operates on a per-branch basis, meaning you can have different settings for different branches, and only those with an active `.asf.yaml` file will kick off a feature. Metadata settings (repo settings, features, labels) are not branch-dependent and should exist in the main (default) branch.
 
 <h2 id="top">Before you start using .asf.yaml</h2>
-<ul>
- <li>.asf.yaml only works with Git repositories. There is no equivalent at the moment for Subversion repositories.</li>
-<li>Do <b>not</b> use the document separator <code>--</code> in your .asf.yaml file. It will cause parsing to fail.</li>
-  <li>The configuration file is specific to the branch in which it resides and only code blocks with a `whoami` matching the branch name will run.</li>
-  <li>The configuration file holds a great deal of power, as it controls a host of automated systems.</li>
-  <li>Before using a feature in .asf.yaml, make sure that you have discussed what you propose with the entire project team, and have understood what the configuration changes will do to the team's workflow and project resources.</li>
-  <li>You can add configuration blocks to an .asf.yaml file in any order; they do not depend on each other or flow from one to the next.</li>  
-</ul>
- 
+
+  - `.asf.yaml` only works with Git repositories. There is no equivalent at the moment for Subversion repositories.
+  - Do <b>not</b> use the document separator `--` in your `.asf.yaml` file. It will cause parsing to fail.
+  - The configuration file is specific to the branch in which it resides and only code blocks with a `whoami` matching the branch name will run.
+  - The configuration file holds a great deal of power, as it controls a host of automated systems.
+  - Before using a feature in `.asf.yaml`, make sure that you have discussed what you propose with the entire project team, and understand what the configuration changes will do to the team's workflow and project resources.
+  - You can add configuration blocks to an `.asf.yaml` file in any order; they do not depend on each other or flow from one to the next. 
 
 ## Contents
 <ul>
@@ -91,17 +89,19 @@ Projects can set their notification targets for commits and GitHub issues/PRs/ac
 | jira_options | `link label worklog` |
 | jobs | `dev@foo.apache.org` |
 | discussions | `issues@foo.apache.org` |
- 
-**NOTE**: Setting up notification schemes via .asf.yaml can only happen in the default (i.e. main/master/trunk etc.) branch of a repository, and each configuration change will cause your project's `private@` list to receive a notification of the change, for review purposes.
 
-Settings made in .asf.yaml takes precedence over the original legacy mail targets (entered when you set up the repository). If a specific target scheme is not found in .asf.yaml, the legacy defaults will be used instead.
+
+**NOTE**: Setting up notification schemes via `.asf.yaml` can only happen in the default (i.e. main/master/trunk etc.) branch of a repository, and each configuration change will cause your project's `private@` list to receive a notification of the change, for review purposes.
+
+Settings made in .asf.yaml takes precedence over the original legacy mail targets (entered when you set up the repository). If a specific target scheme is not found in `.asf.yaml`, the legacy defaults will be used instead.
 
 <h3 id="review">Reviewing your old (pre-.asf.yaml) configuration</h3>
-If you wish to take a look at the default (old style) configuration for a repository, visit `gitbox.apache.org/schemes.cgi?$repository-name-here` , for instance `gitbox.apache.org/schemes.cgi?lucene-solr`.
+If you wish to take a look at the default (old style) configuration for a repository, visit `gitbox.apache.org/schemes.cgi?$repository-name-here`, for instance `gitbox.apache.org/schemes.cgi?lucene-solr`.
 
 <h3 id="split">Splitting email notifications based on context</h3>
 
 You can divide pull requests and issues into sub-categories to split up the open/close emails and the comments/code review parts.
+
 For instance, if a project wants new PRs to send an email to `dev@foo`, but wants any comments on that PR to go to `issues@foo`, employ the following configuration:
 
 | notifications      | email           | notes          |
@@ -111,6 +111,7 @@ For instance, if a project wants new PRs to send an email to `dev@foo`, but want
 | pullrequests_status | `dev@foo.apache.org` | Send new/closed PR notifications to `dev@` |
 | pullrequests_comment | `issues@foo.apache.org` | Send individual PR comments/reviews to `issues@` |
             
+
 You can split `issues` into `issues_status` and `issues_comment` for sending issue emails to the appropriate targets.
 
 The hierarchy for determining the email target for an action is:
@@ -123,10 +124,10 @@ The hierarchy for determining the email target for an action is:
 <h3 id="bypath">by-path commit emails</h3>
 
 Projects may specify that commits to a repository that touches on specific paths will have a copy of the commit email sent to one or more specific addresses.
+
 These paths are glob-enabled.
 
 ```
-
 notifications:
   commits:  commits@foo.apache.org
   commits_by_path:
@@ -145,11 +146,13 @@ Projects may create special rules for bots such as dependabot on GitHub to have 
 | pullrequests | `issues@foo.apache.org` | Send all PR emails (new, closed, comments) to `issues@` |
 | pullrequests_bot_dependabot | `private@foo.apache.org` | Send depandabot PRs to `private@` instead |
 
+
 These special schemes are currently only available for pull requests and issues.
 
 <h3 id="jiraoptions">Jira notification options</h3>
 
 You can enable Jira notifications that will fire when a GitHub issue or pull request has a ticket in its title, such as `[TICKET-1234] Improve foo bar`.
+
 You can set one or more of these options:
 
   - `comment`: Add the PR/issue event as a comment in the referenced Jira ticket.
@@ -245,9 +248,10 @@ The autostaging feature derives a profile from the branch name, thus `site/*` wo
 
 <h3 id="publish">Publishing a branch to your project web site</h3>
 
-**Note**: if you have previously used `gitwcsub` for website publishing, your first publish action using `.asf.yaml` will cause any existing `gitwcsub` or `svnwcsub` subscription to stop working. This ensures that there are no race conditions or "repository fights" going on when you publish.
+**Notes**
 
-**Note**: although publishing the asf-site branch used to work without `.asf.yaml` being present, since May 2021 that file **must** be present at the root of the branch you wish to publish for everything (including soft purging the CDN cache on updates) to work correctly.
+  - if you have previously used `gitwcsub` for website publishing, your first publish action using `.asf.yaml` will cause any existing `gitwcsub` or `svnwcsub` subscription to stop working. This ensures that there are no race conditions or "repository fights" going on when you publish.
+  - lthough publishing the `asf-site` branch used to work without `.asf.yaml` being present, since May 2021 that file **must** be present at the root of the branch you wish to publish for everything (including soft purging the CDN cache on updates) to work correctly.
 
 To publish a branch to your project website sub-domain (`yourproject.apache.org`), set up a configuration block called `publish` in your `.asf.yaml` file. Enable branch-protection through the `whoami` parameter, like so:
 
@@ -275,7 +279,8 @@ publish:
 **NOTE**: You cannot specify your `$project.apache.org` hostname with this setting. It has to be inferred to prevent abuse. Also, please do not abuse this feature in any other way. (Thanks!)
 
 <h3 id="subdir">Specifying a sub-directory to publish to</h3>
-To publish to a sub-directory of the web site URL, specify a `subdir value`. Such checkouts can be useful for sub-projects.
+
+To publish to a sub-directory of the web site URL, specify a `subdir` value. Such checkouts can be useful for sub-projects.
 For instance, if httpd wished to check out a repository into `httpd.apache.org/subproject`, they could use the following configuration:
 
 ```
@@ -299,7 +304,7 @@ The staging and deployment servers support the Pelican build `output/` sub-dir a
 
 <h2 id="blog">Blog deployment service for Git repositories</h2>
 
-You can deploy a project blog in the same manner as the project website. It will be deployed as both `$project.blog.apache.org` AND `$project.apache.org/blog` (will redirect internally if a blog is deployed this way).
+You can deploy a project blog in the same manner as the project's website. It will be deployed as both `$project.blog.apache.org` AND `$project.apache.org/blog` (will redirect internally if a blog is deployed this way).
 
 Deploy a blog by using the `type` parameter in your `publish` setting:
 
@@ -328,7 +333,7 @@ github:
     - gstein
 ```
 
-To remove people as collaborators, remove them from the list. You may only have ten active collaborators at any given time per repository. For more you need to ask `vp-infra@apache.org` for an exception.
+To remove people as collaborators, remove them from the list. You may only have ten active collaborators at any given time per repository. If you need more, ask `vp-infra@apache.org` for an exception.
 
 **Note**: If you wish to completely empty a previously non-empty list of collaborators, explicitly specify an empty list:
 
@@ -350,7 +355,7 @@ github:
     - AMBARI
 ```
 
-The `autolink_jira` property can be either a single string or a list of strings, each corresponding to a Jira project on `issues.apache.org`. It **must** adhere to the Jira project name syntax (uppercase alphabetical characters only).
+The `autolink_jira` property can be a single string or a list of strings, each corresponding to a Jira project on `issues.apache.org`. It **must** adhere to the Jira project name syntax (uppercase alphabetical characters only).
 We will evaluate the need for other autolink features.
 
 <h3 id="branchpro">Branch protection</h3>
@@ -386,6 +391,7 @@ github:
     branch_b:
       required_signatures: true
 ```
+
 **Notes**
   1. Enabling any of the above checks overrides what you may have set previously, so you'll need to add all the existing checks to your `.asf.yaml` file to reproduce any that Infra set manually for you.
   2. If you need to remove a required check in order to push a change to `.asf.yaml`, create an Infra Jira ticket with a request to have the check manually removed.
@@ -398,7 +404,7 @@ github:
     master: {}
 ```
 
-Branches that are not in the YAML or are not dictionary entries are not protected.
+Branches that are not in your `.asf.yaml` file or are not dictionary entries are not protected.
 
 To completely remove all branch protection rules, set the protected_branches section to null:
 
@@ -433,6 +439,7 @@ github:
     edit_comment_discussion: "Re: [D] {title} ({repository})"
     delete_comment_discussion: "Re: [D] {title} ({repository})"
 ```
+
 The format follows a dictionary/hash with an event type and a subject line template.
 
 The following **event types** are currently supported:
@@ -449,6 +456,7 @@ The following **event types** are currently supported:
 | new_pr | Someone createsd a pull request |
 | catchall | If custom subjects are enabled for this repository, but no specific subject line template is defined for that event type, this will be used if present. If there is no `catchall`, and the event type does not have a template, the ASF default subject line will be used instead. |
 | catchall_discussions | Custom catch-all for discussions, as these use slightly different variables. |
+
 
 The **subject line templates** support the use of the following variables only. Custom variables or calls are **not** supported.
 
@@ -468,11 +476,12 @@ The **subject line templates** support the use of the following variables only. 
 | {recipient} | The mailing list this was sent to. |
 | {unsub} | The unsubscribe address of the mailing list this was sent to. |
 
+
 **Note**: If your project uses multiple GitHub repositories, we recommend using the `repository` variable to let people know which repo the email relates to. If your project has a single repo or does not use GitHub integration much (or at all), you can omit that variable.
 
 <h3 id="default_branch">Default branch</h3>
 
-To change the default GitHub repository branch (which is the landing branch when users browse to `github.com/apache/<repository>`  and, the default branch pull requests are initially based on, etc.) create an INFRA Jira ticket. If you are renaming the default branch and the new default branch does not yet exist, you can ask Infra to rename the branch at the same time. Include a **link** to the mailing list thread where the change of the default was agreed.
+To change the default GitHub repository branch (which is the landing branch when users browse to `github.com/apache/<repository>` and the default branch pull requests are initially based on, etc.) create an INFRA Jira ticket. If you are renaming the default branch and the new default branch does not yet exist, you can ask Infra to rename the branch at the same time. Include a **link** to the mailing list thread where the change of the default was agreed.
 
 <h3 id="delete_branch">Delete branch on merge</h3>
 
@@ -530,7 +539,9 @@ github:
   ghp_path:    /docs
 ```
 
-The `ghp_branch` setting can **only** be your default branch (e.g. master, main, ...) or `gh-pages`. (Note: This is subject to change as GitHub is relaxing the rules).
+The `ghp_branch` setting can **only** be your default branch (e.g. master, main, ...) or `gh-pages`. 
+
+**Note**: This is subject to change as GitHub is relaxing the rules.
 
 The `ghp_path` setting should **always** be specified. It can be either `/docs` or `/`. If not specified, it will default to `/docs`.
 
@@ -735,6 +746,7 @@ jenkins:
 
 The GitHub IDs listed here would have access to start builds based on PRs, in addition to the committers on the project. For automated accounts, such as Dependabot, you need to add the `[bot]` suffix to its name.
 
+<p align="right"><a href="#top">Return to top</a>
 
 <h2 id="development">Further Development</h2>
 
