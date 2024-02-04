@@ -14,7 +14,7 @@ If you wish to try out the template:
   2. Clone the empty repo to a location on your computer.
   3. Download the <a href="https://github.com/apache/infrastructure-website/archive/refs/heads/master.zip">template zipfile</a>.
   4. Unzip `master.zip` and copy `infrastructure-website-master/*`  to the root of your new repository.
-  5. Configure <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features" target="_blank">.asf.yaml</a>:
+  5. Configure [.asf.yaml](asf-yaml.html).
 
 ```
 pelican:
