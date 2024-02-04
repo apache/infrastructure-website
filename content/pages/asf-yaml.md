@@ -109,10 +109,8 @@ For instance, if a project wants new PRs to send an email to `dev@foo`, but want
 | commits | `commits@foo.apache.org` | |
 | issues | `issues@foo.apache.org` | Send all issue emails (new, closed, comments) to `issues@` |
 | pullrequests_status | `dev@foo.apache.org` | Send new/closed PR notifications to `dev@` |
-| pullrequests_comment | `issues@foo.apache.org` | Send individual PR comments/reviews to `issues@` |
-            
-
-You can split `issues` into `issues_status` and `issues_comment` for sending issue emails to the appropriate targets.
+| pullrequests_comment | `issues@foo.apache.org` | Send individual PR comments/reviews to `issues@`. You can split `issues` into `issues_status` and `issues_comment` for sending issue emails to the appropriate targets. |
+|   |   |   |            
 
 The hierarchy for determining the email target for an action is:
 
@@ -138,7 +136,10 @@ notifications:
 ```
 
 <h3 id="botschemes">Special schemes for bots</h3>
-Projects may create special rules for bots such as dependabot on GitHub to have PR and issue activity from these directed to a distinct mailing list. The general syntax for this is to append `_bot_$botname` to the scheme, for instance:
+
+Projects may create special rules for bots such as dependabot on GitHub to have PR and issue activity from these directed to a distinct mailing list. These special schemes are currently only available for pull requests and issues. 
+
+The general syntax for this is to append `_bot_$botname` to the scheme, for instance:
 
 | notifications       | email       | notes    |
 | ---------------------------- | -------------------- | -------------------- |
@@ -147,7 +148,7 @@ Projects may create special rules for bots such as dependabot on GitHub to have 
 | pullrequests_bot_dependabot | `private@foo.apache.org` | Send depandabot PRs to `private@` instead |
 
 
-These special schemes are currently only available for pull requests and issues.
+
 
 <h3 id="jiraoptions">Jira notification options</h3>
 
