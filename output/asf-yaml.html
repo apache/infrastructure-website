@@ -80,15 +80,15 @@
 <li>GitHub settings</li>
 <li>Pelican builds</li>
 </ul>
-<p>It operates on a per-branch basis, meaning you can have different settings for different branches, and only those with an active .asf.yaml file will kick off a feature. Metadata settings (repo settings, features, labels) are not branch-dependent and should exist in the main (default) branch.</p>
+<p>It operates on a per-branch basis, meaning you can have different settings for different branches, and only those with an active <code>.asf.yaml</code> file will kick off a feature. Metadata settings (repo settings, features, labels) are not branch-dependent and should exist in the main (default) branch.</p>
 <h2 id="top">Before you start using .asf.yaml</h2>
 <ul>
-<li>.asf.yaml only works with Git repositories. There is no equivalent at the moment for Subversion repositories.</li>
-<li>Do <b>not</b> use the document separator <code>--</code> in your .asf.yaml file. It will cause parsing to fail.</li>
-<li>The configuration file is specific to the branch in which it resides and only code blocks with a `whoami` matching the branch name will run.</li>
+<li><code>.asf.yaml</code> only works with Git repositories. There is no equivalent at the moment for Subversion repositories.</li>
+<li>Do <b>not</b> use the document separator <code>--</code> in your <code>.asf.yaml</code> file. It will cause parsing to fail.</li>
+<li>The configuration file is specific to the branch in which it resides and only code blocks with a <code>whoami</code> matching the branch name will run.</li>
 <li>The configuration file holds a great deal of power, as it controls a host of automated systems.</li>
-<li>Before using a feature in .asf.yaml, make sure that you have discussed what you propose with the entire project team, and have understood what the configuration changes will do to the team's workflow and project resources.</li>
-<li>You can add configuration blocks to an .asf.yaml file in any order; they do not depend on each other or flow from one to the next.</li>
+<li>Before using a feature in <code>.asf.yaml</code>, make sure that you have discussed what you propose with the entire project team, and understand what the configuration changes will do to the team's workflow and project resources.</li>
+<li>You can add configuration blocks to an <code>.asf.yaml</code> file in any order; they do not depend on each other or flow from one to the next.</li>
 </ul>
 <h2>Contents</h2>
 <ul>
@@ -181,13 +181,13 @@
 <td>discussions</td>
 <td><code>issues@foo.apache.org</code></td>
 </tr></tbody></table>
-<p><strong>NOTE</strong>: Setting up notification schemes via .asf.yaml can only happen in the default (i.e. main/master/trunk etc.) branch of a repository, and each configuration change will cause your project's <code>private@</code> list to receive a notification of the change, for review purposes.</p>
-<p>Settings made in .asf.yaml takes precedence over the original legacy mail targets (entered when you set up the repository). If a specific target scheme is not found in .asf.yaml, the legacy defaults will be used instead.</p>
+<p><strong>NOTE</strong>: Setting up notification schemes via <code>.asf.yaml</code> can only happen in the default (i.e. main/master/trunk etc.) branch of a repository, and each configuration change will cause your project's <code>private@</code> list to receive a notification of the change, for review purposes.</p>
+<p>Settings made in .asf.yaml takes precedence over the original legacy mail targets (entered when you set up the repository). If a specific target scheme is not found in <code>.asf.yaml</code>, the legacy defaults will be used instead.</p>
 <h3 id="review">Reviewing your old (pre-.asf.yaml) configuration</h3>
-If you wish to take a look at the default (old style) configuration for a repository, visit `gitbox.apache.org/schemes.cgi?$repository-name-here` , for instance `gitbox.apache.org/schemes.cgi?lucene-solr`.
+If you wish to take a look at the default (old style) configuration for a repository, visit `gitbox.apache.org/schemes.cgi?$repository-name-here`, for instance `gitbox.apache.org/schemes.cgi?lucene-solr`.
 <h3 id="split">Splitting email notifications based on context</h3>
-<p>You can divide pull requests and issues into sub-categories to split up the open/close emails and the comments/code review parts.
-For instance, if a project wants new PRs to send an email to <code>dev@foo</code>, but wants any comments on that PR to go to <code>issues@foo</code>, employ the following configuration:</p>
+<p>You can divide pull requests and issues into sub-categories to split up the open/close emails and the comments/code review parts.</p>
+<p>For instance, if a project wants new PRs to send an email to <code>dev@foo</code>, but wants any comments on that PR to go to <code>issues@foo</code>, employ the following configuration:</p>
 <table>
 <thead>
 <tr>
@@ -226,10 +226,9 @@ For instance, if a project wants new PRs to send an email to <code>dev@foo</code
 <li>Finally, fall back to dev@project for issues/PRs and commits@ for commits.</li>
 </ol>
 <h3 id="bypath">by-path commit emails</h3>
-<p>Projects may specify that commits to a repository that touches on specific paths will have a copy of the commit email sent to one or more specific addresses.
-These paths are glob-enabled.</p>
-<pre><code>
-notifications:
+<p>Projects may specify that commits to a repository that touches on specific paths will have a copy of the commit email sent to one or more specific addresses.</p>
+<p>These paths are glob-enabled.</p>
+<pre><code>notifications:
   commits:  commits@foo.apache.org
   commits_by_path:
     "sub-folder/*": foo@bar.apache.org
@@ -265,8 +264,8 @@ Projects may create special rules for bots such as dependabot on GitHub to have 
 </tr></tbody></table>
 <p>These special schemes are currently only available for pull requests and issues.</p>
 <h3 id="jiraoptions">Jira notification options</h3>
-<p>You can enable Jira notifications that will fire when a GitHub issue or pull request has a ticket in its title, such as <code>[TICKET-1234] Improve foo bar</code>.
-You can set one or more of these options:</p>
+<p>You can enable Jira notifications that will fire when a GitHub issue or pull request has a ticket in its title, such as <code>[TICKET-1234] Improve foo bar</code>.</p>
+<p>You can set one or more of these options:</p>
 <ul>
 <li><code>comment</code>: Add the PR/issue event as a comment in the referenced Jira ticket.</li>
 <li><code>worklog</code>: Add the event as a worklog entry instead of a comment in the Jira ticket you reference.</li>
@@ -329,8 +328,11 @@ This example uses the imaginary <code>yourproject-website.git</code> with an <co
 <li>The site is staged as <code>$project-foo.staged.apache.org</code>, for instance <code>tomcat-foo.staged.apache.org</code>.</li>
 </ul>
 <h3 id="publish">Publishing a branch to your project web site</h3>
-<p><strong>Note</strong>: if you have previously used <code>gitwcsub</code> for website publishing, your first publish action using <code>.asf.yaml</code> will cause any existing <code>gitwcsub</code> or <code>svnwcsub</code> subscription to stop working. This ensures that there are no race conditions or "repository fights" going on when you publish.</p>
-<p><strong>Note</strong>: although publishing the asf-site branch used to work without <code>.asf.yaml</code> being present, since May 2021 that file <strong>must</strong> be present at the root of the branch you wish to publish for everything (including soft purging the CDN cache on updates) to work correctly.</p>
+<p><strong>Notes</strong></p>
+<ul>
+<li>if you have previously used <code>gitwcsub</code> for website publishing, your first publish action using <code>.asf.yaml</code> will cause any existing <code>gitwcsub</code> or <code>svnwcsub</code> subscription to stop working. This ensures that there are no race conditions or "repository fights" going on when you publish.</li>
+<li>lthough publishing the <code>asf-site</code> branch used to work without <code>.asf.yaml</code> being present, since May 2021 that file <strong>must</strong> be present at the root of the branch you wish to publish for everything (including soft purging the CDN cache on updates) to work correctly.</li>
+</ul>
 <p>To publish a branch to your project website sub-domain (<code>yourproject.apache.org</code>), set up a configuration block called <code>publish</code> in your <code>.asf.yaml</code> file. Enable branch-protection through the <code>whoami</code> parameter, like so:</p>
 <pre><code>publish:
   whoami: asf-site
@@ -346,8 +348,8 @@ This example uses the imaginary <code>yourproject-website.git</code> with an <co
 </code></pre>
 <p><strong>NOTE</strong>: You cannot specify your <code>$project.apache.org</code> hostname with this setting. It has to be inferred to prevent abuse. Also, please do not abuse this feature in any other way. (Thanks!)</p>
 <h3 id="subdir">Specifying a sub-directory to publish to</h3>
-To publish to a sub-directory of the web site URL, specify a `subdir value`. Such checkouts can be useful for sub-projects.
-For instance, if httpd wished to check out a repository into `httpd.apache.org/subproject`, they could use the following configuration:
+<p>To publish to a sub-directory of the web site URL, specify a <code>subdir</code> value. Such checkouts can be useful for sub-projects.
+For instance, if httpd wished to check out a repository into <code>httpd.apache.org/subproject</code>, they could use the following configuration:</p>
 <pre><code>publish:
   whoami:    asf-site
   subdir:    subproject
@@ -362,7 +364,7 @@ For instance, if httpd wished to check out a repository into `httpd.apache.org/s
 </ul>
 <p align="right"><a href="#top">Return to top</a></p>
 <h2 id="blog">Blog deployment service for Git repositories</h2>
-<p>You can deploy a project blog in the same manner as the project website. It will be deployed as both <code>$project.blog.apache.org</code> AND <code>$project.apache.org/blog</code> (will redirect internally if a blog is deployed this way).</p>
+<p>You can deploy a project blog in the same manner as the project's website. It will be deployed as both <code>$project.blog.apache.org</code> AND <code>$project.apache.org/blog</code> (will redirect internally if a blog is deployed this way).</p>
 <p>Deploy a blog by using the <code>type</code> parameter in your <code>publish</code> setting:</p>
 <pre><code>publish:
   whoami:    asf-blog
@@ -379,7 +381,7 @@ For instance, if httpd wished to check out a repository into `httpd.apache.org/s
     - Humbedooh
     - gstein
 </code></pre>
-<p>To remove people as collaborators, remove them from the list. You may only have ten active collaborators at any given time per repository. For more you need to ask <code>vp-infra@apache.org</code> for an exception.</p>
+<p>To remove people as collaborators, remove them from the list. You may only have ten active collaborators at any given time per repository. If you need more, ask <code>vp-infra@apache.org</code> for an exception.</p>
 <p><strong>Note</strong>: If you wish to completely empty a previously non-empty list of collaborators, explicitly specify an empty list:</p>
 <pre><code>github:
   collaborators: []
@@ -392,7 +394,7 @@ For instance, if httpd wished to check out a repository into `httpd.apache.org/s
     - INFRA
     - AMBARI
 </code></pre>
-<p>The <code>autolink_jira</code> property can be either a single string or a list of strings, each corresponding to a Jira project on <code>issues.apache.org</code>. It <strong>must</strong> adhere to the Jira project name syntax (uppercase alphabetical characters only).
+<p>The <code>autolink_jira</code> property can be a single string or a list of strings, each corresponding to a Jira project on <code>issues.apache.org</code>. It <strong>must</strong> adhere to the Jira project name syntax (uppercase alphabetical characters only).
 We will evaluate the need for other autolink features.</p>
 <h3 id="branchpro">Branch protection</h3>
 <p>Projects can enable branch protection in their repos, including most of the sub-level protection features such as 'require status checks to pass before merging' , 'approval by at least $n people' , and 'require pull request reviews'.</p>
@@ -433,7 +435,7 @@ We will evaluate the need for other autolink features.</p>
   protected_branches:
     master: {}
 </code></pre>
-<p>Branches that are not in the YAML or are not dictionary entries are not protected.</p>
+<p>Branches that are not in your <code>.asf.yaml</code> file or are not dictionary entries are not protected.</p>
 <p>To completely remove all branch protection rules, set the protected_branches section to null:</p>
 <pre><code>github:
   protected_branches: ~
@@ -573,7 +575,7 @@ We will evaluate the need for other autolink features.</p>
 </tr></tbody></table>
 <p><strong>Note</strong>: If your project uses multiple GitHub repositories, we recommend using the <code>repository</code> variable to let people know which repo the email relates to. If your project has a single repo or does not use GitHub integration much (or at all), you can omit that variable.</p>
 <h3 id="default_branch">Default branch</h3>
-<p>To change the default GitHub repository branch (which is the landing branch when users browse to <code>github.com/apache/&lt;repository&gt;</code>  and, the default branch pull requests are initially based on, etc.) create an INFRA Jira ticket. If you are renaming the default branch and the new default branch does not yet exist, you can ask Infra to rename the branch at the same time. Include a <strong>link</strong> to the mailing list thread where the change of the default was agreed.</p>
+<p>To change the default GitHub repository branch (which is the landing branch when users browse to <code>github.com/apache/&lt;repository&gt;</code> and the default branch pull requests are initially based on, etc.) create an INFRA Jira ticket. If you are renaming the default branch and the new default branch does not yet exist, you can ask Infra to rename the branch at the same time. Include a <strong>link</strong> to the mailing list thread where the change of the default was agreed.</p>
 <h3 id="delete_branch">Delete branch on merge</h3>
 <p>Add this snippet below so branches get auto-deleted upon PR merges to your default branch:</p>
 <pre><code>github:
@@ -606,7 +608,8 @@ We will evaluate the need for other autolink features.</p>
   ghp_branch:  master
   ghp_path:    /docs
 </code></pre>
-<p>The <code>ghp_branch</code> setting can <strong>only</strong> be your default branch (e.g. master, main, ...) or <code>gh-pages</code>. (Note: This is subject to change as GitHub is relaxing the rules).</p>
+<p>The <code>ghp_branch</code> setting can <strong>only</strong> be your default branch (e.g. master, main, ...) or <code>gh-pages</code>.</p>
+<p><strong>Note</strong>: This is subject to change as GitHub is relaxing the rules.</p>
 <p>The <code>ghp_path</code> setting should <strong>always</strong> be specified. It can be either <code>/docs</code> or <code>/</code>. If not specified, it will default to <code>/docs</code>.</p>
 <h3 id="merge">Merge buttons</h3>
 <p>Projects can enable/disable the <code>merge PR</code> button in the GitHub UI and configure which actions to allow by adding the following configuration (or derivatives thereof):</p>
@@ -736,6 +739,7 @@ use. Ignore this feature for now.</p>
     - dependabot[bot]
 </code></pre>
 <p>The GitHub IDs listed here would have access to start builds based on PRs, in addition to the committers on the project. For automated accounts, such as Dependabot, you need to add the <code>[bot]</code> suffix to its name.</p>
+<p align="right"><a href="#top">Return to top</a>
 <h2 id="development">Further Development</h2>
 <p>These features have not been implemented in production yet, but are documented here for future use.</p>
 <ul>
@@ -743,7 +747,7 @@ use. Ignore this feature for now.</p>
 </ul>
 <p>If you would like to add features you are free to open a pull request and propose your changes. The whole logic is defined in the <code>asfyaml.py</code> file.</p>
 <p align="right"><a href="#top">Return to top</a>
-</p></p>
+</p></p></p>
         </div>
       </div>
     </div>    
