@@ -166,17 +166,21 @@ Committers can use <a href="https://whimsy.apache.org/roster/committer/__self__"
 
 <h4 id="list-subscribers">How do I find out who is subscribed to a mailing list?<a class="headerlink" href="#list-subscribers" title="Permanent link">&para;</a></h4>
 
-Information on list subscriptions is private, so is not available to all committers. Moderators can send an email to: `<var>listname</var>-list@<var>tlp</var>.apache.org`
+Information on list subscriptions is private, so is not available to all committers.
+
+**Note**: to use the examples below, replace `listname` with the name of the mailing list, and `tlp` with the name of the ASF project the list belongs to.
+
+Moderators can send an email to: `listname-list@tlp.apache.org`
 
 Anyone with access to the apmail account can run the following command to get a count of subscribers:
 
-`ezmlm-list ~apmail/lists/<var>project</var>/<var>listname</var>| wc -l`
+`ezmlm-list ~apmail/lists/tlp/listname| wc -l`
 
 Remember that there often are people subscribed to the digest version of the list, too:
 
-`~apmail/lists/<var>project</var>/<var>listname</var>/digest`
+`~apmail/lists/tlp/listname/digest`
 
-Note that moderators can get a log of changes to the subscriber list by emailing `<var>listname</var>-log@<var>tlp</var>.apache.org`.
+Note that moderators can get a log of changes to the subscriber list by emailing `listname-log@tlp.apache.org`.
 
 <h4 id="mail-forward">Mail forwarding<a class="headerlink" href="#mail-forward" title="Permanent link">&para;</a></h4>
 

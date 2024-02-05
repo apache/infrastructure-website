@@ -53,7 +53,7 @@ Each PMC can have **one** private Git repository. Open a Jira ticket for Infra t
 
 <h3 id="asfyaml">.asf.yaml for Git repositories<a class="headerlink" href="#asfyaml" title="Permanent link">&para;</a></h3>
 
-`.asf.yaml` is a branch-specific file. Projects hosting their websites in a Git repository must use `.asf.yaml` to build and update their sites. Review <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features#Git.asf.yamlfeatures-WebSiteDeploymentServiceforGitRepositories" target="_blank">this guidance</a>.
+`.asf.yaml` is a branch-specific file. Projects hosting their websites in a Git repository must use `.asf.yaml` to build and update their sites. Review [this documentation](asf-yaml.html) before working with your `.asf.yaml` files.
 
 Projects can also place `.asf.yaml` in the root of a repository to control:
 
@@ -61,7 +61,7 @@ Projects can also place `.asf.yaml` in the root of a repository to control:
 -  github settings
 -  pelican builds
 
-Read <a href="https://cwiki.apache.org/confluence/display/INFRA/.asf.yaml+features+for+git+repositories#id-.asf.yamlfeaturesforgitrepositories-Primer" target="_blank">the .asf.yaml primer</a> to learn more.
+Read [the .asf.yaml primer](asf-yaml.html) to learn more.
 
 <h2 id="svn">SVN repositories<a class="headerlink" href="#svn" title="Permanent link">&para;</a></h2>
 
