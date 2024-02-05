@@ -39,7 +39,7 @@ Section 742.15(b) of the <a href="https://www.trade.gov/us-export-regulations" t
     - Software using a "symmetric algorithm" employing a key length in excess of 56-bits; or
     - Software using an "asymmetric algorithm" where the security of the algorithm is based on: factorization of integers in excess of 512 bits (e.g., RSA), computation of discrete logarithms in a multiplicative group of a finite field of size greater than 512 bits (e.g., Diffie-Hellman over Z/pZ), or other discrete logarithms in a group in excess of 112 bits (e.g., Diffie-Hellman over an elliptic curve).
     - Software designed or modified to perform cryptanalytic functions If the cryptographic functionality is limited to one of the above definitions, it should be classified as ECCN 5D002, and the remaining two steps should be taken (described below). If the release may contain cryptographic functionality beyond what is described above, please contact
-the <a href="/foundation/">ASF Vice President for Legal Affairs</a>.
+the <a href="https://www.apache.org/foundation/leadership" target="_blank">ASF Vice President for Legal Affairs</a>.
 
 <h3 id="sources">Update the Exports Page with Source Links<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h3>
 
@@ -124,6 +124,26 @@ Be sure to add some information at the bottom of the notice about the components
 
 <h2 id="faq">Frequently Asked Questions<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
 
+- <a href="#faq-productname">What is the "PRODUCT NAME/MODEL #" for my product?</a>
+- <a href="#faq-manufacturer">What is the MANUFACTURER?</a>
+- <a href="#faq-notification">What is the NOTIFICATION?</a>
+- <a href="#faq-firstnotification">When is the first time a notification email must be sent?</a>
+- <a href="#faq-public">What are examples of when a crypto item is publicly accessible through ASF servers?¶</a>
+- <a href="#faq-publicemails">Are public contributions of crypto items to the mailing list, Jira or Bugzilla databases considered exports?</a>
+- <a href="#faq-previouslyexported">If we distribute previously exported crypto items, must we still qualify the same item for export?</a>
+- <a href="#faq-manyproducts">If the ASF distributes a particular crypto item within one product under the Section 742.15(b) publicly available exemption, must the same item requalify when distributed in a different ASF product?</a>
+- <a href="#faq-versions">If the ASF distributes/exports a crypto item after qualifying it under the Section 742.15(b) publicly available exemption, must the same product requalify for release of future versions?</a>
+- <a href="#faq-notificationurl">Where must the email's notification URL point to?</a>
+- <a href="#faq-additionalemails">If the notification URL never changes, when are additional notification emails required?</a>
+- <a href="#faq-infousers">Is there any BIS requirement to tell users and/or redistributors of our products about the crypto within our products?</a>
+- <a href="#faq-twocryptos">When exporting a product that is not only designed to use some third-party crypto item, but also includes the third-party crypto item, does this require two notifications or one notification with two manufacturers?</a>
+- <a href="#faq-nonasfsource">Can the ultimate link to the crypto item's source code point to a non-ASF web page?</a>
+- <a href="#faq-compilerswitch">What if the object/binary code being distributed was built with a particular compiler switch?</a>
+- <a href="#faq-binaryurl">Do we need to notify the BIS of the location of object/binary files?</a>
+- <a href="#faq-includedlibssl">If my project ships a binary that includes libssl/libcrypto, what notifications must be made?</a>
+- <a href="#faq-linkedtolibssl">If my project ships a binary that provides bindings to OpenSSL, but does not include its source or binaries, what notifications must be made?</a>
+- <a href="#faq-nonamerican">Why should I, who am not a U.S. citizen nor resident, be constrained by some U.S. law?</a>
+- <a href="#faq-digest">Do digest algorithms such as MD5 and SHA1 require notification?</a>
 <h4 id="faq-productname">What is the "PRODUCT NAME/MODEL #" for my product?<a class="headerlink" href="#faq-productname" title="Permanent link">&para;</a></h4>
 
 The product name is the name of the ASF product (e.g. "Apache Foo"), even if the notification is being made about another manufacturer's cryptography included in the ASF product. Do not list the ASF product's version number.
