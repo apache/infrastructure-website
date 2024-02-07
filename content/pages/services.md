@@ -147,7 +147,7 @@ Apache supports and models continuous integration and continuous deployment, or 
 Other tools to consider:
 
 * <a href="https://travis-ci.org/" target="_blank">Travis CI</a>
-* <a href="https://www.appveyor.com" target="_blank">Appveyor</a>
+* <a href="https://www.appveyor.com" target="_blank">AppVeyor</a>
 
 <h3 id="product-naming">Product naming<a class="headerlink" href="#product-naming" title="Permanent link">&para;</a></h3>
 
