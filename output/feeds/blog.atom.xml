@@ -83,7 +83,7 @@
 &lt;li&gt;Need a good template for the static part of project websites. (Working on it!)&lt;/li&gt;
 &lt;li&gt;There is no documentation on cleanup after a build and main + subpath deployment of a website, nor an example to start with.&lt;/li&gt;
 &lt;li&gt;Long build queues on ASF Jenkins; problems with GHA builds&lt;/li&gt;
-&lt;li&gt;Jenkinsd build should be containerized and isolated from one another, so one build does not bring down a node for everybody else. Need guaranteed minimum performance for performance-sensitive build tests.&lt;/li&gt;
+&lt;li&gt;Jenkins builds should be containerized and isolated from one another, so one build does not bring down a node for everybody else. Need guaranteed minimum performance for performance-sensitive build tests.&lt;/li&gt;
 &lt;li&gt;Improve the messaging of Jira to the mailing lists.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3&gt;New Year&amp;rsquo;s resolutions for projects:&lt;/h3&gt;
