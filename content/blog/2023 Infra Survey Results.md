@@ -93,7 +93,7 @@ Comments:
   - Need a good template for the static part of project websites. (Working on it!)
   - There is no documentation on cleanup after a build and main + subpath deployment of a website, nor an example to start with.
   - Long build queues on ASF Jenkins; problems with GHA builds
-  - Jenkinsd build should be containerized and isolated from one another, so one build does not bring down a node for everybody else. Need guaranteed minimum performance for performance-sensitive build tests.
+  - Jenkins builds should be containerized and isolated from one another, so one build does not bring down a node for everybody else. Need guaranteed minimum performance for performance-sensitive build tests.
   - Improve the messaging of Jira to the mailing lists.
 
 ### New Year’s resolutions for projects:
