@@ -53,4 +53,8 @@ If you are subscribed to an ASF mailing list with a Gmail account, you may exper
 If you or your project experience this, Infra has a workaround which we can apply to your mailing list, but some messages may
 still be rejected.
 
+## Excellent questions
+
+Some of the best stuff Infra does has evolved from project members' questions and suggestions. If you have an infrastructure-related question, feel free to ask it on the `users@infra.apache.org` email list. We may share your question, and our answer to it, in a coming newslette
+
 _That's it until next month!_
