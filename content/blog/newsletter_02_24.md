@@ -27,7 +27,11 @@ The February Roundtable focused on Keycloak and related security issues but, as 
   - There was discussion of trying to find a forum solution that could in time replace the requirement for email-based conversation threads for project decisions.
   - The summary of the conversation is on the Infra Confluence wiki.
 
-The next Infra Roundtable will be **March 6, 2024 1700 UTC**. The main topic, before the suggestions start to fly, will be **XXXXX**. Information on how the roundtables work, and how to join in, is at <a href="https://infra.apache.org/roundtable.html" target="_blank">infra.apache.org/roundtable.html</a>.
+The next Infra Roundtable will be **March 6, 2024 1700 UTC**. The main topic, before the suggestions start to fly, will be **improving automated testing**.
+
+Of note: Develocity is hoping to roll out predictive test / flaky test analysis, to help projects improve their test suites so they generate more reliable results.
+
+Information on how the roundtables work, and how to join in, is at <a href="https://infra.apache.org/roundtable.html" target="_blank">infra.apache.org/roundtable.html</a>.
 
 ## .asf.yaml info available
 
