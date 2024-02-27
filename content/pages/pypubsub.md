@@ -30,7 +30,7 @@ Some examples:
 * To subscribe to all JIRA events for the HADOOP JIRA instance: `http://pubsub.apache.org:2069/jira/HADOOP`
 * To subscribe to *both* JIRA and email streams for tomcat in one go: `http://pubsub.apache.org:2069/jira/TOMCAT,email/tomcat.apache.org`
 
-Public SVN repo topics consist of 'svn', the first one or two path segments after the /repo/ in the URL, and 'commit'.
+Public SVN repo topics consist of 'svn', the first one or two path segments after the /repos/ in the URL, and 'commit'.
 For example, changes to the repository `https://dist.apache.org/repos/dist/release/` have the topics `svn/dist/release/commit`.
 A commit that involves changes to both `dist/release` and `dist/dev` has the topics `svn/dist/commit`.
 Note that `svn/dist/release/commit` will not match, because the topics in the response do not include `release`.
