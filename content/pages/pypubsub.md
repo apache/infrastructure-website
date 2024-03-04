@@ -39,8 +39,6 @@ Private SVN repos topics are constructed in the same way, but have an additional
 For example `https://pubsub.apache.org:2070/private/svn/private/committers/commit` returns commits for
 `https://svn.apache.org/repos/private/committers/board/`
 
-**Note** ASF Members can see pypubsub events for `private/documents` and `private/foundation`, but not, at the moment, for `private/committers`. Role accounts, such as the one for Whimsy, can see events for `private/committers` as well as the other events.
-
 
 ## Event payload examples
 
