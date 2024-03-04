@@ -106,6 +106,7 @@ Note that <code>svn/dist/release/commit</code> will not match, because the topic
 <p>Private SVN repos topics are constructed in the same way, but have an additional 'private' topic.
 For example <code>https://pubsub.apache.org:2070/private/svn/private/committers/commit</code> returns commits for
 <code>https://svn.apache.org/repos/private/committers/board/</code></p>
+<p><strong>Note</strong> ASF Members can see pypubsub events for <code>private/documents</code> and <code>private/foundation</code>, but not, at the moment, for <code>private/committers</code>. Role accounts, such as the one for Whimsy, can see events for <code>private/committers</code> as well as the other events.</p>
 <h2>Event payload examples</h2>
 <p>Pings are simple objects like this:</p>
 <pre><code class="language-json">{"stillalive": 1583973410.9620552}
