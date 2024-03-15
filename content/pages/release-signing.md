@@ -193,7 +193,7 @@ gpg: please see http://www.gnupg.org/faq.html for more information
 If you are using GnuPG on Apache hardware, please read <a href="#where">this</a>. Do **not** carry out sensitive operations using a private key on ASF hardware.
 
 If you encounter this issue elsewhere, it indicates that GnuPG cannot lock memory pages, so they may be swapped out to disc. It would
-then be feasible for an attacker who had gained access to the machine to read the private key from the swap file. For more details, read the <a href="https://www.gnupg.org/faq.html">FAQ</a>.</p>
+then be feasible for an attacker who had gained access to the machine to read the private key from the swap file. For more details, read the <a href="https://www.gnupg.org/faq.html" target="_blank">FAQ</a>.</p>
 
 <h3 id="secure-machine">How secure does the machine I use to sign releases need to be?<a class="headerlink" href="#secure-machine" title="Permanent link">&para;</a></h3>
 
@@ -248,9 +248,7 @@ A public key server manages <a href="#public-private">public keys</a>. Available
 
 Public key servers exist to distribute public keys. They do not vouch for the actual identity of the owner of each key. You must establish this either directly or through a <a href="#web-of-trust">web of trust</a>. Do not trust a key just because it has been downloaded from a key server.
 
-The major public key servers synchronize their records regularly so you only need to upload a key to one and rely on that server to disseminate it to the other key servers. We recommend using:
-
-  - <a href="https://keys.openpgp.org/" target="_blank">OpenPGP Public Key Server</a>
+The major public key servers synchronize their records regularly so you only need to upload a key to one and rely on that server to disseminate it to the other key servers. We recommend using <a href="https://keys.openpgp.org/" target="_blank">OpenPGP Public Key Server</a>.
 
 <h3 id="keyserver-upload">How to upload a key to a public key server<a class="headerlink" href="#keyserver-upload" title="Permanent link">&para;</a></h3>
 
@@ -270,8 +268,7 @@ You must export each changed key separately.
 <h3 id="update-web-of-trust">How to make sure your local web of trust is up-to-date<a class="headerlink" href="#update-web-of-trust" title="Permanent link">&para;</a></h3>
 
 The public web of trust grows constantly as people sign new keys and upload the new signatures onto the network of <a href="#keyserver">public key servers</a>. You should refresh public keys periodically to make sure that your local web of trust is as full as possible. Many <a href="#openpgp">OpenPGP</a> <a href="#openpgp-applications">clients</a> make it easy to refresh keys by
-querying a public key server. For example, to refresh all keys using <a href="https://www.gnupg.org" target="_blank">GNU Privacy
-Guard</a> use:
+querying a public key server. For example, to refresh all keys using <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a>, use:
 
 ```
 $ gpg --refresh-keys
@@ -392,7 +389,7 @@ or
     (gpg --list-sigs <your name> && gpg --armor --export <your name>) >> this file.
 ```
 
-Store the KEYS file with the release archives to which it applies at the top level of the ASF mirror area for the project. This makes it  available for users to download, and for automatic archiving with its release. For example, the Ant KEYS file is in the directory `https://downloads.apache.org/ant`. The corresponding SVN area is at `https://dist.apache.org/repos/dist/release/ant`
+Store the KEYS file with the release archives to which it applies at the top level of the ASF mirror area for the project. This makes it  available for users to download, and for automatic archiving with its release. For example, the Ant KEYS file is in the directory `https://downloads.apache.org/ant`. The corresponding SVN area is at `https://dist.apache.org/repos/dist/release/ant`.
 
 Since users may need the KEYS file to check signatures for archived releases, it is important to retain in the file all keys that have ever been used to sign releases. Add entries with eadch new key the project uses, but do not remove entries.
 
@@ -400,7 +397,7 @@ Since users may need the KEYS file to check signatures for archived releases, it
 <a href="#faq">FAQ</a> will be a reasonable first port of call.
 
 You need an <a href="#openpgp-applications">application</a> to manage keys and create signatures. We recommend <a href="http://www.gnupg.org/">GNU Privacy Guard</a>, and the Apache documentation generally assumes that's what
-you're using. (We welcome contributions that document use of other tools.) Read the <a href="openpgp.html#gnupg">Apache PGP user guide</a> and keep the <a href="https://www.gnupg.org/gph/en/manual.html">manual</a> handy. 
+you're using. (We welcome contributions that document use of other tools.) Read the <a href="openpgp.html#gnupg">Apache PGP user guide</a> and keep the <a href="https://www.gnupg.org/gph/en/manual.html" target="_blank">manual</a> handy. 
 
 GnuPG can handle MD5 and SHA checksums as well as PGP signatures. It is your all-in-one cross-platform tool for release signing and verification.
 
@@ -450,7 +447,7 @@ You join a web of trust when an existing member of that web signs your public ke
 
 <h3 id="key-signing-party">What is a key-signing party?<a class="headerlink" href="#key-signing-party" title="Permanent link">&para;</a></h3>
 
-A key signing party is a meeting organised to allow the exchange of public keys to extend the <a href="#web-of-trust">web of trust</a>. See the <a href="https://www.cryptnet.net/fdp/crypto/keysigning_party/en/keysigning_party.html">Keysigning Party HOWTO</a>.
+A key signing party is a meeting organised to allow the exchange of public keys to extend the <a href="#web-of-trust">web of trust</a>. See the <a href="https://www.cryptnet.net/fdp/crypto/keysigning_party/en/keysigning_party.html" target="_blank">Keysigning Party HOWTO</a>.
 
 <h3 id="apache-wot">How can I link my key into the Apache Web of Trust?<a class="headerlink" href="#apache-wot" title="Permanent link">&para;</a></h3>
 
@@ -458,7 +455,7 @@ You can link into the Apache web of trust by meeting other Apache committers fac
 keys</a>:
 
   - Apache committers organizes <a href="#key-signing-party">key signing parties</a> at each <a href="https://www.apachecon.com" target="_blank">ApacheCon</a>.
-  - If you are not able to attend ApacheCon, or it will not happen for several months, consider organising a face-to-face meeting of <a href="https://people.apache.org/map.html">local committers</a>.
+  - If you are not able to attend ApacheCon, or it will not happen for several months, consider organising a face-to-face meeting of <a href="https://people.apache.org/map.html" target="_blank">local committers</a>.
 
 Subscribe to the `party` list and when you visit a new city, see if committers want to meet up.
 
@@ -563,7 +560,7 @@ When you _delete_ a key from a keyring, it is simply removed. You can add it aga
 
 When you _revoke_ a key, it is marked in the key ring. Whenever a message signed by this key is verified in the future, the user will get a warning that the key has been revoked.
 
-For example, when you verify a revoked key, <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a> issues the following comment:
+For example, when you verify a revoked key, <a href="https://www.gnupg.org" target="_blank" target="_blank">GNU Privacy Guard</a> issues the following comment:
 
 ```
 $ gpg --verify message.asc.message 
@@ -612,7 +609,7 @@ Trust is required in the identity of the public key that made the signature and 
 You can also check the integrity of a release by <a href="#verifying-signature">verifying the signature</a>. You need more knowledge to correctly interpret the result, but it does provide authentication and non-repudiation. If you are connected to the Apache <a href="#web-of-trust">web of trust</a>, this also offers superior security.
 
 <h3 id="public-key-not-found">What does 'Public key not found' mean when I try to verify a signature?<a class="headerlink" href="#public-key-not-found" title="Permanent link">&para;</a></h3>
-To verify a signature, you need the release's public key. For example, when using <a href="https://www.gnupg.org/">GNU Privacy Guard</a>, if you have never imported the appropriate public key, you will see a message like this:
+To verify a signature, you need the release's public key. For example, when using <a href="https://www.gnupg.org/" target="_blank">GNU Privacy Guard</a>, if you have never imported the appropriate public key, you will see a message like this:
 
 ```
 $ gpg --verify foo-1.0.tar.gz.asc foo-1.0.tar.gz
@@ -704,7 +701,7 @@ The project must request a signing key through an Infra Jira ticket, and Infra w
 - The public key will be sent to the project or added to their KEYS file
 
 The Apache Security Team should be notified of any pending requests for CI signing keys, and should approve the workflow before it is being put into use.
-See [INFRA-23996](https://issues.apache.org/jira/browse/INFRA-23996) for background on this.
+See <a href="https://issues.apache.org/jira/browse/INFRA-23996" target="_blank">INFRA-23996</a> for background on this.
 
 
 <h2 id="reading">Further reading<a class="headerlink" href="#reading" title="Permanent link">&para;</a></h2>
