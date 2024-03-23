@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Apache Infrastructure Website</title><link href="https://infra.apache.org/" rel="alternate"></link><link href="https://infra.apache.org/feeds/all-en.atom.xml" rel="self"></link><id>https://infra.apache.org/</id><updated>2024-02-20T00:00:00+00:00</updated><subtitle></subtitle><entry><title>Inside Infra February 2024</title><link href="https://infra.apache.org/blog/newsletter_02_24.html" rel="alternate"></link><published>2024-02-20T00:00:00+00:00</published><updated>2024-02-20T00:00:00+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2024-02-20:/blog/newsletter_02_24.html</id><summary type="html">&lt;p&gt;&lt;em&gt;Hello, all!&lt;/em&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Apache Infrastructure Website</title><link href="https://infra.apache.org/" rel="alternate"></link><link href="https://infra.apache.org/feeds/all-en.atom.xml" rel="self"></link><id>https://infra.apache.org/</id><updated>2024-03-23T00:00:00+00:00</updated><subtitle></subtitle><entry><title>Inside Infra March 2024</title><link href="https://infra.apache.org/blog/newsletter_03_24.html" rel="alternate"></link><published>2024-03-23T00:00:00+00:00</published><updated>2024-03-23T00:00:00+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2024-03-23:/blog/newsletter_03_24.html</id><summary type="html">&lt;p&gt;Welcome to &lt;strong&gt;Inside Infra&lt;/strong&gt; for March, 2024.&lt;/p&gt;
+&lt;h3&gt;Policy change on use of GitHub Actions&lt;/h3&gt;
+&lt;p&gt;Due to misconfigurations in their builds, some projects have been using unsupportable numbers of GitHub Actions. As part of fixing this situation, Infra has added a 'resource use' section to the policy on GitHub Actions. This …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Welcome to &lt;strong&gt;Inside Infra&lt;/strong&gt; for March, 2024.&lt;/p&gt;
+&lt;h3&gt;Policy change on use of GitHub Actions&lt;/h3&gt;
+&lt;p&gt;Due to misconfigurations in their builds, some projects have been using unsupportable numbers of GitHub Actions. As part of fixing this situation, Infra has added a 'resource use' section to the policy on GitHub Actions. This section of the policy will come into effect on &lt;strong&gt;April 20, 2024&lt;/strong&gt;:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;All workflows MUST have a job concurrency level less than or equal to 20. This means a workflow cannot have more than 20 jobs running at the same time across all matrices.&lt;/li&gt;
+&lt;li&gt;All workflows SHOULD have a job concurrency level less than or equal to 15. Just because 20 is the max, doesn't mean you should strive for 20.&lt;/li&gt;
+&lt;li&gt;The average number of minutes a project uses per calendar week MUST NOT exceed the equivalent of 25 full-time runners (250,000 minutes, or 4,200 hours).&lt;/li&gt;
+&lt;li&gt;The average number of minutes a project uses in any consecutive five-day period MUST NOT exceed the equivalent of 30 full-time runners (216,000 minutes, or 3,600 hours).&lt;/li&gt;
+&lt;li&gt;Projects whose builds consistently cross the maximum use limits will lose their access to GitHub Actions until they fix their build configurations.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The full policy is at &lt;a href="https://infra.apache.org/github-actions-policy.html" target="_blank"&gt;&lt;a href="https://infra.apache.org/github-actions-policy.html"&gt;https://infra.apache.org/github-actions-policy.html&lt;/a&gt;&lt;/a&gt;.&lt;/p&gt;
+&lt;h3&gt;Roundtable summary&lt;/h3&gt;
+&lt;p&gt;In the Roundtable of March 3, 2024, Clay Johnson of Gradle outlined the testing features that come with Develocity, focussing on their use with Gradle and Maven. For instance:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The build scan gives insights into what goes on in a build, and can help a project quickly focus on tests that are failing or flaky, and address related code issues.&lt;/li&gt;
+&lt;li&gt;Predictive test selection can speed up certain types of builds by skipping the tests that are not relevant to the build.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A fuller summary of this discussion, and conversation about GitHub Runners and other topics, is at &lt;a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable+2024-03-06%2C+17%3A00+UTC" target="_blank"&gt;&lt;a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable+2024-03-06%2C+17%3A00+UTC"&gt;https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable+2024-03-06%2C+17%3A00+UTC&lt;/a&gt;&lt;/a&gt;, and is available to ASF Members and Committers.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: There will be &lt;strong&gt;no April 2024 Roundtable&lt;/strong&gt;. The series will resume in May.&lt;/p&gt;
+&lt;h3&gt;The end of Apache Paste Bucket?&lt;/h3&gt;
+&lt;p&gt;In 2013 Infra rolled out Apache Paste Bucket (&lt;code&gt;http://paste.apache.org/&lt;/code&gt;). In a blog entry at the time, we described it as an "ASF-driven site for posting snippets, scripts, logging output, configurations and much more and sharing them with the world."&lt;/p&gt;
+&lt;p&gt;The tool has seen some use over the past decade, but has had very little traffic in the last couple of years. To keep Apache Paste Bucket available, the code would require a significant upgrade. Unless we hear that the tool is important to some part of the ASF community, we plan to shut down Apache Paste in the near future.&lt;/p&gt;
+&lt;hr/&gt;
+The next newsletter will appear toward the end of April, 2024.
+</content><category term="blog"></category></entry><entry><title>Inside Infra February 2024</title><link href="https://infra.apache.org/blog/newsletter_02_24.html" rel="alternate"></link><published>2024-02-20T00:00:00+00:00</published><updated>2024-02-20T00:00:00+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2024-02-20:/blog/newsletter_02_24.html</id><summary type="html">&lt;p&gt;&lt;em&gt;Hello, all!&lt;/em&gt;&lt;/p&gt;
 &lt;h2&gt;Newsletter name&lt;/h2&gt;
 &lt;p&gt;Our very unscientific poll showed that "Inside Infra" has the most support as a name for this newsletter, so that is what we shall be.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Note&lt;/strong&gt;: in 2020 the main ASF blog published a series of interviews with Infra team members also called "Inside Infra". Links …&lt;/p&gt;</summary><content type="html">&lt;p&gt;&lt;em&gt;Hello, all!&lt;/em&gt;&lt;/p&gt;
