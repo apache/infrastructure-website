@@ -515,10 +515,13 @@ Primary key fingerprint: 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
 <pre><code>$ gpg --lsign-key someuser
 </code></pre>
 <h3 id="automated-release-signing">Automated Release Signing<a class="headerlink" href="#automated-release-signing" title="Permanent link">&para;</a></h3>
-<p>
-Projects may make use of automated signing for (reproducible) artifacts built by a CI system such as GitHub actions. 
-The project must request a signing key through an Infra Jira ticket, and Infra will provide a signing key for the project:
-</p>
+<p>Projects may make use of automated signing for artifacts built by a CI system such as GitHub Actions, provided that:</p>
+<ul>
+<li>All artifacts being signed can be built <a href="https://reproducible-builds.org" target="_blank">reproducibly</a></li>
+<li>CI deploys the artifacts to a staging environment</li>
+<li>The release procedure contains a validation step where all artifacts are reproduced on <a href="https://www.apache.org/legal/release-policy.html#owned-controlled-hardware" target="_blank">trusted hardware</a> before publication to pages intended for end users</li>
+</ul>
+<p>The project must request a signing key through an Infra Jira ticket, and Infra will provide a signing key for the project:</p>
 <ul>
 <li>The key will be 4096 bit RSA</li>
 <li>It will be a signing-only key</li>
