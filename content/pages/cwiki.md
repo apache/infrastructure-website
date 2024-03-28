@@ -11,6 +11,8 @@ Every Apache Software Foundation project can establish, manage, and populate a s
 
 Many thanks to <a href="http://www.atlassian.com/" target="_blank">Atlassian Software Systems</a> for providing to the ASF a free license for this service.
 
+**Note** To deal with the creation of spammy accounts and risks to ASF and project information on the wiki, we have limited account-creation: committers and ASF members can automatically log in to the ASF Confluence Wiki without creating an account. At the moment people who do not have an ASF LDAP account **cannot** create an account in the wiki.
+
 <h2 id="getting">Getting your project cwiki space<a class="headerlink" href="#getting" title="Permanent link">&para;</a></h2>
 Your ASF Project PMC can request creation of a new space.
 
@@ -28,11 +30,18 @@ When Infra creates the space, it sets up a $project-committer group (or equivale
   - You can create user groups in addition to the standard groups:
   
 <h2 id="watching">Watching a cwiki page<a class="headerlink" href="#watching" title="Permanent link">&para;</a></h2>
-Cwiki users, including those not involved in a project, can 'watch' pages in a project's space to receive update notices when information on that page changes, To watch a page, login in to the ASF cwiki, locate the page you want to watch, and click **Watch** on the top menu bar. 
+Cwiki users, including those not involved in a project, can 'watch' pages in a project's space to receive update notices when information on that page changes. 
+
+To watch a page: 
+  
+  - Log in in to the ASF cwiki.
+  - Locate the page you want to watch.
+  - Click **Watch** on the top menu bar. 
 
 To stop watching a page:
 
-  - Click your profile icon at the top right if the wiki page.
+  - Log in in to the ASF cwiki.
+  - Click your profile icon at the top right of the wiki page.
   - From the dropdown menu that appears, select **Watches**. 
   - The list of pages you are watching appears, and you can remove those you no longer want to watch.
   
