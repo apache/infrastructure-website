@@ -209,6 +209,8 @@ Infra manages the ASF DNS, which is registered with Namecheap.
 
 <a href="https://paste.apache.org/" target="_blank">Paste</a> is a service that lets ASF members post code snippets or similar file extracts they want to share to illustrate a code issue or make available for reuse, usually with other project members. You can post content as plain text, or formatted for a number of coding and scripting languages.
 
+**Note**: Paste has been very lightly used over the past several years. Infra will probably stop supporting it in April, 2024.
+
 <h3 id="machines">Machine list<a class="headerlink" href="#machines" title="Permanent link">&para;</a></h3>
 
 <a href="/machines.html" target="_blank">Host Keys and Fingerprints</a>
