@@ -205,11 +205,9 @@ Infra manages the ASF DNS, which is registered with Namecheap.
 
 <a href="https://s.apache.org" target="_blank">URL shortener</a>
 
-<h3 id="sharing">Sharing snippets<a class="headerlink" href="#sharing" title="Permanent link">&para;</a></h3>
+<h3 id="sharing">Infra Reporting Dashboard<a class="headerlink" href="#infra-reports" title="Permanent link">&para;</a></h3>
 
-<a href="https://paste.apache.org/" target="_blank">Paste</a> is a service that lets ASF members post code snippets or similar file extracts they want to share to illustrate a code issue or make available for reuse, usually with other project members. You can post content as plain text, or formatted for a number of coding and scripting languages.
-
-**Note**: Paste has been very lightly used over the past several years. Infra will probably stop supporting it in April, 2024.
+The <a href="https://infra.apache.org/infra-reports.html" target="_blank">ASF Infrastructure Reporting Dashboard</a> contains a collection of reports on the overall health and activity of the infrastructure at the ASF. Some reports are available only for ASF Members and Infra team members.
 
 <h3 id="machines">Machine list<a class="headerlink" href="#machines" title="Permanent link">&para;</a></h3>
 
