@@ -33,22 +33,20 @@ This should decrypt the file and display the output in the window.
   - Your username.
   - The fact that you have tried a self-service password reset, and why it didn't work. (Was the mail received? Did you decrypt it successfully?)
   - Why you need to regain access to your Apache account -- e.g., if it is to work on a <a href="https://www.apache.org/foundation/" target="_blank">foundation project</a>, name that project; or if you are a <a href="https://www.apache.org/foundation/members" target="_blank">foundation member</a>, state that.
-  - Whether you have SSH access to <code>minotaur.apache.org</code> or to a PMC jail/zone/VM via public-key authentication.
-  - Whether you ever set up OPIE on any `*.apache.org` box. (This is only applicable to people who had root permissions on PMC VMs.)
+  - Whether you have SFTP access to <code>home.apache.org</code> or SSH access to a project VM via public-key authentication.
+  - Whether you ever set up Orthrus/OPIE on any `*.apache.org` box. (This is only applicable to people who had root permissions on PMC VMs.)
   - Whether you have access to the private part of a PGP key associated with your Apache account.
   - Whether the contact information on your ICLA is valid.
   - For (<a href="https://www.apache.org/foundation/members" target="_blank">ASF Members</a> only, whether the contact information in your `members.txt` entry is valid.
   - Whether you are able to send a new ICLA, with the same signature as your original one, which specifies new contact information.
-  - Whether there is any other way in which we (infra) might satisfy ourselves that you are the legitimate owner of that account.
+  - Whether there is any other way in which we (Infra) might satisfy ourselves that you are the legitimate owner of that account.
 
 **Note**: please do not ask other ASF committers or Members to email root@ to vouch for you.
 
-### Two Factor Authentication
-Infra provides two-factor authentication (2FA) for account logins via the <a href="https://oauth.apache.org" target="_blank">Apache OAuth System</a>. You can opt to enable it, however, **note** that, if you enable @FA, you cannot later disable it. 
+### Multi Factor Authentication
+Infra will soon provide multi-factor authentication (MFA) for account logins. Documentation related to setting up and using multi-factor authentication will be provided here when the service is ready.
 
-The documentation for ASF 2FA is <a href="https://oauth.apache.org/api.html" target="_blank">here</a>.
-
-**Note**: If you are using GitHub, you must also use GitHub's 2FA, which is separate from the Apache 2FA. If you are having trouble logging in to GitHub (or some other service) or to Apache, make sure you are using the correct entries for the 2FA in question.
+**Note**: If you are using GitHub, you must also use GitHub's MFA, which is separate from the Apache MFA. If you are having trouble logging in to GitHub (or some other service) or to Apache, make sure you are using the correct entries for the MFA in question.
 
 ## Account removal 
 Occasionally we need to remove an account - either by request or because the committer is deceased or, in rare cases, because the ASF is forcibly removing the committer. 
