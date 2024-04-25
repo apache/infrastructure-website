@@ -14,7 +14,7 @@ Some of the reports are open to the public, while others are restricted to those
 
   - **Jira tickets**: Infra uses this dashboard to track resolution of Jira tickets related to infrastructure work. Gauges and charts cover how quickly issues are resolved and whether the number of open tickets for Jira is increasing or decreasing, and provides a drive-by view of all open Jira tickets.
   - **Mail Transport Statistics**: This screen, for the Infrastructure team, gives a visualization of how the system is handling ASF and project email.
-  - **Real-time Download Stats**: On this screen, an ASF Member can select a project to which they belong and get a series of informative charts (over time, by country, by artifact) of downloads of the project's released artifacts.
-  - **GitHub Actions Usage**: This screen displays a project's use of GitHub Actions. The chart can be configured for project, time range, and other options. 
+  - **Real-time Download Stats**: On this screen, an ASF Member or Committer can select a project to which they belong and get a series of informative charts (over time, by country, by artifact) of downloads of the project's released artifacts.
+  - **GitHub Actions Usage**: This screen displays the use of GitHub Actions for projects you belong to. The chart can be configured for project (if you belong to more than one), time range and other options. 
 
 Send questions or suggestions about the dashboard to `users@infra.apache.org`.
