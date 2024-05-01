@@ -37,7 +37,7 @@ Your Apache project's download page:
   - **must** have a link to the KEYS file for your project on the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/KEYS`.
   - **must** have a link to the signature file for each release. See see the [release signing](release-signing.html) page for more information. 
   - **should** have instructions on how to verify downloads. For this you can include a link to the <a href="https://www.apache.org/info/verification.html" target="_blank">Apache documentation on verification</a>.
-  - **must not** include a link to the top level `closer.lua` utility (e.g. `http://www.apache.org/dyn/closer.lua/PROJECT`) as the KEYS, signatures, and any verification instructions for your release would be missing from the top-level script.
+  - **must not** include a download link to the top-level `closer.lua` utility (e.g. `http://www.apache.org/dyn/closer.lua/PROJECT`).
 
 <h3 id="current-and-older-releases">Current and older releases<a class="headerlink" href="#current-and-older-releases" title="Permanent link">&para;</a></h3>
 
