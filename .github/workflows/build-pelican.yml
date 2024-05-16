@@ -20,3 +20,8 @@ jobs:
       - name: Run a one-line script
         run: python3 -m pelican content -o output
         working-directory: '/home/runner/work/infrastructure-website/infrastructure-website'
+      - name: Push generated content to another branch
+        uses: actions/upload-artifact@v4
+        with:
+          name: output
+          path: output
