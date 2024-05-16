@@ -3,7 +3,7 @@ on:
   push:
     branches: [ "dfoulks/pelican_gha" ]
   pull_request:
-    branches: [ "dfoulks/gha-site" ]
+    branches: [ "dfoulks/pelican_gha" ]
 
   workflow_dispatch:
 jobs:
@@ -20,8 +20,11 @@ jobs:
       - name: Run a one-line script
         run: python3 -m pelican content -o output
         working-directory: '/home/runner/work/infrastructure-website/infrastructure-website'
-      - name: Push generated content to another branch
-        uses: actions/upload-artifact@v4
+      - name: Open a PR against the staging branch
+        uses: peter-evans/create-pull-request
         with:
-          name: output
-          path: output
+          token: ${{ secrets.GITHUB_TOKEN }}
+          commit-message: GitHub Actions Generated Pelican Build
+          title: Generated Pelican Output
+          body: output generated
+          branch: dfoulks/gha-site
