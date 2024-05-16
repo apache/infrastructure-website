@@ -17,7 +17,7 @@ jobs:
           ref: 'dfoulks/pelican_gha'
       - name: Install Pelican
         run: pip3 install pelican markdown ghp-import
-      - name: Run a one-line script
+      - name: Generate website from markdown
         run: python3 -m pelican content -o output
         working-directory: '/home/runner/work/infrastructure-website/infrastructure-website'
       - name: Open a PR against the staging branch
