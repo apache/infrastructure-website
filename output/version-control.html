@@ -1,0 +1,271 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Source Code Repositories at Apache - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="/machines.html">Machines and Fingerprints</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Contribute</a></li>
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Source Code Repositories at Apache
+          </h1>
+              <p>Apache project contributors are in countries all around the world. To help them work together, projects keep their source code in an Internet-accessible revision control system, either <a href="https://subversion.apache.org/" target="_blank">Subversion (SVN)</a> or <a href="https://git-scm.com/" target="_blank">Git</a>. Apache committers have <em>write access</em> to the repositories for their projects, so they can edit existing code and add new files. </p>
+<h2>Contents</h2>
+<ul>
+<li><a href="#general">In general</a></li>
+<li><a href="#git">Git repositories</a><ul>
+<li><a href="#create">Creating repositories</a></li>
+<li><a href="#asfyaml">.asf.yaml for Git repositories</a></li>
+</ul>
+</li>
+<li><a href="#svn">SVN repositories</a><ul>
+<li><a href="#commandline">Command-line SVN access</a></li>
+<li><a href="#commandlinecommit">Committing code through the command line</a></li>
+<li><a href="#configuring">Configuring the SVN client</a></li>
+<li><a href="#svnssl">SVN SSL server certificate</a></li>
+<li><a href="#errormessages">Typical SVN error messages</a></li>
+<li><a href="#svnfaqs">SVN FAQs</a></li>
+</ul>
+</li>
+<li><a href="#migrating">Migrating an SVN code repository to Git</a></li>
+</ul>
+<h2 id="general">In general<a class="headerlink" href="#general" title="Permanent link">&para;</a></h2>
+
+<p><strong>Note</strong>: please review the <a href="project-repo-policy.html">Project Code Repository Policy</a>.</p>
+<p>Everyone has <em>read access</em> to the repositories and can download the most up-to-date development version of any project's software to review or compile. </p>
+<ul>
+<li>If you want a stable release of the source code, download it from the <a href="https://www.apache.org/dyn/closer.lua/" target="_blank">distribution directory</a>. </li>
+<li>Only download the code directly from your project's code repository if you are participating in the development effort. The latest version of the code is what your colleagues have most recently checked in, and they may or may not have confirmed that it compiles correctly and does what they want it to do.</li>
+<li>If you want a release version of the project's compiled application, visit the project's website and find its download page. It may offer both stable releases and "bleeding-edge" or "nightly" builds that compile properly but include the latest, possibly-unstable, features.</li>
+</ul>
+<h2 id="git">Git repositories<a class="headerlink" href="#git" title="Permanent link">&para;</a></h2>
+
+<p>How-to guides, documentation, and a list of projects using Git for revision control are at <a href="https://git.apache.org/" target="_blank">git.apache.org</a>.</p>
+<p>Many Git users manage their source code through one of these tools:</p>
+<ul>
+<li><a href="https://gitbox.apache.org" target="_blank">GitBox</a></li>
+<li><a href="https://github.com/apache" target="_blank">GitHub</a></li>
+</ul>
+<p>Some projects began using <a href="git.html">read-only-mirrors</a> of SVN repositories when Apache's support for Git was limited. This is no longer necessary. <a href="project-repo-policy.html">Writable Git</a> repositories are available to all projects.</p>
+<h3 id="create">Creating repositories<a class="headerlink" href="#create" title="Permanent link">&para;</a></h3>
+
+<p>Apache projects can have as many <strong>public</strong> Git repositories as their product development work requires. Use the <a href="http://selfserve.apache.org/" target="_blank">Self Serve tool</a> to create an additional repository.</p>
+<p>Some projects require a <strong>private</strong> Git repository, for reasons like:</p>
+<ul>
+<li>Developing security patches.</li>
+<li>Preparing the quarterly Bzoard reports when it is necessary to include information in a  <code>&lt;private&gt;</code> section of the report.</li>
+<li>Maintaining the details of legal contracts, Memorandums of Understanding (MOUs) and similar arrangements with third parties. PMCs can enter into such arrangements if they are directly required for the development of the project's product or products.</li>
+<li>Keeping information that should not be public.</li>
+</ul>
+<p>Each PMC can have <strong>one</strong> private Git repository. Open a Jira ticket for Infra to request one, explaining the reasons the project needs it.</p>
+<h3 id="asfyaml">.asf.yaml for Git repositories<a class="headerlink" href="#asfyaml" title="Permanent link">&para;</a></h3>
+
+<p><code>.asf.yaml</code> is a branch-specific file. Projects hosting their websites in a Git repository must use <code>.asf.yaml</code> to build and update their sites. Review <a href="asf-yaml.html">this documentation</a> before working with your <code>.asf.yaml</code> files.</p>
+<p>Projects can also place <code>.asf.yaml</code> in the root of a repository to control:</p>
+<ul>
+<li>notification settings</li>
+<li>github settings</li>
+<li>pelican builds</li>
+</ul>
+<p>Read <a href="asf-yaml.html">the .asf.yaml primer</a> to learn more.</p>
+<h2 id="svn">SVN repositories<a class="headerlink" href="#svn" title="Permanent link">&para;</a></h2>
+
+<p>Information about SVN is at <a href="https://subversion.apache.org/" target="_blank">the Apache SVN site</a> and <a href="http://svnbook.red-bean.com/" target="_blank">Version Control with Subversion</a>. The website provides links for <em>SVN clients</em> you can download and install to make it easier to work with SVN.</p>
+<p>To browse the repositories or download a few individual files, you can</p>
+<ul>
+<li>use <a href="https://svn.apache.org/viewvc/" target="_blank">viewvc</a></li>
+<li>find a project repository at <a href="https://svn.apache.org/repos/asf/" target="_blank">the list of SVN repos</a></li>
+</ul>
+<h3 id="commandline">Command-line SVN access<a class="headerlink" href="#commandline" title="Permanent link">&para;</a></h3>
+
+<p>You can check out a project repository anonymously once you have installed a SVN client. For example, to get the Spamassassin module, use:</p>
+<div class="highlight"><pre><span></span><code> $ svn checkout http://svn.apache.org/repos/asf/spamassassin/trunk spamassassin
+</code></pre></div>
+
+<h3 id="commandlinecommit">Committing code through the command line<a class="headerlink" href="#commandlinecommit" title="Permanent link">&para;</a></h3>
+
+<p>If you are a project committer and don't want to use a SVN client like Tortoise, you can commit your new and updated files using the command line. We use HTTPS basic authentication, so you need to specify your user name and password as part of the check-in command.</p>
+<p>For example, if you wanted to add the file 'test.txt', you might follow these steps:</p>
+<p>``` $ svn co https://svn.apache.org/repos/asf/excalibur/trunk/ excalibur-trunk
+$ cd excalibur-trunk
+$ echo "test" &gt; test.txt
+$ svn add test.txt
+$ svn commit --username your-name --password your-password \
+  --message "Trying out svn"</p>
+<div class="highlight"><pre><span></span><code><span class="n">Apache</span><span class="w"> </span><span class="n">does</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">support</span><span class="w"> </span><span class="n n-Quoted">`svnserve`</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="n n-Quoted">`svn+ssh`</span><span class="p">.</span>
+
+<span class="o">&lt;</span><span class="n">h3</span><span class="w"> </span><span class="n">id</span><span class="o">=</span><span class="s2">&quot;configuring&quot;</span><span class="o">&gt;</span><span class="n">Configuring</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">SVN</span><span class="w"> </span><span class="k">client</span><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">class</span><span class="o">=</span><span class="s2">&quot;headerlink&quot;</span><span class="w"> </span><span class="n">href</span><span class="o">=</span><span class="s2">&quot;#configuring&quot;</span><span class="w"> </span><span class="n">title</span><span class="o">=</span><span class="s2">&quot;Permanent link&quot;</span><span class="o">&gt;&amp;</span><span class="n">para</span><span class="p">;</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;&lt;/</span><span class="n">h3</span><span class="o">&gt;</span>
+
+<span class="n">Committers</span><span class="w"> </span><span class="n">need</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">properly</span><span class="w"> </span><span class="n">configure</span><span class="w"> </span><span class="n">their</span><span class="w"> </span><span class="n">svn</span><span class="w"> </span><span class="k">client</span><span class="p">.</span><span class="w"> </span><span class="k">One</span><span class="w"> </span><span class="n">particular</span><span class="w"> </span><span class="n">issue</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">OS</span><span class="o">-</span><span class="k">specific</span><span class="w"> </span><span class="n">line</span><span class="o">-</span><span class="n">endings</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="kt">text</span><span class="w"> </span><span class="n">files</span><span class="p">.</span><span class="w"> </span><span class="k">When</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="k">add</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="k">new</span><span class="w"> </span><span class="kt">text</span><span class="w"> </span><span class="k">file</span><span class="p">,</span><span class="w"> </span><span class="n">especially</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="n">applying</span><span class="w"> </span><span class="n">patches</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">Bugzilla</span><span class="p">,</span><span class="w"> </span><span class="n">make</span><span class="w"> </span><span class="n">sure</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">line</span><span class="o">-</span><span class="n">endings</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">appropriate</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="k">system</span><span class="p">,</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="p">(</span><span class="k">for</span><span class="w"> </span><span class="n">test</span><span class="p">.</span><span class="n">txt</span><span class="p">)</span>
+
+<span class="n n-Quoted">`svn add test.txt svn propset svn:eol-style native test.txt`</span><span class="w"> </span>
+
+<span class="n">You</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">configure</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">svn</span><span class="w"> </span><span class="k">client</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">automatically</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">some</span><span class="w"> </span><span class="n">common</span><span class="w"> </span><span class="k">file</span><span class="w"> </span><span class="k">types</span><span class="p">.</span><span class="w"> </span><span class="k">Add</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">contents</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">href</span><span class="o">=</span><span class="s2">&quot;https://www.apache.org/dev/svn-eol-style.txt&quot;</span><span class="w"> </span><span class="n">target</span><span class="o">=</span><span class="s2">&quot;_blank&quot;</span><span class="o">&gt;</span><span class="n">this</span><span class="w"> </span><span class="k">file</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">bottom</span><span class="w"> </span><span class="k">of</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="o">~/</span><span class="p">.</span><span class="n">subversion</span><span class="o">/</span><span class="n">config</span><span class="w"> </span><span class="k">file</span><span class="p">,</span><span class="w"> </span><span class="n">normally</span><span class="w"> </span><span class="k">found</span><span class="w"> </span><span class="k">at</span><span class="o">:</span>
+
+<span class="o">-</span><span class="w"> </span><span class="n">Windows</span><span class="o">:</span><span class="w"> </span><span class="n">C</span><span class="o">:</span><span class="err">\</span><span class="n">Documents</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="k">Set</span><span class="n">tings</span><span class="err">\{</span><span class="n">username</span><span class="err">}\</span><span class="n">Application</span><span class="w"> </span><span class="k">Data</span><span class="err">\</span><span class="n">Subversion</span><span class="err">\</span><span class="n">config</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Windows</span><span class="w"> </span><span class="mi">7</span><span class="o">:</span><span class="w"> </span><span class="n">C</span><span class="o">:</span><span class="err">\</span><span class="n">Users</span><span class="err">\{</span><span class="n">username</span><span class="err">}\</span><span class="n">AppData</span><span class="err">\</span><span class="n">Roaming</span><span class="err">\</span><span class="n">Subversion</span><span class="err">\</span><span class="n">config</span><span class="err">]</span>
+<span class="o">-</span><span class="w"> </span><span class="n">Linux</span><span class="w"> </span><span class="o">&amp;</span><span class="w"> </span><span class="n">Mac</span><span class="w"> </span><span class="n">OSX</span><span class="o">:</span><span class="w"> </span><span class="o">~/</span><span class="p">.</span><span class="n">subversion</span><span class="o">/</span><span class="n">config</span><span class="w"> </span><span class="k">or</span><span class="w"> </span><span class="o">/</span><span class="n">etc</span><span class="o">/</span><span class="n">subversion</span><span class="o">/</span><span class="n">config</span>
+
+<span class="n">You</span><span class="w"> </span><span class="n">may</span><span class="w"> </span><span class="n">need</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">additional</span><span class="w"> </span><span class="n">properties</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="k">some</span><span class="w"> </span><span class="n">files</span><span class="p">.</span><span class="w"> </span><span class="k">For</span><span class="w"> </span><span class="n">example</span><span class="p">,</span><span class="w"> </span><span class="n">apply</span><span class="w"> </span><span class="n n-Quoted">`svn:executable=*`</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">script</span><span class="w"> </span><span class="n">files</span><span class="w"> </span><span class="p">(</span><span class="n">e</span><span class="p">.</span><span class="n">g</span><span class="p">.</span><span class="w"> </span><span class="p">.</span><span class="n">bat</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">cgi</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">cmd</span><span class="p">,</span><span class="w"> </span><span class="p">.</span><span class="n">sh</span><span class="p">)</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">intended</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">executed</span><span class="p">.</span><span class="w"> </span><span class="n">Since</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="k">all</span><span class="w"> </span><span class="n">such</span><span class="w"> </span><span class="n">files</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">intended</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">executed</span><span class="p">,</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">make</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">executable</span><span class="w"> </span><span class="n">property</span><span class="w"> </span><span class="n">an</span><span class="w"> </span><span class="n">automatic</span><span class="w"> </span><span class="k">default</span><span class="p">.</span>
+
+<span class="n">Pay</span><span class="w"> </span><span class="n">attention</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">messages</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="n">svn</span><span class="w"> </span><span class="k">client</span><span class="w"> </span><span class="k">when</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="s1">&#39;svn commit&#39;</span><span class="p">.</span>
+
+<span class="o">**</span><span class="n">Tip</span><span class="o">**:</span><span class="w"> </span><span class="k">If</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="k">use</span><span class="w"> </span><span class="n">TortoiseSVN</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">popular</span><span class="w"> </span><span class="n">Windows</span><span class="w"> </span><span class="n">GUI</span><span class="w"> </span><span class="k">client</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">integrates</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">Windows</span><span class="w"> </span><span class="n">Explorer</span><span class="p">,</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="k">right</span><span class="w"> </span><span class="n">click</span><span class="w"> </span><span class="k">in</span><span class="w"> </span><span class="n">Explorer</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="k">select</span><span class="w"> </span><span class="n">TortoiseSVN</span><span class="w"> </span><span class="o">-</span><span class="w"> </span><span class="k">Set</span><span class="n">tings</span><span class="p">,</span><span class="w"> </span><span class="k">and</span><span class="w"> </span><span class="k">then</span><span class="w"> </span><span class="n">press</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="s2">&quot;Edit&quot;</span><span class="w"> </span><span class="n">button</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">update</span><span class="w"> </span><span class="n">your</span><span class="w"> </span><span class="s2">&quot;Subversion configuration file:&quot;</span><span class="p">.</span><span class="w"> </span><span class="k">If</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="k">do</span><span class="w"> </span><span class="k">not</span><span class="w"> </span><span class="n">see</span><span class="w"> </span>
+
+<span class="w">     </span><span class="o">*</span><span class="p">.</span><span class="n">c</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">svn</span><span class="o">:</span><span class="n">eol</span><span class="o">-</span><span class="n">style</span><span class="o">=</span><span class="n">native</span>
+
+<span class="n">copy</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">above</span><span class="w"> </span><span class="n">svn</span><span class="o">-</span><span class="n">eol</span><span class="o">-</span><span class="n">style</span><span class="p">.</span><span class="n">txt</span><span class="w"> </span><span class="k">file</span><span class="s1">&#39;s contents into the end of the config editor that appears, and save the file.</span>
+
+<span class="s1">&lt;h3 id=&quot;svnssl&quot;&gt;SVN SSL server certificate&lt;a class=&quot;headerlink&quot; href=&quot;#svnssl&quot; title=&quot;Permanent link&quot;&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;</span>
+
+<span class="s1">You can check the validity of the server certificate on the &lt;a href=&quot;/machines.html&quot; target=&quot;_blank&quot;&gt;Apache host keys listing&lt;/a&gt;.</span>
+
+<span class="s1">&lt;h3 id=&quot;errormessages&quot;&gt;Typical SVN error messages&lt;a class=&quot;headerlink&quot; href=&quot;#errormessages&quot; title=&quot;Permanent link&quot;&gt;&amp;para;&lt;/a&gt;&lt;/h3&gt;</span>
+
+<span class="s1">**Error validating server certificate**</span>
+
+<span class="s1">```Error validating server certificate for &#39;</span><span class="n">https</span><span class="o">://</span><span class="n">svn</span><span class="p">.</span><span class="n">apache</span><span class="p">.</span><span class="n">org</span><span class="o">:</span><span class="mi">443</span><span class="s1">&#39;:</span>
+<span class="s1"> - The certificate is not issued by a trusted authority. Use the</span>
+<span class="s1">   fingerprint to validate the certificate manually!</span>
+<span class="s1">Certificate information:</span>
+<span class="s1"> - Hostname: *.apache.org</span>
+<span class="s1"> - Valid: from Apr 20 00:00:00 2017 GMT until July 20 23:59:59 2019 GMT</span>
+<span class="s1"> - Issuer: SSL.com</span>
+<span class="s1"> - SHA-1 Fingerprint 2D:97:67:D9:2E:20:EE:07:3D:26:DA:97:A6:43:36:5F:71:8E:94:19</span>
+<span class="s1">(R)eject, accept (t)emporarily or accept (p)ermanently?</span>
+</code></pre></div>
+
+<p>Check the fingerprint against the list at the link above for server certificates.</p>
+<p><strong>No such revision</strong></p>
+<p>If you get an error like</p>
+<p><code>svn: No such revision 765287</code></p>
+<p>This may be because of a short lag in the synchronization between Subversion mirrors, and can occur if multiple commits run in quick succession. This error usually happens if you are located in Europe, or are explicitly using the European mirror.</p>
+<p>Wait for 10 seconds and repeat the command, and you should have success.</p>
+<p><em>Note</em> that this error can also occur when running <code>mvn release:prepare</code>. The mvn release plugin has a special property to handle this situation: <a href="http://maven.apache.org/maven-release/maven-release-plugin/prepare-mojo.html#waitBeforeTagging" target="_blank">waitBeforeTagging</a>.</p>
+<p><strong>Not the latest baseline</strong></p>
+<p>If you get an error like this:</p>
+<p>```svn: Commit failed (details follow):
+svn: The specified baseline is not the latest baseline, so it may not be
+checked out.</p>
+<div class="highlight"><pre><span></span><code>This may be because of a short lag in the synchronization between Subversion mirrors, and can occur if multiple commits run in quick succession. This error usually happens if you are located in Europe, or are explicitly using the European mirror.
+
+Wait for 10 seconds and repeat the command, and you should have success.
+
+**Problems using date revisions**
+
+If you are using a date revision such as <span class="sb">`-r{2004-09-12}:{2004-08-12}`</span> and not getting any or all of the revisions you expected, this is a known problem specific to the ASF repository.
+
+Unfortunately, there is nothing that can be done to improve this situation, so you must use a workaround. You can use <span class="sb">`svn log`</span> or ViewVC to locate the actual revision number that is first after the date you desire, and substitute that into your <span class="sb">`-r`</span> argument to the svn command.
+
+For example, consider the desired command:
+
+<span class="sb">`$ svn diff -rHEAD:{2005-01-01}`</span>
+
+While this produces no results, running <span class="sb">`svn log`</span> alone produces a result like this:
+</code></pre></div>
+
+<hr>
+<p>r124032 | aheritier | 2005-01-04 09:58:16 +1100 (Tue, 04 Jan 2005) | 1 line</p>
+<h2>Switch to subversion</h2>
+<p>r123911 | brett | 2005-01-03 09:48:57 +1100 (Mon, 03 Jan 2005) | 1 line</p>
+<h2>remove nagoya references</h2>
+<p>r116173 | brett | 2004-10-23 22:11:51 +1000 (Sat, 23 Oct 2004) | 2 lines</p>
+<p>remove old requires descriptions
+```</p>
+<p>So try the command:</p>
+<p><code>$ svn diff -rHEAD:123911</code></p>
+<p>This problem crops up because the order of the revisions is not identical to the order of dates in the repository. This is a side effect of loading CVS repositories with history including dates prior to the earliest date in the Subversion repository.</p>
+<h3 id="svnfaqs">SVN FAQs<a class="headerlink" href="#svnfaqs" title="Permanent link">&para;</a></h3>
+
+<ul>
+<li><strong>When should I use svn lock?</strong> Very rarely. Commits in subversion are transactional. This means that locks are almost always unnecessary. An oft-quoted use case is to prevent concurrent editing of a large, unmergeable binary document. However, for open development, good communication is preferable to locking even in this use case. A good, timely post to the list to let your fellow developers know that you're going to start editing that huge PDF is better than locking the file. </li>
+<li><strong>How often can I run a cron job that connects to the repository?</strong> Hourly is fine. Please do not use programs that poll the repository more frequently than hourly. People who run automated scripts that continuously poll the repository wind up getting their access denied, and that may impact other folks connecting through the same host. If you need to stay more in-sync than an hourly cron allows, subscribe your script to the relevant commit mailing list.</li>
+<li><strong>How do I mirror the whole SVN repository for an experiment?</strong>  First, ask yourself whether you really want the entire ASF repository Most people really want only a single project. In that case, just check out that source directory from the repo. If you really do want the entire ASF repository, don't use svnsync. Instead, start by looking <a href="httpa://svn-master.apache.org/dump/" target="_blank">here</a>. Use that to bootstrap your repo.</li>
+<li><strong>Why do I get a 403 error when I try to commit code?</strong> Run <code>svn info</code> and check that the URL starts with <code>https://</code>. If it starts with <code>http://</code>, run:</li>
+</ul>
+<p><code>$ svn switch --relocate http://svn.apache.org https://svn.apache.org</code></p>
+<p>If you still get 403 Forbidden errors, ask your PMC to double-check the authz file and LDAP/Unix group membership.</p>
+<h2 id="migrating">Migrating an SVN code repository to Git<a class="headerlink" href="#migrating" title="Permanent link">&para;</a></h2>
+
+<p>Instructions are <a href="svn-to-git-migration.html">here</a>.</p>
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2024, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

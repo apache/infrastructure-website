@@ -1,0 +1,149 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Configuring ASF Pelican - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="/machines.html">Machines and Fingerprints</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Contribute</a></li>
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Configuring ASF Pelican
+          </h1>
+              <p>Review <a href="https://github.com/apache/template-site" target="_blank">github.com/apache/template-site</a> to inspect a full <code>pelicanconf.yaml</code> file.</p>
+<p>These are the sections to configure in <code>pelicanconf.yaml</code> for your website: </p>
+<h2>Required</h2>
+<div class="highlight"><pre><span></span><code><span class="n">site</span><span class="o">:</span>
+<span class="w">  </span><span class="n">name</span><span class="o">:</span><span class="w"> </span><span class="n">Apache</span><span class="w"> </span><span class="n">Template</span>
+<span class="w">  </span><span class="n">description</span><span class="o">:</span><span class="w"> </span><span class="n">Provides</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">template</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">projects</span><span class="w"> </span><span class="n">wishing</span><span class="w"> </span><span class="n">to</span><span class="w"> </span><span class="n">use</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">Pelican</span><span class="w"> </span><span class="n">ASF</span><span class="w"> </span><span class="kd">static</span><span class="w"> </span><span class="n">content</span><span class="w"> </span><span class="n">system</span>
+<span class="w">  </span><span class="n">domain</span><span class="o">:</span><span class="w"> </span><span class="n">template</span><span class="o">.</span><span class="na">apache</span><span class="o">.</span><span class="na">org</span>
+<span class="w">  </span><span class="n">logo</span><span class="o">:</span><span class="w"> </span><span class="n">images</span><span class="o">/</span><span class="n">logo</span><span class="o">.</span><span class="na">png</span>
+<span class="w">  </span><span class="n">repository</span><span class="o">:</span><span class="w"> </span><span class="n">https</span><span class="o">://</span><span class="n">github</span><span class="o">.</span><span class="na">com</span><span class="sr">/apache/template-site/blob/main/content/</span>
+<span class="w">  </span><span class="n">trademarks</span><span class="o">:</span><span class="w"> </span><span class="n">Apache</span><span class="o">,</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">Apache</span><span class="w"> </span><span class="n">feather</span><span class="w"> </span><span class="n">logo</span><span class="o">,</span><span class="w"> </span><span class="n">and</span><span class="w"> </span><span class="s2">&quot;Project&quot;</span><span class="w"> </span><span class="n">are</span><span class="w"> </span><span class="n">trademarks</span><span class="w"> </span><span class="n">or</span><span class="w"> </span><span class="n">registered</span><span class="w"> </span><span class="n">trademarks</span>
+
+<span class="n">theme</span><span class="o">:</span><span class="w"> </span><span class="n">theme</span><span class="o">/</span><span class="n">apache</span>
+</code></pre></div>
+
+<h2>Options</h2>
+<h3>Plugins</h3>
+<p>If you are using the standard plugins included in ASF Pelican, you can leave this section out.
+If you include it, your build will automatically include the <code>gfm</code> plugin.</p>
+<div class="highlight"><pre><span></span><code><span class="n">plugins</span><span class="o">:</span>
+<span class="w">  </span><span class="n">paths</span><span class="o">:</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">theme</span><span class="o">/</span><span class="n">plugins</span>
+<span class="w">  </span><span class="n">use</span><span class="o">:</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">gfm</span>
+</code></pre></div>
+
+<h3>Special setup</h3>
+<p>To configure four special features:</p>
+<div class="highlight"><pre><span></span><code><span class="n">setup</span><span class="o">:</span>
+<span class="w">  </span><span class="n">data</span><span class="o">:</span><span class="w"> </span><span class="n">asfdata</span><span class="o">.</span><span class="na">yaml</span>
+<span class="w">  </span><span class="n">run</span><span class="o">:</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="sr">/bin/</span><span class="n">bash</span><span class="w"> </span><span class="n">shell</span><span class="o">.</span><span class="na">sh</span>
+<span class="w">  </span><span class="n">ignore</span><span class="o">:</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">README</span><span class="o">.</span><span class="na">md</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="k">include</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">docs</span>
+<span class="w">  </span><span class="n">copy</span><span class="o">:</span>
+<span class="w">    </span><span class="o">-</span><span class="w"> </span><span class="n">docs</span>
+</code></pre></div>
+
+<ol>
+<li>data - uses <code>asfdata</code> plugin to build a data model to use in <code>ezmd</code> files. www-site is the best example.</li>
+<li>run - uses <code>asfrun</code> plugin to run scripts. httpd-site's security vulnerability processing is the best example.</li>
+<li>ignore - sets Pelican's IGNORE_FILES setting.</li>
+<li>copy - uses <code>asfcopy</code> plugin to copy static files outside of the Pelican process. Include these in <code>ignore</code> as well.
+   This is useful if you have large files or many static files.</li>
+</ol>
+<h2>Generate ID</h2>
+<p>The <code>asfgenid</code> plugin performs a number of fixups and enhancements.</p>
+<div class="highlight"><pre><span></span><code><span class="n">genid</span><span class="o">:</span>
+<span class="w">  </span><span class="n">unsafe</span><span class="o">:</span><span class="w"> </span><span class="n">yes</span>
+<span class="w">  </span><span class="n">metadata</span><span class="o">:</span><span class="w"> </span><span class="n">yes</span>
+<span class="w">  </span><span class="n">elements</span><span class="o">:</span><span class="w"> </span><span class="n">yes</span>
+<span class="w">  </span><span class="n">headings_depth</span><span class="o">:</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">  </span><span class="n">permalinks</span><span class="o">:</span><span class="w"> </span><span class="n">yes</span>
+<span class="w">  </span><span class="n">toc_depth</span><span class="o">:</span><span class="w"> </span><span class="mi">4</span>
+<span class="w">  </span><span class="n">tables</span><span class="o">:</span><span class="w"> </span><span class="n">yes</span>
+</code></pre></div>
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2024, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation...
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
