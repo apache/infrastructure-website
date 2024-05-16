@@ -3,7 +3,7 @@ on:
   push:
     branches: [ "dfoulks/pelican_gha" ]
   pull_request:
-    branches: [ "dfoulks/pelican_gha" ]
+    branches: [ "dfoulks/gha-site" ]
 
   workflow_dispatch:
 jobs:
