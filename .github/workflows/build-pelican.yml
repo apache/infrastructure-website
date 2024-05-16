@@ -24,7 +24,7 @@ jobs:
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v4
-      - run: apt install pelican -y
+      - run: pip install pelican
       # Runs a single command using the runners shell
       - name: Run a one-line script
-        run: pelican content -o output
+        run: python3 -m pelican content -o output
