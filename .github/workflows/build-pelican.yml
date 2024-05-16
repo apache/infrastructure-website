@@ -16,7 +16,7 @@ jobs:
           repository: ''
           ref: 'dfoulks/pelican_gha'
       - name: Install Pelican
-        run: pip install pelican
+        run: sudo pip install pelican markdown ghp-import
       - name: Run a one-line script
         run: python3 -m pelican content -o output
         working-directory: '/home/runner/work/infrastructure-website/infrastructure-website'
