@@ -1,0 +1,70 @@
+= Developer Gains with Gradle
+:author: Drew Foulks (ASFInfra) and Clay Johnson (Gradle)
+[.notes]
+--
+while we're not racecar drivers, we do depend on high end machines to help us
+cross the finish line of releasing software. CI and Build systems have bubbles to the
+top of the list of ASF Infra offerings of interest. most if not all of the projects here use
+a build system of some sort.
+
+Gradle and ASF Infra have partnered to ensure that you're getting the most out of what
+we're able to offer.
+--
+
+== Terms
+[%step]
+* build-time
+* flaky tests
+* 
+
+[.notes]
+--
+I understand that many of you already know these terms, but just in case I'd like to ensure
+that we're all reading from the same dictionary. so I'm going to define a few things
+
+build-time refers to the time a build spends occupying build resources.
+* 1 build day is 24 hours of non-stop work for a worker node.
+* whether it's 1 24 hour build or 24 1 hour builds doesn't matter. it's 24 hours of build-time.
+
+Flaky tests are tests that _may_ pass on a second (or third) run.
+* 
+--
+
+== The Need for Speed.
+
+[%step]
+
+[.notes]
+--
+Right now, We're seeing an average savings of 12 minutes per build. which admittedly doesn't
+sound like a lot on its face but that's 81 days worth of build time over the course of the last
+10K builds.
+
+Build caching alone is responsible for 61 of those 81 days saved.
+Gradle's Build caching is lowering precious build time spent generating or regenerating
+build artifacts.
+
+I feel this is made even more incredible because we don't even have the full roster of projects
+using Gradle. As we onboard more projects we expect to see even more time savings.
+
+Local and Remote build caching enables savings of an average of over 13 minutes per build.
+or 90-100 build-days per calendar week.
+--
+
+== Enhanced Introspection
+[.notes]
+--
+TODO: explain how to use gradle enterprise to diagnose builds issues
+
+--
+
+== Better resource utilization.
+[%step]
+* Build time avoidance savings correlate directly to build queue times.
+* Efficient Ephemeral Node usage.
+    
+All of this to say: builds are getting done faster, sooner.
+
+== How do I use this?
+* the GE instance is publicly available at ge.apache.org
+

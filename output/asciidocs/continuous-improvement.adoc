@@ -1,0 +1,194 @@
+= Continuous Improvement for Continuous Development
+:author: Drew Foulks and Gavin McDonald, Infrafolk
+
+[.notes]
+--
+dfoulks:
+Hi I'm Drew Foulks, You might have seen me before at a convention or on 
+a Jira Ticket, I'm a member of the Apache Infrastructure Team and have 
+been since 2019. I've been a member of the Foundation for about 3 years.
+
+TODO: gmcdonald:
+
+--
+
+== Before we get started
+
+Thank you builds@ community.
+[.notes]
+--
+dfoulks:
+make a shout out to our builds@ community. for those of you who
+don't know this is the community that has collected around the ASF's CI 
+systems. These are regular committer / members with build engineer / power user
+experience that have taken up the mantle of build super hero to come to the
+aid of ASF Infra time and time again with useful advice and helping hands.
+
+these folks bring a project independent, solutions based perspective to the
+foundations and I want to ensure that we include more than subtle nod to 
+all of the effort they've put in and perspective that they've provided to us.
+
+thank you builds@ crew
+
+
+
+TODO: gmcdonald:
+
+--
+
+== A year of changes, 2023
+
+[%step]
+* more listening
+* better arm support
+* ephemeral nodes for jenkins
+* build caching
+* better github actions support
+
+[.notes]
+--
+dfoulks:
+2023 was a big year for the Infrastructure team at the ASF. apachecon 2022
+in New Orleans really showed us that in order to strengthen the Foundation
+as a whole from an infra point of view, we needed to put more emphasis on
+communicating with projects and committers not just so that we can address
+pain points but also so that we can be more proactive in our endeavors
+instead of becoming a reactive entity like so many corporate infra teams.
+
+One of the common themes in the work we've been doing this last year is 
+listening. I'm sure that some of you have heard of or maybe even been to
+an Infra roundtable. for those of you who haven't -- we've been hosting 
+these topical panel discussions for about a year now, and have encouraged
+projects to bring us their input on a variety of topics. The CI improvement
+initiative is no exception -- We've been taking stock of the CI concerns
+brought to us both historically and in the past year during these meetings
+We took up the threads and started to work to address those concerns by 
+making changes to the CI systems to make them more flexible and capable
+of addressing the use cases that you, the committers and contributors,
+have presented to us.
+--
+
+== 3rd party builds systems
+[%step]
+* Travis Exodus
+* GitHub Actions
+  * Self hosted runners in Azure
+
+[.notes]
+--
+dfoulks:
+Early 2023 saw the wrapping up of our exit from TravisCI. At the time
+GitHub actions presented an easy, well documented path for exiting travis.
+which at the time was our primary goal, and it really appealed to many of
+our users / Infra.
+
+It's easy to pick up / migrate to, the vendor was trustworthy
+and many people already undertstood the processes under the hood.
+
+Since then adoption has only increased which has given rise to new processes.
+
+The uptick of GitHub Actions usage brought with it the concerns of security and
+scalability. The current situation is that actions are managed by whitelist and
+require an infra ticket for new actions to be approved for use.
+
+We're currently looking at streamlining this process.
+
+
+
+gmcdonald:
+* Can you discuss how the self hosted runners in Azure extend scalability?
+* is there anything else that you'd like to say about this?
+--
+
+== Buildbot
+
+[%step]
+* project websites enabled blogs retirement
+* .asf.yaml changes
+
+[.notes]
+--
+dfoulks:
+Infrastructure spent some time this year working on how it generates content.
+this was a wide reaching initiative that reached right to the heart of what
+are considered the Foundation critical core services that infrastructure has
+always supported.
+
+The way that project websites get built and served has changed a lot in the
+last few years. As our means have changed, so have our methods, and while
+ASF Infra structure internal website builders are nothing new, we have been
+putting in the work to streamline the process for new projects at the foundation.
+
+This year saw the retirement of the Blogs system in favor of a more friendly
+and project-centric method of self-hosted blogs. Infra had been laying the
+groundwork for this for some time with the pelican and jekyll builder work
+
+changes to .asf.yaml have further streamlined the blogs changes into a
+relatively simple self-serve offering. for more information on how this
+gets done exactly, see us or our blogs expert after the presentation.
+
+
+
+gmcdonald:
+* is there anything you wanted to say here?
+--
+
+== Jenkins
+[%step]
+* Gradle Integrations
+* Ephemeral Nodes
+  * ARM Support
+  * GPU Support
+
+[.notes]
+--
+infrastructure spent a lot of time this year trying to get Gradle Enterprise
+integrated with our jenkins systems. 
+
+now, ASF Infrastructure and Gradle bring you ge.apache.org. Additionally,
+we are working to make build caching available to any project that wants it.
+
+We've been working with beam and a few other projects as a pilot program
+for the service and we've found:
+
+### FACT: 
+
+Gradle reports an average time savings of 16 minutes per build over the
+last 10K builds due to local and remote caching alone.
+
+16 minutes of savings doesn't sound like a lot on its face, but beam
+is running well over 10K builds a week. 10K builds @ 16 minutes is 
+111 days of time saved.
+
+that's a lot of build cycle time!
+
+Additionally, Gradle supports Maven and we look forward to rolling out
+gradle integration to projects using maven so that they also can leverage
+the time savings.
+
+### Ephemeral nodes in Jenkins
+
+We've further expanded Jenkins capbility by configuring ephemeral build 
+nodes for jenkins.
+
+currently this has been deployed to ci-builds so if you have a job there
+this applies especially to you:
+
+we've got auto deploying EC2 instances now, you may not have noticed but
+we've started breaking into the cloud by using a few nodes as `ubuntu` tagged
+nodes to help bring down the queue time.
+
+we _also_ have other nodes though
+
+###### FACT
+we added GPU (G4dn.16xlarge) nodes for GPU support with the `gpu` tag
+we added ARM (T4g.Small) nodes for ARM support with the `arm` tag
+
+and we custom built the image so that all of the tools that your builds
+are already configured to use are in the exact same place.
+
+we're also working on getting these images integrated with the new build
+systems so that it's a one and done process.
+--
+
+== Questions and Comments
