@@ -1,7 +1,0 @@
-
-layout: post
-title: Dear Apache
-date: '2015-10-19T18:30:41+00:00'
-permalink: dear_apache
-
-My name is Daniel Takamori and I'm so happy to be joining the Infra team here at Apache.&nbsp; I'm from Oregon in the United States and really enjoy the rain.&nbsp; While at Oregon State University I studied mathematics and physics with a lean towards error correcting codes and mathematical modelling.&nbsp; Some of my hobbies are playing Go in which I'm ranked 6.9 kyu by the AGA, cooking with eggs and green things, and old school platforming video games.&nbsp; In a former life I worked on underwater remotely operated vehicles and automated gardening systems.&nbsp; Traveling is something I liked to do once; living in Hungary was awesome and I hope to visit again. Oregon is a great place to live, with all the trees, rain and burritos but maybe things will change in the future.&nbsp; My handle Pono is my Hawaiian name, and I'm really proud to use it.<br /><br />Previously I was at the Oregon State University Open Source Lab and really enjoyed my time there; getting to know the Open Source communities and even work with Apache!&nbsp; It was a real eye opening experience to the world of what software and DevOps (lol who knows what that even means).&nbsp; I'm very excited to continue working with the community and even more excited to start this next chapter with such an amazing group.<br /><br />See you around internets!<br />
