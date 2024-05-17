@@ -1,4 +1,6 @@
+layout: post
 title: The Infra Blog
+date: '2022-11-17T15:27:00+00:00'
 
 ## The Infra Blog
 
