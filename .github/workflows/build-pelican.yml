@@ -1,7 +1,7 @@
 name: Build a Pelican Website
 on:
   push:
-    branches: [ "dfoulks/pelican-gha" ]
+    branches: [ "dfoulks/pelican_gha" ]
   workflow_dispatch:
 jobs:
   build-pelican:
@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: ''
-          ref: 'dfoulks/pelican-gha'
+          ref: 'dfoulks/pelican_gha'
       - name: Install Pelican
         run: pip3 install pelican markdown ghp-import bs4
       # Optionally, if your website uses the gfm plugin uncomment the GFM block
