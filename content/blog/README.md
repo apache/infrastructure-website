@@ -1,3 +1,5 @@
+title: The Infra Blog
+
 ## The Infra Blog
 
  -  [index.md](index.md) is the wheelhouse for the blog. There you define the general title and which template the blog is using.
