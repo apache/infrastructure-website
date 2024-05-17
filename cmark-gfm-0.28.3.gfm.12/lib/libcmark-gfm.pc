@@ -1,0 +1,10 @@
+prefix=/usr/local
+exec_prefix=/usr/local
+libdir=/usr/local/lib
+includedir=/usr/local/include
+
+Name: libcmark-gfm
+Description: CommonMark parsing, rendering, and manipulation with GitHub Flavored Markdown extensions
+Version: 0.28.3.gfm.12
+Libs: -L${libdir} -lcmark-gfm -lcmark-gfmextensions
+Cflags: -I${includedir}
