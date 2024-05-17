@@ -37,7 +37,7 @@ jobs:
       # START GFM CLEANUP BLOCK #
       ###########################
       - name: Clean up libcmark-gfm artifacts
-        run: rm -rf $(dirname $(echo $LIBCMARKDIR)) build-cmark.sh $(dirname $(echo $LIBCMARKDIR)).orig.tar.gz
+        run: rm -rf $(dirname $(echo $LIBCMARKDIR)) build-cmark.sh "$(dirname $(echo $LIBCMARKDIR)).orig.tar.gz"
       #########################
       # END GFM CLEANUP BLOCK #
       #########################
