@@ -22,7 +22,7 @@ jobs:
       - name: fetch libcmark-gfm.so buildscript
         run: wget https://raw.githubusercontent.com/apache/infrastructure-pelican/master/bin/build-cmark.sh
       - name: build libcmark-gfm.so
-        run: ./build-cmark.sh
+        run: /bin/bash ./build-cmark.sh
       # END GFM BLOCK
       - name: Generate website from markdown
         run: python3 -m pelican content -o output
