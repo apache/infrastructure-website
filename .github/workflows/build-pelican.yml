@@ -31,13 +31,15 @@ jobs:
       # END BUILD GFM BLOCK #
       #######################
       - name: Generate website from markdown
-        run: python3 -m pelican content -o output
+        run: python3 -m pelican content -o .output
         working-directory: '/home/runner/work/infrastructure-website/infrastructure-website'
       ###########################
       # START GFM CLEANUP BLOCK #
       ###########################
       - name: Clean up libcmark-gfm artifacts
-        run: rm -rf $(dirname $(echo $LIBCMARKDIR)) build-cmark.sh "$(dirname $(echo $LIBCMARKDIR)).orig.tar.gz"
+        run: rm -rf ./*
+      - name: Make output visible
+        run: mv .output output
       #########################
       # END GFM CLEANUP BLOCK #
       #########################
