@@ -6,6 +6,8 @@ on:
     branches: [ "dfoulks/pelican_gha" ]
 
   workflow_dispatch:
+env:
+  LIBCMARKDIR: /home/runner/work/infrastructure-website/infrastructure-website/cmark-gfm-0.28.3.gfm.12/lib
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -16,7 +18,7 @@ jobs:
           repository: ''
           ref: 'dfoulks/pelican_gha'
       - name: Install Pelican
-        run: pip3 install pelican markdown ghp-import
+        run: pip3 install pelican markdown ghp-import bs4
       # Optionally, if your website uses the gfm plugin uncomment the GFM block
       # START GFM BLOCK
       - name: fetch libcmark-gfm.so buildscript
