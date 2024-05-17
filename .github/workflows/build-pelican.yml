@@ -17,6 +17,13 @@ jobs:
           ref: 'dfoulks/pelican_gha'
       - name: Install Pelican
         run: pip3 install pelican markdown ghp-import
+      # Optionally, if your website uses the gfm plugin uncomment the GFM block
+      # START GFM BLOCK
+      - name: fetch libcmark-gfm.so buildscript
+        run: wget https://raw.githubusercontent.com/apache/infrastructure-pelican/master/bin/build-cmark.sh
+      - name: build libcmark-gfm.so
+        run: ./build-cmark.sh
+      # END GFM BLOCK
       - name: Generate website from markdown
         run: python3 -m pelican content -o output
         working-directory: '/home/runner/work/infrastructure-website/infrastructure-website'

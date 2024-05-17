@@ -15,6 +15,7 @@ plugins:
   use:
     - toc
     - spu
+    - gfm
 
 content:
   pages: pages

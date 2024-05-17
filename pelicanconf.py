@@ -13,7 +13,7 @@ TIMEZONE = 'UTC'
 THEME = 'content/theme'
 # Specify location of plugins, and which to use
 PLUGIN_PATHS = [ 'plugins',  ]
-PLUGINS = [ 'toc', 'spu', 'asfgenid' ]
+PLUGINS = [ 'toc', 'spu', 'gfm', 'asfgenid',  ]
 # All content is located at '.' (aka content/ )
 PAGE_PATHS = [ 'pages' ]
 STATIC_PATHS = [ '.',  ]
