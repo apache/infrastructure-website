@@ -1,9 +1,0 @@
-
-layout: post
-title: Even more GitHub features added to .asf.yaml
-date: '2020-10-21T13:35:19+00:00'
-permalink: even-more-github-features-added
-
-<p>Available as of yesterday, more self serve features were added to the .asf.yaml toolset, based around GitHub Branch Protection.</p>
-<p>You can now add the following features :-</p><ul><li>GitHub Branch Protection Enable/Disable</li><li>Require Status Checks to pass before merging</li><li>Require Branches to be up to date before merging</li><li>Context Status Checks (i.e. this build/check must pass before merging)</li><li>Require Pull Request Reviews</li><li>Dismiss Stale Pull requests</li><li>Require Code Owner Reviews</li><li>Minimum number of approvals of reviews</li><li>Require Signed Signatures on commits</li></ul><p>Some of these features, like enable/disable protection of branches and required signatures will send an email to the projects private list with details.</p><p>See this <a href="https://github.com/apache/infrastructure-puppet/pull/1678" target="_blank">PR</a> for more details on code and implementation.</p><p>Infra especially thanks Bryan Ellis (erisu) for opening the PR, providing the code and persisting all the way through a long standing PR until it was finally implemented, with tweaks by Humbedooh to see it over the finish line.<br></p><p>See the <a href="https://infra.apache.org/asf-yaml.html" target="_blank">.asf.yaml documentation</a>.</p>
-<p>If you haven't yet discovered the joys of what .asf.yaml can do for your project, read the entire page above to be enlightened.</p><p>Enjoy self-serving these via your .asf.yaml file!</p>
