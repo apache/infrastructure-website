@@ -5,8 +5,8 @@ pelican:
   whoami:         master
   
 staging:
-  whoami: asf-break-test
-  profile: ~
+  whoami: dfoulks/gha-site
+  profile: gha-site
   autostage: preview/*
 
 github:

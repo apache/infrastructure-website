@@ -1,7 +1,0 @@
-
-layout: post
-title: New mailing list for CI Build Services
-date: '2009-04-06T09:14:11+00:00'
-permalink: new_mailing_list_for_ci
-
-<p>Established today, we now have a dedicated mailing list to talk about and work out all things to do with our build services. Currently infrastructure provides projects with use of Hudson, Continuum, Gump and now we have another option in Buildbot. Buildbot is a new service here at Apache Infrastructure, currently in its last stages of testing , more info coming soon.&nbsp;</p><p>&nbsp;All these services and all the projects that use them, are welcome to meet together on the new mailing list. Maybe your project is looking to use one or more of these CI's to build &amp; test their code, build their site, publish to Nexus. Maybe you are already using a CI and want some configuration additions/changes or extra jobs run.</p><p>Also look out for us poor souls looking after these instances and the machines they run on - we might need more information from you projects, clarification or updating of build requirements, builds taking too long that needs investigation.</p><p>Failing builds are of course for each project to solve code-wise, but be sure that whichever CI(s) you choose, they are there to inform and will give you constant reminders of build failures ;)</p><p>&nbsp;Sign up to the new mailing list - builds-subscribe@apache.org.</p><p>&nbsp;See you there!&nbsp;</p><p>&nbsp;&nbsp;</p>

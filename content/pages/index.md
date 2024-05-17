@@ -1,2 +1,0 @@
-Title: Infra
-Template: index
