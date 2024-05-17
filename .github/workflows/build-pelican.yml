@@ -1,10 +1,8 @@
 name: Build a Pelican Website
 on:
   push:
-    branches: [ "dfoulks/pelican_gha" ]
+    branches: [ "dfoulks/pelican-gha" ]
   workflow_dispatch:
-env:
-  LIBCMARKDIR: /home/runner/work/infrastructure-website/infrastructure-website/cmark-gfm-0.28.3.gfm.12/lib
 jobs:
   build-pelican:
     runs-on: ubuntu-latest
@@ -13,10 +11,10 @@ jobs:
       - uses: actions/checkout@v4
         with:
           repository: ''
-          ref: 'dfoulks/pelican_gha'
+          ref: 'dfoulks/pelican-gha'
       - name: Install Pelican
         run: pip3 install pelican markdown ghp-import bs4
-      # Optionally, if your website uses the gfm plugin uncomment the GFM blocks
+      # Optionally, if your website uses the gfm plugin uncomment the GFM block
       #########################
       # START BUILD GFM BLOCK #
       #########################
@@ -28,8 +26,9 @@ jobs:
       # END BUILD GFM BLOCK #
       #######################
       - name: Generate website from markdown
-        run: python3 -m pelican content -o output
-        working-directory: '/home/runner/work/infrastructure-website/infrastructure-website'
+        run: /usr/bin/env python3 -m pelican content -o output
+        env:
+          LIBCMARKDIR: cmark-gfm-0.28.3.gfm.12/lib
       - name: Open a PR against the staging branch
         uses: peter-evans/create-pull-request@v6.0.5
         with:
