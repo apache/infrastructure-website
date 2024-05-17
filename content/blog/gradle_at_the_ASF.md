@@ -1,4 +1,8 @@
-layout: post title: Gradle has landed at the ASF. date: '2023-09-29' permalink: Gradle_has_landed category: builds
+layout: post
+title: Gradle has landed at the ASF.
+date: '2023-09-29'
+permalink: Gradle_has_landed
+category: builds
 
 # Gradle has landed at the ASF!
 
