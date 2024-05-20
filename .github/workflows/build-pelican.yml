@@ -13,5 +13,5 @@ jobs:
           ref: 'dfoulks/pelican_gha'
       - uses: apache/infrastructure-actions/build-pelican@main
         with:
-          dest_branch: 'dfoulks/gha-site'
-          uses_gfm: true
+          dest-branch: 'dfoulks/gha-site'
+          uses-gfm: true
