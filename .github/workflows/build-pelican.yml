@@ -15,3 +15,4 @@ jobs:
         with:
           dest-branch: 'dfoulks/gha-site'
           uses-gfm: true
+          token: ${{ secrets.GITHUB_TOKEN }}
