@@ -1,0 +1,18 @@
+name: Build a Pelican Website
+on:
+  workflow_dispatch:
+  push:
+
+permissions:
+  contents: write
+
+jobs:
+  build-pelican:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: apache/infrastructure-actions/build-pelican@simplify # temp override
+        with:
+          destination: 'sebb/gha-site'
+          gfm: 'true'
+          # Temp override
+          image: 'ghcr.io/sebbasf/infra-pelican:latest'
