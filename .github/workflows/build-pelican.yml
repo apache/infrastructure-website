@@ -13,6 +13,5 @@ jobs:
       - uses: apache/infrastructure-actions/build-pelican@simplify # temp override
         with:
           destination: 'sebb/gha-site'
-          gfm: 'true'
           # Temp override
           image: 'ghcr.io/sebbasf/infra-pelican:latest'
