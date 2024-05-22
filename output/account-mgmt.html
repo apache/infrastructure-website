@@ -86,19 +86,20 @@
 your <code>@apache.org</code> address (which forwards to your non-apache email account) a short-lived password reset link. The link may be encrypted to <a href="https://home.apache.org/keys/committer/" target="_blank">your PGP key</a>.</li>
 <li>decrypting the e-mail - one way to do this is to save the e-mail contents as a text file, e.g. <code>password.txt</code>. Open a shell command window, and run the following command:</li>
 </ol>
-<pre><code>gpg -d password.txt&lt;/code&gt;
-</code></pre>
+<div class="highlight"><pre><span></span><code>gpg -d password.txt&lt;/code&gt;
+</code></pre></div>
+
 <p>This should decrypt the file and display the output in the window.</p>
-<ol start="3">
+<ol>
 <li>
 <p>If you have lost access to your registered email address, file an additional ICLA with Secretary. Follow the directions for <a href="https://www.apache.org/licenses/#submitting" target="_blank">submitting an ICLA</a>. Include your current Apache ID and mention in your cover email that you are requesting a change to your email address.</p>
 </li>
 <li>
 <p>If that didn't work, email <code>root@</code>. In your email, mention the following information:</p>
 </li>
-</ol>
-<ul>
-<li>Your username.</li>
+<li>
+<p>Your username.</p>
+</li>
 <li>The fact that you have tried a self-service password reset, and why it didn't work. (Was the mail received? Did you decrypt it successfully?)</li>
 <li>Why you need to regain access to your Apache account -- e.g., if it is to work on a <a href="https://www.apache.org/foundation/" target="_blank">foundation project</a>, name that project; or if you are a <a href="https://www.apache.org/foundation/members" target="_blank">foundation member</a>, state that.</li>
 <li>Whether you have SFTP access to <code>home.apache.org</code> or SSH access to a project VM via public-key authentication.</li>
@@ -108,17 +109,16 @@ your <code>@apache.org</code> address (which forwards to your non-apache email a
 <li>For (<a href="https://www.apache.org/foundation/members" target="_blank">ASF Members</a> only, whether the contact information in your <code>members.txt</code> entry is valid.</li>
 <li>Whether you are able to send a new ICLA, with the same signature as your original one, which specifies new contact information.</li>
 <li>Whether there is any other way in which we (Infra) might satisfy ourselves that you are the legitimate owner of that account.</li>
-</ul>
+</ol>
 <p><strong>Note</strong>: please do not ask other ASF committers or Members to email root@ to vouch for you.</p>
 <h3>Multi Factor Authentication</h3>
 <p>Infra will soon provide multi-factor authentication (MFA) for account logins. Documentation related to setting up and using multi-factor authentication will be provided here when the service is ready.</p>
-<p>You are welcome to review the &lt;a href="<a href="https://infra.apache.org/mfa.html%3Edraft">https://infra.apache.org/mfa.html&gt;draft</a> MFA policy and the related draft policy on <a href="https://infra.apache.org/mfa-reset.html">https://infra.apache.org/mfa-reset.html</a>resetting MFA if access has been lost.</p>
+<p>You are welcome to review the <a href="https://infra.apache.org/mfa.html>draft MFA policy</a> and the related draft policy on <a href="https://infra.apache.org/mfa-reset.html">https://infra.apache.org/mfa-reset.html</a>resetting MFA if access has been lost</a>.</p>
 <p><strong>Note</strong>: If you are using GitHub, you must also use GitHub's MFA, which is separate from the Apache MFA. If you are having trouble logging in to GitHub (or some other service) or to Apache, make sure you are using the correct entries for the MFA in question.</p>
 <h2>Account removal</h2>
-<p>Occasionally we need to remove an account - either by request or because the committer is deceased or, in rare cases, because the ASF is forcibly removing the committer.</p>
+<p>Occasionally we need to remove an account - either by request or because the committer is deceased or, in rare cases, because the ASF is forcibly removing the committer. </p>
 <p>In practice, we almost never actually remove an LDAP account; we just remove the committer from all LDAP groups and mailing lists they have belonged to.</p>
 <p>An exception would be responding to a GDPR/PII request by a committer. If you wish to make such a request, open an Infra Jira ticket, state the circumstances, and provide your account information (not the password).</p>
-
         </div>
       </div>
     </div>    

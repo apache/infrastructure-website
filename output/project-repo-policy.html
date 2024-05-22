@@ -77,7 +77,7 @@
 <ul>
 <li>Each project can have a public directory in the Subversion repository, or as many public Git repositories as their work requires.</li>
 <li>Each project can request (using a Jira ticket) that Infra set up <strong>a temporary private Git repository fork</strong> for use with tasks, such as fixing security issues in project code, that should not be publicly available. The PMC must explain its need of a private fork in the Jira ticket. Forks will be tied to Jira tickets or CVEs such that upon completion of the work, the private fork can be decommissioned by Infra.</li>
-<li>Private repos <strong>must</strong> have commit/PR/issues emails sent to the project's <code>private@</code> list.</li>
+<li>Private repos <strong>must</strong> have commit/PR/issues emails sent to the project's <code>private@</code> list.  </li>
 <li>To follow the Infra convention, name project repos in the pattern <code>$project-$reponame</code> in order to map the project LDAP group to the permissions scheme.</li>
 </ul>
 <h3>Git repositories</h3>
@@ -91,8 +91,7 @@
 <h4>Git customizations</h4>
 <p>Git offers a number of customizations for committing code to a repository. Apache does not support all of them for its projects. For instance:</p>
 <ul>
-<li><strong>supported</strong>
-<ul>
+<li><strong>supported</strong><ul>
 <li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-the-automatic-deletion-of-branches" target="_blank">Head branches automatically deleted after pull requests are merged</a>.</li>
 <li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-squashing-for-pull-requests" target="_blank">Commit squashing for pull requests</a>.</li>
 <li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-squashing-for-pull-requests" target="_blank">Default to pull request titles for squash commits</a>.</li>
@@ -104,8 +103,7 @@
 </ul>
 <p>To deploy one of these customizations for your project's repository, ask Infra for help via a Jira ticket.</p>
 <ul>
-<li><strong>not supported</strong>
-<ul>
+<li><strong>not supported</strong><ul>
 <li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-auto-merge-for-pull-requests-in-your-repository" target="_blank">Auto-merge of pull requests</a>.</li>
 <li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue" target="_blank">Merge queues</a>. This feature is in limited beta.</li>
 </ul>
@@ -123,7 +121,6 @@
 <li>However, if projects create and house their documentation inside the ASF, statement 2 applies to it.</li>
 </ol>
 <p>Since the primary presence of an Apache project must be within Apache, there is an argument for storing project documentation in its own repository alongside the project's code repository. This practice also makes it easier for project committers to move from committing new features, or updates to existing features, to writing about them for the project's users.</p>
-
         </div>
       </div>
     </div>    
