@@ -7,7 +7,7 @@ Welcome to _Inside Infra_ for May, 2024.
 
 ## Roundtable
 
-The May 2024 Roundtable took place on May 8. the topic of the day was "STeVe for projects: how PMCs can use the STeVe voting tool". 
+The May 2024 Roundtable took place on May 8. The topic of the day was "STeVe for projects: how PMCs can use the STeVe voting tool". 
 
 Infra member Chris Wells reviewed what Apache STeVe is for, and the many voting situations it can support. Its main use in the ASF is for the election of board members, but any project could easily use for project-consensus votes, such as the election of a new PMC chair.
 
