@@ -1,6 +1,6 @@
 
 layout: post
-title: Confluence Wiki service to be restarted
+Title: Confluence Wiki service to be restarted
 date: '2015-06-10T08:32:13+00:00'
 permalink: confluence_wiki_service_to_be
 

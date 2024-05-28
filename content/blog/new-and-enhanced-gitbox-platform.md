@@ -1,6 +1,6 @@
 
 layout: post
-title: New and enhanced GitBox platform sees the light of day
+Title: New and enhanced GitBox platform sees the light of day
 date: '2022-04-04T07:48:50+00:00'
 permalink: new-and-enhanced-gitbox-platform
 

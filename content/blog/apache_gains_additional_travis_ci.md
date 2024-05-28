@@ -1,6 +1,6 @@
 
 layout: post
-title: Apache gains additional Travis-CI capacity
+Title: Apache gains additional Travis-CI capacity
 date: '2015-04-15T20:32:10+00:00'
 permalink: apache_gains_additional_travis_ci
 

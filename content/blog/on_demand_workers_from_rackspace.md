@@ -1,6 +1,6 @@
 
 layout: post
-title: On-demand workers from Rackspace added to builds.apache.org
+Title: On-demand workers from Rackspace added to builds.apache.org
 date: '2014-09-04T13:00:00+00:00'
 permalink: on_demand_slaves_from_rackspace
 

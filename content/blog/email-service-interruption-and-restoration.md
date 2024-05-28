@@ -1,6 +1,6 @@
 
 layout: post
-title: Email service interruption and restoration July 12, 2022
+Title: Email service interruption and restoration July 12, 2022
 date: '2022-07-13T16:41:38+00:00'
 permalink: email-service-interruption-and-restoration
 

@@ -1,6 +1,6 @@
 
 layout: post
-title: Bringing GitPubSub to the Apache Jenkins build server
+Title: Bringing GitPubSub to the Apache Jenkins build server
 date: '2017-03-26T01:07:08+00:00'
 permalink: bringing-gitpubsub-to-the-apache
 

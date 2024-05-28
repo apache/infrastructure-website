@@ -1,6 +1,6 @@
 
 layout: post
-title: The ASF LDAP system
+Title: The ASF LDAP system
 date: '2010-02-22T22:17:39+00:00'
 permalink: the_asf_ldap_system
 

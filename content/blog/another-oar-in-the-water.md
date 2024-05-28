@@ -1,6 +1,6 @@
 
 layout: post
-title: Another oar in the water
+Title: Another oar in the water
 date: '2020-01-05T18:54:30+00:00'
 permalink: another-oar-in-the-water
 

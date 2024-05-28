@@ -1,6 +1,6 @@
 
 layout: post
-title: Even more GitHub features added to .asf.yaml
+Title: Even more GitHub features added to .asf.yaml
 date: '2020-10-21T13:35:19+00:00'
 permalink: even-more-github-features-added
 

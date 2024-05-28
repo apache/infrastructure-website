@@ -1,6 +1,6 @@
 
 layout: post
-title: Subversion master undergoing emergency maintenance
+Title: Subversion master undergoing emergency maintenance
 date: '2014-12-03T17:52:32+00:00'
 permalink: subversion_master_undergoing_emergency_maintenance
 

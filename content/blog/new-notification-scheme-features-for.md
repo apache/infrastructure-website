@@ -1,6 +1,6 @@
 
 layout: post
-title: New notification scheme features for git repositories
+Title: New notification scheme features for git repositories
 date: '2020-04-19T22:50:14+00:00'
 permalink: new-notification-scheme-features-for
 

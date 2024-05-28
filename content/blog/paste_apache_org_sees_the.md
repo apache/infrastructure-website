@@ -1,6 +1,6 @@
 
 layout: post
-title: paste.apache.org sees the light of day
+Title: paste.apache.org sees the light of day
 date: '2013-03-06T18:37:42+00:00'
 permalink: paste_apache_org_sees_the
 

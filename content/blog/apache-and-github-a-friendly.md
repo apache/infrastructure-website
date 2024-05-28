@@ -1,6 +1,6 @@
 
 layout: post
-title: Apache and GitHub - a friendly PSA about awesomeness
+Title: Apache and GitHub - a friendly PSA about awesomeness
 date: '2019-04-30T01:08:58+00:00'
 permalink: apache-and-github-a-friendly
 

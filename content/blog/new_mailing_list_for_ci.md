@@ -1,6 +1,6 @@
 
 layout: post
-title: New mailing list for CI Build Services
+Title: New mailing list for CI Build Services
 date: '2009-04-06T09:14:11+00:00'
 permalink: new_mailing_list_for_ci
 

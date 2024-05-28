@@ -1,5 +1,5 @@
 layout: post 
-title: Add your wisdom to Infra 
+Title: Add your wisdom to Infra 
 date: '2023-11-17T01:55:55+00:00' 
 permalink: add_wisdom
 

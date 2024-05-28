@@ -1,6 +1,6 @@
 
 layout: post
-title: MoinMoin Service - User Account Tidy Up
+Title: MoinMoin Service - User Account Tidy Up
 date: '2014-11-21T12:17:17+00:00'
 permalink: moinmoin_service_user_account_tidy
 

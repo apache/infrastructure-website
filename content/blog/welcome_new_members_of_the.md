@@ -1,6 +1,6 @@
 
 layout: post
-title: Welcome new members of the infra team
+Title: Welcome new members of the infra team
 date: '2011-03-22T10:09:45+00:00'
 permalink: welcome_new_members_of_the
 

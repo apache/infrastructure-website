@@ -1,6 +1,6 @@
 
 layout: post
-title: Jira Public Signup Disabled
+Title: Jira Public Signup Disabled
 date: '2022-11-11T16:48:00+00:00'
 permalink: jira-public-signup-disabled
 

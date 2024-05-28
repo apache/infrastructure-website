@@ -1,6 +1,6 @@
 
 layout: post
-title: New faces in Infrastructure
+Title: New faces in Infrastructure
 date: '2009-03-25T02:28:20+00:00'
 permalink: new_faces_in_infrastructure
 

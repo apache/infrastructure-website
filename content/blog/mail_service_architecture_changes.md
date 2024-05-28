@@ -1,6 +1,6 @@
 
 layout: post
-title: Mail Service Architecture Changes
+Title: Mail Service Architecture Changes
 date: '2015-05-08T21:12:11+00:00'
 permalink: mail_service_architecture_changes
 

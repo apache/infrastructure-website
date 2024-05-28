@@ -1,6 +1,6 @@
 
 layout: post
-title: ASF JIRA Outages and Troubleshooting
+Title: ASF JIRA Outages and Troubleshooting
 date: '2016-06-30T16:25:30+00:00'
 permalink: continued_outages_for_the_asf
 

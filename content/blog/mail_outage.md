@@ -1,6 +1,6 @@
 
 layout: post
-title: Mail outage
+Title: Mail outage
 date: '2014-05-07T14:48:16+00:00'
 permalink: mail_outage
 

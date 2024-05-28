@@ -1,6 +1,6 @@
 
 layout: post
-title: new hardware for apache.org
+Title: new hardware for apache.org
 date: '2010-07-19T04:01:07+00:00'
 permalink: new_hardware_for_apache_org
 

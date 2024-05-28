@@ -1,6 +1,6 @@
 
 layout: post
-title: Subversion-to-Git service (git.apache.org) post mortem, and the path forward
+Title: Subversion-to-Git service (git.apache.org) post mortem, and the path forward
 date: '2019-09-10T21:36:35+00:00'
 permalink: subversion-to-git-service-git
 

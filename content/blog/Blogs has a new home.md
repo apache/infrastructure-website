@@ -1,4 +1,4 @@
-title: Infra blogs has a new home
+Title: Infra blogs has a new home
 date: '2022-10-24T12:54:00+00:00'
 permalink: blogs-has-a-new-home
 

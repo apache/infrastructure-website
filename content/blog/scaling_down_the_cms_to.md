@@ -1,6 +1,6 @@
 
 layout: post
-title: Scaling down the CMS to modest but intricate websites
+Title: Scaling down the CMS to modest but intricate websites
 date: '2014-03-25T18:23:50+00:00'
 permalink: scaling_down_the_cms_to
 

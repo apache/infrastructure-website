@@ -1,6 +1,6 @@
 
 layout: post
-title: Buildbot master currently off-line
+Title: Buildbot master currently off-line
 date: '2015-06-29T21:17:45+00:00'
 permalink: buildbot_master_currently_off_line
 

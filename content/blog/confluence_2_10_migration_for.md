@@ -1,6 +1,6 @@
 
 layout: post
-title: Confluence 2.10 migration for cwiki.a.o 11 July1
+Title: Confluence 2.10 migration for cwiki.a.o 11 July1
 date: '2009-07-07T07:04:25+00:00'
 permalink: confluence_2_10_migration_for
 

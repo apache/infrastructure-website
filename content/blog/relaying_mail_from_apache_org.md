@@ -1,6 +1,6 @@
 
 layout: post
-title: Relaying mail from apache.org.
+Title: Relaying mail from apache.org.
 date: '2009-08-01T12:24:57+00:00'
 permalink: relaying_mail_from_apache_org
 

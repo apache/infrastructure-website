@@ -1,6 +1,6 @@
 
 layout: post
-title: New status page for the ASF
+Title: New status page for the ASF
 date: '2014-08-14T13:45:53+00:00'
 permalink: new_status_page_for_the
 

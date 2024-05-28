@@ -1,6 +1,6 @@
 
 layout: post
-title: Git support at Apache
+Title: Git support at Apache
 date: '2009-05-03T22:22:57+00:00'
 permalink: git_at_apache
 

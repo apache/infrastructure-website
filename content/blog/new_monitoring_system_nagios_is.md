@@ -1,6 +1,6 @@
 
 layout: post
-title: New monitoring system: nagios is dead long live circonus
+Title: New monitoring system: nagios is dead long live circonus
 date: '2014-05-23T22:29:12+00:00'
 permalink: new_monitoring_system_nagios_is
 

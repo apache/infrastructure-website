@@ -1,6 +1,6 @@
 
 layout: post
-title: Welcome to Roller 6.0!
+Title: Welcome to Roller 6.0!
 date: '2020-02-25T22:16:59+00:00'
 permalink: welcome-to-roller-6-0
 

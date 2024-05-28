@@ -1,6 +1,6 @@
 
 layout: post
-title: Apache Services and SHA-1 SSL Cert deprecation
+Title: Apache Services and SHA-1 SSL Cert deprecation
 date: '2015-04-29T23:02:29+00:00'
 permalink: apache_services_and_sha_1
 

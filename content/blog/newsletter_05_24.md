@@ -1,5 +1,5 @@
 layout: post 
-title: Inside Infra May 2024 
+Title: Inside Infra May 2024 
 date: '2024-05-24' 
 permalink: newsletter0524
 

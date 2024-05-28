@@ -1,6 +1,6 @@
 
 layout: post
-title: Strengthening the Infra team
+Title: Strengthening the Infra team
 date: '2022-06-27T12:51:54+00:00'
 permalink: strengthening-the-infra-team
 

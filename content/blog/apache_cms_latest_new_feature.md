@@ -1,6 +1,6 @@
 
 layout: post
-title: Apache CMS: latest new feature is SPEED!
+Title: Apache CMS: latest new feature is SPEED!
 date: '2012-02-26T02:23:56+00:00'
 permalink: apache_cms_latest_new_feature
 

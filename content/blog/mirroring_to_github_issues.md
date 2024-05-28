@@ -1,6 +1,6 @@
 
 layout: post
-title: Mirroring to GitHub issues
+Title: Mirroring to GitHub issues
 date: '2015-07-14T16:05:02+00:00'
 permalink: mirroring_to_github_issues
 

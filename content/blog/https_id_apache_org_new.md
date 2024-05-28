@@ -1,6 +1,6 @@
 
 layout: post
-title: id.apache.org  --  New Password Service
+Title: id.apache.org  --  New Password Service
 date: '2011-01-14T16:36:42+00:00'
 permalink: https_id_apache_org_new
 
