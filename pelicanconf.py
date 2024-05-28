@@ -58,6 +58,7 @@ ASF_GENID = {
 }
 
 
+<<<<<<< HEAD
 
 
 
@@ -67,3 +68,5 @@ IGNORE_FILES = [ 'theme',  ]
 
 
 
+=======
+>>>>>>> c40e39bd5dffe9af12283bb8f7086aadfeb6f179
