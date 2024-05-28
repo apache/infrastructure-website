@@ -1,6 +1,6 @@
 
 layout: post
-Title: ASF Comments System Live!
+title: ASF Comments System Live!
 date: '2012-07-09T16:49:30+00:00'
 permalink: asf_comments_system_live
 

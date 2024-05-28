@@ -1,6 +1,6 @@
 
 layout: post
-Title: s.apache.org - uri shortening service
+title: s.apache.org - uri shortening service
 date: '2010-06-11T17:17:46+00:00'
 permalink: s_apache_org_uri_shortening
 

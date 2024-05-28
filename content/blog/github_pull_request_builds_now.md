@@ -1,6 +1,6 @@
 
 layout: post
-Title: GitHub pull request builds now available on builds.apache.org
+title: GitHub pull request builds now available on builds.apache.org
 date: '2014-10-02T13:00:00+00:00'
 permalink: github_pull_request_builds_now
 

@@ -1,6 +1,6 @@
 
 layout: post
-Title: apache.org incident report for 04092010
+title: apache.org incident report for 04092010
 date: '2010-04-13T05:04:50+00:00'
 permalink: apache_org_04_09_2010
 

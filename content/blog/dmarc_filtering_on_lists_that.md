@@ -1,6 +1,6 @@
 
 layout: post
-Title: DMARC filtering on lists that munge messages
+title: DMARC filtering on lists that munge messages
 date: '2014-06-03T21:57:08+00:00'
 permalink: dmarc_filtering_on_lists_that
 

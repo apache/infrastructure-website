@@ -1,6 +1,6 @@
 
 layout: post
-Title: blogs.a.o moved, upgraded and improved
+title: blogs.a.o moved, upgraded and improved
 date: '2017-01-01T08:06:46+00:00'
 permalink: blogs-a-o-moved-upgraded
 

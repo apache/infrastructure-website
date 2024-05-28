@@ -1,8 +1,7 @@
-
-layout: post
-Title: Apache CMS and external build support
+title: Apache CMS and external build support
 date: '2012-03-10T17:28:05+00:00'
 permalink: apache_cms_and_external_build
+layout: post
 
 <hr/>
 **Note**: Projects and the ASF itself used the Apache Content Management System from 2010 to 2021. It is no longer available.

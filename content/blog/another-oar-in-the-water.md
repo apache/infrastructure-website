@@ -1,8 +1,7 @@
-
-layout: post
-Title: Another oar in the water
+title: Another oar in the water
 date: '2020-01-05T18:54:30+00:00'
 permalink: another-oar-in-the-water
+layout: post
 
 <p>
 The Infrastructure team (Infra) works behind the scenes to make it possible for Apache's galaxy of committers to do the cool stuff they do, and for the open-source world to get, use, and rely on applications Apache projects produce. Infra supports additions to code repositories, a constant stream of conversation among project committers and contributors, and about 100 terabytes a month of software downloads.</p> 

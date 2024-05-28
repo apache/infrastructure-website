@@ -1,6 +1,6 @@
 
 layout: post
-Title: LDAP - It's getting closer
+title: LDAP - It's getting closer
 date: '2009-03-26T16:56:58+00:00'
 permalink: ldap_it_s_getting_closer
 

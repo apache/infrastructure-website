@@ -1,6 +1,6 @@
 
 layout: post
-Title: Public Preview of Drafts feature added to ASF Roller instance
+title: Public Preview of Drafts feature added to ASF Roller instance
 date: '2009-07-15T06:59:48+00:00'
 permalink: public_preview_of_drafts_feature
 

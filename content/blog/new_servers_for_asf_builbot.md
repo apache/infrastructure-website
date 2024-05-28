@@ -1,6 +1,6 @@
 
 layout: post
-Title: New secondary servers for ASF Buildbot
+title: New secondary servers for ASF Buildbot
 date: '2010-03-04T22:03:23+00:00'
 permalink: new_slaves_for_asf_builbot
 

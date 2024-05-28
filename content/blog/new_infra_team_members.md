@@ -1,6 +1,6 @@
 
 layout: post
-Title: New Infra Team Members
+title: New Infra Team Members
 date: '2012-07-26T02:35:47+00:00'
 permalink: new_infra_team_members
 

@@ -1,6 +1,6 @@
 
 layout: post
-Title: Introducing JIRA Service Desk
+title: Introducing JIRA Service Desk
 date: '2015-04-13T20:21:14+00:00'
 permalink: introducing_jira_service_desk
 

@@ -1,6 +1,6 @@
 
 layout: post
-Title: It's official, we now have LDAP running!
+title: It's official, we now have LDAP running!
 date: '2009-05-21T16:01:19+00:00'
 permalink: it_s_official_we_now
 

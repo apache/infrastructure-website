@@ -1,8 +1,7 @@
-
-layout: post
-Title: Apache CMS: latest new feature is SPEED!
+title: Apache CMS: latest new feature is SPEED!
 date: '2012-02-26T02:23:56+00:00'
 permalink: apache_cms_latest_new_feature
+layout: post
 
 <hr/>
 **Note**: Projects and the ASF itself used the Apache Content Management System from 2010 to 2021. It is no longer available.

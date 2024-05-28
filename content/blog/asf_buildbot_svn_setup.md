@@ -1,6 +1,6 @@
 
 layout: post
-Title: ASF Buildbot svn setup
+title: ASF Buildbot svn setup
 date: '2010-03-29T10:25:59+00:00'
 permalink: asf_buildbot_svn_setup
 

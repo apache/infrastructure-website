@@ -1,6 +1,6 @@
 
 layout: post
-Title: Relocation of Apache git repositories on git-wip-us.apache.org to gitbox.apache.org
+title: Relocation of Apache git repositories on git-wip-us.apache.org to gitbox.apache.org
 date: '2018-12-07T17:33:33+00:00'
 permalink: relocation-of-apache-git-repositories
 

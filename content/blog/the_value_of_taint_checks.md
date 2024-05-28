@@ -1,6 +1,6 @@
 
 layout: post
-Title: The value of taint checks in CGI scripts
+title: The value of taint checks in CGI scripts
 date: '2012-06-09T21:45:27+00:00'
 permalink: the_value_of_taint_checks
 

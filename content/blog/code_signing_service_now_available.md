@@ -1,6 +1,6 @@
 
 layout: post
-Title: Code signing service now available
+title: Code signing service now available
 date: '2014-10-06T16:36:09+00:00'
 permalink: code_signing_service_now_available
 

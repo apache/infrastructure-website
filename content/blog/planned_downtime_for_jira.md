@@ -1,6 +1,6 @@
 
 layout: post
-Title: Planned downtime for Jira
+title: Planned downtime for Jira
 date: '2015-05-18T15:28:11+00:00'
 permalink: planned_downtime_for_jira
 

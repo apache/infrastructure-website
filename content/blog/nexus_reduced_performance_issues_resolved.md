@@ -1,6 +1,6 @@
 
 layout: post
-Title: Nexus reduced performance issues resolved
+title: Nexus reduced performance issues resolved
 date: '2014-09-11T09:19:46+00:00'
 permalink: nexus_reduced_performance_issues_resolved
 

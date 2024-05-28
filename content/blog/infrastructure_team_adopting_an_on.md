@@ -1,6 +1,6 @@
 
 layout: post
-Title: Infrastructure Team Adopting an On-Call Rotation
+title: Infrastructure Team Adopting an On-Call Rotation
 date: '2014-08-18T13:00:00+00:00'
 permalink: infrastructure_team_adopting_an_on
 

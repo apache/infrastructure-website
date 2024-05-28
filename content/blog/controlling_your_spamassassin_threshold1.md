@@ -1,6 +1,6 @@
 
 layout: post
-Title: Controlling your SpamAssassin threshold
+title: Controlling your SpamAssassin threshold
 date: '2011-01-27T15:37:21+00:00'
 permalink: controlling_your_spamassassin_threshold1
 

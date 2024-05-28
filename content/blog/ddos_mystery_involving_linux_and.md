@@ -1,6 +1,6 @@
 
 layout: post
-Title: DDOS mystery involving Linux and mod_ssl
+title: DDOS mystery involving Linux and mod_ssl
 date: '2009-10-12T01:53:03+00:00'
 permalink: ddos_mystery_involving_linux_and
 

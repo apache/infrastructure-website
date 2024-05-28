@@ -1,6 +1,6 @@
 
 layout: post
-Title: LDAP, groups and SVN - Coupled together
+title: LDAP, groups and SVN - Coupled together
 date: '2010-02-22T22:03:20+00:00'
 permalink: ldap_svn_coupled_together
 

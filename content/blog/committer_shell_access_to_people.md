@@ -1,6 +1,6 @@
 
 layout: post
-Title: Committer shell access to people.apache.org
+title: Committer shell access to people.apache.org
 date: '2014-09-25T23:38:41+00:00'
 permalink: committer_shell_access_to_people
 

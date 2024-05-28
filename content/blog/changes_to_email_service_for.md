@@ -1,6 +1,6 @@
 
 layout: post
-Title: Changes to email service for all committers
+title: Changes to email service for all committers
 date: '2011-02-24T21:13:18+00:00'
 permalink: changes_to_email_service_for
 

@@ -1,6 +1,6 @@
 
 layout: post
-Title: Git based websites available
+title: Git based websites available
 date: '2015-04-29T21:29:31+00:00'
 permalink: git_based_websites_available
 

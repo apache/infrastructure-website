@@ -45,7 +45,7 @@ For better readability as you are editing, you can lay out the metadata using mu
 
 ```
 layout: post
-Title: THE ENTRY'S TITLE
+title: THE ENTRY'S TITLE
 date: 2010-01-01
 permalink: KEY WORDS FROM THE TITLE
 category CATEGORY

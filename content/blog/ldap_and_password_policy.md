@@ -1,6 +1,6 @@
 
 layout: post
-Title: LDAP and password policy
+title: LDAP and password policy
 date: '2010-12-17T06:38:50+00:00'
 permalink: ldap_and_password_policy
 

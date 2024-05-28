@@ -1,5 +1,5 @@
 layout: post
-Title: Gradle has landed at the ASF.
+title: Gradle has landed at the ASF.
 date: '2023-09-29'
 permalink: Gradle_has_landed
 

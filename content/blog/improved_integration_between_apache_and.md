@@ -1,6 +1,6 @@
 
 layout: post
-Title: Improved integration between Apache and GitHub
+title: Improved integration between Apache and GitHub
 date: '2014-02-12T01:16:30+00:00'
 permalink: improved_integration_between_apache_and
 

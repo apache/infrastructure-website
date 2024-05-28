@@ -1,6 +1,6 @@
 
 layout: post
-Title: Towards a redeployable future, or how I stopped worrying and learned to love setting the execute bit on CGI files
+title: Towards a redeployable future, or how I stopped worrying and learned to love setting the execute bit on CGI files
 date: '2015-02-27T13:08:05+00:00'
 permalink: towards_a_redeployable_future_or
 

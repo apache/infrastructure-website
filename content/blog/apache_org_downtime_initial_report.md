@@ -1,6 +1,6 @@
 
 layout: post
-Title: apache.org downtime - initial report
+title: apache.org downtime - initial report
 date: '2009-08-28T12:33:19+00:00'
 permalink: apache_org_downtime_initial_report
 

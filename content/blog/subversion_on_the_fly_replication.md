@@ -1,6 +1,6 @@
 
 layout: post
-Title: Subversion on-the-fly Replication Talk
+title: Subversion on-the-fly Replication Talk
 date: '2009-04-02T17:47:53+00:00'
 permalink: subversion_on_the_fly_replication
 

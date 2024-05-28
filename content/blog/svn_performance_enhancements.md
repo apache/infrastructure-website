@@ -1,6 +1,6 @@
 
 layout: post
-Title: SVN performance enhancements
+title: SVN performance enhancements
 date: '2010-02-17T00:41:04+00:00'
 permalink: svn_performance_enhancements
 

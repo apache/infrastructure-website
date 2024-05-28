@@ -1,6 +1,6 @@
 
 layout: post
-Title: AppVeyor CI now available for GitHub Mirrors
+title: AppVeyor CI now available for GitHub Mirrors
 date: '2016-02-12T19:45:06+00:00'
 permalink: appveyor_ci_now_available_for
 
