@@ -1,8 +1,7 @@
-
-layout: post
 title: GitHub pull request builds now available on builds.apache.org
 date: '2014-10-02T13:00:00+00:00'
 permalink: github_pull_request_builds_now
+layout: post
 
 <font face="arial, helvetica, sans-serif"><span style="font-stretch: normal;">The ASF Infrastructure team is happy to announce that you can now set up jobs on <a href="https://builds.apache.org">builds.apache.org</a> to listen for pull requests to <a href="https://github.com/apache">github.com/apache</a> repositories, build that pull request’s changes, and then comment on the pull request with the build’s results. This is done using the <a href="http://www.cloudbees.com/products/jenkins-enterprise">Jenkins Enterprise</a> <a href="https://wiki.cloudbees.com/bin/view/DEV/Github+Pull+Request+Validation">GitHub pull request builder plugin</a>, generously provided to the ASF by our friends at <a href="http://www.cloudbees.com/">CloudBees</a>. We've set up the necessary hooks on all github.com/apache repositories that are up as of Wednesday, Oct 1, 2014, and will be adding the hooks to all new repositories going forward.</span><br /> <span style="font-stretch: normal;"></span><br /> <span style="font-stretch: normal;">Here’s what you need to do to set it up:</span><br /> </font> 
   <ul> 

@@ -1,8 +1,7 @@
-
-layout: post
 title: Introducing JIRA Service Desk
 date: '2015-04-13T20:21:14+00:00'
 permalink: introducing_jira_service_desk
+layout: post
 
 <hr/>
 Infra no longer offers the Jira Service Desk. You can manage most standard service requests yourself through the <a href="https://selfserve.apache.org/" target="_blank">Self-Serve service</a>.

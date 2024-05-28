@@ -1,8 +1,7 @@
-
-layout: post
 title: Email from apache.org committer accounts bypasses moderation!
 date: '2014-06-15T02:29:06+00:00'
 permalink: email_from_apache_org_committer
+layout: post
 
 <p>Good news! &nbsp; We've finally laid the necessary groundwork to extend the bypassing of committer emails sent from their apache.org addresses, from commit lists to now all Apache mailing lists. &nbsp;This feature was activated earlier today and represents a significant benefit for cross-collaboration between Apache mailing lists for committers, relieving moderators of needless burden.</p> 
   <p>Also we'd like to remind you of the SSL-enabled SMTP submission service we offer committers listening on people.apache.org port 465. &nbsp;Gmail users in particular can enjoy a convenient way of sending email, to any recipient even outside apache.org, using their apache.org committer address. &nbsp;For more on that please see our website's <a href="http://www.apache.org/dev/user-email.html#via-smtp-based-mail-submission-service-recommended">documentation</a>.</p> 

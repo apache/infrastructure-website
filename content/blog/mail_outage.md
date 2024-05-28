@@ -1,8 +1,7 @@
-
-layout: post
 title: Mail outage
 date: '2014-05-07T14:48:16+00:00'
 permalink: mail_outage
+layout: post
 
 <p>During the afternoon of May 6th we began experiencing delays in mail delivery of 1-2 hours. Initial efforts at remediation seemed to clear this up but on the morning of May 7th the problem worsened and we proactively disabled mail service to deal with the failure. The underlying hardware suffered failures on multiple disks. This outage effects all ASF mailing lists and mail forwarding. </p> 
   <p>&nbsp;This service is housed at <a href="http://osuosl.org">OSUOSL</a>, and we are currently waiting on smart hands to help with replacing hardware. Our expectation at this point is that we still have multiple hours worth of outage.&nbsp;</p> 

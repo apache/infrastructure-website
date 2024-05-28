@@ -1,7 +1,7 @@
-layout: post 
 title: The Infra Newsletter January 2024
 date: '2024-01-20' 
 permalink: newsletter0124 
+layout: post 
 
 Hi, all!
 

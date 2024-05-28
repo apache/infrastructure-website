@@ -1,8 +1,7 @@
-
-layout: post
 title: Code signing service now available
 date: '2014-10-06T16:36:09+00:00'
 permalink: code_signing_service_now_available
+layout: post
 
 <p>The ASF Infrastructure team is pleased to announce the availability of a new code signing service for Java, Windows and Android applications. This service is available to any Apache project to use to sign their releases. Traditionally, Apache projects have shipped source code. The code tarballs are signed with a GPG signature to allow users and providers to verify the code's authenticity, but users have either compiled their own applications or some projects have provided convenience binaries. With projects like Apache OpenOffice, users expect to receive binaries that are ready to run. Today's desktop and mobile operating systems expect that binaries will be signed by the vendor -- which had left a gap to be filled for Apache projects. &nbsp;</p> 
   <p>After a great deal of research, we have chosen Symantec's <a href="http://www.symantec.com/code-signing/secure-app-service">Secure App Service</a> offering to provide code signing service. This allows us to granularly permit access; and each PMC will have their own certificate(s) for signing. The per-project nature of certificate issuance allows us to revoke a signature without disrupting other projects.&nbsp;</p> 

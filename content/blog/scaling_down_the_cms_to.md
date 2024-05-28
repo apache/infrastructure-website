@@ -1,8 +1,7 @@
-
-layout: post
 title: Scaling down the CMS to modest but intricate websites
 date: '2014-03-25T18:23:50+00:00'
 permalink: scaling_down_the_cms_to
+layout: post
 
 <hr/>
 **Note**: Projects and the ASF itself used the Apache Content Management System from 2010 to 2021. It is no longer available.

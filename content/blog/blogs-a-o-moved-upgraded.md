@@ -1,8 +1,7 @@
-
-layout: post
 title: blogs.a.o moved, upgraded and improved
 date: '2017-01-01T08:06:46+00:00'
 permalink: blogs-a-o-moved-upgraded
+layout: post
 
 <p>Hi All,</p> 
   <p> <a href="https://blogs.apache.org" title="blogs.apache.org main site">blogs.apache.org</a> &nbsp; - the site you are reading now! has had a bit of an update.<br /></p> 

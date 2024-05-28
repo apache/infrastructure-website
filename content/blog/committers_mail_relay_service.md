@@ -1,8 +1,7 @@
-
-layout: post
 title: Committers mail relay service
 date: '2014-09-25T22:57:44+00:00'
 permalink: committers_mail_relay_service
+layout: post
 
 <p>For a very long time now we have allowed committers to send email from their @apache.org email address from any host. &nbsp;10 years ago this was less of an issue than it is today. &nbsp;In the current world of mass spam and junk flying around, mail server providers are trying to find better ways to implement a sense of safety from this for their users. &nbsp;One such method is SPF [1]. These methodologies check that incoming email actually originated via a valid mail server for the senders domain.&nbsp;</p> 
   <p>For example if you send from myuserid@apache.org, but you just send that via your ISP at home, it could be construed as being junk as it never came via an apache.org mail server. &nbsp;Some time ago we setup a service on people.apache.org to cater for this, but it was never enforced and it seems that the SMTP daemon running the service is not 100% RFC compliant and thus some people have been unable to use this service.</p> 

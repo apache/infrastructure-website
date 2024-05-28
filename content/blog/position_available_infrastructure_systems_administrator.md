@@ -1,8 +1,7 @@
-
-layout: post
 title: Position Available: Infrastructure Systems Administrator Architect
 date: '2016-07-25T20:07:36+00:00'
 permalink: position_available_infrastructure_systems_administrator
+layout: post
 
 <p><font size="5"><b>UPDATE</b>: &nbsp;We have received enough applicants at this time. Thank you all for your interest.&nbsp;</font></p> 
   <div> 

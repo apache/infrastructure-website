@@ -1,8 +1,7 @@
-
-layout: post
 title: translate service now open!
 date: '2011-12-11T20:30:33+00:00'
 permalink: translate_service_now_open
+layout: post
 
 <p>
 

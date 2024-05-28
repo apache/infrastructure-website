@@ -1,8 +1,7 @@
-
-layout: post
 title: Mirroring to GitHub issues
 date: '2015-07-14T16:05:02+00:00'
 permalink: mirroring_to_github_issues
+layout: post
 
 <p>As some of you are aware, there have been some issues syncing changes from repositories on <a href="https://git-wip-us.apache.org">https://git-wip-us.apache.org</a> to the mirrors on GitHub.</p> 
   <p> </p> 

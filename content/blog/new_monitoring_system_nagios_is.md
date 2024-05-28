@@ -1,8 +1,7 @@
-
-layout: post
 title: New monitoring system: nagios is dead long live circonus
 date: '2014-05-23T22:29:12+00:00'
 permalink: new_monitoring_system_nagios_is
+layout: post
 
 <p>23 may 2014 the old monitoring system &quot;nagios&quot; was put to sleep, and &quot;circonus&quot; was given production status.</p> 
   <p>The new monitoring system is sponsored by circonus and most of the monitoring as well as the central database runs on <a href="www.circonus.com" target="_blank">www.circonus.com</a>. The infrastructure team have built and deployed logic around the standard circonus system:<br />

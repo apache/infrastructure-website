@@ -1,8 +1,7 @@
-
-layout: post
 title: apache.org incident report for 05292012
 date: '2012-05-29T16:59:09+00:00'
 permalink: apache_org_incident_report_for
+layout: post
 
 <p>Last week, internal audit activity discovered that the access logs of some committer-only Apache services contained passwords but had been available to every Apache committer.<br /></p> 
   <h3> </h3> 

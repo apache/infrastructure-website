@@ -1,8 +1,7 @@
-
-layout: post
 title: Infrastructure Team Adopting an On-Call Rotation
 date: '2014-08-18T13:00:00+00:00'
 permalink: infrastructure_team_adopting_an_on
+layout: post
 
 <p>As the Apache Software Foundation (ASF) has grown, the infrastructure required to support its diverse set of projects has grown as well. To care for the infrastructure that the ASF depends on, the foundation has hired several contractors to supplement the dedicated cadre of volunteers who help maintain the ASFs hardware and services. To best utilize the time of our paid contractors and volunteers, the Infrastructure team will be adopting an on-call rotation to meet requests and resolve outages in a timely fashion.&nbsp;</p> 
   <h3>Why We're Establishing an On-Call Rotation

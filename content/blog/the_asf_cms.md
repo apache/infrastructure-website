@@ -1,8 +1,7 @@
-
-layout: post
 title: The ASF CMS
 date: '2010-12-02T04:25:43+00:00'
 permalink: the_asf_cms
+layout: post
 
 <hr/>
 **Note**: Projects and the ASF itself used the Apache Content Management System from 2010 to 2021. It is no longer available.

@@ -1,8 +1,7 @@
-
-layout: post
 title: Relocation of Apache git repositories on git-wip-us.apache.org to gitbox.apache.org
 date: '2018-12-07T17:33:33+00:00'
 permalink: relocation-of-apache-git-repositories
+layout: post
 
 <p>[IF YOUR PROJECT DOES NOT HAVE GIT REPOSITORIES ON GIT-WIP-US PLEASE DISREGARD THIS POST]<br /><br />Hello Apache projects,<br /><br />I am writing to you because you may have git repositories on the git-wip-us server, which is slated to be decommissioned in the coming months. All repositories will be moved to the new gitbox service which includes direct write access on github as well as the standard ASF commit access via gitbox.apache.org.</p> 
   <p><strong>Why this move?</strong><br />The move comes as a result of retiring the git-wip service, as the hardware it runs on is longing for retirement. In lieu of this, we have decided to consolidate the two services (git-wip and gitbox), to ease the management of our repository systems and future-proof the underlying hardware. The move is fully automated, and ideally, nothing will change in your workflow other than added features and access to GitHub.<br /></p> 

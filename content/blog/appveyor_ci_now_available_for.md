@@ -1,8 +1,7 @@
-
-layout: post
 title: AppVeyor CI now available for GitHub Mirrors
 date: '2016-02-12T19:45:06+00:00'
 permalink: appveyor_ci_now_available_for
+layout: post
 
 <p><span style="font-stretch: normal;">The ASF Infrastructure team is happy to announce that projects can how have AppVeyor CI setup on their GitHub mirrors.</span></p> 
   <p>&nbsp;The only thing you need to do is create an INFRA ticket at <a href="https://issues.apache.org/jira/browse/INFRA/">issues.apache.org</a> with the following information:</p> 

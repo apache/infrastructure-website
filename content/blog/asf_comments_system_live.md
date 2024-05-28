@@ -1,8 +1,7 @@
-
-layout: post
 title: ASF Comments System Live!
 date: '2012-07-09T16:49:30+00:00'
 permalink: asf_comments_system_live
+layout: post
 
 <hr/>
 **Note**: This service is no longer available from Infra.

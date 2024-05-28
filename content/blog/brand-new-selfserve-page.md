@@ -1,8 +1,7 @@
-
-layout: post
 title: Brand New Self-serve Page
 date: '2023-03-01'
 permalink: brand-new-selfserve-page
+layout: post
 
 Greetings all! 
 

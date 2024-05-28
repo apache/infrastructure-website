@@ -1,7 +1,6 @@
-
-layout: post
 title: Git support at Apache
 date: '2009-05-03T22:22:57+00:00'
 permalink: git_at_apache
+layout: post
 
 <p><a href="http://git-scm.com/">Git</a> is a new version control system that has been getting increasingly popular during the past few years. Many Apache contributors have also expressed interested in using Git for working with Apache codebases. While the canonical location of all Apache source code is our Subversion repository, we also want to support developers who prefer to use Git as their version control tool.</p><p>Based on work by volunteers on the <a href="http://www.apache.org/dev/infra-mail.html">infrastructure-dev@ mailing list</a>, we have recently set up read-only Git mirrors of many Apache codebases at <a href="http://git.apache.org/">http://git.apache.org/</a>.&nbsp;These mirrors contain the full version histories (including all branches and tags) of the mirrored codebases and are updated in near real time based on the latest svn commits.</p><p>See the <a href="http://www.apache.org/dev/git.html">documentation</a> and <a href="http://wiki.apache.org/general/GitAtApache">wiki</a> pages for more details about this service and how to best use it. We are also open to good ideas on how to extend or improve this service. Please join the infrastructure-dev@ mailing list for the ongoing discussion!</p>

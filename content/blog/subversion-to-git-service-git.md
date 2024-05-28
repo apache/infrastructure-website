@@ -1,8 +1,7 @@
-
-layout: post
 title: Subversion-to-Git service (git.apache.org) post mortem, and the path forward
 date: '2019-09-10T21:36:35+00:00'
 permalink: subversion-to-git-service-git
+layout: post
 
 <h2>What happened<br /></h2> 
   <p>On August 31st 2019, the machine hosting our subversion-to-git mirrors and synchronization process for GitHub suffered a catastrophic drive error due to a power failure at our data center in Virginia. The power failure was, unfortunately, of such a nature, that recovering the disk data was not possible. Four days into the failure, on September 4th 2019, we received confirmation from the data center that the data redundancy had also failed, meaning we had no measure of restoring to a new disk.</p> 

@@ -1,8 +1,7 @@
-
-layout: post
 title: DMARC filtering on lists that munge messages
 date: '2014-06-03T21:57:08+00:00'
 permalink: dmarc_filtering_on_lists_that
+layout: post
 
 <hr/>
 **Note**: The solution described below has been incorporated into ezmlm. However, it creates a new problem, generating double 'Reply-To:' headers in the case of lists with a `reply-to` set to something other than the list name. A complete rewrite of this function is under consideration. You can follow the discussion on Jira ticket <a href="https://issues.apache.org/jira/browse/INFRA-24849" target="_blank">INFRA-24849</a>.

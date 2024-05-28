@@ -1,8 +1,7 @@
-
-layout: post
 title: Promoting Podlings
 date: '2020-07-15T13:29:54+00:00'
 permalink: promoting-podlings
+layout: post
 
 <p style="margin-bottom: 0in; line-height: 100%">The Infrastructure
 team is constantly looking for ways to do its work more quickly while

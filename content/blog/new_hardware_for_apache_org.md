@@ -1,8 +1,7 @@
-
-layout: post
 title: new hardware for apache.org
 date: '2010-07-19T04:01:07+00:00'
 permalink: new_hardware_for_apache_org
+layout: post
 
 <p>This weekend we rolled out a new server, a Dell Power Edge R410, named Eos, to host the Apache.org websites and MoinMoin wiki:</p>
 <ul>

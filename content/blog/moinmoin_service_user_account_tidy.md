@@ -1,8 +1,7 @@
-
-layout: post
 title: MoinMoin Service - User Account Tidy Up
 date: '2014-11-21T12:17:17+00:00'
 permalink: moinmoin_service_user_account_tidy
+layout: post
 
 <hr/>
 **Note**: We no longer use the MoinMoin service. Projects can create a wiki in the <a href="https://infra.apache.org/cwiki.html" target="_blank">ASF Confluence Wiki</a>.

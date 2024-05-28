@@ -1,8 +1,7 @@
-
-layout: post
 title: s.apache.org - uri shortening service
 date: '2010-06-11T17:17:46+00:00'
 permalink: s_apache_org_uri_shortening
+layout: post
 
 <p>
 Today we've brought <a href="http://s.apache.org/">s.apache.org</a> online.  It's a url shortening service that's limited to Apache committers- the people who write all that Apache software!   One of the main reasons we're providing this service is to allow committers to use shortened links whose provenance is known to be a trusted source, which is a big improvement over the generic shorteners out there in the wild.  It is also meant to provide permanent links suitable for inclusion in board reports, or more generally email sent to our mailing lists - which will be archived, either publicly or privately, for as long as Apache is around.

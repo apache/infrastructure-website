@@ -1,8 +1,7 @@
-
-layout: post
 title: Buildbot master currently off-line
 date: '2015-06-29T21:17:45+00:00'
 permalink: buildbot_master_currently_off_line
+layout: post
 
 <p><b>Update (2015-06-30 ~12.00 UTC):</b></p> 
   <p>The replacement buildbot master is now live. The CMS service and the <a href="http://ci.apache.org">ci.apache.org</a>&nbsp; website have been restored. The project CI builds are mostly working but builds that upload docs, snapshots etc. to the buildmaster for publishing are likely to fail at the upload stage while we ensure all the necessary directory structures are in place to receive the uploads. Work to resolve these final few issues is ongoing.<br /></p> 

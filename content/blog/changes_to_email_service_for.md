@@ -1,8 +1,7 @@
-
-layout: post
 title: Changes to email service for all committers
 date: '2011-02-24T21:13:18+00:00'
 permalink: changes_to_email_service_for
+layout: post
 
 <p>In the near future the Infrastructure team will be implementing a change to the way we handle emails for all committers. </p>
 

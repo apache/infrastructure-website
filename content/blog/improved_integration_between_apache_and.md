@@ -1,8 +1,7 @@
-
-layout: post
 title: Improved integration between Apache and GitHub
 date: '2014-02-12T01:16:30+00:00'
 permalink: improved_integration_between_apache_and
+layout: post
 
 <p>After a few weeks of hard work and mind-boggling debugging, we are pleased to announce tighter and smarter integration between GitHub and the Apache Software Foundation's infrastructure.</p> 
   <p>These new features mean a much higher level of replication and retention of what goes on on GitHub, which in turns both help projects maintain control over what goes on within their project, as well as keeping a record of everything that's happening in the development of a project, whether it be on ASF hardware or off-site on GitHub. </p> 

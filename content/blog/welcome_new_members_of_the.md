@@ -1,8 +1,7 @@
-
-layout: post
 title: Welcome new members of the infra team
 date: '2011-03-22T10:09:45+00:00'
 permalink: welcome_new_members_of_the
+layout: post
 
 <p>
 Well, some are not exactly new faces, but since our last blog update of new infra members in 2009 , we have conned with promises of fame, fortune and beer the following new additions to the infra team:
