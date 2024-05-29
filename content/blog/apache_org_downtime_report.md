@@ -1,8 +1,7 @@
-
-layout: post
 title: apache.org incident report for 8282009
 date: '2009-09-02T08:56:09+00:00'
 permalink: apache_org_downtime_report
+layout: post
 
 <p>Last week we <a href="https://blogs.apache.org/infra/entry/apache_org_downtime_initial_report">posted about the security breach</a> that caused us to temporarily suspend some services.&nbsp; All services
 have now been restored. We have analyzed the events that led to the breach, and continued to work on improving the security of our systems.<br /></p>

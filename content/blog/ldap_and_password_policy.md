@@ -1,8 +1,7 @@
-
-layout: post
 title: LDAP and password policy
 date: '2010-12-17T06:38:50+00:00'
 permalink: ldap_and_password_policy
+layout: post
 
 <p>As of approximately 03:00 (UTC) today the infrastructure team have enabled a password policy for all LDAP accounts.<br />
 This policy has been implemented at the LDAP infrastructure level and will affect all users.  It has been deployed using OpenLDAP's password policy schema, and overlay.</p>

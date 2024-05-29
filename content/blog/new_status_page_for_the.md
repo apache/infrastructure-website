@@ -1,8 +1,7 @@
-
-layout: post
 title: New status page for the ASF
 date: '2014-08-14T13:45:53+00:00'
 permalink: new_status_page_for_the
+layout: post
 
 <p>We are pleased to announce that we have a new status page for our infrastructure and the ASF as a whole.</p> 
   <p>Where we have previously been focused on reporting the up/down status of our services, we have now begun to look a bit more at the broader picture of the ASF; What's going on, who is committing how much, where are emails going, what's going on on GitHub mirrors and so on, as well as tracking uptime and availability for our public services that power the ASF's online presence. </p> 

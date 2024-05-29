@@ -1,7 +1,7 @@
-layout: post 
 title: 2023 Infra Survey Results 
 date: '2024-02-13' 
 permalink: 2023_infra_survey_results
+layout: post 
 
 More than 50 people posted responses to our 2023 'year in review' survey. Here is a summary of the responses to questions and the comments added in each section.
 

@@ -1,8 +1,7 @@
-
-layout: post
 title: On-demand workers from Rackspace added to builds.apache.org
 date: '2014-09-04T13:00:00+00:00'
 permalink: on_demand_slaves_from_rackspace
+layout: post
 
 <div>A couple of weeks ago, Apache's Infrastructure team added a new feature to our Jenkins server, <a href="http://builds.apache.org">builds.apache.org</a> to help deal with the at times overwhelming queues of builds waiting for an executor. While this has been improved dramatically by the increase in workers generously provided by Yahoo! on physical hosts, we're always trying to look forward and be prepared for increased usage in the future.&nbsp;</div> 
   <div><br /></div> 

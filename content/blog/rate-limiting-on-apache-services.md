@@ -1,8 +1,7 @@
-
-layout: post
 title: Rate-limiting on Apache services
 date: '2019-01-27T18:20:54+00:00'
 permalink: rate-limiting-on-apache-services
+layout: post
 
 <p>Over the past few days we have implemented rate limiting on selected services across the ASF.</p> 
   <p>As our foundation grows, so do the number of users and robots utilizing our services. In order to accommodate as many as possible with what resources we have, we have opted to implement rate-limiting to ensure that everyone can get their fair share of use of our services across the globe. The first services to have rate-limiting implemented are:</p> 

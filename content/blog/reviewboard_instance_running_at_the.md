@@ -1,8 +1,7 @@
-
-layout: post
 title: ReviewBoard instance running at the ASF
 date: '2010-10-26T03:25:49+00:00'
 permalink: reviewboard_instance_running_at_the
+layout: post
 
 We know we have projects that use reviewboard externally to the ASF, we also have some projects using codereview.appspot.com and we also have some projects using Fisheye/Clover externally.
 

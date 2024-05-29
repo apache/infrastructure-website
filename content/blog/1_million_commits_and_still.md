@@ -1,8 +1,7 @@
-
-layout: post
 title: 1 million commits and still going strong
 date: '2010-09-23T11:55:55+00:00'
 permalink: 1_million_commits_and_still
+layout: post
 
 <p>Yesterday, the main ASF SVN code repository passed the 1 million commit mark.  Shortly thereafter one of the ASF members enquired as to how he could best grab the SVN log entries for all of these commits.  As always, there were a bunch of useful replies, but they were all set to take quite some time; mainly because if anyone just simply runs</p>
 

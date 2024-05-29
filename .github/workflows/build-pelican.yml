@@ -1,0 +1,17 @@
+name: Build a Pelican Website
+on:
+  push:
+    branches: [ "dfoulks/pelican_gha" ]
+  workflow_dispatch:
+jobs:
+  build-pelican:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: 'dfoulks/pelican_gha'
+      - uses: apache/infrastructure-actions/pelican@main
+        with:
+          destination: 'dfoulks/gha-site'
+          gfm: 'true'

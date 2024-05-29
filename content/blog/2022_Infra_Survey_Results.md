@@ -1,9 +1,7 @@
-
-
-layout: post
 title: 2022 Infra Survey Results
 date: '2023-01-11'
 permalink: 2022_infra_survey_results
+layout: post
 
 ### Intro
 I'd like to thank everyone who took time to take the survey. This is the first time that I know of that we've tried something like this, and feedback is very important. I'd also like to take a second to clarify my tone for this article. I'm presenting as Chris T. the Infra person, not as an ASF Member or committer. So when I say "we" or "us", I'm referring to the other Infra folks, not specifically the Foundation as a whole or any Members. I am not posting the full results, but a summary of the data, as we had some responses that used enough information to identify the person being discussed. Those responses are 100% valid and I don't want to post an incomplete dataset with them removed.

@@ -1,8 +1,7 @@
-
-layout: post
 title: The value of taint checks in CGI scripts
 date: '2012-06-09T21:45:27+00:00'
 permalink: the_value_of_taint_checks
+layout: post
 
 <p>Consider the following snippet taken from a live CGI script running on the host that serves www.apache.org:</p> 
   <pre>#!/usr/bin/perl

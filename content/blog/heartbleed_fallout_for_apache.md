@@ -1,8 +1,7 @@
-
-layout: post
 title: heartbleed fallout for apache
 date: '2014-04-11T20:25:44+00:00'
 permalink: heartbleed_fallout_for_apache
+layout: post
 
 <p>Remain calm.</p> 
   <p>What we've learned about the heartbleed incident is that it is hard, in the sense of perhaps only viable to a well-funded blackhat operation, to steal a private certificate and key from a vulnerable service. &nbsp;Nevertheless, the central role Apache projects play in the modern software development world require us to mitigate against that circumstance. &nbsp;Given the length of time and exposure window for this bug's existence, we have to assume that some/many Apache passwords may have been compromised, and perhaps even our private wildcard cert and key, so we've taken a few steps as of today:</p> 

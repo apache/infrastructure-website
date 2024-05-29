@@ -1,8 +1,7 @@
-
-layout: post
 title: Jira Public Signup Disabled
 date: '2022-11-11T16:48:00+00:00'
 permalink: jira-public-signup-disabled
+layout: post
 
 Today, the Infrastructure Team took the step to disable public signups to ASF Jira
 

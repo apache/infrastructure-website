@@ -1,8 +1,7 @@
-
-layout: post
 title: PEAR package hosting available
 date: '2011-04-15T05:32:23+00:00'
 permalink: pear_package_hosting_available1
+layout: post
 
 <hr/>
 **Note**: Hosting releases of PEAR packages is no longer available.

@@ -1,8 +1,7 @@
-
-layout: post
 title: Roller installed for use by Apache Projects
 date: '2009-03-23T00:29:41+00:00'
 permalink: roller_installed_for_use_by
+layout: post
 
 <hr/>
 **Note**: Until June, 2023, the ASF supported using Apache Roller for project blogs. That support has ended. Please visit <a href="https://infra.apache.org/project-blogs.html" target="_blank">Project Blog</a> for more information about blogs for projects.

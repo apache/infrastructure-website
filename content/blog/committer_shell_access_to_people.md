@@ -1,8 +1,7 @@
-
-layout: post
 title: Committer shell access to people.apache.org
 date: '2014-09-25T23:38:41+00:00'
 permalink: committer_shell_access_to_people
+layout: post
 
 <p>Apache committers are granted shell access to a host known as either people.apache.org or minotaur. As you may know, there has been a two year grace period in which we have advertised the upcoming change away from password logins to SSH key only.</p> 
   <p>Due to a significant recent increase in security issues, the Infrastructure team has taken steps to complete the implementation of key-only logins to protect ASF computing resources.&nbsp;</p> 

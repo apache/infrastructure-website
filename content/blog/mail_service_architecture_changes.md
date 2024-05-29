@@ -1,8 +1,7 @@
-
-layout: post
 title: Mail Service Architecture Changes
 date: '2015-05-08T21:12:11+00:00'
 permalink: mail_service_architecture_changes
+layout: post
 
 <p>For the past few months the Infrastructure team have been working extremely hard to re-design, implement and manage changes to the email service architecture. &nbsp;Today we are proud to announce that phase 1 of this has been completed, and has been running for several days now.</p> 
   <p>Phase 1 covers all components of the service except the listserv service, and mail archives. &nbsp;These will be included in phase 2, which we will come onto later. When we started out on this project to review, update and manage our email infrastructure we had a several guiding principals that either the old system must be made to conform too; or any new service would need to meet before being accepted. &nbsp;When we talk about these principals really we are talking about criteria, these are:&nbsp;</p> 

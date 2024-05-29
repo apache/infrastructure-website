@@ -1,8 +1,7 @@
-
-layout: post
 title: apache.org incident report for 04092010
 date: '2010-04-13T05:04:50+00:00'
 permalink: apache_org_04_09_2010
+layout: post
 
 <p>Apache.org services recently suffered a direct, targeted attack against our infrastructure, specifically the server hosting our issue-tracking software.</p> 
   <p>The Apache Software Foundation uses a donated instance of <a href="http://www.atlassian.com/software/jira/">Atlassian JIRA</a> as an issue tracker for our projects. Among other projects, the ASF Infrastructure Team uses it to track issues and requests. Our JIRA instance was hosted on brutus.apache.org, a machine running Ubuntu Linux 8.04 LTS.</p> 
