@@ -1,9 +1,3 @@
-pelican:
-  notify:         notifications@infra.apache.org
-  autobuild:      preview/*
-  target:         asf-site
-  whoami:         master
-  
 staging:
   whoami: asf-break-test
   profile: ~
