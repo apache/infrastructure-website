@@ -93,7 +93,7 @@
 <li>explain what your project's product does.</li>
 <li>pitch how your product solves a problem or creates a new opportunity.</li>
 <li>invite people to get involved in the development team.</li>
-<li>offer an easy way to download the latest builds of the product that you want the public to use.</li>
+<li>offer a link to the Apache downloads platform so people can download the latest builds of the product that you want the public to use.</li>
 <li>provide documentation that will help people not part of the project understand how to get started with the product and how to keep going.</li>
 <li>describe how the project team works, and its connection to the Apache Software Foundation.</li>
 <li>explain how people can get in touch with the project to provide feedback or ask questions.</li>
@@ -108,21 +108,8 @@
 <li><strong>Visitors who use assistive devices to read and work with web pages</strong>. A web search on "JavaScript and assistive readers" will provide helpful information on writing and deploying JS in ways that cause the fewest issues for people using assistive devices to access your project website. The <a href="http://www.cynthiasays.com/" target="_blank">Cynthia Says</a> site can help you check your website for compliance with accessibility guidelines, including JavaScript issues.</li>
 </ol>
 <h3>1. Website-building options</h3>
-<h4>Pelican</h4>
-<p><a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a> is a static site generator written in Python. Highlights include:</p>
-<ul>
-<li>Write your content directly with your editor of choice in reStructuredText or Markdown formats.</li>
-<li>Includes a simple CLI tool to (re)generate your site.</li>
-<li>Easy to interface with distributed version control systems and web hooks.</li>
-<li>Completely static output is easy to host anywhere.</li>
-</ul>
-<p>Pelican has paths to <a href="https://docs.getpelican.com/en/stable/importer.html#import" target="_blank">migrate existing websites from many technologies</a>, including Blogger, Dotclear, Posterous, Tumblr, WordPress, and RSS/Atom.</p>
-<p>Any ASF project can use the <a href="asf-pelican.html"><strong>ASF-Pelican template</strong></a> as the basis for their project website.</p>
-<p>See a how-to on using <a href="pelican-buildbot.html">Pelican and Buildbot</a> to develop and deploy a project website.</p>
-<p>Pelican supports both flat websites and those that have subdirectories. For the latter, Pelican provides a <a href="https://github.com/akhayyat/pelican-page-hierarchy" target="_blank">plugin</a>.</p>
-<p>Browse a <a href="https://github.com/getpelican/pelican-plugins/" target="_blank">collection of Pelican plugins</a> to find others that support functionality you want to add to your site.</p>
-<p>This <a href="https://github.com/search?q=topic%3Apelican+org%3Aapache&amp;type=Repositories" target="_blank">GitHub query</a> returns ASF repositories
-which have the <code>pelican</code> Topic. You can review them as examples of Pelican in action.</p>
+<h4>GitHub Action using Pelican</h4>
+<p>This replaces the ASF Pelican template, which Infra is retiring by the end of 2024. Details on using the Pelican GitHub Action will be available shortly.</p>
 <h4>Jekyll</h4>
 <p><a href="https://jekyllrb.com/" target="_blank">Jekyll</a> is a straightforward tool for developing blogs or static websites using Markdown, and it is easy to deploy the resulting website as GitHub Pages. There are many tutorials online about doing this.</p>
 <h4>Hugo</h4>
@@ -139,6 +126,23 @@ which have the <code>pelican</code> Topic. You can review them as examples of Pe
 <p>Project websites can make use of .htaccess files for setting up custom redirects and other tweaks to the handling of requests. The default <a href="https://httpd.apache.org/docs/2.4/mod/core.html#allowoverride">AllowOverride</a> setting is <code>All</code>,
 which generally enables any sort of redirects or rewrites (using <code>RewriteRule</code>, <code>Redirect</code>, etc.). Some project websites have custom settings in their dedicated virtual host configuration, which may require asking the Infrastructure Team for assistance. If you are in doubt, ask.</p>
 <h3>Tools not supported</h3>
+<h4>ASF Pelican template</h4>
+<p><strong>Note</strong> Infra is discontinuing the Pelican template by the end of 2024, in favour of a GitHub Action using Pelican.
+Infra is migrating the websites of projects using the Pelican option to GitHub Actions.</p>
+<p><a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a> is a static site generator written in Python. Highlights include:</p>
+<ul>
+<li>Write your content directly with your editor of choice in reStructuredText or Markdown formats.</li>
+<li>Includes a simple CLI tool to (re)generate your site.</li>
+<li>Easy to interface with distributed version control systems and web hooks.</li>
+<li>Completely static output is easy to host anywhere.</li>
+</ul>
+<p>Pelican has paths to <a href="https://docs.getpelican.com/en/stable/importer.html#import" target="_blank">migrate existing websites from many technologies</a>, including Blogger, Dotclear, Posterous, Tumblr, WordPress, and RSS/Atom.</p>
+<p>Any ASF project can use the <a href="asf-pelican.html"><strong>ASF-Pelican template</strong></a> as the basis for their project website.</p>
+<p>See a how-to on using <a href="pelican-buildbot.html">Pelican and Buildbot</a> to develop and deploy a project website.</p>
+<p>Pelican supports both flat websites and those that have subdirectories. For the latter, Pelican provides a <a href="https://github.com/akhayyat/pelican-page-hierarchy" target="_blank">plugin</a>.</p>
+<p>Browse a <a href="https://github.com/getpelican/pelican-plugins/" target="_blank">collection of Pelican plugins</a> to find others that support functionality you want to add to your site.</p>
+<p>This <a href="https://github.com/search?q=topic%3Apelican+org%3Aapache&amp;type=Repositories" target="_blank">GitHub query</a> returns ASF repositories
+which have the <code>pelican</code> Topic. You can review them as examples of Pelican in action.</p>
 <h4>GitHub Pages</h4>
 <p>Infra does not have a structure in place to support using <a href="github-pages.html">GitHub Pages</a> for project websites.</p>
 <h4>Apache CMS</h4>
