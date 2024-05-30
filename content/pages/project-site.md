@@ -26,7 +26,7 @@ The site also **should**
   - explain what your project's product does.
   - pitch how your product solves a problem or creates a new opportunity.
   - invite people to get involved in the development team.
-  - offer an easy way to download the latest builds of the product that you want the public to use.
+  - offer a link to the Apache downloads platform so people can download the latest builds of the product that you want the public to use.
   - provide documentation that will help people not part of the project understand how to get started with the product and how to keep going.
   - describe how the project team works, and its connection to the Apache Software Foundation.
   - explain how people can get in touch with the project to provide feedback or ask questions.
@@ -46,27 +46,9 @@ Many TLP sites use JavaScript (JS) to provide functions ranging from menu naviga
 
 ### 1. Website-building options
 
-#### Pelican
+#### GitHub Action using Pelican
 
-<a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a> is a static site generator written in Python. Highlights include:
-
-  - Write your content directly with your editor of choice in reStructuredText or Markdown formats.
-  - Includes a simple CLI tool to (re)generate your site.
-  - Easy to interface with distributed version control systems and web hooks.
-  - Completely static output is easy to host anywhere.
-  
-Pelican has paths to <a href="https://docs.getpelican.com/en/stable/importer.html#import" target="_blank">migrate existing websites from many technologies</a>, including Blogger, Dotclear, Posterous, Tumblr, WordPress, and RSS/Atom.
-
-Any ASF project can use the [**ASF-Pelican template**](asf-pelican.html) as the basis for their project website. 
-  
-See a how-to on using [Pelican and Buildbot](pelican-buildbot.html) to develop and deploy a project website.
-
-Pelican supports both flat websites and those that have subdirectories. For the latter, Pelican provides a <a href="https://github.com/akhayyat/pelican-page-hierarchy" target="_blank">plugin</a>.
-
-Browse a <a href="https://github.com/getpelican/pelican-plugins/" target="_blank">collection of Pelican plugins</a> to find others that support functionality you want to add to your site. 
-
-This <a href="https://github.com/search?q=topic%3Apelican+org%3Aapache&type=Repositories" target="_blank">GitHub query</a> returns ASF repositories
-which have the `pelican` Topic. You can review them as examples of Pelican in action.
+This replaces the ASF Pelican template, which Infra is retiring by the end of 2024. Details on using the Pelican GitHub Action will be available shortly.
 
 #### Jekyll
 
@@ -98,6 +80,30 @@ which generally enables any sort of redirects or rewrites (using `RewriteRule`, 
 
 ### Tools not supported
 
+#### ASF Pelican template
+
+**Note** Infra is discontinuing the Pelican template by the end of 2024, in favour of a GitHub Action using Pelican.
+Infra is migrating the websites of projects using the Pelican option to GitHub Actions.
+
+<a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a> is a static site generator written in Python. Highlights include:
+
+  - Write your content directly with your editor of choice in reStructuredText or Markdown formats.
+  - Includes a simple CLI tool to (re)generate your site.
+  - Easy to interface with distributed version control systems and web hooks.
+  - Completely static output is easy to host anywhere.
+  
+Pelican has paths to <a href="https://docs.getpelican.com/en/stable/importer.html#import" target="_blank">migrate existing websites from many technologies</a>, including Blogger, Dotclear, Posterous, Tumblr, WordPress, and RSS/Atom.
+
+Any ASF project can use the [**ASF-Pelican template**](asf-pelican.html) as the basis for their project website. 
+  
+See a how-to on using [Pelican and Buildbot](pelican-buildbot.html) to develop and deploy a project website.
+
+Pelican supports both flat websites and those that have subdirectories. For the latter, Pelican provides a <a href="https://github.com/akhayyat/pelican-page-hierarchy" target="_blank">plugin</a>.
+
+Browse a <a href="https://github.com/getpelican/pelican-plugins/" target="_blank">collection of Pelican plugins</a> to find others that support functionality you want to add to your site. 
+
+This <a href="https://github.com/search?q=topic%3Apelican+org%3Aapache&type=Repositories" target="_blank">GitHub query</a> returns ASF repositories
+which have the `pelican` Topic. You can review them as examples of Pelican in action.
 #### GitHub Pages
 Infra does not have a structure in place to support using [GitHub Pages](github-pages.html) for project websites.
 
