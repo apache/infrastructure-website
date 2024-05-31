@@ -1,4 +1,4 @@
-
+import datetime
 # Basic information about the site.
 SITENAME = 'Apache Infrastructure Website'
 SITEDESC = 'The official website of the Apache Infrastructure'
@@ -6,7 +6,7 @@ SITEDOMAIN = 'infra.apache.org'
 SITEURL = 'https://infra.apache.org'
 SITELOGO = 'https://infra.apache.org//extras/favicon.ico'
 SITEREPOSITORY = 'https://github.com/apache/infrastructure-website/blob/main/content/'
-CURRENTYEAR = 2024
+CURRENTYEAR = datetime.date.today().year
 TRADEMARKS = 'Apache HTTP Server, Apache, and the Apache feather logo are trademarks of The Apache Software Foundation.'
 TIMEZONE = 'UTC'
 # Theme includes templates and possibly static files
