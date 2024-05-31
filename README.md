@@ -6,9 +6,16 @@ This is the source of the Apache Infrastructure team's website,
 found at https://infra.apache.org/
 
 ## How to build the Infra Site:
-This builds the website and puts its pages in output/
+This builds the website and puts its pages in site-generated/
 
 ```bash
+# Fetch the repository containing the plugins:
+git clone [-depth 1] https://github.com/apache/infrastructure-actions
+
+# Fetch this repository
+git clone [-depth 1] https://github.com/apache/infrastructure-website
+cd infrastructure-website
+
 virtualenv $venvname
 source $venvname/bin/activate
 pip install -r requirements.txt
@@ -17,7 +24,12 @@ git pull origin master
 
 # Edit all the markdown! (infrastructure-website/content/pages/)
 
-pelican -t theme
+# Run Pelican build:
+pelican content -e PLUGIN_PATHS='["../infrastructure-actions/pelican/plugins"]' -o site-generated $FLAGS
+
+# $FLAGS are optional flags:
+# -l start a webserver at http://127.0.0.1:8000/
+# -r autoreload if any files change
 ```
 
 To preview:
