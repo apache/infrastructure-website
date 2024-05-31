@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           ref: 'master'
-      - uses: apache/infrastructure-actions/pelican@main
+      - uses: apache/infrastructure-actions/pelican@noforce
         with:
           destination: 'asf-site'
           gfm: 'true'
