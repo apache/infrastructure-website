@@ -83,11 +83,12 @@
 <li><a href="#faq">Frequently asked questions</a></li>
 </ul>
 <h3 id="accessing">Accessing the Subversion repository<a class="headerlink" href="#accessing" title="Permanent link">&para;</a></h3>
+
 <p>There are several ways to access the Subversion repository:</p>
 <p><strong>Web Access</strong></p>
 <p>If you just wish to browse around or download a few individual files, the best tool is the web-based <a href="http://svn.apache.org/viewvc/" target="_blank">ViewVC interface for Subversion</a>. You can also go straight to the <a href="http://svn.apache.org/repos/asf/" target="_blank">public repository</a>.</p>
 <p><strong>Anonymous Subversion</strong></p>
-<p>To access the Subversion repository anonymously, you need a Subversion client.</p>
+<p>To access the Subversion repository anonymously, you need a Subversion client. </p>
 <p><strong>Finding the project you want</strong></p>
 <p>You can <a href="http://svn.apache.org/repos/asf/" target="_blank">browse</a> for the project that interests you and check it out. For example, to get the Spamassassin module, use:</p>
 <p><code>$ svn checkout http://svn.apache.org/repos/asf/spamassassin/trunk spamassassin</code></p>
@@ -96,32 +97,38 @@
 <p>We currently use HTTPS basic authentication for logging in to Subversion (certificate info below). To change your password, visit <a href="https://svn.apache.org/change-password" target="_blank">svn.apache.org/change-password</a>.</p>
 <p>This will prompt you to enter a svn password of your choice. If you cannot log in, or have lost your password, visit the <a href="https://id.apache.org" target="_blank">Apache Account Utility</a> to reset it.</p>
 <p>When you make changes to the repository, you can commit them with your username/password combination, i.e.</p>
-<pre><code>$ svn co https://svn.apache.org/repos/asf/excalibur/trunk/ excalibur-trunk
-$ cd excalibur-trunk
-$ echo "test" &gt; test.txt
+<div class="highlight"><pre><span></span><code>$ svn co https://svn.apache.org/repos/asf/excalibur/trunk/ excalibur-trunk
+$ <span class="nb">cd</span> excalibur-trunk
+$ <span class="nb">echo</span> <span class="s2">&quot;test&quot;</span> &gt; test.txt
 $ svn add test.txt
-$ svn commit --username your-name --password your-password \
-  --message "Trying out svn"
-</code></pre>
+$ svn commit --username your-name --password your-password <span class="se">\</span>
+  --message <span class="s2">&quot;Trying out svn&quot;</span>
+</code></pre></div>
+
 <p><code>svnserve</code> is not supported, nor is <code>svn+ssh</code>.</p>
 <h3 id="configuring">Configuring the Subversion client<a class="headerlink" href="#configuring" title="Permanent link">&para;</a></h3>
+
 <p>Committers need to configure their svn client properly. One particular issue is OS-specific line endings for text files. When you add a new text file, especially when applying patches from Bugzilla, first ensure that the line-endings are appropriate for your system, then do:</p>
-<pre><code>svn add test.txt svn propset svn:eol-style native test.txt
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="err">svn add test.txt svn propset svn:eol-style native test.txt</span>
+</code></pre></div>
+
 <p>Your svn client can be configured to do that automatically for some common file types.</p>
 <p>Add the contents of the file <code>http://www.apache.org/dev/svn-eol-style.txt</code> to the bottom of your <code>~/.subversion/config</code> file. For Windows this is normally found at <code>C:\\Documents and Settings\\{username}\\Application Data\\Subversion\\config</code>.</p>
 <p>You may need to set additional properties for some files. For example, apply <code>svn:executable=*</code> to script files (.bat, .cgi, .cmd, .sh) that are intended to be executed. Since not all such files are necessarily intended to be executed, do not make the executable property an automatic default.</p>
 <p>Pay attention to the messages from your svn client when you do <code>svn commit</code>.</p>
 <p><strong>Tip</strong>: If you use TortiseSVN, a popular Windows GUI client that integrates with Windows Explorer, you can right-click in Explorer, select <code>TortiseSVN - Settings</code>, and select "Edit" to update your Subversion configuration file. Copy the above <code>svn-eol-style.txt</code> file's contents into the end of the configuration file that appears, and save the file.</p>
 <h3 id="ssl">SSL server certificate<a class="headerlink" href="#ssl" title="Permanent link">&para;</a></h3>
+
 <p>The server certificate for <code>https://svn.apache.org/</code> is a real SSL certificate. However, Subversion, by default, does not currently ship with a list of trusted CAs. So, here's some information to help you verify the validity of our certificate:</p>
-<pre><code> - Hostname: *.apache.org
- - Valid: from Jul  1 00:00:00 2019 GMT until Jun 30 23:59:59 2021 GMT
- - Issuer: Sectigo RSA Domain Validation Secure Server CA, Sectigo Limited, Salford, Greater Manchester, GB
- - Fingerprint: 88:A1:77:AC:CE:5E:6C:0D:22:BC:1F:E4:4E:AA:D4:2A:A4:C0:71:4F
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="err"> - Hostname: *.apache.org</span>
+<span class="err"> - Valid: from Jul  1 00:00:00 2019 GMT until Jun 30 23:59:59 2021 GMT</span>
+<span class="err"> - Issuer: Sectigo RSA Domain Validation Secure Server CA, Sectigo Limited, Salford, Greater Manchester, GB</span>
+<span class="err"> - Fingerprint: 88:A1:77:AC:CE:5E:6C:0D:22:BC:1F:E4:4E:AA:D4:2A:A4:C0:71:4F</span>
+</code></pre></div>
+
 <p>Note that the SSL certificate for our Subversion repository is different from certificates used when logging into Apache infrastructure. See the <a href="new-committers-guide.html">New Committer's guide</a> for more information.</p>
 <h3 id="faq">Frequently asked questions<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h3>
+
 <p><strong>When should I use 'svn lock'?</strong></p>
 <p>Very rarely. Commits in subversion are transactional. This means that locks are almost always unnecessary.</p>
 <p>An oft-quoted use case is to prevent concurrent editing of a large unmergeable binary document. However, for open development, good communication is preferable to locking even in this use case. A clear, timely post to the list to let your fellow developers know that you're going to start editing that huge PDF is better than locking the file.</p>
@@ -132,10 +139,10 @@ $ svn commit --username your-name --password your-password \
 <p>If you really do want the entire ASF repository, <em>don't</em> use <code>svnsync</code>. Instead, start by looking here: <code>http://svn-master.apache.org/dump/</code>. Use that to bootstrap your repo.</p>
 <p><strong>Why do I get a 403 error when I try to commit?</strong></p>
 <p>Run <code>svn info</code> and check that the URL starts with <code>https://</code>. If it starts with <code>http://</code>, run:</p>
-<pre><code>$ svn switch --relocate http://svn.apache.org https://svn.apache.org
-</code></pre>
-<p>If you still get 403 Forbidden errors, ask your PMC to double-check the authz file and LDAP/Unix group membership.</p>
+<div class="highlight"><pre><span></span><code>$ svn switch --relocate http://svn.apache.org https://svn.apache.org
+</code></pre></div>
 
+<p>If you still get 403 Forbidden errors, ask your PMC to double-check the authz file and LDAP/Unix group membership.</p>
         </div>
       </div>
     </div>    
