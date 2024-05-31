@@ -32,15 +32,7 @@ pelican content -e PLUGIN_PATHS='["../infrastructure-actions/pelican/plugins"]' 
 # -r autoreload if any files change
 ```
 
-To preview:
-
-```bash
-cd output/
-python -m pelican.server
-# Browse to localhost:8000
-```
-
-## Technical site documentation:
+## Technical site documentation
 Any time you check in a file, the site regenerates:
 https://ci2.apache.org/#/builders/3
 
