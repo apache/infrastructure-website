@@ -81,8 +81,7 @@
 <p>The repository structure for your Pelican project website has three key directories and a configuration file.</p>
 <p>The directories are:</p>
 <ul>
-<li><strong>content/pages</strong>: holds the static pages for your website. You write and edit them using GFM.
-<ul>
+<li><strong>content/pages</strong>: holds the static pages for your website. You write and edit them using GFM.<ul>
 <li>Each page is a <code>.md</code> file.</li>
 <li>The first line is <code>Title:</code> and the name of the page.</li>
 <li>the second line is <code>Date:</code> and the date of the current version of the page.</li>
@@ -93,13 +92,11 @@
 </ul>
 <p>The configuration file is <code>pelicanconf.py</code>.</p>
 <h3>Setting up a Pelican website on Git</h3>
-<p>Create the repository for the website content using the <a href="https://gitbox.apache.org/setup/newrepo.html" target="_blank">GitBox's Boxer self service tool</a> (<a href="https://gitbox.apache.org/setup/newrepo.html">https://gitbox.apache.org/setup/newrepo.html</a>).</p>
+<p>Create the repository for the website content using the <a href="https://gitbox.apache.org/setup/newrepo.html" target="_blank">GitBox's Boxer self service tool</a> (https://gitbox.apache.org/setup/newrepo.html).</p>
 <ol>
+<li>Clone the repository to a local workspace</li>
 <li>
-<p>Clone the repository to a local workspace</p>
-</li>
-<li>
-<p>Run <code>pelican-quickstart</code> in the root of the repository on the master branch.</p>
+<p>Run <code>pelican-quickstart</code> in the root of the repository on the master branch. </p>
 <ul>
 <li>The script asks where you want to create the website. Accept " . ", the default, unless you have a specific location in mind for it.</li>
 <li>Use $PROJECTNAME for the site title.</li>
@@ -116,13 +113,13 @@
 </li>
 </ol>
 <p>In your site repository, run the following commands:</p>
-<pre><code>for x in "content/pages content/articles theme/plugins"; do mkdir -p $x; done
-rm -rf output publishconf.py
-echo -e "\nPLUGIN_PATHS=['./theme/plugins']\nPLUGINS=[]\n"  &gt;&gt; pelicanconf.py
-echo -e "pelican\nbeautifulsoup4" &gt;&gt; requirements.txt
+<div class="highlight"><pre><span></span><code><span class="err">for x in &quot;content/pages content/articles theme/plugins&quot;; do mkdir -p $x; done</span>
+<span class="err">rm -rf output publishconf.py</span>
+<span class="err">echo -e &quot;\nPLUGIN_PATHS=[&#39;./theme/plugins&#39;]\nPLUGINS=[]\n&quot;  &gt;&gt; pelicanconf.py</span>
+<span class="err">echo -e &quot;pelican\nbeautifulsoup4&quot; &gt;&gt; requirements.txt</span>
+</code></pre></div>
 
-</code></pre>
-<ol start="4">
+<ol>
 <li>Commit and push your changes.</li>
 <li>Set up continuous integration (CI): use the <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">asf.yaml</a> mechanism to have Pelican build and, optionally, publish your website.</li>
 </ol>
@@ -134,7 +131,6 @@ echo -e "pelican\nbeautifulsoup4" &gt;&gt; requirements.txt
 <p>Pelican provides a range of <a href="http://www.pelicanthemes.com/" target="_blank">themes</a> that can help you develop a pleasing site without too much effort. Be sure to specify the directory containing the 'static' and 'templates' directories as <code>theme:</code> in the .asf.yaml file.</p>
 <h3>Pelican plugins</h3>
 <p>There is a directory of <a href="https://github.com/getpelican/pelican-plugins/" target="_blank">Pelican plugins</a> that deliver extra functionality for a website.</p>
-
         </div>
       </div>
     </div>    
