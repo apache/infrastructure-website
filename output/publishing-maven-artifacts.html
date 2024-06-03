@@ -78,12 +78,12 @@
 <p><strong>Note</strong> make sure you are using version 3.0.5 or newer of Maven. You can <a href="https://maven.apache.org/download.cgi" target="_blank">download</a> and install the latest version of Maven before continuing.</p>
 <h2>Setting up your project in the ASF Nexus Repository</h2>
 <p>The <a href="https://repository.apache.org/">ASF Nexus repository</a> enforces security by constraining who can deploy or release a project's artifacts. Nexus maps which artifacts (usually by GroupId) your project produces. This is particularly helpful in preventing accidental releases of a project.</p>
-<p>Before a project can use the repository to release Maven artifacts, it must be configured in Nexus. This is generally a quick and easy process. To get set up, <a href="https://issues.apache.org/jira/secure/CreateIssueDetails!init.jspa?issuetype=3&priority=3&pid=10410&components=12312660&summary=Enable+Nexus+Access+For+[insert+project]&description=Project+URL:%0D%0DSVN+URL:%0D%0DMaven+Group+Ids:%0D%0DManaged+By+This+TLP+Project:" target="_blank">use this link</a> to create a Jira ticket with the following information:</p>
+<p>Before a project can use the repository to release Maven artifacts, it must be configured in Nexus. This is generally a quick and easy process. To get set up, <a href="https://issues.apache.org/jira/secure/CreateIssueDetails!init.jspa?issuetype=3&amp;priority=3&amp;pid=10410&amp;components=12312660&amp;summary=Enable+Nexus+Access+For+[insert+project]&amp;description=Project+URL:%0D%0DSVN+URL:%0D%0DMaven+Group+Ids:%0D%0DManaged+By+This+TLP+Project:" target="_blank">use this link</a> to create a Jira ticket with the following information:</p>
 <ul>
 <li><strong>Project URL</strong>: a link to your project page (usually <code>https://&lt;project&gt;.apache.org/</code>).</li>
 <li><strong>SVN URL</strong>: where you store your source code, in case Infra needs to look up more information.</li>
 <li><strong>Maven Group IDs</strong>: a list of the groupIDs for this project. They should all be subgroups of <code>org.apache</code>.</li>
-<li><strong>Managed By This TLP Project</strong>: if this is a subproject, list the TLP that is responsible. Subprojects usually don't have their own LDAP group, so we need the TLP LDAP group for permissions. </li>
+<li><strong>Managed By This TLP Project</strong>: if this is a subproject, list the TLP that is responsible. Subprojects usually don't have their own LDAP group, so we need the TLP LDAP group for permissions.</li>
 </ul>
 <p>If you have specific questions or concerns, please call them out in the ticket.</p>
 <p>Once you file the Jira ticket, Infra will do the following:</p>
@@ -97,39 +97,37 @@
 <p>To use the ASF Nexus repository, follow these steps.</p>
 <h3>Inherit the Apache POM</h3>
 <p>Inherit the Apache Parent POM like this:</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;parent&gt;</span>
-  <span class="nt">&lt;groupId&gt;</span>org.apache<span class="nt">&lt;/groupId&gt;</span>
-  <span class="nt">&lt;artifactId&gt;</span>apache<span class="nt">&lt;/artifactId&gt;</span>
-  <span class="nt">&lt;version&gt;</span>23<span class="nt">&lt;/version&gt;</span>
-<span class="nt">&lt;/parent&gt;</span>
-</code></pre></div>
-
+<pre><code>&lt;parent&gt;
+  &lt;groupId&gt;org.apache&lt;/groupId&gt;
+  &lt;artifactId&gt;apache&lt;/artifactId&gt;
+  &lt;version&gt;23&lt;/version&gt;
+&lt;/parent&gt;
+</code></pre>
 <p>This parent POM sets up the defaults so your <code>&lt;distributionManagement&gt;</code> section uses the correct release and snapshot repositories. Be sure to remove those from your POM so they inherit correctly. Keep the entry for deploying your site (if you use Maven to deploy your site). If you do, we suggest you use <code>apache.website</code> as the ID to better match the settings below and to save the sanity of committers working on multiple projects.</p>
 <p>The POM also provides a default configuration to make sure that a correct source archive is created for your project. This is separate and in addition to the typical <code>-sources.jar</code> that is created.</p>
 <h3>Set up your development environment</h3>
 <p>You must sign all artifacts with a key that is publicly verifiable. Follow the instructions here to get your keys created and environment set up.</p>
 <p><strong>Note</strong>: We recommend that you use <a href="https://maven.apache.org/guides/mini/guide-encryption.html" target="_blank">Maven's password encryption capabilities</a> for your passwords. <strong>Do not</strong> store your signing key in <code>settings.xml</code>.</p>
 <p>The <a href="https://maven.apache.org/plugins/maven-gpg-plugin/" target="_blank">gpg plugin</a> can prompt for the key (input is masked) or you can configure it to use an agent.</p>
-<div class="highlight"><pre><span></span><code><span class="nt">&lt;settings&gt;</span>
+<pre><code>&lt;settings&gt;
 ...
-  <span class="nt">&lt;servers&gt;</span>
-    <span class="c">&lt;!-- To publish a snapshot of your project --&gt;</span>
-    <span class="nt">&lt;server&gt;</span>
-      <span class="nt">&lt;id&gt;</span>apache.snapshots.https<span class="nt">&lt;/id&gt;</span>
-      <span class="nt">&lt;username&gt;</span> <span class="c">&lt;!-- YOUR APACHE LDAP USERNAME --&gt;</span> <span class="nt">&lt;/username&gt;</span>
-      <span class="nt">&lt;password&gt;</span> <span class="c">&lt;!-- YOUR APACHE LDAP PASSWORD (encrypted) --&gt;</span> <span class="nt">&lt;/password&gt;</span>
-    <span class="nt">&lt;/server&gt;</span>
-    <span class="c">&lt;!-- To stage a release of your project --&gt;</span>
-    <span class="nt">&lt;server&gt;</span>
-      <span class="nt">&lt;id&gt;</span>apache.releases.https<span class="nt">&lt;/id&gt;</span>
-      <span class="nt">&lt;username&gt;</span> <span class="c">&lt;!-- YOUR APACHE LDAP USERNAME --&gt;</span> <span class="nt">&lt;/username&gt;</span>
-      <span class="nt">&lt;password&gt;</span> <span class="c">&lt;!-- YOUR APACHE LDAP PASSWORD (encrypted) --&gt;</span> <span class="nt">&lt;/password&gt;</span>
-    <span class="nt">&lt;/server&gt;</span>
+  &lt;servers&gt;
+    &lt;!-- To publish a snapshot of your project --&gt;
+    &lt;server&gt;
+      &lt;id&gt;apache.snapshots.https&lt;/id&gt;
+      &lt;username&gt; &lt;!-- YOUR APACHE LDAP USERNAME --&gt; &lt;/username&gt;
+      &lt;password&gt; &lt;!-- YOUR APACHE LDAP PASSWORD (encrypted) --&gt; &lt;/password&gt;
+    &lt;/server&gt;
+    &lt;!-- To stage a release of your project --&gt;
+    &lt;server&gt;
+      &lt;id&gt;apache.releases.https&lt;/id&gt;
+      &lt;username&gt; &lt;!-- YOUR APACHE LDAP USERNAME --&gt; &lt;/username&gt;
+      &lt;password&gt; &lt;!-- YOUR APACHE LDAP PASSWORD (encrypted) --&gt; &lt;/password&gt;
+    &lt;/server&gt;
    ...
-  <span class="nt">&lt;/servers&gt;</span>
-<span class="nt">&lt;/settings&gt;</span>
-</code></pre></div>
-
+  &lt;/servers&gt;
+&lt;/settings&gt;
+</code></pre>
 <h3>Test your settings</h3>
 <p>Try installing locally artifacts with activation of the <code>apache-release</code> profile:</p>
 <p><code>mvn clean install -Papache-release</code></p>
@@ -144,13 +142,12 @@
 <li>Diff the original file <code>pom.xml</code> with the one called <code>pom.xml.tag</code> to see if the license or any other info has been removed. This has been known to happen if the starting <code>&lt;project&gt;</code> tag is not on a single line. The only things that should be different between these files are the <code>&lt;version&gt;</code> and <code>&lt;scm&gt;</code> elements. Backport any other changes you find to the original <code>pom.xml</code> file and commit it before proceeding with the release.</li>
 </ol>
 <h3>2. Publish a snapshot</h3>
-<div class="highlight"><pre><span></span><code><span class="n">mvn</span><span class="w"> </span><span class="n">deploy</span><span class="w"></span>
-<span class="p">...</span><span class="w"></span>
-<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="o">[</span><span class="n">deploy:deploy</span><span class="o">]</span><span class="w"></span>
-<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">Retrieving</span><span class="w"> </span><span class="n">previous</span><span class="w"> </span><span class="n">build</span><span class="w"> </span><span class="n">number</span><span class="w"> </span><span class="k">from</span><span class="w"> </span><span class="n">apache</span><span class="p">.</span><span class="n">snapshots</span><span class="p">.</span><span class="n">https</span><span class="w"></span>
-<span class="p">...</span><span class="w"></span>
-</code></pre></div>
-
+<pre><code>mvn deploy
+...
+[INFO] [deploy:deploy]
+[INFO] Retrieving previous build number from apache.snapshots.https
+...
+</code></pre>
 <p><strong>Notes</strong></p>
 <ul>
 <li>If you experience an error like a <em>HTTP 401</em> during deployment, check your settings for the required server entries as outlined above.</li>
@@ -158,10 +155,9 @@
 <li>Verify the deployment under the ASF <a href="https://repository.apache.org/content/repositories/snapshots/" target="_blank">Maven Snapshot repository</a>.</li>
 </ul>
 <h3>3. Prepare the release</h3>
-<div class="highlight"><pre><span></span><code><span class="err">mvn release:clean</span>
-<span class="err">mvn release:prepare</span>
-</code></pre></div>
-
+<pre><code>mvn release:clean
+mvn release:prepare
+</code></pre>
 <p><strong>Notes</strong></p>
 <ul>
 <li>Don't try to publish <code>.sha256</code> or <code>.sha512</code> files; Nexus doesn't handle them.</li>
@@ -177,39 +173,37 @@
 <ol>
 <li>If you get an <strong>error message</strong> like this:</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">Unable</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="n">SCM</span><span class="w"></span>
-<span class="n">Provider</span><span class="w"> </span><span class="nl">message</span><span class="p">:</span><span class="w"></span>
-<span class="n">The</span><span class="w"> </span><span class="n">svn</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="n">failed</span><span class="p">.</span><span class="w"></span>
-<span class="n">Command</span><span class="w"> </span><span class="k">output</span><span class="err">:</span><span class="w"></span>
-<span class="nl">svn</span><span class="p">:</span><span class="w"> </span><span class="k">Commit</span><span class="w"> </span><span class="n">failed</span><span class="w"> </span><span class="p">(</span><span class="n">details</span><span class="w"> </span><span class="n">follow</span><span class="p">)</span><span class="err">:</span><span class="w"></span>
-<span class="nl">svn</span><span class="p">:</span><span class="w"> </span><span class="k">File</span><span class="w"></span>
-<span class="s1">&#39;/repos/asf/maven/plugins/tags/maven-eclipse-plugin-2.7/.../EclipsePlugin.java&#39;</span><span class="w"></span>
-<span class="n">already</span><span class="w"> </span><span class="ow">exists</span><span class="w"></span>
-</code></pre></div>
-
+<pre><code>[INFO] Unable to tag SCM
+Provider message:
+The svn tag command failed.
+Command output:
+svn: Commit failed (details follow):
+svn: File
+'/repos/asf/maven/plugins/tags/maven-eclipse-plugin-2.7/.../EclipsePlugin.java'
+already exists
+</code></pre>
 <p>Then use a Subversion client 1.6 or newer and run <code>svn update</code>.</p>
-<ol>
+<ol start="2">
 <li>If you get an <strong>error message</strong> similar to:</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="o">[</span><span class="n">ERROR</span><span class="o">]</span><span class="w"> </span><span class="n">BUILD</span><span class="w"> </span><span class="n">FAILURE</span><span class="w"></span>
-<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"></span>
-<span class="o">[</span><span class="n">INFO</span><span class="o">]</span><span class="w"> </span><span class="n">Unable</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="n">SCM</span><span class="w"></span>
-<span class="n">Provider</span><span class="w"> </span><span class="nl">message</span><span class="p">:</span><span class="w"></span>
-<span class="n">The</span><span class="w"> </span><span class="n">svn</span><span class="w"> </span><span class="n">tag</span><span class="w"> </span><span class="n">command</span><span class="w"> </span><span class="n">failed</span><span class="p">.</span><span class="w"></span>
-<span class="n">Command</span><span class="w"> </span><span class="k">output</span><span class="err">:</span><span class="w"></span>
-<span class="nl">svn</span><span class="p">:</span><span class="w"> </span><span class="k">Path</span><span class="w"></span>
-<span class="s1">&#39;https://svn.apache.org/repos/asf/maven/plugins/tags/maven-eclipse-plugin-2.7&#39;</span><span class="w"></span>
-<span class="n">already</span><span class="w"> </span><span class="ow">exists</span><span class="w"></span>
-</code></pre></div>
-
-<p>Delete the tag using </p>
+<pre><code>[ERROR] BUILD FAILURE
+[INFO]
+[INFO] Unable to tag SCM
+Provider message:
+The svn tag command failed.
+Command output:
+svn: Path
+'https://svn.apache.org/repos/asf/maven/plugins/tags/maven-eclipse-plugin-2.7'
+already exists
+</code></pre>
+<p>Delete the tag using</p>
 <p><code>svn del -m "re-releasing build" {svn path}</code></p>
 <p>This likely occurred because you're trying to restage the release and you didn't roll back the changes that created the previous tag, or you're trying to release a version that already exists. If that is the case, you need to adjust the versions in your POM and start over.</p>
 <h2>Procedures for Ant + Ivy</h2>
-<p><a href="https://ant.apache.org/" target="_blank">Apache Ant</a> is a popular command-line build tool. <a href="https://ant.apache.org/ivy/" target="_blank">Ivy</a> is a dependency manager designed to work with Ant. </p>
+<p><a href="https://ant.apache.org/" target="_blank">Apache Ant</a> is a popular command-line build tool. <a href="https://ant.apache.org/ivy/" target="_blank">Ivy</a> is a dependency manager designed to work with Ant.</p>
 <h3>1 Prepare your build</h3>
 <p>Usually your normal build process will create the artifacts you want to publish (typically jars), but you may need to PGP-sign them the same way you sign your normal distribution artifacts. The jars are expected to follow the naming scheme <code>artifactId-version.jar</code>.</p>
-<p>You will need a minimal POM for your jar. If you are already using Ivy, you can use the <code>makepom</code> task to create one from your <code>ivy.xml</code> file. Otherwise see the Apache Maven project's <a href="https://maven.apache.org/pom.html" target="_blank">documentation</a> for "minimal" and the Apache Compress Antlib's <a href="https://svn.apache.org/repos/asf/ant/antlibs/compress/trunk/project-template.pom" target="_blank">POM</a> for an example. </p>
+<p>You will need a minimal POM for your jar. If you are already using Ivy, you can use the <code>makepom</code> task to create one from your <code>ivy.xml</code> file. Otherwise see the Apache Maven project's <a href="https://maven.apache.org/pom.html" target="_blank">documentation</a> for "minimal" and the Apache Compress Antlib's <a href="https://svn.apache.org/repos/asf/ant/antlibs/compress/trunk/project-template.pom" target="_blank">POM</a> for an example.</p>
 <p>If you are publishing multiple jars you may consider adding a parent POM to encapsulate the common information; see the Maven documentation for details. An example might be <a href="https://svn.apache.org/repos/asf/ant/core/trunk/src/etc/poms/pom.xml" target="_blank">Ant's parent POM</a>, used for the several jars that make up an Ant release.</p>
 <p>Users who use your project's jars from the Maven repository rather than using your "normal" distributions will likely want additional artifacts containing the source files or javadocs matching your jars in files named <code>artifactId-version-sources.jar</code> and <code>artifactId-version-javadoc.jar</code> respectively. Don't forget to sign those jars as well if you provide them.</p>
 <h3>2. Create minimal Ivy files for your project</h3>
@@ -239,6 +233,7 @@
 <p>If you bungled the release or your vote failed, follow <a href="http://central.sonatype.org/pages/releasing-the-deployment.html#close-and-drop-or-release-your-staging-repository" target="_blank">these instructions</a> to drop your repo. <em>Don't forget to roll back any SCM changes</em>.</p>
 <h3>Promote a repository</h3>
 <p>Congratulations, your vote was successful. The last step is to <a href="http://central.sonatype.org/pages/releasing-the-deployment.html#close-and-drop-or-release-your-staging-repository" target="_blank">promote the artifacts</a> to the release repository where they will get picked up by Central.</p>
+
         </div>
       </div>
     </div>    
