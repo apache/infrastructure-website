@@ -58,4 +58,5 @@ ASF_GENID = {
 }
 
 # Configure ignore files
-IGNORE_FILES = [ 'theme',  ]
+# blog/README.md is not intended for publication
+IGNORE_FILES = [ 'theme', 'blog/README.md' ]
