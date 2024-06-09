@@ -6,7 +6,7 @@ Committers to Apache Software Foundation projects and ASF Members have personal 
 
 ### Your Apache email address
 
-Your account includes an Apache email address which is usually `userID@apache.org`. You can link that mailbox to a personal email address so you can receive mail frp, your Apache address and send mail with your Apache address as the "from" address. See <a href="https://infra.apache.org/committer-email.html">Committer email</a>.
+Your account includes an Apache email address which is usually `userID@apache.org`. You can link that mailbox to a personal email address so you can receive mail from your Apache address and send mail with your Apache address as the "from" address. See <a href="https://infra.apache.org/committer-email.html">Committer email</a>.
 
 ### Managing your account details
 
