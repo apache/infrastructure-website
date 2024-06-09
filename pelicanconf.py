@@ -57,6 +57,6 @@ ASF_GENID = {
  'debug': False,
 }
 
-# Configure ignore files
-# blog/README.md is not intended for publication
-IGNORE_FILES = [ 'theme', 'blog/README.md' ]
+# Configure ignore file and directory basenames (paths not checked)
+# blogs/README.md is not intended for publication
+IGNORE_FILES = [ 'theme', 'README.md' ]
