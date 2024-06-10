@@ -1,8 +1,12 @@
 Title: ASF-Pelican
 
-Infra created ASF-Pelican as a structure and template for projects to use to build their websites, and for the ASF's own website. The template is available at <a href="https://github.com/apache/template-site" target="_blank">github.com/apache/template-site</a>.
+In 2019 Infra created ASF-Pelican as a structure and template for projects to use to build their websites, and for the ASF's own website.
 
-Review the following information to simplify your work with, and get your best results from, the template:
+In 2024, Infra moved from ASF-Pelican to NAME GitHub Action to perform the same functions without being closely tied to BuildBot.
+
+Review the following information to simplify your work with, and get your best results from, the Pelican GHA:
+
+**Note: THE FOLLOWING MATERIAL IS OUT OF DATE. AN UPDATE IS IN PROGRESS**
 
 ## Getting started
 
