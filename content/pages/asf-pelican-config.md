@@ -1,5 +1,14 @@
 Title: Configuring ASF Pelican
 
+**Note**
+In 2019 Infra created ASF-Pelican as a structure and template for projects to use to build their websites, and for the ASF's own website.
+
+In 2024, Infra moved from ASF-Pelican to the ASF **Infrastructure Pelican Action** GitHub Action to perform the same functions without being closely tied to BuildBot. The repository for this GHA is <a href="https//:github.com/apache/infrastructure-actions/tree/main/pelican" target="_blank">github.com/apache/infrastructure-actions/tree/main/pelican</a>.
+
+This page was relevant to ASF-Pelican, but is **not relevant** to the replacement Pelican Action.
+
+<hr/>
+
 Review <a href="https://github.com/apache/template-site" target="_blank">github.com/apache/template-site</a> to inspect a full `pelicanconf.yaml` file.
 
 These are the sections to configure in `pelicanconf.yaml` for your website: 
