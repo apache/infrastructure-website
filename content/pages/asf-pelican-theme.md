@@ -1,6 +1,13 @@
 Title: Apache Theme for ASF Pelican
 
-The Apache Theme, created for use with [ASF-Pelican](asf-pelican.html) for project websites, is available at <a href="https://github.com/apache/template-site/tree/main/theme" target="_blank">github.com/apache/template-site/tree/main.theme</a>.
+**Note**
+In 2019 Infra created ASF-Pelican as a structure and template for projects to use to build their websites, and for the ASF's own website.
+
+In 2024, Infra moved from ASF-Pelican to the ASF **Infrastructure Pelican Action** GitHub Action to perform the same functions without being closely tied to BuildBot. The repository for this GHA is <a href="https//:github.com/apache/infrastructure-actions/tree/main/pelican" target="_blank">github.com/apache/infrastructure-actions/tree/main/pelican</a>.
+
+The following material is correct for both ASF-Pelican and its replacement.
+<hr/>
+The Apache Theme is available at <a href="https://github.com/apache/template-site/tree/main/theme" target="_blank">github.com/apache/template-site/tree/main.theme</a>, in the "gha-compliant" branch.
 
 It has two types of files:
 
