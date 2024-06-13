@@ -1,5 +1,14 @@
 Title: ASF Pelican plugins
 
+**Note**
+In 2019 Infra created ASF-Pelican as a structure and template for projects to use to build their websites, and for the ASF's own website.
+
+In 2024, Infra moved from ASF-Pelican to the ASF **Infrastructure Pelican Action** GitHub Action to perform the same functions without being closely tied to BuildBot. The repository for this GHA is <a href="https//:github.com/apache/infrastructure-actions/tree/main/pelican" target="_blank">github.com/apache/infrastructure-actions/tree/main/pelican</a>.
+
+The following material is correct for both ASF-Pelican and its replacement.
+
+<hr/>
+
 # Plugins
 You can find the available plugins for a site using the ASF-Pelican template in the `themes/plugins` folder of your website's project repository.
 
