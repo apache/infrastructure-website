@@ -78,6 +78,7 @@ In 2019 Infra created ASF-Pelican as a structure and template for projects to us
 <p>In 2024, Infra moved from ASF-Pelican to the ASF <strong>Infrastructure Pelican Action</strong> GitHub Action to perform the same functions without being closely tied to BuildBot. The repository for this GHA is <a href="https//:github.com/apache/infrastructure-actions/tree/main/pelican" target="_blank">github.com/apache/infrastructure-actions/tree/main/pelican</a>.</p>
 <p>The following material is correct for both ASF-Pelican and its replacement.</p>
 <hr/>
+
 <h1>Plugins</h1>
 <p>You can find the available plugins for a site using the ASF-Pelican template in the <code>themes/plugins</code> folder of your website's project repository.</p>
 <h1>Plugin architecture</h1>
@@ -86,74 +87,75 @@ In 2019 Infra created ASF-Pelican as a structure and template for projects to us
 <p>Here is a high-level review of the sequence of events:</p>
 <h2>Pelican settings</h2>
 <p>Settings for a Pelican build are in your Pelican configuration file, <code>pelicanconf.py</code>. Here is where you list the plugins you are using.</p>
-<pre><code class="language-python">PLUGIN_PATHS = ['./theme/plugins']
-PLUGINS = ['asfgenid', 'asfdata', 'pelican-gfm', 'asfreader']
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">PLUGIN_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;./theme/plugins&#39;</span><span class="p">]</span>
+<span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;asfgenid&#39;</span><span class="p">,</span> <span class="s1">&#39;asfdata&#39;</span><span class="p">,</span> <span class="s1">&#39;pelican-gfm&#39;</span><span class="p">,</span> <span class="s1">&#39;asfreader&#39;</span><span class="p">]</span>
+</code></pre></div>
+
 <h2>Initialization</h2>
 <p>At initialization, Pelican reads any ASF_DATA into a metadata dictionary that is available in every page in the site.</p>
 <ul>
 <li>The plugin <code>.asfdata.py</code> reads an <code>.asfdata.yaml</code> file and creates the metadata dictionary.</li>
 </ul>
-<pre><code class="language-python">ASF_DATA_YAML = ".asfdata.yaml"
-ASF_DATA = {
-    'data': ASF_DATA_YAML,
-    'metadata': { },
-    'debug': True
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">ASF_DATA_YAML</span> <span class="o">=</span> <span class="s2">&quot;.asfdata.yaml&quot;</span>
+<span class="n">ASF_DATA</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;data&#39;</span><span class="p">:</span> <span class="n">ASF_DATA_YAML</span><span class="p">,</span>
+    <span class="s1">&#39;metadata&#39;</span><span class="p">:</span> <span class="p">{</span> <span class="p">},</span>
+    <span class="s1">&#39;debug&#39;</span><span class="p">:</span> <span class="kc">True</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <ul>
 <li>The asfgenid plugin <code>./asfgenid.py</code> configures the site's features.</li>
 </ul>
-<pre><code class="language-python"># Configure the asfgenid plugin
-ASF_GENID = {
-    'metadata': True,
-    'elements': True,
-    'headings': True,
-    'headings_re': r'^h[1-4]',
-    'permalinks': True,
-    'toc': True,
-    'toc_headers': r"h[1-4]",
-    'tables': True,
-    'debug': False
-}
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c1"># Configure the asfgenid plugin</span>
+<span class="n">ASF_GENID</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;metadata&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;elements&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;headings&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;headings_re&#39;</span><span class="p">:</span> <span class="sa">r</span><span class="s1">&#39;^h[1-4]&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;permalinks&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;toc&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;toc_headers&#39;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;h[1-4]&quot;</span><span class="p">,</span>
+    <span class="s1">&#39;tables&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="s1">&#39;debug&#39;</span><span class="p">:</span> <span class="kc">False</span>
+<span class="p">}</span>
+</code></pre></div>
+
 <h2>Readers (readers_init)</h2>
 <p>The system sets two important readers at this point. Readers are responsible for transforming page files to html and
 providing a metadata dictionary.</p>
 <ul>
-<li>GFMReader by the pelican-gfm plugin. This code is in a private repository - ask Infra. Transforms GitHub Flavored Markdown(GFM) to HTML.</li>
-</ul>
-<ul>
-<li>.md</li>
+<li>
+<p>GFMReader by the pelican-gfm plugin. This code is in a private repository - ask Infra. Transforms GitHub Flavored Markdown(GFM) to HTML.</p>
+</li>
+<li>
+<p>.md</p>
+</li>
 <li>.markdown</li>
 <li>.mkd</li>
-<li>.mdown</li>
-</ul>
-<ul>
+<li>
+<p>.mdown</p>
+</li>
 <li>
 <p><code>ASFReader,</code>.asfreader.py) transforms an <a href="https://github.com/gstein/ezt" target="_blank">ezt template</a> into GFM and then to HTML.</p>
-<ul>
-<li>.ezmd</li>
-</ul>
+</li>
+<li>
+<p>.ezmd</p>
 </li>
 </ul>
 <h2>Content init (content_object_init)</h2>
 <p>This is signaled after a reader has processed the site's content. At this point plugins can review, record, and transform the html content.</p>
 <ul>
-<li>The asfgenid plugin, <code>./asfgenid.py</code>, performs a number of steps. Some of the steps are optional.
-<ul>
+<li>The asfgenid plugin, <code>./asfgenid.py</code>, performs a number of steps. Some of the steps are optional.</li>
 <li>Metadata transformation by looking up {{ key_expression }} in the page metadata.</li>
 <li>Inventory of existing ID attributes.</li>
 <li>Set ID and class attributes specified by {#id} and {.class} syntax.</li>
 <li>Assign an ID to any headings without IDs.</li>
 <li>Insert a table of contents if a [TOC] tag is present.</li>
 </ul>
-</li>
-</ul>
 <h2>Apache CMS</h2>
-<p>Many projects had their websites served by the Apache CMS from 2010. It was deprecated in 2021. The CMS was written in Perl. We have a new approach that fits Pelican.</p>
+<p>Many projects had their websites served by the Apache CMS from 2010. It was deprecated in 2021. The CMS was written in Perl. We have a new approach that fits Pelican. </p>
 <p>If you want to look into the old CMS process, its <a href="http://svn.apache.org/viewvc/infrastructure/site/trunk/lib/views" target="_blank">Subversion repository and history</a> remain available.</p>
-
         </div>
       </div>
     </div>    
