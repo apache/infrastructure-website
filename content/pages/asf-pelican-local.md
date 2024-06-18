@@ -1,5 +1,13 @@
 Title: Local builds of your Pelican-template website
 
+**Note** In 2019 Infra created ASF-Pelican as a structure and template for projects to use to build their websites, and for the ASF's own website.
+
+In 2024, Infra moved from ASF-Pelican to the ASF Infrastructure Pelican Action GitHub Action to perform the same functions without being closely tied to BuildBot. The repository for this GHA is <a href="github.com/apache/infrastructure-actions/tree/main/pelican" target="_blank">github.com/apache/infrastructure-actions/tree/main/pelican</a>.
+
+The material below relates to the 2019 ASF-Pelican and is **not relevant** to the Pelican GitHub Action.
+
+<hr/>
+
 Once your infrastructure-pelican site is deployed to GitHub, you can easily edit it locally in a clone of the GitHub repo, and test your changes locally (on OSX or Linux) before uploading them to GitHub. Once you upload the changes, the CI/CD system will automatically use them to update the project website (depending on your configuration, the update will go either to a staging area or to the live site).
 
 **Note**: the tool mentioned below _may_ work on <a href="https://docs.microsoft.com/en-us/windows/wsl/about" target="_blank">WSL</a> or <a href="https://www.cygwin.com/" target="_blank">cygwin</a>, but will **not** work under native Windows.
