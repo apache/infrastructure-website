@@ -5,7 +5,7 @@ In 2019 Infra created ASF-Pelican as a structure and template for projects to us
 
 In 2024, Infra moved from ASF-Pelican to the ASF **Infrastructure Pelican Action** GitHub Action to perform the same functions without being closely tied to BuildBot. The repository for this GHA is <a href="https//:github.com/apache/infrastructure-actions/tree/main/pelican" target="_blank">github.com/apache/infrastructure-actions/tree/main/pelican</a>.
 
-This page was relevant to ASF-Pelican, but is **not relevant** to the replacement Pelican Action.
+This page was relevant to ASF-Pelican, but is **not relevant** to the replacement Pelican GitHub Action.
 
 <hr/>
 
