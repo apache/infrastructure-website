@@ -102,29 +102,30 @@ Each reported error has an accompanying error code (<code>CHKxx</code>). The cod
 <tr>
 <td><code>CHK04</code></td>
 <td>The signature used for signing expired before signing the file</td>
-<td><ul><li>It’s possible the expiry has been changed. Make sure the <a href="https://infra.apache.org/release-signing.html#key-basics"><code>KEYS</code></a> file is updated.</li><li>If the key has really expired treat the file as if it has no signature (<code>CHK05</code>).</td>
+<td><ul><li>It&rsquo;s possible the expiry has been changed. Make sure the <a href="https://infra.apache.org/release-signing.html#key-basics"><code>KEYS</code></a> file is updated.</li><li>If the key has really expired treat the file as if it has no signature (<code>CHK05</code>).</li></ul></td>
 </tr>
 <tr>
 <td><code>CHK05</code></td>
 <td>No (or invalid) signature found for the release artifact</td>
-<td>Check: <ul><li>Is there a signature file for this artifact?:<ul><li>If the signature is valid but has the wrong file name or extension, rename it to the appropriate .asc file name.</li><li>If the signature is invalid, see <a href="#invalid-sig">handling invalid or missing signatures</a>.</li></ul></li><li>If there is no signature file at all, see <a href="#invalid-sig">handling invalid or missing signatures</a>.</td>
+<td>Check: <ul><li>Is there a signature file for this artifact?:<ul><li>If the signature is valid but has the wrong file name or extension, rename it to the appropriate .asc file name.</li><li>If the signature is invalid, see <a href="#invalid-sig">handling invalid or missing signatures</a>.</li></ul></li><li>If there is no signature file at all, see <a href="#invalid-sig">handling invalid or missing signatures</a>.</li></ul></td>
 </tr>
 <tr>
 <td><code>CHK06</code></td>
 <td>Checksum mismatch</td>
 <td>Try to spot what the problem was (why are you generating the wrong checksum?): <ul><li>If the file has a valid signature (no <code>CHK04</code> or <code>CHK05</code> errors for this file), generate a <a href="https://infra.apache.org/release-signing.html#sha-checksum">conforming checksum</a>, add it, and remove the broken one.</li><li>Otherwise: treat as if <code>CHK05</code>.</li></ul></td>
-</tr>
-</tbody>
-</table>
+</tr></tbody></table>
 <h2><a id="invalid-sig">Handling invalid or missing signatures</a></h2>
-<p>In case of an invalid or missing signature for a release artifact, the project MUST choose one of the following actions:
- - Remove the artifact(s)
- - Re-assert that the artifact is valid, sign and upload the correct .asc signature file (and fix any missing/invalid checksum files)</p>
-<p>In either case, the project MUST inform the ASF Infrastructure and Security Team 
- at <code>private@infra.apache.org</code> and <code>security@apache.org</code> of their action, with clear evidence that the action 
- has been discussed and agreed upon (a link to a lists.apache.org thread will suffice).</p>
-<p>If you have questions about the error reports, this page, or our release distribution polices in general, 
+<p>In case of an invalid or missing signature for a release artifact, the project MUST choose one of the following actions:</p>
+<ul>
+<li>Remove the artifact(s)</li>
+<li>Re-assert that the artifact is valid, sign and upload the correct .asc signature file (and fix any missing/invalid checksum files)</li>
+</ul>
+<p>In either case, the project MUST inform the ASF Infrastructure and Security Team
+at <code>private@infra.apache.org</code> and <code>security@apache.org</code> of their action, with clear evidence that the action
+has been discussed and agreed upon (a link to a lists.apache.org thread will suffice).</p>
+<p>If you have questions about the error reports, this page, or our release distribution polices in general,
 feel free to reach out to us at <code>users@infra.apache.org</code>.</p>
+
         </div>
       </div>
     </div>    
