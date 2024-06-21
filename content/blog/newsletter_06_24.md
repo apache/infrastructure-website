@@ -76,7 +76,7 @@ We also touched on Non-Infra tools:
   - Reporter (ComDev)
   - Apache Whimsy
 
-The full notes of the meeting are at Infra Roundtable 2024-06-05, 17:00 UTC.
+The full notes of the meeting are at <a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable+2024-06-05%2C+17%3A00+UTC" target="_blank"Infra Roundtable 2024-06-05, 17:00 UTC</a>.
 
 The next Roundtable will be **July 3, 2024, 1700UTC**. We will discuss how to manage the new repository to host ASF-approved GitHub Actions.
 
