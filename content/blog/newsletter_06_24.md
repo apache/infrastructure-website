@@ -69,7 +69,7 @@ Confluence and Jira - Wiki and ticketing system from Atlassian.
   - Apache STeVe - Voting tool for the ASF and for projects. It is its own top level project.
   - Slack - A project channel in the 'the-asf' space can be a communications hub for a project rather than, say, IRC.
   - <a href="https://infra-reports.apache.org" target="_blank">Infra Reports</a> - Dashboard covering resource uptime, public download statistics, use of GitHub Actions, the project website resource checker, and so on.
-  - <a href="https://github.com/apache/infrastructure-actions" target="_blank"Infrastructure Actions repo</a> - hosts Infrastructure-approved GH Actions that all projects can use. This generated a lot of interest and suggestions from those present, so we are devoting the next Roundtable to talking through how we will manage this repository and curate its contents.
+  - <a href="https://github.com/apache/infrastructure-actions" target="_blank">Infrastructure Actions repo</a> - hosts Infrastructure-approved GH Actions that all projects can use. This generated a lot of interest and suggestions from those present, so we are devoting the next Roundtable to talking through how we will manage this repository and curate its contents.
 
 We also touched on Non-Infra tools:
 
