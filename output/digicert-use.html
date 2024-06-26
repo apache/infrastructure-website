@@ -87,7 +87,7 @@
 <p><strong>Note</strong>: The ASF has to pay for each signature using a signing certificate. Using Jenkins to build and sign <strong>releases</strong> using DigiCert ONE is fine. Signing every single <strong>CI build</strong> is not necessary and can become expensive for the Foundation. Please make sure your build process only involves signing certificates for release candidates.</p>
 <h3>Step 1: Obtaining a DigiCert ONE account</h3>
 <p>Adding a new PMC or a new user to an existing PMC needs to be performed by the infrastructure team. Please open an <a href="https://issues.apache.org/jira/browse/INFRA">INFRA Jira ticket</a> and select code signing as the component.</p>
-<p>When the infrastructure team creates your account you will receive a password reset email. The link in that email is only valid for 12 hours. If you are unable to complete the creation of your account in that time you can request a new password reset email by going to <a href="https://one.digicert.com/" target="_blank">DigiCert ONE</a> and clicking the password reset link. Your username is your ASF email address. You should then receive a new password reset email you can use to set your password. </p>
+<p>When the infrastructure team creates your account you will receive a password reset email. The link in that email is only valid for 12 hours. If you are unable to complete the creation of your account in that time you can request a new password reset email by going to <a href="https://one.digicert.com/" target="_blank">DigiCert ONE</a> and clicking the password reset link. Your username is your ASF email address. You should then receive a new password reset email you can use to set your password.</p>
 <p>You also need to configure your OTP token. Officially, only Google authenticator is supported but any similar tool should also work.</p>
 <h3>Step 2: Obtaining credentials for code signing</h3>
 <p>Whatever you need to sign and however you choose to sign it, you need to create credentials to use the signing API. You create these via the DigiCert ONE web interface.</p>
@@ -132,26 +132,35 @@
 <p>To sign a file with SHA-256 rather than SHA-512 use <code>... /fd sha256...</code> rather than <code>... /fd sha512 ...</code>.</p>
 <h4>Signing on Windows binaries on Windows or Linux with JSign 4.0+ Ant task</h4>
 <ol>
-<li>Make the JSign JAR from <a href="https://search.maven.org/artifact/net.jsign/jsign">Maven Central</a> available to Ant.</li>
-<li>The DigiCert ONE specific properties for the JSign task in Antshould be as follows:<div class="highlight"><pre><span></span><code><span class="err">  storetype=&quot;DIGICERTONE&quot;</span>
-<span class="err">  storepass=&quot;&lt;api-key&gt;|&lt;path-to-client-certificate&gt;|&lt;client-certificate-passphrase&gt;&quot;</span>
-<span class="err">  alias=&quot;&lt;name-of-signing-certificate&gt;&quot;</span>
-<span class="err">  tsaurl=&quot;http://timestamp.digicert.com&quot;</span>
-</code></pre></div>
-
+<li>
+<p>Make the JSign JAR from <a href="https://search.maven.org/artifact/net.jsign/jsign">Maven Central</a> available to Ant.</p>
+</li>
+<li>
+<p>The DigiCert ONE specific properties for the JSign task in Antshould be as follows:</p>
+<pre><code>   storetype="DIGICERTONE"
+   storepass="&lt;api-key&gt;|&lt;path-to-client-certificate&gt;|&lt;client-certificate-passphrase&gt;"
+   alias="&lt;name-of-signing-certificate&gt;"
+   tsaurl="http://timestamp.digicert.com"
+</code></pre>
 </li>
 </ol>
 <h4>Signing Windows binaries on Linux with JSign 4.0+</h4>
 <ol>
-<li>Download jsign <code>wget https://github.com/ebourg/jsign/releases/download/4.0/jsign_4.0_all.deb</code>.</li>
-<li>Install jsign <code>sudo dpkg --install jsign_4.0_all.deb</code>.</li>
-<li>You should then be able to sign with:<div class="highlight"><pre><span></span><code><span class="err">jsign --storetype DIGICERTONE --alias &lt;name-of-signing-certificate&gt; --storepass &quot;&lt;api-key&gt;|&lt;path-to-client-certificate&gt;|&lt;client-certificate-passphrase&gt;&quot; --tsaurl=&quot;http://timestamp.digicert.com&quot; application.exe</span>
-</code></pre></div>
-
+<li>
+<p>Download jsign <code>wget https://github.com/ebourg/jsign/releases/download/4.0/jsign_4.0_all.deb</code>.</p>
+</li>
+<li>
+<p>Install jsign <code>sudo dpkg --install jsign_4.0_all.deb</code>.</p>
+</li>
+<li>
+<p>You should then be able to sign with:</p>
+<pre><code> jsign --storetype DIGICERTONE --alias &lt;name-of-signing-certificate&gt; --storepass "&lt;api-key&gt;|&lt;path-to-client-certificate&gt;|&lt;client-certificate-passphrase&gt;" --tsaurl="http://timestamp.digicert.com" application.exe
+</code></pre>
 </li>
 </ol>
 <h4>Other signing formats, tools and operating systems</h4>
 <p>See the client user guide.</p>
+
         </div>
       </div>
     </div>    
