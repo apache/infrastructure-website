@@ -8,6 +8,7 @@ Title: Infra policies
 - [Mail rejection policy](mail-rejection.html)
 - [Dealing with spam in your ASF email account](spam-reporting.html)
 - [Password requirements](password-policy.html)
+- [Policy on issues in third-party services](third-party-policy.html)
 
 ## Projects
 
