@@ -17,7 +17,7 @@ It has two types of files:
 ## Page templates
 
 - base.html - the main template. Other templates extend this template automatically, including those in the default Pelican theme.
-- page.html - this overrides Pelican's `default/simple page.html`, which includes `<h1>{{ page.title }}</h1>`. which we do not want.
+- page.html - this overrides Pelican's `default/simple page.html`, which includes `<h1>{{ page.title }}</h1>`, which we do not want.
 
 Change `base.html` as necessary. Add new override templates if you need them.
 
@@ -69,7 +69,7 @@ site:
 
 ## Pelican theme
 
-This is a [custom theme][1]. Pelican templates use [Jinja][2].
+This is a [custom theme][1] Pelican templates use [Jinja][2].
 
 
 <hr />
