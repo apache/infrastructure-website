@@ -44,7 +44,7 @@ This theme uses the following metadata:
 - License. This is an alternative to Notice.
 
 - bodytag. This adds attributes to the `<body>` element.
-  This is allows the main `index.ezmd` to have the same template, but with a different layout.
+  This allows the main `index.ezmd` to have the same template, but with a different layout.
 
   `<body{% if page.bodytag %} {{ page.bodytag }}{% endif %} >`   
 
