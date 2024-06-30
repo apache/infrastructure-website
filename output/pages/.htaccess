@@ -1,1 +1,2 @@
+Redirect /machines.html https://infra-reports.apache.org/machines/index.html
 RedirectMatch /?([^/]+)\.html$ /$1.html
