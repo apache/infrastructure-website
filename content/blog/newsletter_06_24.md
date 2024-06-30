@@ -29,7 +29,7 @@ Members of the ASF community have lots of good ideas for services Infra could pr
 
 Infra has set up "Infrastructure-ideas" (<a href="https://github.com/apache/infrastructure-ideas" target="_blank">github.com/apache/infrastructure-ideas</a>), a GitHub repository to host, discuss, and get consensus on people's ideas for ASF infrastructure. For now, we will mainly be making use of the repo's "Discussions" tab.
 
-  -Start a new discussion in the category that best matches it:
+  - Start a new discussion in the category that best matches it:
     - Enhancements
     - General
     - New ideas for services
