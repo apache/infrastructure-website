@@ -8,6 +8,8 @@ Please create a [Jira](https://issues.apache.org/jira/) ticket for your request.
 
 Review the [guidelines for creating a Jira ticket](jira-guidelines).
 
+### Suggest a service, or an enhancement to an existing service
+Visit the <a href="https://github.com/apache/infrastructure-ideas" target="_blank">Infra suggestion box</a>.
 
 ### For general inquiries
 General inquiries and questions should go to: `users@infra.apache.org`.
