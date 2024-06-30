@@ -13,13 +13,16 @@
 &lt;p&gt;&lt;strong&gt;Your good ideas for Infrastructure&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;Members of the ASF community have lots of good ideas for services Infra could provide, or improvements the team should make to existing services. To this point, there has not been a convenient way to get those ideas to where people can respond to them by supporting them, suggesting tweaks to the original idea, or explaining why they think the service or fix is not necessary.&lt;/p&gt;
 &lt;p&gt;Infra has set up "Infrastructure-ideas" (&lt;a href="https://github.com/apache/infrastructure-ideas" target="_blank"&gt;github.com/apache/infrastructure-ideas&lt;/a&gt;), a GitHub repository to host, discuss, and get consensus on people's ideas for ASF infrastructure. For now, we will mainly be making use of the repo's "Discussions" tab.&lt;/p&gt;
-&lt;p&gt;-Start a new discussion in the category that best matches it:
-- Enhancements
-- General
-- New ideas for services
-- Polls
-- Q&amp;amp;A&lt;/p&gt;
 &lt;ul&gt;
+&lt;li&gt;Start a new discussion in the category that best matches it:
+&lt;ul&gt;
+&lt;li&gt;Enhancements&lt;/li&gt;
+&lt;li&gt;General&lt;/li&gt;
+&lt;li&gt;New ideas for services&lt;/li&gt;
+&lt;li&gt;Polls&lt;/li&gt;
+&lt;li&gt;Q&amp;amp;A&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
 &lt;li&gt;If you see a suggestion that you agree with, you can upvote it. This helps to demonstrate how broadly the community supports the idea, and that, in turn, could help Infra decide which ideas to devote resources toward implementing.&lt;/li&gt;
 &lt;li&gt;If you want to flesh out a suggestion, feel free to add a comment, a question, a challenge, a tweak to it.
 We look forward to your ideas!&lt;/li&gt;
