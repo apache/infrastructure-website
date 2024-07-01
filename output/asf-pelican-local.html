@@ -76,23 +76,21 @@
 <p>In 2024, Infra moved from ASF-Pelican to the ASF Infrastructure Pelican Action GitHub Action to perform the same functions without being closely tied to BuildBot. The repository for this GHA is <a href="github.com/apache/infrastructure-actions/tree/main/pelican" target="_blank">github.com/apache/infrastructure-actions/tree/main/pelican</a>.</p>
 <p>The material below relates to the 2019 ASF-Pelican and is <strong>not relevant</strong> to the Pelican GitHub Action.</p>
 <hr/>
+
 <p>Once your infrastructure-pelican site is deployed to GitHub, you can easily edit it locally in a clone of the GitHub repo, and test your changes locally (on OSX or Linux) before uploading them to GitHub. Once you upload the changes, the CI/CD system will automatically use them to update the project website (depending on your configuration, the update will go either to a staging area or to the live site).</p>
 <p><strong>Note</strong>: the tool mentioned below <em>may</em> work on <a href="https://docs.microsoft.com/en-us/windows/wsl/about" target="_blank">WSL</a> or <a href="https://www.cygwin.com/" target="_blank">cygwin</a>, but will <strong>not</strong> work under native Windows.</p>
 <h2>Preparation</h2>
-<p>Make sure you have installed:</p>
-<ul>
-<li>cmake</li>
-<li>python3 or greater</li>
-<li>pip3</li>
-</ul>
-<p>Download the <a href="https://raw.githubusercontent.com/apache/infrastructure-pelican/master/bin/local-pelican-site.sh">automatic build tool</a>, and run it, providing the name of your GitHub website repo.</p>
+<p>Make sure you have installed:
+  - cmake
+  - python3 or greater
+  - pip3</p>
+<p>Download the <a href="https://raw.githubusercontent.com/apache/infrastructure-pelican/master/bin/local-pelican-site.sh">automatic build tool</a>, and run it, providing the name of your GitHub website repo. </p>
 <p>Example:</p>
 <p><code>./local-pelican-website.sh infrastructure-website</code></p>
-<p>Once the process has completed, you should be able to see the rendered site by opening a web browser to <a href="http://localhost:8000/">http://localhost:8000/</a>.</p>
+<p>Once the process has completed, you should be able to see the rendered site by opening a web browser to http://localhost:8000/.</p>
 <h2>Use</h2>
 <p>After you have done local edits on the source files for the website, you can test them locally by running the script again as above.</p>
 <p>When you are satisfied that your edits are correct, merge them into the online repository with a pull request. That will trigger an update to the staging or live locations, depending on how you have configured the .asf.yaml file.</p>
-
         </div>
       </div>
     </div>    
