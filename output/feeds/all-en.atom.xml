@@ -659,14 +659,14 @@ If the reaction to this change proves positive, the next step will be to integra
 </content><category term="blog"></category></entry><entry><title>Dear Apache</title><link href="https://infra.apache.org/blog/dear_apache.html" rel="alternate"></link><published>2015-10-19T18:30:41+00:00</published><updated>2015-10-19T18:30:41+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2015-10-19:/blog/dear_apache.html</id><summary type="html">&lt;p&gt;My name is Daniel Takamori and I'm so happy to be joining the Infra team here at Apache.&amp;nbsp; I'm from Oregon in the United States and really enjoy the rain.&amp;nbsp; While at Oregon State University I studied mathematics and physics with a lean towards error correcting codes and mathematical modelling …&lt;/p&gt;</summary><content type="html">&lt;p&gt;My name is Daniel Takamori and I'm so happy to be joining the Infra team here at Apache.&amp;nbsp; I'm from Oregon in the United States and really enjoy the rain.&amp;nbsp; While at Oregon State University I studied mathematics and physics with a lean towards error correcting codes and mathematical modelling.&amp;nbsp; Some of my hobbies are playing Go in which I'm ranked 6.9 kyu by the AGA, cooking with eggs and green things, and old school platforming video games.&amp;nbsp; In a former life I worked on underwater remotely operated vehicles and automated gardening systems.&amp;nbsp; Traveling is something I liked to do once; living in Hungary was awesome and I hope to visit again. Oregon is a great place to live, with all the trees, rain and burritos but maybe things will change in the future.&amp;nbsp; My handle Pono is my Hawaiian name, and I'm really proud to use it.&lt;br/&gt;&lt;br/&gt;Previously I was at the Oregon State University Open Source Lab and really enjoyed my time there; getting to know the Open Source communities and even work with Apache!&amp;nbsp; It was a real eye opening experience to the world of what software and DevOps (lol who knows what that even means).&amp;nbsp; I'm very excited to continue working with the community and even more excited to start this next chapter with such an amazing group.&lt;br/&gt;&lt;br/&gt;See you around internets!&lt;br/&gt;&lt;/p&gt;
 </content><category term="blog"></category></entry><entry><title>Planned downtime for ReviewBoard</title><link href="https://infra.apache.org/blog/planned_downtime_for_reviewboard.html" rel="alternate"></link><published>2015-08-19T19:19:38+00:00</published><updated>2015-08-19T19:19:38+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2015-08-19:/blog/planned_downtime_for_reviewboard.html</id><summary type="html">&lt;div&gt;
 &lt;div&gt;
-&lt;div&gt;The ReviewBoard vm ran out of space and despite our best 
+&lt;div&gt;The ReviewBoard VM ran out of space and despite our best 
 efforts to fix the space issue without restarting the service, that is 
-the only option left.&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;The plan is to restart the vm on 
+the only option left.&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;The plan is to restart the VM on 
 Thursday August 20th at 21:00 UTC (14:00 PDT), but if it fills up …&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div&gt;
 &lt;div&gt;
-&lt;div&gt;The ReviewBoard vm ran out of space and despite our best 
+&lt;div&gt;The ReviewBoard VM ran out of space and despite our best 
 efforts to fix the space issue without restarting the service, that is 
-the only option left.&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;The plan is to restart the vm on 
+the only option left.&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;The plan is to restart the VM on 
 Thursday August 20th at 21:00 UTC (14:00 PDT), but if it fills up again 
 before then, the resize will take place earlier.&lt;br/&gt;&lt;br/&gt;
 &lt;/div&gt;A tweet via @infrabot will be tweeted 1 hour before the scheduled downtime and a planned maintenance notice will be posted to &lt;a href="http://status.apache.org" target="_blank"&gt;status.apache.org&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;
@@ -1015,7 +1015,7 @@ In groups, especially groups that are charged with overlapping duties, there's o
 - A private broker, to monitor internal services&amp;nbsp; without exposing them on internet&lt;br/&gt; - A dedicated broker (inhouse development) that monitor special ASF systems (like svn compare US - EU)&lt;br/&gt;
 - A configuration system, that are based on svn.&lt;br/&gt;
 - A new status page &lt;a href="status.apache.org" target="_blank"&gt;status.apache.org&lt;/a&gt; &lt;br/&gt;
-- A new team structure (all committers with sudo karma on a vm, get an email when something happens with the vm)&lt;br/&gt; &lt;/p&gt;
+- A new team structure (all committers with sudo karma on a VM, get an email when something happens with the VM)&lt;br/&gt; &lt;/p&gt;
 &lt;p&gt; &lt;/p&gt;
 &lt;p&gt;The new system is a lot faster and we can therefore offer projects monitoring of project URLs, of course the project also need to have a team that handles the alerts.&lt;/p&gt;
 &lt;p&gt;The current version has approx. the same facilities as Nagios, but we are planning (and actively programming) a version.2 that will allow us to better predict problems before they occur.&lt;/p&gt;
