@@ -107,7 +107,6 @@ You can publish a small personal website in `public_html`, as described in the [
 <h4 id="statistics">Is there a way to see a graph of loads (CPU, I/O, network)?<a class="headerlink" href="#statistics" title="Permanent link">&para;</a></h4>
 
   - Infra publishes top-level statistics on the <a href="https://status.apache.org/" target="_blank">status page</a>.
-  - Vadim Gritsenko provides <a href="http://home.apache.org/~vgritsenko/stats/" target="_blank">statistics and cool charts</a>.
 
 <h4 id="host-key-change">What should I do if Host Key has changed when logging into an Apache server?<a class="headerlink" href="#host-key-change" title="Permanent link">&para;</a></h4>
 
