@@ -79,7 +79,7 @@
 <pre><code class="language-python"># Theme
 THEME = './theme/apache'
 </code></pre>
-<p>See [ASF-Pelican theme][asf-pelican-theme.html] for details about the ASF Theme.</p>
+<p>See <a href="asf-pelican-theme.html">ASF-Pelican theme</a> for details about the ASF Theme.</p>
 <p><strong>Note</strong>: the following material is under review and will have an update soon.</p>
 <h2>Plugins</h2>
 <p>ASF-Pelican enhances the Pelican environment with plugins. Our environment has its own copy of the <code>asf</code> plugins, and the <code>pelican-build.py</code> script provides <code>pelican-gfm</code>.</p>
@@ -97,7 +97,7 @@ PLUGINS = ['asfgenid', 'asfdata', 'pelican-gfm', 'asfreader']
 <li><a href="#ezmd-reader">EZMD Content</a>. The <code>asfreader.py</code> plugin reads <strong>.ezmd</strong> files, injects data, translates ezt, and converts the GFM Markdown into HTML.</li>
 <li><a href="#generate-id">Generate ID</a>. The <code>asfgenid.py</code> plugin performs a number of enhancements to the HTML.</li>
 </ol>
-<p>See [ASF-Pelican build process][asf-pelican-build.html] for the steps signaled. See [plugins][asf-pelican-plugins.html] for the Python code.</p>
+<p>See <a href="asf-pelican-build.html">ASF-Pelican build process</a> for the steps signaled. See <a href="asf-pelican-plugins.html">plugins</a> for the Python code.</p>
 <h2>Tree structure</h2>
 <p>Pages and static content are stored in the same tree. Generated content is output with the same relative path, except with an html extension.
 These are the necessary settings:</p>
@@ -185,7 +185,7 @@ IGNORE_FILES = ['README.md','interviews','include']
 <td align="center">translate</td>
 <td>Create output HTML by pushing the generated content and metadata through the theme's templates</td>
 </tr></tbody></table>
-<p>See [local builds][asf-pelican-local.html] for how to install ASF-Pelican on your system.</p>
+<p>See <a href="asf-pelican-local.html">local builds</a> for how to install ASF-Pelican on your system.</p>
 <h2>Data model</h2>
 <p><strong>ezmd</strong> templates use a shared data model to generate content. There are three types of data:</p>
 <table>
@@ -208,8 +208,8 @@ IGNORE_FILES = ['README.md','interviews','include']
 <td>EZMD Reader</td>
 <td>Dictionaries - key-value maps where the value may be another dictionary</td>
 </tr></tbody></table>
-<p>The constants are also available to the <code>asfgenid.py</code> plugin and the [theme's templates][asf-pelican-theme.html].</p>
-<p>There are examples of how to <a href="#model-metadata">inject shared metadata</a> below. See the [metadata model][asf-pelican-data.html] for how <code>asfdata.py</code> works to populate the shared metadata.</p>
+<p>The constants are also available to the <code>asfgenid.py</code> plugin and the <a href="asf-pelican-theme.html">theme's templates</a>.</p>
+<p>There are examples of how to <a href="#model-metadata">inject shared metadata</a> below. See the <a href="asf-pelican-data.html">metadata model</a> for how <code>asfdata.py</code> works to populate the shared metadata.</p>
 <h2>Read source</h2>
 <p>The systems uses the <code>read_source</code> method to open a file and convert it into a metadata dictionary and text.</p>
 <p>Example:</p>
