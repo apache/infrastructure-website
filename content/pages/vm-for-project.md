@@ -1,8 +1,8 @@
 Title: Requesting a virtual machine for a project
 
-When your PMC wants to run an application that is not part of the offered services (like a demo setup of your project), you need to request a dedicated virtual machine (vm). It is not possible to request a physical machine. Physical machines are shared resources for all ASF projects.
+When your PMC wants to run an application that is not part of the offered services (like a demo setup of your project), you need to request a dedicated virtual machine (VM). It is not possible to request a physical machine. Physical machines are shared resources for all ASF projects.
 
-Infra maintains hosts in different computer centers around the world to run virtual machines, so we can relocate your vm as requirements change without you having to reinstall anything.
+Infra maintains hosts in different computer centers around the world to run virtual machines, so we can relocate your VM as requirements change without you having to reinstall anything.
 
 ### Contents ###
 
@@ -18,7 +18,7 @@ Infra maintains hosts in different computer centers around the world to run virt
 To request a virtual machine, open a <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Jira</a> ticket with at least the following information:
 
 1. The project's plans for the virtual machine:
-    - Why the project needs a dedicated vm
+    - Why the project needs a dedicated VM
     - Is logging in used in the project's application (HTTPS is mandatory for use of login)?
     - Do any special ports need to be opened?
 2. VM resources requested (the operating system will be the latest Ubuntu LTS release):
@@ -28,17 +28,17 @@ To request a virtual machine, open a <a href="https://issues.apache.org/jira/bro
     - Name (default is `<project>-vm.a.o`)
     - Apache ID of project administrator (one of the maintainers you specify below)
 3. Application resources:
-    - Database (Infra recommends SQLite, given the small size, but can configure an on-box mySQL or PostgreSQL database for the vm.)
+    - Database (Infra recommends SQLite, given the small size, but can configure an on-box mySQL or PostgreSQL database for the VM.)
     - Httpd (installed pr default, configuration is to be agreed upon)
     - Non-standard packages (will be maintained by infra-p6)
     - DNS names needed (default is to create `vmname` only)
     - Backup needed (default is **no** backups other than what is in Infra-p6)
 4. Maintainers:
-    - Provide the name, Apache ID, and contact info for at least three PMC members who will maintain the vm.
+    - Provide the name, Apache ID, and contact info for at least three PMC members who will maintain the VM.
 5. Acknowledgement:
     - Name of a PMC member who acknowledges this request on behalf of the project.
 
-CPU and RAM are expensive resources, so unless you make a really compelling case we will start the vm with default values. If you/we see problems later we can always add more. We can add CPU cores and RAM can without reinstalling anything.
+CPU and RAM are expensive resources, so unless you make a really compelling case we will start the VM with default values. If you/we see problems later we can always add more. We can add CPU cores and RAM can without reinstalling anything.
 
 The operating system needs to be supported by our standard applications, therefore we currently only offer Ubuntu.
 
@@ -46,17 +46,17 @@ The operating system needs to be supported by our standard applications, therefo
 
 <h3 id="deploy">Deploying the virtual machine<a class="headerlink" href="#deploy" title="Permanent link">&para;</a></h3>
 
-Infra may ask questions to clarify the request. When all is clear, we will create the vm according to specifications, install the OS and the mandatory standard (Infra) applications. The mandatory application guarantee a level of security and provide ssh access common to all vms.
+Infra may ask questions to clarify the request. When all is clear, we will create the VM according to specifications, install the OS and the mandatory standard (Infra) applications. The mandatory application guarantee a level of security and provide ssh access common to all vms.
 
-Once we have tested the vm, we will ask a project maintainer to do ssh to the vm.
+Once we have tested the VM, we will ask a project maintainer to do ssh to the VM.
 
 <h3 id="maintain">Project maintainers<a class="headerlink" href="#maintain" title="Permanent link">&para;</a></h3>
 
-The project maintainers are responsible for maintaining the vm. Infra will normally not maintain the vm, but will check on security from time to time.
+The project maintainers are responsible for maintaining the VM. Infra will normally not maintain the VM, but will check on security from time to time.
 
-Each project maintainer needs to have ssh keys uploaded to `id.a.o` before requesting the vm. Maintainers use the ssh keys stored in LDAP to log in to the vm.
+Each project maintainer needs to have ssh keys uploaded to `id.a.o` before requesting the VM. Maintainers use the ssh keys stored in LDAP to log in to the VM.
 
-When the vm is created, each maintainer gets karma to access the vm (ldap add host to userid). Once that has been tested, it is time to get sudo karma if it is required.
+When the VM is created, each maintainer gets karma to access the VM (ldap add host to userid). Once that has been tested, it is time to get sudo karma if it is required.
 
 To prepare for sudo karma follow the <a href="https://reference.apache.org/committer/opie" target="_blank">OPIE guidelines</a>.
 
