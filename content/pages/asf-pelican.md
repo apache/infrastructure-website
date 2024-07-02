@@ -6,11 +6,9 @@ In 2024, Infra moved from ASF-Pelican to the ASF **Infrastructure Pelican Action
 
 Review the following information to simplify your work with, and get your best results from, the Pelican GHA:
 
-**Note: THE FOLLOWING MATERIAL IS OUT OF DATE. AN UPDATE IS IN PROGRESS**
-
 ## Getting started
 
-See the [getting-started guide](asf-pelican-gettingstarted.html).
+See the [Pelican getting-started guide](asf-pelican-gettingstarted.html).
 
 ## For site designers
 
