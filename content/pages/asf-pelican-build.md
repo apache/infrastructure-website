@@ -13,7 +13,7 @@ For websites using the ASf-Pelican template, configure the build using the `peli
 THEME = './theme/apache'
 ```
 
-See [ASF-Pelican theme][asf-pelican-theme.html] for details about the ASF Theme.
+See [ASF-Pelican theme](asf-pelican-theme.html) for details about the ASF Theme.
 
 **Note**: the following material is under review and will have an update soon.
 
@@ -36,7 +36,7 @@ PLUGINS = ['asfgenid', 'asfdata', 'pelican-gfm', 'asfreader']
 3. [EZMD Content][asfreader]. The `asfreader.py` plugin reads **.ezmd** files, injects data, translates ezt, and converts the GFM Markdown into HTML.
 4. [Generate ID][asfgenid]. The `asfgenid.py` plugin performs a number of enhancements to the HTML.
 
-See [ASF-Pelican build process][asf-pelican-build.html] for the steps signaled. See [plugins][asf-pelican-plugins.html] for the Python code.
+See [ASF-Pelican build process](asf-pelican-build.html) for the steps signaled. See [plugins](asf-pelican-plugins.html) for the Python code.
 
 ## Tree structure
 
@@ -76,7 +76,7 @@ Our plugins provide the following activity:
 | Content        | [Generate ID][asfgenid]    | generate_id | generate_id  | Perform ASF specific HTML enhancements |
 | Generator      | [Template][theme]          | translate   | translate    | Create output HTML by pushing the generated content and metadata through the theme's templates |
 
-See [local builds][asf-pelican-local.html] for how to install ASF-Pelican on your system.
+See [local builds](asf-pelican-local.html) for how to install ASF-Pelican on your system.
 
 ## Data model
 
@@ -88,9 +88,9 @@ See [local builds][asf-pelican-local.html] for how to install ASF-Pelican on you
 | EZMD Reader                     | Sequences - arrays of objects with attributes where an attribute may be another sequence |
 | EZMD Reader                     | Dictionaries - key-value maps where the value may be another dictionary |
 
-The constants are also available to the `asfgenid.py` plugin and the [theme's templates][asf-pelican-theme.html].
+The constants are also available to the `asfgenid.py` plugin and the [theme's templates](asf-pelican-theme.html).
 
-There are examples of how to [inject shared metadata][metadata] below. See the [metadata model][asf-pelican-data.html] for how `asfdata.py` works to populate the shared metadata.
+There are examples of how to [inject shared metadata][metadata] below. See the [metadata model](asf-pelican-data.html) for how `asfdata.py` works to populate the shared metadata.
 
 ## Read source
 
