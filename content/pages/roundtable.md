@@ -10,7 +10,7 @@ During the roundtable, people can either **speak or type** their comments. If yo
 
 ### To join the roundtable
 
-In The ASF workspace on Slack, select the `#ASFInfra` channel. When you are in that channel, enter this command:
+In The ASF workspace on Slack, select the `#asfinfra` channel. When you are in that channel, enter this command:
 
 `/qbot addme roundtable`
 
