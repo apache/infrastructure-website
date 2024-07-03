@@ -73,8 +73,10 @@
               Release Distribution Policy
           </h1>
               <h1 id="policy"> </h1>
+
 <p>This policy governs how Apache Top Level Projects (TLPs) distribute releases of their software through the technical channels that Infra maintains, and through other distribution platforms. It complements the formal <a href="https://www.apache.org/legal/release-policy.html" target="_blank">Apache Release Policy</a>, which defines what must be in a software release; and the <a href="release-publishing.html">Release Creation Process</a> page, which describes the steps for a PMC to create a release.</p>
 <h2 id="links">Contents</h2>
+
 <ul>
 <li><a href="#channels">Release distribution channels</a></li>
 <li><a href="#dist-dir">Release distribution directory</a></li>
@@ -86,12 +88,14 @@
 <li><a href="#download-links">Download links</a></li>
 <li><a href="#archival">Releases are archived</a></li>
 <li><a href="#maven">Using Maven for releases</a></li>
-<li><a href="#other-platforms">Other release platforms</a></li>
+  <li><a href="#other-platforms">Other release platforms</a></li>
 <li><a href="#dockerhub">DockerHub and releases</a></li>
 <li><a href="#administration">Policy Administration</a></li>
 </ul>
+
 <p><strong>Note</strong>: <a href="https://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> describes how to interpret <strong>must</strong>, <strong>should</strong>, <strong>should not</strong> and similar terms.</p>
 <h2 id="channels">Release distribution channels<a class="headerlink" href="#channels" title="Permanent link">&para;</a></h2>
+
 <ul>
 <li>The Apache Software Foundation's official channel for distribution of current Apache software releases to the general public is <code>downloads.apache.org/</code>. This directory provides access for current releases to the ASF content distribution network (CDN), through which most users download releases.</li>
 <li>The public may also obtain Apache software from downstream channels (rpm, deb, homebrew, etc.) which redistribute our releases in original or derived form. The vast majority of such downstream channels operate independently of Apache.</li>
@@ -99,12 +103,15 @@
 <li>All historical Apache releases are available from <code>archive.apache.org</code>.</li>
 </ul>
 <h2 id="dist-dir">Release distribution directory<a class="headerlink" href="#dist-dir" title="Permanent link">&para;</a></h2>
+
 <p>Every top-level project at Apache has its own public distribution directory, which is a subdirectory of <code>downloads.apache.org/</code>. Each PMC is responsible for all artifacts within their project's distribution directory.</p>
 <p>Apache Incubator podlings cannot create official ASF releases; see the <a href="http://incubator.apache.org/guides/releasemanagement.html" target="_blank">Incubator documentation</a> for details and discussion.</p>
 <h2 id="release-content">Release content<a class="headerlink" href="#release-content" title="Permanent link">&para;</a></h2>
+
 <p>The <a href="http://www.apache.org/dev/release#what" target="_blank">Apache Release Policy</a> governs the content of official Apache releases and the process by which projects create valid releases.</p>
 <p>The Policy specifies that TLPs may distribute binary packages, provided by the project or third parties which meet certain criteria, may be distributed alongside official source packages. Such packages are sometimes referred to as "convenience binaries" or "PMC-approved artifacts", to distinguish them from other binary packages.</p>
 <h2 id="public-distribution">Public distribution channels<a class="headerlink" href="#public-distribution" title="Permanent link">&para;</a></h2>
+
 <p>Projects <strong>must</strong> upload all official releases to the official distribution channel, <code>downloads.apache.org/</code>. Content suitable for the official distribution channel includes:</p>
 <ul>
 <li>Official releases</li>
@@ -115,6 +122,7 @@
 </ul>
 <p>If an Apache PMC wishes to publish additional materials through the official distribution channel and there is any question about the suitability of the materials, the PMC <strong>must</strong> consult with the ASF Board before publishing.</p>
 <h2 id="unreleased">Distribution of unreleased materials<a class="headerlink" href="#unreleased" title="Permanent link">&para;</a></h2>
+
 <p>Unreleased materials, in original or derived form,</p>
 <ul>
 <li><strong>may</strong> be distributed to consenting members of a project's development community</li>
@@ -123,8 +131,10 @@
 <li><strong>must not</strong> be distributed through channels which encourage use by anyone outside the project development community</li>
 </ul>
 <h2 id="heads-up">Notify Infra before uploading large artifacts<a class="headerlink" href="#heads-up" title="Permanent link">&para;</a></h2>
+
 <p>Projects <strong>must</strong> coordinate with Infra in advance about releases larger than 1GB of artifacts to mitigate strain on content distribution resources.</p>
 <h2 id="sigs-and-sums">Requirements for cryptographic signatures and checksums<a class="headerlink" href="#sigs-and-sums" title="Permanent link">&para;</a></h2>
+
 <p>See the <a href="/release-signing.html" target="_blank">release signing</a> page.</p>
 <p>For every artifact distributed to the public through Apache channels, the PMC</p>
 <ul>
@@ -161,11 +171,11 @@
 <li>You <strong>must</strong> revoke and replace compromised signing keys immediately.</li>
 </ul>
 <h2 id="download-links">Download links<a class="headerlink" href="#download-links" title="Permanent link">&para;</a></h2>
+
 <ul>
 <li>Website documentation for any Apache product <strong>must</strong> provide public download links where interested parties may obtain current official source releases and accompanying cryptographic files.</li>
 <li>Links to artifacts <strong>must not</strong> reference the main Apache web site. They <strong>must</strong> use the <a href="release-download-pages.html">standard procedure</a> to make downloads available through the content distribution system.</li>
-<li>All links to checksums, detached signatures and public keys for current releases <strong>must</strong> reference <code>downloads.apache.org/</code> using <code>https://</code>.
-<ul>
+<li>All links to checksums, detached signatures and public keys for current releases <strong>must</strong> reference <code>downloads.apache.org/</code> using <code>https://</code>. <ul>
 <li>Legacy links to <code>https://[www.]apache.org/dist/...</code> still work, but new links should use <code>downloads.apache.org</code>.</li>
 <li>Older release checksums are on <code>archive.apache.org</code>, and you <strong>may</strong> also link to them.</li>
 </ul>
@@ -173,22 +183,26 @@
 <li>All releases, including old releases, are archived automatically. You <strong>may</strong> link from your PMC's download page to archived older releases for community convenience.</li>
 </ul>
 <h2 id="archival">Releases are archived<a class="headerlink" href="#archival" title="Permanent link">&para;</a></h2>
+
 <ul>
 <li>All releases are archived automatically on <code>archive.apache.org</code>. This automated process generally adds releases to the archive about a day after they first appear on <code>downloads.apache.org/</code>.</li>
 <li>Each project's distribution directory <strong>should</strong> contain the latest release in each branch that is currently under development. When development ceases on a version branch, the PMC <strong>should</strong> remove links to releases of that branch from their download directory.</li>
 </ul>
 <h2 id="maven">Using Maven for releases<a class="headerlink" href="#maven" title="Permanent link">&para;</a></h2>
+
 <p>Infra operates an Apache Maven repository manager at <code>repository.apache.org</code>. Projects <strong>may</strong> use the repository system as a downstream channel to redistribute released materials via Maven Central, and <strong>may</strong> use it to distribute snapshots containing unreleased materials directly to consenting members of a project development community.</p>
 <p>Projects <strong>must not</strong> point or refer to <code>repository.apache.org</code> directly in download pages, release announcements or emails. Instead, any public download links for those releases <strong>should</strong> point to Maven Central.</p>
 <p>Read more about <a href="publishing-maven-artifacts.html">Maven releases for Apache projects</a>.</p>
 <h2 id="other-platforms">Other release platforms<a class="headerlink" href="#other-platforms" title="Permanent link">&para;</a></h2>
+
 <p>The ASF manages a number of distribution platforms that projects are welcome to use. Projects can distribute PMC-approved artifacts on ASF managed distribution platforms and other distribution platforms as long as those binaries comply with ASF release, licensing, branding and trademark policies. Currently, ASF managed platforms include <a href="https://github.com/apache" target="_blank">GitHub</a> and <a href="https://hub.docker.com/u/apache" target="_blank">Docker</a>.</p>
 <h2 id="dockerhub">Docker Hub and releases<a class="headerlink" href="#dockerhub" title="Permanent link">&para;</a></h2>
+
 <p>The ASF only supports two modes of operation on Docker Hub: automated builds based on tags, and some more generalized access (see notes in the Jira ticket INFRA-14586.) Note that Docker Hub is <strong>not</strong> an approved release channel for ASF artifacts. Anything you do on Docker Hub requires the description and supporting documentation to be clear that these are <em>convenience releases</em>, not official distribution artifacts.</p>
 <p>See the <a href="docker-hub-policy.html">Docker Hub policy</a> for further information.</p>
 <h2 id="administration">Policy administration<a class="headerlink" href="#administration" title="Permanent link">&para;</a></h2>
-<p>This policy is <strong>required</strong> for all Apache projects. The <a href="https://whimsy.apache.org/foundation/orgchart/vp-infrastructure" target="_blank">V.P. of Apache Infrastructure</a> <strong>must</strong> approve changes to this policy.</p>
 
+<p>This policy is <strong>required</strong> for all Apache projects. The <a href="https://whimsy.apache.org/foundation/orgchart/vp-infrastructure" target="_blank">V.P. of Apache Infrastructure</a> <strong>must</strong> approve changes to this policy.</p>
         </div>
       </div>
     </div>    
