@@ -1,0 +1,111 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>On-demand workers from Rackspace added to builds.apache.org - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Contribute</a></li>
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav><!-- breadcrumbs -->
+<div class="card" style="height: 34px;">
+    <nav aria-label="breadcrumb"  style="padding-left: 12px; padding-top: 4px;">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+
+            <li class="breadcrumb-item active"><a href="/blog/on_demand_workers_from_rackspace.html">
+On-demand workers from Rackspace added to builds.apache.org            </a></li>
+
+            <li class="breadcrumb-item active">(<a href="https://github.com/apache/infrastructure-website/tree/master/content/blog/on_demand_workers_from_rackspace.md">edit</a>)</li>
+
+        </ol>
+    </nav>
+</div>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              On-demand workers from Rackspace added to builds.apache.org
+          </h1>
+              <p>Posted on: 2014-09-04 13:00:00+00:00</p>
+              <div>A couple of weeks ago, Apache's Infrastructure team added a new feature to our Jenkins server, <a href="http://builds.apache.org">builds.apache.org</a> to help deal with the at times overwhelming queues of builds waiting for an executor. While this has been improved dramatically by the increase in workers generously provided by Yahoo! on physical hosts, we're always trying to look forward and be prepared for increased usage in the future.&nbsp;</div>
+<div><br/></div>
+<div>To that end, we've set up worker images on Rackspace, generated using the fantastic tool <a href="http://packer.io" target="_blank">Packer</a>. Using the <a href="http://jclouds.apache.org">Apache jclouds</a> <a href="https://wiki.jenkins-ci.org/display/JENKINS/JClouds+Plugin">plugin for Jenkins</a>, Ubuntu workers will be spun up dynamically on Rackspace using those images when there's a queue of pending builds that are able to run on the &ldquo;ubuntu&rdquo; label. Up to five of these workers can be running at a time, and they're automatically removed from Jenkins and destroyed on Rackspace once they've been idle a set period of time. This burst capacity will help us prevent a long wait for builds to run on <a href="http://builds.apache.org">builds.apache.org</a>.</div>
+<div><br/></div>
+<div>We're able to do this thanks to Rackspace generously donating resources to the Apache Software Foundation. We're extremely grateful for this, and if any other public cloud providers are also interested in donating compute cycles to the Foundation, please contact the Infrastructure team.</div>
+<div><br/></div>
+<div>One thing to note - the worker image we're using is still new and may have bugs in it. If you see your build suddenly failing for mysterious reasons, please take a look at the worker it ran on - if it's a worker named something like &ldquo;jenkins-ubuntu-1404-4gb-abc&rdquo;, please open a BUILDS JIRA at <a href="https://issues.apache.org">issues.apache.org</a> with a link to the failing build and we'll investigate.</div>
+<div><br/></div>
+<div>We've got more improvements for <a href="http://builds.apache.org">builds.apache.org</a> planned for the future, and we're looking forward to sharing them with all of you - there'll be a talk at ApacheCon EU this November on the current status of Jenkins at the ASF, what we've done to stabilize and improve the developer experience on <a href="http://builds.apache.org">builds.apache.org</a>&nbsp;this year, and what's planned for the future - hope to see you there!</div>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2024, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>  </main>
+  </body>
+</html>
