@@ -18,7 +18,7 @@ If you want to have Qbot available in your PMC's channel, create a Jira ticket f
   - How you want notifications to appear. There are five options:
       - No notifications
       - All notifications
-      - `nodescription`: All notifications without the title of the ticket, but not its description
+      - `nodescription`: All notifications with the title of the ticket, but not its description
       - `nocomments`: No notifications of comments on tickets
       - `createclose`: Just notifications of ticket creation and resolution
 
