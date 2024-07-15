@@ -41,7 +41,7 @@ In Slack, there are three ways to talk to Qbot:
 ## Qbot commands
 **Note** we are expanding Qbot's reach, and this list will expand to match its capabilities.
 
-  - `addme`- Add yourself to a private channel. (Without Qbot, you have to request in a Jira ticket that Infra do this.) The syntax is `/qbot addme <NAME OF CHANNEL>`.
+  - `addme`- Add yourself to a private channel. (Without Qbot, you have to ask someone already in the channel to add you.) The syntax is `/qbot addme <NAME OF CHANNEL>`.
   - `flip` - Qbot will flip a coin and tell you whether it came up heads or tails.
   - `help` - You will see a list of the available commands.
   - `q` - This command starts a  "Q & A" queue in a huddle in your current channel, and makes you the administrator. Such a function can be useful if you anticipate participants submitting a large number of questions. The syntax is `/qbot q start`.
