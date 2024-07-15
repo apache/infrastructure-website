@@ -44,7 +44,7 @@ In Slack, there are three ways to talk to Qbot:
   - `addme`- Add yourself to a private channel. (Without Qbot, you have to request in a Jira ticket that Infra do this.) The syntax is `/qbot addme <NAME OF CHANNEL>`.
   - `flip` - Qbot will flip a coin and tell you whether it came up heads or tails.
   - `help` - You will see a list of the available commands.
-  - `q` - This command starts a huddle in your current channel, and makes you the administrator. The syntax is `/qbot q start`.
+  - `q` - This command starts a  "Q & A" queue in a huddle in your current channel, and makes you the administrator. Such a function can be useful if you anticipate participants submitting a large number of questions. The syntax is `/qbot q start`.
   - `queue` - Performs the same function as `q`. The syntax is `/qbot queue start`.
   - `roll` - Qbot rolls one six-sided die and reports the result.
       - You can roll up to ten dice at a time, and each die can have up to 100 sides or 'pips'.The syntax for a basic dice roll is `/q roll NdP`, where `N` is the number of dice (up to 10) and `P` is the number of surfaces each die has (up to 100): `/roll 8d12`.
