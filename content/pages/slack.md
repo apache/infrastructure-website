@@ -81,6 +81,11 @@ If there is information on a private channel that the channel members, **without
   2. Copy the material in the summary document and paste it in a comment in a public channel for the project (create a new public channel if you do not have one for which the information would be relevant). OR
   3. Save the summary document to your project wiki or some other accessible space and use the "add a bookmark" tool at the top of the public channel display to provide a link to the document so readers can find it easily.
 
+## Qbot
+The Infrastructure team's Qbot is a Slack assistant that can simplify both important and frivolous tasks on Slack channels in the the-asf workspace. It can support requests in channels for PMCs, ASF committees, the ASF Board and ASF Members.
+
+[Learn more here](qbot.html)
+
 ## Expectations
 
 As with all ASF activities, we expect ASF Members and project participants to conduct themselves according to the ASF <a href="https://www.apache.org/foundation/policies/conduct.html" target="_blank">Code of Conduct</a>. 
