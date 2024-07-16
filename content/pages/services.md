@@ -118,7 +118,7 @@ Apache provides, and Infra maintains, [code repositories](version-control.html) 
 
 The ASF supports these options for tracking issues and feature requests:
 
-* <a href="https://issues.apache.org/jira" target="_blank">Jira</a>
+* <a href="https://issues.apache.org/jira" target="_blank">Jira</a> (Note: [qbot](qbot.html) is a tool that can integrate Jira notifications with a project's channel in the `the-asf` [Slack](slack.html) workspace.)
 * The <a href="https://guides.github.com/features/issues/" target="_blank">GitHub issue tracking feature</a>
 
 For historical reasons, some projects use <a href="https://bz.apache.org/bugzilla/" target="_blank">Bugzilla</a>. We continue to support Bugzilla, but will not set it up for projects that do not already use it.
