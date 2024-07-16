@@ -2,7 +2,7 @@ Title: Using Qbot with the-asf Slack channels
 
 The Infrastructure team's **Qbot** is a Slack assistant that can simplify both important and frivolous tasks on Slack channels in the `the-asf` workspace. It can support requests in channels for PMCs, ASF committees, the ASF Board and `asfmembers`.
 
-The name references the tool-maker who provides weapons and gadgets for Agent 007 in the James Bond movies.
+The name references the tool-maker 'Q', who provides weapons and gadgets for Agent 007 in the James Bond movies.
 
 ## What Qbot can do
 Qbot has an evolving set of functions:
