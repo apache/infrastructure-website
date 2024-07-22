@@ -5,7 +5,7 @@ layout: post
 
 Welcome to _Inside Infra_ for June, 2024.
 
-## Q Bot can help you on Slack
+## Qbot can help you on Slack
 
 The Infrastructure team's Qbot is a Slack assistant that can simplify both important and frivolous tasks on Slack channels in the the-asf workspace. It can support requests in channels for PMCs, ASF committees, the ASF Board and ASF members.
 
@@ -22,7 +22,7 @@ To learn more, visit <a href="https://infra.apache.org/qbot.html" target="_blank
 
 ## Roundtable summary
 
-The July Roundtable focused on managing the new <a href="https://github.com/apache/infrastructure-actions" target="_blank">GitHub repo for approved GitHub Actions developed by the ASF community</a>. The goal is to make it easy for a developer to add an Action to the repo as a pull request, and, after Infra verifies is, easy for any project to access and use it in its repositories.
+The July Roundtable focused on managing the new <a href="https://github.com/apache/infrastructure-actions" target="_blank">GitHub repo for approved GitHub Actions developed by the ASF community</a>. The goal is to make it easy for a developer to add an Action to the repo as a pull request, and, after Infra verifies it, easy for any project to access and use it in its repositories.
 
 A lively discussion covered topics such as:
 
