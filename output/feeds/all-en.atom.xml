@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom"><title>Apache Infrastructure Website</title><link href="https://infra.apache.org/" rel="alternate"></link><link href="https://infra.apache.org/feeds/all-en.atom.xml" rel="self"></link><id>https://infra.apache.org/</id><updated>2024-07-22T00:00:00+00:00</updated><subtitle></subtitle><entry><title>Inside Infra July 2024</title><link href="https://infra.apache.org/blog/newsletter_07_24.html" rel="alternate"></link><published>2024-07-22T00:00:00+00:00</published><updated>2024-07-22T00:00:00+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2024-07-22:/blog/newsletter_07_24.html</id><summary type="html">&lt;p&gt;Welcome to &lt;em&gt;Inside Infra&lt;/em&gt; for June, 2024.&lt;/p&gt;
-&lt;h2&gt;Q Bot can help you on Slack&lt;/h2&gt;
-&lt;p&gt;The Infrastructure team's Qbot is a Slack assistant that can simplify both important and frivolous tasks on Slack channels in the the-asf workspace. It can support requests in channels for PMCs, ASF committees, the ASF Board …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Welcome to &lt;em&gt;Inside Infra&lt;/em&gt; for June, 2024.&lt;/p&gt;
-&lt;h2&gt;Q Bot can help you on Slack&lt;/h2&gt;
+&lt;h2&gt;Qbot can help you on Slack&lt;/h2&gt;
+&lt;p&gt;The Infrastructure team's Qbot is a Slack assistant that can simplify both important and frivolous tasks on Slack channels in the the-asf workspace. It can support requests in channels for PMCs, ASF committees, the ASF Board and …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Welcome to &lt;em&gt;Inside Infra&lt;/em&gt; for June, 2024.&lt;/p&gt;
+&lt;h2&gt;Qbot can help you on Slack&lt;/h2&gt;
 &lt;p&gt;The Infrastructure team's Qbot is a Slack assistant that can simplify both important and frivolous tasks on Slack channels in the the-asf workspace. It can support requests in channels for PMCs, ASF committees, the ASF Board and ASF members.&lt;/p&gt;
 &lt;p&gt;The name references the tool-maker 'Q', who provides weapons and gadgets for Agent 007 in the James Bond movies.&lt;/p&gt;
 &lt;h3&gt;Qbot has an evolving set of functions:&lt;/h3&gt;
@@ -14,7 +14,7 @@
 &lt;p&gt;It also has a set of 'fun' features, such as rolling dice or flipping a coin.&lt;/p&gt;
 &lt;p&gt;To learn more, visit &lt;a href="https://infra.apache.org/qbot.html" target="_blank"&gt;Qbot&lt;/a&gt;.&lt;/p&gt;
 &lt;h2&gt;Roundtable summary&lt;/h2&gt;
-&lt;p&gt;The July Roundtable focused on managing the new &lt;a href="https://github.com/apache/infrastructure-actions" target="_blank"&gt;GitHub repo for approved GitHub Actions developed by the ASF community&lt;/a&gt;. The goal is to make it easy for a developer to add an Action to the repo as a pull request, and, after Infra verifies is, easy for any project to access and use it in its repositories.&lt;/p&gt;
+&lt;p&gt;The July Roundtable focused on managing the new &lt;a href="https://github.com/apache/infrastructure-actions" target="_blank"&gt;GitHub repo for approved GitHub Actions developed by the ASF community&lt;/a&gt;. The goal is to make it easy for a developer to add an Action to the repo as a pull request, and, after Infra verifies it, easy for any project to access and use it in its repositories.&lt;/p&gt;
 &lt;p&gt;A lively discussion covered topics such as:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Should the Actions be versioned, so people can easily get the version they want?&lt;/li&gt;
