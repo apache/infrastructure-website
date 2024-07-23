@@ -75,8 +75,7 @@
               <p>This document is a primer on using Git for an Apache Software Foundation project.</p>
 <h2>Contents</h2>
 <ul>
-<li><a href="#repotypes">Repository types</a>
-<ul>
+<li><a href="#repotypes">Repository types</a><ul>
 <li><a href="#publicprivate">Public and private repositories</a></li>
 </ul>
 </li>
@@ -88,6 +87,7 @@
 <li><a href="#further">Further reading</a></li>
 </ul>
 <h2 id="repotypes">Repository types<a class="headerlink" href="#repotypes" title="Permanent link">&para;</a></h2>
+
 <p>There are two forms of Git repositories:</p>
 <ol>
 <li>Read-only mirrors hosted at <code>https://git.apache.org</code></li>
@@ -95,7 +95,8 @@
 </ol>
 <p>This document is chiefly about the read/write repositories.</p>
 <h3 id="publicprivate">Public and private repositories<a class="headerlink" href="#publicprivate" title="Permanent link">&para;</a></h3>
-<p>Projects can set up as many <strong>public repositories</strong> as their development work requires, using <a href="https://selfserve.apache.org/" target="_blank">SelfServe</a>.</p>
+
+<p>Projects can set up as many <strong>public repositories</strong> as their development work requires, using <a href="https://selfserve.apache.org/" target="_blank">SelfServe</a>. </p>
 <p>Each project can also have a <strong>private repository</strong> space for working on sensitive issues such as:</p>
 <ul>
 <li>security patches</li>
@@ -104,43 +105,52 @@
 </ul>
 <p>The private repository is <strong>not</strong> for uses such as project code development not related to a security issue.</p>
 <p>See the <a href="project-repo-policy.html">Project Code Repository Policy</a> for further details.</p>
-<p>Open a Jira ticket for Infra to request a private repository.</p>
+<p>Open a Jira ticket for Infra to request a private repository. </p>
 <h2 id="repocheckout">Repository checkout<a class="headerlink" href="#repocheckout" title="Permanent link">&para;</a></h2>
+
 <p>The repository URLs are all of the form:</p>
-<pre><code>https://gitbox.apache.org/repos/asf/reponame.git
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="c">https://gitbox.apache.org/repos/asf/reponame.git</span>
+</code></pre></div>
+
 <h3>Cloning a repository</h3>
 <ul>
 <li><strong>Committers</strong>: <code>$ git clone https://gitbox.apache.org/repos/asf/reponame.git</code></li>
 <li><strong>Non-Committers</strong>: <code>$ git clone http://gitbox.apache.org/repos/asf/reponame.git</code></li>
 </ul>
 <h2 id="committers">Committers: getting started<a class="headerlink" href="#committers" title="Permanent link">&para;</a></h2>
+
 <p>Set up your name and email that Git will use when you make commits:</p>
-<pre><code>$ git config --global user.name "My Name Here"
+<div class="highlight"><pre><span></span><code>$ git config --global user.name <span class="s2">&quot;My Name Here&quot;</span>
 $ git config --global user.email myusername@apache.org
-</code></pre>
+</code></pre></div>
+
 <p>If you're a long-time GitHub user you can set these configuration variables on a per-repository basis:</p>
-<pre><code>$ git config user.name "My Name Here"
+<div class="highlight"><pre><span></span><code>$ git config user.name <span class="s2">&quot;My Name Here&quot;</span>
 $ git config user.email myusername@apache.org
-</code></pre>
+</code></pre></div>
+
 <p>You can also add your <code>apache.org</code> email address to your GitHub account so that the Apache mirrors on GitHub link to your Gravatar and user account.</p>
 <p>To push to a repository you need to authenticate. More recent versions of Git prompt for a user name and password, and in some cases will cache the credentials in your operating system's default credential store.</p>
 <p>On Mac OS X, you need to have <code>git-credential-osxkeychain</code> installed, and to set the following configuration:</p>
-<pre><code>$ git config --global credential.helper osxkeychain
-</code></pre>
+<div class="highlight"><pre><span></span><code>$ git config --global credential.helper osxkeychain
+</code></pre></div>
+
 <p>If you do not see an authentication prompt, you need to set up a <code>~/.netrc</code> file that contains your user credentials:</p>
-<pre><code>$ (umask 0277; cat &gt;&gt; ~/.netrc &lt;&lt;EOF)
-machine gitbox.apache.org
-login username
-password mypassword
-EOF
-chmod 0600 ~/.netrc
-</code></pre>
+<div class="highlight"><pre><span></span><code>$ <span class="o">(</span><span class="nb">umask</span> <span class="m">0277</span><span class="p">;</span> cat &gt;&gt; ~/.netrc <span class="s">&lt;&lt;EOF)</span>
+<span class="s">machine gitbox.apache.org</span>
+<span class="s">login username</span>
+<span class="s">password mypassword</span>
+<span class="s">EOF</span>
+chmod <span class="m">0600</span> ~/.netrc
+</code></pre></div>
+
 <p>You can list your user name in the Git repository URL, but this requires that you provide your password for every fetch and push. You can simplify this step by cloning a URL like:</p>
-<pre><code>$ git clone https://username@gitbox.apache.org/repos/asf/reponame.git
-</code></pre>
+<div class="highlight"><pre><span></span><code>$ git clone https://username@gitbox.apache.org/repos/asf/reponame.git
+</code></pre></div>
+
 <p>While it's <em>possible</em> to list your password in the URL, we discourage this practice as it leaves your password in plain text in the shell history.</p>
 <h2 id="windowsusers">Windows users<a class="headerlink" href="#windowsusers" title="Permanent link">&para;</a></h2>
+
 <p>You can use <code>git-gui</code> as part of the <code>msysgit</code> package.</p>
 <p>Instead of setting up a <code>~/.netrc</code> file you need to:</p>
 <ol>
@@ -148,28 +158,32 @@ chmod 0600 ~/.netrc
 <li>Create a <code>_netrc</code> file in <code>%HOME%_netrc</code> with this text all on one line: <code>machine gitbox.apache.org login username password mypassword</code></li>
 </ol>
 <h2 id="lineendings">Line endings<a class="headerlink" href="#lineendings" title="Permanent link">&para;</a></h2>
+
 <p>In general, you should normalize line endings in the Git repository and set them to be platform specific on checkout.</p>
 <ul>
-<li>The <code>msysgit</code> installer on <strong>Windows</strong> will prompt you to set the <code>core.autocrlf</code> setting to <code>true</code> by default.</li>
+<li>The <code>msysgit</code> installer on <strong>Windows</strong> will prompt you to set the <code>core.autocrlf</code> setting to <code>true</code> by default. </li>
 <li>On <strong>Mac OS X or Linux</strong>, use this setting: <code>$ git config --global core.autocrlf input</code></li>
 </ul>
 <p>Further details and attributes for handling line endings differently per file type are available at <a href="https://help.github.com/en/github/using-git/configuring-git-to-handle-line-endings" target="_blank">Configuring Git to handle line endings</a>.</p>
 <h2 id="trouble">Troubleshooting<a class="headerlink" href="#trouble" title="Permanent link">&para;</a></h2>
+
 <h4>no DAV locking</h4>
 <p>If you get an error like this:</p>
-<pre><code>error: no DAV locking support on http://gitbox.apache.org/repos/asf/reponame.git/
-fatal: git-http-push failed
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">error</span><span class="o">:</span> <span class="n">no</span> <span class="n">DAV</span> <span class="n">locking</span> <span class="n">support</span> <span class="n">on</span> <span class="n">http</span><span class="o">://</span><span class="n">gitbox</span><span class="o">.</span><span class="na">apache</span><span class="o">.</span><span class="na">org</span><span class="sr">/repos/asf/reponame.git/</span>
+<span class="n">fatal</span><span class="o">:</span> <span class="n">git</span><span class="o">-</span><span class="n">http</span><span class="o">-</span><span class="n">push</span> <span class="n">failed</span>
+</code></pre></div>
+
 <p>It means that you're trying to push over <strong>HTTP</strong>, which is disabled. To fix this error change the remote repository URL to use <strong>HTTPS</strong>. You can edit the <code>.git/config</code> file to update the URL variable, or use:</p>
-<pre><code>$ git config remote.origin.url https://gitbox.apache.org/repos/asf/reponame.git
-</code></pre>
+<div class="highlight"><pre><span></span><code>$ git config remote.origin.url https://gitbox.apache.org/repos/asf/reponame.git
+</code></pre></div>
+
 <h2 id="further">Further reading<a class="headerlink" href="#further" title="Permanent link">&para;</a></h2>
+
 <ul>
 <li><a href="https://lab.github.com/" target="_blank">GitHub Learning Lab</a></li>
 <li><a href="https://github.github.com/training-kit/" target="_blank">Git Cheat Sheets</a></li>
 <li><a href="github-roles.html">GitHub roles</a></li>
 </ul>
-
         </div>
       </div>
     </div>    
