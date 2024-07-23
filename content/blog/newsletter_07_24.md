@@ -13,8 +13,8 @@ The name references the tool-maker 'Q', who provides weapons and gadgets for Age
 
 ### Qbot has an evolving set of functions:
   - Providing to the channel notifications related to your project's Jira tickets - new ticket, new comment, ticket resolved.
-  - Starting a question queue in the huddle in a channel workspace
-  - Adding people to private channels
+  - Adding people to private channels.
+  - Starting a question queue in the huddle in a channel workspace (note that this feature is in alpha development).
 
 It also has a set of 'fun' features, such as rolling dice or flipping a coin.
 
