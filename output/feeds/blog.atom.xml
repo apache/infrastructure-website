@@ -8,8 +8,8 @@
 &lt;h3&gt;Qbot has an evolving set of functions:&lt;/h3&gt;
 &lt;ul&gt;
 &lt;li&gt;Providing to the channel notifications related to your project's Jira tickets - new ticket, new comment, ticket resolved.&lt;/li&gt;
-&lt;li&gt;Starting a question queue in the huddle in a channel workspace&lt;/li&gt;
-&lt;li&gt;Adding people to private channels&lt;/li&gt;
+&lt;li&gt;Adding people to private channels.&lt;/li&gt;
+&lt;li&gt;Starting a question queue in the huddle in a channel workspace (note that this feature is in alpha development).&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;It also has a set of 'fun' features, such as rolling dice or flipping a coin.&lt;/p&gt;
 &lt;p&gt;To learn more, visit &lt;a href="https://infra.apache.org/qbot.html" target="_blank"&gt;Qbot&lt;/a&gt;.&lt;/p&gt;
