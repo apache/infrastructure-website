@@ -44,12 +44,15 @@ In Slack, there are three ways to talk to Qbot:
   - `addme`- Add yourself to a private channel. (Without Qbot, you have to ask someone already in the channel to add you.) The syntax is `/qbot addme <NAME OF CHANNEL>`.
   - `flip` - Qbot will flip a coin and tell you whether it came up heads or tails.
   - `help` - You will see a list of the available commands.
-  - `q` - This command starts a  "Q & A" queue in a huddle in your current channel, and makes you the administrator. Such a function can be useful if you anticipate participants submitting a large number of questions. The syntax is `/qbot q start`.
-  - `queue` - Performs the same function as `q`. The syntax is `/qbot queue start`.
   - `roll` - Qbot rolls one six-sided die and reports the result.
       - You can roll up to ten dice at a time, and each die can have up to 100 sides or 'pips'.The syntax for a basic dice roll is `/q roll NdP`, where `N` is the number of dice (up to 10) and `P` is the number of surfaces each die has (up to 100): `/roll 8d12`.
       - In a role-playing game such as Dungeons and Dragons, when your character gets in trouble you may be able to try a **saving roll** to, well, save them from disaster. The syntax to see if Qbot can help in your current crisis is `roll saving`.
   - `shanty` - Qbot sings you a verse of a sea shanty.
+
+_Note: these two commands are in 'alpha' development and may not work as expected. If you would like to use them in huddles in your project's Slack spaces, please let us know (see 'Requesting features', below)._
+
+  - `q` - This command starts a  "Q & A" queue in a huddle in your current channel, and makes you the administrator. Such a function can be useful if you anticipate participants submitting a large number of questions. The syntax is `/qbot q start`.
+  - `queue` - Performs the same function as `q`. The syntax is `/qbot queue start`.
 
 ## Requesting features
 If you have an idea for a Qbot service that could help your PMC on Slack (or you just want to add a verse from another sea shanty), please suggest it in the <a href="https://github.com/apache/infrastructure-ideas/discussions/categories/qbot" target="_blank">Infrastructure-ideas repository</a>.
