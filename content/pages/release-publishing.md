@@ -36,7 +36,9 @@ A release starts when the project community agrees to make a release. However, n
 
 Most projects designate a committer to be the _release manager_ who takes responsibility for the mechanics of a release. It is a good idea to let several committers take this role on different releases so that more than one person is comfortable doing a release. Release managers shepherd a release from an initial community consensus to getting the compiled code package to final distribution, and may be involved in publicizing the release to the project's community and the ASF in general.
 
-By default, only PMC members can publish release artifacts to https://dist.apache.org/repos/dist/release/. If your project wishes to allow non-PMC member committers to publish release artifacts, please [contact infrastructure](contact.html) with your request. Note that there are only two options: PMC members can publish release artifacts, or Committers can publish release artifacts. Allowing Commmitters to publish release artifacts will require project consensus, so include a link to an email thread with that consensus.
+By default, only PMC members can publish release artifacts to https://dist.apache.org/repos/dist/release/. If your project wishes to allow non-PMC member committers to publish release artifacts, please open a Jira ticket for Infra with your request. Note that there are only two options: only PMC members can publish release artifacts, or all the project's Committers can publish release artifacts. 
+
+Allowing Committers to publish release artifacts requires project consensus, so include a link to an email thread with that consensus.
 
 ***Release managers do the mechanical work; but the PMC in general, and the PMC chair in particular (as an officer of the Foundation), remains responsible for compliance with ASF requirements.***
 
