@@ -2,7 +2,7 @@ Title: Release Creation Process
 
 These best practices help guide a PMC through the steps to create and publish an Apache software product release. It complements the formal <a href="https://www.apache.org/legal/release-policy.html" target="_blank">Apache Release Policy</a>, defining what must be in a software release, and [Release Distribution Policy](release-distribution.html).
 
-Every Apache Software Foundation project software release must meet requirements for content , process , and publication. These requirements ensure that Apache contributors and users benefit from appropriate legal protection the ASF provides, and reflect the Foundation's goals of open, collaborative software development.
+Every Apache Software Foundation project software release must meet requirements for content, process, and publication. These requirements ensure that Apache contributors and users benefit from appropriate legal protection the ASF provides, and reflect the Foundation's goals of open, collaborative software development.
 
 ## Contents ##
 
@@ -36,11 +36,9 @@ A release starts when the project community agrees to make a release. However, n
 
 Most projects designate a committer to be the _release manager_ who takes responsibility for the mechanics of a release. It is a good idea to let several committers take this role on different releases so that more than one person is comfortable doing a release. Release managers shepherd a release from an initial community consensus to getting the compiled code package to final distribution, and may be involved in publicizing the release to the project's community and the ASF in general.
 
-Unless otherwise specified, only PMC members can act as release managers. If your project wishes to allow normal committers to release files, please [contact infrastructure](contact.html) with your request.
+By default, only PMC members can publish release artifacts to https://dist.apache.org/repos/dist/release/. If your project wishes to allow non-PMC member committers to publish release artifacts, please [contact infrastructure](contact.html) with your request. Note that there are only two options: PMC members can publish release artifacts, or Committers can publish release artifacts. Allowing Commmitters to publish release artifacts will require project consensus, so include a link to an email thread with that consensus.
 
-Release managers do the mechanical work; but the PMC in general, and the PMC chair in particular (as an officer of the Foundation), are responsible for compliance with ASF requirements.
-
-Any committer may serve as release manager.
+***Release managers do the mechanical work; but the PMC in general, and the PMC chair in particular (as an officer of the Foundation), remains responsible for compliance with ASF requirements.***
 
 <h2 id="valid">A valid release package<a class="headerlink" href="#valid" title="Permanent link">&para;</a></h2>
 
