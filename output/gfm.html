@@ -84,16 +84,13 @@
 </li>
 <li>
 <p>If your project previously built its site using the Apache CMS, here are some differences from <code>markdown.pl</code> that the CMS used:</p>
-<ul>
+</li>
 <li>
 <p><a href="https://github.github.com/gfm/#html-block">HTML Blocks</a></p>
 <ul>
 <li>Make sure the first line of any html block starts in column one.</li>
-<li>A blank line terminates an html block
-<ul>
+<li>A blank line terminates an html block</li>
 <li><a href="https://github.github.com/gfm/#example-139">Exception</a> to this rule for <code>style</code>, <code>pre</code>, and <code>script</code>.</li>
-</ul>
-</li>
 <li>Review <a href="https://github.github.com/gfm/#example-122">Markdown content within an HTML block</a></li>
 </ul>
 </li>
@@ -108,8 +105,6 @@
 <li>
 <p><a href="https://github.github.com/gfm/#disallowed-raw-html-extension-">Disallowed html</a> the tagfilter extension disables certain html tags. The asfgenid plugin reenables <code>script</code>, <code>style</code>, and <code>iframe</code> html tags.</p>
 </li>
-</ul>
-</li>
 <li>
 <p><a href="https://sindresorhus.com/github-markdown-css/">Examples</a></p>
 </li>
@@ -117,22 +112,25 @@
 <p>ID and Class annotations</p>
 </li>
 </ul>
-<pre><code class="language-md">## What is the Apache Software Foundation?  {#what}
+<div class="highlight"><pre><span></span><code><span class="gu">##</span> What is the Apache Software Foundation?  {#what}
 
 The Apache Software Foundation (ASF) is a non-profit 501(c)(3) corporation,
 incorporated in Delaware, USA, in June of 1999. The ASF is a natural
 outgrowth of The Apache Group, which formed in 1995 to develop the Apache HTTP Server.
-</code></pre>
+</code></pre></div>
+
 <p>Set the class to display an image to <code>float-right</code>:</p>
-<pre><code class="language-md">![Logo](images/logo.svg) {.float-right}
-</code></pre>
+<div class="highlight"><pre><span></span><code>![<span class="nt">Logo</span>](<span class="na">images/logo.svg</span>) {.float-right}
+</code></pre></div>
+
 <p>You can also float an HTML fragment at the right of the page display:</p>
-<pre><code class="language-html">&lt;div class=".pull-right" style="float:right; border-style:dotted; width:200px; padding:5px; margin:5px"&gt;
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;.pull-right&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;float:right; border-style:dotted; width:200px; padding:5px; margin:5px&quot;</span><span class="p">&gt;</span>
 
 SEE INSTEAD: [Trademark Resources Site Map][resources].
 
-&lt;/div&gt;
-</code></pre>
+<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</code></pre></div>
+
 <ul>
 <li>Migrating a site from the Apache CMS</li>
 </ul>
@@ -144,7 +142,6 @@ SEE INSTEAD: [Trademark Resources Site Map][resources].
 <li>Only one {#id} or {.class} annotation is allowed on a tag.</li>
 <li>{.class} annotations are seldom used.</li>
 </ul>
-
         </div>
       </div>
     </div>    
