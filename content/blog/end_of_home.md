@@ -1,5 +1,5 @@
 title: You can't go home again 
-date: '2024-07-22' 
+date: '2024-08-13' 
 permalink: endofhome 
 layout: post
 
