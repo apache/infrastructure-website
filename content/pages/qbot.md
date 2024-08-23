@@ -10,7 +10,7 @@ Qbot has an evolving set of functions:
   - Starting a question queue in the huddle in a channel workspace. (Note: Infra designed this for use with Roundtable events, in case participants had a flood of questions and comments that would need to be queued so everyone had a fair chance to speak. So far, we have not needed to use it.)
   - Adding people to private channels
 
-It also has a set of 'fun' features, such as rolling dice or flipping a coin.
+It also has a set of 'fun' features, such as rolling dice, flipping a coin, or talking to someone from the (fictional) ASF Human Resoures Department.
 
 ## Setting up Qbot in your PMC's channels
 If you want to have Qbot available in your PMC's channel, create a Jira ticket for Infra with the request. Include this information:
@@ -44,6 +44,7 @@ In Slack, there are three ways to talk to Qbot:
   - `addme`- Add yourself to a private channel. (Without Qbot, you have to ask someone already in the channel to add you.) You can make the command from anywhere in the ASF workspace. The syntax is `/qbot addme <NAME OF CHANNEL>`.
   - `flip` - Qbot will flip a coin and tell you whether it came up heads or tails: `/qbot flip`.
   - `help` - You will see a list of the available commands: `/qbot help`.
+  - `lauren` - Lauren works in the (fictional) Human Resources Department at The ASF. You can summon Lauren in any channel in which Qbot is active by typing her name three times in three consecutive posts (the way characters can summon a demon in the movie "Beetlejuice"). **Note** Lauren is limited in what she can say at the moment, but she eventually will be able to discuss Foundation policy, complaints against staff, and employee benefits.
   - `roll` - If you send the command without furthr parameters (`/qbot roll`), Qbot rolls one six-sided die and reports the result.
       - You can roll up to ten dice at a time, and each die can have up to 100 sides or 'pips'.The syntax for a basic dice roll is `/qbot roll NdP`, where `N` is the number of dice (up to 10) and `P` is the number of surfaces each die has (up to 100): `/qbot roll 8d12`.
       - In a role-playing game such as Dungeons and Dragons, when your character gets in trouble you may be able to try a **saving roll** to, well, save them from disaster. The syntax to see if Qbot can help in your current crisis is `/qbot roll saving`.
