@@ -3,7 +3,7 @@ date: '2024-07-22'
 permalink: newsletter0724
 layout: post 
 
-Welcome to _Inside Infra_ for June, 2024.
+Welcome to _Inside Infra_ for July, 2024.
 
 ## Qbot can help you on Slack
 
