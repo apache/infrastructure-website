@@ -42,13 +42,20 @@ In Slack, there are three ways to talk to Qbot:
 **Note** we are expanding Qbot's reach, and this list will expand to match its capabilities.
 
   - `addme`- Add yourself to a private channel. (Without Qbot, you have to ask someone already in the channel to add you.) You can make the command from anywhere in the ASF workspace. The syntax is `/qbot addme <NAME OF CHANNEL>`.
-  - `flip` - Qbot will flip a coin and tell you whether it came up heads or tails: `/qbot flip`.
-  - `help` - You will see a list of the available commands: `/qbot help`.
-  - `lauren` - Lauren works in the (fictional) Human Resources Department at The ASF. You can summon Lauren in any channel in which Qbot is active by typing her name three times in three consecutive posts (the way characters can summon a demon in the movie "Beetlejuice"). **Note** Lauren is limited in what she can say at the moment, but she eventually will be able to discuss Foundation policy, complaints against staff, and employee benefits.
+  - `flip` - Qbot flips a coin and tells you whether it came up heads or tails: `/qbot flip`.
+  - `help` - You see a list of the available commands: `/qbot help`.
+  - `lauren` - Lauren works in the (fictional) Human Resources Department at The ASF. You can summon Lauren in any channel in which Qbot is active by typing her name three times in three consecutive posts (the way characters can summon a demon in the movie "Beetlejuice"). You can also use the following commands to get Laura's input:
+    - `lauren announces`: Lauren shares a significant (in Lauren's opinion) announcement.
+    - `lauren benefits`: Lauren reveals an employee benefit.
+    - `lauren complaints`: Lauren discusses a recent HR complaint with you.
+    - `lauren policies`: Lauren reminds you of a corporation policy.
+
+**Note** Lauren inhabits a parallel world to ours, one in which The ASF has a physical office with many employees who come in to work each day. Her statements may not bear too much relevance to the world you inhabit.
+
   - `roll` - If you send the command without furthr parameters (`/qbot roll`), Qbot rolls one six-sided die and reports the result.
       - You can roll up to ten dice at a time, and each die can have up to 100 sides or 'pips'.The syntax for a basic dice roll is `/qbot roll NdP`, where `N` is the number of dice (up to 10) and `P` is the number of surfaces each die has (up to 100): `/qbot roll 8d12`.
       - In a role-playing game such as Dungeons and Dragons, when your character gets in trouble you may be able to try a **saving roll** to, well, save them from disaster. The syntax to see if Qbot can help in your current crisis is `/qbot roll saving`.
-  - `shanty` - Qbot sings you a verse of a sea shanty. The syntax is `/qbot shanty`.
+  - `shanty` - Qbot shares a verse of a sea shanty. The syntax is `/qbot shanty`.
 
 _Note: the following two commands are in 'alpha' development and may not work as expected. If you would like to use them in huddles in your project's Slack spaces, please let us know (see 'Requesting features', below)._
 
