@@ -75,32 +75,22 @@
               <p>The Infrastructure team's <strong>Qbot</strong> is a Slack assistant that can simplify both important and frivolous tasks on Slack channels in the <code>the-asf</code> workspace. It can support requests in channels for PMCs, ASF committees, the ASF Board and <code>asfmembers</code>.</p>
 <p>The name references the tool-maker 'Q', who provides weapons and gadgets for Agent 007 in the James Bond movies.</p>
 <h2>What Qbot can do</h2>
-<p>Qbot has an evolving set of functions:</p>
-<ul>
-<li>Providing to the channel notifications related to your project's Jira tickets - new ticket, new comment, ticket resolved.</li>
-<li>Starting a question queue in the huddle in a channel workspace. (Note: Infra designed this for use with Roundtable events, in case participants had a flood of questions and comments that would need to be queued so everyone had a fair chance to speak. So far, we have not needed to use it.)</li>
-<li>Adding people to private channels</li>
-</ul>
+<p>Qbot has an evolving set of functions:
+  - Providing to the channel notifications related to your project's Jira tickets - new ticket, new comment, ticket resolved.
+  - Starting a question queue in the huddle in a channel workspace. (Note: Infra designed this for use with Roundtable events, in case participants had a flood of questions and comments that would need to be queued so everyone had a fair chance to speak. So far, we have not needed to use it.)
+  - Adding people to private channels</p>
 <p>It also has a set of 'fun' features, such as rolling dice, flipping a coin, or talking to someone from the (fictional) ASF Human Resoures Department.</p>
 <h2>Setting up Qbot in your PMC's channels</h2>
-<p>If you want to have Qbot available in your PMC's channel, create a Jira ticket for Infra with the request. Include this information:</p>
+<p>If you want to have Qbot available in your PMC's channel, create a Jira ticket for Infra with the request. Include this information:
+  - The name of the channel or channels where notifications about Jira tickets related to your projects should appear
+  - How you want notifications to appear. There are five options:
+      - No notifications
+      - All notifications
+      - <code>nodescription</code>: All notifications with the title of the ticket, but not its description
+      - <code>nocomments</code>: No notifications of comments on tickets
+      - <code>createclose</code>: Just notifications of ticket creation and resolution</p>
 <ul>
-<li>
-<p>The name of the channel or channels where notifications about Jira tickets related to your projects should appear</p>
-</li>
-<li>
-<p>How you want notifications to appear. There are five options:</p>
-<ul>
-<li>No notifications</li>
-<li>All notifications</li>
-<li><code>nodescription</code>: All notifications with the title of the ticket, but not its description</li>
-<li><code>nocomments</code>: No notifications of comments on tickets</li>
-<li><code>createclose</code>: Just notifications of ticket creation and resolution</li>
-</ul>
-</li>
-<li>
-<p>Specify who can use the <code>addme</code> command -- committers, members of your PMC only, ASF Members only...</p>
-</li>
+<li>Specify who can use the <code>addme</code> command -- committers, members of your PMC only, ASF Members only...</li>
 </ul>
 <p>To have Qbot active in a project's private channel, once it is available in your public channels, someone already in the channel has to invite it with the Slack command <code>/invite @QBot</code>.</p>
 <h2>Talking to Qbot</h2>
@@ -109,12 +99,9 @@
 <li>Anywhere in the ASF workspace, type <code>/qbot</code> and the command you want to give it. If it is a command which you do not have permission to use where you currently are in Slack, the command will fail.</li>
 <li>In a channel where Qbot is present, type <code>qbot</code> without the slash, and the command.</li>
 <li>In the Slack interface, there is a general menu bar at the far left. The next column is the menu bar for the ASF workspace. Below the list of your contacts and channels, there is a section for <code>Apps</code>. Qbot appears there.
-<ul>
-<li>Click that entry to see a display with three tabs.</li>
-<li>Select the <code>Messages</code> tab.</li>
-<li>Write your command to Qbot without <code>/</code> or 'qbot` at the start.</li>
-</ul>
-</li>
+        -  Click that entry to see a display with three tabs.
+        -  Select the <code>Messages</code> tab.
+        -  Write your command to Qbot without <code>/</code> or 'qbot` at the start.</li>
 </ul>
 <h2>Qbot commands</h2>
 <p><strong>Note</strong> we are expanding Qbot's reach, and this list will expand to match its capabilities.</p>
@@ -122,8 +109,7 @@
 <li><code>addme</code>- Add yourself to a private channel. (Without Qbot, you have to ask someone already in the channel to add you.) You can make the command from anywhere in the ASF workspace. The syntax is <code>/qbot addme &lt;NAME OF CHANNEL&gt;</code>.</li>
 <li><code>flip</code> - Qbot flips a coin and tells you whether it came up heads or tails: <code>/qbot flip</code>.</li>
 <li><code>help</code> - You see a list of the available commands: <code>/qbot help</code>.</li>
-<li><code>lauren</code> - Lauren works in the (fictional) Human Resources Department at The ASF. You can summon Lauren in any channel in which Qbot is active by typing her name three times in three consecutive posts (the way characters can summon a demon in the movie "Beetlejuice"). You can also use the following commands to get Laura's input:
-<ul>
+<li><code>lauren</code> - Lauren works in the (fictional) Human Resources Department at The ASF. You can summon Lauren in any channel in which Qbot is active by typing her name three times in three consecutive posts (the way characters can summon a demon in the movie "Beetlejuice"). You can also use the following commands to get Laura's input:<ul>
 <li><code>lauren announces</code>: Lauren shares a significant (in Lauren's opinion) announcement.</li>
 <li><code>lauren benefits</code>: Lauren reveals an employee benefit.</li>
 <li><code>lauren complaints</code>: Lauren discusses a recent HR complaint with you.</li>
@@ -133,8 +119,7 @@
 </ul>
 <p><strong>Note</strong> Lauren inhabits a parallel world to ours, one in which The ASF has a physical office with many employees who come in to work each day. Her statements may not bear too much relevance to the world you inhabit.</p>
 <ul>
-<li><code>roll</code> - If you send the command without furthr parameters (<code>/qbot roll</code>), Qbot rolls one six-sided die and reports the result.
-<ul>
+<li><code>roll</code> - If you send the command without furthr parameters (<code>/qbot roll</code>), Qbot rolls one six-sided die and reports the result.<ul>
 <li>You can roll up to ten dice at a time, and each die can have up to 100 sides or 'pips'.The syntax for a basic dice roll is <code>/qbot roll NdP</code>, where <code>N</code> is the number of dice (up to 10) and <code>P</code> is the number of surfaces each die has (up to 100): <code>/qbot roll 8d12</code>.</li>
 <li>In a role-playing game such as Dungeons and Dragons, when your character gets in trouble you may be able to try a <strong>saving roll</strong> to, well, save them from disaster. The syntax to see if Qbot can help in your current crisis is <code>/qbot roll saving</code>.</li>
 </ul>
@@ -148,7 +133,6 @@
 </ul>
 <h2>Requesting features</h2>
 <p>If you have an idea for a Qbot service that could help your PMC on Slack (or you just want to add a verse from another sea shanty), please suggest it in the <a href="https://github.com/apache/infrastructure-ideas/discussions/categories/qbot" target="_blank">Infrastructure-ideas repository</a>.</p>
-
         </div>
       </div>
     </div>    
