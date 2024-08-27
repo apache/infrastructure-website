@@ -1,0 +1,210 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2023 Infra Survey Results - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Contribute</a></li>
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav><!-- breadcrumbs -->
+<div class="card" style="height: 34px;">
+    <nav aria-label="breadcrumb"  style="padding-left: 12px; padding-top: 4px;">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+
+            <li class="breadcrumb-item active"><a href="/blog/2023 Infra Survey Results.html">
+2023 Infra Survey Results            </a></li>
+
+            <li class="breadcrumb-item active">(<a href="https://github.com/apache/infrastructure-website/tree/master/content/blog/2023 Infra Survey Results.md">edit</a>)</li>
+
+        </ol>
+    </nav>
+</div>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              2023 Infra Survey Results
+          </h1>
+              <p>Posted on: 2024-02-13 00:00:00+00:00</p>
+              <p>More than 50 people posted responses to our 2023 'year in review' survey. Here is a summary of the responses to questions and the comments added in each section.</p>
+<p>We're grateful to those who took the time to fill out the survey. Without feedback like this, the Infra team can feel a bit like it is flailing around in the dark.</p>
+<h2>Summary of responses</h2>
+<h3>Infra Roundtables</h3>
+<p>82% of survey respondents have attended an Infra Roundtable</p>
+<p>Some reasons for not having attended include:</p>
+<ul>
+<li>Time constraints (most frequent response)</li>
+<li>Was not aware it existed</li>
+<li>Do not need it / no pressing issues</li>
+<li>Timezone issues (the roundtables frequently happen at a time which is more convenient to people in Europe and North American than in Asia)</li>
+</ul>
+<p>88.9% say the roundtables &lsquo;provide value&rsquo;.</p>
+<p>Topics respondents would like roundtables to address:</p>
+<ul>
+<li>Things Infra is working on that might be useful to PMCs</li>
+<li>Vulnerability scanning</li>
+<li>Automation of
+<ul>
+<li>voting</li>
+<li>policy compliance verification</li>
+<li>releases</li>
+</ul>
+</li>
+<li>Ways to make it easier for contributors to projects to contribute to Infra coding tasks</li>
+<li>Periodic hackathons Infra hackathons open to all contributors</li>
+<li>Series of FAQs / tutorials on common tasks at the ASF</li>
+</ul>
+<h3>Communication</h3>
+<p>81% agreed that Infra is getting better at open communication.</p>
+<p>Further communications improvement suggestions included:</p>
+<ul>
+<li>Periodic newsletter (implemented!)</li>
+<li>Email announcements of important matters to all members</li>
+<li>Better connection of each Infra service with its documentation</li>
+<li>News box on the landing page at <code>infra.a.o</code> needs to be updated more frequently</li>
+<li>Questions to <code>users@infra.a.o</code> seem to go unanswered</li>
+<li>Be more consistent in showing latest and earlier versions of info on the wiki pages</li>
+<li>Public archive containing summaries of all main points in all roundtables</li>
+<li>Periodic publication of the basic stuff, such as 'Where is self-serve?'</li>
+</ul>
+<h3>Technical services</h3>
+<p>95% feel Infra offers adequate technical services for their project.</p>
+<p>Service improvement suggestions:</p>
+<ul>
+<li>Proactively improve the security posture of all ASF projects</li>
+<li>Automating releases (this is coming!) and dependency upgrades for CVE mitigation</li>
+<li>Free BSD runners and CI builder on GitHub</li>
+<li>More docs and examples for VM setup via puppet</li>
+<li>Password management solution</li>
+<li>More powerful GitHub Action runners for all platforms</li>
+<li>Video call service</li>
+</ul>
+<p>We asked which existing services need improvement. These areas got the most votes:</p>
+<ul>
+<li>CI/CD (Jenkins, BuildBot, GitHub Actions &ndash; 62%</li>
+<li>Issue Tracking (Jira, GitHubIssues, Bugzilla) &ndash; 31%</li>
+<li>Documentation / Wiki pages &ndash; 31%</li>
+<li>Source control (GitHub/GitBox, SVN) &ndash; 19%</li>
+<li>Messaging (Slack, mailing lists) &ndash; 19%</li>
+</ul>
+<p>Comments:</p>
+<ul>
+<li>Archived blog content is greatly bit rotted with no way to fix; no good modern blogging options</li>
+<li>ASF project websites vary widely in visual appeal and functionality. How to make it easier to quickly set up &lsquo;modern looking&rsquo; websites?</li>
+<li>Issue tracking &ndash; automated scripts to migrate existing issues from Jira to GitHub Issues.</li>
+<li>Fix tool sprawl &ndash; self-serve, whimsy, reporter, cveprocess...</li>
+<li>Jenkins seems outdated. Would prefer something like Concourse.</li>
+<li>Research an official Stack Overflow integration as an alternative to users&rsquo; lists?</li>
+<li>In CI/CD, we don&rsquo;t really have any CD. Where can we deploy test apps?</li>
+<li>Docker Images.</li>
+<li>More control over Docker Hub repos.</li>
+<li>Builds are sometimes flaky because of disk-full error, broken hardware, missing build tools...</li>
+<li>Builds are very slow for projects with a large number of modules and different workflows for different test suites. Such projects need more dedicated resources.</li>
+<li>It&rsquo;s easy for projects to configure build pipelines that don&rsquo;t work well.</li>
+<li>I shouldn&rsquo;t have to create a filter to understand the context of an email from the ASF.</li>
+<li>Struggling to find good documentation on Buildbot hosts, in particular for setting up a Windows build.</li>
+<li>In a multilanguage project, Kotlin is not counted.</li>
+<li>Mailing list noise from GitHub/GitBox. Drop messages from some bots.</li>
+<li>Need a simple build caching solution for Jenkins so we can cache Maven repositories between builds</li>
+<li>Need a good template for the static part of project websites. (Working on it!)</li>
+<li>There is no documentation on cleanup after a build and main + subpath deployment of a website, nor an example to start with.</li>
+<li>Long build queues on ASF Jenkins; problems with GHA builds</li>
+<li>Jenkins builds should be containerized and isolated from one another, so one build does not bring down a node for everybody else. Need guaranteed minimum performance for performance-sensitive build tests.</li>
+<li>Improve the messaging of Jira to the mailing lists.</li>
+</ul>
+<h3>New Year&rsquo;s resolutions for projects:</h3>
+<ul>
+<li>Hope to make more frequent releases (multiple mentions).</li>
+<li>Get it fully, reproducibly built with OID integration to release it via Trusted Publishing to PyPI.</li>
+<li>Reduce &lsquo;onboarding barriers&rsquo; and bridging projects for more synergy.</li>
+<li>Add documentation tutorials.</li>
+<li>Attracting more people to work on the documentation.</li>
+</ul>
+<h3>New Year&rsquo;s hopes to get from Infra, the ASF, from your project</h3>
+<ul>
+<li>Easy to use and secure package and releasing platform (Working on it!)</li>
+<li>More reliability</li>
+<li>An arrangement with medium or substack</li>
+<li>FreeBSD/BSD</li>
+<li>More stability for Ubuntu Jenkins nodes</li>
+<li>automated voting tool (Working on it!)</li>
+<li>CI stabiity</li>
+<li>More powerful GitHub Runners for all platforms</li>
+</ul>
+<h3>Feedback for the Infra team:</h3>
+<p>Most of the comments were positive, with thanks for our efforts and good wishes for the new year.</p>
+<p>And there was one &ldquo;Well, there is that one guy...&rdquo; (working on it!)</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2024, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>  </main>
+  </body>
+</html>
