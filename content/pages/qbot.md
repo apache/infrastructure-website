@@ -48,7 +48,7 @@ In Slack, there are three ways to talk to Qbot:
     - `lauren announces`: Lauren shares a significant (in Lauren's opinion) announcement.
     - `lauren benefits`: Lauren reveals an employee benefit.
     - `lauren complaints`: Lauren discusses a recent HR complaint with you.
-    - `lauren policies`: Lauren reminds you of a corporation policy.
+    - `lauren policy`: Lauren reminds you of a corporation policy.
 
 **Note** Lauren inhabits a parallel world to ours, one in which The ASF has a physical office with many employees who come in to work each day. Her statements may not bear too much relevance to the world you inhabit.
 
