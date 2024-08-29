@@ -1,5 +1,12 @@
 Title: ASF Pelican data model
 
+In 2019 Infra created ASF-Pelican as a structure and template for projects to use to build their websites, and for the ASF's own website.
+
+In 2024, Infra moved from ASF-Pelican to the ASF **Infrastructure Pelican Action** GitHub Action to perform the same functions without being closely tied to BuildBot. The repository for this GHA is <a href="https//:github.com/apache/infrastructure-actions/tree/main/pelican" target="_blank">github.com/apache/infrastructure-actions/tree/main/pelican</a>.
+
+The material below is **relevant** to the older Pelican build system and the Pelican GitHub Action.
+
+<hr/>
 ## ASF Data
 
 If your site includes the `asfdata.py` plugin, the Pelican site generator reads instructions from it during initialization and creates shared metadata that is available for all pages. It is particularly critical for **ezmd** pages that contain directives.
