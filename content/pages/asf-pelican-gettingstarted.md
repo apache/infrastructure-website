@@ -1,5 +1,13 @@
 Title: ASF-Pelican getting-started guide
 
+In 2019 Infra created ASF-Pelican as a structure and template for projects to use to build their websites, and for the ASF's own website.
+
+In 2024, Infra moved from ASF-Pelican to the ASF **Infrastructure Pelican Action** GitHub Action to perform the same functions without being closely tied to BuildBot. The repository for this GHA is <a href="https//:github.com/apache/infrastructure-actions/tree/main/pelican" target="_blank">github.com/apache/infrastructure-actions/tree/main/pelican</a>.
+
+The material below relates to the 2019 ASF-Pelican and is **not relevant** to the Pelican GitHub Action.
+
+<hr/>
+
 Any ASF project using a Git repository for their website code and resources can use the [ASF-Pelican template](asf-pelican.html) as the basis for their project website. Building a site in this way simplifies both development and integration into the ASF automated build system, while helping ensure that your site satisfies the ASF's <a href="https://infra.apache.org/project-site.html" target="_blank">guidelines for project websites</a>.
 
 Review the [Apache Template example](https://template.staged.apache.org/) to see whether the template's features will support the functions you need for your project.
