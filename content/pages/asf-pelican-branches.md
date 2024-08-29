@@ -1,5 +1,13 @@
 Title: ASF Pelican feature branches
 
+In 2019 Infra created ASF-Pelican as a structure and template for projects to use to build their websites, and for the ASF's own website.
+
+In 2024, Infra moved from ASF-Pelican to the ASF **Infrastructure Pelican Action** GitHub Action to perform the same functions without being closely tied to BuildBot. The repository for this GHA is <a href="https//:github.com/apache/infrastructure-actions/tree/main/pelican" target="_blank">github.com/apache/infrastructure-actions/tree/main/pelican</a>.
+
+The material below is **relevant** to the older Pelican build system and the Pelican GitHub Action.
+
+<hr/>
+
 For large changes to your project website it will often be necessary to make a preview feature branch, work on it with others, and stage the results so you can review them. Here is how to create `preview/feature` branches.
 
 Note: useful information is available from GitHub on <a href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-and-deleting-branches-within-your-repository#creating-a-branch" target="_blank">creating and deleting branches</a>.
