@@ -1,5 +1,11 @@
 Title: Contact the Infrastructure Team
 
+### Request a change to the main ASF website
+The Marketing and Publicity (M&P) committee is responsible for the main ASF website. The source for the website is at <a href="https://github.com/apache/www-site" target="_blank">github.com/apache/www-site</a>. You can create an Issue there to state what you think should change, and what you propose the change to be.
+
+### Request a change to the Infrastructure website
+The source for this website is at <a href="https://github.com/apache/infrastructure-website" target="_blank">github.com/apache/infrastructure-website</a>. You can create an Issue there to state what you think should change, and what you propose the change to be.
+
 ### Chat
 Join us on [Slack](https://the-asf.slack.com/) in the #asfinfra channel for direct messaging!
 
