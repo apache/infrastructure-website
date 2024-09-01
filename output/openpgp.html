@@ -100,23 +100,19 @@
 <h3 id="home">GnuPG Home<a class="headerlink" href="#home" title="Permanent link">&para;</a></h3>
 <p>GnuPG stores important files, including keyrings and configuration files, in a home directory. You can specify your project's home directory in an environmental variable or on the command line. This allows different configurations and keys to be used.</p>
 <p>For example:</p>
-<pre><code>    ::console
-    $ gpg --homedir /home/alice/keys --list-keys
+<pre><code>    $ gpg --homedir /home/alice/keys --list-keys
 </code></pre>
 <p>Projects generally rely on the default. For <code>\*nux</code> (linux, BSD, MacOSX, Solaris, AIX) this is:</p>
-<pre><code>    :::shell
-    $HOME/.gnupg
+<pre><code>    $HOME/.gnupg
 </code></pre>
 <h4 id="switch-home">How to switch Home<a class="headerlink" href="#switch-home" title="Permanent link">&para;</a></h4>
 <p>You can set Home using an environmental variable. This lets you select a specific configuration and keyring for the duration of a
 command line session. This is useful when <a href="release-signing.html#safe-practice">practicing</a> and when using multiple keyrings.</p>
 <p>For example, to set home directory to <code>alice</code> when using Linux:</p>
-<pre><code>    :::console
-    $ export GNUPGHOME=alice
+<pre><code>    $ export GNUPGHOME=alice
 </code></pre>
 <p>When switching key rings, check that the required keyring has been selected by examining the secret keys. For example:</p>
-<pre><code>    :::console
-    $ gpg --list-secret-keys
+<pre><code>    $ gpg --list-secret-keys
     alice/secring.gpg
     -----------------
 
@@ -137,14 +133,12 @@ clients lack <code>SHA512</code> support, we recommend switching to <code>SHA512
 <li><code>default-preference-list</code> - the default algorithm preferences for <a href="release-signing.html#generate">new keys</a> (this does not affect existing keys: see next paragraph)</li>
 </ul>
 <p>To use <code>SHA512</code> (recommended):</p>
-<pre><code>    :::text
-    personal-digest-preferences SHA512
+<pre><code>    personal-digest-preferences SHA512
     cert-digest-algo SHA512
     default-preference-list SHA512 SHA384 SHA256 SHA224 AES256 AES192 AES CAST5 ZLIB BZIP2 ZIP Uncompressed
 </code></pre>
 <p>To use SHA256:</p>
-<pre><code>    :::text
-    personal-digest-preferences SHA256
+<pre><code>    personal-digest-preferences SHA256
     cert-digest-algo SHA256
     default-preference-list SHA512 SHA384 SHA256 SHA224 AES256 AES192 AES CAST5 ZLIB BZIP2 ZIP Uncompressed
 </code></pre>
@@ -152,8 +146,7 @@ clients lack <code>SHA512</code> support, we recommend switching to <code>SHA512
 <p>The digest preferences for each key (from the <a href="#sha-defaults">configuration defaults</a> ) are set when the key is generated. Once the
 configuration has been updated to avoid SHA-1, all new keys generated will use these defaults, but keys generated before the configuration won't be affected.</p>
 <p>All existing private keys in the ring need to be updated to indicate that stronger hashes are preferred. For each public-private key pair (generated with the previous defaults):</p>
-<pre><code>    :::console
-    $ gpg --edit-key F8B7B4FD
+<pre><code>    $ gpg --edit-key F8B7B4FD
     gpg (GnuPG) 1.4.9; Copyright (C) 2008 Free Software Foundation, Inc.
     This program comes with ABSOLUTELY NO WARRANTY.
     This is free software, and you are welcome to redistribute it
@@ -193,8 +186,7 @@ configuration has been updated to avoid SHA-1, all new keys generated will use t
     Command&gt; save
 </code></pre>
 <p>Then upload the modified public key to a public keyserver. For example:</p>
-<pre><code>    :::console
-    $ gpg --send-keys F8B7B4FD
+<pre><code>    $ gpg --send-keys F8B7B4FD
 </code></pre>
 <h2 id="generate-key">How to generate a strong key<a class="headerlink" href="#generate-key" title="Permanent link">&para;</a></h2>
 <p>The weaknesses found in <a href="release-signing.html#sha1">SHA-1</a> threaten all DSA keys and those RSA keys with length less than 2048 bits. Though no realistic attack against those keys have been made public and these keys continue to be useful (and do not need to be revoked), Projects should not generate new keys that are exposed to this weakness.</p>
@@ -210,8 +202,7 @@ than 4096 bits, <a href="https://www.jroller.com/robertburrelldonkin/entry/gnupg
 <p>Once you generate the key, you can use it with the widely available <code>1.4.9</code> and <code>2.x</code> releases.</p>
 <p>If the right version of GnuPG is not currently distributed for your platform, you need to <a href="http://www.gnupg.org/download/index.en.html" target="_blank">install it</a>. You only need this version to generate keys, so you do not need to replace the version distributed with your platform. You can install the new version into a working directory.</p>
 <p>Checking that the installation has worked and that the version is correct, using either</p>
-<pre><code>    :::console
-    $ gpg  --version 
+<pre><code>    $ gpg  --version 
     gpg (GnuPG) 1.4.10
     Copyright (C) 2008 Free Software Foundation, Inc.
     License GPLv3+: GNU GPL version 3 or later
@@ -228,8 +219,7 @@ than 4096 bits, <a href="https://www.jroller.com/robertburrelldonkin/entry/gnupg
     Compression: Uncompressed, ZIP, ZLIB, BZIP2
 </code></pre>
 <p>or</p>
-<pre><code>    :::console
-    $ gpg2 --version
+<pre><code>    $ gpg2 --version
     gpg (GnuPG) 2.0.12
     libgcrypt 1.4.4
     Copyright (C) 2009 Free Software Foundation, Inc.
@@ -253,8 +243,7 @@ keys are used for both encryption and signing. Longer key lengths are available.
 <p>Follow the recommendations about <a href="release-signing.html#user-id">user ID</a> and <a href="release-signing.html#key-comment">comment</a>. Use a strong
 <a href="release-signing.html#passphrase">passphrase</a>.</p>
 <p>Follow either</p>
-<pre><code>    :::console
-    $ gpg --gen-key 
+<pre><code>    $ gpg --gen-key 
     gpg (GnuPG) 1.4.10; Copyright (C) 2008 Free Software Foundation, Inc.
     This is free software: you are free to change and redistribute it.
     There is NO WARRANTY, to the extent permitted by law.
@@ -293,8 +282,7 @@ keys are used for both encryption and signing. Longer key lengths are available.
     You need a Passphrase to protect your secret key.
 </code></pre>
 <p>or</p>
-<pre><code>    :::console
-    $ gpg2 --full-gen-key
+<pre><code>    $ gpg2 --full-gen-key
     gpg (GnuPG) 2.0.12; Copyright (C) 2009 Free Software Foundation, Inc.
     This is free software: you are free to change and redistribute it.
     There is NO WARRANTY, to the extent permitted by law.
@@ -331,8 +319,7 @@ keys are used for both encryption and signing. Longer key lengths are available.
 </code></pre>
 <h3 id="key-gen-avoid-sha1">Check that the key avoids using SHA-1<a class="headerlink" href="#key-gen-avoid-sha1" title="Permanent link">&para;</a></h3>
 <p>Check that the configuration has correctly set the key preferences to avoid SHA-1, using either:</p>
-<pre><code>    :::console
-    $ gpg --edit-key 773447FD
+<pre><code>    $ gpg --edit-key 773447FD
     gpg (GnuPG) 1.4.10; Copyright (C) 2008 Free Software Foundation, Inc.
     This is free software: you are free to change and redistribute it.
     There is NO WARRANTY, to the extent permitted by law.
@@ -353,8 +340,7 @@ keys are used for both encryption and signing. Longer key lengths are available.
          Features: MDC, Keyserver no-modify
 </code></pre>
 <p>or</p>
-<pre><code>    :::console
-    $ gpg2 --edit-key A6EE6908
+<pre><code>    $ gpg2 --edit-key A6EE6908
     gpg (GnuPG) 2.0.12; Copyright (C) 2009 Free Software Foundation, Inc.
     This is free software: you are free to change and redistribute it.
     There is NO WARRANTY, to the extent permitted by law.
@@ -426,16 +412,13 @@ user ID or other information.</p>
 <p>The best way to find a key ID is to obtain it directly from a trusted source, for example, from a business card you obtain personally from the owner of the key.</p>
 <h3 id="find-key-id-with-fingerprint">Find a key ID with its fingerprint<a class="headerlink" href="#find-key-ide-with-fingerprint" title="Permanent link">&para;</a></h3>
 <p>If you have a <a href="release-signing.html#fingerprint">fingerprint</a>, the key ID should be the last 8 digits. For example, the ID of the key with this fingerprint:</p>
-<pre><code>    :::text
-    FF96 6261 C995 1DDE BF34  5150 D5D2 BDB5 E2B0 54B8
+<pre><code>    FF96 6261 C995 1DDE BF34  5150 D5D2 BDB5 E2B0 54B8
 </code></pre>
 <p>should be:</p>
-<pre><code>    :::text
-    E2B054B8
+<pre><code>    E2B054B8
 </code></pre>
 <p>You can confirm this using:</p>
-<pre><code>    :::console
-    $ gpg --list-keys --fingerprint E2B054B8
+<pre><code>    $ gpg --list-keys --fingerprint E2B054B8
     pub   4096R/E2B054B8 2009-08-20
           Key fingerprint = FF96 6261 C995 1DDE BF34  5150 D5D2 BDB5 E2B0 54B8
     uid                  Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;
@@ -445,8 +428,7 @@ user ID or other information.</p>
 <p>When you have the secret key, listing the secret key details allows the key ID to be read from the <code>sec</code> lines in the output.</p>
 <p><strong>Note</strong> that it is possible for an attacker to introduce a new secret key into your keyring (for example, as part of an import). It is vital that you know how many secret keys each keyring should hold. If any unexpected secret keys are present, this probably indicates an attack.</p>
 <p>For example, Alice is <a href="key-transition.html">transitioning</a> and so expects two secret keys in her main keyring. (The case of a single key is similar but less complex.) She lists all secret keys on the keyring:</p>
-<pre><code>    :::console
-    $ gpg --list-secret-keys
+<pre><code>    $ gpg --list-secret-keys
     alice/secring.gpg
     -----------------
     sec   1024D/AD741727 2009-08-20
@@ -459,12 +441,10 @@ user ID or other information.</p>
 </code></pre>
 <p>Alice verifies that details for only two keys are listed and that there are no unexpected additions.</p>
 <p>The <code>sec</code> lines are:</p>
-<pre><code>    :::text
-    sec   1024D/AD741727 2009-08-20
+<pre><code>    sec   1024D/AD741727 2009-08-20
 </code></pre>
 <p>and</p>
-<pre><code>    :::text
-    sec   4096R/E2B054B8 2009-08-20
+<pre><code>    sec   4096R/E2B054B8 2009-08-20
 </code></pre>
 <p>The key ID forms part of the second column, to the right of the key length. In this case the key IDs are <code>AD741727</code> and <code>E2B054B8</code>. The
 <a href="release-signing.html#key-comment">comments</a> help Alice identify each key.</p>
@@ -499,32 +479,27 @@ almost always means <em>exporting a public key</em>.</p>
 <p>GnuPG seeks to limit accidental private key exports by using different operations for each export. Both operations share common options.</p>
 <h3 id="export-option-output">Output options<a class="headerlink" href="#export-option-output" title="Permanent link">&para;</a></h3>
 <p>By default, operations print their results to the command line. For example, to export all public keys (with ASCII encoding) to the command line, do:</p>
-<pre><code>    :::console
-    $ gpg --export --armor 
+<pre><code>    $ gpg --export --armor 
 </code></pre>
 <p>The <code>--output</code> option followed by the name of a file creates that file and stores the output in it. To export all public keys (with ASCII encoding) into a newly created file named <code>export.asc</code>, use:</p>
-<pre><code>    :::console
-    $ gpg --export --output export.asc --armor 
+<pre><code>    $ gpg --export --output export.asc --armor 
 </code></pre>
 <p>Though most of the examples in this guide choose to output to a file, command line output is often useful (for example, the output can be piped into a second command) and is equally valid for most operations. The exception is <a href="#export-secret-key">secret key export</a>, which should always be to a secure temporary file.</p>
 <h3 id="export-option-armor">The armor option<a class="headerlink" href="#export-option-armor" title="Permanent link">&para;</a></h3>
 <p>The <em>--armor</em> option encodes the output using <a href="release-signing.html#ascii">ASCII characters only</a>. This permits embedding the output easily in documents and displaying it on the command line.</p>
 <p>For example, to export all public keys (to the command line) encoded in ASCII, use:</p>
-<pre><code>    :::console
-    $ gpg --export --armor 
+<pre><code>    $ gpg --export --armor 
 </code></pre>
 <p>The binary format is shorter but has few other advantages. For all uses at Apache, use ASCII armor.</p>
 <h3 id="export-public-key">How to export public keys<a class="headerlink" href="#export-public-key" title="Permanent link">&para;</a></h3>
 <p>The <code>--export</code> operation exports public keys.</p>
 <p>When you don't specify a key, the system exports all public keys in the keyring. For example, to export all public keys to the <a href="#export-option-output">command
 line</a> with <a href="#export-option-armor">ASCII encoding</a>:</p>
-<pre><code>    :::console
-    $ gpg --export --armor 
+<pre><code>    $ gpg --export --armor 
 </code></pre>
 <p>To export specific keys, add identifiers for these keys to the end of the command. There are a number of ways to identify keys, but only the <a href="release-signing.html#key-id">key ID</a> will definitely select a single key. This <a href="#find-key-id">guide</a> discusses how to find the key ID when it is unknown.</p>
 <p>For example, to export to the <a href="#export-option-output">command line</a> with <a href="#export-option-armor">ASCII encoding</a> the public key with ID <code>AD741727</code>, use:</p>
-<pre><code>    :::console
-    $ gpg --export --armor AD741727
+<pre><code>    $ gpg --export --armor AD741727
 </code></pre>
 <h3 id="export-all-or-some-public-keys">Should I export all or some public keys"<a class="headerlink" href="#export-all-or-some-puiblic-keys" title="Permanent link">&para;</a></h3>
 <p>This is often a tricky question. An import should not be trusted for key identification (see <a href="#find-key-id">discussion</a>). So, for an import to be useful, usually the key ID of interest needs to be known.</p>
@@ -541,13 +516,11 @@ all times.</p>
 <p><strong>Never</strong> export secret keys to the command line. Instead, use a secure temporary file that you can securely delete after use. Here is one way to do this:</p>
 <h2 id="secret-key-transfer">How to transfer a secret key<a class="headerlink" href="#secret-key-transfer" title="Permanent link">&para;</a></h2>
 <p>Start by <a href="#switch-home">switching</a> GnuPG <a href="#home">home</a> to the source. To export all secret keys to a temporary file such as <code>/tmp/new.sec</code>, do this:</p>
-<pre><code>    :::console
-    $ gpg --export-secret-keys --armor --output /tmp/new.sec
+<pre><code>    $ gpg --export-secret-keys --armor --output /tmp/new.sec
 </code></pre>
 <p>Import this temporary file into the target keyring. Ensure that GnuPG <a href="#home">home</a> is set to the target keyring (by either
 <a href="#switch-home">switching</a> the current session or opening a new terminal configured to use the target keyring). Then do this:</p>
-<pre><code>    :::console
-    $ gpg --import /tmp/new.sec 
+<pre><code>    $ gpg --import /tmp/new.sec 
     gpg: key E2B054B8: secret key imported
     gpg: key E2B054B8: public key "Alice Example (EXAMPLE NEW KEY)
     &lt;alice@example.org&gt;" imported
@@ -557,8 +530,7 @@ all times.</p>
     gpg:   secret keys imported: 1
 </code></pre>
 <p>Check for <em>secret keys imported</em> in the output. Listing secret keys for the target keyring should now show the existence of the secret key:</p>
-<pre><code>    :::console
-    $ gpg --list-secret-keys
+<pre><code>    $ gpg --list-secret-keys
     alice/secring.gpg
     -----------------
     sec   1024D/AD741727 2009-08-20
@@ -570,8 +542,7 @@ all times.</p>
     ssb   4096R/4A6D5217 2009-08-20
 </code></pre>
 <p>Finally make sure that the temporary file you used cannot be read. We recommend secure deletion. If you are working on Linux, for example, you can use the <a href="http://www.linfo.org/shred.html" target="_blank">shred</a> command:</p>
-<pre><code>    :::console
-    $ shred /tmp/new.sec 
+<pre><code>    $ shred /tmp/new.sec 
     $ rm /tmp/new.sec 
 </code></pre>
 <p>Those using encrypted <code>tmp</code> should now restart the machine.</p>
@@ -608,8 +579,7 @@ system on a top end USB drive or a CDROM). Print and store hard copies of the ce
 <p>When a key has been compromised, lost or superseded, when possible generate a new certificate containing a comment explaining the
 situation. For example, generate an <a href="release-signing.html#ascii">ASCII armored</a> (for
 ease of handling) revocation certificate for key <code>AD741727</code> like this:</p>
-<pre><code>    :::console
-    $ gpg --output revoke-AD741727.asc --armor --gen-revoke AD741727
+<pre><code>    $ gpg --output revoke-AD741727.asc --armor --gen-revoke AD741727
 
     sec  1024D/AD741727 2009-08-20 Alice Example (EXAMPLE OF OLD KEY)
     &lt;alice@example.org&gt;
@@ -645,8 +615,7 @@ ease of handling) revocation certificate for key <code>AD741727</code> like this
 <p>When preparing generic certificates (for use if the <a href="release-signing.html#public-private">private key</a> is unavailable), the comment
 cannot include the specifics and so should indicate this.</p>
 <p>The process for generating a generic certificate is identical, but you should add a different comment. For example, generate an <a href="release-signing.html#ascii">ASCII armored</a> (for ease of handling) revocation certificate for key <code>AD741727</code> like this:</p>
-<pre><code>    :::console
-    $ gpg --output revoke-AD741727.asc --armor --gen-revoke AD741727
+<pre><code>    $ gpg --output revoke-AD741727.asc --armor --gen-revoke AD741727
 
     sec  1024D/AD741727 2009-08-20 Alice Example (EXAMPLE OF OLD KEY)
     &lt;alice@example.org&gt;
@@ -681,8 +650,7 @@ cannot include the specifics and so should indicate this.</p>
 </code></pre>
 <h2 id="symmetric">How to use symmetric encryption<a class="headerlink" href="#symmetric" title="Permanent link">&para;</a></h2>
 <p>GnuPG supports symmetric (in addition to public key) cryptography, but the ciphers available sometimes differ. Use <code>gpg --version</code> to discover which ciphers are available in the current installation:</p>
-<pre><code>    :::console
-    $ gpg --version
+<pre><code>    $ gpg --version
     gpg (GnuPG) 1.4.9
     Copyright (C) 2008 Free Software Foundation, Inc.
     License GPLv3+: GNU GPL version 3 or later
@@ -698,18 +666,15 @@ cannot include the specifics and so should indicate this.</p>
     Compression: Uncompressed, ZIP, ZLIB, BZIP2
 </code></pre>
 <p>In this case, the available ciphers are:</p>
-<pre><code>    :::text
-    3DES, CAST5, BLOWFISH, AES, AES192, AES256, TWOFISH
+<pre><code>    3DES, CAST5, BLOWFISH, AES, AES192, AES256, TWOFISH
 </code></pre>
 <p>Note that most of the ciphers early on the list are weak. This is typical. We recommend that you specify a strong cipher on the command
 line. For example, to encrypt a document <code>INPUT_FILENAME</code> using <code>AES256</code> (a strong cipher) and output it to file <code>ENCRYPTED_FILE</code>:</p>
-<pre><code>    :::console
-    $ gpg --cipher-algo AES256 --output ENCRYPTED_FILE --symmetric INPUT_FILENAME
+<pre><code>    $ gpg --cipher-algo AES256 --output ENCRYPTED_FILE --symmetric INPUT_FILENAME
 </code></pre>
 <p>When prompted for a <a href="release-signing.html#passphrase">passphrase</a>, choose a strong one.</p>
 <p>The file format contains metadata, including the cipher used. So to decrypt <code>ENCRYPTED_FILE</code> into <code>OUTPUT_FILE</code> use:</p>
-<pre><code>    :::console
-    $ gpg --output OUTPUT_FILE --decrypt ENCRYPTED_FILE
+<pre><code>    $ gpg --output OUTPUT_FILE --decrypt ENCRYPTED_FILE
 </code></pre>
 <h2 id="update">How to update Apache documents with details of a new key<a class="headerlink" href="#update" title="Permanent link">&para;</a></h2>
 <p>For the new key, you will need to provide both the <a href="release-signing.html#fingerprint">fingerprint</a> and the <a href="release-signing.html#public-private">public key</a> export more than once. We repeat the creation instructions below for each case but you may find it more convenient to create, store then reuse the results.</p>
@@ -734,8 +699,7 @@ line. For example, to encrypt a document <code>INPUT_FILENAME</code> using <code
 </ul>
 <p>Ensure that each <code>pubkeyAddress</code> points to the new export <a href="#publish-in-web-space">uploaded into your Apache home web space</a>.</p>
 <p>When <a href="release-signing.html#transition">transitioning</a>, include one entry for the old and one for the new key. Yu can use the same URL for both since the target should be the <a href="key-transition.html#transition-export">dual export</a> you <a href="#publish-in-web-space">uploadedearlier</a>. For example, for keys A6EE6908 (new) and B1313DE2 (old):</p>
-<pre><code>    :::xml
-    &lt;wot:hasKey&gt;
+<pre><code>    &lt;wot:hasKey&gt;
       &lt;wot:PubKey&gt;
         &lt;wot:hex_id&gt;A6EE6908&lt;/wot:hex_id&gt;
         &lt;wot:fingerprint&gt;597C729B02371932E77CB9D5EDB8C082A6EE6908&lt;/wot:fingerprint&gt;
@@ -778,14 +742,12 @@ never met Charlie. So</p>
 <p>Alice has obtained a file ( <code>document</code> in this example) which Charlie may have created, and a detached signature for that file ( <code>document.asc</code> in this example). Alice wishes to discover whether Charlie signed this file.</p>
 <p>The basic idea is easy. If Alice has verified Bob's identity and trusts Bob to verify the Charlie's identity before signing, then Alice should be able to work out whether Charlie owns the key which was used to sign the file.</p>
 <p>Alice starts by verifying the signature:</p>
-<pre><code>    :::console
-    $ gpg --verify document.asc 
+<pre><code>    $ gpg --verify document.asc 
     gpg: Signature made Wed Sep  9 14:33:12 2009 BST using RSA key ID 8F8A2525
     gpg: Can't check signature: public key not found
 </code></pre>
 <p>This indicates that the key used to create this signature is missing from Alice's keyring. This is not unexpected. Alice adds the public key, perhaps by using a public key server or by importing an export, and tries again:</p>
-<pre><code>    :::console
-    $ gpg --verify document.asc 
+<pre><code>    $ gpg --verify document.asc 
     gpg: Signature made Wed Sep  9 14:33:12 2009 BST using RSA key ID 8F8A2525
     gpg: checking the trustdb
     gpg: 3 marginal(s) needed, 1 complete(s) needed, PGP trust model
@@ -800,23 +762,20 @@ never met Charlie. So</p>
 </code></pre>
 <p>This output indicates that this key says that Charlie created it. This is a reasonable start but is easily faked.</p>
 <p>Alice examines the signatures on this key:</p>
-<pre><code>    :::console
-    $ gpg --list-sigs 8F8A2525
+<pre><code>    $ gpg --list-sigs 8F8A2525
     pub   2048R/8F8A2525 2009-09-09
     uid                  Charlie (EXAMPLE ONLY NOT FOR DISTRIBUTION) &lt;charlie@example.org&gt;
     sig 3       8F8A2525 2009-09-09  Charlie (EXAMPLE ONLY NOT FOR DISTRIBUTION) &lt;charlie@example.org&gt;
 </code></pre>
 <p>This key is signed only by itself. This is not indicative. Unless all keys in the ring have been refreshed, it is possible that a signature has been made but is missing from the ring. Alice refreshes the keys on the ring then verifies once more:</p>
-<pre><code>    :::console
-    $ gpg --list-sigs 8F8A2525
+<pre><code>    $ gpg --list-sigs 8F8A2525
     pub   2048R/8F8A2525 2009-09-09
     uid                  Charlie (EXAMPLE ONLY NOT FOR DISTRIBUTION) &lt;charlie@example.org&gt;
     sig 3       8F8A2525 2009-09-09  Charlie (EXAMPLE ONLY NOT FOR DISTRIBUTION) &lt;charlie@example.org&gt;
     sig         1B912854 2009-09-09  Bob___ (EXAMPLE ONLY NOT FOR DISTRIBUTION) &lt;bob@example.org&gt;
 </code></pre>
 <p>The key now has a signature from Bob's key - or so says the key. But Alice has met Bob. So, she lists the signatures for that key that may - or may not - be owned by Bob:</p>
-<pre><code>    :::console
-    $ gpg --list-sigs 1B912854
+<pre><code>    $ gpg --list-sigs 1B912854
     pub   2048R/1B912854 2009-09-09
     uid                  Bob___ (EXAMPLE ONLY NOT FOR DISTRIBUTION) &lt;bob@example.org&gt;
     sig 3       1B912854 2009-09-09  Bob___ (EXAMPLE ONLY NOT FOR DISTRIBUTION) &lt;bob@example.org&gt;
