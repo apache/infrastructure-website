@@ -39,14 +39,12 @@ GnuPG stores important files, including keyrings and configuration files, in a h
 For example:
 
 ```
-    ::console
     $ gpg --homedir /home/alice/keys --list-keys
 ```
 
 Projects generally rely on the default. For `\*nux` (linux, BSD, MacOSX, Solaris, AIX) this is:
 
 ```
-    :::shell
     $HOME/.gnupg
 ```
 
@@ -58,14 +56,12 @@ command line session. This is useful when [practicing](release-signing.html#safe
 For example, to set home directory to `alice` when using Linux:
 
 ```
-    :::console
     $ export GNUPGHOME=alice
 ```
 
 When switching key rings, check that the required keyring has been selected by examining the secret keys. For example:
 
 ```
-    :::console
     $ gpg --list-secret-keys
     alice/secring.gpg
     -----------------
@@ -95,7 +91,6 @@ To configure `gpg` to avoid SHA-1, edit the options in [`gpg.conf`](#configurati
 To use `SHA512` (recommended):
 
 ```
-    :::text
     personal-digest-preferences SHA512
     cert-digest-algo SHA512
     default-preference-list SHA512 SHA384 SHA256 SHA224 AES256 AES192 AES CAST5 ZLIB BZIP2 ZIP Uncompressed
@@ -104,7 +99,6 @@ To use `SHA512` (recommended):
 To use SHA256:
 
 ```
-    :::text
     personal-digest-preferences SHA256
     cert-digest-algo SHA256
     default-preference-list SHA512 SHA384 SHA256 SHA224 AES256 AES192 AES CAST5 ZLIB BZIP2 ZIP Uncompressed
@@ -118,7 +112,6 @@ configuration has been updated to avoid SHA-1, all new keys generated will use t
 All existing private keys in the ring need to be updated to indicate that stronger hashes are preferred. For each public-private key pair (generated with the previous defaults):
 
 ```
-    :::console
     $ gpg --edit-key F8B7B4FD
     gpg (GnuPG) 1.4.9; Copyright (C) 2008 Free Software Foundation, Inc.
     This program comes with ABSOLUTELY NO WARRANTY.
@@ -162,7 +155,6 @@ All existing private keys in the ring need to be updated to indicate that strong
 Then upload the modified public key to a public keyserver. For example:
 
 ```
-    :::console
     $ gpg --send-keys F8B7B4FD
 ```
 
@@ -189,7 +181,6 @@ If the right version of GnuPG is not currently distributed for your platform, yo
 Checking that the installation has worked and that the version is correct, using either
 
 ```
-    :::console
     $ gpg  --version 
     gpg (GnuPG) 1.4.10
     Copyright (C) 2008 Free Software Foundation, Inc.
@@ -210,7 +201,6 @@ Checking that the installation has worked and that the version is correct, using
 or
 
 ```
-    :::console
     $ gpg2 --version
     gpg (GnuPG) 2.0.12
     libgcrypt 1.4.4
@@ -242,7 +232,6 @@ Follow the recommendations about [user ID](release-signing.html#user-id) and [co
 Follow either
 
 ```
-    :::console
     $ gpg --gen-key 
     gpg (GnuPG) 1.4.10; Copyright (C) 2008 Free Software Foundation, Inc.
     This is free software: you are free to change and redistribute it.
@@ -285,7 +274,6 @@ Follow either
 or
 
 ```
-    :::console
     $ gpg2 --full-gen-key
     gpg (GnuPG) 2.0.12; Copyright (C) 2009 Free Software Foundation, Inc.
     This is free software: you are free to change and redistribute it.
@@ -327,7 +315,6 @@ or
 Check that the configuration has correctly set the key preferences to avoid SHA-1, using either:
 
 ```
-    :::console
     $ gpg --edit-key 773447FD
     gpg (GnuPG) 1.4.10; Copyright (C) 2008 Free Software Foundation, Inc.
     This is free software: you are free to change and redistribute it.
@@ -352,7 +339,6 @@ Check that the configuration has correctly set the key preferences to avoid SHA-
 or
 
 ```
-    :::console
     $ gpg2 --edit-key A6EE6908
     gpg (GnuPG) 2.0.12; Copyright (C) 2009 Free Software Foundation, Inc.
     This is free software: you are free to change and redistribute it.
@@ -431,21 +417,18 @@ The best way to find a key ID is to obtain it directly from a trusted source, fo
 If you have a [fingerprint](release-signing.html#fingerprint), the key ID should be the last 8 digits. For example, the ID of the key with this fingerprint:
 
 ```
-    :::text
     FF96 6261 C995 1DDE BF34  5150 D5D2 BDB5 E2B0 54B8
 ```
 
 should be:
 
 ```
-    :::text
     E2B054B8
 ```
 
 You can confirm this using:
 
 ```
-    :::console
     $ gpg --list-keys --fingerprint E2B054B8
     pub   4096R/E2B054B8 2009-08-20
           Key fingerprint = FF96 6261 C995 1DDE BF34  5150 D5D2 BDB5 E2B0 54B8
@@ -462,7 +445,6 @@ When you have the secret key, listing the secret key details allows the key ID t
 For example, Alice is [transitioning](key-transition.html) and so expects two secret keys in her main keyring. (The case of a single key is similar but less complex.) She lists all secret keys on the keyring:
 
 ```
-    :::console
     $ gpg --list-secret-keys
     alice/secring.gpg
     -----------------
@@ -480,14 +462,12 @@ Alice verifies that details for only two keys are listed and that there are no u
 The `sec` lines are:
 
 ```
-    :::text
     sec   1024D/AD741727 2009-08-20
 ```
 
 and
 
 ```
-    :::text
     sec   4096R/E2B054B8 2009-08-20
 ```
 
@@ -544,14 +524,12 @@ GnuPG seeks to limit accidental private key exports by using different operation
 By default, operations print their results to the command line. For example, to export all public keys (with ASCII encoding) to the command line, do:
 
 ```
-    :::console
     $ gpg --export --armor 
 ```
 
 The `--output` option followed by the name of a file creates that file and stores the output in it. To export all public keys (with ASCII encoding) into a newly created file named `export.asc`, use:
 
 ```
-    :::console
     $ gpg --export --output export.asc --armor 
 ```
 
@@ -564,7 +542,6 @@ The *--armor* option encodes the output using [ASCII characters only](release-si
 For example, to export all public keys (to the command line) encoded in ASCII, use:
 
 ```
-    :::console
     $ gpg --export --armor 
 ```
 
@@ -578,7 +555,6 @@ When you don't specify a key, the system exports all public keys in the keyring.
 line](#export-option-output) with [ASCII encoding](#export-option-armor):
 
 ```
-    :::console
     $ gpg --export --armor 
 ```
 
@@ -587,7 +563,6 @@ To export specific keys, add identifiers for these keys to the end of the comman
 For example, to export to the [command line](#export-option-output) with [ASCII encoding](#export-option-armor) the public key with ID `AD741727`, use:
 
 ```
-    :::console
     $ gpg --export --armor AD741727
 ```
 
@@ -620,7 +595,6 @@ To ensure that you do not accidentally expose private keys, the GnuPG `--export`
 Start by [switching](#switch-home) GnuPG [home](#home) to the source. To export all secret keys to a temporary file such as `/tmp/new.sec`, do this:
 
 ```
-    :::console
     $ gpg --export-secret-keys --armor --output /tmp/new.sec
 ```
 
@@ -628,7 +602,6 @@ Import this temporary file into the target keyring. Ensure that GnuPG [home](#ho
 [switching](#switch-home) the current session or opening a new terminal configured to use the target keyring). Then do this:
 
 ```
-    :::console
     $ gpg --import /tmp/new.sec 
     gpg: key E2B054B8: secret key imported
     gpg: key E2B054B8: public key "Alice Example (EXAMPLE NEW KEY)
@@ -642,7 +615,6 @@ Import this temporary file into the target keyring. Ensure that GnuPG [home](#ho
 Check for *secret keys imported* in the output. Listing secret keys for the target keyring should now show the existence of the secret key:
 
 ```
-    :::console
     $ gpg --list-secret-keys
     alice/secring.gpg
     -----------------
@@ -658,7 +630,6 @@ Check for *secret keys imported* in the output. Listing secret keys for the targ
 Finally make sure that the temporary file you used cannot be read. We recommend secure deletion. If you are working on Linux, for example, you can use the <a href="http://www.linfo.org/shred.html" target="_blank">shred</a> command:
 
 ```
-    :::console
     $ shred /tmp/new.sec 
     $ rm /tmp/new.sec 
 ```
@@ -712,7 +683,6 @@ situation. For example, generate an [ASCII armored](release-signing.html#ascii) 
 ease of handling) revocation certificate for key `AD741727` like this:
 
 ```
-    :::console
     $ gpg --output revoke-AD741727.asc --armor --gen-revoke AD741727
 
     sec  1024D/AD741727 2009-08-20 Alice Example (EXAMPLE OF OLD KEY)
@@ -753,7 +723,6 @@ cannot include the specifics and so should indicate this.
 The process for generating a generic certificate is identical, but you should add a different comment. For example, generate an [ASCII armored](release-signing.html#ascii) (for ease of handling) revocation certificate for key `AD741727` like this:
 
 ```
-    :::console
     $ gpg --output revoke-AD741727.asc --armor --gen-revoke AD741727
 
     sec  1024D/AD741727 2009-08-20 Alice Example (EXAMPLE OF OLD KEY)
@@ -793,7 +762,6 @@ The process for generating a generic certificate is identical, but you should ad
 GnuPG supports symmetric (in addition to public key) cryptography, but the ciphers available sometimes differ. Use `gpg --version` to discover which ciphers are available in the current installation:
 
 ```
-    :::console
     $ gpg --version
     gpg (GnuPG) 1.4.9
     Copyright (C) 2008 Free Software Foundation, Inc.
@@ -813,7 +781,6 @@ GnuPG supports symmetric (in addition to public key) cryptography, but the ciphe
 In this case, the available ciphers are:
 
 ```
-    :::text
     3DES, CAST5, BLOWFISH, AES, AES192, AES256, TWOFISH
 ```
 
@@ -821,7 +788,6 @@ Note that most of the ciphers early on the list are weak. This is typical. We re
 line. For example, to encrypt a document `INPUT_FILENAME` using `AES256` (a strong cipher) and output it to file `ENCRYPTED_FILE`:
 
 ```
-    :::console
     $ gpg --cipher-algo AES256 --output ENCRYPTED_FILE --symmetric INPUT_FILENAME
 ```
 
@@ -830,7 +796,6 @@ When prompted for a [passphrase](release-signing.html#passphrase), choose a stro
 The file format contains metadata, including the cipher used. So to decrypt `ENCRYPTED_FILE` into `OUTPUT_FILE` use:
 
 ```
-    :::console
     $ gpg --output OUTPUT_FILE --decrypt ENCRYPTED_FILE
 ```
 
@@ -868,7 +833,6 @@ Ensure that each `pubkeyAddress` points to the new export [uploaded into your Ap
  When [transitioning](release-signing.html#transition), include one entry for the old and one for the new key. Yu can use the same URL for both since the target should be the [dual export](key-transition.html#transition-export) you [uploadedearlier](#publish-in-web-space). For example, for keys A6EE6908 (new) and B1313DE2 (old):
 
 ```
-    :::xml
     <wot:hasKey>
       <wot:PubKey>
         <wot:hex_id>A6EE6908</wot:hex_id>
@@ -930,7 +894,6 @@ The basic idea is easy. If Alice has verified Bob's identity and trusts Bob to v
 Alice starts by verifying the signature:
 
 ```
-    :::console
     $ gpg --verify document.asc 
     gpg: Signature made Wed Sep  9 14:33:12 2009 BST using RSA key ID 8F8A2525
     gpg: Can't check signature: public key not found
@@ -939,7 +902,6 @@ Alice starts by verifying the signature:
 This indicates that the key used to create this signature is missing from Alice's keyring. This is not unexpected. Alice adds the public key, perhaps by using a public key server or by importing an export, and tries again:
 
 ```
-    :::console
     $ gpg --verify document.asc 
     gpg: Signature made Wed Sep  9 14:33:12 2009 BST using RSA key ID 8F8A2525
     gpg: checking the trustdb
@@ -959,7 +921,6 @@ This output indicates that this key says that Charlie created it. This is a reas
 Alice examines the signatures on this key:
 
 ```
-    :::console
     $ gpg --list-sigs 8F8A2525
     pub   2048R/8F8A2525 2009-09-09
     uid                  Charlie (EXAMPLE ONLY NOT FOR DISTRIBUTION) <charlie@example.org>
@@ -969,7 +930,6 @@ Alice examines the signatures on this key:
 This key is signed only by itself. This is not indicative. Unless all keys in the ring have been refreshed, it is possible that a signature has been made but is missing from the ring. Alice refreshes the keys on the ring then verifies once more:
 
 ```
-    :::console
     $ gpg --list-sigs 8F8A2525
     pub   2048R/8F8A2525 2009-09-09
     uid                  Charlie (EXAMPLE ONLY NOT FOR DISTRIBUTION) <charlie@example.org>
@@ -980,7 +940,6 @@ This key is signed only by itself. This is not indicative. Unless all keys in th
 The key now has a signature from Bob's key - or so says the key. But Alice has met Bob. So, she lists the signatures for that key that may - or may not - be owned by Bob:
 
 ```
-    :::console
     $ gpg --list-sigs 1B912854
     pub   2048R/1B912854 2009-09-09
     uid                  Bob___ (EXAMPLE ONLY NOT FOR DISTRIBUTION) <bob@example.org>
