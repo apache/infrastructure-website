@@ -110,7 +110,6 @@ Host \*
 <li>Read <a href="#ssh-debug">the section on debugging SSH</a> and try to diagnose the problem.</li>
 </ul>
 <h3 id="common-problems">Some common problems<a class="headerlink" href="#common-problems" title="Permanent link">&para;</a></h3>
-<h4 id="exposed">Do not expose your private key<a class="headerlink" href="#exposed" title="Permanent link">&para;</a></h4>. Generate your key on a computer that is in your control, then upload only the public part to id.apache.org (use your ApacheID on the site). Do not make the mistake of generating the key on the an ASF server.
 <h4 id="too-many-groups">Too Many Groups<a class="headerlink" href="#too-many-groups" title="Permanent link">&para;</a></h4>
 FreeBSD only allows a user to be in 16 groups. A user who is too popular will not be allowed to log on. It is easy to mistake this for an ssh problem. If `Authentication succeeded` is present in the <a href="#ssh-debug">debug logs</a>, this indicates that the issue lies on your machine's login rather than with ssh.
 <h4 id="batch-mode">Batch Mode<a class="headerlink" href="#batch-mode" title="Permanent link">&para;</a></h4>
