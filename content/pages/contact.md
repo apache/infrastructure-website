@@ -1,4 +1,5 @@
 Title: Contact the Infrastructure Team
+license: https://www.apache.org/licenses/LICENSE-2.0
 
 ### Request a change to the main ASF website
 The Marketing and Publicity (M&P) committee is responsible for the main ASF website. The source for the website is at <a href="https://github.com/apache/www-site" target="_blank">github.com/apache/www-site</a>. You can create an Issue there to state what you think should change, and what you propose the change to be.
