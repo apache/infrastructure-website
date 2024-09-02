@@ -1,5 +1,7 @@
 Title: About the Apache Infrastructure Team
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 # ASF Infra
 The ASF Infrastructure team, known as **Infra**, provides and manages all infrastructure and services for the ASF, and for each project that is part of the Foundation: physical and virtual servers and their operating systems, mailing lists, version control systems, committer accounts, the artifact distribution system, issue tracking systems, and tools and services to facilitate the work of the Foundation, its projects, and committers.
 
