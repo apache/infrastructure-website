@@ -1,5 +1,7 @@
 Title: How to submit a patch for project code
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 To contribute a change or addition to existing source code:
 
 ### Using Subversion ###

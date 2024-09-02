@@ -1,5 +1,7 @@
 Title: Fingerprints
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 
 <style type="text/css">
   table { font-size: 12px }

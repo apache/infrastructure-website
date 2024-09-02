@@ -1,5 +1,7 @@
 Title: The Infra Roundtable
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 To provide a space for conversations on issues related to the ASF's infrastructure, Infra holds a monthly roundtable of free-flowing discussion.
 
   - The roundtable takes place on the first Wednesday of most months for an hour, usually starting at 1700 UTC, in a huddle on Slack's `#roundtable` channel in the ASF workspace.

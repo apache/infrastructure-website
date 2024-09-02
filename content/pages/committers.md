@@ -1,4 +1,5 @@
 Title: Committers' FAQs
+license: https://www.apache.org/licenses/LICENSE-2.0
 
 A committer is an individual who has write access to the codebase of an Apache project.
 

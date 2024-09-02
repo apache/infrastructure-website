@@ -1,5 +1,7 @@
 Title: Roles for project GitHub repositories
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 Projects can assign roles to people who want access to the project GitHub repositories. Each role gives a different level of access. For Apache projects, the available roles are:
 
   - Read: View or discuss the project code or documentation

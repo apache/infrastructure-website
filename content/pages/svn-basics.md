@@ -1,5 +1,7 @@
 Title: Subversion basics
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 Our developers are located all around the world. To enable them to work together on our software, we keep the source code in Internet-accessible revision control systems, [Git](git.html) and Subversion (SVN).
 
 Apache committers have write access to the Apache Subversion repository so they can make changes to their project's source code. Everyone has read access to the repositories, so you may download the most up-to-date development version of software that interests you.

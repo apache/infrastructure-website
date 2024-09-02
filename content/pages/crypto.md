@@ -1,4 +1,5 @@
 Title: Handling cryptography within an ASF release
+license: https://www.apache.org/licenses/LICENSE-2.0
 
 This page provides PMC members with the information they need to ensure U.S. export control laws are satisfied for ASF product distributions that contain, or are designed or modified to use, cryptography for data confidentiality.
 

@@ -1,5 +1,7 @@
 Title: Managing virtual machines
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 The ASF provides a virtual machine (VM) for any ASF project that need one, with the expectation that the project will actively work to maintain their VM. Note the text in bold in Google's definition of a VM:
 
 <blockquote>

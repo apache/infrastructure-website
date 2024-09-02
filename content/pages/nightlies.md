@@ -1,5 +1,7 @@
 Title: Policy for nightlies.apache.org
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 **Note**: this policy may evolve in the course of a larger review of release and download strategies for The ASF.
 
 This document explains `nightlies.apache.org`: how to use the service and how much data data you can store there for how long, and what Infra expects of users of the service.

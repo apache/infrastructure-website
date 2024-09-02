@@ -1,5 +1,7 @@
 Title: Signing Releases
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 <h2 id="abstract">Introduction<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>
 
 The first part of this document gives release managers a basic introduction to release signing. See under [Further reading](#reading) for links to authoritative sources of deeper information.

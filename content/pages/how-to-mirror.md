@@ -1,5 +1,7 @@
 Title: How to mirror ASF software releases locally
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 **NOTE - as of August, 2021, the ASF itself is not accepting further mirror site applications.**
 
 Organizations may wish to create a download mirror that includes the releases of most or all of the Apache Software Foundation's projects. You may mirror either the full distributions tree, or a reduced tree that excludes a few very resource-intensive (disk-wise and bandwidth-wise) projects (see <a href="#techniques">Mirroring techniques</a>). 

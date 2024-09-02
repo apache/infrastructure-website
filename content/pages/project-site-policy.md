@@ -1,5 +1,7 @@
 Title: Project site policy
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 Every Apache top level project (TLP) must have a static website that conforms with the <a href="https://www.apache.org/foundation/marks/pmcs#navigation" target="_blank">Apache Project Site Branding Policy</a>.
 
 Whimsy's <a href="https://whimsy.apache.org/site/" target="_blank">Apache Project Website Checks</a> tool periodically reviews all TLP websites to provide a report on how well they comply with that policy, and to identify issues that a project may need to address.

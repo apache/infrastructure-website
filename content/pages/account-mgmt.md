@@ -1,4 +1,5 @@
 Title: ASF account management
+license: https://www.apache.org/licenses/LICENSE-2.0
 
 ## Your ASF account
 

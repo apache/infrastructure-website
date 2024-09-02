@@ -1,4 +1,5 @@
 Title: Distributing through the Apple Developer Program
+license: https://www.apache.org/licenses/LICENSE-2.0
 
 The <a href="https://developer.apple.com/programs/" target="_blank">Apple Developer Program</a> is, in Apple's words, a "code to customer" pipeline. Program members can build, test, and distribute apps for release on Apple operating systems.
 

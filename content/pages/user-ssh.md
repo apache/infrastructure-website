@@ -1,5 +1,7 @@
 Title: Committer SSH Access
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 Apache uses SSH (a cryptographic protocol for operating services securely over an unsecured network) to let committers access their project VMs (if configured). 
 
 Remember to keep your client up to date with security patches. Pay close attention to any <a href="#known-host">known host warnings</a>. 

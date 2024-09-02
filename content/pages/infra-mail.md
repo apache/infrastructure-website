@@ -1,5 +1,7 @@
 Title: Apache Infrastructure mailing lists
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 
 <p id="infra-lists">Participation in the Infra mailing lists is only available to ASF committers.</p>
 

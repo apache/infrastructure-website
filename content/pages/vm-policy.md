@@ -1,5 +1,7 @@
 Title: Project VM policy
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 Projects may request from Infra **one** Ubuntu virtual machine for use as they see fit.
 
 Infra will maintain this VM via our existing configuration management tooling. The project's designated committers can obtain sudo access. The project may either maintain the system _in situ_, or provide PR updates to the Infra <a href="https://cwiki.apache.org/confluence/display/INFRA/Puppet+Documentation" target="_blank">Puppet</a> code if they wish to use configuration management.

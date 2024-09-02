@@ -1,5 +1,7 @@
 Title: Release Distribution Policy
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 <h1 id="policy"> </h1>
 
 This policy governs how Apache Top Level Projects (TLPs) distribute releases of their software through the technical channels that Infra maintains, and through other distribution platforms. It complements the formal <a href="https://www.apache.org/legal/release-policy.html" target="_blank">Apache Release Policy</a>, which defines what must be in a software release; and the [Release Creation Process](release-publishing.html) page, which describes the steps for a PMC to create a release.

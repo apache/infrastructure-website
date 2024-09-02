@@ -1,5 +1,7 @@
 title: Handling Release Artifact Integrity Errors at the ASF
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 
 This page will help you resolve [release distribution policy](https://infra.apache.org/release-distribution) errors that our [Download Integrity Checker](https://github.com/apache/infrastructure-download-integrity-checker) discovers.
 Each reported error has an accompanying error code (`CHKxx`). The code will help you resolve issues by using the matrix below:

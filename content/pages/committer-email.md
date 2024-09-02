@@ -1,4 +1,5 @@
 Title: Committer Email
+license: https://www.apache.org/licenses/LICENSE-2.0
 
 Every Apache project committer account has an associated apache.org email address. Some official Apache emails go to these addresses, so you need to check your apache.org email regularly for announcements. You can also use this address for correspondence related to ASF projects you work on.
 

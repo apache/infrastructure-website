@@ -1,5 +1,7 @@
 Title: MFA reset policy
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 **_Draft policy_** Infra will update this page with further details, replacing the _TBD_ notes, as they become available, and will make an announcement when the policy comes into force.
 
 ## Resetting MFA

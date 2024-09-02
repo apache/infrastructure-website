@@ -1,4 +1,5 @@
 Title: Requesting access to the Digicert code signing service
+license: https://www.apache.org/licenses/LICENSE-2.0
 
 The <a href="https://www.digicert.com/" target="_blank">DigiCert</a> code signing service is for JARs and Windows executables.
 

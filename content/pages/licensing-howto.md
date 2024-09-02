@@ -1,5 +1,7 @@
 Title: Assembling LICENSE and NOTICE files
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 This is a "how to" guide for Apache Committers assembling `LICENSE` and `NOTICE` files for their project's product.
 
 ### Overview

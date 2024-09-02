@@ -1,5 +1,7 @@
 Title: Committer password policy
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 This page outlines the policy on committer passwords for LDAP accounts, and explains a bit 
 about the logic behind it.
 

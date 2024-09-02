@@ -1,5 +1,7 @@
 Title: Guidelines for creating a Jira ticket
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 ## Jira tickets
 
 

@@ -1,4 +1,5 @@
 Title: ASF Build and Supported Services
+license: https://www.apache.org/licenses/LICENSE-2.0
 
 ## Introduction
 Here is a summary of The ASF's 'build' (CI/CD) and related services, those hosted at The ASF and those supported externally, directly or via integration.
