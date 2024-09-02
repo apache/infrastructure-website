@@ -1,5 +1,7 @@
 Title: Operating system upgrade policy
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 Infra supports Ubuntu long-term support (LTS) releases and Windows platforms. 
 
 Some services are on a virtual machine (VM) on a host physical server, and some services run on "bare metal". 
