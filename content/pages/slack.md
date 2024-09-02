@@ -1,5 +1,7 @@
 Title: Slack for ASF projects
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 The Apache Software Foundation has a workspace on <a href="https://the-asf.slack.com/" target="_blank">Slack</a> to provide channels on which people working on the same ASF project, or in the same area of the Foundation, can discuss issues, solve problems, and build community in real-time.
 
 A thread in a Slack channel can be a great place to work through a knotty question and move toward consensus. **However**, coming to agreement about something on Slack does not mean the PMC has agreed to or approved something. All formal PMC decisions should take place in one of the project's email lists, so we all have an audit trail of who decided what, and when.
