@@ -1,4 +1,5 @@
 Title: Policy for Outreach to Committers
+license: https://www.apache.org/licenses/LICENSE-2.0
 
 # Outreach
 There are many situations where the Foundation, or groups within,
