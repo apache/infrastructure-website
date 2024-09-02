@@ -1,4 +1,5 @@
 Title: ASFBot: IRC services and archives
+license: https://www.apache.org/licenses/LICENSE-2.0
 
 <p id="intro"></p>
 
