@@ -1,5 +1,7 @@
 Title: Self-hosted runners
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 In GitHub, the runner is the application that runs a job from a GitHub Actions workflow. The runner can run on the hosted machine pools or on self-hosted environments.
 
 A project may want to use a self-hosted runner which, according to GitHub, offers
