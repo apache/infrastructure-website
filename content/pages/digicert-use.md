@@ -1,4 +1,5 @@
 Title: Using the Digicert code signing service
+license: https://www.apache.org/licenses/LICENSE-2.0
 
 ## Transition to DigiCert
 The ASF used Symantec's Secure App Service to provide Windows and JAR code signing functionality from 2014 to 2019. In 2019 the ASF moved from the Symantec service to DigiCert ONE. All new signing must be via the DigiCert service.
