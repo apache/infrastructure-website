@@ -1,5 +1,7 @@
 Title: How to transition to a new PGP key
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 <h2 id="status">Introduction<a class="headerlink" href="#status" title="Permanent link">&para;</a></h2>
 
 This document is for project **committers** who wish to change the PGP key they use at Apache (for example to sign releases). It explains how to create a new PGP key and break it in, gradually having it replace the old key.
