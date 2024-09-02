@@ -1,5 +1,7 @@
 Title: Volunteering for Apache Infrastructure
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 
 There are plenty of opportunities for you to help out with the small tasks Infra does every day to keep the ASF infrastructure alive. Some are self-explanatory or involve following the steps in an established checklist; others require a bit of knowledge of server technology. The best volunteers bring a willingness to learn and a good supply of patience in responding to questions from ASF committers and contributors.
 
