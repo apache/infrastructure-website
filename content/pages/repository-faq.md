@@ -1,5 +1,7 @@
 Title: Apache Maven repositories
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 <h2 id="basic">Basic information<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
 
 **Reminder**: Apache projects **must** release all software packages through the ASF distribution system. See [Release distribution policy](release-distribution.html) for more details.
