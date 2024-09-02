@@ -1,5 +1,7 @@
 Title: GitHub Flavored Markdown
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 Content for this site, and for all sites using the [ASF-Pelican template](asf-pelican.html), is structured using [GitHub Flavored Markdown][3] (GFM).
 
 File extensions are **md**, **markdown**, **mkd**, and **mdown**. If you have an **mdtext** file, it is from the Apache CMS, which is deprecated as of summer, 2021. Change the file extension to **md**.
