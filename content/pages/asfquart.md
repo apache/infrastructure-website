@@ -1,4 +1,5 @@
 Title: ASFQuart
+license: https://www.apache.org/licenses/LICENSE-2.0
 
 ASFQuart is an asynchronous Python web microframework, a customization of <a href="https://github.com/pallets/quart/" target="_blank">Quart</a>, which is built on the principles of the <a href="https://flask.palletsprojects.com/" target="_blank">Flask</a> microsystem. 
 
