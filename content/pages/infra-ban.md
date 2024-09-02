@@ -1,5 +1,7 @@
 Title: Site-wide ban policy
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 ## Policy
 
 The Apache Software Foundation provides a robust and extensive system for serving the needs of the Foundation, of our projects as they create and deploy product releases, and of people all around the world who wish to download and use those products. These services are free of charge; but we offer them with the assumption that everyone uses them appropriately. 
