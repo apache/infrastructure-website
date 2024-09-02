@@ -1,4 +1,5 @@
 Title: Confluence Wiki space for your project
+license: https://www.apache.org/licenses/LICENSE-2.0
 
   - <a href="#overview">Overview</a>
   - <a href="#getting">Getting your project cwiki space</a>
