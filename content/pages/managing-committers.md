@@ -1,5 +1,7 @@
 Title: Managing Project Committers
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 The PMC of each project encourages and guides their new committers, ensures that they have access to the proper resources, advises them about relevant ASF documentation such as the <a href="/new-committers-guide.html" target="_blank">Guide for New Committers</a>, and generally eases their way.
 
 ### Account creation ###
