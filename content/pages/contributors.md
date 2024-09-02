@@ -1,4 +1,5 @@
 Title: Guide for new project contributors
+license: https://www.apache.org/licenses/LICENSE-2.0
 
 This guide provides tips and suggestions for new <strong>contributors</strong> to Apache projects. A contributor is anyone who wants to contribute code, documentation, tests, ideas, anything to any project hosted here at the Apache Software Foundation (ASF).
 
