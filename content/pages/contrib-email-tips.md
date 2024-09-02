@@ -1,4 +1,5 @@
 Title: Tips for Apache project email contributors
+license: https://www.apache.org/licenses/LICENSE-2.0
 
 This is a collection of tips for people wishing to contribute to any <a href="https://www.apache.org/foundation/mailinglists.html" target="_blank">ASF mailing lists</a>.
 
