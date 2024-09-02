@@ -1,4 +1,5 @@
 Title: Application upgrades policy and workflow
+license: https://www.apache.org/licenses/LICENSE-2.0
 
 This policy encompasses Infra's approach to upgrades of Jenkins, Confluence and Jira and their respective plugins.
 
