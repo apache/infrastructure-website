@@ -1,4 +1,6 @@
-Title: Details on contacting Infra
+Title: Contacting Infra
+
+license: https://www.apache.org/licenses/LICENSE-2.0
 
 Here is how to contact Infra in a wide range of situations.
 
