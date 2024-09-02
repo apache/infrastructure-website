@@ -1,4 +1,5 @@
 Title: ASF-Pelican build process
+license: https://www.apache.org/licenses/LICENSE-2.0
 
 In 2019 Infra created ASF-Pelican as a structure and template for projects to use to build their websites, and for the ASF's own website.
 
