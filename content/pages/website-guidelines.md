@@ -1,5 +1,7 @@
 Title: Guidelines for project websites
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 These guidelines relate to Infra policies on resource consumption, linking, legal use, and site ownership. For policies and guidelines that fall under other committees or directors, please see their respective sites/pages.
 
 **NOTE:**  In December, 2021 all TLP web sites and the main `apache.org` site started redirecting any pages using `http` to `https` and set up HTTP Strict Transport Security, or <a href="https://www.globalsign.com/en/blog/what-is-hsts-and-how-do-i-use-it" target="_blank">HSTS</a>. This was at the request of projects and end users, to enhance site security.
@@ -17,6 +19,6 @@ These guidelines relate to Infra policies on resource consumption, linking, lega
 - All web sites must be available on ASF's git or svn servers, and published using git- or pypubsub.
 - Do not host source releases or convenience binaries directly on the web site. See [Release download pages for projects](release-download-pages.html).
 
-**Note**: Any ASF project can use the [ASF-Pelican template](asf-pelican.html) as the basis for their project website. 
+**Note**: Any ASF project can use the ASF **Infrastructure Pelican Action** GitHub Action to compile and deploy its website. The repository for this GHA is <a href="https//:github.com/apache/infrastructure-actions/tree/main/pelican" target="_blank">github.com/apache/infrastructure-actions/tree/main/pelican</a>. 
 
 Should you have any questions, feel free to contact us at <a href="mailto:infrastructure@apache.org" target="_blank">infrastructure@apache.org</a> or on our <a href="https://the-asf.slack.com" target="_blank">Slack channel</a>.
