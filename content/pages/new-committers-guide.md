@@ -1,5 +1,7 @@
 Title: Guide for new project committers
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 Here's how to set up the technical and social environment that will support your work as a committer to an Apache project. Some projects have more specific guidelines which the project website or the PMC provide for you. We also have a thorough [Committers' FAQs](committers.html) for both new and experienced committers.
 
   - <a href="#what-is-a-committer">What is a committer?</a>
