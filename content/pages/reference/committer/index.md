@@ -1,6 +1,9 @@
 Title: Committer Documentation
+
 slug: reference/committer/index
 For committers (primarily)
+
+license: https://www.apache.org/licenses/LICENSE-2.0
 
 A more general list of <a href="https://infra.apache.org/services.html">services and tools</a> is available. 
 
