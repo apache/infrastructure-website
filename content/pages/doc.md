@@ -1,11 +1,12 @@
 Title: Documentation
+license: https://www.apache.org/licenses/LICENSE-2.0
 
 Infra provides a library of resources that is constantly evolving to reflect the current state of Apache's infrastructure and policies.
 
 ### Overview ###
 
 - Please read this <a href="https://www.apache.org/foundation/how-it-works.html#roles" target="_blank">introduction</a> to the different roles within an Apache project community.
-- Through the documentation, unless specifically defined, developers mean: <a href="https://www.apache.org/foundation/how-it-works.html#developers" target="_blank">developer/contributor</a> or <a href="https://www.apache.org/foundation/how-it-works.html#committers" target="_blank">committer</a>.
+- Through the documentation, unless it is specifically defined, the term `developer` mean: <a href="https://www.apache.org/foundation/how-it-works.html#developers" target="_blank">developer/contributor</a> or <a href="https://www.apache.org/foundation/how-it-works.html#committers" target="_blank">committer</a>.
 - <a href="https://www.apache.org/dev/" target="_blank">Here</a> you can find an extensive infrastructure overview for <a href="https://www.apache.org/foundation/how-it-works.html#developers" target="_blank">developers</a>.
 
 ### General guides ###
