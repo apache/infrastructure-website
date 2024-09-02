@@ -1,4 +1,5 @@
 Title: Apache and GitHub
+license: https://www.apache.org/licenses/LICENSE-2.0
 
 The ASF has a <a href="https://github.com/apache" target="_blank">presence on GitHub</a>.
 
