@@ -1,5 +1,7 @@
 Title: Understanding Opensource
 
+license: https://www.apache.org/licenses/LICENSE-2.0
+
 _Cameron Riley originally posted this on the Apache Jakarta website. As that project has been retired, it now appears here._
 
 With the opensource system, if you find any deficiency in the project, the onus is on you to redress that deficiency. Opensource projects provide you with the means and mechanism to not only remove inadequecies in any part of the project but also to improve the project. Without this positive feedback loop an opensource project dies. Opensource doesn't improve by advocacy, mindshare, or by having 10 million users; it improves by participation and contributions from the user community.
