@@ -1,4 +1,5 @@
 Title: Writing a good bug report
+license: https://www.apache.org/licenses/LICENSE-2.0
 
   - <a href="#overview">Bug reporting</a>
   - <a href="#systems">Bug-tracking systems</a>
