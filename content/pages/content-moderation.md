@@ -1,4 +1,5 @@
 Title: Content Moderation Policies
+license: https://www.apache.org/licenses/LICENSE-2.0
 
 This page lists the most common questions and answers surrounding content moderation 
 policies at ASF Infrastructure, including, but not limited to:
