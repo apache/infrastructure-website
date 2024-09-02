@@ -1,4 +1,5 @@
 Title: Project sites using MKDocs
+license: https://www.apache.org/licenses/LICENSE-2.0
 
 <a href="https://www.mkdocs.org/" target="_blank">MKDocs</a> is a static site generator designed for creating project documentation. However, at least one ASF project uses it to build their entire project website.
 
