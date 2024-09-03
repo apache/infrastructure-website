@@ -72,10 +72,10 @@
           <h1>
               Services and Tools
           </h1>
-              <p>Infra maintains a wide range of tools for PMCs, project committers, and the Apache Board to use. Parts of our toolkit are only available to people who have specific duties or roles. Others, like the monitoring tools that show the status of various parts of the Apache infrastructure, are available to everyone.</p>
+              <p>license: https://www.apache.org/licenses/LICENSE-2.0</p>
+<p>Infra maintains a wide range of tools for PMCs, project committers, and the Apache Board to use. Parts of our toolkit are only available to people who have specific duties or roles. Others, like the monitoring tools that show the status of various parts of the Apache infrastructure, are available to everyone.</p>
 <ul>
-<li><a href="#tlps">Services for Top-Level Projects (TLPs)</a>
-<ul>
+<li><a href="#tlps">Services for Top-Level Projects (TLPs)</a><ul>
 <li><a href="#web-sites">Websites</a></li>
 <li><a href="#email">Email</a></li>
 <li><a href="#self-serve">ASF self-service platform</a></li>
@@ -85,8 +85,7 @@
 </ul>
 </li>
 <li><a href="#podlings">Services for incubating projects (podlings)</a></li>
-<li><a href="#tools">Tools for ASF projects</a>
-<ul>
+<li><a href="#tools">Tools for ASF projects</a><ul>
 <li><a href="#source-repository">Version control</a></li>
 <li><a href="#issue-tracking">Issue tracking and feature requests</a></li>
 <li><a href="#repository-to-issue-tracker-integrations">Integrating your repository with Jira tickets</a></li>
@@ -100,8 +99,7 @@
 <li><a href="#voting">Online voting</a></li>
 </ul>
 </li>
-<li><a href="#other">Other tools</a>
-<ul>
+<li><a href="#other">Other tools</a><ul>
 <li><a href="#dns">DNS</a></li>
 <li><a href="#url-shortener">URL shortener</a></li>
 <li><a href="#sharing">Sharing snippets</a></li>
@@ -112,7 +110,9 @@
 </li>
 </ul>
 <h2 id="tlps">Services for Top-Level Projects (TLPs)<a class="headerlink" href="#tlps" title="Permanent link">&para;</a></h2>
+
 <h3 id="web-sites">Websites<a class="headerlink" href="#web-sites" title="Permanent link">&para;</a></h3>
+
 <ul>
 <li><a href="https://apache.org"><code>www.apache.org</code></a> is the main ASF website.</li>
 <li><a href="https://apache.org/dev/#web" targety="_blank">ASF project websites</a>.</li>
@@ -124,6 +124,7 @@
 <li>The <a href="https://whimsy.apache.org/site/" target="_blank">Apache Project Website Checker</a> periodically reviews all TLP websites and reports whether they comply with Apache's <a href="https://www.apache.org/foundation/marks/pmcs#navigation" target="_blank">policies for TLP websites</a>.</li>
 </ul>
 <h3 id="email">Email<a class="headerlink" href="#email" title="Permanent link">&para;</a></h3>
+
 <ul>
 <li>All requests for new email lists should go through the <a href="https://selfserve.apache.org/mailinglist-new.html" target="_blank">self-serve system</a>. Remember not to mark a list as private if you want it publicly archived.</li>
 <li>Email server - QMail/QSMTPD</li>
@@ -135,6 +136,7 @@
 <li>Infra maintains and uses a series of <a href="https://infra.apache.org/infra-mail.html" target="_blank">email lists</a>, some of which are open to committers.</li>
 </ul>
 <h3 id="self-serve">ASF self-service platform<a class="headerlink" href="#self-serve" title="Permanent link">&para;</a></h3>
+
 <p>One of Infra's goals is to empower ASF members, PMCs, and committers to do much of what they need to do without having to request help from Infra. The <a href="https://selfserve.apache.org" target="_blank">Self-Service Platform</a>, for example, provides a number of handy tools that <strong>people who have an Apache email address</strong> (basically, project committers, PMC members, and ASF Members) can use to:</p>
 <ul>
 <li>Create a Jira or Confluence project, Git repository, or email list (PMC Chairs and Infra members).</li>
@@ -145,26 +147,27 @@
 </ul>
 <p>People who are not part of the ASF community but wish to file a Jira ticket about an ASF project's product can use the platform to <a href="https://infra.apache.org/jira-guidelines.html#who" target="_blank">request a Jira account</a>.</p>
 <h3 id="account-mgmt">ASF account management<a class="headerlink" href="#account-mgmt" title="Permanent link">&para;</a></h3>
+
 <p><a href="account-mgmt.html">ASF account management</a> provides guidance if you want to update your account details, or have lost access to your account.</p>
 <h3 id="notices">Getting notices of infrastructure events<a class="headerlink" href="#notices" title="Permanent link">&para;</a></h3>
-You can subscribe to notices of infrastructure events that you want to know about, ranging from Subversion commits to emails to specific lists. [Learn more here](pypubsub.html).
+<p>You can subscribe to notices of infrastructure events that you want to know about, ranging from Subversion commits to emails to specific lists. <a href="pypubsub.html">Learn more here</a>.</p>
 <h3 id="ldap">LDAP-enabled services<a class="headerlink" href="#ldap" title="Permanent link">&para;</a></h3>
-<p>Infra supports many ASF <a href="https://cwiki.apache.org/confluence/display/INFRA/LDAP+enabled+services+at+the+ASF" target="_blank">LDAP-enabled services</a>. You can log in to them with your LDAP credentials.</p>
+
+<p>Infra supports many ASF <a href="https://cwiki.apache.org/confluence/display/INFRA/LDAP+enabled+services+at+the+ASF" target="_blank">LDAP-enabled services</a>. You can log in to them with your LDAP credentials. </p>
 <h2 id="podlings">Services for incubating projects (podlings)<a class="headerlink" href="#podlings" title="Permanent link">&para;</a></h2>
-<p>Infra supports incubating projects, or podlings.</p>
+
+<p>Infra supports incubating projects, or podlings. </p>
 <ul>
 <li>An introduction to <a href="infra-incubator.html">Infra and the Incubator</a>, showing the steps for setting up a new podling.</li>
 <li>Guidance for <a href="project-names.html">selecting a project or product name</a></li>
 </ul>
 <h2 id="tools">Tools for ASF projects<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h2>
+
 <p>Infra supports an array of tools and services to help projects develop and support both their applications and their community, including:</p>
 <ul>
-<li>Every project can use a dedicated space on the <a href="cwiki.html">Confluence wiki</a>.
-<ul>
+<li>Every project can use a dedicated space on the <a href="cwiki.html">Confluence wiki</a>.</li>
 <li>How to <a href="https://cwiki.apache.org/confluence/display/INFRA/Managing+permissions+on+your+project%27s+Confluence+Space" target="_blank">manage user permissions</a> in your project's wiki space.</li>
 <li>How to <a href="https://cwiki.apache.org/confluence/display/INFRA/Giving+a+user+edit+access+to+Confluence" target="_blank">give a user edit access</a> to the wiki space.</li>
-</ul>
-</li>
 <li><a href="https://reporter.apache.org/" target="_blank">Reporter</a> provides actvitity statistics and other information about your project, and editing tools to help you write and submit your project's quarterly Board reports.</li>
 <li>You can create and run a <a href="project-blogs.html">project blog</a>.</li>
 <li>You can establish a <a href="slack.html">Slack channel</a> for real-time team discussions. Once you have your Slack channel, Infra can set up a <em>Slack-Jira bridge</em> so that you get notices in your channel of new or updated Jira tickets. open a Jira ticket for INFRA to get this feature for your TLP's Slack channel.</li>
@@ -174,6 +177,7 @@ You can subscribe to notices of infrastructure events that you want to know abou
 <li>The ASF <a href="https://oauth.apache.org/api.html" target="_blank">OAuth</a> system provides a focal point for services wishing to make use of authentication without security implications around storing sensitive user data. Many Apache services use it to validate that the user requesting access is a committer within the project and has lawful access to the systems in question. <a href="https://cwiki.apache.org/confluence/display/INFRA/ASF+OAuth+Service" target="_blank">Read more about Apache OAuth</a>.</li>
 </ul>
 <h3 id="source-repository">Version control<a class="headerlink" href="#source-repository" title="Permanent link">&para;</a></h3>
+
 <p>Apache provides, and Infra maintains, <a href="version-control.html">code repositories</a> that Apache projects can use to keep their project code safe, accessible to team members, and under version control.</p>
 <ul>
 <li>
@@ -194,6 +198,7 @@ You can subscribe to notices of infrastructure events that you want to know abou
 </li>
 </ul>
 <h3 id="issue-tracking">Issue tracking and feature requests<a class="headerlink" href="#issue-tracking" title="Permanent link">&para;</a></h3>
+
 <p>The ASF supports these options for tracking issues and feature requests:</p>
 <ul>
 <li><a href="https://issues.apache.org/jira" target="_blank">Jira</a> (Note: <a href="qbot.html">qbot</a> is a tool that can integrate Jira notifications with a project's channel in the <code>the-asf</code> <a href="slack.html">Slack</a> workspace.)</li>
@@ -205,13 +210,16 @@ You can subscribe to notices of infrastructure events that you want to know abou
 <p>Here is how to <a href="request-bug-tracker.html">request a bug and issue tracker for your project</a>.</p>
 <p>Here are some guidelines for <a href="bug-writing-guide.html">writing a good bug report</a>.</p>
 <h3 id="repository-to-issue-tracker-integrations">Integrating your repository with Jira tickets<a class="headerlink" href="#repository-to-issue-tracker-integrations" title="Permanent link">&para;</a></h3>
+
 <p>Infra can activate a <a href="svngit2jira.html">Subversion and Git integration with Jira tickets</a> for your project.</p>
 <h3 id="source-repository-publishersubscriber-services">Source repository publisher/subscriber services<a class="headerlink" href="#source-repository-publishersubscriber-services" title="Permanent link">&para;</a></h3>
+
 <ul>
 <li>SvnPubSub</li>
 <li><a href="pypubsub.html">PyPubSub</a></li>
 </ul>
 <h3 id="build">Build services<a class="headerlink" href="#build" title="Permanent link">&para;</a></h3>
+
 <p>Apache supports and models continuous integration and continuous deployment, or <em>CI/CD</em>. The <a href="build-supported-services.html">ASF build and supported services</a> page provides information about, and links to, the CI services the ASF provides and/or supports.</p>
 <p>Other tools to consider:</p>
 <ul>
@@ -219,11 +227,12 @@ You can subscribe to notices of infrastructure events that you want to know abou
 <li><a href="https://www.appveyor.com" target="_blank">AppVeyor</a></li>
 </ul>
 <h3 id="product-naming">Product naming<a class="headerlink" href="#product-naming" title="Permanent link">&para;</a></h3>
+
 <p>See <a href="project-names.html">guidance for choosing a product name</a></p>
 <h3 id="code-signing">Code signing<a class="headerlink" href="#code-signing" title="Permanent link">&para;</a></h3>
+
 <ul>
-<li>Digicert
-<ul>
+<li>Digicert<ul>
 <li>Requesting access to the <a href="digicert-access.html">Digicert code signing service</a></li>
 <li><a href="digicert-use.html">Using Digicert</a></li>
 </ul>
@@ -232,12 +241,15 @@ You can subscribe to notices of infrastructure events that you want to know abou
 <li>More information on <a href="https://cwiki.apache.org/confluence/display/INFRA/Code+Signing+and+Publishing" target="_blank">code signing and publishing</a></li>
 </ul>
 <h3 id="qa">Code quality<a class="headerlink" href="#qa" title="Permanent link">&para;</a></h3>
+
 <p><a href="https://sonarcloud.io/" target="_blank"><strong>SonarCloud</strong></a> is a code quality and security tool that is free to open-source projects. It permits continuous inspection of code quality so your project can perform automatic reviews with static analysis of code to detect bugs, code smells, and security vulnerabilities in 20+ programming languages.</p>
 <p>You can <a href="https://sonarcloud.io/organizations/apache/projects" target="_blank">check the status of many Apache project repositories</a>.</p>
 <p>Guidance for using SonarCloud with an ASF project is <a href="https://cwiki.apache.org/confluence/display/INFRA/SonarCloud+for+ASF+projects" target="_blank">here</a>.</p>
 <h3 id="code-dist">Code distribution<a class="headerlink" href="#code-dist" title="Permanent link">&para;</a></h3>
+
 <p>Use the ASF <a href="https://repository.apache.org/" target="_blank">Nexus Repository Manager</a> to browse for and review code distributions by ASF projects.</p>
 <h4 id="distributions">Distributions<a class="headerlink" href="#distributions" title="Permanent link">&para;</a></h4>
+
 <ul>
 <li><a href="https://www.apache.org/dyn/closer.lua" target="_blank">Current distributions</a></li>
 <li><a href="https://archive.apache.org" target="_blank">Historical distribution archives</a></li>
@@ -245,28 +257,36 @@ You can subscribe to notices of infrastructure events that you want to know abou
 <li><a href="https://repository.apache.org" target="_blank">Nexus</a></li>
 </ul>
 <h3 id="virtual-servers">Virtual servers<a class="headerlink" href="#virtual-servers" title="Permanent link">&para;</a></h3>
+
 <p>Infra can provide Ubuntu virtual machines for projects. See:</p>
 <ul>
 <li><a href="vm-policy.html">Virtual machine policy</a></li>
 <li><a href="vm-for-project.html">Process for requesting a vm</a></li>
 </ul>
 <h3>Use of nightlies.a.o</h3>
+
 <p>nightlies, as implied by its name, is designed as a 'short term' storage solution. See the <a href="nightlies.html">nightlies use policy</a>.</p>
 <h3 id="voting">Online voting<a class="headerlink" href="#voting" title="Permanent link">&para;</a></h3>
+
 <p>Projects can use the <a href="https://steve.apache.org" target="_blank">Apache STeVe</a> voting system instance (offline when not in use). The tool name refers to the <a href="https://en.wikipedia.org/wiki/Single_transferable_vote" target="_blank">single transferable vote</a> system that is one of its voting options. Open a Jira ticket for Infra to provide assistance in preparing STeVe for your project's use.</p>
 <h2 id="other">Other tools<a class="headerlink" href="#other" title="Permanent link">&para;</a></h2>
+
 <h3 id="dns">DNS<a class="headerlink" href="#dns" title="Permanent link">&para;</a></h3>
+
 <p>Infra manages the ASF DNS, which is registered with Namecheap.</p>
 <h3 id="url-shortener">URL shortener<a class="headerlink" href="#url-shortener" title="Permanent link">&para;</a></h3>
+
 <p><a href="https://s.apache.org" target="_blank">URL shortener</a></p>
 <h3 id="sharing">Infra Reporting Dashboard<a class="headerlink" href="#infra-reports" title="Permanent link">&para;</a></h3>
+
 <p>The <a href="https://infra.apache.org/infra-reports.html" target="_blank">ASF Infrastructure Reporting Dashboard</a> contains a collection of reports on the overall health and activity of the infrastructure at the ASF. Some reports are available only for ASF Members and Infra team members.</p>
 <h3 id="machines">Machine list<a class="headerlink" href="#machines" title="Permanent link">&para;</a></h3>
+
 <p><a href="/machines.html" target="_blank">Host Keys and Fingerprints</a></p>
 <h3 id="whimsy">Whimsy<a class="headerlink" href="#whimsy" title="Permanent link">&para;</a></h3>
+
 <p><a href="https://whimsy.apache.org/" target="_blank">Apache Whimsy</a> describes itself as "providing organizational information about the ASF and our projects in easy to consume ways, and to help automate corporate processes at the ASF to make the paperwork behind the scenes easier for our many volunteers."</p>
 <p>There are many Whimsy tools useful for PMCs and individual committers, such as <a href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer search</a>.</p>
-
         </div>
       </div>
     </div>    

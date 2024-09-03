@@ -72,7 +72,8 @@
           <h1>
               Guidelines for creating a Jira ticket
           </h1>
-              <h2>Jira tickets</h2>
+              <p>license: https://www.apache.org/licenses/LICENSE-2.0</p>
+<h2>Jira tickets</h2>
 <p><a href="https://issues.apache.org/jira" target="_blank">Jira</a> is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management. Atlassian provides Jira services to Apache projects. The tool's name is a short form of the name of the Japanese movie monster, <a href="https://en.wikipedia.org/wiki/Jira_(software)" target="_blank">Godzilla</a>, and was an early developer nickname for the application.</p>
 <p>Anyone can review existing Jira tickets, or issues. You must register and log in if you want to create, comment or vote on, upload attachments to, or watch issues. Only <a href="https://www.apache.org/foundation/how-it-works.html#committers" target="_blank">committers</a> can edit, prioritize, schedule and resolve issues.</p>
 <p>ASF and many of its projects use Jira to keep track of work to be done. The largest group of tickets assigned to Infra are requests for Infra to perform a task of one sort or another. The next largest category is reports of possible bugs in the Infrastructure system.</p>
@@ -82,16 +83,21 @@
 <li><a href="#before">Before you create a ticket</a></li>
 <li><a href="#writing">Writing a good Jira ticket</a></li>
 <li><a href="#followup">Jira tickets for Infra</a></li>
-</li></ul>
+
+</ul>
+
 <h3 id="who">Who can create a ticket<a class="headerlink" href="#who" title="Permanent link">&para;</a></h3>
+
 <p>Any person with an ASF Jira account can open a ticket for any ASF project.</p>
 <p>In November, 2022, due to an influx of false Jira accounts creating a flood of spam tickets, Infra ended public signups to ASF Jira accounts. This <a href="https://infra.apache.org/blog/jira-public-signup-disabled.html" target="_blank">blog post</a> discusses the decision.</p>
 <p>If you need to open a Jira ticket for a particular project and do not have an ASF Jira account, you can use the <a href="https://selfserve.apache.org/jira-account.html" target="_blank">Jira account request</a> feature in our <a href="https://selfserve.apache.org" target="_blank">self-serve portal</a> to request an account. The project which you specify in your request will review your information and either approve or reject the application. You will get a notification of their decision.</p>
 <p>If your application is approved, you receive an email with a link to where you can request a password for your Jira account. Once you have logged in, you can create Jira tickets for ASF projects, for Infra, or for the ASF in general.</p>
 <h3 id="account">Approving an account request for a non-ASF reporter<a class="headerlink" href="#account" title="Permanent link">&para;</a></h3>
+
 <p>When someone who is not part of the ASF community requests a Jira account so they can submit tickets related to a project's product, the PMC of the project they specify in their application receives a notice that the application is pending. Please review the <a href="jira-approve-account.html">policy on approving Jira accounts</a> for people who are not members of the ASF community before reviewing the application.</p>
 <p>Review the applicant's information and either approve or deny the request. If you deny the request, you have the option of adding an explanation for the denial. The system sends an email with your decision (including any explanation you provide for a denial) to the applicant.</p>
 <h3 id="before">Before you create a ticket<a class="headerlink" href="#before" title="Permanent link">&para;</a></h3>
+
 <p><strong>Note</strong>: Do not use Jira to submit a ticket about a security vulnerability. Review <a href="https://www.apache.org/security/#reporting-a-vulnerability" target="_blank">the guidelines on reporting vulnerabilities</a> to learn how to report such issues.</p>
 <ol>
 <li>Browse the existing Jira tickets to see if others have already reported the bug you noticed or have requested the task or additional feature that you were going to ask for. If you find a ticket that covers what you wanted to report, you can add a comment and maybe some more relevant information to the existing ticket.</li>
@@ -100,7 +106,7 @@
 <li><strong>Note</strong>: If the ticket is for Infra, and is for a major request, such as to set up a virtual machine for the project, the ticket <strong>should</strong> demonstrate PMC approval of the request, no matter what status the ticket-creator has.</li>
 </ol>
 <h3 id="writing">Writing a good Jira ticket<a class="headerlink" href="#writing" title="Permanent link">&para;</a></h3>
-If there is nothing in Jira already that covers what's on your mind, and the topic seems related to Apache services or an Apache project rather than a third party, click "Create" to display a form where you can describe your issue or request. Providing as much relevant information as you can helps Infra respond quickly and appropriately.
+<p>If there is nothing in Jira already that covers what's on your mind, and the topic seems related to Apache services or an Apache project rather than a third party, click "Create" to display a form where you can describe your issue or request. Providing as much relevant information as you can helps Infra respond quickly and appropriately.</p>
 <p>The form is pretty clear, so the focus here is on a couple of key fields.</p>
 <h4>Project</h4>
 <p>This is the group you want to take a look at the ticket. Select "Infra" for an infrastructure issue or request. Select a specific project if the issue is something like a problem in the project's documentation or website.</p>
@@ -135,6 +141,7 @@ If there is nothing in Jira already that covers what's on your mind, and the top
 <p>There are many optional fields that you can probably skip.</p>
 <p>When you have completed entering the useful information, click <strong>Create</strong> to create the ticket.</p>
 <h3 id="followup">Jira tickets for Infra<a class="headerlink" href="#followup" title="Permanent link">&para;</a></h3>
+
 <p>You cannot read or comment on existing Jira tickets for Infra without having logged in with your Apache credentials. See the "Who can create a ticket" section, at the top of this page, for details.</p>
 <p>The largest group of tickets assigned to Infra are requests for Infra to perform a task of one sort or another. The next largest category is reports of possible bugs in the Infrastructure system.</p>
 <p>Infra may respond in a number of ways, including:</p>
@@ -144,8 +151,7 @@ If there is nothing in Jira already that covers what's on your mind, and the top
 <li>Reporting the issue <strong>resolved</strong>. Please verify the fix or that the requested service is now available. If all is well, and Infra has not changed the status to <em>closed</em> or one of its variants, feel free to do so yourself.</li>
 </ul>
 <p><strong>Note</strong>: A ticket in the status of <em>Waiting for User</em>, will not generally be worked on until the ticket status is set to <em>Waiting for Infra</em>. Be sure to set the ticket to <em>Waiting for Infra</em> if the ticket needs follow-up!</p>
-<p>Here are details about Infra's typical <a href="https://infra.apache.org/responsetime.html" target="_blank">response times</a> to Jira tickets and other requests, which largely depend on the severity of the issue.</p>
-
+<p>Here are details about Infra's typical <a href="https://infra.apache.org/responsetime.html" target="_blank">response times</a> to Jira tickets and other requests, which largely depend on the severity of the issue. </p>
         </div>
       </div>
     </div>    

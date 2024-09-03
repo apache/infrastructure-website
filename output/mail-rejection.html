@@ -72,14 +72,15 @@
           <h1>
               Mail Rejection Policy
           </h1>
-              <h3>"Not authorized" message</h3>
-<p>People emailing ASF addresses may see this message:</p>
+              <p>license: https://www.apache.org/licenses/LICENSE-2.0</p>
+<h3>"Not authorized" message</h3>
+<p>People emailing ASF addresses may see this message: </p>
 <p><code>Recipient address rejected: ASF gnomes rejected your message: SPF fail - not authorized. See https://infra.apache.org/mail-rejection.html</code></p>
 <p>The apache.org MX servers reject messages under many of the following circumstances:</p>
 <ul>
 <li>SPF (Sender Policy Framework) hard fail for domains which have it configured (-all)</li>
 <li>SPF hard fail for major spam targets despite ~all (gmail.com, yahoo.com)</li>
-<li>SPF hard fail for inbound mail from apache.org addresses which do NOT originate from apache.org servers</li>
+<li>SPF hard fail for inbound mail from apache.org addresses which do NOT originate from apache.org servers </li>
 <li>Various RBL provider match</li>
 <li>Invalid HELO hostname (hostname does not exist)</li>
 <li>Invalid HELO domain (domain does not exist)</li>
@@ -94,10 +95,9 @@
 <p>Infra takes a hard-line approach to prolific spammers, and will block all mail traffic from spam domains with a rejection message of <code>550 Domain Blocked - Spam. Contact abuse@infra.apache.org</code>. If you receive this message, you may contact that address (using a different domain) to request review.</p>
 <p>Refer to <a href="https://blogs.apache.org/infra/entry/committers_mail_relay_service" target="_blank">this blog post</a> for additional information.</p>
 <p><a href="/contact.html">Contact Infra</a> via an alternate email address, or <a href="https://issues.apache.org/jira/" target="_blank">file a Jira ticket</a> with any questions.</p>
-<p>If you feel your email has been blocked or rejected in error, please open a ticket at <a href="https://issues.apache.org/jira">https://issues.apache.org/jira</a> and include your external IP address and the To: header.</p>
+<p>If you feel your email has been blocked or rejected in error, please open a ticket at https://issues.apache.org/jira and include your external IP address and the To: header.</p>
 <h3>Issue related to reporting ASF mail as spam</h3>
 <p>Please read <a href="spam-reporting.html">Dealing with spam in your ASF email account</a> and <strong>do not</strong> flag valid ASF-related email as spam.</p>
-
         </div>
       </div>
     </div>    

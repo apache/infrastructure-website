@@ -72,7 +72,8 @@
           <h1>
               Release Download Pages for Projects
           </h1>
-              <p>Your project's release download page is where people can download your product's latest release(s). This page describes how a release manager can put such a page together.</p>
+              <p>license: https://www.apache.org/licenses/LICENSE-2.0</p>
+<p>Your project's release download page is where people can download your product's latest release(s). This page describes how a release manager can put such a page together.</p>
 <p>Review</p>
 <ul>
 <li>the policy on <a href="release-distribution.html">release distribution</a> if you are unsure of the best way to use the project download page</li>
@@ -87,7 +88,9 @@
 <li><a href="#stats">Download statistics</a></li>
 <li><a href="#questions">Questions?</a></li>
 </ul>
+
 <h2 id="links">Download links<a class="headerlink" href="#links" title="Permanent link">&para;</a></h2>
+
 <ul>
 <li>Your project's download page can only link to release artifacts that your PMC has approved.</li>
 <li>Do not link directly to <code>dist.apache.org</code>.</li>
@@ -98,16 +101,18 @@
 <li>Remove all official pre-releases (e.g. milestones, alphas, betas) in a timely fashion once the project releases the final or GA version.</li>
 </ul>
 <h2 id="download-page">Your Apache project's download page<a class="headerlink" href="#download-page" title="Permanent link">&para;</a></h2>
+
 <p>Your Apache project's download page:</p>
 <ul>
 <li><strong>must</strong> have at least one link to the current release. This link <strong>must</strong> use the <code>closer.lua</code> utility. For example: <code>https://www.apache.org/dyn/closer.lua/PROJECT/VERSION/SOURCE-RELEASE</code>. (Note: the <code>mirrors.cgi</code> and <code>closer.cgi</code> scripts have been deprecated. Calls to them redirect to <code>closer.lua</code>.)</li>
 <li><strong>must</strong> have a link to the checksum for the current release. These links <strong>must</strong> use direct links to the Apache distribution server. For example: <code>https://downloads.apache.org/PROJECT/VERSION/CHECKSUM</code>.</li>
 <li><strong>must</strong> have a link to the KEYS file for your project on the Apache distribution server. For example: <code>https://downloads.apache.org/PROJECT/KEYS</code>.</li>
-<li><strong>must</strong> have a link to the signature file for each release. See see the <a href="release-signing.html">release signing</a> page for more information.</li>
+<li><strong>must</strong> have a link to the signature file for each release. See see the <a href="release-signing.html">release signing</a> page for more information. </li>
 <li><strong>should</strong> have instructions on how to verify downloads. For this you can include a link to the <a href="https://www.apache.org/info/verification.html" target="_blank">Apache documentation on verification</a>.</li>
 <li><strong>must not</strong> include a download link to the top-level <code>closer.lua</code> utility (e.g. <code>http://www.apache.org/dyn/closer.lua/PROJECT</code>).</li>
 </ul>
 <h3 id="current-and-older-releases">Current and older releases<a class="headerlink" href="#current-and-older-releases" title="Permanent link">&para;</a></h3>
+
 <ul>
 <li>
 <p>Do <strong>not</strong> keep software distributions on your project's website. Move them to one of the two software distribution sites:</p>
@@ -116,13 +121,14 @@
 <p><strong>Current public releases</strong> appear on <code>downloads.apache.org/</code>. Place current, official releases that the PMC has approved for end-users on the main public release site. Make all changes at <a href="https://dist.apache.org/repos/dist/release/" target="_blank"><code>https://dist.apache.org/repos/dist/release/</code></a>.</p>
 </li>
 <li>
-<p><strong>Older releases</strong> that you no longer recommend to the general public still appear on <code>archive.apache.org/dist/</code>. This site automatically contains all the content that has ever appeared on <code>downloads.apache.org/</code>. It is rarely necessary to touch this site, except during a reorganization. Once your project no longer recommends public use of a particular release, delete it from <code>downloads.apache.org/dist/</code> by removing it from <a href="https://dist.apache.org/repos/dist/release/" target="_blank"><a href="https://dist.apache.org/repos/dist/release/">https://dist.apache.org/repos/dist/release/</a></a>, and removing the link to it from your download page. It remain on the archive site.</p>
+<p><strong>Older releases</strong> that you no longer recommend to the general public still appear on <code>archive.apache.org/dist/</code>. This site automatically contains all the content that has ever appeared on <code>downloads.apache.org/</code>. It is rarely necessary to touch this site, except during a reorganization. Once your project no longer recommends public use of a particular release, delete it from <code>downloads.apache.org/dist/</code> by removing it from <a href="https://dist.apache.org/repos/dist/release/" target="_blank">https://dist.apache.org/repos/dist/release/</a>, and removing the link to it from your download page. It remain on the archive site.</p>
 </li>
 </ul>
 <p>To remove an old release from the release area, use a command of the form:</p>
 <p><code>svn del -m"Archiving release m.n" https://dist.apache.org/repos/dist/release/&lt;project&gt;/etc/m.n</code></p>
 <p>You can use this for release directories or individual files (if multiple releases are present in a single directory).</p>
 <h2 id="download-scripts">Using the closer.lua download script<a class="headerlink" href="#download-scripts" title="Permanent link">&para;</a></h2>
+
 <p>Apache project download pages <strong>must</strong> use a closer.lua script. You'll find below a standard mechanism to let you easily create scripts that comply with the ASF distribution policy.</p>
 <p>There are two options:</p>
 <ul>
@@ -130,7 +136,8 @@
 <li>A <a href="#custom">project-specific script</a>, which in the end calls <code>closer.lua</code> integrated with a page created in the normal way for the project and uses the project's standard document look and feel. This option takes more time to set up.</li>
 </ul>
 <h3 id="closer">Generic closer.lua download script<a class="headerlink" href="#closer" title="Permanent link">&para;</a></h3>
-<p>The starting point for using the generic <code>closer.lua</code> script is a download page in your project's standard documentation which describes the releases. To use the generic script:</p>
+
+<p>The starting point for using the generic <code>closer.lua</code> script is a download page in your project's standard documentation which describes the releases. To use the generic script: </p>
 <ul>
 <li>Alter the page so the download link points to <code>closer.lua</code>.</li>
 <li>Pass in the relative path from the distribution root to the artifact as a parameter.</li>
@@ -140,6 +147,7 @@
 <p><code>http://www.apache.org/dyn/closer.lua/bar/foo/foo-5.5.1.zip?action=download</code></p>
 <p><strong>Note</strong>: there is some information which every project should include on the download page (e.g. KEYS and signatures). Please read about <a href="#best_practice">best practices</a> for download pages.</p>
 <h3 id="custom">Project-specific download script<a class="headerlink" href="#custom" title="Permanent link">&para;</a></h3>
+
 <p>To use a project-specific download script, create a project page containing information for the user about the release to download, together with variables the script populates with the appropriate values.</p>
 <p>Assuming you have called your download page <code>download.html</code>, you can invoke our global download script by using the URI <code>download.cgi</code>.</p>
 <p>This URI takes the path to the page as an input and passes it to <code>closer.lua</code>. When you link to the project page (for example, from the rest of the project documentation), it is important to target these links at the script address (and not the html page address).</p>
@@ -153,35 +161,42 @@
 <p>For example, for artifact <code>foo-1.0.0.tar.gz</code> contained in <code>bar/foo</code>, use <code>[preferred]/bar/foo/foo-1.0.0.tar.gz</code></p>
 <p>Provide links to the checksum and signature for the artifact next to the download link. It is important that users check the sum and verify the signature, so these links should be close and clear.</p>
 <p>For example, for artifact foo-1.0.0.tar.gz contained in bar/foo :</p>
-<pre><code>`&lt;a href="[preferred]/bar/foo/foo-1.0.0.tar.gz"&gt;zip&lt;/a&gt;`
-`&lt;a href='https://downloads.apache.org/bar/foo/foo-1.0.0.tar.gz.asc'&gt;PGP&lt;/a&gt;`
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="err">`</span><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">href</span><span class="o">=</span><span class="ss">&quot;[preferred]/bar/foo/foo-1.0.0.tar.gz&quot;</span><span class="o">&gt;</span><span class="n">zip</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span><span class="err">`</span><span class="w"></span>
+<span class="err">`</span><span class="o">&lt;</span><span class="n">a</span><span class="w"> </span><span class="n">href</span><span class="o">=</span><span class="s1">&#39;https://downloads.apache.org/bar/foo/foo-1.0.0.tar.gz.asc&#39;</span><span class="o">&gt;</span><span class="n">PGP</span><span class="o">&lt;/</span><span class="n">a</span><span class="o">&gt;</span><span class="err">`</span><span class="w"></span>
+</code></pre></div>
+
 <p>More advice on creating a good project page is <a href="#best_practice">below</a>.</p>
 <p>All that remains is to wait for the main website to sync with the new page.</p>
 <h2 id="best_practice">Best practices<a class="headerlink" href="#best_practice" title="Permanent link">&para;</a></h2>
+
 <h3 id="remind-users">Remind users to check sums and signatures</h3>
+
 <p>It is important that users understand that they should always verify the check sums and (if possible) the OpenPGP compatible signature of each file they download. The content of the release download page plays a critical role in this education process.</p>
 <p>Provide clear and easy links to the KEYS, sums and signatures from the download release page or include the information directly in the page itself. The <a href="https://httpd.apache.org/download.cgi" target="_blank">HTTPD page</a> is a good example.</p>
 <p>Include a reminder text with links to more information for users. For example:</p>
-<pre><code>Note: when downloading, please check the
-&lt;a href="https://infra.apache.org/release-signing.html#sha-checksum" target="_blank"&gt;sha checksum&lt;/a&gt;
+<div class="highlight"><pre><span></span><code>Note: when downloading, please check the
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://infra.apache.org/release-signing.html#sha-checksum&quot;</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span><span class="nt">&gt;</span>sha checksum<span class="nt">&lt;/a&gt;</span>
 and verify the 
-&lt;a href="https://www.infra.apache.org/release-signing#openpgp" target="_blank"&gt;OpenPGP compatible signature&lt;/a&gt; 
-from the &lt;a href="https://www.apache.org" target="_blank"&gt;main Apache site&lt;/a&gt;. 
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://www.infra.apache.org/release-signing#openpgp&quot;</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span><span class="nt">&gt;</span>OpenPGP compatible signature<span class="nt">&lt;/a&gt;</span> 
+from the <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://www.apache.org&quot;</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span><span class="nt">&gt;</span>main Apache site<span class="nt">&lt;/a&gt;</span>. 
 Links are provided above (next to the release download link).
-This &lt;a href="https://downloads.apache.org/ws/axis2/KEYS" target="_blank"&gt;KEYS file&lt;/a&gt; 
+This <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://downloads.apache.org/ws/axis2/KEYS&quot;</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span><span class="nt">&gt;</span>KEYS file<span class="nt">&lt;/a&gt;</span> 
 contains the public keys used for signing release. We recommend that you use a web of trust, if possible, to confirm the identity of these keys.
-For more information, please see the &lt;a href="https://www.apache.org/dev/release.html" target="_blank"&gt;Apache Release FAQ&lt;/a&gt;.
-</code></pre>
+For more information, please see the <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">&quot;https://www.apache.org/dev/release.html&quot;</span> <span class="na">target=</span><span class="s">&quot;_blank&quot;</span><span class="nt">&gt;</span>Apache Release FAQ<span class="nt">&lt;/a&gt;</span>.
+</code></pre></div>
+
 <h3 id="linked-urls">Make sure the browser displays linked URLs<a class="headerlink" href="#linked-urls" title="Permanent link">&para;</a></h3>
+
 <p>Users need to be able to verify the origin of the artifacts, signatures and sums they download. Check that the stylesheets your download site uses do not obscure the linked URLs. It is best to use a simple, plain style for download links. Note that some of the Maven-style sheets may obscure some external links in some browsers.</p>
 <h3 id="less-than-24hr">Timing your release announcement<a class="headerlink" href="#less-than-24hr" title="Permanent link">&para;</a></h3>
+
 <p>Your release will be available almost immediately after you upload it to <code>https://downloads.apache.org/</code>, please refer to this <a href="release-publishing.html#timeline">release distribution timeline</a> document for details.</p>
 <h2 id="stats">Download statistics<a class="headerlink" href="#stats" title="Permanent link">&para;</a></h2>
+
 <p>You can review downloads of your project's releases by day, week, month or quarter at our <a href="https://logs.apache.org/stats/">download statistics site</a>. Only project committers can access the page, but they can view download statistics for any Apache project.</p>
 <h2 id="questions">Questions?<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h2>
-<p>If you need assistance in implementing this policy, contact the <code>users@infra.apache.org</code> mailing list.</p>
 
+<p>If you need assistance in implementing this policy, contact the <code>users@infra.apache.org</code> mailing list.</p>
         </div>
       </div>
     </div>    
