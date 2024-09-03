@@ -18,7 +18,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
     <td rowspan="7" style="padding:10px;border: 1px solid">are anyone</td>
     <td style="padding:10px;border: 1px solid">report a <b>security vulnerability</b> in a service that runs on apache.org</td> 
     <td style="padding:10px;border: 1px solid"><code>root@apache.org</code></td> 
-    <td style="padding:10px;border: 1px solid">You may also encrypt the email to this <a href="https://infra.apache.org/tools/infrastructure-root.asc" target="_blank">set of keys</a>.Those you on Linux we have a shell script which might come in handy. See [Infra Tools](https://infra.apache.org/tools/) for more details.</td>
+    <td style="padding:10px;border: 1px solid">You may also encrypt the email to this <a href="https://infra.apache.org/tools/infrastructure-root.asc" target="_blank">set of keys</a>.Those you on Linux we have a shell script which might come in handy. See <a href="https://infra.apache.org/tools/">Infra Tools</a> for more details.</td>
   </tr>
   <tr valign="top" style="border: 1px solid">
     <td style="padding:10px;border: 1px solid">report a <b>security vulnerability</b> in an Apache project</td>
@@ -71,7 +71,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
     <td style="padding:10px;border: 1px solid">are a <b>supplier</b></td>
     <td style="padding:10px;border: 1px solid">anything</td>
     <td style="padding:10px;border: 1px solid"><code>private@infra.apache.org</code></td>
-    <td style="padding:10px;border: 1px solid"><em>Suppliers donate or sell hardware or services to Apache.</em> <a href="https://infra.apache.org/tools/infrastructure-root.asc" target="_blank">Encrypt</a> passwords or send them by other means. See [Infra Tools](https://infra.apache.org/tools/) for more details.</td>
+    <td style="padding:10px;border: 1px solid"><em>Suppliers donate or sell hardware or services to Apache.</em> <a href="https://infra.apache.org/tools/infrastructure-root.asc" target="_blank">Encrypt</a> passwords or send them by other means. See <a href="https://infra.apache.org/tools">Infra Tools</a> for more details.</td>
   </tr>
   <tr valign="top" style="border: 1px solid">
     <td style="padding:10px;border: 1px solid">submitted an <b>ICLA</b> in the past</td>
