@@ -72,8 +72,7 @@
           <h1>
               Assembling LICENSE and NOTICE files
           </h1>
-              <p>license: https://www.apache.org/licenses/LICENSE-2.0</p>
-<p>This is a "how to" guide for Apache Committers assembling <code>LICENSE</code> and <code>NOTICE</code> files for their project's product.</p>
+              <p>This is a "how to" guide for Apache Committers assembling <code>LICENSE</code> and <code>NOTICE</code> files for their project's product.</p>
 <h3>Overview</h3>
 <p>The <code>LICENSE</code> file communicates the licensing of all content in an Apache product distribution. It always contains the text of the Apache License, and
 sometimes more information.</p>
@@ -84,7 +83,8 @@ sometimes more information.</p>
 <li><a href="#guiding">Guiding principle</a></li>
 <li><a href="#source-tree-location">Location</a></li>
 <li><a href="#step-by-step">Step-by-step instructions</a></li>
-<li>Bundling<ul>
+<li>Bundling
+<ul>
 <li><a href="#permissive-deps">Bundling permissively-licensed dependencies</a></li>
 <li><a href="#alv2-dep">Bundling an Apache 2-0 licensed dependency</a></li>
 <li><a href="#bundle-asf-product">Bundling other ASF products</a></li>
@@ -97,84 +97,74 @@ sometimes more information.</p>
 <li><a href="#example-notice">Example NOTICE file</a></li>
 </ul>
 <h3 id="guiding">Guiding principle<a class="headerlink" href="#guiding" title="Permanent link">&para;</a></h3>
-
 <p>The <code>LICENSE</code> and <code>NOTICE</code> files must <strong>exactly represent</strong> the contents of the distribution they reside in. Only components and resources that are actually included in a distribution have any bearing on the content of that distribution's <code>NOTICE</code> and <code>LICENSE</code>.</p>
 <h3 id="source-tree-location">Location<a class="headerlink" href="#source-tree-location" title="Permanent link">&para;</a></h3>
-
 <p><code>LICENSE</code> and <code>NOTICE</code> files belong at the top level of the source tree. ASF prefers that the files have their bare names, but a PMC can opt to call them <code>LICENSE.txt</code> and <code>NOTICE.txt</code>.</p>
 <h3 id="step-by-step">Step-by-step instructions<a class="headerlink" href="#step-by-step" title="Permanent link">&para;</a></h3>
-
 <p>To assemble <code>LICENSE</code> and <code>NOTICE</code> files from scratch for products with complex requirements, follow these steps:</p>
 <ul>
 <li>Copy the full <a href="https://www.apache.org/licenses/LICENSE-2.0.txt" target="_blank">Apache 2.0 license</a> text into a <code>LICENSE</code> file.</li>
-<li>Create a 'NOTICE' file specific to your product's details, and complying with the instructions below. An <a href="#example-notice">example <code>NOTICE</code> file</a> is at the bottom of this page.<ul>
+<li>Create a 'NOTICE' file specific to your product's details, and complying with the instructions below. An <a href="#example-notice">example <code>NOTICE</code> file</a> is at the bottom of this page.
+<ul>
 <li>Add any <a href="#mod-notice">mandatory</a> legal notifications specific to the IP of your product.</li>
 <li>For any <a href="#bundled-vs-non-bundled">bundled</a> dependency, consider whether <code>LICENSE</code> and/or <code>NOTICE</code> need to be modified. <strong>Do not</strong> modify <code>LICENSE</code> or <code>NOTICE</code> for non-bundled dependencies.</li>
 </ul>
 </li>
 </ul>
 <h3 id="permissive-deps">Bundling permissively-licensed dependencies<a class="headerlink" href="#permissive-deps" title="Permanent link">&para;</a></h3>
-
 <p>Bundling a dependency which is issued under one of the following licenses is straightforward, assuming that license applies uniformly to all files within the dependency:</p>
 <ul>
 <li>BSD (without advertising clause)</li>
 <li>MIT/X11</li>
 </ul>
 <p>In <code>LICENSE</code>, add a <a href="http://s.apache.org/Hqj" target="_blank">pointer</a> to the dependency's license within the distribution and a short note summarizing its licensing:</p>
-<div class="highlight"><pre><span></span><code><span class="err">This product bundles SuperWidget 1.2.3, which is available under a</span>
-<span class="err">&quot;3-clause BSD&quot; license. For details, see deps/superwidget/.</span>
-</code></pre></div>
-
+<pre><code>This product bundles SuperWidget 1.2.3, which is available under a
+"3-clause BSD" license. For details, see deps/superwidget/.
+</code></pre>
 <p>Under normal circumstances, there is no need to modify <code>NOTICE</code> to mention a bundled dependency.</p>
 <p><strong>NOTE</strong>: It's also possible to include the text of the 3rd party license within your product's <code>LICENSE</code> file. This is best reserved for short licenses. It's important to specify the version of the dependency as licenses sometimes change as product versions change.</p>
 <p>There are a number of other "permissive" licenses which the ASF Legal Affairs Committee has <a href="https://www.apache.org/legal/resolved.html#category-a" target="_blank"> approved</a> for use. Some of these may require additions to <code>NOTICE</code> -- if in doubt, <a href="https://www.apache.org/legal/resolved.html#asking-questions" target="_blank">ask for assistance</a>.</p>
 <h3 id="alv2-dep">Bundling an Apache 2-0-licensed dependency<a class="headerlink" href="#alv2-dep" title="Permanent link">&para;</a></h3>
-
 <p>Assuming that the bundled dependency itself contains no bundled sub-components under other licenses, so the ALv2 applies uniformly to all files, there is no need to modify <code>LICENSE</code>. However, for completeness it is useful to list the products and their versions, as is done for products under other licenses.</p>
 <p>If the dependency supplies a <code>NOTICE</code> file, its contents must be analyzed and the relevant portions bubbled up into the top-level <code>NOTICE</code> file.</p>
 <h3 id="bundle-asf-product">Bundling other ASF products<a class="headerlink" href="#bundle-asf-product" title="Permanent link">&para;</a></h3>
-
 <p>It is not necessary to duplicate the line "This product includes software developed at the Apache Software Foundation...", though the ASF copyright line and any other portions of <code>NOTICE</code> must be considered for propagation.</p>
 <h3 id="bundled-vs-non-bundled">Bundled vs. non-bundled dependencies<a class="headerlink" href="#bundled-vs-non-bundled" title="Permanent link">&para;</a></h3>
-
 <p>You must customize <code>LICENSE</code> and <code>NOTICE</code> files according to the content of the specific distribution they reside within. Do not add to <code>LICENSE</code> and <code>NOTICE</code> dependencies which are not in the distribution. <strong>Only bundled bits matter.</strong></p>
 <p>Example: If the only difference between <code>apache-foo-1.0.tgz</code> and <code>apache-foo-1.1.tgz</code> is that one bundles SuperWidget while the other forces users to download SuperWidget separately, <code>LICENSE</code> and <code>NOTICE</code> may need to be modified to account for the different bundled bits.</p>
 <h3 id="deps-of-deps">Dependencies of dependencies<a class="headerlink" href="#deps-of-deps" title="Permanent link">&para;</a></h3>
-
 <p>Dependencies of dependencies (including so-called "transitive dependencies") are no different from first-order dependencies for the purposes of assembling <code>LICENSE</code> and <code>NOTICE</code>: <code>LICENSE</code> and <code>NOTICE</code> need only be modified to accommodate them <strong>only if their bits are bundled</strong>.</p>
 <h3 id="mod-notice">Modifications to NOTICE<a class="headerlink" href="#mod-notice" title="Permanent link">&para;</a></h3>
-
 <p>The <code>NOTICE</code> file is reserved for a certain subset of legally required notifications which are not satisfied by either the text of <code>LICENSE</code> or the presence of licensing information embedded within the bundled dependency. Aside from Apache-licensed dependencies which supply <code>NOTICE</code> files of their own, it is uncommon for a dependency to require additions to <code>NOTICE</code>.</p>
 <p>Copyright notifications which have been <a href="https://www.apache.org/legal/src-headers.html#headers" target="_blank">relocated</a>, rather than removed, from source files must be preserved in <code>NOTICE</code>. However, elements such as the copyright notifications embedded within BSD and MIT licenses <a href="https://issues.apache.org/jira/browse/LEGAL-59" target="_blank">do not need to be duplicated</a> in <code>NOTICE</code>. You can leave those notices in their original locations.</p>
 <p>It is important to keep <code>NOTICE</code> as brief and simple as possible, as each addition places a burden on downstream consumers.</p>
 <p><strong>Do not</strong> add anything to <code>NOTICE</code> which is not legally required.</p>
 <h3 id="binary">Binary distributions<a class="headerlink" href="#binary" title="Permanent link">&para;</a></h3>
-
 <p>What applies to canonical source distributions also applies to all redistributions, including binary redistributions:</p>
 <p><strong>All redistributions must obey the licensing requirements of the contents.</strong></p>
 <p>When assembling binary distributions, it is common to pull in and bundle additional dependencies which are not bundled with the source distribution. You must account for these additional dependencies in <code>LICENSE</code> and <code>NOTICE</code>. As a result, the <code>LICENSE</code> and <code>NOTICE</code> files for a binary distribution may differ from those in the source distribution it was built from.</p>
 <p>In any case, the principle remains the same: <code>LICENSE</code> and <code>NOTICE</code> must <strong>exactly</strong> represent the contents of the distribution they reside in.</p>
 <h3 id="example-notice">Example NOTICE file<a class="headerlink" href="#example-notice" title="Permanent link">&para;</a></h3>
-
 <p>The following is the text of the <code>NOTICE</code> file for <a href="https://royale.apache.org/" target="_blank">Apache Royale</a>:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Apache</span> <span class="n">Royale</span>
-<span class="n">Copyright</span> <span class="mi">2020</span> <span class="n">The</span> <span class="n">Apache</span> <span class="n">Software</span> <span class="n">Foundation</span>
+<pre><code>Apache Royale
+Copyright 2020 The Apache Software Foundation
 
-<span class="n">This</span> <span class="n">product</span> <span class="n">includes</span> <span class="n">software</span> <span class="n">developed</span> <span class="k">at</span>
-<span class="n">The</span> <span class="n">Apache</span> <span class="n">Software</span> <span class="n">Foundation</span> <span class="p">(</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="p">.</span><span class="n">apache</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="p">).</span>
+This product includes software developed at
+The Apache Software Foundation (http://www.apache.org/).
 
-<span class="n">The</span> <span class="n">Initial</span> <span class="n">Developer</span> <span class="k">of</span> <span class="k">some</span> <span class="n">parts</span> <span class="k">of</span> <span class="n">the</span> <span class="n">framework</span><span class="p">,</span> <span class="n">which</span> <span class="k">are</span> <span class="n">copied</span> <span class="k">from</span><span class="p">,</span> <span class="n">derived</span> <span class="k">from</span><span class="p">,</span> <span class="k">or</span>
-<span class="n">inspired</span> <span class="k">by</span> <span class="n">Adobe</span> <span class="n">Flex</span> <span class="p">(</span><span class="n">via</span> <span class="n">Apache</span> <span class="n">Flex</span><span class="p">),</span> <span class="k">is</span> <span class="n">Adobe</span> <span class="n">Systems</span> <span class="n">Incorporated</span> <span class="p">(</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="p">.</span><span class="n">adobe</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="p">).</span>
-<span class="n">Copyright</span> <span class="mi">2003</span> <span class="o">-</span> <span class="mi">2012</span> <span class="n">Adobe</span> <span class="n">Systems</span> <span class="n">Incorporated</span><span class="p">.</span> <span class="k">All</span> <span class="n">Rights</span> <span class="n">Reserved</span><span class="p">.</span>
+The Initial Developer of some parts of the framework, which are copied from, derived from, or
+inspired by Adobe Flex (via Apache Flex), is Adobe Systems Incorporated (http://www.adobe.com/).
+Copyright 2003 - 2012 Adobe Systems Incorporated. All Rights Reserved.
 
-<span class="n">The</span> <span class="n">Initial</span> <span class="n">Developer</span> <span class="k">of</span> <span class="n">the</span> <span class="n">examples</span><span class="o">/</span><span class="n">mxroyale</span><span class="o">/</span><span class="n">tourdeflexmodules</span><span class="p">,</span> 
-<span class="k">is</span> <span class="n">Adobe</span> <span class="n">Systems</span> <span class="n">Incorporated</span> <span class="p">(</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="p">.</span><span class="n">adobe</span><span class="p">.</span><span class="n">com</span><span class="o">/</span><span class="p">).</span>
-<span class="n">Copyright</span> <span class="mi">2009</span> <span class="o">-</span> <span class="mi">2013</span> <span class="n">Adobe</span> <span class="n">Systems</span> <span class="n">Incorporated</span><span class="p">.</span> <span class="k">All</span> <span class="n">Rights</span> <span class="n">Reserved</span><span class="p">.</span>
+The Initial Developer of the examples/mxroyale/tourdeflexmodules, 
+is Adobe Systems Incorporated (http://www.adobe.com/).
+Copyright 2009 - 2013 Adobe Systems Incorporated. All Rights Reserved.
 
-<span class="n">The</span> <span class="n">ping</span> <span class="n">sound</span> <span class="n">effect</span> <span class="p">(</span><span class="n">ping</span><span class="p">.</span><span class="n">mp3</span><span class="p">)</span> <span class="k">in</span> 
-<span class="n">examples</span><span class="o">/</span><span class="n">mxroyale</span><span class="o">/</span><span class="n">tourdeflexmodules</span><span class="o">/</span><span class="n">src</span><span class="o">/</span><span class="n">mx</span><span class="o">/</span><span class="n">effects</span><span class="o">/</span><span class="n">assets</span>
-<span class="n">was</span> <span class="n">created</span> <span class="k">by</span> <span class="n">CameronMusic</span><span class="p">.</span> <span class="p">(</span><span class="n">http</span><span class="p">:</span><span class="o">//</span><span class="n">www</span><span class="p">.</span><span class="n">freesound</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="n">people</span><span class="o">/</span><span class="n">cameronmusic</span><span class="o">/</span><span class="n">sounds</span><span class="o">/</span><span class="mi">138420</span><span class="o">/</span><span class="p">)</span>
-</code></pre></div>
+The ping sound effect (ping.mp3) in 
+examples/mxroyale/tourdeflexmodules/src/mx/effects/assets
+was created by CameronMusic. (http://www.freesound.org/people/cameronmusic/sounds/138420/)
+</code></pre>
+
         </div>
       </div>
     </div>    
