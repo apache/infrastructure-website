@@ -1,5 +1,4 @@
 Title: Services and Tools
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 Infra maintains a wide range of tools for PMCs, project committers, and the Apache Board to use. Parts of our toolkit are only available to people who have specific duties or roles. Others, like the monitoring tools that show the status of various parts of the Apache infrastructure, are available to everyone.
