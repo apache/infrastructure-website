@@ -1,5 +1,4 @@
 Title: Subscribe to Apache Software Foundation infrastructure events
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 The ASF employs a plain-text publisher/subscriber service called **PyPubSub** at `pubsub.apache.org:2069`, which lists most events that happen within the Foundation's infrastructure.
