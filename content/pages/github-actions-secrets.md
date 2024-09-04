@@ -1,5 +1,4 @@
 Title: GitHub Actions and Secrets
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 **Notice**: December 27, 2020: We only allow Actions that are official "Made by GitHub" or local to the Apache org on GitHub, to address a potential security vulnerability. This  is an incident-related policy change. We are researching the situation, and the policy may evolve based on what we learn.
