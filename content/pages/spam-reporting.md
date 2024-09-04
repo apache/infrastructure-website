@@ -1,5 +1,4 @@
 Title: Dealing with spam in your ASF email account
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 The ASF acts as a forwarding service for @apache.org committer email addresses, passing email delivered to your @apache.org address to your personal designated account. Due to this process, mail your personal account receives via your @apache.org email address has a header that indicates it comes from the ASF's mail servers.
