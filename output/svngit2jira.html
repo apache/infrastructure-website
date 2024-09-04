@@ -72,16 +72,20 @@
           <h1>
               Subversion and Git integration with Jira tickets
           </h1>
-              <p>Many projects use Jira for managing tracking bugs, milestones, feature requests and so on, and many of these projects keep track of which commit affects which ticket. To make things even easier, we have a service called <code>svngit2jira</code>, which integrates
+              <p>license: https://www.apache.org/licenses/LICENSE-2.0</p>
+<p>Many projects use Jira for managing tracking bugs, milestones, feature requests and so on, and many of these projects keep track of which commit affects which ticket. To make things even easier, we have a service called <code>svngit2jira</code>, which integrates
 Subversion and Git commits with Jira tickets.</p>
 <h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
+
 <p>Simply mention a Jira ticket in a commit, and the specific ticket receives an update indicating that the commit has been made in reference it. For example, scroll down in <a href="https://issues.apache.org/jira/browse/CLOUDSTACK-1638" target="_blank">this CloudStack ticket</a> to see the commit mentioned.</p>
-<p>This service also plugs into the <a href="https://reviews.apache.org/r/" target="_blank">ReviewBoard</a> instance if you use Jira ticket names there, as the CloudStack project does.</p>
+<p>This service also plugs into the <a href="https://reviews.apache.org/r/" target="_blank">ReviewBoard</a> instance if you use Jira ticket names there, as the CloudStack project does.</p></p>
 <h2 id="general-use-of-the-service">General use<a class="headerlink" href="#general-use-of-the-service" title="Permanent link">&para;</a></h2>
-<p>The most common scenario is to mention a Jira ticket in your commit, and the service updates the ticket to reflect your new commit. Some
+
+<p>The most common scenario is to mention a Jira ticket in your commit, and the service updates the ticket to reflect your new commit. Some 
 projects have a trigger set so that it only updates a ticket if the first  sentence is the Jira ticket number, but we can tailor this to suit your project's needs.</p>
 <h2 id="getting-set-up-for-svngit2jira">Setting up svngit2jira<a class="headerlink" href="#getting-set-up-for-svngit2jira" title="Permanent link">&para;</a></h2>
-<p>To enable the service for your project, create an
+
+<p>To enable the service for your project, create an 
 <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Infra Jira ticket</a>. Include this information:</p>
 <ul>
 <li>The name of the project.</li>
@@ -92,8 +96,8 @@ projects have a trigger set so that it only updates a ticket if the first  sente
 <li>If you are using Git, are there any specific branches you'd like the service to ignore?</li>
 </ul>
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
-<p>The source for this feature is <a href="https://svn.apache.org/repos/infra/infrastructure/trunk/projects/svngit2jira/" target="_blank">freely available</a>.</p>
 
+<p>The source for this feature is <a href="https://svn.apache.org/repos/infra/infrastructure/trunk/projects/svngit2jira/" target="_blank">freely available</a>.</p>
         </div>
       </div>
     </div>    
