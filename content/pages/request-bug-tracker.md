@@ -1,5 +1,4 @@
 Title: Requesting or changing an issue and feature-request tracker for a project
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 The ASF recommends these options for tracking issues and feature requests:
