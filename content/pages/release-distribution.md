@@ -1,5 +1,4 @@
 Title: Release Distribution Policy
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 <h1 id="policy"> </h1>
