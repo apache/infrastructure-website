@@ -1,5 +1,4 @@
 Title: Guidelines for project websites
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 These guidelines relate to Infra policies on resource consumption, linking, legal use, and site ownership. For policies and guidelines that fall under other committees or directors, please see their respective sites/pages.
