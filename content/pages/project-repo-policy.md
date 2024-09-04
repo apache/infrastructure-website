@@ -1,5 +1,4 @@
 Title: Project Code Repository Policy
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 Each Apache project can have a directory in the Apache Subversion repository, or Git repositories, for their product code and assets. The majority of projects now use Git.
