@@ -1,5 +1,4 @@
 Title: Using Qbot with the-asf Slack channels
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 The Infrastructure team's **Qbot** is a Slack assistant that can simplify both important and frivolous tasks on Slack channels in the `the-asf` workspace. It can support requests in channels for PMCs, ASF committees, the ASF Board and `asfmembers`.
