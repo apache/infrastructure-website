@@ -1,5 +1,4 @@
 Title: About the Apache Infrastructure Team
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 # ASF Infra
