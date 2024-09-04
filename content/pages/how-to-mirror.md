@@ -1,5 +1,4 @@
 Title: How to mirror ASF software releases locally
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 **NOTE - as of August, 2021, the ASF itself is not accepting further mirror site applications.**
