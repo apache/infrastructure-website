@@ -1,5 +1,4 @@
 Title: Project site policy
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 Every Apache top level project (TLP) must have a static website that conforms with the <a href="https://www.apache.org/foundation/marks/pmcs#navigation" target="_blank">Apache Project Site Branding Policy</a>.
