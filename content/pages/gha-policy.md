@@ -1,5 +1,4 @@
 title: Policy on use of GitHub Actions
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 Due to misconfigurations in their builds, some projects have been using unsupportable numbers of [GitHub Actions](github-actions-secrets.html). As part of fixing this situation, Infra has established a policy for GitHub Actions use. This policy comes into effect on **April 20, 2024**:
