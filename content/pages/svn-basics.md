@@ -1,5 +1,4 @@
 Title: Subversion basics
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 Our developers are located all around the world. To enable them to work together on our software, we keep the source code in Internet-accessible revision control systems, [Git](git.html) and Subversion (SVN).
