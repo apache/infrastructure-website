@@ -72,8 +72,7 @@
           <h1>
               Open-access SVN
           </h1>
-              <p>license: https://www.apache.org/licenses/LICENSE-2.0</p>
-<p>This page collects arguments for and against running our Subversion service in a manner that permits committers the technical
+              <p>This page collects arguments for and against running our Subversion service in a manner that permits committers the technical
 ability (but not the social privilege) to make commits against any part of the <code>https://svn.apache.org/repos/asf</code> repository.</p>
 <ul>
 <li><a href="#upsides">Upsides</a></li>
@@ -82,27 +81,23 @@ ability (but not the social privilege) to make commits against any part of the <
 <li><a href="#alternate-proposal-1">Alternate proposal 1</a></li>
 <li><a href="#alternative-proposal-2-slow-pedal-this-idea-and-focus-on-social-aspects-bimargulies">Alternative proposal 2</a></li>
 </ul>
-
 <h2 id="upsides">Upsides<a class="headerlink" href="#upsides" title="Permanent link">&para;</a></h2>
-
 <ul>
 <li>Simplifies administration of SVN ACL.</li>
 <li>Allows more cross-collaboration into participating projects.</li>
 <li>Changes the culture from a set of technically-closed communities to a set of mostly-open ones.</li>
 </ul>
 <h2 id="downsides">Downsides<a class="headerlink" href="#downsides" title="Permanent link">&para;</a></h2>
-
 <ul>
 <li>PMCs no longer control who has commit privileges (technically untrue. They are simply being asked to use blacklists instead of whitelists).</li>
 <li>Increases leverage for abusive behavior, though this is mitigated by the relative ease by which bad commits can be reverted via reverse-merging, or, for more invasive changes, plastering over them by deleting the entire tree and copying the last known good revision to HEAD. This only starts getting complicated when good commits start being mingled with bad ones.</li>
 <li>One hacked account can damage all of <code>/repos/asf</code> (disregard for basic tenet of security: provide access only to those who require it and only to the bare minimum of what they need).</li>
 <li>May lead to confusion about the distinction between technical and social privileges.</li>
-<li>No single usable accounting of who on a PMC has commit permissions. Impact on non SVN-related resources for PMC and foundation (example: <code>https://home.apache.org/committer-index.html</code>). </li>
+<li>No single usable accounting of who on a PMC has commit permissions. Impact on non SVN-related resources for PMC and foundation (example: <code>https://home.apache.org/committer-index.html</code>).</li>
 <li>Increases workload on PMCs and volunteer committers.</li>
 <li>Creates a precedent where the foundation imposes its will on PMCs for no clearly defined or overwhelming reason (also technically untrue as allowances will be made for grandfathering projects).</li>
 </ul>
 <h2 id="participating-projects">Participating Projects<a class="headerlink" href="#participating-projects" title="Permanent link">&para;</a></h2>
-
 <ul>
 <li>Lucy</li>
 <li>Onami</li>
@@ -111,15 +106,13 @@ ability (but not the social privilege) to make commits against any part of the <
 <li>Hadoop Developer Tools</li>
 <li>Helix</li>
 <li>Kalumet</li>
-<li>Infra buildbot config</li></li>
+<li>Infra buildbot config</li>
 </ul>
 <h2 id="alternate-proposal-1">Alternate proposal 1<a class="headerlink" href="#alternate-proposal-1" title="Permanent link">&para;</a></h2>
-
 <p>Each project that is using svn shall have a top-level 'sandbox' directory where any committer may make branches of trunk (or of other branches). Members/Committers will be encouraged to participate in any ASF project via this sandbox area until such time as they are offered direct commit access to the rest of the project's svn tree.</p>
 <p>Each project will additionally have a <code>sandbox-commits@project.apache.org</code> svn commit mailing list that anyone may join.</p>
 <p>It would be wonderful from an Infra standpoint, if this alternate proposal gains traction, that we could "standardize" and "templatize" our authz rules. The authorization file is already preprocessed by a script before it becomes live, so this is something that could still lead to some simplification of our rulesets.</p>
 <h2 id="alternative-proposal-2-slow-pedal-this-idea-and-focus-on-social-aspects-bimargulies">Alternative Proposal 2: slow-pedal this and focus on social aspects<a class="headerlink" href="#alternative-proposal-2-slow-pedal-this-idea-and-focus-on-social-aspects-bimargulies" title="Permanent link">&para;</a></h2>
-
 <p>The  proposal from bimargulies here rests on two foundations:</p>
 <ul>
 <li>Streamline administration</li>
@@ -127,12 +120,11 @@ ability (but not the social privilege) to make commits against any part of the <
 </ul>
 <p>Changing the authz scheme can give projects a push. However, we have many other possible means of encouraging projects to adopt a more open approach. <code>SCM authz</code> is a tool that the foundation provides to help projects manage themselves. The theory is that many projects could benefit from a shift in attitude toward authz and even commit rights. However, 'many' is not all. I've been talking to someone who might bring a project to the incubator. This project builds software that has very strict assurance requirements. If they were to come, they would probably feel the need to manage a tight ACL. In discussions, it seems to me that existing projects that are far along the sequence towards, 'a stable product that evolves very cautiously' are less likely to adopt an open ACL.</p>
 <p>In any case, the argument about the ACL versus culture cuts both ways. Right now, with no change to the LDAP-based ACL, any project could adopt the following policy:</p>
-<div class="highlight"><pre><span></span><code><span class="err">Commit Access is granted upon request and acceptance of an ICLA. </span>
-<span class="err">If you request and receive commit access, you are expected to read, understand, and comply with the project&#39;s policies. </span>
-<span class="err">If you abuse this, we will remove your access.</span>
-</code></pre></div>
-
-<p>(Of course, this could be weakened to mention Foundation membership or committer status on other projects.) </p>
+<pre><code>Commit Access is granted upon request and acceptance of an ICLA. 
+If you request and receive commit access, you are expected to read, understand, and comply with the project's policies. 
+If you abuse this, we will remove your access.
+</code></pre>
+<p>(Of course, this could be weakened to mention Foundation membership or committer status on other projects.)</p>
 <p>In any case, the eager would-be contributor with an existing ICLA would merely need to wait for the PMC chair to type a command in response to a request. Is this really much of a barrier? I submit that the cultural posture that accompanies the tight ACL on many projects today is a much stronger barrier.</p>
 <p>Thus, my alternative proposal has two aspects. First, to focus attention via the Community Development PMC on exploring more open project cultures. Second, to look for ways to ease administration on the assumption that (some) projects will still maintain ACLs.</p>
 <p>I offer a few thoughts on that:</p>
@@ -141,6 +133,7 @@ ability (but not the social privilege) to make commits against any part of the <
 <li>The incubator seems to me to be an authz accident waiting to happen. Maybe the solution here is simply to adopt the 'all committers' model for the incubator, or maybe we could have an LDAP group after all, so that fat-fingered IPMC chairs are not making many tiny edits.</li>
 </ol>
 <p>In other words, could we significantly reduce the amount of template editing that goes on without clear-cutting all the existing ACLs?</p>
+
         </div>
       </div>
     </div>    

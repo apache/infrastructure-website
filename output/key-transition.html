@@ -72,9 +72,7 @@
           <h1>
               How to transition to a new PGP key
           </h1>
-              <p>license: https://www.apache.org/licenses/LICENSE-2.0</p>
-<h2 id="status">Introduction<a class="headerlink" href="#status" title="Permanent link">&para;</a></h2>
-
+              <h2 id="status">Introduction<a class="headerlink" href="#status" title="Permanent link">&para;</a></h2>
 <p>This document is for project <strong>committers</strong> who wish to change the PGP key they use at Apache (for example to sign releases). It explains how to create a new PGP key and break it in, gradually having it replace the old key.</p>
 <h2>Contents</h2>
 <ul>
@@ -84,19 +82,14 @@
 <li><a href="#transition-export">Exporting both new and old keys</a></li>
 <li><a href="#transition-fingerprints">Fingerprinting new and old keys</a></li>
 </ul>
-
 <h2 id="important">Important note<a class="headerlink" href="#important" title="Permanent link">&para;</a></h2>
-
 <p>If your key has been compromised, you <strong>must not</strong> use a transition period as described below. Revoke the compromised key immediately and create a new one. Consider all <a href="/release-signing.html#web-of-trust" target="_blank">web of trust</a> links signed by the old key as suspect. You must establish a completely new set of links.</p>
 <h2 id="motivation">Why replace a key?<a class="headerlink" href="#motivation" title="Permanent link">&para;</a></h2>
-
 <p>When replacing one uncompromised key with a newer (typically longer) one, using a transition period when both keys are trustworthy and participate in the <a href="/release-signing.html#web-of-trust" target="_blank">web of trust</a> uses <em>trust transitivity</em> to use links to the old key to trust signatures and links created by the new key. During a transition, both keys are trustworthy but you only use the newer one to sign documents and certify links in the web of trust.</p>
 <p>This document describes how to use <a href="openpgp.html">GnuPG</a> to create a new key and manage both keys during this transition period.</p>
 <h2 id="single-keyring">Using a single keyring for two keys<a class="headerlink" href="#single-keyring" title="Permanent link">&para;</a></h2>
-
 <p>It is best to use a single keyring containing both keys.</p>
 <h3 id="generate-new-key">Generate a new key<a class="headerlink" href="#generate-new-key" title="Permanent link">&para;</a></h3>
-
 <p>Generate the new key either:</p>
 <ul>
 <li>directly in the keyring containing the old key</li>
@@ -104,188 +97,167 @@
 </ul>
 <p>To generate a strong <a href="release-signing.html#rsa">RSA key</a> follow <a href="openpgp.html#generate-key">these instructions</a>. If you use a separate keyring, follow <a href="openpgp.html#secret-key-transfer">these instructions</a> to transfer it.</p>
 <p>Both new and old keys should now be contained in the same keyring. Verify this by:</p>
-<div class="highlight"><pre><span></span><code>$ gpg --list-secret-keys  
+<pre><code>$ gpg --list-secret-keys  
 
 alice/secring.gpg
 
 
-sec   1024D/AD741727 <span class="m">2009</span>-08-20
-uid                  Alice Example <span class="o">(</span>EXAMPLE OF OLD KEY<span class="o">)</span> &lt;alice@example.org&gt;
-ssb   1024g/268883A9 <span class="m">2009</span>-08-20
+sec   1024D/AD741727 2009-08-20
+uid                  Alice Example (EXAMPLE OF OLD KEY) &lt;alice@example.org&gt;
+ssb   1024g/268883A9 2009-08-20
 
 
-sec   4096R/E2B054B8 <span class="m">2009</span>-08-20
-uid                  Alice Example <span class="o">(</span>EXAMPLE NEW KEY<span class="o">)</span> &lt;alice@example.org&gt;
-ssb   4096R/4A6D5217 <span class="m">2009</span>-08-20
-</code></pre></div>
-
+sec   4096R/E2B054B8 2009-08-20
+uid                  Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;
+ssb   4096R/4A6D5217 2009-08-20
+</code></pre>
 <p>Both new and old keys should be listed.</p>
 <h3 id="open-interaction-edit">Open interactive edit mode<a class="headerlink" href="#open-interaction-edit" title="Permanent link">&para;</a></h3>
-
 <p>You need to perform a number of operations on the new key. Though you can perform them individually, saving and closing after each one, it is more convenient to use <em>interactive edit</em> mode.</p>
 <p>Start by opening an edit session on the new key, for example E2B054B8</p>
-<div class="highlight"><pre><span></span><code>$ gpg --edit-key E2B054B8
-gpg <span class="o">(</span>GnuPG<span class="o">)</span> <span class="m">1</span>.4.9<span class="p">;</span> Copyright <span class="o">(</span>C<span class="o">)</span> <span class="m">2008</span> Free Software Foundation, Inc.
+<pre><code>$ gpg --edit-key E2B054B8
+gpg (GnuPG) 1.4.9; Copyright (C) 2008 Free Software Foundation, Inc.
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
 
 Secret key is available.
 
 
-pub  4096R/E2B054B8  created: <span class="m">2009</span>-08-20  expires: never       usage: SC
+pub  4096R/E2B054B8  created: 2009-08-20  expires: never       usage: SC
 
                      trust: unknown       validity: unknown
-sub  4096R/4A6D5217  created: <span class="m">2009</span>-08-20  expires: never       usage: E 
+sub  4096R/4A6D5217  created: 2009-08-20  expires: never       usage: E 
 
-<span class="o">[</span> unknown<span class="o">]</span> <span class="o">(</span><span class="m">1</span><span class="o">)</span>. Alice Example <span class="o">(</span>EXAMPLE NEW KEY<span class="o">)</span> &lt;alice@example.org&gt;
+[ unknown] (1). Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;
 
 
 Command&gt; 
-</code></pre></div>
-
+</code></pre>
 <h3 id="trust-new-key">Trust the new key<a class="headerlink" href="#trust-new-key" title="Permanent link">&para;</a></h3>
-
 <p>The new key needs to be marked as ultimately trusted in this keyring. This will ensure that the <a href="release-signing.html#web-of-trust" target="_blank">web of trust</a> links signed by this key will be trusted automatically.</p>
-<div class="highlight"><pre><span></span><code><span class="n">Command</span><span class="o">&gt;</span><span class="w"> </span><span class="n">trust</span><span class="w"></span>
-<span class="n">pub</span><span class="w">  </span><span class="mi">4096</span><span class="n">R</span><span class="o">/</span><span class="n">E2B054B8</span><span class="w">  </span><span class="nl">created</span><span class="p">:</span><span class="w"> </span><span class="mi">2009</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">20</span><span class="w">  </span><span class="nl">expires</span><span class="p">:</span><span class="w"> </span><span class="n">never</span><span class="w">       </span><span class="k">usage</span><span class="err">:</span><span class="w"> </span><span class="n">SC</span><span class="w"></span>
+<pre><code>Command&gt; trust
+pub  4096R/E2B054B8  created: 2009-08-20  expires: never       usage: SC
 
-<span class="w">                     </span><span class="nl">trust</span><span class="p">:</span><span class="w"> </span><span class="k">unknown</span><span class="w">       </span><span class="nl">validity</span><span class="p">:</span><span class="w"> </span><span class="k">unknown</span><span class="w"></span>
-<span class="n">sub</span><span class="w">  </span><span class="mi">4096</span><span class="n">R</span><span class="o">/</span><span class="mi">4</span><span class="n">A6D5217</span><span class="w">  </span><span class="nl">created</span><span class="p">:</span><span class="w"> </span><span class="mi">2009</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">20</span><span class="w">  </span><span class="nl">expires</span><span class="p">:</span><span class="w"> </span><span class="n">never</span><span class="w">       </span><span class="k">usage</span><span class="err">:</span><span class="w"> </span><span class="n">E</span><span class="w"> </span>
+                     trust: unknown       validity: unknown
+sub  4096R/4A6D5217  created: 2009-08-20  expires: never       usage: E 
 
-<span class="o">[</span><span class="n"> unknown</span><span class="o">]</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="w"> </span><span class="n">Alice</span><span class="w"> </span><span class="n">Example</span><span class="w"> </span><span class="p">(</span><span class="n">EXAMPLE</span><span class="w"> </span><span class="k">NEW</span><span class="w"> </span><span class="k">KEY</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="n">alice</span><span class="nv">@example</span><span class="p">.</span><span class="n">org</span><span class="o">&gt;</span><span class="w"></span>
+[ unknown] (1). Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;
 
-<span class="n">Please</span><span class="w"> </span><span class="n">decide</span><span class="w"> </span><span class="n">how</span><span class="w"> </span><span class="n">far</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">trust</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="k">user</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">correctly</span><span class="w"> </span><span class="n">verify</span><span class="w"> </span><span class="n">other</span><span class="w"> </span><span class="n">users</span><span class="s1">&#39; keys</span>
-<span class="s1">(by looking at passports, checking fingerprints from different sources, etc.)</span>
-
-
-<span class="s1">1 = I don&#39;</span><span class="n">t</span><span class="w"> </span><span class="n">know</span><span class="w"> </span><span class="ow">or</span><span class="w"> </span><span class="n">won</span><span class="err">&#39;</span><span class="n">t</span><span class="w"> </span><span class="n">say</span><span class="w"></span>
-<span class="w">  </span><span class="mi">2</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="n">do</span><span class="w"> </span><span class="ow">NOT</span><span class="w"> </span><span class="n">trust</span><span class="w"></span>
-<span class="w">  </span><span class="mi">3</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="n">trust</span><span class="w"> </span><span class="n">marginally</span><span class="w"></span>
-<span class="w">  </span><span class="mi">4</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="n">trust</span><span class="w"> </span><span class="n">fully</span><span class="w"></span>
-<span class="w">  </span><span class="mi">5</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">I</span><span class="w"> </span><span class="n">trust</span><span class="w"> </span><span class="n">ultimately</span><span class="w"></span>
-<span class="w">  </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">back</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">main</span><span class="w"> </span><span class="n">menu</span><span class="w"></span>
+Please decide how far you trust this user to correctly verify other users' keys
+(by looking at passports, checking fingerprints from different sources, etc.)
 
 
-<span class="n">Your</span><span class="w"> </span><span class="n">decision</span><span class="vm">?</span><span class="w"> </span><span class="mi">5</span><span class="w"></span>
-<span class="n">Do</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">really</span><span class="w"> </span><span class="n">want</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="k">set</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">ultimate</span><span class="w"> </span><span class="n">trust</span><span class="vm">?</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">N</span><span class="p">)</span><span class="w"> </span><span class="n">y</span><span class="w"></span>
+1 = I don't know or won't say
+  2 = I do NOT trust
+  3 = I trust marginally
+  4 = I trust fully
+  5 = I trust ultimately
+  m = back to the main menu
 
 
-<span class="n">pub</span><span class="w">  </span><span class="mi">4096</span><span class="n">R</span><span class="o">/</span><span class="n">E2B054B8</span><span class="w">  </span><span class="nl">created</span><span class="p">:</span><span class="w"> </span><span class="mi">2009</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">20</span><span class="w">  </span><span class="nl">expires</span><span class="p">:</span><span class="w"> </span><span class="n">never</span><span class="w">       </span><span class="k">usage</span><span class="err">:</span><span class="w"> </span><span class="n">SC</span><span class="w"></span>
+Your decision? 5
+Do you really want to set this key to ultimate trust? (y/N) y
 
-<span class="w">                     </span><span class="nl">trust</span><span class="p">:</span><span class="w"> </span><span class="n">ultimate</span><span class="w">      </span><span class="nl">validity</span><span class="p">:</span><span class="w"> </span><span class="k">unknown</span><span class="w"></span>
-<span class="n">sub</span><span class="w">  </span><span class="mi">4096</span><span class="n">R</span><span class="o">/</span><span class="mi">4</span><span class="n">A6D5217</span><span class="w">  </span><span class="nl">created</span><span class="p">:</span><span class="w"> </span><span class="mi">2009</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">20</span><span class="w">  </span><span class="nl">expires</span><span class="p">:</span><span class="w"> </span><span class="n">never</span><span class="w">       </span><span class="k">usage</span><span class="err">:</span><span class="w"> </span><span class="n">E</span><span class="w"></span>
 
-<span class="o">[</span><span class="n"> unknown</span><span class="o">]</span><span class="w"> </span><span class="p">(</span><span class="mi">1</span><span class="p">).</span><span class="w"> </span><span class="n">Alice</span><span class="w"> </span><span class="n">Example</span><span class="w"> </span><span class="p">(</span><span class="n">EXAMPLE</span><span class="w"> </span><span class="k">NEW</span><span class="w"> </span><span class="k">KEY</span><span class="p">)</span><span class="w"> </span><span class="o">&lt;</span><span class="n">alice</span><span class="nv">@example</span><span class="p">.</span><span class="n">org</span><span class="o">&gt;</span><span class="w"></span>
-<span class="n">Please</span><span class="w"> </span><span class="n">note</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">shown</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="n">validity</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="ow">not</span><span class="w"> </span><span class="n">necessarily</span><span class="w"> </span><span class="n">correct</span><span class="w"></span>
-<span class="n">unless</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">restart</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">program</span><span class="p">.</span><span class="w"></span>
-</code></pre></div>
+pub  4096R/E2B054B8  created: 2009-08-20  expires: never       usage: SC
 
-<p><h/3 id="sign-new-key">Use the old key to sign the new key<a class="headerlink" href="#sign-new-key" title="Permanent link">&para;</a></h3></p>
+                     trust: ultimate      validity: unknown
+sub  4096R/4A6D5217  created: 2009-08-20  expires: never       usage: E
+
+[ unknown] (1). Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;
+Please note that the shown key validity is not necessarily correct
+unless you restart the program.
+</code></pre>
+<p>&lt;h/3 id="sign-new-key"&gt;Use the old key to sign the new key<a class="headerlink" href="#sign-new-key" title="Permanent link">&para;</a></p>
 <p>Use the old key (AD741727, say) to sign the new key:</p>
-<div class="highlight"><pre><span></span><code><span class="n">Command</span><span class="o">&gt;</span><span class="w"> </span><span class="nf">sign</span><span class="w"> </span><span class="n">AD741727</span><span class="w"></span>
+<pre><code>Command&gt; sign AD741727
 
-<span class="n">pub</span><span class="w">  </span><span class="mi">4096</span><span class="n">R</span><span class="o">/</span><span class="n">E2B054B8</span><span class="w">  </span><span class="nl">created</span><span class="p">:</span><span class="w"> </span><span class="mi">2009</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">20</span><span class="w">  </span><span class="nl">expires</span><span class="p">:</span><span class="w"> </span><span class="n">never</span><span class="w">       </span><span class="k">usage</span><span class="err">:</span><span class="w"> </span><span class="n">SC</span><span class="w"></span>
+pub  4096R/E2B054B8  created: 2009-08-20  expires: never       usage: SC
 
-<span class="w">                     </span><span class="nl">trust</span><span class="p">:</span><span class="w"> </span><span class="n">ultimate</span><span class="w">      </span><span class="nl">validity</span><span class="p">:</span><span class="w"> </span><span class="n">ultimate</span><span class="w"></span>
-<span class="k">Primary</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="nl">fingerprint</span><span class="p">:</span><span class="w"> </span><span class="n">FF96</span><span class="w"> </span><span class="mi">6261</span><span class="w"> </span><span class="n">C995</span><span class="w"> </span><span class="mi">1</span><span class="n">DDE</span><span class="w"> </span><span class="n">BF34</span><span class="w">  </span><span class="mi">5150</span><span class="w"> </span><span class="n">D5D2</span><span class="w"> </span><span class="n">BDB5</span><span class="w"> </span><span class="n">E2B0</span><span class="w"> </span><span class="mi">54</span><span class="n">B8</span><span class="w"></span>
-
-
-<span class="w"> </span><span class="n">Alice</span><span class="w"> </span><span class="n">Example</span><span class="w"> </span><span class="p">(</span><span class="n">EXAMPLE</span><span class="w"> </span><span class="k">NEW</span><span class="w"> </span><span class="k">KEY</span><span class="p">)</span><span class="w"> </span><span class="o">&amp;</span><span class="n">lt</span><span class="p">;</span><span class="n">alice</span><span class="nv">@example</span><span class="p">.</span><span class="n">org</span><span class="o">&amp;</span><span class="n">gt</span><span class="p">;</span><span class="w"></span>
+                     trust: ultimate      validity: ultimate
+Primary key fingerprint: FF96 6261 C995 1DDE BF34  5150 D5D2 BDB5 E2B0 54B8
 
 
-
-<span class="k">Are</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">sure</span><span class="w"> </span><span class="n">that</span><span class="w"> </span><span class="n">you</span><span class="w"> </span><span class="n">want</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="nf">sign</span><span class="w"> </span><span class="n">this</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="k">with</span><span class="w"> </span><span class="n">your</span><span class="w"></span>
-<span class="k">key</span><span class="w"> </span><span class="ss">&quot;Alice Example (EXAMPLE OF OLD KEY) &lt;alice@example.org&gt;&quot;</span><span class="w"></span>
-<span class="p">(</span><span class="n">AD741727</span><span class="p">)</span><span class="w"></span>
+ Alice Example (EXAMPLE NEW KEY) &amp;lt;alice@example.org&amp;gt;
 
 
-<span class="n">Really</span><span class="w"> </span><span class="nf">sign</span><span class="vm">?</span><span class="w"> </span><span class="p">(</span><span class="n">y</span><span class="o">/</span><span class="n">N</span><span class="p">)</span><span class="w"> </span><span class="n">y</span><span class="w"></span>
+
+Are you sure that you want to sign this key with your
+key "Alice Example (EXAMPLE OF OLD KEY) &lt;alice@example.org&gt;"
+(AD741727)
 
 
-<span class="n">You</span><span class="w"> </span><span class="n">need</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">passphrase</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">unlock</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">secret</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="k">for</span><span class="w"></span>
-<span class="k">user</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;Alice Example (EXAMPLE OF OLD KEY) &lt;alice@example.org&gt;&quot;</span><span class="w"></span>
-<span class="mi">1024</span><span class="o">-</span><span class="nc">bit</span><span class="w"> </span><span class="n">DSA</span><span class="w"> </span><span class="k">key</span><span class="p">,</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="n">AD741727</span><span class="p">,</span><span class="w"> </span><span class="n">created</span><span class="w"> </span><span class="mi">2009</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">20</span><span class="w"></span>
-</code></pre></div>
+Really sign? (y/N) y
 
+
+You need a passphrase to unlock the secret key for
+user: "Alice Example (EXAMPLE OF OLD KEY) &lt;alice@example.org&gt;"
+1024-bit DSA key, ID AD741727, created 2009-08-20
+</code></pre>
 <h3 id="check-sha">Check preferences<a class="headerlink" href="#check-sha" title="Permanent link">&para;</a></h3>
-
 <p>Make sure you are <a href="openpgp.html#sha1">avoiding SHA-1</a> in the <a href="openpgp.html#key-prefs">key preferences</a> of both the new and old keys.</p>
 <h3 id="finish-off">Complete the edit<a class="headerlink" href="#finish-off" title="Permanent link">&para;</a></h3>
-
 <p>It is convenient to add secondary user ids for current email accounts at this point.</p>
 <p>Then save your changes, which will exit you from edit mode:</p>
-<div class="highlight"><pre><span></span><code><span class="err">Command&gt; save</span>
-</code></pre></div>
-
+<pre><code>Command&gt; save
+</code></pre>
 <h3 id="sign-old-with-new">Whether to sign the old key with the new<a class="headerlink" href="#sign-old-with-new" title="Permanent link">&para;</a></h3>
-
 <p>Arguments can be made for and against signing the old key with the new. The old key is less trustworthy now and will be revoked in future, so signing with it may be misleading for those unaware of the potential weaknesses. However, without this signature, signers of the new key will not receive the transitive benefit of the links made from the old key. Anyone who chooses not to sign the old key with the new should made efforts to re-sign links made by the old key with the new key.</p>
 <h3 id="set-default-to-new">Set the default to the new key<a class="headerlink" href="#set-default-to-new" title="Permanent link">&para;</a></h3>
-
 <p>Next, change the default key on the keyring to the new. This ensures that all future signatures use the new key. Though you could still use the old key for signing by explicitly specifying it, avoid this since the signatures will be weak.</p>
 <p>To make the new key the default, set the <code>default-key</code> in the <code>gpg.conf</code> configuration file. For example, to set the default to <code>E2B054B8</code> add:</p>
-<div class="highlight"><pre><span></span><code><span class="k">default</span><span class="o">-</span><span class="k">key</span><span class="w"> </span><span class="n">E2B054B8</span><span class="w"></span>
-<span class="n">This</span><span class="w"> </span><span class="n">setting</span><span class="w"> </span><span class="n">can</span><span class="w"> </span><span class="n">be</span><span class="w"> </span><span class="n">tested</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">creating</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">test</span><span class="w"> </span><span class="nl">signature</span><span class="p">:</span><span class="w"></span>
-<span class="err">$</span><span class="w"> </span><span class="n">gpg</span><span class="w"> </span><span class="c1">--detach-sig --armor document</span>
+<pre><code>default-key E2B054B8
+This setting can be tested by creating a test signature:
+$ gpg --detach-sig --armor document
 
-<span class="n">You</span><span class="w"> </span><span class="n">need</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="n">passphrase</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">unlock</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">secret</span><span class="w"> </span><span class="k">key</span><span class="w"> </span><span class="k">for</span><span class="w"></span>
-<span class="k">user</span><span class="err">:</span><span class="w"> </span><span class="ss">&quot;Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;&quot;</span><span class="w"></span>
-<span class="mi">4096</span><span class="o">-</span><span class="nc">bit</span><span class="w"> </span><span class="n">RSA</span><span class="w"> </span><span class="k">key</span><span class="p">,</span><span class="w"> </span><span class="n">ID</span><span class="w"> </span><span class="n">E2B054B8</span><span class="p">,</span><span class="w"> </span><span class="n">created</span><span class="w"> </span><span class="mi">2009</span><span class="o">-</span><span class="mi">08</span><span class="o">-</span><span class="mi">20</span><span class="w"></span>
-</code></pre></div>
-
+You need a passphrase to unlock the secret key for
+user: "Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;"
+4096-bit RSA key, ID E2B054B8, created 2009-08-20
+</code></pre>
 <p>Verify that the new key has been chosen by default.</p>
 <h3 id="update-keys">Upload both keys<a class="headerlink" href="#update-keys" title="Permanent link">&para;</a></h3>
-
 <p>Finish the process by uploading the new and old keys to the keyserver:</p>
-<div class="highlight"><pre><span></span><code>$ gpg --send-keys E2B054B8 AD741727
-</code></pre></div>
-
+<pre><code>$ gpg --send-keys E2B054B8 AD741727
+</code></pre>
 <h3 id="backups">Create backups<a class="headerlink" href="#backups" title="Permanent link">&para;</a></h3>
-
 <p>Follow <a href="openpgp.html#backup">these instructions</a>.</p>
 <h3 id="revocation-certificates">Generate and store revocation certificates<a class="headerlink" href="#revocation-certificates" title="Permanent link">&para;</a></h3>
-
 <p>Follow <a href="openpgp.html#revocation-certs">these instructions</a> to create and securely store [generic revocation certificates](release-signing.html#revocation-cert" for the new key.</p>
 <h3 id="update-documents">Update documents<a class="headerlink" href="#update-documents" title="Permanent link">&para;</a></h3>
-
 <p>The final stage in the process is to update documents containing references to the old key so that they contain both the new and old keys. For Apache documents, follow <a href="openpgp.html#update">this checklist</a>. Use the instructions for a transition when there is a choice.</p>
 <p>For other documents:</p>
 <ul>
 <li>Update those that contain an <a href="release-signing.html#export">export</a> with a <a href="#transition-export">dual export</a>.</li>
-<li>Update those that contain a <a href="release-signing.html#fingerprint&quot;">fingerprint</a> with <a href="#transition-fingerprints">both fingerprints</a>.</li>
+<li>Update those that contain a <a href="release-signing.html#fingerprint%22">fingerprint</a> with <a href="#transition-fingerprints">both fingerprints</a>.</li>
 </ul>
 <h3 id="wot">Web of trust<a class="headerlink" href="#wot" title="Permanent link">&para;</a></h3>
-
 <p>Read this <a href="openpgp.html#wot">Guide to Apache use</a> of the <a href="release-signing.html#web-of-trust">web of trust</a> and make arrangements to include your new key at the earliest opportunity.</p>
 <h2 id="transition-export">Exporting both new and old keys<a class="headerlink" href="#transition-export" title="Permanent link">&para;</a></h2>
-
-<p>During the transition period, use a single export containing both new and old public keys whenever you need an export. </p>
+<p>During the transition period, use a single export containing both new and old public keys whenever you need an export.</p>
 <p>To create a suitable export, supply both key IDs on the command line. For example, to export keys AD741727 (old) and E2B054B8 (new) to FILENAME use:</p>
-<div class="highlight"><pre><span></span><code>$ gpg --export --armor --output FILENAME AD741727 E2B054B8
-</code></pre></div>
-
+<pre><code>$ gpg --export --armor --output FILENAME AD741727 E2B054B8
+</code></pre>
 <p>This exports only the public keys, and so isn't confidential. Replace the old public key with this dual export everywhere it was published.</p>
 <h2 id="transition-fingerprints">Fingerprinting new and old keys<a class="headerlink" href="#transition-fingerprints" title="Permanent link">&para;</a></h2>
-
 <p>During the transitions, use both fingerprints. For example, to fingerprint old key <code>AD741727</code> and new key <code>E2B054B8</code>, use:</p>
-<div class="highlight"><pre><span></span><code>$ gpg --fingerprint AD741727 E2B054B8
-pub   1024D/AD741727 <span class="m">2009</span>-08-20
-      Key <span class="nv">fingerprint</span> <span class="o">=</span> CD0C <span class="m">5281</span> D0A9 E963 19AF  F365 AD81 612A AD74 <span class="m">1727</span>
-uid                  Alice Example <span class="o">(</span>EXAMPLE OF OLD KEY<span class="o">)</span> &lt;alice@example.org&gt;
-sub   1024g/268883A9 <span class="m">2009</span>-08-20
+<pre><code>$ gpg --fingerprint AD741727 E2B054B8
+pub   1024D/AD741727 2009-08-20
+      Key fingerprint = CD0C 5281 D0A9 E963 19AF  F365 AD81 612A AD74 1727
+uid                  Alice Example (EXAMPLE OF OLD KEY) &lt;alice@example.org&gt;
+sub   1024g/268883A9 2009-08-20
 
-pub   4096R/E2B054B8 <span class="m">2009</span>-08-20
-      Key <span class="nv">fingerprint</span> <span class="o">=</span> FF96 <span class="m">6261</span> C995 1DDE BF34  <span class="m">5150</span> D5D2 BDB5 E2B0 54B8
-uid                 Alice Example <span class="o">(</span>EXAMPLE NEW KEY<span class="o">)</span> &lt;alice@example.org&gt;
-sub   4096R/4A6D5217 <span class="m">2009</span>-08-20
-</code></pre></div>
-
+pub   4096R/E2B054B8 2009-08-20
+      Key fingerprint = FF96 6261 C995 1DDE BF34  5150 D5D2 BDB5 E2B0 54B8
+uid                 Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;
+sub   4096R/4A6D5217 2009-08-20
+</code></pre>
 <p>So the fingerprints are:</p>
 <ul>
 <li><code>CD0C 5281 D0A9 E963 19AF F365 AD81 612A AD74 1727</code> for <code>AD741727</code></li>
 <li><code>FF96 6261 C995 1DDE BF34 5150 D5D2 BDB5 E2B0 54B8</code> for <code>E2B054B8</code></li>
 </ul>
 <p>For every fingerprint, the last 8 digits are the key ID.</p>
+
         </div>
       </div>
     </div>    
