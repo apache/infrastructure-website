@@ -1,5 +1,4 @@
 Title: Build and manage a project website with Pelican and Buildbot
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 ASF projects can use <a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a> to create and manage the project website. Pelican provides a framework and the option of using themes to display your site pages, which you write in <a href="https://github.github.com/gfm/" target="_blank">GitHub-flavored-markdown</a> (GFM). You can set <a href="https://buildbot.net/" target="_blank">Buildbot</a> to build and publish the site every time someone saves updates to a page.
