@@ -1,5 +1,4 @@
 Title: Policy on issues in third-party services
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 The ASF pays for certain services, such as one that provides storage/search/access for our mailing list archives. In some cases, the third-party service uses a version of a package we are familiar with; but that does not mean that what they provide is identical to the package we know.
