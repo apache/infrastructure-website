@@ -1,5 +1,4 @@
 Title: Signing Releases
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 <h2 id="abstract">Introduction<a class="headerlink" href="#abstract" title="Permanent link">&para;</a></h2>

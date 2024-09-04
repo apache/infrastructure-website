@@ -1,5 +1,4 @@
 Title: Mail Rejection Policy
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 ### "Not authorized" message

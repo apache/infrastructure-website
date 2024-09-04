@@ -1,5 +1,4 @@
-Title: GitHub Pages for projects
-
+Title: GitHub Pages for projects 
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 Projects with a Git repository can use <a href="https://pages.github.com/" target="_blank">GitHub Pages</a> (gh-pages) to host and deploy the project website. 

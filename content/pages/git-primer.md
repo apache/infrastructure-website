@@ -1,5 +1,4 @@
 Title: Getting started with Git
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 This document is a primer on using Git for an Apache Software Foundation project.

@@ -1,5 +1,4 @@
 title: ASF Infrastructure Reporting Dashboard
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 The dashboard, at <a href="https://infra-reports.apache.org" target="_blank">infra-reports.apache.org</a>, provides a collection of reports on the overall health and activity of the infrastructure at the ASF. These reports can be helpful in understanding the status of all the ASF 'under the hood' resources, and in assessing the resource cost of some activities, like build processes.

@@ -1,5 +1,4 @@
 Title: Mailing list moderation
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 Mailing lists are the virtual rooms where ASF communities live, form and grow. All formal decisions the project's PMC makes need to have an email thread (possibly with a recorded vote) as an audit trail that this was an official decision.

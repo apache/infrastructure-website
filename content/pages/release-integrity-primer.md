@@ -1,5 +1,4 @@
 title: Handling Release Artifact Integrity Errors at the ASF
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 

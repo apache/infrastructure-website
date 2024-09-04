@@ -1,5 +1,4 @@
 Title: Response time
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 The Infra team takes seriously all work requests submitted to it and all reports it receives about issues in the Apache system. We triage such reports according to severity, and seek to resolve them in a timely fashion.

@@ -1,5 +1,4 @@
 Title: Mailing List Migration Project
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 <h3 id="migration">Hermes &#x2192 Mailgw</h3>

@@ -1,5 +1,4 @@
 Title: Nexus 101
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 _This page will hold information and tips to help users work with `repository.apache.org`, and to answer the most frequently-asked questions_.

@@ -1,5 +1,4 @@
 Title: Requesting a virtual machine for a project
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 When your PMC wants to run an application that is not part of the offered services (like a demo setup of your project), you need to request a dedicated virtual machine (VM). It is not possible to request a physical machine. Physical machines are shared resources for all ASF projects.

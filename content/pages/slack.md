@@ -1,5 +1,4 @@
 Title: Slack for ASF projects
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 The Apache Software Foundation has a workspace on <a href="https://the-asf.slack.com/" target="_blank">Slack</a> to provide channels on which people working on the same ASF project, or in the same area of the Foundation, can discuss issues, solve problems, and build community in real-time.

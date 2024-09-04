@@ -1,5 +1,4 @@
 Title: GitHub Actions Policy
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 This page documents the policies for using [GitHub Actions](github-actions-secrets.html) at the Apache Software Foundation.

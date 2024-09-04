@@ -1,5 +1,4 @@
 Title: MFA at the ASF
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 **Draft policy** Infra will update this page with further details, replacing the _TBD_ notes, as they become available, and will make an announcement when the policy comes into force.

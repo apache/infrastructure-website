@@ -1,5 +1,4 @@
-Title: Docker Hub use policy
-
+Title: Docker Hub use policy 
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 

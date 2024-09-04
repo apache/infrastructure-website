@@ -1,5 +1,4 @@
-Title: Glossary
-
+Title: Glossary 
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 

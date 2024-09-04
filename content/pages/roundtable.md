@@ -1,5 +1,4 @@
 Title: The Infra Roundtable
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 To provide a space for conversations on issues related to the ASF's infrastructure, Infra holds a monthly roundtable of free-flowing discussion.

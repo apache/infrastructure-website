@@ -1,5 +1,4 @@
 Title: Building a project website using the GitHub Actions Pelican workflow
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 **DRAFT**

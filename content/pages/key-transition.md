@@ -1,5 +1,4 @@
 Title: How to transition to a new PGP key
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 <h2 id="status">Introduction<a class="headerlink" href="#status" title="Permanent link">&para;</a></h2>

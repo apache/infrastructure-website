@@ -1,5 +1,4 @@
 Title: Host a Jenkins or Buildbot agent
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 Individuals and organizations can support the work of the ASF and its projects by hosting Jenkins or Buildbot agents on virtual machines in their own systems. Donors often provide this service to make available extra build resources for a project that needs more than Infra can easily provide.

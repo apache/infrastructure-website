@@ -1,5 +1,4 @@
 Title: Project VM policy
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 Projects may request from Infra **one** Ubuntu virtual machine for use as they see fit.

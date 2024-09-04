@@ -1,5 +1,4 @@
 Title: Apache Maven repositories
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 <h2 id="basic">Basic information<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>

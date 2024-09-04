@@ -1,5 +1,4 @@
 Title: Subversion and Git integration with Jira tickets
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 Many projects use Jira for managing tracking bugs, milestones, feature requests and so on, and many of these projects keep track of which commit affects which ticket. To make things even easier, we have a service called `svngit2jira`, which integrates

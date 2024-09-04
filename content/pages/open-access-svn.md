@@ -1,5 +1,4 @@
 Title: Open-access SVN
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 This page collects arguments for and against running our Subversion service in a manner that permits committers the technical

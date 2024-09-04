@@ -1,5 +1,4 @@
 Title: Project Blog
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 Until June, 2023, the ASF supported using Apache Roller for project blogs. That support has ended. Now we encourage projects to develop their blog using the technology of their choice.

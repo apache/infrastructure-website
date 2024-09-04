@@ -1,5 +1,4 @@
 Title: Approving Jira Account Requests
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 The ASF uses Jira as one of its main systems for receiving and tracking bug reports and feature requests for our many projects. We require people who are not already part of the ASF community to have an ASF Jira account in order to submit Jira tickets. To get that account, a person who does not already have an ASF identity has to apply in one of two ways:

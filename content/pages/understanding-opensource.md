@@ -1,5 +1,4 @@
 Title: Understanding Opensource
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 _Cameron Riley originally posted this on the Apache Jakarta website. As that project has been retired, it now appears here._

@@ -1,5 +1,4 @@
 Title: Infra and the Incubator
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 ## What Infra is
