@@ -1,5 +1,4 @@
 Title: Publishing Maven Releases to Maven Central Repository
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 [Apache Maven](https://maven.apache.org/) is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
