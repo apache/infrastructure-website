@@ -1,5 +1,4 @@
 Title: Gradle Develocity for ASF projects
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 Gradle, a longtime a leader in developer productivity and build analytics, has become a platinum-level sponsor of the ASF. The ASF instance of Gradle Develocity is at <a href="https://ge.apache.org" target="_blank">ge.apache.org</a>.
