@@ -1,5 +1,4 @@
 Title: Status pages
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
   - See what services are running well and which are reporting issues on the <a href="https://status.apache.org" target="_blank">Status</a> page. If a problem is showing here, Infra has already received an alert about it.
