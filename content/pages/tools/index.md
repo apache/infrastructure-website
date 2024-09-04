@@ -1,9 +1,8 @@
 Title: Send encrypted mail to Infra
-
 slug: tools/index
-For committers and contributors
-
 license: https://www.apache.org/licenses/LICENSE-2.0
+
+For committers and contributors
 
 To send email with encrypted contents to Infra, use the following file :
 
