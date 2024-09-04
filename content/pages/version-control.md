@@ -1,5 +1,4 @@
 Title: Source Code Repositories at Apache
-
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 Apache project contributors are in countries all around the world. To help them work together, projects keep their source code in an Internet-accessible revision control system, either <a href="https://subversion.apache.org/" target="_blank">Subversion (SVN)</a> or <a href="https://git-scm.com/" target="_blank">Git</a>. Apache committers have _write access_ to the repositories for their projects, so they can edit existing code and add new files. 
