@@ -7,7 +7,7 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 ***A note on testing***: Some projects would like to use GitHub Actions for complex processes, such as automating their tests of software builds. 
 
-The _time_ runners are in use (measured in minutes) is unlimited for public repositories so how long a test takes isn't the issue. The issue is tying up limited 'runners' (nodes) while those minutes are running. Apache has 180 runners for over 1200 repositories, so the concern would be how many runners the test requires, which are then unavailable to other projects for the duration of the test. Out of those 180 runners, only 50 Mac OS runners can be in use at one time for all ASF projects.
+The _time_ runners are in use (measured in minutes) is unlimited for public repositories so how long a test takes isn't the issue. The issue is tying up limited 'runners' (nodes) while those minutes are running. Apache has a limited number of runners for over 1200 repositories, so the concern would be how many runners the test requires, which are then unavailable to other projects for the duration of the test.
 
 The ASF maxes out its runner allocation quite often, so a project needs to plan carefully to make best use of them for everyone's sake. For example, it would be important not to trigger a full release test with a pull request that is correcting a typo on one page in one module.
 
