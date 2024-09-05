@@ -84,15 +84,16 @@ Java sources), and follow the project's coding conventions.</li>
 </ol>
 <p>If all this works, you can create your patch. Remove all build products and remnants (like any 'build', 'dist' or 'bin' directories) from the module tree, then build the actual patch. Here's how to do it using the command line SVN client under unix:</p>
 <p>Apache projects prefer the unified diff format. The subversion tool creates that automatically. If you use other tools, please refer to their documentation for details on setting the diff format.</p>
-<pre><code>    # location where the modules are stored
-    cd checkout&lt;/p&gt;
-&lt;div class="codehilite"&gt;&lt;pre&gt;&lt;span class="c"&gt;# directory of the module&lt;/span&gt;
-&lt;span class="n"&gt;cd&lt;/span&gt; &lt;span class="n"&gt;site&lt;/span&gt;
+<div class="highlight"><pre><span></span><code>    # location where the modules are stored
+    cd checkout<span class="nt">&lt;/p&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">&quot;codehilite&quot;</span><span class="nt">&gt;&lt;pre&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;c&quot;</span><span class="nt">&gt;</span># directory of the module<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;n&quot;</span><span class="nt">&gt;</span>cd<span class="nt">&lt;/span&gt;</span> <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;n&quot;</span><span class="nt">&gt;</span>site<span class="nt">&lt;/span&gt;</span>
 
-&lt;span class="c"&gt;# creation of the diff&lt;/span&gt;
-&lt;span class="n"&gt;svn&lt;/span&gt; &lt;span class="nb"&gt;diff&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;site&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nb"&gt;patch&lt;/span&gt;
-&lt;/pre&gt;&lt;/div&gt;
-</code></pre>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;c&quot;</span><span class="nt">&gt;</span># creation of the diff<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;n&quot;</span><span class="nt">&gt;</span>svn<span class="nt">&lt;/span&gt;</span> <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;nb&quot;</span><span class="nt">&gt;</span>diff<span class="nt">&lt;/span&gt;</span> <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;o&quot;</span><span class="nt">&gt;</span><span class="ni">&amp;gt;</span><span class="nt">&lt;/span&gt;</span> <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">&quot;n&quot;</span><span class="nt">&gt;</span>site<span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;p&quot;</span><span class="nt">&gt;</span>.<span class="nt">&lt;/span&gt;&lt;span</span> <span class="na">class=</span><span class="s">&quot;nb&quot;</span><span class="nt">&gt;</span>patch<span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;/pre&gt;&lt;/div&gt;</span>
+</code></pre></div>
+
 <p>The Subversion client now examines all subdirectories for changed files, then compares the changed file to the one on the server. It generates the
 patch.</p>
 <p>The '&gt;' redirection results in the resulting patch being put in a text file named (in this case) <code>site.patch</code>.</p>
@@ -100,7 +101,7 @@ patch.</p>
 <h3>Using Git</h3>
 <p>See <a href="git-primer.html">Getting started with Git</a> for general information.</p>
 <p>The general pattern for creating and submitting a patch for a project using Git is:</p>
-<ol start="0">
+<ol>
 <li>Before you start: talk to the project team! Somebody else may be working on the same thing, or there may be some not-obvious reason why what you are proposing would take the project in a different direction from its current path. Usually, you will get a "Great! Go ahead," response; and if you find out your proposed change is not needed for some reason, you will have saved some time for some other initiative.</li>
 <li>Create and download a branch of the project.</li>
 <li>In that branch, on your local computer, change the source files to incorporate your change or addition. Make sure you provide appropriate source code documentation and follow the project's coding conventions.</li>
@@ -114,7 +115,6 @@ patch.</p>
 <p>A very few projects don't use an issue tracker. In that case, send the patch as an attachment to an e-mail with a subject prefixed with "<code>[PATCH]</code>", to the appropriate development mailing list. If the patch is large, please ask before e-mailing it in case there is a better way to provide it.</p>
 <p>Supply a different patch per issue. A patch can span multiple files but you should normally try not to fix multiple bugs in a single patch, unless those bugs are intimately related.</p>
 <p>Be patient if your patch is not applied as fast as you'd like (open source developers are all volunteers, often doing the development in their spare time) or a developer asks you to make changes to the patch. If you do not receive any feedback in a reasonable amount of time (say, a week or two), feel free to send a follow-up e-mail to the developer list.</p>
-
         </div>
       </div>
     </div>    
