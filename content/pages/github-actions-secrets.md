@@ -25,14 +25,14 @@ A **GitHub <a href="https://docs.github.com/en/developers/apps/about-apps#person
 
 See <a href="https://cwiki.apache.org/confluence/display/INFRA/Github+Secrets+and+Tokens" target="_blank">GitHub secrets and tokens</a>.
 
-### Examples ###
+### Examples
 
-#### GitHub Secrets ####
+#### GitHub Secrets
 
 <a href="https://arrow.apache.org/" target="_blank">Apache Arrow</a> has GitHub Secrets added to their Arrow GitHub repos with the name 'DOCKERHUB_USER' and token 'DOCKERHUB_TOKEN' created as the user account on DockerHub (those account details are in LP).
 Additionally, in DockerHub, an 'arrow-dev' repository was created and the DockerHub 'jenkins' team (containing  the DockerHub 'DOCKERHUB_USER' user) was given admin access.
 
-#### GitHub Actions ####
+#### GitHub Actions
 
 Using Apache Arrow again as an example, the tokens above can be called using this code:
 
@@ -42,3 +42,20 @@ docker login -u ${{ secrets.DOCKERHUB_USER }} \
 -p ${{ secrets.DOCKERHUB_TOKEN }}
 docker-compose push ...
 ```
+
+#### Using an argument to extend the validity of a token for Develocity
+
+If you use the `setup-gradle` Action, it creates a short-lived Develocity token, which expires by default after two hours. If your build takes longer than two hours to run, the token becomes invalid and the build fails.
+
+To extend the validity of the token, adjust the `develocity-token-expiry` action parameter:
+
+```
+ develocity-token-expiry:
+    description: The Develocity short-lived access tokens expiry in hours. Default is 2 hours.
+    required: false
+```
+
+Further information is at these pages: 
+
+  - <a href="https://github.com/gradle/actions/blob/main/docs/setup-gradle.md#managing-develocity-access-keys" target="_blank">Managing Develocity access keys</a>
+  - <a href="https://docs.gradle.com/develocity/gradle-plugin/current/#short_lived_access_tokens" target="_blank">Short-lived access tokens</a>
