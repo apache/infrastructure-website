@@ -34,6 +34,8 @@ To display your search options, click the down-arrow at the right of the `search
     - a keyword within the body of the email
 
 ## If the email you sent does not appear
-The email system does not use what is in the `From` field; instead it looks at the envelope `sender`, so it is important to make sure you are using an account that appears in your LDAP record when you compose email intended for an ASF list.
+The email system does not use what is in the `From` field; instead it looks at the envelope `sender`, so it is important to make sure you are using an account that appears in your LDAP record when you compose email intended for an ASF list. 
+
+You can review and update your LDAP record at <a href="https://selfserve.apache.org/identity.html" target="_blank">selfserve.apache.org/identity.html</a>.
 
 If you used an address that is part of your LDAP record and the message has not yet appeared, it is possible the email is awaiting moderation. Ask the PMC of the project to which you were writing if the project's email moderators are active.
