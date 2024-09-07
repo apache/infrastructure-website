@@ -6,7 +6,7 @@ In `lists.apache.org` you can browse, search for, and read emails on mailing lis
   - Without logging in, you can access email in public ASF mailing lists.
   - If you have logged in:
       - if you are an ASF Member, you can access all ASF mailing lists.
-      - if you are not an ASF Member but are on the PMC of a project, you can accesss, in addition to the public lists, the private lists of that project.
+      - if you are not an ASF Member but are on the PMC of a project, you can access, in addition to the public lists, the private lists of that project.
    
 If you have logged in, and depending on your status as noted above, you can respond to email threads and create new messages in the email list you are currently viewing. The user interface does not have controls for these actions; instead, there are shortcut keys:
 
