@@ -76,37 +76,36 @@
 <p>In 2024, Infra moved from ASF-Pelican to the ASF <strong>Infrastructure Pelican Action</strong> GitHub Action to perform the same functions without being closely tied to BuildBot. The repository for this GHA is <a href="https//:github.com/apache/infrastructure-actions/tree/main/pelican" target="_blank">github.com/apache/infrastructure-actions/tree/main/pelican</a>.</p>
 <p>The material below relates to the 2019 ASF-Pelican and is <strong>not relevant</strong> to the Pelican GitHub Action.</p>
 <hr/>
-
 <p>Any ASF project using a Git repository for their website code and resources can use the <a href="asf-pelican.html">ASF-Pelican template</a> as the basis for their project website. Building a site in this way simplifies both development and integration into the ASF automated build system, while helping ensure that your site satisfies the ASF's <a href="https://infra.apache.org/project-site.html" target="_blank">guidelines for project websites</a>.</p>
 <p>Review the <a href="https://template.staged.apache.org/">Apache Template example</a> to see whether the template's features will support the functions you need for your project.</p>
 <h2>How to use this template</h2>
 <p>First, review the <a href="https://github.com/apache/template-site" target="_blank">code repository for ASF-Pelican</a> to confirm that it provides the features your project site needs. The template builds a copy of the full Apaches Software Foundation website, which has features your site does not need, and lacks features, such as a download page for product releases, that you will need to add.</p>
 <p>If you wish to try out the template:</p>
 <ol>
-<li>Using <a href="https://selfserve.apache.org/" target="_blank">self-serve</a>, create a new repo for the code and resources for your project’s website.</li>
+<li>Using <a href="https://selfserve.apache.org/" target="_blank">self-serve</a>, create a new repo for the code and resources for your project&rsquo;s website.</li>
 <li>Clone the empty repo to a location on your computer.</li>
 <li>Download the <a href="https://github.com/apache/infrastructure-website/archive/refs/heads/master.zip">template zipfile</a>.</li>
 <li>Unzip <code>master.zip</code> and copy <code>infrastructure-website-master/*</code>  to the root of your new repository.</li>
 <li>Configure <a href="asf-yaml.html">.asf.yaml</a>.</li>
 </ol>
-<div class="highlight"><pre><span></span><code><span class="n">pelican</span><span class="o">:</span>
-  <span class="n">notify</span><span class="o">:</span> <span class="n">EMAIL</span> <span class="n">of</span> <span class="n">a</span> <span class="n">person</span> <span class="n">on</span> <span class="n">your</span> <span class="n">team</span> <span class="n">to</span> <span class="n">receive</span> <span class="n">error</span> <span class="n">messages</span> <span class="n">related</span> <span class="n">to</span> <span class="n">Pelican</span>
-  <span class="n">autobuild</span><span class="o">:</span> <span class="n">preview</span><span class="o">/*</span>
-  <span class="n">target</span><span class="o">:</span> <span class="n">YOUR</span> <span class="n">SITE</span><span class="s1">&#39;S GENERATED CONTENT BRANCH</span>
-<span class="s1">  theme: theme/apache</span>
-<span class="s1">  whoami: main</span>
+<pre><code>pelican:
+  notify: EMAIL of a person on your team to receive error messages related to Pelican
+  autobuild: preview/*
+  target: YOUR SITE'S GENERATED CONTENT BRANCH
+  theme: theme/apache
+  whoami: main
 
-<span class="s1">staging:</span>
-<span class="s1">  profile: ~</span>
-<span class="s1">  whoami: YOUR SITE&#39;</span><span class="n">S</span> <span class="n">GENERATED</span> <span class="n">CONTENT</span> <span class="n">BRANCH</span>
-  <span class="n">autostage</span><span class="o">:</span> <span class="n">preview</span><span class="o">/*</span>
-</code></pre></div>
-
-<ol>
+staging:
+  profile: ~
+  whoami: YOUR SITE'S GENERATED CONTENT BRANCH
+  autostage: preview/*
+</code></pre>
+<ol start="6">
 <li>Configure <a href="https://infra.apache.org/asf-pelican-config.html" target="_blank">pelicanconf.yaml</a>.</li>
 <li>Commit and push your new website repository. This should trigger the automatic build to staging (<code>REPONAME.staged.apache.org</code>).</li>
 <li>Review the site to confirm that the template materials display and function correctly.</li>
-<li>Add your own content, updating, replacing, and removing template content elements as appropriate. With each commit / push of content, visit the staging site to confirm that the site displays as you expect it to.<ul>
+<li>Add your own content, updating, replacing, and removing template content elements as appropriate. With each commit / push of content, visit the staging site to confirm that the site displays as you expect it to.
+<ul>
 <li><code>.md</code> files support GitHub Flavored Markdown (<a href="gfm.html"><strong>gfm</strong></a>) and html.</li>
 <li><code>.ezmd</code> files are for templates using <code>ASF_DATA</code>. .ezmd is a markdown extension of <a href="https://github.com/gstein/ezt/blob/wiki/Syntax.md" target="_blank">EZT</a>. It lets you embed ezt inside markdown with modifications to simplify the process of fetching generated/external data.</li>
 </ul>
@@ -116,37 +115,39 @@
 <li>When you are ready to publish the site, create a pull request to merge the content in staging into the trunk of the repo. That will trigger a build of the live site.</li>
 <li>Visit <code>YourProject.apache.org</code> after every update to make sure it displays and functions correctly.</li>
 </ol>
-<p><strong>Note</strong>: we strongly suggest that you do your site development in a <a href="apache-pelican-branches.html">branch</a> rather than the trunk of the repository, and then merge the branch into the trunk when you are sure that everything is working as you would like it. Each commit to the trunk triggers an automatic build to update your live site; this is great for trivial changes like correcting typos, but more of a challenge if you are making major changes and it turns out that there is an error in your code that disables your live site. </p>
+<p><strong>Note</strong>: we strongly suggest that you do your site development in a <a href="apache-pelican-branches.html">branch</a> rather than the trunk of the repository, and then merge the branch into the trunk when you are sure that everything is working as you would like it. Each commit to the trunk triggers an automatic build to update your live site; this is great for trivial changes like correcting typos, but more of a challenge if you are making major changes and it turns out that there is an error in your code that disables your live site.</p>
 <h3>Frameworks</h3>
 <p>The example has the following frameworks.</p>
-<div class="highlight"><pre><span></span><code><span class="err"> - JavaScript:</span>
-<span class="err">   - [JQuery 3.6.0 Slim](https://code.jquery.com/jquery-3.6.0.slim.js)</span>
-<span class="err">   - [Popper 1.14.7](https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.js)</span>
-<span class="err">   - [Bootstrap 4.3.1](https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.js)</span>
-<span class="err"> - CSS:</span>
-<span class="err">   - [Bootstrap 4.3.1](https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css)</span>
-<span class="err">   - [GitHub Markdown 3.0.1](https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.css)</span>
-</code></pre></div>
-
+<pre><code> - JavaScript:
+   - [JQuery 3.6.0 Slim](https://code.jquery.com/jquery-3.6.0.slim.js)
+   - [Popper 1.14.7](https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.js)
+   - [Bootstrap 4.3.1](https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.js)
+ - CSS:
+   - [Bootstrap 4.3.1](https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.css)
+   - [GitHub Markdown 3.0.1](https://cdnjs.cloudflare.com/ajax/libs/github-markdown-css/3.0.1/github-markdown.css)
+</code></pre>
 <p>For fenced code highlighting, consider <a href="https://highlightjs.org" target="_blank">highlightjs</a>.</p>
 <h3>Data model</h3>
 <p>Determine whether your site requires a <a href="asf-pelican-data.html">data model</a>.</p>
 <p>The <code>.ezmd</code> files in the template's <code>content</code> directory show examples, and <a href="https://github.com/apache/template-site/blob/main/asfdata.yaml" target="_blank">asfdata.yaml</a> has many examples.</p>
-<p>Remove the following if you do not need a data model:
-  - <code>asfdata.yaml</code>
-  - <code>data/eccn</code> directory</p>
+<p>Remove the following if you do not need a data model:</p>
+<ul>
+<li><code>asfdata.yaml</code></li>
+<li><code>data/eccn</code> directory</li>
+</ul>
 <h2>Issues and template questions</h2>
 <p>Please let us know if you run into <a href="https://github.com/apache/template-site/issues">issues</a> with the template.</p>
 <h2>Earlier versions</h2>
 <p>Earlier versions of this template made use of a <code>pelicanconf.py</code> configuration file. The current version uses <code>.asf.yaml</code> and <code>pelicanconf.yaml</code>, as noted above. We retain the earlier instruction for the projects using the earlier version of the template; however, any project starting with the template now should use the files and instructions noted above.</p>
-<div class="highlight"><pre><span></span><code> <span class="n">Edit</span> <span class="n">the</span> <span class="ss">`pelicanconf.py`</span> <span class="n">configuration</span> <span class="n">file</span><span class="p">:</span>
+<pre><code> Edit the `pelicanconf.py` configuration file:
 
-   <span class="o">-</span> <span class="n">Website</span> <span class="k">specific</span>
-   <span class="o">-</span> <span class="ss">`PLUGINS`</span>
-   <span class="o">-</span> <span class="ss">`ASF_DATA`</span> <span class="o">-</span> <span class="ss">`asfdata.py`</span> <span class="n">plugin</span> <span class="n">settings</span>
-   <span class="o">-</span> <span class="ss">`ASF_GENID`</span> <span class="o">-</span> <span class="ss">`asfgenid.py`</span> <span class="n">plugin</span> <span class="n">settings</span>
-     <span class="ss">`asfgenid.py`</span> <span class="n">performs</span> <span class="n">a</span> <span class="n">series</span> <span class="n">of</span> <span class="n">html</span> <span class="n">fixups</span> <span class="n">including</span> <span class="n">permalinks</span><span class="p">,</span> <span class="n">heading</span> <span class="n">ids</span><span class="p">,</span> <span class="k">and</span> <span class="k">table</span> <span class="n">of</span> <span class="n">contents</span>
-</code></pre></div>
+   - Website specific
+   - `PLUGINS`
+   - `ASF_DATA` - `asfdata.py` plugin settings
+   - `ASF_GENID` - `asfgenid.py` plugin settings
+     `asfgenid.py` performs a series of html fixups including permalinks, heading ids, and table of contents
+</code></pre>
+
         </div>
       </div>
     </div>    
