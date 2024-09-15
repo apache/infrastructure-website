@@ -14,10 +14,12 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 ## Projects
 
 **Code repositories**
+
 - [Project code repositories](project-repo-policy.html)
 - [GitHub Actions](github-actions-policy.html)
 
 **Releases**
+
 - <a href="https://www.apache.org/legal/apply-license.html" target="_blank">Applying the Apache 2.0 license</a>
 - [Docker Hub policy](docker-hub-policy.html)
 - [Release distribution policy](release-distribution.html)
@@ -25,6 +27,7 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 - [Project use of nightlies.a.o](nightlies.html)
 
 **Other**
+
 - [Application upgrades](app-upgrade-policy.html)
 - [Backups](backup-policy.html) for systems and content
 - [Operating system upgrades](os-upgrade-policy.html)
