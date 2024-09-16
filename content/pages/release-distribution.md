@@ -13,7 +13,7 @@ This policy governs how Apache Top Level Projects (TLPs) distribute releases of 
 <li><a href="#release-content">Release content</a></li>
 <li><a href="#public-distribution">Public distribution channels</a></li>
 <li><a href="#unreleased">Distribution of unreleased materials</a></li>
-<li><a href="#heads-up">Notify Infra before oploading large (&gt;1GB) artifacts</a></li>
+<li><a href="#heads-up">Recommended and maximum sizes of release artifacts</a></li>
 <li><a href="#sigs-and-sums">Requirements for cryptographic signature and checksum requirements</a></li>
 <li><a href="#download-links">Download links</a></li>
 <li><a href="#archival">Releases are archived</a></li>
@@ -65,9 +65,9 @@ Unreleased materials, in original or derived form,
   -  **must not** be distributed through `www.apache.org/dist` or `downloads.apache.org`
   -  **must not** be distributed through channels which encourage use by anyone outside the project development community
 
-<h2 id="heads-up">Notify Infra before uploading large artifacts<a class="headerlink" href="#heads-up" title="Permanent link">&para;</a></h2>
+<h2 id="heads-up">Recommended and maximum sizes of release artifacts<a class="headerlink" href="#heads-up" title="Permanent link">&para;</a></h2>
 
-Projects **must** coordinate with Infra in advance about releases larger than 1GB of artifacts to mitigate strain on content distribution resources.
+Infra recommends keeping the size of your release artifacts below 100MB. The ASF will **not** host release artifacts larger than 1GB.
 
 <h2 id="sigs-and-sums">Requirements for cryptographic signatures and checksums<a class="headerlink" href="#sigs-and-sums" title="Permanent link">&para;</a></h2>
 
