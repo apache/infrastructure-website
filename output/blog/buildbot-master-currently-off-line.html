@@ -1,0 +1,140 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buildbot master currently off-line - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Contribute</a></li>
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav><!-- breadcrumbs -->
+<div class="card" style="height: 34px;">
+    <nav aria-label="breadcrumb"  style="padding-left: 12px; padding-top: 4px;">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+
+            <li class="breadcrumb-item active"><a href="/blog/buildbot-master-currently-off-line.html">
+Buildbot master currently off-line            </a></li>
+
+            <li class="breadcrumb-item active">(<a href="https://github.com/apache/infrastructure-website/tree/master/content/blog/buildbot-master-currently-off-line.md">edit</a>)</li>
+
+        </ol>
+    </nav>
+</div>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Buildbot master currently off-line
+          </h1>
+              <p>Posted on: 2015-06-29 21:17:45+00:00</p>
+              <p><b>Update (2015-06-30 ~12.00 UTC):</b></p>
+<p>The replacement buildbot master is now live. The CMS service and the <a href="http://ci.apache.org">ci.apache.org</a>&nbsp; website have been restored. The project CI builds are mostly working but builds that upload docs, snapshots etc. to the buildmaster for publishing are likely to fail at the upload stage while we ensure all the necessary directory structures are in place to receive the uploads. Work to resolve these final few issues is ongoing.<br /></p>
+<p>We continue to try and contact the owner of the account where the IRC proxy was running. In case their account has been compromised, it remains locked. In addition, all their commits have been reviewed by other project committers and that review has confirmed that no malicious commits have been made by the account in question.</p>
+<p>The review of <a href="http://aegis.apache.org">aegis.apache.org</a>&nbsp; is ongoing. No evidence of compromise beyond the possible compromise of the single, non-privileged user account has been found.<br /></p>
+<p><b>Original post (2015-06-29 ~21.00 UTC):</b></p>
+<p>As per the e-mails to committers@ earlier today, <a href="http://aegis.apache.org">aegis.apache.org</a> is currently offline after a report was received that suspicious network traffic had been observed from that host. This blog post will be updated as more information becomes known.</p>
+<p><b>What we know:</b></p>
+<ul> 
+    <li>At ~16.00 UTC 28 June 2015 a report of suspicious network activity from a buildbot host was reported to the Apache security team.</li> 
+    <li>Further information was requested and at ~18.00 UTC 28 June 2015 the Apache Infrastructure team received a copy of network logs that showed a number of suspicious IRC connections originating from aegis.apache.org</li> 
+    <li>These IRC connections were traced to a non-privileged user account on <a href="http://aegis.apache.org">aegis.apache.org</a>&nbsp; running an open IRC proxy</li> 
+    <li>At ~20.00 UTC 28 June 2015 the user account concerned was locked for all ASF services and the proxy process terminated.</li> 
+    <li>At ~10.00 UTC 29 June 2015, after further discussion within the infrastructure team, aegis.apache.org was taken off-line as a precaution.</li> 
+  </ul>
+<p>It remains unclear whether the open IRC proxy was installed by the user that owned the account or whether their account was compromised and the IRC proxy was installed by an unauthorized user. <br /></p>
+<p>It is worth stressing that no further information came to light between 20.00 UTC 28 June 2015 and 10.00 UTC 29 June 2015 that triggered the decision to take the host off-line. The host was taken off-line purely as a precaution while we reviewed the available information. That process is ongoing. So far we have found no evidence to even suggest anything more than a user account being used to run an IRC proxy and plenty of evidence that suggests that this was the only activity this account was used for.<br /></p>
+<p><b>Risks:</b></p>
+<p>There is no risk to released source or binaries for any ASF project. There are multiple reasons for this:</p>
+<ul> 
+    <li>buildbot is a CI system used to build snapshots, not releases</li> 
+    <li>no builds are performed on <a href="http://aegis.apache.org">aegis.apache.org</a></li> 
+  </ul>
+<p>Buildbot is used to build some project web sites and / or project documentation. The risk of compromise here is viewed as very low for the following reasons:</p>
+<ul> 
+    <li>the builds do not take place on aegis.apache.org</li> 
+    <li>diffs of every change are sent to the relevant project team's mailing list for review and an unexpected / malicious change would be spotted</li> 
+  </ul>
+<p><b>Project impact:</b></p>
+<p> The following services are currently off-line and will remain so until the buildbot master is restored</p>
+<ul> 
+    <li>All buildbot builds</li> 
+    <li>Projects that use the CMS will be unable to update their web sites (the CMS uses buildbot to build web site updates)<br /></li> 
+    <li>the <a href="http://ci.apache.org">ci.apache.org</a>&nbsp; website<br /></li> 
+  </ul>
+<p><b>Work in progress:</b></p>
+<p>Analyzing <a href="http://aegis.apache.org">aegis.apache.org</a>&nbsp; is going to take time and, while we view the chances of a wider compromise of this host as very, very small, we are not willing to bring the host back on line at this point. This host was due for replacement so the decision has been taken to pull this work forward and rebuild the buildbot master on a new host now. We have taken this decision not because we believe <a href="http://aegis.apache.org">aegis.apache.org</a>&nbsp; to be compromised, but because it is possible to complete this work far more quickly than it is possible to confirm our view that <a href="http://aegis.apache.org">aegis.apache.org is not compromised.</a>&nbsp; We currently estimate that the rebuild of the new buildbot master host will be completed by 1 July 2015.<br /></p>
+<p>We continue to analyze the information we have obtained from <a href="http://aegis.apache.org">aegis.apache.org</a>&nbsp; and from other sources and will update this blog post as more information becomes available.</p>
+<p><b>Questions:</b></p>
+<p>Questions, concerns, comments etc. should be directed to infrastructure@apache.org <br /></p>
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2024, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>  </main>
+  </body>
+</html>
