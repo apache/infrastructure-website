@@ -7,6 +7,7 @@ The name references the tool-maker 'Q', who provides weapons and gadgets for Age
 
 ## What Qbot can do
 Qbot has an evolving set of functions:
+
   - Providing to the channel notifications related to your project's Jira tickets - new ticket, new comment, ticket resolved.
   - Starting a question queue in the huddle in a channel workspace. (Note: Infra designed this for use with Roundtable events, in case participants had a flood of questions and comments that would need to be queued so everyone had a fair chance to speak. So far, we have not needed to use it.)
   - Adding people to private channels
@@ -15,6 +16,7 @@ It also has a set of 'fun' features, such as rolling dice, flipping a coin, or t
 
 ## Setting up Qbot in your PMC's channels
 If you want to have Qbot available in your PMC's channel, create a Jira ticket for Infra with the request. Include this information:
+
   - The name of the channel or channels where notifications about Jira tickets related to your projects should appear
   - How you want notifications to appear. There are five options:
       - No notifications
