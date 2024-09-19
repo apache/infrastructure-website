@@ -18,15 +18,16 @@ It also has a set of 'fun' features, such as rolling dice, flipping a coin, or t
 ## Setting up Qbot in your PMC's channels
 If you want to have Qbot available in your PMC's channel, create a Jira ticket for Infra with the request. Include this information:
 
-  - The name of the channel or channels where notifications about Jira tickets related to your projects should appear
+  - If you want to get Jira-ticket notifications, the name of the channel or channels where notifications about tickets related to your projects should appear
   - How you want notifications to appear. There are five options:
       - No notifications
       - All notifications
       - `nodescription`: All notifications with the title of the ticket, but not its description
       - `nocomments`: No notifications of comments on tickets
       - `createclose`: Just notifications of ticket creation and resolution
-
   - Specify who can use the `addme` command -- committers, members of your PMC only, ASF Members only...
+
+See also "Jira-related functions", below.
 
 To have Qbot active in a project's private channel, once it is available in your public channels, someone already in the channel has to invite it with the Slack command `/invite @QBot`.
   
