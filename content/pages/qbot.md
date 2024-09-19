@@ -53,7 +53,7 @@ In Slack, there are three ways to talk to Qbot:
 
 ### Jira-related functions
 
-You can ask Qbot to provide information about Jira tickets.
+**ASF Members** can ask Qbot to provide information about Jira tickets.
 
 **List Jira tickets for a project**
 
