@@ -52,6 +52,25 @@ In Slack, there are three ways to talk to Qbot:
 
 ### Jira-related functions
 
+You can ask Qbot to provide information about Jira tickets.
+
+**List Jira tickets for a project**
+
+  - List all the project's tickets, regardless of status:
+    - basic syntax: `qbot tickets project:<PROJECT>`
+    - display the tickets that match a keyword search: `qbot tickets project:<PROJECT> <KEYWORDS>`
+  - List the project's unassigned tickets:
+    - basic syntax: `qbot tickets unassigned:<PROJECT>`
+    - display the project's unassigneed tickets that match a keyword search: `qbot tickets unassigned:<PROJECT> <KEYWORDS>`
+
+**Find specific Jira tickets**
+
+  - Find tickets using <a href="https://www.atlassian.com/blog/jira/jql-the-most-flexible-way-to-search-jira-14" target="_blank">Jira Query Language (JQL)</a>
+    - syntax: `qbot tickets jql:<JQL STRING>`
+  - Find tickets using a keyword search
+    - syntax: `qbot tickets <KEYWORDS>`
+
+*For keyword searches, separate multiple keywords with spaces.*
 
 ### Fun stuff
 
