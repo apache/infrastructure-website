@@ -13,7 +13,7 @@ Qbot has an evolving set of functions:
   - Displaying information about Jira tickets by project, by keyword, by status.
   - Starting a question queue in the huddle in a channel workspace. (Note: Infra designed this for use with Roundtable events, in case participants had a flood of questions and comments that would need to be queued so everyone had a fair chance to speak. So far, we have not needed to use it.)
 
-It also has a set of 'fun' features, such as rolling dice, flipping a coin, or talking to someone from the (fictional) ASF Human Resoures Department.
+It also has a set of 'fun' features, such as rolling dice, flipping a coin, or talking to someone from the (fictional) ASF Human Resources Department.
 
 ## Setting up Qbot in your PMC's channels
 If you want to have Qbot available in your PMC's channel, create a Jira ticket for Infra with the request. Include this information:
