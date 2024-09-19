@@ -10,7 +10,7 @@ Qbot has an evolving set of functions:
 
   - Adding people to private channels
   - Providing to the channel notifications related to your project's Jira tickets - new ticket, new comment, ticket resolved.
-  - Displaying information about Jira tickets by project, by keyword, by status.
+  - Displaying information about Jira tickets by project, by keyword, by status (available to ASF Members).
   - Starting a question queue in the huddle in a channel workspace. (Note: Infra designed this for use with Roundtable events, in case participants had a flood of questions and comments that would need to be queued so everyone had a fair chance to speak. So far, we have not needed to use it.)
 
 It also has a set of 'fun' features, such as rolling dice, flipping a coin, or talking to someone from the (fictional) ASF Human Resources Department.
