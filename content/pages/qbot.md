@@ -77,7 +77,7 @@ In Slack, there are three ways to talk to Qbot:
 
   - `flip` - Qbot flips a coin and tells you whether it came up heads or tails: `/qbot flip`.
 
-  - `lauren` - Lauren works in the (fictional) Human Resources Department at The ASF. You can summon Lauren in any channel in which Qbot is active by typing her name three times in three consecutive posts (the way characters can summon a demon in the movie "Beetlejuice"). **Note** Lauren inhabits a parallel world to ours, one in which The ASF has a physical office with many employees who come in to work each day. Her statements may not bear too much relevance to the world you inhabit. You can also use the following commands to get Laura's input:
+  - `lauren` - Lauren works in the (fictional) Human Resources Department at The ASF. You can summon Lauren in any channel in which Qbot is active by typing her name three times in three consecutive posts (the way characters can summon a demon in the movie "Beetlejuice"). **Note** Lauren inhabits a parallel world to ours, one in which The ASF has a physical office with many employees who come in to work each day. Her statements may not bear too much relevance to the world you inhabit. You can also use the following commands to get Lauren's input:
     - `lauren announce`: Lauren shares a significant (in Lauren's opinion) announcement.
     - `lauren benefit`: Lauren reveals an employee benefit.
     - `lauren complaint`: Lauren discusses a recent HR complaint with you.
