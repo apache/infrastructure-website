@@ -29,7 +29,7 @@ If you want to have Qbot available in your PMC's channel, create a Jira ticket f
 
 See also "Jira-related functions", below.
 
-To have Qbot active in a project's private channel, once it is available in your public channels, someone already in the channel has to invite it with the Slack command `/invite @QBot`.
+To have Qbot active in a project's private channel, once it is available in your public channels, someone already in the channel has to invite it with the Slack command `invite @QBot`.
   
 
 ## Talking to Qbot
@@ -46,7 +46,7 @@ In Slack, there are three ways to talk to Qbot:
 ## Qbot commands
 **Note** we are expanding Qbot's reach, and this list will expand to match its capabilities.
 
-  - `help` - You see a list of the available commands: `/qbot help`.
+  - `help` - You see a list of the available commands: `qbot help`.
 
 ### Adding yourself to a private channel
   - `addme`- Add yourself to a private channel. (Without Qbot, you have to ask someone already in the channel to add you.) You can make the command from anywhere in the ASF workspace. The syntax is `/qbot addme <NAME OF CHANNEL>`.
@@ -82,15 +82,15 @@ In Slack, there are three ways to talk to Qbot:
     - `lauren benefit`: Lauren reveals an employee benefit.
     - `lauren complaint`: Lauren discusses a recent HR complaint with you.
     - `lauren policy`: Lauren reminds you of a corporation policy.
-  - `roll` - If you send the command without furthr parameters (`/qbot roll`), Qbot rolls one six-sided die and reports the result.
-      - You can roll up to ten dice at a time, and each die can have up to 100 sides or 'pips'.The syntax for a basic dice roll is `/qbot roll NdP`, where `N` is the number of dice (up to 10) and `P` is the number of surfaces each die has (up to 100): `/qbot roll 8d12`.
-      - In a role-playing game such as Dungeons and Dragons, when your character gets in trouble you may be able to try a **saving roll** to, well, save them from disaster. The syntax to see if Qbot can help in your current crisis is `/qbot roll saving`.
-  - `shanty` - Qbot shares a verse of a sea shanty. The syntax is `/qbot shanty`.
+  - `roll` - If you send the command without furthr parameters (`qbot roll`), Qbot rolls one six-sided die and reports the result.
+      - You can roll up to ten dice at a time, and each die can have up to 100 sides or 'pips'.The syntax for a basic dice roll is `qbot roll NdP`, where `N` is the number of dice (up to 10) and `P` is the number of surfaces each die has (up to 100): `qbot roll 8d12`.
+      - In a role-playing game such as Dungeons and Dragons, when your character gets in trouble you may be able to try a **saving roll** to, well, save them from disaster. The syntax to see if Qbot can help in your current crisis is `qbot roll saving`.
+  - `shanty` - Qbot shares a verse of a sea shanty. The syntax is `qbot shanty`.
 
 _Note: the following two commands are in 'alpha' development and may not work as expected. If you would like to use them in huddles in your project's Slack spaces, please let us know (see 'Requesting features', below)._
 
-  - `q` - This command starts a  "Q & A" queue in a huddle in your current channel, and makes you the administrator. Such a function can be useful if you anticipate participants submitting a large number of questions. The syntax is `/qbot q start`.
-  - `queue` - Performs the same function as `q`. The syntax is `/qbot queue start`.
+  - `q` - This command starts a  "Q & A" queue in a huddle in your current channel, and makes you the administrator. Such a function can be useful if you anticipate participants submitting a large number of questions. The syntax is `qbot q start`.
+  - `queue` - Performs the same function as `q`. The syntax is `qbot queue start`.
 
 ## Requesting features
 If you have an idea for a Qbot service that could help your PMC on Slack (or you just want to add a verse from another sea shanty), please suggest it in the <a href="https://github.com/apache/infrastructure-ideas/discussions/categories/qbot" target="_blank">Infrastructure-ideas repository</a>.
