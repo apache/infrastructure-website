@@ -24,7 +24,7 @@ To display your search options, click the down-arrow at the right of the `search
 
   - Opt to search in
     - the current list
-    - all the lists of this domain; that is, if you are looking at an Apache Royale list, you can search at the same time all the email lists of `royale.apache.org` to which you have access.
+    - all the lists of this domain; that is, if you are looking at any Apache Royale list, you can search at the same time all the email lists of `royale.apache.org` to which you have access.
     - all The ASF's email lists to which you have access.
   - You can restrict the search to
     - a specific date range
