@@ -73,7 +73,7 @@
               How to mirror ASF software releases locally
           </h1>
               <p><strong>NOTE - as of August, 2021, the ASF itself is not accepting further mirror site applications.</strong></p>
-<p>Organizations may wish to create a download mirror that includes the releases of most or all of the Apache Software Foundation's projects. You may mirror either the full distributions tree, or a reduced tree that excludes a few very resource-intensive (disk-wise and bandwidth-wise) projects (see <a href="#techniques">Mirroring techniques</a>).</p>
+<p>Organizations may wish to create a download mirror that includes the releases of most or all of the Apache Software Foundation's projects. You may mirror either the full distributions tree, or a reduced tree that excludes a few very resource-intensive (disk-wise and bandwidth-wise) projects (see <a href="#techniques">Mirroring techniques</a>). </p>
 <p>Here is how to set up such a mirror.</p>
 <ul>
 <li><a href="#requirements">Requirements</a></li>
@@ -84,34 +84,38 @@
 <li><a href="#questions">Questions?</a></li>
 </ul>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+
 <p>Hosting a mirror has a few requirements:</p>
 <ul>
 <li>You should have at least 150 GB of available disk space. The current distribution directory is around 110 GB, but it is constantly expanding.</li>
 <li>You should not trim or abridge the mirrored tree in any way.</li>
 <li>You should not modify the mirrored tree in any way. In particular, you should not alter or remove HEADER.html or README.html files. See below for adding information about the mirror host.</li>
 </ul>
-<p>We encourage you to</p>
+<p>We encourage you to </p>
 <ul>
 <li>do an <strong>update-check</strong> at least four times a day a day. You may sync a maximum of six times per day, but only if you have a slow or poor connection that causes timeouts.</li>
 <li>run the <a href="https://httpd.apache.org/" target="_blank">Apache HTTP Server</a> version 2.2 or later and use the following configuration for your web mirror to allow all the features of our download site to function optimally:</li>
 </ul>
-<pre><code>&lt;Directory /path/to/mirror&gt;
+<div class="highlight"><pre><span></span><code><span class="nt">&lt;Directory</span> <span class="err">/path/to/mirror</span><span class="nt">&gt;</span>
   IndexOptions FancyIndexing NameWidth=* FoldersFirst ScanHTMLTitles DescriptionWidth=*
   HeaderName HEADER.html
   ReadmeName README.html
   AllowOverride FileInfo Indexes
   Options Indexes SymLinksIfOwnerMatch FollowSymLinks
   ErrorDocument 404 default
-&lt;/Directory&gt;
-</code></pre>
+<span class="nt">&lt;/Directory&gt;</span>
+</code></pre></div>
+
 <p><strong>Note</strong> that our HEADER.html files do not contain the HTML preamble, so it is important <strong>not</strong> to enable the <code>SuppressHTMLPreamble</code> option.</p>
 <p>Make sure that the server does not send a <code>Content-Encoding</code> header for any of the compressed archives. The hashes and signatures used to check downloads are created for the compressed archives so it is vital that the browser is not told to decompress them. For example, <code>.tar.gz</code> and <code>.tgz</code> files are compressed TAR files. They should have a suitable Content-Type - e.g. <code>application/x-gzip</code> - but no <code>Content-Encoding</code> should be sent. If the server incorrectly sends <code>Content-Encoding: x-gzip</code> (for example), many browsers will automatically decompress the response. This produces a TAR file which will not verify when checked against the hashes or sigs.</p>
 <h2 id="techniques">Mirroring techniques<a class="headerlink" href="#techniques" title="Permanent link">&para;</a></h2>
+
 <h3>Updating</h3>
 <p>We only support <a href="https://rsync.samba.org/" target="_blank">rsync</a> for updating mirrors.</p>
 <p>Update your mirror with:</p>
-<pre><code>rsync -avz --delete --safe-links rsync.apache.org::apache-dist /path/to/mirror
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="err">rsync -avz --delete --safe-links rsync.apache.org::apache-dist /path/to/mirror</span>
+</code></pre></div>
+
 <ul>
 <li>Don't rsync "on the hour" (<code>cronjob minute 0</code>). Pick a random minute between 5 and 55. Never run cronjobs at minute 0 unless the nature of the job requires it.</li>
 <li>Run the job four times a day; no more than six times a day in any case.</li>
@@ -121,19 +125,22 @@
 <p>To exclude resource-intensive projects, replace <code>::apache-dist</code> with <code>::apache-dist-most</code>. Do not use <code>--exclude</code>.</p>
 <h3>Directory permissions</h3>
 <p>If there is a problem with file/directory permissions, make sure you use a proper umask in your cronjob:</p>
-<pre><code>umask 022 ; rsync ...
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="err">umask 022 ; rsync ...</span>
+</code></pre></div>
+
 <h3>Excluded file types</h3>
 <p>Private mirrors of ASF downloads cannot host the following file types:</p>
-<pre><code>exclude =&gt; ['/tmp/', '*.md5', '*.MD5', '*.sha1', '*.sha',
-           '*.sha256', '*.sha512', '*.asc', 'MD5SUM', 'SHA*SUM*',
-           '*.mds', '*.sha2', '*.sha3', 'META',
-           '*.sig', '*.KEYS', 'KEYS', 'KEYS.txt', 
-           '.svn/', '/.rsync.td/',
-           '/openoffice',
-           '/zzz/rsync-module/apache-dist', '.revision'],
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="err">exclude =&gt; [&#39;/tmp/&#39;, &#39;*.md5&#39;, &#39;*.MD5&#39;, &#39;*.sha1&#39;, &#39;*.sha&#39;,</span>
+<span class="err">           &#39;*.sha256&#39;, &#39;*.sha512&#39;, &#39;*.asc&#39;, &#39;MD5SUM&#39;, &#39;SHA*SUM*&#39;,</span>
+<span class="err">           &#39;*.mds&#39;, &#39;*.sha2&#39;, &#39;*.sha3&#39;, &#39;META&#39;,</span>
+<span class="err">           &#39;*.sig&#39;, &#39;*.KEYS&#39;, &#39;KEYS&#39;, &#39;KEYS.txt&#39;, </span>
+<span class="err">           &#39;.svn/&#39;, &#39;/.rsync.td/&#39;,</span>
+<span class="err">           &#39;/openoffice&#39;,</span>
+<span class="err">           &#39;/zzz/rsync-module/apache-dist&#39;, &#39;.revision&#39;],</span>
+</code></pre></div>
+
 <h2 id="sponsorinfo">Mirror host information<a class="headerlink" href="#sponsorinfo" title="Permanent link">&para;</a></h2>
+
 <p>Here is how to add information explaining who is hosting the private download mirror:</p>
 <ol>
 <li>Edit the file <code>/local/path/to/mirror/README.html</code></li>
@@ -141,26 +148,29 @@
 </ol>
 <p>The contents of README.html appear near the bottom of your mirror's home page.</p>
 <ul>
-<li>Only customize the home-page (top-level) README.html. Do not change any other README.html files.</li>
+<li>Only customize the home-page (top-level) README.html. Do not change any other README.html files. </li>
 <li>Don't omit the '/' in <code>"/README.html"</code>.</li>
 </ul>
 <p>Please limit the contents of the README.html to something like:</p>
-<pre><code>This mirror is donated by www.domain.com [url] to support the Apache open source community.
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">This</span><span class="w"> </span><span class="n">mirror</span><span class="w"> </span><span class="k">is</span><span class="w"> </span><span class="n">donated</span><span class="w"> </span><span class="k">by</span><span class="w"> </span><span class="n">www</span><span class="p">.</span><span class="k">domain</span><span class="p">.</span><span class="n">com</span><span class="w"> </span><span class="o">[</span><span class="n">url</span><span class="o">]</span><span class="w"> </span><span class="k">to</span><span class="w"> </span><span class="n">support</span><span class="w"> </span><span class="n">the</span><span class="w"> </span><span class="n">Apache</span><span class="w"> </span><span class="k">open</span><span class="w"> </span><span class="n">source</span><span class="w"> </span><span class="n">community</span><span class="p">.</span><span class="w"></span>
+</code></pre></div>
+
 <p>Search engines interpret referring to specific services or products as <em>PageRank manipulation</em>. This could hurt your site's ranking.</p>
 <h2 id="testing">Testing your mirror<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
+
 <p>If your mirror is not working properly, check the following:</p>
 <ul>
 <li>Page headers and footers display correctly.</li>
 <li>All top-level directories and files on the ASF mirror are present on your mirror.</li>
-<li>Download a couple of files to check that the process works.</li>
+<li>Download a couple of files to check that the process works. </li>
 <li>Trying to download a missing file should generate a <code>404 Not Found</code> error. You can verify this by modifying one of the valid URLs that you tested above.</li>
 </ul>
 <h2 id="verifying">Verifying the download<a class="headerlink" href="#verifying" title="Permanent link">&para;</a></h2>
+
 <p>If you want to verify that the download is a true mirror of what the ASF project posted, using KEYS and signatures, THIS INFORMATION IS COMING.</p>
 <h2 id="questions">Questions?<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h2>
-<p>If you have any questions, contact us at <code>users@infra.apache.org</code>.</p>
 
+<p>If you have any questions, contact us at <code>users@infra.apache.org</code>.</p>
         </div>
       </div>
     </div>    
