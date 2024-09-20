@@ -30,7 +30,7 @@ Slack channels with Qbot installed now also have access to 'Lauren', a member of
 
 <a href="https://lists.apache.org/" target="_blank">lists.apache.org</a> lets you search, browse and contribute to the ASF email lists to which you have access, but it is not obvious that, for instance, you can use lists.a.o to create an email in a list to which you have subscribed.
 
-The page [Working in lists.apache.org]([email_lists.html) explains what your access is and what options are available, and provides a list of hotkeys you can use to do what you need to do.
+The page [Working in lists.apache.org](email_lists.html) explains what your access is and what options are available, and provides a list of hotkeys you can use to do what you need to do.
 
 
 ### Release artifact recommended and maximum sizes
