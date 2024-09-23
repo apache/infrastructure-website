@@ -44,7 +44,8 @@ Infra maintains a wide range of tools for PMCs, project committers, and the Apac
   - The <a href="https://whimsy.apache.org/site/" target="_blank">Apache Project Website Checker</a> periodically reviews all TLP websites and reports whether they comply with Apache's <a href="https://www.apache.org/foundation/marks/pmcs#navigation" target="_blank">policies for TLP websites</a>.
   
 <h3 id="email">Email<a class="headerlink" href="#email" title="Permanent link">&para;</a></h3>
-
+  
+  - [Emailing tips](contrib-email-tips.html)
   - All requests for new email lists should go through the <a href="https://selfserve.apache.org/mailinglist-new.html" target="_blank">self-serve system</a>. Remember not to mark a list as private if you want it publicly archived.
   - Email server - QMail/QSMTPD
   - <a href="https://www.apache.org/foundation/mailinglists.html" target="_blank">email lists</a> - EZMLM
