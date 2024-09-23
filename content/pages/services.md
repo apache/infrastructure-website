@@ -26,7 +26,6 @@ Infra maintains a wide range of tools for PMCs, project committers, and the Apac
   - <a href="#other">Other tools</a>
     - <a href="#dns">DNS</a>
     - <a href="#url-shortener">URL shortener</a>
-    - <a href="#sharing">Sharing snippets</a>
     - <a href="#logging">Logging</a>
     - <a href="#machines">Machine list</a>
     - <a href="#whimsy">Whimsy</a>
