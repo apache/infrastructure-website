@@ -36,7 +36,7 @@ Your Apache project's download page:
   - **must** have at least one link to the current release. This link **must** use the `closer.lua` utility. For example: `https://www.apache.org/dyn/closer.lua/PROJECT/VERSION/SOURCE-RELEASE`. (Note: the `mirrors.cgi` and `closer.cgi` scripts have been deprecated. Calls to them redirect to `closer.lua`.)
   - **must** have a link to the checksum for the current release. These links **must** use direct links to the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/VERSION/CHECKSUM`.
   - **must** have a link to the KEYS file for your project on the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/KEYS`.
-  - **must** have a link to the signature file for each release. See see the [release signing](release-signing.html) page for more information. 
+  - **must** have a link to the signature file for each release. See the [release signing](release-signing.html) page for more information. 
   - **should** have instructions on how to verify downloads. For this you can include a link to the <a href="https://www.apache.org/info/verification.html" target="_blank">Apache documentation on verification</a>.
   - **must not** include a download link to the top-level `closer.lua` utility (e.g. `http://www.apache.org/dyn/closer.lua/PROJECT`).
 
