@@ -88,8 +88,7 @@
 <p>If you want to have Qbot available in your PMC's channel, create a Jira ticket for Infra with the request. Include this information:</p>
 <ul>
 <li>If you want to get Jira-ticket notifications, the name of the channel or channels where notifications about tickets related to your projects should appear</li>
-<li>How you want notifications to appear. There are five options:
-<ul>
+<li>How you want notifications to appear. There are five options:<ul>
 <li>No notifications</li>
 <li>All notifications</li>
 <li><code>nodescription</code>: All notifications with the title of the ticket, but not its description</li>
@@ -107,12 +106,9 @@
 <li>Anywhere in the ASF workspace, type <code>/qbot</code> and the command you want to give it. If it is a command which you do not have permission to use where you currently are in Slack, the command will fail.</li>
 <li>In a channel where Qbot is present, type <code>qbot</code> without the slash, and the command.</li>
 <li>In the Slack interface, there is a general menu bar at the far left. The next column is the menu bar for the ASF workspace. Below the list of your contacts and channels, there is a section for <code>Apps</code>. Qbot appears there.
-<ul>
-<li>Click that entry to see a display with three tabs.</li>
-<li>Select the <code>Messages</code> tab.</li>
-<li>Write your command to Qbot without <code>/</code> or 'qbot` at the start.</li>
-</ul>
-</li>
+        -  Click that entry to see a display with three tabs.
+        -  Select the <code>Messages</code> tab.
+        -  Write your command to Qbot without <code>/</code> or 'qbot` at the start.</li>
 </ul>
 <h2>Qbot commands</h2>
 <p><strong>Note</strong> we are expanding Qbot's reach, and this list will expand to match its capabilities.</p>
@@ -127,14 +123,12 @@
 <p><strong>ASF Members</strong> can ask Qbot to provide information about Jira tickets.</p>
 <p><strong>List Jira tickets for a project</strong></p>
 <ul>
-<li>List all the project's tickets, regardless of status:
-<ul>
+<li>List all the project's tickets, regardless of status:<ul>
 <li>basic syntax: <code>qbot tickets project:&lt;PROJECT&gt;</code></li>
 <li>display the tickets that match a keyword search: <code>qbot tickets project:&lt;PROJECT&gt; &lt;KEYWORDS&gt;</code></li>
 </ul>
 </li>
-<li>List the project's unassigned tickets:
-<ul>
+<li>List the project's unassigned tickets:<ul>
 <li>basic syntax: <code>qbot tickets unassigned:&lt;PROJECT&gt;</code></li>
 <li>display the project's unassigneed tickets that match a keyword search: <code>qbot tickets unassigned:&lt;PROJECT&gt; &lt;KEYWORDS&gt;</code></li>
 </ul>
@@ -142,13 +136,11 @@
 </ul>
 <p><strong>Find specific Jira tickets</strong></p>
 <ul>
-<li>Find tickets using <a href="https://www.atlassian.com/blog/jira/jql-the-most-flexible-way-to-search-jira-14" target="_blank">Jira Query Language (JQL)</a>
-<ul>
+<li>Find tickets using <a href="https://www.atlassian.com/blog/jira/jql-the-most-flexible-way-to-search-jira-14" target="_blank">Jira Query Language (JQL)</a><ul>
 <li>syntax: <code>qbot tickets jql:&lt;JQL STRING&gt;</code></li>
 </ul>
 </li>
-<li>Find tickets using a keyword search
-<ul>
+<li>Find tickets using a keyword search<ul>
 <li>syntax: <code>qbot tickets &lt;KEYWORDS&gt;</code></li>
 </ul>
 </li>
@@ -168,16 +160,12 @@
 <li><code>lauren policy</code>: Lauren reminds you of a corporation policy.</li>
 </ul>
 </li>
-<li>
-<p><code>roll</code> - If you send the command without furthr parameters (<code>qbot roll</code>), Qbot rolls one six-sided die and reports the result.</p>
-<ul>
+<li><code>roll</code> - If you send the command without furthr parameters (<code>qbot roll</code>), Qbot rolls one six-sided die and reports the result.<ul>
 <li>You can roll up to ten dice at a time, and each die can have up to 100 sides or 'pips'.The syntax for a basic dice roll is <code>qbot roll NdP</code>, where <code>N</code> is the number of dice (up to 10) and <code>P</code> is the number of surfaces each die has (up to 100): <code>qbot roll 8d12</code>.</li>
 <li>In a role-playing game such as Dungeons and Dragons, when your character gets in trouble you may be able to try a <strong>saving roll</strong> to, well, save them from disaster. The syntax to see if Qbot can help in your current crisis is <code>qbot roll saving</code>.</li>
 </ul>
 </li>
-<li>
-<p><code>shanty</code> - Qbot shares a verse of a sea shanty. The syntax is <code>qbot shanty</code>.</p>
-</li>
+<li><code>shanty</code> - Qbot shares a verse of a sea shanty. The syntax is <code>qbot shanty</code>.</li>
 </ul>
 <p><em>Note: the following two commands are in 'alpha' development and may not work as expected. If you would like to use them in huddles in your project's Slack spaces, please let us know (see 'Requesting features', below).</em></p>
 <ul>
@@ -186,7 +174,6 @@
 </ul>
 <h2>Requesting features</h2>
 <p>If you have an idea for a Qbot service that could help your PMC on Slack (or you just want to add a verse from another sea shanty), please suggest it in the <a href="https://github.com/apache/infrastructure-ideas/discussions/categories/qbot" target="_blank">Infrastructure-ideas repository</a>.</p>
-
         </div>
       </div>
     </div>    

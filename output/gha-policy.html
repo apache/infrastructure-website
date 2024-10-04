@@ -73,16 +73,15 @@
           <h1>
               Policy on use of GitHub Actions
           </h1>
-              <p>Due to misconfigurations in their builds, some projects have been using unsupportable numbers of <a href="github-actions-secrets.html">GitHub Actions</a>. As part of fixing this situation, Infra has established a policy for GitHub Actions use. This policy comes into effect on&nbsp;<strong>April 20, 2024</strong>:</p>
+              <p>Due to misconfigurations in their builds, some projects have been using unsupportable numbers of <a href="github-actions-secrets.html">GitHub Actions</a>. As part of fixing this situation, Infra has established a policy for GitHub Actions use. This policy comes into effect on <strong>April 20, 2024</strong>:</p>
 <ul>
-<li>All workflows&nbsp;<strong>MUST</strong>&nbsp;have a job concurrency level less than or equal to 20. This means a workflow cannot have more than 20 jobs running at the same time across all matrices.</li>
-<li>All workflows&nbsp;<strong>SHOULD</strong>&nbsp;have a job concurrency level less than or equal to 15. Just because 20 is the max, doesn't mean you should strive for 20.</li>
-<li>Workflows&nbsp;<strong>MUST NOT</strong>&nbsp;use <code>pull_request_target</code>&nbsp;in a workflow without prior consent from Infra.</li>
-<li>The average number of minutes a project uses <em>per calendar week</em>&nbsp;<strong>MUST NOT</strong>&nbsp;exceed the equivalent of 25 full-time runners (250,000 minutes, or 4,200 hours).</li>
-<li>The average number of minutes a project uses <em>in&nbsp;any consecutive five-day period</em>&nbsp;<strong>MUST NOT</strong>&nbsp;exceed the equivalent of 30 full-time runners (216,000 minutes, or 3,600 hours).</li>
+<li>All workflows <strong>MUST</strong> have a job concurrency level less than or equal to 20. This means a workflow cannot have more than 20 jobs running at the same time across all matrices.</li>
+<li>All workflows <strong>SHOULD</strong> have a job concurrency level less than or equal to 15. Just because 20 is the max, doesn't mean you should strive for 20.</li>
+<li>Workflows <strong>MUST NOT</strong> use <code>pull_request_target</code> in a workflow without prior consent from Infra.</li>
+<li>The average number of minutes a project uses <em>per calendar week</em> <strong>MUST NOT</strong> exceed the equivalent of 25 full-time runners (250,000 minutes, or 4,200 hours).</li>
+<li>The average number of minutes a project uses <em>in any consecutive five-day period</em> <strong>MUST NOT</strong> exceed the equivalent of 30 full-time runners (216,000 minutes, or 3,600 hours).</li>
 </ul>
 <p>Projects whose builds consistently cross the maximum use limits will lose their access to GitHub Actions until they fix their build configurations.</p>
-
         </div>
       </div>
     </div>    
