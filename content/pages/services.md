@@ -45,6 +45,7 @@ Infra maintains a wide range of tools for PMCs, project committers, and the Apac
   
 <h3 id="email">Email<a class="headerlink" href="#email" title="Permanent link">&para;</a></h3>
   
+  - Watch out for [phishing](phishing.html)
   - [Emailing tips](contrib-email-tips.html)
   - All requests for new email lists should go through the <a href="https://selfserve.apache.org/mailinglist-new.html" target="_blank">self-serve system</a>. Remember not to mark a list as private if you want it publicly archived.
   - Email server - QMail/QSMTPD
