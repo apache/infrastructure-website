@@ -15,11 +15,14 @@ We never send emails with subjects like:
 - 'cPanel delaying incoming messages'
 - 'Important notification: Account password is set to expire'
 - 'ATTENTION: Incoming Pending Messages'
+- 'Action Required!!-Account Update'
 - 'Password Notification for PROJECTNAME on ...'
+- 'Release Blocked Incoming Messages'
+- 'Your [...@apache.org] Rectification'
 - 'Unauthorized Mailbox Log-in Detetced on ...'
 - 'Deactivation of mailbox due to domain expiration'
 - '[14] pending incoming mails'
-- 'Syncing Error - Incoming failed!'
+- 'Syncing Error - (.) Incoming failed!'
 
 These are phishing &mdash; some may even use our imagery and copycat websites.
 Your best action is to ignore them.
