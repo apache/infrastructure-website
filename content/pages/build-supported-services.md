@@ -138,12 +138,11 @@ Committers need to sign up for a personal account, then create a Jira ticket ask
 Infra adds DockerHub user IDs to a project 'team', which has read/write access to the project repositories.
 
 #### Integrations
-The ASF has tokens/credentials in GHA, Jenkins and Buildbot for projects to use when pushing to Dockerhub using a role account.
+The ASF has tokens/credentials in GHA, Jenkins and Buildbot for projects to use when pushing to Dockerhub using a role account. If you want to make use of this option, open a Jira ticket for Infra, to request they enable it for your projet's repository.
 
 #### More information
 
   - <a href="https://cwiki.apache.org/confluence/display/INFRA/Github+Actions+to+DockerHub" target="_blank">GitHub Actions to DockerHub</a>
-  - <a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins+and+Dockerhub" target="_blank">Jenkins and Dockerhub</a>
 
 <h2 id="gradle">Gradle Enterprise<a class="headerlink" href="#gradle" title="Permanent link">&para;</a></h2>
 Gradle is a suite of acceleration and analytics technologies for CI/CD systems to help projects identify and analyze trends while optimizing build resources. The result is faster builds, with fewer failures, The ASF instance of Gradle enterprise is at <a href="https://ge.apache.org/" target="_blank">ge.apache.org</a>.
