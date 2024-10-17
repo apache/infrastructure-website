@@ -50,5 +50,5 @@ that the above shell script builds.
 To stage a preview of what a PR would result in, be sure to name your branches 
 using the `preview/$foo` syntax, for instance `preview/cleanup-dec-2021`. This 
 will auto-build and -stage your changes and make them available at 
-`infra-$foo.staged.apache.org`, i.e. `infra-cleanup-dec-2021.staged.apache.org`
+`infra-$foo.staged.apache.org`, e.g. `infra-cleanup-dec-2021.staged.apache.org`
 
