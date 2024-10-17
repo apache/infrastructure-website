@@ -20,6 +20,10 @@ To review and update your forwarding addresses:
 
 Users of Google's Gmail should note that the app sometimes shows only one copy of an email, even if copies come to several email aliases that all point to the same inbox. If you try to test forwarding by sending a message to your ASF account from the Gmail account that is the target of the .forward, it can be difficult to tell if it has worked. Send the test e-mail from a different account.
 
+GMail <a href="https://support.google.com/a/answer/81126?hl=en#message-format" target="_blank">checks emails for strict compliance with standards</a>,
+and may silently drop emails if they don't conform.
+For example, emails are only supposed to have a single Reply-To header; GMail drops such emails with no notification.
+
 - Microsoft
 
 There have been ongoing problems with Microsoft domains partly because many of their users report our legitimate email as spam.
@@ -55,4 +59,5 @@ Your email provider may have a simple form for this in its "Settings" area.
 
 Note: If you are using Gmail with your apache.org email address, there is a way to configure it to take advantage of this service. See Gmail's feature to allow outbound mail from your apache.org address to be directed to the mail-relay service, instead of to a Gmail server, for delivery.
 
-
+The <a href="https://lists.apache.org/" target="_blank">lists.apache.org</a> service also allows logged-in users to
+reply to emails from their browser.
