@@ -67,7 +67,7 @@ You may need to set additional properties for some files. For example, apply `sv
 
 Pay attention to the messages from your svn client when you do `svn commit`.
 
-**Tip**: If you use TortiseSVN, a popular Windows GUI client that integrates with Windows Explorer, you can right-click in Explorer, select `TortiseSVN - Settings`, and select "Edit" to update your Subversion configuration file. Copy the above `svn-eol-style.txt` file's contents into the end of the configuration file that appears, and save the file.
+**Tip**: If you use TortoiseSVN, a popular Windows GUI client that integrates with Windows Explorer, you can right-click in Explorer, select `TortoiseSVN - Settings`, and select "Edit" to update your Subversion configuration file. Copy the above `svn-eol-style.txt` file's contents into the end of the configuration file that appears, and save the file.
 
 <h3 id="ssl">SSL server certificate<a class="headerlink" href="#ssl" title="Permanent link">&para;</a></h3>
 
