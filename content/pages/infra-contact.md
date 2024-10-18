@@ -212,7 +212,7 @@ Please review the tables above before filing a ticket - often you or someone in 
 
 <h4 id="reopen">My issue got closed with a request to reopen it<a class="headerlink" href="#reopen" title="Permanent link">&para;</a></h4>
 
-The closed ticket may have a note indicating why we closed it. For instance, the ticket may have lacked information required to confirm or adddress the issue.
+The closed ticket may have a note indicating why we closed it. For instance, the ticket may have lacked information required to confirm or address the issue.
 
 If you have additional information that would help us understand and respond to your issue, please include it in a new INFRA Jira ticket and we will give it a look.
 

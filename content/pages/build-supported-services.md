@@ -138,7 +138,7 @@ Committers need to sign up for a personal account, then create a Jira ticket ask
 Infra adds DockerHub user IDs to a project 'team', which has read/write access to the project repositories.
 
 #### Integrations
-The ASF has tokens/credentials in GHA, Jenkins and Buildbot for projects to use when pushing to Dockerhub using a role account. If you want to make use of this option, open a Jira ticket for Infra, to request they enable it for your projet's repository.
+The ASF has tokens/credentials in GHA, Jenkins and Buildbot for projects to use when pushing to Dockerhub using a role account. If you want to make use of this option, open a Jira ticket for Infra, to request they enable it for your project's repository.
 
 #### More information
 
