@@ -76,7 +76,7 @@
               <p>Every Apache project committer account has an associated apache.org email address. Some official Apache emails go to these addresses, so you need to check your apache.org email regularly for announcements. You can also use this address for correspondence related to ASF projects you work on.</p>
 <p>You cannot work <strong>directly</strong> with your Apache email address. You must set up <strong>forwarding</strong> for this address. Then, when people write to your ASF address, the system forwards the email to your forwarding address. When you reply, the message goes back through the ASF system so the person you are writing with sees it come from your ASF address. See below for how to write a new email from your ASF address.</p>
 <h2>Configuring your Apache email address</h2>
-<p>When Infra creates your committer account, it sets the forwarding email address, or alias, to the address you provided in the account request and, typically, in the <a href="https://www.apache.org/licenses/icla.pdf" target="_blank">Independent Contributor Licensing Agreement (ICLA)</a> you provided. Keep your forwarding address (or addresses) up to date.</p>
+<p>When Infra creates your committer account, it sets the forwarding email address, or alias, to the address you provided in the account request and, typically, in the <a href="https://www.apache.org/licenses/icla.pdf" target="_blank">Independent Contributor Licensing Agreement (ICLA)</a> you provided. Keep your forwarding address (or addresses) up to date. </p>
 <p>To review and update your forwarding addresses:</p>
 <ul>
 <li>Use the <a href="https://id.apache.org/" target="_blank">Selfserve app</a>.</li>
@@ -105,13 +105,14 @@
 <li>Use the <a href="https://id.apache.org/" target="_blank">Selfserve app</a>.</li>
 <li>Use <a href="https://whimsy.apache.org/roster/committer/__self__" target="_blank">Whimsy</a>. Double-click the green "Email addresses (alt)" label.</li>
 </ul>
-<p>You can register multiple email aliases with your committer account. Apache inspects registered e-mail aliases when you subscribe to a restricted mailing list with an email other than your apache.org e-mail address. If you are allowed to subscribe to a restricted Apache mailing list and use an address other than your Apache email address, the Apache system approves the request if you have registered the email as one of your aliases.</p>
+<p>You can register multiple email aliases with your committer account. Apache inspects registered e-mail aliases when you subscribe to a restricted mailing list with an email other than your apache.org e-mail address. If you are allowed to subscribe to a restricted Apache mailing list and use an address other than your Apache email address, the Apache system approves the request if you have registered the email as one of your aliases. </p>
 <h3>Sending email from your Apache address</h3>
 <p>Since you can't use your Apache mailbox directly, send email using your apache.org email address from the committer mail-relay service. Configure this in your email environment:</p>
-<p><code>Server: mail-relay.apache.org Port: 587 (STARTTLS), 465 (SSL) User/Pass: {Your LDAP credentials}</code></p>
+<p><code>Server:     mail-relay.apache.org 
+Port:       587 (STARTTLS), 465 (SSL) 
+User/Pass:  {Your LDAP credentials}</code></p>
 <p>Your email provider may have a simple form for this in its "Settings" area.</p>
 <p>Note: If you are using Gmail with your apache.org email address, there is a way to configure it to take advantage of this service. See Gmail's feature to allow outbound mail from your apache.org address to be directed to the mail-relay service, instead of to a Gmail server, for delivery.</p>
-
         </div>
       </div>
     </div>    
