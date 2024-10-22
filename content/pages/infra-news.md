@@ -1,6 +1,8 @@
 Title: News from Infra
 license: https://www.apache.org/licenses/LICENSE-2.0
 
+**October 22, 2024**: We are seeing a sharp increase in 'phishing attempts', fake emails pretending to come from various ASF groups and committees. Infra has some [anti-phishing advice](phishing.html) to help you avoid falling for these fake messages.
+                            
 **September 16, 2024**: For clarity, Infra has updated the statement on release artifact sizes which appears on the [Release Distribution Policy](release-distribution.html) page. The statement now reads: "Infra recommends keeping the size of your release artifacts below 100MB. The ASF will **not** host release artifacts larger than 1GB."
 
 **September 14, 2024**: Infra has ended the `home.apache.org` hosting service for committer websites and content. More details are <a href="https://infra.apache.org/blog/end_of_home.html">here</a>.
