@@ -91,20 +91,27 @@ Whichever signing option you choose, you will need to complete four steps:</p>
 <p><strong>Note</strong>: The ASF has to pay for each signature using a signing certificate. Using Jenkins to build and sign <strong>releases</strong> using eSigner fine. Signing every single <strong>CI build</strong> is not necessary and can become expensive for the Foundation. Please make sure your build process only involves signing certificates for release candidates.</p>
 <h3>Step 1: Obtaining an ssl.com account</h3>
 <p>Adding a new release manager needs to be performed by the infrastructure team. Please open an <a href="https://issues.apache.org/jira/browse/INFRA">INFRA Jira ticket</a> and select code signing as the component.</p>
-<p>When the infrastructure team creates your account you will receive TBD. Your username is your ASF email address.</p>
-<p>You should configure your account to use 2FA.
-Note: This 2FA is separate to the 2FA you will need to configure to perform code signing.</p>
+<p>When the infrastructure team creates your account you will receive an email to your ASF email address.
+You will be asked for a user name and password.
+Use your ASF email address as the user name (if you enter anything else it should be ignored and your ASF email used anyway).
+Provide a secure password.
+It is recommended that you enabled 2FA for your account (Dashboard -&gt; manage 2FA).
+Note: The 2FA you configure here for account access is not the same as the 2FA you are required to configure later in these instructions to use eSigner.</p>
+<p>You may be prompted to verify your account. It is not necessary to do this.</p>
+<p>You will see a message saying you have been invited to enroll for eSigner for the given certificate.
+You should click yes to accept the invitation.</p>
 <h3>Step 2: Obtaining credentials for code signing</h3>
-<p>Whatever you need to sign and however you choose to sign it, you need to create 2FA credentials.
+<p>Whatever you need to sign and however you choose to sign it, you need to create 2FA credentials for eSigner.
 You create these via the ssl.com web interface.
-Depending on your chosen signing method, you will need either to configure 2FA using the QR code you create or make a note of the base 64 encoded secret code associated.</p>
+Depending on your chosen signing method, you will need either to configure 2FA using the QR code provided or make a note of the base 64 encoded secret code.</p>
 <ol>
 <li>Log on to <a href="https://www.ssl.com/">ssl.com</a>.</li>
-<li>TBD.</li>
+<li>On your Dashboard, there should be a single certificate listed under esigner enrolled orders. Click on it to take you to the certificate page.</li>
+<li>On the right-hand side you will see a prompt to set up a pin. Provide a pin and click "create PIN". You should be shown a QR code and a secret code. Note that the warning that the QR code wll only be shown once is incorrect. You can always view the QR code and secret code by providing your pin on this page.</li>
 </ol>
 <h3>Step 3: Install the OS integration</h3>
 <h4>None</h4>
-<p>If you use JSign 4.0, you can skip this step.</p>
+<p>If you use JSign, you can skip this step.</p>
 <h4>Windows integration</h4>
 <ol>
 <li>TBD.</li>
@@ -118,8 +125,6 @@ Depending on your chosen signing method, you will need either to configure 2FA u
 <li>TBD</li>
 </ol>
 <h3>Step 4: Configure your chosen signing tool</h3>
-<h4>Signing Windows binaries on Windows using signtool.exe</h4>
-<p>TBD.</p>
 <h4>Signing on Windows binaries on Windows or Linux with JSign 4.0+ Ant task</h4>
 <ol>
 <li>
@@ -127,13 +132,13 @@ Depending on your chosen signing method, you will need either to configure 2FA u
 </li>
 <li>
 <p>The eSigner specific properties for the JSign task in Ant should be as follows:</p>
-<pre><code>   storetype="ESIGNER"
-   alias="d97c5110-c66a-4c0c-ac0c-1cd6af812ee6"
-   storepass="&lt;ssl.com user name&gt;|&lt;ssl.com password&gt;"
-   keypass="&lt;ssl.com eSigner TOTP secret&gt;"
-   tsaurl="http://ts.ssl.com"
-   tsmode="RFC3161"
-   alg="SHA256"
+<pre><code>   storetype=ESIGNER
+   alias=d97c5110-c66a-4c0c-ac0c-1cd6af812ee6
+   storepass=&lt;ssl.com user name&gt;|&lt;ssl.com password&gt;
+   keypass=&lt;ssl.com eSigner TOTP secret&gt;
+   tsaurl=http://ts.ssl.com
+   tsmode=RFC3161
+   alg=SHA256
 </code></pre>
 </li>
 </ol>
@@ -151,6 +156,8 @@ Depending on your chosen signing method, you will need either to configure 2FA u
 </code></pre>
 </li>
 </ol>
+<h4>Signing Windows binaries on Windows using signtool.exe</h4>
+<p>TBD.</p>
 <h4>Other signing formats, tools and operating systems</h4>
 <p>See the ssl.com eSigner on-line help.</p>
 
