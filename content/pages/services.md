@@ -157,7 +157,10 @@ See [guidance for choosing a product name](project-names.html)
 
 <h3 id="code-signing">Code signing<a class="headerlink" href="#code-signing" title="Permanent link">&para;</a></h3>
 
-  - Digicert
+  - Code signing service
+      - Requesting access to the [code signing service](code-signing-access.html)
+      - [Using the code signing service](code-signing-use.html)
+  - Digicert (service ends 2024-11-01)
       - Requesting access to the [Digicert code signing service](digicert-access.html)
       - [Using Digicert](digicert-use.html)
   - [Cryptography with OpenPGP](openpgp.html)
