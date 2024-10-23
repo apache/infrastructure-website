@@ -85,17 +85,16 @@
 <li><a href="#cautions">Cautions</a></li>
 </ul>
 <h3 id="request">Requesting a virtual machine<a class="headerlink" href="#request" title="Permanent link">&para;</a></h3>
+
 <p>To request a virtual machine, open a <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Jira</a> ticket with at least the following information:</p>
 <ol>
-<li>The project's plans for the virtual machine:
-<ul>
+<li>The project's plans for the virtual machine:<ul>
 <li>Why the project needs a dedicated VM</li>
 <li>Is logging in used in the project's application (HTTPS is mandatory for use of login)?</li>
 <li>Do any special ports need to be opened?</li>
 </ul>
 </li>
-<li>VM resources requested (the operating system will be the latest Ubuntu LTS release):
-<ul>
+<li>VM resources requested (the operating system will be the latest Ubuntu LTS release):<ul>
 <li>CPU cores (default is 1)</li>
 <li>RAM (default is 1Gb)</li>
 <li>Disk capacity (default is 40Gb)</li>
@@ -103,8 +102,7 @@
 <li>Apache ID of project administrator (one of the maintainers you specify below)</li>
 </ul>
 </li>
-<li>Application resources:
-<ul>
+<li>Application resources:<ul>
 <li>Database (Infra recommends SQLite, given the small size, but can configure an on-box mySQL or PostgreSQL database for the VM.)</li>
 <li>Httpd (installed pr default, configuration is to be agreed upon)</li>
 <li>Non-standard packages (will be maintained by infra-p6)</li>
@@ -112,13 +110,11 @@
 <li>Backup needed (default is <strong>no</strong> backups other than what is in Infra-p6)</li>
 </ul>
 </li>
-<li>Maintainers:
-<ul>
+<li>Maintainers:<ul>
 <li>Provide the name, Apache ID, and contact info for at least three PMC members who will maintain the VM.</li>
 </ul>
 </li>
-<li>Acknowledgement:
-<ul>
+<li>Acknowledgement:<ul>
 <li>Name of a PMC member who acknowledges this request on behalf of the project.</li>
 </ul>
 </li>
@@ -127,40 +123,45 @@
 <p>The operating system needs to be supported by our standard applications, therefore we currently only offer Ubuntu.</p>
 <p><strong>Important</strong>: a PMC member must acknowledge the request ticket.</p>
 <h3 id="deploy">Deploying the virtual machine<a class="headerlink" href="#deploy" title="Permanent link">&para;</a></h3>
+
 <p>Infra may ask questions to clarify the request. When all is clear, we will create the VM according to specifications, install the OS and the mandatory standard (Infra) applications. The mandatory application guarantee a level of security and provide ssh access common to all vms.</p>
 <p>Once we have tested the VM, we will ask a project maintainer to do ssh to the VM.</p>
 <h3 id="maintain">Project maintainers<a class="headerlink" href="#maintain" title="Permanent link">&para;</a></h3>
+
 <p>The project maintainers are responsible for maintaining the VM. Infra will normally not maintain the VM, but will check on security from time to time.</p>
 <p>Each project maintainer needs to have ssh keys uploaded to <code>id.a.o</code> before requesting the VM. Maintainers use the ssh keys stored in LDAP to log in to the VM.</p>
 <p>When the VM is created, each maintainer gets karma to access the VM (ldap add host to userid). Once that has been tested, it is time to get sudo karma if it is required.</p>
 <p>To prepare for sudo karma follow the <a href="https://reference.apache.org/committer/opie" target="_blank">OPIE guidelines</a>.</p>
 <p>When OPIE works, contact us on #asfinfra, or by commenting on the issue, and sudo karma will be granted (ldap add userid to sudoer group).</p>
 <h3 id="ssh-keys">Obtaining SSH keys<a class="headerlink" href="#ssh-keys" title="Permanent link">&para;</a></h3>
+
 <p>To use key-based login, you need to generate a key on your local desktop (do not use a publicly accessible server for this) and then add your public key to LDAP using the self-service app at <code>https://id.apache.org</code>.</p>
 <p>Once you have done this, wait at least 10 mins. You should then be able to log in as follows:</p>
-<pre><code>:::shell $ ssh [username]@$project-vm.apache.org
-</code></pre>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
 <p>Depending on your client setup, you may need to run the following command to ensure the key(s) are made available to the SSH client on your system:</p>
-<pre><code>:::shell $ ssh-add
-</code></pre>
+<div class="highlight"><pre><span></span><code>
+</code></pre></div>
+
 <p>If you use PuTTY, make sure it is configured to force SSH v2 protocol. And use keyboard-interactive.</p>
 <p>Once you have logged in, there are few tasks best performed right away. Please take care when using your shell account.</p>
 <p>Check that your umask is set in a group-friendly fashion. This ensures that the documents you create are editable by your fellow committers. To do this, (depending on which shell you use) edit the <code>.cshrc</code> file or <code>.profile</code> (sh derivatives) so the umask is set as follows:</p>
-<pre><code>umask 002
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="err">umask 002</span>
+</code></pre></div>
+
 <p>If a umask line already exists, modify it. Otherwise, add a new line. You will need to use a <code>*nix</code> command-line editor such as <code>vi</code>.</p>
 <p>Tip: You can review the files of some other committer: <code>ls -al ~mymentor; cat ~mymentor/.cshrc</code>.</p>
 <h3 id="maintenance">General maintenance<a class="headerlink" href="#maintenance" title="Permanent link">&para;</a></h3>
+
 <p>There are no mandatory rules, but here are some suggestions:</p>
 <ul>
-<li>Keep all changes in Git/Puppet. See: <code>https://github.com/apache/infrastructure-p6</code>
-<ul>
+<li>Keep all changes in Git/Puppet. See: <code>https://github.com/apache/infrastructure-p6</code><ul>
 <li>If you do not have karma, please create PRs in a branch against our GitHub repository.</li>
 <li>Keep all application data in <code>/x1</code> if possible.</li>
 </ul>
 </li>
-<li>Update Puppet with all extra installed packages.
-<ul>
+<li>Update Puppet with all extra installed packages.<ul>
 <li>See <code>https://github.com/apache/infrastructure-p6/tree/production/modules/&lt;vmname&gt;/manifests/init.pp</code></li>
 <li>See also the <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+workflow+for+infrastructure-puppet+repo" target="_blank">Git workflow for an Infrastructure Puppet repository</a>.</li>
 </ul>
@@ -168,9 +169,9 @@
 </ul>
 <p>See also <a href="vm-management.html">Managing virtual machines</a></p>
 <h3 id="cautions">Cautions<a class="headerlink" href="#cautions" title="Permanent link">&para;</a></h3>
+
 <ul>
-<li>Do not try to change items controlled by puppet, such as:
-<ul>
+<li>Do not try to change items controlled by puppet, such as:<ul>
 <li>iptables</li>
 <li>sshd</li>
 <li>ldap</li>
@@ -181,7 +182,6 @@
 <li>As sudoer you are expected to know what you do, and are expected to clear any problems you create.</li>
 </ul>
 <p>Before doing something, you are always welcome to join #asfinfra on Slack and ask about it.</p>
-
         </div>
       </div>
     </div>    
