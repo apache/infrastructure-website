@@ -162,7 +162,6 @@ See [guidance for choosing a product name](project-names.html)
       - [Using Digicert](digicert-use.html)
   - [Cryptography with OpenPGP](openpgp.html)
   - For <a href="https://cwiki.apache.org/confluence/display/INFRA/Distribution+via+the+Apple+App+Store" target="_blank">distribution via the Apple App Store</a>
-  - More information on <a href="https://cwiki.apache.org/confluence/display/INFRA/Code+Signing+and+Publishing" target="_blank">code signing and publishing</a>
 
 <h3 id="qa">Code quality<a class="headerlink" href="#qa" title="Permanent link">&para;</a></h3>
 
