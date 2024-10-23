@@ -1,0 +1,173 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Using the ssl.com eSigner code signing service - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Contribute</a></li>
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Using the ssl.com eSigner code signing service
+          </h1>
+              <h2>Transition to ssl.com</h2>
+<p>The ASF used Symantec's Secure App Service to provide Windows and JAR code signing functionality from 2014 to 2019 and DigiCert ONE from 2019 to 2024.
+In 2024 the ASF moved to the ssl.com eSigner service.
+All new signing must be via the ssl.com eSigner service.</p>
+<p>If you require assistance migrating to the ssl.com eSigner service, please open an <a href="https://issues.apache.org/jira/browse/INFRA">INFRA Jira ticket</a> and select code signing as the component.</p>
+<h2>ssl.com eSigner</h2>
+<p>ssl.com's eSigner service supports a range of signing tools and formats.
+For the full details see the <a href="https://www.ssl.com/guide/remote-ev-code-signing-with-esigner">eSigner documentation</a>.
+Whichever signing option you choose, you will need to complete four steps:</p>
+<ol>
+<li>Obtain an ssl.com account</li>
+<li>Obtain credentials for code signing</li>
+<li>Install the OS integration for your chosen OS (Windows or Linux)</li>
+<li>Configure your chosen signing tool</li>
+</ol>
+<p><strong>Note</strong>: The ASF has to pay for each signature using a signing certificate. Using Jenkins to build and sign <strong>releases</strong> using eSigner fine. Signing every single <strong>CI build</strong> is not necessary and can become expensive for the Foundation. Please make sure your build process only involves signing certificates for release candidates.</p>
+<h3>Step 1: Obtaining an ssl.com account</h3>
+<p>Adding a new release manager needs to be performed by the infrastructure team. Please open an <a href="https://issues.apache.org/jira/browse/INFRA">INFRA Jira ticket</a> and select code signing as the component.</p>
+<p>When the infrastructure team creates your account you will receive TBD. Your username is your ASF email address.</p>
+<p>You should configure your account to use 2FA.
+Note: This 2FA is separate to the 2FA you will need to configure to perform code signing.</p>
+<h3>Step 2: Obtaining credentials for code signing</h3>
+<p>Whatever you need to sign and however you choose to sign it, you need to create 2FA credentials.
+You create these via the ssl.com web interface.
+Depending on your chosen signing method, you will need either to configure 2FA using the QR code you create or make a note of the base 64 encoded secret code associated.</p>
+<ol>
+<li>Log on to <a href="https://www.ssl.com/">ssl.com</a>.</li>
+<li>TBD.</li>
+</ol>
+<h3>Step 3: Install the OS integration</h3>
+<h4>None</h4>
+<p>If you use JSign 4.0, you can skip this step.</p>
+<h4>Windows integration</h4>
+<ol>
+<li>TBD.</li>
+</ol>
+<h4>Linux integration</h4>
+<ol>
+<li>TBD.</li>
+</ol>
+<h4>MacOS</h4>
+<ol>
+<li>TBD</li>
+</ol>
+<h3>Step 4: Configure your chosen signing tool</h3>
+<h4>Signing Windows binaries on Windows using signtool.exe</h4>
+<p>TBD.</p>
+<h4>Signing on Windows binaries on Windows or Linux with JSign 4.0+ Ant task</h4>
+<ol>
+<li>
+<p>Make the JSign JAR from <a href="https://search.maven.org/artifact/net.jsign/jsign">Maven Central</a> available to Ant.</p>
+</li>
+<li>
+<p>The eSigner specific properties for the JSign task in Ant should be as follows:</p>
+<pre><code>   storetype="ESIGNER"
+   alias="d97c5110-c66a-4c0c-ac0c-1cd6af812ee6"
+   storepass="&lt;ssl.com user name&gt;|&lt;ssl.com password&gt;"
+   keypass="&lt;ssl.com eSigner TOTP secret&gt;"
+   tsaurl="http://ts.ssl.com"
+   tsmode="RFC3161"
+   alg="SHA256"
+</code></pre>
+</li>
+</ol>
+<h4>Signing Windows binaries on Linux with JSign 4.0+</h4>
+<ol>
+<li>
+<p>Download jsign <code>wget https://github.com/ebourg/jsign/releases/download/4.0/jsign_4.0_all.deb</code>.</p>
+</li>
+<li>
+<p>Install jsign <code>sudo dpkg --install jsign_4.0_all.deb</code>.</p>
+</li>
+<li>
+<p>You should then be able to sign with:</p>
+<pre><code> jsign --storetype ESIGNER --alias d97c5110-c66a-4c0c-ac0c-1cd6af812ee6 --storepass "&lt;ssl.com user name&gt;|&lt;ssl.com password&gt;" --keypass "&lt;ssl.com eSigner TOTP secret&gt;" --tsaurl="http://ts.ssl.com" --tsmode RFC3161 --alg SHA256 application.exe
+</code></pre>
+</li>
+</ol>
+<h4>Other signing formats, tools and operating systems</h4>
+<p>See the ssl.com eSigner on-line help.</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2024, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
