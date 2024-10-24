@@ -26,8 +26,8 @@ Adding a new release manager needs to be performed by the infrastructure team. P
 
 When the infrastructure team creates your account you will receive an email to your ASF email address.
 You will be asked for a user name and password.
-Use your ASF email address as the user name (if you enter anything else it should be ignored and your ASF email used anyway).
-Provide a secure password.
+Use your ASF email address as the user name (if you enter anything else it should be ignored and your ASF email used anyway) and provide a secure password.
+
 It is recommended that you enabled 2FA for your account (Dashboard -> manage 2FA).
 Note: The 2FA you configure here for account access is not the same as the 2FA you are required to configure later in these instructions to use eSigner.
 
@@ -54,7 +54,14 @@ If you use JSign, you can skip this step.
 
 #### Windows integration
 
-1. TBD.
+To sign Windows binaries with the ASF code signing certificate using signtool.exe and/or view the ASF code signing certificate using certutil.exe you will need to install the eSigner Cloud Key Adapter (CKA).
+There are two configuration options for eSigner CKA: manual code signing and automated code signing.
+
+For manual code signing you must configure an authenticator app for 2FA for eSigner using the QR code and you will be required to provide your ssl.com username and password along with a OTP from your authenticator app every time you sign a file.
+For automated code signing you create a local file that contains you ssl.com username and password along with the 2FA secret code and code signing will not require any additional input when you sign a file. 
+
+The eSigner documentation provides step by step instructions on configuring both [manual code signing](https://www.ssl.com/how-to/automate-ev-code-signing-with-signtool-or-certutil-esigner/#manual-code-signing) and [automated code signing](https://www.ssl.com/how-to/automate-ev-code-signing-with-signtool-or-certutil-esigner/#automated-code-signing).
+
 
 #### Linux integration
 
@@ -90,7 +97,7 @@ If you use JSign, you can skip this step.
 
 #### Signing Windows binaries on Windows using signtool.exe
 
-TBD.
+The eSigner documentation provides step by step instructions on configuring and using both [manual code signing](https://www.ssl.com/how-to/automate-ev-code-signing-with-signtool-or-certutil-esigner/#manual-code-signing) and [automated code signing](https://www.ssl.com/how-to/automate-ev-code-signing-with-signtool-or-certutil-esigner/#automated-code-signing).
 
 #### Other signing formats, tools and operating systems
 
