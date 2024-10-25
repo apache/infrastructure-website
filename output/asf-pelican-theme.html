@@ -78,7 +78,7 @@ In 2019 Infra created ASF-Pelican as a structure and template for projects to us
 <p>In 2024, Infra moved from ASF-Pelican to the ASF <strong>Infrastructure Pelican Action</strong> GitHub Action to perform the same functions without being closely tied to BuildBot. The repository for this GHA is <a href="https//:github.com/apache/infrastructure-actions/tree/main/pelican" target="_blank">github.com/apache/infrastructure-actions/tree/main/pelican</a>.</p>
 <p>The following material is correct for both ASF-Pelican and its replacement.</p>
 <hr/>
-The Apache Theme is available at <a href="https://github.com/apache/template-site/tree/main/theme" target="_blank">github.com/apache/template-site/tree/main.theme</a>, in the "gha-compliant" branch.
+<p>The Apache Theme is available at <a href="https://github.com/apache/template-site/tree/main/theme" target="_blank">github.com/apache/template-site/tree/main.theme</a>, in the "gha-compliant" branch.</p>
 <p>It has two types of files:</p>
 <ul>
 <li>Page templates</li>
@@ -96,7 +96,7 @@ The Apache Theme is available at <a href="https://github.com/apache/template-sit
 There are site- or template-specific overrides to the stylesheet frameworks, but these are not done as Pelican specifies.</p>
 <ul>
 <li><code>styles.css</code> - consists of custom site CSS overrides. Edit as needed. Here we include the CSS for the ASF permalink style.
-This file is in the same directory as the html and is included inline with <code>{% include "styles.css" %}</code>.</li>
+  This file is in the same directory as the html and is included inline with <code>{% include "styles.css" %}</code>.</li>
 </ul>
 <h2>Page metadata</h2>
 <p>This theme uses the following metadata:</p>
@@ -106,45 +106,46 @@ This file is in the same directory as the html and is included inline with <code
 </li>
 <li>
 <p>Notice. This is notice text, which is typically a link to the license.</p>
-<p><code>{% if page.notice %}&lt;!-- {{ page.notice }} --&gt;{% endif %}</code></p>
 </li>
+</ul>
+<p><code>{% if page.notice %}&lt;!-- {{ page.notice }} --&gt;{% endif %}</code></p>
+<ul>
 <li>
 <p>License. This is an alternative to Notice.</p>
 </li>
 <li>
 <p>bodytag. This adds attributes to the <code>&lt;body&gt;</code> element.
-This allows the main <code>index.ezmd</code> to have the same template, but with a different layout.</p>
-<p><code>&lt;body{% if page.bodytag %} {{ page.bodytag }}{% endif %} &gt;</code></p>
+  This allows the main <code>index.ezmd</code> to have the same template, but with a different layout.</p>
 </li>
 </ul>
+<p><code>&lt;body{% if page.bodytag %} {{ page.bodytag }}{% endif %} &gt;</code>   </p>
 <h2>Pelican settings</h2>
 <p>Manage Pelican settings in the <a href="https://github.com/apache/template-site/blob/main/pelicanconf.yaml" target="_blank">pelicanconf.yaml</a> file at the top level of the template.</p>
 <p>Some important settings:</p>
-<pre><code>
-site:
-  name: NAME OF YOUR SITE
-  description: DESCRIPTION OF YOUR SITE
-  domain: YOURSITE.apache.org
-  logo: images/logo.png
-  repository: https://github.com/apache/YOUR_REPO/blob/main/content/
-  trademarks: Apache, the Apache feather logo, and "Project" are trademarks or registered trademarks
-  
-</code></pre>
+<div class="highlight"><pre><span></span><code><span class="n">site</span><span class="o">:</span>
+  <span class="n">name</span><span class="o">:</span> <span class="n">NAME</span> <span class="n">OF</span> <span class="n">YOUR</span> <span class="n">SITE</span>
+  <span class="n">description</span><span class="o">:</span> <span class="n">DESCRIPTION</span> <span class="n">OF</span> <span class="n">YOUR</span> <span class="n">SITE</span>
+  <span class="n">domain</span><span class="o">:</span> <span class="n">YOURSITE</span><span class="o">.</span><span class="na">apache</span><span class="o">.</span><span class="na">org</span>
+  <span class="n">logo</span><span class="o">:</span> <span class="n">images</span><span class="o">/</span><span class="n">logo</span><span class="o">.</span><span class="na">png</span>
+  <span class="n">repository</span><span class="o">:</span> <span class="n">https</span><span class="o">://</span><span class="n">github</span><span class="o">.</span><span class="na">com</span><span class="sr">/apache/YOUR_REPO/blob/main/content/</span>
+  <span class="n">trademarks</span><span class="o">:</span> <span class="n">Apache</span><span class="o">,</span> <span class="n">the</span> <span class="n">Apache</span> <span class="n">feather</span> <span class="n">logo</span><span class="o">,</span> <span class="n">and</span> <span class="s2">&quot;Project&quot;</span> <span class="n">are</span> <span class="n">trademarks</span> <span class="n">or</span> <span class="n">registered</span> <span class="n">trademarks</span>
+</code></pre></div>
+
 <h2>Pelican theme</h2>
 <p>This is a <a href="https://docs.getpelican.com/en/latest/themes.html">custom theme</a> Pelican templates use <a href="https://jinja.palletsprojects.com/en/3.0.x/">Jinja</a>.</p>
-<hr/>
+<hr />
+
 <h3>Pelican variables set in pelicanconf.py</h3>
 <p><strong>Note</strong>: early users of this template worked with <code>pelicanconf.py</code>, which is not part of the latest release. This information is for their convenience.</p>
-<pre><code class="language-python">SITENAME = u'Apache &lt;pmc&gt;'
-SITEDOMAIN = '&lt;pmc&gt;.apache.org'
-SITEURL = 'https://&lt;pmc&gt;.apache.org'
-SITELOGO = 'https://&lt;pmc&gt;.apache.org/images/logo.png'
-SITEDESC = u'&lt;pmc desc&gt;'
-SITEREPOSITORY = 'https://github.com/apache/&lt;pmc-site&gt;/blob/&lt;branch&gt;/content/'
-TRADEMARKS = u'Apache, the Apache feather logo, and &lt;pmc&gt; are trademarks or registered trademarks'
-CURRENTYEAR = date.today().year
-</code></pre>
-
+<div class="highlight"><pre><span></span><code><span class="n">SITENAME</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;Apache &lt;pmc&gt;&#39;</span>
+<span class="n">SITEDOMAIN</span> <span class="o">=</span> <span class="s1">&#39;&lt;pmc&gt;.apache.org&#39;</span>
+<span class="n">SITEURL</span> <span class="o">=</span> <span class="s1">&#39;https://&lt;pmc&gt;.apache.org&#39;</span>
+<span class="n">SITELOGO</span> <span class="o">=</span> <span class="s1">&#39;https://&lt;pmc&gt;.apache.org/images/logo.png&#39;</span>
+<span class="n">SITEDESC</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;&lt;pmc desc&gt;&#39;</span>
+<span class="n">SITEREPOSITORY</span> <span class="o">=</span> <span class="s1">&#39;https://github.com/apache/&lt;pmc-site&gt;/blob/&lt;branch&gt;/content/&#39;</span>
+<span class="n">TRADEMARKS</span> <span class="o">=</span> <span class="sa">u</span><span class="s1">&#39;Apache, the Apache feather logo, and &lt;pmc&gt; are trademarks or registered trademarks&#39;</span>
+<span class="n">CURRENTYEAR</span> <span class="o">=</span> <span class="n">date</span><span class="o">.</span><span class="n">today</span><span class="p">()</span><span class="o">.</span><span class="n">year</span>
+</code></pre></div>
         </div>
       </div>
     </div>    

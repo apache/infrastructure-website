@@ -1,0 +1,126 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infrastructure Team Adopting an On-Call Rotation - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Contribute</a></li>
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav><!-- breadcrumbs -->
+<div class="card" style="height: 34px;">
+    <nav aria-label="breadcrumb"  style="padding-left: 12px; padding-top: 4px;">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+
+            <li class="breadcrumb-item active"><a href="/blog/infrastructure-team-adopting-an-on-call-rotation.html">
+Infrastructure Team Adopting an On-Call Rotation            </a></li>
+
+            <li class="breadcrumb-item active">(<a href="https://github.com/apache/infrastructure-website/tree/master/content/blog/infrastructure-team-adopting-an-on-call-rotation.md">edit</a>)</li>
+
+        </ol>
+    </nav>
+</div>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Infrastructure Team Adopting an On-Call Rotation
+          </h1>
+              <p>Posted on: 2014-08-18 13:00:00+00:00</p>
+              <p>As the Apache Software Foundation (ASF) has grown, the infrastructure required to support its diverse set of projects has grown as well. To care for the infrastructure that the ASF depends on, the foundation has hired several contractors to supplement the dedicated cadre of volunteers who help maintain the ASFs hardware and services. To best utilize the time of our paid contractors and volunteers, the Infrastructure team will be adopting an on-call rotation to meet requests and resolve outages in a timely fashion.&nbsp;</p>
+<h3>Why We're Establishing an On-Call Rotation
+</h3>
+<p>
+In groups, especially groups that are charged with overlapping duties, there's occasionally a sense of <a href="http://en.wikipedia.org/wiki/Diffusion_of_responsibility" target="_blank">diffusion of responsibility</a>. There tends to be a good number of tasks or incidents that routinely occur that need a clear owner. We've also tried to set expectations around our service levels relative to the importance of a service. In example, a new mailing list can be set up as convenient, but a failing mail service needs to be addressed immediately.
+
+</p>
+<p>The technical side of this has been that we have historically alerted via email and/or SMS about any urgent issues that came up. Of course those alerts went to everyone on the team. If the alert occurs at an inconvenient time, either everyone responds, which is likely wasteful, or no one responds thinking someone else will.
+
+</p>
+<p>At the Infrastructure team's face to face meeting in July we decided we'd adopt an on-call rotation for the contractors so that everyone wasn't responsible for everything all of the time.  We then went looking for something to let us sanely (and without building it ourselves) deal with that. </p>
+<p>
+
+We ended up choosing <a href="https://pagerduty.com" target="_blank">PagerDuty</a>, which has a number of ways of receiving alerts. More importantly, it allows us to set a schedule, easily override it for holidays or illnesses, and do so programmatically. It also seamlessly integrates with <a href="https://hipchat.com">HipChat</a>, which Infrastructure is running a trial of and communicates with our mobile devices. </p>
+<p>
+
+PagerDuty also supports a clear escalation path that begins alerting other people about issues if the person on-call fails to respond in a timely manner. Additionally, PagerDuty's mobile apps are built with <a href="https://cordova.apache.org">Apache Cordova</a>, which is an interesting circle. We've finished our trial and decided to adopt PagerDuty. PagerDuty&nbsp;was especially gracious and made our account gratis.
+
+</p>
+<p>Adopting an on-call rotation will allow us to provide a better service and response time, while also clearly setting expectations around contractor availability so they can relax on their off weeks. </p>
+<p>
+
+If you have questions or want to get involved, feel free to join us on the infrastructure mailing list infrastructure@apache.org or joining us in our <a href="http://www.hipchat.com/gw4Cfp7JY" target="_blank">Hipchat room</a>. 
+</p>
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2024, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>  </main>
+  </body>
+</html>
