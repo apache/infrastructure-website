@@ -89,17 +89,16 @@
 <h3>Response</h3>
 <p>Infra will respond within a couple of days, either with a request for clarification of some point or to let you know that the instance is set up and ready for your project to use.</p>
 <h3>Using GitHub Issue tracking</h3>
-<p>Enabling GitHub Issue tracking for your project is self-serve. In the .asf.yaml file for your repository, locate the <code>github</code> section and set the <code>issues</code> option to true, as in the example below. </p>
-<div class="highlight"><pre><span></span><code><span class="n">github</span><span class="o">:</span>
-  <span class="n">features</span><span class="o">:</span>
-    <span class="err">#</span> <span class="n">Enable</span> <span class="n">wiki</span> <span class="k">for</span> <span class="n">documentation</span>
-    <span class="n">wiki</span><span class="o">:</span> <span class="kc">true</span>
-    <span class="err">#</span> <span class="n">Enable</span> <span class="n">issue</span> <span class="n">management</span>
-    <span class="n">issues</span><span class="o">:</span> <span class="kc">true</span>
-    <span class="err">#</span> <span class="n">Enable</span> <span class="n">projects</span> <span class="k">for</span> <span class="n">project</span> <span class="n">management</span> <span class="n">boards</span>
-    <span class="n">projects</span><span class="o">:</span> <span class="kc">true</span>
-</code></pre></div>
-
+<p>Enabling GitHub Issue tracking for your project is self-serve. In the .asf.yaml file for your repository, locate the <code>github</code> section and set the <code>issues</code> option to true, as in the example below.</p>
+<pre><code>github:
+  features:
+    # Enable wiki for documentation
+    wiki: true
+    # Enable issue management
+    issues: true
+    # Enable projects for project management boards
+    projects: true
+</code></pre>
 <p>You can review your .asf.yaml settings for Git at <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features" target="_blank">Git .asf.yaml features</a>.</p>
 <h3>Switching from Jira to GitHub Issue tracking</h3>
 <p>If your project switches from Jira to GitHub for receiving issue reports and feature requests, you will want to change the existing Jira tickets to read-only, and prevent people from trying to open new tickets. This will eliminate time and effort you will otherwise have to spend on rejecting new tickets and explaining the change.</p>
@@ -110,6 +109,7 @@
 </ul>
 <p>Infra will let you know when this has been completed.</p>
 <p>We recommend that you inform your dev and user communities of the change.</p>
+
         </div>
       </div>
     </div>    
