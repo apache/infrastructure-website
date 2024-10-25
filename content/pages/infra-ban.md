@@ -35,5 +35,8 @@ If you break one of these rules, **your IP will be banned** from all services ac
   - More than 25,000 `repository.apache.org` visits per 24 hours.
   - More than 100,000 `builds.apache.org` visits per 12 hours.
   - More than 2,500 code `429` (rate-limited) responses not respected per 12 hours. Services like Gitbox, Jira, Confluence, and Bugzilla have rate limits imposed. Abusing these services will result in a `429 HTTP` response code. Not respecting the HTTP response may result in a **permanent ban**.
+  - Excessive 404 result codes on `repository.apache.org` or `people.apache.org`. Neither repository.apache.org nor people.apache.org are general purpose Maven repositories, and should **only be used for the testing of pre-production ASF code artifacts**. <a href="https://mvnrepository.com/repos/central">Maven Central</a> is the correct public java artifact repository service.
+
+Please evaluate your systems and update your configuration to use maven central, not repository.apache.org or people.apache.org
 
 If you think we banned your IP address by mistake, or if you have been banned but have an explanation why we should bend the rules for your specific case (for instance, if you have a NAT IP address that a lot of people use), contact us at `abuse@infra.apache.org` or through the "asfinfra" <a href="https://the-asf.slack.com/" target="_blank">Slack channel</a>. We will consider leniency and allow-listing on a case-by-case basis.
