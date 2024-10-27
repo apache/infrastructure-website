@@ -1,8 +1,8 @@
-title: Inside Infra September 2024 
+title: Inside Infra October 2024 
 date: '2024-10-27' 
 permalink: newsletter1024 layout: post
 
-## Welcome to *Inside Infra* for October, 2024
+**Welcome to *Inside Infra* for October, 2024**
 
 ### Dealing with phishing attempts
 We are seeing a sharp increase in 'phishing attempts', fake emails pretending to come from various ASF groups and committees. Infra has some <a href="https://infra.apache.org/phishing.html" target="_blank">anti-phishing advice</a> to help you avoid falling for these fake messages.
