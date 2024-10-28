@@ -74,8 +74,9 @@
               Apache Maven repositories
           </h1>
               <h2 id="basic">Basic information<a class="headerlink" href="#basic" title="Permanent link">&para;</a></h2>
+
 <p><strong>Reminder</strong>: Apache projects <strong>must</strong> release all software packages through the ASF distribution system. See <a href="release-distribution.html">Release distribution policy</a> for more details.</p>
-<p>The ASF maintains internal snapshot and release Maven repositories at <a href="https://repository.apache.org" target="_blank"><a href="https://repository.apache.org">https://repository.apache.org</a></a>. The repository also proxies Apache's legacy repositories.</p>
+<p>The ASF maintains internal snapshot and release Maven repositories at <a href="https://repository.apache.org" target="_blank">https://repository.apache.org</a>. The repository also proxies Apache's legacy repositories. </p>
 <p><strong>Note</strong>: these repos are intended for internal ASF project use, not for public distribution of artifacts. Except in the rare situation when a project needs external testing of preproduction artifacts, <strong>do not</strong> provide download links to 'repository.apache.org' assets to users external to The ASF.</p>
 <p>If your Apache project would like to use <code>repository.apache.org</code>, see <a href="publishing-maven-artifacts.html">Publishing Maven Releases</a>.</p>
 <ul>
@@ -83,15 +84,18 @@
 <li>Subscribe to the repository mailing list via <code>repository-subscribe@apache.org</code> for questions, complaints and ideas.</li>
 </ul>
 <p>If you're a user looking for Apache artifacts from a Maven repository, all releases are synced to <a href="https://repo1.maven.org/maven2" target="_blank">Maven Central</a> and snapshots are available here:
-<a href="https://repository.apache.org/snapshots/" target="_blank"><a href="http://repository.apache.org/snapshots/">http://repository.apache.org/snapshots/</a></a>.</p>
+<a href="https://repository.apache.org/snapshots/" target="_blank">http://repository.apache.org/snapshots/</a>.</p>
 <h2 id="faq">FAQs about the ASF Jar repositories<a class="headerlink" href="#faq" title="Permanent link">&para;</a></h2>
+
 <h4 id="thirdparty">Can we put third party files in the repositories?<a class="headerlink" href="#thirdparty" title="Permanent link">&para;</a></h4>
+
 <p>You can with the <em>snapshot</em> repositories, but you cannot with the <em>release</em> repositories. When putting third party files in the snapshot repositories, please email the repository mailing list to explain what you are doing. Ideally, you should upload third party files to the 'central' Maven repository via the <a href="https://maven.apache.org/guides/mini/guide-central-repository-upload.html" target="_blank">Maven upload process</a>.</p>
 <h4 id="revolutioncode">Can I release a research branch to the repositories?<a class="headerlink" href="#revolutioncode" title="Permanent link">&para;</a></h4>
+
 <p>As long as your project's PMC is happy with the release, you can release a research branch to the snapshot repository; otherwise you should just release in your <code>home.apache.org</code> personal space.</p>
 <h4 id="rsyncs">How do rsyncs happen?<a class="headerlink" href="#rsyncs" title="Permanent link">&para;</a></h4>
-<p>All official repositories rsync automatically.</p>
 
+<p>All official repositories rsync automatically.</p>
         </div>
       </div>
     </div>    
