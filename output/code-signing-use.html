@@ -80,7 +80,7 @@ All new signing must be via the ssl.com eSigner service.</p>
 <p>If you require assistance migrating to the ssl.com eSigner service, please open an <a href="https://issues.apache.org/jira/browse/INFRA">INFRA Jira ticket</a> and select code signing as the component.</p>
 <h2>ssl.com eSigner</h2>
 <p>ssl.com's eSigner service supports a range of signing tools and formats.
-For the full details see the <a href="https://www.ssl.com/guide/remote-ev-code-signing-with-esigner">eSigner documentation</a>. 
+For the full details see the <a href="https://www.ssl.com/guide/remote-ev-code-signing-with-esigner">eSigner documentation</a>.
 Whichever signing option you choose, you will need to complete four steps:</p>
 <ol>
 <li>Obtain an ssl.com account</li>
@@ -115,7 +115,7 @@ Depending on your chosen signing method, you will need either to configure 2FA u
 <p>To sign Windows binaries with the ASF code signing certificate using signtool.exe and/or view the ASF code signing certificate using certutil.exe you will need to install the eSigner Cloud Key Adapter (CKA).
 There are two configuration options for eSigner CKA: manual code signing and automated code signing.</p>
 <p>For manual code signing you must configure an authenticator app for 2FA for eSigner using the QR code and you will be required to provide your ssl.com username and password along with a OTP from your authenticator app every time you sign a file.
-For automated code signing you create a local file that contains you ssl.com username and password along with the 2FA secret code and code signing will not require any additional input when you sign a file. </p>
+For automated code signing you create a local file that contains you ssl.com username and password along with the 2FA secret code (not the PIN) and code signing will not require any additional input when you sign a file.</p>
 <p>The eSigner documentation provides step by step instructions on configuring both <a href="https://www.ssl.com/how-to/automate-ev-code-signing-with-signtool-or-certutil-esigner/#manual-code-signing">manual code signing</a> and <a href="https://www.ssl.com/how-to/automate-ev-code-signing-with-signtool-or-certutil-esigner/#automated-code-signing">automated code signing</a>.</p>
 <h4>Linux integration</h4>
 <ol>
@@ -128,31 +128,41 @@ For automated code signing you create a local file that contains you ssl.com use
 <h3>Step 4: Configure your chosen signing tool</h3>
 <h4>Signing on Windows binaries on Windows or Linux with JSign 4.0+ Ant task</h4>
 <ol>
-<li>Make the JSign JAR from <a href="https://search.maven.org/artifact/net.jsign/jsign">Maven Central</a> available to Ant.</li>
-<li>The eSigner specific properties for the JSign task in Ant should be as follows:<div class="highlight"><pre><span></span><code><span class="err">  storetype=ESIGNER</span>
-<span class="err">  alias=d97c5110-c66a-4c0c-ac0c-1cd6af812ee6</span>
-<span class="err">  storepass=&lt;ssl.com user name&gt;|&lt;ssl.com password&gt;</span>
-<span class="err">  keypass=&lt;ssl.com eSigner TOTP secret&gt;</span>
-<span class="err">  tsaurl=http://ts.ssl.com</span>
-<span class="err">  tsmode=RFC3161</span>
-<span class="err">  alg=SHA256</span>
-</code></pre></div>
-
+<li>
+<p>Make the JSign JAR from <a href="https://search.maven.org/artifact/net.jsign/jsign">Maven Central</a> available to Ant.</p>
+</li>
+<li>
+<p>The eSigner specific properties for the JSign task in Ant should be as follows:</p>
+<pre><code>   storetype=ESIGNER
+   alias=d97c5110-c66a-4c0c-ac0c-1cd6af812ee6
+   storepass=&lt;ssl.com user name&gt;|&lt;ssl.com password&gt;
+   keypass=&lt;ssl.com eSigner secret code (not the PIN)&gt;
+   tsaurl=http://ts.ssl.com
+   tsmode=RFC3161
+   alg=SHA256
+</code></pre>
 </li>
 </ol>
 <h4>Signing Windows binaries on Linux with JSign 4.0+</h4>
 <ol>
-<li>Download jsign <code>wget https://github.com/ebourg/jsign/releases/download/4.0/jsign_4.0_all.deb</code>.</li>
-<li>Install jsign <code>sudo dpkg --install jsign_4.0_all.deb</code>.</li>
-<li>You should then be able to sign with:<div class="highlight"><pre><span></span><code><span class="err">jsign --storetype ESIGNER --alias d97c5110-c66a-4c0c-ac0c-1cd6af812ee6 --storepass &quot;&lt;ssl.com user name&gt;|&lt;ssl.com password&gt;&quot; --keypass &quot;&lt;ssl.com eSigner TOTP secret&gt;&quot; --tsaurl=&quot;http://ts.ssl.com&quot; --tsmode RFC3161 --alg SHA256 application.exe</span>
-</code></pre></div>
-
+<li>
+<p>Download jsign <code>wget https://github.com/ebourg/jsign/releases/download/4.0/jsign_4.0_all.deb</code>.</p>
+</li>
+<li>
+<p>Install jsign <code>sudo dpkg --install jsign_4.0_all.deb</code>.</p>
+</li>
+<li>
+<p>You should then be able to sign with:</p>
+<pre><code> jsign --storetype ESIGNER --alias d97c5110-c66a-4c0c-ac0c-1cd6af812ee6 --storepass "&lt;ssl.com user name&gt;|&lt;ssl.com password&gt;" --keypass "&lt;ssl.com eSigner secret code (not the PIN)&gt;" --tsaurl="http://ts.ssl.com" --tsmode RFC3161 --alg SHA256 application.exe
+</code></pre>
 </li>
 </ol>
 <h4>Signing Windows binaries on Windows using signtool.exe</h4>
 <p>The eSigner documentation provides step by step instructions on configuring and using both <a href="https://www.ssl.com/how-to/automate-ev-code-signing-with-signtool-or-certutil-esigner/#manual-code-signing">manual code signing</a> and <a href="https://www.ssl.com/how-to/automate-ev-code-signing-with-signtool-or-certutil-esigner/#automated-code-signing">automated code signing</a>.</p>
+<p>If you opt to use automated code signing it is recommended that you remove the Master Key File from you system when not being used either by deleting it and recreating it when required or by moving it to off-line storage (e.g. USB key) that is stored securely.</p>
 <h4>Other signing formats, tools and operating systems</h4>
 <p>See the ssl.com eSigner on-line help.</p>
+
         </div>
       </div>
     </div>    
