@@ -58,7 +58,7 @@ To sign Windows binaries with the ASF code signing certificate using signtool.ex
 There are two configuration options for eSigner CKA: manual code signing and automated code signing.
 
 For manual code signing you must configure an authenticator app for 2FA for eSigner using the QR code and you will be required to provide your ssl.com username and password along with a OTP from your authenticator app every time you sign a file.
-For automated code signing you create a local file that contains you ssl.com username and password along with the 2FA secret code and code signing will not require any additional input when you sign a file. 
+For automated code signing you create a local file that contains you ssl.com username and password along with the 2FA secret code (not the PIN) and code signing will not require any additional input when you sign a file. 
 
 The eSigner documentation provides step by step instructions on configuring both [manual code signing](https://www.ssl.com/how-to/automate-ev-code-signing-with-signtool-or-certutil-esigner/#manual-code-signing) and [automated code signing](https://www.ssl.com/how-to/automate-ev-code-signing-with-signtool-or-certutil-esigner/#automated-code-signing).
 
@@ -82,7 +82,7 @@ The eSigner documentation provides step by step instructions on configuring both
           storetype=ESIGNER
           alias=d97c5110-c66a-4c0c-ac0c-1cd6af812ee6
           storepass=<ssl.com user name>|<ssl.com password>
-          keypass=<ssl.com eSigner TOTP secret>
+          keypass=<ssl.com eSigner secret code (not the PIN)>
           tsaurl=http://ts.ssl.com
           tsmode=RFC3161
           alg=SHA256
@@ -93,11 +93,13 @@ The eSigner documentation provides step by step instructions on configuring both
 1. Install jsign `sudo dpkg --install jsign_4.0_all.deb`.
 1. You should then be able to sign with:
 
-        jsign --storetype ESIGNER --alias d97c5110-c66a-4c0c-ac0c-1cd6af812ee6 --storepass "<ssl.com user name>|<ssl.com password>" --keypass "<ssl.com eSigner TOTP secret>" --tsaurl="http://ts.ssl.com" --tsmode RFC3161 --alg SHA256 application.exe
+        jsign --storetype ESIGNER --alias d97c5110-c66a-4c0c-ac0c-1cd6af812ee6 --storepass "<ssl.com user name>|<ssl.com password>" --keypass "<ssl.com eSigner secret code (not the PIN)>" --tsaurl="http://ts.ssl.com" --tsmode RFC3161 --alg SHA256 application.exe
 
 #### Signing Windows binaries on Windows using signtool.exe
 
 The eSigner documentation provides step by step instructions on configuring and using both [manual code signing](https://www.ssl.com/how-to/automate-ev-code-signing-with-signtool-or-certutil-esigner/#manual-code-signing) and [automated code signing](https://www.ssl.com/how-to/automate-ev-code-signing-with-signtool-or-certutil-esigner/#automated-code-signing).
+
+If you opt to use automated code signing it is recommended that you remove the Master Key File from you system when not being used either by deleting it and recreating it when required or by moving it to off-line storage (e.g. USB key) that is stored securely.
 
 #### Other signing formats, tools and operating systems
 
