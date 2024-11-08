@@ -77,6 +77,7 @@
 <p>In 2024, Infra moved from ASF-Pelican to the ASF <strong>Infrastructure Pelican Action</strong> GitHub Action to perform the same functions without being closely tied to BuildBot. The repository for this GHA is <a href="https//:github.com/apache/infrastructure-actions/tree/main/pelican" target="_blank">github.com/apache/infrastructure-actions/tree/main/pelican</a>.</p>
 <p>The material below is <strong>relevant</strong> to the older Pelican build system and the Pelican GitHub Action.</p>
 <hr/>
+
 <p>For large changes to your project website it will often be necessary to make a preview feature branch, work on it with others, and stage the results so you can review them. Here is how to create <code>preview/feature</code> branches.</p>
 <p>Note: useful information is available from GitHub on <a href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-and-deleting-branches-within-your-repository#creating-a-branch" target="_blank">creating and deleting branches</a>.</p>
 <h2>Creating a feature or preview branch</h2>
@@ -87,14 +88,14 @@
 <p>A successful build will be found at <code>https://www-feature.staged.apache.org/</code>.</p>
 <h2>Merging the branch into the trunk</h2>
 <p>Once your feature is complete, submit a pull request (PR) from <code>preview/feature</code> to <code>main</code>. Once the PR is merged the site updates to include the updated features.</p>
-<p>GitHub has further information on <a href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request#creating-the-pull-request" target="_blank">merging branches</a>.</p>
+<p>GitHub has further information on <a href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request#creating-the-pull-request" target="_blank">merging branches</a>. </p>
 <h2>Example</h2>
 <ol>
 <li>
 <p>Create <code>preview/bootstrap5</code></p>
 </li>
 <li>
-<p>Work on <code>preview/bootstrap5</code> branch to update bootstrap to version 5 with preview builds staged at <a href="https://www-bootstrap5.staged.apache.org/">https://www-bootstrap5.staged.apache.org/</a></p>
+<p>Work on <code>preview/bootstrap5</code> branch to update bootstrap to version 5 with preview builds staged at https://www-bootstrap5.staged.apache.org/</p>
 </li>
 <li>
 <p>Submit PR to merge <code>preview/bootstrap</code> back to <code>main</code></p>
@@ -102,17 +103,16 @@
 </ol>
 <h2>.asf.yaml settings</h2>
 <p>These settings in your project's .asf.yaml file do the automatic staging of preview branches.</p>
-<pre><code class="language-yaml">pelican:
-  autobuild: preview/*
-  target: asf-site
-  theme: theme/apache
-  whoami: main
+<div class="highlight"><pre><span></span><code><span class="nt">pelican</span><span class="p">:</span>
+  <span class="nt">autobuild</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">preview/*</span>
+  <span class="nt">target</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">asf-site</span>
+  <span class="nt">theme</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">theme/apache</span>
+  <span class="nt">whoami</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">main</span>
 
-staging:
-  profile: ~
-  autostage: preview/*
-</code></pre>
-
+<span class="nt">staging</span><span class="p">:</span>
+  <span class="nt">profile</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">~</span>
+  <span class="nt">autostage</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">preview/*</span>
+</code></pre></div>
         </div>
       </div>
     </div>    
