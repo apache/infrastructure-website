@@ -18,8 +18,7 @@ Here's how to set up the technical and social environment that will support your
   - <a href="#get-to-know-the-apache-community">The Apache Community</a>
       - <a href="#mailing-lists">Join mailing lists</a>
   - <a href="#committer-responsibilities">Committer responsibilities</a>
-  - <a href="#attending-apachecon">Attending ApacheCon</a>
-  - <a href="#personal-web-space">Personal web space</a>
+  - <a href="#attending-apachecon">Attending Community Over Code</a>
   - <a href="#identity-theft">Identity theft</a>
   - <a href="#share-your-wisdom">Share your wisdom</a>
   - <a href="#last">The last word</a>
@@ -152,15 +151,9 @@ Each committer has a responsibility to monitor changes made for potential issues
 
 Do not be surprised if your first commit has a delayed diff email. It needs to go through the human moderators.
 
-<h3 id="attending-apachecon">Attending ApacheCon<a class="headerlink" href="#attending-apachecon" title="Permanent link">&para;</a></h3>
+<h3 id="attending-apachecon">Attending Community Over Code<a class="headerlink" href="#attending-apachecon" title="Permanent link">&para;</a></h3>
 
-If you do not have one already, make a note in your diary about the next <a href="https://www.apachecon.com/" target="_blank">ApacheCon</a>. This is a great opportunity to meet other Apache folks, hack code and learn about great new open source projects. Watch the lists as the conference dates approach for details about special deals for committers and opportunities to speak.
-
-<h3 id="personal-web-space">Personal web space<a class="headerlink" href="#personal-web-space" title="Permanent link">&para;</a></h3>
-
-Some Apache committers have personal content served from ASF web servers. There are no fixed guidelines about appropriate content: committers should know how to behave! In general, people use this option to host ASF-related content or to showcase interesting private projects. If you do use this feature, please do so responsibly.
-
-Material placed in the `public_html` directory is available under the `http://home.apache.org/~username/` url (where **username** is your ASF account ID).
+If you do not have one already, make a note in your diary about the next <a href="https://www.communityovercode.org/" target="_blank">Community Over Code</a>. This is a great opportunity to meet other Apache folks, hack code and learn about great new open source projects. Watch the lists as the conference dates approach for details about special deals for committers and opportunities to speak.
 
 <h3 id="identity-theft">Identity theft<a class="headerlink" href="#identity-theft" title="Permanent link">&para;</a></h3>
 
