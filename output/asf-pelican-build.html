@@ -77,23 +77,21 @@
 <p>In 2024, Infra moved from ASF-Pelican to the ASF <strong>Infrastructure Pelican Action</strong> GitHub Action to perform the same functions without being closely tied to BuildBot. The repository for this GHA is <a href="https//:github.com/apache/infrastructure-actions/tree/main/pelican" target="_blank">github.com/apache/infrastructure-actions/tree/main/pelican</a>.</p>
 <p>For websites using the ASf-Pelican template, configure the build using the <code>pelicanconf.py</code> settings.</p>
 <h2>Pelican theme</h2>
-<div class="highlight"><pre><span></span><code><span class="c1"># Theme</span>
-<span class="n">THEME</span> <span class="o">=</span> <span class="s1">&#39;./theme/apache&#39;</span>
-</code></pre></div>
-
+<pre><code class="language-python"># Theme
+THEME = './theme/apache'
+</code></pre>
 <p>See <a href="asf-pelican-theme.html">ASF-Pelican theme</a> for details about the ASF Theme.</p>
 <p><strong>Note</strong>: the following material is under review and will have an update soon.</p>
 <h2>Plugins</h2>
 <p>ASF-Pelican enhances the Pelican environment with plugins. Our environment has its own copy of the <code>asf</code> plugins, and the <code>pelican-build.py</code> script provides <code>pelican-gfm</code>.</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># Pelican Plugins</span>
-<span class="c1"># pelican-gfm is installed in the buildbot as part of build_pelican.py. It is an ASF Infra custom plugin.</span>
-<span class="c1"># other plugins are discoverable and can be installed via pip by mentioning them in requirements.txt</span>
-<span class="c1"># You can find plugins here: https://github.com/pelican-plugins</span>
-<span class="c1"># Plugins that are custom for this site are found in PLUGIN_PATHS.</span>
-<span class="n">PLUGIN_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;./theme/plugins&#39;</span><span class="p">]</span>
-<span class="n">PLUGINS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;asfgenid&#39;</span><span class="p">,</span> <span class="s1">&#39;asfdata&#39;</span><span class="p">,</span> <span class="s1">&#39;pelican-gfm&#39;</span><span class="p">,</span> <span class="s1">&#39;asfreader&#39;</span><span class="p">]</span>
-</code></pre></div>
-
+<pre><code class="language-python"># Pelican Plugins
+# pelican-gfm is installed in the buildbot as part of build_pelican.py. It is an ASF Infra custom plugin.
+# other plugins are discoverable and can be installed via pip by mentioning them in requirements.txt
+# You can find plugins here: https://github.com/pelican-plugins
+# Plugins that are custom for this site are found in PLUGIN_PATHS.
+PLUGIN_PATHS = ['./theme/plugins']
+PLUGINS = ['asfgenid', 'asfdata', 'pelican-gfm', 'asfreader']
+</code></pre>
 <ol>
 <li><a href="#data-model">Data Model</a>. The <code>asfdata.py</code> plugin builds a metadata model that is shared with every page.</li>
 <li><a href="#pelican-gfm">GFM Content</a>. The <code>pelican-gfm</code> plugin reads <strong>.md</strong>, <strong>.markdown</strong>, <strong>.mkd</strong>, and <strong>.mdown</strong> files and converts the GFM Markdown into HTML.</li>
@@ -104,23 +102,22 @@
 <h2>Tree structure</h2>
 <p>Pages and static content are stored in the same tree. Generated content is output with the same relative path, except with an html extension.
 These are the necessary settings:</p>
-<div class="highlight"><pre><span></span><code><span class="n">PATH</span> <span class="o">=</span> <span class="s1">&#39;content&#39;</span>
-<span class="c1"># Save pages using full directory preservation</span>
-<span class="n">PAGE_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;.&#39;</span><span class="p">]</span>
-<span class="c1"># Path with no extension</span>
-<span class="n">PATH_METADATA</span> <span class="o">=</span> <span class="s1">&#39;(?P&lt;path_no_ext&gt;.*)\..*&#39;</span>
-<span class="c1"># We are not slugifying any pages</span>
-<span class="n">ARTICLE_URL</span> <span class="o">=</span> <span class="n">ARTICLE_SAVE_AS</span> <span class="o">=</span> <span class="n">PAGE_URL</span> <span class="o">=</span> <span class="n">PAGE_SAVE_AS</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="si">{path_no_ext}</span><span class="s1">.html&#39;</span>
-<span class="c1"># We want to serve our static files mixed with content</span>
-<span class="n">STATIC_PATHS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;.&#39;</span><span class="p">]</span>
-<span class="c1"># we want any html to be served as-is</span>
-<span class="n">READERS</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;html&#39;</span><span class="p">:</span> <span class="kc">None</span><span class="p">}</span>
-<span class="c1"># ignore README.md files in the content tree and the interviews and include folders</span>
-<span class="n">IGNORE_FILES</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;README.md&#39;</span><span class="p">,</span><span class="s1">&#39;interviews&#39;</span><span class="p">,</span><span class="s1">&#39;include&#39;</span><span class="p">]</span>
-</code></pre></div>
-
+<pre><code class="language-python">PATH = 'content'
+# Save pages using full directory preservation
+PAGE_PATHS = ['.']
+# Path with no extension
+PATH_METADATA = '(?P&lt;path_no_ext&gt;.*)\..*'
+# We are not slugifying any pages
+ARTICLE_URL = ARTICLE_SAVE_AS = PAGE_URL = PAGE_SAVE_AS = '{path_no_ext}.html'
+# We want to serve our static files mixed with content
+STATIC_PATHS = ['.']
+# we want any html to be served as-is
+READERS = {'html': None}
+# ignore README.md files in the content tree and the interviews and include folders
+IGNORE_FILES = ['README.md','interviews','include']
+</code></pre>
 <h1>Process</h1>
-<p>Pelican uses <a href="https://docs.getpelican.com/en/latest/plugins.html#list-of-signals" target="_blank">signals</a> as it goes through the process of reading and generating content. It processes pages in no particular order. </p>
+<p>Pelican uses <a href="https://docs.getpelican.com/en/latest/plugins.html#list-of-signals" target="_blank">signals</a> as it goes through the process of reading and generating content. It processes pages in no particular order.</p>
 <p>Our plugins provide the following activity:</p>
 <table>
 <thead>
@@ -188,9 +185,7 @@ These are the necessary settings:</p>
 <td align="center">translate</td>
 <td align="center">translate</td>
 <td>Create output HTML by pushing the generated content and metadata through the theme's templates</td>
-</tr>
-</tbody>
-</table>
+</tr></tbody></table>
 <p>See <a href="asf-pelican-local.html">local builds</a> for how to install ASF-Pelican on your system.</p>
 <h2>Data model</h2>
 <p><strong>ezmd</strong> templates use a shared data model to generate content. There are three types of data:</p>
@@ -213,147 +208,135 @@ These are the necessary settings:</p>
 <tr>
 <td>EZMD Reader</td>
 <td>Dictionaries - key-value maps where the value may be another dictionary</td>
-</tr>
-</tbody>
-</table>
+</tr></tbody></table>
 <p>The constants are also available to the <code>asfgenid.py</code> plugin and the <a href="asf-pelican-theme.html">theme's templates</a>.</p>
 <p>There are examples of how to <a href="#model-metadata">inject shared metadata</a> below. See the <a href="asf-pelican-data.html">metadata model</a> for how <code>asfdata.py</code> works to populate the shared metadata.</p>
 <h2>Read source</h2>
 <p>The systems uses the <code>read_source</code> method to open a file and convert it into a metadata dictionary and text.</p>
 <p>Example:</p>
-<div class="highlight"><pre><span></span><code>Title: ASF Export Classifications and Source Links
+<pre><code class="language-md">Title: ASF Export Classifications and Source Links
 license: https://www.apache.org/licenses/LICENSE-2.0
 asf_headings: False
 
-<span class="gu">####</span> ASF Project
+#### ASF Project
 ...
-</code></pre></div>
-
+</code></pre>
 <p>The first three lines specify three <code>metadata</code> key-value pairs.
 There is a blank line and the rest is the <code>text</code>.</p>
 <p>Code from <code>pelican-gfm</code> with some parts elided.</p>
-<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">read_source</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">source_path</span><span class="p">):</span>
-        <span class="s2">&quot;Read metadata and content from the source.&quot;</span>
-    <span class="o">...</span>
-    <span class="c1"># Fetch the source content, with a few appropriate tweaks</span>
-        <span class="k">with</span> <span class="n">pelican</span><span class="o">.</span><span class="n">utils</span><span class="o">.</span><span class="n">pelican_open</span><span class="p">(</span><span class="n">source_path</span><span class="p">)</span> <span class="k">as</span> <span class="n">text</span><span class="p">:</span>
+<pre><code class="language-python">    def read_source(self, source_path):
+        "Read metadata and content from the source."
+	...
+	# Fetch the source content, with a few appropriate tweaks
+        with pelican.utils.pelican_open(source_path) as text:
 
-            <span class="c1"># Extract the metadata from the header of the text</span>
-            <span class="n">lines</span> <span class="o">=</span> <span class="n">text</span><span class="o">.</span><span class="n">splitlines</span><span class="p">()</span>
-            <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">lines</span><span class="p">)):</span>
-                <span class="n">line</span> <span class="o">=</span> <span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">]</span>
-                <span class="n">match</span> <span class="o">=</span> <span class="n">GFMReader</span><span class="o">.</span><span class="n">RE_METADATA</span><span class="o">.</span><span class="n">match</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">match</span><span class="p">:</span>
-                    <span class="n">name</span> <span class="o">=</span> <span class="n">match</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-            <span class="o">...</span>
-                    <span class="n">metadata</span><span class="p">[</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
-                <span class="k">elif</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span>
-                    <span class="c1"># blank line</span>
-                    <span class="k">continue</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="c1"># reached actual content</span>
-                    <span class="k">break</span>
-        <span class="o">...</span>
-            <span class="c1"># Reassemble content, minus the metadata</span>
-            <span class="n">text</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">lines</span><span class="p">[</span><span class="n">i</span><span class="p">:])</span>
+            # Extract the metadata from the header of the text
+            lines = text.splitlines()
+            for i in range(len(lines)):
+                line = lines[i]
+                match = GFMReader.RE_METADATA.match(line)
+                if match:
+                    name = match.group(1).strip().lower()
+		    ...
+                    metadata[name] = value
+                elif not line.strip():
+                    # blank line
+                    continue
+                else:
+                    # reached actual content
+                    break
+	    ...
+            # Reassemble content, minus the metadata
+            text = '\n'.join(lines[i:])
 
-            <span class="k">return</span> <span class="n">text</span><span class="p">,</span> <span class="n">metadata</span>
-</code></pre></div>
-
+            return text, metadata
+</code></pre>
 <h2>Model Metadata <a id="ezmd"></a></h2>
 <p>In <code>asfreader.py</code> we extend EZT syntax to do metadata substitution prior to EZT translation. This allows for a more natural and direct representation than with EZT sequences.</p>
 <h3>Examples</h3>
-<div class="highlight"><pre><span></span><code>|  |  |  |
+<pre><code class="language-md">|  |  |  |
 |-----------|-----------|-------------|
 | [{ board[0].name }] | [{ board[1].name }] | [{ board[2].name }] |
 | [{ board[3].name }] | [{ board[4].name }] | [{ board[5].name }] |
 | [{ board[6].name }] | [{ board[7].name }] | [{ board[8].name }] |
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code>| Office    | Individual  |
+</code></pre>
+<pre><code class="language-md">| Office    | Individual  |
 |-----------|-------------|
-| Board Chair |  [<span class="nt">{ ci[boardchair</span>][<span class="nl">roster</span>] }] |
-| Vice Chair |  [<span class="nt">{ ci[vicechair</span>][<span class="nl">roster</span>] }] |
-| President |  [<span class="nt">{ ci[president</span>][<span class="nl">roster</span>] }] |
-| Exec. V.P |  [<span class="nt">{ ci[execvp</span>][<span class="nl">roster</span>] }] |
-| [[]Treasurer](https://treasurer.apache.org/) |  [<span class="nt">{ ci[treasurer</span>][<span class="nl">roster</span>] }] |
-| Assistant Treasurer |  [<span class="nt">{ ci[assistanttreasurer</span>][<span class="nl">roster</span>] }] |
-| Secretary |  [<span class="nt">{ ci[secretary</span>][<span class="nl">roster</span>] }] |
-| Assistant Secretary |  [<span class="nt">{ ci[assistantsecretary</span>][<span class="nl">roster</span>] }] |
-| V.P., [[]Legal Affairs](/legal/) |  [<span class="nt">{ ci[legal</span>][<span class="nl">chair</span>] }] |
-| Assistant V.P., [[]Legal Affairs](/legal/) |  [<span class="nt">{ ci[assistantvplegalaffairs</span>][<span class="nl">roster</span>] }] |
-</code></pre></div>
-
-<div class="highlight"><pre><span></span><code><span class="k">-</span> All volunteer community
-<span class="k">-</span> [{ code_lines }]+ lines of code in&amp;nbsp;stewardship
-<span class="k">-</span> [{ code_changed }]+ lines of code&amp;nbsp;changed
-<span class="k">-</span> [{ code_commits }]+ code commits
-<span class="k">-</span> [{ asf_members }] individual ASF&amp;nbsp;Members
-<span class="k">-</span> [{ asf_committers }]+ Apache Committers
-<span class="k">-</span> [{ asf_contributors }]+ code contributors
-<span class="k">-</span> [{ asf_people }]+ people involved in our&amp;nbsp;communities
-</code></pre></div>
-
+| Board Chair |  [{ ci[boardchair][roster] }] |
+| Vice Chair |  [{ ci[vicechair][roster] }] |
+| President |  [{ ci[president][roster] }] |
+| Exec. V.P |  [{ ci[execvp][roster] }] |
+| [[]Treasurer](https://treasurer.apache.org/) |  [{ ci[treasurer][roster] }] |
+| Assistant Treasurer |  [{ ci[assistanttreasurer][roster] }] |
+| Secretary |  [{ ci[secretary][roster] }] |
+| Assistant Secretary |  [{ ci[assistantsecretary][roster] }] |
+| V.P., [[]Legal Affairs](/legal/) |  [{ ci[legal][chair] }] |
+| Assistant V.P., [[]Legal Affairs](/legal/) |  [{ ci[assistantvplegalaffairs][roster] }] |
+</code></pre>
+<pre><code class="language-md">- All volunteer community
+- [{ code_lines }]+ lines of code in&amp;nbsp;stewardship
+- [{ code_changed }]+ lines of code&amp;nbsp;changed
+- [{ code_commits }]+ code commits
+- [{ asf_members }] individual ASF&amp;nbsp;Members
+- [{ asf_committers }]+ Apache Committers
+- [{ asf_contributors }]+ code contributors
+- [{ asf_people }]+ people involved in our&amp;nbsp;communities
+</code></pre>
 <h3>EZMD Reader</h3>
 <p>The <code>asfreader.py</code> plugin is responsible for <a href="#read-source">reading the source</a>, adding metadata, <a href="#ezt-translation">ezt translation</a>, and <a href="#render-gfm">rendering GFM</a></p>
-<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">add_data</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">metadata</span><span class="p">):</span>
-        <span class="s2">&quot;Mix in ASF data as metadata&quot;</span>
+<pre><code class="language-python">    def add_data(self, text, metadata):
+        "Mix in ASF data as metadata"
 
-        <span class="n">asf_metadata</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">settings</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;ASF_DATA&#39;</span><span class="p">,</span> <span class="p">{</span> <span class="p">})</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;metadata&#39;</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">asf_metadata</span><span class="p">:</span>
-            <span class="n">metadata</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">asf_metadata</span><span class="p">)</span>
-            <span class="c1"># insert any direct references</span>
-            <span class="n">m</span> <span class="o">=</span> <span class="mi">1</span>
-            <span class="k">while</span> <span class="n">m</span><span class="p">:</span>
-                <span class="n">m</span> <span class="o">=</span> <span class="n">METADATA_RE</span><span class="o">.</span><span class="n">search</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">m</span><span class="p">:</span>
-                    <span class="n">this_data</span> <span class="o">=</span> <span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
-                    <span class="n">format_string</span> <span class="o">=</span> <span class="s1">&#39;{{</span><span class="si">{0}</span><span class="s1">}}&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">this_data</span><span class="p">)</span>
-                    <span class="k">try</span><span class="p">:</span>
-                        <span class="n">new_string</span> <span class="o">=</span> <span class="n">format_string</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="o">**</span><span class="n">metadata</span><span class="p">)</span>
-                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">{{{{</span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="se">}}}}</span><span class="s1"> -&gt; </span><span class="si">{</span><span class="n">new_string</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-                    <span class="k">except</span> <span class="ne">Exception</span><span class="p">:</span>
-                        <span class="c1"># the data expression was not found</span>
-                        <span class="n">new_string</span> <span class="o">=</span> <span class="n">format_string</span>
-                        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;</span><span class="se">{{{{</span><span class="si">{</span><span class="n">m</span><span class="o">.</span><span class="n">group</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span><span class="si">}</span><span class="se">}}}}</span><span class="s1"> is not found&#39;</span><span class="p">)</span>
-                    <span class="n">text</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="n">METADATA_RE</span><span class="p">,</span> <span class="n">new_string</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="n">count</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">text</span><span class="p">,</span> <span class="n">metadata</span>
-</code></pre></div>
-
+        asf_metadata = self.settings.get('ASF_DATA', { }).get('metadata')
+        if asf_metadata:
+            metadata.update(asf_metadata)
+            # insert any direct references
+            m = 1
+            while m:
+                m = METADATA_RE.search(text)
+                if m:
+                    this_data = m.group(1).strip()
+                    format_string = '{{{0}}}'.format(this_data)
+                    try:
+                        new_string = format_string.format(**metadata)
+                        print(f'{{{{{m.group(1)}}}}} -&gt; {new_string}')
+                    except Exception:
+                        # the data expression was not found
+                        new_string = format_string
+                        print(f'{{{{{m.group(1)}}}}} is not found')
+                    text = re.sub(METADATA_RE, new_string, text, count=1)
+        return text, metadata
+</code></pre>
 <h2>EZT Translation</h2>
 <p><strong>ezmd</strong> page files are <a href="https://github.com/gstein/ezt">ezt</a> templates that create Markdown and HTML output. See <a href="https://github.com/gstein/ezt/blob/wiki/Syntax.md">EZT Syntax</a> for the directives.</p>
 <h3>EZT Examples</h3>
 <p>Project list:</p>
-<div class="highlight"><pre><span></span><code>| Office    | Individual  |
+<pre><code class="language-md">| Office    | Individual  |
 |-----------|-------------|[for projects]
-| V.P., [<span class="nt">if-any projects.site</span>][<span class="nl">[</span>][end]Apache [<span class="nt">projects.display_name</span>][<span class="nl">if-any projects.site</span>]]([projects.site])[end] | [projects.chair] |[end]
-</code></pre></div>
-
+| V.P., [if-any projects.site][[][end]Apache [projects.display_name][if-any projects.site]]([projects.site])[end] | [projects.chair] |[end]
+</code></pre>
 <p>Featured projects:</p>
-<div class="highlight"><pre><span></span><code>[for featured_projs]<span class="p">&lt;</span><span class="nt">li</span> <span class="err">[</span><span class="na">if-index</span> <span class="na">featured_projs</span> <span class="na">first</span><span class="err">]</span><span class="na">class</span><span class="o">=</span><span class="s">&quot;active&quot;</span><span class="err">[</span><span class="na">end</span><span class="err">]</span><span class="p">&gt;</span>
-     <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#[featured_projs.key_id]&quot;</span> <span class="na">data-toggle</span><span class="o">=</span><span class="s">&quot;tab&quot;</span><span class="p">&gt;</span>[featured_projs.display_name]<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
-<span class="p">&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>[end]
-</code></pre></div>
-
+<pre><code class="language-html">[for featured_projs]&lt;li [if-index featured_projs first]class="active"[end]&gt;
+     &lt;a href="#[featured_projs.key_id]" data-toggle="tab"&gt;[featured_projs.display_name]&lt;/a&gt;
+&lt;/li&gt;[end]
+</code></pre>
 <p>Insert a file as-is into the output:</p>
-<div class="highlight"><pre><span></span><code>Title: Apache Download Mirrors
+<pre><code class="language-md">Title: Apache Download Mirrors
 
-[insertfile &quot;include/closer.ezt&quot;]
-</code></pre></div>
-
+[insertfile "include/closer.ezt"]
+</code></pre>
 <h3>EZT Code</h3>
 <p>Code from <code>asfreader.py</code></p>
-<div class="highlight"><pre><span></span><code>            <span class="c1"># prepare text as an ezt template</span>
-            <span class="c1"># compress_whitespace=0 is required as blank lines and indentation have meaning in markdown</span>
-            <span class="n">template</span> <span class="o">=</span> <span class="n">ezt</span><span class="o">.</span><span class="n">Template</span><span class="p">(</span><span class="n">compress_whitespace</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
-            <span class="n">reader</span> <span class="o">=</span> <span class="n">ASFTemplateReader</span><span class="p">(</span><span class="n">source_path</span><span class="p">,</span> <span class="n">text</span><span class="p">)</span>
-            <span class="n">template</span><span class="o">.</span><span class="n">parse</span><span class="p">(</span><span class="n">reader</span><span class="p">,</span> <span class="n">base_format</span><span class="o">=</span><span class="n">ezt</span><span class="o">.</span><span class="n">FORMAT_HTML</span><span class="p">)</span>
-            <span class="k">assert</span> <span class="n">template</span>
-            <span class="c1"># generate content from ezt template with metadata</span>
-            <span class="n">fp</span> <span class="o">=</span> <span class="n">io</span><span class="o">.</span><span class="n">StringIO</span><span class="p">()</span>
-            <span class="n">template</span><span class="o">.</span><span class="n">generate</span><span class="p">(</span><span class="n">fp</span><span class="p">,</span> <span class="n">metadata</span><span class="p">)</span>
-</code></pre></div>
-
+<pre><code class="language-python">            # prepare text as an ezt template
+            # compress_whitespace=0 is required as blank lines and indentation have meaning in markdown
+            template = ezt.Template(compress_whitespace=0)
+            reader = ASFTemplateReader(source_path, text)
+            template.parse(reader, base_format=ezt.FORMAT_HTML)
+            assert template
+            # generate content from ezt template with metadata
+            fp = io.StringIO()
+            template.generate(fp, metadata)
+</code></pre>
 <h2>Render GFM</h2>
 <p>Content is in <a href="gfm.html">GitHub Flavored Markdown</a> (GFM).</p>
 <p>ASF-Pelican uses a version of <a href="https://github.com/github/cmark-gfm" target="_blank">cmark-gfm</a> by <a href="https://github.blog/2017-03-14-a-formal-spec-for-github-markdown/" target="_blank">GitHub</a> through the <code>pelican-gfm</code> plugin created by Apache Infra.</p>
@@ -366,13 +349,16 @@ There is a blank line and the rest is the <code>text</code>.</p>
 </li>
 <li>
 <p>Many projects used the Apache CMS for their websites. Here are some differences from its <code>markdown.pl</code>.</p>
-</li>
+<ul>
 <li>
 <p><a href="https://github.github.com/gfm/#html-block">HTML Blocks</a></p>
 <ul>
 <li>Make sure the first line of your html block starts in column one.</li>
-<li>A blank line terminates an html block</li>
+<li>A blank line terminates an html block
+<ul>
 <li><a href="https://github.github.com/gfm/#example-139">Exception</a> to this rule for <code>style</code>, <code>pre</code>, and <code>script</code>.</li>
+</ul>
+</li>
 <li><a href="https://github.github.com/gfm/#example-122">Markdown content within an HTML block</a></li>
 </ul>
 </li>
@@ -387,6 +373,8 @@ There is a blank line and the rest is the <code>text</code>.</p>
 <li>
 <p><a href="https://github.github.com/gfm/#disallowed-raw-html-extension-">Disallowed html</a> the tagfilter extension disables certain html. The asfgenid plugin reenables <code>script</code>, <code>style</code>, and <code>iframe</code> html.</p>
 </li>
+</ul>
+</li>
 <li>
 <p><a href="https://sindresorhus.com/github-markdown-css/">Examples</a></p>
 </li>
@@ -394,35 +382,33 @@ There is a blank line and the rest is the <code>text</code>.</p>
 <h3>Pelican GFM</h3>
 <p>The <code>pelican-gfm</code> plugin <a href="#read-source">reads</a> the content file and renders it to HTML.</p>
 <p>From <code>asfreader.py</code>:</p>
-<div class="highlight"><pre><span></span><code>            <span class="c1"># Render the markdown into HTML</span>
-            <span class="n">content</span> <span class="o">=</span> <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">render</span><span class="p">(</span><span class="n">fp</span><span class="o">.</span><span class="n">getvalue</span><span class="p">()</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">)</span>
-            <span class="k">assert</span> <span class="n">content</span>
-</code></pre></div>
-
+<pre><code class="language-python">            # Render the markdown into HTML
+            content = super().render(fp.getvalue().encode('utf-8')).decode('utf-8')
+            assert content
+</code></pre>
 <p>From <code>pelican-gfm</code>:</p>
-<div class="highlight"><pre><span></span><code>    <span class="k">def</span> <span class="nf">render</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">text</span><span class="p">):</span>
-      <span class="s2">&quot;Use cmark-gfm to render the Markdown into an HTML fragment.&quot;</span>
+<pre><code class="language-python">    def render(self, text):
+      "Use cmark-gfm to render the Markdown into an HTML fragment."
 
-      <span class="n">parser</span> <span class="o">=</span> <span class="n">F_cmark_parser_new</span><span class="p">(</span><span class="n">OPTS</span><span class="p">)</span>
-      <span class="k">assert</span> <span class="n">parser</span>
-      <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">EXTENSIONS</span><span class="p">:</span>
-        <span class="n">ext</span> <span class="o">=</span> <span class="n">F_cmark_find_syntax_extension</span><span class="p">(</span><span class="n">name</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;utf-8&#39;</span><span class="p">))</span>
-        <span class="k">assert</span> <span class="n">ext</span>
-        <span class="n">rv</span> <span class="o">=</span> <span class="n">F_cmark_parser_attach_syntax_extension</span><span class="p">(</span><span class="n">parser</span><span class="p">,</span> <span class="n">ext</span><span class="p">)</span>
-        <span class="k">assert</span> <span class="n">rv</span>
-      <span class="n">exts</span> <span class="o">=</span> <span class="n">F_cmark_parser_get_syntax_extensions</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
-      <span class="n">F_cmark_parser_feed</span><span class="p">(</span><span class="n">parser</span><span class="p">,</span> <span class="n">text</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">text</span><span class="p">))</span>
-      <span class="n">doc</span> <span class="o">=</span> <span class="n">F_cmark_parser_finish</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
-      <span class="k">assert</span> <span class="n">doc</span>
+      parser = F_cmark_parser_new(OPTS)
+      assert parser
+      for name in EXTENSIONS:
+        ext = F_cmark_find_syntax_extension(name.encode('utf-8'))
+        assert ext
+        rv = F_cmark_parser_attach_syntax_extension(parser, ext)
+        assert rv
+      exts = F_cmark_parser_get_syntax_extensions(parser)
+      F_cmark_parser_feed(parser, text, len(text))
+      doc = F_cmark_parser_finish(parser)
+      assert doc
 
-      <span class="n">output</span> <span class="o">=</span> <span class="n">F_cmark_render_html</span><span class="p">(</span><span class="n">doc</span><span class="p">,</span> <span class="n">OPTS</span><span class="p">,</span> <span class="n">exts</span><span class="p">)</span>
+      output = F_cmark_render_html(doc, OPTS, exts)
 
-      <span class="n">F_cmark_parser_free</span><span class="p">(</span><span class="n">parser</span><span class="p">)</span>
-      <span class="n">F_cmark_node_free</span><span class="p">(</span><span class="n">doc</span><span class="p">)</span>
+      F_cmark_parser_free(parser)
+      F_cmark_node_free(doc)
 
-      <span class="k">return</span> <span class="n">output</span>
-</code></pre></div>
-
+      return output
+</code></pre>
 <h2>Generate ID</h2>
 <p>We use the <code>asfgenid</code> plugin to perform modifications on the generated content that mimics the markdown extensions in the Apache CMS.
 Many of these ASF-specific enhancements are controlled in <a href="../pelicanconf.py">pelican settings</a> in the <code>ASF_GENID</code> dictionary.</p>
@@ -501,95 +487,90 @@ Many of these ASF-specific enhancements are controlled in <a href="../pelicancon
 <td align="center">-</td>
 <td>convert beautiful soup back into HTML.</td>
 <td></td>
-</tr>
-</tbody>
-</table>
-<div class="highlight"><pre><span></span><code><span class="c1"># Configure the asfgenid plugin</span>
-<span class="n">ASF_GENID</span> <span class="o">=</span> <span class="p">{</span>
-    <span class="s1">&#39;metadata&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-    <span class="s1">&#39;elements&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-    <span class="s1">&#39;headings&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-    <span class="s1">&#39;headings_re&#39;</span><span class="p">:</span> <span class="sa">r</span><span class="s1">&#39;^h[1-4]&#39;</span><span class="p">,</span>
-    <span class="s1">&#39;permalinks&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-    <span class="s1">&#39;toc&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-    <span class="s1">&#39;toc_headers&#39;</span><span class="p">:</span> <span class="sa">r</span><span class="s2">&quot;h[1-4]&quot;</span><span class="p">,</span>
-    <span class="s1">&#39;tables&#39;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
-    <span class="s1">&#39;debug&#39;</span><span class="p">:</span> <span class="kc">False</span>
-<span class="p">}</span>
-</code></pre></div>
-
+</tr></tbody></table>
+<pre><code class="language-python"># Configure the asfgenid plugin
+ASF_GENID = {
+    'metadata': True,
+    'elements': True,
+    'headings': True,
+    'headings_re': r'^h[1-4]',
+    'permalinks': True,
+    'toc': True,
+    'toc_headers': r"h[1-4]",
+    'tables': True,
+    'debug': False
+}
+</code></pre>
 <h3>Element examples</h3>
 <p>Set the heading ID and permalink to <code>#what</code></p>
-<div class="highlight"><pre><span></span><code><span class="gu">##</span> What is the Apache Software Foundation?  {#what}
+<pre><code class="language-md">## What is the Apache Software Foundation?  {#what}
 
 The Apache Software Foundation (ASF) is a non-profit 501(c)(3) corporation,
 incorporated in Delaware, USA, in June of 1999. The ASF is a natural
 outgrowth of The Apache Group, which
 formed in 1995 to develop the Apache HTTP Server.
-</code></pre></div>
-
+</code></pre>
 <p>Set the class to display an image to <code>float-right</code></p>
-<div class="highlight"><pre><span></span><code>![<span class="nt">Logo</span>](<span class="na">images/logo.svg</span>) {.float-right}
-</code></pre></div>
-
+<pre><code class="language-md">![Logo](images/logo.svg) {.float-right}
+</code></pre>
 <p>An HTML fragment is also feasible for a similar purpose</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;.pull-right&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;float:right; border-style:dotted; width:200px; padding:5px; margin:5px&quot;</span><span class="p">&gt;</span>
+<pre><code class="language-html">&lt;div class=".pull-right" style="float:right; border-style:dotted; width:200px; padding:5px; margin:5px"&gt;
 
 SEE INSTEAD: [Trademark Resources Site Map][resources].
 
-<span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
-</code></pre></div>
-
+&lt;/div&gt;
+</code></pre>
 <h3>Heading code</h3>
 <p>Code from <code>asfgenid.py</code> uses <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.html?highlight=javascript#">BeautifulSoup 4</a> to manipulate the rendered HTML. Here is an example:</p>
-<div class="highlight"><pre><span></span><code><span class="c1"># from Apache CMS markdown/extensions/headerid.py - slugify in the same way as the Apache CMS</span>
-<span class="k">def</span> <span class="nf">slugify</span><span class="p">(</span><span class="n">value</span><span class="p">,</span> <span class="n">separator</span><span class="p">):</span>
-    <span class="sd">&quot;&quot;&quot; Slugify a string, to make it URL friendly. &quot;&quot;&quot;</span>
-    <span class="n">value</span> <span class="o">=</span> <span class="n">unicodedata</span><span class="o">.</span><span class="n">normalize</span><span class="p">(</span><span class="s1">&#39;NFKD&#39;</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span><span class="o">.</span><span class="n">encode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">,</span> <span class="s1">&#39;ignore&#39;</span><span class="p">)</span>
-    <span class="n">value</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;[^</span><span class="se">\\</span><span class="s1">w</span><span class="se">\\</span><span class="s1">s-]&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">.</span><span class="n">decode</span><span class="p">(</span><span class="s1">&#39;ascii&#39;</span><span class="p">))</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span>
-    <span class="k">return</span> <span class="n">re</span><span class="o">.</span><span class="n">sub</span><span class="p">(</span><span class="s1">&#39;[</span><span class="si">%s</span><span class="se">\\</span><span class="s1">s]+&#39;</span> <span class="o">%</span> <span class="n">separator</span><span class="p">,</span> <span class="n">separator</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
+<pre><code class="language-python"># from Apache CMS markdown/extensions/headerid.py - slugify in the same way as the Apache CMS
+def slugify(value, separator):
+    """ Slugify a string, to make it URL friendly. """
+    value = unicodedata.normalize('NFKD', value).encode('ascii', 'ignore')
+    value = re.sub('[^\\w\\s-]', '', value.decode('ascii')).strip().lower()
+    return re.sub('[%s\\s]+' % separator, separator, value)
 
-<span class="o">...</span>
+...
 
-<span class="c1"># append a permalink</span>
-<span class="k">def</span> <span class="nf">permalink</span><span class="p">(</span><span class="n">soup</span><span class="p">,</span> <span class="n">mod_element</span><span class="p">):</span>
-    <span class="n">new_tag</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">new_tag</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="n">href</span><span class="o">=</span><span class="s1">&#39;#&#39;</span> <span class="o">+</span> <span class="n">mod_element</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">])</span>
-    <span class="n">new_tag</span><span class="p">[</span><span class="s1">&#39;class&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;headerlink&#39;</span>
-    <span class="n">new_tag</span><span class="p">[</span><span class="s1">&#39;title&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s1">&#39;Permalink&#39;</span>
-    <span class="n">new_tag</span><span class="o">.</span><span class="n">string</span> <span class="o">=</span> <span class="n">LINK_CHAR</span>
-    <span class="n">mod_element</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">new_tag</span><span class="p">)</span>
+# append a permalink
+def permalink(soup, mod_element):
+    new_tag = soup.new_tag('a', href='#' + mod_element['id'])
+    new_tag['class'] = 'headerlink'
+    new_tag['title'] = 'Permalink'
+    new_tag.string = LINK_CHAR
+    mod_element.append(new_tag)
 
-<span class="o">...</span>
+...
 
-<span class="c1"># generate ID for a heading</span>
-<span class="k">def</span> <span class="nf">headingid_transform</span><span class="p">(</span><span class="n">ids</span><span class="p">,</span> <span class="n">soup</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="n">permalinks</span><span class="p">,</span> <span class="n">perma_set</span><span class="p">):</span>
-    <span class="n">new_string</span> <span class="o">=</span> <span class="n">tag</span><span class="o">.</span><span class="n">string</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">new_string</span><span class="p">:</span>
-        <span class="c1"># roll up strings if no immediate string</span>
-        <span class="n">new_string</span> <span class="o">=</span> <span class="n">tag</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span>
-            <span class="n">text</span><span class="o">=</span><span class="k">lambda</span> <span class="n">t</span><span class="p">:</span> <span class="ow">not</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">t</span><span class="p">,</span> <span class="n">Comment</span><span class="p">),</span>
-            <span class="n">recursive</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="n">new_string</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">new_string</span><span class="p">)</span>
+# generate ID for a heading
+def headingid_transform(ids, soup, tag, permalinks, perma_set):
+    new_string = tag.string
+    if not new_string:
+        # roll up strings if no immediate string
+        new_string = tag.find_all(
+            text=lambda t: not isinstance(t, Comment),
+            recursive=True)
+        new_string = ''.join(new_string)
 
-    <span class="c1"># don&#39;t have an id create it from text</span>
-    <span class="n">new_id</span> <span class="o">=</span> <span class="n">slugify</span><span class="p">(</span><span class="n">new_string</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
-    <span class="n">tag</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">unique</span><span class="p">(</span><span class="n">new_id</span><span class="p">,</span> <span class="n">ids</span><span class="p">)</span>
-    <span class="k">if</span> <span class="n">permalinks</span><span class="p">:</span>
-        <span class="n">permalink</span><span class="p">(</span><span class="n">soup</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span>
-        <span class="c1"># inform if there is a duplicate permalink</span>
-        <span class="n">unique</span><span class="p">(</span><span class="n">tag</span><span class="p">[</span><span class="s1">&#39;id&#39;</span><span class="p">],</span> <span class="n">perma_set</span><span class="p">)</span>
+    # don't have an id create it from text
+    new_id = slugify(new_string, '-')
+    tag['id'] = unique(new_id, ids)
+    if permalinks:
+        permalink(soup, tag)
+        # inform if there is a duplicate permalink
+        unique(tag['id'], perma_set)
 
-<span class="o">...</span>
+...
 
-    <span class="c1"># step 6 - find all headings w/o ids already present or assigned with {#id} text</span>
-    <span class="k">if</span> <span class="n">asf_headings</span> <span class="o">==</span> <span class="s1">&#39;True&#39;</span><span class="p">:</span>
-        <span class="k">if</span> <span class="n">asf_genid</span><span class="p">[</span><span class="s1">&#39;debug&#39;</span><span class="p">]:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;headings: </span><span class="si">{</span><span class="n">content</span><span class="o">.</span><span class="n">relative_source_path</span><span class="si">}</span><span class="s1">&#39;</span><span class="p">)</span>
-        <span class="c1"># Find heading tags</span>
-        <span class="n">HEADING_RE</span> <span class="o">=</span> <span class="n">re</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">asf_genid</span><span class="p">[</span><span class="s1">&#39;headings_re&#39;</span><span class="p">])</span>
-        <span class="k">for</span> <span class="n">tag</span> <span class="ow">in</span> <span class="n">soup</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="n">HEADING_RE</span><span class="p">,</span> <span class="nb">id</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-            <span class="n">headingid_transform</span><span class="p">(</span><span class="n">ids</span><span class="p">,</span> <span class="n">soup</span><span class="p">,</span> <span class="n">tag</span><span class="p">,</span> <span class="n">asf_genid</span><span class="p">[</span><span class="s1">&#39;permalinks&#39;</span><span class="p">],</span> <span class="n">permalinks</span><span class="p">)</span>
-</code></pre></div>
+    # step 6 - find all headings w/o ids already present or assigned with {#id} text
+    if asf_headings == 'True':
+        if asf_genid['debug']:
+            print(f'headings: {content.relative_source_path}')
+        # Find heading tags
+        HEADING_RE = re.compile(asf_genid['headings_re'])
+        for tag in soup.findAll(HEADING_RE, id=False):
+            headingid_transform(ids, soup, tag, asf_genid['permalinks'], permalinks)
+</code></pre>
+
         </div>
       </div>
     </div>    
