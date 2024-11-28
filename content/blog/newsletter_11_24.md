@@ -38,6 +38,6 @@ A two-part interview with Chris Lambertus is here:
 
 ## ASF Writers
 
-Infra team member Andrew Wetmore has started a Slack channel for people whose main contribution to The ASF and its projects is through writing–documentation, marketing materials, tutorials, and much more. The 'ASF-writers' channel is in the the-asf workspace on Slack. The group meets next on **Friday, December 6, 1700 UTC**, in the channel's huddle.
+Infra team member Andrew Wetmore has started a Slack channel for people whose main contribution to The ASF and its projects is through writing–documentation, marketing materials, tutorials, and much more. The 'ASF-writers' channel is in the _the-asf_ workspace on Slack. The group meets next on **Friday, December 6, 1700 UTC**, in the channel's huddle.
 
 More soon!
