@@ -23,7 +23,7 @@ See <a href="https://infra.apache.org/roundtable.html" target="_blank">this page
 
 ## A message from the VP-Infra
 
-_Please welcome Chris Lambertus to the role of Infrastructure Administrator at The Apache Software Foundation. Chris has worked for Infra for many years, and is imminently capable. I look forward to working with you Chris._
+_Please welcome Chris Lambertus to the role of interim Infrastructure Administrator at The Apache Software Foundation. Chris has worked for Infra for many years, and is imminently capable. I look forward to working with you Chris._
 
 _Please also join me in thanking Greg Stein for his many years of service in the role of Infrastructure Administrator. He's been instrumental in defining the role and forming the current team. Thank you, Greg._
 
