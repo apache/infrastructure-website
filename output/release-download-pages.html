@@ -149,7 +149,8 @@
 <li><code>release.cgi</code> and <code>release.html</code> will work</li>
 <li><code>download.cgi</code> and <code>release.html</code> will <strong>not</strong> work</li>
 </ul>
-<p>There are a number of elements that a good project download page should contain. See the content to generate that page <a href="https://svn.apache.org/repos/asf/httpd/site/trunk/content/download.mdtext" target="_blank">here</a>.</p>
+<p>There are a number of elements that a good project download page should contain. See the content to generate that page <a href="https://svn.apache.org/repos/asf/httpd/site/trunk/content/download.mdtext" target="_blank">here</a>.
+Alternately, you can get inspiration from the <a href="https://github.com/apache/infrastructure-p6/blob/production/modules/closer_cgi/files/closer.html">default download template</a> that will be used when no custom HTML template exists for a project.</p>
 <p>A variable URL links to downloadable artifacts. The download script substitutes the correct base URL for the <code>[preferred]</code> variable. The rest of the URL should be the path to the artifact relative to the base of the Apache distribution directory.</p>
 <p>For example, for artifact <code>foo-1.0.0.tar.gz</code> contained in <code>bar/foo</code>, use <code>[preferred]/bar/foo/foo-1.0.0.tar.gz</code></p>
 <p>Provide links to the checksum and signature for the artifact next to the download link. It is important that users check the sum and verify the signature, so these links should be close and clear.</p>
