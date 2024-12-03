@@ -93,6 +93,7 @@ There is no requirement to name the script `download.cgi` and the download relea
 
 
 There are a number of elements that a good project download page should contain. See the content to generate that page <a href="https://svn.apache.org/repos/asf/httpd/site/trunk/content/download.mdtext" target="_blank">here</a>.
+Alternately, you can get inspiration from the [default download template](https://github.com/apache/infrastructure-p6/blob/production/modules/closer_cgi/files/closer.html) that will be used when no custom HTML template exists for a project.
 
 A variable URL links to downloadable artifacts. The download script substitutes the correct base URL for the `[preferred]` variable. The rest of the URL should be the path to the artifact relative to the base of the Apache distribution directory.
 
