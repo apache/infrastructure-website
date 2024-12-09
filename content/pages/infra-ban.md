@@ -22,6 +22,7 @@ If you break one of these rules, **your IP will be banned** from all services ac
 
   - Slow Loris-like abuse (too many request timeouts).
   - More than 200,000 pageviews on any box per 12 hours.
+  - More than 50,000 requests to downloads.apache.org per 24 hours. (tip: use a caching proxy instead)
   - More than 50,000 JIRA requests per 24 hours.
   - More than 50 Gibibytes traffic per 12 hours.
   - More than 25,000 visits to archive.apache.org per 24 hours.
