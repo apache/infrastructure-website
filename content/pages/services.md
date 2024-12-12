@@ -23,6 +23,7 @@ Infra maintains a wide range of tools for PMCs, project committers, and the Apac
     - <a href="#code-dist">Code distribution</a>
     - <a href="#virtual-servers">Virtual servers</a>
     - <a href="#voting">Online voting</a>
+    - **Visual Studio**: The ASF has a presence in the <a href="https://marketplace.visualstudio.com/publishers/ASF" target="_blank">Visual Studio Marketplace</a>. Several projects have posted extensions there to make it easier for their developers to work in VS on their product's code. Projects which would like to add their extensions to the Marketplace should make the request to Infra in a Jira ticket.
   - <a href="#other">Other tools</a>
     - <a href="#dns">DNS</a>
     - <a href="#url-shortener">URL shortener</a>
