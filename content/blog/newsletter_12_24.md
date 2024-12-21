@@ -1,4 +1,4 @@
-title: Inside Infra Decemberr 2024 
+title: Inside Infra December 2024 
 date: '2024-12-21' 
 permalink: newsletter1224 layout: post
 
