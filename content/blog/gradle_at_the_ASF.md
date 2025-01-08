@@ -5,7 +5,7 @@ layout: post
 
 # Gradle has landed at the ASF!
 
-Gradle, a longtime leader in developer productivity and build analytics, has become a platinum-level sponsor of the ASF. The ASF instance of Develocity, formerly Gradle Enterprise, is at <a href="https://ge.apache.org" target="_blank">https://ge.apache.org</a>.
+Gradle, a longtime leader in developer productivity and build analytics, has become a platinum-level sponsor of the ASF. The ASF instance of Develocity, formerly Gradle Enterprise, is at <a href="https://develocity.apache.org" target="_blank">https://develocity.apache.org</a>.
 
 ## But what is it?
 Develocity is a suite of acceleration and analytics technologies for CI/CD  systems to help projects identify and analyze trends while optimizing build resources. The result is faster builds, with fewer failures,
@@ -21,7 +21,7 @@ A good resource is <a href="https://cwiki.apache.org/confluence/display/INFRA/Pr
 If your project runs into difficulties or has questions, open a Jira ticket for Infra. If we can't help with your issue ourselves, we can draw on the ASF's community of Gradle users.
 
 ## How do projects make use of Develocity?
-Once a project has integrated Develocity into their build process, scans of each new build are sent to the instance at `ge.apache.org`. Project members can review the build scan dashboard's graphic analysis.
+Once a project has integrated Develocity into their build process, scans of each new build are sent to the instance at `develocity.apache.org`. Project members can review the build scan dashboard's graphic analysis.
 
 ## How do we expect this to impact us?
 We hope that, with increased insight into build processes, projects will see build time savings across all jobs, reducing queue times and driving down time spent building serially or dealing with build failures.

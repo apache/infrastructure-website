@@ -66,5 +66,5 @@ TODO: explain how to use gradle enterprise to diagnose builds issues
 All of this to say: builds are getting done faster, sooner.
 
 == How do I use this?
-* the GE instance is publicly available at ge.apache.org
+* the GE instance is publicly available at develocity.apache.org
 
