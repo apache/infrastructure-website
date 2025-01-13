@@ -1,6 +1,6 @@
 staging:
-  whoami: asf-break-test
-  profile: ~
+  whoami: asf-site-pelfix
+  profile: pelfix
   autostage: preview/*
 
 github:
