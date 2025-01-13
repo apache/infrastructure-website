@@ -43,7 +43,7 @@ TODO: gmcdonald:
 * better arm support
 * ephemeral nodes for jenkins
 * build caching
-* better github actions support
+* better GitHub actions support
 
 [.notes]
 --
