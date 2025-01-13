@@ -1,0 +1,108 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Approving Jira Account Requests - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Contribute</a></li>
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Approving Jira Account Requests
+          </h1>
+              <p>The ASF uses Jira as one of its main systems for receiving and tracking bug reports and feature requests for our many projects. We require people who are not already part of the ASF community to have an ASF Jira account in order to submit Jira tickets. To get that account, a person who does not already have an ASF identity has to apply in one of two ways:</p>
+<ol>
+<li>Using this form on our self-serve system: <a href="https://selfserve.apache.org/jira-account.html" target="_blank"><a href="https://selfserve.apache.org/jira-account.html">https://selfserve.apache.org/jira-account.html</a></a>, which asks them to identify the project to which they want to submit tickets. ASF members associated with that project then review the application to make sure the information is correct and the reason for the account is valid.</li>
+<li>Some projects ask requesters to send their request to the <code>users@</code> list for review, giving the same information in their email that they would provide on the self-serve form.</li>
+</ol>
+<p><strong>Note</strong>: a person does not need a Jira account to view existing issue reports and enhancement requests.</p>
+<h2>Why we use this pattern</h2>
+<p>The ASF put the requirement to have an ASF Jira account in place for two reasons:</p>
+<ol>
+<li>Our system was being swamped with a flood of bot-created spammy tickets. Requiring an account in order to submit a ticket has largely resolved this issue.</li>
+<li>We currently host our Jira system on an ASF server. We intend to move it to a hosted cloud solution. However, that solution has a hard maximum to the number of accounts it can support, and we are trying to reduce the number of ASF Jira accounts to below that maximum.</li>
+</ol>
+<h2>Approving account requests</h2>
+<p>In general, if the request seems valid--all fields are filled in with appropriate information, the reason for the account does not seem suspicious (or machine-written), and the reason given is not about a security vulnerability (see above)--approve it. Do not worry too much about increasing the number of ASF Jira accounts, as Infra is working on addressing that issue in other ways than rejecting valid requests.</p>
+<p>If you are in doubt, consult with colleagues on your PMC.</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

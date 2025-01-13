@@ -1,0 +1,133 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infra and the Incubator - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Contribute</a></li>
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Infra and the Incubator
+          </h1>
+              <h2>What Infra is</h2>
+<p>The Infrastructure team (Infra) manages the systems and hardware that run the services that the ASF and its projects depend on. Infra also reviews requests to install new systems or software on ASF machines, and provides virtual machines (VMs) for projectrs. It's a small team, distributed across many time zones. Someone is on duty at all hours to respond to emergency issues.</p>
+<h2>Infra and incubating projects</h2>
+<p>Your mentor is your first stop in figuring out technical issues for your incubating project. They can explain, based on long experience, how to get the best out of the ASF systems, machines, and services. However, if the mentor is not available, members of the new project can move forward the process of setting up project resources.</p>
+<img src="https://cwiki.apache.org/confluence/rest/gliffy/1.0/embeddedDiagrams/7df21120-01db-421e-bb47-353b7977097a.png"/>
+<h3>Phase 1: Establishing a podling</h3>
+<p><strong>Podling bootstrap file</strong></p>
+<p>The very first task is for a mentor or champion to bootstrap the project via the <em>podlings.xml</em> file that tracks all current and previous podlings.</p>
+<p>This file is <a href="https://svn.apache.org/repos/asf/incubator/public/trunk/content/podlings.xml" target="_blank">here</a>. You may use existing entries as a primer.</p>
+<p><strong>DNS</strong></p>
+<p>The Domain Name System (DNS) is a hierarchical and decentralized naming system for computers, services, or other resources connected to the Internet or a private network. It associates information with domain names assigned to each of the participating entities.</p>
+<p>DNS entry ($projectname.apache.org) is required for the podling website and mailing lists to work. Request this once podlings.xml has been updated, by filing a Jira ticket with Infra. See the next point before completing the ticket.</p>
+<p><strong>LDAP</strong></p>
+<p>The Lightweight Directory Access Protocol (LDAP) is an open, vendor-neutral, industry-standard application protocol for accessing and maintaining distributed directory information services over an Internet Protocol (IP) network.</p>
+<p>Activate LDAP for the project by filing a JIRA ticket with Infra. Typically you can request both LDAP and DNS in the same ticket.</p>
+<h3>Phase 2: Mailing lists</h3>
+<p>Mailing lists are an integral part of the decision-making process for projects and for the whole ASF. Projects must have them set up before requesting other development resources.</p>
+<p>Typically, a project will need three lists</p>
+<ul>
+<li>private@ for podling PMC communications, including recording formal decisions and discussion of security issues</li>
+<li>dev@ for development discussions</li>
+<li>commits@ for code commit notifications</li>
+</ul>
+<p>Projects may also request separate lists for issues, pull requests, and users (this is very important once you do your first software release and begin to develop a user community) at any time.</p>
+<p>The project's mentors can can request mailing lists once DNS and LDAP are set up, through <a href="https://selfserve.apache.org/" target="_blank">SelfServe</a>.</p>
+<p>It takes about twelve hours after the mentor makes the request before the mailing lists become active. This gives Infra time to catch and deal with any errors in the requests.</p>
+<h3>Phase 3: Requesting new project resources or moving existing ones</h3>
+<p><strong>Code repositories</strong></p>
+<p>Moving existing repositories into ASF version control generally requires a github.com transition to the <code>github.com/apache/</code> organization. To make the transition,, file a Jira ticket with Infra.</p>
+<p>If you wish to copy existing code without transferring github stars, etc., your mentor can request <strong>new repositories</strong> for the project via <a href="https://selfserve.apache.org/" target="_blank">SelfServe</a>.</p>
+<p><strong>Bug tracking</strong></p>
+<p>You can enable GitHub issues (and wikis) via our (<a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">.asf.yaml</a> service, a configuration file that controls features such as notification schemes, website staging, GitHub settings, and Pelican builds. This is a per-repo feature.</p>
+<p>The project can request a Jira instance for issue tracking via <a href="https://selfserve.apache.org/" target="_blank">SelfServe</a>.</p>
+<p><strong>Confluence Wiki</strong></p>
+<p>Every project can have a dedicated space on the Apache Confluence wiki. Project participants can use the space to develop documentation, share planning and process documents, and work collaboratively. They can opt to make some pages in their space available to the public. Request a Confluence wiki space for the project via <a href="https://selfserve.apache.org/" target="_blank">SelfServe</a>.</p>
+<p><strong>Website</strong></p>
+<p>Standard practice is to create a web site repository via <a href="https://selfserve.apache.org/" target="_blank_">SelfServe</a>, and then use .asf.yaml for publishing on <code>$project.apache.org</code>.</p>
+<h2>Contacting Infra</h2>
+<p>If there is a problem, or you need Infra to do something, the best option is to start a Jira ticket assigned to Infra. That helps us and you track progress on whatever the thing is.</p>
+<p>For more informal contact, you can use the <em>asfinfra</em>&nbsp;Slack channel in the Apache Slack workspace, or send an email. Further details are <a href="contact.html">here</a>.</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

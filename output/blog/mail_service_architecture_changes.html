@@ -1,0 +1,122 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mail Service Architecture Changes - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Contribute</a></li>
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav><!-- breadcrumbs -->
+<div class="card" style="height: 34px;">
+    <nav aria-label="breadcrumb"  style="padding-left: 12px; padding-top: 4px;">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+
+            <li class="breadcrumb-item active"><a href="/blog/mail_service_architecture_changes.html">
+Mail Service Architecture Changes            </a></li>
+
+            <li class="breadcrumb-item active">(<a href="https://github.com/apache/infrastructure-website/tree/master/content/blog/mail_service_architecture_changes.md">edit</a>)</li>
+
+        </ol>
+    </nav>
+</div>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Mail Service Architecture Changes
+          </h1>
+              <p>Posted on: 2015-05-08 21:12:11+00:00</p>
+              <p>For the past few months the Infrastructure team have been working extremely hard to re-design, implement and manage changes to the email service architecture. &nbsp;Today we are proud to announce that phase 1 of this has been completed, and has been running for several days now.</p>
+<p>Phase 1 covers all components of the service except the listserv service, and mail archives. &nbsp;These will be included in phase 2, which we will come onto later. When we started out on this project to review, update and manage our email infrastructure we had a several guiding principals that either the old system must be made to conform too; or any new service would need to meet before being accepted. &nbsp;When we talk about these principals really we are talking about criteria, these are:&nbsp;</p>
+<p> </p>
+<ul>
+<li>The service must be entirely managed (operationally) from our puppet service.&nbsp;</li>
+<li>The software (packages) must all be packaged - i.e. .deb's, either upstream or packaged locally and in our own repo. Deploying from source is no longer acceptable.</li>
+<li>All the work carried out by puppet et al must be idempotent</li>
+<li>We will not allow the service design to restrict our ability to either adapt it, or grow it at will and on demand.&nbsp;</li>
+</ul>
+<p>Very early on in the design and testing work it became clear that we needed clear separation of each of the roles in the email service infrastructure. This would allow us, in the future too add more capability of any given type if for some reason it were needed. Lets say for example we needed for SpamAssassin capability this can we scaled sideways and allow us to swallow the load without needing to also make it an MX host or listserv host etc.&nbsp;</p>
+<p> </p>
+<p>The design we have settled upon, with phase 1 complete can be seen in this diagram. <a href="http://www.apache.org/dev/mailflow.jpg" target="_blank">http://www.apache.org/dev/mailflow.jpg</a>&nbsp;- This diagram shows that we have deployed several MX hosts (each of which are more than capable of handling our entire inbound mail load comfortably); in differing AWS regions globally. This decision means that while we dont need 3 to cope with capacity we wanted 3 to cope with networking resilience should any of these instances suffer network degradation or outage. &nbsp;</p>
+<p>These MX hosts are simple Postfix instances that run <a href="http://www.postfix.org/POSTSCREEN_README.html" target="_blank">Postfix Postscreen</a>, RBL checks, and <a href="http://www.ijs.si/software/amavisd/" target="_blank">Amavisd-new</a>. &nbsp;This simple protection of only performing RBL checks at the edge frees up the internal scanning hosts from having to scan emails needlessly. Amavis is simply used to pass the emails internally for scanning.&nbsp;</p>
+<p>Once the mails have been passed on by the MX (and there is an interesting detail about how exactly the mails are handled by Amavis that might be a blog post in the near future) they are handled by our scanning cluster. This group of hosts utilise SpamAssassin, ClamAV and again Postfix. While these may not be new technologies, again having a dedicated host or hosts in our case allows us to tune the services specifically for the resources dedicated to scanning and not worry about choking other local services. Of course it also means that should we see a marked increase in mail volume we can easily deploy a new node in a matter of minutes and have it join the rotation and start scanning email.</p>
+<p>All of the scanning nodes are being fronted by a HAProxy instance, this allows us to load balance our nodes and not have to reconfigure the MX hosts should we change the number of scanning hosts. &nbsp;It also means we can take a node out of rotation for maintenance and none of the MX hosts need to be reconfigured or modified in anyway. </p>
+<p>As we said earlier this is only phase 1. &nbsp;You will see in the diagram that we are still running our old ezmlm/qmail stack. This will now become the focus of phase 2, to determine what changes, if any best suit our projects and the foundation as a whole. One of the failings of the current system is that if the listserv host goes down, mail basically stops flowing, as this is the authoritative host for all apache addresses. We will also be looking very hard as to how we can run multiple listserv hosts to remove that single point of failure concern.&nbsp;</p>
+<p>The foundation relies on email as it's official internal communication mechanism, this is evident no more than when we say "If it didn't happen on the list, it didn't happen". Moving this service forward will be a significant challenge, one which we hope to deliver as soon as we can.&nbsp;</p>
+<p>As always, if you have any questions please email <a href="mailto:infrastructure@apache.org">infrastructure@apache.org</a>&nbsp; and we will do what we can to help. <br/><br/></p>
+<p>On behalf of the Infrastructure Team<br/>--pctony &nbsp;</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>  </main>
+  </body>
+</html>

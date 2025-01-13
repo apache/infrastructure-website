@@ -1,0 +1,1245 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fingerprints - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Contribute</a></li>
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Fingerprints
+          </h1>
+              <style type="text/css">
+  table { font-size: 12px }
+</style>
+<h3>FreeBSD:</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Os</th>
+<th>HW</th>
+<th>CPU</th>
+<th>RAM</th>
+<th>Disk</th>
+<th>Arrays</th>
+<th>Services</th>
+<th>Location</th>
+<th>Commissioned</th>
+<th>Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>baldr</td>
+<td>9.1-RELEASE</td>
+<td>DPE 1950</td>
+<td><a href="mailto:E5420@2.50GHz">E5420@2.50GHz</a> 2x4=8</td>
+<td>4x2@667MHz + 4x4@667MHz=24GB</td>
+<td><a href="mailto:2x931GB@7.2k">2x931GB@7.2k</a> gpt+zmirror</td>
+<td></td>
+<td>Jails - Services</td>
+<td>OSUOSL</td>
+<td>2008/02</td>
+<td>dm</td>
+</tr>
+<tr>
+<td>minotaur</td>
+<td>9.1-RELEASE</td>
+<td>HP DL580G7</td>
+<td><a href="mailto:E7540@2.00GHz">E7540@2.00GHz</a> 4x2x6=48</td>
+<td>8*4@1333MHz = 32GB</td>
+<td>4x146GB@10k</td>
+<td>Powervault 220S:<a href="mailto:15x500GB@7.2k">15x500GB@7.2k</a> raidz2 + 2x120GB SSD l2arc</td>
+<td>e-mail, SSH, seed</td>
+<td>OSUOSL</td>
+<td>2011/04</td>
+<td>people</td>
+</tr>
+<tr>
+<td>eos</td>
+<td>9.1-RELEASE</td>
+<td>DPE r410</td>
+<td><a href="mailto:X5550@2.67GHz">X5550@2.67GHz</a> 2x4x2=16</td>
+<td>6x8@1333MHz = 48GB</td>
+<td><a href="mailto:2x160GB@7.2k">2x160GB@7.2k</a> gpt+zmirror</td>
+<td>Storform D55J:10x300GB@10k +2x75GB SSD raidz2 l2 arch</td>
+<td>US: www, rsync, mod_mbox, wiki</td>
+<td>OSUOSL</td>
+<td>2010/06</td>
+<td>www, wiki, rsync</td>
+</tr>
+<tr>
+<td>metis</td>
+<td>9.1-RELEASE</td>
+<td>DPE r510</td>
+<td><a href="mailto:X5650@2.66GHz">X5650@2.66GHz</a> 2x6=12</td>
+<td>8x4@1333MHz = 32GB</td>
+<td>6x600GB@15k 2x100GB SSD</td>
+<td></td>
+<td>Jails - TLPs</td>
+<td>OSUOSL</td>
+<td>2010/12</td>
+<td>dm</td>
+</tr>
+<tr>
+<td>harmonia</td>
+<td>9.1-RELEASE</td>
+<td>DPE r510</td>
+<td><a href="mailto:E5649@2.53GHz">E5649@2.53GHz</a> 2x6=12</td>
+<td>6x4@1333MHz = 24GB</td>
+<td>2x300GB SAS@15k, 2x100GB SSD, 6x2TB SATA</td>
+<td></td>
+<td>EU: svn, ldap</td>
+<td>FUB</td>
+<td>2012/06</td>
+<td>svn</td>
+</tr></tbody></table>
+<h3>SunOS:</h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>os</th>
+<th>HW</th>
+<th>Arrays</th>
+<th>Services</th>
+<th>Location</th>
+<th>Commissioned</th>
+<th>Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>odyne</td>
+<td>10u5 x86</td>
+<td>n/a</td>
+<td></td>
+<td>Zones</td>
+<td>SARA</td>
+<td>2008/05</td>
+<td>zones</td>
+</tr>
+<tr>
+<td>thor</td>
+<td>10u8</td>
+<td>Sun T5220 Sparc</td>
+<td></td>
+<td>Dist,private arch,Confluence(cwiki)</td>
+<td>OSUOSL</td>
+<td>2008/07</td>
+<td>dist</td>
+</tr></tbody></table>
+<h3>Ubuntu:</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Os</th>
+<th>HW</th>
+<th>CPU</th>
+<th>RAM</th>
+<th>Disk</th>
+<th>Arrays</th>
+<th>Services</th>
+<th>Location</th>
+<th>Commissioned</th>
+<th>Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>arcas</td>
+<td>12.04.2 LTS</td>
+<td>r410</td>
+<td><a href="mailto:X5550@2.67GHz">X5550@2.67GHz</a> 2x4x2=16</td>
+<td>8x8GB@1333MHz = 64GB</td>
+<td></td>
+<td></td>
+<td>Jira</td>
+<td>OSUOSL</td>
+<td>2010/07</td>
+<td>jira</td>
+</tr>
+<tr>
+<td>crius</td>
+<td>12.04.5 LTS</td>
+<td>r720</td>
+<td><a href="mailto:E5-2665@2.6GHz">E5-2665@2.6GHz</a></td>
+<td>4x16=64 @ 1600MHz</td>
+<td>1x200SSD + 2x300SAS RAID1 + 5 x 600SAS</td>
+<td></td>
+<td>CI (Jenkins Master)</td>
+<td>OSUOSL</td>
+<td>2013/06</td>
+<td>ci, jenkins</td>
+</tr>
+<tr>
+<td>lares</td>
+<td>14.04 LTS</td>
+<td>HP Proliant DL180 G6</td>
+<td></td>
+<td>50GB</td>
+<td></td>
+<td></td>
+<td>CI (Buildbot slave)</td>
+<td>Y!</td>
+<td>2014/07</td>
+<td>ci, bb</td>
+</tr>
+<tr>
+<td>orcus</td>
+<td>14.04 LTS</td>
+<td>HP Proliant DL180 G6</td>
+<td></td>
+<td>50GB</td>
+<td></td>
+<td></td>
+<td>CI (Buildbot slave)</td>
+<td>Y!</td>
+<td>2014/07</td>
+<td>ci, bb</td>
+</tr>
+<tr>
+<td>penates</td>
+<td>14.04 LTS</td>
+<td>HP Proliant DL180 G6</td>
+<td></td>
+<td>50GB</td>
+<td></td>
+<td></td>
+<td>CI (Jenkins slave)</td>
+<td>Y!</td>
+<td>2014/07</td>
+<td>ci, jenkins</td>
+</tr>
+<tr>
+<td>pietas</td>
+<td>14.04 LTS</td>
+<td>HP Proliant DL180 G6</td>
+<td></td>
+<td>50GB</td>
+<td></td>
+<td></td>
+<td>CI (Jenkins slave)</td>
+<td>Y!</td>
+<td>2014/07</td>
+<td>ci, jenkins</td>
+</tr>
+<tr>
+<td>pomona</td>
+<td>14.04 LTS</td>
+<td>HP Proliant DL180 G6</td>
+<td></td>
+<td>50GB</td>
+<td></td>
+<td></td>
+<td>CI (Jenkins slave)</td>
+<td>Y!</td>
+<td>2014/07</td>
+<td>ci, jenkins</td>
+</tr>
+<tr>
+<td>priapus</td>
+<td>14.04 LTS</td>
+<td>HP Proliant DL180 G6</td>
+<td></td>
+<td>50GB</td>
+<td></td>
+<td></td>
+<td>CI (Jenkins slave)</td>
+<td>Y!</td>
+<td>2014/07</td>
+<td>ci, jenkins</td>
+</tr>
+<tr>
+<td>proserpina</td>
+<td>14.04 LTS</td>
+<td>HP Proliant DL180 G6</td>
+<td></td>
+<td>50GB</td>
+<td></td>
+<td></td>
+<td>CI (Jenkins slave)</td>
+<td>Y!</td>
+<td>2014/07</td>
+<td>ci, jenkins</td>
+</tr>
+<tr>
+<td>silvanus</td>
+<td>14.04 LTS</td>
+<td>HP Proliant DL180 G6</td>
+<td></td>
+<td>50GB</td>
+<td></td>
+<td></td>
+<td>CI (Buildbot slave)</td>
+<td>Y!</td>
+<td>2014/07</td>
+<td>ci, bb</td>
+</tr>
+<tr>
+<td>home</td>
+<td>14.04 LTS</td>
+<td>DPE r530</td>
+<td>E5 1410@2.8 Ghz 1x4</td>
+<td>16GB</td>
+<td>4x3072GB SAS</td>
+<td></td>
+<td>web space</td>
+<td>Iliad</td>
+<td>2015/10</td>
+<td>space</td>
+</tr>
+<tr>
+<td>themis</td>
+<td>14.04 LTS</td>
+<td>DPE r720</td>
+<td><a href="mailto:E5-2665@2.4GHz">E5-2665@2.4GHz</a> 2x6=12</td>
+<td>32x8GB@1600MHz = 256GB</td>
+<td>6x300GB SSD</td>
+<td></td>
+<td>Websites</td>
+<td>OSUOSL</td>
+<td>2014/08</td>
+<td>tlp</td>
+</tr></tbody></table>
+<h3>MacOSX:</h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>os</th>
+<th>HW</th>
+<th>Arrays</th>
+<th>Services</th>
+<th>Location</th>
+<th>Commissioned</th>
+<th>Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>adam</td>
+<td>10.6</td>
+<td>Apple Xserve</td>
+<td></td>
+<td>Gump</td>
+<td>OSUOSL</td>
+<td>2010/07</td>
+<td>ci</td>
+</tr></tbody></table>
+<h3>vCenter</h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>os</th>
+<th>HW</th>
+<th>CPU</th>
+<th>RAM</th>
+<th>Disk</th>
+<th>Arrays</th>
+<th>Services</th>
+<th>Location</th>
+<th>Commissioned</th>
+<th>Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>aether</td>
+<td>Win 2k8</td>
+<td>DPE r210</td>
+<td><a href="mailto:X3430@2.4GHz">X3430@2.4GHz</a> 1x4=4</td>
+<td>8x2@1333MHz = 16GB</td>
+<td><a href="mailto:2x500GB@7.2k">2x500GB@7.2k</a></td>
+<td>None</td>
+<td>VM mgmt</td>
+<td>OSUOSL</td>
+<td>2011/03</td>
+<td></td>
+</tr>
+<tr>
+<td>erebus</td>
+<td>ESX</td>
+<td>DPE r515</td>
+<td><a href="mailto:4176HE@2.4GHz">4176HE@2.4GHz</a> 2x6x1=12</td>
+<td>8x8GB@1333MHz = 64GB</td>
+<td><a href="mailto:1x2TB@7.2k">1x2TB@7.2k</a></td>
+<td>TBD</td>
+<td>VM host</td>
+<td>OSUOSL</td>
+<td>2010/12</td>
+<td>vms</td>
+</tr>
+<tr>
+<td>eirene</td>
+<td>ESX</td>
+<td>DPE r720</td>
+<td><a href="mailto:E5-2665@2.4GHz">E5-2665@2.4GHz</a> 2x8x2=32</td>
+<td>256GB</td>
+<td>? = 830GB</td>
+<td>? = 2 x 1.6TB</td>
+<td>VM host</td>
+<td>OSUOSL</td>
+<td>2013/??</td>
+<td>vms</td>
+</tr>
+<tr>
+<td>phanes</td>
+<td>ESX</td>
+<td>DPE r510</td>
+<td><a href="mailto:X5670@2.93GHz">X5670@2.93GHz</a> 2x6x2=24</td>
+<td>8x16@1066MHz</td>
+<td>2x300GB@10k</td>
+<td>(chaos) SM Storform iServ R518.v2.1. 3 x 120GB SSD Front : 24 x 1TB SAS</td>
+<td>VM host</td>
+<td>OSUOSL</td>
+<td>2012/05</td>
+<td>vms</td>
+</tr></tbody></table>
+<h3>Virtual Machines:</h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>VM name</th>
+<th>os</th>
+<th>HW</th>
+<th>Services</th>
+<th>Location</th>
+<th>Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>archiva-vm</td>
+<td>archiva-vm</td>
+<td></td>
+<td>VM on vCenter</td>
+<td></td>
+<td>OSUOSL</td>
+<td>nyxvm</td>
+</tr>
+<tr>
+<td></td>
+<td>bloodhound-vm2</td>
+<td></td>
+<td>VM on vCenter</td>
+<td></td>
+<td>OSUOSL</td>
+<td>erebusvm</td>
+</tr>
+<tr>
+<td>allura-vm</td>
+<td>allura-vm</td>
+<td>Ubuntu 12.04.2 LTS</td>
+<td>VM on vCenter</td>
+<td>TLP Playground</td>
+<td>OSUOSL</td>
+<td>erebusvm</td>
+</tr>
+<tr>
+<td>analysis</td>
+<td>analysis</td>
+<td>Ubuntu 10.4.2 LTS</td>
+<td>VM on vCenter</td>
+<td>CI (Jenkins/Analysis)</td>
+<td>OSUOSL</td>
+<td>erebusvm, ci</td>
+</tr>
+<tr>
+<td>bb-fbsd2</td>
+<td>bb-fbsd2</td>
+<td>FreeBSD 9.0-RELEASE</td>
+<td>VM on vCenter</td>
+<td>CI (Buildbot slave)</td>
+<td>OSUOSL</td>
+<td>eirenevm, ci, bb</td>
+</tr>
+<tr>
+<td>bb-openbsd</td>
+<td>bb-openbsd</td>
+<td>OpenBSD 4.8</td>
+<td>VM on vCenter</td>
+<td>CI (Buildbot Slave)</td>
+<td>OSUOSL</td>
+<td>erebusvm, ci, bb</td>
+</tr>
+<tr>
+<td>bb-win7</td>
+<td>bb-win7</td>
+<td>Windows 7</td>
+<td>VM on vCenter</td>
+<td>CI (Buildbot slave)</td>
+<td>OSUOSL</td>
+<td>erebusvm, ci</td>
+</tr>
+<tr>
+<td>bloodhound-vm</td>
+<td>bloodhound-vm</td>
+<td></td>
+<td>VM on vCenter</td>
+<td></td>
+<td>OSUOSL</td>
+<td>nyxvm</td>
+</tr>
+<tr>
+<td>buildbot-vm</td>
+<td>buildbot-vm</td>
+<td>Ubuntu 14.04 LTS</td>
+<td>VM at PNAP</td>
+<td>CI (Buildbot Master)</td>
+<td>PhoenixNAP</td>
+<td>pnapvm, ci, bb</td>
+</tr>
+<tr>
+<td>bloodhound-vm2</td>
+<td>bloodhound-vm2</td>
+<td></td>
+<td>VM on vCenter</td>
+<td></td>
+<td>OSUOSL</td>
+<td>eirenevm</td>
+</tr>
+<tr>
+<td>circonus-broker</td>
+<td>circonus-broker</td>
+<td></td>
+<td>VM on vCenter</td>
+<td></td>
+<td>OSUOSL</td>
+<td>eirenevm</td>
+</tr>
+<tr>
+<td>comdev1-us-west</td>
+<td>comdev1</td>
+<td>Ubuntu 14.04.2 LTS</td>
+<td>VM at PNAP</td>
+<td>Comdev VM</td>
+<td>PNAP</td>
+<td>pmc</td>
+</tr>
+<tr>
+<td>devicemap-vm</td>
+<td>devicemap-vm</td>
+<td></td>
+<td>VM on vCenter</td>
+<td></td>
+<td>OSUOSL</td>
+<td>nyxvm</td>
+</tr>
+<tr>
+<td>erebus-ssl</td>
+<td>erebus-ssl</td>
+<td></td>
+<td>VM on vCenter</td>
+<td></td>
+<td>OSUOSL</td>
+<td>erebusvm</td>
+</tr>
+<tr>
+<td>feathercast</td>
+<td>feathercast</td>
+<td></td>
+<td>VM on vCenter</td>
+<td></td>
+<td>OSUOSL</td>
+<td>nyxvm</td>
+</tr>
+<tr>
+<td>hudson-win</td>
+<td>hudson-win</td>
+<td>Windows 2008</td>
+<td>VM on vCenter</td>
+<td>CI (Hudson slave)</td>
+<td>OSUOSL</td>
+<td>nyxvm, ci</td>
+</tr>
+<tr>
+<td>id</td>
+<td>id</td>
+<td>Ubuntu 10.04.1 LTS</td>
+<td>VM on vCenter</td>
+<td>SelfServe</td>
+<td>OSUOSL</td>
+<td>erebusvm</td>
+</tr>
+<tr>
+<td>monitoring</td>
+<td>monitoring</td>
+<td>Debian 4 - 2.6.29.2</td>
+<td>VM</td>
+<td>nagios, nagvis</td>
+<td>Bytemark</td>
+<td>nagios</td>
+</tr>
+<tr>
+<td>ofbiz-vm</td>
+<td>ofbiz-vm</td>
+<td>Ubuntu 10.04.2 LTS</td>
+<td>VM on vCenter</td>
+<td>demo</td>
+<td>OSUOSL</td>
+<td>erebusvm, pmc</td>
+</tr>
+<tr>
+<td>photark-vm</td>
+<td>photark-vm</td>
+<td>Ubuntu 10.04.2 LTS</td>
+<td>VM on vCenter</td>
+<td>demo</td>
+<td>OSUOSL</td>
+<td>nyxvm, pmc</td>
+</tr>
+<tr>
+<td>ooo-forums</td>
+<td>ooo-forums</td>
+<td></td>
+<td>VM on vCenter</td>
+<td></td>
+<td>OSUOSL</td>
+<td>erebusvm</td>
+</tr>
+<tr>
+<td>ooo-wiki2</td>
+<td>ooo-wiki2</td>
+<td></td>
+<td>VM on vCenter</td>
+<td></td>
+<td>OSUOSL</td>
+<td>eirenevm</td>
+</tr>
+<tr>
+<td>openmeetings-vm</td>
+<td>openmeetings-vm</td>
+<td>Ubuntu 14.04.1 LTS</td>
+<td>VM on vCenter</td>
+<td>TLP Playground</td>
+<td>OSUOSL</td>
+<td>eirenevm, pmc</td>
+</tr>
+<tr>
+<td>pkgrepo</td>
+<td>pkgrepo</td>
+<td></td>
+<td>VM on vCenter</td>
+<td></td>
+<td>OSUOSL</td>
+<td>eirenevm</td>
+</tr>
+<tr>
+<td>projects-vm</td>
+<td>projects-vm</td>
+<td>Ubuntu 14.04.1 LTS</td>
+<td>VM on vCenter</td>
+<td>projects.a.o</td>
+<td>OSUOSL</td>
+<td>nyxvm</td>
+</tr>
+<tr>
+<td>rave-vm</td>
+<td>rave-vm</td>
+<td>Ubuntu 12.04 LTS</td>
+<td>VM on Vcenter</td>
+<td>TLP Playground</td>
+<td>OSUOSL</td>
+<td>erebusvm, pmc</td>
+</tr>
+<tr>
+<td>reviews-vm</td>
+<td>reviews-vm</td>
+<td>Ubuntu 10.04.2.LTS</td>
+<td>VM on vCenter</td>
+<td>ReviewBoard</td>
+<td>OSUOSL</td>
+<td>erebusvm, ci</td>
+</tr>
+<tr>
+<td>struts-vm</td>
+<td>struts-vm</td>
+<td></td>
+<td>VM on vCenter</td>
+<td></td>
+<td>OSUOSL</td>
+<td>eirenevm</td>
+</tr>
+<tr>
+<td>sysconfig</td>
+<td>sysconfig</td>
+<td></td>
+<td>VM on vCenter</td>
+<td></td>
+<td>OSUOSL</td>
+<td>eirenevm</td>
+</tr>
+<tr>
+<td>svn-qavm2</td>
+<td>svn-qavm2</td>
+<td>Ubuntu 10.04.2 LTS</td>
+<td>VM on vCenter</td>
+<td>TLP playground</td>
+<td>OSUOSL</td>
+<td>nyxvm, pmc</td>
+</tr>
+<tr>
+<td>tac-vm</td>
+<td>tac-vm2</td>
+<td></td>
+<td>VM on vCenter</td>
+<td></td>
+<td>OSUOSL</td>
+<td>eirenevm</td>
+</tr>
+<tr>
+<td>translate-vm2</td>
+<td>translate-vm2</td>
+<td>Ubuntu 10.04 LTS</td>
+<td>VM on vCenter</td>
+<td>translate</td>
+<td>OSUOSL</td>
+<td>nyxvm</td>
+</tr>
+<tr>
+<td>vmbuild</td>
+<td>vmbuild</td>
+<td>Ubuntu 10.04.2 LTS</td>
+<td>VM on vCenter</td>
+<td>CI (Continuum)</td>
+<td>OSUOSL</td>
+<td>erebusvm, ci</td>
+</tr>
+<tr>
+<td>vmgump</td>
+<td>vmgump</td>
+<td>Ubuntu 10.04.1 LTS</td>
+<td>VM on vCenter</td>
+<td>CI (Gump)</td>
+<td>OSUOSL</td>
+<td>erebusvm, ci</td>
+</tr>
+<tr>
+<td>whimsy-vm3</td>
+<td>whimsy</td>
+<td></td>
+<td>VM on PNAP</td>
+<td></td>
+<td>PNAP</td>
+<td>pnapvm</td>
+</tr></tbody></table>
+<h3>Zones:</h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>os</th>
+<th>HW</th>
+<th>Arrays</th>
+<th>Services</th>
+<th>Location</th>
+<th>Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>community.zones</td>
+<td>SunOS</td>
+<td>Zone/odyne</td>
+<td></td>
+<td>Community</td>
+<td>SARA</td>
+<td></td>
+</tr>
+<tr>
+<td>hudson-solaris.zones</td>
+<td>SunOS</td>
+<td>Zone/odyne</td>
+<td></td>
+<td>CI (Hudson slave)</td>
+<td>SARA</td>
+<td></td>
+</tr>
+<tr>
+<td>git.zones</td>
+<td>SunOS</td>
+<td>Zone/odyne</td>
+<td></td>
+<td>TLP playground</td>
+<td>SARA</td>
+<td>vc</td>
+</tr>
+<tr>
+<td>ldapeu.zones</td>
+<td>SunOS</td>
+<td>Zone/odyne</td>
+<td></td>
+<td>LDAP</td>
+<td>SARA</td>
+<td></td>
+</tr>
+<tr>
+<td>james.zones</td>
+<td>SunOS</td>
+<td>Zone/hyperion</td>
+<td></td>
+<td>TLP playground</td>
+<td>OSUOSL</td>
+<td>hyperionzone</td>
+</tr>
+<tr>
+<td>river.zones</td>
+<td>SunOS</td>
+<td>Zone/odyne</td>
+<td></td>
+<td>TLP playground</td>
+<td>SARA</td>
+<td></td>
+</tr>
+<tr>
+<td>servicemix.zones</td>
+<td>SunOS</td>
+<td>Zone/hyperion</td>
+<td></td>
+<td>TLP playground</td>
+<td>OSUOSL</td>
+<td>hyperionzone</td>
+</tr>
+<tr>
+<td>solaris2.zones</td>
+<td>SunOS</td>
+<td>Zone/hyperion</td>
+<td></td>
+<td></td>
+<td>OSUOSL</td>
+<td></td>
+</tr>
+<tr>
+<td>spamassassin2.zones</td>
+<td>SunOS</td>
+<td>Zone/odyne</td>
+<td></td>
+<td>TLP playground</td>
+<td>SARA</td>
+<td>odynezone</td>
+</tr></tbody></table>
+<h3>Jails - Services</h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>os</th>
+<th>HW</th>
+<th>Services</th>
+<th>Location</th>
+<th>Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>cms.zones</td>
+<td>FreeBSD 9.1-RELEASE</td>
+<td>Jail/baldr</td>
+<td>Apache CMS</td>
+<td>OSUOSL</td>
+<td>baldrjail</td>
+</tr>
+<tr>
+<td>urd.zones</td>
+<td>FreeBSD 9.1-RELEASE</td>
+<td>Jail/baldr</td>
+<td>comments.a.o gitpubsub svngit2jira</td>
+<td>OSUOSL</td>
+<td>baldrjail</td>
+</tr>
+<tr>
+<td>vor.zones</td>
+<td>FreeBSD 9.1-RELEASE</td>
+<td>Jail/baldr</td>
+<td>pear.a.o</td>
+<td>OSUOSL</td>
+<td>baldrjail</td>
+</tr></tbody></table>
+<h3>Hardware:</h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>os</th>
+<th>HW</th>
+<th>Arrays</th>
+<th>Services</th>
+<th>Location</th>
+<th>Commissioned</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>console</td>
+<td>n/a</td>
+<td>Cyclades Alter Path ACS (32 ports)</td>
+<td></td>
+<td>n/a</td>
+<td>OSUOSL</td>
+<td>n/a</td>
+</tr>
+<tr>
+<td>r1sw0</td>
+<td>n/a</td>
+<td>HP ProCurve</td>
+<td></td>
+<td>public</td>
+<td>OSUOSL</td>
+<td>2013/05</td>
+</tr>
+<tr>
+<td>r2sw0</td>
+<td>n/a</td>
+<td>HP ProCurve</td>
+<td></td>
+<td>public</td>
+<td>OSUOSL</td>
+<td>2013/05</td>
+</tr>
+<tr>
+<td>r3sw0</td>
+<td>n/a</td>
+<td>HP ProCurve</td>
+<td></td>
+<td>public</td>
+<td>OSUOSL</td>
+<td>2013/05</td>
+</tr>
+<tr>
+<td>switch</td>
+<td>n/a</td>
+<td>switch</td>
+<td></td>
+<td>public</td>
+<td>Sara</td>
+<td>??</td>
+</tr>
+<tr>
+<td>osuvpn</td>
+<td>n/a</td>
+<td>SonicWall SRA 4200</td>
+<td></td>
+<td>VPN</td>
+<td>OSUOSL</td>
+<td>2010/04</td>
+</tr></tbody></table>
+<h3>Deprecated</h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>os</th>
+<th>HW</th>
+<th>CPU</th>
+<th>RAM</th>
+<th>Disk</th>
+<th>Arrays</th>
+<th>Services</th>
+<th>Location</th>
+<th>Commissioned</th>
+<th>Class</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>hyperion</td>
+<td>10u7</td>
+<td>Sun x2100 M2</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Zones</td>
+<td>OSUOSL</td>
+<td>2007/12</td>
+<td></td>
+</tr></tbody></table>
+<h3>SSH RSA Keys:</h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>RSA Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>baldr</td>
+<td>2048 1f:7d:b4:10:e0:52:38:09:01:89:8e:c1:44:80:d4:85</td>
+</tr>
+<tr>
+<td>comdev1-us-west</td>
+<td>2048 6f:85:00:45:24:c0:8b:e4:02:c7:e3:58:f0:3a:b2:fc</td>
+</tr>
+<tr>
+<td>eos</td>
+<td>2048 2e:8f:6a:67:5a:ee:9c:0d:f9:98:b4:4f:80:25:a0:71</td>
+</tr>
+<tr>
+<td>forrest.zones</td>
+<td>2048 ea:15:4b:bf:02:5d:23:c3:22:03:2c:80:2e:bb:04:f7</td>
+</tr>
+<tr>
+<td>harmonia</td>
+<td>2048 cb:ae:54:4c:0c:6d:bc:f9:33:b3:eb:fb:03:0c:9f:73</td>
+</tr>
+<tr>
+<td>hermes</td>
+<td>2048 d9:e5:9d:61:b0:79:2b:78:0c:db:d1:ab:ef:3b:5a:7e</td>
+</tr>
+<tr>
+<td>home</td>
+<td>2048 1c:5d:3f:a2:89:97:2e:39:eb:b0:09:9e:cf:c6:8d:f3</td>
+</tr>
+<tr>
+<td>minotaur</td>
+<td>1024 51:85:7d:8f:57:54:e7:6f:27:26:98:7a:c7:c1:47:87</td>
+</tr>
+<tr>
+<td>projects-vm</td>
+<td>2048 5f:71:42:22:5d:57:9d:dc:c6:c9:85:cb:91:16:c6:01</td>
+</tr>
+<tr>
+<td>svn01-us-west</td>
+<td>2048 a8:3b:48:59:35:b8:bb:62:97:56:83:46:be:90:88:7c</td>
+</tr>
+<tr>
+<td>thor</td>
+<td>2048 5f:bf:4a:de:de:c4:c6:ad:7a:26:21:08:4a:8e:e8:c6</td>
+</tr>
+<tr>
+<td>tyr.zones</td>
+<td>2048 c0:95:86:8d:be:6a:ce:fb:a5:a1:fe:c6:98:9d:a7:00</td>
+</tr>
+<tr>
+<td>themis</td>
+<td>2048 64:a4:91:4d:b8:53:7d:f8:95:ca:9d:db:e4:8e:2d:5d</td>
+</tr>
+<tr>
+<td>vmbuild vm</td>
+<td>2048 ce:b4:0d:3c:2c:c9:8a:cb:16:28:9b:21:28:8c:ba:58</td>
+</tr>
+<tr>
+<td>whimsy-vm3</td>
+<td>2048 8c:72:f8:b6:ea:06:94:5c:42:0e:d5:98:1a:02:46:a2</td>
+</tr></tbody></table>
+<h3>SSH ECDSA Keys:</h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>ECDSA Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>baldr</td>
+<td>256 74:e1:5c:55:71:5c:42:09:66:81:1d:a0:8c:20:8f:45</td>
+</tr>
+<tr>
+<td>eos</td>
+<td>256 82:9b:ad:ba:c7:f4:dd:69:35:71:33:ea:ea:12:f7:34</td>
+</tr>
+<tr>
+<td>harmonia</td>
+<td>256 98:23:94:9f:b9:3b:b4:ca:f3:83:d2:54:7f:26:e0:17</td>
+</tr>
+<tr>
+<td>hermes</td>
+<td>256 9e:f4:b9:ea:fe:ef:42:26:64:f8:e6:33:4d:8c:41:99</td>
+</tr>
+<tr>
+<td>home</td>
+<td>256 23:33:53:16:c4:18:e9:71:e4:c0:18:42:58:7e:ad:99</td>
+</tr>
+<tr>
+<td>metis</td>
+<td>256 5e:2e:be:db:e6:ec:d8:ac:5c:fd:c5:06:06:1b:00:98</td>
+</tr>
+<tr>
+<td>projects-vm</td>
+<td>256 6f:ed:f8:1d:af:e6:63:cd:ea:68:41:3a:9a:8c:f7:61</td>
+</tr>
+<tr>
+<td>svn01-us-west</td>
+<td>256 c3:85:f4:d0:4a:6d:8b:f9:73:4b:8c:92:04:5c:7e:96</td>
+</tr>
+<tr>
+<td>syncope-vm2</td>
+<td>256 da:f1:ed:75:22:1c:7e:7a:d3:73:2c:6a:79:98:42:b6</td>
+</tr>
+<tr>
+<td>themis</td>
+<td>256 7f:0e:bb:f9:32:78:94:b9:bf:3f:68:cf:c6:db:89:bb</td>
+</tr>
+<tr>
+<td>whimsy-vm3</td>
+<td>256 a1:e3:d1:b4:d7:f6:34:7a:43:e3:50:68:d4:e2:c0:03</td>
+</tr></tbody></table>
+<h3>SSH ED25519 Keys:</h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>ED25519 Key</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>home</td>
+<td>256 79:04:05:a4:79:38:99:d8:f2:e9:49:a1:39:4b:78:bb</td>
+</tr></tbody></table>
+<h3>SSL Keys:</h3>
+<table>
+<thead>
+<tr>
+<th>name</th>
+<th>Fingerprint</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>svn (deprecated)</td>
+<td>BC:5F:40:92:FD:6A:49:AA:F8:B8:35:0D:ED:27:5E:A6:64:C1:7A:1B</td>
+</tr>
+<tr>
+<td>svn (svn01-us-west, svn-master, sha-256)</td>
+<td>9C:1B:1D:84:DC:4B:F2:7C:E4:CD:48:9E:FC:DF:05:4D:40:9C:3B:A3:95:F3:D3:35:08:68:A8:1D:E5:68:94:18</td>
+</tr>
+<tr>
+<td>svn (svn01-us-west, svn-master, sha-1)</td>
+<td>4a:d7:22:dd:04:42:04:36:57:d1:76:f9:c8:1a:ab:66:09:4d:42:23</td>
+</tr>
+<tr>
+<td>svn (harmonia, svn.eu, sha-1)</td>
+<td>4a:d7:22:dd:04:42:04:36:57:d1:76:f9:c8:1a:ab:66:09:4d:42:23</td>
+</tr>
+<tr>
+<td>osuvpn</td>
+<td>75:49:9A:8D:F2:F0:AA:EA:FE:1E:67:EC:7E:09:48:10:B4:FF:6D:D7</td>
+</tr>
+<tr>
+<td>osuvpn (deprecated)</td>
+<td>19:C3:BA:6B:1F:82:42:2A:CE:46:E0:B7:E3:0D:33:CD:53:B4:6E:52</td>
+</tr>
+<tr>
+<td>osuvpn (deprecated)</td>
+<td>(sha1) BC:5F:40:92:FD:6A:49:AA:F8:B8:35:0D:ED:27:5E:A6:64:C1:7A:1B</td>
+</tr>
+<tr>
+<td>people (home, sha-256)</td>
+<td>9C:1B:1D:84:DC:4B:F2:7C:E4:CD:48:9E:FC:DF:05:4D:40:9C:3B:A3:95:F3:D3:35:08:68:A8:1D:E5:68:94:18</td>
+</tr>
+<tr>
+<td>people (home, sha1)</td>
+<td>4a:d7:22:dd:04:42:04:36:57:d1:76:f9:c8:1a:ab:66:09:4d:42:23</td>
+</tr></tbody></table>
+<h1>Monitoring</h1>
+<p><a href="http://status.apache.org/">the public host &amp; service status
+page</a></p>
+<h1>Colos</h1>
+<ul>
+<li>
+<p>OSUOSL: Oregon State University (OSU) Open Source Lab - Corvallis, OR,
+USA</p>
+</li>
+<li>
+<p>SARA: Surfnet</p>
+</li>
+<li>
+<p>FUB: Freie Universitat Berlin, Institut fur Informatik</p>
+</li>
+<li>
+<p>Bytemark:</p>
+</li>
+<li>
+<p>Y!: ....</p>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

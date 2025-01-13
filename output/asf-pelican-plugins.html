@@ -1,0 +1,173 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASF Pelican plugins - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Contribute</a></li>
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              ASF Pelican plugins
+          </h1>
+              <p><strong>Note</strong>
+In 2019 Infra created ASF-Pelican as a structure and template for projects to use to build their websites, and for the ASF's own website.</p>
+<p>In 2024, Infra moved from ASF-Pelican to the ASF <strong>Infrastructure Pelican Action</strong> GitHub Action to perform the same functions without being closely tied to BuildBot. The repository for this GHA is <a href="https//:github.com/apache/infrastructure-actions/tree/main/pelican" target="_blank">github.com/apache/infrastructure-actions/tree/main/pelican</a>.</p>
+<p>The following material is correct for both ASF-Pelican and its replacement.</p>
+<hr/>
+<h1>Plugins</h1>
+<p>You can find the available plugins for a site using the ASF-Pelican template in the <code>themes/plugins</code> folder of your website's project repository.</p>
+<h1>Plugin architecture</h1>
+<p>The plugins operate at various points in a Pelican build.</p>
+<p>Pelican uses <a href="https://docs.getpelican.com/en/latest/plugins.html#list-of-signals" target="_blank">signals</a> at various points.</p>
+<p>Here is a high-level review of the sequence of events:</p>
+<h2>Pelican settings</h2>
+<p>Settings for a Pelican build are in your Pelican configuration file, <code>pelicanconf.py</code>. Here is where you list the plugins you are using.</p>
+<pre><code class="language-python">PLUGIN_PATHS = ['./theme/plugins']
+PLUGINS = ['asfgenid', 'asfdata', 'pelican-gfm', 'asfreader']
+</code></pre>
+<h2>Initialization</h2>
+<p>At initialization, Pelican reads any ASF_DATA into a metadata dictionary that is available in every page in the site.</p>
+<ul>
+<li>The plugin <code>.asfdata.py</code> reads an <code>.asfdata.yaml</code> file and creates the metadata dictionary.</li>
+</ul>
+<pre><code class="language-python">ASF_DATA_YAML = ".asfdata.yaml"
+ASF_DATA = {
+    'data': ASF_DATA_YAML,
+    'metadata': { },
+    'debug': True
+}
+</code></pre>
+<ul>
+<li>The asfgenid plugin <code>./asfgenid.py</code> configures the site's features.</li>
+</ul>
+<pre><code class="language-python"># Configure the asfgenid plugin
+ASF_GENID = {
+    'metadata': True,
+    'elements': True,
+    'headings': True,
+    'headings_re': r'^h[1-4]',
+    'permalinks': True,
+    'toc': True,
+    'toc_headers': r"h[1-4]",
+    'tables': True,
+    'debug': False
+}
+</code></pre>
+<h2>Readers (readers_init)</h2>
+<p>The system sets two important readers at this point. Readers are responsible for transforming page files to html and
+providing a metadata dictionary.</p>
+<ul>
+<li>GFMReader by the pelican-gfm plugin. This code is in a private repository - ask Infra. Transforms GitHub Flavored Markdown(GFM) to HTML.</li>
+</ul>
+<ul>
+<li>.md</li>
+<li>.markdown</li>
+<li>.mkd</li>
+<li>.mdown</li>
+</ul>
+<ul>
+<li>
+<p><code>ASFReader,</code>.asfreader.py) transforms an <a href="https://github.com/gstein/ezt" target="_blank">ezt template</a> into GFM and then to HTML.</p>
+<ul>
+<li>.ezmd</li>
+</ul>
+</li>
+</ul>
+<h2>Content init (content_object_init)</h2>
+<p>This is signaled after a reader has processed the site's content. At this point plugins can review, record, and transform the html content.</p>
+<ul>
+<li>The asfgenid plugin, <code>./asfgenid.py</code>, performs a number of steps. Some of the steps are optional.
+<ul>
+<li>Metadata transformation by looking up {{ key_expression }} in the page metadata.</li>
+<li>Inventory of existing ID attributes.</li>
+<li>Set ID and class attributes specified by {#id} and {.class} syntax.</li>
+<li>Assign an ID to any headings without IDs.</li>
+<li>Insert a table of contents if a [TOC] tag is present.</li>
+</ul>
+</li>
+</ul>
+<h2>Apache CMS</h2>
+<p>Many projects had their websites served by the Apache CMS from 2010. It was deprecated in 2021. The CMS was written in Perl. We have a new approach that fits Pelican.</p>
+<p>If you want to look into the old CMS process, its <a href="http://svn.apache.org/viewvc/infrastructure/site/trunk/lib/views" target="_blank">Subversion repository and history</a> remain available.</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

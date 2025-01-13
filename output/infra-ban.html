@@ -1,0 +1,126 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site-wide ban policy - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Contribute</a></li>
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Site-wide ban policy
+          </h1>
+              <h2>Policy</h2>
+<p>The Apache Software Foundation provides a robust and extensive system for serving the needs of the Foundation, of our projects as they create and deploy product releases, and of people all around the world who wish to download and use those products. These services are free of charge; but we offer them with the assumption that everyone uses them appropriately.</p>
+<p>If you abuse the system by overloading it in one way or another, you make it harder for others to do what they need to do. The Infrastructure team will take steps to prevent abuse and restore normal access to all who rely on the ASF.</p>
+<h3>PMCs and committers</h3>
+<p>Projects misusing ASF resources may see their access to those resources suspended without warning. Examples of misuse include:</p>
+<ul>
+<li>overuse of disk space.</li>
+<li>neglecting maintenance or security for project virtual machines.</li>
+<li>over-consuming Travis minutes.</li>
+</ul>
+<h3>Those visiting the ASF to download products or for other reasons</h3>
+<p>If you break one of these rules, <strong>your IP will be banned</strong> from all services across the ASF.</p>
+<ul>
+<li>Slow Loris-like abuse (too many request timeouts).</li>
+<li>More than 200,000 pageviews on any box per 12 hours.</li>
+<li>More than 50,000 requests to downloads.apache.org per 24 hours. (tip: use a caching proxy instead)</li>
+<li>More than 50,000 JIRA requests per 24 hours.</li>
+<li>More than 50 Gibibytes traffic per 12 hours.</li>
+<li>More than 25,000 visits to archive.apache.org per 24 hours.</li>
+<li>More than 40GB downloaded from archive.apache.org per week.</li>
+<li>More than 100 mebibits/second sustained traffic for an hour or more.</li>
+<li>More than 25,000 JIRA pageviews per hour</li>
+<li>More than 2,000 viewvc requests per 24 hours.</li>
+<li>More than 100,000 Confluence (<code>cwiki.apache.org</code>) page visits per 24 hours.</li>
+<li>More than 10,000 Bugzilla requests per 24 hours.</li>
+<li>More than 1,000 Gitbox requests per hour.</li>
+<li>More than 25,000 <code>repository.apache.org</code> visits per 24 hours.</li>
+<li>More than 100,000 <code>builds.apache.org</code> visits per 12 hours.</li>
+<li>More than 2,500 code <code>429</code> (rate-limited) responses not respected per 12 hours. Services like Gitbox, Jira, Confluence, and Bugzilla have rate limits imposed. Abusing these services will result in a <code>429 HTTP</code> response code. Not respecting the HTTP response may result in a <strong>permanent ban</strong>.</li>
+<li>Excessive 404 result codes on <code>repository.apache.org</code> or <code>people.apache.org</code>. Neither repository.apache.org nor people.apache.org are general purpose Maven repositories, and should <strong>only be used for the testing of pre-production ASF code artifacts</strong>. <a href="https://mvnrepository.com/repos/central">Maven Central</a> is the correct public java artifact repository service.</li>
+</ul>
+<p>Please evaluate your systems and update your configuration to use maven central, not repository.apache.org or people.apache.org</p>
+<p>If you think we banned your IP address by mistake, or if you have been banned but have an explanation why we should bend the rules for your specific case (for instance, if you have a NAT IP address that a lot of people use), contact us at <code>abuse@infra.apache.org</code> or through the "asfinfra" <a href="https://the-asf.slack.com/" target="_blank">Slack channel</a>. We will consider leniency and allow-listing on a case-by-case basis.</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

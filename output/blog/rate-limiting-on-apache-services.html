@@ -1,0 +1,119 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rate-limiting on Apache services - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Contribute</a></li>
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav><!-- breadcrumbs -->
+<div class="card" style="height: 34px;">
+    <nav aria-label="breadcrumb"  style="padding-left: 12px; padding-top: 4px;">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+
+            <li class="breadcrumb-item active"><a href="/blog/rate-limiting-on-apache-services.html">
+Rate-limiting on Apache services            </a></li>
+
+            <li class="breadcrumb-item active">(<a href="https://github.com/apache/infrastructure-website/tree/master/content/blog/rate-limiting-on-apache-services.md">edit</a>)</li>
+
+        </ol>
+    </nav>
+</div>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Rate-limiting on Apache services
+          </h1>
+              <p>Posted on: 2019-01-27 18:20:54+00:00</p>
+              <p>Over the past few days we have implemented rate limiting on selected services across the ASF.</p>
+<p>As our foundation grows, so do the number of users and robots utilizing our services. In order to accommodate as many as possible with what resources we have, we have opted to implement rate-limiting to ensure that everyone can get their fair share of use of our services across the globe. The first services to have rate-limiting implemented are:</p>
+<ul>
+<li>JIRA (issues.apache.org)</li>
+<li>MoinMoin Wiki (wiki.apache.org)</li>
+<li>BugZilla (bz.apache.org)</li>
+</ul>
+<div><br/></div>
+<h3>If you are a normal user of our services:</h3>This very likely will never affect you, and you can go about your business just like normal :) If you DO experience errors or 429 (rate limited) response codes, please do let us know.<br/><br/>
+<h3>If you are a robot or otherwise automated tool:</h3>
+<p>There are now limits in place for how much CPU time you can use, varying from service to service. If you get limited, you will receive a HTTP 429 response instead of the normal 200, and a short text blob will explain that you have crossed our resource limits and have been rate-limited. It will also explain why, and when you can expect to be unblocked again (generally within two minutes time). Scrapers, bots etc using our services should check for a 429 response code and act accordingly (or just slow down the discovery pace in general, as that benefits all of us).</p>
+<p> </p>
+<h3>A general note about the rate limiting system, now and in the future:<br/></h3>
+<p>Rate limits are applied across IP blocks to discourage distributed abuse, thus if you have 1.2.3.4 abusing a service, 1.2.3.5 would potentially also be affected by the rate limits till they expire.</p>
+<p>Later this year, we will be rolling out rate limits on more services, and we encourage people automating tasks to honor the 429 responses across all ASF services.</p>
+<p>We would also like to point out that there are, as before, additional global limits in place regarding the use of our services, which can be found at: <a href="http://www.apache.org/dev/infra-ban.html">https://www.apache.org/dev/infra-ban.html</a> <br/></p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>  </main>
+  </body>
+</html>

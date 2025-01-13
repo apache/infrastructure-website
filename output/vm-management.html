@@ -1,0 +1,135 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Managing virtual machines - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Contribute</a></li>
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Managing virtual machines
+          </h1>
+              <p>The ASF provides a virtual machine (VM) for any ASF project that need one, with the expectation that the project will actively work to maintain their VM. Note the text in bold in Google's definition of a VM:</p>
+<blockquote>
+A virtual machine (VM) is a digital version of a physical computer. Virtual machine software can run programs and operating systems, store data, connect to networks, and do other computing functions, and <b>requires maintenance</b> such as updates and system monitoring.
+</blockquote>
+<p>When an Apache project requests a VM, it identifies three project committers who will be responsible for the tasks related to maintaining the VM in a good state. Infra is there to help when complex problems arrive, but is not the first line of support for your VM.</p>
+<h2>Managing your VM</h2>
+<p>Infra is responsible for most VM high-level management tasks:</p>
+<ul>
+<li>Starting the VM.</li>
+<li>Shutting down the VM (projects can halt, but not re-start the VM as it requires access to the VM provider). If you have stopped your VM, you will need to ask Infra to re-start it.</li>
+<li>Cloning the VM. This occurs very rarely.</li>
+<li>Migrating to a new VM. Infra creates the new VM and can assist with puppet (re)config as needed.</li>
+</ul>
+<h2>Maintenance</h2>
+<p>Your project is responsible for maintenance tasks like</p>
+<ul>
+<li>renewing or replacing expired letsencrypt certificates</li>
+<li>resolving disk space issues</li>
+<li>maintaining any software configured by the project</li>
+<li>addressing security issues in software configured by the project in a timely and appropriate manner</li>
+<li>replying to Infra and Security queries regarding the VM in a timely and appropriate manner</li>
+</ul>
+<p>You do not need to worry about upgrading the base operating system or other packages Infra installed when setting up the VM. They receive upgrades automatically, and the system will be rebooted automatically when a security patch requires it.</p>
+<h2>What Infra will do</h2>
+<ul>
+<li>Create your VM upon request. Each project can have one VM. Make your case to vp-infra if you feel you absolutely need more than one.</li>
+<li>Configure the base operating system, install Infra configuration management (puppet)</li>
+<li>Add users to host ACL and sudoers as needed/requested by the PMC</li>
+<li>Back up the system (see <a href="backup-policy.html">backup policy</a>)</li>
+<li>Apply operating system updates and security patches automatically</li>
+<li>Reboot the system with or without notice as Infra deems necessary</li>
+<li>Assist the project in defining Puppet configuration management where desired and appropriate</li>
+</ul>
+<h2>What Infra will not do</h2>
+<ul>
+<li>Develop advanced software configurations for your project's workflow</li>
+<li>Fix or maintain software deployed by the project</li>
+<li>Develop advanced Puppet configuration automation for your project's deployments</li>
+<li>Provide access to ASF infrastructure build deployment secrets</li>
+</ul>
+<h2>When you get stuck</h2>
+<p>Open a Jira ticket for Infra with the details of the problem you are running into with your VM. We will help to resolve it.</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

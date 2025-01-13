@@ -1,0 +1,165 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GitHub Flavored Markdown - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Contribute</a></li>
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              GitHub Flavored Markdown
+          </h1>
+              <p>Content for this site, and for all sites using the <a href="asf-pelican.html">ASF-Pelican template</a>, is structured using <a href="https://guides.github.com/features/mastering-markdown/">GitHub Flavored Markdown</a> (GFM).</p>
+<p>File extensions are <strong>md</strong>, <strong>markdown</strong>, <strong>mkd</strong>, and <strong>mdown</strong>. If you have an <strong>mdtext</strong> file, it is from the Apache CMS, which is deprecated as of summer, 2021. Change the file extension to <strong>md</strong>.</p>
+<p>Sites built with the ASF-Pelican template use a version of <a href="https://github.com/github/cmark-gfm">cmark-gfm</a> by <a href="https://github.blog/2017-03-14-a-formal-spec-for-github-markdown/">GitHub</a> through the <code>pelican-gfm</code> plugin that Infra created.</p>
+<ul>
+<li>
+<p><a href="https://guides.github.com/features/mastering-markdown/">Mastering Markdown</a>.</p>
+</li>
+<li>
+<p><a href="https://github.github.com/gfm/">Detailed Specification</a> with many examples.</p>
+</li>
+<li>
+<p>If your project previously built its site using the Apache CMS, here are some differences from <code>markdown.pl</code> that the CMS used:</p>
+<ul>
+<li>
+<p><a href="https://github.github.com/gfm/#html-block">HTML Blocks</a></p>
+<ul>
+<li>Make sure the first line of any html block starts in column one.</li>
+<li>A blank line terminates an html block
+<ul>
+<li><a href="https://github.github.com/gfm/#example-139">Exception</a> to this rule for <code>style</code>, <code>pre</code>, and <code>script</code>.</li>
+</ul>
+</li>
+<li>Review <a href="https://github.github.com/gfm/#example-122">Markdown content within an HTML block</a></li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.github.com/gfm/#autolink">Autolinks</a></p>
+<ul>
+<li><a href="https://github.github.com/gfm/#extended-www-autolink">www</a></li>
+<li><a href="https://github.github.com/gfm/#extended-url-autolink">url</a></li>
+<li><a href="https://github.github.com/gfm/#extended-email-autolink">email</a></li>
+</ul>
+</li>
+<li>
+<p><a href="https://github.github.com/gfm/#disallowed-raw-html-extension-">Disallowed html</a> the tagfilter extension disables certain html tags. The asfgenid plugin reenables <code>script</code>, <code>style</code>, and <code>iframe</code> html tags.</p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="https://sindresorhus.com/github-markdown-css/">Examples</a></p>
+</li>
+<li>
+<p>ID and Class annotations</p>
+</li>
+</ul>
+<pre><code class="language-md">## What is the Apache Software Foundation?  {#what}
+
+The Apache Software Foundation (ASF) is a non-profit 501(c)(3) corporation,
+incorporated in Delaware, USA, in June of 1999. The ASF is a natural
+outgrowth of The Apache Group, which formed in 1995 to develop the Apache HTTP Server.
+</code></pre>
+<p>Set the class to display an image to <code>float-right</code>:</p>
+<pre><code class="language-md">![Logo](images/logo.svg) {.float-right}
+</code></pre>
+<p>You can also float an HTML fragment at the right of the page display:</p>
+<pre><code class="language-html">&lt;div class=".pull-right" style="float:right; border-style:dotted; width:200px; padding:5px; margin:5px"&gt;
+
+SEE INSTEAD: [Trademark Resources Site Map][resources].
+
+&lt;/div&gt;
+</code></pre>
+<ul>
+<li>Migrating a site from the Apache CMS</li>
+</ul>
+<p>If you are moving a project site of the Apache CMS and will be using the ASF-Pelican template:</p>
+<ul>
+<li>Change any <strong>mdtext</strong> file extension to <strong>md</strong>.</li>
+<li>Replace the multiple line <code>notice:</code> at the top of the file with a one-line reference to the Apache License.</li>
+<li>Any {#id} and {.class} annotations have any # tags between the annotation and the heading text removed.</li>
+<li>Only one {#id} or {.class} annotation is allowed on a tag.</li>
+<li>{.class} annotations are seldom used.</li>
+</ul>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

@@ -1,0 +1,114 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subversion and Git integration with Jira tickets - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Contribute</a></li>
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Subversion and Git integration with Jira tickets
+          </h1>
+              <p>Many projects use Jira for managing tracking bugs, milestones, feature requests and so on, and many of these projects keep track of which commit affects which ticket. To make things even easier, we have a service called <code>svngit2jira</code>, which integrates
+Subversion and Git commits with Jira tickets.</p>
+<h2 id="how-it-works">How it works<a class="headerlink" href="#how-it-works" title="Permanent link">&para;</a></h2>
+<p>Simply mention a Jira ticket in a commit, and the specific ticket receives an update indicating that the commit has been made in reference it. For example, scroll down in <a href="https://issues.apache.org/jira/browse/CLOUDSTACK-1638" target="_blank">this CloudStack ticket</a> to see the commit mentioned.</p>
+<p>This service also plugs into the <a href="https://reviews.apache.org/r/" target="_blank">ReviewBoard</a> instance if you use Jira ticket names there, as the CloudStack project does.</p>
+<h2 id="general-use-of-the-service">General use<a class="headerlink" href="#general-use-of-the-service" title="Permanent link">&para;</a></h2>
+<p>The most common scenario is to mention a Jira ticket in your commit, and the service updates the ticket to reflect your new commit. Some
+projects have a trigger set so that it only updates a ticket if the first  sentence is the Jira ticket number, but we can tailor this to suit your project's needs.</p>
+<h2 id="getting-set-up-for-svngit2jira">Setting up svngit2jira<a class="headerlink" href="#getting-set-up-for-svngit2jira" title="Permanent link">&para;</a></h2>
+<p>To enable the service for your project, create an
+<a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Infra Jira ticket</a>. Include this information:</p>
+<ul>
+<li>The name of the project.</li>
+<li>Has the PMC agreed to use this? (Make sure of this before requesting the feature, as it does tend to add quite a lot of new information to a Jira ticket.)</li>
+<li>What Jira name does your project use?</li>
+<li>Does the project use Git or Subversion?</li>
+<li>How would you like commits to trigger an update of a JIRA ticket. This can be anything from the standard catch-all FOO-1234 trigger to more specific rules you thought of yourself.</li>
+<li>If you are using Git, are there any specific branches you'd like the service to ignore?</li>
+</ul>
+<h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
+<p>The source for this feature is <a href="https://svn.apache.org/repos/infra/infrastructure/trunk/projects/svngit2jira/" target="_blank">freely available</a>.</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

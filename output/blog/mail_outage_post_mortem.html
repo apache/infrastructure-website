@@ -1,0 +1,117 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mail outage post-mortem - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Contribute</a></li>
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav><!-- breadcrumbs -->
+<div class="card" style="height: 34px;">
+    <nav aria-label="breadcrumb"  style="padding-left: 12px; padding-top: 4px;">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+
+            <li class="breadcrumb-item active"><a href="/blog/mail_outage_post_mortem.html">
+Mail outage post-mortem            </a></li>
+
+            <li class="breadcrumb-item active">(<a href="https://github.com/apache/infrastructure-website/tree/master/content/blog/mail_outage_post_mortem.md">edit</a>)</li>
+
+        </ol>
+    </nav>
+</div>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Mail outage post-mortem
+          </h1>
+              <p>Posted on: 2014-05-28 05:16:39+00:00</p>
+              <p><span style="color: #222222; font-family: arial; font-size: small;"><b>Overview:</b></span><br style="color: #222222; font-family: arial; font-size: small;"/><span style="color: #222222; font-family: arial; font-size: small;">During the afternoon of May 6th we began experiencing delays in mail delivery of 1-2 hours. Initial efforts at remediation seemed to clear this up but on the morning of May 7th the problem worsened and we proactively disabled mail service to deal with the failure. This outage affected all ASF mailing lists and mail forwarding. The service remained unavailable until May 10th, and it took almost 5 additional days to fully flush the backlog of messages. </span><br style="color: #222222; font-family: arial; font-size: small;"/><br style="color: #222222; font-family: arial; font-size: small;"/><span style="color: #222222; font-family: arial; font-size: small;">You can find a timeline here that was kept during the incident: https://blogs.apache.org/infra/entry/mail_outage</span><br style="color: #222222; font-family: arial; font-size: small;"/><br style="color: #222222; font-family: arial; font-size: small;"/><span style="color: #222222; font-family: arial; font-size: small;">This was a catastrophic failure for the Apache Software Foundation as email is core to virtually every operation and is our primary communication medium. &nbsp;</span><br style="color: #222222; font-family: arial; font-size: small;"/><br style="color: #222222; font-family: arial; font-size: small;"/><span style="color: #222222; font-family: arial; font-size: small;"><b>What happened:</b> </span><br style="color: #222222; font-family: arial; font-size: small;"/><br style="color: #222222; font-family: arial; font-size: small;"/><span style="color: #222222; font-family: arial; font-size: small;">The mail service at the ASF is composed of three physical servers. Two of these are external facing mail exchangers that receive mail. The final server handles mailing list expansion, alias forwarding and mail delivery in general. That latter server had two volumes that experienced a disk outage each. This degraded performance substantially and led to the mail delays seen on May 6th and 7th. The service was proactively disabled on May 7th in an attempt to let the arrays rebuild without the significant disk I/O overhead caused by processing the large mail backlog. Ultimately multiple attempts to rebuild the underlying arrays failed and eventually other drives in the array where the data volume was stored failed rendering recovery a hopeless task on May 8th. We began working to restore backups from our offsite backup location to our primary US datacenter. When this began to take longer than expected, additional concurrent efforts began to restore service in one of our secondary datacenters as well as in a public cloud instance. Ultimately we ended up completing the restoration to our primary US datacenter first and were able to bring the service online. When the service resumed, we had an estimated 10 million message backlog in addition to our normal 1.7-2 million ongoing daily message flow. The amount of backlogged mail taxed the existing infrastructure and architecture of the mail service and took almost 5 days to completely clear. </span><br style="color: #222222; font-family: arial; font-size: small;"/><span style="color: #222222; font-family: arial; font-size: small;"></span></p>
+<p><span style="color: #222222; font-family: arial; font-size: small;"><b>What worked:</b></span><br style="color: #222222; font-family: arial; font-size: small;"/><br style="color: #222222; font-family: arial; font-size: small;"/><span style="color: #222222; font-family: arial; font-size: small;">Our backups were sufficient to allow us to restore the service in good working order. </span><br style="color: #222222; font-family: arial; font-size: small;"/><span style="color: #222222; font-family: arial; font-size: small;">Early precautions taken when we discovered the problem combined with our backups resulted in no data loss from the incident. </span><br style="color: #222222; font-family: arial; font-size: small;"/><span style="color: #222222; font-family: arial; font-size: small;">Our mail exchangers continued to work during the outage and held incoming mail until the service was restored. </span><br style="color: #222222; font-family: arial; font-size: small;"/><br style="color: #222222; font-family: arial; font-size: small;"/><span style="color: #222222; font-family: arial; font-size: small;"><b>What didn't work:</b></span><br style="color: #222222; font-family: arial; font-size: small;"/><br style="color: #222222; font-family: arial; font-size: small;"/><span style="color: #222222; font-family: arial; font-size: small;">Our monitoring was not sufficient to identify the problem or alert us to the symptoms. </span><br style="color: #222222; font-family: arial; font-size: small;"/><font color="#222222" face="arial" size="2">No spare hard drives for this class of machine were on-hand in our primary datacenter.&nbsp;</font><br style="color: #222222; font-family: arial; font-size: small;"/><span style="color: #222222; font-family: arial; font-size: small;">The restore time from our remote backups took an excessively long time. This was partially due to the large size of the restore data, and partially due to the transport method used for the data. </span><br style="color: #222222; font-family: arial; font-size: small;"/><span style="color: #222222; font-family: arial; font-size: small;">After the service was restored we had approximately a 10M message backlog that took days to clear.</span><br style="color: #222222; font-family: arial; font-size: small;"/><span style="color: #222222; font-family: arial; font-size: small;">The primary administrator of the service was on vacation, and the remaining infrastructure contractors were not intimately familiar with the service.&nbsp;</span><br style="color: #222222; font-family: arial; font-size: small;"/><span style="color: #222222; font-family: arial; font-size: small;">Our documentation was insufficient to easily restore the service in a rapid manner by folks without intimate knowledge.&nbsp;</span><br style="color: #222222; font-family: arial; font-size: small;"/><br style="color: #222222; font-family: arial; font-size: small;"/><span style="color: #222222; font-family: arial; font-size: small;"><b>Remediation plan:</b></span><br style="color: #222222; font-family: arial; font-size: small;"/><br style="color: #222222; font-family: arial; font-size: small;"/><span style="color: #222222; font-family: arial; font-size: small;">Our immediate action items:</span><br style="color: #222222; font-family: arial; font-size: small;"/> </p>
+<ul>
+<li><span style="color: #222222; font-family: arial; font-size: small;">Update the documentation to be current/diagram mail flow.</span></li>
+<li><span style="font-size: small; color: #222222; font-family: arial;">Improve the monitoring of the mail service itself as well as the hardware.</span><span style="font-size: small; color: #222222; font-family: arial;"> </span></li>
+<li><span style="font-size: small; color: #222222; font-family: arial;">Insure we have adequate spares on hand for the majority of our core services.</span><span style="font-size: small; color: #222222; font-family: arial;"> </span></li>
+<li><span style="font-size: small; color: #222222; font-family: arial;">Place our mail server under configuration management to reduce our MTTR</span><span style="font-size: small; color: #222222; font-family: arial;"> </span></li>
+</ul><br style="color: #222222; font-family: arial; font-size: small;"/><span style="color: #222222; font-family: arial; font-size: small;">Medium-to-Long term initiatives.</span><br style="color: #222222; font-family: arial; font-size: small;"/>
+<ul>
+<li><span style="color: #222222; font-family: arial; font-size: small;">Crosstraining contractors in all critical services</span></li>
+<li><span style="color: #222222; font-family: arial; font-size: small;">Work on moving to a more fault-tolerant/redundant architecture</span></li>
+<li><span style="color: #222222; font-family: arial; font-size: small;">More fully deploy our config management and automated provisioning across our infrastructure so MTTR is reduced.</span></li>
+</ul>
+<p>&nbsp;</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>  </main>
+  </body>
+</html>

@@ -1,0 +1,138 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASF account management - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Contribute</a></li>
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              ASF account management
+          </h1>
+              <h2>Your ASF account</h2>
+<p>Committers to Apache Software Foundation projects and ASF Members have personal accounts to facilitate their work and communications.</p>
+<h3>Your Apache email address</h3>
+<p>Your account includes an Apache email address which is usually <code>userID@apache.org</code>. You can link that mailbox to a personal email address so you can receive mail from your Apache address and send mail with your Apache address as the "from" address. See <a href="https://infra.apache.org/committer-email.html">Committer email</a>.</p>
+<h3>Managing your account details</h3>
+<p>Log in to <a href="https://whimsy.apache.org/" target="_blank">Whimsy</a> and, in the <em>Available to Committers</em> section, click <code>Your personal details</code>. You can update any information in blue by double-clicking it and making the necessary changes in the form that appears.</p>
+<h3>Regaining access to your committer account</h3>
+<p>If you forgot your password, try...</p>
+<ol>
+<li>to reset it at <a href="https://id.apache.org/reset/enter" target="_blank">id.apache.org/reset/enter</a>. That will email to
+your <code>@apache.org</code> address (which forwards to your non-apache email account) a short-lived password reset link. The link may be encrypted to <a href="https://home.apache.org/keys/committer/" target="_blank">your PGP key</a>.</li>
+<li>decrypting the e-mail - one way to do this is to save the e-mail contents as a text file, e.g. <code>password.txt</code>. Open a shell command window, and run the following command:</li>
+</ol>
+<pre><code>gpg -d password.txt&lt;/code&gt;
+</code></pre>
+<p>This should decrypt the file and display the output in the window.</p>
+<ol start="3">
+<li>
+<p>If you have lost access to your registered email address, file an additional ICLA with Secretary. Follow the directions for <a href="https://www.apache.org/licenses/#submitting" target="_blank">submitting an ICLA</a>. Include your current Apache ID and mention in your cover email that you are requesting a change to your email address.</p>
+</li>
+<li>
+<p>If that didn't work, email <code>root@</code>. In your email, mention the following information:</p>
+</li>
+</ol>
+<ul>
+<li>Your username.</li>
+<li>The fact that you have tried a self-service password reset, and why it didn't work. (Was the mail received? Did you decrypt it successfully?)</li>
+<li>Why you need to regain access to your Apache account -- e.g., if it is to work on a <a href="https://www.apache.org/foundation/" target="_blank">foundation project</a>, name that project; or if you are a <a href="https://www.apache.org/foundation/members" target="_blank">foundation member</a>, state that.</li>
+<li>Whether you have SFTP access to <code>home.apache.org</code> or SSH access to a project VM via public-key authentication.</li>
+<li>Whether you ever set up Orthrus/OPIE on any <code>*.apache.org</code> box. (This is only applicable to people who had root permissions on PMC VMs.)</li>
+<li>Whether you have access to the private part of a PGP key associated with your Apache account.</li>
+<li>Whether the contact information on your ICLA is valid.</li>
+<li>For (<a href="https://www.apache.org/foundation/members" target="_blank">ASF Members</a> only, whether the contact information in your <code>members.txt</code> entry is valid.</li>
+<li>Whether you are able to send a new ICLA, with the same signature as your original one, which specifies new contact information.</li>
+<li>Whether there is any other way in which we (Infra) might satisfy ourselves that you are the legitimate owner of that account.</li>
+</ul>
+<p><strong>Note</strong>: please do not ask other ASF committers or Members to email root@ to vouch for you.</p>
+<h3>Multi Factor Authentication</h3>
+<p>Infra will soon provide multi-factor authentication (MFA) for account logins. Documentation related to setting up and using multi-factor authentication will be provided here when the service is ready.</p>
+<p>You are welcome to review the &lt;a href="<a href="https://infra.apache.org/mfa.html%3Edraft">https://infra.apache.org/mfa.html&gt;draft</a> MFA policy and the related draft policy on <a href="https://infra.apache.org/mfa-reset.html">https://infra.apache.org/mfa-reset.html</a>resetting MFA if access has been lost.</p>
+<p><strong>Note</strong>: If you are using GitHub, you must also use GitHub's MFA, which is separate from the Apache MFA. If you are having trouble logging in to GitHub (or some other service) or to Apache, make sure you are using the correct entries for the MFA in question.</p>
+<h2>Account removal</h2>
+<p>Occasionally we need to remove an account - either by request or because the committer is deceased or, in rare cases, because the ASF is forcibly removing the committer.</p>
+<p>In practice, we almost never actually remove an LDAP account; we just remove the committer from all LDAP groups and mailing lists they have belonged to.</p>
+<p>An exception would be responding to a GDPR/PII request by a committer. If you wish to make such a request, open an Infra Jira ticket, state the circumstances, and provide your account information (not the password).</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

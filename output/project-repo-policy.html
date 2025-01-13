@@ -1,0 +1,143 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Code Repository Policy - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Contribute</a></li>
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Project Code Repository Policy
+          </h1>
+              <p>Each Apache project can have a directory in the Apache Subversion repository, or Git repositories, for their product code and assets. The majority of projects now use Git.</p>
+<ul>
+<li>Each project can have a public directory in the Subversion repository, or as many public Git repositories as their work requires.</li>
+<li>Each project can request (using a Jira ticket) that Infra set up <strong>a temporary private Git repository fork</strong> for use with tasks, such as fixing security issues in project code, that should not be publicly available. The PMC must explain its need of a private fork in the Jira ticket. Forks will be tied to Jira tickets or CVEs such that upon completion of the work, the private fork can be decommissioned by Infra.</li>
+<li>Private repos <strong>must</strong> have commit/PR/issues emails sent to the project's <code>private@</code> list.</li>
+<li>To follow the Infra convention, name project repos in the pattern <code>$project-$reponame</code> in order to map the project LDAP group to the permissions scheme.</li>
+</ul>
+<h3>Git repositories</h3>
+<ol>
+<li>We recommend using <a href="https://github.com/apache/" target="_blank">GitHub</a> for your interactions with <a href="http://github.com/apache/" target="_blank">writable Git repositories</a>.</li>
+<li>Those who have reservations about GitHub's terms and conditions can use Apache's <a href="https://gitbox.apache.org/" target="_blank">GitBox</a>, which also gives full access to Apache's writable Git repositories.</li>
+<li>To link your GitHub and Apache IDs, follow <a href="https://gitbox.apache.org/setup/" target="_blank">these instructions</a>.</li>
+<li>Projects can request new, blank, public repositories through <a href="https://selfserve.apache.org" target="_blank">selfserve</a>.</li>
+<li>Apache does not support custom commits or other hooks. All projects get the same hooks. Setting up <a href="https://github.com/apache/infrastructure-puppet/tree/deployment/modules/gitpubsub" target="_blank">gitpubsub</a> should provide sufficient flexibility without impacting the core Git setup.</li>
+</ol>
+<h4>Git customizations</h4>
+<p>Git offers a number of customizations for committing code to a repository. Apache does not support all of them for its projects. For instance:</p>
+<ul>
+<li><strong>supported</strong>
+<ul>
+<li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-the-automatic-deletion-of-branches" target="_blank">Head branches automatically deleted after pull requests are merged</a>.</li>
+<li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-squashing-for-pull-requests" target="_blank">Commit squashing for pull requests</a>.</li>
+<li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-squashing-for-pull-requests" target="_blank">Default to pull request titles for squash commits</a>.</li>
+<li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-merging-for-pull-requests" target="_blank">Commit merging for pull requests</a>.</li>
+<li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/configuring-commit-rebasing-for-pull-requests" target="_blank">Commit rebasing for pull requests</a>.</li>
+<li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-suggestions-to-update-pull-request-branches" target="_blank">Always update a pull request branch when it is not up to date with the base branch</a>.</li>
+</ul>
+</li>
+</ul>
+<p>To deploy one of these customizations for your project's repository, ask Infra for help via a Jira ticket.</p>
+<ul>
+<li><strong>not supported</strong>
+<ul>
+<li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-auto-merge-for-pull-requests-in-your-repository" target="_blank">Auto-merge of pull requests</a>.</li>
+<li><a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue" target="_blank">Merge queues</a>. This feature is in limited beta.</li>
+</ul>
+</li>
+</ul>
+<h3>Subversion directories</h3>
+<p>Typically, the Incubator PMC makes a Jira request to Infra to create an SVN directory for a graduating project, or for a project joining the ASF with an existing SVN directory. If a project needs a subdirectory for a specific purpose, it requests its creation in a Jira ticket to Infra.</p>
+<p>You can find a list of ASF Subversion directories at <a href="https://svn.apache.org/viewvc" target="_blank">svn.apache.org/viewvc</a>.</p>
+<h3>Repository access</h3>
+<ol>
+<li>ASF projects <strong>must</strong> house their project code in ASF supported services (Subversion, GitBox).</li>
+<li>Only people with an ICLA on file with Apache can create, edit, or update code housed within the ASF. There is no third-party access to create, edit, or delete files.</li>
+<li>Apache software projects are open-source, so everyone has <strong>read</strong> access to all public code housed within the ASF.</li>
+<li>Documentation is not code. Projects can host their documentation anywhere (such as on platforms like readthedocs and gitlab) and, if they choose, make them available to the world to create and edit pages.</li>
+<li>However, if projects create and house their documentation inside the ASF, statement 2 applies to it.</li>
+</ol>
+<p>Since the primary presence of an Apache project must be within Apache, there is an argument for storing project documentation in its own repository alongside the project's code repository. This practice also makes it easier for project committers to move from committing new features, or updates to existing features, to writing about them for the project's users.</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

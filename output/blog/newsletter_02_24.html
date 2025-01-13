@@ -1,0 +1,141 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inside Infra February 2024 - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Contribute</a></li>
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav><!-- breadcrumbs -->
+<div class="card" style="height: 34px;">
+    <nav aria-label="breadcrumb"  style="padding-left: 12px; padding-top: 4px;">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+
+            <li class="breadcrumb-item active"><a href="/blog/newsletter_02_24.html">
+Inside Infra February 2024            </a></li>
+
+            <li class="breadcrumb-item active">(<a href="https://github.com/apache/infrastructure-website/tree/master/content/blog/newsletter_02_24.md">edit</a>)</li>
+
+        </ol>
+    </nav>
+</div>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Inside Infra February 2024
+          </h1>
+              <p>Posted on: 2024-02-20 00:00:00+00:00</p>
+              <p><em>Hello, all!</em></p>
+<h2>Newsletter name</h2>
+<p>Our very unscientific poll showed that "Inside Infra" has the most support as a name for this newsletter, so that is what we shall be.</p>
+<p><strong>Note</strong>: in 2020 the main ASF blog published a series of interviews with Infra team members also called "Inside Infra". Links to the interviews are available at <a href="https://cwiki.apache.org/confluence/display/INFRA/The+Infrastructure+team" target="_blank">The Infrastructure team</a>.</p>
+<h2>2023 year-end survey</h2>
+<p>We held our second annual year-end survey and got a lot of participation. Overall satisfaction with Infra's work seems high, but there were also a series of very useful suggestions and ideas. This newsletter, in fact, is a response to one of the suggestions.</p>
+<p>The survey summary is on our <a href="https://infra.apache.org/blog/2023%20Infra%20Survey%20Results.html" target="_blank">blog</a>.</p>
+<h2>Roundtable summary</h2>
+<p>The February Roundtable focused on Keycloak and related security issues but, as is often the case, conversation also moved usefully into several other areas and concerns, including:</p>
+<ul>
+<li>There is concern that it is difficult to find a link to Infra's website, or even know that it exists, from the main ASF website.</li>
+<li>A suggestion to develop project-level security groups for GitHub Issues, based on roles.</li>
+<li>There should be a CalDev service that would support an events calendar for each project that wants one.</li>
+<li>There was discussion of trying to find a forum solution that could in time replace the requirement for email-based conversation threads for project decisions.</li>
+<li>The summary of the conversation is on the Infra Confluence wiki.</li>
+</ul>
+<p>The next Infra Roundtable will be <strong>March 6, 2024 1700 UTC</strong>. The main topic, before the suggestions start to fly, will be <strong>improving automated testing</strong>.</p>
+<p>Of note: Develocity is hoping to roll out predictive test / flaky test analysis, to help projects improve their test suites so they generate more reliable results.</p>
+<p>Information on how the roundtables work, and how to join in, is at <a href="https://infra.apache.org/roundtable.html" target="_blank">infra.apache.org/roundtable.html</a>.</p>
+<h2>.asf.yaml info available</h2>
+<p>.asf.yaml is an important tool in managing project websites and other services. It is a branch-specific configuration file that a project may create and put in the root of a Git repository to control features such as</p>
+<ul>
+<li>notification schemes</li>
+<li>website staging</li>
+<li>GitHub settings</li>
+<li>Pelican builds</li>
+</ul>
+<p>The documentation for .asf.yaml  was on the Infra Cwiki, but is now is in its repository's README file: <a href="https://github.com/apache/infrastructure-asfyaml/blob/main/README.md" target="_blank">github.com/apache/infrastructure-asfyaml/blob/main/README.md</a>.</p>
+<h2>Self-serve and wiki accounts</h2>
+<p>An addition to the Apache self-serve tool will let a user request a Cwiki account. The request goes for approval to the project the user specifies. The project can also grant the user write access, should that be desired.</p>
+<p>This feature is not yet available, but is coming soon.</p>
+<h2>Delivery issues with Gmail</h2>
+<p>If you are subscribed to an ASF mailing list with a Gmail account, you may experience missing list mail. This is due to changes Google made that cause rejection of ASF mailing list mail to Gmail addresses. Infra is currently investigating this issue.</p>
+<p>If you or your project experience this, Infra has a workaround which we can apply to your mailing list, but some messages may
+still be rejected.</p>
+<h2>Excellent questions</h2>
+<p>Some of the best stuff Infra does has evolved from project members' questions and suggestions. If you have an infrastructure-related question, feel free to ask it on the <code>users@infra.apache.org</code> email list. We may share your question, and our answer to it, in a coming newslette</p>
+<p><em>That's it until next month!</em></p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>  </main>
+  </body>
+</html>
