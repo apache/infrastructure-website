@@ -14,8 +14,8 @@ Sites built with the ASF-Pelican template use a version of [cmark-gfm][1] by [Gi
 - If your project previously built its site using the Apache CMS, here are some differences from `markdown.pl` that the CMS used:
 
   - [HTML Blocks][5]
-    - Make sure the first line of any html block starts in column one.
-    - A blank line terminates an html block
+    - Make sure the first line of any HTML block starts in column one.
+    - A blank line terminates an HTML block
       - [Exception][6] to this rule for `style`, `pre`, and `script`.
     - Review [Markdown content within an HTML block][7]
 
@@ -24,7 +24,7 @@ Sites built with the ASF-Pelican template use a version of [cmark-gfm][1] by [Gi
     - [url][10]
     - [email][11]
 
-  - [Disallowed html][12] the tagfilter extension disables certain html tags. The asfgenid plugin reenables `script`, `style`, and `iframe` html tags.
+  - [Disallowed html][12] the tagfilter extension disables certain HTML tags. The asfgenid plugin reenables `script`, `style`, and `iframe` HTML tags.
     
 - [Examples][13]
 

@@ -25,7 +25,7 @@ These metadata fields are available, but are currently optional for the Infra bl
   - status: options are `draft`, `hidden`, or `published`
   - summary: brief description for use on index pages
   - tags: content tags, separated by commas
-  - url: url to use for this article
+  - url: URL to use for this article
 
 Pelican supports these tags, which the Infra blog does not use:
 

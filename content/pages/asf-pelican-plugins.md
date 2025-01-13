@@ -64,7 +64,7 @@ ASF_GENID = {
 
 ## Readers (readers_init)
 
-The system sets two important readers at this point. Readers are responsible for transforming page files to html and
+The system sets two important readers at this point. Readers are responsible for transforming page files to HTML and
 providing a metadata dictionary.
 
 - GFMReader by the pelican-gfm plugin. This code is in a private repository - ask Infra. Transforms GitHub Flavored Markdown(GFM) to HTML.
@@ -80,7 +80,7 @@ providing a metadata dictionary.
 
 ## Content init (content_object_init)
 
-This is signaled after a reader has processed the site's content. At this point plugins can review, record, and transform the html content.
+This is signaled after a reader has processed the site's content. At this point plugins can review, record, and transform the HTML content.
 
 - The asfgenid plugin, `./asfgenid.py`, performs a number of steps. Some of the steps are optional.
   * Metadata transformation by looking up {{ key_expression }} in the page metadata.

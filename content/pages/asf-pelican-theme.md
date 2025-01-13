@@ -30,7 +30,7 @@ In this site the css included by `base.html` is in the `content` tree.
 There are site- or template-specific overrides to the stylesheet frameworks, but these are not done as Pelican specifies.
 
 - `styles.css` - consists of custom site CSS overrides. Edit as needed. Here we include the CSS for the ASF permalink style.
-  This file is in the same directory as the html and is included inline with `{% include "styles.css" %}`.
+  This file is in the same directory as the HTML and is included inline with `{% include "styles.css" %}`.
 
 ## Page metadata
 

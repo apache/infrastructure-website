@@ -91,5 +91,5 @@ Earlier versions of this template made use of a `pelicanconf.py` configuration f
    - `PLUGINS`
    - `ASF_DATA` - `asfdata.py` plugin settings
    - `ASF_GENID` - `asfgenid.py` plugin settings
-     `asfgenid.py` performs a series of html fixups including permalinks, heading ids, and table of contents
+     `asfgenid.py` performs a series of HTML fixups including permalinks, heading ids, and table of contents
 ```

@@ -194,7 +194,7 @@ Alternatively you can specify the `-sources` and `-javadoc` artifacts inside you
 
 ### 3. Configure Ivy to use Nexus ###
 
-If you are already using Ivy you may need to adapt your `resolvers` configuration by adding an url resolver for Nexus and referencing that in a module matching your `ivy.xml`.
+If you are already using Ivy you may need to adapt your `resolvers` configuration by adding an URL resolver for Nexus and referencing that in a module matching your `ivy.xml`.
 
 You usually need to adapt the `ivysettings.xml` file used by Ant by using the same values for `organization` and `name` on the module element that you used in your `ivy.xml` file (where `name` on the module element in `ivysettings.xml` corresponds to `module` in `ivy.xml`).
 
