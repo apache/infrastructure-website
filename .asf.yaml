@@ -1,0 +1,36 @@
+staging:
+  whoami: asf-site-pelfix
+  profile: pelfix
+  autostage: preview/*
+
+github:
+  description:   "ASF Infrastructure Team Website Repository"
+  homepage:      https://infra.apache.org/
+  collaborators: []
+  autolink_jira:
+    - INFRA
+    - FOOTEST
+  custom_subjects:
+    new_issue: "{repository}/#{issue_id} created"
+    close_issue: "{repository}/#{issue_id} closed"
+    catchall: "{repository}/#{issue_id} updated"
+    new_discussion: "Created: Discussion {repository}: {title}"
+    edit_discussion: "Edited: Discussion {repository}: {title}"
+    close_discussion: "Closed: Discussion {repository}: {title}"
+    close_discussion_with_comment: "Closed: Discussion with comment {repository}: {title}"
+    reopen_discussion: "Reopened: Discussion {repository}: {title}"
+    new_comment_discussion: "Commented: Discussion {repository}: {title}"
+    edit_comment_discussion: "Edited a comment: Discussion {repository}: {title}"
+    delete_comment_discussion: "Deleted a comment: Discussion {repository}: {title}"
+  labels:
+    - infrastructure
+    - website
+    - pelican
+  protected_tags: []
+
+notifications:
+  commits:              commits@infra.apache.org
+  pullrequests:         commits@infra.apache.org
+  issues:               issues@infra.apache.org
+  discussions:          issues@infra.apache.org
+  pullrequests_bot_dependabot: notifications@infra.apache.org
