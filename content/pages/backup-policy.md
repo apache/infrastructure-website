@@ -14,7 +14,7 @@ Foundation Critical systems receive additional nightly rsync/zfs based snapshots
   - /x1/db_dump is picked up by the rsync or backuppc process
 
 #### Software repositories ####
-  - gitbox.a.o (rsync, backuppc, github mirrors).
+  - gitbox.a.o (rsync, backuppc, GitHub mirrors).
   - svn.a.o (rsync, backuppc, azure DR replica).
   - archive.a.o (backuppc).
 

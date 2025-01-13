@@ -59,7 +59,7 @@ Each PMC can have **one** private Git repository. Open a Jira ticket for Infra t
 Projects can also place `.asf.yaml` in the root of a repository to control:
 
 -  notification settings
--  github settings
+-  GitHub settings
 -  pelican builds
 
 Read [the .asf.yaml primer](asf-yaml.html) to learn more.

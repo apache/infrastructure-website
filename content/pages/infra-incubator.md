@@ -53,7 +53,7 @@ It takes about twelve hours after the mentor makes the request before the mailin
 
 Moving existing repositories into ASF version control generally requires a github.com transition to the `github.com/apache/` organization. To make the transition,, file a Jira ticket with Infra.
 
-If you wish to copy existing code without transferring github stars, etc., your mentor can request **new repositories** for the project via <a href="https://selfserve.apache.org/" target="_blank">SelfServe</a>.
+If you wish to copy existing code without transferring GitHub stars, etc., your mentor can request **new repositories** for the project via <a href="https://selfserve.apache.org/" target="_blank">SelfServe</a>.
 
 
 **Bug tracking**
