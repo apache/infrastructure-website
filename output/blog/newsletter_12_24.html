@@ -4,15 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Project and product names - Apache Infrastructure Website</title>
+    <title>Inside Infra December 2024 - Apache Infrastructure Website</title>
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/fontawesome.all.min.css" rel="stylesheet">
 <link href="/css/headerlink.css" rel="stylesheet">
 <script src="/highlight/highlight.min.js"></script>  </head>
   <body class="d-flex flex-column h-100">
   <main class="flex-shrink-0">
-      <div>
-
 <!-- nav bar -->
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
     <div class="container-fluid">
@@ -63,7 +61,20 @@
             </ul>
         </div>
     </div>
-</nav>    
+</nav><!-- breadcrumbs -->
+<div class="card" style="height: 34px;">
+    <nav aria-label="breadcrumb"  style="padding-left: 12px; padding-top: 4px;">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+
+            <li class="breadcrumb-item active"><a href="/blog/newsletter_12_24.html">
+Inside Infra December 2024            </a></li>
+
+            <li class="breadcrumb-item active">(<a href="https://github.com/apache/infrastructure-website/tree/master/content/blog/newsletter_12_24.md">edit</a>)</li>
+
+        </ol>
+    </nav>
+</div>    
 
 
 <!-- page contents -->
@@ -71,9 +82,19 @@
     <div class="bg-white p-5 rounded">
         <div class="col-sm-8 mx-auto">
           <h1>
-              Project and product names
+              Inside Infra December 2024
           </h1>
-              <p>This information is available in the <a href="https://apache.org/foundation/marks/pmcs.html#naming" target="_blank">Project Naming Policy</a> section of the page on website branding policy.</p>
+              <p>Posted on: 2024-12-21 00:00:00+00:00</p>
+              <p><strong>Welcome to Inside Infra for December, 2024</strong></p>
+<p>The <strong>December roundtable</strong> did not take place due to presenter illness. We have pushed its topic to next month. That roundtable will be <strong>Wednesday, January 8, 2025, 1700 UTC</strong>. The main topic will be a deep dive into <strong>asf.yaml</strong>, the Swiss Army Knife of ASF build utilities.</p>
+<p>See <a href="https://infra.apache.org/roundtable.html" target="_blank">this page</a> for details about how to join a roundtable, and what happens at it.</p>
+<h2>Removing Blue Ocean and related plugins</h2>
+<p>At the end of February, 2025, ASF Infra will remove all <a href="https://plugins.jenkins.io/blueocean/" target="_blank">Blue Ocean</a> and related plugins from our Jenkins ci-* controllers.</p>
+<p>Cloudbees have removed the Blue Ocean plugin from their <a href="https://docs.cloudbees.com/docs/cloudbees-ci-kb/latest/troubleshooting-guides/admin-monitor-blueocean-removal" target="_blank">Cloudbees Assurance Program</a> (CAP), which our Jenkins Controllers use to maintain plugin integrity and compatibility. The Jenkins Open Source program also removed the plugin(s) from their own instances. The plugin is only receiving security updates from here on, and Cloudbees recommend that users switch to the <a href="https://docs.cloudbees.com/plugins/ci/cloudbees-pipeline-explorer" target="_blank">Pipeline Explorer</a> plugin. Infra has already installed Pipeline Explorer on all ASF controllers.</p>
+<p>If you have questions about Blue Ocean replacements, email <code>users@infra.apache.org</code> or post your question on the <code>#asfinfra</code> channel in the <code>the-ASF</code> workspace on Slack.</p>
+<h2>Naming of repositories for podlings</h2>
+<p>In the past, the names of Git repositories for projects in the Incubator were supposed to start with 'incubator-', and then the project's name. We no longer follow this pattern, so there is no need to request the 'incubator-' prefix for a new Git repository for a project, or when migrating an existing repository to the project.</p>
+<p><strong>More in the new year!</strong></p>
 
         </div>
       </div>
@@ -87,8 +108,6 @@
         </p>
       </div>
     </div>
-    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
-  </main>
-    <script>hljs.initHighlightingOnLoad();</script>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>  </main>
   </body>
 </html>
