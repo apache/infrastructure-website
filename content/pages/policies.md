@@ -26,12 +26,17 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 - [Release download pages policy](release-download-pages.html)
 - [Project use of nightlies.a.o](nightlies.html)
 
+**Project websites**
+
+- [Top-Level Project sites](project-site-policy.html)
+- [Content Security Policy](csp.html)
+- <a href="https://privacy.apache.org/policies/website-policy.html" target="_blank">ASF privacy policy for project websites</a>
+
 **Other**
 
 - [Application upgrades](app-upgrade-policy.html)
 - [Backups](backup-policy.html) for systems and content
 - [Operating system upgrades](os-upgrade-policy.html)
-- [Top-Level Project sites](project-site-policy.html)
 - [Virtual machines for projects](vm-policy.html)
 - [Approving Jira account requests](jira-approve-account.html)
 
