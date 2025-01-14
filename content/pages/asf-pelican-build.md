@@ -54,7 +54,7 @@ PATH_METADATA = '(?P<path_no_ext>.*)\..*'
 ARTICLE_URL = ARTICLE_SAVE_AS = PAGE_URL = PAGE_SAVE_AS = '{path_no_ext}.html'
 # We want to serve our static files mixed with content
 STATIC_PATHS = ['.']
-# we want any html to be served as-is
+# we want any HTML to be served as-is
 READERS = {'html': None}
 # ignore README.md files in the content tree and the interviews and include folders
 IGNORE_FILES = ['README.md','interviews','include']
@@ -270,8 +270,8 @@ ASF-Pelican uses a version of <a href="https://github.com/github/cmark-gfm" targ
 - Many projects used the Apache CMS for their websites. Here are some differences from its `markdown.pl`.
 
   - [HTML Blocks][5]
-    - Make sure the first line of your html block starts in column one.
-    - A blank line terminates an html block
+    - Make sure the first line of your HTML block starts in column one.
+    - A blank line terminates an HTML block
       - [Exception][6] to this rule for `style`, `pre`, and `script`.
     - [Markdown content within an HTML block][7]
 

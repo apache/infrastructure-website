@@ -84,7 +84,7 @@ To use a project-specific download script, create a project page containing info
 
 Assuming you have called your download page `download.html`, you can invoke our global download script by using the URI `download.cgi`.
 
-This URI takes the path to the page as an input and passes it to `closer.lua`. When you link to the project page (for example, from the rest of the project documentation), it is important to target these links at the script address (and not the html page address).
+This URI takes the path to the page as an input and passes it to `closer.lua`. When you link to the project page (for example, from the rest of the project documentation), it is important to target these links at the script address (and not the HTML page address).
 
 There is no requirement to name the script `download.cgi` and the download release page `download.html`, but the name of the script **must** correspond to the name of the download page. For example:
 
