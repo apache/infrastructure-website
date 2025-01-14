@@ -145,7 +145,7 @@ gmcdonald:
 infrastructure spent a lot of time this year trying to get Gradle Enterprise
 integrated with our jenkins systems. 
 
-now, ASF Infrastructure and Gradle bring you ge.apache.org. Additionally,
+now, ASF Infrastructure and Gradle bring you develocity.apache.org. Additionally,
 we are working to make build caching available to any project that wants it.
 
 We've been working with beam and a few other projects as a pilot program

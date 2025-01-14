@@ -145,7 +145,7 @@ The ASF has tokens/credentials in GHA, Jenkins and Buildbot for projects to use 
   - <a href="https://cwiki.apache.org/confluence/display/INFRA/Github+Actions+to+DockerHub" target="_blank">GitHub Actions to DockerHub</a>
 
 <h2 id="gradle">Gradle Enterprise<a class="headerlink" href="#gradle" title="Permanent link">&para;</a></h2>
-Gradle is a suite of acceleration and analytics technologies for CI/CD systems to help projects identify and analyze trends while optimizing build resources. The result is faster builds, with fewer failures, The ASF instance of Gradle enterprise is at <a href="https://ge.apache.org/" target="_blank">ge.apache.org</a>.
+Gradle is a suite of acceleration and analytics technologies for CI/CD systems to help projects identify and analyze trends while optimizing build resources. The result is faster builds, with fewer failures, The ASF instance of Gradle enterprise is at <a href="https://develocity.apache.org/" target="_blank">develocity.apache.org</a>.
 
 More information is available at the [Gradle page](gradle.html).
 
