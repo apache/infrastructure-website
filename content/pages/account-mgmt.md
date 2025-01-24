@@ -47,7 +47,7 @@ This should decrypt the file and display the output in the window.
 ### Multi Factor Authentication
 Infra will soon provide multi-factor authentication (MFA) for account logins. Documentation related to setting up and using multi-factor authentication will be provided here when the service is ready.
 
-You are welcome to review the <a href="https://infra.apache.org/mfa.html>draft MFA policy</a> and the related draft policy on <https://infra.apache.org/mfa-reset.html>resetting MFA if access has been lost</a>.
+You are welcome to review the <a href="https://infra.apache.org/mfa.html">draft MFA policy</a> and the related draft policy on <a href="https://infra.apache.org/mfa-reset.html">resetting MFA if access has been lost</a>.
 
 **Note**: If you are using GitHub, you must also use GitHub's MFA, which is separate from the Apache MFA. If you are having trouble logging in to GitHub (or some other service) or to Apache, make sure you are using the correct entries for the MFA in question.
 
