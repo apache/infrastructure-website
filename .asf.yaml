@@ -34,3 +34,10 @@ notifications:
   issues:               issues@infra.apache.org
   discussions:          issues@infra.apache.org
   pullrequests_bot_dependabot: notifications@infra.apache.org
+
+pelican:
+  notify:         notifications@infra.apache.org
+  autobuild:      preview/*
+  target:         asf-site
+  whoami:         master
+  
