@@ -22,7 +22,20 @@
         new PagefindUI({ element: "#page-404-search" });
     });
   }
-</script>  </head>
+</script>
+<!-- pagefind search box styling -->
+<style type="text/css">
+.search-form {
+	right: 0;
+	left: initial !important;
+        min-width: 25vw;
+	max-width: 90vw;
+	max-height: calc(95vh - 100px);
+	overflow: auto;
+	margin-top: 5px;
+}
+</style>
+  </head>
   <body class="d-flex flex-column h-100">
   <main class="flex-shrink-0">
       <div>
@@ -83,9 +96,9 @@
                 <li class="nav-item dropdown">
                   <a href="#" class="nav-link dropdown-toggle hidden-xs" data-bs-toggle="dropdown"><span class="fa-solid fa-magnifying-glass"
                   aria-hidden="true"></span> Search</a>
-              <ul class="dropdown-menu">
+              <ul class="search-form dropdown-menu">
                 <li>
-                  <div id="pagefind-search" class="dropdown-item input-group" style="min-width: 200px; width: 100%; padding: 0 5px;"></div>
+                  <div id="pagefind-search" class="input-group" style="width: 100%; padding: 0 5px;"></div>
                 </li>
               </ul>
             </li>
