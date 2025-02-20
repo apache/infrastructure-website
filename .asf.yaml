@@ -1,3 +1,6 @@
+meta:
+  nextgen: true
+
 staging:
   whoami: asf-break-test
   profile: ~
