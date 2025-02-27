@@ -119,7 +119,7 @@
 <p>For details on the use of requirement level terms, see the <a href="https://www.ietf.org/rfc/rfc2119.txt" target="_blank">requirements levels</a> standard.</p>
 <p>For additional advice on how to use this feature safely, see <a href="https://cwiki.apache.org/confluence/display/BUILDS/GitHub+Actions+Security" target="_blank">GitHub Actions Security</a>.</p>
 <h3>Resource use</h3>
-<p>Due to misconfigurations in their builds, some projects have been using unsupportable numbers of <a href="github-actions-secrets.html">GitHub Actions</a>. As part of fixing this situation, Infra has established a policy for GitHub Actions use. This section of the policy comes into effect on&nbsp;<strong>April 20, 2024</strong>:</p>
+<p>Due to misconfigurations in their builds, some projects have been using unsupportable numbers of <a href="github-actions-secrets.html">GitHub Actions</a>. As part of fixing this situation, Infra has established a policy for GitHub Actions use:</p>
 <ul>
 <li>All workflows&nbsp;<strong>MUST</strong>&nbsp;have a job concurrency level less than or equal to 20. This means a workflow cannot have more than 20 jobs running at the same time across all matrices.</li>
 <li>All workflows&nbsp;<strong>SHOULD</strong>&nbsp;have a job concurrency level less than or equal to 15. Just because 20 is the max, doesn't mean you should strive for 20.</li>
