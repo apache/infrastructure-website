@@ -21,16 +21,16 @@ Other contributors and interested parties (observers, former members, software e
 
   1. In the Slack app, click the "ASF" header at the top left.
   2. Select `Invite people to ASF`.
-  3. Use the`Single channel guests` option and, in the form that appears, provide the email addresses of the people you would like to invite to a specific channel.
+  3. Provide the email addresses of the people you would like to invite to specific channels.
+  4. Use the `Invite as` `Guest` option and, in the form that appears, specify the channels you want to invite them to.
 
-Infra has disabled the option that would let you provide a member invite link to the workspace to anyone who wanted it, as spammers were taking advantage of it. Projects can invite (single and multichannel guests) interested parties (via their `@dev` or `@users` lists or a note on their website) to send a request to join the channel either to the `@dev` list or to an email address the project specifies. The PMC can then extend an invitation to that person, if they choose. <a href="https://slack.com/help/articles/201330256-Invite-new-members-to-your-workspace" target="_blank">Slack has various ways to invite users to our workspace.</a>
+Infra has disabled the option that would let you provide a member invite link to the workspace to anyone who wanted it, as spammers were taking advantage of it. Projects can invite interested parties (via their `@dev` or `@users` lists or a note on their website) to send a request to join the channel either to the `@dev` list or to an email address the project specifies. The PMC can then extend an invitation to that person, if they choose. <a href="https://slack.com/help/articles/201330256-Invite-new-members-to-your-workspace" target="_blank">Slack has various ways to invite users to our workspace.</a>
 
 ### Slack Account Types
 
-Slack has three account types:
+Slack has two account types:
   - **Member**: has full access to all Slack's features, including inviting others to join the workspace.
-  - **Multi-Channel Guest**: has limited access inside Slack, but can join as many open channels as they wish. 
-  - **Single-Channel Guest**: can only access the channel they are invited to join.
+  - **Guest**: has limited access inside Slack and can only access the channel(s) they are invited to join.
 
 Slack has a list of <a href="https://slack.com/help/articles/201314026-Permissions-on-a-Slack-workspace" target="_blank">permissions</a> for these account types. 
 
