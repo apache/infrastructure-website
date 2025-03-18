@@ -1,7 +1,6 @@
 Title: CSP builder
 slug: tools/csp
 
-
 <script type="application/ecmascript">
   // These are reserved words, they can have single quotes around them. TODO: use them?
   const reserved_csp_words = ["'wasm-unsafe-eval'", "'unsafe-eval'", "'self'", "'unsafe-inline'", "'unsafe-hashes'", "'inline-speculation-rules'", "'strict-dynamic'", "'report-sample'", "'nonce-[a-f0-9]+'"]
