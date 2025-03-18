@@ -1,6 +1,3 @@
-meta:
-  nextgen: true
-
 staging:
   whoami: asf-break-test
   profile: ~
@@ -12,7 +9,6 @@ github:
   collaborators: []
   autolink_jira:
     - INFRA
-    - FOOTEST
   custom_subjects:
     new_issue: "{repository}/#{issue_id} created"
     close_issue: "{repository}/#{issue_id} closed"
