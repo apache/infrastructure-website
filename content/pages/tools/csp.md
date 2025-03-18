@@ -8,7 +8,7 @@ slug: tools/csp
   const standard_changed_elems = ["script-src", "style-src", "img-src"] // Standard headers we might want to edit
   // TODO: checkboxes for more advanced edits?
   async function make_csp(addl_host) {
-    const resp = await fetch("https://www.apache.org/CSPTEST", {method: 'HEAD'})
+    const resp = await fetch("/CSPTEST", {method: 'HEAD'})
     const current_csp = resp.headers.get("Content-Security-Policy")
     if (current_csp) {
       // Turn CSP into a dictionary of key -> list(values)
