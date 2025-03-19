@@ -2,18 +2,18 @@ Title: CSP builder
 slug: tools/csp
 
 <script type="application/ecmascript">
-  // These are reserved words, they can have single quotes around them. TODO: use them?
   const reserved_csp_words = ["'wasm-unsafe-eval'", "'unsafe-eval'", "'self'", "'unsafe-inline'", "'unsafe-hashes'", "'inline-speculation-rules'", "'strict-dynamic'", "'report-sample'", "'nonce-[a-f0-9]+'"]
-  const csp_entry_re = new RegExp(/(\s*(\S+)\s+(([^; ]+\s*)+);)/gim)  // Each CSP element follows this pattern
-  const standard_changed_elems = ["script-src", "style-src", "img-src"] // Standard headers we might want to edit
-  // TODO: checkboxes for more advanced edits?
+  const csp_entry_re = new RegExp(/(\s*(\S+)\s+(([^; ]+\s*)+);)/gim)
+  const standard_changed_elems = ["script-src", "style-src", "img-src"]
   async function make_csp(addl_host) {
-    const resp = await fetch("/", {method: 'HEAD'})
+    const rnd = Math.random().toString(20).substring(0, 8)
+    const resp = await fetch(`?csp-${rnd}`, {method: 'HEAD'})
     const current_csp = resp.headers.get("Content-Security-Policy")
+    current_csp.matchAll(csp_entry_re).map(x => {console.log(x[1], x[2])})
     if (current_csp) {
       // Turn CSP into a dictionary of key -> list(values)
       const csp_dict = Object.fromEntries(current_csp.matchAll(csp_entry_re).map(x => [x[2], x[3].split(/\s+/)]));
-      const res = document.getElementById("csp_result")
+      const res = document.getElementById("csp_log")
       res.innerText = "Current default rules:\n";
       for (const key in csp_dict) {
         res.innerText += `  ${key}: ${csp_dict[key].join(" ")}\n`
@@ -28,12 +28,13 @@ slug: tools/csp
         res.innerText += `  ${key}: ${csp_dict[key].join(" ")}\n`
         htaccess += `${key} ${csp_dict[key].join(" ")}; `
       }
-      document.getElementById("csp_htaccess_title").style.display = "block"
+      document.getElementById("csp_result").style.display = "block"
       const csptxt = document.getElementById("csp_htaccess");
-      csptxt.innerText += `Header Set Content-Security-Policy: ${htaccess}\n`
+      csptxt.innerText = `Header Set Content-Security-Policy: ${htaccess}\n`
     }
 
   }
+
 </script>
 
 ## CSP Editor
@@ -42,10 +43,17 @@ This tool allows you to create a custom Content-Security-Policy header for your 
 <form onsubmit="make_csp(document.getElementById('addl_host').value); return false;">
   Enter a web URL to add to your project's CSP header: <input type="text" id="addl_host">
 </form>
-<pre id="csp_result">
 
-</pre>
-<h4 id="csp_htaccess_title" style="display: none;">Suggested .htaccess contents for updated CSP:</h4>
-<pre id="csp_htaccess" style="color: orangered;">
+<!-- parser log -->
+<pre id="csp_log">
+  </pre>
+
+<!-- suggested output -->
+<div id="csp_result" style="display: none;">
+  <h4>Suggested .htaccess contents for updated CSP:</h4>
+  <pre id="csp_htaccess" style="color: darkslateblue; background-color: lightgoldenrodyellow; white-space: wrap; max-width: 800px;">
+  </pre>
+  <b>Note: This is a single line directive.</b>
+</div>
 
 </pre>
