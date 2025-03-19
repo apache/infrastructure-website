@@ -34,7 +34,6 @@ slug: tools/csp
     }
 
   }
-
 </script>
 
 ## CSP Editor
