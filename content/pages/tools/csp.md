@@ -38,7 +38,8 @@ slug: tools/csp
 </script>
 
 ## CSP Editor
-
+This tool allows you to create a custom Content-Security-Policy header for your project website.
+<hr/>
 <form onsubmit="make_csp(document.getElementById('addl_host').value); return false;">
   Enter a web URL to add to your project's CSP header: <input type="text" id="addl_host">
 </form>
