@@ -63,7 +63,6 @@ slug: tools/csp
 
 </script>
 <body onload="prime_boxes()">
-<h2>CSP Editor</h2>
 <p>This tool allows you to create a custom Content-Security-Policy header for your project website.</p>
 <h3>
   Attention: do not reconfigure CSP headers without prior express permission from either VP Data Privacy or the Infrastructure team.
