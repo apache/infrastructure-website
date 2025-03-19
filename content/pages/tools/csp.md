@@ -65,6 +65,10 @@ slug: tools/csp
 <body onload="prime_boxes()">
 <h2>CSP Editor</h2>
 <p>This tool allows you to create a custom Content-Security-Policy header for your project website.</p>
+<h3>
+  Attention: do not reconfigure CSP headers without prior express permission from either VP Data Privacy or the Infrastructure team.
+  See our <a href="https://privacy.apache.org/policies/website-policy.html">Website Privacy Policy</a> for a more in-depth rationale.
+</h3>
 <hr/>
 <form onsubmit="make_csp(document.getElementById('addl_host').value); return false;">
   Enter a web URL to add to your project's CSP header: <input id="addl_host" type="text" placeholder="https://some.hostname/"/><br/><br/>
