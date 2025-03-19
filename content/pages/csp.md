@@ -1,7 +1,7 @@
 Title: Content Security Policy for project websites 
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-This policy becomes effective **March 1, 2025**. 
+This policy came into effect March 1, 2025. 
 
 For your project's website:
 
