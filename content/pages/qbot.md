@@ -49,6 +49,9 @@ In Slack, there are three ways to talk to Qbot:
   - `help` - You see a list of the available commands: `qbot help`.
 
 ### Adding yourself to a private channel
+
+**Note**: For this command to work, you must have an `@apache.org` email address, and have used it to log into Slack. Basically, that means that the command is available to project committers and ASF Memvbers.
+
   - `addme`- Add yourself to a private channel. (Without Qbot, you have to ask someone already in the channel to add you.) You can make the command from anywhere in the ASF workspace. The syntax is `/qbot addme <NAME OF CHANNEL>`.
 
 ### Jira-related functions
