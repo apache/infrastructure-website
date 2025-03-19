@@ -37,6 +37,7 @@ slug: tools/csp
 
 </script>
 
+## CSP Editor
 
 <form onsubmit="make_csp(document.getElementById('addl_host').value); return false;">
   Enter a web URL to add to your project's CSP header: <input type="text" id="addl_host">
