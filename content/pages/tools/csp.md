@@ -4,6 +4,15 @@ slug: tools/csp
 <script type="application/ecmascript">
   const reserved_csp_words = ["'wasm-unsafe-eval'", "'unsafe-eval'", "'self'", "'unsafe-inline'", "'unsafe-hashes'", "'inline-speculation-rules'", "'strict-dynamic'", "'report-sample'", "'nonce-[a-f0-9]+'"]
   const csp_entry_re = new RegExp(/(\s*(\S+)\s+(([^; ]+\s*)+);)/gim)
+  const all_elements = [
+          "script-src",
+    "style-src",
+    "img-src",
+          "frame-ancestors",
+          "frame-src",
+          "worker-src",
+          "default-src"
+  ]
   const standard_changed_elems = ["script-src", "style-src", "img-src"]
   async function make_csp(addl_host) {
     const rnd = Math.random().toString(20).substring(0, 8)
@@ -22,7 +31,7 @@ slug: tools/csp
       res.innerText += "\n\nSuggested new rules:\n"
       let htaccess = "";
       for (const key in csp_dict) {
-        if (standard_changed_elems.includes(key)) {
+        if (document.getElementById(`chk_${key}`) && document.getElementById(`chk_${key}`).checked === true) {
           csp_dict[key].push(addl_host)
         }
         res.innerText += `  ${key}: ${csp_dict[key].join(" ")}\n`
@@ -35,19 +44,40 @@ slug: tools/csp
 
   }
 
-</script>
+  function prime_boxes() {
+    const wrapper = document.getElementById('sources');
+    for (const srcname of all_elements) {
+      const element_wrapper = document.createElement('div');
+      const chkbox = document.createElement('input');
+      chkbox.type = "checkbox";
+      chkbox.id = `chk_${srcname}`;
+      const label = document.createElement('label');
+      label.setAttribute("for", chkbox.id);
+      if (standard_changed_elems.includes(srcname)) chkbox.checked = true
+      label.innerHTML = `Add hostname to <kbd>${srcname}</kbd>`
+      element_wrapper.appendChild(chkbox);
+      element_wrapper.appendChild(label);
+      wrapper.appendChild(element_wrapper)
+    }
+  }
 
-## CSP Editor
-This tool allows you to create a custom Content-Security-Policy header for your project website.
+</script>
+<body onload="prime_boxes()">
+<h2>CSP Editor</h2>
+<p>This tool allows you to create a custom Content-Security-Policy header for your project website.</p>
 <hr/>
 <form onsubmit="make_csp(document.getElementById('addl_host').value); return false;">
-  Enter a web URL to add to your project's CSP header: <input type="text" id="addl_host">
-</form>
+  Enter a web URL to add to your project's CSP header: <input id="addl_host" type="text" placeholder="https://some.hostname/"/><br/><br/>
+  <hr/>
+  <div id="sources">
 
+  </div>
+  <br/><br/>
+  <input type="submit" value="Generate CSP header">
+</form>
 <!-- parser log -->
 <pre id="csp_log">
   </pre>
-
 <!-- suggested output -->
 <div id="csp_result" style="display: none;">
   <h4>Suggested .htaccess contents for updated CSP:</h4>
@@ -55,5 +85,4 @@ This tool allows you to create a custom Content-Security-Policy header for your 
   </pre>
   <b>Note: This is a single line directive.</b>
 </div>
-
-</pre>
+</body>
