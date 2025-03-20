@@ -494,7 +494,6 @@ user ID or other information.</p>
 <h3 id="find-key-id-otherwise">When you do not have the secret key<a class="headerlink" href="#find-key-id-otherwise" title="Permanent link">&para;</a></h3>
 <p>Unless you have the <a href="release-signing.html#public-private">private key</a> or a <a href="release-signing.html#fingerprint">fingerprint</a>, the only safe way to find the key ID is to ask the owner of the key, using a secure communication channel.</p>
 <p>Trusting that an import contains only the owner's public key is <strong>not recommended</strong>. The import may contain additional public keys (intentionally or not). So, when using an import, always verify the key ID of interest from another source.</p>
-<p>For example, a <a href="http://home.apache.org/~rdonkin/" target="_blank">web page with an embedded export</a> should also list the key IDs of interest.</p>
 <h2 id="backup">How to back up keys<a class="headerlink" href="#backup" title="Permanent link">&para;</a></h2>
 <h3 id="backup-public">Back up public information<a class="headerlink" href="#backup-public" title="Permanent link">&para;</a></h3>
 <p>The <a href="release-signing.html#key-id">key ID</a> is not confidential but without access to this information from a trusted source, substitution attacks are <a href="release-signing.html#infeasible">feasible</a> (see this <a href="#find-key-id">discussion</a>).</p>
