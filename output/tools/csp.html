@@ -132,10 +132,10 @@
     const rnd = Math.random().toString(20).substring(0, 8)
     const resp = await fetch(`?csp-${rnd}`, {method: 'HEAD'})
     const current_csp = resp.headers.get("Content-Security-Policy")
-    current_csp.matchAll(csp_entry_re).map(x => {console.log(x[1], x[2])})
     if (current_csp) {
+      Array.from(current_csp.matchAll(csp_entry_re)).forEach(x => {console.log(x[1], x[2])})
       // Turn CSP into a dictionary of key -> list(values)
-      const csp_dict = Object.fromEntries(current_csp.matchAll(csp_entry_re).map(x => [x[2], x[3].split(/\s+/)]));
+      const csp_dict = Object.fromEntries(Array.from(current_csp.matchAll(csp_entry_re)).map(x => [x[2], x[3].split(/\s+/)]));
       const res = document.getElementById("csp_log")
       res.innerText = "Current default rules:\n";
       for (const key in csp_dict) {
