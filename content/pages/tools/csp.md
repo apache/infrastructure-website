@@ -6,8 +6,8 @@ slug: tools/csp
   const csp_entry_re = new RegExp(/(\s*(\S+)\s+(([^; ]+\s*)+);)/gim)
   const all_elements = [
           "script-src",
-    "style-src",
-    "img-src",
+          "style-src",
+          "img-src",
           "frame-ancestors",
           "frame-src",
           "worker-src",
