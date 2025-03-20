@@ -2,8 +2,19 @@ Title: CSP builder
 slug: tools/csp
 
 <script type="application/ecmascript">
-  const reserved_csp_words = ["'wasm-unsafe-eval'", "'unsafe-eval'", "'self'", "'unsafe-inline'", "'unsafe-hashes'", "'inline-speculation-rules'", "'strict-dynamic'", "'report-sample'", "'nonce-[a-f0-9]+'"]
+  const reserved_csp_words = [ // TODO: not yet used
+    "'wasm-unsafe-eval'",
+    "'unsafe-eval'",
+    "'self'",
+    "'unsafe-inline'",
+    "'unsafe-hashes'",
+    "'inline-speculation-rules'",
+    "'strict-dynamic'",
+    "'report-sample'",
+    "'nonce-[a-f0-9]+'",
+  ]
   const csp_entry_re = new RegExp(/(\s*(\S+)\s+(([^; ]+\s*)+);)/gim)
+  // The following list must include all elements in the default CSP
   const all_elements = [
           "script-src",
           "style-src",
@@ -11,7 +22,13 @@ slug: tools/csp
           "frame-ancestors",
           "frame-src",
           "worker-src",
-          "default-src"
+          "default-src",
+          "connect-src",
+          "font-src",
+          "object-src",
+          "media-src",
+          "child-src",
+          "form-action",
   ]
   const standard_changed_elems = ["script-src", "style-src", "img-src"]
   async function make_csp(addl_host) {
@@ -30,6 +47,12 @@ slug: tools/csp
 
       res.innerText += "\n\nSuggested new rules:\n"
       let htaccess = "";
+      // merge any new keys not in the original
+      for (const key of all_elements) {
+        if (!(key in csp_dict) && document.getElementById(`chk_${key}`) && document.getElementById(`chk_${key}`).checked === true) {
+          csp_dict[key] = [] // originally empty, value is added below
+        }
+      }
       for (const key in csp_dict) {
         if (document.getElementById(`chk_${key}`) && document.getElementById(`chk_${key}`).checked === true) {
           csp_dict[key].push(addl_host)
@@ -40,6 +63,8 @@ slug: tools/csp
       document.getElementById("csp_result").style.display = "block"
       const csptxt = document.getElementById("csp_htaccess");
       csptxt.innerText = `Header Set Content-Security-Policy: ${htaccess}\n`
+    } else {
+      alert("Unable to determine default CSP settings")
     }
 
   }
