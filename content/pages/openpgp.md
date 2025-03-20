@@ -481,8 +481,6 @@ Unless you have the [private key](release-signing.html#public-private) or a [fin
 
 Trusting that an import contains only the owner's public key is **not recommended**. The import may contain additional public keys (intentionally or not). So, when using an import, always verify the key ID of interest from another source.
 
-For example, a <a href="http://home.apache.org/~rdonkin/" target="_blank">web page with an embedded export</a> should also list the key IDs of interest. 
-
 <h2 id="backup">How to back up keys<a class="headerlink" href="#backup" title="Permanent link">&para;</a></h2>
 
 <h3 id="backup-public">Back up public information<a class="headerlink" href="#backup-public" title="Permanent link">&para;</a></h3>
