@@ -40,7 +40,7 @@ Infra maintains a wide range of tools for PMCs, project committers, and the Apac
   - <a href="https://infra-reports.apache.org/site-source/">ASF project website sources</a>
   - An index of <a href="https://projects.apache.org/projects.html?name" target="_blank">all ASF projects</a> (if they have set up a DOAP).
   - Any ASF project can use the [ASF-Pelican template](asf-pelican.html) as the basis for their project website.
-  - Details about individual <a href="https://home.apache.org/" target="_blank">ASF Committers</a>.
+  - Details about individual <a href="https://people.apache.org/" target="_blank">ASF Committers</a>.
   - Notes about committers' <a href="/new-committers-guide.html#public_html" target="_blank">personal web spaces</a>.
   - The <a href="https://whimsy.apache.org/site/" target="_blank">Apache Project Website Checker</a> periodically reviews all TLP websites and reports whether they comply with Apache's <a href="https://www.apache.org/foundation/marks/pmcs#navigation" target="_blank">policies for TLP websites</a>.
   

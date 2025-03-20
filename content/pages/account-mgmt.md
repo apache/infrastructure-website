@@ -18,7 +18,7 @@ Log in to <a href="https://whimsy.apache.org/" target="_blank">Whimsy</a> and, i
 If you forgot your password, try...
 
   1. to reset it at <a href="https://id.apache.org/reset/enter" target="_blank">id.apache.org/reset/enter</a>. That will email to
-your `@apache.org` address (which forwards to your non-apache email account) a short-lived password reset link. The link may be encrypted to <a href="https://home.apache.org/keys/committer/" target="_blank">your PGP key</a>.
+your `@apache.org` address (which forwards to your non-apache email account) a short-lived password reset link. The link may be encrypted to <a href="https://people.apache.org/keys/committer/" target="_blank">your PGP key</a>.
   1. decrypting the e-mail - one way to do this is to save the e-mail contents as a text file, e.g. `password.txt`. Open a shell command window, and run the following command:
 
 ```

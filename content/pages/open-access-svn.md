@@ -24,7 +24,7 @@ ability (but not the social privilege) to make commits against any part of the `
   - Increases leverage for abusive behavior, though this is mitigated by the relative ease by which bad commits can be reverted via reverse-merging, or, for more invasive changes, plastering over them by deleting the entire tree and copying the last known good revision to HEAD. This only starts getting complicated when good commits start being mingled with bad ones.
   - One hacked account can damage all of `/repos/asf` (disregard for basic tenet of security: provide access only to those who require it and only to the bare minimum of what they need).
   - May lead to confusion about the distinction between technical and social privileges.
-  - No single usable accounting of who on a PMC has commit permissions. Impact on non SVN-related resources for PMC and foundation (example: `https://home.apache.org/committer-index.html`). 
+  - No single usable accounting of who on a PMC has commit permissions. Impact on non SVN-related resources for PMC and foundation (example: `https://people.apache.org/committer-index.html`). 
   - Increases workload on PMCs and volunteer committers.
   - Creates a precedent where the foundation imposes its will on PMCs for no clearly defined or overwhelming reason (also technically untrue as allowances will be made for grandfathering projects).
 
