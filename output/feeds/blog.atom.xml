@@ -1,5 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Apache Infrastructure Website - blog</title><link href="https://infra.apache.org/" rel="alternate"></link><link href="https://infra.apache.org/feeds/blog.atom.xml" rel="self"></link><id>https://infra.apache.org/</id><updated>2025-02-25T00:00:00+00:00</updated><subtitle></subtitle><entry><title>Inside Infra February 2025</title><link href="https://infra.apache.org/blog/newsletter_02_25.html" rel="alternate"></link><published>2025-02-25T00:00:00+00:00</published><updated>2025-02-25T00:00:00+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2025-02-25:/blog/newsletter_02_25.html</id><summary type="html">&lt;h2&gt;Roundtable&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Apache Infrastructure Website - blog</title><link href="https://infra.apache.org/" rel="alternate"></link><link href="https://infra.apache.org/feeds/blog.atom.xml" rel="self"></link><id>https://infra.apache.org/</id><updated>2025-03-27T00:00:00+00:00</updated><subtitle></subtitle><entry><title>Inside Infra March 2025</title><link href="https://infra.apache.org/blog/newsletter-03-25.html" rel="alternate"></link><published>2025-03-27T00:00:00+00:00</published><updated>2025-03-27T00:00:00+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2025-03-27:/blog/newsletter-03-25.html</id><summary type="html">&lt;p&gt;Welcome to &lt;strong&gt;Inside Infra&lt;/strong&gt; for March, 2025&lt;/p&gt;
+&lt;p&gt;The next &lt;strong&gt;Infra roundtable&lt;/strong&gt; will be &lt;strong&gt;Wednesday, April 2, 2025, 1700 UTC&lt;/strong&gt;. This will be an "ask us anything" day, so feel free to bring any infrastructure issue that you find interesting/puzzling/scary.&lt;/p&gt;
+&lt;p&gt;For details about how to join a roundtable, and …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Welcome to &lt;strong&gt;Inside Infra&lt;/strong&gt; for March, 2025&lt;/p&gt;
+&lt;p&gt;The next &lt;strong&gt;Infra roundtable&lt;/strong&gt; will be &lt;strong&gt;Wednesday, April 2, 2025, 1700 UTC&lt;/strong&gt;. This will be an "ask us anything" day, so feel free to bring any infrastructure issue that you find interesting/puzzling/scary.&lt;/p&gt;
+&lt;p&gt;For details about how to join a roundtable, and what happens at it, see &lt;a href="https://infra.apache.org/roundtable.html" target="_blank"&gt;infra.apache.org/roundtable.html&lt;/a&gt;&lt;/p&gt;
+&lt;h2&gt;GHA allowlist&lt;/h2&gt;
+&lt;p&gt;Infra and a team of volunteers have been developing an automated self-serve solution that will enable Dependabot to scan our allowlist approved GitHub Actions, as well as help projects add third-party Actions to the list.&lt;/p&gt;
+&lt;p&gt;The team is debugging the complex flow of commits and action triggers to our pubsub-based watcher service. For the moment, you still need to submit a Jira ticket to Infra if you want to add an Action to the allowlist.&lt;/p&gt;
+&lt;p&gt;Remaining tasks include&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;dependabot update bundling&lt;/li&gt;
+&lt;li&gt;watcher service re-scanning&lt;/li&gt;
+&lt;li&gt;polishing up workflow triggers&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;If you are interested in following this work more closely, or contributing to it, please join our email list (&lt;code&gt;ghactions@infra.apache.org&lt;/code&gt;) and/or the &lt;strong&gt;#asf-ghactions&lt;/strong&gt; channel in the the-apache space on Slack.&lt;/p&gt;
+&lt;h2&gt;GitHub Discussions&lt;/h2&gt;
+&lt;p&gt;Projects that are using GitHub Discussions and have suddenly found that feature is missing. Please see &lt;a href="https://github.com/apache/infrastructure-asfyaml?tab=readme-ov-file#repo_features" target="_blank"&gt;github.com/apache/infrastructure-asfyaml?tab=readme-ov-file#repo_features&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;GitHub Discussions are now managed entirely through .asf.yaml, and will default to being disabled unless your project enables them in your .asf.yaml file. If you do not have a valid 'discussions' entry in the notifications section in the configuration, that will also disable GitHub Discussions.&lt;/p&gt;
+&lt;p&gt;To enable Discussions, include these settings into the .asf.yaml file in your default branch:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;notifications:
+   discussions: issues@foo.apache.org  (use your own mailing list name here)
+...
+github:
+   features:
+     discussions: true
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;Jobs!&lt;/h2&gt;
+&lt;p&gt;The Apache Software Foundation (ASF) is seeking an Infrastructure Systems Administrator who will contribute to the stability, security, and growth of its globally-distributed infrastructure. The successful candidate will demonstrate strong system administration skills in diverse environments, proven experience with open source tools and methodologies, and a deep understanding of F/OSS project dynamics. This role is 100% remote, but availability for once-yearly travel to the United States for a multi-day Team Meetup is highly encouraged. The candidate must be based in the UK or Europe. Applicants from nations embargoed or sanctioned by the United States cannot be accepted. Salary commensurate with experience.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://www.indeed.com/job/infrastructure-systems-administrator-036d1005bc664243" target="_blank"&gt;indeed.com/job/infrastructure-systems-administrator-036d1005bc664243" target="_blank"&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;More next month!&lt;/strong&gt;&lt;/p&gt;
+</content><category term="blog"></category></entry><entry><title>Inside Infra February 2025</title><link href="https://infra.apache.org/blog/newsletter_02_25.html" rel="alternate"></link><published>2025-02-25T00:00:00+00:00</published><updated>2025-02-25T00:00:00+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2025-02-25:/blog/newsletter_02_25.html</id><summary type="html">&lt;h2&gt;Roundtable&lt;/h2&gt;
 &lt;b&gt;The February roundtable&lt;/b&gt; took place&amp;nbsp;Wednesday, February 5, 2025. The main topic was creation, review and management of &lt;b&gt;custom GitHub Actions&lt;/b&gt; that projects can use in their compile and build processes, and the self-serve way to add custom GitHub Actions to the GHA Allowlist.
 &lt;p&gt;There is now a management …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Roundtable&lt;/h2&gt;
 &lt;b&gt;The February roundtable&lt;/b&gt; took place&amp;nbsp;Wednesday, February 5, 2025. The main topic was creation, review and management of &lt;b&gt;custom GitHub Actions&lt;/b&gt; that projects can use in their compile and build processes, and the self-serve way to add custom GitHub Actions to the GHA Allowlist.
