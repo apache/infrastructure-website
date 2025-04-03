@@ -4,6 +4,9 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 ### Request a change to the main ASF website
 The Marketing and Publicity (M&P) committee is responsible for the main ASF website. The source for the website is at <a href="https://github.com/apache/www-site" target="_blank">github.com/apache/www-site</a>. You can create an Issue there to state what you think should change, and what you propose the change to be.
 
+### You think your IP address has been blocked
+If you cannot access one or more ASF repositories or services, your IP address may have been blocked. Before contacting Infra, review <a href="https://infra.apache.org/abc/" targeet="_blank">Abuse and Connectivity Issues at the ASF</a> (ABC). The page lists the common overuse (or abuse) issues that affect our site's work and cause an automatic IP address block, and recommends steps to get such a block removed. ABC also provides a channel to contact Infra if you need more information than the page provides.
+
 ### Request a change to the Infrastructure website
 The source for this website is at <a href="https://github.com/apache/infrastructure-website" target="_blank">github.com/apache/infrastructure-website</a>. You can create an Issue there to state what you think should change, and what you propose the change to be.
 
