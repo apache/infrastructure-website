@@ -176,7 +176,7 @@
       }
       document.getElementById("csp_result").style.display = "block"
       const csptxt = document.getElementById("csp_htaccess");
-      csptxt.innerText = `Header Set Content-Security-Policy: ${htaccess}\n`
+      csptxt.innerText = `Header Set Content-Security-Policy "${htaccess}"\n`
     } else {
       alert("Unable to determine default CSP settings")
     }
