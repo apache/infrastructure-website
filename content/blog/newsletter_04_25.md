@@ -18,6 +18,8 @@ The April roundtable was an 'open mic' session, to which people were encouraged 
 
 There is **no roundtable in May**. The next roundtable will be **Wednesday, June 4, 2025, 1700 UTC**. The main topic will be a presentation on **JFrog and Artifactory**, a universal binary repository manager that enables teams to store, manage, and organize software packages throughout the development lifecycle.
 
+<a href="https://infra.apache.org/roundtable.html" target="_blank">How to take part in a Roundtable</a>
+
 ### .asf.yaml improvements
 
 Recent enhancements to .asf.yaml make it easier for projects to manage their development environments, including:
