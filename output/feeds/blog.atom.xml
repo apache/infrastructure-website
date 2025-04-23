@@ -16,6 +16,7 @@
 &lt;li&gt;how to find out if the ASF has blocked your IP address, and why (see below)&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;There is &lt;strong&gt;no roundtable in May&lt;/strong&gt;. The next roundtable will be &lt;strong&gt;Wednesday, June 4, 2025, 1700 UTC&lt;/strong&gt;. The main topic will be a presentation on &lt;strong&gt;JFrog and Artifactory&lt;/strong&gt;, a universal binary repository manager that enables teams to store, manage, and organize software packages throughout the development lifecycle.&lt;/p&gt;
+&lt;p&gt;&lt;a href="https://infra.apache.org/roundtable.html" target="_blank"&gt;How to take part in a Roundtable&lt;/a&gt;&lt;/p&gt;
 &lt;h3&gt;.asf.yaml improvements&lt;/h3&gt;
 &lt;p&gt;Recent enhancements to .asf.yaml make it easier for projects to manage their development environments, including:&lt;/p&gt;
 &lt;ul&gt;
