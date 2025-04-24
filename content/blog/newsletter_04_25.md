@@ -25,7 +25,7 @@ There is **no roundtable in May**. The next roundtable will be **Wednesday, June
 Recent enhancements to .asf.yaml make it easier for projects to manage their development environments, including:
 
   - identifying required reviewers for the release
-  - create a display between when you trigger a build and when the build process actually starts
+  - create a display between when you trigger a deployment and when the deployment process actually starts
   - an option to allow deploying from all protected branches
   - improvements to the branch and tagging processes
 
