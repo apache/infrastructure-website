@@ -21,7 +21,7 @@
 &lt;p&gt;Recent enhancements to .asf.yaml make it easier for projects to manage their development environments, including:&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;identifying required reviewers for the release&lt;/li&gt;
-&lt;li&gt;create a display between when you trigger a build and when the build process actually starts&lt;/li&gt;
+&lt;li&gt;create a display between when you trigger a deployment and when the deployment process actually starts&lt;/li&gt;
 &lt;li&gt;an option to allow deploying from all protected branches&lt;/li&gt;
 &lt;li&gt;improvements to the branch and tagging processes&lt;/li&gt;
 &lt;/ul&gt;
