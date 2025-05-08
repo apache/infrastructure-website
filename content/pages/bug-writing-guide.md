@@ -20,7 +20,7 @@ For the purposes of this discussion, we'll call any issue, from a calculation er
 ASF has two bug-tracking systems:
 
   - <a href="https://issues.apache.org/jira/" target="_blank">Jira</a>
-  - <a href="https://issues.apache.org/bugzilla/" target="_blank">Bugzilla</a>
+  - <a href="https://bz.apache.org/" target="_blank">Bugzilla</a>
   
 Infra itself uses Jira. To submit a ticket for Infra, search for the INFRA project.
 
