@@ -8,7 +8,7 @@ Apple has granted a fee-waiver to participants in Apache Software Foundation pro
 To join the Apple Developer Program as part of the ASF, committers must:
 
   - create an Apple ID using their @apache.org e-mail address
-  - create an INFRA Jira ticket under the code-signing component to request that Infra add them to the list of ASF participants
+  - create an [INFRA Jira](https://issues.apache.org/jira/projects/INFRA/issues/) ticket under the code-signing component to request that Infra add them to the list of ASF participants
   - read the latest Apple Developer Program Agreement
   - confirm, once Infra has added their name to the participants' list, that they have read, understood and agree to abide by the terms of the Apple Developer Program Agreement
  
