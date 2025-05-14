@@ -1,6 +1,8 @@
 Title: Slack for ASF projects
 license: https://www.apache.org/licenses/LICENSE-2.0
 
+**note**: Please review the [Policy for using ASF Slack](slack-policy.html) before setting up a project channel or starting conversation threads.
+
 The Apache Software Foundation has a workspace on <a href="https://the-asf.slack.com/" target="_blank">Slack</a> to provide channels on which people working on the same ASF project, or in the same area of the Foundation, can discuss issues, solve problems, and build community in real-time.
 
 A thread in a Slack channel can be a great place to work through a knotty question and move toward consensus. **However**, coming to agreement about something on Slack does not mean the PMC has agreed to or approved something. All formal PMC decisions should take place in one of the project's email lists, so we all have an audit trail of who decided what, and when.
@@ -83,12 +85,4 @@ If there is information on a private channel that the channel members, **without
   3. Save the summary document to your project wiki or some other accessible space and use the "add a bookmark" tool at the top of the public channel display to provide a link to the document so readers can find it easily.
 
 ## Qbot
-The Infrastructure team's Qbot is a Slack assistant that can simplify both important and frivolous tasks on Slack channels in the the-asf workspace. It can support requests in channels for PMCs, ASF committees, the ASF Board and ASF Members.
-
-[Learn more here](qbot.html)
-
-## Expectations
-
-As with all ASF activities, we expect ASF Members and project participants to conduct themselves according to the ASF <a href="https://www.apache.org/foundation/policies/conduct.html" target="_blank">Code of Conduct</a>. 
-
-We expect channel participants to be respectful and supportive of other participants, and to make contributions that add to the conversation, rather than blurring it. If a participant makes contributions that are disrespectful, offensive, or contrary in other ways to The Apache Way, please report them to Infra.
+The Infrastructure team's Qbot is a Slack assistant that can simplify both important and frivolous tasks on Slack channels in the the-asf workspace. It can support requests in channels for PMCs, ASF committees, the ASF Board and ASF Members. [Learn more here](qbot.html).
