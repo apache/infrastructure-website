@@ -10,6 +10,7 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 - [Dealing with spam in your ASF email account](spam-reporting.html)
 - [Password requirements](password-policy.html)
 - [Policy on issues in third-party services](third-party-policy.html)
+- [Policy for using ASF Slack](slack-policy.html)
 
 ## Projects
 
