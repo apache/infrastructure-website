@@ -18,3 +18,6 @@ The ASF put the requirement to have an ASF Jira account in place for two reasons
 In general, if the request seems valid--all fields are filled in with appropriate information, the reason for the account does not seem suspicious (or machine-written), and the reason given is not about a security vulnerability (see above)--approve it. Do not worry too much about increasing the number of ASF Jira accounts, as Infra is working on addressing that issue in other ways than rejecting valid requests.
 
 If you are in doubt, consult with colleagues on your PMC.
+
+## Inactive accounts
+Infra may disable or remove accounts that show no activity over a long period of time. See [Jira acccount retention policy](jira-account-retention-policy.html).
