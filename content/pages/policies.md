@@ -39,7 +39,10 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 - [Backups](backup-policy.html) for systems and content
 - [Operating system upgrades](os-upgrade-policy.html)
 - [Virtual machines for projects](vm-policy.html)
-- [Approving Jira account requests](jira-approve-account.html)
+- Jira
+
+  - [Approving Jira account requests](jira-approve-account.html)
+  - [Jira account retention policy](jira-account-retention-policy.html)
 
 ## Infrastructure team
 The Apache Infrastructure Team (Infra) operates under the <a href="https://www.apache.org/foundation/policies/conduct.html" target="_blank">ASF Code of Conduct</a>.
