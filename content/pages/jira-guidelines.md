@@ -8,7 +8,7 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 Anyone can review existing Jira tickets, or issues. You must register and log in if you want to create, comment or vote on, upload attachments to, or watch issues. Only <a href="https://www.apache.org/foundation/how-it-works.html#committers" target="_blank">committers</a> can edit, prioritize, schedule and resolve issues.
 
-ASF and many of its projects use Jira to keep track of work to be done. The largest group of tickets assigned to Infra are requests for Infra to perform a task of one sort or another. The next largest category is reports of possible bugs in the Infrastructure system.
+The ASF and many of its projects use Jira to keep track of work to be done. The largest group of tickets assigned to Infra are requests for Infra to perform a task of one sort or another. The next largest category is reports of possible bugs in the Infrastructure system.
 
 
 <ul>
