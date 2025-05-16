@@ -1,4 +1,4 @@
-Title: ASF policy on Jira account retention
+Title: Policy on Jira account retention
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 Over the years, The ASF has accumulated, on top of Jira accounts created by ASF Members and committers, a huge number of Jira accounts created primarily by people who want to submit a ticket for one of our many projects. Most of these accounts don't see reuse after the issue the person wanted to report is resolved, and the account becomes inactive.
