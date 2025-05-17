@@ -18,6 +18,6 @@ These guidelines relate to Infra policies on resource consumption, linking, lega
 - All web sites must be available on ASF's git or svn servers, and published using git- or pypubsub.
 - Do not host source releases or convenience binaries directly on the web site. See [Release download pages for projects](release-download-pages.html).
 
-**Note**: Any ASF project can use the ASF **Infrastructure Pelican Action** GitHub Action to compile and deploy its website. The repository for this GHA is <a href="https//:github.com/apache/infrastructure-actions/tree/main/pelican" target="_blank">github.com/apache/infrastructure-actions/tree/main/pelican</a>. 
+**Note**: Any ASF project can use the ASF **Infrastructure Pelican Action** GitHub Action to compile and deploy its website. The repository for this GHA is <a href="https://github.com/apache/infrastructure-actions/tree/main/pelican" target="_blank">github.com/apache/infrastructure-actions/tree/main/pelican</a>. 
 
 Should you have any questions, feel free to contact us at <a href="mailto:infrastructure@apache.org" target="_blank">infrastructure@apache.org</a> or on our <a href="https://the-asf.slack.com" target="_blank">Slack channel</a>.
