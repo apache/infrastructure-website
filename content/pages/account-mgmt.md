@@ -56,4 +56,4 @@ Occasionally we need to remove an account - either by request or because the com
 
 In practice, we almost never actually remove an LDAP account; we just remove the committer from all LDAP groups and mailing lists they have belonged to.
 
-An exception would be responding to a GDPR/PII request by a committer. If you wish to make such a request, open an Infra Jira ticket, state the circumstances, and provide your account information (not the password).
+An exception would be responding to a GDPR/PII request by a committer. If you wish to make such a request, open an [Infra Jira](https://issues.apache.org/jira/projects/INFRA/issues/) ticket, state the circumstances, and provide your account information (not the password).
