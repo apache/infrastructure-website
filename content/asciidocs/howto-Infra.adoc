@@ -38,12 +38,11 @@ We enforce the policy created by members, committers, the board, us, gnomes, pon
 == How to Communicate With Us
 
 === Methods of Contact
-* Jira tickets
+* Jira tickets (https://issues.apache.org/jira/projects/INFRA/issues/)
 * Mailing lists (users@infra.apache.org)
 * Slack channel (#asfinfra)
 * Roundtables
 * Community Over Code Conference
-* Carrier Pigeon
 
 === Communication is a Two-way Street
 * Able and willing to discuss rationale
@@ -61,4 +60,5 @@ We enforce the policy created by members, committers, the board, us, gnomes, pon
   - Slack	
   - users@infra.apache.org
   - builds@apache.org (for builds stuff)
+  - https://issues.apache.org/jira/projects/INFRA/issues/
   - Roundtables
