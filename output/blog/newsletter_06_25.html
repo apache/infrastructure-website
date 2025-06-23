@@ -1,0 +1,185 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inside Infra June 2025 - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>
+<!-- pagefind search -->
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+      new PagefindUI({ element: "#pagefind-search" });
+  });
+  var pageTitle = '';
+  if(pageTitle === '404'){
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#page-404-search" });
+    });
+  }
+</script>
+<!-- pagefind search box styling -->
+<style type="text/css">
+.search-form {
+	right: 0;
+	left: initial !important;
+        min-width: 25vw;
+	max-width: 90vw;
+	max-height: calc(95vh - 100px);
+	overflow: auto;
+	margin-top: 5px;
+}
+</style>
+  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Infra docs</a></li>
+                        <li><a class="dropdown-item" href="/present.html">Infra presentations</a></li>
+                    </ul>
+                </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Contribute</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle hidden-xs" data-bs-toggle="dropdown"><span class="fa-solid fa-magnifying-glass"
+                  aria-hidden="true"></span> Search</a>
+              <ul class="search-form dropdown-menu">
+                <li>
+                  <div id="pagefind-search" class="input-group" style="width: 100%; padding: 0 5px;"></div>
+                </li>
+              </ul>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav><!-- breadcrumbs -->
+<div class="card" style="height: 34px;">
+    <nav aria-label="breadcrumb"  style="padding-left: 12px; padding-top: 4px;">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+
+            <li class="breadcrumb-item active"><a href="/blog/newsletter_06_25.html">
+Inside Infra June 2025            </a></li>
+
+            <li class="breadcrumb-item active">(<a href="https://github.com/apache/infrastructure-website/tree/master/content/blog/newsletter_06_25.md">edit</a>)</li>
+
+        </ol>
+    </nav>
+</div>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Inside Infra June 2025
+          </h1>
+              <p>Posted on: 2025-06-23 00:00:00+00:00</p>
+              <p><strong>Welcome to Inside Infra for June, 2025</strong></p>
+<h2>Roundtable</h2>
+<p>Discussions at the June Roundtable covered, among other things:</p>
+<ul>
+<li>Misuse of GitHub Actions. Projects are using, and sometimes force-pushing, tags, rather than SHAs. While there are GHA linters that can help identify problems, we should move actively to encourage projects to stop using tags in GHAs, and only use SHAs. There was discussion of the possibility of applying some sort of seal of approval on custom GHAs that comply with this requirement.</li>
+<li>Creating a checklist or scorecard to encourage creators to bring their custom GHAs into compliance with our requirements.</li>
+<li>Review of progress on repository.a.o, and Tooling's progress on the Apache Trusted Release platform.</li>
+<li>What PMCs can use as a password manager (at the moment, only a private repo on SVN or Git).</li>
+<li>Complete notes from the meeting are at Infra Roundtable 2025-06-04 1700 UTC</li>
+</ul>
+<p>The next roundtable will be <strong>Wednesday, July 2, 1700 UTC</strong>. Infra will pull a number of coming-soon improvements out of its hat for discussion.</p>
+<p>Information about how to take part in a roundtable is at <a href="https://infra.apache.org/roundtable.html" target="_blank">infra.apache.org/roundtable.html</a>.</p>
+<h2>Uptick in IP bans due to 404 errors on repository.apache.org</h2>
+<p>Infra is seeing a significant increase in the number of IP bans placed by our automated block system, Blocky. These are largely due to incorrectly configured Maven builds or Artifactory systems using <code>repository.apache.org</code> as a primary repository.</p>
+<p><code>repository.apache.org</code> is not a general-purpose Maven repository, and should only be used by ASF Committers to test pre-production ASF code artifacts. <a href="https://mvnrepository.com/repos/central" target="_blank">Maven Central</a> is the correct public Java artifact service.</p>
+<p>In addition, the Maven project identified an issue where repository.apache.org was incorrectly included in the Apache Parent POM. Downstream users should upgrade their parent POM to avoid this issue.</p>
+<p>For further information, see: <a href="https://issues.apache.org/jira/browse/MPOM-451" target="_blank">issues.apache.org/jira/browse/MPOM-451</a>.</p>
+<p>If you believe your IP has been blocked, you can check your connectivity status via <a href="https://infra.apache.org/abc/" target="_blank">infra.apache.org/abc</a>.</p>
+<h2>Bugzilla</h2>
+<p>Due to a significant increase in abuse, largely driven by AI scraping, the ASF Bugzilla instance is now only available to <strong>authenticated users</strong>. To use it, log in with your ASF credentials.</p>
+<h2>GitHub Actions compliance deadline</h2>
+<p>Infra received this message from GitHiub:</p>
+<pre><code>The Windows Server 2019 runner image will be fully unsupported by June 30, 2025.
+To raise awareness of the upcoming removal, we will temporarily fail jobs using Windows Server 2019.
+Builds that are scheduled to run during the brownout periods will fail.
+The brownouts are scheduled for the following dates and times:
+ 
+June 17 13:00-21:00 UTC
+June 24 13:00-21:00 UTC
+ 
+What you need to do
+ 
+Jobs using the windows-2019 YAML workflow label should be updated to windows-2022, windows-2025 or windows-latest.
+You can always get up-to-date information on our tools by reading about the software in the runner images repository.
+Please contact GitHub Support if you run into any problems or need help. 
+</code></pre>
+<h2>The whitespace kick trick</h2>
+<p>If a build fails, sometimes it does not restart even after you have fixed the issue that caused it to fail. A trick that often works is to add a whitespace at the end of any line of code and commit that updated file to get the build to start again. If this fails, contact Infra</p>
+<p>Infra is working on a new flow of events for builds that will improve stability and observability; we will let the world know when it is in place.</p>
+<p><strong>More next month!</strong></p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache feather logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>  </main>
+  </body>
+</html>

@@ -1,5 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom"><title>Apache Infrastructure Website</title><link href="https://infra.apache.org/" rel="alternate"></link><link href="https://infra.apache.org/feeds/all-en.atom.xml" rel="self"></link><id>https://infra.apache.org/</id><updated>2025-05-23T00:00:00+00:00</updated><subtitle></subtitle><entry><title>Inside Infra May 2025</title><link href="https://infra.apache.org/blog/newsletter_05_25.html" rel="alternate"></link><published>2025-05-23T00:00:00+00:00</published><updated>2025-05-23T00:00:00+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2025-05-23:/blog/newsletter_05_25.html</id><summary type="html">&lt;h2&gt;Welcome to Inside Infra for May, 2025&lt;/h2&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title>Apache Infrastructure Website</title><link href="https://infra.apache.org/" rel="alternate"></link><link href="https://infra.apache.org/feeds/all-en.atom.xml" rel="self"></link><id>https://infra.apache.org/</id><updated>2025-06-23T00:00:00+00:00</updated><subtitle></subtitle><entry><title>Inside Infra June 2025</title><link href="https://infra.apache.org/blog/newsletter_06_25.html" rel="alternate"></link><published>2025-06-23T00:00:00+00:00</published><updated>2025-06-23T00:00:00+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2025-06-23:/blog/newsletter_06_25.html</id><summary type="html">&lt;p&gt;&lt;strong&gt;Welcome to Inside Infra for June, 2025&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;Roundtable&lt;/h2&gt;
+&lt;p&gt;Discussions at the June Roundtable covered, among other things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Misuse of GitHub Actions. Projects are using, and sometimes force-pushing, tags, rather than SHAs. While there are GHA linters that can help identify problems, we should move actively to encourage projects to stop …&lt;/li&gt;&lt;/ul&gt;</summary><content type="html">&lt;p&gt;&lt;strong&gt;Welcome to Inside Infra for June, 2025&lt;/strong&gt;&lt;/p&gt;
+&lt;h2&gt;Roundtable&lt;/h2&gt;
+&lt;p&gt;Discussions at the June Roundtable covered, among other things:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Misuse of GitHub Actions. Projects are using, and sometimes force-pushing, tags, rather than SHAs. While there are GHA linters that can help identify problems, we should move actively to encourage projects to stop using tags in GHAs, and only use SHAs. There was discussion of the possibility of applying some sort of seal of approval on custom GHAs that comply with this requirement.&lt;/li&gt;
+&lt;li&gt;Creating a checklist or scorecard to encourage creators to bring their custom GHAs into compliance with our requirements.&lt;/li&gt;
+&lt;li&gt;Review of progress on repository.a.o, and Tooling's progress on the Apache Trusted Release platform.&lt;/li&gt;
+&lt;li&gt;What PMCs can use as a password manager (at the moment, only a private repo on SVN or Git).&lt;/li&gt;
+&lt;li&gt;Complete notes from the meeting are at Infra Roundtable 2025-06-04 1700 UTC&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The next roundtable will be &lt;strong&gt;Wednesday, July 2, 1700 UTC&lt;/strong&gt;. Infra will pull a number of coming-soon improvements out of its hat for discussion.&lt;/p&gt;
+&lt;p&gt;Information about how to take part in a roundtable is at &lt;a href="https://infra.apache.org/roundtable.html" target="_blank"&gt;infra.apache.org/roundtable.html&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Uptick in IP bans due to 404 errors on repository.apache.org&lt;/h2&gt;
+&lt;p&gt;Infra is seeing a significant increase in the number of IP bans placed by our automated block system, Blocky. These are largely due to incorrectly configured Maven builds or Artifactory systems using &lt;code&gt;repository.apache.org&lt;/code&gt; as a primary repository.&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;repository.apache.org&lt;/code&gt; is not a general-purpose Maven repository, and should only be used by ASF Committers to test pre-production ASF code artifacts. &lt;a href="https://mvnrepository.com/repos/central" target="_blank"&gt;Maven Central&lt;/a&gt; is the correct public Java artifact service.&lt;/p&gt;
+&lt;p&gt;In addition, the Maven project identified an issue where repository.apache.org was incorrectly included in the Apache Parent POM. Downstream users should upgrade their parent POM to avoid this issue.&lt;/p&gt;
+&lt;p&gt;For further information, see: &lt;a href="https://issues.apache.org/jira/browse/MPOM-451" target="_blank"&gt;issues.apache.org/jira/browse/MPOM-451&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;If you believe your IP has been blocked, you can check your connectivity status via &lt;a href="https://infra.apache.org/abc/" target="_blank"&gt;infra.apache.org/abc&lt;/a&gt;.&lt;/p&gt;
+&lt;h2&gt;Bugzilla&lt;/h2&gt;
+&lt;p&gt;Due to a significant increase in abuse, largely driven by AI scraping, the ASF Bugzilla instance is now only available to &lt;strong&gt;authenticated users&lt;/strong&gt;. To use it, log in with your ASF credentials.&lt;/p&gt;
+&lt;h2&gt;GitHub Actions compliance deadline&lt;/h2&gt;
+&lt;p&gt;Infra received this message from GitHiub:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;The Windows Server 2019 runner image will be fully unsupported by June 30, 2025.
+To raise awareness of the upcoming removal, we will temporarily fail jobs using Windows Server 2019.
+Builds that are scheduled to run during the brownout periods will fail.
+The brownouts are scheduled for the following dates and times:
+ 
+June 17 13:00-21:00 UTC
+June 24 13:00-21:00 UTC
+ 
+What you need to do
+ 
+Jobs using the windows-2019 YAML workflow label should be updated to windows-2022, windows-2025 or windows-latest.
+You can always get up-to-date information on our tools by reading about the software in the runner images repository.
+Please contact GitHub Support if you run into any problems or need help. 
+&lt;/code&gt;&lt;/pre&gt;
+&lt;h2&gt;The whitespace kick trick&lt;/h2&gt;
+&lt;p&gt;If a build fails, sometimes it does not restart even after you have fixed the issue that caused it to fail. A trick that often works is to add a whitespace at the end of any line of code and commit that updated file to get the build to start again. If this fails, contact Infra&lt;/p&gt;
+&lt;p&gt;Infra is working on a new flow of events for builds that will improve stability and observability; we will let the world know when it is in place.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;More next month!&lt;/strong&gt;&lt;/p&gt;
+</content><category term="blog"></category></entry><entry><title>Inside Infra May 2025</title><link href="https://infra.apache.org/blog/newsletter_05_25.html" rel="alternate"></link><published>2025-05-23T00:00:00+00:00</published><updated>2025-05-23T00:00:00+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2025-05-23:/blog/newsletter_05_25.html</id><summary type="html">&lt;h2&gt;Welcome to Inside Infra for May, 2025&lt;/h2&gt;
 &lt;h3&gt;Roundtable&lt;/h3&gt;
 &lt;p&gt;There was no roundtable in May. The next roundtable will be &lt;strong&gt;Wednesday, June 4, 2025, 1700 UTC&lt;/strong&gt;. The main topic will be a presentation on &lt;strong&gt;JFrog and Artifactory&lt;/strong&gt;, a universal binary repository manager that enables teams to store, manage, and organize software …&lt;/p&gt;</summary><content type="html">&lt;h2&gt;Welcome to Inside Infra for May, 2025&lt;/h2&gt;
 &lt;h3&gt;Roundtable&lt;/h3&gt;
