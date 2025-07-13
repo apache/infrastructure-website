@@ -3,5 +3,4 @@ publish:
 
 staging:
   whoami: asf-site
-  foo: bar
-  
+
