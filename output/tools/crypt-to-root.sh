@@ -24,6 +24,10 @@ if ! cmd_exists mktemp; then
     echo "This tool needs the mktemp executable in order to work. Please install it!"
     exit 1
 fi
+if ! cmd_exists wget; then
+    echo "This tool needs the wget executable in order to work. Please install it!"
+    exit 1
+fi
 
 KEYSURL="https://infra.apache.org/tools/infrastructure-root.asc"
 KEYSFILE="KEYS.asc"
