@@ -202,7 +202,7 @@ See more <a href="https://apache.org/dev/#mail" target="_blank">notes about proj
 
 <h3 id="feather">Using the project's favicon<a class="headerlink" href="#feather" title="Permanent link">&para;</a></h3>
 
-To use a custom favicon for your project's website, add the `favicon.ico` file to your site's root directory. The ASF feather appears for project sites that don't have a `favicon.ico` file.
+To use a custom favicon for your project's website, add the `favicon.ico` file to your site's root directory. The ASF logo appears for project sites that don't have a `favicon.ico` file.
 
 <h3 id="generated">Minimizing the number of changes committed in the project's Maven- or JavaDoc- generated site<a class="headerlink" href="#generated" title="Permanent link">&para;</a></h3>
 

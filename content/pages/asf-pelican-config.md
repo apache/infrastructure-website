@@ -23,7 +23,7 @@ site:
   domain: template.apache.org
   logo: images/logo.png
   repository: https://github.com/apache/template-site/blob/main/content/
-  trademarks: Apache, the Apache feather logo, and "Project" are trademarks or registered trademarks
+  trademarks: Apache, the Apache logo, and "Project" are trademarks or registered trademarks
 
 theme: theme/apache
 ```

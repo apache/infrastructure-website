@@ -4,7 +4,7 @@ site:
   domain: infra.apache.org
   logo: /extras/favicon.ico
   repository: https://github.com/apache/infrastructure-website/blob/main/content/
-  trademarks: Apache HTTP Server, Apache, and the Apache feather logo are trademarks of The Apache Software Foundation.
+  trademarks: Apache HTTP Server, Apache, and the Apache logo are trademarks of The Apache Software Foundation.
 theme: content/theme
 setup:
   ignore:

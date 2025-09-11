@@ -536,7 +536,7 @@ On the front page on the main ASF site we feature a random sample of projects. W
     logo: /logos/res/{}/default.png,/foundation/press/kit/poweredBy/Apache_PoweredBy.svg
 ```
 
-Here is the code to copy a sequence, take a random sample, add the logo (or the ASF feather if there is no product logo), and, for featured podlings, adjust the name:
+Here is the code to copy a sequence, take a random sample, add the logo (or the ASF logo if there is no product logo), and, for featured podlings, adjust the name:
 
 ```python
     # this sequence is derived from another sequence

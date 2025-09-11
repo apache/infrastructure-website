@@ -63,7 +63,7 @@ site:
   domain: YOURSITE.apache.org
   logo: images/logo.png
   repository: https://github.com/apache/YOUR_REPO/blob/main/content/
-  trademarks: Apache, the Apache feather logo, and "Project" are trademarks or registered trademarks
+  trademarks: Apache, the Apache logo, and "Project" are trademarks or registered trademarks
   
 ```
 
@@ -86,7 +86,7 @@ SITEURL = 'https://<pmc>.apache.org'
 SITELOGO = 'https://<pmc>.apache.org/images/logo.png'
 SITEDESC = u'<pmc desc>'
 SITEREPOSITORY = 'https://github.com/apache/<pmc-site>/blob/<branch>/content/'
-TRADEMARKS = u'Apache, the Apache feather logo, and <pmc> are trademarks or registered trademarks'
+TRADEMARKS = u'Apache, the Apache logo, and <pmc> are trademarks or registered trademarks'
 CURRENTYEAR = date.today().year
 ~~~
 
