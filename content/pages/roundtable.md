@@ -11,11 +11,17 @@ During the roundtable, people can either **speak or type** their comments. If yo
 
 ### To join the roundtable
 
-In The ASF workspace on Slack, select the `#asfinfra` channel. When you are in that channel, enter this command:
+**If you have an ASF email address** In The ASF workspace on Slack, select the `#asfinfra` channel. When you are in that channel, enter this command:
 
 `/qbot addme roundtable`
 
 (qbot is an Infra tool to simplify actions within the ASF Slack workspace.)
+
+**Otherwise**
+
+Contact Infra by email at `users@infra.apache.org` and ask to be added to the Roundtable channel. In your email, please indicate your connection to The ASF or one of its projects or podlings.
+
+### Once you have joined #roundtable ###
 
 `#roundtable` is now in your list of channels. In the future, you will can just click on its link rather than asking to join it again.
 
