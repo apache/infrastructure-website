@@ -2,7 +2,7 @@ title: Danny Angus, Infra VP
 date: '2025--10-09' 
 permalink: danny_angus_infra_vp layout: post
 
-_Danny Angus became VP-Infra in 2024, succeeding David Nalley_
+_Danny Angus became VP-Infra in 2025, succeeding Myrle Krantz_
 
 ## What is your technical background?
 I have no relevant qualification. I'm basically self taught; From books initially, then the internet. Participating in ASF projects has been a very important part of my learning, and that continues today.
