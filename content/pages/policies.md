@@ -11,6 +11,7 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 - [Password requirements](password-policy.html)
 - [Policy on issues in third-party services](third-party-policy.html)
 - [Policy for using ASF Slack](slack-policy.html)
+- [Policy on sharing sensitive information with Infra](sensitive_info.html)
 
 ## Projects
 
