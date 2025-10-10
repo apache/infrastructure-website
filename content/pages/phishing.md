@@ -38,3 +38,5 @@ Further,
 
 If you are unsure whether an email is actually from the ASF,
 [contact the Infra team](contact.html). Better safe than sorry!
+
+See also the [policy on sharing sensitive information with Infra](sensitive_info.html)
