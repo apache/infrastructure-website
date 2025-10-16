@@ -15,6 +15,8 @@ When you run into an issue with ASF instrastructure, with the software one of th
 
 For the purposes of this discussion, we'll call any issue, from a calculation error in a function to a punctuation error on a web page, a "bug". Something that you would like to see added to an application or a website to make it better would be an "enhancement request". Both are useful; we are looking at bugs here.
 
+**Note**: do not include sensitive information in a bug report. See the [Infra policy on sharing sensitive information](sensitive_info.html) and send such information by email to `root@infra.apache.org`. Provide a reference to any related bug reports.
+
 <h2 id="systems">Bug-tracking systems<a class="headerlink" href="#systems" title="Permanent link">&para;</a></h2>
 
 ASF has two bug-tracking systems:
