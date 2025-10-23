@@ -1,8 +1,8 @@
-title: Inside Infra November 2025 
-date: '2025-11-23' 
-permalink: newsletter1125 layout: post
+title: Inside Infra October 2025 
+date: '2025-10-23' 
+permalink: newsletter1025 layout: post
 
-**Welcome to *Inside Infra* for November, 2025**
+**Welcome to *Inside Infra* for October, 2025**
 
 ## Roundtable
 
