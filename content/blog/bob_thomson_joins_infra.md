@@ -3,7 +3,7 @@ date: '2025-10-07'
 permalink: bob-thomson-joins-infra
 layout: post
 
-The ASF Infrastructre team returned to full strength on September 22, 2025 when **Bob Thomson** joined the team as a systems administrator.
+The ASF Infrastructure team returned to full strength on September 22, 2025 when **Bob Thomson** joined the team as a systems administrator.
 
 **Where do you live?** 
 
