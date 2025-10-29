@@ -2,7 +2,7 @@ site:
   name: Apache Infrastructure Website
   description: The official website of the Apache Infrastructure
   domain: infra.apache.org
-  logo: /extras/favicon.ico
+  logo: /extra/favicon.ico
   repository: https://github.com/apache/infrastructure-website/blob/main/content/
   trademarks: Apache HTTP Server, Apache, and the Apache logo are trademarks of The Apache Software Foundation.
 theme: content/theme
