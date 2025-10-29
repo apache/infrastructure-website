@@ -1,0 +1,160 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inside Infra July 2025 - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>
+<!-- pagefind search -->
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+      new PagefindUI({ element: "#pagefind-search" });
+  });
+  var pageTitle = '';
+  if(pageTitle === '404'){
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#page-404-search" });
+    });
+  }
+</script>
+<!-- pagefind search box styling -->
+<style type="text/css">
+.search-form {
+	right: 0;
+	left: initial !important;
+        min-width: 25vw;
+	max-width: 90vw;
+	max-height: calc(95vh - 100px);
+	overflow: auto;
+	margin-top: 5px;
+}
+</style>
+  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="https://apache.org/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Infra docs</a></li>
+                        <li><a class="dropdown-item" href="/present.html">Infra presentations</a></li>
+                    </ul>
+                </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Contribute</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle hidden-xs" data-bs-toggle="dropdown"><span class="fa-solid fa-magnifying-glass"
+                  aria-hidden="true"></span> Search</a>
+              <ul class="search-form dropdown-menu">
+                <li>
+                  <div id="pagefind-search" class="input-group" style="width: 100%; padding: 0 5px;"></div>
+                </li>
+              </ul>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav><!-- breadcrumbs -->
+<div class="card" style="height: 34px;">
+    <nav aria-label="breadcrumb"  style="padding-left: 12px; padding-top: 4px;">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+
+            <li class="breadcrumb-item active"><a href="/blog/newsletter_07_25.html">
+Inside Infra July 2025            </a></li>
+
+            <li class="breadcrumb-item active">(<a href="https://github.com/apache/infrastructure-website/tree/master/content/blog/newsletter_07_25.md">edit</a>)</li>
+
+        </ol>
+    </nav>
+</div>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Inside Infra July 2025
+          </h1>
+              <p>Posted on: 2025-07-23 00:00:00+00:00</p>
+              <p>Welcome to <em>Inside Infra</em> for July, 2025</p>
+<p><strong>Roundtable</strong></p>
+<p>At the July Roundtable, Daniel Gruno presented on the <strong>catalog server</strong>, now in development: <a href="https://catalog-test.apache.org/lookup/project" target="_blank">catalog-test.apache.org/lookup/project</a>. The plan is to move all metadata that the Foundation and projects use into one place for reference and research:</p>
+<ul>
+<li>membership details</li>
+<li>the details of every .asf.yaml file in use</li>
+</ul>
+<p>Infra is working in tandem with the Tooling team to develop this service. We are assembling the list of metadata at the moment. When the service is complete, you will, we hope, have one place to go to find ASF-related information you need.</p>
+<p>In general discussion, Jarek Potiuk described  a tool he has developed to help the Airflow project better understand their <strong>dependency universe</strong>. Their product has about 700 dependencies. This tool shows, among other interesting things, which dependencies they cannot upgrade without code rework. It provides warnings about what Airflow cannot currently upgrade, and where the work must be done-&ndash;for instance, the problem may be with a dependency of a dependency. Work still has to be done, but this tool helps Airflow discover quickly <em>where</em> the work has to happen.</p>
+<p>It is worth noting that the roundtable is not just for receiving what Infra wants to present. Often, the most interesting discoveries and conversations come out of what non-Infra people around the table have to share. There is a lot of exciting stuff going on among The ASF's projects, and here is one place where you can find out about them early.</p>
+<p>Complete notes from the meeting are at <a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable+2025-07-02+1700+UTC" target="_blank">Infra Roundtable 2025-07-02 1700 UTC</a>.</p>
+<p>The next Roundtable will be <strong>Wednesday, August 6, 1700 UTC</strong>, and we will be talking about <strong>AI scraping and The ASF</strong>. There will also be time for news from projects and questions from participants.</p>
+<p>Looking ahead, the <strong>September Roundtable</strong> will be a face-to face event on <strong>September 14 at Community Over Code</strong>, the ASF conference in Minneapolis, Minnesota, USA: <a href="https://communityovercode.org/" target="_blank">communityvercode.org</a>. The entire Infra and Tooling team track is on the 14th, the last day of the event; and if you are attending, we hope you can join us.</p>
+<p>Information about how to take part in the online roundtables is at <a href="https://infra.apache.org/roundtable.html" target="_blank"><a href="https://infra.apache.org/roundtable.html">https://infra.apache.org/roundtable.html</a></a>.</p>
+<p>More next month!</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>  </main>
+  </body>
+</html>

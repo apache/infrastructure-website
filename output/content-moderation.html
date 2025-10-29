@@ -1,0 +1,174 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Content Moderation Policies - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>
+<!-- pagefind search -->
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+      new PagefindUI({ element: "#pagefind-search" });
+  });
+  var pageTitle = '';
+  if(pageTitle === '404'){
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#page-404-search" });
+    });
+  }
+</script>
+<!-- pagefind search box styling -->
+<style type="text/css">
+.search-form {
+	right: 0;
+	left: initial !important;
+        min-width: 25vw;
+	max-width: 90vw;
+	max-height: calc(95vh - 100px);
+	overflow: auto;
+	margin-top: 5px;
+}
+</style>
+  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="https://apache.org/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Infra docs</a></li>
+                        <li><a class="dropdown-item" href="/present.html">Infra presentations</a></li>
+                    </ul>
+                </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Contribute</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle hidden-xs" data-bs-toggle="dropdown"><span class="fa-solid fa-magnifying-glass"
+                  aria-hidden="true"></span> Search</a>
+              <ul class="search-form dropdown-menu">
+                <li>
+                  <div id="pagefind-search" class="input-group" style="width: 100%; padding: 0 5px;"></div>
+                </li>
+              </ul>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Content Moderation Policies
+          </h1>
+              <p>This page lists the most common questions and answers surrounding content moderation
+policies at ASF Infrastructure, including, but not limited to:</p>
+<ul>
+<li>Data Privacy (GDPR, CCPA, CPPA/PIPEDA, etc.)</li>
+<li>Accidental exposure of credentials or other sensitive data</li>
+<li>Spam removal</li>
+</ul>
+<p>The content the Infrastructure team can moderate includes text on ASF web pages, in Jira tickets, in emails to and from ASF addresses, in code comments, and in comments on commits to Git or Subversion code repositories.</p>
+<p>See also the guidelines for <a href="https://infra.apache.org/mailing-list-moderation" target="_blank">mailing list moderation</a>.</p>
+<h2>Personal Data Privacy Requests</h2>
+<p>Requests regarding exposure of PII (Personal Identifiable Information) <strong>MUST</strong> be sent to our
+Data Privacy Officer at <code>privacy@apache.org</code>. For more information on personal data privacy,
+see <a href="https://privacy.apache.org/">https://privacy.apache.org/</a>.</p>
+<h2>Accidental exposure of credentials or company-sensitive data</h2>
+<p><strong>TL;DR:</strong> If you or your company experience accidental exposure of sensitive data or credentials in one of the types of content listed above,
+you should always assume that the data is now public, and immediately invalidate those credentials.</p>
+<p>Depending on the context and circumstances of your request, we <em>may</em> be able to remove the
+following items:</p>
+<ul>
+<li>Specific emails from our mailing list archives*</li>
+<li>Public comments on PRs/issues*</li>
+<li>Web pages or packages with compromised data</li>
+</ul>
+<p><code>*</code>Removing emails from public archives is not likely to be approved, as propagation of email to multiple hosts and locations makes it
+virtually impossible to enact.</p>
+<p>We are <strong>not</strong> able to, and will not spend time with the following:</p>
+<ul>
+<li>Deleting pull requests from GitHub (cannot be done)</li>
+<li>Deleting LDAP or other governance records that pertain to existing committers to ASF project repositories</li>
+</ul>
+<h2>Dealing with spam</h2>
+<p>If you are a <strong>mailing list moderator</strong>, see this <a href="https://infra.apache.org/mailing-list-moderation#spam">guidance on spam management</a>.</p>
+<p>If you have an ASF email account and are receiving what you believe to be spam on it:</p>
+<ul>
+<li>Review <a href="https://infra.apache.org/spam-reporting.html" target="_blank">this guidance on possible spam</a>.</li>
+<li>If you still have an issue, report it to <code>users@infra.apache.org</code>.</li>
+</ul>
+<p>If you seem to be receiving spam from an ASF email account, report the issue to <code>abuse@infra.apache.org</code>.</p>
+<p>We make a good-faith effort to remove obvious spam from our email archives; however, given that our mailing lists are archived in many places, 100% certainty of spam removal is impossible.</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

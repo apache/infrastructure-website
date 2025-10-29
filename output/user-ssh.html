@@ -1,0 +1,215 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Committer SSH Access - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>
+<!-- pagefind search -->
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+      new PagefindUI({ element: "#pagefind-search" });
+  });
+  var pageTitle = '';
+  if(pageTitle === '404'){
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#page-404-search" });
+    });
+  }
+</script>
+<!-- pagefind search box styling -->
+<style type="text/css">
+.search-form {
+	right: 0;
+	left: initial !important;
+        min-width: 25vw;
+	max-width: 90vw;
+	max-height: calc(95vh - 100px);
+	overflow: auto;
+	margin-top: 5px;
+}
+</style>
+  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="https://apache.org/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Infra docs</a></li>
+                        <li><a class="dropdown-item" href="/present.html">Infra presentations</a></li>
+                    </ul>
+                </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Contribute</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle hidden-xs" data-bs-toggle="dropdown"><span class="fa-solid fa-magnifying-glass"
+                  aria-hidden="true"></span> Search</a>
+              <ul class="search-form dropdown-menu">
+                <li>
+                  <div id="pagefind-search" class="input-group" style="width: 100%; padding: 0 5px;"></div>
+                </li>
+              </ul>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Committer SSH Access
+          </h1>
+              <p>Apache uses SSH (a cryptographic protocol for operating services securely over an unsecured network) to let committers access their project VMs (if configured).</p>
+<p>Remember to keep your client up to date with security patches. Pay close attention to any <a href="#known-host">known host warnings</a>.</p>
+<h2>Contents</h2>
+<ul>
+<li><a href="#openssh">Using OpenSSH to connect to Apache</a></li>
+<li><a href="#openssh-ssh2">Configuring OpenSSH to use SSH2 (*nix)</a></li>
+<li><a href="#debug-ssh">Debugging an OpenSSH client connection</a></li>
+<li><a href="#troubleshooting">Troubleshooting</a></li>
+<li><a href="#FAQ">FAQs</a></li>
+<li><a href="#elsewhere">More information</a></li>
+</ul>
+<h2 id="openssh">Using OpenSSH to connect to Apache<a class="headerlink" href="#openssh" title="Permanent link">&para;</a></h2>
+<p><a href="https://www.openssh.org" target="_blank">OpenSSH</a> is a widely used and trusted suite of software using the SSH family of protocols.</p>
+<h2 id="openssh-ssh2">Configuring OpenSSH to use SSH2 (*nix)<a class="headerlink" href="#openssh-ssh2" title="Permanent link">&para;</a></h2>
+<p>The OpenSSH client uses by default configuration files in the <code>~/.ssh</code> directory. The main configuration file is <code>~/.ssh/config</code> and is optional. It may exist already. If it does not, you can create it in a simple text format. Group together instructions for a particular host (or group of hosts). Here is a suggested basic configuration:</p>
+<pre><code>&lt;pre&gt;
+# Apply to all hosts
+
+# Alternatively replace with: 
+
+#Host \*.apache.org
+Host \*
+  FallBackToRsh no
+  Protocol 2,1
+&lt;/pre&gt;
+</code></pre>
+<p>Many other options are available.</p>
+<h2 id="debug-ssh">Debugging an OpenSSH client connection<a class="headerlink" href="#debug-ssh" title="Permanent link">&para;</a></h2>
+<p>To diagnose what's going wrong with an OpenSSH connection, run the client in verbose mode. To do this just add <code>-v</code>:</p>
+<pre><code>ssh -v -l yourApacheID some-project-server.apache.org
+</code></pre>
+<h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
+<ul>
+<li>If you encounter a problem with SSH and you are not running the most modern stable release of the client software you are connecting with, upgrade and retry.</li>
+<li>Configure the client to use <a href="#ssh2-configuration"> SSH2</a> where possible so the connection to Apache uses the SSH2 protocol. This protocol is more secure and lets you use an interactive keyboard (type in password) or <a href="#pki">PKI</a>. If you must use SSH1, you will need to use PKI.</li>
+<li>Read <a href="#ssh-debug">the section on debugging SSH</a> and try to diagnose the problem.</li>
+</ul>
+<h3 id="common-problems">Some common problems<a class="headerlink" href="#common-problems" title="Permanent link">&para;</a></h3>
+<h4 id="too-many-groups">Too Many Groups<a class="headerlink" href="#too-many-groups" title="Permanent link">&para;</a></h4>
+FreeBSD only allows a user to be in 16 groups. A user who is too popular will not be allowed to log on. It is easy to mistake this for an ssh problem. If `Authentication succeeded` is present in the <a href="#ssh-debug">debug logs</a>, this indicates that the issue lies on your machine's login rather than with ssh.
+<h4 id="batch-mode">Batch Mode<a class="headerlink" href="#batch-mode" title="Permanent link">&para;</a></h4>
+<p>Only use batch mode in automated scripts. You will not be able to log in if ssh is configured to use batch mode.</p>
+<h2 id="FAQ">FAQ<a class="headerlink" href="#FAQ" title="Permanent link">&para;</a></h2>
+<h4 id="ssh2">What is SSH2?<a class="headerlink" href="#ssh2" title="Permanent link">&para;</a></h4>
+<p>The second generation in the ssh family of protocols. It is believed to be more secure than the first generation and the implementations are now mature. Certain flaws exist in the first generation protocols which do not exist in the second generation, so we recommend <a href="#ssh2-configuration">using SSH2</a> where possible.</p>
+<h4 id="ssh-debug">How can I debug my connection?<a class="headerlink" href="#ssh-debug" title="Permanent link">&para;</a></h4>
+<p>The easiest way to diagnose a failing connection is to run your client in verbose mode. This will print up descriptions of the actions that the client is taking. <a href="#debug-ssh">Here</a> is how to do this using <a href="https://www.openssh.org" target="_blank">OpenSSH</a>.</p>
+<p>If <code>Authentication succeeded</code> is present then this indicates that the issue
+lies in your machine login rather than in ssh.</p>
+<h4 id="ssh2-configuration">How do I configure my client to use SSH2?<a class="headerlink" href="#ssh2-configuration" title="Permanent link">&para;</a></h4>
+<p>If you are using OpenSSH, <a href="#openssh-ssh2">some instructions</a> are available. Otherwise, please consult the manual.</p>
+<h4 id="what-client">What client can I use?<a class="headerlink" href="#what-client" title="Permanent link">&para;</a></h4>
+<p>You can use any client that supports <a href="#ssh2">SSH2</a>. (It is possible to use older
+clients that support only SSH1 but that requires more knowledge.)</p>
+<p><a href="http://www.openssh.org">OpenSSH</a> is a well known and trusted client that
+is available for most *nixes. Some notes on how to use OpenSSH to connect
+to Apache are <a href="#openssh">here</a>.</p>
+<h4 id="pki">What is PKI?<a class="headerlink" href="#pki" title="Permanent link">&para;</a></h4>
+<p>Public key infrastructure (PKI) enables the ssh family of protocols to operate without passing a password to the server. You use a passphrase to unlock a private key on the client machine, and a corresponding public key on the server for authentication the during the handshake. We recommend this as the most secure method of connection.</p>
+<h4 id="no-connection">Why can't I connect using SSH1?<a class="headerlink" href="#no-connection" title="Permanent link">&para;</a></h4>
+<p>Because it has been deprecated in OpenSSH.</p>
+<h4 id="known-host">What is a known host?<a class="headerlink" href="#known-host" title="Permanent link">&para;</a></h4>
+<p>SSH employs the <em>known hosts</em> mechanism to prevent <a href="#middle-man-attacks">man in the
+middle</a> attacks. The first time that the client connects to a server, the fingerprint of the key used by that server is
+displayed to the user, who may to asked to confirm the identity of that server. For example:</p>
+<pre><code>The authenticity of host 'home.apache.org (209.237.237.194)' can't be established.
+RSA key fingerprint is 1c:5d:3f:a2:89:97:2e:39:eb:b0:09:9e:cf:c6:8d:f3.
+Are you sure you want to continue connecting (yes/no)? 
+</code></pre>
+<p>The fingerprints for <code>home.apache.org</code> can be found
+<a href="/new-committers-guide.html#identity-theft">here</a>. If the user elects to continue,
+this value is written to a <code>known_hosts</code> file. In future, when the user connects to the same server, the system checks this value and alerts the user if it has changed. <strong>Do not continue the connection</strong> after such an alert: contact infrastructure. This is of crucial importance when using keyboard interactive authentication.</p>
+<p><strong>Note</strong>: The fingerprint for the key used for ssh is different from the fingerprint of the certificate used to securely serve the
+website.</p>
+<h4 id="middle-man-attacks">What Is a Man-in-the-Middle attack?<a class="headerlink" href="#middle-man-attacks" title="Permanent link">&para;</a></h4>
+<p>A class of attacks where the attacker masquerades as the server to the client and as the client to the server.</p>
+<h2 id="elsewhere">More information<a class="headerlink" href="#elsewhere" title="Permanent link">&para;</a></h2>
+<ul>
+<li><a href="/new-committers-guide.html#identity-theft" target="_blank">Identity theft</a></li>
+</ul>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

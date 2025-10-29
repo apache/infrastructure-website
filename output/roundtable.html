@@ -1,0 +1,162 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Infra Roundtable - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>
+<!-- pagefind search -->
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+      new PagefindUI({ element: "#pagefind-search" });
+  });
+  var pageTitle = '';
+  if(pageTitle === '404'){
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#page-404-search" });
+    });
+  }
+</script>
+<!-- pagefind search box styling -->
+<style type="text/css">
+.search-form {
+	right: 0;
+	left: initial !important;
+        min-width: 25vw;
+	max-width: 90vw;
+	max-height: calc(95vh - 100px);
+	overflow: auto;
+	margin-top: 5px;
+}
+</style>
+  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="https://apache.org/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Infra docs</a></li>
+                        <li><a class="dropdown-item" href="/present.html">Infra presentations</a></li>
+                    </ul>
+                </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Contribute</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle hidden-xs" data-bs-toggle="dropdown"><span class="fa-solid fa-magnifying-glass"
+                  aria-hidden="true"></span> Search</a>
+              <ul class="search-form dropdown-menu">
+                <li>
+                  <div id="pagefind-search" class="input-group" style="width: 100%; padding: 0 5px;"></div>
+                </li>
+              </ul>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              The Infra Roundtable
+          </h1>
+              <p>To provide a space for conversations on issues related to the ASF's infrastructure, Infra holds a monthly roundtable of free-flowing discussion.</p>
+<ul>
+<li>The roundtable takes place on the first Wednesday of most months for an hour, usually starting at 1700 UTC, in a huddle on Slack's <code>#roundtable</code> channel in the ASF workspace.</li>
+<li>Infra announces in advance the general topic for each month's meeting.</li>
+<li>The roundtables are available to anyone who can access the ASF workspace on Slack: basically, committers and Members.</li>
+</ul>
+<p>During the roundtable, people can either <strong>speak or type</strong> their comments. If you follow the chat screen only, with no audio, you will miss significant parts of the meeting. Turning on a webcam, on the other hand, is optional.</p>
+<h3>To join the roundtable</h3>
+<p><strong>If you have an ASF email address</strong>: In The ASF workspace on Slack, select the <code>#asfinfra</code> channel. When you are in that channel, enter this command:</p>
+<p><code>/qbot addme roundtable</code></p>
+<p>(qbot is an Infra tool to simplify actions within the ASF Slack workspace.)</p>
+<p><strong>Otherwise</strong>: Contact Infra by email at <code>users@infra.apache.org</code> and ask to be added to the Roundtable channel. In your email, please indicate your connection to The ASF or one of its projects or podlings.</p>
+<h3>Once you have joined #roundtable</h3>
+<p><code>#roundtable</code> is now in your list of channels. In the future, you will can just click on its link rather than asking to join it again.</p>
+<p>When you are in the channel, you can share messages with others as a sort of pre-meeting. At some point an infra staffer will post a message inviting people to join the channel <strong>huddle</strong>. Click the link to join the huddle, an icon that looks like the outline of a headset.</p>
+<h3>What happens in the roundtable</h3>
+<ul>
+<li>An Infra team member normally opens the meeting with a short presentation related to the advertised topic, and then throws the floor open to discussion.</li>
+<li>If you are using a microphone, please mute your mic when not speaking, to cut down on ambient noise.</li>
+<li>To contribute to the discussion, either type your message in the huddle thread (not the main channel thread) or unmute and start speaking. We will all try to practice good meeting manners, which include not talking over others.</li>
+<li>If time permits, we can discuss any other urgent, Infra-related topic that is on your mind.</li>
+</ul>
+<h3>To leave the roundtable</h3>
+<p>When you want to leave, click the <strong>Leave</strong> button. The app returns you to the main Roundtable channel.</p>
+<h3>After the roundtable</h3>
+<p>Infra posts a summary of each roundtable's discussion <a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable" target="_blank">here</a>. (requires login)</p>
+<p>If the meeting does not get to discuss a question you submitted, feel free to ask it in the <code>asfinfra</code> Slack channel, or bring it up again at the next roundtable.</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

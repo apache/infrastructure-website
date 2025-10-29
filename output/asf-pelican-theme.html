@@ -1,0 +1,206 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apache Theme for ASF Pelican - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>
+<!-- pagefind search -->
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+      new PagefindUI({ element: "#pagefind-search" });
+  });
+  var pageTitle = '';
+  if(pageTitle === '404'){
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#page-404-search" });
+    });
+  }
+</script>
+<!-- pagefind search box styling -->
+<style type="text/css">
+.search-form {
+	right: 0;
+	left: initial !important;
+        min-width: 25vw;
+	max-width: 90vw;
+	max-height: calc(95vh - 100px);
+	overflow: auto;
+	margin-top: 5px;
+}
+</style>
+  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="https://apache.org/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Infra docs</a></li>
+                        <li><a class="dropdown-item" href="/present.html">Infra presentations</a></li>
+                    </ul>
+                </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Contribute</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle hidden-xs" data-bs-toggle="dropdown"><span class="fa-solid fa-magnifying-glass"
+                  aria-hidden="true"></span> Search</a>
+              <ul class="search-form dropdown-menu">
+                <li>
+                  <div id="pagefind-search" class="input-group" style="width: 100%; padding: 0 5px;"></div>
+                </li>
+              </ul>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Apache Theme for ASF Pelican
+          </h1>
+              <p><strong>Note</strong>
+In 2019 Infra created ASF-Pelican as a structure and template for projects to use to build their websites, and for the ASF's own website.</p>
+<p>In 2024, Infra moved from ASF-Pelican to the ASF <strong>Infrastructure Pelican Action</strong> GitHub Action to perform the same functions without being closely tied to BuildBot. The repository for this GHA is <a href="https://github.com/apache/infrastructure-actions/tree/main/pelican" target="_blank">github.com/apache/infrastructure-actions/tree/main/pelican</a>.</p>
+<p>The following material is correct for both ASF-Pelican and its replacement.</p>
+<hr/>
+The Apache Theme is available at <a href="https://github.com/apache/template-site/tree/main/theme" target="_blank">github.com/apache/template-site/tree/main.theme</a>, in the "gha-compliant" branch.
+<p>It has two types of files:</p>
+<ul>
+<li>Page templates</li>
+<li>CSS stylesheets</li>
+</ul>
+<h2>Page templates</h2>
+<ul>
+<li>base.html - the main template. Other templates extend this template automatically, including those in the default Pelican theme.</li>
+<li>page.html - this overrides Pelican's <code>default/simple page.html</code>, which includes <code>&lt;h1&gt;{{ page.title }}&lt;/h1&gt;</code>, which we do not want.</li>
+</ul>
+<p>Change <code>base.html</code> as necessary. Add new override templates if you need them.</p>
+<p>See the <a href="https://docs.getpelican.com/en/latest/themes.html#inheritance" target="_blank">Pelican documentation</a> for information about inheritance from the simple theme.</p>
+<h2>CSS stylesheets</h2>
+<p>In this site the css included by <code>base.html</code> is in the <code>content</code> tree.
+There are site- or template-specific overrides to the stylesheet frameworks, but these are not done as Pelican specifies.</p>
+<ul>
+<li><code>styles.css</code> - consists of custom site CSS overrides. Edit as needed. Here we include the CSS for the ASF permalink style.
+This file is in the same directory as the HTML and is included inline with <code>{% include "styles.css" %}</code>.</li>
+</ul>
+<h2>Page metadata</h2>
+<p>This theme uses the following metadata:</p>
+<ul>
+<li>
+<p>Title. Used in <code>base.html</code> with <code>&lt;title&gt;{{ page.title }}&lt;/title&gt;</code> to provide the page title.</p>
+</li>
+<li>
+<p>Notice. This is notice text, which is typically a link to the license.</p>
+<p><code>{% if page.notice %}&lt;!-- {{ page.notice }} --&gt;{% endif %}</code></p>
+</li>
+<li>
+<p>License. This is an alternative to Notice.</p>
+</li>
+<li>
+<p>bodytag. This adds attributes to the <code>&lt;body&gt;</code> element.
+This allows the main <code>index.ezmd</code> to have the same template, but with a different layout.</p>
+<p><code>&lt;body{% if page.bodytag %} {{ page.bodytag }}{% endif %} &gt;</code></p>
+</li>
+</ul>
+<h2>Pelican settings</h2>
+<p>Manage Pelican settings in the <a href="https://github.com/apache/template-site/blob/main/pelicanconf.yaml" target="_blank">pelicanconf.yaml</a> file at the top level of the template.</p>
+<p>Some important settings:</p>
+<pre><code>
+site:
+  name: NAME OF YOUR SITE
+  description: DESCRIPTION OF YOUR SITE
+  domain: YOURSITE.apache.org
+  logo: images/logo.png
+  repository: https://github.com/apache/YOUR_REPO/blob/main/content/
+  trademarks: Apache, the Apache logo, and "Project" are trademarks or registered trademarks
+  
+</code></pre>
+<h2>Pelican theme</h2>
+<p>This is a <a href="https://docs.getpelican.com/en/latest/themes.html">custom theme</a> Pelican templates use <a href="https://jinja.palletsprojects.com/en/3.0.x/">Jinja</a>.</p>
+<hr/>
+<h3>Pelican variables set in pelicanconf.py</h3>
+<p><strong>Note</strong>: early users of this template worked with <code>pelicanconf.py</code>, which is not part of the latest release. This information is for their convenience.</p>
+<pre><code class="language-python">SITENAME = u'Apache &lt;pmc&gt;'
+SITEDOMAIN = '&lt;pmc&gt;.apache.org'
+SITEURL = 'https://&lt;pmc&gt;.apache.org'
+SITELOGO = 'https://&lt;pmc&gt;.apache.org/images/logo.png'
+SITEDESC = u'&lt;pmc desc&gt;'
+SITEREPOSITORY = 'https://github.com/apache/&lt;pmc-site&gt;/blob/&lt;branch&gt;/content/'
+TRADEMARKS = u'Apache, the Apache logo, and &lt;pmc&gt; are trademarks or registered trademarks'
+CURRENTYEAR = date.today().year
+</code></pre>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

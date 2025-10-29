@@ -1,0 +1,279 @@
+    <!doctype html>
+    <html class="no-js" lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>
+<!-- pagefind search -->
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+      new PagefindUI({ element: "#pagefind-search" });
+  });
+  var pageTitle = '';
+  if(pageTitle === '404'){
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#page-404-search" });
+    });
+  }
+</script>
+<!-- pagefind search box styling -->
+<style type="text/css">
+.search-form {
+	right: 0;
+	left: initial !important;
+        min-width: 25vw;
+	max-width: 90vw;
+	max-height: calc(95vh - 100px);
+	overflow: auto;
+	margin-top: 5px;
+}
+</style>
+    </head>
+    <body class="d-flex flex-column h-100">
+    <main class="flex-shrink-0">
+        <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="https://apache.org/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Infra docs</a></li>
+                        <li><a class="dropdown-item" href="/present.html">Infra presentations</a></li>
+                    </ul>
+                </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Contribute</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle hidden-xs" data-bs-toggle="dropdown"><span class="fa-solid fa-magnifying-glass"
+                  aria-hidden="true"></span> Search</a>
+              <ul class="search-form dropdown-menu">
+                <li>
+                  <div id="pagefind-search" class="input-group" style="width: 100%; padding: 0 5px;"></div>
+                </li>
+              </ul>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+            <div id="contents">
+                <div class="bg-white p-5 rounded">
+                    <div class="col-sm-8 mx-auto">
+
+            <h3 style="text-align:center">Welcome to the website of Infra, the Apache Infrastructure Team!</h3>
+            <p style="text-align:center"><i>Serving the technical needs of The Apache Software Foundation and its projects</i></p>
+            <hr/>
+            <!-- news card -->
+            <div class="row"> 
+                <div class="col-md">
+                    <div class="card rounded-3 bg-light h-100">
+                        <div class="card-body d-flex flex-column">
+                            <a href="/contact.html"></a>
+                            <h5 class="card-title text-center text-capitalize">
+                                <i class="fa-solid fa-newspaper" style="color: #000; font-size: 16pt;"></i>
+                                <a href="/infra-news.html" >Infra News</a>
+                            </h5>
+                            <p class="card-text"><b>June 23, 2025</b>: Due to a significant increase in abuse, largely driven by AI scraping, the <b>ASF Bugzilla</b> instance is now only available to <b>authenticated users</b>. To use it, log in with your ASF credentials.</p>
+                            <p class="card-text"><b>May 16, 2025</b>: Infra has established a policy covering retention/removal of inactive Jira accounts: <a href="https://infra.apache.org/jira-account-retention-policy.html" target="_blank">Jira account retention policy</a>.</p>
+                            <p class="card-text"><b>May 15, 2025</b>: In a response to the massive increase in abusive requests that caused our Subversion ViewVC service to buckle under the pressure, we have implemented authorization checks for ViewVC. In essence, this means ViewVC is now only accessible to ASF committers. We understand that this will cause frustration for some project participants, and we took this step because, at the moment, no other option is available.</p>
+                            <p class="card-text"><b>May 15, 2025</b>: A new policy related to use of ASF Slack clarifies limitations for projects of the use of private Slack channels and private direct-message groups. See <a href="https://infra.apache.org/slack-policy.html" target="_blank">Policy for using ASF Slack</a></p>
+                                
+                            <div class="d-grid mt-auto">
+                                <a href="/infra-news.html" class="btn btn-primary">Read More...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- top row of cards -->
+            <div class="row">
+                <!-- how can we help? -->
+                <div class="col-md">
+                    <div class="card rounded-3 bg-light h-100">
+                        <div class="card-body d-flex flex-column">
+                            <a href="/contact.html"></a>
+                            <h5 class="card-title text-center text-capitalize">
+                                <i class="fa fa-question-circle" style="color: #000; font-size: 16pt;"></i>
+                                <a href="/contact.html" >Looking for Help?</a>
+                            </h5>
+                            <p class="card-text">
+                                If you have questions about or require
+                                support with email, code repositories, virtual machines, web sites,
+                                issue trackers or other infrastructure stuff, we are here to help!
+                            </p>
+                            <div class="d-grid mt-auto">
+                                <a href="/contact.html" class="btn btn-primary">Learn More...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- services and tools -->
+                <div class="col-md">
+                    <div class="card rounded-3 bg-light h-100">
+                        <div class="card-body d-flex flex-column">
+                            <a href="/services.html"></a>
+                            <h5 class="card-title text-center text-capitalize">
+                                <i class="fa fa-handshake" style="color: #000; font-size: 16pt;"></i>
+                                <a href="/services.html">Services and Tools</a>
+                            </h5>
+                            <p class="card-text">
+                                Infra supports services for the ASF and its projects,
+                                including GitBox, Jira, Confluence Wiki, Jenkins, and Buildbot.
+                                Our toolbox that contains both home-brewed solutions and
+                                "off the shelf" offerings.
+                            </p>
+                            <div class="d-grid mt-auto">
+                                <a href="/services.html" class="btn btn-primary">Learn More...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- self-serve -->
+                <div class="col-md">
+                    <div class="card rounded-3 bg-light h-100">
+                        <div class="card-body d-flex flex-column">
+                            <a href="https://selfserve.apache.org/" target="_blank"></a>
+                            <h5 class="card-title text-center text-capitalize">
+                                <i class="fa fa-user-cog" style="color: #000; font-size: 16pt;"></i>
+                                <a href="https://selfserve.apache.org/" target="_blank">Self-serve</a>
+                            </h5>
+                            <p class="card-text">
+                                Use our self-serve features to perform tasks ranging from requesting a Jira account to creating a mailing list, without having to involve the Infra team.
+                            </p>
+                            <div class="d-grid mt-auto">
+                                <a href="https://selfserve.apache.org/" target="_blank" class="btn btn-primary">Learn More...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- second row of cards -->
+            <div class="row">
+                <!-- Roundtable -->
+                <div class="col-md">
+                    <div class="card rounded-3 bg-light h-100">
+                        <div class="card-body d-flex flex-column">
+                            <a href="/roundtable.html"></a>
+                            <h5 class="card-title text-center text-capitalize">
+                                <i class="fa-regular fa-comments" style="color: #000; font-size: 16pt;"></i>
+                                <a href="/roundtable.html">Roundtables</a>
+                            </h5>
+                            <p class="card-text">
+                                Infra holds Roundtable meetings most months to discuss infrastructure development and challenges. Participants are welcome to bring their own concerns, questions, and suggestions.</p>
+                        <p>The next Infra roundtable will be on the #roundtable Slack channel on <b>November 5, 2025, 1700 UTC</b>. The main topic will be demonstration of a proof of concept of a <b>new MFA system</b>.</p>
+                            <div class="d-grid mt-auto">
+                                <a href="/roundtable.html" class="btn btn-primary">Learn More...</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Ideas -->
+                <div class="col-md">
+                    <div class="card rounded-3 bg-light h-100">
+                        <div class="card-body d-flex flex-column">
+                            <a href="https://github.com/apache/infrastructure-ideas/tree/main" target="_blank"></a>
+                            <h5 class="card-title text-center text-capitalize">
+                                <i class="fa-regular fa-lightbulb" style="color: #000; font-size: 16pt;"></i>
+                                <a href="https://github.com/apache/infrastructure-ideas/tree/main" target="_blank">Ideas</a>
+                            </h5>
+                            <p class="card-text">
+                                Here is the suggestion box for future ASF infrastructure services, as well as for enhancements to existing services.</p>
+                        <p>Add your suggestion, or upvote and comment on suggestions others have made.
+                            </p>
+                            <div class="d-grid mt-auto">
+                                <a href="https://github.com/apache/infrastructure-ideas/tree/main" target="_blank" class="btn btn-primary">Suggest!</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="col-md">
+                    <div class="card rounded-3 bg-light h-100">
+                        <div class="card-body d-flex flex-column">
+                            <a href="/services.html"></a>
+                            <h5 class="card-title text-center text-capitalize">
+                                <i class="fa-regular fa-newspaper" style="color: #000; font-size: 16pt;"></i>
+                               <a href="https://infra.apache.org/blog/newsletter_10_25.html">Inside Infra</a>
+                            </h5>
+                            <p class="card-text">
+                                Infra publishes a monthly newsletter, "Inside Infra", on our <a href="https://infra.apache.org/blog/">blog</a> and also emails it to Members and committers who have subscribed to the <code>users@infra.apache.org</code> email list. This is a handy way to catch up on Infrastructure developments, policy changes, and new resources.
+                            </p>
+                            <div class="d-grid mt-auto">
+                                <a href="https://infra.apache.org/blog/newsletter_10_25.html" class="btn btn-primary">Read the latest issue</a>
+                            </div>
+                        </div>
+                    </div>
+                </div> 
+
+            </div>                    </div>
+                </div>
+            </div>
+
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>        </div>
+    </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+    </body>
+    </html>

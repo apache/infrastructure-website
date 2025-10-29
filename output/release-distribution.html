@@ -1,0 +1,251 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Release Distribution Policy - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>
+<!-- pagefind search -->
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+      new PagefindUI({ element: "#pagefind-search" });
+  });
+  var pageTitle = '';
+  if(pageTitle === '404'){
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#page-404-search" });
+    });
+  }
+</script>
+<!-- pagefind search box styling -->
+<style type="text/css">
+.search-form {
+	right: 0;
+	left: initial !important;
+        min-width: 25vw;
+	max-width: 90vw;
+	max-height: calc(95vh - 100px);
+	overflow: auto;
+	margin-top: 5px;
+}
+</style>
+  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="https://apache.org/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Infra docs</a></li>
+                        <li><a class="dropdown-item" href="/present.html">Infra presentations</a></li>
+                    </ul>
+                </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Contribute</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle hidden-xs" data-bs-toggle="dropdown"><span class="fa-solid fa-magnifying-glass"
+                  aria-hidden="true"></span> Search</a>
+              <ul class="search-form dropdown-menu">
+                <li>
+                  <div id="pagefind-search" class="input-group" style="width: 100%; padding: 0 5px;"></div>
+                </li>
+              </ul>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Release Distribution Policy
+          </h1>
+              <h1 id="policy"> </h1>
+<p>This policy governs how Apache Top Level Projects (TLPs) distribute releases of their software through the technical channels that Infra maintains, and through other distribution platforms. It complements the formal <a href="https://www.apache.org/legal/release-policy.html" target="_blank">Apache Release Policy</a>, which defines what must be in a software release; and the <a href="release-publishing.html">Release Creation Process</a> page, which describes the steps for a PMC to create a release.</p>
+<h2 id="links">Contents</h2>
+<ul>
+<li><a href="#channels">Release distribution channels</a></li>
+<li><a href="#dist-dir">Release distribution directory</a></li>
+<li><a href="#release-content">Release content</a></li>
+<li><a href="#public-distribution">Public distribution channels</a></li>
+<li><a href="#unreleased">Distribution of unreleased materials</a></li>
+<li><a href="#heads-up">Recommended and maximum sizes of release artifacts</a></li>
+<li><a href="#sigs-and-sums">Requirements for cryptographic signature and checksum requirements</a></li>
+<li><a href="#download-links">Download links</a></li>
+<li><a href="#archival">Releases are archived</a></li>
+<li><a href="#maven">Using Maven for releases</a></li>
+<li><a href="#other-platforms">Other release platforms</a></li>
+<li><a href="#dockerhub">DockerHub and releases</a></li>
+<li><a href="#administration">Policy Administration</a></li>
+</ul>
+<p><strong>Note</strong>: <a href="https://www.ietf.org/rfc/rfc2119.txt" target="_blank">RFC 2119</a> describes how to interpret <strong>must</strong>, <strong>should</strong>, <strong>should not</strong> and similar terms.</p>
+<h2 id="channels">Release distribution channels<a class="headerlink" href="#channels" title="Permanent link">&para;</a></h2>
+<ul>
+<li>The Apache Software Foundation's official channel for distribution of current Apache software releases to the general public is <code>downloads.apache.org/</code>. This directory provides access for current releases to the ASF content distribution network (CDN), through which most users download releases.</li>
+<li>The public may also obtain Apache software from downstream channels (rpm, deb, homebrew, etc.) which redistribute our releases in original or derived form. The vast majority of such downstream channels operate independently of Apache.</li>
+<li>Infra maintains a number of developer-only channels which facilitate distribution of unreleased software to consenting members of a development community.</li>
+<li>All historical Apache releases are available from <code>archive.apache.org</code>.</li>
+</ul>
+<h2 id="dist-dir">Release distribution directory<a class="headerlink" href="#dist-dir" title="Permanent link">&para;</a></h2>
+<p>Every top-level project at Apache has its own public distribution directory, which is a subdirectory of <code>downloads.apache.org/</code>. Each PMC is responsible for all artifacts within their project's distribution directory.</p>
+<p>Apache Incubator podlings cannot create official ASF releases; see the <a href="http://incubator.apache.org/guides/releasemanagement.html" target="_blank">Incubator documentation</a> for details and discussion.</p>
+<h2 id="release-content">Release content<a class="headerlink" href="#release-content" title="Permanent link">&para;</a></h2>
+<p>The <a href="http://www.apache.org/dev/release#what" target="_blank">Apache Release Policy</a> governs the content of official Apache releases and the process by which projects create valid releases.</p>
+<p>The Policy specifies that TLPs may distribute binary packages, provided by the project or third parties which meet certain criteria, may be distributed alongside official source packages. Such packages are sometimes referred to as "convenience binaries" or "PMC-approved artifacts", to distinguish them from other binary packages.</p>
+<h2 id="public-distribution">Public distribution channels<a class="headerlink" href="#public-distribution" title="Permanent link">&para;</a></h2>
+<p>Projects <strong>must</strong> upload all official releases to the official distribution channel, <code>downloads.apache.org/</code>. Content suitable for the official distribution channel includes:</p>
+<ul>
+<li>Official releases</li>
+<li>PMC-approved artifacts, compiled code anyone can download and install</li>
+<li>Cryptographic signatures and checksums</li>
+<li>The <a href="#sigs-and-sums">KEYS</a> file</li>
+<li>README, CHANGES and similar documents describing distributed content</li>
+</ul>
+<p>If an Apache PMC wishes to publish additional materials through the official distribution channel and there is any question about the suitability of the materials, the PMC <strong>must</strong> consult with the ASF Board before publishing.</p>
+<h2 id="unreleased">Distribution of unreleased materials<a class="headerlink" href="#unreleased" title="Permanent link">&para;</a></h2>
+<p>Unreleased materials, in original or derived form,</p>
+<ul>
+<li><strong>may</strong> be distributed to consenting members of a project's development community</li>
+<li><strong>must not</strong> be advertised to anyone outside of the project development community</li>
+<li><strong>must not</strong> be distributed through <code>www.apache.org/dist</code> or <code>downloads.apache.org</code></li>
+<li><strong>must not</strong> be distributed through channels which encourage use by anyone outside the project development community</li>
+</ul>
+<h2 id="heads-up">Recommended and maximum sizes of release artifacts<a class="headerlink" href="#heads-up" title="Permanent link">&para;</a></h2>
+<p>Infra recommends keeping the size of your release artifacts below 100MB. The ASF will <strong>not</strong> host release artifacts larger than 1GB.</p>
+<h2 id="sigs-and-sums">Requirements for cryptographic signatures and checksums<a class="headerlink" href="#sigs-and-sums" title="Permanent link">&para;</a></h2>
+<p>See the <a href="/release-signing.html" target="_blank">release signing</a> page.</p>
+<p>For every artifact distributed to the public through Apache channels, the PMC</p>
+<ul>
+<li><strong>must</strong> supply a valid OpenPGP-compatible ASCII-armored detached signature file.</li>
+<li><strong>must</strong> supply at least one checksum file.</li>
+<li><strong>should</strong> supply a SHA-256 and/or SHA-512 checksum file.</li>
+<li><strong>SHOULD NOT</strong> supply a MD5 or SHA-1 checksum file because these are deprecated.</li>
+</ul>
+<p>For new releases, PMCs <strong>must</strong> supply SHA-256 and/or SHA-512 and <strong>should not</strong> supply MD5 or SHA-1. You do not need to change existing releases.</p>
+<p>You <strong>must</strong> form the names of individual signature and checksum files by adding to the name of the artifact the appropriate suffix:</p>
+<ul>
+<li><code>.asc</code> for a (ASCII-armored) PGP signature</li>
+<li><code>.sha256</code> for an SHA-256 checksum</li>
+<li><code>.sha512</code> for an SHA-512 checksum</li>
+</ul>
+<p>Noted for completeness that this specification also applies to <strong>deprecated</strong> file types:</p>
+<ul>
+<li><code>.md5</code> for an MD5 checksum</li>
+<li><code>.sha1</code> for an SHA-1 checksum</li>
+</ul>
+<p>Regarding signature and checksum files:</p>
+<ul>
+<li>Legacy suffix <code>.sha</code> <strong>should not be</strong> be used and <code>.sha</code> files <strong>should not</strong> be provided.</li>
+<li>Binary PGP signature <code>.sig</code> files <strong>must not</strong> be provided.</li>
+<li><code>.mds</code> files (containing multiple checksums) <strong>may</strong> be provided for individual files as long as the included checksums comply with the above requirements.</li>
+<li>Signature and checksum files for verifying distributed artifacts <strong>should not</strong> be provided, unless named as indicated above.</li>
+</ul>
+<p>Regarding KEYS files:</p>
+<ul>
+<li>Projects <strong>must</strong> publish a KEYS file in their distribution directory which contains all public keys used to sign artifacts.</li>
+<li>Signing keys used at Apache <strong>must</strong> be published in the KEYS file and <strong>should</strong> be made available through the global public keyserver network. Signing keys <strong>should</strong> be linked into a strong web of trust.</li>
+<li>Signing keys for new artifacts <strong>must</strong> be RSA and at least 2048 bit. New keys <strong>should</strong> be 4096 bit RSA. Signatures <strong>should</strong> be cryptographically strong.</li>
+<li>Private keys <strong>must not</strong> be stored on any ASF machine. Likewise, signatures for releases <strong>must not</strong> be created on ASF machines.</li>
+<li>You <strong>must</strong> revoke and replace compromised signing keys immediately.</li>
+</ul>
+<h2 id="download-links">Download links<a class="headerlink" href="#download-links" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Website documentation for any Apache product <strong>must</strong> provide public download links where interested parties may obtain current official source releases and accompanying cryptographic files.</li>
+<li>Links to artifacts <strong>must not</strong> reference the main Apache web site. They <strong>must</strong> use the <a href="release-download-pages.html">standard procedure</a> to make downloads available through the content distribution system.</li>
+<li>All links to checksums, detached signatures and public keys for current releases <strong>must</strong> reference <code>downloads.apache.org/</code> using <code>https://</code>.
+<ul>
+<li>Legacy links to <code>https://[www.]apache.org/dist/...</code> still work, but new links should use <code>downloads.apache.org</code>.</li>
+<li>Older release checksums are on <code>archive.apache.org</code>, and you <strong>may</strong> also link to them.</li>
+</ul>
+</li>
+<li>All releases, including old releases, are archived automatically. You <strong>may</strong> link from your PMC's download page to archived older releases for community convenience.</li>
+</ul>
+<h2 id="archival">Releases are archived<a class="headerlink" href="#archival" title="Permanent link">&para;</a></h2>
+<ul>
+<li>All releases are archived automatically on <code>archive.apache.org</code>. This automated process generally adds releases to the archive about a day after they first appear on <code>downloads.apache.org/</code>.</li>
+<li>Each project's distribution directory <strong>should</strong> contain the latest release in each branch that is currently under development. When development ceases on a version branch, the PMC <strong>should</strong> remove links to releases of that branch from their download directory.</li>
+</ul>
+<h2 id="maven">Using Maven for releases<a class="headerlink" href="#maven" title="Permanent link">&para;</a></h2>
+<p>Infra operates an Apache Maven repository manager at <code>repository.apache.org</code>. Projects <strong>may</strong> use the repository system as a downstream channel to redistribute released materials via Maven Central, and <strong>may</strong> use it to distribute snapshots containing unreleased materials directly to consenting members of a project development community.</p>
+<p>Projects <strong>must not</strong> point or refer to <code>repository.apache.org</code> directly in download pages, release announcements or emails. Instead, any public download links for those releases <strong>should</strong> point to Maven Central.</p>
+<p>Read more about <a href="publishing-maven-artifacts.html">Maven releases for Apache projects</a>.</p>
+<h2 id="other-platforms">Other release platforms<a class="headerlink" href="#other-platforms" title="Permanent link">&para;</a></h2>
+<p>The ASF manages a number of distribution platforms that projects are welcome to use. Projects can distribute PMC-approved artifacts on ASF managed distribution platforms and other distribution platforms as long as those binaries comply with ASF release, licensing, branding and trademark policies. Currently, ASF managed platforms include <a href="https://github.com/apache" target="_blank">GitHub</a> and <a href="https://hub.docker.com/u/apache" target="_blank">Docker</a>.</p>
+<h2 id="dockerhub">Docker Hub and releases<a class="headerlink" href="#dockerhub" title="Permanent link">&para;</a></h2>
+<p>The ASF only supports two modes of operation on Docker Hub: automated builds based on tags, and some more generalized access (see notes in the Jira ticket INFRA-14586.) Note that Docker Hub is <strong>not</strong> an approved release channel for ASF artifacts. Anything you do on Docker Hub requires the description and supporting documentation to be clear that these are <em>convenience releases</em>, not official distribution artifacts.</p>
+<p>See the <a href="docker-hub-policy.html">Docker Hub policy</a> for further information.</p>
+<h2 id="administration">Policy administration<a class="headerlink" href="#administration" title="Permanent link">&para;</a></h2>
+<p>This policy is <strong>required</strong> for all Apache projects. The <a href="https://whimsy.apache.org/foundation/orgchart/vp-infrastructure" target="_blank">V.P. of Apache Infrastructure</a> <strong>must</strong> approve changes to this policy.</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

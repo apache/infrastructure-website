@@ -1,0 +1,173 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add your wisdom to Infra - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>
+<!-- pagefind search -->
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+      new PagefindUI({ element: "#pagefind-search" });
+  });
+  var pageTitle = '';
+  if(pageTitle === '404'){
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#page-404-search" });
+    });
+  }
+</script>
+<!-- pagefind search box styling -->
+<style type="text/css">
+.search-form {
+	right: 0;
+	left: initial !important;
+        min-width: 25vw;
+	max-width: 90vw;
+	max-height: calc(95vh - 100px);
+	overflow: auto;
+	margin-top: 5px;
+}
+</style>
+  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="https://apache.org/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Infra docs</a></li>
+                        <li><a class="dropdown-item" href="/present.html">Infra presentations</a></li>
+                    </ul>
+                </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Contribute</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle hidden-xs" data-bs-toggle="dropdown"><span class="fa-solid fa-magnifying-glass"
+                  aria-hidden="true"></span> Search</a>
+              <ul class="search-form dropdown-menu">
+                <li>
+                  <div id="pagefind-search" class="input-group" style="width: 100%; padding: 0 5px;"></div>
+                </li>
+              </ul>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav><!-- breadcrumbs -->
+<div class="card" style="height: 34px;">
+    <nav aria-label="breadcrumb"  style="padding-left: 12px; padding-top: 4px;">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+
+            <li class="breadcrumb-item active"><a href="/blog/add_wisdom.html">
+Add your wisdom to Infra            </a></li>
+
+            <li class="breadcrumb-item active">(<a href="https://github.com/apache/infrastructure-website/tree/master/content/blog/add_wisdom.md">edit</a>)</li>
+
+        </ol>
+    </nav>
+</div>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Add your wisdom to Infra
+          </h1>
+              <p>Posted on: 2023-11-17 01:55:55+00:00</p>
+              <p>Committers, contributors, and ASF Members have a wealth of information about every aspect of software and community development. When we share our knowledge, its reach multiplies and our effectiveness increases.</p>
+<p>For the infrastructure that supports all our efforts at the ASF, here are some ways to share what you know with the folks with the greatest need to hear it:</p>
+<p><strong>Share your smarts</strong></p>
+<p>If you join the <code>users@infra.apache.org</code> email list, you can help answer the many questions we receive related to our infrastructure: Where can I find X? How do I achieve Y? I am trying to do Z but getting this mystery error message.</p>
+<p>The issues range in complexity. Any committer or ASF Member is well-positioned to answer all but the most gnarly ones.</p>
+<p><strong>Join the Roundtables</strong></p>
+<p>Infra holds regular roundtable discussions on important topics in the World of Infrastructure. These are not lectures, where an Infra member holds forth and everybody is supposed to sit in respectful silence. Rather, the Infra team is hoping to gain insights and guidance from members of the ASF community that will improve how the team works or a tool it is developing.</p>
+<p>The roundtables usually take place on the <strong>first Wednesday of each month</strong>, on the <code>#roundtable</code> channel in the <code>the-ASF</code> workspace on Slack. They are available to anyone who can access the ASF workspace on Slack: basically, committers and Members.</p>
+<ul>
+<li>Here are <a href="https://infra.apache.org/roundtable.html" target="_blank">details about the Roundtables</a>, including information on joining the <code>#roundtable</code> channel.</li>
+<li>We don't record the sessions, but we do take <a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable" target="_blank">copious notes</a>.</li>
+</ul>
+<p><strong>Build better builds</strong></p>
+<p>A group meets regularly (usually the second Thursday of the month) in the <code>#builds</code> channel in the <code>the-ASF</code> workspace on Slack to explore issues related to builds of ASF projects' products. You are welcome whether you have a puzzle you need help solving, or some insights that may help others.</p>
+<p><strong>Re-vision distribution</strong></p>
+<p>Infra is starting to develop the <strong>Artifacts Distribution Platform</strong> (ADP). The idea is to consolidate <code>dist.apache.org</code>, <code>downloads.apache.org</code>, <code>rsync.apache.org</code> and <code>archive.apache.org</code> into one service that will free up resources and:</p>
+<ul>
+<li>simplify backups of release artifacts</li>
+<li>remove the need to "police" projects about their release pages by no longer requiring them to manually archive older releases</li>
+<li>ensure that all new releases follow our release policies by only allowing policy-compliant artifacts to be released</li>
+<li>make it easier for product users to verify that what they are about to download is a certified ASF artifact</li>
+</ul>
+<p>We are assembling lists of necessary features, 'good to have' features, and ambitious pipe dreams, and value input from all across the The ASF's communities.</p>
+<ul>
+<li>Join the <code>artifacts@infra.apache.org</code> mailing list.</li>
+<li>Ask to be invited to the <code>artifact-platform-dev</code> channel in the <code>the-ASF</code> workspace on Slack.</li>
+<li>Review the <a href="https://cwiki.apache.org/confluence/display/INFRA/Artifacts+Distribution+Platform" target="_blank">current collection of ideas and issues</a> related to the ADP. Add your thoughts/concerns/insights in the editable pages linked to from that main page. (Note: we have already blue-skied a very complex application. If you suggest another component, we may invite you to help develop it.)</li>
+</ul>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>  </main>
+  </body>
+</html>

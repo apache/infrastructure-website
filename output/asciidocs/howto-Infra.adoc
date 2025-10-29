@@ -1,0 +1,64 @@
+= How-to Infra
+:imagesdir: images
+With Chris Wells And Chris Thistlethwaite from your ASF Infra Team
+
+== ASF Infra
+* Infra is a team operating under the VP of Infrastructure
+* There are 9 of us, 6 full-time, 2 part-time, and 1 volunteer (VP Infra)
+* Located in the EU, US, and Canada covering +2 UTC to -7 UTC
+* 1 team member on-call at a time 24/7/365; rotating weekly
+
+== Not Your Average IT Department
+
+=== Some other company
+image::how_to_infra-other_company.png[]
+
+=== Infra's Structure
+image::how_to_infra-infra_structure.png[]
+
+=== Why is that important?
+* Individual Infra members have some autonomy and discretion
+* I don't think escalation  means what you think it means
+* We are professionals, you are professionals
+
+=== Why is that important? (cont)
+* The Foundation handles legal, privacy, and DEI policy
+* Infra handles operational policy
+
+== Why We Say "No"
+We enforce the policy created by members, committers, the board, us, gnomes, ponies, etc.
+
+=== Policy
+* Legal
+* Privacy
+* Technical
+* Resources
+* Ongoing maintenance
+
+== How to Communicate With Us
+
+=== Methods of Contact
+* Jira tickets (https://issues.apache.org/jira/projects/INFRA/issues/)
+* Mailing lists (users@infra.apache.org)
+* Slack channel (#asfinfra)
+* Roundtables
+* Community Over Code Conference
+
+=== Communication is a Two-way Street
+* Able and willing to discuss rationale
+* Build a better business case and ask again
+* "no" today _might_ be yes tomorrow
+
+== Hypothetical Requests
+* Create a new Jira user
+* Request Docker Hub access
+* Unblock your company's IP
+* Builds not running
+
+== Questions?
+* Contact us
+  - Slack	
+  - users@infra.apache.org
+  - builds@apache.org (for builds stuff)
+  - https://issues.apache.org/jira/projects/INFRA/issues/
+  - Roundtables

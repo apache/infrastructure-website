@@ -1,0 +1,293 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mailing List Migration Project - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>
+<!-- pagefind search -->
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+      new PagefindUI({ element: "#pagefind-search" });
+  });
+  var pageTitle = '';
+  if(pageTitle === '404'){
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#page-404-search" });
+    });
+  }
+</script>
+<!-- pagefind search box styling -->
+<style type="text/css">
+.search-form {
+	right: 0;
+	left: initial !important;
+        min-width: 25vw;
+	max-width: 90vw;
+	max-height: calc(95vh - 100px);
+	overflow: auto;
+	margin-top: 5px;
+}
+</style>
+  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="https://apache.org/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Infra docs</a></li>
+                        <li><a class="dropdown-item" href="/present.html">Infra presentations</a></li>
+                    </ul>
+                </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Contribute</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle hidden-xs" data-bs-toggle="dropdown"><span class="fa-solid fa-magnifying-glass"
+                  aria-hidden="true"></span> Search</a>
+              <ul class="search-form dropdown-menu">
+                <li>
+                  <div id="pagefind-search" class="input-group" style="width: 100%; padding: 0 5px;"></div>
+                </li>
+              </ul>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Mailing List Migration Project
+          </h1>
+              <h3 id="migration">Hermes &rarr; Mailgw</h3>
+<p>
+As part of the Apache Infrastructure team's goals of modernization and
+service improvement, we are pleased to announce the general availability
+of "mailgw", the long-awaited replacement for hermes.
+<p>
+This document addresses common questions related to the migration of mail 
+and mailing lists to the new server.
+<p>
+<h3 id="faq">Frequently Asked Questions</h3>
+<p>
+<h4>What are hermes and mailgw, and why are we migrating?</h4>
+<p>
+Hermes and mailgw are hostnames for the servers that process mail to
+@apache.org email addresses. They also process mailing list traffic
+for all ASF projects, e.g. "users@httpd.apache.org".
+<p>
+Hermes is a nearly 10 year old legacy server that pre-dates Infra's modern 
+configuration management strategy, and pre-dates many modern email 
+technologies like TLS encryption.
+<p>
+Mailgw is a modern server using currently available technology, and
+under full configuration management, greatly improving reliability and
+reproducibility of the service in case of failures.
+<p>
+The migration process moves @apache.org and @$project.apache.org email 
+services from hermes onto mailgw, ensuring that email services remain 
+compliant with modern standards to the greatest extent possible.
+<p>
+<h4>Will we lose any email?</h4>
+<p>
+No. Despite a list being migrated from hermes to mailgw, mail which was 
+'in flight' to hermes will still be delivered to the list subscribers on 
+hermes. Once the list is fully migrated, we will reroute email to mailgw 
+automatically. This process is transparent to users.
+<p>
+<h4>Will this affect official archives?</h4>
+<p>
+No. We manage archives through mailing list subscriptions to the PonEE 
+archival service and list subscriptions to the mbox-vm archiver. Mail
+delivered via either hermes or mailgw will make it to the official archives.
+<p>
+<h4>What about unofficial mbox archives?</h4>
+<p>
+hermes-based ~apmail/lists/project.a.o/archives accessible via ezmlm's 
+archive commands (get/index/thread/etc) will not be transferred to mailgw. 
+They will be archived for posterity and we can provide them upon 
+Member request. Access all mailing list archives via the 
+official URL <a href="https://lists.apache.org">https://lists.apache.org</a>.
+<p>
+<h4>Will the system preserve queued moderation mail?</h4>
+<p>
+Yes.
+<p>
+<h4>Will the system preserve settings and subscribers/mods?</h4>
+<p>
+Yes.
+<p>
+<h4>What do I do if there is a problem?</h4>
+<p>
+Email users@infra.apache.org or open an Infra Jira ticket.
+<p>
+<hr/>
+<h3> APMAIL Volunteer Specific Information</h3>
+<h4>Will apmail volunteers be able to access the new server?</h4>
+<p>Yes, apmail access will be re-granted upon request. Ask Infra if you
+wish to continue as an apmail volunteer, and we will add you to the new
+server.</p>
+<h4>What is the actual hostname of the new server?</h4>
+<p>mailgw-he-de.apache.org</p>
+<h4>How do we know if a list has been migrated?</h4>
+<p>The list will exist on mailgw-he-de.apache.org, and the list directory
+on hermes will contain a flag file called 'migrated-to-mailgw'.</p>
+<h4>Do apmail processes remain the same?</h4>
+<p>For the most part, tools in ~apmail/bin will perform as expected, and
+ezmlm commands (subscriptions, moderation, etc.,) work as expected.
+Contact Infra if anything doesn't work as expected.</p>
+<h4>Has my project been migrated?</h4>
+<p>The following projects have been migrated:</p>
+<p>accumulo.apache.org
+activemq.apache.org
+age.apache.org
+airavata.apache.org
+airflow.apache.org
+allura.apache.org
+ambari.apache.org
+ambari.apache.org
+annotator.apache.org
+ant.apache.org
+any23.apache.org
+apachecon.com
+apachecon.eu
+apisix.apache.org
+apr.apache.org
+apr.apache.org
+archiva.apache.org
+aries.apache.org
+arrow.apache.org
+asterixdb.apache.org
+atlas.apache.org
+attic.apache.org
+avro.apache.org
+axis.apache.org
+batchee.apache.org
+beam.apache.org
+bigtop.apache.org
+bloodhound.apache.org
+bookkeeper.apache.org
+brooklyn.apache.org
+brpc.apache.org
+buildr.apache.org
+buildstream.apache.org
+bval.apache.org
+calcite.apache.org
+camel.apache.org
+camel.apbahir.apache.org
+carbondata.apache.org
+cassandra.apache.org
+cayenne.apache.org
+celix.apache.org
+clerezza.apache.org
+cloudstack.apache.org
+cocoon.apache.org
+commons.apache.org
+community.apache.org
+copylines
+copylines.readme
+cordova.apache.org
+couchdb.apache.org
+crail.apache.org
+creadur.apache.org
+ctakes.apache.org
+curator.apache.org
+cxf.apache.org
+echarts.apache.org
+empire-db.apache.org
+eventmesh.apache.org
+infra.apache.org
+infratest.apache.org
+kibble.apache.org
+pivot.apache.org
+steve.apache.org
+warble.apache.org
+wayang.apache.org
+weex.apache.org
+whimsical.apache.org
+wicket.apache.org
+ws.apache.org
+xalan.apache.org
+xerces.apache.org
+xmlgraphics.apache.org
+yetus.apache.org
+yunikorn.apache.org
+zeppelin.apache.org
+zookeeper.apache.org
+freemarker.apache.org datafu.apache.org     geode.apache.org datalab.apache.org     geronimo.apache.org datasketches.apache.org     giraph.apache.org db.apache.org         gobblin.apache.org deltaspike.apache.org        gora.apache.org devlake.apache.org      griffin.apache.org directory.apache.org     groovy.apache.org diversity.apache.org      guacamole.apache.org dolphinscheduler.apache.org    gump.apache.org doris.apache.org        hadoop.apache.org drill.apache.org      hawq.apache.org druid.apache.org        hbase.apache.org dubbo.apache.org       hc.apache.org dump_subs_dig_mods.sh     helix.apache.org felix.apache.org       heron.apache.org fineract.apache.org        hive.apache.org flagon.apache.org       hivemall.apache.org flex.apache.org         hop.apache.org flink.apache.org     httpd.apache.org flume.apache.org       hudi.apache.org fluo.apache.org         hugegraph.apache.org
+iceberg.apache.org ignite.apache.org impala.apache.org inlong.apache.org iotdb.apache.org isis.apache.org incubator.apache.org jackrabbit.apache.org        jmeter.apache.org       juddi.apache.org james.apache.org        johnzon.apache.org      juneau.apache.org jclouds.apache.org      joshua.apache.org jena.apache.org         jspwiki.apache.org kafka.apache.org     knox.apache.org kylin.apache.org karaf.apache.org        kudu.apache.org         kyuubi.apache.org kvrocks.apache.org
+pagespeed.apache.org parquet.apache.org pdfbox.apache.org pegasus.apache.org perl.apache.org petri.apache.org phoenix.apache.org pig.apache.org pinot.apache.org plc4x.apache.org poi.apache.org ponymail.apache.org portals.apache.org pulsar.apache.org</p>
+</p></p></p></p></p></p></p></p></p></p></p></p></p></p></p></p></p></p></p></p></p>
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

@@ -1,0 +1,827 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ASF Pelican data model - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>
+<!-- pagefind search -->
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+      new PagefindUI({ element: "#pagefind-search" });
+  });
+  var pageTitle = '';
+  if(pageTitle === '404'){
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#page-404-search" });
+    });
+  }
+</script>
+<!-- pagefind search box styling -->
+<style type="text/css">
+.search-form {
+	right: 0;
+	left: initial !important;
+        min-width: 25vw;
+	max-width: 90vw;
+	max-height: calc(95vh - 100px);
+	overflow: auto;
+	margin-top: 5px;
+}
+</style>
+  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="https://apache.org/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Infra docs</a></li>
+                        <li><a class="dropdown-item" href="/present.html">Infra presentations</a></li>
+                    </ul>
+                </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Contribute</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle hidden-xs" data-bs-toggle="dropdown"><span class="fa-solid fa-magnifying-glass"
+                  aria-hidden="true"></span> Search</a>
+              <ul class="search-form dropdown-menu">
+                <li>
+                  <div id="pagefind-search" class="input-group" style="width: 100%; padding: 0 5px;"></div>
+                </li>
+              </ul>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              ASF Pelican data model
+          </h1>
+              <p>In 2019 Infra created ASF-Pelican as a structure and template for projects to use to build their websites, and for the ASF's own website.</p>
+<p>In 2024, Infra moved from ASF-Pelican to the ASF <strong>Infrastructure Pelican Action</strong> GitHub Action to perform the same functions without being closely tied to BuildBot. The repository for this GHA is <a href="https://github.com/apache/infrastructure-actions/tree/main/pelican" target="_blank">github.com/apache/infrastructure-actions/tree/main/pelican</a>.</p>
+<p>The material below is <strong>relevant</strong> to the older Pelican build system and the Pelican GitHub Action.</p>
+<hr/>
+## ASF Data
+<p>If your site includes the <code>asfdata.py</code> plugin, the Pelican site generator reads instructions from it during initialization and creates shared metadata that is available for all pages. It is particularly critical for <strong>ezmd</strong> pages that contain directives.</p>
+<p>The <code>pelicanconf.yaml</code> file contains the following:</p>
+<pre><code>setup:
+  data: asfdata.yaml
+</code></pre>
+<ul>
+<li><code>data</code> is a .yaml file of metadata instructions.</li>
+</ul>
+<p>Within the plugin there are three kinds of data transformations:</p>
+<ol>
+<li>Constant key-value pairs.</li>
+<li>Specific sequences that are custom code specific to the datasource:
+<ul>
+<li>Twitter feed uses the Twitter Recent Tweet API</li>
+<li>Blogs reads a Roller Atom feed in XML</li>
+<li>ECCN reads export notifications from a .yaml file</li>
+</ul>
+</li>
+<li>Multiple data models derived from a single .yaml or json file:
+<ul>
+<li>Committee info, which has Board, Officer, Committee, and Project information</li>
+<li>Podling info, which has Incubator podling information</li>
+</ul>
+</li>
+</ol>
+<h2>Key value metadata</h2>
+<p>These are provided in the <code>ASF_DATA['data']</code> file:</p>
+<pre><code class="language-yaml"># key-value pairs
+code_lines: 227M
+code_changed: 4.2B
+code_commits: 4.1M
+asf_members: 820
+# For use as nnn+ or 'more than nnn'
+asf_members_rounded: 800
+asf_committers: 8,100
+asf_contributors: 40,000
+asf_people: 488,000
+com_initiatives: 350
+com_projects: 300
+com_podlings: 37
+com_downloads: ~2 Petabytes
+com_emails: 24M
+com_mailinglists: 1,400
+com_pageviews: 35M
+</code></pre>
+<h2>Recent tweets</h2>
+<p>This sequence uses specific code:</p>
+<pre><code class="language-yaml"># used on index.ezmd
+twitter:
+  # load, transform, and create a sequence of tweets
+  handle: 'TheASF'
+  count: 1
+</code></pre>
+<p>The key method for reading recent tweets from the API.</p>
+<pre><code class="language-python"># retrieve the last count recent tweets from the handle.
+def process_twitter(handle, count):
+    print(f'-----\ntwitter feed: {handle}')
+    bearer_token = twitter_auth()
+    query = f'from:{handle}'
+    tweet_fields = 'tweet.fields=author_id'
+    url = f'https://api.twitter.com/2/tweets/search/recent?query={query}&amp;{tweet_fields}'
+    headers = {'Authorization': f'Bearer {bearer_token}'}
+    load = connect_to_endpoint(url, headers)
+    reference = sequence_list('twitter', load['data'])
+    if load['meta']['result_count'] &lt; count:
+        v = reference
+    else:
+        v = reference[:count]
+    return v
+</code></pre>
+<h2>Recent blog posts</h2>
+<p>The main Apache site uses three different blog feeds. Here is how the site calls one, as an example:</p>
+<pre><code class="language-yaml"># used on index.ezmd
+foundation:
+  # load, transform, and create a sequence of foundation blogs
+  blog: https://blogs.apache.org/foundation/feed/entries/atom
+  count: 1
+</code></pre>
+<p>The site is only interested in the most recent post's title and id/url.</p>
+<pre><code class="language-python"># retrieve blog posts from an Atom feed.
+def process_blog(feed, count, debug):
+    print(f'blog feed: {feed}')
+    content = requests.get(feed).text
+    dom = xml.dom.minidom.parseString(content)
+    # dive into the dom to get 'entry' elements
+    entries = dom.getElementsByTagName('entry')
+    # we only want count many from the beginning
+    entries = entries[:count]
+    v = [ ]
+    for entry in entries:
+        if debug:
+            print(entry.tagName)
+        # we only want the title and href
+        v.append(
+            {
+                'id': get_element_text(entry, 'id'),
+                'title': get_element_text(entry, 'title'),
+            }
+        )
+    if debug:
+        for s in v:
+            print(s)
+
+    return [ Blog(href=s['id'],
+                  title=s['title'])
+             for s in v ]
+</code></pre>
+<p>Note the use of the <code>Blog</code> class. Its definition is in the code for the next example.</p>
+<h2>ECCN Data Sequences</h2>
+<p>The ECCN data matrix is records a project's bisnotice emails regarding encryption code.
+It has four layers: projects, products, versions, and controlled sources. This information is primarily of interest to the main Apache site, but may be useful to those working on project websites in showing how the system secures and processes data.</p>
+<p>Here are the ASF_DATA directives</p>
+<pre><code class="language-yaml"># used on licenses/exports/index.ezmd
+eccn:
+  # load, transform, and create a four tiered structure of sequence objects
+  # projects, products, versions, and sources
+  file: data/eccn/eccnmatrix.yaml
+</code></pre>
+<p>Here is a sample of the data for the first project.</p>
+<pre><code class="language-yaml">eccnmatrix:
+  - href: 'http://accumulo.apache.org/'
+    name: Apache Accumulo Project
+    contact: John Vines
+    product:
+      - name: Apache Accumulo Project
+        versions:
+          - version: development
+            eccn: 5D002
+            source:
+              - href: 'https://git-wip-us.apache.org/repos/asf/accumulo.git'
+                manufacturer: ASF
+                why: Designed for use with built in Java encryption libraries
+              - href: 'http://www.bouncycastle.org/download/bcmail-jdk15-137.tar.gz'
+                manufacturer: Bouncy Castle
+                why: General-purpose encryption library for Java 1.5
+          - version: 1.6.0 and on
+            eccn: 5D002
+            source:
+              - href: 'https://git-wip-us.apache.org/repos/asf/accumulo.git'
+                manufacturer: ASF
+                why: Designed for use with built in Java encryption libraries
+              - href: 'http://www.bouncycastle.org/download/bcmail-jdk15-137.tar.gz'
+                manufacturer: Bouncy Castle
+                why: General-purpose encryption library for Java 1.5
+          - version: 1.5.x
+            eccn: 5D002
+            source:
+              - href: 'https://git-wip-us.apache.org/repos/asf/accumulo.git'
+                manufacturer: ASF
+                why: Designed for use with built in Java encryption libraries
+  ...
+</code></pre>
+<p>Here is the custom processing for the ECCN data matrix. Note the wrappers.</p>
+<pre><code class="language-python"># create sequence of sequences of ASF ECCN data.
+def process_eccn(fname):
+    print('-----\nECCN:', fname)
+    j = yaml.safe_load(open(fname))
+
+    # versions have zero or more controlled sources
+    def make_sources(sources):
+        return [ Source(href=s['href'],
+                        manufacturer=s['manufacturer'],
+                        why=s['why'])
+                 for s in sources ]
+
+    # products have one or more versions
+    def make_versions(vsns):
+        return [ Version(version=v['version'],
+                         eccn=v['eccn'],
+                         source=make_sources(v.get('source', [ ])),
+                         )
+                 for v in sorted(vsns,
+                                 key=operator.itemgetter('version')) ]
+
+    # projects have one or more products
+    def make_products(prods):
+        return [ Product(name=p['name'],
+                         versions=make_versions(p['versions']),
+                         )
+                 for p in sorted(prods,
+                                 key=operator.itemgetter('name')) ]
+
+    # eccn matrix has one or more projects
+    return [ Project(name=proj['name'],
+                     href=proj['href'],
+                     contact=proj['contact'],
+                     product=make_products(proj['product']))
+             for proj in sorted(j['eccnmatrix'],
+                                key=operator.itemgetter('name')) ]
+
+
+# object wrappers
+class wrapper:
+    def __init__(self, **kw):
+        vars(self).update(kw)
+
+# Improve the names when failures occur.
+class Source(wrapper): pass
+class Version(wrapper): pass
+class Product(wrapper): pass
+class Project(wrapper): pass
+class Blog(wrapper): pass
+</code></pre>
+<h2>Committee Info</h2>
+<p>The committee info data contains three data structures: - officers, committees, and the board of directors. Again, this is primarily of interest to the main Apache site.</p>
+<p>From these we derive:</p>
+<ul>
+<li>Board of Directors sequence</li>
+<li>Officers sequence</li>
+<li>Committees / PMCs sequence</li>
+<li>CI - Officers including PMC VPs dictionary</li>
+<li>Projects sequence</li>
+<li>Featured projects - a random sample of three projects.</li>
+<li>Project directory columns</li>
+</ul>
+<h3>Board of Directors</h3>
+<p>The Board of Directors sequence is derived first.</p>
+<pre><code class="language-json">  ...
+  "board": {
+    "roster": {
+      "bdelacretaz": {
+        "name": "Bertrand Delacretaz"
+      },
+      "fielding": {
+        "name": "Roy T. Fielding"
+      },
+      "sharan": {
+        "name": "Sharan Foga"
+      },
+      "jmclean": {
+        "name": "Justin Mclean"
+      },
+      "rubys": {
+        "name": "Sam Ruby"
+      },
+      "clr": {
+        "name": "Craig L Russell"
+      },
+      "rvs": {
+        "name": "Roman Shaposhnik"
+      },
+      "striker": {
+        "name": "Sander Striker"
+      },
+      "wusheng": {
+        "name": "Sheng Wu"
+      }
+    }
+  }
+  ...
+</code></pre>
+<p>Here are the directives</p>
+<pre><code class="language-yaml">ci:
+  # load, transform, and create data sequences from committee info 
+  url: https://whimsy.apache.org/public/committee-info.json
+  board:
+    # used on /foundation/ and /foundation/board/
+    description: 'Board of Directors sequence'
+    # select ci['board']['roster'] for the sequence
+    path: board.roster
+</code></pre>
+<p>Here is the Python code used to select the board roster from committee info.</p>
+<pre><code class="language-python">    # select sub dictionary
+    if 'path' in sequence:
+        print(f'path: {sequence["path"]}')
+        parts = sequence['path'].split('.')
+        for part in parts:
+            reference = reference[part]
+</code></pre>
+<p>The following procedure converts a dictionary into a sequence of objects with attributes.</p>
+<pre><code class="language-python"># convert a dictionary into a sequence (list)
+def sequence_dict(seq, reference):
+    sequence = [ ]
+    for refs in reference:
+        # converting dicts into objects with attributes. Ignore non-dict content.
+        if isinstance(reference[refs], dict):
+            # put the key of the dict  into the dictionary
+            reference[refs]['key_id'] = refs
+            for item in reference[refs]:
+                if isinstance(reference[refs][item], bool):
+                    # fix up any Boolean values to be ezt.boolean - essentially True -&gt; "yes"
+                    reference[refs][item] = ezt.boolean(reference[refs][item])
+            # convert the dict into an object with attributes and append to the sequence
+            sequence.append(type(seq, (), reference[refs]))
+    return sequence
+</code></pre>
+<h3>Officers</h3>
+<p>How the system assembles the list of Foundation officers.</p>
+<pre><code class="language-json">    "boardchair": {
+      "display_name": "Board Chair",
+      "paragraph": "Executive Officers",
+      "roster": {
+        "striker": {
+          "name": "Sander Striker"
+        }
+      }
+    },
+</code></pre>
+<p>Committees / PMC Chairs. Roster and Reporting is omitted.</p>
+<pre><code class="language-json">    ...
+    "zookeeper": {
+      "display_name": "ZooKeeper",
+      "site": "http://zookeeper.apache.org/",
+      "description": "Centralized service for maintaining configuration information",
+      "mail_list": "zookeeper",
+      "established": "11/2010",
+      "chair": {
+        "fpj": {
+          "name": "Flavio Junqueira"
+        }
+      },
+      "pmc": true
+    },
+    "legal": {
+      "display_name": "Legal Affairs",
+      "site": null,
+      "description": null,
+      "mail_list": "legal",
+      "established": "03/2007",
+      "chair": {
+        "rvs": {
+          "name": "Roman Shaposhnik"
+        }
+      },
+      "pmc": false,
+      "paragraph": "Board Committees"
+    },
+    ...
+</code></pre>
+<p>Here are the directives that create metadata models from the above data.</p>
+<pre><code class="language-yaml">  officers:
+    description: 'Foundation Officers sequence'
+    # select ci['officers'] for the sequence
+    path: officers
+    # convert ci['officers']['roster']
+    asfid: roster
+  committees:
+    description: 'Foundation Committees sequence'
+    # ci['committees']
+    path: committees
+    # remove all report and roster dictionaries from committees
+    trim: report,roster
+    # convert ci['committees']['chair']
+    asfid: chair
+  ci:
+    # used on /foundation/
+    description: 'Dictionary of officers and committees'
+    # save a merged dictionary version of these sequences.
+    dictionary: officers,committees
+</code></pre>
+<p>We've already seen the code for <code>path</code> above. Here is the code that invokes <code>trim</code> and <code>asfid</code>:</p>
+<pre><code class="language-python">    # remove irrelevant keys
+    if 'trim' in sequence:
+        print(f'trim: {sequence["trim"]}')
+        parts = sequence['trim'].split(',')
+        for part in parts:
+            remove_part(reference, part)
+
+    # transform roster and chair patterns
+    if 'asfid' in sequence:
+        print(f'asfid: {sequence["asfid"]}')
+        asfid_part(reference, sequence['asfid'])
+</code></pre>
+<p>Here is the code that trims a key from a dictionary:</p>
+<pre><code class="language-python"># remove parts of a data source we don't want ro access
+def remove_part(reference, part):
+    for refs in reference:
+        if refs == part:
+            del reference[part]
+            return
+        elif isinstance(reference[refs], dict):
+            remove_part(reference[refs], part)
+</code></pre>
+<p>Here is the code that rearranges the chair or officer (roster) so that the dictionary is flattened before sequencing.</p>
+<pre><code class="language-python"># rotate a roster list singleton into an name and availid 
+def asfid_part(reference, part):
+    for refs in reference:
+        fix = reference[refs][part]
+        for k in fix:
+            availid = k
+            name = fix[k]['name']
+        reference[refs][part] = name
+        reference[refs]['availid'] = availid
+</code></pre>
+<p>The <code>ci</code> data model is a dictionary we need to improve the display of officers on the ASF main site.</p>
+<pre><code class="language-python">    # this dictionary is derived from sub-dictionaries
+    if 'dictionary' in sequence:
+        print(f'dictionary: {sequence["dictionary"]}')
+        reference = { }
+        paths = sequence['dictionary'].split(',')
+        # create a dictionary from the keys in one or more sub-dictionaries
+        for path in paths:
+            for key in load[path]:
+                reference[key] = load[path][key]
+        # dictionary result, do not sequence
+        is_dictionary = True
+</code></pre>
+<h3>Projects / PMCs</h3>
+<p>For sequences about projects we first derive a project list from the committee list. We supplement it with each project's initial letter to provide an alphabetical project index.</p>
+<pre><code class="language-yaml">  projects:
+    description: 'Current Projects'
+    # ci['committees']
+    path: committees
+    # select only where 'pmc' is true.
+    where: pmc
+    # sort by project name
+    alpha: display_name
+</code></pre>
+<p>Here's the code that trims non-pmcs from the committee list.</p>
+<pre><code class="language-python"># trim out parts of a data source that don't match part = True
+def where_parts(reference, part):
+    # currently only works on True parts
+    # if we trim as we go we invalidate the iterator. Instead create a deletion list.
+    filtered = [ ]
+    # first find the list that needs to be trimmed.
+    for refs in reference:
+        if not reference[refs][part]:
+            filtered.append(refs)
+    # remove the parts to be trimmed.
+    for refs in filtered:
+        del reference[refs]
+</code></pre>
+<p>This code provides an alphabetical index for the product index derived below.</p>
+<pre><code class="language-python"># perform alphabetation. HTTP Server is special and is put before 'A'
+def alpha_part(reference, part):
+    for refs in reference:
+        name = reference[refs][part]
+        if name == 'HTTP Server':
+            # when sorting by letter HTTPD Server is wanted first
+            letter = ' '
+        else:
+            letter = name[0].upper()
+        reference[refs]['letter'] = letter
+</code></pre>
+<h3>Featured projects</h3>
+<p>On the front page on the main ASF site we feature a random sample of projects. We also want to display a project's logo.</p>
+<pre><code class="language-yaml">  featured_projs:
+    # used on /
+    description: 'Featured Projects'
+    # base on projects sequence
+    sequence: projects
+    # take a random sample of 3
+    random: 3
+    # logo path - use apache powered by if missing
+    logo: /logos/res/{}/default.png,/foundation/press/kit/poweredBy/Apache_PoweredBy.svg
+</code></pre>
+<p>Here is the code to copy a sequence, take a random sample, add the logo (or the ASF logo if there is no product logo), and, for featured podlings, adjust the name:</p>
+<pre><code class="language-python">    # this sequence is derived from another sequence
+    if 'sequence' in sequence:
+        print(f'sequence: {sequence["sequence"]}')
+        reference = metadata[sequence['sequence']]
+        # sequences derived from prior sequences do not need to be converted to a sequence
+        is_sequence = True
+
+    # this sequence is a random sample of another sequence
+    if 'random' in sequence:
+        print(f'random: {sequence["random"]}')
+        if is_sequence:
+            reference = random.sample(reference, sequence['random'])
+        else:
+            print(f'{seq} - random requires an existing sequence to sample')
+
+    # for a project or podling see if the logo exists w/HEAD and set the relative path.
+    if 'logo' in sequence:
+        print(f'logo: {sequence["logo"]}')
+        if is_sequence:
+            # determine the project or podling logo
+            reference = add_logo(reference, sequence['logo'])
+            if seq == 'featured_pods':
+                # for podlings strip "Apache" from the beginning and "(incubating)" from the end.
+                # this is Sally's request
+                for item in reference:
+                    setattr(item, 'name', ' '.join(item.name.split(' ')[1:-1]))
+        else:
+            print(f'{seq} - logo requires an existing sequence')
+
+</code></pre>
+<p>Here is the detailed check to see if a project or podling logo is available.</p>
+<pre><code class="language-python"># add logo attribute with HEAD check for existence. If nonexistent use default.
+def add_logo(reference, part):
+    # split between logo pattern and default.
+    parts = part.split(',')
+    for item in reference:
+        # the logo pattern includes a place to insert the project/podling key
+        logo = (parts[0].format(item.key_id))
+        # HEAD request
+        response = requests.head('https://www.apache.org/' + logo)
+        if response.status_code != 200:
+            # logo not found - use the default logo
+            logo = parts[1]
+        # save the logo path as an attribute
+        setattr(item, 'logo', logo)
+    return reference
+</code></pre>
+<h3>Project index</h3>
+<p>At the bottom of the main page of the ASF site we display a project index that includes headings for each letter of the alphabet:</p>
+<pre><code class="language-yaml">  pl:
+    # used on /
+    description: 'Project List Columns'
+    # base on projects sequence
+    sequence: projects
+    # split into 6 column sequence adding letters of the alphabet and putting httpd first
+    split: 6
+</code></pre>
+<p>This code derives the sequences for the six columns in the display. The output metadata is <code>pl_0</code>, <code>pl_1</code>, <code>pl_2</code>, <code>pl_3</code>, <code>pl_4</code>, and <code>pl_5</code>:</p>
+<pre><code class="language-python"># split a list into equal sized columns. Adds letter breaks in the alphabetical sequence.
+def split_list(metadata, seq, reference, split):
+    # copy sequence
+    sequence = list(reference)
+    # sort the copy
+    sequence.sort(key=lambda x: (x.letter, x.display_name))
+    # size of list
+    size = len(sequence)
+    # size of columns
+    percol = int((size+26+split-1)/split)
+    # positions
+    start = nseq = nrow = 0
+    letter = ' '
+    # create each column
+    for column in range(split):
+        subsequence = [ ]
+        end = min(size+26, start+percol)
+        while nrow &lt; end:
+            if letter &lt; sequence[nseq].letter:
+                # new letter - add a letter break into the column. If a letter has no content it is skipped
+                letter = sequence[nseq].letter
+                subsequence.append(type(seq, (), { 'letter': letter, 'display_name': letter }))
+            else:
+                # add the project into the sequence
+                subsequence.append(sequence[nseq])
+                nseq = nseq+1
+            nrow = nrow+1
+        # save the column sequence in the metadata
+        metadata[f'{seq}_{column}'] = subsequence
+        start = end
+    if nseq &lt; size:
+        print(f'WARNING: {seq} not all of sequence consumed: short {size-nseq} projects')
+</code></pre>
+<h2>Adding a data source</h2>
+<p>Before you code to add a data source, evaluate which of the above patterns it fits.</p>
+<ul>
+<li>Is it a custom pattern as for Twitter, blogs, and ECCN?</li>
+<li>Can it follow the sequence of directives used for committee iInfo?</li>
+<li>If it is a sequence of directives, does it need a new one?</li>
+</ul>
+<h3>Adding a custom data source</h3>
+<pre><code class="language-python">    # Lift data from ASF_DATA['data'] into METADATA
+    if 'data' in asf_data:
+        print(f'Processing {asf_data["data"]}')
+        config_data = read_config(asf_data['data'])
+        for key in config_data:
+            # first check for data that is a singleton with special handling
+            if key == 'eccn':
+                # process eccn data
+                fname = config_data[key]['file']
+                metadata[key] = v = process_eccn(fname)
+                if debug:
+                    print('ECCN V:', v)
+                continue
+
+            if key == 'twitter':
+                # process twitter data
+                # if we decide to have multiple twitter feeds available then move next to blog below
+                handle = config_data[key]['handle']
+                count = config_data[key]['count']
+                metadata[key] = v = process_twitter(handle, count)
+                if debug:
+                    print('TWITTER V:', v)
+                continue
+</code></pre>
+<p>For a custom singletons add your call to your new process_X code here, following the pattern for ECCN or Twitter.</p>
+<pre><code class="language-python">       	    value = config_data[key]
+            if isinstance(value, dict):
+                # dictionaries may have multiple data structures that are processed with a sequence of actions
+                # into multiple sequences and dictionaries.
+                print(f'-----\n{key} creates one or more sequences')
+                if debug:
+                    print(value)
+                # special cases that are multiple are processed first
+                if 'blog' in value:
+                    # process blog feed
+                    feed = config_data[key]['blog']
+                    count = config_data[key]['count']
+                    metadata[key] = v = process_blog(feed, count, debug)
+                    if debug:
+                        print('BLOG V:', v)
+                    continue
+</code></pre>
+<p>For custom non-singletons add your call to your new process_X code here, following the pattern for a blog feed.</p>
+<h3>Adding a directive to the sequence process</h3>
+<p>If you are adding a directive, add it to <code>process_sequence</code> in the place you need it (process order can matter):</p>
+<pre><code class="language-python"># process sequencing transformations to the data source
+def process_sequence(metadata, seq, sequence, load, debug):
+    reference = load
+    # has been converted to a sequence
+    is_sequence = False
+    # has been converted to a dictionary - won't be made into a sequence
+    is_dictionary = False
+    # save metadata at the end
+    save_metadata = True
+
+    # description
+    if 'description' in sequence:
+        print(f'{seq}: {sequence["description"]}')
+
+    # select sub dictionary
+    if 'path' in sequence:
+        print(f'path: {sequence["path"]}')
+        parts = sequence['path'].split('.')
+        for part in parts:
+            reference = reference[part]
+
+    # filter dictionary by attribute value. if filter is false discard
+    if 'where' in sequence:
+        print(f'where: {sequence["where"]}')
+        where_parts(reference, sequence['where'])
+
+    # remove irrelevant keys
+    if 'trim' in sequence:
+        print(f'trim: {sequence["trim"]}')
+        parts = sequence['trim'].split(',')
+        for part in parts:
+            remove_part(reference, part)
+
+    # transform roster and chair patterns
+    if 'asfid' in sequence:
+        print(f'asfid: {sequence["asfid"]}')
+        asfid_part(reference, sequence['asfid'])
+
+    # add first letter of alphabetic categories
+    if 'alpha' in sequence:
+        print(f'alpha: {sequence["alpha"]}')
+        alpha_part(reference, sequence['alpha'])
+
+    # this dictionary is derived from sub-dictionaries
+    if 'dictionary' in sequence:
+        print(f'dictionary: {sequence["dictionary"]}')
+        reference = { }
+        paths = sequence['dictionary'].split(',')
+        # create a dictionary from the keys in one or more sub-dictionaries
+        for path in paths:
+            for key in load[path]:
+                reference[key] = load[path][key]
+        # dictionary result, do not sequence
+        is_dictionary = True
+
+    # this sequence is derived from another sequence
+    if 'sequence' in sequence:
+        print(f'sequence: {sequence["sequence"]}')
+        reference = metadata[sequence['sequence']]
+        # sequences derived from prior sequences do not need to be converted to a sequence
+        is_sequence = True
+
+    # this sequence is a random sample of another sequence
+    if 'random' in sequence:
+        print(f'random: {sequence["random"]}')
+        if is_sequence:
+            reference = random.sample(reference, sequence['random'])
+        else:
+            print(f'{seq} - random requires an existing sequence to sample')
+
+    # for a project or podling see if the logo exists w/HEAD and set the relative path.
+    if 'logo' in sequence:
+        print(f'logo: {sequence["logo"]}')
+        if is_sequence:
+            # determine the project or podling logo
+            reference = add_logo(reference, sequence['logo'])
+            if seq == 'featured_pods':
+                # for podlings strip "Apache" from the beginning and "(incubating)" from the end.
+                # this is Sally's request
+                for item in reference:
+                    setattr(item, 'name', ' '.join(item.name.split(' ')[1:-1]))
+        else:
+            print(f'{seq} - logo requires an existing sequence')
+
+    # this sequence is a sorted list divided into multiple columns
+    if 'split' in sequence:
+        print(f'split: {sequence["split"]}')
+        if is_sequence:
+            # create a sequence for each column
+            split_list(metadata, seq, reference, sequence['split'])
+            # created column sequences are already saved to metadata so do not do so later
+            save_metadata = False
+        else:
+            print(f'{seq} - split requires an existing sequence to split')
+
+</code></pre>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

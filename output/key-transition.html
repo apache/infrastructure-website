@@ -1,0 +1,320 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to transition to a new PGP key - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>
+<!-- pagefind search -->
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+      new PagefindUI({ element: "#pagefind-search" });
+  });
+  var pageTitle = '';
+  if(pageTitle === '404'){
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#page-404-search" });
+    });
+  }
+</script>
+<!-- pagefind search box styling -->
+<style type="text/css">
+.search-form {
+	right: 0;
+	left: initial !important;
+        min-width: 25vw;
+	max-width: 90vw;
+	max-height: calc(95vh - 100px);
+	overflow: auto;
+	margin-top: 5px;
+}
+</style>
+  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="https://apache.org/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Infra docs</a></li>
+                        <li><a class="dropdown-item" href="/present.html">Infra presentations</a></li>
+                    </ul>
+                </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Contribute</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle hidden-xs" data-bs-toggle="dropdown"><span class="fa-solid fa-magnifying-glass"
+                  aria-hidden="true"></span> Search</a>
+              <ul class="search-form dropdown-menu">
+                <li>
+                  <div id="pagefind-search" class="input-group" style="width: 100%; padding: 0 5px;"></div>
+                </li>
+              </ul>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              How to transition to a new PGP key
+          </h1>
+              <h2 id="status">Introduction<a class="headerlink" href="#status" title="Permanent link">&para;</a></h2>
+<p>This document is for project <strong>committers</strong> who wish to change the PGP key they use at Apache (for example to sign releases). It explains how to create a new PGP key and break it in, gradually having it replace the old key.</p>
+<h2>Contents</h2>
+<ul>
+<li><a href="#important">Important note</a></li>
+<li><a href="#motivation">Why replace a key?</a></li>
+<li><a href="#single-keyring">Using a single keyring for two keys</a></li>
+<li><a href="#transition-export">Exporting both new and old keys</a></li>
+<li><a href="#transition-fingerprints">Fingerprinting new and old keys</a></li>
+</ul>
+<h2 id="important">Important note<a class="headerlink" href="#important" title="Permanent link">&para;</a></h2>
+<p>If your key has been compromised, you <strong>must not</strong> use a transition period as described below. Revoke the compromised key immediately and create a new one. Consider all <a href="/release-signing.html#web-of-trust" target="_blank">web of trust</a> links signed by the old key as suspect. You must establish a completely new set of links.</p>
+<h2 id="motivation">Why replace a key?<a class="headerlink" href="#motivation" title="Permanent link">&para;</a></h2>
+<p>When replacing one uncompromised key with a newer (typically longer) one, using a transition period when both keys are trustworthy and participate in the <a href="/release-signing.html#web-of-trust" target="_blank">web of trust</a> uses <em>trust transitivity</em> to use links to the old key to trust signatures and links created by the new key. During a transition, both keys are trustworthy but you only use the newer one to sign documents and certify links in the web of trust.</p>
+<p>This document describes how to use <a href="openpgp.html">GnuPG</a> to create a new key and manage both keys during this transition period.</p>
+<h2 id="single-keyring">Using a single keyring for two keys<a class="headerlink" href="#single-keyring" title="Permanent link">&para;</a></h2>
+<p>It is best to use a single keyring containing both keys.</p>
+<h3 id="generate-new-key">Generate a new key<a class="headerlink" href="#generate-new-key" title="Permanent link">&para;</a></h3>
+<p>Generate the new key either:</p>
+<ul>
+<li>directly in the keyring containing the old key</li>
+<li>in a new keyring, and then transfer the new key to the keyring containing the old key</li>
+</ul>
+<p>To generate a strong <a href="release-signing.html#rsa">RSA key</a> follow <a href="openpgp.html#generate-key">these instructions</a>. If you use a separate keyring, follow <a href="openpgp.html#secret-key-transfer">these instructions</a> to transfer it.</p>
+<p>Both new and old keys should now be contained in the same keyring. Verify this by:</p>
+<pre><code>$ gpg --list-secret-keys  
+
+alice/secring.gpg
+
+
+sec   1024D/AD741727 2009-08-20
+uid                  Alice Example (EXAMPLE OF OLD KEY) &lt;alice@example.org&gt;
+ssb   1024g/268883A9 2009-08-20
+
+
+sec   4096R/E2B054B8 2009-08-20
+uid                  Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;
+ssb   4096R/4A6D5217 2009-08-20
+</code></pre>
+<p>Both new and old keys should be listed.</p>
+<h3 id="open-interaction-edit">Open interactive edit mode<a class="headerlink" href="#open-interaction-edit" title="Permanent link">&para;</a></h3>
+<p>You need to perform a number of operations on the new key. Though you can perform them individually, saving and closing after each one, it is more convenient to use <em>interactive edit</em> mode.</p>
+<p>Start by opening an edit session on the new key, for example E2B054B8</p>
+<pre><code>$ gpg --edit-key E2B054B8
+gpg (GnuPG) 1.4.9; Copyright (C) 2008 Free Software Foundation, Inc.
+This is free software: you are free to change and redistribute it.
+There is NO WARRANTY, to the extent permitted by law.
+
+Secret key is available.
+
+
+pub  4096R/E2B054B8  created: 2009-08-20  expires: never       usage: SC
+
+                     trust: unknown       validity: unknown
+sub  4096R/4A6D5217  created: 2009-08-20  expires: never       usage: E 
+
+[ unknown] (1). Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;
+
+
+Command&gt; 
+</code></pre>
+<h3 id="trust-new-key">Trust the new key<a class="headerlink" href="#trust-new-key" title="Permanent link">&para;</a></h3>
+<p>The new key needs to be marked as ultimately trusted in this keyring. This will ensure that the <a href="release-signing.html#web-of-trust" target="_blank">web of trust</a> links signed by this key will be trusted automatically.</p>
+<pre><code>Command&gt; trust
+pub  4096R/E2B054B8  created: 2009-08-20  expires: never       usage: SC
+
+                     trust: unknown       validity: unknown
+sub  4096R/4A6D5217  created: 2009-08-20  expires: never       usage: E 
+
+[ unknown] (1). Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;
+
+Please decide how far you trust this user to correctly verify other users' keys
+(by looking at passports, checking fingerprints from different sources, etc.)
+
+
+1 = I don't know or won't say
+  2 = I do NOT trust
+  3 = I trust marginally
+  4 = I trust fully
+  5 = I trust ultimately
+  m = back to the main menu
+
+
+Your decision? 5
+Do you really want to set this key to ultimate trust? (y/N) y
+
+
+pub  4096R/E2B054B8  created: 2009-08-20  expires: never       usage: SC
+
+                     trust: ultimate      validity: unknown
+sub  4096R/4A6D5217  created: 2009-08-20  expires: never       usage: E
+
+[ unknown] (1). Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;
+Please note that the shown key validity is not necessarily correct
+unless you restart the program.
+</code></pre>
+<p>&lt;h/3 id="sign-new-key"&gt;Use the old key to sign the new key<a class="headerlink" href="#sign-new-key" title="Permanent link">&para;</a></p>
+<p>Use the old key (AD741727, say) to sign the new key:</p>
+<pre><code>Command&gt; sign AD741727
+
+pub  4096R/E2B054B8  created: 2009-08-20  expires: never       usage: SC
+
+                     trust: ultimate      validity: ultimate
+Primary key fingerprint: FF96 6261 C995 1DDE BF34  5150 D5D2 BDB5 E2B0 54B8
+
+
+ Alice Example (EXAMPLE NEW KEY) &amp;lt;alice@example.org&amp;gt;
+
+
+
+Are you sure that you want to sign this key with your
+key "Alice Example (EXAMPLE OF OLD KEY) &lt;alice@example.org&gt;"
+(AD741727)
+
+
+Really sign? (y/N) y
+
+
+You need a passphrase to unlock the secret key for
+user: "Alice Example (EXAMPLE OF OLD KEY) &lt;alice@example.org&gt;"
+1024-bit DSA key, ID AD741727, created 2009-08-20
+</code></pre>
+<h3 id="check-sha">Check preferences<a class="headerlink" href="#check-sha" title="Permanent link">&para;</a></h3>
+<p>Make sure you are <a href="openpgp.html#sha1">avoiding SHA-1</a> in the <a href="openpgp.html#key-prefs">key preferences</a> of both the new and old keys.</p>
+<h3 id="finish-off">Complete the edit<a class="headerlink" href="#finish-off" title="Permanent link">&para;</a></h3>
+<p>It is convenient to add secondary user ids for current email accounts at this point.</p>
+<p>Then save your changes, which will exit you from edit mode:</p>
+<pre><code>Command&gt; save
+</code></pre>
+<h3 id="sign-old-with-new">Whether to sign the old key with the new<a class="headerlink" href="#sign-old-with-new" title="Permanent link">&para;</a></h3>
+<p>Arguments can be made for and against signing the old key with the new. The old key is less trustworthy now and will be revoked in future, so signing with it may be misleading for those unaware of the potential weaknesses. However, without this signature, signers of the new key will not receive the transitive benefit of the links made from the old key. Anyone who chooses not to sign the old key with the new should made efforts to re-sign links made by the old key with the new key.</p>
+<h3 id="set-default-to-new">Set the default to the new key<a class="headerlink" href="#set-default-to-new" title="Permanent link">&para;</a></h3>
+<p>Next, change the default key on the keyring to the new. This ensures that all future signatures use the new key. Though you could still use the old key for signing by explicitly specifying it, avoid this since the signatures will be weak.</p>
+<p>To make the new key the default, set the <code>default-key</code> in the <code>gpg.conf</code> configuration file. For example, to set the default to <code>E2B054B8</code> add:</p>
+<pre><code>default-key E2B054B8
+This setting can be tested by creating a test signature:
+$ gpg --detach-sig --armor document
+
+You need a passphrase to unlock the secret key for
+user: "Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;"
+4096-bit RSA key, ID E2B054B8, created 2009-08-20
+</code></pre>
+<p>Verify that the new key has been chosen by default.</p>
+<h3 id="update-keys">Upload both keys<a class="headerlink" href="#update-keys" title="Permanent link">&para;</a></h3>
+<p>Finish the process by uploading the new and old keys to the keyserver:</p>
+<pre><code>$ gpg --send-keys E2B054B8 AD741727
+</code></pre>
+<h3 id="backups">Create backups<a class="headerlink" href="#backups" title="Permanent link">&para;</a></h3>
+<p>Follow <a href="openpgp.html#backup">these instructions</a>.</p>
+<h3 id="revocation-certificates">Generate and store revocation certificates<a class="headerlink" href="#revocation-certificates" title="Permanent link">&para;</a></h3>
+<p>Follow <a href="openpgp.html#revocation-certs">these instructions</a> to create and securely store [generic revocation certificates](release-signing.html#revocation-cert" for the new key.</p>
+<h3 id="update-documents">Update documents<a class="headerlink" href="#update-documents" title="Permanent link">&para;</a></h3>
+<p>The final stage in the process is to update documents containing references to the old key so that they contain both the new and old keys. For Apache documents, follow <a href="openpgp.html#update">this checklist</a>. Use the instructions for a transition when there is a choice.</p>
+<p>For other documents:</p>
+<ul>
+<li>Update those that contain an <a href="release-signing.html#export">export</a> with a <a href="#transition-export">dual export</a>.</li>
+<li>Update those that contain a <a href="release-signing.html#fingerprint%22">fingerprint</a> with <a href="#transition-fingerprints">both fingerprints</a>.</li>
+</ul>
+<h3 id="wot">Web of trust<a class="headerlink" href="#wot" title="Permanent link">&para;</a></h3>
+<p>Read this <a href="openpgp.html#wot">Guide to Apache use</a> of the <a href="release-signing.html#web-of-trust">web of trust</a> and make arrangements to include your new key at the earliest opportunity.</p>
+<h2 id="transition-export">Exporting both new and old keys<a class="headerlink" href="#transition-export" title="Permanent link">&para;</a></h2>
+<p>During the transition period, use a single export containing both new and old public keys whenever you need an export.</p>
+<p>To create a suitable export, supply both key IDs on the command line. For example, to export keys AD741727 (old) and E2B054B8 (new) to FILENAME use:</p>
+<pre><code>$ gpg --export --armor --output FILENAME AD741727 E2B054B8
+</code></pre>
+<p>This exports only the public keys, and so isn't confidential. Replace the old public key with this dual export everywhere it was published.</p>
+<h2 id="transition-fingerprints">Fingerprinting new and old keys<a class="headerlink" href="#transition-fingerprints" title="Permanent link">&para;</a></h2>
+<p>During the transitions, use both fingerprints. For example, to fingerprint old key <code>AD741727</code> and new key <code>E2B054B8</code>, use:</p>
+<pre><code>$ gpg --fingerprint AD741727 E2B054B8
+pub   1024D/AD741727 2009-08-20
+      Key fingerprint = CD0C 5281 D0A9 E963 19AF  F365 AD81 612A AD74 1727
+uid                  Alice Example (EXAMPLE OF OLD KEY) &lt;alice@example.org&gt;
+sub   1024g/268883A9 2009-08-20
+
+pub   4096R/E2B054B8 2009-08-20
+      Key fingerprint = FF96 6261 C995 1DDE BF34  5150 D5D2 BDB5 E2B0 54B8
+uid                 Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;
+sub   4096R/4A6D5217 2009-08-20
+</code></pre>
+<p>So the fingerprints are:</p>
+<ul>
+<li><code>CD0C 5281 D0A9 E963 19AF F365 AD81 612A AD74 1727</code> for <code>AD741727</code></li>
+<li><code>FF96 6261 C995 1DDE BF34 5150 D5D2 BDB5 E2B0 54B8</code> for <code>E2B054B8</code></li>
+</ul>
+<p>For every fingerprint, the last 8 digits are the key ID.</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

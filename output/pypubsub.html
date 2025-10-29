@@ -1,0 +1,337 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subscribe to Apache Software Foundation infrastructure events - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>
+<!-- pagefind search -->
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+      new PagefindUI({ element: "#pagefind-search" });
+  });
+  var pageTitle = '';
+  if(pageTitle === '404'){
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#page-404-search" });
+    });
+  }
+</script>
+<!-- pagefind search box styling -->
+<style type="text/css">
+.search-form {
+	right: 0;
+	left: initial !important;
+        min-width: 25vw;
+	max-width: 90vw;
+	max-height: calc(95vh - 100px);
+	overflow: auto;
+	margin-top: 5px;
+}
+</style>
+  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="https://apache.org/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Infra docs</a></li>
+                        <li><a class="dropdown-item" href="/present.html">Infra presentations</a></li>
+                    </ul>
+                </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Contribute</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle hidden-xs" data-bs-toggle="dropdown"><span class="fa-solid fa-magnifying-glass"
+                  aria-hidden="true"></span> Search</a>
+              <ul class="search-form dropdown-menu">
+                <li>
+                  <div id="pagefind-search" class="input-group" style="width: 100%; padding: 0 5px;"></div>
+                </li>
+              </ul>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Subscribe to Apache Software Foundation infrastructure events
+          </h1>
+              <p>The ASF employs a plain-text publisher/subscriber service called <strong>PyPubSub</strong> at <code>pubsub.apache.org:2069</code>, which lists most events that happen within the Foundation's infrastructure.</p>
+<p>Currently, the service streams the following events:</p>
+<ul>
+<li>Subversion commits</li>
+<li>Git commits and pushes</li>
+<li>Emails to publicly archived lists</li>
+<li>JIRA updates</li>
+<li>Pull Requests and Issues from GitHub</li>
+<li>Staging and publishing notifications sent via our <a href="https://s.apache.org/asfyaml">.asf.yaml</a> offering.</li>
+</ul>
+<p>Events are delivered as JSON objects in a <a href="https://en.wikipedia.org/wiki/Chunked_transfer_encoding" target="_blank">chunked response stream</a>, with each new chunk being either an event payload or a keep-alive ping.</p>
+<h2>How to subscribe</h2>
+<p>Subscribers can pick one or multiple topics to subscribe to, with more specific subscriptions getting fewer, but more specific, event payloads. Construct subscriptions in the form of: <code>http://pubsub.apache.org:2069/topics/go/here</code>, and separate the topics you want to subscribe to with forward slashes.</p>
+<p>The service returns events that match <em>all</em> of the topics you are subscribed to.
+To subscribe to multiple topic batches in an OR'ed way, you may use a comma to separate your batches of topics.</p>
+<p>Some examples:</p>
+<ul>
+<li>To subscribe to all svn commits; <code>http://pubsub.apache.org:2069/svn/commit</code></li>
+<li>To subscribe to all git commits; <code>http://pubsub.apache.org:2069/git/commit</code></li>
+<li>To subscribe to all git events (push+commit) for whimsy.git; <code>http://pubsub.apache.org:2069/git/whimsy</code></li>
+<li>To subscribe to all <code>netbeans.apache.org</code> emails: <code>http://pubsub.apache.org:2069/email/netbeans.apache.org</code></li>
+<li>To subscribe to PRs opened against <code>beam-foo.git</code>: <code>http://pubsub.apache.org:2069/github/beam-foo.git/pr</code></li>
+<li>To subscribe to all commits, both Subversion and git: <code>http://pubsub.apache.org:2069/commit</code></li>
+<li>To subscribe to all JIRA events for the HADOOP JIRA instance: <code>http://pubsub.apache.org:2069/jira/HADOOP</code></li>
+<li>To subscribe to <em>both</em> JIRA and email streams for tomcat in one go: <code>http://pubsub.apache.org:2069/jira/TOMCAT,email/tomcat.apache.org</code></li>
+</ul>
+<p>Public SVN repo topics consist of 'svn', the first one or two path segments after the /repos/ in the URL, and 'commit'.
+For example, changes to the repository <code>https://dist.apache.org/repos/dist/release/</code> have the topics <code>svn/dist/release/commit</code>.
+A commit that involves changes to both <code>dist/release</code> and <code>dist/dev</code> has the topics <code>svn/dist/commit</code>.
+Note that <code>svn/dist/release/commit</code> will not match, because the topics in the response do not include <code>release</code>.</p>
+<p>Private SVN repos topics are constructed in the same way, but have an additional 'private' topic.
+For example <code>https://pubsub.apache.org:2070/private/svn/private/committers/commit</code> returns commits for
+<code>https://svn.apache.org/repos/private/committers/board/</code></p>
+<h2>Event payload examples</h2>
+<p>Pings are simple objects like this:</p>
+<pre><code class="language-json">{"stillalive": 1583973410.9620552}
+</code></pre>
+<p>An example of a real event payload, in this case a git commit, could be (emails redacted in this example):</p>
+<pre><code class="language-json">{
+	"commit": {
+		"body": "[maven-release-plugin] prepare for next development iteration\n",
+		"committer": "sblackmon &lt;s...@apache.org&gt;",
+		"hash": "8e6f956",
+		"log": "[maven-release-plugin] prepare for next development iteration",
+		"repository": "git",
+		"sha": "8e6f956c2eda06ca9debf21634cedcecc96293ff",
+		"author": "sblackmon",
+		"files": ["pom.xml", "streams-cli/pom.xml", "streams-components/pom.xml"],
+		"server": "gitbox",
+		"project": "streams",
+		"autopublish": false,
+		"date": "Wed Mar 11 19:25:06 2020 -0500",
+		"committed": "Wed Mar 11 19:25:06 2020 -0500",
+		"subject": "[maven-release-plugin] prepare for next development iteration",
+		"ref": "refs/heads/master",
+		"email": "s...@apache.org",
+		"authored": "Wed Mar 11 19:25:06 2020 -0500",
+		"ref_names": ""
+	},
+	"pubsub_topics": ["git", "streams", "commit"],
+	"pubsub_path": "/git/streams/commit"
+}
+</code></pre>
+<p>Payloads vary depending on what they represent, so check both what sub-objects are present in the payload and the <code>pubsub_path</code> variable, which will show the full payload event path and explain which type is being sent.</p>
+<h2>Try it yourself</h2>
+<p>To try it out and take a look at the event stream, use <a href="https://en.wikipedia.org/wiki/CURL">cURL</a> in your terminal:</p>
+<pre><code class="language-bash">curl http://pubsub.apache.org:2069/git/commit
+</code></pre>
+<br/>
+<p>A secure version also exists on port 2070, for use with authenticated event streams:</p>
+<pre><code class="language-bash">curl https://pubsub.apache.org:2070/git/commit
+</code></pre>
+<p>Please note that due to limitations in our TLS terminator, payloads larger than 64kb are split into 64kb chunks on
+port 2070. If you are using port 2070, you should ensure that the data you receive is terminated with a newline (\n),
+or continue fetching data till you hit a chunk terminated with a newline.</p>
+<p>N.B. the following curl switches may be added:</p>
+<ul>
+<li>-N - non-buffered output; used when piping into another command (e.g. tail)</li>
+<li>-sS - silent mode (-s) but still shows error messages (-S)</li>
+</ul>
+<h2>Using PyPubSub in programming</h2>
+<h3>Using PyPubSub with Python</h3>
+<p>You can listen for and react to payloads in Python using the <a href="https://pypi.org/project/asfpy/">asfpy</a> pip package:</p>
+<pre><code class="language-python">import asfpy.pubsub
+
+def process_event(payload):
+   print("Got an event from PyPubSub!")
+   ...
+
+def main():
+    pubsub = asfpy.pubsub.Listener('http://pubsub.apache.org:2069/')
+    pubsub.attach(process_event, raw=True)
+
+</code></pre>
+<h3>Using PyPubSub with node.js</h3>
+<p>This sample snippet lets you use <code>node.js</code> for listening for and processing pubsub events:</p>
+<pre><code class="language-javascript">const http = require("http");
+const https = require("https");
+
+class PyPubSub {
+    constructor(url) {
+        this.url = url;
+        this.getter = url.match(/^https/i) ? https : http;
+    }
+
+    attach(func) {
+        this.getter.get(this.url, res =&gt; {
+            res.setEncoding("utf8");
+            let body = '';
+            res.on("data", data =&gt; {
+	        // Be mindful of proxies that split pubsub chunks into smaller ones,
+		// only load the JSON blob once we hit a newline (\n)
+                body += data;
+                if (data.endsWith("\n")) {
+                    let payload = JSON.parse(body);
+                    body = '';
+                    func(payload);
+                }
+              });
+        });
+    }
+}
+
+
+// Test
+function process(payload) {
+    // ping-back?
+    if (payload.stillalive) {
+        console.log("Got a ping-back");
+    // Actual payload? process it!
+    } else {
+        console.log("Got a payload from PyPubSub!");
+        console.log(payload);
+    }
+}
+
+const pps = new PyPubSub('http://pubsub.apache.org:2069/');
+pps.attach(process);
+</code></pre>
+<h3>Using PyPubSub with Ruby</h3>
+<p>This sample lets you connect to our pubsub service via Ruby:</p>
+<pre><code class="language-ruby">require 'net/http'
+require 'json'
+require 'thread'
+
+pubsub_URL = 'https://pubsub.apache.org:2070/'
+
+def do_stuff_with(event)
+  print("Got a pubsub event!:\n")
+  print(event)
+  print("\n")
+end
+
+def listen(url)
+  ps_thread = Thread.new do
+    begin
+      uri = URI.parse(url)
+      Net::HTTP.start(uri.host, uri.port, :use_ssl =&gt; url.match(/^https:/) ? true : false) do |http|
+        request = Net::HTTP::Get.new uri.request_uri
+        http.request request do |response|
+          body = ''
+          response.read_body do |chunk|
+            body += chunk
+	    # All chunks are terminated with \n. Since 2070 can split events into 64kb sub-chunks
+	    # we wait till we have gotten a newline, before trying to parse the JSON.
+            if chunk.end_with? "\n"
+              event = JSON.parse(body.chomp)
+              body = ''
+              if event['stillalive']  # pingback
+                print("ping? PONG!\n")
+              else
+                do_stuff_with(event)
+              end
+            end
+          end
+        end
+      end
+    rescue Errno::ECONNREFUSED =&gt; e
+      restartable = true
+      STDERR.puts e
+      sleep 3
+    rescue Exception =&gt; e
+      STDERR.puts e
+      STDERR.puts e.backtrace
+    end
+  end
+  return ps_thread
+end
+
+begin
+  ps_thread = listen(pubsub_URL)
+  print("Pubsub thread started, waiting for results...\n")
+  while ps_thread.alive?
+    sleep 10
+  end
+end
+</code></pre>
+<h2>Want to know more? Have questions?</h2>
+<p>To learn more, or just get some questions answered, please contact us at <code>users@infra.apache.org</code>, and we'll try our best to help you out.</p>
+<h2>Acknowledgements</h2>
+<p>PyPubSub is based on <a href="https://paul.querna.org/articles/2010/10/22/evolution-of-apaches-websites/">SvnPubSub</a>
+and <a href="/gitpubsub.html">gitpubsub</a>. We wish to thank the Subversion project for building the precursor to this service.</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>

@@ -1,0 +1,191 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Writing a good bug report - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>
+<!-- pagefind search -->
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+      new PagefindUI({ element: "#pagefind-search" });
+  });
+  var pageTitle = '';
+  if(pageTitle === '404'){
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#page-404-search" });
+    });
+  }
+</script>
+<!-- pagefind search box styling -->
+<style type="text/css">
+.search-form {
+	right: 0;
+	left: initial !important;
+        min-width: 25vw;
+	max-width: 90vw;
+	max-height: calc(95vh - 100px);
+	overflow: auto;
+	margin-top: 5px;
+}
+</style>
+  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="https://apache.org/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Infra docs</a></li>
+                        <li><a class="dropdown-item" href="/present.html">Infra presentations</a></li>
+                    </ul>
+                </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Contribute</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+                        <li><a class="dropdown-item" href="/how-to-mirror.html">Become an ASF download mirror</a></li>
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle hidden-xs" data-bs-toggle="dropdown"><span class="fa-solid fa-magnifying-glass"
+                  aria-hidden="true"></span> Search</a>
+              <ul class="search-form dropdown-menu">
+                <li>
+                  <div id="pagefind-search" class="input-group" style="width: 100%; padding: 0 5px;"></div>
+                </li>
+              </ul>
+            </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Writing a good bug report
+          </h1>
+              <ul>
+<li><a href="#overview">Bug reporting</a></li>
+<li><a href="#systems">Bug-tracking systems</a></li>
+<li><a href="#newbug">Is this a new bug?</a></li>
+<li><a href="#useful">A useful bug report</a></li>
+<li><a href="#blocked">If your report or comment gets blocked</a></li>
+<li><a href="#followup">Following up</a></li>
+</ul>
+<h2 id="overview">Bug reporting<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
+<p>When you run into an issue with ASF instrastructure, with the software one of the ASF projects produces, or with an ASF-related website, you may be the first person to have noticed the issue. If so, you should report it. The people responsible for the thing that has a bug or other issue will be happy to know about the problem so they can fix it before more people run into it.</p>
+<p>For the purposes of this discussion, we'll call any issue, from a calculation error in a function to a punctuation error on a web page, a "bug". Something that you would like to see added to an application or a website to make it better would be an "enhancement request". Both are useful; we are looking at bugs here.</p>
+<p><strong>Note</strong>: do not include sensitive information in a bug report. See the <a href="sensitive_info.html">Infra policy on sharing sensitive information</a> and send such information by email to <code>root@infra.apache.org</code>. Provide a reference to any related bug reports.</p>
+<h2 id="systems">Bug-tracking systems<a class="headerlink" href="#systems" title="Permanent link">&para;</a></h2>
+<p>ASF has two bug-tracking systems:</p>
+<ul>
+<li><a href="https://issues.apache.org/jira/" target="_blank">Jira</a></li>
+<li><a href="https://bz.apache.org/" target="_blank">Bugzilla</a></li>
+</ul>
+<p>Infra itself uses <a href="https://issues.apache.org/jira/projects/INFRA/issues" target="_blank">Jira</a> (requires login).</p>
+<p>Projects can use either system, or some other method of tracking bugs. If the bug you found is in a project's application or website, you need to find out where that project wants to hear about it. If you cannot find the project in either Jira or Bugzilla, ask for advice on the project's <code>dev@</code> or <code>users@</code> mailing list.</p>
+<h2 id="newbug">Is this a new bug?<a class="headerlink" href="#newbug" title="Permanent link">&para;</a></h2>
+<p>Before spending the time filing a bug report, it's useful to check whether a report about the bug you found already exists. If so, you can add comments or additional information to the existing report.</p>
+<p>Infra maintains several real-time <a href="stats.html">status pages</a>. If the infrastructure issue you ran into is reported on one of these pages, Infra already knows about it.</p>
+<p>If what you found seems to be a new bug, you get to report it!</p>
+<h2 id="useful">A useful bug report<a class="headerlink" href="#useful" title="Permanent link">&para;</a></h2>
+<p>Useful bug reports get bugs fixed. A useful bug report is usually:</p>
+<ul>
+<li>Reproducible. If a developer or sysadmin can't see it or conclusively prove that it exists, they may stamp it "WORKSFORME" or "INVALID", and move on to the next bug. Every detail you can provide helps.</li>
+<li>Specific. The quicker the person looking at your report can connect your issue to a specific problem, the quicker they can fix it.</li>
+</ul>
+<p>Let's say the application you're testing is a web browser. You crash at foo.com, and want to write up a bug report:</p>
+<p><strong>A bad report</strong>: "My browser crashed. I think I was on foo.com. My computer uses Windows. I think that this is a really bad problem and you should fix it now. By the way, your icons really suck. Nobody will use your software if you keep those ugly icons. Oh, and my grandmother's home page doesn't look right, either, it's all messed up. Good luck.</p>
+<p><strong>A good report</strong>: "I crashed each time when I went to foo.com, using the 10.28.99 build on a Win NT 4.0 (Service Pack 5) system. I also rebooted into Linux, and reproduced this problem using the 10.28.99 Linux build. The browser crashed each time while drawing the Foo banner at the top of the page. I broke apart the page, and discovered that the following image link will crash the application reproducibly, unless you remove the "border=0" attribute: <code>&lt;IMG SRC="http://foo.com/images/topics/topicfoos.gif" width=34 height=44 border=0 alt="News"&gt;</code>"</p>
+<p>When you enter a bug report, both Bugzilla and Jira provide some helpful fields where you can select things like your operating system. If you are reporting a bug via email to a project, you need to remember to provide all the relevant information that could help identify the source of the problem.</p>
+<p>Once you have established the conditions (operating system, web browser, and so on), include the steps to reproduce the problem:</p>
+<ol>
+<li>What you wanted to do.</li>
+<li>The steps you took to do it.</li>
+<li>What you expected to happen.</li>
+<li>What actually happened.</li>
+</ol>
+<p>If you can capture onscreen error messages, extracts from logs, or relevant screen shots, include them in the report.</p>
+<p>The bug-tracking systems allow you to suggest a <strong>severity</strong> for the bug. If you are reporting by email, explain the urgency of getting the bug fixed.</p>
+<p>Make sure you provide a useful <strong>title</strong> for the report:</p>
+<ul>
+<li>Useful: "PCMCIA install fails on Tosh Tecra 780DVD w/ 3c589"</li>
+<li>Not useful: "Browser crashes" or "Install problem"</li>
+</ul>
+<p>Review <a href="jira-guidelines.html">Creating a Jira ticket</a> for specifics about Jira bug reports.</p>
+<h3>What not to include</h3>
+<p>Adding editorial comments ("what sort of idiot would release a product with such a bug?") is worse than useless. It sets you up as a critic rather than a partner to the people whose help you need.</p>
+<h2 id="blocked">If your report or comment gets blocked<a class="headerlink" href="#blocked" title="Permanent link">&para;</a></h2>
+<p>Infra uses various tools and techniques to prevent spammers from posting material on Jira. If your new bug report, or comment on an existing report, gets blocked, <a href="contact.html">contact Infra</a> so we can resolve the issue and fine-tune our spam filters.</p>
+<h2 id="followup">Following up<a class="headerlink" href="#followup" title="Permanent link">&para;</a></h2>
+<p>In either bug tracking system you can arrange to get updates whenever the status of the bug report changes. If you are reporting by email and want to get updates sent to one or more email addresses, specify them.</p>
+<p><em>Based on contributions from Eli Goldberg, Claudius Gayle, Peter Mock, Chris Pratt, Tom Schutter, and Chris Yeh.</em></p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2025, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
