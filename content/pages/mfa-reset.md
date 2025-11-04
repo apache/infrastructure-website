@@ -12,10 +12,10 @@ Resetting a committer's MFA may be necessary because:
 
 There will be at least two methods to restore MFA:
 
-  1. The committer uses a recovery key that they had previously downloaded from Keycloak during initial MFA setup.
+  1. The committer uses a recovery key that they had previously established during initial MFA setup.
   
      - Visit (URL TBD) to reset MFA using a recovery key.
-
+<br>
   2. The committer establishes their identity with the ASF via one or more of the following methods:
 
      - Have the project PMC open an Infra Jira ticket to address the issue
