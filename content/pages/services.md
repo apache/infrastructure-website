@@ -31,7 +31,6 @@ Infra maintains a wide range of tools for PMCs, project committers, and the Apac
     - <a href="#url-shortener">URL shortener</a>
     - <a href="#logging">Logging</a>
     - <a href="#machines">Machine list</a>
-    - <a href="#whimsy">Whimsy</a>
 
 <h2 id="tlps">Services for Top-Level Projects (TLPs)<a class="headerlink" href="#tlps" title="Permanent link">&para;</a></h2>
 
@@ -220,9 +219,3 @@ The <a href="https://infra.apache.org/infra-reports.html" target="_blank">ASF In
 <h3 id="machines">Machine list<a class="headerlink" href="#machines" title="Permanent link">&para;</a></h3>
 
 <a href="/machines.html" target="_blank">Host Keys and Fingerprints</a>
-
-<h3 id="whimsy">Whimsy<a class="headerlink" href="#whimsy" title="Permanent link">&para;</a></h3>
-
-<a href="https://whimsy.apache.org/" target="_blank">Apache Whimsy</a> describes itself as "providing organizational information about the ASF and our projects in easy to consume ways, and to help automate corporate processes at the ASF to make the paperwork behind the scenes easier for our many volunteers."
-
-There are many Whimsy tools useful for PMCs and individual committers, such as <a href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer search</a>.
