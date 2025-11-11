@@ -123,7 +123,7 @@ Please note that the shown key validity is not necessarily correct
 unless you restart the program.
 ```
 
-<h/3 id="sign-new-key">Use the old key to sign the new key<a class="headerlink" href="#sign-new-key" title="Permanent link">&para;</a></h3>
+<h3 id="sign-new-key">Use the old key to sign the new key<a class="headerlink" href="#sign-new-key" title="Permanent link">&para;</a></h3>
 
 Use the old key (AD741727, say) to sign the new key:
 
