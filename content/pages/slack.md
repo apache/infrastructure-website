@@ -85,4 +85,9 @@ If there is information on a private channel that the channel members, **without
   3. Save the summary document to your project wiki or some other accessible space and use the "add a bookmark" tool at the top of the public channel display to provide a link to the document so readers can find it easily.
 
 ## Qbot
+
 The Infrastructure team's Qbot is a Slack assistant that can simplify both important and frivolous tasks on Slack channels in the the-asf workspace. It can support requests in channels for PMCs, ASF committees, the ASF Board and ASF Members. [Learn more here](qbot.html).
+
+## Updating your email address
+
+You cannot update your email address wtihin the Slack app. To make the change, follow these instructions: <a href="https://slack.com/intl/en-ie/help/articles/207262907-Change-your-email-address">slack.com/intl/en-ie/help/articles/207262907-Change-your-email-address</a>.
