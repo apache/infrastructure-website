@@ -53,7 +53,7 @@ This replaces the ASF Pelican template, which Infra is retiring by the end of 20
 
 #### Jekyll
 
-<a href="https://jekyllrb.com/" target="_blank">Jekyll</a> is a straightforward tool for developing blogs or static websites using Markdown, and it is easy to deploy the resulting website as GitHub Pages. There are many tutorials online about doing this.
+A number of <a href="https://github.com/search?q=topic%3Ajekyll+org%3Aapache&type=Repositories" target="_blank">ASF projects</a> use <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>, which is a straightforward tool for developing blogs or static websites using Markdown, and it is easy to deploy the resulting website as GitHub Pages. There are many tutorials online about doing this.
 
 #### Hugo
 
