@@ -695,7 +695,10 @@ Projects may make use of automated signing for artifacts built by a CI system su
 
 - All artifacts being signed can be built <a href="https://reproducible-builds.org" target="_blank">reproducibly</a>
 - CI deploys the artifacts to a staging environment
-- The release procedure contains a validation step where all artifacts are reproduced on <a href="https://www.apache.org/legal/release-policy.html#owned-controlled-hardware" target="_blank">trusted hardware</a> before publication to pages intended for end users
+- The release procedure contains a validation step where all artifacts are reproduced on <a href="https://www.apache.org/legal/release-policy.html#owned-controlled-hardware" target="_blank">trusted hardware</a> (i.e. not GitHub Actions) before publication to pages intended for end users. This means rebuilding the artifacts from source and validating the resulting artifacts are bit-by-bit identical to those staged for release.
+
+The Apache Security Team should be notified of any pending requests for CI signing keys, and should approve the workflow before it is being put into use. In this request, please highlight the intended change to your release process where you make sure artifacts are validated on trusted hardware before release.
+See <a href="https://issues.apache.org/jira/browse/INFRA-23996" target="_blank">INFRA-23996</a> for background on this.
 
 The project must request a signing key through an Infra Jira ticket, and Infra will provide a signing key for the project:
 
@@ -704,9 +707,6 @@ The project must request a signing key through an Infra Jira ticket, and Infra w
 - Infra will put a PGP-encrypted revocation key in the project's private svn/git dir
 - The private key will never be shared with the project or anyone outside of the infra-root team, but will be available to the chosen CI system
 - The public key will be sent to the project or added to their KEYS file
-
-The Apache Security Team should be notified of any pending requests for CI signing keys, and should approve the workflow before it is being put into use.
-See <a href="https://issues.apache.org/jira/browse/INFRA-23996" target="_blank">INFRA-23996</a> for background on this.
 
 
 <h2 id="reading">Further reading<a class="headerlink" href="#reading" title="Permanent link">&para;</a></h2>
