@@ -31,7 +31,7 @@ Infra maintains a wide range of tools for PMCs, project committers, and the Apac
     - <a href="#url-shortener">URL shortener</a>
     - <a href="#logging">Logging</a>
     - <a href="#machines">Machine list</a>
-
+<hr/>
 <h2 id="tlps">Services for Top-Level Projects (TLPs)<a class="headerlink" href="#tlps" title="Permanent link">&para;</a></h2>
 
 <h3 id="web-sites">Websites<a class="headerlink" href="#web-sites" title="Permanent link">&para;</a></h3>
@@ -80,14 +80,14 @@ You can subscribe to notices of infrastructure events that you want to know abou
 <h3 id="ldap">LDAP-enabled services<a class="headerlink" href="#ldap" title="Permanent link">&para;</a></h3>
 
 Infra supports many ASF <a href="https://cwiki.apache.org/confluence/display/INFRA/LDAP+enabled+services+at+the+ASF" target="_blank">LDAP-enabled services</a>. You can log in to them with your LDAP credentials. 
-
+<hr/>
 <h2 id="podlings">Services for incubating projects (podlings)<a class="headerlink" href="#podlings" title="Permanent link">&para;</a></h2>
 
 Infra supports incubating projects, or podlings. 
 
   - An introduction to [Infra and the Incubator](infra-incubator.html), showing the steps for setting up a new podling.
   - Guidance for [selecting a project or product name](project-names.html)
-  
+<hr/>  
 <h2 id="tools">Tools for ASF projects<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h2>
 
 Infra supports an array of tools and services to help projects develop and support both their applications and their community, including:
@@ -201,7 +201,7 @@ nightlies, as implied by its name, is designed as a 'short term' storage solutio
 <h3 id="voting">Online voting<a class="headerlink" href="#voting" title="Permanent link">&para;</a></h3>
 
 Projects can use the <a href="https://steve.apache.org" target="_blank">Apache STeVe</a> voting system instance (offline when not in use). The tool name refers to the <a href="https://en.wikipedia.org/wiki/Single_transferable_vote" target="_blank">single transferable vote</a> system that is one of its voting options. Open a Jira ticket for Infra to provide assistance in preparing STeVe for your project's use.
-
+<hr/>
 <h2 id="other">Other tools<a class="headerlink" href="#other" title="Permanent link">&para;</a></h2>
 
 <h3 id="dns">DNS<a class="headerlink" href="#dns" title="Permanent link">&para;</a></h3>
