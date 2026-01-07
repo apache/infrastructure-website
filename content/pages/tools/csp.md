@@ -27,6 +27,13 @@ SetEnv CSP_PROJECT_DOMAINS "https://*.algolia.net/ https://*.algolianet.com/ htt
 Any hosts listed in the `CSP_PROJECT_DOMAINS` variable will be added to the default- and base source 
 elements in the existing CSP header, and should suffice for the vast majority of projects.
 
+The following domains are already allowed by default and do not need to be added:
+* `https://www.apachecon.com/`
+* `https://www.communityovercode.org/`
+* `https://*.apache.org/`
+* `https://apache.org/`
+* `https://*.scarf.sh/`
+
 If you need more specifically tailored headers, please reach out to users@infra.apache.org 
 and we can assist you.
 
