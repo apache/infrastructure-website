@@ -11,4 +11,6 @@ For your project's website:
 
 This policy brings project websites into alignment with the security and privacy parameters defined by the VP, Data Privacy and as requested by The ASF Security Committee. We ask that projects do not circumvent them without express permission from our VP, Data Privacy. 
 
+The <a href="https://infra.apache.org/tools/csp.html" target="_blank">Content Security Policy Builder</a> can help you create or update the CSP policy for your project's website.
+
 Review The ASF's project website policy <a href="https://privacy.apache.org/policies/website-policy.html" target="_blank">here</a>.
