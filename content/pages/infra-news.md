@@ -1,6 +1,10 @@
 Title: News from Infra
 license: https://www.apache.org/licenses/LICENSE-2.0
 
+**December 30, 2025**: Starting November 10, 2025, The ASF experienced a massive DDOS (distributed denial of service) attack. The Infra team had to create a suite of tools to augment the existing blocking processes and to improving analysis of attacks on ASF machines. Infra is taking further steps to make sure ASF services and systems remain both secure and available to those who need them.
+
+A discussion of the attack and the response is available at <a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable+2025-12-03+1800+UTC" target="_blank">Infra Roundtable 2025-12-03 1800 UTC</a>.
+
 **June 23, 2025**: Due to a significant increase in abuse, largely driven by AI scraping, the ASF Bugzilla instance is now only available to authenticated users</b>. To use it, log in with your ASF credentials.
 
 **May 16, 2025**: Infra has established a policy covering retention/removal of inactive Jira accounts: <a href="https://infra.apache.org/jira-account-retention-policy.html" target="_blank">Jira account retention policy</a>.
