@@ -1066,7 +1066,7 @@ that year:&lt;br/&gt;&lt;/p&gt;&lt;p style="margin-bottom: 0in; line-height: 100
 &lt;/p&gt;&lt;p style="margin-bottom: 0in; line-height: 100%"&gt;&lt;br/&gt;
 &lt;/p&gt;&lt;p style="margin-bottom: 0in; line-height: 100%"&gt;Between then and now
 the team has improved automation of the various steps, especially
-with the introduction of &lt;a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank"&gt;asf.yaml&lt;/a&gt;&amp;nbsp;configuration files to simplify publishing project websites. In
+with the introduction of &lt;a href="https://github.com/apache/infrastructure-asfyaml/blob/main/README.md" target="_blank"&gt;asf.yaml&lt;/a&gt;&amp;nbsp;configuration files to simplify publishing project websites. In
 2020 the same promotion process, for Apache ShardingSphere, took a
 grand total of &lt;b&gt;four minutes&lt;/b&gt;:&lt;/p&gt;&lt;p style="margin-bottom: 0in; line-height: 100%"&gt;&lt;br/&gt;&lt;/p&gt;&lt;p style="margin-bottom: 0in; line-height: 100%"&gt;&lt;a href="https://blogs.apache.org/infra/mediaresource/53eb7318-305c-4ace-831e-c0bfd6a679b4"&gt;&lt;img alt="promote2020.png" src="https://blogs.apache.org/infra/mediaresource/53eb7318-305c-4ace-831e-c0bfd6a679b4?t=true" style="width: 25%;"/&gt;&lt;/a&gt;&lt;br/&gt;
 &lt;/p&gt;&lt;p style="margin-bottom: 0in; line-height: 100%"&gt;
