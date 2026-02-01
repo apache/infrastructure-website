@@ -7,11 +7,11 @@ Projects with a Git repository can use <a href="https://pages.github.com/" targe
 
 Projects can use GitHub and gh-pages for staging a website for review and improvement before publishing it to TLP servers.
 
-See <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features#Git.asf.yamlfeatures-GitHubPages" target="_blank">this section on the Infra wiki page about asf.yaml</a> for how to enable gh-pages for your Git repository.
+See <a href="https://github.com/apache/infrastructure-asfyaml/blob/main/README.md#pages" target="_blank">this section on the Infra wiki page about asf.yaml</a> for how to enable gh-pages for your Git repository.
 
 There are various ways to build and publish your staging site, including:
 
-  - Use Infra's <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_kblank">.asf.yaml.</a>
+  - Use Infra's <a href="https://github.com/apache/infrastructure-asfyaml/blob/main/README.md" target="_blank">.asf.yaml.</a>
   - Use Buildbot in combination with Jekyll and Pelican
   - Use your own build tool in combination with gh-pages or .asf.yaml
 
@@ -19,4 +19,4 @@ There are various ways to build and publish your staging site, including:
 
 Projects are welcome to use GitHub for their source code, and to generate (or collect) website pages host and display them at GitHub instead of using the ASF TLP servers.
 
-See <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features#Git.asf.yamlfeatures-GitHubPages">this section on the Infra wiki page about asf.yaml</a> for how to enable gh-pages for your Git repository. Then prepare and review your website. When you are happy with its look and functions, change the DNS to point to the site on GitHub.
+See <a href="https://github.com/apache/infrastructure-asfyaml/blob/main/README.md#pages">this section on the Infra wiki page about asf.yaml</a> for how to enable gh-pages for your Git repository. Then prepare and review your website. When you are happy with its look and functions, change the DNS to point to the site on GitHub.
