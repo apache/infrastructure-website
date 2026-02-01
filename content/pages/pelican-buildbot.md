@@ -53,7 +53,7 @@ echo -e "pelican\nbeautifulsoup4" >> requirements.txt
 ```
 
 4. Commit and push your changes.
-5. Set up continuous integration (CI): use the <a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">asf.yaml</a> mechanism to have Pelican build and, optionally, publish your website.
+5. Set up continuous integration (CI): use the <a href="https://github.com/apache/infrastructure-asfyaml/blob/main/README.md" target="_blank">asf.yaml</a> mechanism to have Pelican build and, optionally, publish your website.
 
 ### Setting up a Pelican website on Subversion ###
 
