@@ -54,7 +54,7 @@ Infra can help you set up a role account that can watch for any changes in your 
 
 However, your cwiki space supports comments, and any logged-in page visitor can add suggestions or ask questions.
 
-**What if the site is down?** If the cwiki is down, first check the <a href="http://monitoring.apache.org/status/" target="_blank">ASF Public Network Status page</a>. If the service seems to be down, but Monitoring reports it as OK, then please email `infra@` or post a Jira ticket.
+**What if the site is down?** If the cwiki is down, first check the <a href="http://status.apache.org" target="_blank">ASF Public Network Status page</a>. If the service seems to be down, but Monitoring reports it as OK, then please email `infra@` or post a Jira ticket.
 
 If the Monitoring status shows that the service is offline, then the appropriate people have already been contacted. If the service stays offline for 24 hours, then please file a Jira ticket.
 
