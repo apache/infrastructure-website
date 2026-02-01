@@ -33,7 +33,7 @@ github:
     projects: true
 ```
 
-You can review your .asf.yaml settings for Git at <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features" target="_blank">Git .asf.yaml features</a>.
+You can review your .asf.yaml settings for Git at <a href="https://github.com/apache/infrastructure-asfyaml/blob/main/README.md" target="_blank">Git .asf.yaml features</a>.
 
 ### Switching from Jira to GitHub Issue tracking
 

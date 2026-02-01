@@ -155,7 +155,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
   <tr valign="top" style="border: 1px solid">
     <td style="padding:10px;border: 1px solid">create an <b>svnpubsub-based site</b></td>
     <td style="padding:10px;border: 1px solid">SVN URL of the compiled site (directory containing HTML files)</td>
-    <td style="padding:10px;border: 1px solid">For Git-based web sites, refer to <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features" target="_blank">Git-.asf.yaml features</a> for instructions on publishing.</td>
+    <td style="padding:10px;border: 1px solid">For Git-based web sites, refer to <a href="https://github.com/apache/infrastructure-asfyaml/blob/main/README.md" target="_blank">Git-.asf.yaml features</a> for instructions on publishing.</td>
   </tr>
   <tr valign="top" style="border: 1px solid">
     <td style="padding:10px;border: 1px solid">create a <b>project blog</b></td>

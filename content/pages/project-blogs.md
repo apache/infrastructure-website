@@ -7,7 +7,7 @@ If you're building your site via Pelican, Hugo, or another static site generator
 
 All project blogs should be accessible via $projectName.apache.org/blog. A blog can be a great way of announcing new milestones and features, sharing tips and tricks, and putting a "face" on your project for your developer and user communities. The project's PMC is responsible for the blog's content, and for granting write access to PPMC members.
 
-There are some resources available if you're using <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features#Git.asf.yamlfeatures-BlogdeploymentserviceforGitrepositories" target="_blank">.asf.yaml</a> for blog deployment.
+There are some resources available if you're using <a href="https://github.com/apache/infrastructure-asfyaml/blob/main/README.md#blog" target="_blank">.asf.yaml</a> for blog deployment.
 
 It is good practice to discuss the content of blog posts on the project's dev list before publishing.
 

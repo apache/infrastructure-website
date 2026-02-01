@@ -21,7 +21,7 @@ Infra provides a library of resources that is constantly evolving to reflect the
 #### Source code ####
 - [Project source code repositories](version-control.html)
 - [Repositories for Maven releases and snapshots](repository-faq.html)
-- <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features" target="_blank">.asf.yaml features for Git repositories</a>
+- <a href="https://github.com/apache/infrastructure-asfyaml/blob/main/README.md" target="_blank">.asf.yaml features for Git repositories</a>
 - [GitHub Actions and Secrets](github-actions-secrets.html)
   - [GitHub Actions policy](github-actions-policy.html)
 
