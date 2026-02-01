@@ -58,7 +58,7 @@ If you wish to copy existing code without transferring GitHub stars, etc., your 
 
 **Bug tracking**
 
-You can enable GitHub issues (and wikis) via our (<a href="https://cwiki.apache.org/confluence/display/INFRA/git+-+.asf.yaml+features" target="_blank">.asf.yaml</a> service, a configuration file that controls features such as notification schemes, website staging, GitHub settings, and Pelican builds. This is a per-repo feature. 
+You can enable GitHub issues (and wikis) via our (<a href="https://cwiki.apache.org/confluence/display/INFRA/Git+-+.asf.yaml+features" target="_blank">.asf.yaml</a> service, a configuration file that controls features such as notification schemes, website staging, GitHub settings, and Pelican builds. This is a per-repo feature. 
 
 The project can request a Jira instance for issue tracking via <a href="https://selfserve.apache.org/" target="_blank">SelfServe</a>.
 
