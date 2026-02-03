@@ -1,6 +1,12 @@
 Title: News from Infra
 license: https://www.apache.org/licenses/LICENSE-2.0
 
+**February 3, 2026**: Apache Maven 3.9.12 has a change that causes a problem in repository.apache.org (the Sonatype Nexus 2 Pro staging suite): if your build uses parallel PUT deployment, the build creates a separate staging repository for each of the requests instead of assembling everything in one repository.
+
+The Maven team is working on a resolution to this issue. Until the fix is available, they suggest **disabling parallel PUTs**.
+
+For details on disabling parallel PUTs, and what to do if you have already run into this problem in a build, see this article in the Infra blog: <a href="https://infra.apache.org/blog/parallelputissue.html">Parallel PUT problem in repository.apache.org with Apache Maven 3.9.12]</a>. 
+
 **December 30, 2025**: Starting November 10, 2025, The ASF experienced a massive DDOS (distributed denial of service) attack. The Infra team had to create a suite of tools to augment the existing blocking processes and to improving analysis of attacks on ASF machines. Infra is taking further steps to make sure ASF services and systems remain both secure and available to those who need them.
 
 A discussion of the attack and the response is available at <a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable+2025-12-03+1800+UTC" target="_blank">Infra Roundtable 2025-12-03 1800 UTC</a>.
