@@ -41,8 +41,8 @@ That depends on your role and what you want to do. If this chart doesn't help, I
   </tr>
   <tr valign="top" style="border: 1px solid">
     <td style="padding:10px;border: 1px solid">discuss something publicly with Infra, or ask Infra a question</td>
-    <td style="padding:10px;border: 1px solid"><code>users@infra.apache.org</code></td>
-    <td style="padding:10px;border: 1px solid">Consider this a semi-public list, as many people subscribe to it. The discussion archives are available for ASF Members only.</td>    
+    <td style="padding:10px;border: 1px solid">The #asfinfra Slack channel, or by taking part in a Roundtable (the end of each Roundtable session is an open-mic opportunity for your comments or questions). See <a href="infra.apache.org/roundtable.html" target="_blank">https://infra.apache.org/roundtable.html</a>.
+    <td style="padding:10px;border: 1px solid">Consider these semi-public forums which are not suitable for confidential information.</td>    
   </tr>
   <tr valign="top" style="border: 1px solid">
     <td style="padding:10px;border: 1px solid">get your <b>IP</b> unblocked</td>
