@@ -10,7 +10,7 @@ The source for this website is at <a href="https://github.com/apache/infrastruct
 
 ### Email lists
 Infra monitors and participates in these email addresses:
-  - `users@infra.apache.org` is for general infrastructure discussions and suggestions, and for questions related to ASF infrastructure and the Infra team that do not rise to the level of a Jira ticket. Only committers and ASF members can subscribe to the list.
+  - `users@infra.apache.org` is for general infrastructure discussions and suggestions, and for questions related to ASF infrastructure and the Infra team that do **not** rise to the level of a Jira ticket. Only committers and ASF members can subscribe to the list.
   - `private@infra.apache.org` is for communications that may involve PII, personnel issues, or other information that should not be widely shared. Only ASF Members and Board Members can subscribe to the list.
   - `root@apache.org` is an unarchived alias that goes to Infra staff only for Infra-related security issues or other private matters that don't fit other lists. See the second entry on <a href="https://infra.apache.org/infra-contact.html">Contacting Infra</a> about reporting a security issue specific to an ASF project or a project's product. Also read the [Infra policy on sharing sensitive information](sensitive_info.html).
 
@@ -28,11 +28,6 @@ Review the [guidelines for creating a Jira ticket](jira-guidelines).
 
 ### Suggest a service, or an enhancement to an existing service
 Visit the <a href="https://github.com/apache/infrastructure-ideas" target="_blank">Infra suggestion box</a>.
-
-### For general inquiries
-General inquiries and questions should go to: `users@infra.apache.org`.
-
-Project committers and ASF members can subscribe to this list. Send an email, from the email address you want to use, to `users-subscribe@infra.apache.org`.
 
 ### What we need to know ###
 
