@@ -1,6 +1,8 @@
 Title: News from Infra
 license: https://www.apache.org/licenses/LICENSE-2.0
 
+**February 23, 2026**: The Apache instance of **Reviewboard** will cease operation on March 31, 2026. Details are in the <a href="https://infra.apache.org/blog/newsletter_02_26.html>February newsletter</a>.
+
 **February 3, 2026**: Apache Maven 3.9.12 has a change that causes a problem in repository.apache.org (the Sonatype Nexus 2 Pro staging suite): if your build uses parallel PUT deployment, the build creates a separate staging repository for each of the requests instead of assembling everything in one repository.
 
 The Maven team is working on a resolution to this issue. Until the fix is available, they suggest **disabling parallel PUTs**.
@@ -28,9 +30,3 @@ A discussion of the attack and the response is available at <a href="https://cwi
 **August 30, 2024**: In the ASF Slack workspace (`the-asf.slack.com`), channels with Qbot installed now also have access to 'Lauren', a member of the Human Resources department of an alternate-world ASF, in which the Foundation has a big office where Committers and Members work. Lauren can provide policy statements, review complaints, point out employee benefits, and make important (to Lauren) announcements. Lauren is very sure her information is accurate and up-to-date; you may have a different opinion. Instructions for contacting Lauren are on the [Qbot page](qbot.html).
 
 **July 16, 2024**: [Qbot](qbot.html) is a tool to make a number of tasks easier in a project's channel in the `the-asf` Slack workspace.
-
-**June 20, 2024**: Infra has added `apache.org` to Chrome's HSTS (HTTP Strict Transport Security) preload list, improving security measures for the majority of visitors to our sites. This change went into effect on July 1st.
-
-**May 10, 2024**: Since there is a wide range of similar tools people can use, Apache Paste, a tool for sharing code snippets and similar material, is no longer available.
-
-**April 12, 2024**: the <a href="https://infra-reports.apache.org/" target="_blank">ASF Infrastructure Reporting Dashboard</a> provides a collection of reports on the overall health and activity of the infrastructure at the ASF. These reports can be helpful in understanding the status of all the ASF 'under the hood' resources, and in assessing the resource cost of some activities, like build processes. [Learn more](infra-reports.html).
