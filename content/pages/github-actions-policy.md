@@ -8,8 +8,10 @@ For details on the use of requirement level terms, see the <a href="https://www.
 For additional advice on how to use this feature safely, see <a href="https://cwiki.apache.org/confluence/display/BUILDS/GitHub+Actions+Security" target="_blank">GitHub Actions Security</a>.
 
 ### Dependabot
-All repositories using GitHub Actions **must** have <a href="https://github.com/dependabot" target="_blank">Dependabot</a> enabled.
-
+All repositories using GitHub Actions **must** have automatic dependency management in place using one of these tools:
+* <a href="https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/dependabot-quickstart-guide" target="_blank">GitHub Dependabot</a> for the <a href="https://docs.github.com/en/code-security/reference/supply-chain-security/supported-ecosystems-and-repositories#github-actions" target="_blank">`github-actions` ecosystem</a>
+* <a href="https://docs.renovatebot.com/getting-started/running/#forking-renovate-app" target="_blank">Forking Renovate</a> using the <a href="https://docs.renovatebot.com/modules/manager/github-actions/" target="_blank">GitHub actions manager</a>
+ 
 ### Resource use
 Due to misconfigurations in their builds, some projects have been using unsupportable numbers of [GitHub Actions](github-actions-secrets.html). As part of fixing this situation, Infra has established a policy for GitHub Actions use:
 
