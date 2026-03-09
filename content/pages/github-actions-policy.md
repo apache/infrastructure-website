@@ -9,8 +9,8 @@ For additional advice on how to use this feature safely, see <a href="https://cw
 
 ### Dependabot
 All repositories using GitHub Actions **must** have automatic dependency management in place using one of these tools:
-* [GitHub Dependabot](https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/dependabot-quickstart-guide) for the [`github-actions` ecosystem](https://docs.github.com/en/code-security/reference/supply-chain-security/supported-ecosystems-and-repositories#github-actions)
-* [Forking Renovate](https://docs.renovatebot.com/getting-started/running/#forking-renovate-app) using the [GitHub actions manager](https://docs.renovatebot.com/modules/manager/github-actions/)
+* <a href="https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/dependabot-quickstart-guide" target="_blank">GitHub Dependabot</a> for the <a href="https://docs.github.com/en/code-security/reference/supply-chain-security/supported-ecosystems-and-repositories#github-actions" target="_blank">`github-actions` ecosystem</a>
+* <a href="https://docs.renovatebot.com/getting-started/running/#forking-renovate-app" target="_blank">Forking Renovate</a> using the <a href="https://docs.renovatebot.com/modules/manager/github-actions/" target="_blank">GitHub actions manager</a>
  
 ### Resource use
 Due to misconfigurations in their builds, some projects have been using unsupportable numbers of [GitHub Actions](github-actions-secrets.html). As part of fixing this situation, Infra has established a policy for GitHub Actions use:
