@@ -1,6 +1,8 @@
 Title: News from Infra
 license: https://www.apache.org/licenses/LICENSE-2.0
 
+**March 13, 2026**: The parallel PUT issue reported below (February 3) is **resolved** in Apache Maven 3.9.13.
+
 **February 23, 2026**: The Apache instance of **Reviewboard** will cease operation on March 31, 2026. Details are in the <a href="https://infra.apache.org/blog/newsletter_02_26.html">February newsletter</a>.
 
 **February 3, 2026**: Apache Maven 3.9.12 has a change that causes a problem in repository.apache.org (the Sonatype Nexus 2 Pro staging suite): if your build uses parallel PUT deployment, the build creates a separate staging repository for each of the requests instead of assembling everything in one repository.
