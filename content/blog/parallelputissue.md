@@ -2,6 +2,7 @@ title: Parallel PUT problem in repository.apache.org with Apache Maven 3.9.12
 date: '2026-02-03' 
 permalink: parallelputproblem layout: post
 
+**Note** March 12, 2026: the issue described below is **resolved in Apache Maven version 3.9.13**. The workarounds are still valid for those who have not yet updated to 3.9.13.
 
 Apache Maven 3.9.12 has a change that causes a problem in repository.apache.org (the Sonatype Nexus 2 Pro staging suite): if your build uses **parallel PUT** deployment, the build creates a separate staging repository for each of the requests instead of assembling everything in one repository.
 
