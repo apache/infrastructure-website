@@ -47,6 +47,8 @@ GitHub provides an option to allow a non-committer contributor to use GitHub Act
 
 The default for this option is to “always require approval for external contributors”.
 
-Projects that have a strong desire to use the “only require approval first time” option should communicate that, explaining their reasons, in a Jira ticket for Infra.
+Projects that have a strong desire to use the “only require approval first time” option should open a Jira ticket with Infra and provide the following information:
 
-Projects will be allowed to continue using the "only require approval first time" feature, provided they affirm that they will actively monitor their workflows for abuse and act accordingly. Failure to do so may result in the workflow settings being switched back to "always require approval for external contributors".
+* The name(s) of the repo(s) concerned.
+
+* A link to a mailing list discussion showing a consensus vote by the PMC noting, that they affirm that they will actively monitor their workflows for abuse, and that they will act accordingly if and when abuse is detected. Failure to carry out such monitoring and addressing of abuse may result in the workflow settings being switched back to "always require approval for external contributors".
