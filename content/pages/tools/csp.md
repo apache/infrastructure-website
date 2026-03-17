@@ -1,7 +1,9 @@
 Title: CSP builder
 slug: tools/csp
 
-In order to update your project website's Content-Security-Policy (CSP) header, 
+**Note** At the moment there is no CSP builder app. However, the following instructions should enable you to update the CSP header for your project's website.
+
+To update your project website's Content-Security-Policy (CSP) header, 
 you will need to create a `.htaccess` file at the root of the website output.
 
 The .htaccess file needs only a single directive with a comment:
