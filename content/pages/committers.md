@@ -96,7 +96,7 @@ Infra uses the `users@infra.apache.org` mailing list to discuss new infrastructu
 
 <h4 id="machines">What hosts/machines at Apache can I access?<a class="headerlink" href="#machines" title="Permanent link">&para;</a></h4>
 
-Here is a <a href="https://infra-reports.apache.org/#machines)" target="_blank">list of Apache services/hosts and their public keys</a>.
+Here is a <a href="https://infra-reports.apache.org/#machines" target="_blank">list of Apache services/hosts and their public keys</a>.
 
 Note that you <strong>only</strong> have SFTP access. There is no shell access. RSA SSH keys are required for SFTP access, which you can update via <a href="https://whimsy.apache.org" target="_blank">Whimsy</a> or <a href="https://id.apache.org" target="_blank">id.apache.org</a>.
 
