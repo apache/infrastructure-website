@@ -25,7 +25,7 @@ You can with the <em>snapshot</em> repositories, but you cannot with the <em>rel
 
 <h4 id="revolutioncode">Can I release a research branch to the repositories?<a class="headerlink" href="#revolutioncode" title="Permanent link">&para;</a></h4>
 
-As long as your project's PMC is happy with the release, you can release a research branch to the snapshot repository; otherwise you should just release in your `home.apache.org` personal space.
+As long as your project's PMC is happy with the release, you can release a research branch to the snapshot repository.
 
 <h4 id="rsyncs">How do rsyncs happen?<a class="headerlink" href="#rsyncs" title="Permanent link">&para;</a></h4>
 
