@@ -10,7 +10,7 @@ The presenter for the March roundtable was unavailable at the last moment, so Dr
 
 People made suggestions and proposed initiatives in response to these questions:
 
-   1. If you were the ASF president or a board member,, what would your priorities for Infra be?
+   1. If you were the ASF president or a board member, what would your priorities for Infra be?
    2. In your ideal ASF of tomorrow, how much should we incorporate AI contributions, internal tooling, and vibe code submissions?
    3. In The ASF of tomorrow, how should Infra better support Top Level Projects in what they do?
 
