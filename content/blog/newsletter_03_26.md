@@ -39,7 +39,7 @@ The Infrastructure team will present a full track of talks, discussions, worksho
 
 ### Infra 101
 
-if your website doesn't update after you have made and committed a change, the process may be stalled. Try making a **whitespace commit**. A large commit may not traverse all the parts of the process correctly and a small one after it will, and will thus trigger the publish process
+If your website doesn't update after you have made and committed a change, the process may be stalled. Try making a **whitespace commit**. A large commit may not traverse all the parts of the process correctly and a small one after it will, and will thus trigger the publish process.
 
 _BUT_
 
