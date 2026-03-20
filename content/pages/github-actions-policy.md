@@ -54,3 +54,6 @@ Projects that have a strong desire to use the “only require approval first tim
 * The name(s) of the repo(s) concerned.
 
 * A link to a mailing list discussion showing a consensus vote by the PMC noting, that they affirm that they will actively monitor their workflows for abuse, and that they will act accordingly if and when abuse is detected. Failure to carry out such monitoring and addressing of abuse may result in the workflow settings being switched back to "always require approval for external contributors".
+
+### Details on submitting a GitHub Action for approval
+The README file at <a href="https://github.com/apache/infrastructure-actions" target="_blank">github.com/apache/infrastructure-actions</a> has a detailed guide for how to add or update a GitHub Action.
