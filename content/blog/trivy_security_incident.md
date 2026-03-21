@@ -10,6 +10,8 @@ ASF Infrastructure and ASF Security have provided the following summary based on
   - Trivy version 0.69.4 contained malicious code that could potentially steal credentials present in GitHub Secrets.
   - The trivy-action GitHub Action and trivy-setup were also compromised.
 
+On March 21, Trivy published this <a href="https://github.com/aquasecurity/trivy/security/advisories/GHSA-69fq-xp46-6x23" target="_blank">statement about the event</a>.
+
 ### Impact on ASF projects
 A small number of ASF projects include the trivy GitHub Action in their build workflows.
 
