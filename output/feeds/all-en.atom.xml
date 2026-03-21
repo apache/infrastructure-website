@@ -41,6 +41,7 @@
 &lt;li&gt;Trivy version 0.69.4 contained malicious code that could potentially steal credentials present in GitHub Secrets.&lt;/li&gt;
 &lt;li&gt;The trivy-action GitHub Action and trivy-setup were also compromised.&lt;/li&gt;
 &lt;/ul&gt;
+&lt;p&gt;On March 21, Trivy published this &lt;a href="https://github.com/aquasecurity/trivy/security/advisories/GHSA-69fq-xp46-6x23" target="_blank"&gt;statement about the event&lt;/a&gt;.&lt;/p&gt;
 &lt;h3&gt;Impact on ASF projects&lt;/h3&gt;
 &lt;p&gt;A small number of ASF projects include the trivy GitHub Action in their build workflows.&lt;/p&gt;
 &lt;h3&gt;Infra response&lt;/h3&gt;
