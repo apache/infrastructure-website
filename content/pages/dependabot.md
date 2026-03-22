@@ -47,9 +47,11 @@ Set the `directory` field to the location of the manifest file relative to the r
 
 <h2 id="recommendations">Recommendations<a class="headerlink" href="#recommendations" title="Permanent link">&para;</a></h2>
 
-<h3 id="weekly-schedule">Use weekly updates with grouped pull requests<a class="headerlink" href="#weekly-schedule" title="Permanent link">&para;</a></h3>
+<h3 id="update-schedule">Choose an update schedule that fits your project<a class="headerlink" href="#update-schedule" title="Permanent link">&para;</a></h3>
 
-A weekly schedule avoids an overwhelming number of pull requests while still keeping dependencies reasonably current. If your project has many dependencies, use **groups** to combine related updates into a single pull request:
+The right update frequency depends on the size of your project, the number of dependencies, and how often you release. Some projects run Dependabot daily, others weekly or quarterly &mdash; there is no single correct answer. Large, frequently-released projects (for example, Apache Airflow ships ~100 distributions every two weeks) benefit from updating as often as possible and bumping to the highest available versions each time. As the saying goes, "if something is painful, do it more frequently."
+
+A `weekly` schedule is a reasonable starting point for many projects, but smaller or less frequently released projects may prefer `monthly` or even quarterly reviews. If your project has many dependencies, use **groups** to combine related updates into a single pull request:
 
 ```yaml
 version: 2
