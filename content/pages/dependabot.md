@@ -99,6 +99,44 @@ updates:
 
 **Note**: Cooldowns apply only to version updates, not to security updates, so critical fixes are never delayed.
 
+<h3 id="ignore-versions">Ignore incompatible versions<a class="headerlink" href="#ignore-versions" title="Permanent link">&para;</a></h3>
+
+Dependabot does not account for the language or runtime version your project targets. It may propose dependency updates that require a newer version of Java, Python, or another runtime than your project supports. Use the `ignore` option to prevent Dependabot from proposing versions you cannot use.
+
+For example, if your project still targets Java 8 and a library released version 5.x that requires Java 11+, you can cap updates to the 4.x line:
+
+```yaml
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    ignore:
+      - dependency-name: "com.example:some-library"
+        versions: [">=5.0.0"]
+```
+
+You can also ignore all major version bumps for a dependency while still receiving minor and patch updates:
+
+```yaml
+    ignore:
+      - dependency-name: "com.example:some-library"
+        update-types: ["version-update:semver-major"]
+```
+
+Similarly, if a Python package has dropped support for your Python version:
+
+```yaml
+  - package-ecosystem: "pip"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    ignore:
+      - dependency-name: "some-package"
+        versions: [">=3.0"]
+```
+
+For full details on the `ignore` syntax, see the <a href="https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#ignore" target="_blank">Dependabot `ignore` configuration reference</a>.
+
 <h2 id="full-example">Full example<a class="headerlink" href="#full-example" title="Permanent link">&para;</a></h2>
 
 Below is a complete example for a project that uses GitHub Actions, Maven, npm, pip, and uv:
