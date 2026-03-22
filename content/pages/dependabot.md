@@ -101,7 +101,7 @@ updates:
 
 <h2 id="full-example">Full example<a class="headerlink" href="#full-example" title="Permanent link">&para;</a></h2>
 
-Below is a complete example for a project that uses GitHub Actions, pip, and uv:
+Below is a complete example for a project that uses GitHub Actions, Maven, npm, pip, and uv:
 
 ```yaml
 version: 2
@@ -115,6 +115,30 @@ updates:
       default-days: 4
     groups:
       actions-dependencies:
+        patterns:
+          - "*"
+
+  # Keep Maven dependencies up to date
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      default-days: 4
+    groups:
+      maven-dependencies:
+        patterns:
+          - "*"
+
+  # Keep npm dependencies up to date
+  - package-ecosystem: "npm"
+    directory: "/frontend"
+    schedule:
+      interval: "weekly"
+    cooldown:
+      default-days: 4
+    groups:
+      npm-dependencies:
         patterns:
           - "*"
 
