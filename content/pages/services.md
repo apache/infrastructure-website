@@ -19,6 +19,7 @@ Infra maintains a wide range of tools for PMCs, project committers, and the Apac
     - <a href="#repository-to-issue-tracker-integrations">Integrating your repository with Jira tickets</a>
     - <a href="#source-repository-publishersubscriber-services">Source repository publisher/subscriber services</a>
     - <a href="#build">Build services</a>
+    - <a href="#dependency-management">Dependency management</a>
     - <a href="#product-naming">Product naming</a>
     - <a href="#code-signing">Code signing</a>
     - <a href="#qa">Code quality</a>
@@ -150,8 +151,13 @@ Apache supports and models continuous integration and continuous deployment, or 
 
 Other tools to consider:
 
+* [Dependabot](dependabot.html) for automated dependency updates
 * <a href="https://travis-ci.org/" target="_blank">Travis CI</a>
 * <a href="https://www.appveyor.com" target="_blank">AppVeyor</a>
+
+<h3 id="dependency-management">Dependency management<a class="headerlink" href="#dependency-management" title="Permanent link">&para;</a></h3>
+
+[Dependabot](dependabot.html) automatically keeps your project's dependencies up to date and free of known vulnerabilities. It is **required** for the `github-actions` ecosystem (see the [GitHub Actions Policy](github-actions-policy.html)), and recommended for all other ecosystems your project uses.
 
 <h3 id="product-naming">Product naming<a class="headerlink" href="#product-naming" title="Permanent link">&para;</a></h3>
 
