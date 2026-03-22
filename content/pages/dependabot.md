@@ -24,7 +24,7 @@ updates:
 
 <h2 id="ecosystems">Identify your ecosystems<a class="headerlink" href="#ecosystems" title="Permanent link">&para;</a></h2>
 
-Look at which dependency files exist in your repository and add a `package-ecosystem` entry for each one. Common ecosystems include:
+Dependabot supports a <a href="https://docs.github.com/en/code-security/reference/supply-chain-security/supported-ecosystems-and-repositories" target="_blank">wide range of package ecosystems</a>. Look at which dependency files exist in your repository and add a `package-ecosystem` entry for each one. Many projects use several ecosystems at once (for example, a Python project may have `pip` for dependencies, `github-actions` for CI, and `docker` for container images). Common ecosystems include:
 
 | Ecosystem | Manifest files | `package-ecosystem` value |
 |---|---|---|
@@ -33,6 +33,7 @@ Look at which dependency files exist in your repository and add a `package-ecosy
 | Gradle | `build.gradle`, `build.gradle.kts` | `gradle` |
 | npm | `package.json` | `npm` |
 | pip | `requirements.txt`, `setup.py`, `pyproject.toml` | `pip` |
+| uv | `uv.lock` | `uv` |
 | Go modules | `go.mod` | `gomod` |
 | Cargo (Rust) | `Cargo.toml` | `cargo` |
 | Bundler (Ruby) | `Gemfile` | `bundler` |
@@ -100,7 +101,7 @@ updates:
 
 <h2 id="full-example">Full example<a class="headerlink" href="#full-example" title="Permanent link">&para;</a></h2>
 
-Below is a complete example for a project that uses GitHub Actions, Maven, and npm:
+Below is a complete example for a project that uses GitHub Actions, pip, and uv:
 
 ```yaml
 version: 2
@@ -117,27 +118,27 @@ updates:
         patterns:
           - "*"
 
-  # Keep Maven dependencies up to date
-  - package-ecosystem: "maven"
+  # Keep pip dependencies up to date
+  - package-ecosystem: "pip"
     directory: "/"
     schedule:
       interval: "weekly"
     cooldown:
       default-days: 4
     groups:
-      maven-dependencies:
+      pip-dependencies:
         patterns:
           - "*"
 
-  # Keep npm dependencies up to date
-  - package-ecosystem: "npm"
-    directory: "/frontend"
+  # Keep uv dependencies up to date
+  - package-ecosystem: "uv"
+    directory: "/"
     schedule:
       interval: "weekly"
     cooldown:
       default-days: 4
     groups:
-      npm-dependencies:
+      uv-dependencies:
         patterns:
           - "*"
 ```
