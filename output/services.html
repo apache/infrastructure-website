@@ -137,6 +137,7 @@
 <li><a href="#repository-to-issue-tracker-integrations">Integrating your repository with Jira tickets</a></li>
 <li><a href="#source-repository-publishersubscriber-services">Source repository publisher/subscriber services</a></li>
 <li><a href="#build">Build services</a></li>
+<li><a href="#dependency-management">Dependency management</a></li>
 <li><a href="#product-naming">Product naming</a></li>
 <li><a href="#code-signing">Code signing</a></li>
 <li><a href="#qa">Code quality</a></li>
@@ -267,9 +268,12 @@ You can subscribe to notices of infrastructure events that you want to know abou
 <p>Apache supports and models continuous integration and continuous deployment, or <em>CI/CD</em>. The <a href="build-supported-services.html">ASF build and supported services</a> page provides information about, and links to, the CI services the ASF provides and/or supports.</p>
 <p>Other tools to consider:</p>
 <ul>
+<li><a href="dependabot.html">Dependabot</a> for automated dependency updates</li>
 <li><a href="https://travis-ci.org/" target="_blank">Travis CI</a></li>
 <li><a href="https://www.appveyor.com" target="_blank">AppVeyor</a></li>
 </ul>
+<h3 id="dependency-management">Dependency management<a class="headerlink" href="#dependency-management" title="Permanent link">&para;</a></h3>
+<p><a href="dependabot.html">Dependabot</a> automatically keeps your project's dependencies up to date and free of known vulnerabilities. It is <strong>required</strong> for the <code>github-actions</code> ecosystem (see the <a href="github-actions-policy.html">GitHub Actions Policy</a>), and recommended for all other ecosystems your project uses.</p>
 <h3 id="product-naming">Product naming<a class="headerlink" href="#product-naming" title="Permanent link">&para;</a></h3>
 <p>See <a href="project-names.html">guidance for choosing a product name</a></p>
 <h3 id="code-signing">Code signing<a class="headerlink" href="#code-signing" title="Permanent link">&para;</a></h3>
