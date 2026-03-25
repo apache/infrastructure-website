@@ -29,7 +29,7 @@ This document is informative and does not constitute policy.
 
   - <a href="#verifying-signature">What does verifying a signature mean?</a>
   - <a href="#check-integrity">How can I check the integrity of a release?</a>
-  _ <a herf="#trust-hardware">What is the difference between secure hardware and trusted hardware?</a>
+  - <a href="#trust-hardware">What is the difference between secure hardware and trusted hardware?</a>
   - <a href="#public-key-not-found">What does 'Public key not found' mean when verifying a signature?</a>
   - <a href="#trust">What is a trusted key?</a>
   - <a href="#valid-untrusted-vs-invalid-trusted">What is the difference between a valid signature from an untrusted key and an invalid signature from a trusted key?</a>
