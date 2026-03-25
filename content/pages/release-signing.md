@@ -29,6 +29,7 @@ This document is informative and does not constitute policy.
 
   - <a href="#verifying-signature">What does verifying a signature mean?</a>
   - <a href="#check-integrity">How can I check the integrity of a release?</a>
+  _ <a herf="#trust-hardware">What is the difference between secure hardware and trusted hardware?</a>
   - <a href="#public-key-not-found">What does 'Public key not found' mean when verifying a signature?</a>
   - <a href="#trust">What is a trusted key?</a>
   - <a href="#valid-untrusted-vs-invalid-trusted">What is the difference between a valid signature from an untrusted key and an invalid signature from a trusted key?</a>
@@ -627,6 +628,12 @@ Apache projects normally keep the developers' public keys in a file called `KEYS
 ```
 
 to import the public keys.</p>
+
+<h3 id="trust-hardware">What is the difference between secure hardware and trusted hardware?</h3>
+
+**Secure hardware**: your personal laptop would quality as "secure" provided that only you have root/admin access to it, so only you can access private keys stored on it. 
+
+**Trusted hardware** is secure hardware under the direct control of the release manager, with limited release permissions, and protected by a passphrase and possibly other security measures.
 
 <h3 id="trust">What is a trusted key?<a class="headerlink" href="#trust" title="Permanent link">&para;</a></h3>
 
