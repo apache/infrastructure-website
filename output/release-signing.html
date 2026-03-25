@@ -137,7 +137,8 @@
 <h3>FAQs from those downloading releases</h3>
 <ul>
 <li><a href="#verifying-signature">What does verifying a signature mean?</a></li>
-<li><a href="#check-integrity">How can I check the integrity of a release?</a></li>
+<li><a href="#check-integrity">How can I check the integrity of a release?</a>
+_ <a herf="#trust-hardware">What is the difference between secure hardware and trusted hardware?</a></li>
 <li><a href="#public-key-not-found">What does 'Public key not found' mean when verifying a signature?</a></li>
 <li><a href="#trust">What is a trusted key?</a></li>
 <li><a href="#valid-untrusted-vs-invalid-trusted">What is the difference between a valid signature from an untrusted key and an invalid signature from a trusted key?</a></li>
@@ -516,6 +517,9 @@ gpg: Can't check signature: public key not found
 <pre><code>  $ gpg --import KEYS
 </code></pre>
 <p>to import the public keys.</p>
+<h3 id="trust-hardware">What is the difference between secure hardware and trusted hardware?</h3>
+<p><strong>Secure hardware</strong>: your personal laptop would quality as "secure" provided that only you have root/admin access to it, so only you can access private keys stored on it.</p>
+<p><strong>Trusted hardware</strong> is secure hardware under the direct control of the release manager, with limited release permissions, and protected by a passphrase and possibly other security measures.</p>
 <h3 id="trust">What is a trusted key?<a class="headerlink" href="#trust" title="Permanent link">&para;</a></h3>
 <p><a href="#openpgp">OpenPGP</a> uses a <a href="#web-of-trust">web of trust</a>. The owner of a public key who trusts the identity of a second key may mark this key as trusted by signing it. This has several major effects:</p>
 <ul>
