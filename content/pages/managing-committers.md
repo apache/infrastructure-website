@@ -21,8 +21,10 @@ The request will be CC'd to the PMC mailing list. Barring objections from the PM
 
 After that, the PMC takes over and provides the committer's infrastructure needs, in particular, write access to the **project's source repository**.
 
-To grant or deny access to directories in SVN, the PMC chair needs to update the appropriate **group entry** in LDAP:
+To grant access to directories in SVN or Git, the PMC chair needs to update the appropriate **group entry** in LDAP:
 
 Go to the <a href="https://whimsy.apache.org/roster/committee/" target="_blank">Whimsy roster tool</a>, select the appropriate committee, and either double click on the person or the plus sign to modify or add a person.
 
 If the SVN access group is not defined as an LDAP group (e.g. it is an Incubator podling) then edit the appropriate entry in the <a href="https://svn.apache.org/repos/infra/infrastructure/trunk/subversion/authorization/asf-authorization-template" target="_blank">asf-authorization-template file</a> and commit the change.
+
+**Note** it is possible to remove a committer's access to repositories in an urgent situation, such as their account being taken over by a hacker. However, the PMC chair should not take this action for situations such as a committer's extended inactivity. In 2026, the ASF Security team is working on proposals that may clarify the conditions under which a committer's rights to commit code can be suspended or removed.
