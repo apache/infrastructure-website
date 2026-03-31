@@ -1,7 +1,5 @@
 name: Build a Pelican Website
 on:
-  push:
-    branches: [ "master" ]
   workflow_dispatch:
 jobs:
   build-pelican:
