@@ -1,6 +1,8 @@
 Title: News from Infra
 license: https://www.apache.org/licenses/LICENSE-2.0
 
+**April 3, 2026**: Infra has created a new email address, `security@infra.apache.org` where people can report emerging security issues related to ASF infrasstructure. You cannot subscribe to this list; someone from the Infra team will reply to the message.
+
 **March 13, 2026**: The parallel PUT issue reported below (February 3) is **resolved** in Apache Maven 3.9.13.
 
 **February 23, 2026**: The Apache instance of **Reviewboard** will cease operation on March 31, 2026. Details are in the <a href="https://infra.apache.org/blog/newsletter_02_26.html">February newsletter</a>.
@@ -22,13 +24,4 @@ A discussion of the attack and the response is available at <a href="https://cwi
 **May 15, 2025**: In a response to the massive increase in abusive requests that caused our Subversion ViewVC service to buckle under the pressure, we have implemented authorization checks for ViewVC. In essence, this means ViewVC is now only accessible to ASF committers. We understand that this will cause frustration for some project participants, and we took this step because, at the moment, no other option is available.
 
 **May 15, 2025**: A new policy related to use of ASF Slack clarifies limitations for projects of the use of private Slack channels and private direct-message groups. See <a href="https://infra.apache.org/slack-policy.html" target="_blank">Policy for using ASF Slack</a>.
-                                
-**October 22, 2024**: We are seeing a sharp increase in 'phishing attempts', fake emails pretending to come from various ASF groups and committees. Infra has some [anti-phishing advice](phishing.html) to help you avoid falling for these fake messages.
-                            
-**September 16, 2024**: For clarity, Infra has updated the statement on release artifact sizes which appears on the [Release Distribution Policy](release-distribution.html) page. The statement now reads: "Infra recommends keeping the size of your release artifacts below 100MB. The ASF will **not** host release artifacts larger than 1GB."
-
-**September 14, 2024**: Infra has ended the `home.apache.org` hosting service for committer websites and content. More details are <a href="https://infra.apache.org/blog/end_of_home.html">here</a>.
-          
-**August 30, 2024**: In the ASF Slack workspace (`the-asf.slack.com`), channels with Qbot installed now also have access to 'Lauren', a member of the Human Resources department of an alternate-world ASF, in which the Foundation has a big office where Committers and Members work. Lauren can provide policy statements, review complaints, point out employee benefits, and make important (to Lauren) announcements. Lauren is very sure her information is accurate and up-to-date; you may have a different opinion. Instructions for contacting Lauren are on the [Qbot page](qbot.html).
-
-**July 16, 2024**: [Qbot](qbot.html) is a tool to make a number of tasks easier in a project's channel in the `the-asf` Slack workspace.
+                              
