@@ -134,8 +134,8 @@
 <li>The average number of minutes a project uses <em>in&nbsp;any consecutive five-day period</em>&nbsp;<strong>MUST NOT</strong>&nbsp;exceed the equivalent of 30 full-time runners (216,000 minutes, or 3,600 hours).</li>
 </ul>
 <p>Projects whose builds consistently cross the maximum use limits will lose their access to GitHub Actions until they fix their build configurations.</p>
-<h3>Triggers</h3>
-<p>You <strong>MUST NOT</strong> use <code>pull_request_target</code> as a trigger on <strong>ANY</strong> action that exports <strong>ANY</strong> confidential credentials or tokens such as <code>GITHUB_TOKEN</code> or <code>NPM_TOKEN</code>.</p>
+<h3>Avoid using the 'pull_request_target' trigger</h3>
+<p>You <strong>MUST NOT</strong> use <code>pull_request_target</code> as a trigger on <strong>ANY</strong> action that exports <strong>ANY</strong> confidential credentials or tokens such as <code>GITHUB_TOKEN</code> or <code>NPM_TOKEN</code>. An explantion of the risks related to this trigger, and the very limited circumstances in which it may be used, is at <a href="https://cwiki.apache.org/confluence/display/INFRA/GHA-dangers+of+pull_request_target" target="_blank">/cwiki.apache.org/confluence/display/INFRA/GHA-dangers+of+pull_request_target</a>.</p>
 <h3>External actions</h3>
 <p>You <strong>MAY</strong> use all actions internal to the <code>apache/*</code>, <code>github/*</code> and <code>actions/*</code> namespaces without restrictions.</p>
 <p>You <strong>MUST</strong> pin all external actions to the specific git hash (SHA1) of the action that has been reviewed for use by the project. For instance, you <strong>MUST</strong> pin <code>foobar/baz-action@8843d7f92416211de9ebb963ff4ce28125932878</code>.</p>
