@@ -1,10 +1,11 @@
 Title: MFA reset policy
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-**_Draft policy_** Infra will update this page with further details, replacing the _TBD_ notes, as they become available, and will make an announcement when the policy comes into force.
+**_Draft policy_** 
+Infra will update this page with further details, replacing the _TBD_ notes, as they become available, and will make an announcement when the policy comes into force.
 
 ## Resetting MFA
-Resetting a committer's MFA may be necessary because:
+Resetting a committer's multi-factor authentication (MFA) may be necessary because:
 
   - The committer has lost access to the MFA devices
   - The committer's MFA has been compromised in some way
