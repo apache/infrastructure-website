@@ -16,7 +16,7 @@ There will be at least two methods to restore MFA:
   1. The committer uses a recovery key that they established during initial MFA setup.
   
      - Visit (URL TBD) to reset MFA using a recovery key.
-<br/>
+
   2. The committer establishes their identity with The ASF via one or more of the following methods:
 
      - Have the project PMC open an Infra Jira ticket to address the issue.
