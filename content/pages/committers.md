@@ -86,13 +86,15 @@ The most likely explanation is that the commit message is awaiting moderation. M
 
 <h4 id="infrastructure-change-request">How do I make infrastructure requests?<a class="headerlink" href="#infrastructure-change-request" title="Permanent link">&para;</a></h4>
 
-You might notice something that needs changing, for example the configuration for a mailing list. The request to the `users@infra` list or the `apmail@` alias needs to come from your Project Management Committee. That ensures that the requests are official, and not just an individual's desire.
+You might notice something that needs changing, for example the configuration for a mailing list. The request to the `users@infra` list or the `apmail@` alias needs to come from your Project Management Committee. That ensures that the requests are official, and not just an individual's desire. You can also submit a Jira ticket for Infra, explaining the issue and the proposed fix.
 
 There are many things that the PMC or PMC chair can do directly, thereby easing the load on the infrastructure team (Infra).
 
 <h4 id="infrastructure-public-communications">How does Infra communicate with the public?<a class="headerlink" href="#infrastructure-public-communications" title="Permanent link">&para;</a></h4>
 
-Infra uses the `users@infra.apache.org` mailing list to discuss new infrastructure developments at the ASF. For service downtime announcements and current information on operations, we use <a href="https://twitter.com/infrabot" target="_blank">Infrabot</a>. For general announcements regarding services and the like, Infra has a <a href="https://blogs.apache.org/infra" target="_blank">blog</a>.
+  - Infra uses the `users@infra.apache.org` mailing list to discuss new infrastructure developments at the ASF. For service downtime announcements and current information on operations, we use <a href="https://twitter.com/infrabot" target="_blank">Infrabot</a>. For general announcements regarding services and the like, Infra has a <a href="https://blogs.apache.org/infra" target="_blank">blog</a>.
+  - Infra publishes a monthly newsletter which appears on the blog, and which we send to all subscribers to the `users@infra` email list.
+  - On the first Wednesday of most months, Infra holds a roundtable which, in addition to a presentation, usually has time for people to raise issues or ask questions. The roundtable takes place in a Slack channel: here is <a href="https://infra.apache.org/roundtable">information on taking parts in roundtables</a>.
 
 <h4 id="machines">What hosts/machines at Apache can I access?<a class="headerlink" href="#machines" title="Permanent link">&para;</a></h4>
 
