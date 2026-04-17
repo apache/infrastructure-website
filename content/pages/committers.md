@@ -1,11 +1,11 @@
 Title: Committers' FAQs
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-A committer is an individual who has write access to the codebase of an Apache project.
+A committer is an individual who has write access to the codebase of an ASF project.
 
-The main information resource for you in this role, apart from the wisdom of your project colleagues, is the [New Committers Guide](new-committers-guide.html).
+The main information resource for you in this role, apart from the wisdom of your project colleagues, is the <a href="https://infra.apache.org/new-committers-guide.html" target="_blank">Guide for New Project Committers</a>.
 
-If you are not an Apache committer, but wish to become one, the instructions on [how to contribute](contributors.html) to Apache projects will be more useful to you.</p>
+If you are not an Apache committer, but wish to become one, the instructions on <a href="https://www.apache.org/foundation/getinvolved.html#become-a-committer" target="_blank">How to become a committer</p>
 
 <h3 id="frequently-asked-questions">Frequently asked questions<a class="headerlink" href="#frequently-asked-questions" title="Permanent link">&para;</a></h3>
 <ul>
@@ -20,13 +20,13 @@ If you are not an Apache committer, but wish to become one, the instructions on 
 
 <h3 id="general">General<a class="headerlink" href="#general" title="Permanent link">&para;</a></h3>
 
-<h4 id="apachecon">What is ApacheCon?<a class="headerlink" href="#apachecon" title="Permanent link">&para;</a></h4>
+<h4 id="apachecon">What is Community Over Code?<a class="headerlink" href="#communityovercode" title="Permanent link">&para;</a></h4>
 
-The Apache Software Foundation periodically organizes <a href="https://www.apachecon.com">conferences</a> focusing on software developed at Apache and on the way that Apache develops its software. Learn about what's happening at Apache, hack code and meet the faces associated with the names!
+The Apache Software Foundation periodically organizes <a href="https://www.apache.org/foundation/conferences.html" target="_blank">conferences</a> focusing on software developed at The ASF and on the way that ASF projects develops software. Learn about what's happening at The ASF, hack code and meet the faces associated with the names!
 
 <h4 id="hackathon">What is a Hackathon?<a class="headerlink" href="#hackathon" title="Permanent link">&para;</a></h4>
 
-A face-to-face or shared online gathering for hacking code together. Hackathons are generally held at ApacheCons, as well as at other times.
+A face-to-face or shared online gathering for hacking code together. Hackathons are generally held at ASF conferences, as well as at other times.
 
 <h4 id="infrathon">What is an Infrathon?<a class="headerlink" href="#infrathon" title="Permanent link">&para;</a></h4>
 
@@ -51,16 +51,16 @@ Contact the <a href="https://incubator.apache.org/" target="_blank">Incubator Pr
 
 **Note**: this is an incomplete collection and not authoritative.
 
-As an Apache volunteer, you have the right to set your own priorities and do the work that scratches your own itch. As a Committer, you have a responsibility to the community to help create a product that will outlive the interest of any particular volunteer, including yourself. For example, the code that you commit should be clear enough that others not involved in its current development will be able to maintain and extend it. It also means that you are responsible for helping to grow and maintain the health of the Apache community.
+As an ASF volunteer, you have the right to set your own priorities and do the work that scratches your own itch. As a Committer, you have a responsibility to the community to help create a product that will outlive the interest of any particular volunteer, including yourself. For example, the code that you commit should be clear enough that others not involved in its current development will be able to maintain and extend it. It also means that you are responsible for helping to grow and maintain the health of the Apache community.
 
 More specific responsibilities of Committers include:
 
-  - **Deciding on release plans and releases**: A prime committer responsibility is to help decide when a version of product code is ready for release. A release is not to be taken lightly; each release must uphold the Apache tradition of quality. Each Project Management Committee PMC) formally authorizes the distribution of releases to the public.
+  - **Deciding on release plans and releases**: A prime committer responsibility is to help decide when a version of product code is ready for release. A release is not to be taken lightly; each release must uphold the ASF tradition of quality. Each Project Management Committee PMC) formally authorizes the distribution of releases to the public.
   - **Applying patches**: To grow and maintain healthy communities, committers need to discuss, review and apply patches submitted by contributors and other committers. Committers are also responsible for the quality and IP clearance of the code that goes into ASF repositories.
   - **Helping users**: Committers should monitor both the `dev@` and `user@` or `users@` email lists for the projects they work on and together provide prompt and useful
  responses to questions from users and their developer colleagues.
   - **Monitoring commits and issues**: Committers should review commit email messages for their projects and point out anything that looks funny or that may point to IP issues. Committers also monitor the project's issue-tracking system (Bugzilla or Jira or something else) for bug reports or enhancement requests.
-  - **Helping out with the website**: The main Apache website and the project websites are in constant need of maintenance. Committers on a project are expected to
+  - **Helping out with the website**: The main ASF website and the project websites are in constant need of maintenance. Committers on a project are expected to
  collectively maintain the project's web site. Apache committers as a group share the responsibility to maintain the main Apache site.
 
 <h4 id="committer-set-term">Is there a set term for acting as a Committer? Will I have to be elected again?<a class="headerlink" href="#committer-set-term" title="Permanent link">&para;</a></h4>
@@ -96,13 +96,11 @@ Infra uses the `users@infra.apache.org` mailing list to discuss new infrastructu
 
 <h4 id="machines">What hosts/machines at Apache can I access?<a class="headerlink" href="#machines" title="Permanent link">&para;</a></h4>
 
+Each ASF project may have a virtual machine that Infra has established for its use. Typically, projects use their VMs for working on fixes related to security issues and similar projects. The Project Management Committee of the project you are working on can provide you with access to the VM if you need it.
+
 Here is a <a href="https://infra-reports.apache.org/#machines" target="_blank">list of Apache services/hosts and their public keys</a>.
 
 Note that you <strong>only</strong> have SFTP access. There is no shell access. RSA SSH keys are required for SFTP access, which you can update via <a href="https://whimsy.apache.org" target="_blank">Whimsy</a> or <a href="https://id.apache.org" target="_blank">id.apache.org</a>.
-
-<h4 id="can-cant">What can and can't I do on those machines?<a class="headerlink" href="#can-cant" title="Permanent link">&para;</a></h4>
-
-You can publish a small personal website in `public_html`, as described in the [New committers' guide](new-committers-guide.html). **Never** store secret/private keys (the private half of an SSH keypair, or a PGP private key) on any ASF machines.
 
 <h4 id="statistics">Is there a way to see a graph of loads (CPU, I/O, network)?<a class="headerlink" href="#statistics" title="Permanent link">&para;</a></h4>
 
