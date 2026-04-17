@@ -12,16 +12,3 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 The Maven team is working on a resolution to this issue. Until the fix is available, they suggest **disabling parallel PUTs**.
 
 For details on disabling parallel PUTs, and what to do if you have already run into this problem in a build, see this article in the Infra blog: <a href="https://infra.apache.org/blog/parallelputissue.html">Parallel PUT problem in repository.apache.org with Apache Maven 3.9.12]</a>. 
-
-**December 30, 2025**: Starting November 10, 2025, The ASF experienced a massive DDOS (distributed denial of service) attack. The Infra team had to create a suite of tools to augment the existing blocking processes and to improving analysis of attacks on ASF machines. Infra is taking further steps to make sure ASF services and systems remain both secure and available to those who need them.
-
-A discussion of the attack and the response is available at <a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable+2025-12-03+1800+UTC" target="_blank">Infra Roundtable 2025-12-03 1800 UTC</a>.
-
-**June 23, 2025**: Due to a significant increase in abuse, largely driven by AI scraping, the ASF Bugzilla instance is now only available to authenticated users</b>. To use it, log in with your ASF credentials.
-
-**May 16, 2025**: Infra has established a policy covering retention/removal of inactive Jira accounts: <a href="https://infra.apache.org/jira-account-retention-policy.html" target="_blank">Jira account retention policy</a>.
-
-**May 15, 2025**: In a response to the massive increase in abusive requests that caused our Subversion ViewVC service to buckle under the pressure, we have implemented authorization checks for ViewVC. In essence, this means ViewVC is now only accessible to ASF committers. We understand that this will cause frustration for some project participants, and we took this step because, at the moment, no other option is available.
-
-**May 15, 2025**: A new policy related to use of ASF Slack clarifies limitations for projects of the use of private Slack channels and private direct-message groups. See <a href="https://infra.apache.org/slack-policy.html" target="_blank">Policy for using ASF Slack</a>.
-                              
