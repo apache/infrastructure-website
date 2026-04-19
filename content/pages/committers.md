@@ -92,7 +92,7 @@ There are many things that the PMC or PMC chair can do directly, thereby easing 
 
 <h4 id="infrastructure-public-communications">How does Infra communicate with the public?<a class="headerlink" href="#infrastructure-public-communications" title="Permanent link">&para;</a></h4>
 
-  - Infra uses the `users@infra.apache.org` mailing list to discuss new infrastructure developments at the ASF. For service downtime announcements and current information on operations, we use <a href="https://twitter.com/infrabot" target="_blank">Infrabot</a>. For general announcements regarding services and the like, Infra has a <a href="https://blogs.apache.org/infra" target="_blank">blog</a>.
+  - Infra uses the `users@infra.apache.org` mailing list to discuss new infrastructure developments at the ASF. For service downtime announcements and current information on operations, we use <a href="https://twitter.com/infrabot" target="_blank">Infrabot</a>. For general announcements regarding services and the like, Infra has a <a href="https://infra.apache.org/blog/" target="_blank">blog</a>.
   - Infra publishes a monthly newsletter which appears on the blog, and which we send to all subscribers to the `users@infra` email list.
   - On the first Wednesday of most months, Infra holds a roundtable which, in addition to a presentation, usually has time for people to raise issues or ask questions. The roundtable takes place in a Slack channel: here is <a href="https://infra.apache.org/roundtable">information on taking parts in roundtables</a>.
 
