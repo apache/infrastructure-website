@@ -1,7 +1,7 @@
 Title: News from Infra
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-**April 3, 2026**: Infra has created a new email address, `security@infra.apache.org`, where people can report emerging security issues related to ASF infrastructure. You cannot subscribe to this list; someone from the Infra team will reply to the message.
+**April 3, 2026**: Infra has created a new email address, `security@infra.apache.org`, where people can report emerging security issues related to ASF infrastructure. You cannot subscribe to this list; someone from the Infra team will reply to the message if further information is needed.
 
 **March 13, 2026**: The parallel PUT issue reported below (February 3) is **resolved** in Apache Maven 3.9.13.
 
