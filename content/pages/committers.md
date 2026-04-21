@@ -28,10 +28,6 @@ The Apache Software Foundation periodically organizes <a href="https://www.apach
 
 A face-to-face or shared online gathering for hacking code together. Hackathons are generally held at ASF conferences, as well as at other times.
 
-<h4 id="infrathon">What is an Infrathon?<a class="headerlink" href="#infrathon" title="Permanent link">&para;</a></h4>
-
-A face-to-face gathering for work on Apache infrastructure by our amazing infra contractors and volunteers.
-
 <h4 id="volunteer">How do I manage my volunteer energy?<a class="headerlink" href="#volunteer" title="Permanent link">&para;</a></h4>
 
 Heed the warnings in these two email threads about what it means to be a committed person at the ASF and how to deal with the pressures that arise from such dedication:
