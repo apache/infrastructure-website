@@ -54,8 +54,8 @@ Infra documents what we upgraded and when, from what version to what version, on
 
 # Notifications
 
-Since Jenkins, Jira and Confluence are **Core Services**, Infra issues a notice of a planned upgrade at least 72 hours ahead of the event on the wiki or a web page and by emails to the `builds@apache.org` and `users@infra.apache.org` mailing lists. We add a Twitter notification by `ASF Infrabot` one hour before upgrades begin.
+Since Jenkins, Jira and Confluence are **Core Services**, Infra issues a notice of a planned upgrade at least 72 hours ahead of the event on the wiki or a web page and by emails to the `announce@infra.apache.org`, `builds@apache.org` and `users@infra.apache.org` mailing lists.
 
 # In case of emergencies
 
-Occasionally things go wrong with a main or plugin upgrade, and security issues may arise. If we determine that there is an issue, we will work on it immediately until we resolve it. We will send an email to the relevant list and a notice on X (the former Twitter) about any unexpected downtime.
+Occasionally things go wrong with a main or plugin upgrade, and security issues may arise. If we determine that there is an issue, we will work on it immediately until we resolve it. We will send an email to the relevant list about any unexpected downtime.
