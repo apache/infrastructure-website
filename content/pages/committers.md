@@ -45,8 +45,6 @@ We each need to re-read these important messages from time to time and remind ou
 
 Contact the <a href="https://incubator.apache.org/" target="_blank">Incubator Project</a>. They will assist you in starting a project or moving an existing one into the ASF.</p>
 
-<a href="https://labs.apache.org/" target="_blank">Apache Labs</a> could also be for you if you want to start something new.
-
 <h4 id="committer-responsibilities">What are the responsibilities of a Committer?<a class="headerlink" href="#committer-responsibilities" title="Permanent link">&para;</a></h4>
 
 **Note**: this is an incomplete collection and not authoritative.
