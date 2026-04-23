@@ -26,7 +26,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
   </tr>
   <tr valign="top" style="border: 1px solid">
     <td style="padding:10px;border: 1px solid">report a <b>security vulnerability</b> in an Apache project</td>
-    <td style="padding:10px;border: 1px solid"> the <a href="https://www.apache.org/security/" target="_blank">Apache Security Team</a></td>
+    <td style="padding:10px;border: 1px solid"> consult <a href="https://security.apache.org/report-code/" target="_blank">security.apache.org/report-code/</a></td>
     <td style="padding:10px;border: 1px solid">The Security Team is not part of Infra.</td>
   </tr>
   <tr valign="top" style="border: 1px solid">
