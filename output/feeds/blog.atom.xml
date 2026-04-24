@@ -423,7 +423,7 @@ Please contact GitHub Support if you run into any problems or need help.
 &lt;ul&gt;
 &lt;li&gt;&lt;code&gt;users@infra.apache.org&lt;/code&gt; is for general infrastructure discussions and suggestions, and for questions related to ASF infrastructure and the Infra team that do not rise to the level of a Jira ticket. Only committers and ASF members can subscribe to the list.&lt;/li&gt;
 &lt;li&gt;&lt;code&gt;private@infra.apache.org&lt;/code&gt; is for communications that may involve PII, personnel issues, or other information that should not be widely shared. Only ASF Members can subscribe to the list.&lt;/li&gt;
-&lt;li&gt;&lt;code&gt;root@apache.org&lt;/code&gt; is an unarchived alias that goes to Infra staff only for Infra-related security issues or other private matters that don't fit other lists. See the second entry on &lt;a href="https://infra.apache.org/infra-contact.html" target="_blank"&gt;Contacting Infra&lt;/a&gt; about reporting a security issue specific to an ASF project or a project's product.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;root@apache.org&lt;/code&gt; is an unarchived alias that goes to Infra staff only for Infra-related security issues or other private matters that don't fit other lists. See the third entry on &lt;a href="https://infra.apache.org/infra-contact.html" target="_blank"&gt;Contacting Infra&lt;/a&gt; if you are reporting a security issue specific to an ASF project or a project's product.&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;In the past there was the &lt;code&gt;infrastructure@apache.org&lt;/code&gt; mailing list. This address is no longer in use.&lt;/p&gt;
 &lt;h3&gt;Reminder: removal of Maven integration plugin&lt;/h3&gt;
