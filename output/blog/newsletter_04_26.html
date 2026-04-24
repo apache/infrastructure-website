@@ -1,0 +1,181 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel='shortcut icon' type='image/x-icon' href='/extra/favicon.ico' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inside Infra April 2026 - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>
+<!-- pagefind search -->
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+      new PagefindUI({ element: "#pagefind-search" });
+  });
+  var pageTitle = '';
+  if(pageTitle === '404'){
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#page-404-search" });
+    });
+  }
+</script>
+<!-- pagefind search box styling -->
+<style type="text/css">
+.search-form {
+	right: 0;
+	left: initial !important;
+        min-width: 25vw;
+	max-width: 90vw;
+	max-height: calc(95vh - 100px);
+	overflow: auto;
+	margin-top: 5px;
+}
+</style>
+  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="https://apache.org/images/feather.png" style="height: 32px;"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                        <li><a class="dropdown-item" href="https://infra.apache.org/tools/csp.html">Content Security Policy Builder</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Infra docs</a></li>
+                        <li><a class="dropdown-item" href="/present.html">Infra presentations</a></li>
+                    </ul>
+                </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Contribute</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle hidden-xs" data-bs-toggle="dropdown">
+                        <span class="fa-solid fa-magnifying-glass" aria-hidden="true"></span> Search</a>
+                    <ul class="search-form dropdown-menu">
+                        <li>
+                            <div id="pagefind-search" class="input-group" style="width: 100%; padding: 0 5px;"></div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav><!-- breadcrumbs -->
+<div class="card" style="height: 34px;">
+    <nav aria-label="breadcrumb"  style="padding-left: 12px; padding-top: 4px;">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+
+            <li class="breadcrumb-item active"><a href="/blog/newsletter_04_26.html">
+Inside Infra April 2026            </a></li>
+
+            <li class="breadcrumb-item active">(<a href="https://github.com/apache/infrastructure-website/tree/master/content/blog/newsletter_04_26.md">edit</a>)</li>
+
+        </ol>
+    </nav>
+</div>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Inside Infra April 2026
+          </h1>
+              <p>Posted on: 2026-04-24 00:00:00+00:00</p>
+              <h2>Welcome to Inside Infra for April, 2026</h2>
+<h3>Roundtable</h3>
+<p>The April 1 Roundtable focused on the migration of the ASF's Confluence Wiki and Jira services from local instances to the cloud. This move is necessary because our use of both services far outstrips what the local instances were designed to handle.</p>
+<p>There are significant technical challenges in the migration:</p>
+<ul>
+<li>We have 1.2 million Confluence pages related to The ASF, its committees, and most of its projects.</li>
+<li>We have a similar number of Jira tickets related to 682 ASF projects. We have to migrate them all, even the tickets related to retired projects, to maintain project development history.</li>
+<li>We have over 150,000 user accounts for Jira and almost 100,000 for Confluence (many ASF-related people have one of each, of course). Many of these are inactive. We have to get our combined number of accounts down to 75,000.</li>
+</ul>
+<p>The migration task needs more projects to volunteer to take part so we can address any issues that come up before we do the migration. Project PMCs can express their interest in a message to <code>users@infra</code>, in an Infra Jira ticket, or in the conversation on the <code>#atlassian-cloud-migration</code> channel in the <code>the-asf</code> Slack space.</p>
+<p>A summary of the presentation and discussion is at <a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable+2026-04-1" target="_blank">cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable+2026-04-1</a>.</p>
+<p>The next roundtable will be <strong>May 6, 1700 UTC</strong>. The timely topic for discussion is <strong>AI coding - infrastructure implications</strong>.</p>
+<p>Details about joining a roundtable, and what goes on at one, are at: <a href="https://infra.apache.org/roundtable.html" target="_blank">infra.apache.org/roundtable.html</a>.</p>
+<h3>MFA</h3>
+<p>Infra has integrated and deployed <strong>Authentik</strong>, an open source identity platform, as the Foundation's new multi-factor authentication (MFA) service. The platform is operational and we are now in a soft launch, working with the Tooling team to integrate the first production services: ASF Trusted Release platform (ATR) and the Board Agenda Tool (BAT).</p>
+<p>These early integrations will help to validate the end-to-end authentication flow before broader rollout.</p>
+<p>Further information is at <a href="https://cwiki.apache.org/confluence/display/INFRA/MFA+User+Guide" target="_blank">MFA User Guide</a>.</p>
+<h3>Rulesets and CoPilot code reviews in GitHub</h3>
+<p>Rulesets and CoPilot code reviews are now available for ASF project repositories. You make both available through settings in the repository's .asf.yaml file.</p>
+<ul>
+<li><strong>Rulesets</strong> help you control how people can interact with branches and tags in a repository. See <a href="https://github.com/apache/infrastructure-asfyaml?tab=readme-ov-file#rulesets" target="_blank">the section on rulesets in the <code>.asf.yaml</code> README file</a>.</li>
+<li><strong>CoPilot code review</strong> can review code written in any coding language and provide feedback. It reviews your code from multiple angles to identify issues and suggest fixes, which you can apply with a couple of clicks. See <a href="https://github.com/apache/infrastructure-asfyaml?tab=readme-ov-file#copilot_code_review" target="_blank">the section on Copilot code review in the <code>.asf.yaml</code> README file</a>.</li>
+</ul>
+<h3>Infra at C/C Glasgow</h3>
+<p>The Infrastructure team will present a full track of talks, discussions, workshops, games and an in-person Roundtable at Community over Code Glasgow, <strong>October 11-14</strong>. The <a href="https://communityovercode.org/wp-content/uploads/2026/02/Community-Over-Code-Prospectus-2026.pdf" target="_blank">conference prospectus</a> is available now, and the detailed schedule of keynotes, tracks, and talks&ndash;-and Games Night!--will be available soon.</p>
+<h3>Phishing attempts</h3>
+<p>Projects are seeing a large number of phishing attempts in Slack workspaces. The attacker, using a fake account, pretends to be someone in an important role in The ASF or the larger coding world, and sends direct messages to members to try to lure them to phishing websites. If you receive a message like this that is outside your normal experience on Slack, do not click on any link it includes. First confirm by another channel that it came from the supposed sender.</p>
+<h3>Infra 101</h3>
+<p><strong>Your project has a person who isn't a committer that they wish to be able to review pull requests</strong></p>
+<p>The project can assign the Triage (or collaborator) role to a user who is not a committer or ASF Member in the repository's <a href="https://github.com/apache/infrastructure-asfyaml"><code>.asf.yaml</code></a> file with an entry like this:</p>
+<pre><code>github:
+  collaborators:
+    - externalgithubuserhere 
+</code></pre>
+<p><strong>More next month!</strong></p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2026, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>  </main>
+  </body>
+</html>
