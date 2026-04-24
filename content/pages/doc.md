@@ -1,7 +1,7 @@
 Title: Documentation
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-Infra provides a library of resources that is constantly evolving to reflect the current state of Apache's infrastructure and policies.
+Infra provides a library of resources that are constantly evolving to reflect the current state of Apache's infrastructure and policies.
 
 ### Overview ###
 
@@ -11,7 +11,7 @@ Infra provides a library of resources that is constantly evolving to reflect the
 
 ### General guides ###
 
-- [Understanding Opensource](understanding-opensource.html)
+- [Understanding Open source](understanding-opensource.html)
 - [Writing a good bug report](bug-writing-guide.html)
 - [Creating a Jira ticket](jira-guidelines.html)
 - [Creating a patch for project code](patch.html)
