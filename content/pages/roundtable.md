@@ -21,9 +21,9 @@ During the roundtable, people can either **speak or type** their comments. If yo
 
 ### Once you have joined #roundtable ###
 
-`#roundtable` is now in your list of channels. In the future, you will can just click on its link rather than asking to join it again.
+`#roundtable` is now in your list of channels. In the future, you can just click on its link rather than asking to join it again.
 
-When you are in the channel, you can share messages with others as a sort of pre-meeting. At some point an infra staffer will post a message inviting people to join the channel **huddle**. Click the link to join the huddle, an icon that looks like the outline of a headset.
+When you are in the channel, you can share messages with others as a sort of pre-meeting. At some point an Infra staffer will post a message inviting people to join the channel **huddle**. Click the link to join the huddle, an icon that looks like the outline of a headset.
 
 ### What happens in the roundtable
 

@@ -11,4 +11,4 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 The Maven team is working on a resolution to this issue. Until the fix is available, they suggest **disabling parallel PUTs**.
 
-For details on disabling parallel PUTs, and what to do if you have already run into this problem in a build, see this article in the Infra blog: <a href="https://infra.apache.org/blog/parallelputissue.html">Parallel PUT problem in repository.apache.org with Apache Maven 3.9.12]</a>. 
+For details on disabling parallel PUTs, and what to do if you have already run into this problem in a build, see this article in the Infra blog: <a href="https://infra.apache.org/blog/parallelputissue.html">Parallel PUT problem in repository.apache.org with Apache Maven 3.9.12</a>. 
