@@ -27,7 +27,7 @@ Infra provides a library of resources that is constantly evolving to reflect the
 
 #### Build and release ####
 - [Release creation process](release-publishing.html)
-- Creating optional [Maven releases](publishing-maven-artifacts.html) 
+- Creating optional [Maven releases](publishing-maven-artifacts.html)
 - [Signing releases](release-signing.html)
 - [Cryptography with OpenPGP](openpgp.html)
 - [Release distribution policy](release-distribution.html)
@@ -55,8 +55,7 @@ Infra provides a library of resources that is constantly evolving to reflect the
 
 - [New committer's guide](new-committers-guide.html)
 - [Managing your Apache email address](committer-email.html)
-- <a href="https://people.apache.org" target="_blank">Apache People</a> provides a simple phone book-like 
-lookup for Apache Committers.
+- <a href="https://people.apache.org" target="_blank">Apache People</a> provides a simple phone book-like lookup for Apache Committers.
 - <a href="https://whimsy.apache.org/" target="_blank">The Whimsy Project</a> provides a number of committer-specific tools for finding information about Apache people.
 - [Transitioning to a new PGP key](key-transition.html)
 - [Getting started with Git](git-primer.html)
