@@ -76,7 +76,7 @@ People who are not part of the ASF community but wish to file a Jira ticket abou
 [ASF account management](account-mgmt.html) provides guidance if you want to update your account details, or have lost access to your account.
   
 <h3 id="notices">Getting notices of infrastructure events<a class="headerlink" href="#notices" title="Permanent link">&para;</a></h3>
-You can subscribe to notices of infrastructure events that you want to know about, ranging from Subversion commits to emails to specific lists. <a href="pypubsub.html">Learn more here</a>.
+You can subscribe to notices of infrastructure events that you want to know about, ranging from Subversion commits to emails to specific lists. [Learn more here](pypubsub.html).
 
 <h3 id="ldap">LDAP-enabled services<a class="headerlink" href="#ldap" title="Permanent link">&para;</a></h3>
 
@@ -218,9 +218,9 @@ Infra manages the ASF DNS, which is registered with Namecheap.
 
 <a href="https://s.apache.org" target="_blank">URL shortener</a>
 
-<h3 id="infra-reports">Infra Reporting Dashboard<a class="headerlink" href="#infra-reports" title="Permanent link">&para;</a></h3>
+<h3 id="sharing">Infra Reporting Dashboard<a class="headerlink" href="#infra-reports" title="Permanent link">&para;</a></h3>
 
-The <a href="https://`infra.apache.org`/infra-reports.html" target="_blank">ASF Infrastructure Reporting Dashboard</a> contains a collection of reports on the overall health and activity of the infrastructure at the ASF. Some reports are available only for ASF Members and Infra team members.
+The <a href="https://infra.apache.org/infra-reports.html" target="_blank">ASF Infrastructure Reporting Dashboard</a> contains a collection of reports on the overall health and activity of the infrastructure at the ASF. Some reports are available only for ASF Members and Infra team members.
 
 <h3 id="machines">Machine list<a class="headerlink" href="#machines" title="Permanent link">&para;</a></h3>
 
