@@ -50,7 +50,6 @@ that the above shell script builds.
 To stage a preview of what a PR would result in, be sure to name your branches 
 using the `preview/$foo` syntax, for instance `preview/cleanup-dec-2021`. This 
 will auto-build and -stage your changes and make them available at 
-`infrastructure-$foo.staged.apache.org`, e.g. `infrastructure-cleanup-dec-2021.staged.apache.org`
+`infrastructure-$foo.staged.apache.org`, e.g. `infrastructure-cleanup-dec-2021.staged.apache.org`.
 
-Note that underscore is not allowed in DNS,
-so should not be used in the branch name.
+Note that underscore is not allowed in DNS, so do not use it in the branch name.
