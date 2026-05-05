@@ -116,36 +116,28 @@
           <h1>
               MFA reset policy
           </h1>
-              <p><strong><em>Draft policy</em></strong>
-Infra will update this page with further details, replacing the <em>TBD</em> notes, as they become available, and will make an announcement when the policy comes into force.</p>
-<h2>Resetting MFA</h2>
-<p>Resetting a committer's multi-factor authentication (MFA) may be necessary because:</p>
-<ul>
-<li>The committer has lost access to the MFA devices</li>
-<li>The committer's MFA has been compromised in some way</li>
-<li>Other reasons</li>
-</ul>
-<p>There will be at least two methods to restore MFA:</p>
+              <h2>Resetting MFA</h2>
+<p>A committer may need to reset their multi-factor authentication (MFA) if they lose access to their MFA devices or believe their MFA has been compromised.</p>
+<p>There are two paths to recovery if you have lost your MFA token(s):</p>
 <ol>
 <li>
-<p>The committer uses a recovery key that they established during initial MFA setup.</p>
+<p><strong>Self-service with a recovery code</strong> established during initial MFA setup.</p>
 <ul>
-<li>Visit (URL TBD) to reset MFA using a recovery key.</li>
+<li>Visit <a href="https://mfa.apache.org">https://mfa.apache.org</a> and use a recovery token by clicking "Select another authentication method."</li>
 </ul>
 </li>
 <li>
-<p>The committer establishes their identity with The ASF via one or more of the following methods:</p>
-<ul>
-<li>Have the project PMC open an Infra Jira ticket to address the issue.</li>
-<li>Work with the project PMC to validate their identity to the best of the project's ability.</li>
-<li>Provide proof of ownership of the ASF-linked GitHub account to Infra via a process TBD.</li>
-<li>Provide proof of ownership of the GPG key associated with the ASF ID via a process TBD.</li>
-<li>Fill out a form TBD containing the information the committer provided on their original ICLA.</li>
-</ul>
-<p>Infra will perform address/signature validation.</p>
+<p><strong>Identity validation by Infra.</strong> Have someone from your PMC or Department open an Infra Jira ticket, or email <a href="mailto:security@infra.apache.org">security@infra.apache.org</a>. Infra will validate identity against factors that you previously registered with the ASF.</p>
 </li>
 </ol>
-<p>If a committer has lost their ASF MFA, GitHub 2FA, and their GPG private key/passphrase, and Infra is unable to perform ICLA validation, the person will need to work with their project to be considered as a new committer, and will need to go through the new committership/new account process. The old account will be considered unrecoverable and will be <strong>disabled</strong>.</p>
+<p>To keep this process low-friction, we strongly encourage committers to register multiple factors in advance:</p>
+<ul>
+<li>Save the recovery codes provided during MFA setup.</li>
+<li>Upload a valid GPG public key to <a href="https://id.apache.org/" target="_blank">id.apache.org</a>.</li>
+<li>Link their ASF and GitHub accounts via <a href="https://gitbox.apache.org/boxer/" target="_blank">Boxer</a>.</li>
+</ul>
+<p>If a committer cannot establish their identity through any of their registered factors, the affected account will be <strong>disabled</strong>, and the person will need to work with their project to be onboarded again through the usual new-committer process.</p>
+<p>Operational details of the reset procedure are maintained on the <a href="https://cwiki.apache.org/confluence/display/INFRA/MFA+Reset+Policy">ASF Infra Cwiki</a>. (Committer authentication required.)</p>
 
         </div>
       </div>
