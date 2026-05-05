@@ -1,4 +1,4 @@
-Title: Service no longer provided by ASF Infra
+Title: Services no longer provided by ASF Infra
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 # Introduction
