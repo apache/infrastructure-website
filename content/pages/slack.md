@@ -24,7 +24,7 @@ Other contributors and interested parties (observers, former members, software e
   1. In the Slack app, click the "ASF" header at the top left.
   2. Select `Invite people to ASF`.
   3. Provide the email addresses of the people you would like to invite to specific channels.
-  4. Use the `Invite as` `Guest` option and, in the form that appears, specify the channels you want to invite them to.
+  4. Use the `Invite as` `Guest` option and, in the form that appears, specify the channel you want to invite them to.
 
 Infra has disabled the option that would let you provide a member invite link to the workspace to anyone who wanted it, as spammers were taking advantage of it. Projects can invite interested parties (via their `@dev` or `@users` lists or a note on their website) to send a request to join the channel either to the `@dev` list or to an email address the project specifies. The PMC can then extend an invitation to that person, if they choose. <a href="https://slack.com/help/articles/201330256-Invite-new-members-to-your-workspace" target="_blank">Slack has various ways to invite users to our workspace.</a>
 
@@ -55,7 +55,7 @@ Once you are part of the ASF workspace as a member or a multi-channel guest, you
  
  Some ASF channels are **private** or **locked**, and do not appear on the list of channels you can join. Someone who is already in the channel has to invite you to join such a channel.
  
-If you are a single-channel guest, you cannot join other channels.
+If you are a single-channel guest and wish to join additional channels, ask an ASF Member or committer to open a Jira ticket for Infra with the request. They should provide your user name and the additional channels you would like to join.
  
 It is good manners to send a hello message to a channel you join, possibly with a short statement of why you are there.
 
