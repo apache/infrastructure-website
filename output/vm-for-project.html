@@ -180,11 +180,12 @@
 <p>When OPIE works, contact us on #asfinfra, or by commenting on the issue, and sudo karma will be granted (ldap add userid to sudoer group).</p>
 <h3 id="ssh-keys">Obtaining SSH keys<a class="headerlink" href="#ssh-keys" title="Permanent link">&para;</a></h3>
 <p>To use key-based login, you need to generate a key on your local desktop (do not use a publicly accessible server for this) and then add your public key to LDAP using the self-service app at <code>https://id.apache.org</code>.</p>
+<p>Alternatively, login to <a href="https://whimsy.apache.org/roster/committer/__self">https://whimsy.apache.org/roster/committer/__self</a>__ and double-click the green 'SSH keys' label to add the key.</p>
 <p>Once you have done this, wait at least 10 mins. You should then be able to log in as follows:</p>
-<pre><code>:::shell $ ssh [username]@$project-vm.apache.org
+<pre><code class="language-shell">$ ssh [username]@$project-vm.apache.org
 </code></pre>
 <p>Depending on your client setup, you may need to run the following command to ensure the key(s) are made available to the SSH client on your system:</p>
-<pre><code>:::shell $ ssh-add
+<pre><code class="language-shell">$ ssh-add
 </code></pre>
 <p>If you use PuTTY, make sure it is configured to force SSH v2 protocol. And use keyboard-interactive.</p>
 <p>Once you have logged in, there are few tasks best performed right away. Please take care when using your shell account.</p>
