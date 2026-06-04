@@ -67,16 +67,18 @@ When OPIE works, contact us on #asfinfra, or by commenting on the issue, and sud
 
 To use key-based login, you need to generate a key on your local desktop (do not use a publicly accessible server for this) and then add your public key to LDAP using the self-service app at `https://id.apache.org`.
 
+Alternatively, login to https://whimsy.apache.org/roster/committer/__self__ and double-click the green 'SSH keys' label to add the key.
+
 Once you have done this, wait at least 10 mins. You should then be able to log in as follows:
 
-```
-:::shell $ ssh [username]@$project-vm.apache.org
+```shell
+$ ssh [username]@$project-vm.apache.org
 ```
 
 Depending on your client setup, you may need to run the following command to ensure the key(s) are made available to the SSH client on your system:
 
-```
-:::shell $ ssh-add
+```shell
+$ ssh-add
 ```
 
 If you use PuTTY, make sure it is configured to force SSH v2 protocol. And use keyboard-interactive.
