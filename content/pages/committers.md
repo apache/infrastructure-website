@@ -5,7 +5,7 @@ A committer is an individual who has write access to the codebase of an ASF proj
 
 The main information resource for you in this role, apart from the wisdom of your project colleagues, is the <a href="https://infra.apache.org/new-committers-guide.html" target="_blank">Guide for New Project Committers</a>.
 
-If you are not an Apache committer, but wish to become one, the instructions on <a href="https://www.apache.org/foundation/getinvolved.html#become-a-committer" target="_blank">How to become a committer</p>
+If you are not an Apache committer, but wish to become one, see <a href="https://www.apache.org/foundation/getinvolved.html#become-a-committer" target="_blank">How to become a committer</p>.
 
 <h3 id="frequently-asked-questions">Frequently asked questions<a class="headerlink" href="#frequently-asked-questions" title="Permanent link">&para;</a></h3>
 <ul>
@@ -27,15 +27,6 @@ The Apache Software Foundation periodically organizes <a href="https://www.apach
 <h4 id="hackathon">What is a Hackathon?<a class="headerlink" href="#hackathon" title="Permanent link">&para;</a></h4>
 
 A face-to-face or shared online gathering for hacking code together. Hackathons are generally held at ASF conferences, as well as at other times.
-
-<h4 id="volunteer">How do I manage my volunteer energy?<a class="headerlink" href="#volunteer" title="Permanent link">&para;</a></h4>
-
-Heed the warnings in these two email threads about what it means to be a committed person at the ASF and how to deal with the pressures that arise from such dedication:
-
-  - <a href="https://mail-archives.apache.org/mod_mbox/www-community/200311.mbox/%3c3FC1C5BD.3060406@apache.org%3e" target="_blank">What is a member?</a>
-  - <a href="https://mail-archives.apache.org/mod_mbox/www-community/200311.mbox/%3c4A16CAE8-2130-11D8-9668-000393753936@gbiv.com%3e" target="_blank">volunteeritis</a>
-
-We each need to re-read these important messages from time to time and remind ourselves and our communities of the need for self-care and care of others.
 
 <h4 id="new-project">How do I start a new ASF project or migrate an existing project?<a class="headerlink" href="#new-project" title="Permanent link">&para;</a></h4>
 
