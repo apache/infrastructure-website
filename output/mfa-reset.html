@@ -5,7 +5,7 @@
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <link rel='shortcut icon' type='image/x-icon' href='/extra/favicon.ico' />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MFA reset policy - Apache Infrastructure Website</title>
+    <title>MFA Reset Policy - Apache Infrastructure Website</title>
 <link href="/css/bootstrap.min.css" rel="stylesheet">
 <link href="/css/fontawesome.all.min.css" rel="stylesheet">
 <link href="/css/headerlink.css" rel="stylesheet">
@@ -114,30 +114,30 @@
     <div class="bg-white p-5 rounded">
         <div class="col-sm-8 mx-auto">
           <h1>
-              MFA reset policy
+              MFA Reset Policy
           </h1>
-              <h2>Resetting MFA</h2>
-<p>A committer may need to reset their multi-factor authentication (MFA) if they lose access to their MFA devices or believe their MFA has been compromised.</p>
+              <p>A committer may need to reset their ASF multi-factor authentication (MFA) if they lose access to their MFA devices or believe their MFA has been compromised.</p>
 <p>There are two paths to recovery if you have lost your MFA token(s):</p>
 <ol>
-<li>
-<p><strong>Self-service with a recovery code</strong> established during initial MFA setup.</p>
+<li><strong>Self-service with a recovery code</strong> established during initial MFA setup.</li>
+</ol>
 <ul>
 <li>Visit <a href="https://mfa.apache.org">https://mfa.apache.org</a> and use a recovery token by clicking "Select another authentication method."</li>
 </ul>
-</li>
-<li>
-<p><strong>Identity validation by Infra.</strong> Have someone from your PMC or Department open an Infra Jira ticket, or email <a href="mailto:security@infra.apache.org">security@infra.apache.org</a>. Infra will validate identity against factors that you previously registered with the ASF.</p>
-</li>
+<ol start="2">
+<li><strong>Identity validation by Infra.</strong></li>
 </ol>
+<ul>
+<li>Have someone from your PMC or Department open an Infra Jira ticket, or email <a href="mailto:security@infra.apache.org">security@infra.apache.org</a>. Infra will validate your identity against factors that you previously registered with the ASF.</li>
+</ul>
 <p>To keep this process low-friction, we strongly encourage committers to register multiple factors in advance:</p>
 <ul>
-<li>Save the recovery codes provided during MFA setup.</li>
+<li><em>Save the recovery codes provided during MFA setup.</em></li>
 <li>Upload a valid GPG public key to <a href="https://id.apache.org/" target="_blank">id.apache.org</a>.</li>
 <li>Link their ASF and GitHub accounts via <a href="https://gitbox.apache.org/boxer/" target="_blank">Boxer</a>.</li>
 </ul>
-<p>If a committer cannot establish their identity through any of their registered factors, the affected account will be <strong>disabled</strong>, and the person will need to work with their project to be onboarded again through the usual new-committer process.</p>
-<p>Operational details of the reset procedure are maintained on the <a href="https://cwiki.apache.org/confluence/display/INFRA/MFA+Reset+Policy">ASF Infra Cwiki</a>. (Committer authentication required.)</p>
+<p>If a committer cannot establish their identity through any of their registered factors or through any other Infra-established process, the affected account will be <strong>disabled</strong>, and the committer will need to work with their project to be onboarded again through the new-committer process.</p>
+<p>More committer-specific details related to the reset procedure are maintained on the <a href="https://cwiki.apache.org/confluence/display/INFRA/MFA+Reset+Policy" target="_blank">ASF Infra Cwiki</a>. (Committer authentication required.)</p>
 
         </div>
       </div>
