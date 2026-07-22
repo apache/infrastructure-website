@@ -11,4 +11,6 @@ The ASF is expanding the use of MFA to cover its own applications and processes.
   - Using an existing feature at <a href="https://id.apache.org/" target="_blank">id.apache.org</a> to upload their GPG public key. This gives the committer an additional factor Infra can rely on during account recovery.
   - Linking their ASF and GitHub accounts via <a href="https://gitbox.apache.org/boxer/" target="_blank">Boxer</a>. This establishes a verifiable relationship between the two accounts.
 
+Committers and ASF Members can consult in-development user documentation at <a href="https://s.apache.org/mfa-user-guide" target="_blank">s.apache.org/mfa-user-guide</a>.
+
 See also the <a href="https://infra.apache.org/mfa-reset.html">MFA reset policy</a>.
