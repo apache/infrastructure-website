@@ -142,7 +142,6 @@ Infra can activate a [Subversion and Git integration with Jira tickets](svngit2j
 
 <h3 id="source-repository-publishersubscriber-services">Source repository publisher/subscriber services<a class="headerlink" href="#source-repository-publishersubscriber-services" title="Permanent link">&para;</a></h3>
 
-  - SvnPubSub
   - [PyPubSub](pypubsub.html)
 
 <h3 id="build">Build services<a class="headerlink" href="#build" title="Permanent link">&para;</a></h3>
