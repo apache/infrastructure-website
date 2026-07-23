@@ -25,7 +25,7 @@ Work continues on the migration of our in-house Jira and Confluence Wiki service
 
 The new ASF multi-factor authentication (MFA) system is live and protecting access to some ASF services and systems, such as webmod, but Infra and early adopters are still working on resolving some usability issues and completing the documentation before expanding its use across the ASF.
 
-From the in-development documentation, MFA "adds a second step to your login. After entering your ASF username and password, you confirm your identity with a device you control -- an authenticator app on your phone, a hardware security key, or a passkey built into your laptop." Further information is available at infra.apache.org/mfa.html.
+From the in-development documentation, MFA "adds a second step to your login. After entering your ASF username and password, you confirm your identity with a device you control -- an authenticator app on your phone, a hardware security key, or a passkey built into your laptop." Further information is available at <a href="https://infra.apache.org/mfa.html">mfa.html</a>.
 
 ## CAP - active beta seeks testers
 
