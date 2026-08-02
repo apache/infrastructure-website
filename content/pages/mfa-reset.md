@@ -1,6 +1,8 @@
 Title: MFA Reset Policy
 license: https://www.apache.org/licenses/LICENSE-2.0
 
+**Note**: This is a summary of the full policy, which is available to ASF Member and Committers at <a href="https://cwiki.apache.org/confluence/spaces/INFRA/pages/263427637/MFA+Reset+Policy" target="_blank">cwiki.apache.org/confluence/spaces/INFRA/pages/263427637/MFA+Reset+Policy</a>.
+
 A committer may need to reset their ASF multi-factor authentication (MFA) if they lose access to their MFA devices or believe their MFA has been compromised.
 
 There are two paths to recovery if you have lost your MFA token(s):
