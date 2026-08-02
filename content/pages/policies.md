@@ -9,6 +9,7 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 - [Mail rejection policy](mail-rejection.html)
 - [Dealing with spam in your ASF email account](spam-reporting.html)
 - [Password requirements](password-policy.html)
+- <a href="https://cwiki.apache.org/confluence/spaces/INFRA/pages/263427637/MFA+Reset+Policy" target="_blank">MFA Reset Policy</a>
 - [Policy on issues in third-party services](third-party-policy.html)
 - [Policy for using ASF Slack](slack-policy.html)
 - [Policy on sharing sensitive information with Infra](sensitive_info.html)
