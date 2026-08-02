@@ -42,7 +42,7 @@ Apache Incubator podlings cannot create official ASF releases; see the <a href="
 
 The <a href="http://www.apache.org/dev/release#what" target="_blank">Apache Release Policy</a> governs the content of official Apache releases and the process by which projects create valid releases.
 
-The Policy specifies that TLPs may distribute binary packages, provided by the project or third parties which meet certain criteria, may be distributed alongside official source packages. Such packages are sometimes referred to as "convenience binaries" or "PMC-approved artifacts", to distinguish them from other binary packages.
+The Policy specifies that TLPs may distribute binary packages, provided by the project or third parties which meet certain criteria, alongside official source packages. Such packages are sometimes referred to as "convenience binaries" or "PMC-approved artifacts", to distinguish them from other binary packages.
 
 <h2 id="public-distribution">Public distribution channels<a class="headerlink" href="#public-distribution" title="Permanent link">&para;</a></h2>
 
