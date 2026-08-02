@@ -3,7 +3,7 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 **Note**: If you cannot access one or more ASF repositories or services, your IP address may have been **blocked**. Before contacting Infra, review <a href="https://infra.apache.org/abc/" target="_blank">Abuse and Connectivity Issues at the ASF</a> (ABC). The page lists the common overuse (or abuse) issues that affect our site's work and cause an automatic IP address block, and recommends steps to get such a block removed. ABC also provides a channel to contact Infra if you need more information than the page provides.
 
-Infra maintains a wide range of tools for PMCs, project committers, and the Apache Board to use. Parts of our toolkit are only available to people who have specific duties or roles. Others, like the monitoring tools that show the status of various parts of the Apache infrastructure, are available to everyone.
+Infra maintains a wide range of tools for PMCs, project committers, and the Apache Board and its committees to use. Parts of our toolkit are only available to people who have specific duties or roles. Others, like the monitoring tools that show the status of various parts of the Apache infrastructure, are available to everyone.
 
   - <a href="#tlps">Services for Top-Level Projects (TLPs)</a>
     - <a href="#web-sites">Websites</a>
@@ -167,9 +167,6 @@ See [guidance for choosing a product name](project-names.html)
   - Code signing service
       - Requesting access to the [code signing service](code-signing-access.html)
       - [Using the code signing service](code-signing-use.html)
-  - Digicert (service ends 2024-11-01)
-      - Requesting access to the [Digicert code signing service](digicert-access.html)
-      - [Using Digicert](digicert-use.html)
   - [Cryptography with OpenPGP](openpgp.html)
   - For <a href="https://cwiki.apache.org/confluence/display/INFRA/Distribution+via+the+Apple+App+Store" target="_blank">distribution via the Apple App Store</a>
 
