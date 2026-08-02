@@ -42,7 +42,7 @@ Your Apache project's download page:
 
 <h3 id="current-and-older-releases">Current and older releases<a class="headerlink" href="#current-and-older-releases" title="Permanent link">&para;</a></h3>
 
-  - Do **not** keep software distributions on your project's website. Move them to one of the two software distribution sites:
+Do **not** keep software distributions on your project's website. Move them to one of the two software distribution sites:
 
   - **Current public releases** appear on `downloads.apache.org/`. Place current, official releases that the PMC has approved for end-users on the main public release site. Make all changes at <a href="https://dist.apache.org/repos/dist/release/" target="_blank">`https://dist.apache.org/repos/dist/release/`</a>.
 
