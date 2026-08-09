@@ -211,6 +211,7 @@ Please review the tables above before filing a ticket - often you or someone in 
   - If you create a Jira ticket, create it in the **right Jira component**. This helps the team spot pending tasks in their areas. If it's not obvious which component is the right one, select "documentation".
   - **Be patient**. It may take a few days for someone to respond.
   - **Research your topic**. See the <a href="https://www.apache.org/dev/" target="_blank">developer information section</a>.
+  - See also [Jira tickets for Infra](jira-for-infra.html).
   
 **Thanks**. Making requests following these guidelines might require a little effort, but saves time for all involved.
 
