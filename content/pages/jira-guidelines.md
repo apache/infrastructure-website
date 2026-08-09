@@ -97,16 +97,5 @@ When you have completed entering the useful information, click **Create** to cre
 
 <h3 id="followup">Jira tickets for Infra<a class="headerlink" href="#followup" title="Permanent link">&para;</a></h3>
 
-You cannot read or comment on existing Jira tickets for Infra without having logged in with your Apache credentials. See the "Who can create a ticket" section, at the top of this page, for details.
+See [Jira tickets for Infra](jira-for-infra.html)
 
-The largest group of tickets assigned to Infra are requests for Infra to perform a task of one sort or another. The next largest category is reports of possible bugs in the Infrastructure system.
-
-Infra may respond in a number of ways, including:
-
-  - Closing the ticket as **invalid**. Review "Before you create a ticket", above, for reasons that may generate this response.
-  - Asking for **further details**. You may then see that the status of the ticket has changed to _waiting for user_. Provide the details as best you can in a comment, and change the status to _waiting for Infra_.
-  - Reporting the issue **resolved**. Please verify the fix or that the requested service is now available. If all is well, and Infra has not changed the status to _closed_ or one of its variants, feel free to do so yourself.
-
-**Note**: A ticket in the status of _Waiting for User_, will not generally be worked on until the ticket status is set to _Waiting for Infra_. Be sure to set the ticket to _Waiting for Infra_ if the ticket needs follow-up!
-
-Here are details about Infra's typical <a href="https://infra.apache.org/responsetime.html" target="_blank">response times</a> to Jira tickets and other requests, which largely depend on the severity of the issue. 
