@@ -1,4 +1,4 @@
-Title: Jira tickets for Infrea
+Title: Jira tickets for Infra
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 **Note**: this page is specifically about Jira tickets assigned to the Infrastructure team. General information about Jira and the ASF is at [Jira tickets](jira-guidelines.html).
