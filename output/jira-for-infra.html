@@ -1,0 +1,159 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel='shortcut icon' type='image/x-icon' href='/extra/favicon.ico' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jira tickets for Infra - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>
+<!-- pagefind search -->
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+      new PagefindUI({ element: "#pagefind-search" });
+  });
+  var pageTitle = '';
+  if(pageTitle === '404'){
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#page-404-search" });
+    });
+  }
+</script>
+<!-- pagefind search box styling -->
+<style type="text/css">
+.search-form {
+	right: 0;
+	left: initial !important;
+        min-width: 25vw;
+	max-width: 90vw;
+	max-height: calc(95vh - 100px);
+	overflow: auto;
+	margin-top: 5px;
+}
+</style>
+  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="https://apache.org/images/feather.png" style="height: 32px;" alt="Apache Software Foundation oak leaf logo"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                        <li><a class="dropdown-item" href="https://infra.apache.org/tools/csp.html">Content Security Policy Builder</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Infra docs</a></li>
+                        <li><a class="dropdown-item" href="/present.html">Infra presentations</a></li>
+                    </ul>
+                </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Contribute</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle d-none d-sm-inline-block" data-bs-toggle="dropdown" aria-label="Search">
+                        <span class="fa-solid fa-magnifying-glass" aria-hidden="true"></span> Search</a>
+                    <ul class="search-form dropdown-menu">
+                        <li>
+                            <div id="pagefind-search" class="input-group" style="width: 100%; padding: 0 5px;"></div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Jira tickets for Infra
+          </h1>
+              <p><strong>Note</strong>: this page is specifically about Jira tickets assigned to the Infrastructure team. General information about Jira and the ASF is at <a href="jira-guidelines.html">Jira tickets</a>.</p>
+<h1>Jira tickets for Infra</h1>
+<p>The largest group of Jira tickets assigned to Infra are requests for Infra to perform a task of one sort or another. The next largest category is reports of possible issues in the Infrastructure system.</p>
+<h2>What we need to know</h2>
+<p>We need the right information to respond to your work request or bug report. In addition to the <a href="jira-guidelines.html#writing">Writing a good Jira ticket</a> advice, see Infra's <a href="infra-contact.html#what-we-need-to-know">What we need to know</a> list.</p>
+<h2>How Infra will respond</h2>
+<p>Infra may respond in a number of ways, including:</p>
+<ul>
+<li>Closing the ticket as <strong>invalid</strong>. Review <a href="jira-guidelines.html#before">Before you create a ticket</a> for reasons that may generate this response.</li>
+<li>Asking for <strong>further details</strong>. You may then see that the status of the ticket has changed to <em>waiting for user</em>. Provide the details as best you can in a comment, and change the status to <em>waiting for Infra</em>.</li>
+<li>Closing the ticket as <strong>inactive</strong>. If we set the ticket status to <em>Waiting for user</em> and there is no activity on it for 14 days, the system sends a reminder to the reporter. If there is no activity on the ticket for a further seven days, the system automatically closes it as inactive.</li>
+<li>Reporting the issue <strong>resolved</strong>. Please verify the fix or that the requested service is now available. If all is well, and Infra has not changed the status to <em>closed</em> or one of its variants, feel free to do so yourself.</li>
+</ul>
+<h2>When Infra will respond</h2>
+<p>Here are details about Infra's typical <a href="responsetime.html">response times</a> to Jira tickets and other requests, which largely depend on the severity of the issue.</p>
+<h2>How you should respond</h2>
+<p><strong>Note</strong>: Infra does not normally work on a ticket in the status of <em>Waiting for User</em>. We normally wait until the status changes to <em>Waiting for Infra</em>. Be sure to set the ticket to <em>Waiting for Infra</em> if the ticket needs follow-up!</p>
+<p>The reporter of a ticket should check it regularly to see if it has had activity that requires their response.</p>
+<ul>
+<li>If the status is now <em>Waiting for User</em>, Infra may need something for you: additional information, a clarification, testing a fix or, if the ticket is about a problem with infrastructure, a request to verify whether you are still experiencing the problem. Provide the information if you can, or explain why you cannot...and don't forget to change the ticket status to <em>Waiting for Infra</em>.</li>
+<li>If the message from Infra is that the work is done or the problem is solved, and you can verify it, add a note to that effect and <strong>close the ticket</strong> as fixed. Do not just abandon it.</li>
+<li>There may be questions or suggestions in the comment thread that you should respond to.</li>
+</ul>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2026, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
