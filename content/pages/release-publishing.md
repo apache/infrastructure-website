@@ -1,9 +1,11 @@
 Title: Release Creation Process
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-These best practices help guide a PMC through the steps to create and publish an Apache software product release. It complements the formal <a href="https://www.apache.org/legal/release-policy.html" target="_blank">Apache Release Policy</a>, defining what must be in a software release, and [Release Distribution Policy](release-distribution.html).
+These best practices help guide a PMC through the steps to create and publish an Apache software product release. They complement the formal <a href="https://www.apache.org/legal/release-policy.html" target="_blank">Apache Release Policy</a>, defining what must be in a software release, and [Release Distribution Policy](release-distribution.html).
 
 Every Apache Software Foundation project software release must meet requirements for content, process, and publication. These requirements ensure that Apache contributors and users benefit from appropriate legal protection the ASF provides, and reflect the Foundation's goals of open, collaborative software development.
+
+**Note**: Projects using the **Apache Trusted Releases (ATR)** platform should consult its [documentation](atr.html), which in part supersedes this information.
 
 ## Contents ##
 
@@ -134,3 +136,5 @@ As a rule of thumb, projects should currently:
 <h2 id="faqs">FAQs<a class="headerlink" href="#faqs" title="Permanent link">&para;</a></h2>
 
   - **How do I archive an old release?** `downloads.apache.org` is automatically archived every four hours. Therefore, a copy of every official release exists in the archives. Just delete the copy of the release that is in your project's dist directory. Remember to update any links from the download page related to that release.
+
+**Note**: if your project is using the [Apache Trusted Releases](atr.html) (ATR) platform, there is no delay in archiving older releases.
