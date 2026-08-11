@@ -1,8 +1,10 @@
 title: Handling Release Artifact Integrity Errors at the ASF
 license: https://www.apache.org/licenses/LICENSE-2.0
 
+**Note**: Projects using the **Apache Trusted Releases (ATR)** platform should consult its [documentation](atr.html). ATR, among its many functions, checks the integrity of proposed releases.
 
 This page will help you resolve [release distribution policy](https://infra.apache.org/release-distribution) errors that our [Download Integrity Checker](https://github.com/apache/infrastructure-download-integrity-checker) discovers.
+
 Each reported error has an accompanying error code (`CHKxx`). The code will help you resolve issues by using the matrix below:
 
 
