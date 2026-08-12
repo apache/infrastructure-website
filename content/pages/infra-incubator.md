@@ -9,7 +9,7 @@ The Infrastructure team (Infra) manages the systems and hardware that run the se
 
 Your mentor is your first stop in figuring out technical issues for your incubating project. They can explain, based on long experience, how to get the best out of the ASF systems, machines, and services. However, if the mentor is not available, members of the new project can move forward the process of setting up project resources.
 
-<img src="https://cwiki.apache.org/confluence/rest/gliffy/1.0/embeddedDiagrams/7df21120-01db-421e-bb47-353b7977097a.png" />
+<img src="../images/setuppodling.png" width="600" />
 
 ### Phase 1: Establishing a podling
 
