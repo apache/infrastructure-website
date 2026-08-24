@@ -3,7 +3,7 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 Your project's release download page is where people can download your product's latest release(s). This page describes how a release manager can put such a page together.
 
-*Note**: Projects using the **Apache Trusted Releases (ATR)** platform should consult its [documentation](atr.html). ATR handles the SVN distribution work for the release manager.
+**Note**: Projects using the **Apache Trusted Releases (ATR)** platform should consult its [documentation](atr.html). ATR handles the SVN distribution work for the release manager.
 
 Review
 
