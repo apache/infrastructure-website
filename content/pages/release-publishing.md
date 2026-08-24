@@ -139,4 +139,4 @@ As a rule of thumb, projects should currently:
 
   - **How do I archive an old release?** `downloads.apache.org` is automatically archived every four hours. Therefore, a copy of every official release exists in the archives. Just delete the copy of the release that is in your project's dist directory. Remember to update any links from the download page related to that release.
 
-**Note**: if your project is using the [Apache Trusted Releases](atr.html) (ATR) platform, there is no delay in archiving older releases.
+**Note**: Projects using the [Apache Trusted Releases](atr.html) (ATR) platform can configure their ATR project so that archiving of older releases is automated.
