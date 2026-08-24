@@ -43,7 +43,7 @@ By default, only PMC members can publish release artifacts to https://dist.apach
 
 Allowing Committers to publish release artifacts requires project consensus, so include a link to an email thread with that consensus.
 
-**Note**: Any PMC member of a project using the **ATR** platform can assign a **specific Committer** to the role of release manager, rather than giving blanket permission to all Committers of the PMC. To do this, open a Jira ticket for ATR with the details of your request.
+**Note**: Any PMC member of a project using the **ATR** platform can assign a **specific Committer** to the role of release manager, rather than giving blanket permission to all Committers of the PMC. Consult the [ATR documentation](atr.html). 
 
 ***Release managers do the mechanical work; but the PMC in general, and the PMC chair in particular (as an officer of the Foundation), remain responsible for compliance with ASF requirements.***
 
