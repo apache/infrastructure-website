@@ -3,12 +3,14 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 Your project's release download page is where people can download your product's latest release(s). This page describes how a release manager can put such a page together.
 
+**Note**: Projects using the **Apache Trusted Releases (ATR)** platform should consult its [documentation](atr.html). ATR handles the SVN distribution work for the release manager.
+
 Review
 
   - the policy on [release distribution](release-distribution.html) if you are unsure of the best way to use the project download page
   - guidelines on [signing releases](release-signing.html)
 
-## Contents ##
+## Contents 
 
 <ul>
 <li><a href="#links">Download links</a></li>
@@ -42,7 +44,7 @@ Your Apache project's download page:
 
 <h3 id="current-and-older-releases">Current and older releases<a class="headerlink" href="#current-and-older-releases" title="Permanent link">&para;</a></h3>
 
-Do **not** keep software distributions on your project's website. Move them to one of the two software distribution sites:
+Do **not** keep software distributions on your project's website. Move them to one of these two sites:
 
   - **Current public releases** appear on `downloads.apache.org/`. Place current, official releases that the PMC has approved for end-users on the main public release site. Make all changes at <a href="https://dist.apache.org/repos/dist/release/" target="_blank">`https://dist.apache.org/repos/dist/release/`</a>.
 
