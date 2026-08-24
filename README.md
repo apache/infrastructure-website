@@ -33,8 +33,7 @@ pelican content -e PLUGIN_PATHS='["../infrastructure-actions/pelican/plugins"]' 
 ```
 
 ## Technical site documentation
-Any time you check in a file, the site regenerates:
-https://ci2.apache.org/#/builders/3
+Any time you make changes to the site content, it triggers a Github action. See the workflow file at `https://github.com/apache/infrastructure-website/blob/master/.github/workflows/build-pelican.yml`.
 
 ## Preparation
 The `gfm_reader.py` script points to a specific directory on

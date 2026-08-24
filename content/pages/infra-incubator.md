@@ -3,13 +3,13 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 ## What Infra is
 
-The Infrastructure team (Infra) manages the systems and hardware that run the services that the ASF and its projects depend on. Infra also reviews requests to install new systems or software on ASF machines, and provides virtual machines (VMs) for projectrs. It's a small team, distributed across many time zones. Someone is on duty at all hours to respond to emergency issues.
+The Infrastructure team (Infra) manages the systems and hardware that run the services that the ASF and its projects depend on. Infra also reviews requests to install new systems or software on ASF machines, and provides virtual machines (VMs) for projects. It's a small team, distributed across many time zones. Someone is on duty at all hours to respond to emergency issues.
 
 ## Infra and incubating projects
 
 Your mentor is your first stop in figuring out technical issues for your incubating project. They can explain, based on long experience, how to get the best out of the ASF systems, machines, and services. However, if the mentor is not available, members of the new project can move forward the process of setting up project resources.
 
-<img src="https://cwiki.apache.org/confluence/rest/gliffy/1.0/embeddedDiagrams/7df21120-01db-421e-bb47-353b7977097a.png" />
+<img src="../images/setuppodling.png" width="600" />
 
 ### Phase 1: Establishing a podling
 
