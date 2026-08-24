@@ -116,8 +116,9 @@
           <h1>
               Release Creation Process
           </h1>
-              <p>These best practices help guide a PMC through the steps to create and publish an Apache software product release. It complements the formal <a href="https://www.apache.org/legal/release-policy.html" target="_blank">Apache Release Policy</a>, defining what must be in a software release, and <a href="release-distribution.html">Release Distribution Policy</a>.</p>
+              <p>These best practices help guide a PMC through the steps to create and publish an Apache software product release. They complement the formal <a href="https://www.apache.org/legal/release-policy.html" target="_blank">Apache Release Policy</a>, defining what must be in a software release, and <a href="release-distribution.html">Release Distribution Policy</a>.</p>
 <p>Every Apache Software Foundation project software release must meet requirements for content, process, and publication. These requirements ensure that Apache contributors and users benefit from appropriate legal protection the ASF provides, and reflect the Foundation's goals of open, collaborative software development.</p>
+<p><strong>Note</strong>: Projects using the <strong>Apache Trusted Releases (ATR)</strong> platform should consult its <a href="atr.html">documentation</a>, which in part supersedes this information.</p>
 <h2>Contents</h2>
 <ul>
 <li><a href="#definition">An Apache release</a></li>
@@ -150,7 +151,8 @@
 <p>Most projects designate a committer to be the <em>release manager</em> who takes responsibility for the mechanics of a release. It is a good idea to let several committers take this role on different releases so that more than one person is comfortable doing a release. Release managers shepherd a release from an initial community consensus to getting the compiled code package to final distribution, and may be involved in publicizing the release to the project's community and the ASF in general.</p>
 <p>By default, only PMC members can publish release artifacts to <a href="https://dist.apache.org/repos/dist/release/">https://dist.apache.org/repos/dist/release/</a>. If your project wishes to allow non-PMC member committers to publish release artifacts, please open a Jira ticket for Infra with your request. Note that there are only two options: only PMC members can publish release artifacts, or all the project's Committers can publish release artifacts.</p>
 <p>Allowing Committers to publish release artifacts requires project consensus, so include a link to an email thread with that consensus.</p>
-<p><em><strong>Release managers do the mechanical work; but the PMC in general, and the PMC chair in particular (as an officer of the Foundation), remains responsible for compliance with ASF requirements.</strong></em></p>
+<p><strong>Note</strong>: Any PMC member of a project using the <strong>ATR</strong> platform can assign a <strong>specific Committer</strong> to the role of release manager, rather than giving blanket permission to all Committers of the PMC. Consult the <a href="atr.html">ATR documentation</a>.</p>
+<p><em><strong>Release managers do the mechanical work; but the PMC in general, and the PMC chair in particular (as an officer of the Foundation), remain responsible for compliance with ASF requirements.</strong></em></p>
 <h2 id="valid">A valid release package<a class="headerlink" href="#valid" title="Permanent link">&para;</a></h2>
 <p>The Apache Software Foundation exists to create open source software, so the fundamental requirement for a release is that it has the necessary source code to build the project. A project may provide compiled binaries of each release for the convenience of users.</p>
 <p>All project source code must be covered by the <a href="https://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License, version 2.0</a>. The license or appropriate boilerplate text must be included in each source file. For the license to be valid, the code must have been contributed by an individual covered by an appropriate <a href="https://www.apache.org/licenses/contributor-agreements.html" target="_blank">contributor license agreement</a>, or have otherwise been licensed to the Foundation and passed through IP clearance. See <a href="https://www.apache.org/legal/release-policy.html" target="_blank">this page</a> for details on release requirements. When in doubt, contact the Foundation's Legal resources by filing a Jira ticket under the 'LEGAL' project. The Apache <a href="https://creadur.apache.org/rat/" target="_blank">Release Audit Tool (RAT)</a> can help you verify that your proposed release complies with the requirements.</p>
@@ -229,6 +231,7 @@ for one hour after publishing a release before announcing it to the wider public
 <ul>
 <li><strong>How do I archive an old release?</strong> <code>downloads.apache.org</code> is automatically archived every four hours. Therefore, a copy of every official release exists in the archives. Just delete the copy of the release that is in your project's dist directory. Remember to update any links from the download page related to that release.</li>
 </ul>
+<p><strong>Note</strong>: Projects using the <a href="atr.html">Apache Trusted Releases</a> (ATR) platform can configure their ATR project so that archiving of older releases is automated.</p>
 
         </div>
       </div>
