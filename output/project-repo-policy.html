@@ -122,6 +122,7 @@
 <li>Each project can request (using a Jira ticket) that Infra set up <strong>a temporary private Git repository fork</strong> for use with tasks, such as fixing security issues in project code, that should not be publicly available. The PMC must explain its need of a private fork in the Jira ticket. Forks will be tied to Jira tickets or CVEs such that upon completion of the work, the private fork can be decommissioned by Infra.</li>
 <li>Private repos <strong>must</strong> have commit/PR/issues emails sent to the project's <code>private@</code> list.</li>
 <li>To follow the Infra convention, name project repos in the pattern <code>$project-$reponame</code> in order to map the project LDAP group to the permissions scheme.</li>
+<li>The private repository is <strong>not</strong> for uses such as project code development not related to a security issue. The resources available to run GitHub Actions against private repo code are extremely limited, so use for CI must be kept to the absolute bare minimum.</li>
 </ul>
 <h3>Git repositories</h3>
 <ol>
