@@ -35,6 +35,8 @@ Each project can also have a **private repository** space for working on sensiti
 
 The private repository is **not** for uses such as project code development not related to a security issue.
 
+In particular, the resources available to run **GitHub Actions** against private repo code are **extremely limited**, so use for CI must be kept to the absolute bare minimum.
+
 See the [Project Code Repository Policy](project-repo-policy.html) for further details.
 
 Open a Jira ticket for Infra to request a private repository. 
