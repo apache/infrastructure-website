@@ -7,6 +7,7 @@ Each Apache project can have a directory in the Apache Subversion repository, or
   - Each project can request (using a Jira ticket) that Infra set up **a temporary private Git repository fork** for use with tasks, such as fixing security issues in project code, that should not be publicly available. The PMC must explain its need of a private fork in the Jira ticket. Forks will be tied to Jira tickets or CVEs such that upon completion of the work, the private fork can be decommissioned by Infra.
   - Private repos **must** have commit/PR/issues emails sent to the project's `private@` list.  
   - To follow the Infra convention, name project repos in the pattern `$project-$reponame` in order to map the project LDAP group to the permissions scheme.
+  - The private repository is **not** for uses such as project code development not related to a security issue. The resources available to run GitHub Actions against private repo code are extremely limited, so use for CI must be kept to the absolute bare minimum.
 
 ### Git repositories
 
