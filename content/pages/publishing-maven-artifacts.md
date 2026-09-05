@@ -25,8 +25,6 @@ Once you file the Jira ticket, Infra will do the following:
   - **Set up the project in Nexus**: We configure your groupIds in Nexus and link them to the appropriate LDAP group for authorization.
   - **Move Existing Artifacts**: To maintain the proper `maven-metadata.xml` files and prevent rsync conflicts in Central, we must move all your artifacts to the new repository. We will mark the folder in the old repository as read-only to prevent accidental deployments.
   - **Check POMs**: If your project is Maven-based, we will check your POM for any obvious problems.
-  
-Further information about the POM and other Maven matters is <a href="https://maven.apache.org/pom/asf/" target="_blank">here</a>.
 
 ## Adjusting your build to deploy to the ASF Nexus repository ##
 To use the ASF Nexus repository, follow these steps.
@@ -38,13 +36,15 @@ Inherit the Apache Parent POM like this:
 <parent>
   <groupId>org.apache</groupId>
   <artifactId>apache</artifactId>
-  <version>23</version>
+  <version>39</version>
 </parent>
 ```
 
 This parent POM sets up the defaults so your `<distributionManagement>` section uses the correct release and snapshot repositories. Be sure to remove those from your POM so they inherit correctly. Keep the entry for deploying your site (if you use Maven to deploy your site). If you do, we suggest you use `apache.website` as the ID to better match the settings below and to save the sanity of committers working on multiple projects.
 
 The POM also provides a default configuration to make sure that a correct source archive is created for your project. This is separate and in addition to the typical `-sources.jar` that is created.
+
+Further information about the POM, the latest version and other Maven matters is <a href="https://maven.apache.org/pom/asf/" target="_blank">here</a>.
 
 ### Set up your development environment ###
 
