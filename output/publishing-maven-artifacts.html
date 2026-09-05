@@ -135,7 +135,6 @@
 <li><strong>Move Existing Artifacts</strong>: To maintain the proper <code>maven-metadata.xml</code> files and prevent rsync conflicts in Central, we must move all your artifacts to the new repository. We will mark the folder in the old repository as read-only to prevent accidental deployments.</li>
 <li><strong>Check POMs</strong>: If your project is Maven-based, we will check your POM for any obvious problems.</li>
 </ul>
-<p>Further information about the POM and other Maven matters is <a href="https://maven.apache.org/pom/asf/" target="_blank">here</a>.</p>
 <h2>Adjusting your build to deploy to the ASF Nexus repository</h2>
 <p>To use the ASF Nexus repository, follow these steps.</p>
 <h3>Inherit the Apache POM</h3>
@@ -143,11 +142,12 @@
 <pre><code>&lt;parent&gt;
   &lt;groupId&gt;org.apache&lt;/groupId&gt;
   &lt;artifactId&gt;apache&lt;/artifactId&gt;
-  &lt;version&gt;23&lt;/version&gt;
+  &lt;version&gt;39&lt;/version&gt;
 &lt;/parent&gt;
 </code></pre>
 <p>This parent POM sets up the defaults so your <code>&lt;distributionManagement&gt;</code> section uses the correct release and snapshot repositories. Be sure to remove those from your POM so they inherit correctly. Keep the entry for deploying your site (if you use Maven to deploy your site). If you do, we suggest you use <code>apache.website</code> as the ID to better match the settings below and to save the sanity of committers working on multiple projects.</p>
 <p>The POM also provides a default configuration to make sure that a correct source archive is created for your project. This is separate and in addition to the typical <code>-sources.jar</code> that is created.</p>
+<p>Further information about the POM, the latest version and other Maven matters is <a href="https://maven.apache.org/pom/asf/" target="_blank">here</a>.</p>
 <h3>Set up your development environment</h3>
 <p>You must sign all artifacts with a key that is publicly verifiable. Follow the instructions here to get your keys created and environment set up.</p>
 <p><strong>Note</strong>: We recommend that you use <a href="https://maven.apache.org/guides/mini/guide-encryption.html" target="_blank">Maven's password encryption capabilities</a> for your passwords. <strong>Do not</strong> store your signing key in <code>settings.xml</code>.</p>
