@@ -137,7 +137,7 @@
 <li><a href="#repository-to-issue-tracker-integrations">Integrating your repository with Jira tickets</a></li>
 <li><a href="#source-repository-publishersubscriber-services">Source repository publisher/subscriber services</a></li>
 <li><a href="#build">Build services</a></li>
-<li><a href="#dependency-management">Dependency management</a></li>
+<li><a href="#github-actions">GitHub Actions</a></li>
 <li><a href="#product-naming">Product naming</a></li>
 <li><a href="#code-signing">Code signing</a></li>
 <li><a href="#qa">Code quality</a></li>
@@ -266,12 +266,30 @@
 <p>Apache supports and models continuous integration and continuous deployment, or <em>CI/CD</em>. The <a href="build-supported-services.html">ASF build and supported services</a> page provides information about, and links to, the CI services the ASF provides and/or supports.</p>
 <p>Other tools to consider:</p>
 <ul>
-<li><a href="dependabot.html">Dependabot</a> for automated dependency updates</li>
 <li><a href="https://travis-ci.org/" target="_blank">Travis CI</a></li>
 <li><a href="https://www.appveyor.com" target="_blank">AppVeyor</a></li>
 </ul>
-<h3 id="dependency-management">Dependency management<a class="headerlink" href="#dependency-management" title="Permanent link">&para;</a></h3>
+<h3 id="github-actions">GitHub Actions<a class="headerlink" href="#github-actions" title="Permanent link">&para;</a></h3>
+<p>GitHub Actions (GHA) runners are a <strong>shared</strong> resource: every ASF project draws on the same pool of GitHub-hosted runners. Queue time is therefore a community concern rather than a per-project one. See <a href="github-actions-secrets.html">GitHub Actions secrets</a> for credential handling.</p>
+<h4 id="gha-policy">GitHub Actions Policy<a class="headerlink" href="#gha-policy" title="Permanent link">&para;</a></h4>
+<p>The <a href="github-actions-policy.html">GitHub Actions Policy</a> sets out the rules every ASF workflow <strong>must</strong> follow, including job concurrency limits, weekly and five-day runner-minute budgets, pinning external actions to a specific git hash, avoiding the <code>pull_request_target</code> trigger where credentials are exposed, and the dependency management described below. Projects whose builds consistently cross the maximum use limits can lose access to GitHub Actions until they fix their build configurations.</p>
+<h4 id="gha-dependabot">Dependabot and dependency management<a class="headerlink" href="#gha-dependabot" title="Permanent link">&para;</a></h4>
 <p><a href="dependabot.html">Dependabot</a> automatically keeps your project's dependencies up to date and free of known vulnerabilities. It is <strong>required</strong> for the <code>github-actions</code> ecosystem (see the <a href="github-actions-policy.html">GitHub Actions Policy</a>), and recommended for all other ecosystems your project uses.</p>
+<h4 id="gha-queues">Why queues build up<a class="headerlink" href="#gha-queues" title="Permanent link">&para;</a></h4>
+<p>Sometimes GitHub CI queues many workflows, leading to long wait times (with AI-generated contributions likely contributing significantly). In other cases, build misconfigurations or local spikes from cherry-picked or re-run jobs create noisy-neighbour issues for other projects.</p>
+<p>Dependency updates are a growing share of that load. Every project repository is now scanned by GitHub's Dependabot alerts and by the scanners that downstream users and their employers run against ASF project releases, so we now see many more security updates than we used to. Projects rush to fix what the scanners report as quickly as they can.</p>
+<p>That response has a cost: by default, a <code>groups</code> block applies only to <strong>version</strong> updates, so security updates open <strong>one pull request per alert</strong>, each with a full CI run behind it. This can add hundreds of builds into the <a href="#github-actions">shared GitHub Actions queue</a>.</p>
+<h4 id="gha-mitigations">How your project can help<a class="headerlink" href="#gha-mitigations" title="Permanent link">&para;</a></h4>
+<p>Here are ways you and your PMC can help mitigate this issue:</p>
+<ul>
+<li><strong>Optimize PR workflows</strong>: Run full test suites periodically on main merges or via scheduled "canary" builds rather than on every PR. Use <code>paths:</code> filters in GitHub Actions YAML, write custom scripts to determine dynamic build matrix outputs, or utilize tools like <a href="https://yetus.apache.org/" target="_blank">Apache Yetus</a> or <a href="gradle.html">Develocity</a> (<a href="https://develocity.apache.org/" target="_blank">develocity.apache.org</a>) for predictive test selection. Contact Infra via a Jira ticket or by email to <code>users@infra</code> for advice on the best approach for your project.</li>
+<li><strong>Review workflows for anomalies</strong>: Check for deprecated labels like <code>macos-13</code>, which cause workers to hang in "waiting for runner" status and artificially inflate queue sizes. Also, review custom parallelism settings that might block valid jobs. The <a href="github-actions-policy.html">GitHub Actions Policy</a> requires a job concurrency level of 20 or less per workflow, and recommends staying at or below 15.</li>
+<li><strong>Group your dependency updates</strong>: An ungrouped Dependabot configuration opens one pull request and one full CI run per dependency. Combine them with <code>groups</code>, and add <code>applies-to: security-updates</code> so that security fixes are batched as well instead of arriving as a stream of single-dependency PRs. See <a href="dependabot.html#group-security-updates">grouping security updates</a> for the configuration.</li>
+<li><strong>Pin first-party actions to a major version tag</strong>: The <a href="github-actions-policy.html">GitHub Actions Policy</a> requires a specific git hash only for <strong>external</strong> actions; actions in the <code>apache/*</code>, <code>github/*</code> and <code>actions/*</code> namespaces may be used without that restriction. Pinning those to a major version tag rather than to a hash lets a patch or minor release arrive without a pull request, which removes a large share of the Dependabot traffic a project sees. External actions still <strong>MUST</strong> be pinned to a specific git hash.</li>
+<li><strong>Reuse workflows across repositories</strong>: A project with several repositories can keep its shared CI in <a href="https://docs.github.com/en/actions/how-tos/reuse-automations/reuse-workflows" target="_blank">reusable workflows</a> in one repository and call them from the rest. An action or dependency update is then reviewed and tested once rather than once per repository, which cuts both the number of Dependabot pull requests and the CI runs behind them.</li>
+<li><strong>Use lightweight runners</strong>: For small, short jobs, consider using <code>runs-on: ubuntu-slim</code>. These provide 1 vCPU, 5GB RAM, no Docker engine, and a 15-minute hard limit. They churn much more quickly during peak times, allowing you to bypass the standard <code>ubuntu-latest</code> queue while freeing up capacity for others.</li>
+<li><strong>Explore self-hosted runners</strong>: Speak with the Infra team about setting up project-specific <a href="self-hosted-runners.html">self-hosted runners</a>, particularly if you have targeted donations or cloud credits available.</li>
+</ul>
 <h3 id="product-naming">Product naming<a class="headerlink" href="#product-naming" title="Permanent link">&para;</a></h3>
 <p>See <a href="project-names.html">guidance for choosing a product name</a></p>
 <h3 id="code-signing">Code signing<a class="headerlink" href="#code-signing" title="Permanent link">&para;</a></h3>

@@ -125,6 +125,7 @@
 <li><a href="https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/dependabot-quickstart-guide" target="_blank">GitHub Dependabot</a> for the <a href="https://docs.github.com/en/code-security/reference/supply-chain-security/supported-ecosystems-and-repositories#github-actions" target="_blank"><code>github-actions</code> ecosystem</a></li>
 <li><a href="https://docs.renovatebot.com/getting-started/running/#forking-renovate-app" target="_blank">Forking Renovate</a> using the <a href="https://docs.renovatebot.com/modules/manager/github-actions/" target="_blank">GitHub actions manager</a></li>
 </ul>
+<p>See the <a href="dependabot.html">Dependabot</a> page for how to configure it, including <a href="dependabot.html#group-security-updates">grouping security updates</a> so that a burst of advisories does not turn into a burst of CI runs.</p>
 <h3>Resource use</h3>
 <p>Due to misconfigurations in their builds, some projects have been using unsupportable numbers of <a href="github-actions-secrets.html">GitHub Actions</a>. As part of fixing this situation, Infra has established a policy for GitHub Actions use:</p>
 <ul>
@@ -135,6 +136,7 @@
 </ul>
 <p>Projects whose builds consistently cross the maximum use limits will lose their access to GitHub Actions until they fix their build configurations.</p>
 <p><strong>Note</strong>: Projects should review these recommended practices from Git: <a href="https://cwiki.apache.org/confluence/spaces/INFRA/pages/430408443/GitHub+Actions+Recommended+Practices" target="_blank">cwiki.apache.org/confluence/spaces/INFRA/pages/430408443/GitHub+Actions+Recommended+Practices</a>.</p>
+<p>Runners are a shared resource, so a project can slow every other project down while staying inside these limits. For why queues build up and what your project can do to reduce its share of the load, see <a href="services.html#github-actions">GitHub Actions</a> on the Services and Tools page.</p>
 <h3>Avoid using the 'pull_request_target' trigger</h3>
 <p>You <strong>MUST NOT</strong> use <code>pull_request_target</code> as a trigger on <strong>ANY</strong> action that exports <strong>ANY</strong> confidential credentials or tokens such as <code>GITHUB_TOKEN</code> or <code>NPM_TOKEN</code>. An explantion of the risks related to this trigger, and the very limited circumstances in which it may be used, is at <a href="https://cwiki.apache.org/confluence/display/INFRA/GHA-dangers+of+pull_request_target" target="_blank">/cwiki.apache.org/confluence/display/INFRA/GHA-dangers+of+pull_request_target</a>.</p>
 <h3>External actions</h3>
