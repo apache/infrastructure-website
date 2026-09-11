@@ -11,6 +11,8 @@ For additional advice on how to use this feature safely, see <a href="https://cw
 All repositories using GitHub Actions **must** have automatic dependency management in place using one of these tools:
 * <a href="https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/dependabot-quickstart-guide" target="_blank">GitHub Dependabot</a> for the <a href="https://docs.github.com/en/code-security/reference/supply-chain-security/supported-ecosystems-and-repositories#github-actions" target="_blank">`github-actions` ecosystem</a>
 * <a href="https://docs.renovatebot.com/getting-started/running/#forking-renovate-app" target="_blank">Forking Renovate</a> using the <a href="https://docs.renovatebot.com/modules/manager/github-actions/" target="_blank">GitHub actions manager</a>
+
+See the [Dependabot](dependabot.html) page for how to configure it, including [grouping security updates](dependabot.html#group-security-updates) so that a burst of advisories does not turn into a burst of CI runs.
  
 ### Resource use
 Due to misconfigurations in their builds, some projects have been using unsupportable numbers of [GitHub Actions](github-actions-secrets.html). As part of fixing this situation, Infra has established a policy for GitHub Actions use:
@@ -23,6 +25,8 @@ Due to misconfigurations in their builds, some projects have been using unsuppor
 Projects whose builds consistently cross the maximum use limits will lose their access to GitHub Actions until they fix their build configurations.
 
 **Note**: Projects should review these recommended practices from Git: <a href="https://cwiki.apache.org/confluence/spaces/INFRA/pages/430408443/GitHub+Actions+Recommended+Practices" target="_blank">cwiki.apache.org/confluence/spaces/INFRA/pages/430408443/GitHub+Actions+Recommended+Practices</a>.
+
+Runners are a shared resource, so a project can slow every other project down while staying inside these limits. For why queues build up and what your project can do to reduce its share of the load, see [GitHub Actions](services.html#github-actions) on the Services and Tools page.
 
 ### Avoid using the 'pull_request_target' trigger
 

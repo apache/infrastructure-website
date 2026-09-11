@@ -62,3 +62,5 @@ Further information is at these pages:
 
   - The [Apache GitHub Actions Policy](github-actions-policy.html)
   - Advice for <a href="https://cwiki.apache.org/confluence/display/BUILDS/GitHub+Actions+Security">GitHub Actions Security</a>
+  - [GitHub Actions](services.html#github-actions) on the Services and Tools page, on shared runner queues and how to reduce your project's load
+  - [Dependabot](dependabot.html) for dependency management, which is **required** for the `github-actions` ecosystem

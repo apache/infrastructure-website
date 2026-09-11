@@ -88,7 +88,12 @@ GHA integrates with nightlies.apache.org, Dockerhub, Artifactory, Jenkins and mo
 All Committers have access to GHA and their workflows via `commit` using their LDAP credentials.
 
 #### More information
-In addition to the official GitHub documentation, Infra has placed some <a href="https://infra.apache.org/github-actions-secrets.html" target="_blank">notes</a> on a  Confluence wiki page.
+In addition to the official GitHub documentation, Infra maintains:
+
+  - [GitHub Actions and Secrets](github-actions-secrets.html), for handling credentials in workflows.
+  - The [GitHub Actions Policy](github-actions-policy.html), which sets the limits and requirements every ASF workflow must meet.
+  - [GitHub Actions](services.html#github-actions) on the Services and Tools page, which explains why the shared runner queues build up and how your project can help.
+  - The <a href="https://cwiki.apache.org/confluence/spaces/INFRA/pages/430408443/GitHub+Actions+Recommended+Practices" target="_blank">GitHub Actions Recommended Practices</a> wiki page (requires a committer or Member login).
 
 <h2 id="artifactory">Artifactory<a class="headerlink" href="#artifactory" title="Permanent link">&para;</a></h2>
 

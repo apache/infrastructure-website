@@ -24,6 +24,8 @@ Infra provides a library of resources that is constantly evolving to reflect the
 - <a href="https://github.com/apache/infrastructure-asfyaml/blob/main/README.md" target="_blank">.asf.yaml features for Git repositories</a>
 - [GitHub Actions and Secrets](github-actions-secrets.html)
   - [GitHub Actions policy](github-actions-policy.html)
+  - [Shared runner queues and how to reduce your load](services.html#github-actions)
+- [Dependabot for dependency management](dependabot.html)
 
 #### Build and release ####
 - [Release creation process](release-publishing.html)

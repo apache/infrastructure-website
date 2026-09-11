@@ -80,6 +80,42 @@ You can also split groups by update type or dependency kind:
           - "major"
 ```
 
+Unless you say otherwise, a group covers version updates only. See [Group security updates](#group-security-updates) below to batch security fixes the same way.
+
+<h3 id="group-security-updates">Group security updates<a class="headerlink" href="#group-security-updates" title="Permanent link">&para;</a></h3>
+
+Every project repository is now scanned by GitHub's Dependabot alerts and by the scanners that downstream users and their employers run against ASF project releases, so we now see many more security updates than we used to. Projects rush to fix what the scanners report as quickly as they can.
+
+That response has a cost: by default, a `groups` block applies only to **version** updates, so security updates open **one pull request per alert**, each with a full CI run behind it. This can add hundreds of builds into the [shared GitHub Actions queue](services.html#github-actions).
+
+A group with `applies-to: security-updates` set collects all outstanding security fixes for that group into one pull request:
+
+```yaml
+version: 2
+updates:
+  - package-ecosystem: "maven"
+    directory: "/"
+    schedule:
+      interval: "weekly"
+    groups:
+      # One PR for the routine version bumps
+      maven-dependencies:
+        applies-to: version-updates
+        patterns:
+          - "*"
+      # One PR for all outstanding security fixes
+      maven-security:
+        applies-to: security-updates
+        patterns:
+          - "*"
+```
+
+When `applies-to` is omitted, the group defaults to `version-updates`, which is why a configuration that groups version updates can still produce a flood of individual security PRs.
+
+Grouping is a trade-off: a grouped pull request is all-or-nothing, so one update in the batch that breaks your build holds up the rest of the fixes in it. If your project needs to land a critical fix in isolation, narrow the group's `patterns` to leave that dependency out, or keep a separate group for the dependencies you want to review one at a time.
+
+For the full syntax, see the <a href="https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file#groups" target="_blank">Dependabot `groups` configuration reference</a>.
+
 <h3 id="cooldown">Use a cooldown period<a class="headerlink" href="#cooldown" title="Permanent link">&para;</a></h3>
 
 A **cooldown** delays Dependabot from proposing a new dependency version until it has been published for a minimum number of days. This gives the community time to discover issues with a release &mdash; including compromised packages &mdash; before your project adopts it. See <a href="https://blog.yossarian.net/2025/11/21/We-should-all-be-using-dependency-cooldowns" target="_blank">Why you should use dependency cooldowns</a> for background on the security rationale.
@@ -153,6 +189,11 @@ updates:
       default-days: 4
     groups:
       actions-dependencies:
+        applies-to: version-updates
+        patterns:
+          - "*"
+      actions-security:
+        applies-to: security-updates
         patterns:
           - "*"
 
@@ -165,6 +206,11 @@ updates:
       default-days: 4
     groups:
       maven-dependencies:
+        applies-to: version-updates
+        patterns:
+          - "*"
+      maven-security:
+        applies-to: security-updates
         patterns:
           - "*"
 
@@ -177,6 +223,11 @@ updates:
       default-days: 4
     groups:
       npm-dependencies:
+        applies-to: version-updates
+        patterns:
+          - "*"
+      npm-security:
+        applies-to: security-updates
         patterns:
           - "*"
 
@@ -189,6 +240,11 @@ updates:
       default-days: 4
     groups:
       pip-dependencies:
+        applies-to: version-updates
+        patterns:
+          - "*"
+      pip-security:
+        applies-to: security-updates
         patterns:
           - "*"
 
@@ -201,6 +257,11 @@ updates:
       default-days: 4
     groups:
       uv-dependencies:
+        applies-to: version-updates
+        patterns:
+          - "*"
+      uv-security:
+        applies-to: security-updates
         patterns:
           - "*"
 ```
