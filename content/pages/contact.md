@@ -10,9 +10,9 @@ The source for this website is at <a href="https://github.com/apache/infrastruct
 
 ### Email lists
 Infra monitors and participates in these email addresses:
-  - `users@infra.apache.org` is for general infrastructure discussions and suggestions, and for questions related to ASF infrastructure and the Infra team that do **not** rise to the level of a Jira ticket; so if your question requires guidance or action by Infra, please open a Jira ticket. Only committers and ASF members can subscribe to the list.
+  - `users@infra.apache.org` is for general infrastructure discussions and suggestions, and for questions related to ASF infrastructure and the Infra team that do **not** rise to the level of a Jira ticket; so if your question requires guidance or action by Infra, please open a Jira ticket. See the `security@infra` note below if your problem relates to your ASF account in a way that prevents you from opening a Jira ticket. Only committers and ASF members can subscribe to the list.
   - `private@infra.apache.org` is for communications that may involve PII, personnel issues, or other information that should not be widely shared. Only ASF Members and Board Members can subscribe to the list.
-  - Use `security@infra.apache.org` to report **infrastructure-related** security issues (you cannot subscribe to this list). See the third entry on <a href="https://infra.apache.org/infra-contact.html">Contacting Infra</a> if you are reporting a security issue specific to an ASF project or a project's product.
+  - Use `security@infra.apache.org` to report **infrastructure-related** security issues (you cannot subscribe to this list) or if your problem prevents you from opening a Jira ticket. See the third entry on <a href="https://infra.apache.org/infra-contact.html">Contacting Infra</a> if you are reporting a security issue specific to an ASF project or a project's product.
   - `root@apache.org` is an unarchived alias that goes to Infra staff for material that doesn't fit other lists. Please review [Infra policy on sharing sensitive information](sensitive_info.html).
 
 In the past there was the `infrastructure@apache.org` mailing list. This address is no longer in use.
