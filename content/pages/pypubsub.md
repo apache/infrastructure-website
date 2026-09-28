@@ -14,6 +14,10 @@ Currently, the service streams the following events:
 
 Events are delivered as JSON objects in a <a href="https://en.wikipedia.org/wiki/Chunked_transfer_encoding" target="_blank">chunked response stream</a>, with each new chunk being either an event payload or a keep-alive ping. 
 
+## Live stream explorer
+You can explore our pubsub stream using the [PyPubSub Explorer](/tools/pse/), a live visualization tool for PyPubSub streams.
+
+
 ## How to subscribe
 Subscribers can pick one or multiple topics to subscribe to, with more specific subscriptions getting fewer, but more specific, event payloads. Construct subscriptions in the form of: `http://pubsub.apache.org:2069/topics/go/here`, and separate the topics you want to subscribe to with forward slashes. 
 
