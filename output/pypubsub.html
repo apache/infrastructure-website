@@ -127,6 +127,8 @@
 <li>Staging and publishing notifications sent via our <a href="https://s.apache.org/asfyaml">.asf.yaml</a> offering.</li>
 </ul>
 <p>Events are delivered as JSON objects in a <a href="https://en.wikipedia.org/wiki/Chunked_transfer_encoding" target="_blank">chunked response stream</a>, with each new chunk being either an event payload or a keep-alive ping.</p>
+<h2>Live stream explorer</h2>
+<p>You can explore our pubsub stream using the <a href="/tools/pse/">PyPubSub Explorer</a>, a live visualization tool for PyPubSub streams.</p>
 <h2>How to subscribe</h2>
 <p>Subscribers can pick one or multiple topics to subscribe to, with more specific subscriptions getting fewer, but more specific, event payloads. Construct subscriptions in the form of: <code>http://pubsub.apache.org:2069/topics/go/here</code>, and separate the topics you want to subscribe to with forward slashes.</p>
 <p>The service returns events that match <em>all</em> of the topics you are subscribed to.
