@@ -1,3 +1,7 @@
 Redirect /apply-license.html https://www.apache.org/legal/apply-license.html
 Redirect /machines.html https://infra-reports.apache.org/machines/index.html
 Header set Access-Control-Expose-Headers Content-Security-Policy
+
+# Pubsub explorer proxy
+RewriteEngine On
+RewriteRule ^/pubsub/ https://pubsub.apache.org:2070/ [P,L]
