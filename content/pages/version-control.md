@@ -119,7 +119,7 @@ copy the above svn-eol-style.txt file's contents into the end of the config edit
 
 <h3 id="svnssl">SVN SSL server certificate<a class="headerlink" href="#svnssl" title="Permanent link">&para;</a></h3>
 
-You can check the validity of the server certificate on the <a href="/machines.html" target="_blank">Apache host keys listing</a>.
+For ssh connection information (not https), you can check the validity of the server certificate in the <a href="https://infra-reports.apache.org/#machines" target="_blank">Apache host keys listing</a>.
 
 <h3 id="errormessages">Typical SVN error messages<a class="headerlink" href="#errormessages" title="Permanent link">&para;</a></h3>
 
