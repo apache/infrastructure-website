@@ -36,11 +36,11 @@ You **MUST NOT** use `pull_request_target` as a trigger on **ANY** action that e
 
 From November 2026, the `pull_request_target` trigger is disabled for ASF repositories. Projects still using it should migrate to the pattern below.
 
-Projects have used `pull_request_target` for jobs that need write access in response to a pull request from a fork: commenting on the pull request, labelling it, or publishing something built from it (a website preview, a test report, a coverage summary). All of these can be done without `pull_request_target`, by splitting the work across three workflows so that no privileged job ever runs, or even sees, code from the pull request.
+Projects have used `pull_request_target` for jobs that need write access in response to a pull request from a fork: commenting on the pull request, labelling it, or publishing something built from it (a website preview, a test report, a coverage summary). You can do all of these without `pull_request_target` by splitting the work across three workflows so that no privileged job ever runs, or even sees, code from the pull request.
 
 1. **Build in `pull_request`, and only produce artifacts.** The existing CI workflow runs on `pull_request`. It runs the pull request's code with a read-only token and no secrets, and uploads whatever the privileged step needs (a built site, a report, a JSON summary) with `actions/upload-artifact`. It does nothing else.
 2. **Add a "signal" workflow for events that do not start a build.** If the privileged step must also react to events such as a label being added or a pull request being closed, add a small `pull_request` workflow that does nothing. It has `permissions: {}`, checks nothing out and runs one `echo`. Its only purpose is to complete, which tells the privileged workflow that something happened to a pull request.
-3. **Do the privileged work in `workflow_run`.** A third workflow is triggered by `workflow_run` when the build workflow or the signal workflow completes. GitHub always runs `workflow_run` from the **default branch**, so its code is your reviewed code, never the contributor's. It may hold a write token, downloads the artifacts produced by the build, and comments, labels or publishes.
+3. **Do the privileged work in `workflow_run`**, which starts when the build workflow or the signal workflow completes. GitHub always runs `workflow_run` from the **default branch**, so its code is your reviewed code, never the contributor's. This workflow may hold a write token. It downloads the artifacts produced by the build and comments, labels or publishes.
 
 The signal workflow:
 
@@ -83,7 +83,7 @@ jobs:
           RUN_ID: ${{ github.event.workflow_run.id }}
 ```
 
-The pattern is safer because the privileged workflow never relies on the code of the pull request. It receives no checkout, no scripts and no build steps from it, only data. You never need to review the build workflow, which may be large and changes in every pull request, to know what the privileged job will do; you only need to review a small workflow and script on the default branch.
+The pattern is safer because the privileged workflow never relies on the code of the pull request. It receives no checkout, no scripts and no build steps from it; only data. You never need to review the build workflow, which may be large and changes in every pull request, to know what the privileged job will do; you only need to review a small workflow and script on the default branch.
 
 When using this pattern you **MUST** follow these rules:
 
@@ -93,7 +93,11 @@ When using this pattern you **MUST** follow these rules:
 * List the triggering workflows explicitly in `workflows:` and check `github.event.workflow_run.event == 'pull_request'`.
 * Set `permissions: {}` at the top level and grant each job only the scopes it needs.
 
-A complete example that publishes website previews of pull requests, including from forks, is in the `apache/magpie-site` repository: <a href="https://github.com/apache/magpie-site/blob/main/.github/workflows/build.yml" target="_blank">build.yml</a> (build, upload artifact), <a href="https://github.com/apache/magpie-site/blob/main/.github/workflows/preview-signal.yml" target="_blank">preview-signal.yml</a> (signal) and <a href="https://github.com/apache/magpie-site/blob/main/.github/workflows/preview-publish.yml" target="_blank">preview-publish.yml</a> (privileged publisher).
+A complete example that publishes website previews of pull requests, including from forks, is in the Apache Magpie website repository:
+
+* <a href="https://github.com/apache/magpie-site/blob/main/.github/workflows/build.yml" target="_blank">build.yml</a>: builds the site and uploads it as an artifact
+* <a href="https://github.com/apache/magpie-site/blob/main/.github/workflows/preview-signal.yml" target="_blank">preview-signal.yml</a>: the signal workflow
+* <a href="https://github.com/apache/magpie-site/blob/main/.github/workflows/preview-publish.yml" target="_blank">preview-publish.yml</a>: the privileged workflow that publishes the preview
 
 ### External actions
 
