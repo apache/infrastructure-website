@@ -139,6 +139,64 @@
 <p>Runners are a shared resource, so a project can slow every other project down while staying inside these limits. For why queues build up and what your project can do to reduce its share of the load, see <a href="services.html#github-actions">GitHub Actions</a> on the Services and Tools page.</p>
 <h3>Avoid using the 'pull_request_target' trigger</h3>
 <p>You <strong>MUST NOT</strong> use <code>pull_request_target</code> as a trigger on <strong>ANY</strong> action that exports <strong>ANY</strong> confidential credentials or tokens such as <code>GITHUB_TOKEN</code> or <code>NPM_TOKEN</code>. An explantion of the risks related to this trigger, and the very limited circumstances in which it may be used, is at <a href="https://cwiki.apache.org/confluence/display/INFRA/GHA-dangers+of+pull_request_target" target="_blank">/cwiki.apache.org/confluence/display/INFRA/GHA-dangers+of+pull_request_target</a>.</p>
+<h4>A safer replacement for <code>pull_request_target</code></h4>
+<p>From November 2026, the <code>pull_request_target</code> trigger is disabled for ASF repositories. Projects still using it should migrate to the pattern below.</p>
+<p>Projects have used <code>pull_request_target</code> for jobs that need write access in response to a pull request from a fork: commenting on the pull request, labelling it, or publishing something built from it (a website preview, a test report, a coverage summary). You can do all of these without <code>pull_request_target</code> by splitting the work across three workflows so that no privileged job ever runs, or even sees, code from the pull request.</p>
+<ol>
+<li><strong>Build in <code>pull_request</code>, and only produce artifacts.</strong> The existing CI workflow runs on <code>pull_request</code>. It runs the pull request's code with a read-only token and no secrets, and uploads whatever the privileged step needs (a built site, a report, a JSON summary) with <code>actions/upload-artifact</code>. It does nothing else.</li>
+<li><strong>Add a "signal" workflow for events that do not start a build.</strong> If the privileged step must also react to events such as a label being added or a pull request being closed, add a small <code>pull_request</code> workflow that does nothing. It has <code>permissions: {}</code>, checks nothing out and runs one <code>echo</code>. Its only purpose is to complete, which tells the privileged workflow that something happened to a pull request.</li>
+<li><strong>Do the privileged work in <code>workflow_run</code></strong>, which starts when the build workflow or the signal workflow completes. GitHub always runs <code>workflow_run</code> from the <strong>default branch</strong>, so its code is your reviewed code, never the contributor's. This workflow may hold a write token. It downloads the artifacts produced by the build and comments, labels or publishes.</li>
+</ol>
+<p>The signal workflow:</p>
+<pre><code class="language-yaml">name: "PR signal"
+on:
+  pull_request:
+    types: [opened, reopened, labeled, unlabeled, closed]
+permissions: {}
+jobs:
+  signal:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "pr-privileged.yml runs when this workflow completes"
+</code></pre>
+<p>The privileged workflow:</p>
+<pre><code class="language-yaml">name: "PR privileged actions"
+on:
+  workflow_run:
+    workflows: ["CI", "PR signal"]   # name the workflows explicitly
+    types: [completed]
+permissions: {}
+jobs:
+  act:
+    if: github.event.workflow_run.event == 'pull_request'
+    runs-on: ubuntu-latest
+    permissions:
+      actions: read          # download the build's artifacts
+      pull-requests: write   # comment on and label pull requests
+    steps:
+      - uses: actions/checkout@&lt;sha&gt;   # the default branch, never the PR
+        with:
+          persist-credentials: false
+      - run: ./scripts/pr-privileged.sh   # from the default branch
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          RUN_ID: ${{ github.event.workflow_run.id }}
+</code></pre>
+<p>The pattern is safer because the privileged workflow never relies on the code of the pull request. It receives no checkout, no scripts and no build steps from it; only data. You never need to review the build workflow, which may be large and changes in every pull request, to know what the privileged job will do; you only need to review a small workflow and script on the default branch.</p>
+<p>When using this pattern you <strong>MUST</strong> follow these rules:</p>
+<ul>
+<li>Never check out, build or execute code from the pull request in the <code>workflow_run</code> workflow. Check out the default branch only.</li>
+<li>Treat the downloaded artifacts as untrusted data, not code. Never execute them, <code>source</code> them or install them. Validate their contents (expected files, sizes, formats) before using them, and extract them outside the workspace so they cannot overwrite your scripts.</li>
+<li>Never interpolate values from the triggering event, such as <code>${{ github.event.workflow_run.head_branch }}</code>, a pull request title or a comment body, into a <code>run:</code> block. Pass only IDs (the run ID, a pull request number) and derive everything else from the GitHub API.</li>
+<li>List the triggering workflows explicitly in <code>workflows:</code> and check <code>github.event.workflow_run.event == 'pull_request'</code>.</li>
+<li>Set <code>permissions: {}</code> at the top level and grant each job only the scopes it needs.</li>
+</ul>
+<p>A complete example that publishes website previews of pull requests, including from forks, is in the Apache Magpie website repository:</p>
+<ul>
+<li><a href="https://github.com/apache/magpie-site/blob/main/.github/workflows/build.yml" target="_blank">build.yml</a>: builds the site and uploads it as an artifact</li>
+<li><a href="https://github.com/apache/magpie-site/blob/main/.github/workflows/preview-signal.yml" target="_blank">preview-signal.yml</a>: the signal workflow</li>
+<li><a href="https://github.com/apache/magpie-site/blob/main/.github/workflows/preview-publish.yml" target="_blank">preview-publish.yml</a>: the privileged workflow that publishes the preview</li>
+</ul>
 <h3>External actions</h3>
 <p>You <strong>MAY</strong> use all actions internal to the <code>apache/*</code>, <code>github/*</code> and <code>actions/*</code> namespaces without restrictions.</p>
 <p>You <strong>MUST</strong> pin all external actions to the specific git hash (SHA1) of the action that has been reviewed for use by the project. For instance, you <strong>MUST</strong> pin <code>foobar/baz-action@8843d7f92416211de9ebb963ff4ce28125932878</code>.</p>
