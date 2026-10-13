@@ -20,7 +20,7 @@ If you are not an Apache committer, but wish to become one, see <a href="https:/
 
 <h3 id="general">General<a class="headerlink" href="#general" title="Permanent link">&para;</a></h3>
 
-<h4 id="apachecon">What is Community Over Code?<a class="headerlink" href="#communityovercode" title="Permanent link">&para;</a></h4>
+<h4 id="apachecon">What is Community Over Code?<a class="headerlink" href="#apachecon" title="Permanent link">&para;</a></h4>
 
 The Apache Software Foundation periodically organizes <a href="https://www.apache.org/foundation/conferences.html" target="_blank">conferences</a> focusing on software developed at The ASF and on the way that ASF projects develops software. Learn about what's happening at The ASF, hack code and meet the faces associated with the names!
 
