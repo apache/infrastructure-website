@@ -54,15 +54,15 @@ How to find the length of your key is described [here](#key-length-how-to).
 
 <h3 id="basic-facts">The basics<a class="headerlink" href="#basic-facts" title="Permanent link">&para;</a></h3>
 
-Every artifact distributed by the Apache Software Foundation  **must** be accompanied by one file containing an <a href="#openpgp-ascii-detach-sig">OpenPGP-compatible ASCII armored detached signature</a> and another file containing a <a href="release-signing#sha-checksum">SHA</a> or <a href="release-signing#md5">MD5</a>) checksum.
+Every artifact distributed by the Apache Software Foundation  **must** be accompanied by one file containing an <a href="#openpgp-ascii-detach-sig">OpenPGP-compatible ASCII armored detached signature</a> and another file containing a <a href="#sha-checksum">SHA-256 or SHA-512</a> checksum.
 
-  - MD5 hashes are **deprecated**; please use SHA for new releases.
-  - **Avoid** further use of `SHA-1`</code>.
+  - New releases **must** use SHA-256 and/or SHA-512 checksums.
+  - MD5 and SHA-1 are **deprecated** and **should not** be supplied for new releases. Existing releases do not need to change.
 
-Form the names of these files by adding to the name of the artifact the following suffixes:</p>
+Form the names of these files by adding to the name of the artifact the following suffixes:
 
   - the signature by suffixing `.asc`
-  - the checksum by suffixing `.md5` or `.sha[1|256|512]` (as appropriate)
+  - the checksum by suffixing `.sha256` or `.sha512` (as appropriate)
 
 Release managers **must not** store private keys used to sign Apache releases on ASF hardware. 
 
