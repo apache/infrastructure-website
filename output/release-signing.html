@@ -157,15 +157,15 @@
 </ul>
 <p>How to find the length of your key is described <a href="#key-length-how-to">here</a>.</p>
 <h3 id="basic-facts">The basics<a class="headerlink" href="#basic-facts" title="Permanent link">&para;</a></h3>
-<p>Every artifact distributed by the Apache Software Foundation  <strong>must</strong> be accompanied by one file containing an <a href="#openpgp-ascii-detach-sig">OpenPGP-compatible ASCII armored detached signature</a> and another file containing a <a href="release-signing#sha-checksum">SHA</a> or <a href="release-signing#md5">MD5</a>) checksum.</p>
+<p>Every artifact distributed by the Apache Software Foundation  <strong>must</strong> be accompanied by one file containing an <a href="#openpgp-ascii-detach-sig">OpenPGP-compatible ASCII armored detached signature</a> and another file containing a <a href="#sha-checksum">SHA-256 or SHA-512</a> checksum.</p>
 <ul>
-<li>MD5 hashes are <strong>deprecated</strong>; please use SHA for new releases.</li>
-<li><strong>Avoid</strong> further use of <code>SHA-1</code>.</li>
+<li>New releases <strong>must</strong> use SHA-256 and/or SHA-512 checksums.</li>
+<li>MD5 and SHA-1 are <strong>deprecated</strong> and <strong>should not</strong> be supplied for new releases. Existing releases do not need to change.</li>
 </ul>
 <p>Form the names of these files by adding to the name of the artifact the following suffixes:</p>
 <ul>
 <li>the signature by suffixing <code>.asc</code></li>
-<li>the checksum by suffixing <code>.md5</code> or <code>.sha[1|256|512]</code> (as appropriate)</li>
+<li>the checksum by suffixing <code>.sha256</code> or <code>.sha512</code> (as appropriate)</li>
 </ul>
 <p>Release managers <strong>must not</strong> store private keys used to sign Apache releases on ASF hardware.</p>
 <p>See the <a href="release-distribution.html#sigs-and-sums">release distribution policy</a> for details.</p>
