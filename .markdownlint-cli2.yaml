@@ -1,0 +1,45 @@
+# Pelican metadata (Title:, license: and so on) is not Markdown.
+frontMatter: "^(?:[A-Za-z][\\w-]*:.*\\r?\\n)+"
+
+ignores:
+  - "content/theme/**"
+
+config:
+  # Site conventions: long single-line paragraphs, inline HTML, and the
+  # page title coming from the Title: metadata.
+  MD013: false
+  MD033: false
+  MD041: false
+
+  # Existing pages break these rules. Re-enable each one once the pages
+  # are cleaned up.
+  MD001: false
+  MD003: false
+  MD004: false
+  MD005: false
+  MD007: false
+  MD009: false
+  MD010: false
+  MD012: false
+  MD014: false
+  MD018: false
+  MD022: false
+  MD024: false
+  MD025: false
+  MD026: false
+  MD029: false
+  MD030: false
+  MD031: false
+  MD032: false
+  MD034: false
+  MD036: false
+  MD038: false
+  MD040: false
+  MD045: false
+  MD046: false
+  MD048: false
+  MD049: false
+  MD051: false
+  MD053: false
+  MD059: false
+  MD060: false
