@@ -452,9 +452,9 @@ on those disks once you are through with them. Failing that, drill through the d
 <p>Creating a different key with a matching identity is considered <a href="release-signing.html#infeasible">infeasible</a>. For all operations where
 precise identity matters and that identity is specified on the command line, you should use the key ID to identify the key. Avoid using
 user ID or other information.</p>
-<h3 id="find-key-id-from-trusted-source">Find a key ID from a trusted source<a class="headerlink" href="#finbd-key-id-from-trusted-source" title="Permanent link">&para;</a></h3>
+<h3 id="find-key-id-from-trusted-source">Find a key ID from a trusted source<a class="headerlink" href="#find-key-id-from-trusted-source" title="Permanent link">&para;</a></h3>
 <p>The best way to find a key ID is to obtain it directly from a trusted source, for example, from a business card you obtain personally from the owner of the key.</p>
-<h3 id="find-key-id-with-fingerprint">Find a key ID with its fingerprint<a class="headerlink" href="#find-key-ide-with-fingerprint" title="Permanent link">&para;</a></h3>
+<h3 id="find-key-id-with-fingerprint">Find a key ID with its fingerprint<a class="headerlink" href="#find-key-id-with-fingerprint" title="Permanent link">&para;</a></h3>
 <p>If you have a <a href="release-signing.html#fingerprint">fingerprint</a>, the key ID should be the last 8 digits. For example, the ID of the key with this fingerprint:</p>
 <pre><code>    FF96 6261 C995 1DDE BF34  5150 D5D2 BDB5 E2B0 54B8
 </code></pre>
@@ -544,7 +544,7 @@ line</a> with <a href="#export-option-armor">ASCII encoding</a>:</p>
 <p>For example, to export to the <a href="#export-option-output">command line</a> with <a href="#export-option-armor">ASCII encoding</a> the public key with ID <code>AD741727</code>, use:</p>
 <pre><code>    $ gpg --export --armor AD741727
 </code></pre>
-<h3 id="export-all-or-some-public-keys">Should I export all or some public keys"<a class="headerlink" href="#export-all-or-some-puiblic-keys" title="Permanent link">&para;</a></h3>
+<h3 id="export-all-or-some-public-keys">Should I export all or some public keys"<a class="headerlink" href="#export-all-or-some-public-keys" title="Permanent link">&para;</a></h3>
 <p>This is often a tricky question. An import should not be trusted for key identification (see <a href="#find-key-id">discussion</a>). So, for an import to be useful, usually the key ID of interest needs to be known.</p>
 <p>Keys used at Apache should be available through the global <a href="release-signing.html#keyserver">public keyserver</a> network. Using this network, given the <a href="release-signing.html#key-id">key ID</a> the person who needs it can download the public key.</p>
 <p>So an export is really only useful for someone who cannot use the global keyserver network. But in this case, the import really needs to include all the public keys on the ring to maximise the chances of a trusted path being found in the <a href="release-signing.html#web-of-trust">web of trust</a>.</p>
@@ -729,7 +729,7 @@ line. For example, to encrypt a document <code>INPUT_FILENAME</code> using <code
 <p>The suffix <code>.asc</code> is conventional for ASCII armored public key exports. So, for example, <code>A6EE6908.asc</code> is a reasonable choice for the export of key <code>A6EE6908</code>. Record the URL (for example <code>http://home.apache.org/~rdonkin/A6EE6908.asc</code> ) for use later in your
 <a href="#foaf">FOAF</a>.</p>
 <p>If your Apache home page contains details of your keys (recommended), update the <a href="release-signing.html#fingerprint">fingerprints</a> and the <a href="release-signing.html#ascii">ASCII armored</a> <a href="release-signing.html#public-private">public key</a> <a href="release-signing.html#export">export</a>. Any browser with a suitable <a href="release-signing.html#openpgp">OpenPGP</a> plugin (for example, <a href="https://www.mozilla.com/firefox/" target="_blank">Firefox</a> with the <a href="https://www.getfiregpg.org" target="_blank">FireGPG plugin</a>) will let you download the key into the local keyring.</p>
-<p>For example, <a href="https://home.apache.org/~rdonkin/" target="_blank">this home page contains a section with fingerprints and a for exporting them. At the bottom, the export has been inlined so browsers with <a href="release-signing.html#opengpg">OpenPGP</a> support can import the keys.</a></p>
+<p>For example, <a href="https://home.apache.org/~rdonkin/" target="_blank">this home page contains a section with fingerprints and a for exporting them. At the bottom, the export has been inlined so browsers with <a href="release-signing.html#openpgp">OpenPGP</a> support can import the keys.</a></p>
 <p>To create an <a href="release-signing.html#ascii">ASCII armored</a> <a href="release-signing.html#public-private">public key</a> <a href="release-signing.html#export">export</a>:</p>
 <ul>
 <li>When using a <a href="release-signing.html#transition">transition</a>, follow these <a href="key-transition.html#transition-export">instructions</a>.</li>
