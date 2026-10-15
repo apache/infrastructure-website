@@ -177,9 +177,23 @@ jobs:
       - uses: actions/checkout@&lt;sha&gt;   # the default branch, never the PR
         with:
           persist-credentials: false
-      - run: ./scripts/pr-privileged.sh   # from the default branch
+      - name: Find the pull request
+        id: pr
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          [[ "$HEAD_SHA" =~ ^[0-9a-f]{40}$ ]] || { echo "::error::bad head sha"; exit 1; }
+          PR=$(gh pr list -R "$REPO" --state open --search "$HEAD_SHA" \
+                 --json number,headRefOid \
+                 --jq ".[] | select(.headRefOid == \"$HEAD_SHA\") | .number" | head -n1)
+          echo "number=$PR" &gt;&gt; "$GITHUB_OUTPUT"
+      - if: steps.pr.outputs.number != ''
+        run: ./scripts/pr-privileged.sh   # from the default branch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
           RUN_ID: ${{ github.event.workflow_run.id }}
 </code></pre>
 <p>The pattern is safer because the privileged workflow never relies on the code of the pull request. It receives no checkout, no scripts and no build steps from it; only data. You never need to review the build workflow, which may be large and changes in every pull request, to know what the privileged job will do; you only need to review a small workflow and script on the default branch.</p>
@@ -187,7 +201,7 @@ jobs:
 <ul>
 <li>Never check out, build or execute code from the pull request in the <code>workflow_run</code> workflow. Check out the default branch only.</li>
 <li>Treat the downloaded artifacts as untrusted data, not code. Never execute them, <code>source</code> them or install them. Validate their contents (expected files, sizes, formats) before using them, and extract them outside the workspace so they cannot overwrite your scripts.</li>
-<li>Never interpolate values from the triggering event, such as <code>${{ github.event.workflow_run.head_branch }}</code>, a pull request title or a comment body, into a <code>run:</code> block. Pass only IDs (the run ID, a pull request number) and derive everything else from the GitHub API.</li>
+<li>Never interpolate values from the triggering event, such as <code>${{ github.event.workflow_run.head_branch }}</code>, a pull request title or a comment body, into a <code>run:</code> block. Pass only IDs (the run ID, the head commit SHA, a pull request number) through <code>env:</code>, and derive everything else from the GitHub API.</li>
 <li>List the triggering workflows explicitly in <code>workflows:</code> and check <code>github.event.workflow_run.event == 'pull_request'</code>.</li>
 <li>Set <code>permissions: {}</code> at the top level and grant each job only the scopes it needs.</li>
 </ul>
@@ -197,6 +211,15 @@ jobs:
 <li><a href="https://github.com/apache/magpie-site/blob/main/.github/workflows/preview-signal.yml" target="_blank">preview-signal.yml</a>: the signal workflow</li>
 <li><a href="https://github.com/apache/magpie-site/blob/main/.github/workflows/preview-publish.yml" target="_blank">preview-publish.yml</a>: the privileged workflow that publishes the preview</li>
 </ul>
+<h5>Finding the pull request number</h5>
+<p>The <code>workflow_run</code> event gives you the build's run ID directly, as <code>github.event.workflow_run.id</code>, but not a usable pull request number. The event's <code>pull_requests</code> array is empty when the pull request comes from a fork, which is the case this pattern exists for. Find the pull request from the commit that was built instead, as the "Find the pull request" step in the privileged workflow above does:</p>
+<ul>
+<li><code>github.event.workflow_run.head_sha</code> is the commit the triggering workflow ran on. GitHub sets it, so the pull request cannot forge it. Pass it to the step through <code>env:</code>, never inline in the <code>run:</code> block, and check that it is 40 hexadecimal characters before using it.</li>
+<li><code>gh pr list --search &lt;sha&gt;</code> finds pull requests from forks as well as from branches of the repository. The <code>select(.headRefOid == &hellip;)</code> filter keeps only a pull request whose current head is exactly that commit, because the search also matches pull requests that only contain the commit somewhere in their history.</li>
+<li>An empty result is normal: it usually means the author pushed again after this build started, and the newer push triggers its own run. Skip the privileged step, as the example's <code>if:</code> does.</li>
+<li>A merged or closed pull request is no longer open, so for <code>closed</code> events use <code>--state all</code> instead of <code>--state open</code>.</li>
+</ul>
+<p>If your script only has a run ID, for example from a manual re-run, look up the commit first with <code>gh run view "$RUN_ID" --json headSha --jq .headSha</code> and then search for the pull request in the same way.</p>
 <h3>External actions</h3>
 <p>You <strong>MAY</strong> use all actions internal to the <code>apache/*</code>, <code>github/*</code> and <code>actions/*</code> namespaces without restrictions.</p>
 <p>You <strong>MUST</strong> pin all external actions to the specific git hash (SHA1) of the action that has been reviewed for use by the project. For instance, you <strong>MUST</strong> pin <code>foobar/baz-action@8843d7f92416211de9ebb963ff4ce28125932878</code>.</p>
