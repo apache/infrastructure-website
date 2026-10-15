@@ -77,9 +77,23 @@ jobs:
       - uses: actions/checkout@<sha>   # the default branch, never the PR
         with:
           persist-credentials: false
-      - run: ./scripts/pr-privileged.sh   # from the default branch
+      - name: Find the pull request
+        id: pr
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          HEAD_SHA: ${{ github.event.workflow_run.head_sha }}
+        run: |
+          [[ "$HEAD_SHA" =~ ^[0-9a-f]{40}$ ]] || { echo "::error::bad head sha"; exit 1; }
+          PR=$(gh pr list -R "$REPO" --state open --search "$HEAD_SHA" \
+                 --json number,headRefOid \
+                 --jq ".[] | select(.headRefOid == \"$HEAD_SHA\") | .number" | head -n1)
+          echo "number=$PR" >> "$GITHUB_OUTPUT"
+      - if: steps.pr.outputs.number != ''
+        run: ./scripts/pr-privileged.sh   # from the default branch
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ steps.pr.outputs.number }}
           RUN_ID: ${{ github.event.workflow_run.id }}
 ```
 
@@ -89,7 +103,7 @@ When using this pattern you **MUST** follow these rules:
 
 * Never check out, build or execute code from the pull request in the `workflow_run` workflow. Check out the default branch only.
 * Treat the downloaded artifacts as untrusted data, not code. Never execute them, `source` them or install them. Validate their contents (expected files, sizes, formats) before using them, and extract them outside the workspace so they cannot overwrite your scripts.
-* Never interpolate values from the triggering event, such as `${{ github.event.workflow_run.head_branch }}`, a pull request title or a comment body, into a `run:` block. Pass only IDs (the run ID, a pull request number) and derive everything else from the GitHub API.
+* Never interpolate values from the triggering event, such as `${{ github.event.workflow_run.head_branch }}`, a pull request title or a comment body, into a `run:` block. Pass only IDs (the run ID, the head commit SHA, a pull request number) through `env:`, and derive everything else from the GitHub API.
 * List the triggering workflows explicitly in `workflows:` and check `github.event.workflow_run.event == 'pull_request'`.
 * Set `permissions: {}` at the top level and grant each job only the scopes it needs.
 
@@ -98,6 +112,17 @@ A complete example that publishes website previews of pull requests, including f
 * <a href="https://github.com/apache/magpie-site/blob/main/.github/workflows/build.yml" target="_blank">build.yml</a>: builds the site and uploads it as an artifact
 * <a href="https://github.com/apache/magpie-site/blob/main/.github/workflows/preview-signal.yml" target="_blank">preview-signal.yml</a>: the signal workflow
 * <a href="https://github.com/apache/magpie-site/blob/main/.github/workflows/preview-publish.yml" target="_blank">preview-publish.yml</a>: the privileged workflow that publishes the preview
+
+##### Finding the pull request number
+
+The `workflow_run` event gives you the build's run ID directly, as `github.event.workflow_run.id`, but not a usable pull request number. The event's `pull_requests` array is empty when the pull request comes from a fork, which is the case this pattern exists for. Find the pull request from the commit that was built instead, as the "Find the pull request" step in the privileged workflow above does:
+
+* `github.event.workflow_run.head_sha` is the commit the triggering workflow ran on. GitHub sets it, so the pull request cannot forge it. Pass it to the step through `env:`, never inline in the `run:` block, and check that it is 40 hexadecimal characters before using it.
+* `gh pr list --search <sha>` finds pull requests from forks as well as from branches of the repository. The `select(.headRefOid == …)` filter keeps only a pull request whose current head is exactly that commit, because the search also matches pull requests that only contain the commit somewhere in their history.
+* An empty result is normal: it usually means the author pushed again after this build started, and the newer push triggers its own run. Skip the privileged step, as the example's `if:` does.
+* A merged or closed pull request is no longer open, so for `closed` events use `--state all` instead of `--state open`.
+
+If your script only has a run ID, for example from a manual re-run, look up the commit first with `gh run view "$RUN_ID" --json headSha --jq .headSha` and then search for the pull request in the same way.
 
 ### External actions
 
