@@ -409,11 +409,11 @@ Creating a different key with a matching identity is considered [infeasible](rel
 precise identity matters and that identity is specified on the command line, you should use the key ID to identify the key. Avoid using
 user ID or other information.
 
-<h3 id="find-key-id-from-trusted-source">Find a key ID from a trusted source<a class="headerlink" href="#finbd-key-id-from-trusted-source" title="Permanent link">&para;</a></h3>
+<h3 id="find-key-id-from-trusted-source">Find a key ID from a trusted source<a class="headerlink" href="#find-key-id-from-trusted-source" title="Permanent link">&para;</a></h3>
 
 The best way to find a key ID is to obtain it directly from a trusted source, for example, from a business card you obtain personally from the owner of the key.
 
-<h3 id="find-key-id-with-fingerprint">Find a key ID with its fingerprint<a class="headerlink" href="#find-key-ide-with-fingerprint" title="Permanent link">&para;</a></h3>
+<h3 id="find-key-id-with-fingerprint">Find a key ID with its fingerprint<a class="headerlink" href="#find-key-id-with-fingerprint" title="Permanent link">&para;</a></h3>
 
 If you have a [fingerprint](release-signing.html#fingerprint), the key ID should be the last 8 digits. For example, the ID of the key with this fingerprint:
 
@@ -565,7 +565,7 @@ For example, to export to the [command line](#export-option-output) with [ASCII 
     $ gpg --export --armor AD741727
 ```
 
-<h3 id="export-all-or-some-public-keys">Should I export all or some public keys"<a class="headerlink" href="#export-all-or-some-puiblic-keys" title="Permanent link">&para;</a></h3>
+<h3 id="export-all-or-some-public-keys">Should I export all or some public keys"<a class="headerlink" href="#export-all-or-some-public-keys" title="Permanent link">&para;</a></h3>
 
 This is often a tricky question. An import should not be trusted for key identification (see [discussion](#find-key-id)). So, for an import to be useful, usually the key ID of interest needs to be known.
 
@@ -815,7 +815,7 @@ The suffix `.asc` is conventional for ASCII armored public key exports. So, for 
 
 If your Apache home page contains details of your keys (recommended), update the [fingerprints](release-signing.html#fingerprint) and the [ASCII armored](release-signing.html#ascii) [public key](release-signing.html#public-private) [export](release-signing.html#export). Any browser with a suitable [OpenPGP](release-signing.html#openpgp) plugin (for example, <a href="https://www.mozilla.com/firefox/" target="_blank">Firefox</a> with the <a href="https://www.getfiregpg.org" target="_blank">FireGPG plugin</a>) will let you download the key into the local keyring.
 
-For example, <a href="https://home.apache.org/~rdonkin/" target="_blank">this home page contains a section with fingerprints and a for exporting them. At the bottom, the export has been inlined so browsers with [OpenPGP](release-signing.html#opengpg) support can import the keys.
+For example, <a href="https://home.apache.org/~rdonkin/" target="_blank">this home page contains a section with fingerprints and a for exporting them. At the bottom, the export has been inlined so browsers with [OpenPGP](release-signing.html#openpgp) support can import the keys.
 
 To create an [ASCII armored](release-signing.html#ascii) [public key](release-signing.html#public-private) [export](release-signing.html#export):
 
