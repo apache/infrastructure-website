@@ -58,7 +58,7 @@ Further information is at these pages:
 - <a href="https://github.com/gradle/actions/blob/main/docs/setup-gradle.md#managing-develocity-access-keys" target="_blank">Managing Develocity access keys</a>
 - <a href="https://docs.gradle.com/develocity/gradle-plugin/current/#short_lived_access_tokens" target="_blank">Short-lived access tokens</a>
 
-### Links ###
+### Links
 
 - The [Apache GitHub Actions Policy](github-actions-policy.html)
 - Advice for <a href="https://cwiki.apache.org/confluence/display/BUILDS/GitHub+Actions+Security">GitHub Actions Security</a>

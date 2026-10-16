@@ -38,11 +38,11 @@ Review the [guidelines for creating a Jira ticket](jira-guidelines).
 
 Visit the <a href="https://github.com/apache/infrastructure-ideas" target="_blank">Infra suggestion box</a>.
 
-### What we need to know ###
+### What we need to know
 
 Here's a [guide to what to tell us](infra-contact.html) so we can respond to your request quickly and appropriately.
 
-### In case of emergency ###
+### In case of emergency
 
 If there is an absolutely urgent problem that must be handled **at once**, such as a malicious hacker having an active root through shell on `archive.apache.org`, members of the ASF community can follow this escalation path:
 

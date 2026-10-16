@@ -19,7 +19,7 @@ During the roundtable, people can either **speak or type** their comments. If yo
 
 **Otherwise**: Contact Infra by email at `users@infra.apache.org` and ask to be added to the Roundtable channel. In your email, please indicate your connection to The ASF or one of its projects or podlings.
 
-### Once you have joined #roundtable ###
+### Once you have joined #roundtable
 
 `#roundtable` is now in your list of channels. In the future, you can just click on its link rather than asking to join it again.
 
