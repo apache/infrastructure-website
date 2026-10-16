@@ -175,7 +175,7 @@ Your forwarding address(es) are stored in LDAP and maintained through the <a hre
 
 <h3 id="mailmod">Mailing list moderation<a class="headerlink" href="#mailmod" title="Permanent link">&para;</a></h3>
 
-This information has moved [here](mailing-list-moderation.html).
+This information has moved to [Mailing list moderation](mailing-list-moderation.html).
 
 <h3 id="legal">Legal and organizational<a class="headerlink" href="#legal" title="Permanent link">&para;</a></h3>
 

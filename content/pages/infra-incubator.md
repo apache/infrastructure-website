@@ -9,7 +9,7 @@ The Infrastructure team (Infra) manages the systems and hardware that run the se
 
 Your mentor is your first stop in figuring out technical issues for your incubating project. They can explain, based on long experience, how to get the best out of the ASF systems, machines, and services. However, if the mentor is not available, members of the new project can move forward the process of setting up project resources.
 
-<img src="../images/setuppodling.png" width="600" />
+<img src="../images/setuppodling.png" width="600" alt="Podling setup in three phases: bootstrapping with podlings.xml, LDAP and DNS; mailing lists through selfserve; then repositories, website, Jira and Confluence once the mailing lists are active" />
 
 ### Phase 1: Establishing a podling
 
@@ -73,4 +73,4 @@ Standard practice is to create a web site repository via <a href="https://selfse
 
 If there is a problem, or you need Infra to do something, the best option is to start a Jira ticket assigned to Infra. That helps us and you track progress on whatever the thing is.
 
-For more informal contact, you can use the _asfinfra_ Slack channel in the Apache Slack workspace, or send an email. Further details are [here](contact.html).
+For more informal contact, you can use the _asfinfra_ Slack channel in the Apache Slack workspace, or send an email. See [Contact the Infrastructure Team](contact.html) for details.
