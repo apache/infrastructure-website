@@ -55,7 +55,7 @@ Manage Pelican settings in the <a href="https://github.com/apache/template-site/
 
 Some important settings:
 
-```
+```yaml
 
 site:
   name: NAME OF YOUR SITE

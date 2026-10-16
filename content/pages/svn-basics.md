@@ -40,7 +40,7 @@ This will prompt you to enter a svn password of your choice. If you cannot log i
 
 When you make changes to the repository, you can commit them with your username/password combination, i.e.
 
-```
+```shell
 $ svn co https://svn.apache.org/repos/asf/excalibur/trunk/ excalibur-trunk
 $ cd excalibur-trunk
 $ echo "test" > test.txt
@@ -55,7 +55,7 @@ $ svn commit --username your-name --password your-password \
 
 Committers need to configure their svn client properly. One particular issue is OS-specific line endings for text files. When you add a new text file, especially when applying patches from Bugzilla, first ensure that the line-endings are appropriate for your system, then do:
 
-```
+```bash
 svn add test.txt svn propset svn:eol-style native test.txt
 ```
 
@@ -73,7 +73,7 @@ Pay attention to the messages from your svn client when you do `svn commit`.
 
 The server certificate for `https://svn.apache.org/` is a real SSL certificate. However, Subversion, by default, does not currently ship with a list of trusted CAs. So, here's some information to help you verify the validity of our certificate:
 
-```
+```text
  - Hostname: *.apache.org
  - Valid: from Jul  1 00:00:00 2019 GMT until Jun 30 23:59:59 2021 GMT
  - Issuer: Sectigo RSA Domain Validation Secure Server CA, Sectigo Limited, Salford, Greater Manchester, GB
@@ -104,7 +104,7 @@ If you really do want the entire ASF repository, *don't* use `svnsync`. Instead,
 
 Run `svn info` and check that the URL starts with `https://`. If it starts with `http://`, run:
 
-```
+```shell
 $ svn switch --relocate http://svn.apache.org https://svn.apache.org
 ```
 

@@ -34,7 +34,7 @@ To use the ASF Nexus repository, follow these steps.
 
 Inherit the Apache Parent POM like this:
 
-```
+```xml
 <parent>
   <groupId>org.apache</groupId>
   <artifactId>apache</artifactId>
@@ -56,7 +56,7 @@ You must sign all artifacts with a key that is publicly verifiable. Follow the i
 
 The <a href="https://maven.apache.org/plugins/maven-gpg-plugin/" target="_blank">gpg plugin</a> can prompt for the key (input is masked) or you can configure it to use an agent.
 
-```
+```xml
 <settings>
 ...
   <servers>
@@ -97,7 +97,7 @@ This will build artifacts and sources and sign them.
 
 ### 2. Publish a snapshot ###
 
-```
+```text
 mvn deploy
 ...
 [INFO] [deploy:deploy]
@@ -113,7 +113,7 @@ mvn deploy
   
 ### 3. Prepare the release ###
 
-```
+```bash
 mvn release:clean
 mvn release:prepare
 ```
@@ -137,7 +137,7 @@ Now you must close the staging repository to indicate to Nexus that the build is
 
 1. If you get an **error message** like this:
 
-```
+```text
 [INFO] Unable to tag SCM
 Provider message:
 The svn tag command failed.
@@ -152,7 +152,7 @@ Then use a Subversion client 1.6 or newer and run `svn update`.
 
 2. If you get an **error message** similar to:
 
-```
+```text
 [ERROR] BUILD FAILURE
 [INFO]
 [INFO] Unable to tag SCM

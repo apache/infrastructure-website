@@ -52,7 +52,7 @@ Bundling a dependency which is issued under one of the following licenses is str
 
 In `LICENSE`, add a <a href="http://s.apache.org/Hqj" target="_blank">pointer</a> to the dependency's license within the distribution and a short note summarizing its licensing:
 
-```
+```text
 This product bundles SuperWidget 1.2.3, which is available under a
 "3-clause BSD" license. For details, see deps/superwidget/.
 ```
@@ -107,7 +107,7 @@ In any case, the principle remains the same: `LICENSE` and `NOTICE` must **exact
 
 The following is the text of the `NOTICE` file for <a href="https://royale.apache.org/" target="_blank">Apache Royale</a>:
 
-```
+```text
 Apache Royale
 Copyright 2020 The Apache Software Foundation
 

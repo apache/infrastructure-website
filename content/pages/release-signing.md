@@ -102,7 +102,7 @@ It is
 To create one using <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a> for file
 `foo.tar.gz`, type:
 
-```
+```shell
 $ gpg --armor --output foo.tar.gz.asc --detach-sig foo.tar.gz 
 ```
 
@@ -111,19 +111,19 @@ $ gpg --armor --output foo.tar.gz.asc --detach-sig foo.tar.gz
 MD5 is a <a href="http://www.faqs.org/rfcs/rfc1321.html" target="_blank">well known</a>  <a href="#message-digest">message
 digest algorithm</a>. Many tools are available to calculate these sums. For example, you can use <a href="https://www.openssl.org/" target="_blank">OpenSSL</a>:
 
-```
+```shell
 $ openssl md5 < file
 ```
 
 Platform-specific applications are also common, such as `md5sum` on linux:
 
-```
+```shell
 $ md5sum file
 ```
 
 With GnuPG:
 
-```
+```shell
 $ gpg --print-md MD5 [fileName] > [fileName].md5
 
 ```
@@ -136,7 +136,7 @@ Run the command in the same directory as the file so the output only contains th
 
 Like <a href="#md5">MD5</a>, <a href="http://www.ietf.org/rfc/rfc3174.txt">SHA</a> is a <a href="#message-digest">message digest</a> algorithm. Using GnuPG, you can create a SHA1 signature as follows:
 
-```
+```shell
   $ gpg --print-md SHA1 [fileName] > [fileName].sha1
 ```
 
@@ -145,7 +145,7 @@ lengths (256 and 512 bits respectively). These longer variations are less vulner
 
 To create a `SHA512` checksum use:
 
-```
+```shell
   $ sha512sum [fileName] > [fileName].sha512
 ```
 
@@ -186,7 +186,7 @@ Do **not** store your private key on any ASF machine. Do **not** create signatur
 
 When you use <a href="http://www.gnupg.org">GNU Privacy Guard</a> you may see a warning similar to:
 
-```
+```text
 gpg: WARNING: using insecure memory!
 gpg: please see http://www.gnupg.org/faq.html for more information
 ```
@@ -260,7 +260,7 @@ There are two common ways to upload a key to a <a href="#keyserver">public key s
   
 For example, using <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a>, send the key with <a href="#key-id">ID</a> B1313DE2 to the default public key server by:
 
-```
+```shell
 $ gpg --send-key B13131DE2
 ```
 
@@ -271,7 +271,7 @@ You must export each changed key separately.
 The public web of trust grows constantly as people sign new keys and upload the new signatures onto the network of <a href="#keyserver">public key servers</a>. You should refresh public keys periodically to make sure that your local web of trust is as full as possible. Many <a href="#openpgp">OpenPGP</a> <a href="#openpgp-applications">clients</a> make it easy to refresh keys by
 querying a public key server. For example, to refresh all keys using <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a>, use:
 
-```
+```shell
 $ gpg --refresh-keys
 ```
 
@@ -282,7 +282,7 @@ You can export a public key through <a href="https://www.gnupg.org" target="_bla
 
 To export all public keys to the command line use:
 
-```
+```bash
 gpg --export --armor
 ```
 
@@ -349,7 +349,7 @@ There are several Apache documents you have to update when you have a new key. F
 The easiest way to discover the length of a key with id `KEYID` is to use `gpg --list-keys KEYID`. This prints basic information about the key. The first line includes the size in the second column, just before the id.
 For example:
 
-```
+```shell
 $ gpg --list-keys B1313DE2
 pub   1024D/B1313DE2 2003-01-15
 uid                  Robert Burrell Donkin (CODE SIGNING KEY) <rdonkin@apache.org>
@@ -375,7 +375,7 @@ The KEYS file is a plain-text file containing the public key signatures of the r
 
 It is traditional to include the following header to explain how to use the file. These commands generate a descriptive comment describing the key, followed by the key itself. Key handling software ignores the comments when importing a key file:
 
-```
+```text
 This file contains the PGP keys of various developers.</p>
 Users: pgp < KEYS
 or
@@ -520,7 +520,7 @@ media failure or some other reason), assume that the key has been potentially co
 
 You can generate an <a href="#ascii">ASCII armored</a> revocation certificate for key `bob` and save it to `revoke.asc` using <a href="https://www.gnupg.org" target="_blank:>GNU Privacy Guard</a>:
 
-```
+```shell
 $ gpg --output revoke.asc --armor --gen-revoke bob
 ```
 
@@ -532,7 +532,7 @@ If you are preparing a revocation certificate for future use, you should test it
 
 To revoke a key with a <a href="#revocation-cert">revocation certificate</a> using <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a>, import the certificate:
 
-```
+```shell
 $ gpg --import revoke.asc 
 gpg: key 4A03679A: "Some User<someuser@example.org>" revocation
 certificate imported
@@ -561,7 +561,7 @@ When you _revoke_ a key, it is marked in the key ring. Whenever a message signed
 
 For example, when you verify a revoked key, <a href="https://www.gnupg.org" target="_blank" target="_blank">GNU Privacy Guard</a> issues the following comment:
 
-```
+```shell
 $ gpg --verify message.asc.message 
 gpg: Signature made Sat Apr  8 09:28:31 2006 BST using DSA key ID 4A03679A
 gpg: Good signature from "Some User <someuser@example.org>"
@@ -585,14 +585,14 @@ You can use <a href="#pke">public key cryptography</a> to test whether a particu
 
 For example, when using <a href="https://www.gnupg.org/" target="_blank">GNU Privacy Guard</a> you verify the signature `foo-1.0.tar.gz.asc` for release `foo-1.0.tar.gz` using the following command:
 
-```
+```shell
 $ gpg --verify foo-1.0.tar.gz.asc foo-1.0.tar.gz
 ```
 
 A signature is valid, if `gpg` verifies the `.asc` as a _good signature_, and doesn't complain about expired
 or revoked keys. Technically :
 
-```
+```shell
 $ gpg --verify --status-fd 1 foo-1.0.tar.gz.asc foo-1.0.tar.gz
 ```
 
@@ -609,7 +609,7 @@ You can also check the integrity of a release by <a href="#verifying-signature">
 <h3 id="public-key-not-found">What does 'Public key not found' mean when I try to verify a signature?<a class="headerlink" href="#public-key-not-found" title="Permanent link">&para;</a></h3>
 To verify a signature, you need the release's public key. For example, when using <a href="https://www.gnupg.org/" target="_blank">GNU Privacy Guard</a>, if you have never imported the appropriate public key, you will see a message like this:
 
-```
+```shell
 $ gpg --verify foo-1.0.tar.gz.asc foo-1.0.tar.gz
 gpg: Signature made Mon Sep 26 22:26:18 2005 BST using RSA key ID 00000000
 gpg: Can't check signature: public key not found
@@ -619,7 +619,7 @@ You can often download unknown keys from a <a href="#keyserver">public key serve
 
 Apache projects normally keep the developers' public keys in a file called `KEYS`. You may be able to find that file on the project's website, or in their code repository. Use
 
-```
+```shell
   $ gpg --import KEYS
 ```
 
@@ -654,7 +654,7 @@ Do not trust a file with an invalid signature. You can trust a file with a valid
 
 For example, when you use <a href="https://www.gnupg.org/" target="_blank">GNU Privacy Guard</a>, a message similar to the following indicates that the signature is invalid:
 
-```
+```shell
 $ gpg --verify foo-1.0.tar.gz.asc foo-1.0.tar.gz
 gpg: Signature made Mon Sep 26 22:26:18 2005 BST using RSA key ID 00000000
 gpg: BAD signature from "someone@example.org"
@@ -662,7 +662,7 @@ gpg: BAD signature from "someone@example.org"
 
 A message similar to the following indicates that the signature is valid but for an untrusted key:
 
-```
+```shell
 $ gpg --verify foo-1.0.tar.gz.asc foo-1.0.tar.gz
 gpg: Signature made Mon Sep 26 22:05:28 2005 BST using RSA key ID 00000000
 gpg: Good signature from "someone@example.org"
@@ -688,7 +688,7 @@ On occasion, the user (who understands the risks) may trust a key but not consid
 
 For example, with <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a> use:
 
-```
+```shell
 $ gpg --lsign-key someuser
 ```
 

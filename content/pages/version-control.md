@@ -175,7 +175,7 @@ For example, consider the desired command:
 
 While this produces no results, running `svn log` alone produces a result like this:
 
-```
+```text
 ------------------------------------------------------------------------
 r124032 | aheritier | 2005-01-04 09:58:16 +1100 (Tue, 04 Jan 2005) | 1 line
 

@@ -9,7 +9,7 @@ The command `mkdocs gh-deploy` removes the site, rebuilds it, and then deploys t
 
 To prevent the new build from removing the `.asf.yaml` file, use this build command sequence:
 
-```
+```bash
 rm -r site
 mkdir site
 cp ../.asf.yaml site/

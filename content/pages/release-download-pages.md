@@ -104,7 +104,7 @@ Provide links to the checksum and signature for the artifact next to the downloa
 
 For example, for artifact foo-1.0.0.tar.gz contained in bar/foo :
 
-```
+```text
 `<a href="[preferred]/bar/foo/foo-1.0.0.tar.gz">zip</a>`
 `<a href='https://downloads.apache.org/bar/foo/foo-1.0.0.tar.gz.asc'>PGP</a>`
 ```
@@ -123,7 +123,7 @@ Provide clear and easy links to the KEYS, sums and signatures from the download 
 
 Include a reminder text with links to more information for users. For example:
 
-```
+```text
 Note: when downloading, please check the
 <a href="https://infra.apache.org/release-signing.html#sha-checksum" target="_blank">sha checksum</a>
 and verify the 

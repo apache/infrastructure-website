@@ -25,7 +25,7 @@ If you wish to try out the template:
   4. Unzip `master.zip` and copy `infrastructure-website-master/*`  to the root of your new repository.
   5. Configure [.asf.yaml](asf-yaml.html).
 
-```
+```yaml
 pelican:
   notify: EMAIL of a person on your team to receive error messages related to Pelican
   autobuild: preview/*
@@ -85,7 +85,7 @@ Please let us know if you run into [issues](https://github.com/apache/template-s
 
 Earlier versions of this template made use of a `pelicanconf.py` configuration file. The current version uses `.asf.yaml` and `pelicanconf.yaml`, as noted above. We retain the earlier instruction for the projects using the earlier version of the template; however, any project starting with the template now should use the files and instructions noted above.
 
-```
+```text
  Edit the `pelicanconf.py` configuration file:
 
    - Website specific

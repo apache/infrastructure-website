@@ -30,7 +30,7 @@ GitHub Discussions are now managed entirely through .asf.yaml, and will default 
 
 To enable Discussions, include these settings into the .asf.yaml file in your default branch:
 
-```
+```yaml
 notifications:
    discussions: issues@foo.apache.org  (use your own mailing list name here)
 ...

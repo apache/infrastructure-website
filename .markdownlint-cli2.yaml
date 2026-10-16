@@ -25,7 +25,6 @@ config:
   MD034: false
   MD036: false
   MD038: false
-  MD040: false
   MD045: false
   MD046: false
   MD048: false

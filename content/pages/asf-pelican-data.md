@@ -14,7 +14,7 @@ If your site includes the `asfdata.py` plugin, the Pelican site generator reads 
 
 The `pelicanconf.yaml` file contains the following:
 
-```
+```yaml
 setup:
   data: asfdata.yaml
 ```

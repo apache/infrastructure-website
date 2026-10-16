@@ -23,7 +23,7 @@ Infra will respond within a couple of days, either with a request for clarificat
 
 Enabling GitHub Issue tracking for your project is self-serve. In the .asf.yaml file for your repository, locate the `github` section and set the `issues` option to true, as in the example below.
 
-```
+```yaml
 github:
   features:
     # Enable wiki for documentation

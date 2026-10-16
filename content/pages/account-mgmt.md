@@ -21,7 +21,7 @@ If you forgot your password, try...
 your `@apache.org` address (which forwards to your non-apache email account) a short-lived password reset link. The link may be encrypted to <a href="https://people.apache.org/keys/committer/" target="_blank">your PGP key</a>.
   1. decrypting the e-mail - one way to do this is to save the e-mail contents as a text file, e.g. `password.txt`. Open a shell command window, and run the following command:
 
-```
+```text
 gpg -d password.txt</code>
 ```
 

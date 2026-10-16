@@ -46,7 +46,7 @@ Open a Jira ticket for Infra to request a private repository.
 
 The repository URLs are all of the form:
 
-```
+```text
 https://gitbox.apache.org/repos/asf/reponame.git
 ```
 
@@ -70,14 +70,14 @@ For details on how .asf.yaml can help you manage your GitHub settings, see <a hr
 
 Set up your name and email that Git will use when you make commits:
 
-```
+```shell
 $ git config --global user.name "My Name Here"
 $ git config --global user.email myusername@apache.org
 ```
 
 If you're a long-time GitHub user you can set these configuration variables on a per-repository basis:
 
-```
+```shell
 $ git config user.name "My Name Here"
 $ git config user.email myusername@apache.org
 ```
@@ -88,13 +88,13 @@ To push to a repository you need to authenticate. More recent versions of Git pr
 
 On Mac OS X, you need to have `git-credential-osxkeychain` installed, and to set the following configuration:
 
-```
+```shell
 $ git config --global credential.helper osxkeychain
 ```
 
 If you do not see an authentication prompt, you need to set up a `~/.netrc` file that contains your user credentials:
 
-```
+```shell
 $ (umask 0277; cat >> ~/.netrc <<EOF)
 machine gitbox.apache.org
 login username
@@ -105,7 +105,7 @@ chmod 0600 ~/.netrc
 
 You can list your user name in the Git repository URL, but this requires that you provide your password for every fetch and push. You can simplify this step by cloning a URL like:
 
-```
+```shell
 $ git clone https://username@gitbox.apache.org/repos/asf/reponame.git
 ```
 
@@ -135,14 +135,14 @@ Further details and attributes for handling line endings differently per file ty
 
 If you get an error like this:
 
-```
+```text
 error: no DAV locking support on http://gitbox.apache.org/repos/asf/reponame.git/
 fatal: git-http-push failed
 ```
 
 It means that you're trying to push over **HTTP**, which is disabled. To fix this error change the remote repository URL to use **HTTPS**. You can edit the `.git/config` file to update the URL variable, or use:
 
-```
+```shell
 $ git config remote.origin.url https://gitbox.apache.org/repos/asf/reponame.git
 ```
 

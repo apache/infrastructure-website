@@ -58,7 +58,7 @@ ASF-wide export page, but <strong>before publicly posting the distribution or co
 An XSLT transformer called <a href="https://svn.apache.org/repos/asf/infrastructure/site/trunk/content/licenses/exports/bisnotice.xsl" target="_blank">bisnotice.xsl</a>
 can generate the BIS notice for a product based on the XML data. For example, running it as:
 
-```
+```text
 $ cd {SVNROOT}/infrastructure/site/trunk/</li>
 $ svn up</li>
 $ cd content/licenses/exports/</li>
@@ -71,7 +71,7 @@ will result in text output that looks like an email template for the PMC chair t
 
 There are also some sample script files in the top-level directory (site/trunk): `bisnotice.cmd` (Windows) and `bisnotice.sh` (Un*x).
 
-```
+```text
 TO: crypt AT bis.doc.gov, 
        enc AT nsa.gov, 
        web_site AT bis.doc.gov
@@ -101,7 +101,7 @@ NOTIFICATION:         http://www.apache.org/licenses/exports/
 
 Should the software qualify for the Section 742.15(b) exemption, place the following notice into each distribution's README file:
 
-```
+```text
    This distribution includes cryptographic software.  The country in 
    which you currently reside may have restrictions on the import, 
    possession, use, and/or re-export to another country, of 

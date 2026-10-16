@@ -16,7 +16,7 @@ These are the sections to configure in `pelicanconf.yaml` for your website:
 
 ## Required
 
-```
+```yaml
 site:
   name: Apache Template
   description: Provides a template for projects wishing to use the Pelican ASF static content system
@@ -35,7 +35,7 @@ theme: theme/apache
 If you are using the standard plugins included in ASF Pelican, you can leave this section out.
 If you include it, your build will automatically include the `gfm` plugin.
 
-```
+```yaml
 plugins:
   paths:
     - theme/plugins
@@ -47,7 +47,7 @@ plugins:
 
 To configure four special features:
 
-```
+```yaml
 setup:
   data: asfdata.yaml
   run:
@@ -70,7 +70,7 @@ setup:
 
 The `asfgenid` plugin performs a number of fixups and enhancements.
 
-```
+```yaml
 genid:
   unsafe: yes
   metadata: yes

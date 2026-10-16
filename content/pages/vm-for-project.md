@@ -87,7 +87,7 @@ Once you have logged in, there are few tasks best performed right away. Please t
 
 Check that your umask is set in a group-friendly fashion. This ensures that the documents you create are editable by your fellow committers. To do this, (depending on which shell you use) edit the `.cshrc` file or `.profile` (sh derivatives) so the umask is set as follows:
 
-```
+```bash
 umask 002
 ```
 
