@@ -21,11 +21,11 @@ The survey summary is on our <a href="https://infra.apache.org/blog/2023%20Infra
 
 The February Roundtable focused on Keycloak and related security issues but, as is often the case, conversation also moved usefully into several other areas and concerns, including:
 
-  - There is concern that it is difficult to find a link to Infra's website, or even know that it exists, from the main ASF website.
-  - A suggestion to develop project-level security groups for GitHub Issues, based on roles.
-  - There should be a CalDev service that would support an events calendar for each project that wants one.
-  - There was discussion of trying to find a forum solution that could in time replace the requirement for email-based conversation threads for project decisions.
-  - The summary of the conversation is on the Infra Confluence wiki.
+- There is concern that it is difficult to find a link to Infra's website, or even know that it exists, from the main ASF website.
+- A suggestion to develop project-level security groups for GitHub Issues, based on roles.
+- There should be a CalDev service that would support an events calendar for each project that wants one.
+- There was discussion of trying to find a forum solution that could in time replace the requirement for email-based conversation threads for project decisions.
+- The summary of the conversation is on the Infra Confluence wiki.
 
 The next Infra Roundtable will be **March 6, 2024 1700 UTC**. The main topic, before the suggestions start to fly, will be **improving automated testing**.
 
@@ -37,10 +37,10 @@ Information on how the roundtables work, and how to join in, is at <a href="http
 
 .asf.yaml is an important tool in managing project websites and other services. It is a branch-specific configuration file that a project may create and put in the root of a Git repository to control features such as
 
-  - notification schemes
-  - website staging
-  - GitHub settings
-  - Pelican builds
+- notification schemes
+- website staging
+- GitHub settings
+- Pelican builds
 
 The documentation for .asf.yaml  was on the Infra Cwiki, but is now is in its repository's README file: <a href="https://github.com/apache/infrastructure-asfyaml/blob/main/README.md" target="_blank">github.com/apache/infrastructure-asfyaml/blob/main/README.md</a>.
 

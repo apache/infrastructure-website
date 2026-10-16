@@ -20,8 +20,8 @@ The next Roundtable will be **April 1, 1700 UTC** on the roundtable channel in t
 
 Looking ahead:
 
-  - The May Roundtable will be **May 6, 1700 UTC** with the topic: **What is the impact on our infrastructure of AI coding?**
-  - On **June 3, 1700 UTC**, Piotr P. Karwasz presents at the roundtable on **release automation**
+- The May Roundtable will be **May 6, 1700 UTC** with the topic: **What is the impact on our infrastructure of AI coding?**
+- On **June 3, 1700 UTC**, Piotr P. Karwasz presents at the roundtable on **release automation**
 
 Information on roundtables, and how to take part in one, is at <a href="https://infra.apache.org/roundtable.html" target="_blank">infra.apache.org/roundtable.html</a>
 

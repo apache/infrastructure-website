@@ -17,9 +17,9 @@ Once your infrastructure-pelican site is deployed to GitHub, you can easily edit
 
 Make sure you have installed:
 
-  - cmake
-  - python3 or greater
-  - pip3
+- cmake
+- python3 or greater
+- pip3
 
 Download the [automatic build tool](https://raw.githubusercontent.com/apache/infrastructure-pelican/master/bin/local-pelican-site.sh), and run it, providing the name of your GitHub website repo.
 

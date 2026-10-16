@@ -5,15 +5,15 @@ This document is a primer on using Git for an Apache Software Foundation project
 
 ## Contents
 
-  - <a href="#repotypes">Repository types</a>
-    -  <a href="#publicprivate">Public and private repositories</a>
-  - <a href="repocheckout">Repository checkout</a>
-  - <a href="asfyanl">Using .asf.yaml</a>
-  - <a href="#committers">Committers: getting started</a>
-  - <a href="#windowsusers">Windows users</a>
-  - <a href="#lineendings">Line endings</a>
-  - <a href="#trouble">Troubleshooting</a>
-  - <a href="#further">Further reading</a>
+- <a href="#repotypes">Repository types</a>
+  - <a href="#publicprivate">Public and private repositories</a>
+- <a href="repocheckout">Repository checkout</a>
+- <a href="asfyanl">Using .asf.yaml</a>
+- <a href="#committers">Committers: getting started</a>
+- <a href="#windowsusers">Windows users</a>
+- <a href="#lineendings">Line endings</a>
+- <a href="#trouble">Troubleshooting</a>
+- <a href="#further">Further reading</a>
 
 <h2 id="repotypes">Repository types<a class="headerlink" href="#repotypes" title="Permanent link">&para;</a></h2>
 
@@ -30,9 +30,9 @@ Projects can set up as many **public repositories** as their development work re
 
 Each project can also have a **private repository** space for working on sensitive issues such as:
 
-  - security patches
-  - writing a draft of the project Board report when there is a section that will appear in a `<private>` tag
-  - sharing credentials
+- security patches
+- writing a draft of the project Board report when there is a section that will appear in a `<private>` tag
+- sharing credentials
 
 The private repository is **not** for uses such as project code development not related to a security issue.
 
@@ -52,17 +52,17 @@ https://gitbox.apache.org/repos/asf/reponame.git
 
 ### Cloning a repository
 
-  - **Committers**: `$ git clone https://gitbox.apache.org/repos/asf/reponame.git`
-  - **Non-Committers**: `$ git clone http://gitbox.apache.org/repos/asf/reponame.git`
+- **Committers**: `$ git clone https://gitbox.apache.org/repos/asf/reponame.git`
+- **Non-Committers**: `$ git clone http://gitbox.apache.org/repos/asf/reponame.git`
 
 <h2 id="asfyaml">Using .asf.yaml<a class="headerlink" href="asfyaml" title=title="Permanent link">&para;</a></h2>
 
 `.asf.yaml` is a branch-specific <a href="https://en.wikipedia.org/wiki/YAML" target="_blank">YAML</a> configuration file that a project may create (using a text editor of your choice) and put in the root of a Git repository to control features such as
 
-  - notification schemes
-  - website staging
-  - GitHub settings
-  - Pelican builds
+- notification schemes
+- website staging
+- GitHub settings
+- Pelican builds
 
 For details on how .asf.yaml can help you manage your GitHub settings, see <a href="https://github.com/apache/infrastructure-asfyaml/edit/main/README.md" target="blank">github.com/apache/infrastructure-asfyaml/edit/main/README.md</a>.
 
@@ -124,8 +124,8 @@ Instead of setting up a `~/.netrc` file you need to:
 
 In general, you should normalize line endings in the Git repository and set them to be platform specific on checkout.
 
-  - The `msysgit` installer on **Windows** will prompt you to set the `core.autocrlf` setting to `true` by default.
-  - On **Mac OS X or Linux**, use this setting: `$ git config --global core.autocrlf input`
+- The `msysgit` installer on **Windows** will prompt you to set the `core.autocrlf` setting to `true` by default.
+- On **Mac OS X or Linux**, use this setting: `$ git config --global core.autocrlf input`
 
 Further details and attributes for handling line endings differently per file type are available at <a href="https://help.github.com/en/github/using-git/configuring-git-to-handle-line-endings" target="_blank">Configuring Git to handle line endings</a>.
 
@@ -148,9 +148,9 @@ $ git config remote.origin.url https://gitbox.apache.org/repos/asf/reponame.git
 
 <h2 id="further">Further reading<a class="headerlink" href="#further" title="Permanent link">&para;</a></h2>
 
-  - [GitHub Actions Policy](github-actions-policy.html)
-  - [GitHub Apps](github-apps.html)
-  - [GitHub Pages](github-pages.html)
-  - [GitHub roles](github-roles.html)
-  - <a href="https://lab.github.com/" target="_blank">GitHub Learning Lab</a>
-  - <a href="https://github.github.com/training-kit/" target="_blank">Git Cheat Sheets</a>
+- [GitHub Actions Policy](github-actions-policy.html)
+- [GitHub Apps](github-apps.html)
+- [GitHub Pages](github-pages.html)
+- [GitHub roles](github-roles.html)
+- <a href="https://lab.github.com/" target="_blank">GitHub Learning Lab</a>
+- <a href="https://github.github.com/training-kit/" target="_blank">Git Cheat Sheets</a>

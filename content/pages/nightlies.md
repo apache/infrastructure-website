@@ -12,13 +12,13 @@ were otherwise kept on `ci-builds.apache.org` (was `builds.apache.org`) along wi
 
 nightlies, as implied by its name, is designed as a 'short term' storage solution. Examples of how projects use the service are:
 
-  - Nightly Snapshots of trunk/main builds for developer-only testing.
-  - Different website versions - e.g : trunk/main/bleeding edge docs , RC1, $latest release version, $previous release version.
-  - Javadocs / Api Docs.
-  - Logs of jobs.
-  - Artifacts, packages as created by a build or builds.
-  - Historical data for analysis, graphing etc.
-  - A generated index.html to your sub-directories of data.
+- Nightly Snapshots of trunk/main builds for developer-only testing.
+- Different website versions - e.g : trunk/main/bleeding edge docs , RC1, $latest release version, $previous release version.
+- Javadocs / Api Docs.
+- Logs of jobs.
+- Artifacts, packages as created by a build or builds.
+- Historical data for analysis, graphing etc.
+- A generated index.html to your sub-directories of data.
 
 **Note**: nightlies is **not an official release channel**. Do not place product release artifacts here. Please review Apache's release distribution policy, especially the section on release channels.
 

@@ -15,8 +15,8 @@ Notices of updates to this page appear on the <a href="https://www.apache.org/fo
 
 <h2 id="contents">Contents<a class="headerlink" href="#contents" title="Permanent link">&para;</a></h2>
 
-  - <a href="#overview">Overview</a>
-  - <a href="#faq">Frequently Asked Questions</a>
+- <a href="#overview">Overview</a>
+- <a href="#faq">Frequently Asked Questions</a>
 
 <h2 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 
@@ -24,22 +24,22 @@ The U.S. Government places <a href="https://www.bis.doc.gov/index.php/regulation
 
 PMCs considering including cryptographic functionality within their products, or designing their products to use other software with cryptographic functionality, should take the following steps **before** placing such code on any ASF server, including commits to subversion or git.
 
-  - <a href="#classify">Check the Export Control Classification Number (ECCN)</a>.
-  - <a href="#sources">Update the exports page with source links</a>.
-  - <a href="#notify">Notify the U.S. Government of the new code</a>.
-  - <a href="#inform">Inform users</a>.
+- <a href="#classify">Check the Export Control Classification Number (ECCN)</a>.
+- <a href="#sources">Update the exports page with source links</a>.
+- <a href="#notify">Notify the U.S. Government of the new code</a>.
+- <a href="#inform">Inform users</a>.
 
 <h3 id="classify">Check the Export Control Classification Number (ECCN)<a class="headerlink" href="#classify" title="Permanent link">&para;</a></h3>
 
 Section 742.15(b) of the <a href="https://www.trade.gov/us-export-regulations" target="_blank">Export Administration Regulations (EAR)</a> authorizes exports and reexports, without review, of encryption source and object code provided the following conditions are met:
 
-  - the encryption source code is controlled by ECCN 5D002.
-  - the encryption source code will be publicly available (published and made available to the public without restrictions upon its further dissemination).
-  - a notification is sent to the U.S. Government's Bureau of Industry and Security (BIS) and the ENC Encryption Request Coordinator at or before making the code publicly available. Current ASF processes satisfy the "publicly available" requirement. The notification requirement is described <a href="#notify">below</a>. However, it is important to ensure the included cryptographic functionality meets the definition of <a href="https://cr.yp.to/export/ear2001/ccl5-pt2.pdf" target="_blank">ECCN D002</a>, which can be summarized as:
-    - Software specially designed or modified for the development, production or use of any of the other software of this list, or software designed to certify other software on this list; or
-    - Software using a "symmetric algorithm" employing a key length in excess of 56-bits; or
-    - Software using an "asymmetric algorithm" where the security of the algorithm is based on: factorization of integers in excess of 512 bits (e.g., RSA), computation of discrete logarithms in a multiplicative group of a finite field of size greater than 512 bits (e.g., Diffie-Hellman over Z/pZ), or other discrete logarithms in a group in excess of 112 bits (e.g., Diffie-Hellman over an elliptic curve).
-    - Software designed or modified to perform cryptanalytic functions If the cryptographic functionality is limited to one of the above definitions, it should be classified as ECCN 5D002, and the remaining two steps should be taken (described below). If the release may contain cryptographic functionality beyond what is described above, please contact
+- the encryption source code is controlled by ECCN 5D002.
+- the encryption source code will be publicly available (published and made available to the public without restrictions upon its further dissemination).
+- a notification is sent to the U.S. Government's Bureau of Industry and Security (BIS) and the ENC Encryption Request Coordinator at or before making the code publicly available. Current ASF processes satisfy the "publicly available" requirement. The notification requirement is described <a href="#notify">below</a>. However, it is important to ensure the included cryptographic functionality meets the definition of <a href="https://cr.yp.to/export/ear2001/ccl5-pt2.pdf" target="_blank">ECCN D002</a>, which can be summarized as:
+  - Software specially designed or modified for the development, production or use of any of the other software of this list, or software designed to certify other software on this list; or
+  - Software using a "symmetric algorithm" employing a key length in excess of 56-bits; or
+  - Software using an "asymmetric algorithm" where the security of the algorithm is based on: factorization of integers in excess of 512 bits (e.g., RSA), computation of discrete logarithms in a multiplicative group of a finite field of size greater than 512 bits (e.g., Diffie-Hellman over Z/pZ), or other discrete logarithms in a group in excess of 112 bits (e.g., Diffie-Hellman over an elliptic curve).
+  - Software designed or modified to perform cryptanalytic functions If the cryptographic functionality is limited to one of the above definitions, it should be classified as ECCN 5D002, and the remaining two steps should be taken (described below). If the release may contain cryptographic functionality beyond what is described above, please contact
 the <a href="https://www.apache.org/foundation/leadership" target="_blank">ASF Vice President for Legal Affairs</a>.
 
 <h3 id="sources">Update the Exports Page with Source Links<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h3>

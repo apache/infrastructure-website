@@ -20,12 +20,12 @@ projects have a trigger set so that it only updates a ticket if the first  sente
 To enable the service for your project, create an
 <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Infra Jira ticket</a>. Include this information:
 
-  - The name of the project.
-  - Has the PMC agreed to use this? (Make sure of this before requesting the feature, as it does tend to add quite a lot of new information to a Jira ticket.)
-  - What Jira name does your project use?
-  - Does the project use Git or Subversion?
-  - How would you like commits to trigger an update of a JIRA ticket. This can be anything from the standard catch-all FOO-1234 trigger to more specific rules you thought of yourself.
-  - If you are using Git, are there any specific branches you'd like the service to ignore?
+- The name of the project.
+- Has the PMC agreed to use this? (Make sure of this before requesting the feature, as it does tend to add quite a lot of new information to a Jira ticket.)
+- What Jira name does your project use?
+- Does the project use Git or Subversion?
+- How would you like commits to trigger an update of a JIRA ticket. This can be anything from the standard catch-all FOO-1234 trigger to more specific rules you thought of yourself.
+- If you are using Git, are there any specific branches you'd like the service to ignore?
   
 <h2 id="source-code">Source code<a class="headerlink" href="#source-code" title="Permanent link">&para;</a></h2>
 

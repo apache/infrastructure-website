@@ -14,9 +14,9 @@ Information about how to take part in a roundtable is at <a href="https://infra.
 
 Infra monitors and participates in these email addresses:
 
-  - `users@infra.apache.org` is for general infrastructure discussions and suggestions, and for questions related to ASF infrastructure and the Infra team that do not rise to the level of a Jira ticket. Only committers and ASF members can subscribe to the list.
-  - `private@infra.apache.org` is for communications that may involve PII, personnel issues, or other information that should not be widely shared. Only ASF Members can subscribe to the list.
-  - `root@apache.org` is an unarchived alias that goes to Infra staff only for Infra-related security issues or other private matters that don't fit other lists. See the third entry on <a href="https://infra.apache.org/infra-contact.html" target="_blank">Contacting Infra</a> if you are reporting a security issue specific to an ASF project or a project's product.
+- `users@infra.apache.org` is for general infrastructure discussions and suggestions, and for questions related to ASF infrastructure and the Infra team that do not rise to the level of a Jira ticket. Only committers and ASF members can subscribe to the list.
+- `private@infra.apache.org` is for communications that may involve PII, personnel issues, or other information that should not be widely shared. Only ASF Members can subscribe to the list.
+- `root@apache.org` is an unarchived alias that goes to Infra staff only for Infra-related security issues or other private matters that don't fit other lists. See the third entry on <a href="https://infra.apache.org/infra-contact.html" target="_blank">Contacting Infra</a> if you are reporting a security issue specific to an ASF project or a project's product.
 
 In the past there was the `infrastructure@apache.org` mailing list. This address is no longer in use.
 
@@ -26,9 +26,9 @@ At the end of May, 2025, Infra will be removing the deprecated Cloudbees Maven I
 
 For further information, see:
 
-  - <a href="https://docs.cloudbees.com/docs/cloudbees-ci-kb/latest/troubleshooting-guides/help-bulk-migration-maven-jobs" target="_blank">help-bulk-migration-maven-jobs</a>
-  - <a href="https://plugins.jenkins.io/pipeline-maven/" target="_blank">plugins.jenkins.io/pipeline-maven/</a>
-  - a YouTube video: <a href="https://www.youtube.com/watch?v=u0_sIo9I7CE" target="_blank">Darin Pope, Cloudbees Advocate, goes through the steps to migrate</a>
+- <a href="https://docs.cloudbees.com/docs/cloudbees-ci-kb/latest/troubleshooting-guides/help-bulk-migration-maven-jobs" target="_blank">help-bulk-migration-maven-jobs</a>
+- <a href="https://plugins.jenkins.io/pipeline-maven/" target="_blank">plugins.jenkins.io/pipeline-maven/</a>
+- a YouTube video: <a href="https://www.youtube.com/watch?v=u0_sIo9I7CE" target="_blank">Darin Pope, Cloudbees Advocate, goes through the steps to migrate</a>
 
 Gavin McDonald has checked all project controllers, and sees that very few projects are still using the Maven type job, so this removal should affect almost nobody. If, however, you have concerns or would like help with migrating your project's Maven-type job, Infra is only to happy to help.
 
@@ -56,10 +56,10 @@ You can add and remove external collaborators to your GitHub repository using .a
 
 If you invited a collaborator and they missed the invitation (they're only valid for seven days), simply
 
-  - remove them from the collaborator section in your .asf.yaml
-  - commit and push the change
-  - re-add them to the collaborator section
-  - commit and push that change
+- remove them from the collaborator section in your .asf.yaml
+- commit and push the change
+- re-add them to the collaborator section
+- commit and push that change
 
 They will receive a new invitation.
 

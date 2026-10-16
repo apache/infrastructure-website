@@ -12,8 +12,8 @@ The topic at both meetings was **Phishing attempts, spam, and code security**. D
 
 Summaries of the conversations are here:
 
-  - <a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable+2024-11-06+1700UTC" target="_blank">November 6</a>
-  - <a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable+2024-11-13+1000UTC" target="_blank">November 13</a>
+- <a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable+2024-11-06+1700UTC" target="_blank">November 6</a>
+- <a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable+2024-11-13+1000UTC" target="_blank">November 13</a>
 
 ## December roundtable
 
@@ -33,8 +33,8 @@ _Myrle Krantz_
 
 A two-part interview with Chris Lambertus is here:
 
-  - <a href="https://news.apache.org/foundation/entry/inside-infra-chris-lambertus-part" target="_blank">part one</a>
-  - <a href="https://news.apache.org/foundation/entry/inside-infra-chris-lambertus-part1" target="_blank">part two</a>
+- <a href="https://news.apache.org/foundation/entry/inside-infra-chris-lambertus-part" target="_blank">part one</a>
+- <a href="https://news.apache.org/foundation/entry/inside-infra-chris-lambertus-part1" target="_blank">part two</a>
 
 ## ASF Writers
 

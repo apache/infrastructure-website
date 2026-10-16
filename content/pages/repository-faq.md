@@ -11,8 +11,8 @@ The ASF maintains internal snapshot and release Maven repositories at <a href="h
 
 If your Apache project would like to use `repository.apache.org`, see [Publishing Maven Releases](publishing-maven-artifacts.html).
 
-  - Use the `New` repo and staging process to help prevent accidental releases and ensure that releases meet Apache standards.
-  - Subscribe to the repository mailing list via `repository-subscribe@apache.org` for questions, complaints and ideas.
+- Use the `New` repo and staging process to help prevent accidental releases and ensure that releases meet Apache standards.
+- Subscribe to the repository mailing list via `repository-subscribe@apache.org` for questions, complaints and ideas.
 
 If you're a user looking for Apache artifacts from a Maven repository, all releases are synced to <a href="https://repo1.maven.org/maven2" target="_blank">Maven Central</a> and snapshots are available here:
 <a href="https://repository.apache.org/snapshots/" target="_blank">http://repository.apache.org/snapshots/</a>.

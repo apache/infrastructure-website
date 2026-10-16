@@ -11,11 +11,11 @@ The August Roundtable discussed the impact of **AI scraping** on The ASF, and wh
 
 The main impacts on ASF infrastructure are:
 
-  - Overuse of resources - effectively, distributed denial of service
-  - Increased downtime
-  - Valid requestors unable to reach resources
-  - Alerts at all hours of the day and night for limited staff
-  - Possible legal exposure relative to PII being scraped
+- Overuse of resources - effectively, distributed denial of service
+- Increased downtime
+- Valid requestors unable to reach resources
+- Alerts at all hours of the day and night for limited staff
+- Possible legal exposure relative to PII being scraped
 
 The full summary, including many helpful comments and suggestions, is at <a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable+2025-08-06+1700+UTC" target="_blank">Infra Roundtable 2025-08-06 1700 UTC</a>
 

@@ -74,8 +74,8 @@ The `.ezmd` files in the template's `content` directory show examples, and <a hr
 
 Remove the following if you do not need a data model:
 
-  - `asfdata.yaml`
-  - `data/eccn` directory
+- `asfdata.yaml`
+- `data/eccn` directory
 
 ## Issues and template questions
 

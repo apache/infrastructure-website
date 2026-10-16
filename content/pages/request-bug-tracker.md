@@ -10,10 +10,10 @@ The ASF recommends these options for tracking issues and feature requests:
 
 Infra itself uses Jira, so to request a Jira instance for your project, create a <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Jira ticket</a>. Set the issue type to 'New Jira Project' and provide the necessary details:
 
-  - A list of committers with access to modify/close tickets
-  - A list of committers who will act as Jira administrators
-  - A notification scheme (to which email address do JIRA notifications go?)
-  - A name and description for the Jira instance
+* A list of committers with access to modify/close tickets
+* A list of committers who will act as Jira administrators
+* A notification scheme (to which email address do JIRA notifications go?)
+* A name and description for the Jira instance
   
 ### Response
 
@@ -42,8 +42,8 @@ If your project switches from Jira to GitHub for receiving issue reports and fea
 
 Once GitHub issue tracking is active for the project, open what will probably be your final Jira ticket for Infra, requesting Infra to:
 
-  - Change all existing Jira tickets for the project to read-only
-  - Remove the project name from the drop-down list of projects that a person can choose from when creating a Jira ticket.
+* Change all existing Jira tickets for the project to read-only
+* Remove the project name from the drop-down list of projects that a person can choose from when creating a Jira ticket.
 
 Infra will let you know when this has been completed.
 

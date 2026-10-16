@@ -11,9 +11,9 @@ See <a href="https://github.com/apache/infrastructure-asfyaml/blob/main/README.m
 
 There are various ways to build and publish your staging site, including:
 
-  - Use Infra's <a href="https://github.com/apache/infrastructure-asfyaml/blob/main/README.md" target="_blank">.asf.yaml.</a>
-  - Use Buildbot in combination with Jekyll and Pelican
-  - Use your own build tool in combination with gh-pages or .asf.yaml
+- Use Infra's <a href="https://github.com/apache/infrastructure-asfyaml/blob/main/README.md" target="_blank">.asf.yaml.</a>
+- Use Buildbot in combination with Jekyll and Pelican
+- Use your own build tool in combination with gh-pages or .asf.yaml
 
 ### Using gh-pages for the project website
 

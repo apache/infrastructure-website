@@ -3,22 +3,22 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 ### Contents ###
 
-  - <a href="#introduction">Introduction</a>
-  - <a href="#gnupg">Gnu Privacy Guard</a>
-  - <a href="#generate-key">How to generate a strong key</a>
-  - <a href="#private-keyring-management">Private keyring management</a>
+- <a href="#introduction">Introduction</a>
+- <a href="#gnupg">Gnu Privacy Guard</a>
+- <a href="#generate-key">How to generate a strong key</a>
+- <a href="#private-keyring-management">Private keyring management</a>
 
  How to...
 
-   - <a href="#find-key-id">find a key ID</a>
-   - <a href="#backup">back up keys</a>
-   - <a href="#export-key">export a key</a>
-   - <a href="#secret-key-transfer">transfer a secret key</a>
-   - <a href="#transition">transition from an old to a new key</a>
-   - <a href="#revocation-certs">use revocation certificates</a>
-   - <a href="#symmetric">use symmetric encryption</a>
-   - <a href="#update">update Apache documents with details of a new key</a>
-   - <a href="#wot">use the Web of Trust</a>
+- <a href="#find-key-id">find a key ID</a>
+- <a href="#backup">back up keys</a>
+- <a href="#export-key">export a key</a>
+- <a href="#secret-key-transfer">transfer a secret key</a>
+- <a href="#transition">transition from an old to a new key</a>
+- <a href="#revocation-certs">use revocation certificates</a>
+- <a href="#symmetric">use symmetric encryption</a>
+- <a href="#update">update Apache documents with details of a new key</a>
+- <a href="#wot">use the Web of Trust</a>
 
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 
@@ -84,9 +84,9 @@ clients lack `SHA512` support, we recommend switching to `SHA512` if possible.
 
 To configure `gpg` to avoid SHA-1, edit the options in [`gpg.conf`](#configuration). Options need to be added or given the correct values for:
 
-  -  `cert-digest-algo` - the certificate digest used when linking into the [web of trust](release-signing.html#link-into-wot)
-  -  `personal-digest-preferences` - the digest used for [signing messages](release-signing.html#detach-sig)
-  -  `default-preference-list` - the default algorithm preferences for [new keys](release-signing.html#generate) (this does not affect existing keys: see next paragraph)
+- `cert-digest-algo` - the certificate digest used when linking into the [web of trust](release-signing.html#link-into-wot)
+- `personal-digest-preferences` - the digest used for [signing messages](release-signing.html#detach-sig)
+- `default-preference-list` - the default algorithm preferences for [new keys](release-signing.html#generate) (this does not affect existing keys: see next paragraph)
 
 To use `SHA512` (recommended):
 
@@ -171,8 +171,8 @@ than 4096 bits, <a href="https://www.jroller.com/robertburrelldonkin/entry/gnupg
 
 <a href="https://www.gnupg.org" target="_blank">GnuPG</a> comes in two flavors. To easily generate a 4096 bit RSA signing and encryption key pair with strong digests, use either GnuPG version:
 
-  -  `2.0.12` or higher (well-known, portable version)
-  -  `1.4.10` or higher (version with advanced features)
+- `2.0.12` or higher (well-known, portable version)
+- `1.4.10` or higher (version with advanced features)
 
 Once you generate the key, you can use it with the widely available `1.4.9` and `2.x` releases.
 
@@ -376,7 +376,7 @@ If you are generating a key for use in a [transition](release-signing.html#trans
 
 If this is a new code signing key not involved with a transition:
 
-  1.  [Upload](release-signing.html#keyserver-upload) the new [public key](release-signing.html#public-private) to a public
+  1. [Upload](release-signing.html#keyserver-upload) the new [public key](release-signing.html#public-private) to a public
 [keyserver](release-signing.html#keyserver)
 
   1. Create backups by following these [instructions](#backup)
@@ -488,10 +488,10 @@ The [key ID](release-signing.html#key-id) is not confidential but without access
 
 So, for each [key pair](release-signing.html#public-private) you generate, the [key ID](release-signing.html#key-id) needs to recorded in a form that makes tampering difficult. Defense in depth is the best strategy. We recommend that you use a range of methods::
 
-  - Print a hard copy of the key ID and store it securely
-  - Include the key ID on your business cards
-  - ASF Members should include the key ID on their Apache business cards
-  - Include a text document containing the key ID in your [secure, tamperproof private backups](#backup-private)
+- Print a hard copy of the key ID and store it securely
+- Include the key ID on your business cards
+- ASF Members should include the key ID on their Apache business cards
+- Include a text document containing the key ID in your [secure, tamperproof private backups](#backup-private)
   
 <h3 id="backup-private">Back up private information<a class="headerlink" href="#backup-private" title="Permanent link">&para;</a></h3>
 
@@ -505,8 +505,8 @@ Choose a strong passphrase. If this is not possible then use strong, [symmetric]
 
 We recommend a removable medium type with good long term storage characteristics:
 
-  - A small capacity, high quality USB flash drive
-  - A CDROM
+- A small capacity, high quality USB flash drive
+- A CDROM
 
 Make and securely store multiple copies.
 
@@ -652,9 +652,9 @@ store](release-signing.html#revocation-certificate-storage) generic revocation c
 When you create a new [key pair](release-signing.html#public-private), also generate and store generic revocation certificates for that key pair. We recommend that you generate a certificate (following the instructions in the next section) for each appropriate
 revocation reason type:
 
-  - No reason specified
-  - Key has been compromised
-  - Key is no longer used
+- No reason specified
+- Key has been compromised
+- Key is no longer used
 
 Note that *Key is superseded* is not appropriate for a new key since it is not possible to know which key will replace it.
 
@@ -669,10 +669,10 @@ Revocation certificates include a small amount of additional information"
 
 One of four machine readable reason types:
 
-  - No reason specified - *a catch-all category*
-  - Key has been compromised - *also use this if you believe that the key may have been compromised (for example, when a storage device containing the private key has been lost)*
- - Key is superseded - *the comment should suggest the replacement key*
- - Key is no longer used - *useful when the key has been destroyed and so a generic revocation prepared earlier must be used*
+- No reason specified - *a catch-all category*
+- Key has been compromised - *also use this if you believe that the key may have been compromised (for example, when a storage device containing the private key has been lost)*
+- Key is superseded - *the comment should suggest the replacement key*
+- Key is no longer used - *useful when the key has been destroyed and so a generic revocation prepared earlier must be used*
 
 The certificate also includes a human-readable *comment*. Explain here the reason why you are revoking the key. This lets those affected by the revocation to formulate an appropriate response.
 
@@ -818,13 +818,13 @@ For example, <a href="https://home.apache.org/~rdonkin/" target="_blank">this ho
 
 To create an [ASCII armored](release-signing.html#ascii) [public key](release-signing.html#public-private) [export](release-signing.html#export):
 
-  - When using a [transition](release-signing.html#transition), follow these [instructions](key-transition.html#transition-export).
-  - Otherwise this [discussion](#export-key) describes how to export public keys.
+- When using a [transition](release-signing.html#transition), follow these [instructions](key-transition.html#transition-export).
+- Otherwise this [discussion](#export-key) describes how to export public keys.
 
 To find the [fingerprint](release-signing.html#fingerprint) for a key:
 
-  - When using a [transition](release-signing.html#transition), follow these [instructions](key-transition.html#transition-fingerprints).
-  - Otherwise use `gpg --fingerprint`.
+- When using a [transition](release-signing.html#transition), follow these [instructions](key-transition.html#transition-fingerprints).
+- Otherwise use `gpg --fingerprint`.
   
 Ensure that each `pubkeyAddress` points to the new export [uploaded into your Apache home web space](#publish-in-web-space).
 
@@ -853,8 +853,8 @@ Projects maintain [KEYS](release-signing.html#keys-policy) files containing the 
 
 To create an [ASCII armored](release-signing.html#ascii) [export](release-signing.html#export):
 
-  - When using a [transition](release-signing.html#transition), follow these [instructions](key-transition.html#transition-export).
-  - Otherwise this [discussion](#export-key) describes how to export public keys
+- When using a [transition](release-signing.html#transition), follow these [instructions](key-transition.html#transition-export).
+- Otherwise this [discussion](#export-key) describes how to export public keys
 
 If there is an older export in the `KEYS` file, only remove it if it has not been used to sign a release. It is important
 that the KEYS file can also be used to check archived releases.
@@ -882,8 +882,8 @@ Verifying identities is usually automated, but here is an example to explain the
 Take Alice, Bob and Charlie. Alice has verified Bob's identity in person. Bob has verified Charlie's identity in person. But Alice has
 never met Charlie. So
 
-  - Bob's key has been signed by Alice's key
-  - Charlie's key has been signed by Bob's key
+- Bob's key has been signed by Alice's key
+- Charlie's key has been signed by Bob's key
 
 Alice has obtained a file ( `document` in this example) which Charlie may have created, and a detached signature for that file ( `document.asc` in this example). Alice wishes to discover whether Charlie signed this file.
 
@@ -955,8 +955,8 @@ Most clients allow automation of this process of transitive trust resolution. Th
 
 It is vital that Apache code signing keys are linked into a strong [web of trust](release-signing.html#web-of-trust). This allows independent verification of the fidelity of Apache releases by anyone strongly linked to this web. In particular, this lets two important groups independently verify releases:
 
-  - The Apache Infrastructure Team
-  - Downstream packagers
+- The Apache Infrastructure Team
+- Downstream packagers
 
 The Apache web of trust is reasonably well connected to the wider-open source web of trust. Though every opportunity should be taken to link into wider networks, the most important action needs to be to plan to exchange signatures with other Apache committers.
 
@@ -982,9 +982,9 @@ Subscribe to the party list (see committer documentation) to find out about info
 
 In short, expect that:
 
-  - this will involve a face-to-face meeting
-  - you will have to provide some sort of real-world identification, like a driver's license
-  - you will be asked to verify their identity and sign their public key in
+- this will involve a face-to-face meeting
+- you will have to provide some sort of real-world identification, like a driver's license
+- you will be asked to verify their identity and sign their public key in
 exchange
 
 Bring the key [fingerprint](release-signing.html#fingerprint) but keep the private key safely at home.
@@ -999,11 +999,11 @@ The most effective way to achieve this is to attend a [key signing party](releas
 
 Expect to:
 
-  - bring identification
-  - bring a hard copy of your key's [fingerprint](release-signing.html#fingerprint)
-  - supply the key ID or public key to the organiser before the party
-  - check that the [fingerprint](release-signing.html#fingerprint) for your key supplied by the organiser matches your hard copy
-  - confirm this to those present
+- bring identification
+- bring a hard copy of your key's [fingerprint](release-signing.html#fingerprint)
+- supply the key ID or public key to the organiser before the party
+- check that the [fingerprint](release-signing.html#fingerprint) for your key supplied by the organiser matches your hard copy
+- confirm this to those present
 
 Do **not** bring your private key. This **must** stay safe and secure at all times. Wait until the conference has finished and you have returned home before signing keys.
 

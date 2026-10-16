@@ -22,11 +22,11 @@ Infra is looking for projects to help evaluate test migrations of their projects
 
 Infra will perform the (test) migration of your Jira project and/or Confluence space(s), so there is nothing for you to do except some testing, like:-
 
-  - Log in to the Cloud test instance (url to be provided to test projects) using either your ASF ID or your non-ASF username, if you use one of those.
-  - Browse around your test Jira project / Confluence wiki and ensure all is well.
-  - Play around with it: create some Jira tickets, delete some, go through your usual workflow, etc.
-  - Provide Feedback!. After a few days playing, or in case of problems., reach out to the Infra  team via an INFRA ticket that we will open for your project's feedback on the test migration process.
-  - Participate in discussions on the Slack channel we will set up for early testers.
+- Log in to the Cloud test instance (url to be provided to test projects) using either your ASF ID or your non-ASF username, if you use one of those.
+- Browse around your test Jira project / Confluence wiki and ensure all is well.
+- Play around with it: create some Jira tickets, delete some, go through your usual workflow, etc.
+- Provide Feedback!. After a few days playing, or in case of problems., reach out to the Infra  team via an INFRA ticket that we will open for your project's feedback on the test migration process.
+- Participate in discussions on the Slack channel we will set up for early testers.
 
 This is opt in, and is Phase 2 of our planned migration to Atlassian Cloud - Initial user testing. This Phase should last until early November.
 

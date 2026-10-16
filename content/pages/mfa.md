@@ -9,8 +9,8 @@ ASF project committers will encounter MFA when they set up their accounts to wor
 
 The Infra team is expanding its use of ASF MFA to cover ASF applications and processes. Committers will be prompted to enroll in ASF MFA when accessing a service which uses that system. The method for setting up ASF MFA is similar to the current GitHub experience. To ensure smooth enrollment in The ASF's MFA system, committers can prepare by:
 
-  - Using an existing feature at <a href="https://id.apache.org/" target="_blank">id.apache.org</a> to upload their GPG public key. This gives the committer an additional factor Infra can rely on during account recovery.
-  - Linking their ASF and GitHub accounts via <a href="https://gitbox.apache.org/boxer/" target="_blank">Boxer</a>. This establishes a verifiable relationship between the two accounts.
+- Using an existing feature at <a href="https://id.apache.org/" target="_blank">id.apache.org</a> to upload their GPG public key. This gives the committer an additional factor Infra can rely on during account recovery.
+- Linking their ASF and GitHub accounts via <a href="https://gitbox.apache.org/boxer/" target="_blank">Boxer</a>. This establishes a verifiable relationship between the two accounts.
 
 Committers and ASF Members can consult in-development user documentation at <a href="https://s.apache.org/mfa-user-guide" target="_blank">s.apache.org/mfa-user-guide</a>.
 

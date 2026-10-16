@@ -8,13 +8,13 @@ permalink: newsletter0425 layout: post
 
 The April roundtable was an 'open mic' session, to which people were encouraged to bring their fascinating or festering issues. Topics included:
 
-  - the dynamics in choirs and voluntary organizations in general and how they map to the dynamics in ASF Member interrelations
-  - where project VMs are hosted
-  - how to find the APIs of services Infra provides
-  - what a pipservice is, and whether a pipservice sandbox would be useful to project committers
-  - the allowlist for custom GitHub Actions
-  - whether custom GHAs need to include Apache licenses (short answer is 'no')
-  - how to find out if the ASF has blocked your IP address, and why (see below)
+- the dynamics in choirs and voluntary organizations in general and how they map to the dynamics in ASF Member interrelations
+- where project VMs are hosted
+- how to find the APIs of services Infra provides
+- what a pipservice is, and whether a pipservice sandbox would be useful to project committers
+- the allowlist for custom GitHub Actions
+- whether custom GHAs need to include Apache licenses (short answer is 'no')
+- how to find out if the ASF has blocked your IP address, and why (see below)
 
 There is **no roundtable in May**. The next roundtable will be **Wednesday, June 4, 2025, 1700 UTC**. The main topic will be a presentation on **JFrog and Artifactory**, a universal binary repository manager that enables teams to store, manage, and organize software packages throughout the development lifecycle.
 
@@ -24,10 +24,10 @@ There is **no roundtable in May**. The next roundtable will be **Wednesday, June
 
 Recent enhancements to .asf.yaml make it easier for projects to manage their development environments, including:
 
-  - identifying required reviewers for the release
-  - create a display between when you trigger a deployment and when the deployment process actually starts
-  - an option to allow deploying from all protected branches
-  - improvements to the branch and tagging processes
+- identifying required reviewers for the release
+- create a display between when you trigger a deployment and when the deployment process actually starts
+- an option to allow deploying from all protected branches
+- improvements to the branch and tagging processes
 
 More details are available in this part of the .asf.yaml README file: [https://github.com/apache/infrastructure-asfyaml?tab=readme-ov-file#environments](github.com/apache/infrastructure-asfyaml?tab=readme-ov-file#environments)
 
@@ -37,9 +37,9 @@ At the end of May, 2025, Infra will be removing the deprecated <a href="https://
 
 Further information is available:
 
-  - <a href="https://docs.cloudbees.com/docs/cloudbees-ci-kb/latest/troubleshooting-guides/help-bulk-migration-maven-jobs" target="_blank">Bulk migration Maven jobs</a>
-  - <a href="https://plugins.jenkins.io/pipeline-maven/" target="_blank">Pipeline</a>
-  - <a href="https://www.youtube.com/watch?v=u0_sIo9I7CE" target="_blank">Video: Darin Pope, Cloudbees Advocate, goes through the steps to migrate</a>
+- <a href="https://docs.cloudbees.com/docs/cloudbees-ci-kb/latest/troubleshooting-guides/help-bulk-migration-maven-jobs" target="_blank">Bulk migration Maven jobs</a>
+- <a href="https://plugins.jenkins.io/pipeline-maven/" target="_blank">Pipeline</a>
+- <a href="https://www.youtube.com/watch?v=u0_sIo9I7CE" target="_blank">Video: Darin Pope, Cloudbees Advocate, goes through the steps to migrate</a>
 
 Infra's Gavin McDonald has checked all project controllers, and sees that very few projects are still using the Maven type job, so this removal should affect almost nobody. If, however, you have concerns or would like help with migrating your project's Maven-type job, Infra is only to happy to help.
 
@@ -53,8 +53,8 @@ We now have 99,115 Jira accounts that have been inactive for more than three yea
 
 This volume of accounts puts an unnecessary burden on our system, and Infra will be taking steps to reduce the account count:
 
-  - We will **delete** accounts that are more than a year old and have never had any activity.
-  - We will **disable and anonymize** accounts that have been inactive for the past three years, retaining the record of their activity before that time.
+- We will **delete** accounts that are more than a year old and have never had any activity.
+- We will **disable and anonymize** accounts that have been inactive for the past three years, retaining the record of their activity before that time.
 
 ASF Members and project committers can help lighten the load by making sure to always use a Jira account with your ASF credentials (username, email address as they appear in the ICLA you submitted) whenever creating or commenting on a ticket for the ASF, or related to any of our projects.
 

@@ -268,6 +268,6 @@ updates:
 
 <h2 id="further-reading">Further reading<a class="headerlink" href="#further-reading" title="Permanent link">&para;</a></h2>
 
-  - <a href="https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuring-dependabot-version-updates" target="_blank">Configuring Dependabot version updates</a>
-  - <a href="https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file" target="_blank">Configuration options for the dependabot.yml file</a>
-  - [GitHub Actions Policy](github-actions-policy.html) (Dependabot is **required** for the `github-actions` ecosystem)
+- <a href="https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuring-dependabot-version-updates" target="_blank">Configuring Dependabot version updates</a>
+- <a href="https://docs.github.com/en/code-security/dependabot/dependabot-version-updates/configuration-options-for-the-dependabot.yml-file" target="_blank">Configuration options for the dependabot.yml file</a>
+- [GitHub Actions Policy](github-actions-policy.html) (Dependabot is **required** for the `github-actions` ecosystem)

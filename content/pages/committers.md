@@ -39,12 +39,12 @@ As an ASF volunteer, you have the right to set your own priorities and do the wo
 
 More specific responsibilities of Committers include:
 
-  - **Deciding on release plans and releases**: A prime committer responsibility is to help decide when a version of product code is ready for release. A release is not to be taken lightly; each release must uphold the ASF tradition of quality. Each Project Management Committee PMC) formally authorizes the distribution of releases to the public.
-  - **Applying patches**: To grow and maintain healthy communities, committers need to discuss, review and apply patches submitted by contributors and other committers. Committers are also responsible for the quality and IP clearance of the code that goes into ASF repositories.
-  - **Helping users**: Committers should monitor both the `dev@` and `user@` or `users@` email lists for the projects they work on and together provide prompt and useful
+- **Deciding on release plans and releases**: A prime committer responsibility is to help decide when a version of product code is ready for release. A release is not to be taken lightly; each release must uphold the ASF tradition of quality. Each Project Management Committee PMC) formally authorizes the distribution of releases to the public.
+- **Applying patches**: To grow and maintain healthy communities, committers need to discuss, review and apply patches submitted by contributors and other committers. Committers are also responsible for the quality and IP clearance of the code that goes into ASF repositories.
+- **Helping users**: Committers should monitor both the `dev@` and `user@` or `users@` email lists for the projects they work on and together provide prompt and useful
  responses to questions from users and their developer colleagues.
-  - **Monitoring commits and issues**: Committers should review commit email messages for their projects and point out anything that looks funny or that may point to IP issues. Committers also monitor the project's issue-tracking system (Bugzilla or Jira or something else) for bug reports or enhancement requests.
-  - **Helping out with the website**: The main ASF website and the project websites are in constant need of maintenance. Committers on a project are expected to
+- **Monitoring commits and issues**: Committers should review commit email messages for their projects and point out anything that looks funny or that may point to IP issues. Committers also monitor the project's issue-tracking system (Bugzilla or Jira or something else) for bug reports or enhancement requests.
+- **Helping out with the website**: The main ASF website and the project websites are in constant need of maintenance. Committers on a project are expected to
  collectively maintain the project's web site. Apache committers as a group share the responsibility to maintain the main Apache site.
 
 <h4 id="committer-set-term">Is there a set term for acting as a Committer? Will I have to be elected again?<a class="headerlink" href="#committer-set-term" title="Permanent link">&para;</a></h4>
@@ -76,13 +76,13 @@ There are many things that the PMC or PMC chair can do directly, thereby easing 
 
 <h4 id="infrastructure-public-communications">How does Infra communicate with the public?<a class="headerlink" href="#infrastructure-public-communications" title="Permanent link">&para;</a></h4>
 
-  - Infra provides <a href="https://infra.apache.org/stats.html">status pages</a> where you can check uptime statistics and possible outages, website source scans, and other information.
-  - Announcements of scheduled outages and alerts of service interruptions go to the `announce@infra.apache.org` mailing list.
-  - Infra uses the `users@infra.apache.org` mailing list to discuss infrastructure developments at the ASF.
-  - For general announcements regarding services and the like, Infra has a <a href="https://infra.apache.org/blog/" target="_blank">blog</a>.
-  - Infra publishes a monthly newsletter which appears on the blog, and which we send to all subscribers to the `users@infra` email list.
-  - Those with access to the ASF space on Slack can enage with Infra in the `asfinfra` channel.
-  - On the first Wednesday of most months, Infra holds a roundtable which, in addition to a presentation, usually has time for people to raise issues or ask questions. The roundtable takes place in a Slack channel: here is <a href="https://infra.apache.org/roundtable">information on taking part in roundtables</a>.
+- Infra provides <a href="https://infra.apache.org/stats.html">status pages</a> where you can check uptime statistics and possible outages, website source scans, and other information.
+- Announcements of scheduled outages and alerts of service interruptions go to the `announce@infra.apache.org` mailing list.
+- Infra uses the `users@infra.apache.org` mailing list to discuss infrastructure developments at the ASF.
+- For general announcements regarding services and the like, Infra has a <a href="https://infra.apache.org/blog/" target="_blank">blog</a>.
+- Infra publishes a monthly newsletter which appears on the blog, and which we send to all subscribers to the `users@infra` email list.
+- Those with access to the ASF space on Slack can enage with Infra in the `asfinfra` channel.
+- On the first Wednesday of most months, Infra holds a roundtable which, in addition to a presentation, usually has time for people to raise issues or ask questions. The roundtable takes place in a Slack channel: here is <a href="https://infra.apache.org/roundtable">information on taking part in roundtables</a>.
 
 <h4 id="machines">What hosts/machines at Apache can I access?<a class="headerlink" href="#machines" title="Permanent link">&para;</a></h4>
 
@@ -94,7 +94,7 @@ Note that you <strong>only</strong> have SFTP access. There is no shell access. 
 
 <h4 id="statistics">Is there a way to see a graph of loads (CPU, I/O, network)?<a class="headerlink" href="#statistics" title="Permanent link">&para;</a></h4>
 
-  - Infra publishes top-level statistics on the <a href="https://status.apache.org/" target="_blank">status page</a>.
+- Infra publishes top-level statistics on the <a href="https://status.apache.org/" target="_blank">status page</a>.
 
 <h4 id="host-key-change">What should I do if Host Key has changed when logging into an Apache server?<a class="headerlink" href="#host-key-change" title="Permanent link">&para;</a></h4>
 
@@ -183,12 +183,12 @@ This information has moved [here](mailing-list-moderation.html).
 
 **Note:** While there is not an official list, the following principles have been cited as the core beliefs of The Apache Way:
 
-  - collaborative software development
-  - commercial-friendly standard license
-  - consistently high quality software
-  - respectful, honest, technical-based interaction
-  - faithful implementation of standards
-  - security as a mandatory feature
+- collaborative software development
+- commercial-friendly standard license
+- consistently high quality software
+- respectful, honest, technical-based interaction
+- faithful implementation of standards
+- security as a mandatory feature
 
 A non-official <a href="http://theapacheway.com/" target="_blank">The Apache Way</a> website is available.</p>
 

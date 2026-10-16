@@ -8,8 +8,8 @@ Trivy, Agua Security's open-source vulnerability scanner, appears to have experi
 
 ASF Infrastructure and ASF Security have provided the following summary based on what we believe to be true:
 
-  - Trivy version 0.69.4 contained malicious code that could potentially steal credentials present in GitHub Secrets.
-  - The trivy-action GitHub Action and trivy-setup were also compromised.
+- Trivy version 0.69.4 contained malicious code that could potentially steal credentials present in GitHub Secrets.
+- The trivy-action GitHub Action and trivy-setup were also compromised.
 
 On March 21, Trivy published this <a href="https://github.com/aquasecurity/trivy/security/advisories/GHSA-69fq-xp46-6x23" target="_blank">statement about the event</a>.
 
@@ -19,9 +19,9 @@ A small number of ASF projects include the trivy GitHub Action in their build wo
 
 ### Infra response
 
-  - ASF Infra and ASF Security agreed to disable all previously allowed "verified creator" actions while the incident is being investigated
-  - This may cause build failures, and require projects request newly-failed actions be added via the Infra GHA approval process: <a href="https://github.com/apache/infrastructure-actions?tab=readme-ov-file#adding-a-new-version-to-the-allow-list" target="_blank">github.com/apache/infrastructure-actions?tab=readme-ov-file#adding-a-new-version-to-the-allow-list</a>
-  - Infra and the Security team are investigating if any secrets and Git repositories of ASF projects may have been compromised.
+- ASF Infra and ASF Security agreed to disable all previously allowed "verified creator" actions while the incident is being investigated
+- This may cause build failures, and require projects request newly-failed actions be added via the Infra GHA approval process: <a href="https://github.com/apache/infrastructure-actions?tab=readme-ov-file#adding-a-new-version-to-the-allow-list" target="_blank">github.com/apache/infrastructure-actions?tab=readme-ov-file#adding-a-new-version-to-the-allow-list</a>
+- Infra and the Security team are investigating if any secrets and Git repositories of ASF projects may have been compromised.
 
 ### For further information
 

@@ -32,9 +32,9 @@ Your best actions are to:
 
 Further,
 
--  Do not divulge your credentials to any service outside of **apache.org**.
--  In any email claiming to come from an apache.org address, do not click on any 'reset' or 'reauthenticate' links. We never ask you to do this.
--  If you think you have been a victim of phishing, reset your ASF password at <a href="http://id.apache.org/" target="_blank">id.apache.org</a>.
+- Do not divulge your credentials to any service outside of **apache.org**.
+- In any email claiming to come from an apache.org address, do not click on any 'reset' or 'reauthenticate' links. We never ask you to do this.
+- If you think you have been a victim of phishing, reset your ASF password at <a href="http://id.apache.org/" target="_blank">id.apache.org</a>.
 
 If you are unsure whether an email is actually from the ASF,
 [contact the Infra team](contact.html). Better safe than sorry!

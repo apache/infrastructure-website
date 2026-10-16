@@ -204,13 +204,13 @@ Please review the tables above before filing a ticket - often you or someone in 
 
 <h5 id="request-checklist">Before you press `Send` on your ticket:<a class="headerlink" href="#request-checklist" title="Permanent link">&para;</a></h5>
 
-  - **Ask** in your project</strong> whether someone has the karma to implement the requested change. This eases the load on the infra team. The moderators and volunteer admins of the project's issue tracker and wiki can often address issues with those services.
-  - **Aggregate requests**: instead of sending five emails, each asking for one more moderator to be added, send one email asking for five moderators to be added.
-  - **CC your PMC** on emails. When creating Jira tickets, some cases **SHOULD** or even **MUST** demonstrate PMC consensus. If the ticket does not demonstrate PMC consensus, Infra will close the ticket as **invalid** or **reject** it. For more details, please refer to our [Jira Guidelines](jira-guidelines.html).
-  - If you create a Jira ticket, create it in the **right Jira component**. This helps the team spot pending tasks in their areas. If it's not obvious which component is the right one, select "documentation".
-  - **Be patient**. It may take a few days for someone to respond.
-  - **Research your topic**. See the <a href="https://www.apache.org/dev/" target="_blank">developer information section</a>.
-  - See also [Jira tickets for Infra](jira-for-infra.html).
+- **Ask** in your project</strong> whether someone has the karma to implement the requested change. This eases the load on the infra team. The moderators and volunteer admins of the project's issue tracker and wiki can often address issues with those services.
+- **Aggregate requests**: instead of sending five emails, each asking for one more moderator to be added, send one email asking for five moderators to be added.
+- **CC your PMC** on emails. When creating Jira tickets, some cases **SHOULD** or even **MUST** demonstrate PMC consensus. If the ticket does not demonstrate PMC consensus, Infra will close the ticket as **invalid** or **reject** it. For more details, please refer to our [Jira Guidelines](jira-guidelines.html).
+- If you create a Jira ticket, create it in the **right Jira component**. This helps the team spot pending tasks in their areas. If it's not obvious which component is the right one, select "documentation".
+- **Be patient**. It may take a few days for someone to respond.
+- **Research your topic**. See the <a href="https://www.apache.org/dev/" target="_blank">developer information section</a>.
+- See also [Jira tickets for Infra](jira-for-infra.html).
   
 **Thanks**. Making requests following these guidelines might require a little effort, but saves time for all involved.
 

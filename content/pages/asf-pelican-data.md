@@ -643,9 +643,9 @@ def split_list(metadata, seq, reference, split):
 
 Before you code to add a data source, evaluate which of the above patterns it fits.
 
-  - Is it a custom pattern as for Twitter, blogs, and ECCN?
-  - Can it follow the sequence of directives used for committee iInfo?
-  - If it is a sequence of directives, does it need a new one?
+- Is it a custom pattern as for Twitter, blogs, and ECCN?
+- Can it follow the sequence of directives used for committee iInfo?
+- If it is a sequence of directives, does it need a new one?
 
 ### Adding a custom data source
 

@@ -3,18 +3,18 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 Mailing lists are the virtual rooms where ASF communities live, form and grow. All formal decisions the project's PMC makes need to have an email thread (possibly with a recorded vote) as an audit trail that this was an official decision.
 
-  - <a href="#new-mailing-list">How do we create a new mailing list?</a>
-  - <a href="#mailing-list-moderators">How do I change moderators?</a>
-  - <a href="#subscribers">How do I find who is subscribed to a list?</a>
-  - <a href="#mail-moderate">What should I do with MODERATE emails?</a>
+- <a href="#new-mailing-list">How do we create a new mailing list?</a>
+- <a href="#mailing-list-moderators">How do I change moderators?</a>
+- <a href="#subscribers">How do I find who is subscribed to a list?</a>
+- <a href="#mail-moderate">What should I do with MODERATE emails?</a>
 
 Dealing with
 
-  - <a href="#spam">MODERATE requests for spam</a>
-  - <a href="#allowing_posts">allowing posts from non-subscribers</a>
-  - <a href="#problem_posts">problem posts</a>
-  - <a href="#missing">reports of missing mail</a>
-  - <a href="#bounce">reports of message bounces</a>
+- <a href="#spam">MODERATE requests for spam</a>
+- <a href="#allowing_posts">allowing posts from non-subscribers</a>
+- <a href="#problem_posts">problem posts</a>
+- <a href="#missing">reports of missing mail</a>
+- <a href="#bounce">reports of message bounces</a>
 
 See also Infra's general guidelines on <a href="https://infra.apache.org/content-moderation.html" target="_blank">content moderation</a>.
 
@@ -24,9 +24,9 @@ It is wise to keep the number of mailing lists per codebase the smallest possibl
 
 At the same time, as communities grow, the need for more specialized mailing lists appears. If you think your project requires a new list:
 
-  - Float the idea in the `dev@` or `users@` mailing list.
-  - If there seems to be some support for the idea, request a community vote.
-  - If the community approves adding a mailing list, the PMC chair or another Apache Member on the PMC can do so through the <a href="https://selfserve.apache.org" target="_blank">ASF Self-Service Platform</a>
+- Float the idea in the `dev@` or `users@` mailing list.
+- If there seems to be some support for the idea, request a community vote.
+- If the community approves adding a mailing list, the PMC chair or another Apache Member on the PMC can do so through the <a href="https://selfserve.apache.org" target="_blank">ASF Self-Service Platform</a>
 
 **WARNING**: Creating a user email list can harm a project community if the developers don't pay attention to their users and reply to their emails. One would expect a well-behaving user community to reply to one another in a civil, adult manner that is focused on whatever the list was created for, but it can take time for a community to learn and take to heart such good behavior.
 
@@ -34,19 +34,19 @@ At the same time, as communities grow, the need for more specialized mailing lis
 
 You can manage the list of moderators for a project's email list if you are:
 
-  - a Foundation member and on the PMC of the project
-  - chair of the project
-  - an existing moderator of the list
+- a Foundation member and on the PMC of the project
+- chair of the project
+- an existing moderator of the list
 
-    - Log in to <a href="https://webmod.apache.org/" target="_blank">WebMod</a> with your ASF credentials.
-    - Select the 'List moderator management' tab.
-    - In the dropdown list, select the project which has the email list in question.
-    - In the list of email lists that appears, select the list whose moderators you want to manage.
+  - Log in to <a href="https://webmod.apache.org/" target="_blank">WebMod</a> with your ASF credentials.
+  - Select the 'List moderator management' tab.
+  - In the dropdown list, select the project which has the email list in question.
+  - In the list of email lists that appears, select the list whose moderators you want to manage.
 
 The current list of moderators for this list appears. You can:
 
-  - **Remove a moderator**: Click the `Remove as moderator` link beside their name.
-  - **Add a moderator**: In the `Add a moderator` field, enter the email address of the new moderator. Make sure this is an address that the person has registered with the ASF.
+- **Remove a moderator**: Click the `Remove as moderator` link beside their name.
+- **Add a moderator**: In the `Add a moderator` field, enter the email address of the new moderator. Make sure this is an address that the person has registered with the ASF.
 
 To determine who the existing moderators are, any committer can use the technique described in the "committers" SVN module at <a href="https://svn.apache.org/repos/private/committers/docs/resources.txt" target="_blank">resources.txt</a>.
 
@@ -76,10 +76,10 @@ You can review and manage email that is waiting for moderation in two ways:
 
 <a href="https://webmod.apache.org/" target="_blank">WebMod</a> simplifies reviewing and responding to emails that require moderation.
 
-  - Log in to WebMod using your Apache credentials.
-  - A tab appears for each email list for which you are a moderator and that has emails needing review. Select a tab.
-  - You can approve or reject multiple emails in one action by checking the checkboxes to the left of the email titles and selecting either `accept` or `spam` from the bulk-actions dropdown list.
-  - You have many options for reviewing each individual email, including displaying just the text body or viewing the source. The options appear as links to the right of the email title.
+- Log in to WebMod using your Apache credentials.
+- A tab appears for each email list for which you are a moderator and that has emails needing review. Select a tab.
+- You can approve or reject multiple emails in one action by checking the checkboxes to the left of the email titles and selecting either `accept` or `spam` from the bulk-actions dropdown list.
+- You have many options for reviewing each individual email, including displaying just the text body or viewing the source. The options appear as links to the right of the email title.
 
 #### Manual moderation
 
