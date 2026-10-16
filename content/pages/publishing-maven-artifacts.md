@@ -16,7 +16,7 @@ Before a project can use the repository to release Maven artifacts, it must be c
   - **Project URL**: a link to your project page (usually `https://<project>.apache.org/`).
   - **SVN URL**: where you store your source code, in case Infra needs to look up more information.
   - **Maven Group IDs**: a list of the groupIDs for this project. They should all be subgroups of `org.apache`.
-  - **Managed By This TLP Project**: if this is a subproject, list the TLP that is responsible. Subprojects usually don't have their own LDAP group, so we need the TLP LDAP group for permissions. 
+  - **Managed By This TLP Project**: if this is a subproject, list the TLP that is responsible. Subprojects usually don't have their own LDAP group, so we need the TLP LDAP group for permissions.
 
 If you have specific questions or concerns, please call them out in the ticket.
   
@@ -27,9 +27,11 @@ Once you file the Jira ticket, Infra will do the following:
   - **Check POMs**: If your project is Maven-based, we will check your POM for any obvious problems.
 
 ## Adjusting your build to deploy to the ASF Nexus repository ##
+
 To use the ASF Nexus repository, follow these steps.
 
 ### Inherit the Apache POM ###
+
 Inherit the Apache Parent POM like this:
 
 ```
@@ -110,6 +112,7 @@ mvn deploy
   - Verify the deployment under the ASF <a href="https://repository.apache.org/content/repositories/snapshots/" target="_blank">Maven Snapshot repository</a>.
   
 ### 3. Prepare the release ###
+
 ```
 mvn release:clean
 mvn release:prepare
@@ -144,6 +147,7 @@ svn: File
 '/repos/asf/maven/plugins/tags/maven-eclipse-plugin-2.7/.../EclipsePlugin.java'
 already exists
 ```
+
 Then use a Subversion client 1.6 or newer and run `svn update`.
 
 2. If you get an **error message** similar to:
@@ -160,7 +164,7 @@ svn: Path
 already exists
 ```
 
-Delete the tag using 
+Delete the tag using
 
 `svn del -m "re-releasing build" {svn path}`
 
@@ -168,13 +172,13 @@ This likely occurred because you're trying to restage the release and you didn't
 
 ## Procedures for Ant + Ivy ##
 
-<a href="https://ant.apache.org/" target="_blank">Apache Ant</a> is a popular command-line build tool. <a href="https://ant.apache.org/ivy/" target="_blank">Ivy</a> is a dependency manager designed to work with Ant. 
+<a href="https://ant.apache.org/" target="_blank">Apache Ant</a> is a popular command-line build tool. <a href="https://ant.apache.org/ivy/" target="_blank">Ivy</a> is a dependency manager designed to work with Ant.
 
 ### 1 Prepare your build ###
 
 Usually your normal build process will create the artifacts you want to publish (typically jars), but you may need to PGP-sign them the same way you sign your normal distribution artifacts. The jars are expected to follow the naming scheme `artifactId-version.jar`.
 
-You will need a minimal POM for your jar. If you are already using Ivy, you can use the `makepom` task to create one from your `ivy.xml` file. Otherwise see the Apache Maven project's <a href="https://maven.apache.org/pom.html" target="_blank">documentation</a> for "minimal" and the Apache Compress Antlib's <a href="https://svn.apache.org/repos/asf/ant/antlibs/compress/trunk/project-template.pom" target="_blank">POM</a> for an example. 
+You will need a minimal POM for your jar. If you are already using Ivy, you can use the `makepom` task to create one from your `ivy.xml` file. Otherwise see the Apache Maven project's <a href="https://maven.apache.org/pom.html" target="_blank">documentation</a> for "minimal" and the Apache Compress Antlib's <a href="https://svn.apache.org/repos/asf/ant/antlibs/compress/trunk/project-template.pom" target="_blank">POM</a> for an example.
 
 If you are publishing multiple jars you may consider adding a parent POM to encapsulate the common information; see the Maven documentation for details. An example might be <a href="https://svn.apache.org/repos/asf/ant/core/trunk/src/etc/poms/pom.xml" target="_blank">Ant's parent POM</a>, used for the several jars that make up an Ant release.
 
@@ -227,5 +231,3 @@ If you bungled the release or your vote failed, follow <a href="http://central.s
 ### Promote a repository ###
 
 Congratulations, your vote was successful. The last step is to <a href="http://central.sonatype.org/pages/releasing-the-deployment.html#close-and-drop-or-release-your-staging-repository" target="_blank">promote the artifacts</a> to the release repository where they will get picked up by Central.
-
-

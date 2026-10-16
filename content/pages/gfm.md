@@ -25,7 +25,7 @@ Sites built with the ASF-Pelican template use a version of [cmark-gfm][1] by [Gi
     - [email][11]
 
   - [Disallowed html][12] the tagfilter extension disables certain HTML tags. The asfgenid plugin reenables `script`, `style`, and `iframe` HTML tags.
-    
+
 - [Examples][13]
 
 - ID and Class annotations
@@ -64,7 +64,6 @@ If you are moving a project site of the Apache CMS and will be using the ASF-Pel
   - Only one {#id} or {.class} annotation is allowed on a tag.
   - {.class} annotations are seldom used.
 
-
 [1]: https://github.com/github/cmark-gfm
 [2]: https://github.blog/2017-03-14-a-formal-spec-for-github-markdown/
 [3]: https://guides.github.com/features/mastering-markdown/
@@ -78,4 +77,3 @@ If you are moving a project site of the Apache CMS and will be using the ASF-Pel
 [11]: https://github.github.com/gfm/#extended-email-autolink
 [12]: https://github.github.com/gfm/#disallowed-raw-html-extension-
 [13]: https://sindresorhus.com/github-markdown-css/
-

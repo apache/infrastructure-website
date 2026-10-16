@@ -7,7 +7,7 @@ Welcome to *Inside Infra* for September, 2025
 
 ## Infra at Community over Code
 
-The Infrastructure team was busy at Community over Code in Minneapolis this month. The team gave a track of presentations, had a host of valuable hallway conversations, and even hosted the first-ever Games Night at an ASF convention. 
+The Infrastructure team was busy at Community over Code in Minneapolis this month. The team gave a track of presentations, had a host of valuable hallway conversations, and even hosted the first-ever Games Night at an ASF convention.
 
 Games Night looks to be a feature of ASF conventions in the future. And by way of hallway conversations and response and questions during Infra presentations, we have identified many in the ASF community who are willing to help support Infra's work
 
@@ -28,7 +28,7 @@ Information about how to take part in the online roundtables is at <a href="http
   - GitHub settings
   - Pelican builds
 
-It operates on a per-branch basis, meaning you can have different settings for different branches, and only those branches with an active .asf.yaml file will kick off a feature. 
+It operates on a per-branch basis, meaning you can have different settings for different branches, and only those branches with an active .asf.yaml file will kick off a feature.
 
 Much more information is available at <a href="https://github.com/apache/infrastructure-asfyaml" target="_blank">github.com/apache/infrastructure-asfyaml</a>
 
@@ -49,6 +49,5 @@ redirect attack: An agent hacks in to the phone system you use and can get copie
 SIM swap attack: Someone within your phone company could be bribed or induced to transfer your phone service to an agent, who can then intercept texts (including OTPs and codes) and calls intended for you.
 
 There are many authentication services available, some based on open-source code, but Infra does not make recommendations of particular services at this time. We encourage you, though, to do your research, compare the usability of two or three good candidates, and settle soon on an MFA option that will help keep you, and us, more safe.
-
 
 **More next month!**

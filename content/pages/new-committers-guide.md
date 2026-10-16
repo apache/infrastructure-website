@@ -101,9 +101,11 @@ To use GitHub, you need to integrate your GitHub ID with your Apache account, so
 3. After about two to five minutes, you should have access to your project's repositories on GitHub.
 
 #### Using Gitbox
+
 To connect to Git repositories through Gitbox, visit <a href="https://gitbox.apache.org" target="_blank">Gitbox</a> and follow the onscreen instructions.
 
 ### Your first commit to a Git repository
+
 If your project has a page for its developers and committers on its website, add your name and information to it. This is a great way to make your first commit, and helps your team get to know you.
 
 It also serves another purpose: you will learn how to add documentation to your project's website and the technology used to build it. Documentation is vital, and being able to improve the project's web site is a skill that you will need. If your project has not documented how to rebuild the website, then ask on your `dev@` mailing list and use the answer to create a document describing how to do that. It will be gratefully received!

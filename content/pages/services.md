@@ -31,6 +31,7 @@ Infra maintains a wide range of tools for PMCs, project committers, and the Apac
     - <a href="#dns">DNS</a>
     - <a href="#url-shortener">URL shortener</a>
     - <a href="#machines">Machine list</a>
+
 <hr/>
 <h2 id="tlps">Services for Top-Level Projects (TLPs)<a class="headerlink" href="#tlps" title="Permanent link">&para;</a></h2>
 
@@ -80,14 +81,15 @@ You can subscribe to notices of infrastructure events that you want to know abou
 
 <h3 id="ldap">LDAP-enabled services<a class="headerlink" href="#ldap" title="Permanent link">&para;</a></h3>
 
-Infra supports many ASF <a href="https://cwiki.apache.org/confluence/display/INFRA/LDAP+enabled+services+at+the+ASF" target="_blank">LDAP-enabled services</a>. You can log in to them with your LDAP credentials. 
+Infra supports many ASF <a href="https://cwiki.apache.org/confluence/display/INFRA/LDAP+enabled+services+at+the+ASF" target="_blank">LDAP-enabled services</a>. You can log in to them with your LDAP credentials.
 <hr/>
 <h2 id="podlings">Services for incubating projects (podlings)<a class="headerlink" href="#podlings" title="Permanent link">&para;</a></h2>
 
-Infra supports incubating projects, or podlings. 
+Infra supports incubating projects, or podlings.
 
   - An introduction to [Infra and the Incubator](infra-incubator.html), showing the steps for setting up a new podling.
   - Guidance for [selecting a project or product name](project-names.html)
+
 <hr/>  
 <h2 id="tools">Tools for ASF projects<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h2>
 
@@ -118,7 +120,6 @@ Apache provides, and Infra maintains, [code repositories](version-control.html) 
     - <a href="https://svn.apache.org/repos/asf/" target="_blank">Subversion (SVN) repositories</a>
     - <a href="https://svn.apache.org/viewvc/" target="_blank">ViewVC (Browser interface to the main SVN repository)</a>
   
-
 <h3 id="issue-tracking">Issue tracking and feature requests<a class="headerlink" href="#issue-tracking" title="Permanent link">&para;</a></h3>
 
 The ASF supports these options for tracking issues and feature requests:

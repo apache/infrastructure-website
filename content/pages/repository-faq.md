@@ -5,7 +5,7 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 **Reminder**: Apache projects **must** release all software packages through the ASF distribution system. See [Release distribution policy](release-distribution.html) for more details.
 
-The ASF maintains internal snapshot and release Maven repositories at <a href="https://repository.apache.org" target="_blank">https://repository.apache.org</a>. The repository also proxies Apache's legacy repositories. 
+The ASF maintains internal snapshot and release Maven repositories at <a href="https://repository.apache.org" target="_blank">https://repository.apache.org</a>. The repository also proxies Apache's legacy repositories.
 
 **Note**: these repos are intended for internal ASF project use, not for public distribution of artifacts. Except in the rare situation when a project needs external testing of preproduction artifacts, **do not** provide download links to 'repository.apache.org' assets to users external to The ASF.
 

@@ -102,7 +102,6 @@ foundation:
 
 The site is only interested in the most recent post's title and id/url.
 
-
 ```python
 # retrieve blog posts from an Atom feed.
 def process_blog(feed, count, debug):
@@ -391,7 +390,6 @@ Committees / PMC Chairs. Roster and Reporting is omitted.
 
 Here are the directives that create metadata models from the above data.
 
-
 ```yaml
   officers:
     description: 'Foundation Officers sequence'
@@ -475,7 +473,7 @@ The `ci` data model is a dictionary we need to improve the display of officers o
 
 ### Projects / PMCs
 
-For sequences about projects we first derive a project list from the committee list. We supplement it with each project's initial letter to provide an alphabetical project index. 
+For sequences about projects we first derive a project list from the committee list. We supplement it with each project's initial letter to provide an alphabetical project index.
 
 ```yaml
   projects:
@@ -604,7 +602,7 @@ At the bottom of the main page of the ASF site we display a project index that i
     split: 6
 ```
 
-This code derives the sequences for the six columns in the display. The output metadata is `pl_0`, `pl_1`, `pl_2`, `pl_3`, `pl_4`, and `pl_5`: 
+This code derives the sequences for the six columns in the display. The output metadata is `pl_0`, `pl_1`, `pl_2`, `pl_3`, `pl_4`, and `pl_5`:
 
 ```python
 # split a list into equal sized columns. Adds letter breaks in the alphabetical sequence.

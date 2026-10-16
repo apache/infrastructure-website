@@ -12,7 +12,7 @@ This page was relevant to ASF-Pelican, but is **not relevant** to the replacemen
 
 Review <a href="https://github.com/apache/template-site" target="_blank">github.com/apache/template-site</a> to inspect a full `pelicanconf.yaml` file.
 
-These are the sections to configure in `pelicanconf.yaml` for your website: 
+These are the sections to configure in `pelicanconf.yaml` for your website:
 
 ## Required
 

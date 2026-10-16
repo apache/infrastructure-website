@@ -10,6 +10,7 @@ A virtual machine (VM) is a digital version of a physical computer. Virtual mach
 When an Apache project requests a VM, it identifies three project committers who will be responsible for the tasks related to maintaining the VM in a good state. Infra is there to help when complex problems arrive, but is not the first line of support for your VM.
 
 ## Managing your VM
+
 Infra is responsible for most VM high-level management tasks:
 
   - Starting the VM.
@@ -18,6 +19,7 @@ Infra is responsible for most VM high-level management tasks:
   - Migrating to a new VM. Infra creates the new VM and can assist with puppet (re)config as needed.
 
 ## Maintenance
+
 Your project is responsible for maintenance tasks like
 
   - renewing or replacing expired letsencrypt certificates

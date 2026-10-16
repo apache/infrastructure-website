@@ -3,21 +3,20 @@ date: '2022-12-01'
 permalink: the_joy_of_feedback
 layout: post
 
-In discussions at ApacheCon in New Orleans, we learned that the three standard methods of communicating with Infra: 
+In discussions at ApacheCon in New Orleans, we learned that the three standard methods of communicating with Infra:
 
-  * opening a Jira ticket 
-  * sending an email 
+  * opening a Jira ticket
+  * sending an email
   * posting a message on the `#asfinfra` Slack channel
 
 are not ideal for many conversations folks would like to have about The ASF's infrastructure.
-
 
 ## Roundtable Discussions
 
 Infra is proposing to hold a monthly roundtable of free-flowing discussion.
 
-Our idea right now is that each roundtable event will take place in a Slack huddle and will last an hour. 
- 
+Our idea right now is that each roundtable event will take place in a Slack huddle and will last an hour.
+
 The first (shorter) part will be Infra talking about a topic of interest, something we are planning, or a problem we are facing.
 Then we'll open the floor for everyone to talk about that topic... and about anything else infrastructure-related.
 
@@ -39,6 +38,4 @@ Surveys will be anonymous and results will be posted on the Infra blog. Dependin
 
 Cheers,
 
-  - ASF Infra      
-
-
+  - ASF Infra

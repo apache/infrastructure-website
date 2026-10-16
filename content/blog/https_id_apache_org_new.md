@@ -5,8 +5,8 @@ layout: post
 
 Folks, <br /> <br />
 
-The infrastructure team are pleased to announce the availability of <a href="https://id.apache.org">id.apache.org</a> the new password management tool for all ASF committers and members.  This new service will allow users to: 
-<ol> 
+The infrastructure team are pleased to announce the availability of <a href="https://id.apache.org">id.apache.org</a> the new password management tool for all ASF committers and members.  This new service will allow users to:
+<ol>
  <li>Reset forgotten LDAP passwords themselves, no need to contact the Infra team anymore.</li>
  <li>The ability to change their LDAP password.</li>
  <li> The ability to update your LDAP record, i.e. change forename, surname or mail attributes. [1].</li>

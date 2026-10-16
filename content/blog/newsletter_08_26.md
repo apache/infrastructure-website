@@ -3,7 +3,6 @@ date: '2026-08-27'
 permalink: newsletter0826
 layout: post 
 
-
 Welcome to **Inside Infra** for August, 2026
 
 ### Roundtable

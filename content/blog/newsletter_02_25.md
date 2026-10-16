@@ -9,10 +9,9 @@ There is now a management committee of subject matter experts who will review cu
 
 We hope this process will fix the current bottleneck that is slowing down review of new GitHubActions, and will provide guidance to help submitters create stronger and more resilient code.
 
+There will be <b>no roundtable</b> in March, 2025. The next roundtable will be Wednesday, April 2, 2025, 1700 UTC. The main topic will be announced soon.
 
-There will be <b>no roundtable</b> in March, 2025. The next roundtable will be Wednesday, April 2, 2025, 1700 UTC. The main topic will be announced soon. 
-
-See <a href="https://infra.apache.org/roundtable.html" target="_blank">infra.apache.org/roundtable.html</a> for details about how to join a roundtable, and what happens at it. 
+See <a href="https://infra.apache.org/roundtable.html" target="_blank">infra.apache.org/roundtable.html</a> for details about how to join a roundtable, and what happens at it.
 
 <h2>ASFMM</h2>
 

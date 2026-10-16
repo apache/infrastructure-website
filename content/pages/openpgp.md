@@ -7,9 +7,9 @@ license: https://www.apache.org/licenses/LICENSE-2.0
   - <a href="#gnupg">Gnu Privacy Guard</a>
   - <a href="#generate-key">How to generate a strong key</a>
   - <a href="#private-keyring-management">Private keyring management</a>
- 
+
  How to...
- 
+
    - <a href="#find-key-id">find a key ID</a>
    - <a href="#backup">back up keys</a>
    - <a href="#export-key">export a key</a>
@@ -19,7 +19,6 @@ license: https://www.apache.org/licenses/LICENSE-2.0
    - <a href="#symmetric">use symmetric encryption</a>
    - <a href="#update">update Apache documents with details of a new key</a>
    - <a href="#wot">use the Web of Trust</a>
-
 
 <h2 id="introduction">Introduction<a class="headerlink" href="#introduction" title="Permanent link">&para;</a></h2>
 
@@ -85,8 +84,8 @@ clients lack `SHA512` support, we recommend switching to `SHA512` if possible.
 
 To configure `gpg` to avoid SHA-1, edit the options in [`gpg.conf`](#configuration). Options need to be added or given the correct values for:
 
-  -  `cert-digest-algo` - the certificate digest used when linking into the [web of trust](release-signing.html#link-into-wot) 
-  -  `personal-digest-preferences` - the digest used for [signing messages](release-signing.html#detach-sig) 
+  -  `cert-digest-algo` - the certificate digest used when linking into the [web of trust](release-signing.html#link-into-wot)
+  -  `personal-digest-preferences` - the digest used for [signing messages](release-signing.html#detach-sig)
   -  `default-preference-list` - the default algorithm preferences for [new keys](release-signing.html#generate) (this does not affect existing keys: see next paragraph)
 
 To use `SHA512` (recommended):
@@ -104,7 +103,7 @@ To use SHA256:
     cert-digest-algo SHA256
     default-preference-list SHA512 SHA384 SHA256 SHA224 AES256 AES192 AES CAST5 ZLIB BZIP2 ZIP Uncompressed
 ```
-    
+
 <h3 id="key-prefs">Setting preferences for keys<a class="headerlink" href="#key-prefs" title="Permanent link">&para;</a></h3>
 
 The digest preferences for each key (from the [configuration defaults](#sha-defaults) ) are set when the key is generated. Once the
@@ -175,7 +174,7 @@ than 4096 bits, <a href="https://www.jroller.com/robertburrelldonkin/entry/gnupg
   -  `2.0.12` or higher (well-known, portable version)
   -  `1.4.10` or higher (version with advanced features)
 
-Once you generate the key, you can use it with the widely available `1.4.9` and `2.x` releases. 
+Once you generate the key, you can use it with the widely available `1.4.9` and `2.x` releases.
 
 If the right version of GnuPG is not currently distributed for your platform, you need to <a href="http://www.gnupg.org/download/index.en.html" target="_blank">install it</a>. You only need this version to generate keys, so you do not need to replace the version distributed with your platform. You can install the new version into a working directory.
 
@@ -378,9 +377,9 @@ If you are generating a key for use in a [transition](release-signing.html#trans
 If this is a new code signing key not involved with a transition:
 
   1.  [Upload](release-signing.html#keyserver-upload) the new [public key](release-signing.html#public-private) to a public
-[keyserver](release-signing.html#keyserver) 
+[keyserver](release-signing.html#keyserver)
 
-  1. Create backups by following these [instructions](#backup) 
+  1. Create backups by following these [instructions](#backup)
 
   1. Follow these [instructions](#revocation-certs) to create and securely store generic [revocation
 certificates](release-signing.html#revocation-cert) for the new key
@@ -670,10 +669,10 @@ Revocation certificates include a small amount of additional information"
 
 One of four machine readable reason types:
 
-  - No reason specified - *a catch-all category* 
-  - Key has been compromised - *also use this if you believe that the key may have been compromised (for example, when a storage device containing the private key has been lost)* 
- - Key is superseded - *the comment should suggest the replacement key* 
- - Key is no longer used - *useful when the key has been destroyed and so a generic revocation prepared earlier must be used* 
+  - No reason specified - *a catch-all category*
+  - Key has been compromised - *also use this if you believe that the key may have been compromised (for example, when a storage device containing the private key has been lost)*
+ - Key is superseded - *the comment should suggest the replacement key*
+ - Key is no longer used - *useful when the key has been destroyed and so a generic revocation prepared earlier must be used*
 
 The certificate also includes a human-readable *comment*. Explain here the reason why you are revoking the key. This lets those affected by the revocation to formulate an appropriate response.
 
@@ -717,7 +716,7 @@ ease of handling) revocation certificate for key `AD741727` like this:
 ```
 
 When preparing generic certificates (for use if the [private key](release-signing.html#public-private) is unavailable), the comment
-cannot include the specifics and so should indicate this. 
+cannot include the specifics and so should indicate this.
 
 The process for generating a generic certificate is identical, but you should add a different comment. For example, generate an [ASCII armored](release-signing.html#ascii) (for ease of handling) revocation certificate for key `AD741727` like this:
 
@@ -757,7 +756,7 @@ The process for generating a generic certificate is identical, but you should ad
 ```
 
 <h2 id="symmetric">How to use symmetric encryption<a class="headerlink" href="#symmetric" title="Permanent link">&para;</a></h2>
-    
+
 GnuPG supports symmetric (in addition to public key) cryptography, but the ciphers available sometimes differ. Use `gpg --version` to discover which ciphers are available in the current installation:
 
 ```
@@ -807,7 +806,7 @@ For the new key, you will need to provide both the [fingerprint](release-signing
 **Note**: you must [upload signing keys to a public key server](release-signing.html#keyserver-upload). You must also add them to your LDAP record using the Apache <a href="https://id.apache.org" target="_blank">self-service app</a>.
 
 A reliable, permanent URL for your new public key is useful. Your Apache web space is an ideal location for this. Copy an
-[ASCII armored](release-signing.html#ascii) [public key](release-signing.html#public-private) 
+[ASCII armored](release-signing.html#ascii) [public key](release-signing.html#public-private)
 [export](release-signing.html#export) (see instructions later, or use documents you created earlier) into the `public_html` subdirectory of your home on <a href="https://home.apache.org" target="_blank">home.apache.org</a>.
 
 The suffix `.asc` is conventional for ASCII armored public key exports. So, for example, `A6EE6908.asc` is a reasonable choice for the export of key `A6EE6908`. Record the URL (for example `http://home.apache.org/~rdonkin/A6EE6908.asc` ) for use later in your
@@ -1001,7 +1000,7 @@ The most effective way to achieve this is to attend a [key signing party](releas
 Expect to:
 
   - bring identification
-  - bring a hard copy of your key's [fingerprint](release-signing.html#fingerprint) 
+  - bring a hard copy of your key's [fingerprint](release-signing.html#fingerprint)
   - supply the key ID or public key to the organiser before the party
   - check that the [fingerprint](release-signing.html#fingerprint) for your key supplied by the organiser matches your hard copy
   - confirm this to those present

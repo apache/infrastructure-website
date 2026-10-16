@@ -2,6 +2,7 @@ Title: Using the ssl.com eSigner code signing service
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 ## Transition to ssl.com
+
 The ASF used Symantec's Secure App Service to provide Windows and JAR code signing functionality from 2014 to 2019 and DigiCert ONE from 2019 to 2024.
 In 2024 the ASF moved to the ssl.com eSigner service.
 All new signing must be via the ssl.com eSigner service.
@@ -9,8 +10,9 @@ All new signing must be via the ssl.com eSigner service.
 If you require assistance migrating to the ssl.com eSigner service, please open an <a href="https://issues.apache.org/jira/browse/INFRA">INFRA Jira ticket</a> and select code signing as the component.
 
 ## ssl.com eSigner
+
 ssl.com's eSigner service supports a range of signing tools and formats.
-For the full details see the [eSigner documentation](https://www.ssl.com/guide/remote-ev-code-signing-with-esigner). 
+For the full details see the [eSigner documentation](https://www.ssl.com/guide/remote-ev-code-signing-with-esigner).
 Whichever signing option you choose, you will need to complete four steps:
 
 1. Obtain an ssl.com account
@@ -58,10 +60,9 @@ To sign Windows binaries with the ASF code signing certificate using signtool.ex
 There are two configuration options for eSigner CKA: manual code signing and automated code signing.
 
 For manual code signing you must configure an authenticator app for 2FA for eSigner using the QR code and you will be required to provide your ssl.com username and password along with a OTP from your authenticator app every time you sign a file.
-For automated code signing you create a local file that contains you ssl.com username and password along with the 2FA secret code (not the PIN) and code signing will not require any additional input when you sign a file. 
+For automated code signing you create a local file that contains you ssl.com username and password along with the 2FA secret code (not the PIN) and code signing will not require any additional input when you sign a file.
 
 The eSigner documentation provides step by step instructions on configuring both [manual code signing](https://www.ssl.com/how-to/automate-ev-code-signing-with-signtool-or-certutil-esigner/#manual-code-signing) and [automated code signing](https://www.ssl.com/how-to/automate-ev-code-signing-with-signtool-or-certutil-esigner/#automated-code-signing).
-
 
 #### Linux integration
 
@@ -70,7 +71,6 @@ The eSigner documentation provides step by step instructions on configuring both
 #### MacOS
 
 1. TBD
-
 
 ### Step 4: Configure your chosen signing tool
 

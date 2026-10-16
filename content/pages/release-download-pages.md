@@ -10,7 +10,7 @@ Review
   - the policy on [release distribution](release-distribution.html) if you are unsure of the best way to use the project download page
   - guidelines on [signing releases](release-signing.html)
 
-## Contents 
+## Contents
 
 <ul>
 <li><a href="#links">Download links</a></li>
@@ -38,7 +38,7 @@ Your Apache project's download page:
   - **must** have at least one link to the current release. This link **must** use the `closer.lua` utility. For example: `https://www.apache.org/dyn/closer.lua/PROJECT/VERSION/SOURCE-RELEASE`. (Note: the `mirrors.cgi` and `closer.cgi` scripts have been deprecated. Calls to them redirect to `closer.lua`.)
   - **must** have a link to the checksum for the current release. These links **must** use direct links to the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/VERSION/CHECKSUM`.
   - **must** have a link to the KEYS file for your project on the Apache distribution server. For example: `https://downloads.apache.org/PROJECT/KEYS`.
-  - **must** have a link to the signature file for each release. See the [release signing](release-signing.html) page for more information. 
+  - **must** have a link to the signature file for each release. See the [release signing](release-signing.html) page for more information.
   - **should** have instructions on how to verify downloads. For this you can include a link to the <a href="https://www.apache.org/info/verification.html" target="_blank">Apache documentation on verification</a>.
   - **must not** include a download link to the top-level `closer.lua` utility (e.g. `http://www.apache.org/dyn/closer.lua/PROJECT`).
 
@@ -67,7 +67,7 @@ There are two options:
   
 <h3 id="closer">Generic closer.lua download script<a class="headerlink" href="#closer" title="Permanent link">&para;</a></h3>
 
-The starting point for using the generic `closer.lua` script is a download page in your project's standard documentation which describes the releases. To use the generic script: 
+The starting point for using the generic `closer.lua` script is a download page in your project's standard documentation which describes the releases. To use the generic script:
 
   - Alter the page so the download link points to `closer.lua`.
   - Pass in the relative path from the distribution root to the artifact as a parameter.
@@ -92,7 +92,6 @@ There is no requirement to name the script `download.cgi` and the download relea
 
   - `release.cgi` and `release.html` will work
   - `download.cgi` and `release.html` will **not** work
-
 
 There are a number of elements that a good project download page should contain. See the content to generate that page <a href="https://svn.apache.org/repos/asf/httpd/site/trunk/content/download.mdtext" target="_blank">here</a>.
 Alternately, you can get inspiration from the [default download template](https://github.com/apache/infrastructure-p6/blob/production/modules/closer_cgi/files/closer.html) that will be used when no custom HTML template exists for a project.

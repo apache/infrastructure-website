@@ -220,7 +220,7 @@ Read this [Guide to Apache use](openpgp.html#wot) of the [web of trust](release-
 
 <h2 id="transition-export">Exporting both new and old keys<a class="headerlink" href="#transition-export" title="Permanent link">&para;</a></h2>
 
-During the transition period, use a single export containing both new and old public keys whenever you need an export. 
+During the transition period, use a single export containing both new and old public keys whenever you need an export.
 
 To create a suitable export, supply both key IDs on the command line. For example, to export keys AD741727 (old) and E2B054B8 (new) to FILENAME use:
 

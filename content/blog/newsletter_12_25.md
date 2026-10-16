@@ -12,6 +12,4 @@ The full discussion is available at <a href="https://cwiki.apache.org/confluence
 
 The next Roundtable will be **Wednesday, February 4, 2026, 1800 UTC**. Jarek Potiuk will be presenting on the **software dependency tracker** he developed, and on **using AI in code development**.
 
-
-
 More next year!

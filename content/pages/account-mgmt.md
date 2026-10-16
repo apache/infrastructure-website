@@ -13,7 +13,7 @@ Your account includes an Apache email address which is usually `userID@apache.or
 
 Log in to <a href="https://whimsy.apache.org/" target="_blank">Whimsy</a> and, in the _Available to Committers_ section, click `Your personal details`. You can update any information in blue by double-clicking it and making the necessary changes in the form that appears.
 
-### Regaining access to your committer account 
+### Regaining access to your committer account
 
 If you forgot your password, try...
 
@@ -30,7 +30,7 @@ This should decrypt the file and display the output in the window.
   3. If you have lost access to your registered email address, file an additional ICLA with Secretary. Follow the directions for <a href="https://www.apache.org/licenses/#submitting" target="_blank">submitting an ICLA</a>. Include your current Apache ID and mention in your cover email that you are requesting a change to your email address.
 
   4. If that didn't work, email `root@`. In your email, mention the following information:
- 
+
   - Your username.
   - The fact that you have tried a self-service password reset, and why it didn't work. (Was the mail received? Did you decrypt it successfully?)
   - Why you need to regain access to your Apache account -- e.g., if it is to work on a <a href="https://www.apache.org/foundation/" target="_blank">foundation project</a>, name that project; or if you are a <a href="https://www.apache.org/foundation/members" target="_blank">foundation member</a>, state that.
@@ -45,14 +45,16 @@ This should decrypt the file and display the output in the window.
 **Note**: please do not ask other ASF committers or Members to email root@ to vouch for you.
 
 ### Multi Factor Authentication
+
 Infra will soon provide multi-factor authentication (MFA) for account logins. Documentation related to setting up and using multi-factor authentication will be provided here when the service is ready.
 
 You are welcome to review the <a href="https://infra.apache.org/mfa.html">draft MFA policy</a> and the related draft policy on <a href="https://infra.apache.org/mfa-reset.html">resetting MFA if access has been lost</a>.
 
 **Note**: If you are using GitHub, you must also use GitHub's MFA, which is separate from the Apache MFA. If you are having trouble logging in to GitHub (or some other service) or to Apache, make sure you are using the correct entries for the MFA in question.
 
-## Account removal 
-Occasionally we need to remove an account - either by request or because the committer is deceased or, in rare cases, because the ASF is forcibly removing the committer. 
+## Account removal
+
+Occasionally we need to remove an account - either by request or because the committer is deceased or, in rare cases, because the ASF is forcibly removing the committer.
 
 In practice, we almost never actually remove an LDAP account; we just remove the committer from all LDAP groups and mailing lists they have belonged to.
 

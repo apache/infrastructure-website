@@ -11,6 +11,5 @@ To join the Apple Developer Program as part of the ASF, committers must:
   - create a <a href="https://issues.apache.org/jira/projects/INFRA/issues" target="_blank">Jira ticket for Infra</a> under the code-signing component to request that Infra add them to the list of ASF participants
   - read the latest Apple Developer Program Agreement
   - confirm, once Infra has added their name to the participants' list, that they have read, understood and agree to abide by the terms of the Apple Developer Program Agreement
- 
-The file that tracks participants' confirmations, with additional information for updating it, is <a href="https://svn.apache.org/repos/private/committers/apple-app-store-code-signing/committer-apple-agreement-tracking.txt" target="_blank">here</a>.
 
+The file that tracks participants' confirmations, with additional information for updating it, is <a href="https://svn.apache.org/repos/private/committers/apple-app-store-code-signing/committer-apple-agreement-tracking.txt" target="_blank">here</a>.

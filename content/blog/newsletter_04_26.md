@@ -47,7 +47,7 @@ Projects are seeing a large number of phishing attempts in Slack workspaces. The
 
 ### Infra 101
 
-**Your project has a person who isn't a committer that they wish to be able to review pull requests** 
+**Your project has a person who isn't a committer that they wish to be able to review pull requests**
 
 The project can assign the Triage (or collaborator) role to a user who is not a committer or ASF Member in the repository's <a href="https://github.com/apache/infrastructure-asfyaml">`.asf.yaml`</a> file with an entry like this:
 

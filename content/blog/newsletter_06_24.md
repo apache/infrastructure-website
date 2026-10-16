@@ -9,19 +9,17 @@ Welcome to _Inside Infra_ for June, 2024.
 
 Many ASF projects, and the Infrastructure team, have been using the ASF-pelican template and service to build and deploy their websites. Infra has decided to deprecate its customized buildsite offerings in favor of those provided by GitHub Pages. A GitHub Action provides the same Pelican features and workflow as the former service did.
 
-Infra is offering support to help projects move from the former buildsite tool to the GitHub Action, providing a run-once migration script that adapts the website repository. 
+Infra is offering support to help projects move from the former buildsite tool to the GitHub Action, providing a run-once migration script that adapts the website repository.
 
 The documentation about building websites with Pelican that starts at <a href="https://infra.apache.org/asf-pelican.html" target="_blank">infra.apache.org/asf-pelican.html</a> is being updated.
 
-To read more about migration methods, please visit: <a href="https://cwiki.apache.org/confluence/display/INFRA/Moving+from+Infrastructure-pelican+to+GitHub+Actions" target="_blank">Moving from Infrastructure-pelican to GitHub Actions</a>, and the GHA's README file: <a href="https://github.com/apache/infrastructure-actions/blob/main/pelican/README.md" target="_blank">github.com/apache/infrastructure-actions/blob/main/pelican/README.md</a>. 
+To read more about migration methods, please visit: <a href="https://cwiki.apache.org/confluence/display/INFRA/Moving+from+Infrastructure-pelican+to+GitHub+Actions" target="_blank">Moving from Infrastructure-pelican to GitHub Actions</a>, and the GHA's README file: <a href="https://github.com/apache/infrastructure-actions/blob/main/pelican/README.md" target="_blank">github.com/apache/infrastructure-actions/blob/main/pelican/README.md</a>.
 
 We are expecting to wrap up disabling our Pelican buildsite offerings by the end of 2024. If you have any questions regarding this migration, please email us at private@infra.apache.org or message us on #asfinfra in the-asf Slack space.
-
 
 **Apache and HSTS**
 
 Infra is adding apache.org to Chrome's HTTP Strict Transport Security (HSTS) preload list, upping the security measures for the majority of visitors to our sites. This change will go into effect on July 1st.
-
 
 **Your good ideas for Infrastructure**
 
@@ -39,7 +37,6 @@ Infra has set up "Infrastructure-ideas" (<a href="https://github.com/apache/infr
   - If you want to flesh out a suggestion, feel free to add a comment, a question, a challenge, a tweak to it.
 We look forward to your ideas!
 
-
 **The new ASF distribution platform**
 
 Infra developing the Artifacts Distribution Platform (ADP). The idea is to consolidate dist.apache.org, downloads.apache.org, rsync.apache.org and archive.apache.org into one service that will free up resources and:
@@ -54,9 +51,8 @@ We have assembled lists of necessary features, 'good to have' features, and ambi
   - Join the `artifacts@infra.apache.org` mailing list.
   - Ask to be invited to the `artifact-platform-dev` channel in the `the-ASF` workspace on Slack.
   - Review the <a href="https://cwiki.apache.org/confluence/display/INFRA/Artifacts+Distribution+Platform" target="_blank">current collection of ideas and issues</a> related to the ADP. Add your thoughts/concerns/insights in the editable pages linked to from that main page. (Note: we have already blue-skied a very complex application. If you suggest another component, we may invite you to help develop it.)
-    
-**Note**: the name of the platform may change before it goes live.
 
+**Note**: the name of the platform may change before it goes live.
 
 **Roundtable summary**
 

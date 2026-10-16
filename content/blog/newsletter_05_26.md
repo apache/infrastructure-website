@@ -6,9 +6,9 @@ permalink: newsletter0526 layout: post
 
 ### Roundtable
 
-The May 6 Roundtable focused on **AI coding and its implications for ASF infrastructure**. 
+The May 6 Roundtable focused on **AI coding and its implications for ASF infrastructure**.
 
-To start, Andrew Musselman of the Tooling team described a tool he has developed to do a security scan of software in development. The tool inspects a potential release in more than 350 ways at three levels (from most to least critical) and provides recommendations for humans to review. 
+To start, Andrew Musselman of the Tooling team described a tool he has developed to do a security scan of software in development. The tool inspects a potential release in more than 350 ways at three levels (from most to least critical) and provides recommendations for humans to review.
 
 Andrew demonstrated samples of the reports the tool produces, using Apache STeVe as the target. The tool found over 300 issues and reported them ranked by severity, plus providing other information. The tool originally focused on submissions to the Apache Trusted Releases platform, but it has now been made more generic so it can focus on any project's product.
 
@@ -49,7 +49,7 @@ The Infrastructure team will present a full track at Community over Code Glasgow
 
 Additionally, Infra will be hosting Games Night, which was very popular at the 2025 convention.
 
-More details are at <a href="https://communityovercode.org/" target="_blank">communityovercode.org</a>. We hope to see you there! 
+More details are at <a href="https://communityovercode.org/" target="_blank">communityovercode.org</a>. We hope to see you there!
 
 ### Infra 101
 

@@ -2,11 +2,13 @@ Title: Using the Digicert code signing service
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 ## Transition to DigiCert
+
 The ASF used Symantec's Secure App Service to provide Windows and JAR code signing functionality from 2014 to 2019. In 2019 the ASF moved from the Symantec service to DigiCert ONE. All new signing must be via the DigiCert service.
 
 If you require assistance migrating to the DigiCert service, please open an <a href="https://issues.apache.org/jira/browse/INFRA">INFRA Jira ticket</a> and select code signing as the component.
 
 ## DigiCert Secure Software
+
 DigiCert Secure Software supports a range of signing tools and formats. For the full list see the [client user guide](https://digicert.github.io/snowbird-doc/#/administration-guides/secure-software-manager/index). Whichever signing option you choose, you will need to complete four steps:
 
 1. Obtain a DigiCert ONE account
@@ -20,7 +22,7 @@ DigiCert Secure Software supports a range of signing tools and formats. For the 
 
 Adding a new PMC or a new user to an existing PMC needs to be performed by the infrastructure team. Please open an <a href="https://issues.apache.org/jira/browse/INFRA">INFRA Jira ticket</a> and select code signing as the component.
 
-When the infrastructure team creates your account you will receive a password reset email. The link in that email is only valid for 12 hours. If you are unable to complete the creation of your account in that time you can request a new password reset email by going to <a href="https://one.digicert.com/" target="_blank">DigiCert ONE</a> and clicking the password reset link. Your username is your ASF email address. You should then receive a new password reset email you can use to set your password. 
+When the infrastructure team creates your account you will receive a password reset email. The link in that email is only valid for 12 hours. If you are unable to complete the creation of your account in that time you can request a new password reset email by going to <a href="https://one.digicert.com/" target="_blank">DigiCert ONE</a> and clicking the password reset link. Your username is your ASF email address. You should then receive a new password reset email you can use to set your password.
 
 You also need to configure your OTP token. Officially, only Google authenticator is supported but any similar tool should also work.
 
@@ -66,7 +68,6 @@ If you use JSign 4.0, you can skip this step.
 
 The DigiCert ONE client tools are not available for MacOS. Use JSign 4.0 so you can skip this step.
 
-
 ### Step 4: Configure your chosen signing tool
 
 #### Signing Windows binaries on Windows using signtool.exe
@@ -86,7 +87,6 @@ To sign a file with SHA-256 rather than SHA-512 use `... /fd sha256...` rather t
           storepass="<api-key>|<path-to-client-certificate>|<client-certificate-passphrase>"
           alias="<name-of-signing-certificate>"
           tsaurl="http://timestamp.digicert.com"
-
 
 #### Signing Windows binaries on Linux with JSign 4.0+
 

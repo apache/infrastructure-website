@@ -5,7 +5,6 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 Here you'll find a comprehensive list of topics that covers most of what you will run into
 as a committer at the Apache Software Foundation.
 
-
 ### Need to contact the infrastructure team?
 
 - <a href="https://infra.apache.org/contact.html">Contacting Infra</a>
@@ -25,7 +24,6 @@ as a committer at the Apache Software Foundation.
 
 - <a href="https://infra.apache.org/committer-email.html">Committer email</a>
 
-
 ### Using ASF virtual machines
 
 - <a href="https://infra.apache.org/vm-policy.html">Virtual machine policy</a>
@@ -35,7 +33,6 @@ as a committer at the Apache Software Foundation.
 
 - <a href="https://infra.apache.org/project-site-policy.html">Project website policy</a>
 - <a href="https://infra.apache.org/project-site.html">Managing your project website</a>
-
 
 ### Jenkins
 

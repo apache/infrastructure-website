@@ -1,7 +1,6 @@
 Title: Glossary 
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-
 _This page will hold definitions of frequently-used technical terms._
 
   - **checksum** - definition coming

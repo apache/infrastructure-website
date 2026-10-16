@@ -8,5 +8,3 @@ The ASF service https://repository.apache.org (sometimes referred to as `RAO` or
 _links to existing resources_
 
 _frequently asked questions_
-
-

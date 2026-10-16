@@ -4,14 +4,13 @@ permalink: newsletter0126 layout: post
 
 **Welcome to Inside Infra for January, 2026**
 
-
 ### Roundtable
 
 There was no January Roundtable.
 
 The next Roundtable will be **Wednesday, February 11, 2026, 1800 UTC** (moved one week because so many people will be involved in FOSDEM at the start of the month). Jarek Potiuk will be presenting on the **software dependency tracker** he developed, and on **using AI in code development**.
 
-See <a href="https://infra.apache.org/roundtable.html" target="_blank">infra.apache.org/roundtable.html</a> for details about how to join a roundtable, and what happens at it. 
+See <a href="https://infra.apache.org/roundtable.html" target="_blank">infra.apache.org/roundtable.html</a> for details about how to join a roundtable, and what happens at it.
 
 ### Response to survey responses
 

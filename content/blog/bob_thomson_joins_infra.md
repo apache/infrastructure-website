@@ -5,7 +5,7 @@ layout: post
 
 The ASF Infrastructure team returned to full strength on September 22, 2025 when **Bob Thomson** joined the team as a systems administrator.
 
-**Where do you live?** 
+**Where do you live?**
 
 The Dordogne, southwest France. I am a Scot, though, from Glasgow, and lived in and around the city for my first 50 years, before we took advantage of the UK’s disappearing EU membership to move to France, after a couple of referendum results that did not go our way!
 

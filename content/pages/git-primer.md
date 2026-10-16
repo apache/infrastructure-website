@@ -26,7 +26,7 @@ This document is chiefly about the read/write repositories.
 
 <h3 id="publicprivate">Public and private repositories<a class="headerlink" href="#publicprivate" title="Permanent link">&para;</a></h3>
 
-Projects can set up as many **public repositories** as their development work requires, using <a href="https://selfserve.apache.org/" target="_blank">SelfServe</a>. 
+Projects can set up as many **public repositories** as their development work requires, using <a href="https://selfserve.apache.org/" target="_blank">SelfServe</a>.
 
 Each project can also have a **private repository** space for working on sensitive issues such as:
 
@@ -40,7 +40,7 @@ In particular, the resources available to run **GitHub Actions** against private
 
 See the [Project Code Repository Policy](project-repo-policy.html) for further details.
 
-Open a Jira ticket for Infra to request a private repository. 
+Open a Jira ticket for Infra to request a private repository.
 
 <h2 id="repocheckout">Repository checkout<a class="headerlink" href="#repocheckout" title="Permanent link">&para;</a></h2>
 
@@ -54,7 +54,6 @@ https://gitbox.apache.org/repos/asf/reponame.git
 
   - **Committers**: `$ git clone https://gitbox.apache.org/repos/asf/reponame.git`
   - **Non-Committers**: `$ git clone http://gitbox.apache.org/repos/asf/reponame.git`
-
 
 <h2 id="asfyaml">Using .asf.yaml<a class="headerlink" href="asfyaml" title=title="Permanent link">&para;</a></h2>
 
@@ -125,7 +124,7 @@ Instead of setting up a `~/.netrc` file you need to:
 
 In general, you should normalize line endings in the Git repository and set them to be platform specific on checkout.
 
-  - The `msysgit` installer on **Windows** will prompt you to set the `core.autocrlf` setting to `true` by default. 
+  - The `msysgit` installer on **Windows** will prompt you to set the `core.autocrlf` setting to `true` by default.
   - On **Mac OS X or Linux**, use this setting: `$ git config --global core.autocrlf input`
 
 Further details and attributes for handling line endings differently per file type are available at <a href="https://help.github.com/en/github/using-git/configuring-git-to-handle-line-endings" target="_blank">Configuring Git to handle line endings</a>.

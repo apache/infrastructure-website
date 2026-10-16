@@ -35,7 +35,6 @@ To deploy one of these customizations for your project's repository, ask Infra f
     - <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-auto-merge-for-pull-requests-in-your-repository" target="_blank">Auto-merge of pull requests</a>.
     - <a href="https://docs.github.com/en/repositories/configuring-branches-and-merges-in-your-repository/configuring-pull-request-merges/managing-a-merge-queue" target="_blank">Merge queues</a>. This feature is in limited beta.
 
-
 ### Subversion directories
 
 Typically, the Incubator PMC makes a Jira request to Infra to create an SVN directory for a graduating project, or for a project joining the ASF with an existing SVN directory. If a project needs a subdirectory for a specific purpose, it requests its creation in a Jira ticket to Infra.

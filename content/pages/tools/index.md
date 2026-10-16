@@ -11,5 +11,3 @@ To send email with encrypted contents to Infra, use the following file :
 We also have a bash script that can be used which references the above file
 
 [crypt-to-root.sh](crypt-to-root.sh)
-
-

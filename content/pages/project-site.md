@@ -3,7 +3,6 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 Every Apache project or podling has a website hosted at `apache.org`. Apache provides tools to support it. Each project decides how their website looks, its contents, how they maintain it, and what software they use to support it, as long as the result is static files that our public web servers can make available to browsers. We also have limited support for .htaccess files and CGI scripts.
 
-
 ## Contents
 
 <ul>
@@ -76,7 +75,8 @@ If you'd like to get started with an easy-to-use, <a href="https://github.github
 You can use any other tool that generates static HTML pages, or hand-code those pages. You then check them into your project's website repository. The check-in will trigger a site update.
 
 #### Custom website directives using .htaccess files ####
-Project websites can make use of .htaccess files for setting up custom redirects and other tweaks to the handling of requests. The default [AllowOverride](https://httpd.apache.org/docs/2.4/mod/core.html#allowoverride) setting is `All`, 
+
+Project websites can make use of .htaccess files for setting up custom redirects and other tweaks to the handling of requests. The default [AllowOverride](https://httpd.apache.org/docs/2.4/mod/core.html#allowoverride) setting is `All`,
 which generally enables any sort of redirects or rewrites (using `RewriteRule`, `Redirect`, etc.). Some project websites have custom settings in their dedicated virtual host configuration, which may require asking the Infrastructure Team for assistance. If you are in doubt, ask.
 
 ### Tools not supported
@@ -95,20 +95,23 @@ Infra is migrating the websites of projects using the Pelican option to GitHub A
   
 Pelican has paths to <a href="https://docs.getpelican.com/en/stable/importer.html#import" target="_blank">migrate existing websites from many technologies</a>, including Blogger, Dotclear, Posterous, Tumblr, WordPress, and RSS/Atom.
 
-Any ASF project can use the [**ASF-Pelican template**](asf-pelican.html) as the basis for their project website. 
+Any ASF project can use the [**ASF-Pelican template**](asf-pelican.html) as the basis for their project website.
   
 See a how-to on using [Pelican and Buildbot](pelican-buildbot.html) to develop and deploy a project website.
 
 Pelican supports both flat websites and those that have subdirectories. For the latter, Pelican provides a <a href="https://github.com/akhayyat/pelican-page-hierarchy" target="_blank">plugin</a>.
 
-Browse a <a href="https://github.com/getpelican/pelican-plugins/" target="_blank">collection of Pelican plugins</a> to find others that support functionality you want to add to your site. 
+Browse a <a href="https://github.com/getpelican/pelican-plugins/" target="_blank">collection of Pelican plugins</a> to find others that support functionality you want to add to your site.
 
 This <a href="https://github.com/search?q=topic%3Apelican+org%3Aapache&type=Repositories" target="_blank">GitHub query</a> returns ASF repositories
 which have the `pelican` Topic. You can review them as examples of Pelican in action.
+
 #### GitHub Pages
+
 Infra does not have a structure in place to support using [GitHub Pages](github-pages.html) for project websites.
 
 #### Apache CMS
+
 The Apache CMS, which projects used to build and deploy their websites since 2010, is no longer available as of July 31, 2021. All projects that used it, including the main Apache website, have moved or must move to other technologies. Those that linger will find at some point that they can no longer update their website. See the notes in the section on site management tools, below.
 
 ### 2. Website repository
@@ -121,7 +124,7 @@ Copy whatever you need to start a build into the master branch of the new reposi
 
 ### 3. The build process
 
-Configure Pelican or Jekyll to build the site automatically when its contents change, using [.asf.yaml](asf-yaml.html) and Buildbot. 
+Configure Pelican or Jekyll to build the site automatically when its contents change, using [.asf.yaml](asf-yaml.html) and Buildbot.
 
 ### 4. A staging website
 
@@ -149,15 +152,12 @@ publish:
 
 For more detailed procedures, see see [.asf.yaml](asf-yaml.html).
 
-
-
 <h2 id="sitemanagement">Site management</h2>
   
-  The basic requirements for site management are that 
+  The basic requirements for site management are that
 
   - only committers should be able to modify the site.
   - notifications of all site changes are sent to the relevant project mailing lists.
-
 
 <h3 id="tools">Management tools<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h3>
 
@@ -169,13 +169,12 @@ Infra supports these tools for publishing and maintaining Apache project website
   - [**pypubsub**](pypubsub.html) automatically serves the static contents of a designated Git repository as the website for a project. Git-based websites are typically maintained in a repository branch to be published as `https://project.apache.org`. A project can host the site from its primary project repository. Typically these will be built as a Jenkins or a Buildbot job (see below). We recommend that you only have a single writer to the asf-site branch to avoid potential conflicts.
   - For **websites using a Git repository**, you can add an [.asf.yaml](asf-yaml.html) configuration file. The file lets you set instructions that simplify updating and maintaining the site.
 
-  
 ### Build tools
 
 Infra provides these build tools:
 
-  - **Jenkins** is an open-source automation server that supports building, deploying and automating a project. Infra resources on Jenkins start <a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins" target="_blank">here</a>. 
-  - **Buildbot** is a job scheduling system: it queues jobs, executes the jobs when the required resources are available, and reports the results. 
+  - **Jenkins** is an open-source automation server that supports building, deploying and automating a project. Infra resources on Jenkins start <a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins" target="_blank">here</a>.
+  - **Buildbot** is a job scheduling system: it queues jobs, executes the jobs when the required resources are available, and reports the results.
   
 <h3 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h3>
 
@@ -206,7 +205,7 @@ To use a custom favicon for your project's website, add the `favicon.ico` file t
 
 <h3 id="generated">Minimizing the number of changes committed in the project's Maven- or JavaDoc- generated site<a class="headerlink" href="#generated" title="Permanent link">&para;</a></h3>
 
-If you are using `svnpubsub`, the commit performs very slowly if the number of changes is large, particularly if the number of files is also large. This is often the case with JavaDoc, and to a lesser extent with Maven-generated sites. 
+If you are using `svnpubsub`, the commit performs very slowly if the number of changes is large, particularly if the number of files is also large. This is often the case with JavaDoc, and to a lesser extent with Maven-generated sites.
 
 To speed up the commit:
 

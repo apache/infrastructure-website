@@ -56,6 +56,7 @@ In `LICENSE`, add a <a href="http://s.apache.org/Hqj" target="_blank">pointer</a
 This product bundles SuperWidget 1.2.3, which is available under a
 "3-clause BSD" license. For details, see deps/superwidget/.
 ```
+
 Under normal circumstances, there is no need to modify `NOTICE` to mention a bundled dependency.
 
 **NOTE**: It's also possible to include the text of the 3rd party license within your product's `LICENSE` file. This is best reserved for short licenses. It's important to specify the version of the dependency as licenses sometimes change as product versions change.

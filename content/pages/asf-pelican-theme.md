@@ -47,7 +47,7 @@ This theme uses the following metadata:
 - bodytag. This adds attributes to the `<body>` element.
   This allows the main `index.ezmd` to have the same template, but with a different layout.
 
-  `<body{% if page.bodytag %} {{ page.bodytag }}{% endif %} >`   
+  `<body{% if page.bodytag %} {{ page.bodytag }}{% endif %} >`
 
 ## Pelican settings
 
@@ -67,11 +67,9 @@ site:
   
 ```
 
-
 ## Pelican theme
 
 This is a [custom theme][1] Pelican templates use [Jinja][2].
-
 
 <hr />
 
@@ -89,7 +87,6 @@ SITEREPOSITORY = 'https://github.com/apache/<pmc-site>/blob/<branch>/content/'
 TRADEMARKS = u'Apache, the Apache logo, and <pmc> are trademarks or registered trademarks'
 CURRENTYEAR = date.today().year
 ~~~
-
 
 [1]: https://docs.getpelican.com/en/latest/themes.html
 [2]: https://jinja.palletsprojects.com/en/3.0.x/

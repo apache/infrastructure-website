@@ -11,6 +11,7 @@ The following material is correct for both ASF-Pelican and its replacement.
 <hr/>
 
 # Plugins
+
 You can find the available plugins for a site using the ASF-Pelican template in the `themes/plugins` folder of your website's project repository.
 
 # Plugin architecture
@@ -68,7 +69,7 @@ The system sets two important readers at this point. Readers are responsible for
 providing a metadata dictionary.
 
 - GFMReader by the pelican-gfm plugin. This code is in a private repository - ask Infra. Transforms GitHub Flavored Markdown(GFM) to HTML.
- 
+
  * .md
   * .markdown
   * .mkd
@@ -91,6 +92,6 @@ This is signaled after a reader has processed the site's content. At this point 
 
 ## Apache CMS
 
-Many projects had their websites served by the Apache CMS from 2010. It was deprecated in 2021. The CMS was written in Perl. We have a new approach that fits Pelican. 
+Many projects had their websites served by the Apache CMS from 2010. It was deprecated in 2021. The CMS was written in Perl. We have a new approach that fits Pelican.
 
 If you want to look into the old CMS process, its <a href="http://svn.apache.org/viewvc/infrastructure/site/trunk/lib/views" target="_blank">Subversion repository and history</a> remain available.

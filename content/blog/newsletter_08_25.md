@@ -7,7 +7,7 @@ layout: post
 
 ### Roundtable
 
-The August Roundtable discussed the impact of **AI scraping** on The ASF, and what responses to it might be useful. 
+The August Roundtable discussed the impact of **AI scraping** on The ASF, and what responses to it might be useful.
 
 The main impacts on ASF infrastructure are:
 
@@ -47,6 +47,5 @@ _What attracted you to the ASF and to this ASF Infra job?_
 "I’ve never really stopped doing the IT sorts of things that I started my career on. These are the things that I call recreational system administration: Purchase a domain; set up DNS, mail, web, etc.; write small, useful utilities for myself to solve some problem or automate something.
 
 "After some time away from professional IT and professional software development, I was curious to see the state of things now. The distributed, collaborative, and technical environment within ASF Infra has a lot in common with jobs I had early in my career, and I’ve sought to replicate elements of that environment repeatedly, where I could, in later roles."
-
 
 **More next month!**

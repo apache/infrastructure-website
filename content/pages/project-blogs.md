@@ -3,7 +3,7 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 Until June, 2023, the ASF supported using Apache Roller for project blogs. That support has ended. Now we encourage projects to develop their blog using the technology of their choice.
 
-If you're building your site via Pelican, Hugo, or another static site generator, it's as easy as following their steps to create posts. For instance, infra.apache.org is using Pelican builds hosted by the ASF. Posts just need to be written using markdown and created under a directory named "blog". 
+If you're building your site via Pelican, Hugo, or another static site generator, it's as easy as following their steps to create posts. For instance, infra.apache.org is using Pelican builds hosted by the ASF. Posts just need to be written using markdown and created under a directory named "blog".
 
 All project blogs should be accessible via $projectName.apache.org/blog. A blog can be a great way of announcing new milestones and features, sharing tips and tricks, and putting a "face" on your project for your developer and user communities. The project's PMC is responsible for the blog's content, and for granting write access to PPMC members.
 
@@ -17,7 +17,7 @@ You no longer have to request a blog from Infra. If your project doesn't current
 
 ### Getting editor access ###
 
-Your blog code should be in your project's website repo or another separate GitHub/GitBox repo. Access is controlled via the same process as committing code to any other ASF repo. Contributors can use PRs to create new content that can be reviewed by the project and then approved to be published. 
+Your blog code should be in your project's website repo or another separate GitHub/GitBox repo. Access is controlled via the same process as committing code to any other ASF repo. Contributors can use PRs to create new content that can be reviewed by the project and then approved to be published.
 
 ### Working with your blog ###
 

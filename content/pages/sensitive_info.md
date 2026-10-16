@@ -10,4 +10,4 @@ It is sometimes necessary for you to share sensitive information with the Infras
 
 **Do not** share such information on an ASF Slack channel, a public email thread, as a comment on a Jira ticket, or as a GitHub issue.
 
-**Do** share it in an email to `root@infra.apache.org`. **Do not** copy or blind-copy the message you are sending to any other address. 
+**Do** share it in an email to `root@infra.apache.org`. **Do not** copy or blind-copy the message you are sending to any other address.

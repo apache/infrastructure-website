@@ -24,7 +24,6 @@ This document is informative and does not constitute policy.
 - <a href="#automated-release-signing">Automated Release Signing</a>
 - <a href="#reading">Further Reading</a>
 
-
 ### FAQs from those downloading releases
 
   - <a href="#verifying-signature">What does verifying a signature mean?</a>
@@ -64,7 +63,7 @@ Form the names of these files by adding to the name of the artifact the followin
   - the signature by suffixing `.asc`
   - the checksum by suffixing `.sha256` or `.sha512` (as appropriate)
 
-Release managers **must not** store private keys used to sign Apache releases on ASF hardware. 
+Release managers **must not** store private keys used to sign Apache releases on ASF hardware.
 
 See the <a href="release-distribution.html#sigs-and-sums">release distribution policy</a> for details.
 
@@ -96,8 +95,8 @@ Create a <a href="#openpgp-ascii-detach-sig">OpenPGP compatible ASCII armored de
 
 It is
 
-  - an <a href="#openpgp">OpenPGP</a> compatible 
-  - <a href="#ascii">ASCII armored</a> 
+  - an <a href="#openpgp">OpenPGP</a> compatible
+  - <a href="#ascii">ASCII armored</a>
   - <a href="#detach-sig">detached signature</a>
 
 To create one using <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a> for file
@@ -173,7 +172,7 @@ Apache recommends that ASF release managers use <a href="https://www.gnupg.org" 
 <h3 id="where">Where should I create the signatures?<a class="headerlink" href="#where" title="Permanent link">&para;</a></h3>
 
 Creating signatures requires the private key. Keep limited copies of the private key securely and confidentially. Though the file used
-to store the private key is typically protected by encryption, it is vulnerable to dictionary attacks on the <a href="#passphrase">passphrase</a>. So keep this file secret. 
+to store the private key is typically protected by encryption, it is vulnerable to dictionary attacks on the <a href="#passphrase">passphrase</a>. So keep this file secret.
 
 Create signatures on the machine where you store the private key, on secure hardware with limited read permissions, protected by a good
 <a href="#passphrase">passphrase</a>. Consider using removable media or an <a href="#isolated-installation">isolated
@@ -225,7 +224,7 @@ SHA512 is the strongest well-studied, widely-used cryptographic hash. It is ther
 
 <h3 id="generate">How to generate a code signing key<a class="headerlink" href="#generate" title="Permanent link">&para;</a></h3>
 
-The exact mechanics are <a href="#openpgp-applications">application</a>-dependent. For GnuPG (recommended): 
+The exact mechanics are <a href="#openpgp-applications">application</a>-dependent. For GnuPG (recommended):
 
   - Follow the <a href="openpgp.html#generate-key">strong key generation instructions</a>
   - Decide on the <a href="#key-length">right key length</a>
@@ -279,7 +278,7 @@ $ gpg --refresh-keys
 <h3 id="export">How to export a key</h3>
 
 You can export a public key through <a href="https://www.gnupg.org" target="_blank">OpenPGP</a> by using
-`--export`. Typically, the export should be ASCII armored. 
+`--export`. Typically, the export should be ASCII armored.
 
 To export all public keys to the command line use:
 
@@ -366,14 +365,13 @@ sub   8192R/B800EFC1 2009-08-07
 
 shows that key `B1313DE2` has length 1024 and `A6EE6908` length 8192.
 
-
 <h2 id="key-basics">Key basics<a class="headerlink" href="#key-basics" title="Permanent link">&para;</a></h2>
 
 To sign releases, you need to <a href="#generate">generate</a> a new master key-pair for code signing. Follow these <a href="openpgp.html#generate-key" target="_blank">instructions</a>.
 
 <h3 id="keys-policy">The KEYS File<a class="headerlink" href="#keys-policy" title="Permanent link">&para;</a></h3>
 
-The KEYS file is a plain-text file containing the public key signatures of the release managers (and optionally other committers) for the project. A good example is the <a href="https://downloads.apache.org/ant/KEYS" target="_blank">Apache Ant KEYS file</a>. 
+The KEYS file is a plain-text file containing the public key signatures of the release managers (and optionally other committers) for the project. A good example is the <a href="https://downloads.apache.org/ant/KEYS" target="_blank">Apache Ant KEYS file</a>.
 
 It is traditional to include the following header to explain how to use the file. These commands generate a descriptive comment describing the key, followed by the key itself. Key handling software ignores the comments when importing a key file:
 
@@ -399,7 +397,7 @@ Since users may need the KEYS file to check signatures for archived releases, it
 <a href="#faq">FAQ</a> will be a reasonable first port of call.
 
 You need an <a href="#openpgp-applications">application</a> to manage keys and create signatures. We recommend <a href="http://www.gnupg.org/">GNU Privacy Guard</a>, and the Apache documentation generally assumes that's what
-you're using. (We welcome contributions that document use of other tools.) Read the <a href="openpgp.html#gnupg">Apache PGP user guide</a> and keep the <a href="https://www.gnupg.org/gph/en/manual.html" target="_blank">manual</a> handy. 
+you're using. (We welcome contributions that document use of other tools.) Read the <a href="openpgp.html#gnupg">Apache PGP user guide</a> and keep the <a href="https://www.gnupg.org/gph/en/manual.html" target="_blank">manual</a> handy.
 
 GnuPG can handle MD5 and SHA checksums as well as PGP signatures. It is your all-in-one cross-platform tool for release signing and verification.
 
@@ -439,7 +437,7 @@ It is difficult to personally verify the identity of all useful <a href="#pke">p
 
 You can use webs of trust to solve the problem of verifying the identity of public keys.
 
-**Note:** to take full advantage of a web of trust, it is important to actively build your personal web of trust into the major public webs of trust. Conferences are an ideal opportunity for exchanging key information, but you must come <a href="#link-into-wot">prepared</a>. 
+**Note:** to take full advantage of a web of trust, it is important to actively build your personal web of trust into the major public webs of trust. Conferences are an ideal opportunity for exchanging key information, but you must come <a href="#link-into-wot">prepared</a>.
 
 For more information read the <a href="https://www.gnupg.org/(en)/documentation/guides.html" target="_blank">GNU Privacy Handbook</a>.
 
@@ -480,7 +478,6 @@ It is vital that the private key is kept safe and secure. Though the file is enc
 
 However, for code signing keys we recommend taking additional measures. Reduce the window of vulnerability by using an
 <a href="#isolated-installation">isolated installation</a> or by storing the private key on removable media (which you should remove and store securely when not actually signing a release.).
-
 
 <h3 id="isolated-installation">The meaning of 'isolated installation'<a class="headerlink" href="#isolated-installation" title="Permanent link">&para;</a></h3>
 
@@ -580,7 +577,6 @@ owner.
 Primary key fingerprint: 82D1 169B E6F1 9D14 DA76  A5DD 968E 66E4 4A03 679A
 ```
 
-
 <h2>FAQs from those downloading releases</h2>
 
 <h3 id="verifying-signature">What does verifying a signature mean?<a class="headerlink" href="#verifying-signature" title="Permanent link">&para;</a></h3>
@@ -631,7 +627,7 @@ to import the public keys.</p>
 
 <h3 id="trust-hardware">What is the difference between secure hardware and trusted hardware?</h3>
 
-**Secure hardware**: your personal laptop would quality as "secure" provided that only you have root/admin access to it, so only you can access private keys stored on it. 
+**Secure hardware**: your personal laptop would quality as "secure" provided that only you have root/admin access to it, so only you can access private keys stored on it.
 
 **Trusted hardware** is secure hardware under the direct control of the release manager, with limited release permissions, and protected by a passphrase and possibly other security measures.
 
@@ -714,7 +710,6 @@ The project must request a signing key through an Infra Jira ticket, and Infra w
 - Infra will put a PGP-encrypted revocation key in the project's private svn/git dir
 - The private key will never be shared with the project or anyone outside of the infra-root team, but will be available to the chosen CI system
 - The public key will be sent to the project or added to their KEYS file
-
 
 <h2 id="reading">Further reading<a class="headerlink" href="#reading" title="Permanent link">&para;</a></h2>
 

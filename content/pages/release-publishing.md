@@ -39,11 +39,11 @@ A release starts when the project community agrees to make a release. However, n
 
 Most projects designate a committer to be the _release manager_ who takes responsibility for the mechanics of a release. It is a good idea to let several committers take this role on different releases so that more than one person is comfortable doing a release. Release managers shepherd a release from an initial community consensus to getting the compiled code package to final distribution, and may be involved in publicizing the release to the project's community and the ASF in general.
 
-By default, only PMC members can publish release artifacts to https://dist.apache.org/repos/dist/release/. If your project wishes to allow non-PMC member committers to publish release artifacts, please open a Jira ticket for Infra with your request. Note that there are only two options: only PMC members can publish release artifacts, or all the project's Committers can publish release artifacts. 
+By default, only PMC members can publish release artifacts to https://dist.apache.org/repos/dist/release/. If your project wishes to allow non-PMC member committers to publish release artifacts, please open a Jira ticket for Infra with your request. Note that there are only two options: only PMC members can publish release artifacts, or all the project's Committers can publish release artifacts.
 
 Allowing Committers to publish release artifacts requires project consensus, so include a link to an email thread with that consensus.
 
-**Note**: Any PMC member of a project using the **ATR** platform can assign a **specific Committer** to the role of release manager, rather than giving blanket permission to all Committers of the PMC. Consult the [ATR documentation](atr.html). 
+**Note**: Any PMC member of a project using the **ATR** platform can assign a **specific Committer** to the role of release manager, rather than giving blanket permission to all Committers of the PMC. Consult the [ATR documentation](atr.html).
 
 ***Release managers do the mechanical work; but the PMC in general, and the PMC chair in particular (as an officer of the Foundation), remain responsible for compliance with ASF requirements.***
 
@@ -113,19 +113,17 @@ See [Publishing Maven releases](publishing-maven-artifacts.html).
 
 <h2 id="timeline">Release distribution availability schedule<a class="headerlink" href="#timeline" title="Permanent link">&para;</a></h2>
 
-Releases pushed to the `dist/release` subversion directory will be available for download almost immediately after the push/move operation has completed, 
-though the exact speed depends on the size of the artifact(s) that have been uploaded. Generally speaking, releases should be available on 
+Releases pushed to the `dist/release` subversion directory will be available for download almost immediately after the push/move operation has completed,
+though the exact speed depends on the size of the artifact(s) that have been uploaded. Generally speaking, releases should be available on
 [downloads.apache.org](https://downloads.apache.org/) within 15 minutes of publishing them to `dist/release`.
 
-
-Our global content delivery network (CDN) at [dlcdn.apache.org](https://dlcdn.apache.org/) will have files available for download within 
-seconds of them appearing on downloads.apache.org. However, due to our current caching algorithms, they may not appear in the raw directory listings 
-for up to two hours even though the files are present on the service. We are currently working on ways to improve this experience, and will 
+Our global content delivery network (CDN) at [dlcdn.apache.org](https://dlcdn.apache.org/) will have files available for download within
+seconds of them appearing on downloads.apache.org. However, due to our current caching algorithms, they may not appear in the raw directory listings
+for up to two hours even though the files are present on the service. We are currently working on ways to improve this experience, and will
 update this page when/if the process has changed.
 
-
-Our [download helper script](release-download-pages.html#download-scripts) also employ caching to help speed up processing, and its findings 
-(whether or not a release is present on the CDN) may be delayed by up to an hour in some circumstances. We therefore advise projects to wait 
+Our [download helper script](release-download-pages.html#download-scripts) also employ caching to help speed up processing, and its findings
+(whether or not a release is present on the CDN) may be delayed by up to an hour in some circumstances. We therefore advise projects to wait
 for one hour after publishing a release before announcing it to the wider public.
 
 As a rule of thumb, projects should currently:
@@ -133,7 +131,6 @@ As a rule of thumb, projects should currently:
 1. upload or move the release to the `dist/release` space in subversion
 2. after a few minutes, check [downloads.apache.org](https://downloads.apache.org/) for whether their release has been published on our download server
 3. when the download is present, wait one hour for any caching to reset, then announce the general availability of the release
-
 
 <h2 id="faqs">FAQs<a class="headerlink" href="#faqs" title="Permanent link">&para;</a></h2>
 

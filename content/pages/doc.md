@@ -19,6 +19,7 @@ Infra provides a library of resources that is constantly evolving to reflect the
 ### PMC resources ###
 
 #### Source code ####
+
 - [Project source code repositories](version-control.html)
 - [Repositories for Maven releases and snapshots](repository-faq.html)
 - <a href="https://github.com/apache/infrastructure-asfyaml/blob/main/README.md" target="_blank">.asf.yaml features for Git repositories</a>
@@ -28,6 +29,7 @@ Infra provides a library of resources that is constantly evolving to reflect the
 - [Dependabot for dependency management](dependabot.html)
 
 #### Build and release ####
+
 - [Release creation process](release-publishing.html)
 - Creating optional [Maven releases](publishing-maven-artifacts.html)
 - [Signing releases](release-signing.html)
@@ -40,6 +42,7 @@ Infra provides a library of resources that is constantly evolving to reflect the
 - [Deploying a self-hosted runner](self-hosted-runners.html)
 
 #### Website, blog and wiki ####
+
 - [Project website guidelines](website-guidelines.html). **Note**: No new projects can use the Apache CMS, which has reached end-of-life. Any projects still using the CMS must migrate to another resource to maintain their websites. Projects that have not migrated their site may find that they are no longer able to update it.
 - Here is how one project <a href="https://cwiki.apache.org/confluence/display/INFRA/How+Apache+Jena+migrated+from+the+CMS" target="_blank">did the migration</a>.
 - A [project site template](asf-pelican.html) written in Pelican is available to smooth migration away from the CMS, and to support creation of new project sites.
@@ -48,10 +51,10 @@ Infra provides a library of resources that is constantly evolving to reflect the
 - <a href="https://cwiki.apache.org/confluence/display/INFRA/Managing+permissions+on+your+project%27s+Confluence+Space" target="_blank">Managing permissions on your project's Confluence space</a>.
 
 #### Other ####
+
 - [Managing project committers](managing-committers.html)
 - [Virtual machine for your project](vm-policy.html)
 - [Mailing list moderation](mailing-list-moderation.html)
-
 
 ### Committer resources ###
 

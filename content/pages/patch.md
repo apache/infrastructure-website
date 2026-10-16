@@ -51,7 +51,6 @@ The general pattern for creating and submitting a patch for a project using Git 
 
 One or more of the project's committers will review your proposed changes and, if all is well, merge them.
 
-
 ### In general ###
 
 A very few projects don't use an issue tracker. In that case, send the patch as an attachment to an e-mail with a subject prefixed with "<code>[PATCH]</code>", to the appropriate development mailing list. If the patch is large, please ask before e-mailing it in case there is a better way to provide it.

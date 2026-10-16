@@ -20,7 +20,8 @@ Infra itself uses Jira, so to request a Jira instance for your project, create a
 Infra will respond within a couple of days, either with a request for clarification of some point or to let you know that the instance is set up and ready for your project to use.
 
 ### Using GitHub Issue tracking
-Enabling GitHub Issue tracking for your project is self-serve. In the .asf.yaml file for your repository, locate the `github` section and set the `issues` option to true, as in the example below. 
+
+Enabling GitHub Issue tracking for your project is self-serve. In the .asf.yaml file for your repository, locate the `github` section and set the `issues` option to true, as in the example below.
 
 ```
 github:

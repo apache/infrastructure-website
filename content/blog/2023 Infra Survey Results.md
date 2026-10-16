@@ -69,7 +69,7 @@ We asked which existing services need improvement. These areas got the most vote
   - Issue Tracking (Jira, GitHubIssues, Bugzilla) – 31%
   - Documentation / Wiki pages – 31%
   - Source control (GitHub/GitBox, SVN) – 19%
-  - Messaging (Slack, mailing lists) – 19%	
+  - Messaging (Slack, mailing lists) – 19%
 
 Comments:
 

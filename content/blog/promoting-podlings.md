@@ -11,7 +11,7 @@ improve standard processes that almost every project goes through,
 the better it is for the whole community.<br></p><p style="margin-bottom: 0in; line-height: 100%">&nbsp; &nbsp;As an example,
 when a project starts out with the ASF, it normally begins as a
 “podling” in the ASF incubator. Here it can start to create its
-code, standard practices, and work methods in a development sandbox. 
+code, standard practices, and work methods in a development sandbox.
 </p><p style="margin-bottom: 0in; line-height: 100%">&nbsp; &nbsp;Once the project
 develops a large-enough community of committers and contributors, and
 seems to be viable, it can request promotion to top-level-project

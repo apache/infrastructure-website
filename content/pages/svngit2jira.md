@@ -12,12 +12,12 @@ This service also plugs into the <a href="https://reviews.apache.org/r/" target=
 
 <h2 id="general-use-of-the-service">General use<a class="headerlink" href="#general-use-of-the-service" title="Permanent link">&para;</a></h2>
 
-The most common scenario is to mention a Jira ticket in your commit, and the service updates the ticket to reflect your new commit. Some 
+The most common scenario is to mention a Jira ticket in your commit, and the service updates the ticket to reflect your new commit. Some
 projects have a trigger set so that it only updates a ticket if the first  sentence is the Jira ticket number, but we can tailor this to suit your project's needs.
 
 <h2 id="getting-set-up-for-svngit2jira">Setting up svngit2jira<a class="headerlink" href="#getting-set-up-for-svngit2jira" title="Permanent link">&para;</a></h2>
 
-To enable the service for your project, create an 
+To enable the service for your project, create an
 <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Infra Jira ticket</a>. Include this information:
 
   - The name of the project.

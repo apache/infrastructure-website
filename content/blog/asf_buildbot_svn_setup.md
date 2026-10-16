@@ -58,8 +58,8 @@ permalink: asf_buildbot_svn_setup
 split_file = split_file_branches
 </pre>
   <p>Next up , the relevant entry in our subversion/hooks/post-commit file looks like this (with&nbsp;constants defined earlier in the file): </p>
-  <pre>    $SVNLOOK dirs-changed -r &quot;$REV&quot; &quot;$REPOS&quot; | egrep -qf &quot;$BUILDBOT_PROJECT_PATHS&quot; &amp;&amp; 
-( $BUILDBOT --repository &quot;$REPOS&quot; --revision &quot;$REV&quot; --bbserver &quot;$BBSERVER&quot; --bbport &quot;$BBPORT&quot; 
+  <pre>    $SVNLOOK dirs-changed -r &quot;$REV&quot; &quot;$REPOS&quot; | egrep -qf &quot;$BUILDBOT_PROJECT_PATHS&quot; &amp;&amp;
+( $BUILDBOT --repository &quot;$REPOS&quot; --revision &quot;$REV&quot; --bbserver &quot;$BBSERVER&quot; --bbport &quot;$BBPORT&quot;
 --project-paths &quot;$BUILDBOT_PROJECT_PATHS&quot; &gt;&gt;/var/log/svn_buildbot.log 2&gt;&amp;1 &amp; )
 </pre>
   <p>And, last but not least for the svn host side of things, our buildbot_project_paths file which contains entries such as :</p>

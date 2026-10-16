@@ -3,13 +3,11 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 ## Jira tickets
 
-
 <a href="https://issues.apache.org/jira" target="_blank">Jira</a> is a proprietary issue tracking product developed by Atlassian that allows bug tracking and agile project management. Atlassian provides Jira services to Apache projects. The tool's name is a short form of the name of the Japanese movie monster, <a href="https://en.wikipedia.org/wiki/Jira_(software)" target="_blank">Godzilla</a>, and was an early developer nickname for the application.
 
 Anyone can review existing Jira tickets, or issues. You must register and log in if you want to create, comment or vote on, upload attachments to, or watch issues. Only <a href="https://www.apache.org/foundation/how-it-works.html#committers" target="_blank">committers</a> can edit, prioritize, schedule and resolve issues.
 
 The ASF and many of its projects use Jira to keep track of work to be done. The largest group of tickets assigned to Infra are requests for Infra to perform a task of one sort or another. The next largest category is reports of possible bugs in the Infrastructure system.
-
 
 <ul>
 <li><a href="#who">Who can create a ticket</a></li>
@@ -51,18 +49,23 @@ If there is nothing in Jira already that covers what's on your mind, and the top
 The form is pretty clear, so the focus here is on a couple of key fields.
 
 #### Project
+
 This is the group you want to take a look at the ticket. Select "Infra" for an infrastructure issue or request. Select a specific project if the issue is something like a problem in the project's documentation or website.
 
 #### Issue type
+
 There's a good list of issue types to choose from. Make sure you select the most appropriate one.
 
 #### Project (again)
+
 For an Infra ticket, if you want Infra to look at a problem with the Apache Widget project, in this field select `Widget`. Most of the time, for an Infra ticket, select `Infra`.
 
 #### Summary
+
 This is your quick statement of your problem or request. "Things are broken!" would not be a useful statement. Something like "Self-serve site hangs, then crashes" is more likely to get the right person's attention and a prompt resolution to the problem.
 
 #### Priority
+
 Make your best guess at how urgent this thing is. Infra, and many projects, triage Jira tickets by their priorities, and may adjust the priority of a ticket if its current setting seems too high or too low.
 
 The options are
@@ -74,23 +77,29 @@ The options are
   - **Trivial**: this issue is minimal and has no time constraints. ( _"The copyright year on Infra web page bla.html is incorrect."_)
 
 #### Component/s
+
 Select one or more components that this issue or request relates to. If you cannot figure out what to pick, select `Other/misc`.
 
 #### Fix Version/s
+
 This an optional field, useful if your issue concerns a specific Infra tool or service and you know the version you are using.
 
 #### Assignee
+
 If you specify someone here, that person receives an alert about the issue. You can accept the default (Automatic) to put the issue in the queue for the Infra or project team's attention.
 
 #### Environment
+
 This is an optional field where you can describe your operating system, software platform and/or hardware specifications if they are relevant to the bug, task, or feature request.
 
 #### Description
+
 Provide the juicy details here. For example, for an infrastructure bug report, Infra needs to know how to reproduce the thing you ran into. Describe what you were doing ("I was logged in to bla.html using Firefox"), what you wanted to do ("I wanted to do xxx"), what you expected to happen, and what you actually experienced.
 
 For a feature request, it helps if you can not only describe the feature, but explain why the ASF or the specific project needs it.
 
 #### Other fields
+
 There are many optional fields that you can probably skip.
 
 When you have completed entering the useful information, click **Create** to create the ticket.
@@ -98,4 +107,3 @@ When you have completed entering the useful information, click **Create** to cre
 <h3 id="followup">Jira tickets for Infra<a class="headerlink" href="#followup" title="Permanent link">&para;</a></h3>
 
 See [Jira tickets for Infra](jira-for-infra.html)
-

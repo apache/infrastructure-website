@@ -6,7 +6,7 @@ permalink: newsletter1224 layout: post
 
 The **December roundtable** did not take place due to presenter illness. We have pushed its topic to next month. That roundtable will be **Wednesday, January 8, 2025, 1700 UTC**. The main topic will be a deep dive into **asf.yaml**, the Swiss Army Knife of ASF build utilities.
 
-See <a href="https://infra.apache.org/roundtable.html" target="_blank">this page</a> for details about how to join a roundtable, and what happens at it. 
+See <a href="https://infra.apache.org/roundtable.html" target="_blank">this page</a> for details about how to join a roundtable, and what happens at it.
 
 ## Removing Blue Ocean and related plugins
 
@@ -19,6 +19,5 @@ If you have questions about Blue Ocean replacements, email `users@infra.apache.o
 ## Naming of repositories for podlings
 
 In the past, the names of Git repositories for projects in the Incubator were supposed to start with 'incubator-', and then the project's name. We no longer follow this pattern, so there is no need to request the 'incubator-' prefix for a new Git repository for a project, or when migrating an existing repository to the project.
-
 
 **More in the new year!**

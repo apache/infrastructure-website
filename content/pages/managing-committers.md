@@ -5,7 +5,7 @@ The PMC of each project encourages and guides their new committers, ensures that
 
 ### Account creation ###
 
-Make sure the new committer fills out the appropriate forms, including the <a href="https://www.apache.org/licenses/contributor-agreements.html" target="_blank">Contributior License Agreement</a>, or CLA. A committer account cannot be processed until the ASF secretary or a board member acknowledges receipt of the CLA. 
+Make sure the new committer fills out the appropriate forms, including the <a href="https://www.apache.org/licenses/contributor-agreements.html" target="_blank">Contributior License Agreement</a>, or CLA. A committer account cannot be processed until the ASF secretary or a board member acknowledges receipt of the CLA.
 
 Work with your new committer to ensure that their CLA is received and recorded properly; monitor the file iclas.txt in the `foundation/officers` repository. Only ASF members and officers (including PMC chairs) have access. The page <a href="https://people.apache.org/committer-index.html" target="_blank">Apache Committers</a> has a link to "Unlisted CLAs". This list is generated daily from the iclas.txt file, so recently received CLAs appear there.
 

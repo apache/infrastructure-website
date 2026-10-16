@@ -27,7 +27,7 @@ When you are in the channel, you can share messages with others as a sort of pre
 
 ### What happens in the roundtable
 
-  - An Infra team member normally opens the meeting with a short presentation related to the advertised topic, and then throws the floor open to discussion. 
+  - An Infra team member normally opens the meeting with a short presentation related to the advertised topic, and then throws the floor open to discussion.
   - If you are using a microphone, please mute your mic when not speaking, to cut down on ambient noise.
   - To contribute to the discussion, either type your message in the huddle thread (not the main channel thread) or unmute and start speaking. We will all try to practice good meeting manners, which include not talking over others.
   - If time permits, we can discuss any other urgent, Infra-related topic that is on your mind.
@@ -40,4 +40,4 @@ When you want to leave, click the **Leave** button. The app returns you to the m
 
 Infra posts a summary of each roundtable's discussion <a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable" target="_blank">here</a>. (requires login)
 
-If the meeting does not get to discuss a question you submitted, feel free to ask it in the `asfinfra` Slack channel, or bring it up again at the next roundtable. 
+If the meeting does not get to discuss a question you submitted, feel free to ask it in the `asfinfra` Slack channel, or bring it up again at the next roundtable.

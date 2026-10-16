@@ -18,7 +18,6 @@ The minutes of the meeting are at <a href="https://cwiki.apache.org/confluence/d
 
 The next Roundtable will be **Wednesday, December 3, 1800 UTC**. (Note the change in UTC). Related to the service difficulties we have been dealing with, the topic is **DDOS: behind the scenes**.
 
-
 ## Automated requests
 
 Infra constantly gets automated requests from people to install Integrations into our GiHhub organization, like "$committer_name requests to install Netflify" or "$othercommitter requests to install ChatGPT..."
@@ -26,7 +25,6 @@ Infra constantly gets automated requests from people to install Integrations int
 Infra will always DENY such automated requests.
 
 If anyone wants to have a third-party app installed into GitHub, they must submit an INFRA Jira ticket explaining the need and the tool requested.
-
 
 ## Email compliance with DMARC/DKIM
 
