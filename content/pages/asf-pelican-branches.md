@@ -35,7 +35,7 @@ GitHub has further information on <a href="https://docs.github.com/en/github/col
 
 1. Create `preview/bootstrap5`
 
-2. Work on `preview/bootstrap5` branch to update bootstrap to version 5 with preview builds staged at https://www-bootstrap5.staged.apache.org/
+2. Work on `preview/bootstrap5` branch to update bootstrap to version 5 with preview builds staged at <https://www-bootstrap5.staged.apache.org/>
 
 3. Submit PR to merge `preview/bootstrap` back to `main`
 

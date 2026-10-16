@@ -40,7 +40,7 @@ If you have questions or encounter any issues, feel free to reach out to `users@
 Ricardo is a curious technology professional. He started his career at CodeSourcery, an open source software development services company, where he focused on IT and Python-based tool maintenance. He spent his career so far collaborating with globally distributed teams in technical marketing and application engineering roles (Mentor Graphics), and sales and marketing roles (Odaseva, Cognition Factory). He has far more rss feeds than he can keep up with, an abundance of open wikipedia tabs, and engages in recreational system administration.
 His non-nerdy pursuits include growing tomatoes, hiking, cycling and visiting friends and family. He is based in the Sacramento, California area in the United States.
 
-_What attracted you to the ASF and to this ASF Infra job?_
+*What attracted you to the ASF and to this ASF Infra job?*
 
 "It boils down to alignment, interest, ability, curiosity and familiarity. I’ve been a fan of open-source software environments and methods for a long time. The mission of The Apache Software Foundation and what the Foundation enables is very appealing to me.
 

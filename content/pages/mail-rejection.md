@@ -30,7 +30,7 @@ Refer to <a href="https://blogs.apache.org/infra/entry/committers_mail_relay_ser
 
 [Contact Infra](/contact.html) via an alternate email address, or <a href="https://issues.apache.org/jira/" target="_blank">file a Jira ticket</a> with any questions.
 
-If you feel your email has been blocked or rejected in error, please open a ticket at https://issues.apache.org/jira and include your external IP address and the To: header.
+If you feel your email has been blocked or rejected in error, please open a ticket at <https://issues.apache.org/jira> and include your external IP address and the To: header.
 
 ### Issue related to reporting ASF mail as spam
 

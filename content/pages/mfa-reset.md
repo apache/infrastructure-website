@@ -8,10 +8,10 @@ A committer may need to reset their ASF multi-factor authentication (MFA) if the
 There are two paths to recovery if you have lost your MFA token(s):
 
   1. **Self-service with a recovery code** established during initial MFA setup.
-    - Visit https://mfa.apache.org and use a recovery token by clicking "Select another authentication method."
+    - Visit <https://mfa.apache.org> and use a recovery token by clicking "Select another authentication method."
 
   2. **Identity validation by Infra.**
-    - Have someone from your PMC or Department open an Infra Jira ticket, or email security@infra.apache.org. Infra will validate your identity against factors that you previously registered with the ASF.
+    - Have someone from your PMC or Department open an Infra Jira ticket, or email <security@infra.apache.org>. Infra will validate your identity against factors that you previously registered with the ASF.
 
 To keep this process low-friction, we strongly encourage committers to register multiple factors in advance:
 

@@ -16,7 +16,7 @@ See also the guidelines for <a href="https://infra.apache.org/mailing-list-moder
 
 Requests regarding exposure of PII (Personal Identifiable Information) **MUST** be sent to our
 Data Privacy Officer at `privacy@apache.org`. For more information on personal data privacy,
-see https://privacy.apache.org/.
+see <https://privacy.apache.org/>.
 
 ## Accidental exposure of credentials or company-sensitive data
 

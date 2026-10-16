@@ -15,7 +15,7 @@ The next roundtable will be September 2, 1700 UTC. Daniel Gruno will report on t
 
 Note: the October Roundtable will be an in-person event at Community Over Code Glasgow.
 
-Details about joining a roundtable, and what goes on at one, are here: https://infra.apache.org/roundtable.html
+Details about joining a roundtable, and what goes on at one, are here: <https://infra.apache.org/roundtable.html>
 
 ### Mail delivery improvements
 
@@ -35,10 +35,10 @@ Further information is available at infra.apache.org/mfa.html.
 
 Work is in progress to streamline and automate procedural/technical decision votes that relate to infrastructure, security, and tooling, using a service called the Contingent Approval Platform (CAP). CAP provides a single, uniform workflow for establishing proof of consensus in a project for a given action, whether this is a social/manual thing or an automated task that requires approval.
 
-A demo version is up and running at https://cap-test.apache.org, and https://cap-test.apache.org/#/about has documentation and the tool's rationale in great detail.
+A demo version is up and running at <https://cap-test.apache.org>, and <https://cap-test.apache.org/#/about> has documentation and the tool's rationale in great detail.
 
 ### Infra at C/C Glasgow
 
-The Infrastructure track events will be on Monday, October 12 at Community over Code Glasgow. The full conference schedule is here: https://web.cvent.com/event/ac71ce47-2b5f-424c-abfe-5b48255315fb/summary?RefId=XSummary. For the Infra sessions, select Monday and then, in the Filters option, select Infrastructure.
+The Infrastructure track events will be on Monday, October 12 at Community over Code Glasgow. The full conference schedule is here: <https://web.cvent.com/event/ac71ce47-2b5f-424c-abfe-5b48255315fb/summary?RefId=XSummary>. For the Infra sessions, select Monday and then, in the Filters option, select Infrastructure.
 
 **More next month**

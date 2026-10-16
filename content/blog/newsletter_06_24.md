@@ -15,7 +15,7 @@ The documentation about building websites with Pelican that starts at <a href="h
 
 To read more about migration methods, please visit: <a href="https://cwiki.apache.org/confluence/display/INFRA/Moving+from+Infrastructure-pelican+to+GitHub+Actions" target="_blank">Moving from Infrastructure-pelican to GitHub Actions</a>, and the GHA's README file: <a href="https://github.com/apache/infrastructure-actions/blob/main/pelican/README.md" target="_blank">github.com/apache/infrastructure-actions/blob/main/pelican/README.md</a>.
 
-We are expecting to wrap up disabling our Pelican buildsite offerings by the end of 2024. If you have any questions regarding this migration, please email us at private@infra.apache.org or message us on #asfinfra in the-asf Slack space.
+We are expecting to wrap up disabling our Pelican buildsite offerings by the end of 2024. If you have any questions regarding this migration, please email us at <private@infra.apache.org> or message us on #asfinfra in the-asf Slack space.
 
 **Apache and HSTS**
 

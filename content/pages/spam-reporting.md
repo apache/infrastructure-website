@@ -5,7 +5,7 @@ The ASF acts as a forwarding service for @apache.org committer email addresses, 
 
 Marking such email as spam in tools like Outlook's "Report as Junk" feature causes those tools to flag the Foundation's mail servers as spammers. This results in the Foundation's mail servers being banned from mailing to Outlook/O365 and other major email services.
 
-To avoid disrupting the flow of email for everyone connected to the ASF, **do not** flag any mail sent to your @apache.org address as spam (even if it _seems to be_ spam). Simply delete it instead. If there is a particularly persistent spam issue, report it via an Infra Jira ticket, or via email to root@apache.org.
+To avoid disrupting the flow of email for everyone connected to the ASF, **do not** flag any mail sent to your @apache.org address as spam (even if it _seems to be_ spam). Simply delete it instead. If there is a particularly persistent spam issue, report it via an Infra Jira ticket, or via email to <root@apache.org>.
 
 ### Do not flag legitimate ASF mail as spam
 

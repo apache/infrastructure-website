@@ -27,7 +27,7 @@ Example:
 
 `./local-pelican-website.sh infrastructure-website`
 
-Once the process has completed, you should be able to see the rendered site by opening a web browser to http://localhost:8000/.
+Once the process has completed, you should be able to see the rendered site by opening a web browser to <http://localhost:8000/>.
 
 ## Use
 

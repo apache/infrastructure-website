@@ -518,7 +518,7 @@ Each revocation certificate has a type specifying a general (machine readable) r
 Create certificates to cover the first two cases. Note that if a key is lost or can no longer be accessed (due to
 media failure or some other reason), assume that the key has been potentially compromised. Print copies of the revocation certificates and store them safely to guard against media failure.
 
-You can generate an <a href="#ascii">ASCII armored</a> revocation certificate for key `bob` and save it to `revoke.asc` using <a href="https://www.gnupg.org" target="_blank:>GNU Privacy Guard</a>:
+You can generate an <a href="#ascii">ASCII armored</a> revocation certificate for key `bob` and save it to `revoke.asc` using <a href="<https://www.gnupg.org>" target="_blank:>GNU Privacy Guard</a>:
 
 ```shell
 $ gpg --output revoke.asc --armor --gen-revoke bob
