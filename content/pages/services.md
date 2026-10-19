@@ -242,7 +242,7 @@ Infra manages the ASF DNS, which is registered with Namecheap.
 
 <a href="https://s.apache.org" target="_blank">URL shortener</a>
 
-<h3 id="sharing">Infra Reporting Dashboard<a class="headerlink" href="#infra-reports" title="Permanent link">&para;</a></h3>
+<h3 id="sharing">Infra Reporting Dashboard<a class="headerlink" href="#sharing" title="Permanent link">&para;</a></h3>
 
 The <a href="https://infra.apache.org/infra-reports.html" target="_blank">ASF Infrastructure Reporting Dashboard</a> contains a collection of reports on the overall health and activity of the infrastructure at the ASF. Some reports are available only for ASF Members and Infra team members.
 
