@@ -47,7 +47,7 @@ Infra provides a library of resources that is constantly evolving to reflect the
 - Here is how one project <a href="https://cwiki.apache.org/confluence/display/INFRA/How+Apache+Jena+migrated+from+the+CMS" target="_blank">did the migration</a>.
 - A [project site template](asf-pelican.html) written in Pelican is available to smooth migration away from the CMS, and to support creation of new project sites.
 - [Managing your project website](project-site.html)
-- [Project blog](project-blog.html)
+- [Project blog](project-blogs.html)
 - <a href="https://cwiki.apache.org/confluence/display/INFRA/Managing+permissions+on+your+project%27s+Confluence+Space" target="_blank">Managing permissions on your project's Confluence space</a>.
 
 #### Other ####

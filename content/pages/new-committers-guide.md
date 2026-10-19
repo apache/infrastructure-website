@@ -164,7 +164,7 @@ Please be aware that Apache Software Foundation committers are targets for ident
 Leaking your access to Apache can have very destructive consequences. **Never** disclose your ASF password to anyone.
 
 The Apache Infrastructure team is clueful about DNS maintenance: do **not** trust any redirection by IP address. Your access to Apache will be through the
-machines serving the `svn.apache.org` domain. The SSH/SSL fingerprints of machines are listed on the <a href="/machines" target="_blank">machines</a> page, and our <a href="https://infra.apache.org/version-control.html#cert" target="_blank">SVN server fingerprints</a> are also listed.
+machines serving the `svn.apache.org` domain. The SSH/SSL fingerprints of machines are listed on the <a href="/machines" target="_blank">machines</a> page, and our <a href="https://infra.apache.org/version-control.html#svnssl" target="_blank">SVN server fingerprints</a> are also listed.
 
 Please use caution. Do not hesitate to ask if you have doubts: post a question to infrastructure before taking any action.
 
