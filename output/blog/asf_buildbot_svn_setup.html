@@ -181,8 +181,8 @@ raise RuntimeError(&amp;quot;cannot determine branch for '%s'&amp;quot; % change
 <p>split_file = split_file_branches
 </p></pre>
 <p>Next up , the relevant entry in our subversion/hooks/post-commit file looks like this (with&nbsp;constants defined earlier in the file): </p>
-<pre>    $SVNLOOK dirs-changed -r "$REV" "$REPOS" | egrep -qf "$BUILDBOT_PROJECT_PATHS" &amp;&amp; 
-( $BUILDBOT --repository "$REPOS" --revision "$REV" --bbserver "$BBSERVER" --bbport "$BBPORT" 
+<pre>    $SVNLOOK dirs-changed -r "$REV" "$REPOS" | egrep -qf "$BUILDBOT_PROJECT_PATHS" &amp;&amp;
+( $BUILDBOT --repository "$REPOS" --revision "$REV" --bbserver "$BBSERVER" --bbport "$BBPORT"
 --project-paths "$BUILDBOT_PROJECT_PATHS" &gt;&gt;/var/log/svn_buildbot.log 2&gt;&amp;1 &amp; )
 </pre>
 <p>And, last but not least for the svn host side of things, our buildbot_project_paths file which contains entries such as :</p>

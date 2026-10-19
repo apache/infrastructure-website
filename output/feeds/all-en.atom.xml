@@ -476,7 +476,7 @@
 &lt;h2&gt;Infra at Community over Code&lt;/h2&gt;
 &lt;p&gt;The Infrastructure team was busy at Community over Code in Minneapolis this month. The team gave a track of presentations, had a host of valuable hallway conversations, and even hosted the first-ever Games Night at an ASF convention …&lt;/p&gt;</summary><content type="html">&lt;p&gt;Welcome to &lt;em&gt;Inside Infra&lt;/em&gt; for September, 2025&lt;/p&gt;
 &lt;h2&gt;Infra at Community over Code&lt;/h2&gt;
-&lt;p&gt;The Infrastructure team was busy at Community over Code in Minneapolis this month. The team gave a track of presentations, had a host of valuable hallway conversations, and even hosted the first-ever Games Night at an ASF convention.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;The Infrastructure team was busy at Community over Code in Minneapolis this month. The team gave a track of presentations, had a host of valuable hallway conversations, and even hosted the first-ever Games Night at an ASF convention.&lt;/p&gt;
 &lt;p&gt;Games Night looks to be a feature of ASF conventions in the future. And by way of hallway conversations and response and questions during Infra presentations, we have identified many in the ASF community who are willing to help support Infra's work&lt;/p&gt;
 &lt;h2&gt;Roundtable&lt;/h2&gt;
 &lt;p&gt;The September Roundtable was part of Community Over Code The full summary, including many helpful comments and suggestions, is at &lt;a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable+2025-08-06+1700+UTC" target="_blank"&gt;Infra Roundtable 2025-08-06 1700 UTC&lt;/a&gt;&lt;/p&gt;
@@ -490,7 +490,7 @@
 &lt;li&gt;GitHub settings&lt;/li&gt;
 &lt;li&gt;Pelican builds&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;It operates on a per-branch basis, meaning you can have different settings for different branches, and only those branches with an active&amp;nbsp;.asf.yaml&amp;nbsp;file will kick off a feature.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;It operates on a per-branch basis, meaning you can have different settings for different branches, and only those branches with an active&amp;nbsp;.asf.yaml&amp;nbsp;file will kick off a feature.&lt;/p&gt;
 &lt;p&gt;Much more information is available at &lt;a href="https://github.com/apache/infrastructure-asfyaml" target="_blank"&gt;github.com/apache/infrastructure-asfyaml&lt;/a&gt;&lt;/p&gt;
 &lt;h2&gt;Blocking cyber threats with MFA&lt;/h2&gt;
 &lt;p&gt;There has been a dramatic increase recently in cyber threats, notably by agents of national governments who can deploy resources far beyond those available to the cliche hacker working from his mom's basement. These agents will take any opportunity to obtain one piece of personally identifying information (PII) about you, and then another and another, until they have enough 'markers' to be able to log into something while pretending to be you. That could be an online network where you work or play, your bank account, or where you put your software code for safekeeping. Once the agent has logged in to a network, they may be able to cause damage to areas well beyond your credit balance or your personal code repository.&lt;/p&gt;
@@ -734,8 +734,8 @@ github:
 &lt;b&gt;The February roundtable&lt;/b&gt; took place&amp;nbsp;Wednesday, February 5, 2025. The main topic was creation, review and management of &lt;b&gt;custom GitHub Actions&lt;/b&gt; that projects can use in their compile and build processes, and the self-serve way to add custom GitHub Actions to the GHA Allowlist.
 &lt;p&gt;There is now a management committee of subject matter experts who will review custom GitHub Actions as ASF community members submit them, and will add them to the ASF allowList if they are approved. Further details are available at &lt;a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable+2025-02-05+1700+UTC" target="_blank"&gt;Infra Roundtable 2025-02-05 1700 UTC&lt;/a&gt;&lt;/p&gt;
 &lt;p&gt;We hope this process will fix the current bottleneck that is slowing down review of new GitHubActions, and will provide guidance to help submitters create stronger and more resilient code.&lt;/p&gt;
-&lt;p&gt;There will be &lt;b&gt;no roundtable&lt;/b&gt; in March, 2025. The next roundtable will be Wednesday, April 2, 2025, 1700 UTC. The main topic will be announced soon.&amp;nbsp;&lt;/p&gt;
-&lt;p&gt;See&amp;nbsp;&lt;a href="https://infra.apache.org/roundtable.html" target="_blank"&gt;infra.apache.org/roundtable.html&lt;/a&gt;&amp;nbsp;for details about how to join a roundtable, and what happens at it.&amp;nbsp;&lt;/p&gt;
+&lt;p&gt;There will be &lt;b&gt;no roundtable&lt;/b&gt; in March, 2025. The next roundtable will be Wednesday, April 2, 2025, 1700 UTC. The main topic will be announced soon.&lt;/p&gt;
+&lt;p&gt;See&amp;nbsp;&lt;a href="https://infra.apache.org/roundtable.html" target="_blank"&gt;infra.apache.org/roundtable.html&lt;/a&gt;&amp;nbsp;for details about how to join a roundtable, and what happens at it.&lt;/p&gt;
 &lt;h2&gt;ASFMM&lt;/h2&gt;
 &lt;p&gt;Infra has developed a custom chat service that ASF Members can use during the annual Members' Meeting, which this year is on &lt;b&gt;March 6&lt;/b&gt;.&lt;/p&gt;
 &lt;p&gt;The tool, &lt;b&gt;ASFMM&lt;/b&gt;, is available at &lt;a href="https://asfmm.apache.org/oauth.html" target="_blank"&gt;asfmm.apache.org/oauth.html&lt;/a&gt;. Members must log in using their ASF credentials to use it.&lt;/p&gt;
@@ -1275,25 +1275,24 @@ still be rejected.&lt;/p&gt;
 &lt;img src="../images/image4.png" width="450"/&gt;
 &lt;h3&gt;Next Steps&lt;/h3&gt;
 &lt;p&gt;The easy thing would be to say, &amp;ldquo;Let&amp;rsquo;s fix all the things!&amp;rdquo; To be honest, there is on-going work with all the above issues, but most of them are not subject to a quick fix or a short answer. Now that we have data and a baseline, we&amp;rsquo;ll evaluate and discuss how we&amp;rsquo;re going to address your concerns. Since that I&amp;rsquo;ve never done one of these surveys before, I do not have the next steps laid out, so we&amp;rsquo;ll have to take them together.&lt;/p&gt;
-</content><category term="blog"></category></entry><entry><title>The Joy of Feedback (2022 Infra Survey)</title><link href="https://infra.apache.org/blog/the_joy_of_feedback.html" rel="alternate"></link><published>2022-12-01T00:00:00+00:00</published><updated>2022-12-01T00:00:00+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2022-12-01:/blog/the_joy_of_feedback.html</id><summary type="html">&lt;p&gt;In discussions at ApacheCon in New Orleans, we learned that the three standard methods of communicating with Infra:&amp;nbsp;&lt;/p&gt;
+</content><category term="blog"></category></entry><entry><title>The Joy of Feedback (2022 Infra Survey)</title><link href="https://infra.apache.org/blog/the_joy_of_feedback.html" rel="alternate"></link><published>2022-12-01T00:00:00+00:00</published><updated>2022-12-01T00:00:00+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2022-12-01:/blog/the_joy_of_feedback.html</id><summary type="html">&lt;p&gt;In discussions at ApacheCon in New Orleans, we learned that the three standard methods of communicating with Infra:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;opening a Jira ticket&amp;nbsp;&lt;/li&gt;
-&lt;li&gt;sending an email&amp;nbsp;&lt;/li&gt;
+&lt;li&gt;opening a Jira ticket&lt;/li&gt;
+&lt;li&gt;sending an email&lt;/li&gt;
 &lt;li&gt;posting a message on the &lt;code&gt;#asfinfra&lt;/code&gt; Slack channel&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;are not ideal for many conversations folks would like to have about The ASF's infrastructure.&lt;/p&gt;
-&lt;h2&gt;Roundtable Discussions …&lt;/h2&gt;</summary><content type="html">&lt;p&gt;In discussions at ApacheCon in New Orleans, we learned that the three standard methods of communicating with Infra:&amp;nbsp;&lt;/p&gt;
+&lt;h2&gt;Roundtable Discussions …&lt;/h2&gt;</summary><content type="html">&lt;p&gt;In discussions at ApacheCon in New Orleans, we learned that the three standard methods of communicating with Infra:&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;opening a Jira ticket&amp;nbsp;&lt;/li&gt;
-&lt;li&gt;sending an email&amp;nbsp;&lt;/li&gt;
+&lt;li&gt;opening a Jira ticket&lt;/li&gt;
+&lt;li&gt;sending an email&lt;/li&gt;
 &lt;li&gt;posting a message on the &lt;code&gt;#asfinfra&lt;/code&gt; Slack channel&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;are not ideal for many conversations folks would like to have about The ASF's infrastructure.&lt;/p&gt;
 &lt;h2&gt;Roundtable Discussions&lt;/h2&gt;
 &lt;p&gt;Infra is proposing to hold a monthly roundtable of free-flowing discussion.&lt;/p&gt;
-&lt;p&gt;Our idea right now is that each roundtable event will take place in a Slack huddle and will last an hour.&amp;nbsp;
-&amp;nbsp;
-The first (shorter) part will be Infra talking about a topic of interest, something we are planning, or a problem we are facing.
+&lt;p&gt;Our idea right now is that each roundtable event will take place in a Slack huddle and will last an hour.&lt;/p&gt;
+&lt;p&gt;The first (shorter) part will be Infra talking about a topic of interest, something we are planning, or a problem we are facing.
 Then we'll open the floor for everyone to talk about that topic... and about anything else infrastructure-related.&lt;/p&gt;
 &lt;p&gt;We'll create a bullet-point summary of what we talked about, and will make the summaries available in our CWiki space.&lt;/p&gt;
 &lt;h2&gt;Surveys&lt;/h2&gt;
@@ -1349,7 +1348,7 @@ improve standard processes that almost every project goes through,
 the better it is for the whole community.&lt;br/&gt;&lt;/p&gt;&lt;p style="margin-bottom: 0in; line-height: 100%"&gt;&amp;nbsp; &amp;nbsp;As an example,
 when a project starts out with the ASF, it normally begins as a
 &amp;ldquo;podling&amp;rdquo; in the ASF incubator. Here it can start to create its
-code, standard practices, and work methods in a development sandbox. 
+code, standard practices, and work methods in a development sandbox.
 &lt;/p&gt;&lt;p style="margin-bottom: 0in; line-height: 100%"&gt;&amp;nbsp; &amp;nbsp;Once the project
 develops a large-enough community of committers and contributors, and
 seems to be viable, it can request promotion to top-level-project
@@ -1558,15 +1557,15 @@ If the reaction to this change proves positive, the next step will be to integra
 </content><category term="blog"></category></entry><entry><title>Dear Apache</title><link href="https://infra.apache.org/blog/dear_apache.html" rel="alternate"></link><published>2015-10-19T18:30:41+00:00</published><updated>2015-10-19T18:30:41+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2015-10-19:/blog/dear_apache.html</id><summary type="html">&lt;p&gt;My name is Daniel Takamori and I'm so happy to be joining the Infra team here at Apache.&amp;nbsp; I'm from Oregon in the United States and really enjoy the rain.&amp;nbsp; While at Oregon State University I studied mathematics and physics with a lean towards error correcting codes and mathematical modelling …&lt;/p&gt;</summary><content type="html">&lt;p&gt;My name is Daniel Takamori and I'm so happy to be joining the Infra team here at Apache.&amp;nbsp; I'm from Oregon in the United States and really enjoy the rain.&amp;nbsp; While at Oregon State University I studied mathematics and physics with a lean towards error correcting codes and mathematical modelling.&amp;nbsp; Some of my hobbies are playing Go in which I'm ranked 6.9 kyu by the AGA, cooking with eggs and green things, and old school platforming video games.&amp;nbsp; In a former life I worked on underwater remotely operated vehicles and automated gardening systems.&amp;nbsp; Traveling is something I liked to do once; living in Hungary was awesome and I hope to visit again. Oregon is a great place to live, with all the trees, rain and burritos but maybe things will change in the future.&amp;nbsp; My handle Pono is my Hawaiian name, and I'm really proud to use it.&lt;br/&gt;&lt;br/&gt;Previously I was at the Oregon State University Open Source Lab and really enjoyed my time there; getting to know the Open Source communities and even work with Apache!&amp;nbsp; It was a real eye opening experience to the world of what software and DevOps (lol who knows what that even means).&amp;nbsp; I'm very excited to continue working with the community and even more excited to start this next chapter with such an amazing group.&lt;br/&gt;&lt;br/&gt;See you around internets!&lt;br/&gt;&lt;/p&gt;
 </content><category term="blog"></category></entry><entry><title>Planned downtime for ReviewBoard</title><link href="https://infra.apache.org/blog/planned_downtime_for_reviewboard.html" rel="alternate"></link><published>2015-08-19T19:19:38+00:00</published><updated>2015-08-19T19:19:38+00:00</updated><author><name></name></author><id>tag:infra.apache.org,2015-08-19:/blog/planned_downtime_for_reviewboard.html</id><summary type="html">&lt;div&gt;
 &lt;div&gt;
-&lt;div&gt;The ReviewBoard VM ran out of space and despite our best 
-efforts to fix the space issue without restarting the service, that is 
-the only option left.&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;The plan is to restart the VM on 
+&lt;div&gt;The ReviewBoard VM ran out of space and despite our best
+efforts to fix the space issue without restarting the service, that is
+the only option left.&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;The plan is to restart the VM on
 Thursday August 20th at 21:00 UTC (14:00 PDT), but if it fills up …&lt;/div&gt;&lt;/div&gt;</summary><content type="html">&lt;div&gt;
 &lt;div&gt;
-&lt;div&gt;The ReviewBoard VM ran out of space and despite our best 
-efforts to fix the space issue without restarting the service, that is 
-the only option left.&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;The plan is to restart the VM on 
-Thursday August 20th at 21:00 UTC (14:00 PDT), but if it fills up again 
+&lt;div&gt;The ReviewBoard VM ran out of space and despite our best
+efforts to fix the space issue without restarting the service, that is
+the only option left.&lt;br/&gt;&lt;br/&gt;&lt;/div&gt;The plan is to restart the VM on
+Thursday August 20th at 21:00 UTC (14:00 PDT), but if it fills up again
 before then, the resize will take place earlier.&lt;br/&gt;&lt;br/&gt;
 &lt;/div&gt;A tweet via @infrabot will be tweeted 1 hour before the scheduled downtime and a planned maintenance notice will be posted to &lt;a href="http://status.apache.org" target="_blank"&gt;status.apache.org&lt;/a&gt;.&lt;br/&gt;&lt;br/&gt;
 &lt;/div&gt;The actual downtime should take no more than 30 minutes.&lt;br/&gt;&lt;br/&gt;The next email about this will be after the service has resumed from the &lt;span&gt;planned&lt;/span&gt; downtime.&lt;br/&gt;&lt;br/&gt;Thanks!&lt;br/&gt;&lt;br/&gt;Geoff Corey
@@ -2325,7 +2324,7 @@ http://tinyurl.com/XXXXXXXXX [obscured]
 &lt;p&gt;About 6 hours after they started resetting passwords, we noticed the attackers and began shutting down services. We notified Atlassian of the previously unreported XSS attack in JIRA and contacted SliceHost.  Atlassian was responsive.  Unfortunately, SliceHost did nothing and 2 days later, the &lt;strong&gt;very&lt;/strong&gt; same virtual host (slice) &lt;a href="http://blogs.atlassian.com/news/2010/04/oh_man_what_a_day_an_update_on_our_security_breach.html"&gt;attacked Atlassian directly&lt;/a&gt;.&lt;/p&gt;
 &lt;p&gt;We started moving services to a different machine, thor.apache.org. The attackers had root access on brutus.apache.org for several hours, and we could no longer trust the operating system on the original machine.&lt;/p&gt;
 &lt;p&gt;By April 10th, JIRA and Bugzilla were back online.&lt;/p&gt;
-&lt;p&gt;On April 13th, Atlassian provided a patch for JIRA to prevent the XSS attack. See 
+&lt;p&gt;On April 13th, Atlassian provided a patch for JIRA to prevent the XSS attack. See
 &lt;a href="http://jira.atlassian.com/browse/JRA-20994"&gt;JRA-20994&lt;/a&gt; and &lt;a href="http://jira.atlassian.com/browse/JRA-20995"&gt;JRA-20995&lt;/a&gt; for details.
 &lt;/p&gt;
 &lt;p&gt;Our Confluence wiki remains offline at this time. We are working to restore it.&lt;/p&gt;
@@ -2425,8 +2424,8 @@ raise RuntimeError(&amp;amp;quot;cannot determine branch for '%s'&amp;amp;quot; 
 &lt;p&gt;split_file = split_file_branches
 &lt;/p&gt;&lt;/pre&gt;
 &lt;p&gt;Next up , the relevant entry in our subversion/hooks/post-commit file looks like this (with&amp;nbsp;constants defined earlier in the file): &lt;/p&gt;
-&lt;pre&gt;    $SVNLOOK dirs-changed -r "$REV" "$REPOS" | egrep -qf "$BUILDBOT_PROJECT_PATHS" &amp;amp;&amp;amp; 
-( $BUILDBOT --repository "$REPOS" --revision "$REV" --bbserver "$BBSERVER" --bbport "$BBPORT" 
+&lt;pre&gt;    $SVNLOOK dirs-changed -r "$REV" "$REPOS" | egrep -qf "$BUILDBOT_PROJECT_PATHS" &amp;amp;&amp;amp;
+( $BUILDBOT --repository "$REPOS" --revision "$REV" --bbserver "$BBSERVER" --bbport "$BBPORT"
 --project-paths "$BUILDBOT_PROJECT_PATHS" &amp;gt;&amp;gt;/var/log/svn_buildbot.log 2&amp;gt;&amp;amp;1 &amp;amp; )
 &lt;/pre&gt;
 &lt;p&gt;And, last but not least for the svn host side of things, our buildbot_project_paths file which contains entries such as :&lt;/p&gt;
