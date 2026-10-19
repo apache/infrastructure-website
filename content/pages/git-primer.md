@@ -5,15 +5,15 @@ This document is a primer on using Git for an Apache Software Foundation project
 
 ## Contents
 
-  - <a href="#repotypes">Repository types</a>
-    -  <a href="#publicprivate">Public and private repositories</a>
-  - <a href="#repocheckout">Repository checkout</a>
-  - <a href="#asfyaml">Using .asf.yaml</a>
-  - <a href="#committers">Committers: getting started</a>
-  - <a href="#windowsusers">Windows users</a>
-  - <a href="#lineendings">Line endings</a>
-  - <a href="#trouble">Troubleshooting</a>
-  - <a href="#further">Further reading</a>
+- <a href="#repotypes">Repository types</a>
+  - <a href="#publicprivate">Public and private repositories</a>
+- <a href="#repocheckout">Repository checkout</a>
+- <a href="#asfyaml">Using .asf.yaml</a>
+- <a href="#committers">Committers: getting started</a>
+- <a href="#windowsusers">Windows users</a>
+- <a href="#lineendings">Line endings</a>
+- <a href="#trouble">Troubleshooting</a>
+- <a href="#further">Further reading</a>
 
 <h2 id="repotypes">Repository types<a class="headerlink" href="#repotypes" title="Permanent link">&para;</a></h2>
 
@@ -54,7 +54,6 @@ https://gitbox.apache.org/repos/asf/reponame.git
 
 - **Committers**: `$ git clone https://gitbox.apache.org/repos/asf/reponame.git`
 - **Non-Committers**: `$ git clone http://gitbox.apache.org/repos/asf/reponame.git`
-
 
 <h2 id="asfyaml">Using .asf.yaml<a class="headerlink" href="#asfyaml" title="Permanent link">&para;</a></h2>
 
