@@ -41,8 +41,8 @@ That depends on your role and what you want to do. If this chart doesn't help, I
   </tr>
   <tr valign="top" style="border: 1px solid">
     <td style="padding:10px;border: 1px solid">discuss something publicly with Infra, or ask Infra a question</td>
-    <td style="padding:10px;border: 1px solid">The #asfinfra Slack channel, or by taking part in a Roundtable (the end of each Roundtable session is an open-mic opportunity for your comments or questions). See <a href="infra.apache.org/roundtable.html" target="_blank">https://infra.apache.org/roundtable.html</a>.
-    <td style="padding:10px;border: 1px solid">Consider these semi-public forums which are not suitable for confidential information.</td>
+    <td style="padding:10px;border: 1px solid">The #asfinfra Slack channel, or by taking part in a Roundtable (the end of each Roundtable session is an open-mic opportunity for your comments or questions). See <a href="https://infra.apache.org/roundtable.html" target="_blank">https://infra.apache.org/roundtable.html</a>.
+    <td style="padding:10px;border: 1px solid">Consider these semi-public forums which are not suitable for confidential information.</td>    
   </tr>
   <tr valign="top" style="border: 1px solid">
     <td style="padding:10px;border: 1px solid">get your <b>IP</b> unblocked</td>
@@ -192,7 +192,7 @@ Don't see here what you're looking for? See above for <a href="#requesting-where
 
 <h2 id="requesting-action">Other Requests<a class="headerlink" href="#requesting-action" title="Permanent link">&para;</a></h2>
 
-<h4 id="requesting-menu">What can I ask for?<a class="headerlink" href="#requestin-menu" title="Permanent link">&para;</a></h4>
+<h4 id="requesting-menu">What can I ask for?<a class="headerlink" href="#requesting-menu" title="Permanent link">&para;</a></h4>
 
 See the list of [Services and tools](https://infra.apache.org/services.html) Infra provides for projects. If you want something that isn't listed, get in touch with a Jira ticket for Infra. It might be possible to support it, especially if the feature request includes a list of [volunteers](infra-volunteer.html) who will help maintain it hint, hint.</p>
 
