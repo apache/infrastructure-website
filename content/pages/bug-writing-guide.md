@@ -8,7 +8,6 @@ license: https://www.apache.org/licenses/LICENSE-2.0
   - <a href="#blocked">If your report or comment gets blocked</a>
   - <a href="#followup">Following up</a>
 
-
 <h2 id="overview">Bug reporting<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 
 When you run into an issue with ASF instrastructure, with the software one of the ASF projects produces, or with an ASF-related website, you may be the first person to have noticed the issue. If so, you should report it. The people responsible for the thing that has a bug or other issue will be happy to know about the problem so they can fix it before more people run into it.
@@ -66,7 +65,7 @@ Make sure you provide a useful **title** for the report:
 
    - Useful: "PCMCIA install fails on Tosh Tecra 780DVD w/ 3c589"
    - Not useful: "Browser crashes" or "Install problem"
-   
+
 Review [Creating a Jira ticket](jira-guidelines.html) for specifics about Jira bug reports.
 
 ### What not to include ###

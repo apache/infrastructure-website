@@ -3,7 +3,8 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 Individuals and organizations can support the work of the ASF and its projects by hosting Jenkins or Buildbot agents on virtual machines in their own systems. Donors often provide this service to make available extra build resources for a project that needs more than Infra can easily provide.
 
-**Notes** 
+**Notes**
+
   - Ubuntu is a core supported OS at the ASF and we do not need any external hosting by individuals at this time.
   - Organizations wanting to donate multiple VMs for Jenkins and/or Buildbot use should email `private@infra.apache.org` to start discussions.
 
@@ -12,9 +13,9 @@ Individuals and organizations can support the work of the ASF and its projects b
 There are a few things you'll need to know and to adhere to.
 
   - Keep up to date with security patches etc,, the obvious stuff; we may want to be added to root alias for security reporting etc.
-  - Spec requirements: 
+  - Spec requirements:
       - minimum 16GB RAM
-      - 500GB Hard disk 
+      - 500GB Hard disk
       - A permanent static IP address
   - You must be an ASF Committer.
   - You must subscribe to the `builds@a.o` email list.

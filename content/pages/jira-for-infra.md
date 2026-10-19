@@ -3,7 +3,7 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 **Note**: this page is specifically about Jira tickets assigned to the Infrastructure team. General information about Jira and the ASF is at [Jira tickets](jira-guidelines.html).
 
-# Jira tickets for Infra 
+# Jira tickets for Infra
 
 The largest group of Jira tickets assigned to Infra are requests for Infra to perform a task of one sort or another. The next largest category is reports of possible issues in the Infrastructure system.
 
@@ -12,6 +12,7 @@ The largest group of Jira tickets assigned to Infra are requests for Infra to pe
 We need the right information to respond to your work request or bug report. In addition to the [Writing a good Jira ticket](jira-guidelines.html#writing) advice, see Infra's [What we need to know](infra-contact.html#what-we-need-to-know) list.
 
 ## How Infra will respond
+
 Infra may respond in a number of ways, including:
 
   - Closing the ticket as **invalid**. Review [Before you create a ticket](jira-guidelines.html#before) for reasons that may generate this response.

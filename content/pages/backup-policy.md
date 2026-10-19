@@ -10,18 +10,22 @@ Project VM backups: Automated backups via BackupPC are provided as a courtesy, h
 Foundation Critical systems receive additional nightly rsync/zfs based snapshots which are retained for approximately 30 days in most cases.
 
 #### Databases ####
+
   - MySQL and Postgres databases are backed up nightly using a puppet managed tool to /x1/db_dump
   - /x1/db_dump is picked up by the rsync or backuppc process
 
 #### Software repositories ####
+
   - gitbox.a.o (rsync, backuppc, GitHub mirrors).
   - svn.a.o (rsync, backuppc, azure DR replica).
   - archive.a.o (backuppc).
 
 #### Server logs ####
+
   - Ephemeral. retained in <a href="https://www.elastic.co/" target="_blank">Elasticsearch</a> for approximately 90 days, but not guaranteed. Not available outside Infra.
   - Compiled statistics available in some cases.
 
 #### Email ####
+
   - Raw archives (mbox-vm) (rsync/backuppc)
   - qmail source (hermes) (rsync backup + rsync replica)

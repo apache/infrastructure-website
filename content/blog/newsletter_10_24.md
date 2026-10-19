@@ -5,6 +5,7 @@ permalink: newsletter1024 layout: post
 **Welcome to *Inside Infra* for October, 2024**
 
 ### Dealing with phishing attempts
+
 We are seeing a sharp increase in 'phishing attempts', fake emails pretending to come from various ASF groups and committees. Infra has some <a href="https://infra.apache.org/phishing.html" target="_blank">anti-phishing advice</a> to help you avoid falling for these fake messages.
 
 ### Infra at Community over Code
@@ -25,6 +26,6 @@ More details are <a href="https://cwiki.apache.org/confluence/display/INFRA/Infr
 
 There will be **two** roundtables in November, both focusing on dealing with **spam and phishing attempts**. The first one will be **Wednesday, November 6, 1700 UTC**. The second one will be a week later: **November 13, 1000 UTC**. We want to see if a meeting at that time is more convenient for participants from India, Asia, Australia (a wide band of territory!).
 
-See <a href="https://infra.apache.org/roundtable.html" target="_blank">this page</a> for details about how to join a roundtable, and what happens at it. 
+See <a href="https://infra.apache.org/roundtable.html" target="_blank">this page</a> for details about how to join a roundtable, and what happens at it.
 
 *More soon!*

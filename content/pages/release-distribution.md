@@ -112,7 +112,7 @@ Regarding KEYS files:
 
   - Website documentation for any Apache product **must** provide public download links where interested parties may obtain current official source releases and accompanying cryptographic files.
   - Links to artifacts **must not** reference the main Apache web site. They **must** use the [standard procedure](release-download-pages.html) to make downloads available through the content distribution system.
-  - All links to checksums, detached signatures and public keys for current releases **must** reference `downloads.apache.org/` using `https://`. 
+  - All links to checksums, detached signatures and public keys for current releases **must** reference `downloads.apache.org/` using `https://`.
     - Legacy links to `https://[www.]apache.org/dist/...` still work, but new links should use `downloads.apache.org`.
     - Older release checksums are on `archive.apache.org`, and you **may** also link to them.
   - All releases, including old releases, are archived automatically. You **may** link from your PMC's download page to archived older releases for community convenience.

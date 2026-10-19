@@ -34,7 +34,8 @@ Pelican supports these tags, which the Infra blog does not use:
   - template: template to use to generate content
   - translation (true or false)
 
-The first line of the file should have this metadata, at a minimum: 
+The first line of the file should have this metadata, at a minimum:
+
 ```
   layout: post title: THE ENTRY'S TITLE date: 2010-01-01 permalink: KEY WORDS FROM THE TITLE category CATEGORY
 ```
@@ -54,6 +55,7 @@ category CATEGORY
 ### Creating a blog entry
 
 To create an entry, create an .md file in this folder. The file's name should probably be like the permalink for the entry.
+
   - give the file a meaningful title that does not duplicate one we have used already.
   - Starting at the first line of the file, add metadata for the entry, as described above.
 

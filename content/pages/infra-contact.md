@@ -11,17 +11,17 @@ That depends on your role and what you want to do. If this chart doesn't help, I
 
 <table style="border: 1px solid">
   <tr style="border: 1px solid">
-      <th style="padding:10px;border: 1px solid">If you...</th><th style="padding:10px;border: 1px solid">and want to...</th><th style="padding:10px;border: 1px solid">then contact...</th><th style="padding:10px;border: 1px solid">Notes</th>    
+      <th style="padding:10px;border: 1px solid">If you...</th><th style="padding:10px;border: 1px solid">and want to...</th><th style="padding:10px;border: 1px solid">then contact...</th><th style="padding:10px;border: 1px solid">Notes</th>
   </tr>
   <tr valign="top" style="border: 1px solid">
     <td rowspan="8" style="padding:10px;border: 1px solid">are anyone</td>
-    <td style="padding:10px;border: 1px solid">report a <b>security vulnerability</b> in a service that runs on apache.org infrastructure</td> 
-    <td style="padding:10px;border: 1px solid"><code>security@infra.apache.org</code></td> 
+    <td style="padding:10px;border: 1px solid">report a <b>security vulnerability</b> in a service that runs on apache.org infrastructure</td>
+    <td style="padding:10px;border: 1px solid"><code>security@infra.apache.org</code></td>
     <td style="padding:10px;border: 1px solid">You may also encrypt the email to this <a href="https://infra.apache.org/tools/infrastructure-root.asc" target="_blank">set of keys</a>. For those using Linux, we have a shell script which might come in handy. See <a href="https://infra.apache.org/tools/" target="_blank">Infra Tools</a> for more details.</td>
   </tr>
    <tr valign="top" style="border: 1px solid">
-    <td style="padding:10px;border: 1px solid">share <b>sensitive information</b> with Infra</td> 
-    <td style="padding:10px;border: 1px solid"><code>root@apache.org</code></td> 
+    <td style="padding:10px;border: 1px solid">share <b>sensitive information</b> with Infra</td>
+    <td style="padding:10px;border: 1px solid"><code>root@apache.org</code></td>
     <td style="padding:10px;border: 1px solid">See the <a href="https://infra.apache.org/sensitive_info.html" target="_blank">Infra policy on sharing sensitive information</a>.</td>
   </tr>
   <tr valign="top" style="border: 1px solid">
@@ -32,7 +32,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
   <tr valign="top" style="border: 1px solid">
     <td style="padding:10px;border: 1px solid">report that a <b>service is down</b> <em>and</em> <a href="https://status.apache.org/" target="_blank">status.apache.org</a> doesn't show it</td>
     <td style="padding:10px;border: 1px solid">Infra's <a href="https://the-asf.slack.com/#asfinfra" target="_blank">Slack channel</a></td>
-    <td style="padding:10px;border: 1px solid">Email to <code>users@infra.apache.org</code> is an acceptable alternative.</td>    
+    <td style="padding:10px;border: 1px solid">Email to <code>users@infra.apache.org</code> is an acceptable alternative.</td>
   </tr>
   <tr valign="top" style="border: 1px solid">
     <td style="padding:10px;border: 1px solid"><b>unsubscribe</b> from a mailing list</td>
@@ -47,7 +47,7 @@ That depends on your role and what you want to do. If this chart doesn't help, I
   <tr valign="top" style="border: 1px solid">
     <td style="padding:10px;border: 1px solid">get your <b>IP</b> unblocked</td>
     <td style="padding:10px;border: 1px solid"><code>abuse@infra.apache.org</code></td>
-    <td style="padding:10px;border: 1px solid"></td>    
+    <td style="padding:10px;border: 1px solid"></td>
   </tr>
   <tr valign="top" style="border: 1px solid">
     <td style="padding:10px;border: 1px solid"><b>edit</b> the mail archives of a mailing list you posted to</td>
@@ -125,12 +125,11 @@ That depends on your role and what you want to do. If this chart doesn't help, I
   </tr>
 </table>
 
-
 <h2 id="what-we-need-to-know">What we need to know<a class="headerlink" href="#what-we-need-to-know" title="Permanent link">&para;</a></h2>
 
 <table style="border: 1px solid">
   <tr style="border: 1px solid">
-      <th style="padding:10px;border: 1px solid">If you ask us to...</th><th style="padding:10px;border: 1px solid" >we need to know...</th><th style="padding:10px;border: 1px solid">Notes</th>    
+      <th style="padding:10px;border: 1px solid">If you ask us to...</th><th style="padding:10px;border: 1px solid" >we need to know...</th><th style="padding:10px;border: 1px solid">Notes</th>
   </tr>
   <tr valign="top" style="border: 1px solid">
     <td style="padding:10px;border: 1px solid"><b>create</b> a podling</td>
@@ -199,7 +198,7 @@ See the list of [Services and tools](https://infra.apache.org/services.html) Inf
 
 <h4 id="requesting-where">Where should I submit my request?<a class="headerlink" href="#requesting-where" title="Permanent link">&para;</a></h4>
 
-If there is a <a href="https://selfserve.apache.org/" target="_blank">dedicated app</a>, use it. If not, file a <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Jira ticket</a> for Infra. 
+If there is a <a href="https://selfserve.apache.org/" target="_blank">dedicated app</a>, use it. If not, file a <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">Jira ticket</a> for Infra.
 
 Please review the tables above before filing a ticket - often you or someone in your PMC can effect the change without involving infra at all.
 
@@ -214,7 +213,6 @@ Please review the tables above before filing a ticket - often you or someone in 
   - See also [Jira tickets for Infra](jira-for-infra.html).
   
 **Thanks**. Making requests following these guidelines might require a little effort, but saves time for all involved.
-
 
 <h4 id="reopen">My issue got closed with a request to reopen it<a class="headerlink" href="#reopen" title="Permanent link">&para;</a></h4>
 

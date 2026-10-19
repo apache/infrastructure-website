@@ -29,7 +29,7 @@ Recent enhancements to .asf.yaml make it easier for projects to manage their dev
   - an option to allow deploying from all protected branches
   - improvements to the branch and tagging processes
 
-More details are available in this part of the .asf.yaml README file: [https://github.com/apache/infrastructure-asfyaml?tab=readme-ov-file#environments](github.com/apache/infrastructure-asfyaml?tab=readme-ov-file#environments) 
+More details are available in this part of the .asf.yaml README file: [https://github.com/apache/infrastructure-asfyaml?tab=readme-ov-file#environments](github.com/apache/infrastructure-asfyaml?tab=readme-ov-file#environments)
 
 ### Removal of Maven integration plugin
 
@@ -54,7 +54,7 @@ We now have 99,115 Jira accounts that have been inactive for more than three yea
 This volume of accounts puts an unnecessary burden on our system, and Infra will be taking steps to reduce the account count:
 
   - We will **delete** accounts that are more than a year old and have never had any activity.
-  - We will **disable and anonymize** accounts that have been inactive for the past three years, retaining the record of their activity before that time. 
+  - We will **disable and anonymize** accounts that have been inactive for the past three years, retaining the record of their activity before that time.
 
 ASF Members and project committers can help lighten the load by making sure to always use a Jira account with your ASF credentials (username, email address as they appear in the ICLA you submitted) whenever creating or commenting on a ticket for the ASF, or related to any of our projects.
 
@@ -67,6 +67,5 @@ If you cannot access one or more ASF repositories or services, your IP address m
 The Apache Software Foundation (ASF) is seeking an Infrastructure Systems Administrator who will contribute to the stability, security, and growth of its globally-distributed infrastructure. The successful candidate will demonstrate strong system administration skills in diverse environments, proven experience with open source tools and methodologies, and a deep understanding of F/OSS project dynamics. This role is 100% remote, but availability for once-yearly travel to the United States for a multi-day Team Meetup is highly encouraged. The candidate must be based in the UK or Europe. Applicants from nations embargoed or sanctioned by the United States cannot be accepted. Salary commensurate with experience.
 
 <a href="https://s.apache.org/infra-hiring-2025" target="_blank">s.apache.org/infra-hiring-2025</a>
-
 
 **More next month!**

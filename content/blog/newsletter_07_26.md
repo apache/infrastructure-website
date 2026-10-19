@@ -7,7 +7,7 @@ Welcome to _Inside Infra_ for July, 2026
 
 ## Roundtable
 
-The July Roundtable featured a presentation by Clay Johnson of Gradle Technologies on **Predictive Test Selection**, which can propose a subset of a project's test to cover only those modules and functions that the most recent commit may affect. This can dramatically reduce build time and the amount of build resources deployed. 
+The July Roundtable featured a presentation by Clay Johnson of Gradle Technologies on **Predictive Test Selection**, which can propose a subset of a project's test to cover only those modules and functions that the most recent commit may affect. This can dramatically reduce build time and the amount of build resources deployed.
 
 More details, including a PDF of the presentation slide deck, are on this page: <a href="https://cwiki.apache.org/confluence/spaces/INFRA/pages/430408857/Infra+Roundtable+2026-07-01" target="_blank">s.apache.org/wjtlv</a>.
 

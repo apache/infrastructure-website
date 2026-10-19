@@ -13,20 +13,18 @@ If you join the `users@infra.apache.org` email list, you can help answer the man
 
 The issues range in complexity. Any committer or ASF Member is well-positioned to answer all but the most gnarly ones.
 
-
 **Join the Roundtables**
 
 Infra holds regular roundtable discussions on important topics in the World of Infrastructure. These are not lectures, where an Infra member holds forth and everybody is supposed to sit in respectful silence. Rather, the Infra team is hoping to gain insights and guidance from members of the ASF community that will improve how the team works or a tool it is developing.
 
 The roundtables usually take place on the **first Wednesday of each month**, on the `#roundtable` channel in the `the-ASF` workspace on Slack. They are available to anyone who can access the ASF workspace on Slack: basically, committers and Members.
+
   - Here are <a href="https://infra.apache.org/roundtable.html" target="_blank">details about the Roundtables</a>, including information on joining the `#roundtable` channel.
   - We don't record the sessions, but we do take <a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable" target="_blank">copious notes</a>.
- 
 
 **Build better builds**
 
 A group meets regularly (usually the second Thursday of the month) in the `#builds` channel in the `the-ASF` workspace on Slack to explore issues related to builds of ASF projects' products. You are welcome whether you have a puzzle you need help solving, or some insights that may help others.
-
 
 **Re-vision distribution**
 

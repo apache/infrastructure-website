@@ -62,7 +62,7 @@ IGNORE_FILES = ['README.md','interviews','include']
 
 # Process
 
-Pelican uses <a href="https://docs.getpelican.com/en/latest/plugins.html#list-of-signals" target="_blank">signals</a> as it goes through the process of reading and generating content. It processes pages in no particular order. 
+Pelican uses <a href="https://docs.getpelican.com/en/latest/plugins.html#list-of-signals" target="_blank">signals</a> as it goes through the process of reading and generating content. It processes pages in no particular order.
 
 Our plugins provide the following activity:
 
@@ -281,7 +281,7 @@ ASF-Pelican uses a version of <a href="https://github.com/github/cmark-gfm" targ
     - [email][11]
 
   - [Disallowed html][12] the tagfilter extension disables certain html. The asfgenid plugin reenables `script`, `style`, and `iframe` html.
-    
+
 - [Examples][13]
 
 ### Pelican GFM
@@ -438,7 +438,6 @@ def headingid_transform(ids, soup, tag, permalinks, perma_set):
         for tag in soup.findAll(HEADING_RE, id=False):
             headingid_transform(ids, soup, tag, asf_genid['permalinks'], permalinks)
 ```
-
 
 [pelican]:   	https://blog.getpelican.com
 [gfm]:		https://github.com/github/cmark-gfm

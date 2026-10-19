@@ -1,7 +1,7 @@
 Title: Source Code Repositories at Apache
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-Apache project contributors are in countries all around the world. To help them work together, projects keep their source code in an Internet-accessible revision control system, either <a href="https://subversion.apache.org/" target="_blank">Subversion (SVN)</a> or <a href="https://git-scm.com/" target="_blank">Git</a>. Apache committers have _write access_ to the repositories for their projects, so they can edit existing code and add new files. 
+Apache project contributors are in countries all around the world. To help them work together, projects keep their source code in an Internet-accessible revision control system, either <a href="https://subversion.apache.org/" target="_blank">Subversion (SVN)</a> or <a href="https://git-scm.com/" target="_blank">Git</a>. Apache committers have _write access_ to the repositories for their projects, so they can edit existing code and add new files.
 
 ## Contents ##
 
@@ -22,9 +22,9 @@ Apache project contributors are in countries all around the world. To help them 
 
 **Note**: please review the [Project Code Repository Policy](project-repo-policy.html).
 
-Everyone has *read access* to the repositories and can download the most up-to-date development version of any project's software to review or compile. 
+Everyone has *read access* to the repositories and can download the most up-to-date development version of any project's software to review or compile.
 
-- If you want a stable release of the source code, download it from the <a href="https://www.apache.org/dyn/closer.lua/" target="_blank">distribution directory</a>. 
+- If you want a stable release of the source code, download it from the <a href="https://www.apache.org/dyn/closer.lua/" target="_blank">distribution directory</a>.
 - Only download the code directly from your project's code repository if you are participating in the development effort. The latest version of the code is what your colleagues have most recently checked in, and they may or may not have confirmed that it compiles correctly and does what they want it to do.
 - If you want a release version of the project's compiled application, visit the project's website and find its download page. It may offer both stable releases and "bleeding-edge" or "nightly" builds that compile properly but include the latest, possibly-unstable, features.
 
@@ -99,7 +99,7 @@ Apache does not support `svnserve` or `svn+ssh`.
 
 Committers need to properly configure their svn client. One particular issue is OS-specific line-endings for text files. When you add a new text file, especially when applying patches from Bugzilla, make sure that the line-endings are appropriate for your system, then do (for test.txt)
 
-`svn add test.txt svn propset svn:eol-style native test.txt` 
+`svn add test.txt svn propset svn:eol-style native test.txt`
 
 You can configure your svn client to do that automatically for some common file types. Add the contents of <a href="https://www.apache.org/dev/svn-eol-style.txt" target="_blank">this file</a> to the bottom of your ~/.subversion/config file, normally found at:
 
@@ -111,7 +111,7 @@ You may need to set additional properties for some files. For example, apply `sv
 
 Pay attention to the messages from your svn client when you do 'svn commit'.
 
-**Tip**: If you use TortoiseSVN, a popular Windows GUI client that integrates with Windows Explorer, you can right click in Explorer and select TortoiseSVN - Settings, and then press the "Edit" button to update your "Subversion configuration file:". If you do not see 
+**Tip**: If you use TortoiseSVN, a popular Windows GUI client that integrates with Windows Explorer, you can right click in Explorer and select TortoiseSVN - Settings, and then press the "Edit" button to update your "Subversion configuration file:". If you do not see
 
      *.c = svn:eol-style=native
 
@@ -198,7 +198,7 @@ This problem crops up because the order of the revisions is not identical to the
 
 <h3 id="svnfaqs">SVN FAQs<a class="headerlink" href="#svnfaqs" title="Permanent link">&para;</a></h3>
 
-- **When should I use svn lock?** Very rarely. Commits in subversion are transactional. This means that locks are almost always unnecessary. An oft-quoted use case is to prevent concurrent editing of a large, unmergeable binary document. However, for open development, good communication is preferable to locking even in this use case. A good, timely post to the list to let your fellow developers know that you're going to start editing that huge PDF is better than locking the file. 
+- **When should I use svn lock?** Very rarely. Commits in subversion are transactional. This means that locks are almost always unnecessary. An oft-quoted use case is to prevent concurrent editing of a large, unmergeable binary document. However, for open development, good communication is preferable to locking even in this use case. A good, timely post to the list to let your fellow developers know that you're going to start editing that huge PDF is better than locking the file.
 - **How often can I run a cron job that connects to the repository?** Hourly is fine. Please do not use programs that poll the repository more frequently than hourly. People who run automated scripts that continuously poll the repository wind up getting their access denied, and that may impact other folks connecting through the same host. If you need to stay more in-sync than an hourly cron allows, subscribe your script to the relevant commit mailing list.
 - **How do I mirror the whole SVN repository for an experiment?**  First, ask yourself whether you really want the entire ASF repository Most people really want only a single project. In that case, just check out that source directory from the repo. If you really do want the entire ASF repository, don't use svnsync. Instead, start by looking <a href="httpa://svn-master.apache.org/dump/" target="_blank">here</a>. Use that to bootstrap your repo.
 - **Why do I get a 403 error when I try to commit code?** Run `svn info` and check that the URL starts with `https://`. If it starts with `http://`, run:

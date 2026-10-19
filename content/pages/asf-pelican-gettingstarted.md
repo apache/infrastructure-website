@@ -73,6 +73,7 @@ Determine whether your site requires a [data model](asf-pelican-data.html).
 The `.ezmd` files in the template's `content` directory show examples, and <a href="https://github.com/apache/template-site/blob/main/asfdata.yaml" target="_blank">asfdata.yaml</a> has many examples.
 
 Remove the following if you do not need a data model:
+
   - `asfdata.yaml`
   - `data/eccn` directory
 

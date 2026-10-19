@@ -8,6 +8,6 @@ As of April, 2025, the ASF had 99,115 Jira accounts that had been inactive for m
 This volume of accounts puts an unnecessary burden on our system, and Infra will be taking steps to:
 
   - delete accounts that are more than a year old and have never had any activity.
-  - disable and anonymize accounts that have been inactive for the past three years, retaining the record of their activity before that time. 
+  - disable and anonymize accounts that have been inactive for the past three years, retaining the record of their activity before that time.
 
 ASF Members and project committers can help lighten the load by making sure to always use a Jira account with your ASF credentials (username, email address as they appear in the ICLA you submitted) whenever creating or commenting on a ticket for The ASF, or related to any of our projects.

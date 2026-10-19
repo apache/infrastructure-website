@@ -31,10 +31,11 @@ Infra has disabled the option that would let you provide a member invite link to
 ### Slack Account Types
 
 Slack has two account types:
+
   - **Member**: has full access to all Slack's features, including inviting others to join the workspace.
   - **Guest**: has limited access inside Slack and can only access the channel(s) they are invited to join.
 
-Slack has a list of <a href="https://slack.com/help/articles/201314026-Permissions-on-a-Slack-workspace" target="_blank">permissions</a> for these account types. 
+Slack has a list of <a href="https://slack.com/help/articles/201314026-Permissions-on-a-Slack-workspace" target="_blank">permissions</a> for these account types.
 
 #### ASF and Slack 'members'
 
@@ -47,18 +48,17 @@ For the Apache Software Foundation:
 
 ## Joining project channels
 
-Once you are part of the ASF workspace as a member or a multi-channel guest, you can join any public channels you wish to. 
+Once you are part of the ASF workspace as a member or a multi-channel guest, you can join any public channels you wish to.
 
  - At the top of your list of channels in the Slack app, click the **+** icon.
  - Use the _Browse channels_ option to display a list of open channels in the workspace; or enter text in the search field.
  - Select any channel to add it to your channel list.
- 
- Some ASF channels are **private** or **locked**, and do not appear on the list of channels you can join. Someone who is already in the channel has to invite you to join such a channel.
- 
-If you are a single-channel guest and wish to join additional channels, ask an ASF Member or committer to open a Jira ticket for Infra with the request. They should provide your user name and the additional channels you would like to join.
- 
-It is good manners to send a hello message to a channel you join, possibly with a short statement of why you are there.
 
+ Some ASF channels are **private** or **locked**, and do not appear on the list of channels you can join. Someone who is already in the channel has to invite you to join such a channel.
+
+If you are a single-channel guest and wish to join additional channels, ask an ASF Member or committer to open a Jira ticket for Infra with the request. They should provide your user name and the additional channels you would like to join.
+
+It is good manners to send a hello message to a channel you join, possibly with a short statement of why you are there.
 
 ## Setting up a project channel
 

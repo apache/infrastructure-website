@@ -7,7 +7,7 @@ As of August 2021, you need to use a special MKDocs build command sequence so it
 
 The command `mkdocs gh-deploy` removes the site, rebuilds it, and then deploys the updated contents to the given remote branch. This removes, but does not replace, the `.asf.yaml` file.
 
-To prevent the new build from removing the `.asf.yaml` file, use this build command sequence: 
+To prevent the new build from removing the `.asf.yaml` file, use this build command sequence:
 
 ```
 rm -r site

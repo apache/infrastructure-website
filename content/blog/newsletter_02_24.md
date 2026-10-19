@@ -7,7 +7,7 @@ _Hello, all!_
 
 ## Newsletter name
 
-Our very unscientific poll showed that "Inside Infra" has the most support as a name for this newsletter, so that is what we shall be. 
+Our very unscientific poll showed that "Inside Infra" has the most support as a name for this newsletter, so that is what we shall be.
 
 **Note**: in 2020 the main ASF blog published a series of interviews with Infra team members also called "Inside Infra". Links to the interviews are available at <a href="https://cwiki.apache.org/confluence/display/INFRA/The+Infrastructure+team" target="_blank">The Infrastructure team</a>.
 

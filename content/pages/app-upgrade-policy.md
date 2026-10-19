@@ -10,7 +10,7 @@ This policy encompasses Infra's approach to upgrades of Jenkins, Confluence and 
 **Main Jenkins instance**
 _Upgrades once a quarter_
 
-Infra follows the <a href="https://jenkins.io/download/lts/" target="_blank">LTS line of releases</a>, which the Jenkins Project releases on a 12 week cycle. Once every three months, on the last Saturday or Sunday of the month following the Jenkins LTS release, ASF Infra upgrades the main instance. 
+Infra follows the <a href="https://jenkins.io/download/lts/" target="_blank">LTS line of releases</a>, which the Jenkins Project releases on a 12 week cycle. Once every three months, on the last Saturday or Sunday of the month following the Jenkins LTS release, ASF Infra upgrades the main instance.
 
 **Jenkins plugins**
 _Upgrades once a month_
@@ -27,7 +27,7 @@ Jira gets a new release every two to six weeks, far too often (and unpredictable
 **Jira plugins**
 _Upgrades every two months_
 
-We upgrade Jira plugins before or after each main instance upgrade, as appropriate, and once every two months between main instance upgrades. 
+We upgrade Jira plugins before or after each main instance upgrade, as appropriate, and once every two months between main instance upgrades.
 
 ### Confluence
 
@@ -37,7 +37,7 @@ _Upgrades every six months_
 Our goal is to upgrade Confluence to the latest version twice a year.
 
 **Confluence plugins**
-_Upgrades every two months_ 
+_Upgrades every two months_
 
 Every two months we perform upgrades to plugins that are compatible with the version of the main Confluence instance we are running.
 

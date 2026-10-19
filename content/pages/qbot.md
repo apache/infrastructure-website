@@ -6,6 +6,7 @@ The Infrastructure team's **Qbot** is a Slack assistant that can simplify both i
 The name references the tool-maker 'Q', who provides weapons and gadgets for Agent 007 in the James Bond movies.
 
 ## What Qbot can do
+
 Qbot has an evolving set of functions:
 
   - Adding people to private channels
@@ -16,6 +17,7 @@ Qbot has an evolving set of functions:
 It also has a set of 'fun' features, such as rolling dice, flipping a coin, or talking to someone from the (fictional) ASF Human Resources Department.
 
 ## Setting up Qbot in your PMC's channels
+
 If you want to have Qbot available in your PMC's channel, create a Jira ticket for Infra with the request. Include this information:
 
   - If you want to get Jira-ticket notifications, the name of the channel or channels where notifications about tickets related to your projects should appear
@@ -31,8 +33,8 @@ See also "Jira-related functions", below.
 
 To have Qbot active in a project's private channel, once it is available in your public channels, someone already in the channel has to invite it with the Slack command `invite @QBot`.
   
-
 ## Talking to Qbot
+
 In Slack, there are three ways to talk to Qbot:
 
   -  Anywhere in the ASF workspace, type `/qbot` and the command you want to give it. If it is a command which you do not have permission to use where you currently are in Slack, the command will fail.
@@ -41,14 +43,15 @@ In Slack, there are three ways to talk to Qbot:
         -  Click that entry to see a display with three tabs.
         -  Select the `Messages` tab.
         -  Write your command to Qbot without `/` or 'qbot` at the start.
-        
 
 ## Qbot commands
+
 **Note** we are expanding Qbot's reach, and this list will expand to match its capabilities.
 
   - `help` - You see a list of the available commands: `qbot help`.
 
 ### Adding yourself to a private channel
+
   - `addme`- Add yourself to a private channel. (Without Qbot, you have to ask someone already in the channel to add you.) You can make the command from anywhere in the ASF workspace. The syntax is `/qbot addme <NAME OF CHANNEL>`.
 
 ### Jira-related functions
@@ -93,4 +96,5 @@ _Note: the following two commands are in 'alpha' development and may not work as
   - `queue` - Performs the same function as `q`. The syntax is `qbot queue start`.
 
 ## Requesting features
+
 If you have an idea for a Qbot service that could help your PMC on Slack (or you just want to add a verse from another sea shanty), please suggest it in the <a href="https://github.com/apache/infrastructure-ideas/discussions/categories/qbot" target="_blank">Infrastructure-ideas repository</a>.

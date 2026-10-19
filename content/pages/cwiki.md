@@ -31,19 +31,19 @@ When Infra creates the space, it sets up a $project-committer group (or equivale
   - You can create user groups in addition to the standard groups:
   
 <h2 id="watching">Watching a cwiki page<a class="headerlink" href="#watching" title="Permanent link">&para;</a></h2>
-Cwiki users, including those not involved in a project, can 'watch' pages in a project's space to receive update notices when information on that page changes. 
+Cwiki users, including those not involved in a project, can 'watch' pages in a project's space to receive update notices when information on that page changes.
 
-To watch a page: 
+To watch a page:
   
   - Log in in to the ASF cwiki.
   - Locate the page you want to watch.
-  - Click **Watch** on the top menu bar. 
+  - Click **Watch** on the top menu bar.
 
 To stop watching a page:
 
   - Log in in to the ASF cwiki.
   - Click your profile icon at the top right of the wiki page.
-  - From the dropdown menu that appears, select **Watches**. 
+  - From the dropdown menu that appears, select **Watches**.
   - The list of pages you are watching appears, and you can remove those you no longer want to watch.
   
 Infra can help you set up a role account that can watch for any changes in your space and send notices about them to an email list. This can lead to a large amount of traffic, so you can choose a digest option that provides a daily summary of changes.

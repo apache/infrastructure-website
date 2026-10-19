@@ -13,18 +13,15 @@ Chris will be at Community over Code in Denver, Colorado, USA, October 7-10, so 
 
 Here is a link to an <a href="https://news.apache.org/foundation/entry/inside-infra-chris-thistlethwaite-part" target="_blank">interview with Chris</a>.
 
-
 ### Qbot qnews
 
 **1. Jira features**
 
 In the ASF Slack workspace (the-asf.slack.com), ASF Members using channels with Qbot installed can now call up Jira tickets that match various search conditions (unassigned, related to a certain project, and so on). Details on the available commands are on the <a href="https://infra.apache.org/qbot.html" target="_blank">Qbot page</a>.
 
-
 **2. Lauren marches on**
 
 Slack channels with Qbot installed now also have access to 'Lauren', a member of the Human Resources department of an alternate-world ASF, in which the Foundation has a big office where Committers and Members work. Lauren can provide policy statements, review complaints, point out employee benefits, and make important (to Lauren) announcements. Lauren is very sure her information is accurate and up-to-date; you may have a different opinion. Instructions for contacting Lauren are also on the Qbot page.
-
 
 ### Working with lists.apache.org
 
@@ -32,11 +29,9 @@ Slack channels with Qbot installed now also have access to 'Lauren', a member of
 
 The page <a href="https://infra.apache.org/email_lists.html" target="_blank">Working in lists.apache.org</a> explains what your access is and what options are available, and provides a list of hotkeys you can use to do what you need to do.
 
-
 ### Release artifact recommended and maximum sizes
 
 For clarity, Infra has updated the statement in the [Release Distribution Policy](release-distribution.html) on release artifact sizes. The statement now reads: **Infra recommends keeping the size of your release artifacts below 100MB. The ASF will not host release artifacts larger than 1GB.**
-
 
 ### Roundtable summary
 

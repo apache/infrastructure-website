@@ -17,6 +17,7 @@ The November Roundtable will be **Wednesday, November 5, 1700 UTC**, on the #rou
 Information about how to take part in the online roundtables is at <a href="https://infra.apache.org/roundtable.html" target="_blank">infra.apache.org/roundtable.html</a>.
 
 ## Projects to test Wiki and Jira migration
+
 Infra is looking for projects to help evaluate test migrations of their projects' documents and tickets to a test instance of Jira / Confluence on the Atlassian Cloud.
 
 Infra will perform the (test) migration of your Jira project and/or Confluence space(s), so there is nothing for you to do except some testing, like:-
@@ -32,10 +33,9 @@ This is opt in, and is Phase 2 of our planned migration to Atlassian Cloud - Ini
 Please contact `gmcdonald@apache.org`, or via Infra's Slack channel, #asfinfra, if your project would like to participate - please provide a link to the discussion supporting this decision.
 
 ## Back to full strength
+
 System Administrator <a href="https://infra.apache.org/blog/bob_thomson_joins_infra.html" target="_blank">Bob Thomson</a>, a welcome addition, joined the Infra team in September.
 
 We also spoke with Danny Angus, VP-Infra since earlier in 2025: <a href="https://infra.apache.org/blog/Danny_Angus_Infra_VP.html" target="_blank">infra.apache.org/blog/Danny_Angus_Infra_VP.html</a>
 
-
 **More next month!**
-

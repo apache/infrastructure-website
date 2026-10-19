@@ -3,7 +3,7 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 ### "Not authorized" message
 
-People emailing ASF addresses may see this message: 
+People emailing ASF addresses may see this message:
 
 ``Recipient address rejected: ASF gnomes rejected your message: SPF fail - not authorized. See https://infra.apache.org/mail-rejection.html``
 
@@ -11,7 +11,7 @@ The apache.org MX servers reject messages under many of the following circumstan
 
 - SPF (Sender Policy Framework) hard fail for domains which have it configured (-all)
 - SPF hard fail for major spam targets despite ~all (gmail.com, yahoo.com)
-- SPF hard fail for inbound mail from apache.org addresses which do NOT originate from apache.org servers 
+- SPF hard fail for inbound mail from apache.org addresses which do NOT originate from apache.org servers
 - Various RBL provider match
 - Invalid HELO hostname (hostname does not exist)
 - Invalid HELO domain (domain does not exist)

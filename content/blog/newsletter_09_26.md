@@ -7,7 +7,7 @@ layout: post
 
 ## Roundtable
 
-September's Roundtable featured a report on the current state of the **Contingent Approval Platform (CAP)**. 
+September's Roundtable featured a report on the current state of the **Contingent Approval Platform (CAP)**.
 
 CAP provides a single, uniform workflow for establishing proof of consensus in a project for a given action, whether this is a social/manual thing or an automated task that requires approval.
 
@@ -38,6 +38,5 @@ Infra has identified some DKIM-related problems related to downstream handling o
 The Infrastructure track events at Community Over Code Glasgow will be on Monday, October 12. The full conference schedule is here: <a href="https://web.cvent.com/event/ac71ce47-2b5f-424c-abfe-5b48255315fb/summary?RefId=XSummary" target="_blank">web.cvent.com/event/ac71ce47-2b5f-424c-abfe-5b48255315fb/summary?RefId=XSummary</a>. For the Infra sessions, select _Monday_ and then, in the Filters option, select _Infrastructure_.
 
 We particularly recommend the workshop on **build efficiency** to help projects cope with the challenge of our having to steward effectively our small reply of GitHub runners.
-
 
 **More next month!**

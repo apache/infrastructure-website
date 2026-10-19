@@ -10,7 +10,7 @@ For details about how to join a roundtable, and what happens at it, see <a href=
 
 ## GHA allowlist
 
-Infra and a team of volunteers have been developing an automated self-serve solution that will enable Dependabot to scan our allowlist approved GitHub Actions, as well as help projects add third-party Actions to the list. 
+Infra and a team of volunteers have been developing an automated self-serve solution that will enable Dependabot to scan our allowlist approved GitHub Actions, as well as help projects add third-party Actions to the list.
 
 The team is debugging the complex flow of commits and action triggers to our pubsub-based watcher service. For the moment, you still need to submit a Jira ticket to Infra if you want to add an Action to the allowlist.
 

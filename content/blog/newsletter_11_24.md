@@ -19,7 +19,7 @@ Summaries of the conversations are here:
 
 The next roundtable will be **Wednesday, December 4, 1700 UTC**. The main topic will be a deep dive into **asf.yaml**, the Swiss Army Knife of ASF build utilities.
 
-See <a href="https://infra.apache.org/roundtable.html" target="_blank">this page</a> for details about how to join a roundtable, and what happens at it. 
+See <a href="https://infra.apache.org/roundtable.html" target="_blank">this page</a> for details about how to join a roundtable, and what happens at it.
 
 ## A message from the VP-Infra
 

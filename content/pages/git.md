@@ -3,7 +3,6 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 The Apache Software Foundation projects use <a href="https://subversion.apache.org/" target="_blank">Subversion</a> (SVN) or <a href="https://git-scm.com/" target="_blank">Git</a> for [version control](version-control.html) of their software and documentation assets. This page is about _read-only_ Git mirrors of Apache SVN codebases. [Writable Git repositories](project-repo-policy.html) are also available.
 
-
 <h2 id="git-mirrors">Read-only Git mirrors<a class="headerlink" href="#git-mirrors" title="Permanent link">&para;</a></h2>
 
 We maintain read-only Git mirrors of many Apache codebases at <a href="https://git.apache.org/" target="_blank">https://git.apache.org/</a>. These mirrors contain the full version histories (including all branches and tags) of the mirrored codebases and are updated in near real time based on the latest svn commits.
@@ -40,6 +39,6 @@ Once you're ready to share your changes with the rest of the project team, you c
 
 `git format-patch origin/trunk`
 
-The sooner you share your work, the better. 
+The sooner you share your work, the better.
 
 You can repeat the steps of this workflow as often as you like, producing more patches to be attached to the issue tracker. Once some of your patches are accepted and committed to svn, you can rebase your work against the latest trunk. Alternatively, if you're asked to make some changes, you can go back to the original Git commit and modify it until the project team accepts your changes.

@@ -15,7 +15,6 @@ More information is available in the [guide](new-committers-guide.html) and [FAQ
   - <a href="#svnbasics">Source code repositories</a>
   - <a href="#providingfeedback">Providing feedback to Apache projects</a></i></p>
 
-
 <h3 id="comdev">Community Development is here to help!<a class="headerlink" href="#comdev" title="Permanent link">&para;</a></h3>
 
 Apache values "Community over code", and is full of volunteers who want to help you. Guideposts and helpful information and mentors for newcomers to Apache can be found at <a href="http://community.apache.org/" target="_blank">Community Development</a>.
@@ -53,7 +52,7 @@ projects have different preferences about how you should submit feedback. Check 
 
 A vital part of the ASF projects are the project mailing lists. Most projects have a users' list named `users@${project}.apache.org` or `user@${project}.apache.org`. Subscribe to it by sending an e-mail to `users-subscribe@${project}.apache.org`, then follow the instructions. We have many <a href="/contrib-email-tips" target="_blank">tips on asking questions</a> in a way that gets answers.
 
-Tell the developer and user community about your use of the software product, your experiences in setting it up, issues you encountered, and any general feedback you may have. Don't forget to include any positive observations that will show you appreciate the effort the team is making. Your story will likely be very welcome if you write it clearly, in a friendly tone, and Read The Manual before asking for answers that you could find there. You'll probably receive enthusiastic responses from some of the developers and other users (although responses may not appear right away: everybody is busy). 
+Tell the developer and user community about your use of the software product, your experiences in setting it up, issues you encountered, and any general feedback you may have. Don't forget to include any positive observations that will show you appreciate the effort the team is making. Your story will likely be very welcome if you write it clearly, in a friendly tone, and Read The Manual before asking for answers that you could find there. You'll probably receive enthusiastic responses from some of the developers and other users (although responses may not appear right away: everybody is busy).
 
 If you found specific issues or have an idea about how things should work, the project may ask you to submit a detailed bug report or patch to improve things.
 
@@ -74,7 +73,7 @@ A patch is a computer-generated file that describes differences between differen
 See [How to submit a patch for project code](patch.html) for further details.
 
 <h4 id="websites">How to suggest changes to project websites<a class="headerlink" href="#websites" title="Permanent link">&para;</a></h4>
-<p>One of the simplest ways to contribute to Apache projects is by suggesting improvements to the project's website or product documentation. If something doesn't make 
+<p>One of the simplest ways to contribute to Apache projects is by suggesting improvements to the project's website or product documentation. If something doesn't make
 sense to you, or if you have a better way to explain something, send the project a patch!
 
 Projects use many different content management systems for their websites. Some systems have a web-based editor that makes it relatively simple to provide improvements, once you have access rights. Ask the PMC for such rights, explaining how you would like to help, or simply provide your suggestions in an email.

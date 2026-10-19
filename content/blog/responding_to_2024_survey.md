@@ -5,7 +5,7 @@ layout: post
 
 At the end of 2023, Infra conducted a survey, looking for feedback on how the team and the ASF infrastructure are working. It was good to see that, for instance, 95% of respondents felt that Infra offers adequate technical services for their project. The full report on responses is at [2023 Infra Survey Results](2023%20Infra%20Survey%20Results.html).
 
-Many respondents took the time to add comments identify areas which needed improvement, and the Infra team never got around to acknowledging and responding to those comments and suggestions, until now. (Note, some comments were a little unclear or too terse for us to figure out how to answer them. Apologies for omitting them in this following list.) 
+Many respondents took the time to add comments identify areas which needed improvement, and the Infra team never got around to acknowledging and responding to those comments and suggestions, until now. (Note, some comments were a little unclear or too terse for us to figure out how to answer them. Apologies for omitting them in this following list.)
 
 The comments and suggestions fell into several broad categories:
 

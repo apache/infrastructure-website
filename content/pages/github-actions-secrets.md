@@ -3,7 +3,7 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 **GitHub <a href="https://help.github.com/en/actions/getting-started-with-github-actions/about-github-actions" target="_blank">Actions</a>** help you automate your software development workflows in the same place you store code and collaborate on pull requests and issues. You can write individual tasks, called actions, and combine them to create a custom workflow. Workflows are custom automated processes that you can set up in your repository to build, test, package, release, or deploy any code project on GitHub.
 
-***A note on testing***: Some projects would like to use GitHub Actions for complex processes, such as automating their tests of software builds. 
+***A note on testing***: Some projects would like to use GitHub Actions for complex processes, such as automating their tests of software builds.
 
 The _time_ runners are in use (measured in minutes) is unlimited for public repositories so how long a test takes isn't the issue. The issue is tying up limited 'runners' (nodes) while those minutes are running. Apache has a limited number of runners for over 1200 repositories, so the concern would be how many runners the test requires, which are then unavailable to other projects for the duration of the test.
 
@@ -53,7 +53,7 @@ To extend the validity of the token, adjust the `develocity-token-expiry` action
     required: false
 ```
 
-Further information is at these pages: 
+Further information is at these pages:
 
   - <a href="https://github.com/gradle/actions/blob/main/docs/setup-gradle.md#managing-develocity-access-keys" target="_blank">Managing Develocity access keys</a>
   - <a href="https://docs.gradle.com/develocity/gradle-plugin/current/#short_lived_access_tokens" target="_blank">Short-lived access tokens</a>

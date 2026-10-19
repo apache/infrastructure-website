@@ -7,7 +7,6 @@ layout: post
 **Note**: Until June, 2023, the ASF supported using Apache Roller for project blogs. That support has ended. Please visit <a href="https://infra.apache.org/project-blogs.html" target="_blank">Project Blog</a> for more information about blogs for projects.
 <hr/>
 
-
 Roller was installed today for the use of ASF Projects. Those committers with personal blogs should instead add their feed to planet.apache.org.
 
 Still a few things to sort out, but blogs.apache.org is mostly ready.

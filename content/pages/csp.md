@@ -1,7 +1,7 @@
 Title: Content Security Policy for project websites 
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-This policy became effective **March 1, 2025**. 
+This policy became effective **March 1, 2025**.
 
 For your project's website:
 
@@ -9,7 +9,7 @@ For your project's website:
   - External resources, such as videos or PDFs, from providers with which we do not have a Data Processing Agreement (DPA) are **not allowed** to be embedded in the project's website. If you have a DPA request or inquiry, contact `privacy@apache.org`. They can also tell you if a provider whose content you want to embed in your website has already signed a DPA.
   - Links that lead to downloadable external resources **are allowed** if the site visitor must give explicit consent in order to see or use the content (such as by clicking a button or a link). This consent cannot be opt-out, and there must be a clear way for the visitor to retract consent at a later time.
 
-This policy brings project websites into alignment with the security and privacy parameters defined by the VP, Data Privacy and as requested by The ASF Security Committee. We ask that projects do not circumvent them without express permission from our VP, Data Privacy. 
+This policy brings project websites into alignment with the security and privacy parameters defined by the VP, Data Privacy and as requested by The ASF Security Committee. We ask that projects do not circumvent them without express permission from our VP, Data Privacy.
 
 The <a href="https://infra.apache.org/tools/csp.html" target="_blank">instructions on this page</a> can help you update the CSP policy for your project's website.
 

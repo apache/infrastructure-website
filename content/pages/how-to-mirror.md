@@ -3,7 +3,7 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 **NOTE - as of August, 2021, the ASF itself is not accepting further mirror site applications.**
 
-Organizations may wish to create a download mirror that includes the releases of most or all of the Apache Software Foundation's projects. You may mirror either the full distributions tree, or a reduced tree that excludes a few very resource-intensive (disk-wise and bandwidth-wise) projects (see <a href="#techniques">Mirroring techniques</a>). 
+Organizations may wish to create a download mirror that includes the releases of most or all of the Apache Software Foundation's projects. You may mirror either the full distributions tree, or a reduced tree that excludes a few very resource-intensive (disk-wise and bandwidth-wise) projects (see <a href="#techniques">Mirroring techniques</a>).
 
 Here is how to set up such a mirror.
 
@@ -22,7 +22,7 @@ Hosting a mirror has a few requirements:
   - You should not trim or abridge the mirrored tree in any way.
   - You should not modify the mirrored tree in any way. In particular, you should not alter or remove HEADER.html or README.html files. See below for adding information about the mirror host.
 
-We encourage you to 
+We encourage you to
 
   - do an **update-check** at least four times a day a day. You may sync a maximum of six times per day, but only if you have a slow or poor connection that causes timeouts.
   - run the <a href="https://httpd.apache.org/" target="_blank">Apache HTTP Server</a> version 2.2 or later and use the following configuration for your web mirror to allow all the features of our download site to function optimally:
@@ -93,7 +93,7 @@ Here is how to add information explaining who is hosting the private download mi
 
 The contents of README.html appear near the bottom of your mirror's home page.
 
-  - Only customize the home-page (top-level) README.html. Do not change any other README.html files. 
+  - Only customize the home-page (top-level) README.html. Do not change any other README.html files.
   - Don't omit the '/' in `"/README.html"`.
 
 Please limit the contents of the README.html to something like:
@@ -110,7 +110,7 @@ If your mirror is not working properly, check the following:
 
   - Page headers and footers display correctly.
   - All top-level directories and files on the ASF mirror are present on your mirror.
-  - Download a couple of files to check that the process works. 
+  - Download a couple of files to check that the process works.
   - Trying to download a missing file should generate a `404 Not Found` error. You can verify this by modifying one of the valid URLs that you tested above.
 
 <h2 id="verifying">Verifying the download<a class="headerlink" href="#verifying" title="Permanent link">&para;</a></h2>

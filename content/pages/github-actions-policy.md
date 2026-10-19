@@ -8,13 +8,16 @@ For details on the use of requirement level terms, see the <a href="https://www.
 For additional advice on how to use this feature safely, see <a href="https://cwiki.apache.org/confluence/display/BUILDS/GitHub+Actions+Security" target="_blank">GitHub Actions Security</a>.
 
 ### Dependabot
+
 All repositories using GitHub Actions **must** have automatic dependency management in place using one of these tools:
+
 * <a href="https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/dependabot-quickstart-guide" target="_blank">GitHub Dependabot</a> for the <a href="https://docs.github.com/en/code-security/reference/supply-chain-security/supported-ecosystems-and-repositories#github-actions" target="_blank">`github-actions` ecosystem</a>
 * <a href="https://docs.renovatebot.com/getting-started/running/#forking-renovate-app" target="_blank">Forking Renovate</a> using the <a href="https://docs.renovatebot.com/modules/manager/github-actions/" target="_blank">GitHub actions manager</a>
 
 See the [Dependabot](dependabot.html) page for how to configure it, including [grouping security updates](dependabot.html#group-security-updates) so that a burst of advisories does not turn into a burst of CI runs.
- 
+
 ### Resource use
+
 Due to misconfigurations in their builds, some projects have been using unsupportable numbers of [GitHub Actions](github-actions-secrets.html). As part of fixing this situation, Infra has established a policy for GitHub Actions use:
 
   - All workflows **MUST** have a job concurrency level less than or equal to 20. This means a workflow cannot have more than 20 jobs running at the same time across all matrices.
@@ -143,7 +146,7 @@ Automated services **MUST NOT** push data to a repository or branch that is subj
 
 ### Non-committer contributors and GitHub Actions
 
-GitHub provides an option to allow a non-committer contributor to use GitHub Actions if a previous pull request by that person has been approved. This raises security concerns, and could cause issues with overall use of GitHub Actions. 
+GitHub provides an option to allow a non-committer contributor to use GitHub Actions if a previous pull request by that person has been approved. This raises security concerns, and could cause issues with overall use of GitHub Actions.
 
 The default for this option is to “always require approval for external contributors”.
 
@@ -154,4 +157,5 @@ Projects that have a strong desire to use the “only require approval first tim
 * A link to a mailing list discussion showing a consensus vote by the PMC noting, that they affirm that they will actively monitor their workflows for abuse, and that they will act accordingly if and when abuse is detected. Failure to carry out such monitoring and addressing of abuse may result in the workflow settings being switched back to "always require approval for external contributors".
 
 ### Details on submitting a GitHub Action for approval
+
 The README file at <a href="https://github.com/apache/infrastructure-actions" target="_blank">github.com/apache/infrastructure-actions</a> has a detailed guide for how to add or update a GitHub Action.

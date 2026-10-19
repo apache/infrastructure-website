@@ -6,11 +6,11 @@ layout: post
 <p>As of approximately 03:00 (UTC) today the infrastructure team have enabled a password policy for all LDAP accounts.<br />
 This policy has been implemented at the LDAP infrastructure level and will affect all users.  It has been deployed using OpenLDAP's password policy schema, and overlay.</p>
 
-<p>At the time of launch we will be enforcing the following policy. </p> 
+<p>At the time of launch we will be enforcing the following policy. </p>
 
 <ul>
 <li>At the time of a given users 10th successive login failure the account will be locked.</li>  
-<li>The account will then be automatically unlocked 24 hours later, or until a member of root@ unlocks it for you.</li> 
+<li>The account will then be automatically unlocked 24 hours later, or until a member of root@ unlocks it for you.</li>
 <li>If the user successfully completes a login before the tally reaches 10, the counter for failed logins is reset back to 0.</li>
 </ul>
 

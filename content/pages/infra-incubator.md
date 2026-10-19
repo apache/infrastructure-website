@@ -55,13 +55,11 @@ Moving existing repositories into ASF version control generally requires a githu
 
 If you wish to copy existing code without transferring GitHub stars, etc., your mentor can request **new repositories** for the project via <a href="https://selfserve.apache.org/" target="_blank">SelfServe</a>.
 
-
 **Bug tracking**
 
-You can enable GitHub issues (and wikis) via our (<a href="https://github.com/apache/infrastructure-asfyaml/blob/main/README.md" target="_blank">.asf.yaml</a> service, a configuration file that controls features such as notification schemes, website staging, GitHub settings, and Pelican builds. This is a per-repo feature. 
+You can enable GitHub issues (and wikis) via our (<a href="https://github.com/apache/infrastructure-asfyaml/blob/main/README.md" target="_blank">.asf.yaml</a> service, a configuration file that controls features such as notification schemes, website staging, GitHub settings, and Pelican builds. This is a per-repo feature.
 
 The project can request a Jira instance for issue tracking via <a href="https://selfserve.apache.org/" target="_blank">SelfServe</a>.
-
 
 **Confluence Wiki**
 

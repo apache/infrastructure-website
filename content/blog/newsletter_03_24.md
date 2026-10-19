@@ -17,7 +17,6 @@ Due to misconfigurations in their builds, some projects have been using unsuppor
 
 The full policy is at <a href="https://infra.apache.org/github-actions-policy.html" target="_blank">https://infra.apache.org/github-actions-policy.html</a>.
 
-
 ### Roundtable summary
 
 In the Roundtable of March 3, 2024, Clay Johnson of Gradle outlined the testing features that come with Develocity, focussing on their use with Gradle and Maven. For instance:
@@ -28,7 +27,6 @@ In the Roundtable of March 3, 2024, Clay Johnson of Gradle outlined the testing 
 A fuller summary of this discussion, and conversation about GitHub Runners and other topics, is at <a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable+2024-03-06%2C+17%3A00+UTC" target="_blank">https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable+2024-03-06%2C+17%3A00+UTC</a>, and is available to ASF Members and Committers.
 
 **Note**: There will be **no April 2024 Roundtable**. The series will resume in May.
-
 
 ### The end of Apache Paste Bucket?
 

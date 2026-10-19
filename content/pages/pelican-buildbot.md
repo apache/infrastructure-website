@@ -3,7 +3,6 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 ASF projects can use <a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a> to create and manage the project website. Pelican provides a framework and the option of using themes to display your site pages, which you write in <a href="https://github.github.com/gfm/" target="_blank">GitHub-flavored-markdown</a> (GFM). You can set <a href="https://buildbot.net/" target="_blank">Buildbot</a> to build and publish the site every time someone saves updates to a page.
 
-
 Pelican provides support for importing an existing site that runs on WordPress or some other service.
 
 ### Sites with sub-directories
@@ -30,7 +29,7 @@ The configuration file is `pelicanconf.py`.
 Create the repository for the website content using the <a href="https://gitbox.apache.org/setup/newrepo.html" target="_blank">GitBox's Boxer self service tool</a> (https://gitbox.apache.org/setup/newrepo.html).
 
 1. Clone the repository to a local workspace
-2. Run `pelican-quickstart` in the root of the repository on the master branch. 
+2. Run `pelican-quickstart` in the root of the repository on the master branch.
     - The script asks where you want to create the website. Accept " . ", the default, unless you have a specific location in mind for it.
     - Use $PROJECTNAME for the site title.
     - Set the website author as $PROJECTNAME also. This lets all members of the project edit the website.
@@ -39,7 +38,7 @@ Create the repository for the website content using the <a href="https://gitbox.
     - Set article pagination to `No`.
     - Set time zone to `UTC`.
     - Set generation of tasks.py / makefile to 'No'.
-    
+
 3. Site configuration:
 
 In your site repository, run the following commands:
@@ -70,5 +69,3 @@ Pelican provides a range of <a href="http://www.pelicanthemes.com/" target="_bla
 ### Pelican plugins ###
 
 There is a directory of <a href="https://github.com/getpelican/pelican-plugins/" target="_blank">Pelican plugins</a> that deliver extra functionality for a website.
-
-

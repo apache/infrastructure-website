@@ -24,10 +24,9 @@ You can subscribe to any repository you like, and get reports on any specific ch
 
 <h2 id="jiras">Reporting on changes to Jira tickets<a class="headerlink" href="#jiras" title="Permanent link">&para;</a></h2>
 
-If your channel is set up for Jira reporting, ASFBot keeps track of the latest changes to a Jira ticket. To view, for instance, the most recent comment pertaining to `INFRA-1234`, type: 
+If your channel is set up for Jira reporting, ASFBot keeps track of the latest changes to a Jira ticket. To view, for instance, the most recent comment pertaining to `INFRA-1234`, type:
 
-`ASFBot: comment INFRA-1234` 
-
+`ASFBot: comment INFRA-1234`
 
 <h2 id="issues">Fetching issue information<a class="headerlink" href="#issues" title="Permanent link">&para;</a></h2>
 
@@ -39,7 +38,7 @@ ASFBot returns a link to that Jira ticket or Bugzilla issue and, if available, a
 
 <h2 id="secretary">Secretary feature<a class="headerlink" href="#secretary" title="Permanent link">&para;</a></h2>
 
-ASFBot provides a simple secretary feature. To leave a message for an absent person, write: 
+ASFBot provides a simple secretary feature. To leave a message for an absent person, write:
 
 `ASFBot: tell [recipient] [message]`
 
@@ -59,7 +58,7 @@ Record keeping works as follows:
   - To end a meeting and save a summary of it, type `ASFBot: meeting end`. This will end the record keeping and produce an HTML document containing the summary of the meeting and a log of everything participants wrote.
   - To send an IRC meeting summary as an email to a recipient, type `ASFBot: meeting send your@domain.tld`. You will need to have been granted karma by Infra to perform this task.
 
- ASFBot understands most <a href="https://meetbot.debian.net/Manual.html" target="_blank">meetbot</a> commands, so 
+ ASFBot understands most <a href="https://meetbot.debian.net/Manual.html" target="_blank">meetbot</a> commands, so
 `#meetingstart` and `#meetingend` will also start and end a recording of a meeting.
 
 For an example of what a meeting summary may look like, check out this record of a <a href="https://comments.apache.org/meetings/couchdb-meeting-16_01_2013-2439.html" target="_blank">CouchDB meeting</a>.

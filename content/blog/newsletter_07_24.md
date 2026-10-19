@@ -12,6 +12,7 @@ The Infrastructure team's Qbot is a Slack assistant that can simplify both impor
 The name references the tool-maker 'Q', who provides weapons and gadgets for Agent 007 in the James Bond movies.
 
 ### Qbot has an evolving set of functions:
+
   - Providing to the channel notifications related to your project's Jira tickets - new ticket, new comment, ticket resolved.
   - Adding people to private channels.
   - Starting a question queue in the huddle in a channel workspace (note that this feature is in alpha development).

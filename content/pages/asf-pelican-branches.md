@@ -29,7 +29,7 @@ A successful build will be found at `https://www-feature.staged.apache.org/`.
 
 Once your feature is complete, submit a pull request (PR) from `preview/feature` to `main`. Once the PR is merged the site updates to include the updated features.
 
-GitHub has further information on <a href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request#creating-the-pull-request" target="_blank">merging branches</a>. 
+GitHub has further information on <a href="https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request#creating-the-pull-request" target="_blank">merging branches</a>.
 
 ## Example
 

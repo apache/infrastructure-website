@@ -12,14 +12,15 @@ Currently, the service streams the following events:
 * Pull Requests and Issues from GitHub
 * Staging and publishing notifications sent via our [.asf.yaml](https://s.apache.org/asfyaml) offering.
 
-Events are delivered as JSON objects in a <a href="https://en.wikipedia.org/wiki/Chunked_transfer_encoding" target="_blank">chunked response stream</a>, with each new chunk being either an event payload or a keep-alive ping. 
+Events are delivered as JSON objects in a <a href="https://en.wikipedia.org/wiki/Chunked_transfer_encoding" target="_blank">chunked response stream</a>, with each new chunk being either an event payload or a keep-alive ping.
 
 ## Live stream explorer
+
 You can explore our pubsub stream using the [PyPubSub Explorer](/tools/pse/), a live visualization tool for PyPubSub streams.
 
-
 ## How to subscribe
-Subscribers can pick one or multiple topics to subscribe to, with more specific subscriptions getting fewer, but more specific, event payloads. Construct subscriptions in the form of: `http://pubsub.apache.org:2069/topics/go/here`, and separate the topics you want to subscribe to with forward slashes. 
+
+Subscribers can pick one or multiple topics to subscribe to, with more specific subscriptions getting fewer, but more specific, event payloads. Construct subscriptions in the form of: `http://pubsub.apache.org:2069/topics/go/here`, and separate the topics you want to subscribe to with forward slashes.
 
 The service returns events that match _all_ of the topics you are subscribed to.
 To subscribe to multiple topic batches in an OR'ed way, you may use a comma to separate your batches of topics.
@@ -44,10 +45,10 @@ Private SVN repos topics are constructed in the same way, but have an additional
 For example `https://pubsub.apache.org:2070/private/svn/private/committers/commit` returns commits for
 `https://svn.apache.org/repos/private/committers/board/`
 
-
 ## Event payload examples
 
 Pings are simple objects like this:
+
 ~~~ json
 {"stillalive": 1583973410.9620552}
 ~~~
@@ -84,7 +85,9 @@ An example of a real event payload, in this case a git commit, could be (emails 
 Payloads vary depending on what they represent, so check both what sub-objects are present in the payload and the `pubsub_path` variable, which will show the full payload event path and explain which type is being sent.
 
 ## Try it yourself
+
 To try it out and take a look at the event stream, use [cURL](https://en.wikipedia.org/wiki/CURL) in your terminal:
+
 ~~~ bash
 curl http://pubsub.apache.org:2069/git/commit
 ~~~
@@ -92,9 +95,11 @@ curl http://pubsub.apache.org:2069/git/commit
 <br/>
 
 A secure version also exists on port 2070, for use with authenticated event streams:
+
 ~~~ bash
 curl https://pubsub.apache.org:2070/git/commit
 ~~~
+
 Please note that due to limitations in our TLS terminator, payloads larger than 64kb are split into 64kb chunks on
 port 2070. If you are using port 2070, you should ensure that the data you receive is terminated with a newline (\n),
 or continue fetching data till you hit a chunk terminated with a newline.
@@ -104,10 +109,12 @@ N.B. the following curl switches may be added:
 * -N - non-buffered output; used when piping into another command (e.g. tail)
 * -sS - silent mode (-s) but still shows error messages (-S)
 
-
 ## Using PyPubSub in programming
+
 ### Using PyPubSub with Python
+
 You can listen for and react to payloads in Python using the [asfpy](https://pypi.org/project/asfpy/) pip package:
+
 ~~~ python
 import asfpy.pubsub
 
@@ -122,7 +129,9 @@ def main():
 ~~~
 
 ### Using PyPubSub with node.js
+
 This sample snippet lets you use `node.js` for listening for and processing pubsub events:
+
 ~~~ javascript
 const http = require("http");
 const https = require("https");
@@ -169,6 +178,7 @@ pps.attach(process);
 ~~~
 
 ### Using PyPubSub with Ruby
+
 This sample lets you connect to our pubsub service via Ruby:
 
 ~~~ruby
@@ -230,8 +240,10 @@ end
 ~~~
 
 ## Want to know more? Have questions?
+
 To learn more, or just get some questions answered, please contact us at `users@infra.apache.org`, and we'll try our best to help you out.
 
 ## Acknowledgements
+
 PyPubSub is based on [SvnPubSub](https://paul.querna.org/articles/2010/10/22/evolution-of-apaches-websites/)
 and <a href="https://github.com/Humbedooh/gitpubsub/blob/master/README.md" target="_blank">gitpubsub</a>. We wish to thank the Subversion project for building the precursor to this service.

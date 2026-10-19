@@ -8,5 +8,5 @@ layout: post
 <hr/>
 <p>
 
-Any projects in the position of being able to release via PEAR packages can now do so hosted officially on ASF servers.</p> 
+Any projects in the position of being able to release via PEAR packages can now do so hosted officially on ASF servers.</p>
   <p><a href="http://pear.apache.org">http://pear.apache.org</a> is now up and running and ready to serve!</p>

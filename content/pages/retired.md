@@ -10,4 +10,3 @@ It serves as a landing page to provide final information for those still looking
 
 This service was retired from use on 31st March 2026 after over a decade of service. Projects
 that did use Reviewboard have now moved on to other services such as Github Issues + PRs.
-

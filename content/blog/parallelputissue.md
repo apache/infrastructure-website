@@ -6,7 +6,7 @@ permalink: parallelputproblem layout: post
 
 Apache Maven 3.9.12 has a change that causes a problem in repository.apache.org (the Sonatype Nexus 2 Pro staging suite): if your build uses **parallel PUT** deployment, the build creates a separate staging repository for each of the requests instead of assembling everything in one repository.
 
-The Maven team is working on a resolution to this issue. Until the fix is available, they suggest **disabling parallel PUTs**. 
+The Maven team is working on a resolution to this issue. Until the fix is available, they suggest **disabling parallel PUTs**.
 
 You can do this in several ways:
 

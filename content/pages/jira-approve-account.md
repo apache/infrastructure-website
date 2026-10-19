@@ -9,15 +9,18 @@ The ASF uses Jira as one of its main systems for receiving and tracking bug repo
 **Note**: a person does not need a Jira account to view existing issue reports and enhancement requests.
 
 ## Why we use this pattern
+
 The ASF put the requirement to have an ASF Jira account in place for two reasons:
 
 1. Our system was being swamped with a flood of bot-created spammy tickets. Requiring an account in order to submit a ticket has largely resolved this issue.
 2. We currently host our Jira system on an ASF server. We intend to move it to a hosted cloud solution. However, that solution has a hard maximum to the number of accounts it can support, and we are trying to reduce the number of ASF Jira accounts to below that maximum.
 
 ## Approving account requests
+
 In general, if the request seems valid--all fields are filled in with appropriate information, the reason for the account does not seem suspicious (or machine-written), and the reason given is not about a security vulnerability (see above)--approve it. Do not worry too much about increasing the number of ASF Jira accounts, as Infra is working on addressing that issue in other ways than rejecting valid requests.
 
 If you are in doubt, consult with colleagues on your PMC.
 
 ## Inactive accounts
+
 Infra may disable or remove accounts that show no activity over a long period of time. See [Jira acccount retention policy](jira-account-retention-policy.html).

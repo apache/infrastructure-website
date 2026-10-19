@@ -37,6 +37,7 @@ Due to a significant increase in abuse, largely driven by AI scraping, the ASF B
 ## GitHub Actions compliance deadline
 
 Infra received this message from GitHiub:
+
 ```
 The Windows Server 2019 runner image will be fully unsupported by June 30, 2025.
 To raise awareness of the upcoming removal, we will temporarily fail jobs using Windows Server 2019.
@@ -58,7 +59,5 @@ Please contact GitHub Support if you run into any problems or need help.
 If a build fails, sometimes it does not restart even after you have fixed the issue that caused it to fail. A trick that often works is to add a whitespace at the end of any line of code and commit that updated file to get the build to start again. If this fails, contact Infra
 
 Infra is working on a new flow of events for builds that will improve stability and observability; we will let the world know when it is in place.
-
-
 
 **More next month!**

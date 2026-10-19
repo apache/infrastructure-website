@@ -23,12 +23,12 @@ The next Roundtable will be **Wednesday, March 4, 2026, 1800 UTC**. The featured
 
 Atlassian is discontinuing support for the on-premises versions of Jira Issue Tracker and the Confluence Wiki, so The ASF will be migrating to cloud instances of these services in the coming months.
 
-We need projects that are willing to let Infra copy their ticket and wiki data to a cloud test location, and test how working with the cloud versions of these tools goes. Infra will perform the test migration, so project members only need to engage in testing: 
+We need projects that are willing to let Infra copy their ticket and wiki data to a cloud test location, and test how working with the cloud versions of these tools goes. Infra will perform the test migration, so project members only need to engage in testing:
 
-1. Log in to the Cloud test instance 
-2. Browse around your test Jira project / Confluence wiki and ensure all looks as it does in the live, locally-hosted instance 
-3. Create some Jira tickets, delete some, go through your usual workflow, etc. Create, edit, move, and delete some wiki pages (go crazy: remember, this is a test environment so you cannot hurt the real pages). 
-4. After a few days playing, or in case of problems, report to the Infra team via a (real) Jira ticket (see below). 
+1. Log in to the Cloud test instance
+2. Browse around your test Jira project / Confluence wiki and ensure all looks as it does in the live, locally-hosted instance
+3. Create some Jira tickets, delete some, go through your usual workflow, etc. Create, edit, move, and delete some wiki pages (go crazy: remember, this is a test environment so you cannot hurt the real pages).
+4. After a few days playing, or in case of problems, report to the Infra team via a (real) Jira ticket (see below).
 
 The information you provide will be a huge help to the migration effort.
 
@@ -38,15 +38,12 @@ If you are not sure about something in this testing effort, ask us via `users@in
 
 Testing begins **NOW** - and we need to complete testing by the end of April so we can move to the next phase of the migration
 
-
 ## When you need to talk with Infra
 
 Years ago, when the Infra team was largely made up of volunteers, the best way to give or get information was by email to `users@infra.a.o`. That is no longer the case. The best way by far to get help from Infra is by opening a Jira ticket. The best ways to share information or engage with Infra are by the #asfinfra Slack channel, or by taking part in a Roundtable (each roundtable has time after the main presentation when anyone can bring forward an issue that needs attention). Information on joining and taking part in roundtables is at <a href="https://infra.apache.org/roundtable.html" target="_blank">infra.apache.org/roundtable.html</a>.
 
-
 ## The end of Reviewboard
 
 Apache Reviewboard is very rarely used these days, and our Reviewboard instance is many years out of date. So Reviewboard at `reviews.apache.org`, which opened for business in October, 2010, will be turned off on March 31, 2026. There will be no direct replacement.
-
 
 **More next month!**

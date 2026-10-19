@@ -22,7 +22,7 @@ If you just wish to browse around or download a few individual files, the best t
 
 **Anonymous Subversion**
 
-To access the Subversion repository anonymously, you need a Subversion client. 
+To access the Subversion repository anonymously, you need a Subversion client.
 
 **Finding the project you want**
 

@@ -6,27 +6,27 @@ layout: post
 <p>
 Well, some are not exactly new faces, but since our last blog update of new infra members in 2009 , we have conned with promises of fame, fortune and beer the following new additions to the infra team:
 
-</p> 
-  <ul> 
+</p>
+  <ul>
     <li>Chris Rhodes: (arreyder)
-</li> 
+</li>
     <li>Brian Fox: (brianf)
-</li> 
+</li>
     <li>Matt Benson: (mbenson)
-</li> 
+</li>
     <li>David Blevins: (dblevins)
-</li> 
+</li>
     <li>Rudiger Pluem: (rpluem)
-</li> 
+</li>
     <li>Noirin Plunkett: (noirin)
-</li> 
+</li>
     <li>Ulrich Stärk: (uli)
-</li> 
+</li>
     <li>Daniel Shahaf: (danielsh)
-</li> 
+</li>
     <li>Paul Davis: (davisp)
 
-</li> 
-  </ul> 
+</li>
+  </ul>
   <p>Infra work is not your normal volunteer work, and it is greatly appreciated when any of these folks get to help.
 </p>

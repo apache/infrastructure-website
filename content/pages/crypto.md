@@ -5,7 +5,7 @@ This page provides PMC members with the information they need to ensure U.S. exp
 
 **This page is not intended for users of Apache products**. Users should consult the <a href="https://www.apache.org/licenses/exports/" target="_blank">export control status of our products</a>.
 
-**Note**: The regulations covering US export control laws for encryption are continuously changing, and the latest modification of this page, to describe the current state of regulations, was May 24, 2019. 
+**Note**: The regulations covering US export control laws for encryption are continuously changing, and the latest modification of this page, to describe the current state of regulations, was May 24, 2019.
 
 This page describes the process which should be continued until the Apache VP Legal Affairs approves an updated version.
 

@@ -108,8 +108,6 @@ There are no mandatory rules, but here are some suggestions:
 
 See also [Managing virtual machines](vm-management.html)
 
-
-    
 <h3 id="cautions">Cautions<a class="headerlink" href="#cautions" title="Permanent link">&para;</a></h3>
 
   - Do not try to change items controlled by puppet, such as:

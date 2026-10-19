@@ -42,11 +42,11 @@ The Infrastructure team will present a full track at Community over Code Glasgow
 
 Additionally, Infra will be hosting **Games Night**, which was very popular at the 2025 convention.
 
-More details are at <a href="https://communityovercode.org/" target="_blank">communityovercode.org/</a>. We hope to see you there! 
+More details are at <a href="https://communityovercode.org/" target="_blank">communityovercode.org/</a>. We hope to see you there!
 
 ### Infra 101: Use of build resources
 
-The ASF has a limited number of self-hosted runners to support build processes. Processes that run more often than they need to, or for longer than is reasonable, prevent other projects from doing their builds. Committers and ASF Members can see, for the projects they are involved in, use of GitHub Actions resources (times ranging from the past hour to the past 30 days) at <a href="https://infra-reports.apache.org/#ghactions" target="_blank">infra-reports.apache.org/#ghactions</a>. 
+The ASF has a limited number of self-hosted runners to support build processes. Processes that run more often than they need to, or for longer than is reasonable, prevent other projects from doing their builds. Committers and ASF Members can see, for the projects they are involved in, use of GitHub Actions resources (times ranging from the past hour to the past 30 days) at <a href="https://infra-reports.apache.org/#ghactions" target="_blank">infra-reports.apache.org/#ghactions</a>.
 
 There is on-going community discussion on a Slack channel, `project-workflow-optimisations`, about how projects can optimize GitHub Actions workflows to minimize
 

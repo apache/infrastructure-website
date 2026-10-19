@@ -15,7 +15,7 @@ Dealing with
   - <a href="#problem_posts">problem posts</a>
   - <a href="#missing">reports of missing mail</a>
   - <a href="#bounce">reports of message bounces</a>
- 
+
 See also Infra's general guidelines on <a href="https://infra.apache.org/content-moderation.html" target="_blank">content moderation</a>.
 
 <h3 id="new-mailing-list">How do we create a new mailing list?<a class="headerlink" href="#new-mailing-list" title="Permanent link">&para;</a></h3>
@@ -37,8 +37,8 @@ You can manage the list of moderators for a project's email list if you are:
   - a Foundation member and on the PMC of the project
   - chair of the project
   - an existing moderator of the list
- 
-    - Log in to <a href="https://webmod.apache.org/" target="_blank">WebMod</a> with your ASF credentials. 
+
+    - Log in to <a href="https://webmod.apache.org/" target="_blank">WebMod</a> with your ASF credentials.
     - Select the 'List moderator management' tab.
     - In the dropdown list, select the project which has the email list in question.
     - In the list of email lists that appears, select the list whose moderators you want to manage.
@@ -72,7 +72,7 @@ However, most committers do not have access to apmail. See the notes in the "com
 
 You can review and manage email that is waiting for moderation in two ways:
 
-#### WebMod 
+#### WebMod
 
 <a href="https://webmod.apache.org/" target="_blank">WebMod</a> simplifies reviewing and responding to emails that require moderation.
 
@@ -82,6 +82,7 @@ You can review and manage email that is waiting for moderation in two ways:
   - You have many options for reviewing each individual email, including displaying just the text body or viewing the source. The options appear as links to the right of the email title.
 
 #### Manual moderation
+
 Review the mail to see if it is spam (or other severely misguided mail). If it is spam, just ignore the mail to have it silently dropped after 5 days.
 
 To bounce non-spam with a notice to the sender, reply to the `-reject` address in the mail header. If you wish to include a comment with the rejection, the body of the message should look like this:
@@ -131,7 +132,6 @@ badposter=menace.com
 ```
 
 If this address contains random alphanumerics, it is probably a short-lived address, in which case there is no point trying to use the deny list.
-
 
 <h3 id="allowing_posts">Allowing posts from non-subscribers<a class="headerlink" href="#allowing_posts" title="Permanent link">&para;</a></h3>
 
@@ -211,7 +211,7 @@ Here are the message numbers:
 
 ```
 
-This can occur if the recipient's mail system has strict SPAM detection rules. 
+This can occur if the recipient's mail system has strict SPAM detection rules.
 
 One way to find such emails is to request an index listing from ezmlm, for example
 by sending an email to `dev-index-12345@tlp.apache.org`. This will show the subject, timestamp and sender of the email. That may be sufficient to identify it as spam.

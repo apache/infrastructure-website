@@ -17,7 +17,6 @@ If you are not an Apache committer, but wish to become one, see <a href="https:/
 <li><a href="#legal">Legal and organizational</a></li>
 </ul>
 
-
 <h3 id="general">General<a class="headerlink" href="#general" title="Permanent link">&para;</a></h3>
 
 <h4 id="apachecon">What is Community Over Code?<a class="headerlink" href="#apachecon" title="Permanent link">&para;</a></h4>

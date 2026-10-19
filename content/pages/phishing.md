@@ -30,7 +30,7 @@ Your best actions are to:
 - not respond to the email
 - forward the message, with full headers, to `root@apache.org`.
 
-Further, 
+Further,
 
 -  Do not divulge your credentials to any service outside of **apache.org**.
 -  In any email claiming to come from an apache.org address, do not click on any 'reset' or 'reauthenticate' links. We never ask you to do this.
