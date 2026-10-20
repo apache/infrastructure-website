@@ -405,8 +405,7 @@ keys are used for both encryption and signing. Longer key lengths are available.
          Features: MDC, Keyserver no-modify
 
 </code></pre>
-<p>The <code>Digest</code> line should list SHA-512 first and SHA-1 last. Instructions for altering the preferences of a key are
-<a href="#key-prefs">here</a>.</p>
+<p>The <code>Digest</code> line should list SHA-512 first and SHA-1 last. See <a href="#key-prefs">setting preferences for keys</a>.</p>
 <h3 id="final-steps">Final steps<a class="headerlink" href="#final-steps" title="Permanent link">&para;</a></h3>
 <p>When you generate a new code signing key, you need to update a number of Apache documents and perform some other tasks.</p>
 <h5 id="generation-final-steps-transition">Final transition steps<a class="headerlink" href="#generation-final-steps-transition" title="Permanent link">&para;</a></h5>
@@ -740,7 +739,7 @@ line. For example, to encrypt a document <code>INPUT_FILENAME</code> using <code
 <li>When using a <a href="release-signing.html#transition">transition</a>, follow these <a href="key-transition.html#transition-fingerprints">instructions</a>.</li>
 <li>Otherwise use <code>gpg --fingerprint</code>.</li>
 </ul>
-<p>Ensure that each <code>pubkeyAddress</code> points to the new export <a href="#publish-in-web-space">uploaded into your Apache home web space</a>.</p>
+<p><a id="foaf"></a>Ensure that each <code>pubkeyAddress</code> points to the new export <a href="#publish-in-web-space">uploaded into your Apache home web space</a>.</p>
 <p>When <a href="release-signing.html#transition">transitioning</a>, include one entry for the old and one for the new key. Yu can use the same URL for both since the target should be the <a href="key-transition.html#transition-export">dual export</a> you <a href="#publish-in-web-space">uploadedearlier</a>. For example, for keys A6EE6908 (new) and B1313DE2 (old):</p>
 <pre><code class="language-xml">    &lt;wot:hasKey&gt;
       &lt;wot:PubKey&gt;

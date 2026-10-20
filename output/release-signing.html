@@ -155,7 +155,7 @@
 <li>Committers with a DSA key or an RSA key of length less than 2048 bits should generate a new key for signing releases. The original key does not need to be revoked yet. Follow this <a href="key-transition.html">guide</a>.</li>
 <li>Committers with RSA keys of length 2048 or more do not need to generate a new key yet. They should reconfigure their client to avoid the weakness by following these <a href="openpgp.html#sha1">instructions</a> and wait for the next major OpenPGP revision.</li>
 </ul>
-<p>How to find the length of your key is described <a href="#key-length-how-to">here</a>.</p>
+<p>See <a href="#key-length-how-to">how to find the length of a key</a>.</p>
 <h3 id="basic-facts">The basics<a class="headerlink" href="#basic-facts" title="Permanent link">&para;</a></h3>
 <p>Every artifact distributed by the Apache Software Foundation  <strong>must</strong> be accompanied by one file containing an <a href="#openpgp-ascii-detach-sig">OpenPGP-compatible ASCII armored detached signature</a> and another file containing a <a href="#sha-checksum">SHA-256 or SHA-512</a> checksum.</p>
 <ul>
