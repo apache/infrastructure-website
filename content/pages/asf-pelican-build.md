@@ -67,15 +67,15 @@ Pelican uses <a href="https://docs.getpelican.com/en/latest/plugins.html#list-of
 Our plugins provide the following activity:
 
 | Pelican Signal | Step | [GFM Content][pelican-gfm] | [EZMD Content][asfreader] | Description |
-|----------------|---------|:-----:|:--:|------|
-| Initialization | [Data Model][asfdata]      |             |              | Read data sources |
-| Reader         | Class     |   [GFMReader][pelican-gfm]   | [ASFReader(GFMReader)][asfreader] | Pelican Reader class  |
-|                | [Read][read]               | read_source | super.read_source | Read page source and metadata |
-|                | [Model Metadata][metadata] |             | add_data     | Add asf data to the model and expand any `[{ reference }]` |
-|                | [Translate][ezttranslate]  |             | ezt          | ezt template translation |
-|                | [Render GFM][markdown]     | render      | super.render | Render GFM/HTML into HTML  |
-| Content        | [Generate ID][asfgenid]    | generate_id | generate_id  | Perform ASF specific HTML enhancements |
-| Generator      | [Template][theme]          | translate   | translate    | Create output HTML by pushing the generated content and metadata through the theme's templates |
+| --- | --- | :---: | :---: | --- |
+| Initialization | [Data Model][asfdata] | | | Read data sources |
+| Reader | Class | [GFMReader][pelican-gfm] | [ASFReader(GFMReader)][asfreader] | Pelican Reader class |
+| | [Read][read] | read_source | super.read_source | Read page source and metadata |
+| | [Model Metadata][metadata] | | add_data | Add asf data to the model and expand any `[{ reference }]` |
+| | [Translate][ezttranslate] | | ezt | ezt template translation |
+| | [Render GFM][markdown] | render | super.render | Render GFM/HTML into HTML |
+| Content | [Generate ID][asfgenid] | generate_id | generate_id | Perform ASF specific HTML enhancements |
+| Generator | [Template][theme] | translate | translate | Create output HTML by pushing the generated content and metadata through the theme's templates |
 
 See [local builds](asf-pelican-local.html) for how to install ASF-Pelican on your system.
 
@@ -83,11 +83,11 @@ See [local builds](asf-pelican-local.html) for how to install ASF-Pelican on you
 
 **ezmd** templates use a shared data model to generate content. There are three types of data:
 
-| When referenced                 | Data type                        |
-|---------------------------------|----------------------------------|
+| When referenced | Data type |
+| --- | --- |
 | EZMD Reader, Content, Generator | Constants - either integer or string values |
-| EZMD Reader                     | Sequences - arrays of objects with attributes where an attribute may be another sequence |
-| EZMD Reader                     | Dictionaries - key-value maps where the value may be another dictionary |
+| EZMD Reader | Sequences - arrays of objects with attributes where an attribute may be another sequence |
+| EZMD Reader | Dictionaries - key-value maps where the value may be another dictionary |
 
 The constants are also available to the `asfgenid.py` plugin and the [theme's templates](asf-pelican-theme.html).
 
@@ -327,19 +327,19 @@ From `pelican-gfm`:
 We use the `asfgenid` plugin to perform modifications on the generated content that mimics the markdown extensions in the Apache CMS.
 Many of these ASF-specific enhancements are controlled in [pelican settings][configure] in the `ASF_GENID` dictionary.
 
-| ASF_GENID key |   default    | process                                                                                                       | page override |
-|---------------|:------------:|---------------------------------------------------------------------------------------------------------------|---------------|
-| unsafe_tags   |     True     | fix up script, style, and iframe HTML tags that the GFM autofilter extension marks as unsafe                  |               |
-| -             |      -       | convert HTML into beautiful soup                                                                              |               |
-| metadata      |     True     | `{{ metadata }}` include data in the HTML                                                                     |               |
-| -             |     True     | inventory of all ID attributes; duplicates are invalid                                                        |               |
-| elements      |     True     | find all `{#id}` and `{.class}` texts and assign attributes                                                   |               |
-| headings      |     True     | assign IDs to all headings w/o IDs already present or assigned with `{#id}` text                              | asf_headings  |
-| headings_re   | `r'^h[1-6]'` | regex for finding headings that require IDs                                                                   |               |
-| tables        |     True     | tables with a class attribute are assigned `class=table`                                                      |               |
-| toc           |     True     | generate a table of contents if [TOC] is found. If this is set to False then the `toc.py` plugin may be used. |               |
-| toc_headers   | `r'h[1-6]'`  | headings to include in the [TOC]                                                                              |               |
-| -             |      -       | convert beautiful soup back into HTML.                                                                        |               |
+| ASF_GENID key | default | process | page override |
+| --- | :---: | --- | --- |
+| unsafe_tags | True | fix up script, style, and iframe HTML tags that the GFM autofilter extension marks as unsafe | |
+| - | - | convert HTML into beautiful soup | |
+| metadata | True | `{{ metadata }}` include data in the HTML | |
+| - | True | inventory of all ID attributes; duplicates are invalid | |
+| elements | True | find all `{#id}` and `{.class}` texts and assign attributes | |
+| headings | True | assign IDs to all headings w/o IDs already present or assigned with `{#id}` text | asf_headings |
+| headings_re | `r'^h[1-6]'` | regex for finding headings that require IDs | |
+| tables | True | tables with a class attribute are assigned `class=table` | |
+| toc | True | generate a table of contents if [TOC] is found. If this is set to False then the `toc.py` plugin may be used. | |
+| toc_headers | `r'h[1-6]'` | headings to include in the [TOC] | |
+| - | - | convert beautiful soup back into HTML. | |
 
 ```python
 # Configure the asfgenid plugin
@@ -439,9 +439,6 @@ def headingid_transform(ids, soup, tag, permalinks, perma_set):
             headingid_transform(ids, soup, tag, asf_genid['permalinks'], permalinks)
 ```
 
-[pelican]: https://blog.getpelican.com
-[gfm]: https://github.com/github/cmark-gfm
-[gfmspec]: https://github.blog/2017-03-14-a-formal-spec-for-github-markdown/
 [4]: https://github.github.com/gfm/
 [5]: https://github.github.com/gfm/#html-block
 [6]: https://github.github.com/gfm/#example-139
@@ -454,27 +451,14 @@ def headingid_transform(ids, soup, tag, permalinks, perma_set):
 [13]: https://sindresorhus.com/github-markdown-css/
 [ezt]: https://github.com/gstein/ezt
 [eztsyntax]: https://github.com/gstein/ezt/blob/wiki/Syntax.md
-[structure]: https://docs.getpelican.com/en/latest/themes.html#structure
-[variables]: https://docs.getpelican.com/en/latest/themes.html#templates-and-variables
-[pagemodel]: https://docs.getpelican.com/en/latest/themes.html#page
-[settings]: https://docs.getpelican.com/en/latest/settings.html#
-[signals]: https://docs.getpelican.com/en/latest/plugins.html#list-of-signals
 [bs4]: https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.html?highlight=javascript#
-[pelicanasf]: https://github.com/apache/infrastructure-p6/tree/production/modules/pelican_asf/files
 [asfdata]: #data-model
 [asfreader]: #ezmd-reader
 [asfgenid]: #generate-id
 [theme]: ../theme/apache/templates/.
-[plugins]: ../theme/plugins/.
 [configure]: ../pelicanconf.py
-[datamodel]: ../asfdata.yaml
 [read]: #read-source
-[metadata]: #model-metadata
+[metadata]: #ezmd
 [markdown]: #render-gfm
-[data]: data.md
 [ezttranslate]: #ezt-translation
-[process]: #process
-[branches]: #branches
-[local]: builds.md
-[asfref]: #reference
 [pelican-gfm]: #pelican-gfm

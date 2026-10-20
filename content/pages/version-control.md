@@ -209,4 +209,4 @@ If you still get 403 Forbidden errors, ask your PMC to double-check the authz fi
 
 <h2 id="migrating">Migrating an SVN code repository to Git<a class="headerlink" href="#migrating" title="Permanent link">&para;</a></h2>
 
-Instructions are [here](svn-to-git-migration.html).
+See [SVN to Git migration](svn-to-git-migration.html).

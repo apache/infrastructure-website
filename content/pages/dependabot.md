@@ -27,7 +27,7 @@ updates:
 Dependabot supports a <a href="https://docs.github.com/en/code-security/reference/supply-chain-security/supported-ecosystems-and-repositories" target="_blank">wide range of package ecosystems</a>. Look at which dependency files exist in your repository and add a `package-ecosystem` entry for each one. Many projects use several ecosystems at once (for example, a Python project may have `pip` for dependencies, `github-actions` for CI, and `docker` for container images). Common ecosystems include:
 
 | Ecosystem | Manifest files | `package-ecosystem` value |
-|---|---|---|
+| --- | --- | --- |
 | GitHub Actions | `.github/workflows/*.yml` | `github-actions` |
 | Maven | `pom.xml` | `maven` |
 | Gradle | `build.gradle`, `build.gradle.kts` | `gradle` |

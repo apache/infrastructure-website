@@ -24,10 +24,10 @@ Here are the top subjects that were referred to:
 
 The charts reflect the data above:
 
-<img src="../images/image1.png" width="450">
-<img src="../images/image2.png" width="450">
-<img src="../images/image3.png" width="450">
-<img src="../images/image4.png" width="450">
+<img src="../images/image1.png" width="450" alt="Bar chart of services that need improvement, 54 responses: CI/CD 29, issue tracking 19, documentation and wiki 15, messaging 11, source control 9">
+<img src="../images/image2.png" width="450" alt="Pie chart of whether Infra offers adequate technical services, 80 responses: 91.3% yes, 8.8% no">
+<img src="../images/image3.png" width="450" alt="Bar chart of overall satisfaction with Infra from 1 to 10, 80 responses: 26 gave 10, 14 gave 9, 16 gave 8, 14 gave 7, and 10 gave 6 or lower">
+<img src="../images/image4.png" width="450" alt="Pie chart of whether projects want a way to discuss technical needs in detail with Infra, 80 responses: 26.3% yes, 73.8% no">
 
 ### Next Steps
 

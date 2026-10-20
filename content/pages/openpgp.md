@@ -361,8 +361,7 @@ or
 
 ```
 
-The `Digest` line should list SHA-512 first and SHA-1 last. Instructions for altering the preferences of a key are
-[here](#key-prefs).
+The `Digest` line should list SHA-512 first and SHA-1 last. See [setting preferences for keys](#key-prefs).
 
 <h3 id="final-steps">Final steps<a class="headerlink" href="#final-steps" title="Permanent link">&para;</a></h3>
 
@@ -826,7 +825,7 @@ To find the [fingerprint](release-signing.html#fingerprint) for a key:
 - When using a [transition](release-signing.html#transition), follow these [instructions](key-transition.html#transition-fingerprints).
 - Otherwise use `gpg --fingerprint`.
   
-Ensure that each `pubkeyAddress` points to the new export [uploaded into your Apache home web space](#publish-in-web-space).
+<a id="foaf"></a>Ensure that each `pubkeyAddress` points to the new export [uploaded into your Apache home web space](#publish-in-web-space).
 
  When [transitioning](release-signing.html#transition), include one entry for the old and one for the new key. Yu can use the same URL for both since the target should be the [dual export](key-transition.html#transition-export) you [uploadedearlier](#publish-in-web-space). For example, for keys A6EE6908 (new) and B1313DE2 (old):
 

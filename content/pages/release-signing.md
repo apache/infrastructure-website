@@ -49,7 +49,7 @@ The impact of this weakness on Apache can be mitigated by action now. What needs
 - Committers with a DSA key or an RSA key of length less than 2048 bits should generate a new key for signing releases. The original key does not need to be revoked yet. Follow this [guide](key-transition.html).
 - Committers with RSA keys of length 2048 or more do not need to generate a new key yet. They should reconfigure their client to avoid the weakness by following these [instructions](openpgp.html#sha1) and wait for the next major OpenPGP revision.
 
-How to find the length of your key is described [here](#key-length-how-to).
+See [how to find the length of a key](#key-length-how-to).
 
 <h3 id="basic-facts">The basics<a class="headerlink" href="#basic-facts" title="Permanent link">&para;</a></h3>
 
