@@ -131,7 +131,7 @@
 <p><a href="https://www.openssh.org" target="_blank">OpenSSH</a> is a widely used and trusted suite of software using the SSH family of protocols.</p>
 <h2 id="openssh-ssh2">Configuring OpenSSH to use SSH2 (*nix)<a class="headerlink" href="#openssh-ssh2" title="Permanent link">&para;</a></h2>
 <p>The OpenSSH client uses by default configuration files in the <code>~/.ssh</code> directory. The main configuration file is <code>~/.ssh/config</code> and is optional. It may exist already. If it does not, you can create it in a simple text format. Group together instructions for a particular host (or group of hosts). Here is a suggested basic configuration:</p>
-<pre><code>&lt;pre&gt;
+<pre><code class="language-text">&lt;pre&gt;
 # Apply to all hosts
 
 # Alternatively replace with: 
@@ -145,7 +145,7 @@ Host \*
 <p>Many other options are available.</p>
 <h2 id="debug-ssh">Debugging an OpenSSH client connection<a class="headerlink" href="#debug-ssh" title="Permanent link">&para;</a></h2>
 <p>To diagnose what's going wrong with an OpenSSH connection, run the client in verbose mode. To do this just add <code>-v</code>:</p>
-<pre><code>ssh -v -l yourApacheID some-project-server.apache.org
+<pre><code class="language-bash">ssh -v -l yourApacheID some-project-server.apache.org
 </code></pre>
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 <ul>
@@ -181,7 +181,7 @@ to Apache are <a href="#openssh">here</a>.</p>
 <p>SSH employs the <em>known hosts</em> mechanism to prevent <a href="#middle-man-attacks">man in the
 middle</a> attacks. The first time that the client connects to a server, the fingerprint of the key used by that server is
 displayed to the user, who may to asked to confirm the identity of that server. For example:</p>
-<pre><code>The authenticity of host 'home.apache.org (209.237.237.194)' can't be established.
+<pre><code class="language-text">The authenticity of host 'home.apache.org (209.237.237.194)' can't be established.
 RSA key fingerprint is 1c:5d:3f:a2:89:97:2e:39:eb:b0:09:9e:cf:c6:8d:f3.
 Are you sure you want to continue connecting (yes/no)? 
 </code></pre>

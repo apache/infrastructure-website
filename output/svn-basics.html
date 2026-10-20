@@ -139,7 +139,7 @@
 <p>We currently use HTTPS basic authentication for logging in to Subversion (certificate info below). To change your password, visit <a href="https://svn.apache.org/change-password" target="_blank">svn.apache.org/change-password</a>.</p>
 <p>This will prompt you to enter a svn password of your choice. If you cannot log in, or have lost your password, visit the <a href="https://id.apache.org" target="_blank">Apache Account Utility</a> to reset it.</p>
 <p>When you make changes to the repository, you can commit them with your username/password combination, i.e.</p>
-<pre><code>$ svn co https://svn.apache.org/repos/asf/excalibur/trunk/ excalibur-trunk
+<pre><code class="language-shell">$ svn co https://svn.apache.org/repos/asf/excalibur/trunk/ excalibur-trunk
 $ cd excalibur-trunk
 $ echo "test" &gt; test.txt
 $ svn add test.txt
@@ -149,7 +149,7 @@ $ svn commit --username your-name --password your-password \
 <p><code>svnserve</code> is not supported, nor is <code>svn+ssh</code>.</p>
 <h3 id="configuring">Configuring the Subversion client<a class="headerlink" href="#configuring" title="Permanent link">&para;</a></h3>
 <p>Committers need to configure their svn client properly. One particular issue is OS-specific line endings for text files. When you add a new text file, especially when applying patches from Bugzilla, first ensure that the line-endings are appropriate for your system, then do:</p>
-<pre><code>svn add test.txt svn propset svn:eol-style native test.txt
+<pre><code class="language-bash">svn add test.txt svn propset svn:eol-style native test.txt
 </code></pre>
 <p>Your svn client can be configured to do that automatically for some common file types.</p>
 <p>Add the contents of the file <code>http://www.apache.org/dev/svn-eol-style.txt</code> to the bottom of your <code>~/.subversion/config</code> file. For Windows this is normally found at <code>C:\\Documents and Settings\\{username}\\Application Data\\Subversion\\config</code>.</p>
@@ -158,7 +158,7 @@ $ svn commit --username your-name --password your-password \
 <p><strong>Tip</strong>: If you use TortoiseSVN, a popular Windows GUI client that integrates with Windows Explorer, you can right-click in Explorer, select <code>TortoiseSVN - Settings</code>, and select "Edit" to update your Subversion configuration file. Copy the above <code>svn-eol-style.txt</code> file's contents into the end of the configuration file that appears, and save the file.</p>
 <h3 id="ssl">SSL server certificate<a class="headerlink" href="#ssl" title="Permanent link">&para;</a></h3>
 <p>The server certificate for <code>https://svn.apache.org/</code> is a real SSL certificate. However, Subversion, by default, does not currently ship with a list of trusted CAs. So, here's some information to help you verify the validity of our certificate:</p>
-<pre><code> - Hostname: *.apache.org
+<pre><code class="language-text"> - Hostname: *.apache.org
  - Valid: from Jul  1 00:00:00 2019 GMT until Jun 30 23:59:59 2021 GMT
  - Issuer: Sectigo RSA Domain Validation Secure Server CA, Sectigo Limited, Salford, Greater Manchester, GB
  - Fingerprint: 88:A1:77:AC:CE:5E:6C:0D:22:BC:1F:E4:4E:AA:D4:2A:A4:C0:71:4F
@@ -175,7 +175,7 @@ $ svn commit --username your-name --password your-password \
 <p>If you really do want the entire ASF repository, <em>don't</em> use <code>svnsync</code>. Instead, start by looking here: <code>http://svn-master.apache.org/dump/</code>. Use that to bootstrap your repo.</p>
 <p><strong>Why do I get a 403 error when I try to commit?</strong></p>
 <p>Run <code>svn info</code> and check that the URL starts with <code>https://</code>. If it starts with <code>http://</code>, run:</p>
-<pre><code>$ svn switch --relocate http://svn.apache.org https://svn.apache.org
+<pre><code class="language-shell">$ svn switch --relocate http://svn.apache.org https://svn.apache.org
 </code></pre>
 <p>If you still get 403 Forbidden errors, ask your PMC to double-check the authz file and LDAP/Unix group membership.</p>
 

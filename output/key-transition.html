@@ -141,7 +141,7 @@
 </ul>
 <p>To generate a strong <a href="release-signing.html#rsa">RSA key</a> follow <a href="openpgp.html#generate-key">these instructions</a>. If you use a separate keyring, follow <a href="openpgp.html#secret-key-transfer">these instructions</a> to transfer it.</p>
 <p>Both new and old keys should now be contained in the same keyring. Verify this by:</p>
-<pre><code>$ gpg --list-secret-keys  
+<pre><code class="language-shell">$ gpg --list-secret-keys  
 
 alice/secring.gpg
 
@@ -159,7 +159,7 @@ ssb   4096R/4A6D5217 2009-08-20
 <h3 id="open-interaction-edit">Open interactive edit mode<a class="headerlink" href="#open-interaction-edit" title="Permanent link">&para;</a></h3>
 <p>You need to perform a number of operations on the new key. Though you can perform them individually, saving and closing after each one, it is more convenient to use <em>interactive edit</em> mode.</p>
 <p>Start by opening an edit session on the new key, for example E2B054B8</p>
-<pre><code>$ gpg --edit-key E2B054B8
+<pre><code class="language-shell">$ gpg --edit-key E2B054B8
 gpg (GnuPG) 1.4.9; Copyright (C) 2008 Free Software Foundation, Inc.
 This is free software: you are free to change and redistribute it.
 There is NO WARRANTY, to the extent permitted by law.
@@ -179,7 +179,7 @@ Command&gt;
 </code></pre>
 <h3 id="trust-new-key">Trust the new key<a class="headerlink" href="#trust-new-key" title="Permanent link">&para;</a></h3>
 <p>The new key needs to be marked as ultimately trusted in this keyring. This will ensure that the <a href="release-signing.html#web-of-trust" target="_blank">web of trust</a> links signed by this key will be trusted automatically.</p>
-<pre><code>Command&gt; trust
+<pre><code class="language-text">Command&gt; trust
 pub  4096R/E2B054B8  created: 2009-08-20  expires: never       usage: SC
 
                      trust: unknown       validity: unknown
@@ -214,7 +214,7 @@ unless you restart the program.
 </code></pre>
 <h3 id="sign-new-key">Use the old key to sign the new key<a class="headerlink" href="#sign-new-key" title="Permanent link">&para;</a></h3>
 <p>Use the old key (AD741727, say) to sign the new key:</p>
-<pre><code>Command&gt; sign AD741727
+<pre><code class="language-text">Command&gt; sign AD741727
 
 pub  4096R/E2B054B8  created: 2009-08-20  expires: never       usage: SC
 
@@ -243,14 +243,14 @@ user: "Alice Example (EXAMPLE OF OLD KEY) &lt;alice@example.org&gt;"
 <h3 id="finish-off">Complete the edit<a class="headerlink" href="#finish-off" title="Permanent link">&para;</a></h3>
 <p>It is convenient to add secondary user ids for current email accounts at this point.</p>
 <p>Then save your changes, which will exit you from edit mode:</p>
-<pre><code>Command&gt; save
+<pre><code class="language-text">Command&gt; save
 </code></pre>
 <h3 id="sign-old-with-new">Whether to sign the old key with the new<a class="headerlink" href="#sign-old-with-new" title="Permanent link">&para;</a></h3>
 <p>Arguments can be made for and against signing the old key with the new. The old key is less trustworthy now and will be revoked in future, so signing with it may be misleading for those unaware of the potential weaknesses. However, without this signature, signers of the new key will not receive the transitive benefit of the links made from the old key. Anyone who chooses not to sign the old key with the new should made efforts to re-sign links made by the old key with the new key.</p>
 <h3 id="set-default-to-new">Set the default to the new key<a class="headerlink" href="#set-default-to-new" title="Permanent link">&para;</a></h3>
 <p>Next, change the default key on the keyring to the new. This ensures that all future signatures use the new key. Though you could still use the old key for signing by explicitly specifying it, avoid this since the signatures will be weak.</p>
 <p>To make the new key the default, set the <code>default-key</code> in the <code>gpg.conf</code> configuration file. For example, to set the default to <code>E2B054B8</code> add:</p>
-<pre><code>default-key E2B054B8
+<pre><code class="language-text">default-key E2B054B8
 This setting can be tested by creating a test signature:
 $ gpg --detach-sig --armor document
 
@@ -261,7 +261,7 @@ user: "Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;"
 <p>Verify that the new key has been chosen by default.</p>
 <h3 id="update-keys">Upload both keys<a class="headerlink" href="#update-keys" title="Permanent link">&para;</a></h3>
 <p>Finish the process by uploading the new and old keys to the keyserver:</p>
-<pre><code>$ gpg --send-keys E2B054B8 AD741727
+<pre><code class="language-shell">$ gpg --send-keys E2B054B8 AD741727
 </code></pre>
 <h3 id="backups">Create backups<a class="headerlink" href="#backups" title="Permanent link">&para;</a></h3>
 <p>Follow <a href="openpgp.html#backup">these instructions</a>.</p>
@@ -279,12 +279,12 @@ user: "Alice Example (EXAMPLE NEW KEY) &lt;alice@example.org&gt;"
 <h2 id="transition-export">Exporting both new and old keys<a class="headerlink" href="#transition-export" title="Permanent link">&para;</a></h2>
 <p>During the transition period, use a single export containing both new and old public keys whenever you need an export.</p>
 <p>To create a suitable export, supply both key IDs on the command line. For example, to export keys AD741727 (old) and E2B054B8 (new) to FILENAME use:</p>
-<pre><code>$ gpg --export --armor --output FILENAME AD741727 E2B054B8
+<pre><code class="language-shell">$ gpg --export --armor --output FILENAME AD741727 E2B054B8
 </code></pre>
 <p>This exports only the public keys, and so isn't confidential. Replace the old public key with this dual export everywhere it was published.</p>
 <h2 id="transition-fingerprints">Fingerprinting new and old keys<a class="headerlink" href="#transition-fingerprints" title="Permanent link">&para;</a></h2>
 <p>During the transitions, use both fingerprints. For example, to fingerprint old key <code>AD741727</code> and new key <code>E2B054B8</code>, use:</p>
-<pre><code>$ gpg --fingerprint AD741727 E2B054B8
+<pre><code class="language-shell">$ gpg --fingerprint AD741727 E2B054B8
 pub   1024D/AD741727 2009-08-20
       Key fingerprint = CD0C 5281 D0A9 E963 19AF  F365 AD81 612A AD74 1727
 uid                  Alice Example (EXAMPLE OF OLD KEY) &lt;alice@example.org&gt;

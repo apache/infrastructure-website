@@ -159,7 +159,7 @@
 </li>
 </ol>
 <p>In your site repository, run the following commands:</p>
-<pre><code>for x in "content/pages content/articles theme/plugins"; do mkdir -p $x; done
+<pre><code class="language-bash">for x in "content/pages content/articles theme/plugins"; do mkdir -p $x; done
 rm -rf output publishconf.py
 echo -e "\nPLUGIN_PATHS=['./theme/plugins']\nPLUGINS=[]\n"  &gt;&gt; pelicanconf.py
 echo -e "pelican\nbeautifulsoup4" &gt;&gt; requirements.txt

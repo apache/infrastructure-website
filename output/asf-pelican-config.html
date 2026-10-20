@@ -124,7 +124,7 @@ In 2019 Infra created ASF-Pelican as a structure and template for projects to us
 <p>Review <a href="https://github.com/apache/template-site" target="_blank">github.com/apache/template-site</a> to inspect a full <code>pelicanconf.yaml</code> file.</p>
 <p>These are the sections to configure in <code>pelicanconf.yaml</code> for your website:</p>
 <h2>Required</h2>
-<pre><code>site:
+<pre><code class="language-yaml">site:
   name: Apache Template
   description: Provides a template for projects wishing to use the Pelican ASF static content system
   domain: template.apache.org
@@ -138,7 +138,7 @@ theme: theme/apache
 <h3>Plugins</h3>
 <p>If you are using the standard plugins included in ASF Pelican, you can leave this section out.
 If you include it, your build will automatically include the <code>gfm</code> plugin.</p>
-<pre><code>plugins:
+<pre><code class="language-yaml">plugins:
   paths:
     - theme/plugins
   use:
@@ -146,7 +146,7 @@ If you include it, your build will automatically include the <code>gfm</code> pl
 </code></pre>
 <h3>Special setup</h3>
 <p>To configure four special features:</p>
-<pre><code>setup:
+<pre><code class="language-yaml">setup:
   data: asfdata.yaml
   run:
     - /bin/bash shell.sh
@@ -166,7 +166,7 @@ This is useful if you have large files or many static files.</li>
 </ol>
 <h2>Generate ID</h2>
 <p>The <code>asfgenid</code> plugin performs a number of fixups and enhancements.</p>
-<pre><code>genid:
+<pre><code class="language-yaml">genid:
   unsafe: yes
   metadata: yes
   elements: yes

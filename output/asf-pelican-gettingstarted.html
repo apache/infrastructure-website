@@ -132,7 +132,7 @@
 <li>Unzip <code>master.zip</code> and copy <code>infrastructure-website-master/*</code>  to the root of your new repository.</li>
 <li>Configure <a href="asf-yaml.html">.asf.yaml</a>.</li>
 </ol>
-<pre><code>pelican:
+<pre><code class="language-yaml">pelican:
   notify: EMAIL of a person on your team to receive error messages related to Pelican
   autobuild: preview/*
   target: YOUR SITE'S GENERATED CONTENT BRANCH
@@ -183,7 +183,7 @@ staging:
 <p>Please let us know if you run into <a href="https://github.com/apache/template-site/issues">issues</a> with the template.</p>
 <h2>Earlier versions</h2>
 <p>Earlier versions of this template made use of a <code>pelicanconf.py</code> configuration file. The current version uses <code>.asf.yaml</code> and <code>pelicanconf.yaml</code>, as noted above. We retain the earlier instruction for the projects using the earlier version of the template; however, any project starting with the template now should use the files and instructions noted above.</p>
-<pre><code> Edit the `pelicanconf.py` configuration file:
+<pre><code class="language-text"> Edit the `pelicanconf.py` configuration file:
 
    - Website specific
    - `PLUGINS`

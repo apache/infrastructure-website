@@ -199,7 +199,7 @@ which have the <code>pelican</code> Topic. You can review them as examples of Pe
 <h3>4. A staging website</h3>
 <p>Using <a href="asf-yaml.html">.asf.yaml</a> with a Git repository, once you have your generated web site committed and pushed to a branch, you can set up a staging web site to test your changes before publishing them to your main web site.</p>
 <p>To do so, add or edit <code>.asf.yaml</code> in the staging branch (where the build output is generated) and add the following (assuming your staging branch is asf-staging):</p>
-<pre><code>staging:
+<pre><code class="language-yaml">staging:
   profile: ~
   whoami:  asf-staging
 </code></pre>
@@ -207,7 +207,7 @@ which have the <code>pelican</code> Topic. You can review them as examples of Pe
 For more details, see <a href="asf-yaml.html">.asf.yaml</a>.</p>
 <h3>5. Publishing</h3>
 <p>When you are ready to publish a branch of your Git web site repository to your project web site, you can use <code>.asf.yaml</code>:</p>
-<pre><code>publish:
+<pre><code class="language-yaml">publish:
   whoami:  asf-site
 </code></pre>
 <p>For more detailed procedures, see see <a href="asf-yaml.html">.asf.yaml</a>.</p>

@@ -139,7 +139,7 @@
 <p>To use the ASF Nexus repository, follow these steps.</p>
 <h3>Inherit the Apache POM</h3>
 <p>Inherit the Apache Parent POM like this:</p>
-<pre><code>&lt;parent&gt;
+<pre><code class="language-xml">&lt;parent&gt;
   &lt;groupId&gt;org.apache&lt;/groupId&gt;
   &lt;artifactId&gt;apache&lt;/artifactId&gt;
   &lt;version&gt;39&lt;/version&gt;
@@ -152,7 +152,7 @@
 <p>You must sign all artifacts with a key that is publicly verifiable. Follow the instructions here to get your keys created and environment set up.</p>
 <p><strong>Note</strong>: We recommend that you use <a href="https://maven.apache.org/guides/mini/guide-encryption.html" target="_blank">Maven's password encryption capabilities</a> for your passwords. <strong>Do not</strong> store your signing key in <code>settings.xml</code>.</p>
 <p>The <a href="https://maven.apache.org/plugins/maven-gpg-plugin/" target="_blank">gpg plugin</a> can prompt for the key (input is masked) or you can configure it to use an agent.</p>
-<pre><code>&lt;settings&gt;
+<pre><code class="language-xml">&lt;settings&gt;
 ...
   &lt;servers&gt;
     &lt;!-- To publish a snapshot of your project --&gt;
@@ -185,7 +185,7 @@
 <li>Diff the original file <code>pom.xml</code> with the one called <code>pom.xml.tag</code> to see if the license or any other info has been removed. This has been known to happen if the starting <code>&lt;project&gt;</code> tag is not on a single line. The only things that should be different between these files are the <code>&lt;version&gt;</code> and <code>&lt;scm&gt;</code> elements. Backport any other changes you find to the original <code>pom.xml</code> file and commit it before proceeding with the release.</li>
 </ol>
 <h3>2. Publish a snapshot</h3>
-<pre><code>mvn deploy
+<pre><code class="language-text">mvn deploy
 ...
 [INFO] [deploy:deploy]
 [INFO] Retrieving previous build number from apache.snapshots.https
@@ -198,7 +198,7 @@
 <li>Verify the deployment under the ASF <a href="https://repository.apache.org/content/repositories/snapshots/" target="_blank">Maven Snapshot repository</a>.</li>
 </ul>
 <h3>3. Prepare the release</h3>
-<pre><code>mvn release:clean
+<pre><code class="language-bash">mvn release:clean
 mvn release:prepare
 </code></pre>
 <p><strong>Notes</strong></p>
@@ -216,7 +216,7 @@ mvn release:prepare
 <ol>
 <li>If you get an <strong>error message</strong> like this:</li>
 </ol>
-<pre><code>[INFO] Unable to tag SCM
+<pre><code class="language-text">[INFO] Unable to tag SCM
 Provider message:
 The svn tag command failed.
 Command output:
@@ -229,7 +229,7 @@ already exists
 <ol start="2">
 <li>If you get an <strong>error message</strong> similar to:</li>
 </ol>
-<pre><code>[ERROR] BUILD FAILURE
+<pre><code class="language-text">[ERROR] BUILD FAILURE
 [INFO]
 [INFO] Unable to tag SCM
 Provider message:

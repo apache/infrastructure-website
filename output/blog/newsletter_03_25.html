@@ -145,7 +145,7 @@ Inside Infra March 2025            </a></li>
 <p>Projects that are using GitHub Discussions and have suddenly found that feature is missing. Please see <a href="https://github.com/apache/infrastructure-asfyaml?tab=readme-ov-file#repo_features" target="_blank">github.com/apache/infrastructure-asfyaml?tab=readme-ov-file#repo_features</a>.</p>
 <p>GitHub Discussions are now managed entirely through .asf.yaml, and will default to being disabled unless your project enables them in your .asf.yaml file. If you do not have a valid 'discussions' entry in the notifications section in the configuration, that will also disable GitHub Discussions.</p>
 <p>To enable Discussions, include these settings into the .asf.yaml file in your default branch:</p>
-<pre><code>notifications:
+<pre><code class="language-yaml">notifications:
    discussions: issues@foo.apache.org  (use your own mailing list name here)
 ...
 github:

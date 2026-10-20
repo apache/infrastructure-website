@@ -139,7 +139,7 @@
 <li>do an <strong>update-check</strong> at least four times a day a day. You may sync a maximum of six times per day, but only if you have a slow or poor connection that causes timeouts.</li>
 <li>run the <a href="https://httpd.apache.org/" target="_blank">Apache HTTP Server</a> version 2.2 or later and use the following configuration for your web mirror to allow all the features of our download site to function optimally:</li>
 </ul>
-<pre><code>&lt;Directory /path/to/mirror&gt;
+<pre><code class="language-apache">&lt;Directory /path/to/mirror&gt;
   IndexOptions FancyIndexing NameWidth=* FoldersFirst ScanHTMLTitles DescriptionWidth=*
   HeaderName HEADER.html
   ReadmeName README.html
@@ -154,7 +154,7 @@
 <h3>Updating</h3>
 <p>We only support <a href="https://rsync.samba.org/" target="_blank">rsync</a> for updating mirrors.</p>
 <p>Update your mirror with:</p>
-<pre><code>rsync -avz --delete --safe-links rsync.apache.org::apache-dist /path/to/mirror
+<pre><code class="language-bash">rsync -avz --delete --safe-links rsync.apache.org::apache-dist /path/to/mirror
 </code></pre>
 <ul>
 <li>Don't rsync "on the hour" (<code>cronjob minute 0</code>). Pick a random minute between 5 and 55. Never run cronjobs at minute 0 unless the nature of the job requires it.</li>
@@ -165,11 +165,11 @@
 <p>To exclude resource-intensive projects, replace <code>::apache-dist</code> with <code>::apache-dist-most</code>. Do not use <code>--exclude</code>.</p>
 <h3>Directory permissions</h3>
 <p>If there is a problem with file/directory permissions, make sure you use a proper umask in your cronjob:</p>
-<pre><code>umask 022 ; rsync ...
+<pre><code class="language-bash">umask 022 ; rsync ...
 </code></pre>
 <h3>Excluded file types</h3>
 <p>Private mirrors of ASF downloads cannot host the following file types:</p>
-<pre><code>exclude =&gt; ['/tmp/', '*.md5', '*.MD5', '*.sha1', '*.sha',
+<pre><code class="language-text">exclude =&gt; ['/tmp/', '*.md5', '*.MD5', '*.sha1', '*.sha',
            '*.sha256', '*.sha512', '*.asc', 'MD5SUM', 'SHA*SUM*',
            '*.mds', '*.sha2', '*.sha3', 'META',
            '*.sig', '*.KEYS', 'KEYS', 'KEYS.txt', 
@@ -189,7 +189,7 @@
 <li>Don't omit the '/' in <code>"/README.html"</code>.</li>
 </ul>
 <p>Please limit the contents of the README.html to something like:</p>
-<pre><code>This mirror is donated by www.domain.com [url] to support the Apache open source community.
+<pre><code class="language-text">This mirror is donated by www.domain.com [url] to support the Apache open source community.
 </code></pre>
 <p>Search engines interpret referring to specific services or products as <em>PageRank manipulation</em>. This could hurt your site's ranking.</p>
 <h2 id="testing">Testing your mirror<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>

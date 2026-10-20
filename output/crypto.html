@@ -160,7 +160,7 @@ the <a href="https://www.apache.org/foundation/leadership" target="_blank">ASF V
 ASF-wide export page, but <strong>before publicly posting the distribution or committing the controlled code</strong>, send an email using the template below.</p>
 <p>An XSLT transformer called <a href="https://svn.apache.org/repos/asf/infrastructure/site/trunk/content/licenses/exports/bisnotice.xsl" target="_blank">bisnotice.xsl</a>
 can generate the BIS notice for a product based on the XML data. For example, running it as:</p>
-<pre><code>$ cd {SVNROOT}/infrastructure/site/trunk/&lt;/li&gt;
+<pre><code class="language-text">$ cd {SVNROOT}/infrastructure/site/trunk/&lt;/li&gt;
 $ svn up&lt;/li&gt;
 $ cd content/licenses/exports/&lt;/li&gt;
 $ java -Xbootclasspath/p:../../../lib/xalan.jar org.apache.xalan.xslt.Process \
@@ -169,7 +169,7 @@ $ java -Xbootclasspath/p:../../../lib/xalan.jar org.apache.xalan.xslt.Process \
 </code></pre>
 <p>will result in text output that looks like an email template for the PMC chair to send to the appropriate addresses. A generic example is below. Note that the product parameter selects which product(s) to print based on matching a substring of the product name. The template output is only correct when a single product is matched.</p>
 <p>There are also some sample script files in the top-level directory (site/trunk): <code>bisnotice.cmd</code> (Windows) and <code>bisnotice.sh</code> (Un*x).</p>
-<pre><code>TO: crypt AT bis.doc.gov, 
+<pre><code class="language-text">TO: crypt AT bis.doc.gov, 
        enc AT nsa.gov, 
        web_site AT bis.doc.gov
 CC: {applicable project list}
@@ -195,7 +195,7 @@ NOTIFICATION:         http://www.apache.org/licenses/exports/
 </code></pre>
 <h3 id="inform">Inform users by including a crypto notice in the distribution's README file<a class="headerlink" href="#inform" title="Permanent link">&para;</a></h3>
 <p>Should the software qualify for the Section 742.15(b) exemption, place the following notice into each distribution's README file:</p>
-<pre><code>   This distribution includes cryptographic software.  The country in 
+<pre><code class="language-text">   This distribution includes cryptographic software.  The country in 
    which you currently reside may have restrictions on the import, 
    possession, use, and/or re-export to another country, of 
    encryption software. BEFORE using any encryption software, please 

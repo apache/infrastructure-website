@@ -190,7 +190,7 @@
 <p>If you use PuTTY, make sure it is configured to force SSH v2 protocol. And use keyboard-interactive.</p>
 <p>Once you have logged in, there are few tasks best performed right away. Please take care when using your shell account.</p>
 <p>Check that your umask is set in a group-friendly fashion. This ensures that the documents you create are editable by your fellow committers. To do this, (depending on which shell you use) edit the <code>.cshrc</code> file or <code>.profile</code> (sh derivatives) so the umask is set as follows:</p>
-<pre><code>umask 002
+<pre><code class="language-bash">umask 002
 </code></pre>
 <p>If a umask line already exists, modify it. Otherwise, add a new line. You will need to use a <code>*nix</code> command-line editor such as <code>vi</code>.</p>
 <p>Tip: You can review the files of some other committer: <code>ls -al ~mymentor; cat ~mymentor/.cshrc</code>.</p>

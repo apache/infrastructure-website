@@ -198,30 +198,30 @@
 </ul>
 <p>To create one using <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a> for file
 <code>foo.tar.gz</code>, type:</p>
-<pre><code>$ gpg --armor --output foo.tar.gz.asc --detach-sig foo.tar.gz 
+<pre><code class="language-shell">$ gpg --armor --output foo.tar.gz.asc --detach-sig foo.tar.gz 
 </code></pre>
 <h3 id="md5">What is an MD5 checksum?<a class="headerlink" href="#md5" title="Permanent link">&para;</a></h3>
 <p>MD5 is a <a href="http://www.faqs.org/rfcs/rfc1321.html" target="_blank">well known</a> <a href="#message-digest">message
 digest algorithm</a>. Many tools are available to calculate these sums. For example, you can use <a href="https://www.openssl.org/" target="_blank">OpenSSL</a>:</p>
-<pre><code>$ openssl md5 &lt; file
+<pre><code class="language-shell">$ openssl md5 &lt; file
 </code></pre>
 <p>Platform-specific applications are also common, such as <code>md5sum</code> on linux:</p>
-<pre><code>$ md5sum file
+<pre><code class="language-shell">$ md5sum file
 </code></pre>
 <p>With GnuPG:</p>
-<pre><code>$ gpg --print-md MD5 [fileName] &gt; [fileName].md5
+<pre><code class="language-shell">$ gpg --print-md MD5 [fileName] &gt; [fileName].md5
 
 </code></pre>
 <p>Run the command in the same directory as the file so the output only contains the file name with no directory prefixes.</p>
 <p><strong>Note</strong> that the security of MD5 is now <a href="#md5-security">questionable</a> and is only useful as part of a defense in depth.</p>
 <h3 id="sha-checksum">What is an SHA checksum?<a class="headerlink" href="#sha-checksum" title="Permanent link">&para;</a></h3>
 <p>Like <a href="#md5">MD5</a>, <a href="http://www.ietf.org/rfc/rfc3174.txt">SHA</a> is a <a href="#message-digest">message digest</a> algorithm. Using GnuPG, you can create a SHA1 signature as follows:</p>
-<pre><code>  $ gpg --print-md SHA1 [fileName] &gt; [fileName].sha1
+<pre><code class="language-shell">  $ gpg --print-md SHA1 [fileName] &gt; [fileName].sha1
 </code></pre>
 <p><strong>Avoid</strong> further use of <a href="#sha1">SHA-1</a>. <code>SHA256</code> and <code>SHA512</code> use the same <code>SHA</code> algorithm family with longer hash
 lengths (256 and 512 bits respectively). These longer variations are less vulnerable to the weaknesses found in the algorithm family than <code>SHA1</code>. Apache recommends using <a href="#sha1">SHA512</a>.</p>
 <p>To create a <code>SHA512</code> checksum use:</p>
-<pre><code>  $ sha512sum [fileName] &gt; [fileName].sha512
+<pre><code class="language-shell">  $ sha512sum [fileName] &gt; [fileName].sha512
 </code></pre>
 <p>Run the command in the same directory as the file so the output only contains the file name with no directory prefixes.</p>
 <p>There are other members of the <code>SHA</code> family that are rarely used.</p>
@@ -243,7 +243,7 @@ installation</a>.</p>
 <p>Do <strong>not</strong> store your private key on any ASF machine. Do <strong>not</strong> create signatures on ASF machines.</p>
 <h3 id="insecure-memory">What is 'insecure memory'?<a class="headerlink" href="#insecure-memory" title="Permanent link">&para;</a></h3>
 <p>When you use <a href="http://www.gnupg.org">GNU Privacy Guard</a> you may see a warning similar to:</p>
-<pre><code>gpg: WARNING: using insecure memory!
+<pre><code class="language-text">gpg: WARNING: using insecure memory!
 gpg: please see http://www.gnupg.org/faq.html for more information
 </code></pre>
 <p>If you are using GnuPG on Apache hardware, please read <a href="#where">this</a>. Do <strong>not</strong> carry out sensitive operations using a private key on ASF hardware.</p>
@@ -288,19 +288,19 @@ generate keys for other uses.</p>
 <li>Use automatic facilities built into most <a href="#openpgp">OpenPGP</a> <a href="#openpgp-applications">implementations</a></li>
 </ul>
 <p>For example, using <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a>, send the key with <a href="#key-id">ID</a> B1313DE2 to the default public key server by:</p>
-<pre><code>$ gpg --send-key B13131DE2
+<pre><code class="language-shell">$ gpg --send-key B13131DE2
 </code></pre>
 <p>You must export each changed key separately.</p>
 <h3 id="update-web-of-trust">How to make sure your local web of trust is up-to-date<a class="headerlink" href="#update-web-of-trust" title="Permanent link">&para;</a></h3>
 <p>The public web of trust grows constantly as people sign new keys and upload the new signatures onto the network of <a href="#keyserver">public key servers</a>. You should refresh public keys periodically to make sure that your local web of trust is as full as possible. Many <a href="#openpgp">OpenPGP</a> <a href="#openpgp-applications">clients</a> make it easy to refresh keys by
 querying a public key server. For example, to refresh all keys using <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a>, use:</p>
-<pre><code>$ gpg --refresh-keys
+<pre><code class="language-shell">$ gpg --refresh-keys
 </code></pre>
 <h3 id="export">How to export a key</h3>
 <p>You can export a public key through <a href="https://www.gnupg.org" target="_blank">OpenPGP</a> by using
 <code>--export</code>. Typically, the export should be ASCII armored.</p>
 <p>To export all public keys to the command line use:</p>
-<pre><code>gpg --export --armor
+<pre><code class="language-bash">gpg --export --armor
 </code></pre>
 <p>In most cases, it is better to export all keys - this ensures that signatures made on other keys will be exported. However, it is possible to export just one key by specifying it on the command line.</p>
 <p>You can export secret keys. However, this poses a security risk and there are better solutions for most common use cases. For
@@ -337,7 +337,7 @@ certification</a>.</p>
 <h3 id="key-length-how-to">How to find the length of a key<a class="headerlink" href="#key-length-how-to" title="Permanent link">&para;</a></h3>
 <p>The easiest way to discover the length of a key with id <code>KEYID</code> is to use <code>gpg --list-keys KEYID</code>. This prints basic information about the key. The first line includes the size in the second column, just before the id.
 For example:</p>
-<pre><code>$ gpg --list-keys B1313DE2
+<pre><code class="language-shell">$ gpg --list-keys B1313DE2
 pub   1024D/B1313DE2 2003-01-15
 uid                  Robert Burrell Donkin (CODE SIGNING KEY) &lt;rdonkin@apache.org&gt;
 uid                  Robert Burrell Donkin &lt;robertburrelldonkin@gmail.com&gt;
@@ -355,7 +355,7 @@ sub   8192R/B800EFC1 2009-08-07
 <h3 id="keys-policy">The KEYS File<a class="headerlink" href="#keys-policy" title="Permanent link">&para;</a></h3>
 <p>The KEYS file is a plain-text file containing the public key signatures of the release managers (and optionally other committers) for the project. A good example is the <a href="https://downloads.apache.org/ant/KEYS" target="_blank">Apache Ant KEYS file</a>.</p>
 <p>It is traditional to include the following header to explain how to use the file. These commands generate a descriptive comment describing the key, followed by the key itself. Key handling software ignores the comments when importing a key file:</p>
-<pre><code>This file contains the PGP keys of various developers.&lt;/p&gt;
+<pre><code class="language-text">This file contains the PGP keys of various developers.&lt;/p&gt;
 Users: pgp &lt; KEYS
 or
        gpg --import KEYS
@@ -451,13 +451,13 @@ break any passphrase. A good passphrase will buy important time in the event of 
 <p>Create certificates to cover the first two cases. Note that if a key is lost or can no longer be accessed (due to
 media failure or some other reason), assume that the key has been potentially compromised. Print copies of the revocation certificates and store them safely to guard against media failure.</p>
 <p>You can generate an <a href="#ascii">ASCII armored</a> revocation certificate for key <code>bob</code> and save it to <code>revoke.asc</code> using &lt;a href="<a href="https://www.gnupg.org">https://www.gnupg.org</a>" target="_blank:&gt;GNU Privacy Guard:</p>
-<pre><code>$ gpg --output revoke.asc --armor --gen-revoke bob
+<pre><code class="language-shell">$ gpg --output revoke.asc --armor --gen-revoke bob
 </code></pre>
 <p><a href="#revocation-certificate-storage">Securely store</a> the certificate.</p>
 <p>If you are preparing a revocation certificate for future use, you should test it before storing it. See <a href="#safe-practice">safe practice.</a></p>
 <h3 id="revoke-key">Revoking a key<a class="headerlink" href="#revoke-key" title="Permanent link">&para;</a></h3>
 <p>To revoke a key with a <a href="#revocation-cert">revocation certificate</a> using <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a>, import the certificate:</p>
-<pre><code>$ gpg --import revoke.asc 
+<pre><code class="language-shell">$ gpg --import revoke.asc 
 gpg: key 4A03679A: "Some User&lt;someuser@example.org&gt;" revocation
 certificate imported
 gpg: Total number processed: 1
@@ -477,7 +477,7 @@ gpg:    new key revocations: 1
 <p>When you <em>delete</em> a key from a keyring, it is simply removed. You can add it again later.</p>
 <p>When you <em>revoke</em> a key, it is marked in the key ring. Whenever a message signed by this key is verified in the future, the user will get a warning that the key has been revoked.</p>
 <p>For example, when you verify a revoked key, <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a> issues the following comment:</p>
-<pre><code>$ gpg --verify message.asc.message 
+<pre><code class="language-shell">$ gpg --verify message.asc.message 
 gpg: Signature made Sat Apr  8 09:28:31 2006 BST using DSA key ID 4A03679A
 gpg: Good signature from "Some User &lt;someuser@example.org&gt;"
 gpg: checking the trustdb
@@ -495,11 +495,11 @@ Primary key fingerprint: 82D1 169B E6F1 9D14 DA76  A5DD 968E 66E4 4A03 679A
 <h3 id="verifying-signature">What does verifying a signature mean?<a class="headerlink" href="#verifying-signature" title="Permanent link">&para;</a></h3>
 <p>You can use <a href="#pke">public key cryptography</a> to test whether a particular file is identical in content to an original by verifying a <a href="#detach-sig">signature</a>. The signature file is a <a href="#message-digest">digest</a> of the original file signed by a private key which attests to the digest's authenticity.</p>
 <p>For example, when using <a href="https://www.gnupg.org/" target="_blank">GNU Privacy Guard</a> you verify the signature <code>foo-1.0.tar.gz.asc</code> for release <code>foo-1.0.tar.gz</code> using the following command:</p>
-<pre><code>$ gpg --verify foo-1.0.tar.gz.asc foo-1.0.tar.gz
+<pre><code class="language-shell">$ gpg --verify foo-1.0.tar.gz.asc foo-1.0.tar.gz
 </code></pre>
 <p>A signature is valid, if <code>gpg</code> verifies the <code>.asc</code> as a <em>good signature</em>, and doesn't complain about expired
 or revoked keys. Technically :</p>
-<pre><code>$ gpg --verify --status-fd 1 foo-1.0.tar.gz.asc foo-1.0.tar.gz
+<pre><code class="language-shell">$ gpg --verify --status-fd 1 foo-1.0.tar.gz.asc foo-1.0.tar.gz
 </code></pre>
 <p>should classify the <code>.asc</code> as a <code>GOODSIG</code>.</p>
 <p>Trust is required in the identity of the public key that made the signature and that the signature is for the original file and not some other file. When verifying a release from an untrusted source (for example, over P2P file sharing or from a mirror) it is important to download the signature from a trusted source. Signatures for all Apache releases are available directly for download from <code>www.apache.org</code>.</p>
@@ -508,13 +508,13 @@ or revoked keys. Technically :</p>
 <p>You can also check the integrity of a release by <a href="#verifying-signature">verifying the signature</a>. You need more knowledge to correctly interpret the result, but it does provide authentication and non-repudiation. If you are connected to the Apache <a href="#web-of-trust">web of trust</a>, this also offers superior security.</p>
 <h3 id="public-key-not-found">What does 'Public key not found' mean when I try to verify a signature?<a class="headerlink" href="#public-key-not-found" title="Permanent link">&para;</a></h3>
 To verify a signature, you need the release's public key. For example, when using <a href="https://www.gnupg.org/" target="_blank">GNU Privacy Guard</a>, if you have never imported the appropriate public key, you will see a message like this:
-<pre><code>$ gpg --verify foo-1.0.tar.gz.asc foo-1.0.tar.gz
+<pre><code class="language-shell">$ gpg --verify foo-1.0.tar.gz.asc foo-1.0.tar.gz
 gpg: Signature made Mon Sep 26 22:26:18 2005 BST using RSA key ID 00000000
 gpg: Can't check signature: public key not found
 </code></pre>
 <p>You can often download unknown keys from a <a href="#keyserver">public key servers</a>. However, only rely on these if you can confirm them through your <a href="#web-of-trust">web of trust</a>.</p>
 <p>Apache projects normally keep the developers' public keys in a file called <code>KEYS</code>. You may be able to find that file on the project's website, or in their code repository. Use</p>
-<pre><code>  $ gpg --import KEYS
+<pre><code class="language-shell">  $ gpg --import KEYS
 </code></pre>
 <p>to import the public keys.</p>
 <h3 id="trust-hardware">What is the difference between secure hardware and trusted hardware?</h3>
@@ -536,12 +536,12 @@ Guide</a>.</p>
 (either corrupt or created from a different file).</p>
 <p>Do not trust a file with an invalid signature. You can trust a file with a valid signature as much as you trust the identity of the key that was used to verify the signature.</p>
 <p>For example, when you use <a href="https://www.gnupg.org/" target="_blank">GNU Privacy Guard</a>, a message similar to the following indicates that the signature is invalid:</p>
-<pre><code>$ gpg --verify foo-1.0.tar.gz.asc foo-1.0.tar.gz
+<pre><code class="language-shell">$ gpg --verify foo-1.0.tar.gz.asc foo-1.0.tar.gz
 gpg: Signature made Mon Sep 26 22:26:18 2005 BST using RSA key ID 00000000
 gpg: BAD signature from "someone@example.org"
 </code></pre>
 <p>A message similar to the following indicates that the signature is valid but for an untrusted key:</p>
-<pre><code>$ gpg --verify foo-1.0.tar.gz.asc foo-1.0.tar.gz
+<pre><code class="language-shell">$ gpg --verify foo-1.0.tar.gz.asc foo-1.0.tar.gz
 gpg: Signature made Mon Sep 26 22:05:28 2005 BST using RSA key ID 00000000
 gpg: Good signature from "someone@example.org"
 gpg:                 aka "someone@anotherdomain.org"
@@ -559,7 +559,7 @@ Primary key fingerprint: 00 00 00 00 00 00 00  00 00 00 00 00 00 00 00
 <h3 id="local-sig">Can I mark a key as locally trusted?<a class="headerlink" href="#local-sig" title="Permanent link">&para;</a></h3>
 <p>On occasion, the user (who understands the risks) may trust a key but not consider it trustworthy enough to exported to the <a href="#web-of-trust">web of trust</a>. <a href="#openpgp">OpenPGP</a> lets you sign keys as local only. These trust relationships will not be exported to the public web of trust but are treated as trusted when you use the key ring locally.</p>
 <p>For example, with <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a> use:</p>
-<pre><code>$ gpg --lsign-key someuser
+<pre><code class="language-shell">$ gpg --lsign-key someuser
 </code></pre>
 <h3 id="automated-release-signing">Automated Release Signing<a class="headerlink" href="#automated-release-signing" title="Permanent link">&para;</a></h3>
 <p>Projects may make use of automated signing for artifacts built by a CI system such as GitHub Actions, provided that:</p>
