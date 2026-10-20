@@ -10,17 +10,17 @@ config:
   MD013: false
   MD033: false
   MD041: false
+  # "!" in blog headings.
+  MD026:
+    punctuation: ".,;:。，；："
 
   # Existing pages break these rules. Re-enable each one once the pages
   # are cleaned up.
   MD001: false
-  MD003: false
   MD010: false
   MD014: false
-  MD018: false
   MD024: false
   MD025: false
-  MD026: false
   MD029: false
   MD034: false
   MD036: false

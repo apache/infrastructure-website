@@ -79,7 +79,7 @@ c['schedulers'].append(AnyBranchScheduler(name=&quot;on-wookie-commit&quot;,
                          treeStableTimer=2,
                          builderNames=[&quot;wookie-trunk&quot;]))
 
-#builders
+\#builders
 
 f28 = factory.BuildFactory()
 f28.addStep(SVN(

@@ -3,22 +3,22 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 Infra provides a library of resources that is constantly evolving to reflect the current state of Apache's infrastructure and policies.
 
-### Overview ###
+### Overview
 
 - Please read this <a href="https://www.apache.org/foundation/how-it-works.html#roles" target="_blank">introduction</a> to the different roles within an Apache project community.
 - Through the documentation, unless it is specifically defined, the term `developer` means <a href="https://www.apache.org/foundation/how-it-works.html#developers" target="_blank">developer/contributor</a> or <a href="https://www.apache.org/foundation/how-it-works.html#committers" target="_blank">committer</a>.
 - <a href="https://www.apache.org/dev/" target="_blank">Here</a> you can find an extensive infrastructure overview for <a href="https://www.apache.org/foundation/how-it-works.html#developers" target="_blank">developers</a>.
 
-### General guides ###
+### General guides
 
 - [Understanding Open source](understanding-opensource.html)
 - [Writing a good bug report](bug-writing-guide.html)
 - [Creating a Jira ticket](jira-guidelines.html)
 - [Creating a patch for project code](patch.html)
 
-### PMC resources ###
+### PMC resources
 
-#### Source code ####
+#### Source code
 
 - [Project source code repositories](version-control.html)
 - [Repositories for Maven releases and snapshots](repository-faq.html)
@@ -28,7 +28,7 @@ Infra provides a library of resources that is constantly evolving to reflect the
   - [Shared runner queues and how to reduce your load](services.html#github-actions)
 - [Dependabot for dependency management](dependabot.html)
 
-#### Build and release ####
+#### Build and release
 
 - [Release creation process](release-publishing.html)
 - Creating optional [Maven releases](publishing-maven-artifacts.html)
@@ -41,7 +41,7 @@ Infra provides a library of resources that is constantly evolving to reflect the
 - [Handling cryptography within an ASF release](crypto.html)
 - [Deploying a self-hosted runner](self-hosted-runners.html)
 
-#### Website, blog and wiki ####
+#### Website, blog and wiki
 
 - [Project website guidelines](website-guidelines.html). **Note**: No new projects can use the Apache CMS, which has reached end-of-life. Any projects still using the CMS must migrate to another resource to maintain their websites. Projects that have not migrated their site may find that they are no longer able to update it.
 - Here is how one project <a href="https://cwiki.apache.org/confluence/display/INFRA/How+Apache+Jena+migrated+from+the+CMS" target="_blank">did the migration</a>.
@@ -50,13 +50,13 @@ Infra provides a library of resources that is constantly evolving to reflect the
 - [Project blog](project-blogs.html)
 - <a href="https://cwiki.apache.org/confluence/display/INFRA/Managing+permissions+on+your+project%27s+Confluence+Space" target="_blank">Managing permissions on your project's Confluence space</a>.
 
-#### Other ####
+#### Other
 
 - [Managing project committers](managing-committers.html)
 - [Virtual machine for your project](vm-policy.html)
 - [Mailing list moderation](mailing-list-moderation.html)
 
-### Committer resources ###
+### Committer resources
 
 - [New committer's guide](new-committers-guide.html)
 - [Managing your Apache email address](committer-email.html)
@@ -69,7 +69,7 @@ Infra provides a library of resources that is constantly evolving to reflect the
 - [Apache mailing list etiquette](contrib-email-tips.html)
 - [How to submit a patch for project code](patch.html)
 
-### Contributor resources ###
+### Contributor resources
 
 [New contributor's guide](contributors.html)
 

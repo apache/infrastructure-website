@@ -66,15 +66,15 @@ At least <a href="https://github.com/search?q=topic%3Ajbake+org%3Aapache&type=Re
 
 <a href="https://www.mkdocs.org/" target="_blank">MKDocs</a> is a static site generator designed for creating project documentation. However, at least one ASF project uses it to build their entire project website. See [this note](asfyaml-mkdocs.html) on the build sequence to use to preserve your project site's [.asf.yaml](asf-yaml.html) file.
 
-#### Basic website template in Markdown ####
+#### Basic website template in Markdown
 
 If you'd like to get started with an easy-to-use, <a href="https://github.github.com/gfm/" target="_blank">Markdown</a>-based site that many projects have used, see the <a href="https://github.com/apache/apache-website-template" target="_blank">sample Apache project website</a> repository, which has many useful features and instructions for using `svnpubsub`.
 
-#### HTML files ####
+#### HTML files
 
 You can use any other tool that generates static HTML pages, or hand-code those pages. You then check them into your project's website repository. The check-in will trigger a site update.
 
-#### Custom website directives using .htaccess files ####
+#### Custom website directives using .htaccess files
 
 Project websites can make use of .htaccess files for setting up custom redirects and other tweaks to the handling of requests. The default [AllowOverride](https://httpd.apache.org/docs/2.4/mod/core.html#allowoverride) setting is `All`,
 which generally enables any sort of redirects or rewrites (using `RewriteRule`, `Redirect`, etc.). Some project websites have custom settings in their dedicated virtual host configuration, which may require asking the Infrastructure Team for assistance. If you are in doubt, ask.

@@ -96,7 +96,7 @@ Comments:
 - Jenkins builds should be containerized and isolated from one another, so one build does not bring down a node for everybody else. Need guaranteed minimum performance for performance-sensitive build tests.
 - Improve the messaging of Jira to the mailing lists.
 
-### New Year’s resolutions for projects:
+### New Year’s resolutions for projects
 
 - Hope to make more frequent releases (multiple mentions).
 - Get it fully, reproducibly built with OID integration to release it via Trusted Publishing to PyPI.
@@ -115,7 +115,7 @@ Comments:
 - CI stabiity
 - More powerful GitHub Runners for all platforms
 
-### Feedback for the Infra team:
+### Feedback for the Infra team
 
 Most of the comments were positive, with thanks for our efforts and good wishes for the new year.
 
