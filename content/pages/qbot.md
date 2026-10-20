@@ -90,7 +90,7 @@ In Slack, there are three ways to talk to Qbot:
   - In a role-playing game such as Dungeons and Dragons, when your character gets in trouble you may be able to try a **saving roll** to, well, save them from disaster. The syntax to see if Qbot can help in your current crisis is `qbot roll saving`.
 - `shanty` - Qbot shares a verse of a sea shanty. The syntax is `qbot shanty`.
 
-_Note: the following two commands are in 'alpha' development and may not work as expected. If you would like to use them in huddles in your project's Slack spaces, please let us know (see 'Requesting features', below)._
+*Note: the following two commands are in 'alpha' development and may not work as expected. If you would like to use them in huddles in your project's Slack spaces, please let us know (see 'Requesting features', below).*
 
 - `q` - This command starts a  "Q & A" queue in a huddle in your current channel, and makes you the administrator. Such a function can be useful if you anticipate participants submitting a large number of questions. The syntax is `qbot q start`.
 - `queue` - Performs the same function as `q`. The syntax is `qbot queue start`.

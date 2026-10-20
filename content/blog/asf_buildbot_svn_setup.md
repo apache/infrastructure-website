@@ -84,7 +84,7 @@ c['schedulers'].append(AnyBranchScheduler(name=&quot;on-wookie-commit&quot;,
 f28 = factory.BuildFactory()
 f28.addStep(SVN(
     mode=&quot;clobber&quot;,
-    baseURL=&quot;http://svn.apache.org/repos/asf/&quot;,
+    baseURL=&quot;<http://svn.apache.org/repos/asf/>&quot;,
     defaultBranch=&quot;<strong>incubator/wookie/trunk</strong>&quot;,
     haltOnFailure=True,
 ))

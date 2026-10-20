@@ -147,7 +147,7 @@ Infra can activate a [Subversion and Git integration with Jira tickets](svngit2j
 
 <h3 id="build">Build services<a class="headerlink" href="#build" title="Permanent link">&para;</a></h3>
 
-Apache supports and models continuous integration and continuous deployment, or *CI/CD*. The [ASF build and supported services](build-supported-services.html) page provides information about, and links to, the CI services the ASF provides and/or supports.
+Apache supports and models continuous integration and continuous deployment, or _CI/CD_. The [ASF build and supported services](build-supported-services.html) page provides information about, and links to, the CI services the ASF provides and/or supports.
 
 Other tools to consider:
 

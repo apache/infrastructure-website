@@ -976,7 +976,7 @@ Other Apache events may also hold keysigning parties (and most will if asked). T
 
 Smaller, informal Apache-sponsored meetings are also an opportunity to swap keys (as well as gossip) with other committers.
 
-Subscribe to the party list (see committer documentation) to find out about informal meetings. When you travel, take advantage of this opportunity to meet up with other Apache committers by posting to the party list. The <a href="https://community.zones.apache.org/map.html" target="_blank>committer map</a> shows locations for many committers. If there are committers near you, you can organise an informal meetup.
+Subscribe to the party list (see committer documentation) to find out about informal meetings. When you travel, take advantage of this opportunity to meet up with other Apache committers by posting to the party list. The <a href="<https://community.zones.apache.org/map.html>" target="_blank>committer map</a> shows locations for many committers. If there are committers near you, you can organise an informal meetup.
 
 <h3 id="wot-link-in">How to link into a public web of trust<a class="headerlink" href="#wot-link-in" title="Permanent link">&para;</a></h3>
 

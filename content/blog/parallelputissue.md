@@ -10,7 +10,7 @@ The Maven team is working on a resolution to this issue. Until the fix is availa
 
 You can do this in several ways:
 
-1. Upgrade to ASF Parent POM 37 (https://maven.apache.org/pom/asf/) which contains the workaround (https://github.com/apache/maven-apache-parent/pull/566).
+1. Upgrade to ASF Parent POM 37 (<https://maven.apache.org/pom/asf/>) which contains the workaround (<https://github.com/apache/maven-apache-parent/pull/566>).
 
 2. Using the command line, add the user property `-Daether.connector.basic.parallelPut=false`
 
@@ -18,7 +18,7 @@ You can do this in several ways:
 
 `-Daether.connector.basic.parallelPut=false`
 
-Read more about this here: https://maven.apache.org/configure.html#mvn-maven-config-file
+Read more about this here: <https://maven.apache.org/configure.html#mvn-maven-config-file>
 
 4. In ~/.m2/settings.xml, add this property to a profile that is always enabled:
 

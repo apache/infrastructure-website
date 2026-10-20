@@ -75,7 +75,7 @@ providing a metadata dictionary.
   - .mkd
   - .mdown
 
-- `ASFReader, `.asfreader.py) transforms an <a href="https://github.com/gstein/ezt" target="_blank">ezt template</a> into GFM and then to HTML.
+- `ASFReader` (`./asfreader.py`) transforms an <a href="https://github.com/gstein/ezt" target="_blank">ezt template</a> into GFM and then to HTML.
   
   - .ezmd
 

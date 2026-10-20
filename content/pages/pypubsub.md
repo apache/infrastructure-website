@@ -34,7 +34,7 @@ Some examples:
 * To subscribe to PRs opened against `beam-foo.git`: `http://pubsub.apache.org:2069/github/beam-foo.git/pr`
 * To subscribe to all commits, both Subversion and git: `http://pubsub.apache.org:2069/commit`
 * To subscribe to all JIRA events for the HADOOP JIRA instance: `http://pubsub.apache.org:2069/jira/HADOOP`
-* To subscribe to *both* JIRA and email streams for tomcat in one go: `http://pubsub.apache.org:2069/jira/TOMCAT,email/tomcat.apache.org`
+* To subscribe to _both_ JIRA and email streams for tomcat in one go: `http://pubsub.apache.org:2069/jira/TOMCAT,email/tomcat.apache.org`
 
 Public SVN repo topics consist of 'svn', the first one or two path segments after the /repos/ in the URL, and 'commit'.
 For example, changes to the repository `https://dist.apache.org/repos/dist/release/` have the topics `svn/dist/release/commit`.

@@ -7,7 +7,7 @@ Matomo, formerly known as Piwik, is a free (GPL licensed) web analytics software
 
 _what a project would get out of it_
   
-_include negatives? For example, 'Projects should be aware that there are a number of bug reports that suggest Matomo sometimes delivers inaccurate data.'_ (https://www.trustradius.com/products/matomo/reviews?qs=pros-and-cons#overview).
+_include negatives? For example, 'Projects should be aware that there are a number of bug reports that suggest Matomo sometimes delivers inaccurate data.'_ (<https://www.trustradius.com/products/matomo/reviews?qs=pros-and-cons#overview>).
   
 ## Installing and running Matomo
 

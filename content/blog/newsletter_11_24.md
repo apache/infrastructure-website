@@ -23,13 +23,13 @@ See <a href="https://infra.apache.org/roundtable.html" target="_blank">this page
 
 ## A message from the VP-Infra
 
-_Please welcome Chris Lambertus to the role of interim Infrastructure Administrator at The Apache Software Foundation. Chris has worked for Infra for many years, and is imminently capable. I look forward to working with you Chris._
+*Please welcome Chris Lambertus to the role of interim Infrastructure Administrator at The Apache Software Foundation. Chris has worked for Infra for many years, and is imminently capable. I look forward to working with you Chris.*
 
-_Please also join me in thanking Greg Stein for his many years of service in the role of Infrastructure Administrator. He's been instrumental in defining the role and forming the current team. Thank you, Greg._
+*Please also join me in thanking Greg Stein for his many years of service in the role of Infrastructure Administrator. He's been instrumental in defining the role and forming the current team. Thank you, Greg.*
 
-_Best Regards,_
+*Best Regards,*
 
-_Myrle Krantz_
+*Myrle Krantz*
 
 A two-part interview with Chris Lambertus is here:
 
@@ -38,6 +38,6 @@ A two-part interview with Chris Lambertus is here:
 
 ## ASF Writers
 
-Infra team member Andrew Wetmore has started a Slack channel for people whose main contribution to The ASF and its projects is through writing–documentation, marketing materials, tutorials, and much more. The 'ASF-writers' channel is in the _the-asf_ workspace on Slack. The group meets next on **Friday, December 6, 1700 UTC**, in the channel's huddle.
+Infra team member Andrew Wetmore has started a Slack channel for people whose main contribution to The ASF and its projects is through writing–documentation, marketing materials, tutorials, and much more. The 'ASF-writers' channel is in the *the-asf* workspace on Slack. The group meets next on **Friday, December 6, 1700 UTC**, in the channel's huddle.
 
 More soon!

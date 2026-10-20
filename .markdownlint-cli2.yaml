@@ -13,22 +13,20 @@ config:
   # "!" in blog headings.
   MD026:
     punctuation: ".,;:。，；："
+  # Tabs are kept inside code examples.
+  MD010:
+    code_blocks: false
 
   # Existing pages break these rules. Re-enable each one once the pages
   # are cleaned up.
   MD001: false
-  MD010: false
   MD014: false
   MD024: false
   MD025: false
   MD029: false
-  MD034: false
   MD036: false
-  MD038: false
   MD045: false
   MD046: false
-  MD048: false
-  MD049: false
   MD051: false
   MD053: false
   MD059: false

@@ -25,5 +25,5 @@ PagerDuty also supports a clear escalation path that begins alerting other peopl
   <p>Adopting an on-call rotation will allow us to provide a better service and response time, while also clearly setting expectations around contractor availability so they can relax on their off weeks. </p>
   <p>
 
-If you have questions or want to get involved, feel free to join us on the infrastructure mailing list infrastructure@apache.org or joining us in our <a href="http://www.hipchat.com/gw4Cfp7JY" target="_blank">Hipchat room</a>.
+If you have questions or want to get involved, feel free to join us on the infrastructure mailing list <infrastructure@apache.org> or joining us in our <a href="http://www.hipchat.com/gw4Cfp7JY" target="_blank">Hipchat room</a>.
 </p>

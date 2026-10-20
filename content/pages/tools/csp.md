@@ -13,7 +13,7 @@ SetEnv CSP_PROJECT_DOMAINS "host1 host2 host3"
 
 Where `host1`, `host2`, and so on, are the additional domains or URLs your
 project needs to unblock for the website to work. Each additional host you
-add **MUST** have been pre-approved by VP Data Privacy (privacy@apache.org),
+add **MUST** have been pre-approved by VP Data Privacy (<privacy@apache.org>),
 and **SHOULD** have an accompanying comment in the .htaccess file explaining
 why the CSP is changed and where permission was obtained.
 
@@ -35,7 +35,7 @@ The following domains are already allowed by default and do not need to be added
 * `https://apache.org/`
 * `https://*.scarf.sh/`
 
-If you need more specifically tailored headers, please reach out to users@infra.apache.org
+If you need more specifically tailored headers, please reach out to <users@infra.apache.org>
 and we can assist you.
 
 **DO NOT EDIT CSP HEADERS WITHOUT ASKING FIRST**.
