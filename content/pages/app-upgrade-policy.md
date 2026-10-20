@@ -45,12 +45,12 @@ Every two months we perform upgrades to plugins that are compatible with the ver
 
 Infra documents what we upgraded and when, from what version to what version, on these pages:
 
-  - <a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins+Upgrades" target="_blank">Jenkins upgrades</a>
-  - <a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins+Plugin+Upgrades" target="_blank">Jenkins plugin upgrades</a>
-  - <a href="https://cwiki.apache.org/confluence/display/INFRA/Jira+Upgrades" target="_blank">Jira upgrades</a>
-  - <a href="https://cwiki.apache.org/confluence/display/INFRA/Jira+Plugin+Upgrades" target="_blank">Jira plugin upgrades</a>
-  - <a href="https://cwiki.apache.org/confluence/display/INFRA/Confluence+Upgrades" target="_blank">Confluence upgrades</a>
-  - <a href="https://cwiki.apache.org/confluence/display/INFRA/Confluence+Plugin+Upgrades" target="_blank">Confluence plugin upgrades</a>
+- <a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins+Upgrades" target="_blank">Jenkins upgrades</a>
+- <a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins+Plugin+Upgrades" target="_blank">Jenkins plugin upgrades</a>
+- <a href="https://cwiki.apache.org/confluence/display/INFRA/Jira+Upgrades" target="_blank">Jira upgrades</a>
+- <a href="https://cwiki.apache.org/confluence/display/INFRA/Jira+Plugin+Upgrades" target="_blank">Jira plugin upgrades</a>
+- <a href="https://cwiki.apache.org/confluence/display/INFRA/Confluence+Upgrades" target="_blank">Confluence upgrades</a>
+- <a href="https://cwiki.apache.org/confluence/display/INFRA/Confluence+Plugin+Upgrades" target="_blank">Confluence plugin upgrades</a>
 
 # Notifications
 

@@ -20,8 +20,8 @@ See <a href="https://infra.apache.org/roundtable.html" target="_blank">this page
 
 Staring March 1, 2025, the ASF will be enforcing a **Content Security Policy** (CSP) for all project websites.
 
-  - External trackers from 3rd party providers are NO LONGER allowed
-  - External resources from providers with which we do not have a Data Processing Agreement (DPA) are NO LONGER allowed
+- External trackers from 3rd party providers are NO LONGER allowed
+- External resources from providers with which we do not have a Data Processing Agreement (DPA) are NO LONGER allowed
 
 This policy will bring project websites into alignment with The ASF's security and privacy parameters.
 

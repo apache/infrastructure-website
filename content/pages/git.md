@@ -12,9 +12,9 @@ mirrors are also available on GitHub.
 
 Please file an <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">INFRA</a> ticket (component: Git) to request a new codebase to be mirrored or to change the settings of an existing mirror. When requesting a new mirror, please include the following information:
 
-  - Name of the codebase, for example "Apache Tika"
-  - Name of the requested Git mirror, for example "tika.git"
-  - Subversion path of the codebase, for example "/lucene/tika"
+- Name of the codebase, for example "Apache Tika"
+- Name of the requested Git mirror, for example "tika.git"
+- Subversion path of the codebase, for example "/lucene/tika"
   = Subversion layout, in case it is different from the standard "trunk, branches, tags" structure.
 
 <h2 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">&para;</a></h2>

@@ -11,7 +11,7 @@ The ASF maxes out its runner allocation quite often, so a project needs to plan 
 
 **Evolving knowledge**
 
--  If you are considering using GitHub Actions with buildsy, please subscribe to the `builds@ a.o` mailing list, where there is a continuing discussion on this topic and others related to continuous integration development.
+- If you are considering using GitHub Actions with buildsy, please subscribe to the `builds@ a.o` mailing list, where there is a continuing discussion on this topic and others related to continuous integration development.
 
 - The community is curating a <a href="https://cwiki.apache.org/confluence/display/BUILDS/GitHub+Actions+status" target="_blank">Wiki page</a> about the current state of using GitHub Actions for ASF projects.
 
@@ -55,12 +55,12 @@ To extend the validity of the token, adjust the `develocity-token-expiry` action
 
 Further information is at these pages:
 
-  - <a href="https://github.com/gradle/actions/blob/main/docs/setup-gradle.md#managing-develocity-access-keys" target="_blank">Managing Develocity access keys</a>
-  - <a href="https://docs.gradle.com/develocity/gradle-plugin/current/#short_lived_access_tokens" target="_blank">Short-lived access tokens</a>
+- <a href="https://github.com/gradle/actions/blob/main/docs/setup-gradle.md#managing-develocity-access-keys" target="_blank">Managing Develocity access keys</a>
+- <a href="https://docs.gradle.com/develocity/gradle-plugin/current/#short_lived_access_tokens" target="_blank">Short-lived access tokens</a>
 
 ### Links ###
 
-  - The [Apache GitHub Actions Policy](github-actions-policy.html)
-  - Advice for <a href="https://cwiki.apache.org/confluence/display/BUILDS/GitHub+Actions+Security">GitHub Actions Security</a>
-  - [GitHub Actions](services.html#github-actions) on the Services and Tools page, on shared runner queues and how to reduce your project's load
-  - [Dependabot](dependabot.html) for dependency management, which is **required** for the `github-actions` ecosystem
+- The [Apache GitHub Actions Policy](github-actions-policy.html)
+- Advice for <a href="https://cwiki.apache.org/confluence/display/BUILDS/GitHub+Actions+Security">GitHub Actions Security</a>
+- [GitHub Actions](services.html#github-actions) on the Services and Tools page, on shared runner queues and how to reduce your project's load
+- [Dependabot](dependabot.html) for dependency management, which is **required** for the `github-actions` ecosystem

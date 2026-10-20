@@ -16,9 +16,9 @@ The team is debugging the complex flow of commits and action triggers to our pub
 
 Remaining tasks include
 
-  - dependabot update bundling
-  - watcher service re-scanning
-  - polishing up workflow triggers
+- dependabot update bundling
+- watcher service re-scanning
+- polishing up workflow triggers
 
 If you are interested in following this work more closely, or contributing to it, please join our email list (`ghactions@infra.apache.org`) and/or the **#asf-ghactions** channel in the the-apache space on Slack.
 

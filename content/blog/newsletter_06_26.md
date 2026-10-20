@@ -10,8 +10,8 @@ The June Roundtable focused on **release automation**, with Piotr Karwasz presen
 
 The coming roundtables will be
 
-  - July 1, 1700 UTC. Clay Johnson of Gradle will present on **predictive test analysis**.
-  - August 5, 1700 UTC. The Tooling team will present the current state of the **Apache Trusted Releases (ATR) platform**.
+- July 1, 1700 UTC. Clay Johnson of Gradle will present on **predictive test analysis**.
+- August 5, 1700 UTC. The Tooling team will present the current state of the **Apache Trusted Releases (ATR) platform**.
 
 Details about joining a roundtable, and what goes on at one, are here: <a href="https://infra.apache.org/roundtable.html" target="_blank">infra.apache.org/roundtable.html</a>.
 
@@ -31,14 +31,14 @@ The source code is at <a href="https://github.com/apache/infrastructure-cap" tar
 
 The Infrastructure team will present a full track at Community over Code Glasgow, October 11-14:
 
-  - Apache Trusted Releases: Securing the Open Source Supply Chain (with the Tooling team)
-  - CI Workshop
-  - Defending the Foundation: Implementing Automated Integrity Validation (AIV) Gates for Apache Projects
-  - Distributed Denial of Service: Traffic characterization and mitigation
-  - How To Infra
-  - Infra Deployment Workshop
-  - IRL Roundtable
-  - Where are we going with ASF Infra?
+- Apache Trusted Releases: Securing the Open Source Supply Chain (with the Tooling team)
+- CI Workshop
+- Defending the Foundation: Implementing Automated Integrity Validation (AIV) Gates for Apache Projects
+- Distributed Denial of Service: Traffic characterization and mitigation
+- How To Infra
+- Infra Deployment Workshop
+- IRL Roundtable
+- Where are we going with ASF Infra?
 
 Additionally, Infra will be hosting **Games Night**, which was very popular at the 2025 convention.
 
@@ -50,8 +50,8 @@ The ASF has a limited number of self-hosted runners to support build processes. 
 
 There is on-going community discussion on a Slack channel, `project-workflow-optimisations`, about how projects can optimize GitHub Actions workflows to minimize
 
-  - the number of concurrent jobs drawing on our limited allocation of runners
-  - the number of long-running jobs
+- the number of concurrent jobs drawing on our limited allocation of runners
+- the number of long-running jobs
 
 To share best practices, we encourage projects to contribute to this CWiki page: <a href="https://cwiki.apache.org/confluence/display/INFRA/GitHub+Actions+Recommended+Practices" target="_blank">cwiki.apache.org/confluence/display/INFRA/GitHub+Actions+Recommended+Practices</a>.
 

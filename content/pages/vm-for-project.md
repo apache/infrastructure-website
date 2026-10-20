@@ -7,12 +7,12 @@ Infra maintains hosts in different computer centers around the world to run virt
 
 ### Contents ###
 
-  - <a href="#request">Requesting a virtual machine</a>
-  - <a href="#deploy">Deploying the virtual machine</a>
-  - <a href="#maintain">Project maintainers</a>
-  - <a href="#ssh-keys">Obtaining SSH keys</a>
-  - <a href="#maintenance">General maintenance</a>
-  - <a href="#cautions">Cautions</a>
+- <a href="#request">Requesting a virtual machine</a>
+- <a href="#deploy">Deploying the virtual machine</a>
+- <a href="#maintain">Project maintainers</a>
+- <a href="#ssh-keys">Obtaining SSH keys</a>
+- <a href="#maintenance">General maintenance</a>
+- <a href="#cautions">Cautions</a>
 
 <h3 id="request">Requesting a virtual machine<a class="headerlink" href="#request" title="Permanent link">&para;</a></h3>
 
@@ -99,23 +99,23 @@ Tip: You can review the files of some other committer: `ls -al ~mymentor; cat ~m
 
 There are no mandatory rules, but here are some suggestions:
 
-  - Keep all changes in Git/Puppet. See: `https://github.com/apache/infrastructure-p6`
-    - If you do not have karma, please create PRs in a branch against our GitHub repository.
-    - Keep all application data in `/x1` if possible.
-  - Update Puppet with all extra installed packages.
-    - See `https://github.com/apache/infrastructure-p6/tree/production/modules/<vmname>/manifests/init.pp`
-    - See also the <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+workflow+for+infrastructure-puppet+repo" target="_blank">Git workflow for an Infrastructure Puppet repository</a>.
+- Keep all changes in Git/Puppet. See: `https://github.com/apache/infrastructure-p6`
+  - If you do not have karma, please create PRs in a branch against our GitHub repository.
+  - Keep all application data in `/x1` if possible.
+- Update Puppet with all extra installed packages.
+  - See `https://github.com/apache/infrastructure-p6/tree/production/modules/<vmname>/manifests/init.pp`
+  - See also the <a href="https://cwiki.apache.org/confluence/display/INFRA/Git+workflow+for+infrastructure-puppet+repo" target="_blank">Git workflow for an Infrastructure Puppet repository</a>.
 
 See also [Managing virtual machines](vm-management.html)
 
 <h3 id="cautions">Cautions<a class="headerlink" href="#cautions" title="Permanent link">&para;</a></h3>
 
-  - Do not try to change items controlled by puppet, such as:
-    - iptables
-    - sshd
-    - ldap
-    - /root/bin
-    - anything else relevant for security
-  - As sudoer you are expected to know what you do, and are expected to clear any problems you create.
+- Do not try to change items controlled by puppet, such as:
+  - iptables
+  - sshd
+  - ldap
+  - /root/bin
+  - anything else relevant for security
+- As sudoer you are expected to know what you do, and are expected to clear any problems you create.
 
 Before doing something, you are always welcome to join #asfinfra on Slack and ask about it.

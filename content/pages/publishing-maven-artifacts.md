@@ -13,18 +13,18 @@ The [ASF Nexus repository](https://repository.apache.org/) enforces security by 
 
 Before a project can use the repository to release Maven artifacts, it must be configured in Nexus. This is generally a quick and easy process. To get set up, <a href="https://issues.apache.org/jira/secure/CreateIssueDetails!init.jspa?issuetype=3&priority=3&pid=10410&components=12312660&summary=Enable+Nexus+Access+For+[insert+project]&description=Project+URL:%0D%0DSVN+URL:%0D%0DMaven+Group+Ids:%0D%0DManaged+By+This+TLP+Project:" target="_blank">use this link</a> to create a Jira ticket with the following information:
 
-  - **Project URL**: a link to your project page (usually `https://<project>.apache.org/`).
-  - **SVN URL**: where you store your source code, in case Infra needs to look up more information.
-  - **Maven Group IDs**: a list of the groupIDs for this project. They should all be subgroups of `org.apache`.
-  - **Managed By This TLP Project**: if this is a subproject, list the TLP that is responsible. Subprojects usually don't have their own LDAP group, so we need the TLP LDAP group for permissions.
+- **Project URL**: a link to your project page (usually `https://<project>.apache.org/`).
+- **SVN URL**: where you store your source code, in case Infra needs to look up more information.
+- **Maven Group IDs**: a list of the groupIDs for this project. They should all be subgroups of `org.apache`.
+- **Managed By This TLP Project**: if this is a subproject, list the TLP that is responsible. Subprojects usually don't have their own LDAP group, so we need the TLP LDAP group for permissions.
 
 If you have specific questions or concerns, please call them out in the ticket.
   
 Once you file the Jira ticket, Infra will do the following:
 
-  - **Set up the project in Nexus**: We configure your groupIds in Nexus and link them to the appropriate LDAP group for authorization.
-  - **Move Existing Artifacts**: To maintain the proper `maven-metadata.xml` files and prevent rsync conflicts in Central, we must move all your artifacts to the new repository. We will mark the folder in the old repository as read-only to prevent accidental deployments.
-  - **Check POMs**: If your project is Maven-based, we will check your POM for any obvious problems.
+- **Set up the project in Nexus**: We configure your groupIds in Nexus and link them to the appropriate LDAP group for authorization.
+- **Move Existing Artifacts**: To maintain the proper `maven-metadata.xml` files and prevent rsync conflicts in Central, we must move all your artifacts to the new repository. We will mark the folder in the old repository as read-only to prevent accidental deployments.
+- **Check POMs**: If your project is Maven-based, we will check your POM for any obvious problems.
 
 ## Adjusting your build to deploy to the ASF Nexus repository ##
 
@@ -107,9 +107,9 @@ mvn deploy
 
 **Notes**
 
-  - If you experience an error like a _HTTP 401_ during deployment, check your settings for the required server entries as outlined above.
-  - Be sure that the generated artifacts respect the <a href="https://www.apache.org/legal/release-policy.html#distribute-raw-artifact" target="_blank">Apache release rules</a>: NOTICE and LICENSE files should be present in the META-INF directory within the jar.
-  - Verify the deployment under the ASF <a href="https://repository.apache.org/content/repositories/snapshots/" target="_blank">Maven Snapshot repository</a>.
+- If you experience an error like a _HTTP 401_ during deployment, check your settings for the required server entries as outlined above.
+- Be sure that the generated artifacts respect the <a href="https://www.apache.org/legal/release-policy.html#distribute-raw-artifact" target="_blank">Apache release rules</a>: NOTICE and LICENSE files should be present in the META-INF directory within the jar.
+- Verify the deployment under the ASF <a href="https://repository.apache.org/content/repositories/snapshots/" target="_blank">Maven Snapshot repository</a>.
   
 ### 3. Prepare the release ###
 
@@ -120,10 +120,10 @@ mvn release:prepare
 
 **Notes**
 
-  - Don't try to publish `.sha256` or `.sha512` files; Nexus doesn't handle them.
-  - Remove `.md5`s in `dist.apache.org/repos/dist/release/` manually.
-  - Preparing the release will create a new tag in SVN, and automatically check the version in on your behalf.
-  - If you're located in Europe, `release:prepare` may fail with `Unable to tag SCM` and `svn: No such revision X`. Wait 10 seconds and run `mvn release:prepare` again.
+- Don't try to publish `.sha256` or `.sha512` files; Nexus doesn't handle them.
+- Remove `.md5`s in `dist.apache.org/repos/dist/release/` manually.
+- Preparing the release will create a new tag in SVN, and automatically check the version in on your behalf.
+- If you're located in Europe, `release:prepare` may fail with `Unable to tag SCM` and `svn: No such revision X`. Wait 10 seconds and run `mvn release:prepare` again.
   
 ### 4. Stage the release for a vote ###
 

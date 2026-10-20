@@ -18,18 +18,18 @@ Your project team wants to build an excellent application that solves a problem,
 
 Your website **must**
 
-  - satisfy the <a href="https://www.apache.org/foundation/marks/pmcs" target="_blank">Apache branding requirements</a>, in particular that <a href="https://www.apache.org/foundation/marks/pmcs#navigation" target="_blank">certain links</a> appear on the site's landing page, in whatever navigation structure the site uses. Whimsy's <a href="https://whimsy.apache.org/site/" target="_blank">Apache Project Website Checks</a> tool periodically reviews all top-level project (TLP) websites to provide a report on how well they comply with that policy, and to identify issues that a project may need to address.
-  - comply with the Infrastructure team's [project site policy](project-site-policy.html).
+- satisfy the <a href="https://www.apache.org/foundation/marks/pmcs" target="_blank">Apache branding requirements</a>, in particular that <a href="https://www.apache.org/foundation/marks/pmcs#navigation" target="_blank">certain links</a> appear on the site's landing page, in whatever navigation structure the site uses. Whimsy's <a href="https://whimsy.apache.org/site/" target="_blank">Apache Project Website Checks</a> tool periodically reviews all top-level project (TLP) websites to provide a report on how well they comply with that policy, and to identify issues that a project may need to address.
+- comply with the Infrastructure team's [project site policy](project-site-policy.html).
 
 The site also **should**
 
-  - explain what your project's product does.
-  - pitch how your product solves a problem or creates a new opportunity.
-  - invite people to get involved in the development team.
-  - offer a link to the Apache downloads platform so people can download the latest builds of the product that you want the public to use.
-  - provide documentation that will help people not part of the project understand how to get started with the product and how to keep going.
-  - describe how the project team works, and its connection to the Apache Software Foundation.
-  - explain how people can get in touch with the project to provide feedback or ask questions.
+- explain what your project's product does.
+- pitch how your product solves a problem or creates a new opportunity.
+- invite people to get involved in the development team.
+- offer a link to the Apache downloads platform so people can download the latest builds of the product that you want the public to use.
+- provide documentation that will help people not part of the project understand how to get started with the product and how to keep going.
+- describe how the project team works, and its connection to the Apache Software Foundation.
+- explain how people can get in touch with the project to provide feedback or ask questions.
 
 Once you have outlined the content that will be on the website, and decided how and where to display it, you need to decide how to build the site.
 
@@ -88,10 +88,10 @@ Infra is migrating the websites of projects using the Pelican option to GitHub A
 
 <a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a> is a static site generator written in Python. Highlights include:
 
-  - Write your content directly with your editor of choice in reStructuredText or Markdown formats.
-  - Includes a simple CLI tool to (re)generate your site.
-  - Easy to interface with distributed version control systems and web hooks.
-  - Completely static output is easy to host anywhere.
+- Write your content directly with your editor of choice in reStructuredText or Markdown formats.
+- Includes a simple CLI tool to (re)generate your site.
+- Easy to interface with distributed version control systems and web hooks.
+- Completely static output is easy to host anywhere.
   
 Pelican has paths to <a href="https://docs.getpelican.com/en/stable/importer.html#import" target="_blank">migrate existing websites from many technologies</a>, including Blogger, Dotclear, Posterous, Tumblr, WordPress, and RSS/Atom.
 
@@ -156,25 +156,25 @@ For more detailed procedures, see see [.asf.yaml](asf-yaml.html).
   
   The basic requirements for site management are that
 
-  - only committers should be able to modify the site.
-  - notifications of all site changes are sent to the relevant project mailing lists.
+- only committers should be able to modify the site.
+- notifications of all site changes are sent to the relevant project mailing lists.
 
 <h3 id="tools">Management tools<a class="headerlink" href="#tools" title="Permanent link">&para;</a></h3>
 
 Infra supports these tools for publishing and maintaining Apache project websites:
 
-  -  **[Site template](asf-pelican.html)** streamlines migration of an existing project site on the deprecated CMS, and creation of new project sites.
-  -  **[Pelican and BuildBot](pelican-buildbot.html)** streamline creating and publishing your project website.
-  - **svnpubsub** automatically publishes the static contents of a designated svn folder (<a href="https://svn.apache.org/repos/asf/ant/site/ant/production/" target="_blank">example</a>) as the project web site at `http://project.apache.org`. The project team can use any site build mechanism it wants as long as the above requirements are met.
-  - [**pypubsub**](pypubsub.html) automatically serves the static contents of a designated Git repository as the website for a project. Git-based websites are typically maintained in a repository branch to be published as `https://project.apache.org`. A project can host the site from its primary project repository. Typically these will be built as a Jenkins or a Buildbot job (see below). We recommend that you only have a single writer to the asf-site branch to avoid potential conflicts.
-  - For **websites using a Git repository**, you can add an [.asf.yaml](asf-yaml.html) configuration file. The file lets you set instructions that simplify updating and maintaining the site.
+- **[Site template](asf-pelican.html)** streamlines migration of an existing project site on the deprecated CMS, and creation of new project sites.
+- **[Pelican and BuildBot](pelican-buildbot.html)** streamline creating and publishing your project website.
+- **svnpubsub** automatically publishes the static contents of a designated svn folder (<a href="https://svn.apache.org/repos/asf/ant/site/ant/production/" target="_blank">example</a>) as the project web site at `http://project.apache.org`. The project team can use any site build mechanism it wants as long as the above requirements are met.
+- [**pypubsub**](pypubsub.html) automatically serves the static contents of a designated Git repository as the website for a project. Git-based websites are typically maintained in a repository branch to be published as `https://project.apache.org`. A project can host the site from its primary project repository. Typically these will be built as a Jenkins or a Buildbot job (see below). We recommend that you only have a single writer to the asf-site branch to avoid potential conflicts.
+- For **websites using a Git repository**, you can add an [.asf.yaml](asf-yaml.html) configuration file. The file lets you set instructions that simplify updating and maintaining the site.
 
 ### Build tools
 
 Infra provides these build tools:
 
-  - **Jenkins** is an open-source automation server that supports building, deploying and automating a project. Infra resources on Jenkins start <a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins" target="_blank">here</a>.
-  - **Buildbot** is a job scheduling system: it queues jobs, executes the jobs when the required resources are available, and reports the results.
+- **Jenkins** is an open-source automation server that supports building, deploying and automating a project. Infra resources on Jenkins start <a href="https://cwiki.apache.org/confluence/display/INFRA/Jenkins" target="_blank">here</a>.
+- **Buildbot** is a job scheduling system: it queues jobs, executes the jobs when the required resources are available, and reports the results.
   
 <h3 id="logging">Logging<a class="headerlink" href="#logging" title="Permanent link">&para;</a></h3>
 
@@ -209,15 +209,15 @@ If you are using `svnpubsub`, the commit performs very slowly if the number of c
 
 To speed up the commit:
 
-  - When running JavaDoc, pass the `-notimestamp` option. This will avoid most files from being modified between runs if there haven't been code changes.
-  - Use a Maven skin that doesn't add a timestamp to the output. This may require customizing the current skins.
-  - If you use the Maven dependencies report in the Project Info Reports plugin, use version 2.7+ of the plugin to avoid random strings being generated.
-  - If you maintain historical versions of documentation, always check changes in to a single "trunk", then use an `svn copy` operation to tag or branch the content, rather than checking in a complete copy.
-  - Minimize use of "publish date" and "version" in templates to those that are truly necessary or helpful. Consider using a "last modified date" and version in the URL instead (unless "latest" is implied).
-  - Minimize Subversion keywords in the output that may change frequently without significant meaning. This includes keywords in source code that may be rendered to JavaDoc or a Maven JXR source cross-reference.
-  - Avoid publishing Maven reports that change constantly to the project site. Code coverage, style reports, static analysis, etc. can be generated into working copies on the CI server instead for easy developer viewing.
+- When running JavaDoc, pass the `-notimestamp` option. This will avoid most files from being modified between runs if there haven't been code changes.
+- Use a Maven skin that doesn't add a timestamp to the output. This may require customizing the current skins.
+- If you use the Maven dependencies report in the Project Info Reports plugin, use version 2.7+ of the plugin to avoid random strings being generated.
+- If you maintain historical versions of documentation, always check changes in to a single "trunk", then use an `svn copy` operation to tag or branch the content, rather than checking in a complete copy.
+- Minimize use of "publish date" and "version" in templates to those that are truly necessary or helpful. Consider using a "last modified date" and version in the URL instead (unless "latest" is implied).
+- Minimize Subversion keywords in the output that may change frequently without significant meaning. This includes keywords in source code that may be rendered to JavaDoc or a Maven JXR source cross-reference.
+- Avoid publishing Maven reports that change constantly to the project site. Code coverage, style reports, static analysis, etc. can be generated into working copies on the CI server instead for easy developer viewing.
 
 <h2 id="preview">Previewing the website<a class="headerlink" href="#preview" title="Permanent link">&para;</a></h2>
 
-  - For svnpubsub sites, review the local files in your svn checkout before committing them. The changes will be published immediately after you commit them.
-  - There is no preview mode for `pypubsub`. You should ideally have a way to build and test the website locally.
+- For svnpubsub sites, review the local files in your svn checkout before committing them. The changes will be published immediately after you commit them.
+- There is no preview mode for `pypubsub`. You should ideally have a way to build and test the website locally.

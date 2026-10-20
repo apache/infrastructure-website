@@ -3,25 +3,25 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 Here's how to set up the technical and social environment that will support your work as a committer to an Apache project. Some projects have more specific guidelines which the project website or the PMC provide for you. We also have a thorough [Committers' FAQs](committers.html) for both new and experienced committers.
 
-  - <a href="#what-is-a-committer">What is a committer?</a>
-  - <a href="#becoming-a-committer">Becoming a committer</a>
-      - <a href="#the-committers-way">The Committer's Way</a>
-      - <a href="#submitting-your-individual-contributor-license-agreement-icla">Submitting your Individual Contributor License Agreement (ICLA)</a>
-      - <a href="#acceptance-of-your-icla">Acceptance of your ICLA</a>
-      - <a href="#apache-committer-account-creation">Apache Committer account creation</a>
-      - <a href="#set-up-your-apacheorg-email-address">Set up your @apache.org email address</a>
-      - <a href="#set-up-subversion-or-git-access">Set up Subversion or Git access</a>
-      - <a href="#config-access">Configure your access to project Git repositories</a>
-      - <a href="#set-up-security-and-pgp-keys">Set up Security and PGP Keys</a>
-  - <a href="#committer-resources">Committer resources</a>
-      - <a href="#check-out-the-committers-only-subversion-module">the Committers-only Subversion module</a>
-  - <a href="#get-to-know-the-apache-community">The Apache Community</a>
-      - <a href="#mailing-lists">Join mailing lists</a>
-  - <a href="#committer-responsibilities">Committer responsibilities</a>
-  - <a href="#attending-apachecon">Attending Community Over Code</a>
-  - <a href="#identity-theft">Identity theft</a>
-  - <a href="#share-your-wisdom">Share your wisdom</a>
-  - <a href="#last">The last word</a>
+- <a href="#what-is-a-committer">What is a committer?</a>
+- <a href="#becoming-a-committer">Becoming a committer</a>
+  - <a href="#the-committers-way">The Committer's Way</a>
+  - <a href="#submitting-your-individual-contributor-license-agreement-icla">Submitting your Individual Contributor License Agreement (ICLA)</a>
+  - <a href="#acceptance-of-your-icla">Acceptance of your ICLA</a>
+  - <a href="#apache-committer-account-creation">Apache Committer account creation</a>
+  - <a href="#set-up-your-apacheorg-email-address">Set up your @apache.org email address</a>
+  - <a href="#set-up-subversion-or-git-access">Set up Subversion or Git access</a>
+  - <a href="#config-access">Configure your access to project Git repositories</a>
+  - <a href="#set-up-security-and-pgp-keys">Set up Security and PGP Keys</a>
+- <a href="#committer-resources">Committer resources</a>
+  - <a href="#check-out-the-committers-only-subversion-module">the Committers-only Subversion module</a>
+- <a href="#get-to-know-the-apache-community">The Apache Community</a>
+  - <a href="#mailing-lists">Join mailing lists</a>
+- <a href="#committer-responsibilities">Committer responsibilities</a>
+- <a href="#attending-apachecon">Attending Community Over Code</a>
+- <a href="#identity-theft">Identity theft</a>
+- <a href="#share-your-wisdom">Share your wisdom</a>
+- <a href="#last">The last word</a>
 
 <h3 id="what-is-a-committer">What is a committer?<a class="headerlink" href="#what-is-a-committer" title="Permanent link">&para;</a></h3>
 
@@ -31,9 +31,9 @@ The plain sense of the word "committer" is that you have access rights to your p
 
 If you are not yet a committer, but would like to become one, review:
 
-  - <a href="https://www.apache.org/foundation/getinvolved.html#become-a-committer" target="_blank">Become a committer</a>
-  - <a href="https://www.apache.org/foundation/how-it-works.html#committers" target="_blank">ASF committers</a>
-  - <a href="https://www.apache.org/foundation/how-it-works.html#meritocracy" target="_blank">Meritocracy</a>
+- <a href="https://www.apache.org/foundation/getinvolved.html#become-a-committer" target="_blank">Become a committer</a>
+- <a href="https://www.apache.org/foundation/how-it-works.html#committers" target="_blank">ASF committers</a>
+- <a href="https://www.apache.org/foundation/how-it-works.html#meritocracy" target="_blank">Meritocracy</a>
 
 <h3 id="the-committers-way">The Committer's Way<a class="headerlink" href="#the-committers-way" title="Permanent link">&para;</a></h3>
 
@@ -47,11 +47,11 @@ Take more care than you may have done before when working on the code, since you
 
 If you are a brand-new committer, you must complete and submit an <a href="https://www.apache.org/licenses/#contributor-license-agreements" target="_blank">Individual Contributor License Agreement</a> (ICLA) before the ASF can activate your committer account. Note that an account can only be created if a PMC (or Incubator podling) has invited you. The ICLA is a formal contract that declares the terms under which you will contribute intellectual property to the ASF. Note that the ICLA does <strong>not</strong> assign copyright to the ASF; you retain copyright to your own work. However it does grant the ASF sufficient rights to release any work you submit under the Apache license.</p>
 
-  - Choose an Apache ID before submitting your ICLA. Also select an alternative, in case the ID you want is unsuitable or already taken. Your ID must consist of at least three lower-case alphanumeric characters, starting with a letter. (<a href="https://people.apache.org/committer-index.html" target="_blank">This list</a> shows the IDs that are already taken.)
-  - Identify your project (PMC or incubator podling).
-  - **IMPORTANT**: you may need to hold discussions with your employer before signing the ICLA, since your employer may have rights to the coding work you do, even outside of your employment. Your employer might even need to provide a <a href="https://www.apache.org/licenses/#contributor-license-agreements" target="_blank">Corporate CLA</a> - determining that is your responsibility. Make sure that you keep up-to-date with this requirement.
-  - Read and understand the agreements ICLA specifies and strive to meet the standards expected. Correct title to code sources is of great importance to ASF and it must be to you, too.
-  - Make sure that any code you contribute is original work, and that you publicly contribute it to the ASF. In the case of any doubt (or when a contribution has a complex history) please consult your project PMC before committing it.
+- Choose an Apache ID before submitting your ICLA. Also select an alternative, in case the ID you want is unsuitable or already taken. Your ID must consist of at least three lower-case alphanumeric characters, starting with a letter. (<a href="https://people.apache.org/committer-index.html" target="_blank">This list</a> shows the IDs that are already taken.)
+- Identify your project (PMC or incubator podling).
+- **IMPORTANT**: you may need to hold discussions with your employer before signing the ICLA, since your employer may have rights to the coding work you do, even outside of your employment. Your employer might even need to provide a <a href="https://www.apache.org/licenses/#contributor-license-agreements" target="_blank">Corporate CLA</a> - determining that is your responsibility. Make sure that you keep up-to-date with this requirement.
+- Read and understand the agreements ICLA specifies and strive to meet the standards expected. Correct title to code sources is of great importance to ASF and it must be to you, too.
+- Make sure that any code you contribute is original work, and that you publicly contribute it to the ASF. In the case of any doubt (or when a contribution has a complex history) please consult your project PMC before committing it.
 
 Some procedures may appear a little bureaucratic, but they are there to protect you as well as ASF. For a clearer understanding read the <a href="https://www.apache.org/licenses/" target="_blank">ASF license guide</a>.
 
@@ -65,10 +65,10 @@ You will also need to familiarize yourself with some Apache policies and procedu
 
 Key Committer resources:
 
-  - <a href="https://www.apache.org/dev/index.html" target="_blank">ASF Developer Guides &amp; Resources</a> contains pointers to the most important information
-  - the <a href="https://www.apache.org/foundation/how-it-works.html" target="_blank">ASF How it works</a> document
-  - the <a href="https://training.apache.org/" target="_blank">Apache Training (Incubating)</a> pages
-  - the <a href="https://www.apache.org/foundation/bylaws.html" target="_blank">ASF Bylaws</a>
+- <a href="https://www.apache.org/dev/index.html" target="_blank">ASF Developer Guides &amp; Resources</a> contains pointers to the most important information
+- the <a href="https://www.apache.org/foundation/how-it-works.html" target="_blank">ASF How it works</a> document
+- the <a href="https://training.apache.org/" target="_blank">Apache Training (Incubating)</a> pages
+- the <a href="https://www.apache.org/foundation/bylaws.html" target="_blank">ASF Bylaws</a>
 
 <h3 id="apache-committer-account-creation">Apache Committer account creation<a class="headerlink" href="#apache-committer-account-creation" title="Permanent link">&para;</a></h3>
 
@@ -140,8 +140,8 @@ Taking part in the community makes Apache fun. The <a href="https://community.ap
 
 A lot of Apache knowledge-sharing and all formal decision-making takes place on email lists. Most of the lists are public, and you can join and participate in any that attract you.
 
-  - Your project probably has a `dev@` and a `users@` email list, and it is a good idea to join both.
-  - We strongly urge all committers to join the `builds@` email list, where people from many projects, and the Infrastructure team, share insights and solve problems related to building and releasing software packages. People using Jenkins, or interested in CI/CD (continuous integration and continuous development) find this list invaluable. Infra also posts notifications to this list regarding outages, upgrades, app add/removals and more.
+- Your project probably has a `dev@` and a `users@` email list, and it is a good idea to join both.
+- We strongly urge all committers to join the `builds@` email list, where people from many projects, and the Infrastructure team, share insights and solve problems related to building and releasing software packages. People using Jenkins, or interested in CI/CD (continuous integration and continuous development) find this list invaluable. Infra also posts notifications to this list regarding outages, upgrades, app add/removals and more.
 
 Instructions for joining and leaving lists, and a browsable list of Apache mailing lists, are <a href="https://www.apache.org/foundation/mailinglists.html" target="_blank">here</a>.
 

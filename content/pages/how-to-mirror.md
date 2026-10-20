@@ -7,25 +7,25 @@ Organizations may wish to create a download mirror that includes the releases of
 
 Here is how to set up such a mirror.
 
-  - <a href="#requirements">Requirements</a>
-  - <a href="#techniques">Mirroring techniques</a>
-  - <a href="#sponsorinfo">Mirror host information</a>
-  - <a href="#testing">Testing your mirror</a>
-  - <a href="#verifying">Verifying a download</a>
-  - <a href="#questions">Questions?</a>
+- <a href="#requirements">Requirements</a>
+- <a href="#techniques">Mirroring techniques</a>
+- <a href="#sponsorinfo">Mirror host information</a>
+- <a href="#testing">Testing your mirror</a>
+- <a href="#verifying">Verifying a download</a>
+- <a href="#questions">Questions?</a>
 
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 
 Hosting a mirror has a few requirements:
 
-  - You should have at least 150 GB of available disk space. The current distribution directory is around 110 GB, but it is constantly expanding.
-  - You should not trim or abridge the mirrored tree in any way.
-  - You should not modify the mirrored tree in any way. In particular, you should not alter or remove HEADER.html or README.html files. See below for adding information about the mirror host.
+- You should have at least 150 GB of available disk space. The current distribution directory is around 110 GB, but it is constantly expanding.
+- You should not trim or abridge the mirrored tree in any way.
+- You should not modify the mirrored tree in any way. In particular, you should not alter or remove HEADER.html or README.html files. See below for adding information about the mirror host.
 
 We encourage you to
 
-  - do an **update-check** at least four times a day a day. You may sync a maximum of six times per day, but only if you have a slow or poor connection that causes timeouts.
-  - run the <a href="https://httpd.apache.org/" target="_blank">Apache HTTP Server</a> version 2.2 or later and use the following configuration for your web mirror to allow all the features of our download site to function optimally:
+- do an **update-check** at least four times a day a day. You may sync a maximum of six times per day, but only if you have a slow or poor connection that causes timeouts.
+- run the <a href="https://httpd.apache.org/" target="_blank">Apache HTTP Server</a> version 2.2 or later and use the following configuration for your web mirror to allow all the features of our download site to function optimally:
 
 ```
 <Directory /path/to/mirror>
@@ -54,9 +54,9 @@ Update your mirror with:
 rsync -avz --delete --safe-links rsync.apache.org::apache-dist /path/to/mirror
 ```
 
-  - Don't rsync "on the hour" (`cronjob minute 0`). Pick a random minute between 5 and 55. Never run cronjobs at minute 0 unless the nature of the job requires it.
-  - Run the job four times a day; no more than six times a day in any case.
-  - Check the output from the rsync job regularly so you can detect problems like lack of disk space or permission issues.
+- Don't rsync "on the hour" (`cronjob minute 0`). Pick a random minute between 5 and 55. Never run cronjobs at minute 0 unless the nature of the job requires it.
+- Run the job four times a day; no more than six times a day in any case.
+- Check the output from the rsync job regularly so you can detect problems like lack of disk space or permission issues.
 
 ### Excluding resource-intensive projects
 
@@ -93,8 +93,8 @@ Here is how to add information explaining who is hosting the private download mi
 
 The contents of README.html appear near the bottom of your mirror's home page.
 
-  - Only customize the home-page (top-level) README.html. Do not change any other README.html files.
-  - Don't omit the '/' in `"/README.html"`.
+- Only customize the home-page (top-level) README.html. Do not change any other README.html files.
+- Don't omit the '/' in `"/README.html"`.
 
 Please limit the contents of the README.html to something like:
 
@@ -108,10 +108,10 @@ Search engines interpret referring to specific services or products as _PageRank
 
 If your mirror is not working properly, check the following:
 
-  - Page headers and footers display correctly.
-  - All top-level directories and files on the ASF mirror are present on your mirror.
-  - Download a couple of files to check that the process works.
-  - Trying to download a missing file should generate a `404 Not Found` error. You can verify this by modifying one of the valid URLs that you tested above.
+- Page headers and footers display correctly.
+- All top-level directories and files on the ASF mirror are present on your mirror.
+- Download a couple of files to check that the process works.
+- Trying to download a missing file should generate a `404 Not Found` error. You can verify this by modifying one of the valid URLs that you tested above.
 
 <h2 id="verifying">Verifying the download<a class="headerlink" href="#verifying" title="Permanent link">&para;</a></h2>
 

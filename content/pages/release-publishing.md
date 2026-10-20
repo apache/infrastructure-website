@@ -9,17 +9,17 @@ Every Apache Software Foundation project software release must meet requirements
 
 ## Contents ##
 
-  - <a href="#definition">An Apache release</a>
-  - <a href="#releasemanager">The release manager</a>
-  - <a href="#valid">A valid release package</a>
-  - <a href="#signing">Signing release artifacts</a>
-  - <a href="#voting">Voting whether to approve the release</a>
-  - <a href="#distribution">Distribution</a>
-    - <a href="#uploading">Uploading packages</a>
-    - <a href="#normal">Normal distribution on the Apache downloads site</a>
-    - <a href="#tomaven">Maven distribution</a>
-  - <a href="#timeline">Release distribution availability schedule</a>
-  - <a href="#faqs">FAQs</a>
+- <a href="#definition">An Apache release</a>
+- <a href="#releasemanager">The release manager</a>
+- <a href="#valid">A valid release package</a>
+- <a href="#signing">Signing release artifacts</a>
+- <a href="#voting">Voting whether to approve the release</a>
+- <a href="#distribution">Distribution</a>
+  - <a href="#uploading">Uploading packages</a>
+  - <a href="#normal">Normal distribution on the Apache downloads site</a>
+  - <a href="#tomaven">Maven distribution</a>
+- <a href="#timeline">Release distribution availability schedule</a>
+- <a href="#faqs">FAQs</a>
 
 <h2 id="definition">An Apache release<a class="headerlink" href="#definition" title="Permanent link">&para;</a></h2>
 
@@ -79,9 +79,9 @@ Infra maintains the Apache release distribution infrastructure, which has three 
 
 <h3 id="uploading">Uploading packages<a class="headerlink" href="#uploading" title="Permanent link">&para;</a></h3>
 
-  - Upload development packages and snapshots to `https://dist.apache.org/repos/dist/dev/$project/`
-  - Upload release packages to `https://dist.apache.org/repos/dist/release/$project/`. If your project uses a Subversion repository, you can use `svn mv` from the `dev` folder.
-  - Incubator projects can find their dev/release folder inside their incubator directory.
+- Upload development packages and snapshots to `https://dist.apache.org/repos/dist/dev/$project/`
+- Upload release packages to `https://dist.apache.org/repos/dist/release/$project/`. If your project uses a Subversion repository, you can use `svn mv` from the `dev` folder.
+- Incubator projects can find their dev/release folder inside their incubator directory.
 
 <h3 id="normal">Normal distribution on the Apache downloads site<a class="headerlink" href="#normal" title="Permanent link">&para;</a></h3>
 
@@ -89,19 +89,19 @@ See the [Release Distribution Policy](release-distribution.html) for specific te
 
 Each Apache TLP has a `release/TLP-name` directory in the distribution Subversion repository at `https://dist.apache.org/repos/dist/`. Once a release vote passes, the release manager adds the release artifacts (plus signature and hash files) to this location. Each project is responsible for the structure of its directory. [PyPubSub](pypubsub.html) pushes the contents of these directories to `https://downloads.apache.org/`. **Note** only store the most recent version of each supported release here.
 
-  - **Do not** use the SVN directories under `https://dist.apache.org/repos/dist/` to link to product releases. Projects must use the ASF release system. See [Release Download Pages](release-download-pages.html) for further details.
+- **Do not** use the SVN directories under `https://dist.apache.org/repos/dist/` to link to product releases. Projects must use the ASF release system. See [Release Download Pages](release-download-pages.html) for further details.
 
-  - A signature (`.asc`) can become invalid because the signing key is revoked or has expired. Make sure all current signatures for your project in `downloads.apache.org/` are valid.
+- A signature (`.asc`) can become invalid because the signing key is revoked or has expired. Make sure all current signatures for your project in `downloads.apache.org/` are valid.
 
-  - Hash, signature and KEYS files are excluded from the public release:
+- Hash, signature and KEYS files are excluded from the public release:
 
 `*.md5 *.sha *.sha1 *.sha256 *.sha512 *.asc *.sig KEYS *.mds MD5SUM SHA*SUM`
 
-  - **Do not** publish `.md5` files because MD5 is broken.
-  - **Do not** publish `.sig` files. Make sure your `.asc`s are plain-text files.
-  - The download page should use `HTTPS:` rather than plain `HTTP:` for linking to KEYS, sigs and hashes (for example: `https://downloads.apache.org/httpd/KEYS`).
+- **Do not** publish `.md5` files because MD5 is broken.
+- **Do not** publish `.sig` files. Make sure your `.asc`s are plain-text files.
+- The download page should use `HTTPS:` rather than plain `HTTP:` for linking to KEYS, sigs and hashes (for example: `https://downloads.apache.org/httpd/KEYS`).
 
-  - In addition to the checksum files required in the [Release Distribution Policy](release-distribution.html), the project can provide an `MD5SUM` or `SHA*SUM`. `MD5SUM` and `SHA*SUM` must look like the output of `md5sum(1)`: lines containing a checksum, followed by a filename ; use only plain file names (no slashes). Do not use any other file names for such files.
+- In addition to the checksum files required in the [Release Distribution Policy](release-distribution.html), the project can provide an `MD5SUM` or `SHA*SUM`. `MD5SUM` and `SHA*SUM` must look like the output of `md5sum(1)`: lines containing a checksum, followed by a filename ; use only plain file names (no slashes). Do not use any other file names for such files.
 
 If the release directory does not yet exist, please create a Jira ticket for INFRA with the required information (see the [contact](contact.html) page).
 
@@ -134,6 +134,6 @@ As a rule of thumb, projects should currently:
 
 <h2 id="faqs">FAQs<a class="headerlink" href="#faqs" title="Permanent link">&para;</a></h2>
 
-  - **How do I archive an old release?** `downloads.apache.org` is automatically archived every four hours. Therefore, a copy of every official release exists in the archives. Just delete the copy of the release that is in your project's dist directory. Remember to update any links from the download page related to that release.
+- **How do I archive an old release?** `downloads.apache.org` is automatically archived every four hours. Therefore, a copy of every official release exists in the archives. Just delete the copy of the release that is in your project's dist directory. Remember to update any links from the download page related to that release.
 
 **Note**: Projects using the [Apache Trusted Releases](atr.html) (ATR) platform can configure their ATR project so that archiving of older releases is automated.

@@ -31,16 +31,16 @@ This should decrypt the file and display the output in the window.
 
   4. If that didn't work, email `root@`. In your email, mention the following information:
 
-  - Your username.
-  - The fact that you have tried a self-service password reset, and why it didn't work. (Was the mail received? Did you decrypt it successfully?)
-  - Why you need to regain access to your Apache account -- e.g., if it is to work on a <a href="https://www.apache.org/foundation/" target="_blank">foundation project</a>, name that project; or if you are a <a href="https://www.apache.org/foundation/members" target="_blank">foundation member</a>, state that.
-  - SSH access to a project VM via public-key authentication.
-  - Whether you ever set up Orthrus/OPIE on any `*.apache.org` box. (This is only applicable to people who had root permissions on PMC VMs.)
-  - Whether you have access to the private part of a PGP key associated with your Apache account.
-  - Whether the contact information on your ICLA is valid.
-  - For (<a href="https://www.apache.org/foundation/members" target="_blank">ASF Members</a> only, whether the contact information in your `members.txt` entry is valid.
-  - Whether you are able to send a new ICLA, with the same signature as your original one, which specifies new contact information.
-  - Whether there is any other way in which we (Infra) might satisfy ourselves that you are the legitimate owner of that account.
+- Your username.
+- The fact that you have tried a self-service password reset, and why it didn't work. (Was the mail received? Did you decrypt it successfully?)
+- Why you need to regain access to your Apache account -- e.g., if it is to work on a <a href="https://www.apache.org/foundation/" target="_blank">foundation project</a>, name that project; or if you are a <a href="https://www.apache.org/foundation/members" target="_blank">foundation member</a>, state that.
+- SSH access to a project VM via public-key authentication.
+- Whether you ever set up Orthrus/OPIE on any `*.apache.org` box. (This is only applicable to people who had root permissions on PMC VMs.)
+- Whether you have access to the private part of a PGP key associated with your Apache account.
+- Whether the contact information on your ICLA is valid.
+- For (<a href="https://www.apache.org/foundation/members" target="_blank">ASF Members</a> only, whether the contact information in your `members.txt` entry is valid.
+- Whether you are able to send a new ICLA, with the same signature as your original one, which specifies new contact information.
+- Whether there is any other way in which we (Infra) might satisfy ourselves that you are the legitimate owner of that account.
 
 **Note**: please do not ask other ASF committers or Members to email root@ to vouch for you.
 

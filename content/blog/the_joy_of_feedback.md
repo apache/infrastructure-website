@@ -5,9 +5,9 @@ layout: post
 
 In discussions at ApacheCon in New Orleans, we learned that the three standard methods of communicating with Infra:
 
-  * opening a Jira ticket
-  * sending an email
-  * posting a message on the `#asfinfra` Slack channel
+* opening a Jira ticket
+* sending an email
+* posting a message on the `#asfinfra` Slack channel
 
 are not ideal for many conversations folks would like to have about The ASF's infrastructure.
 
@@ -38,4 +38,4 @@ Surveys will be anonymous and results will be posted on the Infra blog. Dependin
 
 Cheers,
 
-  - ASF Infra
+* ASF Infra

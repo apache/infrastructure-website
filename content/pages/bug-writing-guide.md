@@ -1,12 +1,12 @@
 Title: Writing a good bug report
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-  - <a href="#overview">Bug reporting</a>
-  - <a href="#systems">Bug-tracking systems</a>
-  - <a href="#newbug">Is this a new bug?</a>
-  - <a href="#useful">A useful bug report</a>
-  - <a href="#blocked">If your report or comment gets blocked</a>
-  - <a href="#followup">Following up</a>
+- <a href="#overview">Bug reporting</a>
+- <a href="#systems">Bug-tracking systems</a>
+- <a href="#newbug">Is this a new bug?</a>
+- <a href="#useful">A useful bug report</a>
+- <a href="#blocked">If your report or comment gets blocked</a>
+- <a href="#followup">Following up</a>
 
 <h2 id="overview">Bug reporting<a class="headerlink" href="#overview" title="Permanent link">&para;</a></h2>
 
@@ -20,8 +20,8 @@ For the purposes of this discussion, we'll call any issue, from a calculation er
 
 ASF has two bug-tracking systems:
 
-  - <a href="https://issues.apache.org/jira/" target="_blank">Jira</a>
-  - <a href="https://bz.apache.org/" target="_blank">Bugzilla</a>
+- <a href="https://issues.apache.org/jira/" target="_blank">Jira</a>
+- <a href="https://bz.apache.org/" target="_blank">Bugzilla</a>
   
 Infra itself uses <a href="https://issues.apache.org/jira/projects/INFRA/issues" target="_blank">Jira</a> (requires login).
 
@@ -39,8 +39,8 @@ If what you found seems to be a new bug, you get to report it!
 
 Useful bug reports get bugs fixed. A useful bug report is usually:
 
-  - Reproducible. If a developer or sysadmin can't see it or conclusively prove that it exists, they may stamp it "WORKSFORME" or "INVALID", and move on to the next bug. Every detail you can provide helps.
-  - Specific. The quicker the person looking at your report can connect your issue to a specific problem, the quicker they can fix it.
+- Reproducible. If a developer or sysadmin can't see it or conclusively prove that it exists, they may stamp it "WORKSFORME" or "INVALID", and move on to the next bug. Every detail you can provide helps.
+- Specific. The quicker the person looking at your report can connect your issue to a specific problem, the quicker they can fix it.
 
 Let's say the application you're testing is a web browser. You crash at foo.com, and want to write up a bug report:
 
@@ -63,8 +63,8 @@ The bug-tracking systems allow you to suggest a **severity** for the bug. If you
 
 Make sure you provide a useful **title** for the report:
 
-   - Useful: "PCMCIA install fails on Tosh Tecra 780DVD w/ 3c589"
-   - Not useful: "Browser crashes" or "Install problem"
+- Useful: "PCMCIA install fails on Tosh Tecra 780DVD w/ 3c589"
+- Not useful: "Browser crashes" or "Install problem"
 
 Review [Creating a Jira ticket](jira-guidelines.html) for specifics about Jira bug reports.
 

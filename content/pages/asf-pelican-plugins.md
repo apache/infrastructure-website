@@ -70,25 +70,25 @@ providing a metadata dictionary.
 
 - GFMReader by the pelican-gfm plugin. This code is in a private repository - ask Infra. Transforms GitHub Flavored Markdown(GFM) to HTML.
 
- * .md
-  * .markdown
-  * .mkd
-  * .mdown
+  - .md
+  - .markdown
+  - .mkd
+  - .mdown
 
 - `ASFReader, `.asfreader.py) transforms an <a href="https://github.com/gstein/ezt" target="_blank">ezt template</a> into GFM and then to HTML.
   
-  * .ezmd
+  - .ezmd
 
 ## Content init (content_object_init)
 
 This is signaled after a reader has processed the site's content. At this point plugins can review, record, and transform the HTML content.
 
 - The asfgenid plugin, `./asfgenid.py`, performs a number of steps. Some of the steps are optional.
-  * Metadata transformation by looking up {{ key_expression }} in the page metadata.
-  * Inventory of existing ID attributes.
-  * Set ID and class attributes specified by {#id} and {.class} syntax.
-  * Assign an ID to any headings without IDs.
-  * Insert a table of contents if a [TOC] tag is present.
+  - Metadata transformation by looking up {{ key_expression }} in the page metadata.
+  - Inventory of existing ID attributes.
+  - Set ID and class attributes specified by {#id} and {.class} syntax.
+  - Assign an ID to any headings without IDs.
+  - Insert a table of contents if a [TOC] tag is present.
 
 ## Apache CMS
 

@@ -7,12 +7,12 @@ Remember to keep your client up to date with security patches. Pay close attenti
 
 ## Contents ##
 
-  - <a href="#openssh">Using OpenSSH to connect to Apache</a>
-  - <a href="#openssh-ssh2">Configuring OpenSSH to use SSH2 (*nix)</a>
-  - <a href="#debug-ssh">Debugging an OpenSSH client connection</a>
-  - <a href="#troubleshooting">Troubleshooting</a>
-  - <a href="#FAQ">FAQs</a>
-  - <a href="#elsewhere">More information</a>
+- <a href="#openssh">Using OpenSSH to connect to Apache</a>
+- <a href="#openssh-ssh2">Configuring OpenSSH to use SSH2 (*nix)</a>
+- <a href="#debug-ssh">Debugging an OpenSSH client connection</a>
+- <a href="#troubleshooting">Troubleshooting</a>
+- <a href="#FAQ">FAQs</a>
+- <a href="#elsewhere">More information</a>
 
 <h2 id="openssh">Using OpenSSH to connect to Apache<a class="headerlink" href="#openssh" title="Permanent link">&para;</a></h2>
 
@@ -47,9 +47,9 @@ ssh -v -l yourApacheID some-project-server.apache.org
 
 <h2 id="troubleshooting">Troubleshooting<a class="headerlink" href="#troubleshooting" title="Permanent link">&para;</a></h2>
 
-  - If you encounter a problem with SSH and you are not running the most modern stable release of the client software you are connecting with, upgrade and retry.
-  - Configure the client to use <a href="#ssh2-configuration"> SSH2</a> where possible so the connection to Apache uses the SSH2 protocol. This protocol is more secure and lets you use an interactive keyboard (type in password) or <a href="#pki">PKI</a>. If you must use SSH1, you will need to use PKI.
-  - Read <a href="#ssh-debug">the section on debugging SSH</a> and try to diagnose the problem.
+- If you encounter a problem with SSH and you are not running the most modern stable release of the client software you are connecting with, upgrade and retry.
+- Configure the client to use <a href="#ssh2-configuration"> SSH2</a> where possible so the connection to Apache uses the SSH2 protocol. This protocol is more secure and lets you use an interactive keyboard (type in password) or <a href="#pki">PKI</a>. If you must use SSH1, you will need to use PKI.
+- Read <a href="#ssh-debug">the section on debugging SSH</a> and try to diagnose the problem.
 
 <h3 id="common-problems">Some common problems<a class="headerlink" href="#common-problems" title="Permanent link">&para;</a></h3>
 
@@ -119,4 +119,4 @@ A class of attacks where the attacker masquerades as the server to the client an
 
 <h2 id="elsewhere">More information<a class="headerlink" href="#elsewhere" title="Permanent link">&para;</a></h2>
 
-  - <a href="/new-committers-guide.html#identity-theft" target="_blank">Identity theft</a>
+- <a href="/new-committers-guide.html#identity-theft" target="_blank">Identity theft</a>

@@ -15,9 +15,9 @@ There are two paths to recovery if you have lost your MFA token(s):
 
 To keep this process low-friction, we strongly encourage committers to register multiple factors in advance:
 
-  - *Save the recovery codes provided during MFA setup.*
-  - Upload a valid GPG public key to <a href="https://id.apache.org/" target="_blank">id.apache.org</a>.
-  - Link their ASF and GitHub accounts via <a href="https://gitbox.apache.org/boxer/" target="_blank">Boxer</a>.
+- *Save the recovery codes provided during MFA setup.*
+- Upload a valid GPG public key to <a href="https://id.apache.org/" target="_blank">id.apache.org</a>.
+- Link their ASF and GitHub accounts via <a href="https://gitbox.apache.org/boxer/" target="_blank">Boxer</a>.
 
 If a committer cannot establish their identity through any of their registered factors or through any other Infra-established process, the affected account will be **disabled**, and the committer will need to work with their project to be onboarded again through the new-committer process.
 

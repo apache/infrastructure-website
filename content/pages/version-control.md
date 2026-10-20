@@ -5,18 +5,18 @@ Apache project contributors are in countries all around the world. To help them 
 
 ## Contents ##
 
-  - <a href="#general">In general</a>
-  - <a href="#git">Git repositories</a>
-    - <a href="#create">Creating repositories</a>
-    - <a href="#asfyaml">.asf.yaml for Git repositories</a>
-  - <a href="#svn">SVN repositories</a>
-    - <a href="#commandline">Command-line SVN access</a>
-    - <a href="#commandlinecommit">Committing code through the command line</a>
-    - <a href="#configuring">Configuring the SVN client</a>
-    - <a href="#svnssl">SVN SSL server certificate</a>
-    - <a href="#errormessages">Typical SVN error messages</a>
-    - <a href="#svnfaqs">SVN FAQs</a>
-  - <a href="#migrating">Migrating an SVN code repository to Git</a>
+- <a href="#general">In general</a>
+- <a href="#git">Git repositories</a>
+  - <a href="#create">Creating repositories</a>
+  - <a href="#asfyaml">.asf.yaml for Git repositories</a>
+- <a href="#svn">SVN repositories</a>
+  - <a href="#commandline">Command-line SVN access</a>
+  - <a href="#commandlinecommit">Committing code through the command line</a>
+  - <a href="#configuring">Configuring the SVN client</a>
+  - <a href="#svnssl">SVN SSL server certificate</a>
+  - <a href="#errormessages">Typical SVN error messages</a>
+  - <a href="#svnfaqs">SVN FAQs</a>
+- <a href="#migrating">Migrating an SVN code repository to Git</a>
 
 <h2 id="general">In general<a class="headerlink" href="#general" title="Permanent link">&para;</a></h2>
 
@@ -34,8 +34,8 @@ How-to guides, documentation, and a list of projects using Git for revision cont
 
 Many Git users manage their source code through one of these tools:
 
-* <a href="https://gitbox.apache.org" target="_blank">GitBox</a>
-* <a href="https://github.com/apache" target="_blank">GitHub</a>
+- <a href="https://gitbox.apache.org" target="_blank">GitBox</a>
+- <a href="https://github.com/apache" target="_blank">GitHub</a>
 
 Some projects began using [read-only-mirrors](git.html) of SVN repositories when Apache's support for Git was limited. This is no longer necessary. [Writable Git](project-repo-policy.html) repositories are available to all projects.
 
@@ -45,10 +45,10 @@ Apache projects can have as many **public** Git repositories as their product de
 
 Some projects require a **private** Git repository, for reasons like:
 
-  - Developing security patches.
-  - Preparing the quarterly Bzoard reports when it is necessary to include information in a  `<private>` section of the report.
-  - Maintaining the details of legal contracts, Memorandums of Understanding (MOUs) and similar arrangements with third parties. PMCs can enter into such arrangements if they are directly required for the development of the project's product or products.
-  - Keeping information that should not be public.
+- Developing security patches.
+- Preparing the quarterly Bzoard reports when it is necessary to include information in a  `<private>` section of the report.
+- Maintaining the details of legal contracts, Memorandums of Understanding (MOUs) and similar arrangements with third parties. PMCs can enter into such arrangements if they are directly required for the development of the project's product or products.
+- Keeping information that should not be public.
 
 Each PMC can have **one** private Git repository. Open a Jira ticket for Infra to request one, explaining the reasons the project needs it.
 
@@ -58,9 +58,9 @@ Each PMC can have **one** private Git repository. Open a Jira ticket for Infra t
 
 Projects can also place `.asf.yaml` in the root of a repository to control:
 
--  notification settings
--  GitHub settings
--  pelican builds
+- notification settings
+- GitHub settings
+- pelican builds
 
 Read [the .asf.yaml primer](asf-yaml.html) to learn more.
 

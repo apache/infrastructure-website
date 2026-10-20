@@ -37,9 +37,9 @@ Mailing lists are an integral part of the decision-making process for projects a
 
 Typically, a project will need three lists
 
-  - private@ for podling PMC communications, including recording formal decisions and discussion of security issues
-  - dev@ for development discussions
-  - commits@ for code commit notifications
+- private@ for podling PMC communications, including recording formal decisions and discussion of security issues
+- dev@ for development discussions
+- commits@ for code commit notifications
 
 Projects may also request separate lists for issues, pull requests, and users (this is very important once you do your first software release and begin to develop a user community) at any time.
 

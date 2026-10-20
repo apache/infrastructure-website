@@ -15,10 +15,10 @@ We need the right information to respond to your work request or bug report. In 
 
 Infra may respond in a number of ways, including:
 
-  - Closing the ticket as **invalid**. Review [Before you create a ticket](jira-guidelines.html#before) for reasons that may generate this response.
-  - Asking for **further details**. You may then see that the status of the ticket has changed to _waiting for user_. Provide the details as best you can in a comment, and change the status to _waiting for Infra_.
-  - Closing the ticket as **inactive**. If we set the ticket status to _Waiting for user_ and there is no activity on it for 14 days, the system sends a reminder to the reporter. If there is no activity on the ticket for a further seven days, the system automatically closes it as inactive.
-  - Reporting the issue **resolved**. Please verify the fix or that the requested service is now available. If all is well, and Infra has not changed the status to _closed_ or one of its variants, feel free to do so yourself.
+- Closing the ticket as **invalid**. Review [Before you create a ticket](jira-guidelines.html#before) for reasons that may generate this response.
+- Asking for **further details**. You may then see that the status of the ticket has changed to _waiting for user_. Provide the details as best you can in a comment, and change the status to _waiting for Infra_.
+- Closing the ticket as **inactive**. If we set the ticket status to _Waiting for user_ and there is no activity on it for 14 days, the system sends a reminder to the reporter. If there is no activity on the ticket for a further seven days, the system automatically closes it as inactive.
+- Reporting the issue **resolved**. Please verify the fix or that the requested service is now available. If all is well, and Infra has not changed the status to _closed_ or one of its variants, feel free to do so yourself.
 
 ## When Infra will respond
 
@@ -30,6 +30,6 @@ Here are details about Infra's typical [response times](responsetime.html) to Ji
 
 The reporter of a ticket should check it regularly to see if it has had activity that requires their response.
 
-  - If the status is now _Waiting for User_, Infra may need something for you: additional information, a clarification, testing a fix or, if the ticket is about a problem with infrastructure, a request to verify whether you are still experiencing the problem. Provide the information if you can, or explain why you cannot...and don't forget to change the ticket status to _Waiting for Infra_.
-  - If the message from Infra is that the work is done or the problem is solved, and you can verify it, add a note to that effect and **close the ticket** as fixed. Do not just abandon it.
-  - There may be questions or suggestions in the comment thread that you should respond to.
+- If the status is now _Waiting for User_, Infra may need something for you: additional information, a clarification, testing a fix or, if the ticket is about a problem with infrastructure, a request to verify whether you are still experiencing the problem. Provide the information if you can, or explain why you cannot...and don't forget to change the ticket status to _Waiting for Infra_.
+- If the message from Infra is that the work is done or the problem is solved, and you can verify it, add a note to that effect and **close the ticket** as fixed. Do not just abandon it.
+- There may be questions or suggestions in the comment thread that you should respond to.

@@ -20,8 +20,8 @@ Each reported error has an accompanying error code (`CHKxx`). The code will help
 
 In case of an invalid or missing signature for a release artifact, the project MUST choose one of the following actions:
 
- - Remove the artifact(s)
- - Re-assert that the artifact is valid, sign and upload the correct .asc signature file (and fix any missing/invalid checksum files)
+- Remove the artifact(s)
+- Re-assert that the artifact is valid, sign and upload the correct .asc signature file (and fix any missing/invalid checksum files)
 
  In either case, the project MUST inform the ASF Infrastructure and Security Team
  at `private@infra.apache.org` and `security@apache.org` of their action, with clear evidence that the action

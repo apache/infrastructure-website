@@ -13,39 +13,39 @@ When an Apache project requests a VM, it identifies three project committers who
 
 Infra is responsible for most VM high-level management tasks:
 
-  - Starting the VM.
-  - Shutting down the VM (projects can halt, but not re-start the VM as it requires access to the VM provider). If you have stopped your VM, you will need to ask Infra to re-start it.
-  - Cloning the VM. This occurs very rarely.
-  - Migrating to a new VM. Infra creates the new VM and can assist with puppet (re)config as needed.
+- Starting the VM.
+- Shutting down the VM (projects can halt, but not re-start the VM as it requires access to the VM provider). If you have stopped your VM, you will need to ask Infra to re-start it.
+- Cloning the VM. This occurs very rarely.
+- Migrating to a new VM. Infra creates the new VM and can assist with puppet (re)config as needed.
 
 ## Maintenance
 
 Your project is responsible for maintenance tasks like
 
-  - renewing or replacing expired letsencrypt certificates
-  - resolving disk space issues
-  - maintaining any software configured by the project
-  - addressing security issues in software configured by the project in a timely and appropriate manner
-  - replying to Infra and Security queries regarding the VM in a timely and appropriate manner
+- renewing or replacing expired letsencrypt certificates
+- resolving disk space issues
+- maintaining any software configured by the project
+- addressing security issues in software configured by the project in a timely and appropriate manner
+- replying to Infra and Security queries regarding the VM in a timely and appropriate manner
 
 You do not need to worry about upgrading the base operating system or other packages Infra installed when setting up the VM. They receive upgrades automatically, and the system will be rebooted automatically when a security patch requires it.
 
 ## What Infra will do
 
-  - Create your VM upon request. Each project can have one VM. Make your case to vp-infra if you feel you absolutely need more than one.
-  - Configure the base operating system, install Infra configuration management (puppet)
-  - Add users to host ACL and sudoers as needed/requested by the PMC
-  - Back up the system (see [backup policy](backup-policy.html))
-  - Apply operating system updates and security patches automatically
-  - Reboot the system with or without notice as Infra deems necessary
-  - Assist the project in defining Puppet configuration management where desired and appropriate
+- Create your VM upon request. Each project can have one VM. Make your case to vp-infra if you feel you absolutely need more than one.
+- Configure the base operating system, install Infra configuration management (puppet)
+- Add users to host ACL and sudoers as needed/requested by the PMC
+- Back up the system (see [backup policy](backup-policy.html))
+- Apply operating system updates and security patches automatically
+- Reboot the system with or without notice as Infra deems necessary
+- Assist the project in defining Puppet configuration management where desired and appropriate
 
 ## What Infra will not do
 
-  - Develop advanced software configurations for your project's workflow
-  - Fix or maintain software deployed by the project
-  - Develop advanced Puppet configuration automation for your project's deployments
-  - Provide access to ASF infrastructure build deployment secrets
+- Develop advanced software configurations for your project's workflow
+- Fix or maintain software deployed by the project
+- Develop advanced Puppet configuration automation for your project's deployments
+- Provide access to ASF infrastructure build deployment secrets
 
 ## When you get stuck
 

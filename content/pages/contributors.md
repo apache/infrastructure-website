@@ -9,11 +9,11 @@ More information is available in the [guide](new-committers-guide.html) and [FAQ
 
 <h3 id="links">Contents<a class="headerlink" href="#links" title="Permanent link">&para;</a></h3>
 
-  - <a href="#comdev">Community Development is here to help!</a>
-  - <a href="#mail">Everything happens on mailing lists</a>
-  - <a href="#howitworks">How open-source works at Apache</a>
-  - <a href="#svnbasics">Source code repositories</a>
-  - <a href="#providingfeedback">Providing feedback to Apache projects</a></i></p>
+- <a href="#comdev">Community Development is here to help!</a>
+- <a href="#mail">Everything happens on mailing lists</a>
+- <a href="#howitworks">How open-source works at Apache</a>
+- <a href="#svnbasics">Source code repositories</a>
+- <a href="#providingfeedback">Providing feedback to Apache projects</a></i></p>
 
 <h3 id="comdev">Community Development is here to help!<a class="headerlink" href="#comdev" title="Permanent link">&para;</a></h3>
 
@@ -27,19 +27,19 @@ Virtually everything at Apache happens on one of our publicly archived mailing l
 
 There are many books, presentations, and academic papers about the way open-source software development works and how you can become a valuable member of the open source/free software community. For an overview of how it works at Apache, see
 
-  - the <a href="https://www.apache.org/" target="_blank">ASF home page</a>
-  - the <a href="https://www.apache.org/foundation/how-it-works.html">ASF How it works</a> document
-  - Cameron Riley's [Understanding Opensource](understanding-opensource.html) document
-  - the <a href="https://www.fsf.org/" target="_blank">Free Software Foundation (FSF) website</a>
-  - the <a href="https://www.opensource.org/" target="_blank">Open Source Initiative website</a>
-  - <a href="http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/" target="_blank">The Cathedral and the Bazaar</a>
+- the <a href="https://www.apache.org/" target="_blank">ASF home page</a>
+- the <a href="https://www.apache.org/foundation/how-it-works.html">ASF How it works</a> document
+- Cameron Riley's [Understanding Opensource](understanding-opensource.html) document
+- the <a href="https://www.fsf.org/" target="_blank">Free Software Foundation (FSF) website</a>
+- the <a href="https://www.opensource.org/" target="_blank">Open Source Initiative website</a>
+- <a href="http://www.catb.org/~esr/writings/cathedral-bazaar/cathedral-bazaar/" target="_blank">The Cathedral and the Bazaar</a>
 
 <h3 id="svnbasics">Source code repositories<a class="headerlink" href="#svnbasics" title="Permanent link">&para;</a></h3>
 
 Apache projects use either of these repository systems:
 
-  - [Subversion](svn-basics.html)
-  - [Git](git-primer.html).
+- [Subversion](svn-basics.html)
+- [Git](git-primer.html).
 
 <h3 id="bleeding-edge">Nightly code / Development code<a class="headerlink" href="#bleeding-edge" title="Permanent link">&para;</a></h3>
 

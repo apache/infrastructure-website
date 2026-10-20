@@ -12,5 +12,5 @@ Infra will maintain this VM via our existing configuration management tooling. T
 
 See also:
 
-  - the process to [request a VM for your project](vm-for-project.html)
-  - [Managing virtual machines](vm-management.html)
+- the process to [request a VM for your project](vm-for-project.html)
+- [Managing virtual machines](vm-management.html)

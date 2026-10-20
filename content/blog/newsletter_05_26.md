@@ -16,17 +16,17 @@ Once the tool has a suitable name, it will be made generally available to ASF pr
 
 Discussion then addressed the challenges and opportunities AI coding presents to the ASF. Some comments:
 
-  - Jarek Potiuk: Programming with AI seems to be a huge change in the way we do programming, and this makes a lot of people uneasy. There is an emotional journey toward embracing AI. A huge amount of code now is ai-generated or ai-supported.
-  - Henri Yandell : AI and Jacquard looms are chapters of the same story, along with moving beyond punch cards and printing presses requiring manual placing of physical letters
-  - Bob Thomson: none of this is currently profitable, so costs necessarily will increase massively - also no sign of the usual thing with technology where it gets cheaper; so far, rather the opposite.
-  - Danny Angus: I do think we are behind the curve in ai-adoption for ops. We aren't building up repositories of prompts and steering. We certainly don't have agentic feedback loops
+- Jarek Potiuk: Programming with AI seems to be a huge change in the way we do programming, and this makes a lot of people uneasy. There is an emotional journey toward embracing AI. A huge amount of code now is ai-generated or ai-supported.
+- Henri Yandell : AI and Jacquard looms are chapters of the same story, along with moving beyond punch cards and printing presses requiring manual placing of physical letters
+- Bob Thomson: none of this is currently profitable, so costs necessarily will increase massively - also no sign of the usual thing with technology where it gets cheaper; so far, rather the opposite.
+- Danny Angus: I do think we are behind the curve in ai-adoption for ops. We aren't building up repositories of prompts and steering. We certainly don't have agentic feedback loops
 
 A summary of the discussion is at <a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable+2026-05-06" target="_blank">Infra Roundtable 2026-05-06</a>.
 
 The next two roundtables will be
 
-  - June 3, 1700 UTC. Piotr P. Karwasz will present on **release automation**.
-  - July 1, 1700 UTC. Clay Johnson of Gradle will present on **predictive test analysis**.
+- June 3, 1700 UTC. Piotr P. Karwasz will present on **release automation**.
+- July 1, 1700 UTC. Clay Johnson of Gradle will present on **predictive test analysis**.
 
 Details about joining a roundtable, and what goes on at one, are here: <a href="https://infra.apache.org/roundtable.html">infra.apache.org/roundtable.html</a>.
 
@@ -38,14 +38,14 @@ The soft launch of the new multi-factor authorization system for the ASF started
 
 The Infrastructure team will present a full track at Community over Code Glasgow, October 11-14:
 
-  - Apache Trusted Releases: Securing the Open Source Supply Chain
-  - CI Workshop
-  - Defending the Foundation: Implementing Automated Integrity Validation (AIV) Gates for Apache Projects
-  - Distributed Denial of Service: Traffic characterization and mitigation
-  - How To Infra
-  - Infra Deployment Workshop
-  - IRL Roundtable
-  - Where are we going with ASF Infra?
+- Apache Trusted Releases: Securing the Open Source Supply Chain
+- CI Workshop
+- Defending the Foundation: Implementing Automated Integrity Validation (AIV) Gates for Apache Projects
+- Distributed Denial of Service: Traffic characterization and mitigation
+- How To Infra
+- Infra Deployment Workshop
+- IRL Roundtable
+- Where are we going with ASF Infra?
 
 Additionally, Infra will be hosting Games Night, which was very popular at the 2025 convention.
 

@@ -26,14 +26,14 @@ This document is informative and does not constitute policy.
 
 ### FAQs from those downloading releases
 
-  - <a href="#verifying-signature">What does verifying a signature mean?</a>
-  - <a href="#check-integrity">How can I check the integrity of a release?</a>
-  - <a href="#trust-hardware">What is the difference between secure hardware and trusted hardware?</a>
-  - <a href="#public-key-not-found">What does 'Public key not found' mean when verifying a signature?</a>
-  - <a href="#trust">What is a trusted key?</a>
-  - <a href="#valid-untrusted-vs-invalid-trusted">What is the difference between a valid signature from an untrusted key and an invalid signature from a trusted key?</a>
-  - <a href="#fingerprint">What is a public key fingerprint?</a>
-  - <a href="#local-sig">Can I mark a key as locally trusted?</a>
+- <a href="#verifying-signature">What does verifying a signature mean?</a>
+- <a href="#check-integrity">How can I check the integrity of a release?</a>
+- <a href="#trust-hardware">What is the difference between secure hardware and trusted hardware?</a>
+- <a href="#public-key-not-found">What does 'Public key not found' mean when verifying a signature?</a>
+- <a href="#trust">What is a trusted key?</a>
+- <a href="#valid-untrusted-vs-invalid-trusted">What is the difference between a valid signature from an untrusted key and an invalid signature from a trusted key?</a>
+- <a href="#fingerprint">What is a public key fingerprint?</a>
+- <a href="#local-sig">Can I mark a key as locally trusted?</a>
 
 ## For release managers
 
@@ -45,9 +45,9 @@ Recent research has revealed weaknesses in SHA-1, and thus in the DSA and 1024 b
 
 The impact of this weakness on Apache can be mitigated by action now. What needs to be done is a little involved, so we have provided complete instructions.
 
-  - Committers without a code signing key should read this document and follow these [instructions](openpgp.html#generate-key).
-  - Committers with a DSA key or an RSA key of length less than 2048 bits should generate a new key for signing releases. The original key does not need to be revoked yet. Follow this [guide](key-transition.html).
-  - Committers with RSA keys of length 2048 or more do not need to generate a new key yet. They should reconfigure their client to avoid the weakness by following these [instructions](openpgp.html#sha1) and wait for the next major OpenPGP revision.
+- Committers without a code signing key should read this document and follow these [instructions](openpgp.html#generate-key).
+- Committers with a DSA key or an RSA key of length less than 2048 bits should generate a new key for signing releases. The original key does not need to be revoked yet. Follow this [guide](key-transition.html).
+- Committers with RSA keys of length 2048 or more do not need to generate a new key yet. They should reconfigure their client to avoid the weakness by following these [instructions](openpgp.html#sha1) and wait for the next major OpenPGP revision.
 
 How to find the length of your key is described [here](#key-length-how-to).
 
@@ -55,13 +55,13 @@ How to find the length of your key is described [here](#key-length-how-to).
 
 Every artifact distributed by the Apache Software Foundation  **must** be accompanied by one file containing an <a href="#openpgp-ascii-detach-sig">OpenPGP-compatible ASCII armored detached signature</a> and another file containing a <a href="#sha-checksum">SHA-256 or SHA-512</a> checksum.
 
-  - New releases **must** use SHA-256 and/or SHA-512 checksums.
-  - MD5 and SHA-1 are **deprecated** and **should not** be supplied for new releases. Existing releases do not need to change.
+- New releases **must** use SHA-256 and/or SHA-512 checksums.
+- MD5 and SHA-1 are **deprecated** and **should not** be supplied for new releases. Existing releases do not need to change.
 
 Form the names of these files by adding to the name of the artifact the following suffixes:
 
-  - the signature by suffixing `.asc`
-  - the checksum by suffixing `.sha256` or `.sha512` (as appropriate)
+- the signature by suffixing `.asc`
+- the checksum by suffixing `.sha256` or `.sha512` (as appropriate)
 
 Release managers **must not** store private keys used to sign Apache releases on ASF hardware.
 
@@ -71,21 +71,21 @@ See the <a href="release-distribution.html#sigs-and-sums">release distribution p
 
 A signature allows anyone to verify that a file is identical to the one your project's release manager created. Since your project's release has a signature:
 
-  - users can make sure that what they received has not been modified in any way, either accidentally via a faulty transmission channel, or intentionally (with or without malicious intent).
-  - the Apache infrastructure team can verify the identity of a file.
+- users can make sure that what they received has not been modified in any way, either accidentally via a faulty transmission channel, or intentionally (with or without malicious intent).
+- the Apache infrastructure team can verify the identity of a file.
 
 <a href="#openpgp">OpenPGP</a> <a href="#verifying-signature">signatures</a> confer the usual advantages of digital signatures: authentication, integrity and non-repudiation. <a href="#md5">MD5</a> and <a href="#sha-checksum">SHA</a> checksums only provide the integrity part as they are not encrypted.
 
 <h3 id="security-basics">Security checklist<a class="headerlink" href="#security-basics" title="Permanent link">&para;</a></h3>
 
-  - <a href="#private-key-protection">Protect</a> your <a href="#public-private">private key</a>
-  - Choose a <a href="#passphrase">good passphrase</a>
-  - Opt for a reasonably <a href="#key-length">long key length</a>
+- <a href="#private-key-protection">Protect</a> your <a href="#public-private">private key</a>
+- Choose a <a href="#passphrase">good passphrase</a>
+- Opt for a reasonably <a href="#key-length">long key length</a>
 
 <h3 id="signing-basics">Signing basics<a class="headerlink" href="#signing-basics" title="Permanent link">&para;</a></h3>
 
-  - Signatures should be <a href="#openpgp-ascii-detach-sig">ASCII armored and detached</a>.
-  - You should <a href="#export">export</a> your <a href="#public-private">public key</a> and append the result to the appropriate <a href="#keys-policy">KEYS</a> file(s).
+- Signatures should be <a href="#openpgp-ascii-detach-sig">ASCII armored and detached</a>.
+- You should <a href="#export">export</a> your <a href="#public-private">public key</a> and append the result to the appropriate <a href="#keys-policy">KEYS</a> file(s).
 
 <h3 id="sign-release">How do I sign a release?<a class="headerlink" href="#sign-release" title="Permanent link">&para;</a></h3>
 
@@ -95,9 +95,9 @@ Create a <a href="#openpgp-ascii-detach-sig">OpenPGP compatible ASCII armored de
 
 It is
 
-  - an <a href="#openpgp">OpenPGP</a> compatible
-  - <a href="#ascii">ASCII armored</a>
-  - <a href="#detach-sig">detached signature</a>
+- an <a href="#openpgp">OpenPGP</a> compatible
+- <a href="#ascii">ASCII armored</a>
+- <a href="#detach-sig">detached signature</a>
 
 To create one using <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a> for file
 `foo.tar.gz`, type:
@@ -226,11 +226,11 @@ SHA512 is the strongest well-studied, widely-used cryptographic hash. It is ther
 
 The exact mechanics are <a href="#openpgp-applications">application</a>-dependent. For GnuPG (recommended):
 
-  - Follow the <a href="openpgp.html#generate-key">strong key generation instructions</a>
-  - Decide on the <a href="#key-length">right key length</a>
-  - Configure the tool to <a href="#sha1">avoid SHA-1</a>
-  - Choose a good <a href="#passphrase">passphrase</a>
-  - Use the recommended <a href="#user-id">id</a> and <a href="#key-comment">comment</a>
+- Follow the <a href="openpgp.html#generate-key">strong key generation instructions</a>
+- Decide on the <a href="#key-length">right key length</a>
+- Configure the tool to <a href="#sha1">avoid SHA-1</a>
+- Choose a good <a href="#passphrase">passphrase</a>
+- Use the recommended <a href="#user-id">id</a> and <a href="#key-comment">comment</a>
   
 <h3 id="user-id">The OpenPGP User-ID to use for your code-signing key<a class="headerlink" href="#user-id" title="Permanent link">&para;</a></h3>
 
@@ -255,8 +255,8 @@ The major public key servers synchronize their records regularly so you only nee
 
 There are two common ways to upload a key to a <a href="#keyserver">public key server</a>:
 
-  - Most key servers let you upload <a href="#export">exports</a> through their websites
-  - Use automatic facilities built into most <a href="#openpgp">OpenPGP</a> <a href="#openpgp-applications">implementations</a>
+- Most key servers let you upload <a href="#export">exports</a> through their websites
+- Use automatic facilities built into most <a href="#openpgp">OpenPGP</a> <a href="#openpgp-applications">implementations</a>
   
 For example, using <a href="https://www.gnupg.org" target="_blank">GNU Privacy Guard</a>, send the key with <a href="#key-id">ID</a> B1313DE2 to the default public key server by:
 
@@ -425,11 +425,11 @@ To practice using OpenPGP, use separate environments. each with a different prac
 
 For example, using <a href="http://www.gnupg.org" target="_blank">GNU Privacy Guard</a>:
 
-  - (First time only)Create a directory to contain the keyring
-  - Open the shell to be configured to use this keyring
-  - Change to the directory
-  - (First time only) `$ mkdir -m 700 .gnupg`
-  - Set up the environment: `export GNUPGHOME=.gnupg`
+- (First time only)Create a directory to contain the keyring
+- Open the shell to be configured to use this keyring
+- Change to the directory
+- (First time only) `$ mkdir -m 700 .gnupg`
+- Set up the environment: `export GNUPGHOME=.gnupg`
 
 <h2 id="web-of-trust">What is a Web Of Trust?<a class="headerlink" href="#web-of-trust" title="Permanent link">&para;</a></h2>
 
@@ -454,8 +454,8 @@ A key signing party is a meeting organised to allow the exchange of public keys 
 You can link into the Apache web of trust by meeting other Apache committers face-to-face and <a href="#link-into-wot">exchanging public
 keys</a>:
 
-  - Apache committers organizes <a href="#key-signing-party">key signing parties</a> at each <a href="https://www.apachecon.com" target="_blank">ApacheCon</a>.
-  - If you are not able to attend ApacheCon, or it will not happen for several months, consider organising a face-to-face meeting of <a href="https://people.apache.org/map.html" target="_blank">local committers</a>.
+- Apache committers organizes <a href="#key-signing-party">key signing parties</a> at each <a href="https://www.apachecon.com" target="_blank">ApacheCon</a>.
+- If you are not able to attend ApacheCon, or it will not happen for several months, consider organising a face-to-face meeting of <a href="https://people.apache.org/map.html" target="_blank">local committers</a>.
 
 Subscribe to the `party` list and when you visit a new city, see if committers want to meet up.
 
@@ -467,10 +467,10 @@ A public key is for verifying signatures and encrypting messages; a private key 
 
 Anyone who possesses a copy of a <a href="#public-private">private key</a> used to <a href="#sign-release">sign</a> releases can create doctored releases with valid signatures. If this person intends harm then the consequences could be serious indeed. It is therefore very important to keep the private key secret.
 
-  - Only sign releases on a <a href="#secure-machine">secure machine</a>.
-  - Keep your <a href="#openpgp-applications">signing application</a> fully patched.
-  - Keep the key file <a href="#safe-and-secure">safe and secret</a>.
-  - Choose a good <a href="#passphrase">passphrase</a>.
+- Only sign releases on a <a href="#secure-machine">secure machine</a>.
+- Keep your <a href="#openpgp-applications">signing application</a> fully patched.
+- Keep the key file <a href="#safe-and-secure">safe and secret</a>.
+- Choose a good <a href="#passphrase">passphrase</a>.
   
 <h3 id="safe-and-secure">How safe does the private key need to be?<a class="headerlink" href="#safe-and-secure" title="Permanent link">&para;</a></h3>
 
@@ -510,10 +510,10 @@ You should generate a revocation certificate for each public key you use. Store 
 
 Each revocation certificate has a type specifying a general (machine readable) reason for the revocation:
 
-  - No reason specified
-  - Key has been compromised
-  - Key is superseded
-  - Key is no longer used
+- No reason specified
+- Key has been compromised
+- Key is superseded
+- Key is no longer used
   
 Create certificates to cover the first two cases. Note that if a key is lost or can no longer be accessed (due to
 media failure or some other reason), assume that the key has been potentially compromised. Print copies of the revocation certificates and store them safely to guard against media failure.
@@ -548,10 +548,10 @@ Store each revocation certificate securely and separately from the key it revoke
 
 If a key has been compromised, distribute its <a href="#revocation-cert">revocation certificate</a> to those using the key. This process is a mirror of the process by which you distributred the original key.
 
-  - Inform the Apache infrastructure team by a post containing the revocation certificate.
-  - Update the KEYS files containing the original key with the revocation certificate.
-  - Upload the revocation certificate to the major keyserver networks.
-  - Post an announcement to the appropriate lists with the revocation certificate attached.
+- Inform the Apache infrastructure team by a post containing the revocation certificate.
+- Update the KEYS files containing the original key with the revocation certificate.
+- Upload the revocation certificate to the major keyserver networks.
+- Post an announcement to the appropriate lists with the revocation certificate attached.
 
 <h3 id="delete-vs-revoke">The difference between deleting and revoking a key<a class="headerlink" href="#delete-vs-revoke" title="Permanent link">&para;</a></h3>
 
@@ -635,10 +635,10 @@ to import the public keys.</p>
 
 <a href="#openpgp">OpenPGP</a> uses a <a href="#web-of-trust">web of trust</a>. The owner of a public key who trusts the identity of a second key may mark this key as trusted by signing it. This has several major effects:
 
-  - In future, no <a href="#valid-untrusted-vs-invalid-trusted">untrusted key warning</a> appears when a valid signature for
+- In future, no <a href="#valid-untrusted-vs-invalid-trusted">untrusted key warning</a> appears when a valid signature for
 this key is verified.
-  - Keys the owner of the key trusts may also become trusted. In other words, if the owner of a key whose identity you trust confirms the identity of a key, that key may be automatically trusted. This behavior is typically configurable.
-   - The next time you export your key, those who trust your key may start to trust the identity of the trusted key.
+- Keys the owner of the key trusts may also become trusted. In other words, if the owner of a key whose identity you trust confirms the identity of a key, that key may be automatically trusted. This behavior is typically configurable.
+- The next time you export your key, those who trust your key may start to trust the identity of the trusted key.
 
 The transitive nature of the web of trust places a responsibility on the owner to verify the identity of the owner of those keys marked as trusted.
 
@@ -715,11 +715,11 @@ The project must request a signing key through an Infra Jira ticket, and Infra w
 
 There are many other excellent resources on signing releases, but these make a good start:
 
-  - The <a href="openpgp.html#gnupg">Guide to using GnuPG</a> at Apache
-  - The <a href="key-transition.html">Apache Key Transition Guide</a>
-  - RFC <a href="http://www.ietf.org/rfc/rfc1321.txt" target="_blank">1321</a> MD5 message-digest algorithm
-  - RFC <a href="http://www.ietf.org/rfc/rfc2440.txt">2440</a> OpenPGP message format
-  - The GNU Privacy Guard project <a href="https://www.gnupg.org/documentation/" target="_blank">documentation</a>
-  - An introduction to <a href="https://www.pgpi.org/doc/pgpintro/" target="_blank">PGP public key cryptography</a>
-  - <a href="https://www.schneier.com/book-applied.html" target="_blank">Applied Cryptography</a> by Bruce Schneier
-  - Windows-centric <a href="http://www.mccune.cc/PGPpage2.htm" target="_blank">PGP FAQ</a> by Tom McCune</p>
+- The <a href="openpgp.html#gnupg">Guide to using GnuPG</a> at Apache
+- The <a href="key-transition.html">Apache Key Transition Guide</a>
+- RFC <a href="http://www.ietf.org/rfc/rfc1321.txt" target="_blank">1321</a> MD5 message-digest algorithm
+- RFC <a href="http://www.ietf.org/rfc/rfc2440.txt">2440</a> OpenPGP message format
+- The GNU Privacy Guard project <a href="https://www.gnupg.org/documentation/" target="_blank">documentation</a>
+- An introduction to <a href="https://www.pgpi.org/doc/pgpintro/" target="_blank">PGP public key cryptography</a>
+- <a href="https://www.schneier.com/book-applied.html" target="_blank">Applied Cryptography</a> by Bruce Schneier
+- Windows-centric <a href="http://www.mccune.cc/PGPpage2.htm" target="_blank">PGP FAQ</a> by Tom McCune</p>

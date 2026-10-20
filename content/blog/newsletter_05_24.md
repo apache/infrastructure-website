@@ -25,8 +25,8 @@ The June Roundtable will take place **June 5 at 1700UTC**, on the roundtable cha
 
 The Infrastructure team will be taking part in all three Community Over Code (CoC) events this year:
 
-  - CoC Europe, June 3-5, Bratislava, Slovakia - <a href="https://eu.communityovercode.org/" target="_blank">eu.communityovercode.org</a>. Three Infra team members will be present.
-  - CoC Asia, July 26-28, Hangzhou, China - <a href="https://asia.communityovercode.org/" target="_blank">asia.communityovercode.org</a>. One Infra team member will be taking part.
-  - CoC North America,  October 7-10, Denver, Colorado USA - <a href="https://communityovercode.org/" target="_blank">communityovercode.org</a>. The full team will be at the conference, and will be presenting a track of four talks.
+- CoC Europe, June 3-5, Bratislava, Slovakia - <a href="https://eu.communityovercode.org/" target="_blank">eu.communityovercode.org</a>. Three Infra team members will be present.
+- CoC Asia, July 26-28, Hangzhou, China - <a href="https://asia.communityovercode.org/" target="_blank">asia.communityovercode.org</a>. One Infra team member will be taking part.
+- CoC North America,  October 7-10, Denver, Colorado USA - <a href="https://communityovercode.org/" target="_blank">communityovercode.org</a>. The full team will be at the conference, and will be presenting a track of four talks.
 
 More news coming in the June issue!

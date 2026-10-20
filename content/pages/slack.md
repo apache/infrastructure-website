@@ -32,8 +32,8 @@ Infra has disabled the option that would let you provide a member invite link to
 
 Slack has two account types:
 
-  - **Member**: has full access to all Slack's features, including inviting others to join the workspace.
-  - **Guest**: has limited access inside Slack and can only access the channel(s) they are invited to join.
+- **Member**: has full access to all Slack's features, including inviting others to join the workspace.
+- **Guest**: has limited access inside Slack and can only access the channel(s) they are invited to join.
 
 Slack has a list of <a href="https://slack.com/help/articles/201314026-Permissions-on-a-Slack-workspace" target="_blank">permissions</a> for these account types.
 
@@ -44,15 +44,15 @@ Both the ASF and Slack use the term 'member', but in different ways. The Slack u
 For the Apache Software Foundation:
 
 - An <a href="https://www.apache.org/foundation/how-it-works.html#asf-members" target="_blank">ASF Member</a> is a "person who was nominated by current members and elected due to merit for the evolution and progress of the foundation."
- - A <a href="https://www.apache.org/foundation/how-it-works.html#pmc-members" target="_blank">PMC member</a> is a "developer or a committer that was elected" to the PMC.
+- A <a href="https://www.apache.org/foundation/how-it-works.html#pmc-members" target="_blank">PMC member</a> is a "developer or a committer that was elected" to the PMC.
 
 ## Joining project channels
 
 Once you are part of the ASF workspace as a member or a multi-channel guest, you can join any public channels you wish to.
 
- - At the top of your list of channels in the Slack app, click the **+** icon.
- - Use the _Browse channels_ option to display a list of open channels in the workspace; or enter text in the search field.
- - Select any channel to add it to your channel list.
+- At the top of your list of channels in the Slack app, click the **+** icon.
+- Use the _Browse channels_ option to display a list of open channels in the workspace; or enter text in the search field.
+- Select any channel to add it to your channel list.
 
  Some ASF channels are **private** or **locked**, and do not appear on the list of channels you can join. Someone who is already in the channel has to invite you to join such a channel.
 
@@ -64,9 +64,9 @@ It is good manners to send a hello message to a channel you join, possibly with 
 
 Before setting up a new project channel, search the ASF workspace to make sure it does not already exist. If it does not, any member of the workspace can add the channel.
 
-  - At the top of your list of channels in the Slack app, click the **+** icon
-  - Use the _Browse channels_ option to see if the channel you are thinking of already exists. If you can't find it, click _Create Channel_ at the top of the channels list; or use the _Create a channel_ option under the + icon.
-  - After you provide a name for the channel, you can set it as **public**, so any member of the ASF can see and join it, or **private**, as noted above. People can only join a private channel by invitation.
+- At the top of your list of channels in the Slack app, click the **+** icon
+- Use the _Browse channels_ option to see if the channel you are thinking of already exists. If you can't find it, click _Create Channel_ at the top of the channels list; or use the _Create a channel_ option under the + icon.
+- After you provide a name for the channel, you can set it as **public**, so any member of the ASF can see and join it, or **private**, as noted above. People can only join a private channel by invitation.
 
 If you _do_ add a channel for your project, make sure you tell the PMC, committers, and other stakeholders about it so they can find and make use of it.
 

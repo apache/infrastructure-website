@@ -33,8 +33,8 @@ It is best to use a single keyring containing both keys.
 
 Generate the new key either:
 
-  - directly in the keyring containing the old key
-  - in a new keyring, and then transfer the new key to the keyring containing the old key
+- directly in the keyring containing the old key
+- in a new keyring, and then transfer the new key to the keyring containing the old key
 
 To generate a strong [RSA key](release-signing.html#rsa) follow [these instructions](openpgp.html#generate-key). If you use a separate keyring, follow [these instructions](openpgp.html#secret-key-transfer) to transfer it.
 
@@ -211,8 +211,8 @@ The final stage in the process is to update documents containing references to t
 
 For other documents:
 
-  - Update those that contain an [export](release-signing.html#export) with a <a href="#transition-export">dual export</a>.
-  - Update those that contain a [fingerprint](release-signing.html#fingerprint") with [both fingerprints](#transition-fingerprints).
+- Update those that contain an [export](release-signing.html#export) with a <a href="#transition-export">dual export</a>.
+- Update those that contain a [fingerprint](release-signing.html#fingerprint") with [both fingerprints](#transition-fingerprints).
   
 <h3 id="wot">Web of trust<a class="headerlink" href="#wot" title="Permanent link">&para;</a></h3>
 
@@ -249,7 +249,7 @@ sub   4096R/4A6D5217 2009-08-20
 
 So the fingerprints are:
 
-  - `CD0C 5281 D0A9 E963 19AF F365 AD81 612A AD74 1727` for `AD741727`
-  - `FF96 6261 C995 1DDE BF34 5150 D5D2 BDB5 E2B0 54B8` for `E2B054B8`
+- `CD0C 5281 D0A9 E963 19AF F365 AD81 612A AD74 1727` for `AD741727`
+- `FF96 6261 C995 1DDE BF34 5150 D5D2 BDB5 E2B0 54B8` for `E2B054B8`
 
 For every fingerprint, the last 8 digits are the key ID.

@@ -8,11 +8,11 @@ permalink: newsletter0625 layout: post
 
 Discussions at the June Roundtable covered, among other things:
 
-  - Misuse of GitHub Actions. Projects are using, and sometimes force-pushing, tags, rather than SHAs. While there are GHA linters that can help identify problems, we should move actively to encourage projects to stop using tags in GHAs, and only use SHAs. There was discussion of the possibility of applying some sort of seal of approval on custom GHAs that comply with this requirement.
-  - Creating a checklist or scorecard to encourage creators to bring their custom GHAs into compliance with our requirements.
-  - Review of progress on repository.a.o, and Tooling's progress on the Apache Trusted Release platform.
-  - What PMCs can use as a password manager (at the moment, only a private repo on SVN or Git).
-  - Complete notes from the meeting are at Infra Roundtable 2025-06-04 1700 UTC
+- Misuse of GitHub Actions. Projects are using, and sometimes force-pushing, tags, rather than SHAs. While there are GHA linters that can help identify problems, we should move actively to encourage projects to stop using tags in GHAs, and only use SHAs. There was discussion of the possibility of applying some sort of seal of approval on custom GHAs that comply with this requirement.
+- Creating a checklist or scorecard to encourage creators to bring their custom GHAs into compliance with our requirements.
+- Review of progress on repository.a.o, and Tooling's progress on the Apache Trusted Release platform.
+- What PMCs can use as a password manager (at the moment, only a private repo on SVN or Git).
+- Complete notes from the meeting are at Infra Roundtable 2025-06-04 1700 UTC
 
 The next roundtable will be **Wednesday, July 2, 1700 UTC**. Infra will pull a number of coming-soon improvements out of its hat for discussion.
 

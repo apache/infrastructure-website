@@ -13,14 +13,14 @@ See the [Pelican getting-started guide](asf-pelican-gettingstarted.html).
 
 ## For site designers
 
--  Information about the [ASF Theme](asf-pelican-theme.html).
--  The <a href="https://whimsy.apache.org/site/" target="_blank">Apache Project Website Checker</a> periodically reviews all TLP websites and reports whether they comply with Apache's <a href="https://www.apache.org/foundation/marks/pmcs#navigation" target="_blank">policies for TLP websites</a>.
+- Information about the [ASF Theme](asf-pelican-theme.html).
+- The <a href="https://whimsy.apache.org/site/" target="_blank">Apache Project Website Checker</a> periodically reviews all TLP websites and reports whether they comply with Apache's <a href="https://www.apache.org/foundation/marks/pmcs#navigation" target="_blank">policies for TLP websites</a>.
 
 ## For site developers
 
--  [Data modeling](asf-pelican-data.html) provides what developers need to know to maintain and expand on the data they want to use and display on their site.
--  [Build process](asf-pelican-build.html) describes the full end-to-end build from the developer's perspective.
--  Review the [plugins](asf-pelican-plugins.html) that are included in the template repository, and the plugin architecture.
+- [Data modeling](asf-pelican-data.html) provides what developers need to know to maintain and expand on the data they want to use and display on their site.
+- [Build process](asf-pelican-build.html) describes the full end-to-end build from the developer's perspective.
+- Review the [plugins](asf-pelican-plugins.html) that are included in the template repository, and the plugin architecture.
 
 ## For site committers
 

@@ -9,8 +9,8 @@ Welcome to _Inside Infra_ for July, 2025
 
 At the July Roundtable, Daniel Gruno presented on the **catalog server**, now in development: <a href="https://catalog-test.apache.org/lookup/project" target="_blank">catalog-test.apache.org/lookup/project</a>. The plan is to move all metadata that the Foundation and projects use into one place for reference and research:
 
-  - membership details
-  - the details of every .asf.yaml file in use
+- membership details
+- the details of every .asf.yaml file in use
 
 Infra is working in tandem with the Tooling team to develop this service. We are assembling the list of metadata at the moment. When the service is complete, you will, we hope, have one place to go to find ASF-related information you need.
 

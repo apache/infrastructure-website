@@ -10,9 +10,9 @@ The April 1 Roundtable focused on the migration of the ASF's Confluence Wiki and
 
 There are significant technical challenges in the migration:
 
-  - We have 1.2 million Confluence pages related to The ASF, its committees, and most of its projects.
-  - We have a similar number of Jira tickets related to 682 ASF projects. We have to migrate them all, even the tickets related to retired projects, to maintain project development history.
-  - We have over 150,000 user accounts for Jira and almost 100,000 for Confluence (many ASF-related people have one of each, of course). Many of these are inactive. We have to get our combined number of accounts down to 75,000.
+- We have 1.2 million Confluence pages related to The ASF, its committees, and most of its projects.
+- We have a similar number of Jira tickets related to 682 ASF projects. We have to migrate them all, even the tickets related to retired projects, to maintain project development history.
+- We have over 150,000 user accounts for Jira and almost 100,000 for Confluence (many ASF-related people have one of each, of course). Many of these are inactive. We have to get our combined number of accounts down to 75,000.
 
 The migration task needs more projects to volunteer to take part so we can address any issues that come up before we do the migration. Project PMCs can express their interest in a message to `users@infra`, in an Infra Jira ticket, or in the conversation on the `#atlassian-cloud-migration` channel in the `the-asf` Slack space.
 
@@ -34,8 +34,8 @@ Further information is at <a href="https://cwiki.apache.org/confluence/display/I
 
 Rulesets and CoPilot code reviews are now available for ASF project repositories. You make both available through settings in the repository's .asf.yaml file.
 
-  - **Rulesets** help you control how people can interact with branches and tags in a repository. See <a href="https://github.com/apache/infrastructure-asfyaml?tab=readme-ov-file#rulesets" target="_blank">the section on rulesets in the `.asf.yaml` README file</a>.
-  - **CoPilot code review** can review code written in any coding language and provide feedback. It reviews your code from multiple angles to identify issues and suggest fixes, which you can apply with a couple of clicks. See <a href="https://github.com/apache/infrastructure-asfyaml?tab=readme-ov-file#copilot_code_review" target="_blank">the section on Copilot code review in the `.asf.yaml` README file</a>.
+- **Rulesets** help you control how people can interact with branches and tags in a repository. See <a href="https://github.com/apache/infrastructure-asfyaml?tab=readme-ov-file#rulesets" target="_blank">the section on rulesets in the `.asf.yaml` README file</a>.
+- **CoPilot code review** can review code written in any coding language and provide feedback. It reviews your code from multiple angles to identify issues and suggest fixes, which you can apply with a couple of clicks. See <a href="https://github.com/apache/infrastructure-asfyaml?tab=readme-ov-file#copilot_code_review" target="_blank">the section on Copilot code review in the `.asf.yaml` README file</a>.
 
 ### Infra at C/C Glasgow
 

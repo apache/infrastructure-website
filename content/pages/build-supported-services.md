@@ -8,16 +8,16 @@ Here is a summary of The ASF's 'build' (CI/CD) and related services, those hoste
 Note that 'supported' means that Infra provides the service or provides access to the service. It does not mean that a particular service is considered
 an official 'release channel'.
 
--  <a href="#jenkins">Jenkins</a>
--  <a href="#buildbot">Buildbot</a>
--  <a href="#gump">Apache Gump</a>
--  <a href="#gha">GitHub Actions</a>
--  <a href="#artifactory">Artifactory</a>
--  <a href="#nexus">Nexus</a>
--  <a href="#nightlies">Nightlies</a>
--  <a href="#dockerhub">DockerHub</a>
--  <a href="#gradle">Gradle Enterprise</a>
--  <a href="#sonarcloud">Sonarcloud</a>
+- <a href="#jenkins">Jenkins</a>
+- <a href="#buildbot">Buildbot</a>
+- <a href="#gump">Apache Gump</a>
+- <a href="#gha">GitHub Actions</a>
+- <a href="#artifactory">Artifactory</a>
+- <a href="#nexus">Nexus</a>
+- <a href="#nightlies">Nightlies</a>
+- <a href="#dockerhub">DockerHub</a>
+- <a href="#gradle">Gradle Enterprise</a>
+- <a href="#sonarcloud">Sonarcloud</a>
 
 <h2 id="jenkins">Jenkins<a class="headerlink" href="#jenkins" title="Permanent link">&para;</a></h2>
 
@@ -45,8 +45,8 @@ ASF Infra runs an instance of the open source Buildbot software. Buildbot runs o
 
 Projects can add/edit/remove their configuration files via Subversion or Git.
 
-  - <a href="https://svn.apache.org/repos/infra/infrastructure/buildbot2/projects" target="_blank">Subversion</a>
-  - <a href="https://github.com/apache/infrastructure-bb2" target="_blank">Git/GitHub</a>
+- <a href="https://svn.apache.org/repos/infra/infrastructure/buildbot2/projects" target="_blank">Subversion</a>
+- <a href="https://github.com/apache/infrastructure-bb2" target="_blank">Git/GitHub</a>
 
 Use the standard naming `$projectname.py` for your config file. You may place multiple build jobs in this file.
 
@@ -101,10 +101,10 @@ All Committers have access to GHA and their workflows via `commit` using their L
 
 In addition to the official GitHub documentation, Infra maintains:
 
-  - [GitHub Actions and Secrets](github-actions-secrets.html), for handling credentials in workflows.
-  - The [GitHub Actions Policy](github-actions-policy.html), which sets the limits and requirements every ASF workflow must meet.
-  - [GitHub Actions](services.html#github-actions) on the Services and Tools page, which explains why the shared runner queues build up and how your project can help.
-  - The <a href="https://cwiki.apache.org/confluence/spaces/INFRA/pages/430408443/GitHub+Actions+Recommended+Practices" target="_blank">GitHub Actions Recommended Practices</a> wiki page (requires a committer or Member login).
+- [GitHub Actions and Secrets](github-actions-secrets.html), for handling credentials in workflows.
+- The [GitHub Actions Policy](github-actions-policy.html), which sets the limits and requirements every ASF workflow must meet.
+- [GitHub Actions](services.html#github-actions) on the Services and Tools page, which explains why the shared runner queues build up and how your project can help.
+- The <a href="https://cwiki.apache.org/confluence/spaces/INFRA/pages/430408443/GitHub+Actions+Recommended+Practices" target="_blank">GitHub Actions Recommended Practices</a> wiki page (requires a committer or Member login).
 
 <h2 id="artifactory">Artifactory<a class="headerlink" href="#artifactory" title="Permanent link">&para;</a></h2>
 
@@ -153,10 +153,10 @@ The ASF has an 'apache' account at <a href="https://hub.docker.com/orgs/apache" 
 
 Committers need to sign up for a personal account, then create a Jira ticket asking Infra to set up their access. The ticket should state
 
-  - dockerhub_id : asf_id
-  - project name
-  - repository name(s)
-  - team name
+- dockerhub_id : asf_id
+- project name
+- repository name(s)
+- team name
 
 Infra adds DockerHub user IDs to a project 'team', which has read/write access to the project repositories.
 
@@ -166,7 +166,7 @@ The ASF has tokens/credentials in GHA, Jenkins and Buildbot for projects to use 
 
 #### More information
 
-  - <a href="https://cwiki.apache.org/confluence/display/INFRA/Github+Actions+to+DockerHub" target="_blank">GitHub Actions to DockerHub</a>
+- <a href="https://cwiki.apache.org/confluence/display/INFRA/Github+Actions+to+DockerHub" target="_blank">GitHub Actions to DockerHub</a>
 
 <h2 id="gradle">Gradle Enterprise<a class="headerlink" href="#gradle" title="Permanent link">&para;</a></h2>
 Gradle is a suite of acceleration and analytics technologies for CI/CD systems to help projects identify and analyze trends while optimizing build resources. The result is faster builds, with fewer failures, The ASF instance of Gradle enterprise is at <a href="https://develocity.apache.org/" target="_blank">develocity.apache.org</a>.
