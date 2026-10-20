@@ -56,13 +56,13 @@ Moderators can send an email to `listname-list@tlp.apache.org`.
 
 Anyone with access to the apmail account can run the following command to get a count of the subscribers:
 
-```
+```bash
 ezmlm-list~/lists/project/listname| wc -l
 ```
 
 Remember that there often are people subscribed to the digest version of the list. To find them:
 
-```
+```text
 ~lists/project/listname/digest
 ```
 
@@ -87,7 +87,7 @@ Review the mail to see if it is spam (or other severely misguided mail). If it i
 
 To bounce non-spam with a notice to the sender, reply to the `-reject` address in the mail header. If you wish to include a comment with the rejection, the body of the message should look like this:
 
-```
+```text
 %%% Start comment
 Your message goes here...
 %%% End comment
@@ -113,13 +113,13 @@ To avoid revealing your personal IP address, you may wish to use an anonymizing 
 
 If the spam emails are all sent from the same address, try adding them to the 'deny' list:
 
-```
+```text
 {listname}-deny-subscribe-badposter=menace.com@tlp.apache.org</code>
 ```
 
 You can find the sender's address in the moderation request in the `cc:` area:
   
-```
+```text
 Cc: {listname}-allow-tc.<digits>.<alphanumeric>-badposter=menace.com@tlp.apache.org
 ```
 
@@ -127,7 +127,7 @@ The sender's e-mail address is contained between the '-' (hyphens) immediately f
 
 This is already in the correct form for use in the 'deny' subscription request, as the '@' has been changed to '='. In the example above this is:
 
-```
+```text
 badposter=menace.com
 ```
 
@@ -141,7 +141,7 @@ A moderator can fix this by using 'Reply All' to a moderation message from the p
 
 It's also possible to set this up in advance, by subscribing the poster to the 'allow' list. For example, if you want `mailbot@host.com` to be able to post, use:
 
-```
+```text
 {listname}-allow-subscribe-mailbot=host.com@tlp.apache.org
 ```
 
@@ -151,7 +151,7 @@ Replace the '@' in the sender email with '='.
 
 If you have a troublesome poster, you can un-subscribe them from the list using
 
-```
+```text
 {listname}-unsubscribe-badboy=menace.com@tlp.apache.org
 ```
 
@@ -159,7 +159,7 @@ Send a courtesy email to them to let them know they have been unsubscribed, and 
 
 Occasionally you will get someone with a poorly-configured spam filter sending automated replies to the list. You can deny their postings using
 
-```
+```text
 {listname}-deny-subscribe-badposter=menace.com@tlp.apache.org
 ```
 
@@ -167,7 +167,7 @@ Send a courtesy email suggesting how they can resolve the problem.
 
 If an unsubscribed user was added to the moderation list and is sending spam to the list, remove them by sending an email to:
 
-```
+```text
 {listname}-allow-unsubscribe-badposter=menace.com@tlp.apache.org
 ```
 
@@ -177,7 +177,7 @@ There is an <em>opt-in</em> configuration for problem posters, which lets you su
 
 To use it (once it has been enabled) do this:
 
-```
+```text
 {listname}-sendsubscribertomod-subscribe-badposter=menace.com@tlp.apache.org
 
 ```
@@ -199,7 +199,7 @@ Also check whether the emails could have been treated as SPAM by their e-mail cl
 If a subscriber reports getting a  bounce message from ezmlm, ask them to provide the details.
 For example:
 
-```
+```text
 Hi! This is the ezmlm program.
 I'm managing the user@tlp.apache.org mailing list.
 

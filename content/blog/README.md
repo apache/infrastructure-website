@@ -36,7 +36,7 @@ Pelican supports these tags, which the Infra blog does not use:
 
 The first line of the file should have this metadata, at a minimum:
 
-```
+```text
   layout: post title: THE ENTRY'S TITLE date: 2010-01-01 permalink: KEY WORDS FROM THE TITLE category CATEGORY
 ```
 
@@ -44,7 +44,7 @@ Note that the title does not need a period at its end.
 
 For better readability as you are editing, you can lay out the metadata using multiple lines:
 
-```
+```yaml
 layout: post
 title: THE ENTRY'S TITLE
 date: 2010-01-01

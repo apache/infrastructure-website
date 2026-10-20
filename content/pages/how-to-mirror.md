@@ -27,7 +27,7 @@ We encourage you to
 - do an **update-check** at least four times a day a day. You may sync a maximum of six times per day, but only if you have a slow or poor connection that causes timeouts.
 - run the <a href="https://httpd.apache.org/" target="_blank">Apache HTTP Server</a> version 2.2 or later and use the following configuration for your web mirror to allow all the features of our download site to function optimally:
 
-```
+```apache
 <Directory /path/to/mirror>
   IndexOptions FancyIndexing NameWidth=* FoldersFirst ScanHTMLTitles DescriptionWidth=*
   HeaderName HEADER.html
@@ -50,7 +50,7 @@ We only support <a href="https://rsync.samba.org/" target="_blank">rsync</a> for
 
 Update your mirror with:
 
-```
+```bash
 rsync -avz --delete --safe-links rsync.apache.org::apache-dist /path/to/mirror
 ```
 
@@ -66,7 +66,7 @@ To exclude resource-intensive projects, replace `::apache-dist` with `::apache-d
 
 If there is a problem with file/directory permissions, make sure you use a proper umask in your cronjob:
 
-```
+```bash
 umask 022 ; rsync ...
 ```
 
@@ -74,7 +74,7 @@ umask 022 ; rsync ...
 
 Private mirrors of ASF downloads cannot host the following file types:
 
-```
+```text
 exclude => ['/tmp/', '*.md5', '*.MD5', '*.sha1', '*.sha',
            '*.sha256', '*.sha512', '*.asc', 'MD5SUM', 'SHA*SUM*',
            '*.mds', '*.sha2', '*.sha3', 'META',
@@ -98,7 +98,7 @@ The contents of README.html appear near the bottom of your mirror's home page.
 
 Please limit the contents of the README.html to something like:
 
-```
+```text
 This mirror is donated by www.domain.com [url] to support the Apache open source community.
 ```
 

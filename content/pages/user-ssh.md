@@ -22,7 +22,7 @@ Remember to keep your client up to date with security patches. Pay close attenti
 
 The OpenSSH client uses by default configuration files in the `~/.ssh` directory. The main configuration file is `~/.ssh/config` and is optional. It may exist already. If it does not, you can create it in a simple text format. Group together instructions for a particular host (or group of hosts). Here is a suggested basic configuration:
 
-```
+```text
 <pre>
 # Apply to all hosts
 
@@ -41,7 +41,7 @@ Many other options are available.
 
 To diagnose what's going wrong with an OpenSSH connection, run the client in verbose mode. To do this just add `-v`:
 
-```
+```bash
 ssh -v -l yourApacheID some-project-server.apache.org
 ```
 
@@ -100,7 +100,7 @@ SSH employs the <em>known hosts</em> mechanism to prevent <a href="#middle-man-a
 middle</a> attacks. The first time that the client connects to a server, the fingerprint of the key used by that server is
 displayed to the user, who may to asked to confirm the identity of that server. For example:
 
-```
+```text
 The authenticity of host 'home.apache.org (209.237.237.194)' can't be established.
 RSA key fingerprint is 1c:5d:3f:a2:89:97:2e:39:eb:b0:09:9e:cf:c6:8d:f3.
 Are you sure you want to continue connecting (yes/no)? 

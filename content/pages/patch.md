@@ -17,7 +17,7 @@ If all this works, you can create your patch. Remove all build products and remn
 
 Apache projects prefer the unified diff format. The subversion tool creates that automatically. If you use other tools, please refer to their documentation for details on setting the diff format.
 
-```
+```text
     # location where the modules are stored
     cd checkout</p>
 <div class="codehilite"><pre><span class="c"># directory of the module</span>

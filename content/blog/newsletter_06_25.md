@@ -38,7 +38,7 @@ Due to a significant increase in abuse, largely driven by AI scraping, the ASF B
 
 Infra received this message from GitHiub:
 
-```
+```text
 The Windows Server 2019 runner image will be fully unsupported by June 30, 2025.
 To raise awareness of the upcoming removal, we will temporarily fail jobs using Windows Server 2019.
 Builds that are scheduled to run during the brownout periods will fail.

@@ -34,7 +34,7 @@ Additionally, in DockerHub, an 'arrow-dev' repository was created and the Docker
 
 Using Apache Arrow again as an example, the tokens above can be called using this code:
 
-```
+```yaml
 run: |
 docker login -u ${{ secrets.DOCKERHUB_USER }} \
 -p ${{ secrets.DOCKERHUB_TOKEN }}
@@ -47,7 +47,7 @@ If you use the `setup-gradle` Action, it creates a short-lived Develocity token,
 
 To extend the validity of the token, adjust the `develocity-token-expiry` action parameter:
 
-```
+```yaml
  develocity-token-expiry:
     description: The Develocity short-lived access tokens expiry in hours. Default is 2 hours.
     required: false

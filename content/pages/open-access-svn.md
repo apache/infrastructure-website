@@ -58,7 +58,7 @@ The  proposal from bimargulies here rests on two foundations:
 
 In any case, the argument about the ACL versus culture cuts both ways. Right now, with no change to the LDAP-based ACL, any project could adopt the following policy:
 
-```
+```text
 Commit Access is granted upon request and acceptance of an ICLA. 
 If you request and receive commit access, you are expected to read, understand, and comply with the project's policies. 
 If you abuse this, we will remove your access.

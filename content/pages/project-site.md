@@ -132,7 +132,7 @@ Using [.asf.yaml](asf-yaml.html) with a Git repository, once you have your gener
 
 To do so, add or edit `.asf.yaml` in the staging branch (where the build output is generated) and add the following (assuming your staging branch is asf-staging):
 
-```
+```yaml
 staging:
   profile: ~
   whoami:  asf-staging
@@ -145,7 +145,7 @@ For more details, see [.asf.yaml](asf-yaml.html).
 
 When you are ready to publish a branch of your Git web site repository to your project web site, you can use `.asf.yaml`:
 
-```
+```yaml
 publish:
   whoami:  asf-site
 ```

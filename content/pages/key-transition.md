@@ -40,7 +40,7 @@ To generate a strong [RSA key](release-signing.html#rsa) follow [these instructi
 
 Both new and old keys should now be contained in the same keyring. Verify this by:
 
-```
+```shell
 $ gpg --list-secret-keys  
 
 alice/secring.gpg
@@ -64,7 +64,7 @@ You need to perform a number of operations on the new key. Though you can perfor
 
 Start by opening an edit session on the new key, for example E2B054B8
 
-```
+```shell
 $ gpg --edit-key E2B054B8
 gpg (GnuPG) 1.4.9; Copyright (C) 2008 Free Software Foundation, Inc.
 This is free software: you are free to change and redistribute it.
@@ -88,7 +88,7 @@ Command>
 
 The new key needs to be marked as ultimately trusted in this keyring. This will ensure that the <a href="release-signing.html#web-of-trust" target="_blank">web of trust</a> links signed by this key will be trusted automatically.
 
-```
+```text
 Command> trust
 pub  4096R/E2B054B8  created: 2009-08-20  expires: never       usage: SC
 
@@ -127,7 +127,7 @@ unless you restart the program.
 
 Use the old key (AD741727, say) to sign the new key:
 
-```
+```text
 Command> sign AD741727
 
 pub  4096R/E2B054B8  created: 2009-08-20  expires: never       usage: SC
@@ -163,7 +163,7 @@ It is convenient to add secondary user ids for current email accounts at this po
 
 Then save your changes, which will exit you from edit mode:
 
-```
+```text
 Command> save
 ```
 
@@ -177,7 +177,7 @@ Next, change the default key on the keyring to the new. This ensures that all fu
 
 To make the new key the default, set the `default-key` in the `gpg.conf` configuration file. For example, to set the default to `E2B054B8` add:
 
-```
+```text
 default-key E2B054B8
 This setting can be tested by creating a test signature:
 $ gpg --detach-sig --armor document
@@ -193,7 +193,7 @@ Verify that the new key has been chosen by default.
 
 Finish the process by uploading the new and old keys to the keyserver:
 
-```
+```shell
 $ gpg --send-keys E2B054B8 AD741727
 ```
 
@@ -224,7 +224,7 @@ During the transition period, use a single export containing both new and old pu
 
 To create a suitable export, supply both key IDs on the command line. For example, to export keys AD741727 (old) and E2B054B8 (new) to FILENAME use:
 
-```
+```shell
 $ gpg --export --armor --output FILENAME AD741727 E2B054B8
 ```
 
@@ -234,7 +234,7 @@ This exports only the public keys, and so isn't confidential. Replace the old pu
 
 During the transitions, use both fingerprints. For example, to fingerprint old key `AD741727` and new key `E2B054B8`, use:
 
-```
+```shell
 $ gpg --fingerprint AD741727 E2B054B8
 pub   1024D/AD741727 2009-08-20
       Key fingerprint = CD0C 5281 D0A9 E963 19AF  F365 AD81 612A AD74 1727

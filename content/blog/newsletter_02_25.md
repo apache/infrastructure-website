@@ -36,7 +36,7 @@ Other significant enhancements include:
 
 To opt in to the updated .asf.yaml, add this code to your existing .asf.yaml file:
 
-```
+```yaml
 meta:
   nextgen: true
 ```

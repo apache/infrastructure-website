@@ -43,7 +43,7 @@ Create the repository for the website content using the <a href="https://gitbox.
 
 In your site repository, run the following commands:
 
-```
+```bash
 for x in "content/pages content/articles theme/plugins"; do mkdir -p $x; done
 rm -rf output publishconf.py
 echo -e "\nPLUGIN_PATHS=['./theme/plugins']\nPLUGINS=[]\n"  >> pelicanconf.py
