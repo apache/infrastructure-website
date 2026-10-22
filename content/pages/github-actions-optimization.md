@@ -11,11 +11,43 @@ Some of the techniques below are **experimental**: Airflow is piloting them now,
 
 | Technique | Status | Effect in Airflow |
 | --- | --- | --- |
+| [Start with the basics](#basics) | Recommended for every project | Frees runners held by hung, duplicate and superseded runs |
 | [Run only the tests a change needs](#selective-tests) | In production | A typical PR runs 30-40 jobs instead of the full 239 (Java projects: [Develocity](#selective-tests-java)) |
 | [Use smaller runners for small jobs](#smaller-runners) | In production | Bookkeeping jobs moved off the standard runner queue |
 | [Cap open pull requests per contributor](#pr-cap) | In production | 210 PRs from 21 contributors closed in the first pass |
 | [Run external contributors' CI in their forks](#fork-ci) | **Experimental** | Expected to cut shared-runner use by about 40% |
 | [Self-hosted runners with RunsOn](#runs-on) | **Experimental** | Expected to move at least 40% of the heaviest jobs off shared runners |
+
+<h3 id="basics">Start with the basics<a class="headerlink" href="#basics" title="Permanent link">&para;</a></h3>
+
+These changes take minutes, apply to every project, and often recover a lot of capacity on their own. They come from Infra's <a href="https://cwiki.apache.org/confluence/spaces/INFRA/pages/430408443/GitHub+Actions+Recommended+Practices" target="_blank">GitHub Actions Recommended Practices</a>. The aim is that each workflow runs for as little time as possible, and that as few of your project's workflows as possible run at the same time.
+
+- **Set timeouts.** A hung job holds its runner for GitHub's default of 6 hours. Set <a href="https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idtimeout-minutes" target="_blank">`timeout-minutes`</a> on every job, a little above how long it normally takes, and on long steps where useful.
+- **Cancel superseded pull request runs.** When a contributor pushes a new commit, runs for the earlier commits keep going although nobody needs their results. A <a href="https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/control-workflow-concurrency" target="_blank">concurrency group</a> per ref cancels them. Limit cancelling to pull requests, so builds of release branches always complete:
+
+```yaml
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+```
+
+- **Restrict the `push` trigger to long-lived branches.** If `push` has no branch filter and `pull_request` is also configured, every push to a branch with an open pull request runs the workflow twice. List the branches that need push builds. If your contributors rely on push builds of other branches, at least exclude Dependabot's branches, which are already covered by their pull requests:
+
+```yaml
+on:
+  push:
+    branches:
+      - main
+      - 2.x
+    # or, if you build every branch on push:
+    # branches-ignore:
+    #   - dependabot/**
+```
+
+- **Fail fast in matrices.** Use <a href="https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/run-job-variations#handling-failures" target="_blank">`fail-fast: true`</a> where one failing combination makes the rest of the matrix pointless, and keep <a href="https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/run-job-variations#defining-the-maximum-number-of-concurrent-jobs" target="_blank">`max-parallel`</a> low.
+- **Stagger scheduled workflows.** Most `schedule` triggers fire at the top of the hour, when the shared queue is busiest. Pick an odd minute, and add path filters to avoid redundant runs.
+- **Cache dependencies.** Use <a href="https://docs.github.com/en/actions/reference/workflows-and-actions/dependency-caching" target="_blank">dependency caching</a> (see also the <a href="https://github.com/actions/cache/blob/main/tips-and-workarounds.md" target="_blank">`actions/cache` tips</a>) so that jobs do not download and build the same dependencies on every run.
+- **Lint your workflows.** <a href="https://github.com/rhysd/actionlint" target="_blank">actionlint</a> catches mistakes in workflow files before they cost a failed run.
 
 <h3 id="selective-tests">Run only the tests a change needs<a class="headerlink" href="#selective-tests" title="Permanent link">&para;</a></h3>
 
