@@ -13,6 +13,7 @@ Some of the techniques below are **experimental**: Airflow is piloting them now,
 | --- | --- | --- |
 | [Start with the basics](#basics) | Recommended for every project | Frees runners held by hung, duplicate and superseded runs |
 | [Run only the tests a change needs](#selective-tests) | In production | A typical PR runs 30-40 jobs instead of the full 239 (Java projects: [Develocity](#selective-tests-java)) |
+| [Replace post-merge runs with scheduled canary builds](#canary) | In production | `main` gets a full run four times a day instead of after every merge |
 | [Use smaller runners for small jobs](#smaller-runners) | In production | Bookkeeping jobs moved off the standard runner queue |
 | [Cap open pull requests per contributor](#pr-cap) | In production | 210 PRs from 21 contributors closed in the first pass |
 | [Run external contributors' CI in their forks](#fork-ci) | **Experimental** | Expected to cut shared-runner use by about 40% |
@@ -57,7 +58,7 @@ How to start, from simplest to most capable:
 
 - Use <a href="https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#onpushpull_requestpull_request_targetpathspaths-ignore" target="_blank">`paths` and `paths-ignore` filters</a> so that whole workflows only run when relevant files change.
 - Add a first job that inspects the changed files (`git diff --name-only` against the merge base) and writes a JSON matrix to its outputs. Later jobs use `fromJSON()` on it, and skip themselves when it is empty.
-- Make the rules conservative: when in doubt, run more. Run the full suite on pushes to the default branch and on scheduled "canary" builds, so anything a pull request skipped is still caught soon after merge.
+- Make the rules conservative: when in doubt, run more. Run the full suite in [scheduled "canary" builds](#canary) of the default branch, so anything a pull request skipped is still caught soon after merge.
 - Let maintainers force a full run with a label (Airflow uses `full tests needed`).
 
 Airflow reference: <a href="https://github.com/apache/airflow/blob/main/dev/breeze/doc/ci/04_selective_checks.md" target="_blank">selective checks documentation</a>, including the rules it applies and worked examples.
@@ -75,6 +76,34 @@ For an example, Apache Ozone recently made its Maven test goals cacheable and en
 Maven projects that do not use Develocity can still skip unchanged modules with the <a href="https://maven.apache.org/extensions/maven-build-cache-extension/" target="_blank">Apache Maven Build Cache Extension</a>. Gradle's own <a href="https://docs.gradle.org/current/userguide/build_cache.html" target="_blank">build cache</a> does the same for Gradle builds.
 
 For other build systems, <a href="https://yetus.apache.org/" target="_blank">Apache Yetus</a> can work out which modules a patch touches and test only those.
+
+<h3 id="canary">Replace post-merge runs with scheduled canary builds<a class="headerlink" href="#canary" title="Permanent link">&para;</a></h3>
+
+Many workflows run the full CI suite again on every push to `main`, after the pull request has already been tested. On a busy repository that is one full run per merged pull request, often within minutes of each other, and each run tests code that its pull request run has already covered.
+
+Instead, you can drop `main` from the `push` trigger and run the full suite on a schedule: a "canary" build. However many pull requests are merged in between, the canary runs at a fixed rate, and it is still the safety net for anything that selective tests skipped on a pull request. Add `workflow_dispatch`, so a maintainer can start a canary by hand, for example to check a fix.
+
+```yaml
+on:
+  schedule:
+    # Full run on main four times a day, off the top of the hour.
+    - cron: '58 1,7,13,19 * * *'
+  pull_request:
+  push:
+    # Release branches change rarely, so they can still build on every push.
+    branches:
+      - 'v[0-9]+-[0-9]+-test'
+  workflow_dispatch:
+```
+
+Things to plan for:
+
+- **Report canary failures.** Nobody watches a scheduled run, so send its failures somewhere people will see them: a mailing list, a chat channel, or an issue. Airflow posts them to Slack.
+- **Finding the commit that broke `main` takes longer.** A failing canary covers every pull request merged since the last green one. Run the canary often enough that this stays a short list, and use `workflow_dispatch` to test a suspect commit.
+- **Move post-merge jobs to the canary.** Jobs that must run after a merge, such as publishing documentation, refreshing caches or updating constraint files, move to the scheduled run too. Run them only for `schedule` and `workflow_dispatch` events in the upstream repository, not in forks.
+- **With a merge queue, the `push` run is a duplicate.** If your repository uses GitHub's merge queue, the queue has already tested the exact tree that lands on `main`, so a run on push repeats it.
+
+Airflow does not build `main` on push at all. Its full-matrix canary runs four times a day, alternating between AMD and ARM runners, so each architecture runs twice a day, and release branches build on every push. Airflow reference: the `on:` triggers and comments in <a href="https://github.com/apache/airflow/blob/main/.github/workflows/ci-amd.yml" target="_blank">`ci-amd.yml`</a> and <a href="https://github.com/apache/airflow/blob/main/.github/workflows/ci-arm.yml" target="_blank">`ci-arm.yml`</a>, and <a href="https://github.com/apache/airflow/pull/66348" target="_blank">apache/airflow#66348</a>, which split the canary between the two architectures.
 
 <h3 id="smaller-runners">Use smaller runners for small jobs<a class="headerlink" href="#smaller-runners" title="Permanent link">&para;</a></h3>
 
