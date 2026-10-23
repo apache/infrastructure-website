@@ -1,0 +1,328 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel='shortcut icon' type='image/x-icon' href='/extra/favicon.ico' />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Optimizing GitHub Actions workflows - Apache Infrastructure Website</title>
+<link href="/css/bootstrap.min.css" rel="stylesheet">
+<link href="/css/fontawesome.all.min.css" rel="stylesheet">
+<link href="/css/headerlink.css" rel="stylesheet">
+<script src="/highlight/highlight.min.js"></script>
+<!-- pagefind search -->
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+<script src="/_pagefind/pagefind-ui.js" type="text/javascript"></script>
+<script>
+  window.addEventListener('DOMContentLoaded', (event) => {
+      new PagefindUI({ element: "#pagefind-search" });
+  });
+  var pageTitle = '';
+  if(pageTitle === '404'){
+    window.addEventListener('DOMContentLoaded', (event) => {
+        new PagefindUI({ element: "#page-404-search" });
+    });
+  }
+</script>
+<!-- pagefind search box styling -->
+<style type="text/css">
+.search-form {
+	right: 0;
+	left: initial !important;
+        min-width: 25vw;
+	max-width: 90vw;
+	max-height: calc(95vh - 100px);
+	overflow: auto;
+	margin-top: 5px;
+}
+</style>
+  </head>
+  <body class="d-flex flex-column h-100">
+  <main class="flex-shrink-0">
+      <div>
+
+<!-- nav bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark sticky-top" aria-label="Fifth navbar example">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/"><img src="https://apache.org/images/feather.png" style="height: 32px;" alt="Apache Software Foundation oak leaf logo"/> Apache Infrastructure</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarADP" aria-controls="navbarADP" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarADP">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">About</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/infra-news.html">News</a></li>
+                        <li><a class="dropdown-item" href="/blog/">The Infrastructure Blog</a></li>
+                        <li><a class="dropdown-item" href="/roundtable.html">The Infrastructure Roundtable</a></li>
+                        <li><a class="dropdown-item" href="/team.html">About the team</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/policies.html">Policies</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Services and Tools</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/services.html">Services and Tools</a></li>
+                        <li><a class="dropdown-item" href="https://blocky.apache.org/">Blocky</a></li>
+                        <li><a class="dropdown-item" href="https://whimsy.apache.org/roster/committer/" target="_blank">Committer Search</a></li>
+                        <li><a class="dropdown-item" href="https://infra.apache.org/tools/csp.html">Content Security Policy Builder</a></li>
+                        <li><a class="dropdown-item" href="https://app.datadoghq.com/account/login?next=%2Finfrastructure">DataDog</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Documentation</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/doc.html">Infra docs</a></li>
+                        <li><a class="dropdown-item" href="/present.html">Infra presentations</a></li>
+                    </ul>
+                </li>
+                  <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Contribute</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="/hosting-external-agent.html">Host a Jenkins or Buildbot agent</a></li>
+                        <li><a class="dropdown-item" href="/infra-volunteer.html">Volunteer with Infra</a></li>
+
+                    </ul>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/stats.html">Status</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/contact.html">Contact Us</a>
+                </li>
+                <li class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle d-none d-sm-inline-block" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-label="Search">
+                        <span class="fa-solid fa-magnifying-glass" aria-hidden="true"></span> Search</a>
+                    <ul class="search-form dropdown-menu">
+                        <li>
+                            <div id="pagefind-search" class="input-group" style="width: 100%; padding: 0 5px;"></div>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>    
+
+
+<!-- page contents -->
+<div id="contents">
+    <div class="bg-white p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>
+              Optimizing GitHub Actions workflows
+          </h1>
+              <p>GitHub-hosted runners are a <strong>shared</strong> resource: every ASF project draws on the same pool, so the minutes one project saves shorten the queue for everyone else. The <a href="github-actions-policy.html">GitHub Actions Policy</a> sets the limits every project must stay within, and <a href="services.html#gha-mitigations">How your project can help</a> lists the quick wins. This page lists the optimizations a PMC can implement in its own workflows, and gives an example for each. To check your project's workflows against them, you can <a href="#magpie">audit them with Apache Magpie</a>.</p>
+<p>The examples come from <a href="https://github.com/apache/airflow" target="_blank">Apache Airflow</a>, whose CI is one of the largest at the ASF and which has tried most of these techniques. Your project's results may differ.</p>
+<p>Some of these techniques are experiments that Airflow is exploring. Treat them as recipes to evaluate, not as recommended defaults.</p>
+<h3 id="summary">Summary<a class="headerlink" href="#summary" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Technique</th>
+<th>Status</th>
+<th>Effect in Airflow</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#basics">Start with the basics</a></td>
+<td>Recommended for every project</td>
+<td>Frees runners held by hung, duplicate and superseded runs</td>
+</tr>
+<tr>
+<td><a href="#selective-tests">Run only the tests a change needs</a></td>
+<td>In production</td>
+<td>A typical PR runs 30-40 jobs instead of the full 239 (Java projects: <a href="#selective-tests-java">Develocity</a>)</td>
+</tr>
+<tr>
+<td><a href="#canary">Replace post-merge runs with scheduled canary builds</a></td>
+<td>In production</td>
+<td><code>main</code> gets a full run four times a day instead of after every merge</td>
+</tr>
+<tr>
+<td><a href="#smaller-runners">Use smaller runners for small jobs</a></td>
+<td>In production</td>
+<td>Bookkeeping jobs moved off the standard runner queue</td>
+</tr>
+<tr>
+<td><a href="#pr-cap">Cap open pull requests per contributor</a></td>
+<td>In production</td>
+<td>210 PRs from 21 contributors closed in the first pass</td>
+</tr>
+<tr>
+<td><a href="#fork-ci">Run external contributors' CI in their forks</a></td>
+<td><strong>Experimental</strong></td>
+<td>Expected to cut shared-runner use by about 40%</td>
+</tr>
+<tr>
+<td><a href="#runs-on">Self-hosted runners with RunsOn</a></td>
+<td><strong>Experimental</strong></td>
+<td>Expected to move at least 40% of the heaviest jobs off shared runners</td>
+</tr></tbody></table>
+<h3 id="basics">Start with the basics<a class="headerlink" href="#basics" title="Permanent link">&para;</a></h3>
+<p>These changes take minutes and often recover a lot of capacity on their own. They come from Infra's <a href="https://cwiki.apache.org/confluence/spaces/INFRA/pages/430408443/GitHub+Actions+Recommended+Practices" target="_blank">GitHub Actions Recommended Practices</a>. The aim is that each workflow runs for as little time as possible, and that as few of your project's workflows as possible run at the same time.</p>
+<ul>
+<li><strong>Set timeouts.</strong> A hung job holds its runner for GitHub's default of 6 hours. Set <a href="https://docs.github.com/en/actions/reference/workflows-and-actions/workflow-syntax#jobsjob_idtimeout-minutes" target="_blank"><code>timeout-minutes</code></a> on every job, a little above how long it normally takes, and on long steps where useful.</li>
+<li><strong>Cancel superseded pull request runs.</strong> When a contributor pushes a new commit, runs for the earlier commits keep going although nobody needs their results. A <a href="https://docs.github.com/en/actions/how-tos/write-workflows/choose-when-workflows-run/control-workflow-concurrency" target="_blank">concurrency group</a> per ref cancels them. Limit cancelling to pull requests, so builds of release branches always complete:</li>
+</ul>
+<pre><code class="language-yaml">concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' }}
+</code></pre>
+<ul>
+<li><strong>Restrict the <code>push</code> trigger to long-lived branches.</strong> If <code>push</code> has no branch filter and <code>pull_request</code> is also configured, every push to a branch with an open pull request runs the workflow twice. List the branches that need push builds. If your contributors rely on push builds of other branches, at least exclude Dependabot's branches, which are already covered by their pull requests:</li>
+</ul>
+<pre><code class="language-yaml">on:
+  push:
+    branches:
+      - main
+      - 2.x
+    # or, if you build every branch on push:
+    # branches-ignore:
+    #   - dependabot/**
+</code></pre>
+<ul>
+<li><strong>Fail fast in matrices.</strong> Use <a href="https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/run-job-variations#handling-failures" target="_blank"><code>fail-fast: true</code></a> so that one failing combination cancels the rest of the matrix, and keep <a href="https://docs.github.com/en/actions/how-tos/write-workflows/choose-what-workflows-do/run-job-variations#defining-the-maximum-number-of-concurrent-jobs" target="_blank"><code>max-parallel</code></a> low.</li>
+<li><strong>Stagger scheduled workflows.</strong> Most <code>schedule</code> triggers fire at the top of the hour, when the shared queue is busiest. Pick an odd minute, and add path filters to avoid redundant runs.</li>
+<li><strong>Cache dependencies.</strong> Use <a href="https://docs.github.com/en/actions/reference/workflows-and-actions/dependency-caching" target="_blank">dependency caching</a> (see also the <a href="https://github.com/actions/cache/blob/main/tips-and-workarounds.md" target="_blank"><code>actions/cache</code> tips</a>) so that jobs do not download and build the same dependencies on every run.</li>
+<li><strong>Lint your workflows.</strong> <a href="https://github.com/rhysd/actionlint" target="_blank">actionlint</a> catches mistakes in workflow files before they cost a failed run.</li>
+</ul>
+<h3 id="selective-tests">Run only the tests a change needs<a class="headerlink" href="#selective-tests" title="Permanent link">&para;</a></h3>
+<p>The largest saving usually comes from not running work a change cannot affect. A full Airflow CI run is 239 jobs, but most pull requests run 30-40 jobs or fewer. A first job, "selective checks", looks at which files the pull request changes (plus the event, the target branch and the labels) and computes the smallest set of jobs that still gives confidence in the change. Later jobs read their matrix from that job's outputs. A documentation fix gets the docs build, a change to one provider gets that provider's tests, and a change to core code or to CI itself still gets the full run.</p>
+<p>How to start, from simplest to most capable:</p>
+<ul>
+<li>Use <a href="https://docs.github.com/en/actions/writing-workflows/workflow-syntax-for-github-actions#onpushpull_requestpull_request_targetpathspaths-ignore" target="_blank"><code>paths</code> and <code>paths-ignore</code> filters</a> so that whole workflows only run when relevant files change.</li>
+<li>Add a first job that inspects the changed files (<code>git diff --name-only</code> against the merge base) and writes a JSON matrix to its outputs. Later jobs use <code>fromJSON()</code> on it, and skip themselves when it is empty.</li>
+<li>Make the rules conservative: when in doubt, run more. Run the full suite in <a href="#canary">scheduled "canary" builds</a> of the default branch, so anything a pull request skipped is still caught soon after merge.</li>
+<li>Let maintainers force a full run with a label (Airflow uses <code>full tests needed</code>).</li>
+</ul>
+<p>Airflow reference: <a href="https://github.com/apache/airflow/blob/main/dev/breeze/doc/ci/04_selective_checks.md" target="_blank">selective checks documentation</a>, including the rules it applies and worked examples.</p>
+<h4 id="selective-tests-java">Java projects: use Develocity instead of custom rules<a class="headerlink" href="#selective-tests-java" title="Permanent link">&para;</a></h4>
+<p>Maven and Gradle projects do not need to write their own selection logic. The ASF has a sponsored instance of <a href="gradle.html">Gradle Develocity</a> at <a href="https://develocity.apache.org" target="_blank">develocity.apache.org</a>, available to all projects, and it works with both Maven and Gradle builds:</p>
+<ul>
+<li><strong>Predictive Test Selection</strong> uses the history of your project's builds to pick the tests a change is likely to affect, and skips the rest. Clay Johnson of Gradle presented it at the <a href="https://cwiki.apache.org/confluence/spaces/INFRA/pages/430408857/Infra+Roundtable+2026-07-01" target="_blank">July 2026 Infra Roundtable</a> (notes and a link to slides on the page). A presentation at the <a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable+2024-03-06%2C+17%3A00+UTC" target="_blank">March 2024 Roundtable</a> covered Develocity's test features more broadly.</li>
+<li><strong>The remote build cache</strong> lets a build reuse the outputs, including test results, of modules whose inputs have not changed since an earlier build, so CI only builds and tests what actually changed.</li>
+<li><strong>Build scans</strong> show where a build spends its time and which tests are failing or flaky, so you know what to fix first.</li>
+</ul>
+<p>Apache Ozone recently made its Maven test goals cacheable and enabled the Develocity remote build cache (<a href="https://issues.apache.org/jira/browse/HDDS-16940" target="_blank">HDDS-16940</a>). To get started, follow the <a href="https://cwiki.apache.org/confluence/display/INFRA/Project+Onboarding+Instructions+for+Develocity" target="_blank">Project Onboarding Instructions for Develocity</a>, and open an Infra Jira ticket if you run into problems.</p>
+<p>Maven projects that do not use Develocity can still skip unchanged modules with the <a href="https://maven.apache.org/extensions/maven-build-cache-extension/" target="_blank">Apache Maven Build Cache Extension</a>. Gradle's own <a href="https://docs.gradle.org/current/userguide/build_cache.html" target="_blank">build cache</a> does the same for Gradle builds.</p>
+<p>For other build systems, <a href="https://yetus.apache.org/" target="_blank">Apache Yetus</a> can work out which modules a patch touches and test only those.</p>
+<h3 id="canary">Replace post-merge runs with scheduled canary builds<a class="headerlink" href="#canary" title="Permanent link">&para;</a></h3>
+<p>Many workflows run the full CI suite again on every push to <code>main</code>, after the pull request has already been tested. On a busy repository that is one full run per merged pull request, often within minutes of each other, and each run tests code that its pull request run has already covered.</p>
+<p>Instead, you can drop <code>main</code> from the <code>push</code> trigger and run the full suite on a schedule: a "canary" build. However many pull requests are merged in between, the canary runs at a fixed rate, and it is still the safety net for anything that selective tests skipped on a pull request. Add <code>workflow_dispatch</code>, so a maintainer can start a canary by hand, for example to check a fix.</p>
+<pre><code class="language-yaml">on:
+  schedule:
+    # Full run on main four times a day, off the top of the hour.
+    - cron: '58 1,7,13,19 * * *'
+  pull_request:
+  push:
+    # Release branches change rarely, so they can still build on every push.
+    branches:
+      - 'v[0-9]+-[0-9]+-test'
+  workflow_dispatch:
+</code></pre>
+<p>Things to plan for:</p>
+<ul>
+<li><strong>Report canary failures.</strong> Nobody watches a scheduled run, so send its failures somewhere people will see them: a mailing list, a chat channel, or an issue. Airflow posts them to Slack.</li>
+<li><strong>Finding the commit that broke <code>main</code> takes longer.</strong> A failing canary covers every pull request merged since the last green one. Run the canary often enough that this stays a short list, and use <code>workflow_dispatch</code> to test a suspect commit.</li>
+<li><strong>Move post-merge jobs to the canary.</strong> Jobs that must run after a merge, such as publishing documentation, refreshing caches or updating constraint files, move to the scheduled run too. Run them only for <code>schedule</code> and <code>workflow_dispatch</code> events in the upstream repository, not in forks.</li>
+<li><strong>With a merge queue, the <code>push</code> run is a duplicate.</strong> If your repository uses GitHub's merge queue, the queue has already tested the exact tree that lands on <code>main</code>, so a run on push repeats it.</li>
+</ul>
+<p>Airflow does not build <code>main</code> on push at all. Its full-matrix canary runs four times a day, alternating between AMD and ARM runners, so each architecture runs twice a day, and release branches build on every push. Airflow reference: the <code>on:</code> triggers and comments in <a href="https://github.com/apache/airflow/blob/main/.github/workflows/ci-amd.yml" target="_blank"><code>ci-amd.yml</code></a> and <a href="https://github.com/apache/airflow/blob/main/.github/workflows/ci-arm.yml" target="_blank"><code>ci-arm.yml</code></a>, and <a href="https://github.com/apache/airflow/pull/66348" target="_blank">apache/airflow#66348</a>, which split the canary between the two architectures.</p>
+<h3 id="smaller-runners">Use smaller runners for small jobs<a class="headerlink" href="#smaller-runners" title="Permanent link">&para;</a></h3>
+<p>Many jobs do very little work: computing a matrix, posting a notification, labelling or closing issues, checking a file name. They do not need a full <code>ubuntu-latest</code> (or <code>ubuntu-24.04</code>, <code>ubuntu-22.04</code>) virtual machine. Run them on <code>runs-on: ubuntu-slim</code>, a much smaller runner type that GitHub schedules from a separate pool, so these jobs start faster at peak times and leave the standard runners for jobs that need them.</p>
+<p><code>ubuntu-slim</code> has significant limits, so check a job against them before you move it:</p>
+<ul>
+<li>1 vCPU and 5 GB of memory, and a small disk.</li>
+<li>A <strong>15-minute</strong> maximum run time.</li>
+<li>It is an unprivileged container, not a VM: there is no Docker daemon, so the job cannot build images, start containers or use Docker container actions.</li>
+<li>A minimal toolset. <code>actions/setup-*</code> actions work, but the system Python is externally managed, so a bare <code>pip install</code> fails.</li>
+</ul>
+<p>A good rule: if a job only moves metadata around, it belongs on <code>ubuntu-slim</code>. If it builds, runs containers, or runs a real test suite, keep it on a standard runner. See GitHub's <a href="https://docs.github.com/en/actions/reference/runners/github-hosted-runners" target="_blank">GitHub-hosted runners reference</a> for the current specification.</p>
+<p>Airflow reference: <a href="https://github.com/apache/airflow/pull/72852" target="_blank">apache/airflow#72852</a> moved its short CI bookkeeping jobs to <code>ubuntu-slim</code>. The <a href="https://github.com/apache/airflow/blob/main/dev/breeze/doc/ci/05_workflows.md#runners" target="_blank">runners section of its CI documentation</a> explains which jobs go where.</p>
+<h3 id="pr-cap">Cap open pull requests per contributor<a class="headerlink" href="#pr-cap" title="Permanent link">&para;</a></h3>
+<p>Every pull request costs a CI run on every push. Some contributors, often using AI tools, open dozens of low-value pull requests at once, and each one keeps drawing on the shared runners.</p>
+<p>You can cap the number of pull requests a user <strong>without write access</strong> may have open in a repository with the <code>creation_cap</code> setting in <code>.asf.yaml</code>. This does not affect committers and other users with write access. See <a href="https://github.com/apache/infrastructure-asfyaml/blob/main/README.md#pr_creation_cap" target="_blank">Pull request creation cap</a> in the <code>.asf.yaml</code> reference for details.</p>
+<pre><code class="language-yaml">github:
+  pull_requests:
+    creation_cap:
+      enabled: true
+      max_open_pull_requests: 5
+</code></pre>
+<p>Airflow agreed a cap of 5 by lazy consensus on its dev list. When it enabled the cap it closed the excess pull requests in a one-time pass: 210 pull requests from 21 contributors. Each closed pull request got a comment asking its author to choose which ones matter most and bring those back. Tell your contributors before you enable the cap, and document what they should do when they reach it.</p>
+<p>Airflow references: <a href="https://github.com/apache/airflow/pull/73469" target="_blank">apache/airflow#73469</a> (the cap), the <a href="https://github.com/apache/airflow/blob/main/contributing-docs/32_open_pull_request_limit.rst" target="_blank">contributor guide for the limit</a>, and the <a href="https://lists.apache.org/thread/pbry9otfdbkr1n85scq3v9mdlp15fgg2" target="_blank">announcement on the dev list</a>.</p>
+<h3 id="fork-ci">Run external contributors' CI in their forks (experimental)<a class="headerlink" href="#fork-ci" title="Permanent link">&para;</a></h3>
+<p><strong>Status: experimental.</strong> Airflow has accepted this design and is starting an opt-in pilot. Findings and reusable recipes will be published here when the pilot ends.</p>
+<p>A fork has its own GitHub Actions quota. When a pull request comes from a contributor without write access, its CI can run in the contributor's fork instead of on the ASF's shared runners. In Airflow's design ("your PR, your CI"):</p>
+<ul>
+<li>CI for a pull request from an external contributor runs in their fork. The pull request shows the fork run's status and links to it.</li>
+<li>The pull request stays in draft until its fork run passes, so maintainers mostly review pull requests that already pass.</li>
+<li>Committers and collaborators' pull requests keep using project CI as before.</li>
+<li>A passing fork run is trusted only when the pull request does not change what CI runs (<code>.github/</code>, the CI tooling and scripts). Such pull requests stay in draft until a maintainer reviews them and runs project CI with a label. Maintainers can use the same label on any pull request they want verified in project CI before merging.</li>
+<li>The gate never falls back to project CI when it cannot decide, and a pull request that edits the workflows to get around the gate is detected and closed.</li>
+</ul>
+<p>Airflow expects this to cut its use of shared runners by about 40%.</p>
+<p>Airflow references: <a href="https://cwiki.apache.org/confluence/spaces/AIRFLOW/pages/451974711/AIP-120+Run+CI+for+external+contributions+in+contributor+forks" target="_blank">AIP-120: Run CI for external contributions in contributor forks</a>, the design and ADR in <a href="https://github.com/apache/airflow/pull/73378" target="_blank">apache/airflow#73378</a>, and the implementation, which starts with <a href="https://github.com/apache/airflow/pull/74819" target="_blank">apache/airflow#74819</a> (the gate), <a href="https://github.com/apache/airflow/pull/74820" target="_blank">#74820</a> (fork-mode selective checks) and <a href="https://github.com/apache/airflow/pull/74822" target="_blank">#74822</a> (reconciler).</p>
+<h3 id="runs-on">Self-hosted runners with RunsOn (experimental)<a class="headerlink" href="#runs-on" title="Permanent link">&para;</a></h3>
+<p><strong>Status: experimental.</strong></p>
+<p>If your project has cloud credits, for example from a targeted donation, you can move its heaviest jobs off the shared runners. <a href="https://runs-on.com" target="_blank">RunsOn</a> starts an ephemeral EC2 instance in <strong>your project's own AWS account</strong> for each job, while GitHub Actions remains the orchestrator. A workflow requests one with a <code>runs-on:</code> label that names the size it needs, for example <code>runs-on=${{ github.run_id }}/cpu=8/ram=32</code>. There is no cluster to operate, both AMD and ARM instances are available, and RunsOn offers a free license to open source projects in exchange for a public acknowledgement. Apache Arrow, Apache DataFusion and ASF Infra already use it.</p>
+<p>Self-hosted runners need Infra's involvement: read <a href="self-hosted-runners.html">Self-hosted runners</a> and open an Infra Jira ticket before you start.</p>
+<p>In Airflow's design:</p>
+<ul>
+<li>Scheduled canary runs, and pushes to and pull requests from <code>apache/airflow</code> branches, run on RunsOn.</li>
+<li>Pull requests from forks stay on GitHub-hosted runners, with a read-only token and no secrets, as before. A committer can opt a fork pull request in with a label.</li>
+<li>When RunsOn or the budget is unavailable, a pull request can be sent back to GitHub-hosted runners with a label, and a repository variable moves every run back without a code change.</li>
+<li>Windows jobs stay on GitHub-hosted runners.</li>
+<li>Self-hosted runners do not become the default for all pull requests until the budget is known to support it.</li>
+</ul>
+<p>Airflow expects this to move at least 40% of its heaviest jobs (the complete and full test runs) off the shared runners.</p>
+<h4 id="runs-on-security">Securing self-hosted runners<a class="headerlink" href="#runs-on-security" title="Permanent link">&para;</a></h4>
+<p>A self-hosted runner gives every job that lands on it compute in your cloud account and whatever that account lets the instance reach. Address each item before you let pull requests run on self-hosted runners.</p>
+<ul>
+<li><strong>The workflow's choice of runner is not a security boundary.</strong> A <code>pull_request</code> run uses the workflow files and scripts from the pull request itself. A pull request from a fork can change the logic your workflow uses to decide which jobs go to self-hosted runners, or put a RunsOn label in <code>runs-on:</code> directly and ask for any instance size. Treat that logic as a routing preference. Enforce the restriction outside the repository, in the RunsOn stack and the cloud account.</li>
+<li><strong>Approval for fork workflows does not close the gap.</strong> Even "Require approval for all external contributors" exempts members of the <code>apache</code> GitHub organization (committers of any ASF project who linked their GitHub account) and the repository's collaborators. Ask Infra to confirm your repository's approval setting, but do not rely on it.</li>
+<li><strong>Restrict what the instance can reach.</strong> Limit the instance role to the cache bucket prefix the jobs need, with no access to RunsOn's configuration bucket. Deny network traffic between runners in the security group, because CI jobs often bind unauthenticated local services on all interfaces. Disable SSH access, and isolate sticky disks between jobs (<code>EnableStickyDiskIsolation</code>).</li>
+<li><strong>Cap cost in the stack, not just in alerts.</strong> Limit the instance types jobs can request and their run time (<code>RunnerMaxRuntime</code>). RunsOn has no instance cap of its own, and its daily budget setting (<code>AppBudgetDailyUsd</code>) only alerts, so use the account's EC2 vCPU quotas as the hard ceiling.</li>
+<li><strong>Consider a separate stack for untrusted code.</strong> Running pull requests from forks on their own stack (in their own account, or with a role that can reach nothing beyond its own cache bucket) is stronger than sharing a stack with the jobs that hold secrets.</li>
+<li><strong>Bind an opt-in label to the reviewed commit.</strong> A label that sends a fork pull request to self-hosted runners would otherwise also cover every later push. Airflow honours the label only while a committer's latest review approves the pull request's current head commit and no committer's request for changes stands. A re-run reuses the labels of its original event, so check the pull request's current labels through the API rather than the event payload.</li>
+<li><strong>Make shared caches tamper-evident.</strong> Every job on the stack can write to the cache bucket, so a pull request's job could overwrite a cached artifact that a later job with secrets restores. Name cached blobs by their SHA-256 digest, store the digest through a store the job cannot forge (Airflow uses the ASF stash action, whose restore accepts only artifacts from the same run or branch), and verify the digest before extracting. A tampered blob then only causes a cache miss.</li>
+<li><strong>Keep a way back.</strong> A repository variable that sends every run back to GitHub-hosted runners lets you switch off self-hosted runners quickly if the stack or the credits lapse.</li>
+</ul>
+<p>RunsOn offers two modes. Fleet adds a GitHub runner group restricted to selected workflows, but GitHub matches those workflows by ref, so runs of a pull request (<code>refs/pull/N/merge</code>) never qualify, and Fleet then covers only canary and push runs. Airflow chose Flex on a hardened stack, as described above, which is also how Infra already runs RunsOn for pull requests in other ASF repositories.</p>
+<p>Airflow references: <a href="https://cwiki.apache.org/confluence/x/-JXwGg" target="_blank">AIP-118: Self-hosted runners for Apache Airflow CI</a> and its <a href="https://cwiki.apache.org/confluence/spaces/AIRFLOW/pages/451974672/AIP-118+Appendix+%E2%80%94+evidence+and+implementation+details" target="_blank">appendix with evidence and implementation details</a>, the <a href="https://lists.apache.org/thread/t6cr2gnmnxk3pczoklm954zzy2wcn98d" target="_blank">AIP-119 discussion</a> on cost guardrails, the implementation and its security review in <a href="https://github.com/apache/airflow/pull/74889" target="_blank">apache/airflow#74889</a>, and the earlier full-CI experiment in <a href="https://github.com/apache/airflow/pull/74714" target="_blank">apache/airflow#74714</a>. See also RunsOn's own <a href="https://runs-on.com" target="_blank">documentation</a> on security for public repositories.</p>
+<h3 id="magpie">Audit your workflows with Apache Magpie<a class="headerlink" href="#magpie" title="Permanent link">&para;</a></h3>
+<p><a href="https://magpie.apache.org/" target="_blank">Apache Magpie</a> is a set of skills for the AI agent a maintainer already uses, built at the ASF for the work of running a project. Its <a href="https://github.com/apache/magpie/blob/main/docs/repo-health/README.md" target="_blank">repo-health skills</a> let a PMC audit its repositories without writing anything to them: each skill reads the repository, reports what it found, and proposes changes that the maintainers decide on.</p>
+<p>The <a href="https://github.com/apache/magpie/tree/main/plugins/magpie-repo-health/skills/workflow-optimization" target="_blank"><code>workflow-optimization</code></a> skill uses this page as its source. It reads one repository's workflows, <code>.asf.yaml</code> and Dependabot configuration, and a week of its GitHub Actions run history, and checks them against the techniques above. The result is a prioritised plan: what is broken, what runs more jobs than it needs to, what is quick hygiene, and what needs the community to agree first. Each finding names the file and line it is about and the run numbers behind it, and the plan suggests how to split the changes into pull requests.</p>
+<p>Other repo-health skills cover related checks:</p>
+<ul>
+<li><a href="https://github.com/apache/magpie/tree/main/plugins/magpie-repo-health/skills/workflow-security-audit" target="_blank"><code>workflow-security-audit</code></a> scans workflows with <code>zizmor</code> for injection risks, excessive permissions, unpinned actions and unsafe triggers.</li>
+<li><a href="https://github.com/apache/magpie/tree/main/plugins/magpie-repo-health/skills/ci-runner-audit" target="_blank"><code>ci-runner-audit</code></a> finds retired runner labels, which leave jobs waiting for a runner that never comes.</li>
+<li><a href="https://github.com/apache/magpie/tree/main/plugins/magpie-repo-health/skills/flaky-test-triage" target="_blank"><code>flaky-test-triage</code></a> separates flaky tests from real failures in the run history, so re-runs stop eating runner time.</li>
+<li>Dependency and licence audits that check for vulnerable dependencies and licence compliance.</li>
+</ul>
+<p>To try it, follow the <a href="https://github.com/apache/magpie/blob/main/docs/setup/marketplace-install.md" target="_blank">installation instructions</a>, install the repo-health skills with <code>/plugin install magpie-repo-health@apache-magpie</code>, and ask your agent to review your project's workflows, or run <code>/magpie-repo-health:workflow-optimization</code>.</p>
+<h3 id="help">Getting help<a class="headerlink" href="#help" title="Permanent link">&para;</a></h3>
+<p>If you want advice on which of these fits your project, or you have optimizations of your own that worked, contact Infra via a Jira ticket or by email to <code>users@infra.apache.org</code>. We will add all proven recipes to this page.</p>
+
+        </div>
+      </div>
+    </div>    
+    <!-- footer -->
+    <div class="row">
+      <div class="large-12 medium-12 columns">
+        <p style="font-style: italic; font-size: 0.8rem; text-align: center;">
+          Copyright 2026, <a href="https://www.apache.org/">The Apache Software Foundation</a>, Licensed under the <a href="https://www.apache.org/licenses/LICENSE-2.0">Apache License, Version 2.0</a>.<br/>
+          Apache&reg; and the Apache logo are trademarks of The Apache Software Foundation.
+        </p>
+      </div>
+    </div>
+    <script type="application/ecmascript" src="/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"></script>      </div>
+  </main>
+    <script>hljs.initHighlightingOnLoad();</script>
+  </body>
+</html>
