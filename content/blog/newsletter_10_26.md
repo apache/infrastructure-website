@@ -10,9 +10,9 @@ October's Roundtable was an in-person event during Community Over Code Glasgow. 
 
 Note: the next online Roundtable will be **November 4, 1700 GMT**. We will be trying out a new format. Here are some of the changes:
 
-- The roundtable will run up to 90 minutes, rather than 60.
-- There will be two half-hour presentation slots at each meeting: Infra will select the topic and make the presentation for one, and Tooling will do the same for the other.
-- We will try to keep all questions for the final half hour.
+  - The roundtable will run up to 90 minutes, rather than 60.
+  - There will be two half-hour presentation slots at each meeting: Infra will select the topic and make the presentation for one, and Tooling will do the same for the other.
+  - We will try to keep all questions for the final half hour.
 
 For details about joining one of the online roundtables, and what goes on at one, are at: <a href="https://infra.apache.org/roundtable.html">The Infra Roundtable</a>.
 
@@ -46,18 +46,18 @@ Infra identified and resolved problems related to downstream handling of DKIM (d
 
 The ASF mailing list archive, at lists.apache.org, has had a significant makeover.
 
-*Enhanced security*: 2FA is now required for new sign-ins, using the ASF's official OIDC provider (`mfa.apache.org`). If you have not yet enrolled for 2FA, now is a good time to do so. Initiating a login will start the enrollment process if you have not yet set up 2FA for your account.
+_Enhanced security_: 2FA is now required for new sign-ins, using the ASF's official OIDC provider (`mfa.apache.org`). If you have not yet enrolled for 2FA, now is a good time to do so. Initiating a login will start the enrollment process if you have not yet set up 2FA for your account.
 
-*Favorite lists*: Favorite any lists you like and you can see a compiled activity summary for just those lists, as if they were a single project..
+_Favorite lists_: Favorite any lists you like and you can see a compiled activity summary for just those lists, as if they were a single project..
 
-*UI fixes/changes*:
+_UI fixes/changes_:
 
-- `ctrl+c` now properly copies text instead of opening up the compose dialog.
-- middle mouse button works as intended again, no longer causes a 404 message.
-- The site now has dark and light modes, defaulting to your desktop or browser's display settings.
-- You can switch between the traditional list view and a new forum style view, where +1s count as upvotes on topics, for a more familiar feel for those who may not have the same love for mailing lists as some of us.
-- A new streaming API provides results for huge lists much faster, by streaming the results as you flip through the pages. No more waiting for a minute or three for a list with 25,000 monthly emails to load.
-- Feeds are back! Use your favorite atom feed app to subscribe to list updates.
+  - `ctrl+c` now properly copies text instead of opening up the compose dialog.
+  - middle mouse button works as intended again, no longer causes a 404 message.
+  - The site now has dark and light modes, defaulting to your desktop or browser's display settings.
+  - You can switch between the traditional list view and a new forum style view, where +1s count as upvotes on topics, for a more familiar feel for those who may not have the same love for mailing lists as some of us.
+  - A new streaming API provides results for huge lists much faster, by streaming the results as you flip through the pages. No more waiting for a minute or three for a list with 25,000 monthly emails to load.
+  - Feeds are back! Use your favorite atom feed app to subscribe to list updates.
 
 ### More MFA at the ASF
 
@@ -67,10 +67,10 @@ As we upgrade a service to use MFA, you'll notice that its login screen will cha
 
 Currently, MFA is enabled for:
 
-- <a href="https://releases.apache.org/" target="_blank">Apache Trusted Releases (ATR)</a>
-- <a href="https://lists.apache.org/" target="_blank">Mailing list archives</a>
-- <a href="https://dash.security.apache.org/" target="_blank">Security reports dashboard</a>
-- <a href="https://webmod.apache.org/" target="_blank">WebMod</a>
+  - <a href="https://releases.apache.org/" target="_blank">Apache Trusted Releases (ATR)</a>
+  - <a href="https://lists.apache.org/" target="_blank">Mailing list archives</a>
+  - <a href="https://dash.security.apache.org/" target="_blank">Security reports dashboard</a>
+  - <a href="https://webmod.apache.org/" target="_blank">WebMod</a>
 
 Services that will be enabling MFA in the near future include, but are not limited to:
 
