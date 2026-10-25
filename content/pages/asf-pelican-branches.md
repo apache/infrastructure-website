@@ -5,7 +5,7 @@ In 2019 Infra created ASF-Pelican as a structure and template for projects to us
 
 In 2024, Infra moved from ASF-Pelican to the ASF **Infrastructure Pelican Action** GitHub Action to perform the same functions without being closely tied to BuildBot. The repository for this GHA is <a href="https://github.com/apache/infrastructure-actions/tree/main/pelican" target="_blank">github.com/apache/infrastructure-actions/tree/main/pelican</a>.
 
-The material below is **relevant** to the older Pelican build system and the Pelican GitHub Action.
+The material below is relevant to the **older Pelican build system** and the **Pelican GitHub Action**.
 
 <hr/>
 
@@ -15,15 +15,16 @@ Note: useful information is available from GitHub on <a href="https://docs.githu
 
 ## Creating a feature or preview branch
 
-Replace `feature` with a name of your choice. You can have multiple feature branches, each with its own name and purpose.
+- From `main` create a `preview/feature` branch.
+- Replace `feature` with a name of your choice.
 
-From `main` create a `preview/feature` branch.
+ You can have multiple feature branches, each with its own name and purpose.
 
 ## Building
 
-After you make a commit to your `preview/feature` branch, the Pelican build should happen automatically. You will get an email sent to `id@apache.org`.
+After you make a commit to your `preview/feature` branch, the Pelican build should happen automatically. You will get an email sent to your ASF account:  `YourID@apache.org`.
 
-A successful build will be found at `https://www-feature.staged.apache.org/`.
+You will find a successful build in the feature branch you specified, something like `https://www-feature.staged.apache.org/`.
 
 ## Merging the branch into the trunk
 
@@ -34,10 +35,8 @@ GitHub has further information on <a href="https://docs.github.com/en/github/col
 ## Example
 
 1. Create `preview/bootstrap5`
-
-2. Work on `preview/bootstrap5` branch to update bootstrap to version 5 with preview builds staged at <https://www-bootstrap5.staged.apache.org/>
-
-3. Submit PR to merge `preview/bootstrap` back to `main`
+1. Work on `preview/bootstrap5` branch to update bootstrap to version 5 with preview builds staged at <https://www-bootstrap5.staged.apache.org/>
+1. Submit PR to merge `preview/bootstrap` back to `main`
 
 ## .asf.yaml settings
 
