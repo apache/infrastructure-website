@@ -7,6 +7,8 @@ In 2024, Infra moved from ASF-Pelican to the ASF **Infrastructure Pelican Action
 
 For websites using the ASf-Pelican template, configure the build using the `pelicanconf.py` settings.
 
+<hr/>
+
 ## Pelican theme
 
 ```python
@@ -14,9 +16,7 @@ For websites using the ASf-Pelican template, configure the build using the `peli
 THEME = './theme/apache'
 ```
 
-See [ASF-Pelican theme](asf-pelican-theme.html) for details about the ASF Theme.
-
-**Note**: the following material is under review and will have an update soon.
+See [ASF-Pelican theme](asf-pelican-theme.html) for details about the ASF theme.
 
 ## Plugins
 
@@ -32,10 +32,10 @@ PLUGIN_PATHS = ['./theme/plugins']
 PLUGINS = ['asfgenid', 'asfdata', 'pelican-gfm', 'asfreader']
 ```
 
-1. [Data Model][asfdata]. The `asfdata.py` plugin builds a metadata model that is shared with every page.
-2. [GFM Content][pelican-gfm]. The `pelican-gfm` plugin reads **.md**, **.markdown**, **.mkd**, and **.mdown** files and converts the GFM Markdown into HTML.
-3. [EZMD Content][asfreader]. The `asfreader.py` plugin reads **.ezmd** files, injects data, translates ezt, and converts the GFM Markdown into HTML.
-4. [Generate ID][asfgenid]. The `asfgenid.py` plugin performs a number of enhancements to the HTML.
+1. [Data Model][asfdata]: The `asfdata.py` plugin builds a metadata model that is shared with every page.
+1. [GFM Content][pelican-gfm]: The `pelican-gfm` plugin reads **.md**, **.markdown**, **.mkd**, and **.mdown** files and converts the GFM Markdown into HTML.
+1. [EZMD Content][asfreader]: The `asfreader.py` plugin reads **.ezmd** files, injects data, translates ezt, and converts the GFM Markdown into HTML.
+1. [Generate ID][asfgenid]: The `asfgenid.py` plugin performs a number of enhancements to the HTML.
 
 See [ASF-Pelican build process](asf-pelican-build.html) for the steps signaled. See [plugins](asf-pelican-plugins.html) for the Python code.
 
@@ -60,7 +60,7 @@ READERS = {'html': None}
 IGNORE_FILES = ['README.md','interviews','include']
 ```
 
-# Process
+## Process
 
 Pelican uses <a href="https://docs.getpelican.com/en/latest/plugins.html#list-of-signals" target="_blank">signals</a> as it goes through the process of reading and generating content. It processes pages in no particular order.
 
@@ -211,7 +211,7 @@ The `asfreader.py` plugin is responsible for [reading the source][read], adding 
         return text, metadata
 ```
 
-## EZT Translation
+### EZT Translation
 
 **ezmd** page files are [ezt][ezt] templates that create Markdown and HTML output. See [EZT Syntax][eztsyntax] for the directives.
 
@@ -385,7 +385,7 @@ SEE INSTEAD: [Trademark Resources Site Map][resources].
 </div>
 ```
 
-### Heading code
+## Heading code
 
 Code from `asfgenid.py` uses [BeautifulSoup 4][bs4] to manipulate the rendered HTML. Here is an example:
 
