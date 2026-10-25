@@ -22,7 +22,7 @@ your `@apache.org` address (which forwards to your non-apache email account) a s
   1. decrypting the e-mail - one way to do this is to save the e-mail contents as a text file, e.g. `password.txt`. Open a shell command window, and run the following command:
 
 ```text
-gpg -d password.txt</code>
+gpg -d password.txt
 ```
 
 This should decrypt the file and display the output in the window.
