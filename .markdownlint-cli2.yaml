@@ -1,4 +1,7 @@
-# A list explaining what each rule does is available at https://rumdl.dev/rules/
+# Config for markdownlint-cli2, run by the pre-commit hook in
+# .pre-commit-config.yaml. Rule IDs (MD001 and so on) are listed at
+# https://github.com/DavidAnson/markdownlint/blob/main/doc/Rules.md
+# To turn a rule off, add "MDxxx: false" under config: below.
 
 # Pelican metadata (Title:, license: and so on) is not Markdown.
 frontMatter: "^(?:[A-Za-z][\\w-]*:.*\\r?\\n)+"
