@@ -1,3 +1,5 @@
+# A list explaining what each rule does is available at https://rumdl.dev/rules/
+
 # Pelican metadata (Title:, license: and so on) is not Markdown.
 frontMatter: "^(?:[A-Za-z][\\w-]*:.*\\r?\\n)+"
 
