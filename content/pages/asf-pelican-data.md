@@ -8,6 +8,7 @@ In 2024, Infra moved from ASF-Pelican to the ASF **Infrastructure Pelican Action
 The material below is **relevant** to the older Pelican build system and the Pelican GitHub Action.
 
 <hr/>
+
 ## ASF Data
 
 If your site includes the `asfdata.py` plugin, the Pelican site generator reads instructions from it during initialization and creates shared metadata that is available for all pages. It is particularly critical for **ezmd** pages that contain directives.
@@ -19,17 +20,17 @@ setup:
   data: asfdata.yaml
 ```
 
-- `data` is a .yaml file of metadata instructions.
+`data` is a .yaml file of metadata instructions.
 
 Within the plugin there are three kinds of data transformations:
 
 1. Constant key-value pairs.
-2. Specific sequences that are custom code specific to the datasource:
+1. Specific sequences that are custom code specific to the datasource:
    - Twitter feed uses the Twitter Recent Tweet API
    - Blogs reads a Roller Atom feed in XML
    - ECCN reads export notifications from a .yaml file
-3. Multiple data models derived from a single .yaml or json file:
-   - Committee info, which has Board, Officer, Committee, and Project information
+1. Multiple data models derived from a single .yaml or json file:
+   - Committee info, which has Board, officer, committee, and project information
    - Podling info, which has Incubator podling information
 
 ## Key value metadata
@@ -68,7 +69,7 @@ twitter:
   count: 1
 ```
 
-The key method for reading recent tweets from the API.
+The key method for reading recent tweets from the API:
 
 ```python
 # retrieve the last count recent tweets from the handle.
@@ -90,7 +91,7 @@ def process_twitter(handle, count):
 
 ## Recent blog posts
 
-The main Apache site uses three different blog feeds. Here is how the site calls one, as an example:
+The main ASF site uses three blog feeds. Here is how the site calls one, as an example:
 
 ```yaml
 # used on index.ezmd
@@ -136,10 +137,17 @@ Note the use of the `Blog` class. Its definition is in the code for the next exa
 
 ## ECCN Data Sequences
 
-The ECCN data matrix is records a project's bisnotice emails regarding encryption code.
-It has four layers: projects, products, versions, and controlled sources. This information is primarily of interest to the main Apache site, but may be useful to those working on project websites in showing how the system secures and processes data.
+The ECCN data matrix records a project's bisnotice emails regarding encryption code.
+It has four layers: 
 
-Here are the ASF_DATA directives
+- projects
+- products
+- versions
+- controlled sources.
+
+This information is primarily of interest to the main ASF site, but may be useful to those working on project websites who want to see how the system secures and processes data.
+
+Here are the ASF_DATA directives:
 
 ```yaml
 # used on licenses/exports/index.ezmd
@@ -149,7 +157,7 @@ eccn:
   file: data/eccn/eccnmatrix.yaml
 ```
 
-Here is a sample of the data for the first project.
+Here is a sample of the data for the first project:
 
 ```yaml
 eccnmatrix:
@@ -164,7 +172,7 @@ eccnmatrix:
             source:
               - href: 'https://git-wip-us.apache.org/repos/asf/accumulo.git'
                 manufacturer: ASF
-                why: Designed for use with built in Java encryption libraries
+                why: Designed for use with built-in Java encryption libraries
               - href: 'http://www.bouncycastle.org/download/bcmail-jdk15-137.tar.gz'
                 manufacturer: Bouncy Castle
                 why: General-purpose encryption library for Java 1.5
@@ -186,7 +194,7 @@ eccnmatrix:
   ...
 ```
 
-Here is the custom processing for the ECCN data matrix. Note the wrappers.
+Here is the custom processing for the ECCN data matrix. Note the wrappers:
 
 ```python
 # create sequence of sequences of ASF ECCN data.
@@ -242,7 +250,13 @@ class Blog(wrapper): pass
 
 ## Committee Info
 
-The committee info data contains three data structures: - officers, committees, and the board of directors. Again, this is primarily of interest to the main Apache site.
+The committee info data contains three data structures: 
+
+- officers
+- committees
+- board of directors
+
+  Again, this is primarily of interest to the main ASF site.
 
 From these we derive:
 
@@ -256,7 +270,7 @@ From these we derive:
 
 ### Board of Directors
 
-The Board of Directors sequence is derived first.
+Here is how the system assembles the list of Board members:
 
 ```json
   ...
@@ -294,7 +308,7 @@ The Board of Directors sequence is derived first.
   ...
 ```
 
-Here are the directives
+Here are the directives:
 
 ```yaml
 ci:
@@ -307,7 +321,7 @@ ci:
     path: board.roster
 ```
 
-Here is the Python code used to select the board roster from committee info.
+Here is the Python code used to select the board roster from committee info:
 
 ```python
     # select sub dictionary
@@ -318,7 +332,7 @@ Here is the Python code used to select the board roster from committee info.
             reference = reference[part]
 ```
 
-The following procedure converts a dictionary into a sequence of objects with attributes.
+The following procedure converts a dictionary into a sequence of objects with attributes:
 
 ```python
 # convert a dictionary into a sequence (list)
@@ -340,7 +354,7 @@ def sequence_dict(seq, reference):
 
 ### Officers
 
-How the system assembles the list of Foundation officers.
+How the system assembles the list of Foundation officers:
 
 ```json
     "boardchair": {
@@ -354,7 +368,7 @@ How the system assembles the list of Foundation officers.
     },
 ```
 
-Committees / PMC Chairs. Roster and Reporting is omitted.
+Committees / PMC Chairs. Roster and Reporting are omitted.
 
 ```json
     ...
@@ -388,7 +402,7 @@ Committees / PMC Chairs. Roster and Reporting is omitted.
     ...
 ```
 
-Here are the directives that create metadata models from the above data.
+Here are the directives that create metadata models from the above data:
 
 ```yaml
   officers:
@@ -412,7 +426,7 @@ Here are the directives that create metadata models from the above data.
     dictionary: officers,committees
 ```
 
-We've already seen the code for `path` above. Here is the code that invokes `trim` and `asfid`:
+We've already seen the code for `path`. Here is the code that invokes `trim` and `asfid`:
 
 ```python
     # remove irrelevant keys
@@ -441,7 +455,7 @@ def remove_part(reference, part):
             remove_part(reference[refs], part)
 ```
 
-Here is the code that rearranges the chair or officer (roster) so that the dictionary is flattened before sequencing.
+Here is the code that rearranges the chair or officer (roster) to flatten the dictionary before sequencing.
 
 ```python
 # rotate a roster list singleton into an name and availid 
@@ -455,7 +469,7 @@ def asfid_part(reference, part):
         reference[refs]['availid'] = availid
 ```
 
-The `ci` data model is a dictionary we need to improve the display of officers on the ASF main site.
+The `ci` data model is a dictionary that improves the display of officers on the ASF main site.
 
 ```python
     # this dictionary is derived from sub-dictionaries
@@ -486,7 +500,7 @@ For sequences about projects we first derive a project list from the committee l
     alpha: display_name
 ```
 
-Here's the code that trims non-pmcs from the committee list.
+Here's the code that trims non-pmc members from the committee list:
 
 ```python
 # trim out parts of a data source that don't match part = True
@@ -503,7 +517,7 @@ def where_parts(reference, part):
         del reference[refs]
 ```
 
-This code provides an alphabetical index for the product index derived below.
+This code provides an alphabetical index for the product index:
 
 ```python
 # perform alphabetation. HTTP Server is special and is put before 'A'
@@ -520,7 +534,7 @@ def alpha_part(reference, part):
 
 ### Featured projects
 
-On the front page on the main ASF site we feature a random sample of projects. We also want to display a project's logo.
+On the front page on the main ASF site we feature a random sample of projects, with their logos.
 
 ```yaml
   featured_projs:
@@ -568,7 +582,7 @@ Here is the code to copy a sequence, take a random sample, add the logo (or the 
 
 ```
 
-Here is the detailed check to see if a project or podling logo is available.
+Here is the detailed check to see if a project or podling logo is available:
 
 ```python
 # add logo attribute with HEAD check for existence. If nonexistent use default.
@@ -644,7 +658,7 @@ def split_list(metadata, seq, reference, split):
 Before you code to add a data source, evaluate which of the above patterns it fits.
 
 - Is it a custom pattern as for Twitter, blogs, and ECCN?
-- Can it follow the sequence of directives used for committee iInfo?
+- Can it follow the sequence of directives used for committee info?
 - If it is a sequence of directives, does it need a new one?
 
 ### Adding a custom data source
