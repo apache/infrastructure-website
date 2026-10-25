@@ -119,12 +119,12 @@
               <p>In 2019 Infra created ASF-Pelican as a structure and template for projects to use to build their websites, and for the ASF's own website.</p>
 <p>In 2024, Infra moved from ASF-Pelican to the ASF <strong>Infrastructure Pelican Action</strong> GitHub Action to perform the same functions without being closely tied to BuildBot. The repository for this GHA is <a href="https://github.com/apache/infrastructure-actions/tree/main/pelican" target="_blank">github.com/apache/infrastructure-actions/tree/main/pelican</a>.</p>
 <p>For websites using the ASf-Pelican template, configure the build using the <code>pelicanconf.py</code> settings.</p>
+<hr/>
 <h2>Pelican theme</h2>
 <pre><code class="language-python"># Theme
 THEME = './theme/apache'
 </code></pre>
-<p>See <a href="asf-pelican-theme.html">ASF-Pelican theme</a> for details about the ASF Theme.</p>
-<p><strong>Note</strong>: the following material is under review and will have an update soon.</p>
+<p>See <a href="asf-pelican-theme.html">ASF-Pelican theme</a> for details about the ASF theme.</p>
 <h2>Plugins</h2>
 <p>ASF-Pelican enhances the Pelican environment with plugins. Our environment has its own copy of the <code>asf</code> plugins, and the <code>pelican-build.py</code> script provides <code>pelican-gfm</code>.</p>
 <pre><code class="language-python"># Pelican Plugins
@@ -136,10 +136,10 @@ PLUGIN_PATHS = ['./theme/plugins']
 PLUGINS = ['asfgenid', 'asfdata', 'pelican-gfm', 'asfreader']
 </code></pre>
 <ol>
-<li><a href="#data-model">Data Model</a>. The <code>asfdata.py</code> plugin builds a metadata model that is shared with every page.</li>
-<li><a href="#pelican-gfm">GFM Content</a>. The <code>pelican-gfm</code> plugin reads <strong>.md</strong>, <strong>.markdown</strong>, <strong>.mkd</strong>, and <strong>.mdown</strong> files and converts the GFM Markdown into HTML.</li>
-<li><a href="#ezmd-reader">EZMD Content</a>. The <code>asfreader.py</code> plugin reads <strong>.ezmd</strong> files, injects data, translates ezt, and converts the GFM Markdown into HTML.</li>
-<li><a href="#generate-id">Generate ID</a>. The <code>asfgenid.py</code> plugin performs a number of enhancements to the HTML.</li>
+<li><a href="#data-model">Data Model</a>: The <code>asfdata.py</code> plugin builds a metadata model that is shared with every page.</li>
+<li><a href="#pelican-gfm">GFM Content</a>: The <code>pelican-gfm</code> plugin reads <strong>.md</strong>, <strong>.markdown</strong>, <strong>.mkd</strong>, and <strong>.mdown</strong> files and converts the GFM Markdown into HTML.</li>
+<li><a href="#ezmd-reader">EZMD Content</a>: The <code>asfreader.py</code> plugin reads <strong>.ezmd</strong> files, injects data, translates ezt, and converts the GFM Markdown into HTML.</li>
+<li><a href="#generate-id">Generate ID</a>: The <code>asfgenid.py</code> plugin performs a number of enhancements to the HTML.</li>
 </ol>
 <p>See <a href="asf-pelican-build.html">ASF-Pelican build process</a> for the steps signaled. See <a href="asf-pelican-plugins.html">plugins</a> for the Python code.</p>
 <h2>Tree structure</h2>
@@ -159,7 +159,7 @@ READERS = {'html': None}
 # ignore README.md files in the content tree and the interviews and include folders
 IGNORE_FILES = ['README.md','interviews','include']
 </code></pre>
-<h1>Process</h1>
+<h2>Process</h2>
 <p>Pelican uses <a href="https://docs.getpelican.com/en/latest/plugins.html#list-of-signals" target="_blank">signals</a> as it goes through the process of reading and generating content. It processes pages in no particular order.</p>
 <p>Our plugins provide the following activity:</p>
 <table>
@@ -350,7 +350,7 @@ There is a blank line and the rest is the <code>text</code>.</p>
                     text = re.sub(METADATA_RE, new_string, text, count=1)
         return text, metadata
 </code></pre>
-<h2>EZT Translation</h2>
+<h3>EZT Translation</h3>
 <p><strong>ezmd</strong> page files are <a href="https://github.com/gstein/ezt">ezt</a> templates that create Markdown and HTML output. See <a href="https://github.com/gstein/ezt/blob/wiki/Syntax.md">EZT Syntax</a> for the directives.</p>
 <h3>EZT Examples</h3>
 <p>Project list:</p>
@@ -563,7 +563,7 @@ SEE INSTEAD: [Trademark Resources Site Map][resources].
 
 &lt;/div&gt;
 </code></pre>
-<h3>Heading code</h3>
+<h2>Heading code</h2>
 <p>Code from <code>asfgenid.py</code> uses <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.html?highlight=javascript#">BeautifulSoup 4</a> to manipulate the rendered HTML. Here is an example:</p>
 <pre><code class="language-python"># from Apache CMS markdown/extensions/headerid.py - slugify in the same way as the Apache CMS
 def slugify(value, separator):
