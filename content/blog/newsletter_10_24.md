@@ -4,11 +4,11 @@ permalink: newsletter1024 layout: post
 
 **Welcome to *Inside Infra* for October, 2024**
 
-### Dealing with phishing attempts
+## Dealing with phishing attempts
 
 We are seeing a sharp increase in 'phishing attempts', fake emails pretending to come from various ASF groups and committees. Infra has some <a href="https://infra.apache.org/phishing.html" target="_blank">anti-phishing advice</a> to help you avoid falling for these fake messages.
 
-### Infra at Community over Code
+## Infra at Community over Code
 
 Most of the Infrastructure Team attended Community Over Code in Denver, both presenting on infrastructure-related topics and taking part in other discussions.
 
@@ -16,13 +16,13 @@ Most of the Infrastructure Team attended Community Over Code in Denver, both pre
 
 **Drew Foulks**: It was enjoyable to put faces to names and solutions to problems in Denver. Members of many projects felt comfortable just coming to us with their problems, a big difference from just 3 or 4 years ago...
 
-### Roundtable summary
+## Roundtable summary
 
 The Roundtable at Community Over Code Denver was lively, with a great discussion on several topics - how to get more people involved in projects and in the larger ASF community, dealing with spam on Bugzilla, and whether and how to help contributors test third-party integrations.  Participants also suggested topics for future roundtables.
 
 More details are <a href="https://cwiki.apache.org/confluence/display/INFRA/Infra+Roundtable+2024-10-08" target="_blank">here</a>.
 
-### November roundtables
+## November roundtables
 
 There will be **two** roundtables in November, both focusing on dealing with **spam and phishing attempts**. The first one will be **Wednesday, November 6, 1700 UTC**. The second one will be a week later: **November 13, 1000 UTC**. We want to see if a meeting at that time is more convenient for participants from India, Asia, Australia (a wide band of territory!).
 
