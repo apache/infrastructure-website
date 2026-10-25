@@ -192,7 +192,7 @@ Airflow references: <a href="https://cwiki.apache.org/confluence/x/-JXwGg" targe
 
 <h3 id="cancel-merged">Cancel the runs of merged pull requests (proposed)<a class="headerlink" href="#cancel-merged" title="Permanent link">&para;</a></h3>
 
-**Status: proposed.** Airflow is adding this to a scheduled job that already runs every 15 minutes. Results will be added here once it has run for a while.
+**Status: proposed.** Results will be added here once it has been used in production for a while.
 
 Merging a pull request does not stop its `pull_request` runs. A maintainer often merges as soon as the checks they need are green, while slower jobs of the same run are still queued or running. Those jobs keep holding runners for a result nobody reads, because the change is already on its target branch. A concurrency group does not help: the merge does not start a new run in the pull request's group.
 
@@ -201,7 +201,7 @@ A scheduled workflow can cancel them. Every few minutes it lists the repository'
 - **Match runs to pull requests by head.** The `pull_requests` field of a run is empty when the pull request comes from a fork, so match by head repository, branch and commit instead.
 - **Only cancel runs created before the merge.** Workflows triggered by the merge itself, for example on the `closed` event, are meant to run.
 - **Skip heads that an open pull request still uses.** A branch can be reused for a new pull request, and a common branch name such as `main` or `patch-1` has pull requests from many forks, so look at all of them, not only the latest.
-- **Force-cancel what does not stop.** A job that ignores the cancellation keeps its runner. Use the <a href="https://docs.github.com/en/rest/actions/workflow-runs#force-cancel-a-workflow-run" target="_blank">force-cancel endpoint</a> for a run that is still running some time after a normal cancel.
+- **Force-cancel what does not stop.** A job that ignores the cancellation keeps its runner. Use the <a href="https://docs.github.com/en/rest/actions/workflow-runs#force-cancel-a-workflow-run" target="_blank">force-cancel endpoint</a> to cancel a run that continues after a normal cancel.
 
 A minimal version, which needs only `actions: write`:
 
@@ -237,8 +237,6 @@ jobs:
             fi
           done
 ```
-
-Airflow reference: <a href="https://github.com/apache/airflow/pull/75619" target="_blank">apache/airflow#75619</a>, which adds this to its fork CI monitor, together with the force-cancel of runs still going 30 minutes after the merge and a switch to turn it off.
 
 <h3 id="magpie">Audit your workflows with Apache Magpie<a class="headerlink" href="#magpie" title="Permanent link">&para;</a></h3>
 
