@@ -196,45 +196,46 @@ Airflow references: <a href="https://cwiki.apache.org/confluence/x/-JXwGg" targe
 
 Merging a pull request does not stop its `pull_request` runs. A maintainer often merges as soon as the checks they need are green, while slower jobs of the same run are still queued or running. Those jobs keep holding runners for a result nobody reads, because the change is already on its target branch. A concurrency group does not help: the merge does not start a new run in the pull request's group.
 
-A scheduled workflow can cancel them. Every few minutes it lists the repository's unfinished `pull_request` runs and cancels the ones whose pull request has merged. Things to get right:
+A workflow triggered by `push` can cancel them. Merging pushes a commit to the target branch, so the workflow starts right after the merge, looks up the pull request of that commit and cancels its unfinished `pull_request` runs. A `push` run has a token that can write to the base repository, so it can also cancel the runs of pull requests from forks. Things to get right:
 
-- **Match runs to pull requests by head.** The `pull_requests` field of a run is empty when the pull request comes from a fork, so match by head repository, branch and commit instead.
+- **Match runs by the head of the pull request.** The `pull_requests` field of a run is empty when the pull request comes from a fork, so filter the runs by the head commit and head repository of the merged pull request instead.
 - **Only cancel runs created before the merge.** Workflows triggered by the merge itself, for example on the `closed` event, are meant to run.
-- **Skip heads that an open pull request still uses.** A branch can be reused for a new pull request, and a common branch name such as `main` or `patch-1` has pull requests from many forks, so look at all of them, not only the latest.
+- **Skip heads that an open pull request still uses.** The same commit can be the head of another pull request, for example one that targets a different branch.
 - **Force-cancel what does not stop.** A job that ignores the cancellation keeps its runner. Use the <a href="https://docs.github.com/en/rest/actions/workflow-runs#force-cancel-a-workflow-run" target="_blank">force-cancel endpoint</a> to cancel a run that continues after a normal cancel.
 
-A minimal version, which needs only `actions: write`:
+A minimal version, which needs write access only to `actions`. List the branches that your pull requests merge into under `branches`:
 
 ```yaml
 name: Cancel the runs of merged pull requests
 on:
-  schedule:
-    - cron: '7,22,37,52 * * * *'
-  workflow_dispatch:
+  push:
+    branches: [main]
 permissions:
   actions: write
+  contents: read
   pull-requests: read
 jobs:
   cancel:
     runs-on: ubuntu-slim
-    timeout-minutes: 10
+    timeout-minutes: 5
     steps:
       - env:
           GH_TOKEN: ${{ github.token }}
           REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
         run: |
-          for status in queued in_progress; do
-            gh api --paginate "repos/$REPO/actions/runs?event=pull_request&status=$status" \
-              --jq '.workflow_runs[] | [.id, .head_repository.full_name, .head_branch, .head_sha, .created_at] | @tsv'
-          done | while IFS=$'\t' read -r id head_repo branch sha created; do
-            prs=$(gh pr list -R "$REPO" --state all --head "$branch" --limit 1000 \
-              --json state,headRefOid,headRepositoryOwner,mergedAt \
-              --jq "[.[] | select(.headRefOid == \"$sha\" and .headRepositoryOwner.login == \"${head_repo%%/*}\")]")
-            merged_at=$(jq -r '[.[] | select(.state == "MERGED")][0].mergedAt // empty' <<< "$prs")
-            open=$(jq '[.[] | select(.state == "OPEN")] | length' <<< "$prs")
-            if [[ -n "$merged_at" && "$open" == 0 && "$created" < "$merged_at" ]]; then
+          gh api "repos/$REPO/commits/$SHA/pulls" \
+            --jq '.[] | select(.merged_at != null) | [.head.repo.full_name, .head.sha, .merged_at] | @tsv' |
+          while IFS=$'\t' read -r head_repo head_sha merged_at; do
+            open=$(gh pr list -R "$REPO" --state open --search "$head_sha" --json headRefOid \
+              --jq "[.[] | select(.headRefOid == \"$head_sha\")] | length")
+            [[ "$open" == 0 ]] || continue
+            for status in queued in_progress; do
+              gh api --paginate "repos/$REPO/actions/runs?event=pull_request&head_sha=$head_sha&status=$status" \
+                --jq ".workflow_runs[] | select(.head_repository.full_name == \"$head_repo\" and .created_at < \"$merged_at\") | .id"
+            done | while read -r id; do
               gh run cancel "$id" -R "$REPO"
-            fi
+            done
           done
 ```
 
