@@ -2,19 +2,19 @@ Title: ASF Pelican plugins
 license: https://www.apache.org/licenses/LICENSE-2.0
 
 **Note**
-In 2019 Infra created ASF-Pelican as a structure and template for projects to use to build their websites, and for the ASF's own website.
+In 2019, Infra created ASF-Pelican as a structure and template for projects to use to build their websites, and for the ASF's own website.
 
 In 2024, Infra moved from ASF-Pelican to the ASF **Infrastructure Pelican Action** GitHub Action to perform the same functions without being closely tied to BuildBot. The repository for this GHA is <a href="https://github.com/apache/infrastructure-actions/tree/main/pelican" target="_blank">github.com/apache/infrastructure-actions/tree/main/pelican</a>.
 
-The following material is correct for both ASF-Pelican and its replacement.
+The following material is **correct** for both ASF-Pelican and its replacement.
 
 <hr/>
 
-# Plugins
+## Plugins
 
 You can find the available plugins for a site using the ASF-Pelican template in the `themes/plugins` folder of your website's project repository.
 
-# Plugin architecture
+## Plugin architecture
 
 The plugins operate at various points in a Pelican build.
 
@@ -22,7 +22,7 @@ Pelican uses <a href="https://docs.getpelican.com/en/latest/plugins.html#list-of
 
 Here is a high-level review of the sequence of events:
 
-## Pelican settings
+### Pelican settings
 
 Settings for a Pelican build are in your Pelican configuration file, `pelicanconf.py`. Here is where you list the plugins you are using.
 
@@ -31,7 +31,7 @@ PLUGIN_PATHS = ['./theme/plugins']
 PLUGINS = ['asfgenid', 'asfdata', 'pelican-gfm', 'asfreader']
 ```
 
-## Initialization
+### Initialization
 
 At initialization, Pelican reads any ASF_DATA into a metadata dictionary that is available in every page in the site.
 
@@ -63,7 +63,7 @@ ASF_GENID = {
 }
 ```
 
-## Readers (readers_init)
+### Readers (readers_init)
 
 The system sets two important readers at this point. Readers are responsible for transforming page files to HTML and
 providing a metadata dictionary.
@@ -79,7 +79,7 @@ providing a metadata dictionary.
   
   - .ezmd
 
-## Content init (content_object_init)
+### Content init (content_object_init)
 
 This is signaled after a reader has processed the site's content. At this point plugins can review, record, and transform the HTML content.
 
