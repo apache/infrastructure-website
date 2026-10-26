@@ -117,26 +117,28 @@
               Backup policy
           </h1>
               <p>Infra is committed to maintaining backups of critical systems and data for disaster recovery. Infra does not specifically maintain "historical" backups. Changes to ASF data sets are expected to be reflected in SCM commit history as well as email-based records of commits/changes. SCM systems and email are the primary focus of the Infra backup strategy.</p>
-<p>All Infra-managed systems have scheduled nightly file-level and weekly full backups via an automated BackupPC installation, with a retention of approximately 14 days for fulls. <em><strong>Backups are pruned regularly due to space constraints, and are not guaranteed to be nightly depending on bandwidth and backup server capacity.</strong></em></p>
-<p>Project VM backups: Automated backups via BackupPC are provided as a courtesy, however, <em><strong>extra data drives outside the base OS are not backed up due to space and time constraints. Ephemeral data or data sets which generate large numbers of backup errors (transient data, temporary data,) are typically excluded from backup</strong></em>. Contact Infra if you have specific backup needs for your project VM beyond the Infra-provided base operating system: /etc, /home, /var, /usr.</p>
-<p>Foundation Critical systems receive additional nightly rsync/zfs based snapshots which are retained for approximately 30 days in most cases.</p>
-<h4>Databases</h4>
 <ul>
-<li>MySQL and Postgres databases are backed up nightly using a puppet managed tool to /x1/db_dump</li>
-<li>/x1/db_dump is picked up by the rsync or backuppc process</li>
+<li><strong>Infra-managed systems</strong> have scheduled nightly file-level and weekly full backups via an automated BackupPC installation, with a retention of approximately 14 days for full backups. Backups are pruned regularly due to space constraints, and are <strong>not guaranteed to be nightly</strong> due to limitations in bandwidth and backup server capacity.</li>
+<li>Infra provides automated backups via BackupPC of <strong>project VMs</strong> as a courtesy, however, extra data drives outside the base OS are <strong>not</strong> backed up due to space and time constraints. Ephemeral data or data sets which generate large numbers of backup errors (transient data, temporary data,) are typically <strong>excluded</strong> from backup. Contact Infra if you have specific backup needs for your project VM beyond the Infra-provided base operating system: /etc, /home, /var, /usr.</li>
+<li><strong>Foundation-critical systems</strong> receive additional nightly rsync/zfs-based snapshots which are retained for approximately 30 days in most cases.</li>
 </ul>
-<h4>Software repositories</h4>
+<h2>Databases</h2>
 <ul>
-<li>gitbox.a.o (rsync, backuppc, GitHub mirrors).</li>
-<li>svn.a.o (rsync, backuppc, azure DR replica).</li>
-<li>archive.a.o (backuppc).</li>
+<li>MySQL and Postgres databases are backed up nightly to <code>/x1/db_dump</code> using a puppet-managed tool</li>
+<li>The rsync or backuppc procesess picks up <code>/x1/db_dump</code></li>
 </ul>
-<h4>Server logs</h4>
+<h2>Software repositories</h2>
 <ul>
-<li>Ephemeral. retained in <a href="https://www.elastic.co/" target="_blank">Elasticsearch</a> for approximately 90 days, but not guaranteed. Not available outside Infra.</li>
-<li>Compiled statistics available in some cases.</li>
+<li>gitbox.a.o (rsync, backuppc, GitHub mirrors)</li>
+<li>svn.a.o (rsync, backuppc, Azure DR replica)</li>
+<li>archive.a.o (backuppc)</li>
 </ul>
-<h4>Email</h4>
+<h2>Server logs</h2>
+<ul>
+<li>Ephemeral. Retained in <a href="https://www.elastic.co/" target="_blank">Elasticsearch</a> for approximately 90 days, but not guaranteed. Not available outside Infra.</li>
+<li>Compiled statistics are available on request in some cases.</li>
+</ul>
+<h2>Email</h2>
 <ul>
 <li>Raw archives (mbox-vm) (rsync/backuppc)</li>
 <li>qmail source (hermes) (rsync backup + rsync replica)</li>
