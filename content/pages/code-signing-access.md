@@ -14,8 +14,10 @@ The infra team will then request the account creation and (after a few e-mails a
 Release managers can then sign release artifacts via:
 
 - the API, using a tool such as <a href="https://ebourg.github.io/jsign/" target="_blank">Jsign<a/>
-- the standard Windows tools (signtool.exe / certutil.exe) by installing the <a href="https://www.ssl.com/downloads/#cka" target="_blank">eSigner Cloud Key Adapter (CKA)</a>
-- ssl.com's Java based <a href="https://www.ssl.com/guide/esigner-codesigntool-command-guide/" target="_blank">CodeSignTool</a>
+- the standard Windows tools (signtool.exe / certutil.exe) by installing the <a href="https://www.ssl.com/downloads/#cka" target="_blank">eSigner Cloud Key Adapter (CKA)</a>.
+- ssl.com's Java based <a href="https://www.ssl.com/guide/esigner-codesigntool-command-guide/" target="_blank">CodeSignTool</a>. 
 - the eSigner <a href="https://app.esigner.com/" target="_blank">web interface</a>
 
 For the first three options, code signing is performed locally (no need to upload large files, just the hashes are passed to the central signing service).
+
+See also [Using the ssl.com eSigner code signing service](code-signing-use.html).
