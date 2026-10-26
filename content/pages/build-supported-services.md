@@ -126,9 +126,7 @@ Snapshots and staged artifacts do not get synced.
 
 ### Integrations
 
-You can push snapshots via GHA, Buildbot and Jenkins.
-
-Experimental signing and push to Staging (in readiness for a manual promotion to release) is being tested.
+You can push snapshots via GHA, Buildbot and Jenkins; and to Staging for a manual promotion to release.
 
 ### More information
 
