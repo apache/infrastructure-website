@@ -21,6 +21,10 @@ config:
   # Tabs are kept inside code examples.
   MD010:
     code_blocks: false
+  # Authors indent lists and choose their own emphasis markers; neither
+  # changes how the page renders.
+  MD007: false
+  MD049: false
 
   # Existing pages break these rules. Re-enable each one once the pages
   # are cleaned up.
