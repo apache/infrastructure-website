@@ -7,7 +7,7 @@ ASFBot offers many services for Apache projects on Internet Relay Chat (IRC). IR
 
 **Note**: Infra supports ASFBot primarily for use during ASF members' meetings. If projects want to add extensions so that ASFBot can do other things, they need to support those extensions rather than relying on Infra to do so.
 
-## Contents ##
+## Contents
 
 - <a href="#commits">Reporting on repository commits and new Jira tickets</a>
 - <a href="#jiras">Reporting on changes to Jira tickets</a>
@@ -18,7 +18,7 @@ ASFBot offers many services for Apache projects on Internet Relay Chat (IRC). IR
 
 <h2 id="commits">Reporting on repository commits and new Jira tickets<a class="headerlink" href="#commits" title="Permanent link">&para;</a></h2>
 
-ASFBot can report on new commits to your Subversion or Git repository and or report when someone creates, updates, or closes a Jira ticket. You can tailor the ASFBot reports to your individual needs, with multiline logs, compacted paragraphs, coloring, different report styles, etc.
+ASFBot can report on new commits to your Subversion or Git repository and when someone creates, updates, or closes a Jira ticket. You can tailor the ASFBot reports to your team's needs, with multiline logs, compacted paragraphs, coloring, different report styles, etc.
 
 You can subscribe to any repository you like, and get reports on any specific changes you prefer, as long as these changes are publicly available. Subscriptions are <em>tag-based</em>, meaning that any one tag will apply to both Subversion and git commits.</p>
 
@@ -46,23 +46,23 @@ ASFBot passes that message to the intended recipient the next time that person l
 
 <h2 id="meetings">Record-keeping for meetings<a class="headerlink" href="#meetings" title="Permanent link">&para;</a></h2>
 
-ASFBot can keep a record of meetings you hold on IRC and publish these in HTML format with an agenda, actions to be taken and a list of participants. Record keeping is available in channels where logging is enabled. To enable logging, contact Infra.
+ASFBot can keep a record of meetings you hold on IRC and publish these in HTML format with an agenda, actions to be taken and a list of participants. Record-keeping is available in channels where logging is enabled. To enable logging, contact Infra.
 
 Record keeping works as follows:
 
 - To initiate a meeting, type `ASFBot: meeting start`.
-- To set an agenda,type `#topic [agenda goes here]` or use the `/topic</` command to change the channel's topic. ASFBot will keep the original topic of the channel in memory, and change it back once the meeting is over.
+- To set an agenda, type `#topic [agenda goes here]` or use the `/topic</` command to change the channel's topic. ASFBot will keep the original topic of the channel in memory, and change it back once the meeting is over.
 - To add information to the meeting summary, type `#info [something here]`.
-- Anything contributed with `[off]` at the beginning will be considered off-the-record and will not become part of the meeting log.
+- Anything contributed with `[off]` at the beginning will be considered off the record and will not become part of the meeting log.
 - To add an action to be taken before the next meeting, type `#action [action]`.
-- To end a meeting and save a summary of it, type `ASFBot: meeting end`. This will end the record keeping and produce an HTML document containing the summary of the meeting and a log of everything participants wrote.
+- To end a meeting and save a summary of it, type `ASFBot: meeting end`. This will end the record-keeping and produce an HTML document containing the summary of the meeting and a log of everything participants wrote.
 - To send an IRC meeting summary as an email to a recipient, type `ASFBot: meeting send your@domain.tld`. You will need to have been granted karma by Infra to perform this task.
 
- ASFBot understands most <a href="https://meetbot.debian.net/Manual.html" target="_blank">meetbot</a> commands, so
+ASFBot understands most <a href="https://meetbot.debian.net/Manual.html" target="_blank">meetbot</a> commands, so
 `#meetingstart` and `#meetingend` will also start and end a recording of a meeting.
 
 For an example of what a meeting summary may look like, check out this record of a <a href="https://comments.apache.org/meetings/couchdb-meeting-16_01_2013-2439.html" target="_blank">CouchDB meeting</a>.
 
 <h2 id="sourcecode">Technical Information About ASFBot<a class="headerlink" href="#sourcecode" title="Permanent link">&para;</a></h2>
 
-The ASFBot <a href="https://svn.apache.org/repos/infra/infrastructure/trunk/projects/asfbot/" target="_blank">source code</a>
+The ASFBot <a href="https://svn.apache.org/repos/infra/infrastructure/trunk/projects/asfbot/" target="_blank">source code</a>.
