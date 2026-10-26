@@ -117,22 +117,22 @@
               ASF Pelican plugins
           </h1>
               <p><strong>Note</strong>
-In 2019 Infra created ASF-Pelican as a structure and template for projects to use to build their websites, and for the ASF's own website.</p>
+In 2019, Infra created ASF-Pelican as a structure and template for projects to use to build their websites, and for the ASF's own website.</p>
 <p>In 2024, Infra moved from ASF-Pelican to the ASF <strong>Infrastructure Pelican Action</strong> GitHub Action to perform the same functions without being closely tied to BuildBot. The repository for this GHA is <a href="https://github.com/apache/infrastructure-actions/tree/main/pelican" target="_blank">github.com/apache/infrastructure-actions/tree/main/pelican</a>.</p>
-<p>The following material is correct for both ASF-Pelican and its replacement.</p>
+<p>The following material is <strong>correct</strong> for both ASF-Pelican and its replacement.</p>
 <hr/>
-<h1>Plugins</h1>
+<h2>Plugins</h2>
 <p>You can find the available plugins for a site using the ASF-Pelican template in the <code>themes/plugins</code> folder of your website's project repository.</p>
-<h1>Plugin architecture</h1>
+<h2>Plugin architecture</h2>
 <p>The plugins operate at various points in a Pelican build.</p>
 <p>Pelican uses <a href="https://docs.getpelican.com/en/latest/plugins.html#list-of-signals" target="_blank">signals</a> at various points.</p>
 <p>Here is a high-level review of the sequence of events:</p>
-<h2>Pelican settings</h2>
+<h3>Pelican settings</h3>
 <p>Settings for a Pelican build are in your Pelican configuration file, <code>pelicanconf.py</code>. Here is where you list the plugins you are using.</p>
 <pre><code class="language-python">PLUGIN_PATHS = ['./theme/plugins']
 PLUGINS = ['asfgenid', 'asfdata', 'pelican-gfm', 'asfreader']
 </code></pre>
-<h2>Initialization</h2>
+<h3>Initialization</h3>
 <p>At initialization, Pelican reads any ASF_DATA into a metadata dictionary that is available in every page in the site.</p>
 <ul>
 <li>The plugin <code>.asfdata.py</code> reads an <code>.asfdata.yaml</code> file and creates the metadata dictionary.</li>
@@ -160,7 +160,7 @@ ASF_GENID = {
     'debug': False
 }
 </code></pre>
-<h2>Readers (readers_init)</h2>
+<h3>Readers (readers_init)</h3>
 <p>The system sets two important readers at this point. Readers are responsible for transforming page files to HTML and
 providing a metadata dictionary.</p>
 <ul>
@@ -180,7 +180,7 @@ providing a metadata dictionary.</p>
 </ul>
 </li>
 </ul>
-<h2>Content init (content_object_init)</h2>
+<h3>Content init (content_object_init)</h3>
 <p>This is signaled after a reader has processed the site's content. At this point plugins can review, record, and transform the HTML content.</p>
 <ul>
 <li>The asfgenid plugin, <code>./asfgenid.py</code>, performs a number of steps. Some of the steps are optional.
