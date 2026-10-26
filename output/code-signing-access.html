@@ -117,21 +117,21 @@
               Requesting access to the code signing service
           </h1>
               <p>The ASF currently uses <a href="https://www.ssl.com/" target="_blank">ssl.com</a>'s <a href="https://www.ssl.com/esigner/" target="_blank">eSigner</a> to sign JARs and Windows executables.</p>
-<p>To gain access to the service, create a <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank"> Jira ticket</a> with the following information:</p>
+<p>To gain access for your project to the service, create a <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank"> Jira ticket</a> with the following information:</p>
 <ul>
 <li>Set the component to <code>code signing</code></li>
 <li>The name of the PMC requesting the code signing service</li>
 <li>The Apache IDs of the committer(s) who will act as release managers</li>
 </ul>
-<p>The infra team will then request the account creation and (after a few e-mails and configuring a OTP token) you will have an account that lets you access the service. Each PMC member must have their own account to access the service.</p>
+<p>The infra team will then request the account creation and (after a few e-mails and configuring an OTP token) you will have an account that lets you access the service. Each PMC member must have their own account to access the service.</p>
 <p>Release managers can then sign release artifacts via:</p>
 <ul>
-<li>the API using a tool such as <a href="https://ebourg.github.io/jsign/" target="_blank">Jsign<a></a></a></li>
+<li>the API, using a tool such as <a href="https://ebourg.github.io/jsign/" target="_blank">Jsign<a></a></a></li>
 <li>the standard Windows tools (signtool.exe / certutil.exe) by installing the <a href="https://www.ssl.com/downloads/#cka" target="_blank">eSigner Cloud Key Adapter (CKA)</a></li>
 <li>ssl.com's Java based <a href="https://www.ssl.com/guide/esigner-codesigntool-command-guide/" target="_blank">CodeSignTool</a></li>
 <li>the eSigner <a href="https://app.esigner.com/" target="_blank">web interface</a></li>
 </ul>
-<p>For the first three options, the code signing is performed locally (no need to upload large files, just the hashes are passed to the central signing service).</p>
+<p>For the first three options, code signing is performed locally (no need to upload large files, just the hashes are passed to the central signing service).</p>
 
         </div>
       </div>
