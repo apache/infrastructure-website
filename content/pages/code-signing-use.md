@@ -3,16 +3,16 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 ## Transition to ssl.com
 
-The ASF used Symantec's Secure App Service to provide Windows and JAR code signing functionality from 2014 to 2019 and DigiCert ONE from 2019 to 2024.
-In 2024 the ASF moved to the ssl.com eSigner service.
-All new signing must be via the ssl.com eSigner service.
+The ASF used Symantec's Secure App Service to provide Windows and JAR code signing functionality from 2014 to 2019, and DigiCert ONE from 2019 to 2024. In 2024 the ASF moved to the ssl.com eSigner service.
 
-If you require assistance migrating to the ssl.com eSigner service, please open an <a href="https://issues.apache.org/jira/browse/INFRA">INFRA Jira ticket</a> and select code signing as the component.
+All new signing **must** be via the ssl.com eSigner service.
+
+If you require assistance migrating to the ssl.com eSigner service, please open an <a href="https://issues.apache.org/jira/browse/INFRA">INFRA Jira ticket</a> and select `code signing` as the component.
 
 ## ssl.com eSigner
 
-ssl.com's eSigner service supports a range of signing tools and formats.
-For the full details see the [eSigner documentation](https://www.ssl.com/guide/remote-ev-code-signing-with-esigner).
+ssl.com's eSigner service supports a range of signing tools and formats. For full details see the <a href="https://www.ssl.com/guide/remote-ev-code-signing-with-esigner" target="_blank">eSigner documentation</a>.
+
 Whichever signing option you choose, you will need to complete four steps:
 
 1. Obtain an ssl.com account
@@ -20,49 +20,54 @@ Whichever signing option you choose, you will need to complete four steps:
 1. Install the OS integration for your chosen OS (Windows or Linux)
 1. Configure your chosen signing tool
 
-**Note**: The ASF has to pay for each signature using a signing certificate. Using Jenkins to build and sign **releases** using eSigner fine. Signing every single **CI build** is not necessary and can become expensive for the Foundation. Please make sure your build process only involves signing certificates for release candidates.
+**Note**: The ASF has to pay for each signature using a signing certificate. 
+
+- Using Jenkins to build and sign **releases** using eSigner is **fine**.
+- Signing every single **CI build** is **not necessary** and can become expensive for the Foundation. Please make sure your build process only involves signing certificates for release candidates.
 
 ### Step 1: Obtaining an ssl.com account
 
-Adding a new release manager needs to be performed by the infrastructure team. Please open an <a href="https://issues.apache.org/jira/browse/INFRA">INFRA Jira ticket</a> and select code signing as the component.
+Adding a new release manager needs to be performed by the infrastructure team. Open an <a href="https://issues.apache.org/jira/browse/INFRA" target="_blank">INFRA Jira ticket</a> and select `code signing` as the component.
 
-When the infrastructure team creates your account you will receive an email to your ASF email address.
-You will be asked for a user name and password.
-Use your ASF email address as the user name (if you enter anything else it should be ignored and your ASF email used anyway) and provide a secure password.
+When the infrastructure team creates your account you will receive an email to your ASF email address. You will be asked for a user name and password. **Use your ASF email address** as the user name (if you enter anything else it should be ignored and your ASF email used anyway) and provide a secure password.
 
-It is recommended that you enabled 2FA for your account (Dashboard -> manage 2FA).
-Note: The 2FA you configure here for account access is not the same as the 2FA you are required to configure later in these instructions to use eSigner.
+We recommend that you enable two-factor authentication (2FA) for your account (Dashboard -> manage 2FA).
+
+**Note**: The 2FA you configure here for account access is not the same as the 2FA you are required to configure later in these instructions to use eSigner.
 
 You may be prompted to verify your account. It is not necessary to do this.
 
-You will see a message saying you have been invited to enroll for eSigner for the given certificate.
-You should click yes to accept the invitation.
+You will see a message saying you have been invited to enroll for eSigner for the given certificate. Click `yes` to accept the invitation.
 
 ### Step 2: Obtaining credentials for code signing
 
-Whatever you need to sign and however you choose to sign it, you need to create 2FA credentials for eSigner.
-You create these via the ssl.com web interface.
-Depending on your chosen signing method, you will need either to configure 2FA using the QR code provided or make a note of the base 64 encoded secret code.
+Whatever you need to sign and however you choose to sign it, you need to create 2FA credentials for eSigner. You create these via the ssl.com web interface.
 
-1. Log on to [ssl.com](https://www.ssl.com/).
-1. On your Dashboard, there should be a single certificate listed under esigner enrolled orders. Click on it to take you to the certificate page.
-1. On the right-hand side you will see a prompt to set up a pin. Provide a pin and click "create PIN". You should be shown a QR code and a secret code. Note that the warning that the QR code wll only be shown once is incorrect. You can always view the QR code and secret code by providing your pin on this page.
+Depending on your chosen signing method, you will need either to configure 2FA using the QR code provided, or make a note of the base 64 encoded secret code.
+
+1. Log into <a href="https://www.ssl.com/" target="_blank">ssl.com</a>.
+1. On your Dashboard, there should be a single certificate listed under `esigner enrolled orders`. Click it to open the certificate page.
+1. On the right-hand side you will see a prompt to set up a pin. Provide a pin and click `create PIN`. You should see a QR code and a secret code. Note that the warning that the QR code wll only be shown once is **incorrect**. You can always view the QR code and secret code by providing your pin on this page.
 
 ### Step 3: Install the OS integration
 
-#### None
+#### JSign
 
 If you use JSign, you can skip this step.
 
 #### Windows integration
 
-To sign Windows binaries with the ASF code signing certificate using signtool.exe and/or view the ASF code signing certificate using certutil.exe you will need to install the eSigner Cloud Key Adapter (CKA).
+To sign Windows binaries with the ASF code signing certificate using signtool.exe, or to view the ASF code signing certificate using certutil.exe, you will need to install the eSigner Cloud Key Adapter (CKA).
+
 There are two configuration options for eSigner CKA: manual code signing and automated code signing.
 
-For manual code signing you must configure an authenticator app for 2FA for eSigner using the QR code and you will be required to provide your ssl.com username and password along with a OTP from your authenticator app every time you sign a file.
-For automated code signing you create a local file that contains you ssl.com username and password along with the 2FA secret code (not the PIN) and code signing will not require any additional input when you sign a file.
+- For **manual code signing** you must configure an authenticator app for 2FA for eSigner using the QR code proviced, and you will be required to provide your ssl.com username and password along with a OTP from your authenticator app every time you sign a file.
+- For **automated code signing** you create a local file that contains your ssl.com username and password along with the 2FA secret code (not the PIN), and code signing will not require any additional input when you sign a file.
 
-The eSigner documentation provides step by step instructions on configuring both [manual code signing](https://www.ssl.com/how-to/automate-ev-code-signing-with-signtool-or-certutil-esigner/#manual-code-signing) and [automated code signing](https://www.ssl.com/how-to/automate-ev-code-signing-with-signtool-or-certutil-esigner/#automated-code-signing).
+The eSigner documentation provides step by step instructions on configuring
+
+- <a href="https://www.ssl.com/how-to/automate-ev-code-signing-with-signtool-or-certutil-esigner/#manual-code-signing" target="_blank">manual code signing
+- <a href="https://www.ssl.com/how-to/automate-ev-code-signing-with-signtool-or-certutil-esigner/#automated-code-signing" target="_blank">automated code signing</a>
 
 #### Linux integration
 
@@ -76,7 +81,7 @@ The eSigner documentation provides step by step instructions on configuring both
 
 #### Signing on Windows binaries on Windows or Linux with JSign 4.0+ Ant task
 
-1. Make the JSign JAR from [Maven Central](https://search.maven.org/artifact/net.jsign/jsign) available to Ant.
+1. Make the JSign JAR from <a href="https://search.maven.org/artifact/net.jsign/jsign" target="_blank">Maven Central</a> available to Ant.
 1. The eSigner specific properties for the JSign task in Ant should be as follows:
 
           storetype=ESIGNER
@@ -93,13 +98,18 @@ The eSigner documentation provides step by step instructions on configuring both
 1. Install jsign `sudo dpkg --install jsign_4.0_all.deb`.
 1. You should then be able to sign with:
 
-        jsign --storetype ESIGNER --alias d97c5110-c66a-4c0c-ac0c-1cd6af812ee6 --storepass "<ssl.com user name>|<ssl.com password>" --keypass "<ssl.com eSigner secret code (not the PIN)>" --tsaurl="http://ts.ssl.com" --tsmode RFC3161 --alg SHA256 application.exe
+```
+jsign --storetype ESIGNER --alias d97c5110-c66a-4c0c-ac0c-1cd6af812ee6 --storepass "<ssl.com user name>|<ssl.com password>" --keypass "<ssl.com eSigner secret code (not the PIN)>" --tsaurl="http://ts.ssl.com" --tsmode RFC3161 --alg SHA256 application.exe
+```
 
 #### Signing Windows binaries on Windows using signtool.exe
 
-The eSigner documentation provides step by step instructions on configuring and using both [manual code signing](https://www.ssl.com/how-to/automate-ev-code-signing-with-signtool-or-certutil-esigner/#manual-code-signing) and [automated code signing](https://www.ssl.com/how-to/automate-ev-code-signing-with-signtool-or-certutil-esigner/#automated-code-signing).
+The eSigner documentation provides step by step instructions on using
 
-If you opt to use automated code signing it is recommended that you remove the Master Key File from you system when not being used either by deleting it and recreating it when required or by moving it to off-line storage (e.g. USB key) that is stored securely.
+- <a href="https://www.ssl.com/how-to/automate-ev-code-signing-with-signtool-or-certutil-esigner/#manual-code-signing" target="_blank">manual code signing
+- <a href="https://www.ssl.com/how-to/automate-ev-code-signing-with-signtool-or-certutil-esigner/#automated-code-signing" target="_blank">automated code signing</a>
+
+If you opt to use automated code signing we recommend that you remove the **Master Key File** from you system when you are not using it, either by deleting it and recreating it when required or by moving it to off-line storage (e.g. USB key) that you keep in a safe place.
 
 #### Other signing formats, tools and operating systems
 
