@@ -18,6 +18,7 @@ Some of these techniques are experiments that Airflow is exploring. Treat them a
 | [Cap open pull requests per contributor](#pr-cap) | In production | 210 PRs from 21 contributors closed in the first pass |
 | [Run external contributors' CI in their forks](#fork-ci) | **Experimental** | Expected to cut shared-runner use by about 40% |
 | [Self-hosted runners with RunsOn](#runs-on) | **Experimental** | Expected to move at least 40% of the heaviest jobs off shared runners |
+| [Cancel the runs of merged pull requests](#cancel-merged) | **Proposed** | Stops runs that keep going after their pull request has merged |
 
 <h3 id="basics">Start with the basics<a class="headerlink" href="#basics" title="Permanent link">&para;</a></h3>
 
@@ -188,6 +189,55 @@ A self-hosted runner gives every job that lands on it compute in your cloud acco
 RunsOn offers two modes. Fleet adds a GitHub runner group restricted to selected workflows, but GitHub matches those workflows by ref, so runs of a pull request (`refs/pull/N/merge`) never qualify, and Fleet then covers only canary and push runs. Airflow chose Flex on a hardened stack, as described above, which is also how Infra already runs RunsOn for pull requests in other ASF repositories.
 
 Airflow references: <a href="https://cwiki.apache.org/confluence/x/-JXwGg" target="_blank">AIP-118: Self-hosted runners for Apache Airflow CI</a> and its <a href="https://cwiki.apache.org/confluence/spaces/AIRFLOW/pages/451974672/AIP-118+Appendix+%E2%80%94+evidence+and+implementation+details" target="_blank">appendix with evidence and implementation details</a>, the <a href="https://lists.apache.org/thread/t6cr2gnmnxk3pczoklm954zzy2wcn98d" target="_blank">AIP-119 discussion</a> on cost guardrails, the implementation and its security review in <a href="https://github.com/apache/airflow/pull/74889" target="_blank">apache/airflow#74889</a>, and the earlier full-CI experiment in <a href="https://github.com/apache/airflow/pull/74714" target="_blank">apache/airflow#74714</a>. See also RunsOn's own <a href="https://runs-on.com" target="_blank">documentation</a> on security for public repositories.
+
+<h3 id="cancel-merged">Cancel the runs of merged pull requests (proposed)<a class="headerlink" href="#cancel-merged" title="Permanent link">&para;</a></h3>
+
+**Status: proposed.** Results will be added here once it has been used in production for a while.
+
+Merging a pull request does not stop its `pull_request` runs. A maintainer often merges as soon as the checks they need are green, while slower jobs of the same run are still queued or running. Those jobs keep holding runners for a result nobody reads, because the change is already on its target branch. A concurrency group does not help: the merge does not start a new run in the pull request's group.
+
+A workflow triggered by `push` can cancel them. Merging pushes a commit to the target branch, so the workflow starts right after the merge, looks up the pull request of that commit and cancels its unfinished `pull_request` runs. A `push` run has a token that can write to the base repository, so it can also cancel the runs of pull requests from forks. Things to get right:
+
+- **Match runs by the head of the pull request.** The `pull_requests` field of a run is empty when the pull request comes from a fork, so filter the runs by the head commit and head repository of the merged pull request instead.
+- **Only cancel runs created before the merge.** Workflows triggered by the merge itself, for example on the `closed` event, are meant to run.
+- **Skip heads that an open pull request still uses.** The same commit can be the head of another pull request, for example one that targets a different branch.
+- **Force-cancel what does not stop.** A job that ignores the cancellation keeps its runner. Use the <a href="https://docs.github.com/en/rest/actions/workflow-runs#force-cancel-a-workflow-run" target="_blank">force-cancel endpoint</a> to cancel a run that continues after a normal cancel.
+
+A minimal version, which needs write access only to `actions`. List the branches that your pull requests merge into under `branches`:
+
+```yaml
+name: Cancel the runs of merged pull requests
+on:
+  push:
+    branches: [main]
+permissions:
+  actions: write
+  contents: read
+  pull-requests: read
+jobs:
+  cancel:
+    runs-on: ubuntu-slim
+    timeout-minutes: 5
+    steps:
+      - env:
+          GH_TOKEN: ${{ github.token }}
+          REPO: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+        run: |
+          gh api "repos/$REPO/commits/$SHA/pulls" \
+            --jq '.[] | select(.merged_at != null) | [.head.repo.full_name, .head.sha, .merged_at] | @tsv' |
+          while IFS=$'\t' read -r head_repo head_sha merged_at; do
+            open=$(gh pr list -R "$REPO" --state open --search "$head_sha" --json headRefOid \
+              --jq "[.[] | select(.headRefOid == \"$head_sha\")] | length")
+            [[ "$open" == 0 ]] || continue
+            for status in queued in_progress; do
+              gh api --paginate "repos/$REPO/actions/runs?event=pull_request&head_sha=$head_sha&status=$status" \
+                --jq ".workflow_runs[] | select(.head_repository.full_name == \"$head_repo\" and .created_at < \"$merged_at\") | .id"
+            done | while read -r id; do
+              gh run cancel "$id" -R "$REPO"
+            done
+          done
+```
 
 <h3 id="magpie">Audit your workflows with Apache Magpie<a class="headerlink" href="#magpie" title="Permanent link">&para;</a></h3>
 
