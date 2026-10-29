@@ -1,8 +1,7 @@
 Title: Content Moderation Policies
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-This page lists the most common questions and answers surrounding content moderation
-policies at ASF Infrastructure, including, but not limited to:
+This page lists the most common questions and answers surrounding content moderation policies at ASF Infrastructure, including, but not limited to:
 
 - Data Privacy (GDPR, CCPA, CPPA/PIPEDA, etc.)
 - Accidental exposure of credentials or other sensitive data
@@ -12,35 +11,30 @@ The content the Infrastructure team can moderate includes text on ASF web pages,
 
 See also the guidelines for <a href="https://infra.apache.org/mailing-list-moderation" target="_blank">mailing list moderation</a>.
 
-## Personal Data Privacy Requests
+## Personal data privacy requests
 
-Requests regarding exposure of PII (Personal Identifiable Information) **MUST** be sent to our
-Data Privacy Officer at `privacy@apache.org`. For more information on personal data privacy,
-see <https://privacy.apache.org/>.
+Requests regarding exposure of PII (Personal Identifiable Information) **MUST** be sent to our Data Privacy Officer at `privacy@apache.org`. For more information on personal data privacy, visit <a href="https://privacy.apache.org/" target="_blank">privacy.apache.org</a>.
 
 ## Accidental exposure of credentials or company-sensitive data
 
-**TL;DR:** If you or your company experience accidental exposure of sensitive data or credentials in one of the types of content listed above,
-you should always assume that the data is now public, and immediately invalidate those credentials.
+If you or your company experience accidental exposure of sensitive data or credentials in one of the types of content listed above, you should always assume that the data is now public, and immediately invalidate those credentials.
 
-Depending on the context and circumstances of your request, we _may_ be able to remove the
-following items:
+Depending on the context and circumstances of your request, we _may_ be able to remove the following items:
 
 - Specific emails from our mailing list archives*
 - Public comments on PRs/issues*
 - Web pages or packages with compromised data
 
-`*`Removing emails from public archives is not likely to be approved, as propagation of email to multiple hosts and locations makes it
-   virtually impossible to enact.
+`*`Removing emails from public archives is not likely to be approved, as propagation of email to multiple hosts and locations makes it virtually impossible to enact.
 
-We are **not** able to, and will not spend time with the following:
+We are **not** able to do the following, and will not spend time on:
 
-- Deleting pull requests from GitHub (cannot be done)
+- Deleting pull requests from GitHub
 - Deleting LDAP or other governance records that pertain to existing committers to ASF project repositories
 
 ## Dealing with spam
 
-If you are a **mailing list moderator**, see this <a href="https://infra.apache.org/mailing-list-moderation#spam">guidance on spam management</a>.
+If you are a **mailing list moderator**, see this <a href="https://infra.apache.org/mailing-list-moderation#spam" target="_blank">guidance on spam management</a>.
 
 If you have an ASF email account and are receiving what you believe to be spam on it:
 
