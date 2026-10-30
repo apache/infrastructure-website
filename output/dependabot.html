@@ -209,8 +209,8 @@ updates:
 <p>Set the <code>directory</code> field to the location of the manifest file relative to the repository root (for example, <code>"/"</code> or <code>"/frontend"</code>). For GitHub Actions, use <code>"/"</code> (Dependabot knows to look in <code>.github/workflows</code>).</p>
 <h2 id="recommendations">Recommendations<a class="headerlink" href="#recommendations" title="Permanent link">&para;</a></h2>
 <h3 id="update-schedule">Choose an update schedule that fits your project<a class="headerlink" href="#update-schedule" title="Permanent link">&para;</a></h3>
-<p>The right update frequency depends on the size of your project, the number of dependencies, and how often you release. Some projects run Dependabot daily, others weekly or quarterly &mdash; there is no single correct answer. Large, frequently-released projects (for example, Apache Airflow ships ~100 distributions every two weeks) benefit from updating as often as possible and bumping to the highest available versions each time. As the saying goes, "if something is painful, do it more frequently."</p>
-<p>A <code>weekly</code> schedule is a reasonable starting point for many projects, but smaller or less frequently released projects may prefer <code>monthly</code> or even quarterly reviews. If your project has many dependencies, use <strong>groups</strong> to combine related updates into a single pull request:</p>
+<p>The right update frequency depends on the size of your project, the number of dependencies, and how often you release builds. Some projects run Dependabot daily, others weekly or quarterly &mdash; there is no single correct answer. Large, frequently-released projects (for example, Apache Airflow ships ~100 distributions every two weeks) benefit from updating as often as possible and bumping to the highest available versions each time. As the saying goes, "if something is painful, do it more frequently."</p>
+<p>A <code>weekly</code> schedule is a reasonable starting point for many projects, but smaller or less frequently released projects may prefer <code>monthly</code> or even <code>quarterly</code> reviews. If your project has many dependencies, use <strong>groups</strong> to combine related updates into a single pull request:</p>
 <pre><code class="language-yaml">version: 2
 updates:
   - package-ecosystem: "npm"
@@ -222,7 +222,7 @@ updates:
         patterns:
           - "*"
 </code></pre>
-<p>You can also split groups by update type or dependency kind:</p>
+<p>You can also split groups by update type or dependency:</p>
 <pre><code class="language-yaml">    groups:
       minor-and-patch:
         update-types:
@@ -270,7 +270,7 @@ updates:
     cooldown:
       default-days: 4
 </code></pre>
-<p><strong>Note</strong>: Cooldowns apply only to version updates, not to security updates, so critical fixes are never delayed.</p>
+<p><strong>Note</strong>: Cooldowns apply only to version updates, not to security updates, so they never delay critical fixes.</p>
 <h3 id="ignore-versions">Ignore incompatible versions<a class="headerlink" href="#ignore-versions" title="Permanent link">&para;</a></h3>
 <p>Dependabot does not account for the language or runtime version your project targets. It may propose dependency updates that require a newer version of Java, Python, or another runtime than your project supports. Use the <code>ignore</code> option to prevent Dependabot from proposing versions you cannot use.</p>
 <p>For example, if your project still targets Java 8 and a library released version 5.x that requires Java 11+, you can cap updates to the 4.x line:</p>
