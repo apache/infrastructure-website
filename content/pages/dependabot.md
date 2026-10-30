@@ -50,9 +50,9 @@ Set the `directory` field to the location of the manifest file relative to the r
 
 <h3 id="update-schedule">Choose an update schedule that fits your project<a class="headerlink" href="#update-schedule" title="Permanent link">&para;</a></h3>
 
-The right update frequency depends on the size of your project, the number of dependencies, and how often you release. Some projects run Dependabot daily, others weekly or quarterly &mdash; there is no single correct answer. Large, frequently-released projects (for example, Apache Airflow ships ~100 distributions every two weeks) benefit from updating as often as possible and bumping to the highest available versions each time. As the saying goes, "if something is painful, do it more frequently."
+The right update frequency depends on the size of your project, the number of dependencies, and how often you release builds. Some projects run Dependabot daily, others weekly or quarterly &mdash; there is no single correct answer. Large, frequently-released projects (for example, Apache Airflow ships ~100 distributions every two weeks) benefit from updating as often as possible and bumping to the highest available versions each time. As the saying goes, "if something is painful, do it more frequently."
 
-A `weekly` schedule is a reasonable starting point for many projects, but smaller or less frequently released projects may prefer `monthly` or even quarterly reviews. If your project has many dependencies, use **groups** to combine related updates into a single pull request:
+A `weekly` schedule is a reasonable starting point for many projects, but smaller or less frequently released projects may prefer `monthly` or even `quarterly` reviews. If your project has many dependencies, use **groups** to combine related updates into a single pull request:
 
 ```yaml
 version: 2
@@ -67,7 +67,7 @@ updates:
           - "*"
 ```
 
-You can also split groups by update type or dependency kind:
+You can also split groups by update type or dependency:
 
 ```yaml
     groups:
@@ -133,7 +133,7 @@ updates:
       default-days: 4
 ```
 
-**Note**: Cooldowns apply only to version updates, not to security updates, so critical fixes are never delayed.
+**Note**: Cooldowns apply only to version updates, not to security updates, so they never delay critical fixes.
 
 <h3 id="ignore-versions">Ignore incompatible versions<a class="headerlink" href="#ignore-versions" title="Permanent link">&para;</a></h3>
 
