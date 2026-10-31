@@ -8,16 +8,15 @@ In `lists.apache.org` you can browse, search for, and read emails on mailing lis
   - if you are an ASF Member, you can access all ASF mailing lists.
   - if you are not an ASF Member but are on the PMC of a project, you can access, in addition to the public lists, the private lists of that project.
 
-If you have logged in, and depending on your status as noted above, you can respond to email threads and create new messages in the email list you are currently viewing. The user interface does not have controls for these actions; instead, there are shortcut keys:
+If you have logged in, and depending on your status as noted above, you can respond to email threads and create new messages in the email list you are currently viewing. The user interface does not have controls for these actions; instead, there are shortcut keys, which become active when you have chosen a list or a message within that list:
 
 - `H`: Display the help window.
 - `C`: Start a new email thread in the current list.
 - `R`: Reply to the current email thread.
 - `S`: Go to the search bar.
 - `Escape`: Hide modal dialogues or collapse the current thread.
-- In list view:
-  - `right arrow`: Move down the current list to display the next-older bunch of emails.
-  - `left arrow`: Move up the current list to display the next-newer bunch of emails.
+- `right arrow`: Move down the current list to display the next-older bunch of emails.
+- `left arrow`: Move up the current list to display the next-newer bunch of emails.
 
 ## Searching
 
@@ -36,7 +35,7 @@ To display your search options, click the down-arrow at the right of the `search
 
 ## If the email you sent does not appear
 
-The email system does not use what is in the `From` field; instead it looks at the envelope `sender`, so it is important to make sure you are using an account that appears in your LDAP record when you compose email intended for an ASF list.
+The email system does not use what is in the `From` field; instead it looks at the envelope `sender`, so make sure you are using an account that appears in your LDAP record when you compose email intended for an ASF list.
 
 You can review and update your LDAP record at <a href="https://selfserve.apache.org/identity.html" target="_blank">selfserve.apache.org/identity.html</a>.
 
