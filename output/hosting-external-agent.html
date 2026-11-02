@@ -123,9 +123,8 @@
 <li>Organizations wanting to donate multiple VMs for Jenkins and/or Buildbot use should email <code>private@infra.apache.org</code> to start discussions.</li>
 </ul>
 <h2>Getting ready to host</h2>
-<p>There are a few things you'll need to know and to adhere to.</p>
 <ul>
-<li>Keep up to date with security patches etc,, the obvious stuff; we may want to be added to root alias for security reporting etc.</li>
+<li>Keep up to date with security patches etc. Infra may want to be added to root alias for security reporting.</li>
 <li>Spec requirements:
 <ul>
 <li>minimum 16GB RAM</li>
@@ -136,14 +135,14 @@
 <li>You must be an ASF Committer.</li>
 <li>You must subscribe to the <code>builds@a.o</code> email list.</li>
 <li>Maintain and provide a link to a public page that lists software you add to your agent.</li>
-<li>Open an INFRA Jira ticket so we can complete your hosting set up when you are completely ready.</li>
+<li>When you are ready, open an INFRA Jira ticket so we can complete your hosting set-up.</li>
 </ul>
-<h3>For Buildbot</h3>
+<h2>For Buildbot</h2>
 <p>Make sure it's a stock, latest buildbot-worker install for your OS variant.</p>
 <p>When you are ready, liaise with <code>root@a.o</code> to negotiate connection credentials. Keep your agent secure and only open the one required port.</p>
-<h3>For Jenkins</h3>
+<h2>For Jenkins</h2>
 <ul>
-<li>Create a Jenkins user and group using /home/jenkins.</li>
+<li>Create a Jenkins user and group using <code>/home/jenkins</code>.</li>
 <li>Add the Jenkins ssh public key into the users' <code>~/.ssh/authorized</code> keys.</li>
 </ul>
 
