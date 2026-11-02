@@ -1,7 +1,7 @@
 Title: Glossary 
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-_This page will hold definitions of frequently-used technical terms._
+_More definitions coming_
 
 - **checksum** - (per the Mirriam-Webster online dictonary) "a sum derived from the bits of a segment of computer data that is calculated before and after transmission or storage to assure that the data is free from errors or tampering."
 - **CTR** - "commit, then review" - Projects following this pattern do not require a second committer to review code before it is committed to the repository. Such projects have a system for reviewing the updated code after each commit to make sure it functions as intended.
