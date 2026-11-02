@@ -119,14 +119,14 @@
               <p>This page documents the policies for using <a href="github-actions-secrets.html">GitHub Actions</a> at the Apache Software Foundation.</p>
 <p>For details on the use of requirement level terms, see the <a href="https://www.ietf.org/rfc/rfc2119.txt" target="_blank">requirements levels</a> standard.</p>
 <p>For additional advice on how to use this feature safely, see <a href="https://cwiki.apache.org/confluence/display/BUILDS/GitHub+Actions+Security" target="_blank">GitHub Actions Security</a>.</p>
-<h3>Dependabot</h3>
+<h2>Dependabot</h2>
 <p>All repositories using GitHub Actions <strong>must</strong> have automatic dependency management in place using one of these tools:</p>
 <ul>
 <li><a href="https://docs.github.com/en/code-security/tutorials/secure-your-dependencies/dependabot-quickstart-guide" target="_blank">GitHub Dependabot</a> for the <a href="https://docs.github.com/en/code-security/reference/supply-chain-security/supported-ecosystems-and-repositories#github-actions" target="_blank"><code>github-actions</code> ecosystem</a></li>
 <li><a href="https://docs.renovatebot.com/getting-started/running/#forking-renovate-app" target="_blank">Forking Renovate</a> using the <a href="https://docs.renovatebot.com/modules/manager/github-actions/" target="_blank">GitHub actions manager</a></li>
 </ul>
 <p>See the <a href="dependabot.html">Dependabot</a> page for how to configure it, including <a href="dependabot.html#group-security-updates">grouping security updates</a> so that a burst of advisories does not turn into a burst of CI runs.</p>
-<h3>Resource use</h3>
+<h2>Resource use</h2>
 <p>Due to misconfigurations in their builds, some projects have been using unsupportable numbers of <a href="github-actions-secrets.html">GitHub Actions</a>. As part of fixing this situation, Infra has established a policy for GitHub Actions use:</p>
 <ul>
 <li>All workflows&nbsp;<strong>MUST</strong>&nbsp;have a job concurrency level less than or equal to 20. This means a workflow cannot have more than 20 jobs running at the same time across all matrices.</li>
@@ -137,9 +137,9 @@
 <p>Projects whose builds consistently cross the maximum use limits will lose their access to GitHub Actions until they fix their build configurations.</p>
 <p><strong>Note</strong>: Projects should review these recommended practices from Git: <a href="https://cwiki.apache.org/confluence/spaces/INFRA/pages/430408443/GitHub+Actions+Recommended+Practices" target="_blank">cwiki.apache.org/confluence/spaces/INFRA/pages/430408443/GitHub+Actions+Recommended+Practices</a>.</p>
 <p>Runners are a shared resource, so a project can slow every other project down while staying inside these limits. For why queues build up and what your project can do to reduce its share of the load, see <a href="services.html#github-actions">GitHub Actions</a> on the Services and Tools page.</p>
-<h3>Avoid using the 'pull_request_target' trigger</h3>
+<h2>Avoid using the 'pull_request_target' trigger</h2>
 <p>You <strong>MUST NOT</strong> use <code>pull_request_target</code> as a trigger on <strong>ANY</strong> action that exports <strong>ANY</strong> confidential credentials or tokens such as <code>GITHUB_TOKEN</code> or <code>NPM_TOKEN</code>. An explantion of the risks related to this trigger, and the very limited circumstances in which it may be used, is at <a href="https://cwiki.apache.org/confluence/display/INFRA/GHA-dangers+of+pull_request_target" target="_blank">/cwiki.apache.org/confluence/display/INFRA/GHA-dangers+of+pull_request_target</a>.</p>
-<h4>A safer replacement for <code>pull_request_target</code></h4>
+<h3>A safer replacement for <code>pull_request_target</code></h3>
 <p>From November 2026, the <code>pull_request_target</code> trigger is disabled for ASF repositories. Projects still using it should migrate to the pattern below.</p>
 <p>Projects have used <code>pull_request_target</code> for jobs that need write access in response to a pull request from a fork: commenting on the pull request, labelling it, or publishing something built from it (a website preview, a test report, a coverage summary). You can do all of these without <code>pull_request_target</code> by splitting the work across three workflows so that no privileged job ever runs, or even sees, code from the pull request.</p>
 <ol>
@@ -202,8 +202,8 @@ jobs:
 <li>Never check out, build or execute code from the pull request in the <code>workflow_run</code> workflow. Check out the default branch only.</li>
 <li>Treat the downloaded artifacts as untrusted data, not code. Never execute them, <code>source</code> them or install them. Validate their contents (expected files, sizes, formats) before using them, and extract them outside the workspace so they cannot overwrite your scripts.</li>
 <li>Never interpolate values from the triggering event, such as <code>${{ github.event.workflow_run.head_branch }}</code>, a pull request title or a comment body, into a <code>run:</code> block. Pass only IDs (the run ID, the head commit SHA, a pull request number) through <code>env:</code>, and derive everything else from the GitHub API.</li>
-<li>List the triggering workflows explicitly in <code>workflows:</code> and check <code>github.event.workflow_run.event == 'pull_request'</code>.</li>
-<li>Set <code>permissions: {}</code> at the top level and grant each job only the scopes it needs.</li>
+<li>List the triggering workflows explicitly in <code>workflows:</code> and check <code>github.event.workflow_run.event == 'pull_request'</code>.
+Set <code>permissions: {}</code> at the top level and grant each job only the scopes it needs.</li>
 </ul>
 <p>A complete example that publishes website previews of pull requests, including from forks, is in the Apache Magpie website repository:</p>
 <ul>
@@ -211,7 +211,7 @@ jobs:
 <li><a href="https://github.com/apache/magpie-site/blob/main/.github/workflows/preview-signal.yml" target="_blank">preview-signal.yml</a>: the signal workflow</li>
 <li><a href="https://github.com/apache/magpie-site/blob/main/.github/workflows/preview-publish.yml" target="_blank">preview-publish.yml</a>: the privileged workflow that publishes the preview</li>
 </ul>
-<h5>Finding the pull request number</h5>
+<h4>Finding the pull request number</h4>
 <p>The <code>workflow_run</code> event gives you the build's run ID directly, as <code>github.event.workflow_run.id</code>, but not a usable pull request number. The event's <code>pull_requests</code> array is empty when the pull request comes from a fork, which is the case this pattern exists for. Find the pull request from the commit that was built instead, as the "Find the pull request" step in the privileged workflow above does:</p>
 <ul>
 <li><code>github.event.workflow_run.head_sha</code> is the commit the triggering workflow ran on. GitHub sets it, so the pull request cannot forge it. Pass it to the step through <code>env:</code>, never inline in the <code>run:</code> block, and check that it is 40 hexadecimal characters before using it.</li>
@@ -220,28 +220,24 @@ jobs:
 <li>A merged or closed pull request is no longer open, so for <code>closed</code> events use <code>--state all</code> instead of <code>--state open</code>.</li>
 </ul>
 <p>If your script only has a run ID, for example from a manual re-run, look up the commit first with <code>gh run view "$RUN_ID" --json headSha --jq .headSha</code> and then search for the pull request in the same way.</p>
-<h3>External actions</h3>
+<h2>External actions</h2>
 <p>You <strong>MAY</strong> use all actions internal to the <code>apache/*</code>, <code>github/*</code> and <code>actions/*</code> namespaces without restrictions.</p>
 <p>You <strong>MUST</strong> pin all external actions to the specific git hash (SHA1) of the action that has been reviewed for use by the project. For instance, you <strong>MUST</strong> pin <code>foobar/baz-action@8843d7f92416211de9ebb963ff4ce28125932878</code>.</p>
-<h3>Using self-hosted runners with GitHub Actions</h3>
+<h2>Using self-hosted runners with GitHub Actions</h2>
 <p>See this guidance on <a href="https://cwiki.apache.org/confluence/display/INFRA/GitHub+-+self-hosted+runners" target="_blank">GitHub - self-hosted runners</a>.</p>
-<h3>Pushing commits to repositories</h3>
+<h2>Pushing commits to repositories</h2>
 <p>In general, only committers <strong>MAY</strong> push commits to repositories.</p>
 <p>Automated services such as GitHub Actions (and Jenkins, BuildBot, etc.) <strong>MAY</strong> work on website content and other non-released data such as documentation and convenience binaries.
 Automated services <strong>MUST NOT</strong> push data to a repository or branch that is subject to official release as a software package by the project, <strong>unless</strong> the project secures specific prior authorization of the workflow from Infrastructure.</p>
-<h3>Non-committer contributors and GitHub Actions</h3>
+<h2>Non-committer contributors and GitHub Actions</h2>
 <p>GitHub provides an option to allow a non-committer contributor to use GitHub Actions if a previous pull request by that person has been approved. This raises security concerns, and could cause issues with overall use of GitHub Actions.</p>
 <p>The default for this option is to &ldquo;always require approval for external contributors&rdquo;.</p>
 <p>Projects that have a strong desire to use the &ldquo;only require approval first time&rdquo; option should open a Jira ticket with Infra and provide the following information:</p>
 <ul>
-<li>
-<p>The name(s) of the repo(s) concerned.</p>
-</li>
-<li>
-<p>A link to a mailing list discussion showing a consensus vote by the PMC noting, that they affirm that they will actively monitor their workflows for abuse, and that they will act accordingly if and when abuse is detected. Failure to carry out such monitoring and addressing of abuse may result in the workflow settings being switched back to "always require approval for external contributors".</p>
-</li>
+<li>The name(s) of the repo(s) concerned.</li>
+<li>A link to a mailing list discussion showing a consensus vote by the PMC noting, that they affirm that they will actively monitor their workflows for abuse, and that they will act accordingly if and when abuse is detected. Failure to carry out such monitoring and addressing of abuse may result in the workflow settings being switched back to "always require approval for external contributors".</li>
 </ul>
-<h3>Details on submitting a GitHub Action for approval</h3>
+<h2>Submitting a GitHub Action for approval</h2>
 <p>The README file at <a href="https://github.com/apache/infrastructure-actions" target="_blank">github.com/apache/infrastructure-actions</a> has a detailed guide for how to add or update a GitHub Action.</p>
 
         </div>
