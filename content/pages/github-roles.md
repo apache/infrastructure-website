@@ -1,17 +1,17 @@
 Title: Roles for project GitHub repositories
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-Projects can assign roles to people who want access to the project GitHub repositories. Each role gives a different level of access. For Apache projects, the available roles are:
+Projects can assign roles to people who want access to the project GitHub repositories. Each role gives a different level of access. For ASF projects, the available roles are:
 
-- Read: View or discuss the project code or documentation
-- Triage (see below): Manage issues and pull requests without having write access
-- Write: For contributors who actively push code updates to the repository
+- Read: View or discuss the project code or documentation.
+- Triage (see below): Manage issues and pull requests without having write access.
+- Write: For contributors who actively push code updates to the repository.
 
-See <a href="https://docs.github.com/en/articles/managing-access-to-your-organizations-repositories" target="_blank">Managing access to your organization's repositories'</a>.
+See <a href="https://docs.github.com/en/articles/managing-access-to-your-organizations-repositories" target="_blank">Managing access to your organization's repositories</a>.
 
-### Triage ###
+## Triage
 
-As of September, 2020 Apache projects can assign the GitHub _triage_ role to PMC members, committers, and others with a vote link, to help with management of their code repository.
+ASF projects can assign the GitHub triage role to PMC members, committers, and others with a vote link, to help with management of their code repository.
 
 A person with the triage role can
 
