@@ -16,11 +16,9 @@ Here is how to set up such a mirror.
 
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
 
-Hosting a mirror has a few requirements:
-
-- You should have at least 150 GB of available disk space. The current distribution directory is around 110 GB, but it is constantly expanding.
-- You should not trim or abridge the mirrored tree in any way.
-- You should not modify the mirrored tree in any way. In particular, you should not alter or remove HEADER.html or README.html files. See below for adding information about the mirror host.
+- You should have at least 150 GB of available disk space. The distribution directory is around 486 GB in November 2026, and it is constantly expanding.
+- **Do not** trim or abridge the mirrored tree in any way.
+- **Do not** modify the mirrored tree in any way. In particular, do not alter or remove `HEADER.html` or `README.html` files. See below for adding information about the mirror host.
 
 We encourage you to
 
@@ -38,9 +36,9 @@ We encourage you to
 </Directory>
 ```
 
-**Note** that our HEADER.html files do not contain the HTML preamble, so it is important **not** to enable the `SuppressHTMLPreamble` option.
+**Note** that our `HEADER.html` files do not contain the HTML preamble, so it is important **not** to enable the `SuppressHTMLPreamble` option.
 
-Make sure that the server does not send a `Content-Encoding` header for any of the compressed archives. The hashes and signatures used to check downloads are created for the compressed archives so it is vital that the browser is not told to decompress them. For example, `.tar.gz` and `.tgz` files are compressed TAR files. They should have a suitable Content-Type - e.g. `application/x-gzip` - but no `Content-Encoding` should be sent. If the server incorrectly sends `Content-Encoding: x-gzip` (for example), many browsers will automatically decompress the response. This produces a TAR file which will not verify when checked against the hashes or sigs.
+Make sure that the server does not send a `Content-Encoding` header for any of the compressed archives. The hashes and signatures used to check downloads are created for the compressed archives, so it is vital that the browser is not told to decompress them. For example, `.tar.gz` and `.tgz` files are compressed TAR files. They should have a suitable Content-Type - e.g. `application/x-gzip` - but no `Content-Encoding` should be sent. If the server incorrectly sends `Content-Encoding: x-gzip` (for example), many browsers will automatically decompress the response. This produces a TAR file which will not verify when checked against the hashes or sigs.
 
 <h2 id="techniques">Mirroring techniques<a class="headerlink" href="#techniques" title="Permanent link">&para;</a></h2>
 
@@ -54,7 +52,7 @@ Update your mirror with:
 rsync -avz --delete --safe-links rsync.apache.org::apache-dist /path/to/mirror
 ```
 
-- Don't rsync "on the hour" (`cronjob minute 0`). Pick a random minute between 5 and 55. Never run cronjobs at minute 0 unless the nature of the job requires it.
+- Don't rsync "on the hour" (`cronjob minute 0`). Pick a random minute between 5 and 55. Never run cronjobs at minute 0 unless the nature of the job requires it, as this is the busiest point in the hour.
 - Run the job four times a day; no more than six times a day in any case.
 - Check the output from the rsync job regularly so you can detect problems like lack of disk space or permission issues.
 
@@ -99,7 +97,7 @@ The contents of README.html appear near the bottom of your mirror's home page.
 Please limit the contents of the README.html to something like:
 
 ```text
-This mirror is donated by www.domain.com [url] to support the Apache open source community.
+This mirror is donated by www.domain.com [url] to support the ASF open source community.
 ```
 
 Search engines interpret referring to specific services or products as _PageRank manipulation_. This could hurt your site's ranking.
