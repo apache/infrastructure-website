@@ -128,11 +128,10 @@
 <li><a href="#questions">Questions?</a></li>
 </ul>
 <h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
-<p>Hosting a mirror has a few requirements:</p>
 <ul>
-<li>You should have at least 150 GB of available disk space. The current distribution directory is around 110 GB, but it is constantly expanding.</li>
-<li>You should not trim or abridge the mirrored tree in any way.</li>
-<li>You should not modify the mirrored tree in any way. In particular, you should not alter or remove HEADER.html or README.html files. See below for adding information about the mirror host.</li>
+<li>You should have at least 150 GB of available disk space. The distribution directory is around 486 GB in November 2026, and it is constantly expanding.</li>
+<li><strong>Do not</strong> trim or abridge the mirrored tree in any way.</li>
+<li><strong>Do not</strong> modify the mirrored tree in any way. In particular, do not alter or remove <code>HEADER.html</code> or <code>README.html</code> files. See below for adding information about the mirror host.</li>
 </ul>
 <p>We encourage you to</p>
 <ul>
@@ -148,8 +147,8 @@
   ErrorDocument 404 default
 &lt;/Directory&gt;
 </code></pre>
-<p><strong>Note</strong> that our HEADER.html files do not contain the HTML preamble, so it is important <strong>not</strong> to enable the <code>SuppressHTMLPreamble</code> option.</p>
-<p>Make sure that the server does not send a <code>Content-Encoding</code> header for any of the compressed archives. The hashes and signatures used to check downloads are created for the compressed archives so it is vital that the browser is not told to decompress them. For example, <code>.tar.gz</code> and <code>.tgz</code> files are compressed TAR files. They should have a suitable Content-Type - e.g. <code>application/x-gzip</code> - but no <code>Content-Encoding</code> should be sent. If the server incorrectly sends <code>Content-Encoding: x-gzip</code> (for example), many browsers will automatically decompress the response. This produces a TAR file which will not verify when checked against the hashes or sigs.</p>
+<p><strong>Note</strong> that our <code>HEADER.html</code> files do not contain the HTML preamble, so it is important <strong>not</strong> to enable the <code>SuppressHTMLPreamble</code> option.</p>
+<p>Make sure that the server does not send a <code>Content-Encoding</code> header for any of the compressed archives. The hashes and signatures used to check downloads are created for the compressed archives, so it is vital that the browser is not told to decompress them. For example, <code>.tar.gz</code> and <code>.tgz</code> files are compressed TAR files. They should have a suitable Content-Type - e.g. <code>application/x-gzip</code> - but no <code>Content-Encoding</code> should be sent. If the server incorrectly sends <code>Content-Encoding: x-gzip</code> (for example), many browsers will automatically decompress the response. This produces a TAR file which will not verify when checked against the hashes or sigs.</p>
 <h2 id="techniques">Mirroring techniques<a class="headerlink" href="#techniques" title="Permanent link">&para;</a></h2>
 <h3>Updating</h3>
 <p>We only support <a href="https://rsync.samba.org/" target="_blank">rsync</a> for updating mirrors.</p>
@@ -157,7 +156,7 @@
 <pre><code class="language-bash">rsync -avz --delete --safe-links rsync.apache.org::apache-dist /path/to/mirror
 </code></pre>
 <ul>
-<li>Don't rsync "on the hour" (<code>cronjob minute 0</code>). Pick a random minute between 5 and 55. Never run cronjobs at minute 0 unless the nature of the job requires it.</li>
+<li>Don't rsync "on the hour" (<code>cronjob minute 0</code>). Pick a random minute between 5 and 55. Never run cronjobs at minute 0 unless the nature of the job requires it, as this is the busiest point in the hour.</li>
 <li>Run the job four times a day; no more than six times a day in any case.</li>
 <li>Check the output from the rsync job regularly so you can detect problems like lack of disk space or permission issues.</li>
 </ul>
@@ -189,7 +188,7 @@
 <li>Don't omit the '/' in <code>"/README.html"</code>.</li>
 </ul>
 <p>Please limit the contents of the README.html to something like:</p>
-<pre><code class="language-text">This mirror is donated by www.domain.com [url] to support the Apache open source community.
+<pre><code class="language-text">This mirror is donated by www.domain.com [url] to support the ASF open source community.
 </code></pre>
 <p>Search engines interpret referring to specific services or products as <em>PageRank manipulation</em>. This could hurt your site's ranking.</p>
 <h2 id="testing">Testing your mirror<a class="headerlink" href="#testing" title="Permanent link">&para;</a></h2>
