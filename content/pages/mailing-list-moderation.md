@@ -155,6 +155,13 @@ If you have a troublesome poster, you can un-subscribe them from the list using
 {listname}-unsubscribe-badboy=menace.com@tlp.apache.org
 ```
 
+NOTE: For some mail clients / web mail providers, you may need to add quotes around the left hand side of the '@'
+
+For example, to unsubscribe user 'badboy@menace.com' from dev@tlp.apache.org
+```text
+"dev-unsubscribe-badboy=menace.com"@tlp.apache.org
+```
+
 Send a courtesy email to them to let them know they have been unsubscribed, and why.
 
 Occasionally you will get someone with a poorly-configured spam filter sending automated replies to the list. You can deny their postings using
