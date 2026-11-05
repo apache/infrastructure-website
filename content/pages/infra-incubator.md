@@ -67,7 +67,7 @@ Every project can have a dedicated space on the Apache Confluence wiki. Project 
 
 **Website**
 
-Standard practice is to create a web site repository via <a href="https://selfserve.apache.org/" target="_blank_">SelfServe</a>, and then use .asf.yaml for publishing on `$project.apache.org`.
+Standard practice is to create a web site repository via <a href="https://selfserve.apache.org/" target="_blank_">SelfServe</a>, and then use [.asf.yaml](asf-yaml.html) for publishing on `$project.apache.org`.
 
 ## Contacting Infra
 
