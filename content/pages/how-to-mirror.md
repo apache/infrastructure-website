@@ -113,7 +113,7 @@ If your mirror is not working properly, check the following:
 
 <h2 id="verifying">Verifying the download<a class="headerlink" href="#verifying" title="Permanent link">&para;</a></h2>
 
-If you want to verify that the download is a true mirror of what the ASF project posted, using KEYS and signatures, THIS INFORMATION IS COMING.
+If you want to verify that the download is a true mirror of what the ASF posted, using KEYS and signatures, follow the same procedure you use when verifying the download of any ASF product: <a href="https://www.apache.org/info/verification.html" target="_blank">Verifying Apache Software Foundation Releases</a>.
 
 <h2 id="questions">Questions?<a class="headerlink" href="#questions" title="Permanent link">&para;</a></h2>
 
