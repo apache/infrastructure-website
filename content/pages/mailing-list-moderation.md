@@ -157,7 +157,8 @@ If you have a troublesome poster, you can un-subscribe them from the list using
 
 NOTE: For some mail clients / web mail providers, you may need to add quotes around the left hand side of the '@'
 
-For example, to unsubscribe user 'badboy@menace.com' from dev@tlp.apache.org
+For example, to unsubscribe user ``badboy@menace.com`` from ``dev@tlp.apache.org``
+
 ```text
 "dev-unsubscribe-badboy=menace.com"@tlp.apache.org
 ```
