@@ -1,9 +1,7 @@
 Title: Jira tickets for Infra
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-**Note**: this page is specifically about Jira tickets assigned to the Infrastructure team. General information about Jira and the ASF is at [Jira tickets](jira-guidelines.html).
-
-# Jira tickets for Infra
+**Note**: this page is specifically about Jira tickets assigned to the Infrastructure team. General information about Jira and the ASF is at [Jira guidelines](jira-guidelines.html).
 
 The largest group of Jira tickets assigned to Infra are requests for Infra to perform a task of one sort or another. The next largest category is reports of possible issues in the Infrastructure system.
 
@@ -26,7 +24,7 @@ Here are details about Infra's typical [response times](responsetime.html) to Ji
 
 ## How you should respond
 
-**Note**: Infra does not normally work on a ticket in the status of _Waiting for User_. We normally wait until the status changes to _Waiting for Infra_. Be sure to set the ticket to _Waiting for Infra_ if the ticket needs follow-up!
+**Note**: Infra does not normally work on a ticket in the status of _Waiting for User_. We wait until the status changes to _Waiting for Infra_. Be sure to set the ticket to _Waiting for Infra_ if the ticket needs follow-up!
 
 The reporter of a ticket should check it regularly to see if it has had activity that requires their response.
 
