@@ -98,7 +98,7 @@ The eSigner documentation provides step by step instructions on configuring
 1. Install jsign `sudo dpkg --install jsign_4.0_all.deb`.
 1. You should then be able to sign with:
 
-```
+```txt
 jsign --storetype ESIGNER --alias d97c5110-c66a-4c0c-ac0c-1cd6af812ee6 --storepass "<ssl.com user name>|<ssl.com password>" --keypass "<ssl.com eSigner secret code (not the PIN)>" --tsaurl="http://ts.ssl.com" --tsmode RFC3161 --alg SHA256 application.exe
 ```
 
