@@ -120,10 +120,10 @@ A complete example that publishes website previews of pull requests, including f
 
 The `workflow_run` event gives you the build's run ID directly, as `github.event.workflow_run.id`, but not a usable pull request number. The event's `pull_requests` array is empty when the pull request comes from a fork, which is the case this pattern exists for. Find the pull request from the commit that was built instead, as the "Find the pull request" step in the privileged workflow above does:
 
-* `github.event.workflow_run.head_sha` is the commit the triggering workflow ran on. GitHub sets it, so the pull request cannot forge it. Pass it to the step through `env:`, never inline in the `run:` block, and check that it is 40 hexadecimal characters before using it.
-* `gh pr list --search <sha>` finds pull requests from forks as well as from branches of the repository. The `select(.headRefOid == …)` filter keeps only a pull request whose current head is exactly that commit, because the search also matches pull requests that only contain the commit somewhere in their history.
-* An empty result is normal: it usually means the author pushed again after this build started, and the newer push triggers its own run. Skip the privileged step, as the example's `if:` does.
-* A merged or closed pull request is no longer open, so for `closed` events use `--state all` instead of `--state open`.
+- `github.event.workflow_run.head_sha` is the commit the triggering workflow ran on. GitHub sets it, so the pull request cannot forge it. Pass it to the step through `env:`, never inline in the `run:` block, and check that it is 40 hexadecimal characters before using it.
+- `gh pr list --search <sha>` finds pull requests from forks as well as from branches of the repository. The `select(.headRefOid == …)` filter keeps only a pull request whose current head is exactly that commit, because the search also matches pull requests that only contain the commit somewhere in their history.
+- An empty result is normal: it usually means the author pushed again after this build started, and the newer push triggers its own run. Skip the privileged step, as the example's `if:` does.
+- A merged or closed pull request is no longer open, so for `closed` events use `--state all` instead of `--state open`.
 
 If your script only has a run ID, for example from a manual re-run, look up the commit first with `gh run view "$RUN_ID" --json headSha --jq .headSha` and then search for the pull request in the same way.
 
