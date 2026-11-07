@@ -7,4 +7,4 @@ Because of GitHub Apps' potential to act autonomously, The ASF looks carefully a
 
 ## Adding a GitHub App to the ASF on GitHub
 
-Infra has established <a href="https://cwiki.apache.org/confluence/spaces/INFRA/pages/444334693/Adding+a+GitHub+App+to+the+ASF+GitHub+Organization" target="_blank">guidance</a> for requesting the addition of a GitHub App to the ASF's GitHub presence. 
+Infra has established <a href="https://cwiki.apache.org/confluence/spaces/INFRA/pages/444334693/Adding+a+GitHub+App+to+the+ASF+GitHub+Organization" target="_blank">guidance</a> for requesting the addition of a GitHub App to the ASF's GitHub presence.
