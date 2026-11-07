@@ -196,7 +196,7 @@
 <li>Install jsign <code>sudo dpkg --install jsign_4.0_all.deb</code>.</li>
 <li>You should then be able to sign with:</li>
 </ol>
-<pre><code>jsign --storetype ESIGNER --alias d97c5110-c66a-4c0c-ac0c-1cd6af812ee6 --storepass "&lt;ssl.com user name&gt;|&lt;ssl.com password&gt;" --keypass "&lt;ssl.com eSigner secret code (not the PIN)&gt;" --tsaurl="http://ts.ssl.com" --tsmode RFC3161 --alg SHA256 application.exe
+<pre><code class="language-txt">jsign --storetype ESIGNER --alias d97c5110-c66a-4c0c-ac0c-1cd6af812ee6 --storepass "&lt;ssl.com user name&gt;|&lt;ssl.com password&gt;" --keypass "&lt;ssl.com eSigner secret code (not the PIN)&gt;" --tsaurl="http://ts.ssl.com" --tsmode RFC3161 --alg SHA256 application.exe
 </code></pre>
 <h4>Signing Windows binaries on Windows using signtool.exe</h4>
 <p>The eSigner documentation provides step by step instructions on using</p>
