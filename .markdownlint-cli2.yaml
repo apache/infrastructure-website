@@ -35,3 +35,5 @@ config:
   MD029: false
   MD036: false
   MD046: false
+  # Ignore trailing whitespaces
+  MD009: false
