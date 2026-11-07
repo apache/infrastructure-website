@@ -117,7 +117,7 @@
               How to transition to a new PGP key
           </h1>
               <h2 id="status">Introduction<a class="headerlink" href="#status" title="Permanent link">&para;</a></h2>
-<p>This document is for project <strong>committers</strong> who wish to change the PGP key they use at Apache (for example to sign releases). It explains how to create a new PGP key and break it in, gradually having it replace the old key.</p>
+<p>This document is for project <strong>committers</strong> who wish to change the PGP key they use at the ASF (for example, to sign releases). It explains how to create a new PGP key and break it in, gradually having it replace the old key.</p>
 <h2>Contents</h2>
 <ul>
 <li><a href="#important">Important note</a></li>
@@ -130,7 +130,7 @@
 <p>If your key has been compromised, you <strong>must not</strong> use a transition period as described below. Revoke the compromised key immediately and create a new one. Consider all <a href="/release-signing.html#web-of-trust" target="_blank">web of trust</a> links signed by the old key as suspect. You must establish a completely new set of links.</p>
 <h2 id="motivation">Why replace a key?<a class="headerlink" href="#motivation" title="Permanent link">&para;</a></h2>
 <p>When replacing one uncompromised key with a newer (typically longer) one, using a transition period when both keys are trustworthy and participate in the <a href="/release-signing.html#web-of-trust" target="_blank">web of trust</a> uses <em>trust transitivity</em> to use links to the old key to trust signatures and links created by the new key. During a transition, both keys are trustworthy but you only use the newer one to sign documents and certify links in the web of trust.</p>
-<p>This document describes how to use <a href="openpgp.html">GnuPG</a> to create a new key and manage both keys during this transition period.</p>
+<p>This document describes how to use <a href="https://www.openpgp.org" target="_blank">OpenPGP</a> to create a new key and manage both keys during this transition period.</p>
 <h2 id="single-keyring">Using a single keyring for two keys<a class="headerlink" href="#single-keyring" title="Permanent link">&para;</a></h2>
 <p>It is best to use a single keyring containing both keys.</p>
 <h3 id="generate-new-key">Generate a new key<a class="headerlink" href="#generate-new-key" title="Permanent link">&para;</a></h3>
@@ -139,7 +139,7 @@
 <li>directly in the keyring containing the old key</li>
 <li>in a new keyring, and then transfer the new key to the keyring containing the old key</li>
 </ul>
-<p>To generate a strong <a href="release-signing.html#rsa">RSA key</a> follow <a href="openpgp.html#generate-key">these instructions</a>. If you use a separate keyring, follow <a href="openpgp.html#secret-key-transfer">these instructions</a> to transfer it.</p>
+<p>To generate a strong <a href="release-signing.html#rsa">RSA key</a>, follow <a href="openpgp.html#generate-key">these instructions</a>. If you use a separate keyring, follow <a href="openpgp.html#secret-key-transfer">these instructions</a> to transfer it.</p>
 <p>Both new and old keys should now be contained in the same keyring. Verify this by:</p>
 <pre><code class="language-shell">$ gpg --list-secret-keys  
 

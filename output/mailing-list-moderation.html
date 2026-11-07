@@ -223,6 +223,10 @@ Your message goes here...
 <p>If you have a troublesome poster, you can un-subscribe them from the list using</p>
 <pre><code class="language-text">{listname}-unsubscribe-badboy=menace.com@tlp.apache.org
 </code></pre>
+<p>NOTE: For some mail clients / web mail providers, you may need to add quotes around the left hand side of the '@'</p>
+<p>For example, to unsubscribe user <code>badboy@menace.com</code> from <code>dev@tlp.apache.org</code></p>
+<pre><code class="language-text">"dev-unsubscribe-badboy=menace.com"@tlp.apache.org
+</code></pre>
 <p>Send a courtesy email to them to let them know they have been unsubscribed, and why.</p>
 <p>Occasionally you will get someone with a poorly-configured spam filter sending automated replies to the list. You can deny their postings using</p>
 <pre><code class="language-text">{listname}-deny-subscribe-badposter=menace.com@tlp.apache.org
