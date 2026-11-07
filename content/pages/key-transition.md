@@ -3,9 +3,9 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 <h2 id="status">Introduction<a class="headerlink" href="#status" title="Permanent link">&para;</a></h2>
 
-This document is for project **committers** who wish to change the PGP key they use at Apache (for example to sign releases). It explains how to create a new PGP key and break it in, gradually having it replace the old key.
+This document is for project **committers** who wish to change the PGP key they use at the ASF (for example, to sign releases). It explains how to create a new PGP key and break it in, gradually having it replace the old key.
 
-## Contents ##
+## Contents
 
 <ul>
 <li><a href="#important">Important note</a></li>
@@ -23,7 +23,7 @@ If your key has been compromised, you **must not** use a transition period as de
 
 When replacing one uncompromised key with a newer (typically longer) one, using a transition period when both keys are trustworthy and participate in the <a href="/release-signing.html#web-of-trust" target="_blank">web of trust</a> uses _trust transitivity_ to use links to the old key to trust signatures and links created by the new key. During a transition, both keys are trustworthy but you only use the newer one to sign documents and certify links in the web of trust.
 
-This document describes how to use [GnuPG](openpgp.html) to create a new key and manage both keys during this transition period.
+This document describes how to use <a href="https://www.openpgp.org" target="_blank">OpenPGP</a> to create a new key and manage both keys during this transition period.
 
 <h2 id="single-keyring">Using a single keyring for two keys<a class="headerlink" href="#single-keyring" title="Permanent link">&para;</a></h2>
 
@@ -36,7 +36,7 @@ Generate the new key either:
 - directly in the keyring containing the old key
 - in a new keyring, and then transfer the new key to the keyring containing the old key
 
-To generate a strong [RSA key](release-signing.html#rsa) follow [these instructions](openpgp.html#generate-key). If you use a separate keyring, follow [these instructions](openpgp.html#secret-key-transfer) to transfer it.
+To generate a strong [RSA key](release-signing.html#rsa), follow [these instructions](openpgp.html#generate-key). If you use a separate keyring, follow [these instructions](openpgp.html#secret-key-transfer) to transfer it.
 
 Both new and old keys should now be contained in the same keyring. Verify this by:
 
