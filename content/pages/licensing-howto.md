@@ -3,7 +3,7 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 This is a "how to" guide for Apache Committers assembling `LICENSE` and `NOTICE` files for their project's product.
 
-### Overview
+## Overview
 
 The `LICENSE` file communicates the licensing of all content in an Apache product distribution. It always contains the text of the Apache License, and
 sometimes more information.
@@ -26,15 +26,15 @@ The <a href="https://www.apache.org/legal" target="_blank">complete requirements
 - <a href="#binary">Binary distributions</a>
 - <a href="#example-notice">Example NOTICE file</a>
 
-<h3 id="guiding">Guiding principle<a class="headerlink" href="#guiding" title="Permanent link">&para;</a></h3>
+<h2 id="guiding">Guiding principle<a class="headerlink" href="#guiding" title="Permanent link">&para;</a></h2>
 
 The `LICENSE` and `NOTICE` files must **exactly represent** the contents of the distribution they reside in. Only components and resources that are actually included in a distribution have any bearing on the content of that distribution's `NOTICE` and `LICENSE`.
 
-<h3 id="source-tree-location">Location<a class="headerlink" href="#source-tree-location" title="Permanent link">&para;</a></h3>
+<h2 id="source-tree-location">Location<a class="headerlink" href="#source-tree-location" title="Permanent link">&para;</a></h2>
 
 `LICENSE` and `NOTICE` files belong at the top level of the source tree. ASF prefers that the files have their bare names, but a PMC can opt to call them `LICENSE.txt` and `NOTICE.txt`.
 
-<h3 id="step-by-step">Step-by-step instructions<a class="headerlink" href="#step-by-step" title="Permanent link">&para;</a></h3>
+<h2 id="step-by-step">Step-by-step instructions<a class="headerlink" href="#step-by-step" title="Permanent link">&para;</a></h2>
 
 To assemble `LICENSE` and `NOTICE` files from scratch for products with complex requirements, follow these steps:
 
@@ -43,7 +43,7 @@ To assemble `LICENSE` and `NOTICE` files from scratch for products with complex 
   - Add any <a href="#mod-notice">mandatory</a> legal notifications specific to the IP of your product.
   - For any <a href="#bundled-vs-non-bundled">bundled</a> dependency, consider whether `LICENSE` and/or `NOTICE` need to be modified. **Do not** modify `LICENSE` or `NOTICE` for non-bundled dependencies.
 
-<h3 id="permissive-deps">Bundling permissively-licensed dependencies<a class="headerlink" href="#permissive-deps" title="Permanent link">&para;</a></h3>
+<h2 id="permissive-deps">Bundling permissively-licensed dependencies<a class="headerlink" href="#permissive-deps" title="Permanent link">&para;</a></h2>
 
 Bundling a dependency which is issued under one of the following licenses is straightforward, assuming that license applies uniformly to all files within the dependency:
 
@@ -63,27 +63,27 @@ Under normal circumstances, there is no need to modify `NOTICE` to mention a bun
 
 There are a number of other "permissive" licenses which the ASF Legal Affairs Committee has <a href="https://www.apache.org/legal/resolved.html#category-a" target="_blank"> approved</a> for use. Some of these may require additions to `NOTICE` -- if in doubt, <a href="https://www.apache.org/legal/resolved.html#asking-questions" target="_blank">ask for assistance</a>.
 
-<h3 id="alv2-dep">Bundling an Apache 2-0-licensed dependency<a class="headerlink" href="#alv2-dep" title="Permanent link">&para;</a></h3>
+<h2 id="alv2-dep">Bundling an Apache 2-0-licensed dependency<a class="headerlink" href="#alv2-dep" title="Permanent link">&para;</a></h2>
 
 Assuming that the bundled dependency itself contains no bundled sub-components under other licenses, so the ALv2 applies uniformly to all files, there is no need to modify <code>LICENSE</code>. However, for completeness it is useful to list the products and their versions, as is done for products under other licenses.
 
 If the dependency supplies a <code>NOTICE</code> file, its contents must be analyzed and the relevant portions bubbled up into the top-level <code>NOTICE</code> file.
 
-<h3 id="bundle-asf-product">Bundling other ASF products<a class="headerlink" href="#bundle-asf-product" title="Permanent link">&para;</a></h3>
+<h2 id="bundle-asf-product">Bundling other ASF products<a class="headerlink" href="#bundle-asf-product" title="Permanent link">&para;</a></h2>
 
 It is not necessary to duplicate the line "This product includes software developed at the Apache Software Foundation...", though the ASF copyright line and any other portions of <code>NOTICE</code> must be considered for propagation.
 
-<h3 id="bundled-vs-non-bundled">Bundled vs. non-bundled dependencies<a class="headerlink" href="#bundled-vs-non-bundled" title="Permanent link">&para;</a></h3>
+<h2 id="bundled-vs-non-bundled">Bundled vs. non-bundled dependencies<a class="headerlink" href="#bundled-vs-non-bundled" title="Permanent link">&para;</a></h2>
 
 You must customize `LICENSE` and `NOTICE` files according to the content of the specific distribution they reside within. Do not add to `LICENSE` and `NOTICE` dependencies which are not in the distribution. **Only bundled bits matter.**
 
 Example: If the only difference between `apache-foo-1.0.tgz` and `apache-foo-1.1.tgz` is that one bundles SuperWidget while the other forces users to download SuperWidget separately, `LICENSE` and `NOTICE` may need to be modified to account for the different bundled bits.
 
-<h3 id="deps-of-deps">Dependencies of dependencies<a class="headerlink" href="#deps-of-deps" title="Permanent link">&para;</a></h3>
+<h2 id="deps-of-deps">Dependencies of dependencies<a class="headerlink" href="#deps-of-deps" title="Permanent link">&para;</a></h2>
 
 Dependencies of dependencies (including so-called "transitive dependencies") are no different from first-order dependencies for the purposes of assembling `LICENSE` and `NOTICE`: `LICENSE` and `NOTICE` need only be modified to accommodate them **only if their bits are bundled**.
 
-<h3 id="mod-notice">Modifications to NOTICE<a class="headerlink" href="#mod-notice" title="Permanent link">&para;</a></h3>
+<h2 id="mod-notice">Modifications to NOTICE<a class="headerlink" href="#mod-notice" title="Permanent link">&para;</a></h2>
 
 The `NOTICE` file is reserved for a certain subset of legally required notifications which are not satisfied by either the text of `LICENSE` or the presence of licensing information embedded within the bundled dependency. Aside from Apache-licensed dependencies which supply `NOTICE` files of their own, it is uncommon for a dependency to require additions to `NOTICE`.
 
@@ -93,7 +93,7 @@ It is important to keep `NOTICE` as brief and simple as possible, as each additi
 
 **Do not** add anything to `NOTICE` which is not legally required.
 
-<h3 id="binary">Binary distributions<a class="headerlink" href="#binary" title="Permanent link">&para;</a></h3>
+<h2 id="binary">Binary distributions<a class="headerlink" href="#binary" title="Permanent link">&para;</a></h2>
 
 What applies to canonical source distributions also applies to all redistributions, including binary redistributions:
 
@@ -103,7 +103,7 @@ When assembling binary distributions, it is common to pull in and bundle additio
 
 In any case, the principle remains the same: `LICENSE` and `NOTICE` must **exactly** represent the contents of the distribution they reside in.
 
-<h3 id="example-notice">Example NOTICE file<a class="headerlink" href="#example-notice" title="Permanent link">&para;</a></h3>
+<h2 id="example-notice">Example NOTICE file<a class="headerlink" href="#example-notice" title="Permanent link">&para;</a></h2>
 
 The following is the text of the `NOTICE` file for <a href="https://royale.apache.org/" target="_blank">Apache Royale</a>:
 
