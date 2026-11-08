@@ -18,7 +18,7 @@ Dealing with
 
 See also Infra's general guidelines on <a href="https://infra.apache.org/content-moderation.html" target="_blank">content moderation</a>.
 
-<h3 id="new-mailing-list">How do we create a new mailing list?<a class="headerlink" href="#new-mailing-list" title="Permanent link">&para;</a></h3>
+<h2 id="new-mailing-list">How do we create a new mailing list?<a class="headerlink" href="#new-mailing-list" title="Permanent link">&para;</a></h2>
 
 It is wise to keep the number of mailing lists per codebase the smallest possible to allow the community to reach that critical mass that is necessary to bootstrap a codebase and keep it in good shape.
 
@@ -26,11 +26,13 @@ At the same time, as communities grow, the need for more specialized mailing lis
 
 - Float the idea in the `dev@` or `users@` mailing list.
 - If there seems to be some support for the idea, request a community vote.
-- If the community approves adding a mailing list, the PMC chair or another Apache Member on the PMC can do so through the <a href="https://selfserve.apache.org" target="_blank">ASF Self-Service Platform</a>
+- If the community approves adding a mailing list, the PMC chair or another Apache Member on the PMC can do so through the <a href="https://selfserve.apache.org" target="_blank">ASF Self-Service Platform</a>.
 
-**WARNING**: Creating a user email list can harm a project community if the developers don't pay attention to their users and reply to their emails. One would expect a well-behaving user community to reply to one another in a civil, adult manner that is focused on whatever the list was created for, but it can take time for a community to learn and take to heart such good behavior.
+**WARNING**: Creating a user email list can harm a project community if the developers don't pay attention to their users and reply to messages on that list. 
 
-<h3 id="mailing-list-moderators">How do I change moderators?<a class="headerlink" href="#mailing-list-moderators" title="Permanent link">&para;</a></h3>
+**A note on email etiquette**: One would expect a well-behaving user community to reply to one another in email in a civil, adult manner that is focused on whatever the list was created for, but it can take time for a community to learn and take to heart such good behavior. Bear in mind that everyone associated with The ASF is expected to comply with our <a href="https://apache.org/foundation/policies/conduct.html" target="_blank">code of conduct</a> in both words and actions.
+
+<h2 id="mailing-list-moderators">How do I change moderators?<a class="headerlink" href="#mailing-list-moderators" title="Permanent link">&para;</a></h2>
 
 You can manage the list of moderators for a project's email list if you are:
 
@@ -50,7 +52,7 @@ The current list of moderators for this list appears. You can:
 
 To determine who the existing moderators are, any committer can use the technique described in the "committers" SVN module at <a href="https://svn.apache.org/repos/private/committers/docs/resources.txt" target="_blank">resources.txt</a>.
 
-<h3 id="subscribers">How do I find who is subscribed to a list?<a class="headerlink" href="#subscribers" title="Permanent link">&para;</a></h3>
+<h2 id="subscribers">How do I find who is subscribed to a list?<a class="headerlink" href="#subscribers" title="Permanent link">&para;</a></h2>
 
 Moderators can send an email to `listname-list@tlp.apache.org`.
 
@@ -62,17 +64,17 @@ ezmlm-list~/lists/project/listname| wc -l
 
 Remember that there often are people subscribed to the digest version of the list. To find them:
 
-```text
-~lists/project/listname/digest
+```bash
+ezmlm-lists/project/listname/digest
 ```
 
 However, most committers do not have access to apmail. See the notes in the "committers" SVN module (`https://svn.apache.org/repos/private/committers`) at `/docs/resources.txt` for another way.
 
-<h3 id="mail-moderate">What should I do with "MODERATE" emails?<a class="headerlink" href="#mail-moderate" title="Permanent link">&para;</a></h3>
+<h2 id="mail-moderate">What should I do with "MODERATE" emails?<a class="headerlink" href="#mail-moderate" title="Permanent link">&para;</a></h2>
 
 You can review and manage email that is waiting for moderation in two ways:
 
-#### WebMod
+### WebMod
 
 <a href="https://webmod.apache.org/" target="_blank">WebMod</a> simplifies reviewing and responding to emails that require moderation.
 
@@ -81,9 +83,9 @@ You can review and manage email that is waiting for moderation in two ways:
 - You can approve or reject multiple emails in one action by checking the checkboxes to the left of the email titles and selecting either `accept` or `spam` from the bulk-actions dropdown list.
 - You have many options for reviewing each individual email, including displaying just the text body or viewing the source. The options appear as links to the right of the email title.
 
-#### Manual moderation
+### Manual moderation
 
-Review the mail to see if it is spam (or other severely misguided mail). If it is spam, just ignore the mail to have it silently dropped after 5 days.
+Review the mail to see if it is spam (or other severely misguided mail). If it is spam, just ignore the mail to have it silently dropped after five days.
 
 To bounce non-spam with a notice to the sender, reply to the `-reject` address in the mail header. If you wish to include a comment with the rejection, the body of the message should look like this:
 
@@ -99,9 +101,9 @@ If there is no `-allow` address in the moderate requests, the list is misconfigu
 
 See the <a href="http://www.ezmlm.org/" target="_blank">EZMLM</a> "Moderator's and Administrator's Manual". You can also send a request for advice to `{listname}-help@tlp.apache.org` from your moderation address.
 
-Some lists are only open to ASF committers. The moderators have methods to ensure that subscribers are committers, so subscribers can use whatever email address that they want. Moderators see the tips described in the "committers" SVN module at <a href="https://svn.apache.org/repos/private/committers/docs/resources.txt" target="_blank">resources.txt</a>.
+Some lists are only open to ASF committers. The moderators have methods to ensure that subscribers are committers, so subscribers can use whatever email address that they want. Moderators, see the tips described in the "committers" SVN module at <a href="https://svn.apache.org/repos/private/committers/docs/resources.txt" target="_blank">resources.txt</a>.
 
-<h3 id="spam">Dealing with MODERATE requests for spam<a class="headerlink" href="#spam" title="Permanent link">&para;</a></h3>
+<h2 id="spam">Dealing with MODERATE requests for spam<a class="headerlink" href="#spam" title="Permanent link">&para;</a></h2>
 
 **NOTE**: You may receive a moderation email that contains email identified as spam. Moderation emails containing spam emails are **not spam**. **DO NOT** report mod emails as spam because this causes our legitimate moderation email and the ASF servers themselves to lose sender reputation. Various email providers may block the ASF as a whole as a result of your action.
 
@@ -109,9 +111,9 @@ If the content of the MODERATE request is clearly spam, the simplest solution is
 
 Some SPAM emails have an opt-out link. Whether this will actually do anything useful is another matter, but it might be worth trying if the spam seems to be from a legitimate business.
 
-To avoid revealing your personal IP address, you may wish to use an anonymizing service such as Tor.
+To avoid revealing your personal IP address, you may wish to use an anonymizing service such as <a href="https://www.torproject.org/" target="_blank">Tor</a>.
 
-If the spam emails are all sent from the same address, try adding them to the 'deny' list:
+If the spam emails are all sent from the same address, try adding the sender to the 'deny' list:
 
 ```text
 {listname}-deny-subscribe-badposter=menace.com@tlp.apache.org</code>
@@ -133,7 +135,7 @@ badposter=menace.com
 
 If this address contains random alphanumerics, it is probably a short-lived address, in which case there is no point trying to use the deny list.
 
-<h3 id="allowing_posts">Allowing posts from non-subscribers<a class="headerlink" href="#allowing_posts" title="Permanent link">&para;</a></h3>
+<h2 id="allowing_posts">Allowing posts from non-subscribers<a class="headerlink" href="#allowing_posts" title="Permanent link">&para;</a></h2>
 
 Most lists require people to subscribe in order to post messages. However, subscribers receive copies of all mails (or digests). This is obviously unsuitable for bots, or for private lists which need to accept posts from non-subscribers.
 
@@ -147,7 +149,7 @@ It's also possible to set this up in advance, by subscribing the poster to the '
 
 Replace the '@' in the sender email with '='.
 
-<h3 id="problem_posts">Dealing with problem posts<a class="headerlink" href="#problem_posts" title="Permanent link">&para;</a></h3>
+<h2 id="problem_posts">Dealing with problem posts<a class="headerlink" href="#problem_posts" title="Permanent link">&para;</a></h2>
 
 If you have a troublesome poster, you can un-subscribe them from the list using
 
@@ -197,15 +199,14 @@ Once a bad poster starts behaving in the proper manner again, feel free to 'unsu
 Send moderation commands from your **moderator address**.  You can tell if you're sending from the right address by emailing the `-help` address (e.g.,
 `dev-help@tlp.apache.org`) and checking if the subject of the reply contains the word "Moderator help".
 
-<h3 id="missing">Dealing with reports of missing mail<a class="headerlink" href="#missing" title="Permanent link">&para;</a></h3>
+<h2 id="missing">Dealing with reports of missing mail<a class="headerlink" href="#missing" title="Permanent link">&para;</a></h2>
 
 If a subscriber reports that they are not receiving some e-mails, check which ones are involved. If they are not seeing their own e-mails, note that GMail hides duplicates.
 Also check whether the emails could have been treated as SPAM by their e-mail client.
 
-<h3 id="bounce">Dealing with reports of message bounces<a class="headerlink" href="#bounce" title="Permanent link">&para;</a></h3>
+<h2 id="bounce">Dealing with reports of message bounces<a class="headerlink" href="#bounce" title="Permanent link">&para;</a></h2>
 
-If a subscriber reports getting a  bounce message from ezmlm, ask them to provide the details.
-For example:
+If a subscriber reports getting a  bounce message from ezmlm, ask them to provide the details. For example:
 
 ```text
 Hi! This is the ezmlm program.
@@ -222,5 +223,4 @@ Here are the message numbers:
 This can occur if the recipient's mail system has strict SPAM detection rules.
 
 One way to find such emails is to request an index listing from ezmlm, for example
-by sending an email to `dev-index-12345@tlp.apache.org`. This will show the subject, timestamp and sender of the email. That may be sufficient to identify it as spam.
-If not, the subject and date should make it easy to find the email in the archives.
+by sending an email to `dev-index-12345@tlp.apache.org`. This will show the subject, timestamp and sender of the email. That may be sufficient to identify it as spam. If not, the subject and date should make it easy to find the email in the archives.
