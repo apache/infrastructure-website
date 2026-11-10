@@ -1,23 +1,20 @@
-Title: MFA Reset Policy
+Title: MFA reset policy
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-**Note**: This is a summary of the full policy, which is available to ASF Member and Committers at <a href="https://cwiki.apache.org/confluence/spaces/INFRA/pages/263427637/MFA+Reset+Policy" target="_blank">cwiki.apache.org/confluence/spaces/INFRA/pages/263427637/MFA+Reset+Policy</a>.
+**Note**: This is a summary of the full policy, which is available to ASF Members and Committers at <a href="https://cwiki.apache.org/confluence/spaces/INFRA/pages/263427637/MFA+Reset+Policy" target="_blank">cwiki.apache.org/confluence/spaces/INFRA/pages/263427637/MFA+Reset+Policy</a>.
 
 A committer may need to reset their ASF multi-factor authentication (MFA) if they lose access to their MFA devices or believe their MFA has been compromised.
 
 There are two paths to recovery if you have lost your MFA token(s):
 
-  1. **Self-service with a recovery code** established during initial MFA setup.
-    - Visit <https://mfa.apache.org> and use a recovery token by clicking "Select another authentication method."
-
-  2. **Identity validation by Infra.**
-    - Have someone from your PMC or Department open an Infra Jira ticket, or email <security@infra.apache.org>. Infra will validate your identity against factors that you previously registered with the ASF.
+1. **Self-service with a recovery code.** established during initial MFA setup. Visit `mfa.apache.org` and use a recovery token by clicking "Select another authentication method."
+2. **Identity validation by Infra.** Have someone from your PMC or Department open an Infra Jira ticket, or email `security@infra.apache.org`. Infra will validate your identity against factors that you previously registered with the ASF.
 
 To keep this process low-friction, we strongly encourage committers to register multiple factors in advance:
 
-- *Save the recovery codes provided during MFA setup.*
+- Save the recovery codes provided during MFA setup.
 - Upload a valid GPG public key to <a href="https://id.apache.org/" target="_blank">id.apache.org</a>.
-- Link their ASF and GitHub accounts via <a href="https://gitbox.apache.org/boxer/" target="_blank">Boxer</a>.
+- Link your ASF and GitHub accounts via <a href="https://gitbox.apache.org/boxer/" target="_blank">Boxer</a>.
 
 If a committer cannot establish their identity through any of their registered factors or through any other Infra-established process, the affected account will be **disabled**, and the committer will need to work with their project to be onboarded again through the new-committer process.
 
