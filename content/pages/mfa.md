@@ -14,4 +14,4 @@ The Infra team is expanding its use of ASF MFA to cover ASF applications and pro
 
 Committers and ASF Members can consult in-development user documentation at <a href="https://s.apache.org/mfa-user-guide" target="_blank">s.apache.org/mfa-user-guide</a>.
 
-See also the <a href="https://infra.apache.org/mfa-reset.html">MFA reset policy</a>.
+See also the <a href="https://infra.apache.org/mfa-reset.html" target="_blank">MFA reset policy</a>.
