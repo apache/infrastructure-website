@@ -3,7 +3,7 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 The PMC of each project encourages and guides their new committers, ensures that they have access to the proper resources, advises them about relevant ASF documentation such as the <a href="/new-committers-guide.html" target="_blank">Guide for New Committers</a>, and generally eases their way.
 
-### Account creation ###
+## Account creation
 
 Make sure the new committer fills out the appropriate forms, including the <a href="https://www.apache.org/licenses/contributor-agreements.html" target="_blank">Contributior License Agreement</a>, or CLA. A committer account cannot be processed until the ASF secretary or a board member acknowledges receipt of the CLA.
 
@@ -17,13 +17,13 @@ ASF only accepts **requests for new committer accounts** from PMC chairs and ASF
 
 The request will be CC'd to the PMC mailing list. Barring objections from the PMC, a person with root access will create the account and assign the appropriate group permissions. This may take a few days. ASF sends a message confirming the new account to the PMC mailing list and to the new committer.
 
-### Committer access to code repositories ###
+## Committer access to code repositories
 
 After that, the PMC takes over and provides the committer's infrastructure needs, in particular, write access to the **project's source repository**.
 
 To grant access to directories in SVN or Git, the PMC chair needs to update the appropriate **group entry** in LDAP:
 
-Go to the <a href="https://whimsy.apache.org/roster/committee/" target="_blank">Whimsy roster tool</a>, select the appropriate committee, and either double click on the person or the plus sign to modify or add a person.
+Go to the <a href="https://whimsy.apache.org/roster/committee/" target="_blank">Whimsy roster tool</a>, select the appropriate committee, and either double-click the person or click the plus sign to modify or add a person.
 
 If the SVN access group is not defined as an LDAP group (e.g. it is an Incubator podling) then edit the appropriate entry in the <a href="https://svn.apache.org/repos/infra/infrastructure/trunk/subversion/authorization/asf-authorization-template" target="_blank">asf-authorization-template file</a> and commit the change.
 
