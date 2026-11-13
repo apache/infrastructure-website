@@ -3,13 +3,12 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 To contribute a change or addition to existing source code:
 
-### Using Subversion ###
+## Using Subversion
 
 See [Subversion basics](svn-basics.html)
 
 1. Check out the latest copy of the source code from the project's code repository.
-2. Change the source files to incorporate your change or addition. Make sure you provide appropriate source code documentation (like javadoc for
-Java sources), and follow the project's coding conventions.
+2. Change the source files to incorporate your change or addition. Make sure you provide appropriate source code documentation (like javadoc for Java sources), and follow the project's coding conventions.
 3. Check the software still compiles and runs correctly on your local machine.
 4. Run any unit or regression tests the software may have.
 
@@ -28,14 +27,13 @@ Apache projects prefer the unified diff format. The subversion tool creates that
 </pre></div>
 ```
 
-The Subversion client now examines all subdirectories for changed files, then compares the changed file to the one on the server. It generates the
-patch.
+The Subversion client now examines all subdirectories for changed files, then compares the changed file to the one on the server. It generates the patch.
 
 The '&gt;' redirection results in the resulting patch being put in a text file named (in this case) `site.patch`.
 
 With your patch generated, you need to send it to the developers. Different projects have different preferences for this. Usually you add it as an attachment to the relevant bug report in the bug tracking database. If a relevant bug report doesn't exist yet, create one.
 
-### Using Git ###
+## Using Git
 
 See [Getting started with Git](git-primer.html) for general information.
 
@@ -51,10 +49,10 @@ The general pattern for creating and submitting a patch for a project using Git 
 
 One or more of the project's committers will review your proposed changes and, if all is well, merge them.
 
-### In general ###
+## In general
 
 A very few projects don't use an issue tracker. In that case, send the patch as an attachment to an e-mail with a subject prefixed with "<code>[PATCH]</code>", to the appropriate development mailing list. If the patch is large, please ask before e-mailing it in case there is a better way to provide it.
 
-Supply a different patch per issue. A patch can span multiple files but you should normally try not to fix multiple bugs in a single patch, unless those bugs are intimately related.
+Supply a different patch per issue. A patch can span multiple files but you should normally **not** try to fix multiple bugs in a single patch, unless those bugs are intimately related.
 
 Be patient if your patch is not applied as fast as you'd like (open source developers are all volunteers, often doing the development in their spare time) or a developer asks you to make changes to the patch. If you do not receive any feedback in a reasonable amount of time (say, a week or two), feel free to send a follow-up e-mail to the developer list.
