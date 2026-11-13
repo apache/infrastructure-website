@@ -4,11 +4,11 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 This page outlines the policy on committer passwords for LDAP accounts, and explains a bit
 about the logic behind it.
 
-### Minimum password length: eight characters
+## Minimum password length: eight characters
 
 All passwords must have eight or more characters. You can use any combination of letters, numbers, special characters, and spaces, and there is no upper limit to the password length.
 
-### Minimum password entropy size: 54 bits
+## Minimum password entropy size: 54 bits
 
 Entropy size is a measure of how many attempts if would potentially take to crack the password, whether
 through brute-forcing, dictionary attacks or simply guessing. It is measured in bits that
@@ -26,7 +26,7 @@ characters in total (`I,a,m,G,r,o,t, and a whitespace), thus the entropy size is
 At the ASF, we require a minimum entropy size of **54 bits**, meaning it should require more than
 approximately 18 quadrillion attempts to brute-force a password.
 
-### Minimum password complexity: 0.60
+## Minimum password complexity: 0.60
 
 We also require a complexity degree of 0.60. Password complexity ranges from 0 to 1, where 0 is
 a password consisting of only the same letters over and over, and 1 means a password is
