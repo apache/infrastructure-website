@@ -117,12 +117,11 @@
               How to submit a patch for project code
           </h1>
               <p>To contribute a change or addition to existing source code:</p>
-<h3>Using Subversion</h3>
+<h2>Using Subversion</h2>
 <p>See <a href="svn-basics.html">Subversion basics</a></p>
 <ol>
 <li>Check out the latest copy of the source code from the project's code repository.</li>
-<li>Change the source files to incorporate your change or addition. Make sure you provide appropriate source code documentation (like javadoc for
-Java sources), and follow the project's coding conventions.</li>
+<li>Change the source files to incorporate your change or addition. Make sure you provide appropriate source code documentation (like javadoc for Java sources), and follow the project's coding conventions.</li>
 <li>Check the software still compiles and runs correctly on your local machine.</li>
 <li>Run any unit or regression tests the software may have.</li>
 </ol>
@@ -137,11 +136,10 @@ Java sources), and follow the project's coding conventions.</li>
 &lt;span class="n"&gt;svn&lt;/span&gt; &lt;span class="nb"&gt;diff&lt;/span&gt; &lt;span class="o"&gt;&amp;gt;&lt;/span&gt; &lt;span class="n"&gt;site&lt;/span&gt;&lt;span class="p"&gt;.&lt;/span&gt;&lt;span class="nb"&gt;patch&lt;/span&gt;
 &lt;/pre&gt;&lt;/div&gt;
 </code></pre>
-<p>The Subversion client now examines all subdirectories for changed files, then compares the changed file to the one on the server. It generates the
-patch.</p>
+<p>The Subversion client now examines all subdirectories for changed files, then compares the changed file to the one on the server. It generates the patch.</p>
 <p>The '&gt;' redirection results in the resulting patch being put in a text file named (in this case) <code>site.patch</code>.</p>
 <p>With your patch generated, you need to send it to the developers. Different projects have different preferences for this. Usually you add it as an attachment to the relevant bug report in the bug tracking database. If a relevant bug report doesn't exist yet, create one.</p>
-<h3>Using Git</h3>
+<h2>Using Git</h2>
 <p>See <a href="git-primer.html">Getting started with Git</a> for general information.</p>
 <p>The general pattern for creating and submitting a patch for a project using Git is:</p>
 <ol start="0">
@@ -154,9 +152,9 @@ patch.</p>
 <li>Create a pull request to merge your branch into the trunk of the project's code.</li>
 </ol>
 <p>One or more of the project's committers will review your proposed changes and, if all is well, merge them.</p>
-<h3>In general</h3>
+<h2>In general</h2>
 <p>A very few projects don't use an issue tracker. In that case, send the patch as an attachment to an e-mail with a subject prefixed with "<code>[PATCH]</code>", to the appropriate development mailing list. If the patch is large, please ask before e-mailing it in case there is a better way to provide it.</p>
-<p>Supply a different patch per issue. A patch can span multiple files but you should normally try not to fix multiple bugs in a single patch, unless those bugs are intimately related.</p>
+<p>Supply a different patch per issue. A patch can span multiple files but you should normally <strong>not</strong> try to fix multiple bugs in a single patch, unless those bugs are intimately related.</p>
 <p>Be patient if your patch is not applied as fast as you'd like (open source developers are all volunteers, often doing the development in their spare time) or a developer asks you to make changes to the patch. If you do not receive any feedback in a reasonable amount of time (say, a week or two), feel free to send a follow-up e-mail to the developer list.</p>
 
         </div>
