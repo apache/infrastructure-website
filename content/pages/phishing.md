@@ -24,10 +24,10 @@ We never send emails with subjects like:
 - '[14] pending incoming mails'
 - 'Syncing Error - (.) Incoming failed!'
 
-These are phishing &mdash; some may even use our imagery and copycat websites.
-Your best actions are to:
+These are phishing attempts. Some may even use our imagery and copycat websites.
+Your best actions:
 
-- not respond to the email
+- Do not respond to the email.
 - forward the message, with full headers, to `root@apache.org`.
 
 Further,
