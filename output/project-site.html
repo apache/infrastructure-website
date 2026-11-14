@@ -116,7 +116,7 @@
           <h1>
               Managing your project web site
           </h1>
-              <p>Every Apache project or podling has a website hosted at <code>apache.org</code>. Apache provides tools to support it. Each project decides how their website looks, its contents, how they maintain it, and what software they use to support it, as long as the result is static files that our public web servers can make available to browsers. We also have limited support for .htaccess files and CGI scripts.</p>
+              <p>Every ASF project or podling has a website hosted at <code>apache.org</code>. Apache provides tools to support it. Each project decides how their website looks, its contents, how they maintain it, and what software they use to support it, as long as the result is static files that our public web servers can make available to browsers. We also have limited support for .htaccess files and CGI scripts.</p>
 <h2>Contents</h2>
 <ul>
 <li><a href="#planning">Planning the project website</a></li>
@@ -152,7 +152,8 @@
 </ol>
 <h3>1. Website-building options</h3>
 <h4>GitHub Action using Pelican</h4>
-<p>This replaces the ASF Pelican template, which Infra is retiring by the end of 2024. Details on using the Pelican GitHub Action will be available shortly.</p>
+<p>In 2019, Infra created ASF-Pelican as a structure and template for projects to use to build their websites, and for the ASF's own website.</p>
+<p>In 2024, Infra moved from ASF-Pelican to the <strong>ASF Infrastructure Pelican Action</strong> GitHub Action to perform the same functions without being closely tied to BuildBot. For more information, see <a href="asf-pelican.html">ASF-Pelican</a>.</p>
 <h4>Jekyll</h4>
 <p>A number of <a href="https://github.com/search?q=topic%3Ajekyll+org%3Aapache&amp;type=Repositories" target="_blank">ASF projects</a> use <a href="https://jekyllrb.com/" target="_blank">Jekyll</a>, which is a straightforward tool for developing blogs or static websites using Markdown, and it is easy to deploy the resulting website as GitHub Pages. There are many tutorials online about doing this.</p>
 <h4>Hugo</h4>
@@ -166,12 +167,10 @@
 <h4>HTML files</h4>
 <p>You can use any other tool that generates static HTML pages, or hand-code those pages. You then check them into your project's website repository. The check-in will trigger a site update.</p>
 <h4>Custom website directives using .htaccess files</h4>
-<p>Project websites can make use of .htaccess files for setting up custom redirects and other tweaks to the handling of requests. The default <a href="https://httpd.apache.org/docs/2.4/mod/core.html#allowoverride">AllowOverride</a> setting is <code>All</code>,
-which generally enables any sort of redirects or rewrites (using <code>RewriteRule</code>, <code>Redirect</code>, etc.). Some project websites have custom settings in their dedicated virtual host configuration, which may require asking the Infrastructure Team for assistance. If you are in doubt, ask.</p>
+<p>Project websites can make use of .htaccess files for setting up custom redirects and other tweaks to the handling of requests. The default <a href="https://httpd.apache.org/docs/2.4/mod/core.html#allowoverride">AllowOverride</a> setting is <code>All</code>, which generally enables any sort of redirects or rewrites (using <code>RewriteRule</code>, <code>Redirect</code>, etc.). Some project websites have custom settings in their dedicated virtual host configuration, which may require asking the Infrastructure Team for assistance. If you are in doubt, ask.</p>
 <h3>Tools not supported</h3>
 <h4>ASF Pelican template</h4>
-<p><strong>Note</strong> Infra is discontinuing the Pelican template by the end of 2024, in favour of a GitHub Action using Pelican.
-Infra is migrating the websites of projects using the Pelican option to GitHub Actions.</p>
+<p><strong>Note</strong> Infra has discontinued support of the Pelican template in favour of a GitHub Action using Pelican.</p>
 <p><a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a> is a static site generator written in Python. Highlights include:</p>
 <ul>
 <li>Write your content directly with your editor of choice in reStructuredText or Markdown formats.</li>
@@ -191,8 +190,7 @@ which have the <code>pelican</code> Topic. You can review them as examples of Pe
 <h4>Apache CMS</h4>
 <p>The Apache CMS, which projects used to build and deploy their websites since 2010, is no longer available as of July 31, 2021. All projects that used it, including the main Apache website, have moved or must move to other technologies. Those that linger will find at some point that they can no longer update their website. See the notes in the section on site management tools, below.</p>
 <h3>2. Website repository</h3>
-<p>If you don't have a web site repository for your project yet, you can create one using <a href="https://selfserve.apache.org/" target="_blank">Self-serve</a>.</p>
-<p>The convention is to name the repository <code>$project-site.git</code>, for instance <code>httpd-site.git</code>.</p>
+<p>If you don't have a web site repository for your project yet, you can create one using <a href="https://selfserve.apache.org/" target="_blank">Self-serve</a>. The convention is to name the repository <code>$project-site.git</code>, for instance <code>httpd-site.git</code>.</p>
 <p>Copy whatever you need to start a build into the master branch of the new repository. This will act as the base of the build process.</p>
 <h3>3. The build process</h3>
 <p>Configure Pelican or Jekyll to build the site automatically when its contents change, using <a href="asf-yaml.html">.asf.yaml</a> and Buildbot.</p>
