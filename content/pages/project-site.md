@@ -1,7 +1,7 @@
 Title: Managing your project web site
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-Every Apache project or podling has a website hosted at `apache.org`. Apache provides tools to support it. Each project decides how their website looks, its contents, how they maintain it, and what software they use to support it, as long as the result is static files that our public web servers can make available to browsers. We also have limited support for .htaccess files and CGI scripts.
+Every ASF project or podling has a website hosted at `apache.org`. Apache provides tools to support it. Each project decides how their website looks, its contents, how they maintain it, and what software they use to support it, as long as the result is static files that our public web servers can make available to browsers. We also have limited support for .htaccess files and CGI scripts.
 
 ## Contents
 
@@ -48,7 +48,9 @@ Many TLP sites use JavaScript (JS) to provide functions ranging from menu naviga
 
 #### GitHub Action using Pelican
 
-This replaces the ASF Pelican template, which Infra is retiring by the end of 2024. Details on using the Pelican GitHub Action will be available shortly.
+In 2019, Infra created ASF-Pelican as a structure and template for projects to use to build their websites, and for the ASF's own website.
+
+In 2024, Infra moved from ASF-Pelican to the **ASF Infrastructure Pelican Action** GitHub Action to perform the same functions without being closely tied to BuildBot. For more information, see [ASF-Pelican](asf-pelican.html).
 
 #### Jekyll
 
@@ -76,15 +78,13 @@ You can use any other tool that generates static HTML pages, or hand-code those 
 
 #### Custom website directives using .htaccess files
 
-Project websites can make use of .htaccess files for setting up custom redirects and other tweaks to the handling of requests. The default [AllowOverride](https://httpd.apache.org/docs/2.4/mod/core.html#allowoverride) setting is `All`,
-which generally enables any sort of redirects or rewrites (using `RewriteRule`, `Redirect`, etc.). Some project websites have custom settings in their dedicated virtual host configuration, which may require asking the Infrastructure Team for assistance. If you are in doubt, ask.
+Project websites can make use of .htaccess files for setting up custom redirects and other tweaks to the handling of requests. The default [AllowOverride](https://httpd.apache.org/docs/2.4/mod/core.html#allowoverride) setting is `All`, which generally enables any sort of redirects or rewrites (using `RewriteRule`, `Redirect`, etc.). Some project websites have custom settings in their dedicated virtual host configuration, which may require asking the Infrastructure Team for assistance. If you are in doubt, ask.
 
 ### Tools not supported
 
 #### ASF Pelican template
 
-**Note** Infra is discontinuing the Pelican template by the end of 2024, in favour of a GitHub Action using Pelican.
-Infra is migrating the websites of projects using the Pelican option to GitHub Actions.
+**Note** Infra has discontinued support of the Pelican template in favour of a GitHub Action using Pelican.
 
 <a href="https://docs.getpelican.com/en/stable/" target="_blank">Pelican</a> is a static site generator written in Python. Highlights include:
 
@@ -116,9 +116,7 @@ The Apache CMS, which projects used to build and deploy their websites since 201
 
 ### 2. Website repository
 
-If you don't have a web site repository for your project yet, you can create one using <a href="https://selfserve.apache.org/" target="_blank">Self-serve</a>.
-
-The convention is to name the repository `$project-site.git`, for instance `httpd-site.git`.
+If you don't have a web site repository for your project yet, you can create one using <a href="https://selfserve.apache.org/" target="_blank">Self-serve</a>. The convention is to name the repository `$project-site.git`, for instance `httpd-site.git`.
 
 Copy whatever you need to start a build into the master branch of the new repository. This will act as the base of the build process.
 
