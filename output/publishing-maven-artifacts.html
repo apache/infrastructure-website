@@ -117,10 +117,10 @@
               Publishing Maven Releases to Maven Central Repository
           </h1>
               <p><a href="https://maven.apache.org/">Apache Maven</a> is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.</p>
-<p>This document describes how to release Maven artifacts for Apache Software Foundation projects to the <a href="https://maven.apache.org/repository/index.html">Maven Central Repository</a>. This is optional. Apache projects <strong>must</strong> release all software packages through the ASF distribution system. See <a href="release-distribution.html">Release distribution policy</a> for more details.</p>
+<p>This document describes how to release Maven artifacts for Apache Software Foundation projects to the <a href="https://maven.apache.org/repository/index.html">Maven Central Repository</a>. This is <strong>optional</strong>. ASF projects <strong>must</strong> release all software packages through the ASF distribution system. See <a href="release-distribution.html">Release distribution policy</a> for more details.</p>
 <p><strong>Note</strong> make sure you are using version 3.0.5 or newer of Maven. You can <a href="https://maven.apache.org/download.cgi" target="_blank">download</a> and install the latest version of Maven before continuing.</p>
 <h2>Setting up your project in the ASF Nexus Repository</h2>
-<p>The <a href="https://repository.apache.org/">ASF Nexus repository</a> enforces security by constraining who can deploy or release a project's artifacts. Nexus maps which artifacts (usually by GroupId) your project produces. This is particularly helpful in preventing accidental releases of a project.</p>
+<p>The <a href="https://repository.apache.org/">ASF Nexus repository</a> enforces security by constraining who can deploy or release a project's artifacts. Nexus maps which artifacts your project produces, usually by GroupId. This is particularly helpful in preventing accidental product releases.</p>
 <p>Before a project can use the repository to release Maven artifacts, it must be configured in Nexus. This is generally a quick and easy process. To get set up, <a href="https://issues.apache.org/jira/secure/CreateIssueDetails!init.jspa?issuetype=3&amp;priority=3&amp;pid=10410&amp;components=12312660&amp;summary=Enable+Nexus+Access+For+[insert+project]&amp;description=Project+URL:%0D%0DSVN+URL:%0D%0DMaven+Group+Ids:%0D%0DManaged+By+This+TLP+Project:" target="_blank">use this link</a> to create a Jira ticket with the following information:</p>
 <ul>
 <li><strong>Project URL</strong>: a link to your project page (usually <code>https://&lt;project&gt;.apache.org/</code>).</li>
@@ -129,7 +129,7 @@
 <li><strong>Managed By This TLP Project</strong>: if this is a subproject, list the TLP that is responsible. Subprojects usually don't have their own LDAP group, so we need the TLP LDAP group for permissions.</li>
 </ul>
 <p>If you have specific questions or concerns, please call them out in the ticket.</p>
-<p>Once you file the Jira ticket, Infra will do the following:</p>
+<p>Once you file the Jira ticket, Infra will:</p>
 <ul>
 <li><strong>Set up the project in Nexus</strong>: We configure your groupIds in Nexus and link them to the appropriate LDAP group for authorization.</li>
 <li><strong>Move Existing Artifacts</strong>: To maintain the proper <code>maven-metadata.xml</code> files and prevent rsync conflicts in Central, we must move all your artifacts to the new repository. We will mark the folder in the old repository as read-only to prevent accidental deployments.</li>
@@ -137,7 +137,7 @@
 </ul>
 <h2>Adjusting your build to deploy to the ASF Nexus repository</h2>
 <p>To use the ASF Nexus repository, follow these steps.</p>
-<h3>Inherit the Apache POM</h3>
+<h3>1. Inherit the Apache POM</h3>
 <p>Inherit the Apache Parent POM like this:</p>
 <pre><code class="language-xml">&lt;parent&gt;
   &lt;groupId&gt;org.apache&lt;/groupId&gt;
@@ -147,8 +147,8 @@
 </code></pre>
 <p>This parent POM sets up the defaults so your <code>&lt;distributionManagement&gt;</code> section uses the correct release and snapshot repositories. Be sure to remove those from your POM so they inherit correctly. Keep the entry for deploying your site (if you use Maven to deploy your site). If you do, we suggest you use <code>apache.website</code> as the ID to better match the settings below and to save the sanity of committers working on multiple projects.</p>
 <p>The POM also provides a default configuration to make sure that a correct source archive is created for your project. This is separate and in addition to the typical <code>-sources.jar</code> that is created.</p>
-<p>Further information about the POM, the latest version and other Maven matters is <a href="https://maven.apache.org/pom/asf/" target="_blank">here</a>.</p>
-<h3>Set up your development environment</h3>
+<p>Further information about the POM, the latest version and other Maven matters is available at <a href="https://maven.apache.org/pom/asf/" target="_blank">maven.apache.org/pom/asf/</a>.</p>
+<h3>2. Set up your development environment</h3>
 <p>You must sign all artifacts with a key that is publicly verifiable. Follow the instructions here to get your keys created and environment set up.</p>
 <p><strong>Note</strong>: We recommend that you use <a href="https://maven.apache.org/guides/mini/guide-encryption.html" target="_blank">Maven's password encryption capabilities</a> for your passwords. <strong>Do not</strong> store your signing key in <code>settings.xml</code>.</p>
 <p>The <a href="https://maven.apache.org/plugins/maven-gpg-plugin/" target="_blank">gpg plugin</a> can prompt for the key (input is masked) or you can configure it to use an agent.</p>
@@ -171,7 +171,7 @@
   &lt;/servers&gt;
 &lt;/settings&gt;
 </code></pre>
-<h3>Test your settings</h3>
+<h3>3. Test your settings</h3>
 <p>Try installing locally artifacts with activation of the <code>apache-release</code> profile:</p>
 <p><code>mvn clean install -Papache-release</code></p>
 <p>This will build artifacts and sources and sign them.</p>
@@ -271,7 +271,7 @@ already exists
 <p>How to manage your staged release, no matter which build tool you used.</p>
 <h3>Close the staged repository</h3>
 <p>Your artifacts should now exist in a new staging repository. See <a href="http://central.sonatype.org/pages/releasing-the-deployment.html#locate-and-examine-your-staging-repository" target="_blank">Locate and Examine</a> for instructions on how to "close" this repository to trigger the quality checks and prepare it for a vote.</p>
-<p>Now you go call your vote. Based on the results you will either promote (yay!) or drop and restage the release. If you are an <strong>incubating project</strong>, don't forget the IPMC vote before promoting. The actual Vote process is project=specific, but if you're looking for some examples, the Maven project has thorough <a href="http://maven.apache.org/developers/release/maven-project-release-procedure.html" target="_blank">documentation on their voting process</a>.</p>
+<p>Now you go call your vote. Based on the results you will either promote (yay!) or drop and restage the release. If you are an <strong>incubating project</strong>, don't forget the IPMC vote before promoting. The actual voting process is project=specific, but if you're looking for some examples, the Maven project has thorough <a href="http://maven.apache.org/developers/release/maven-project-release-procedure.html" target="_blank">documentation on their voting process</a>.</p>
 <h3>Drop a repository</h3>
 <p>If you bungled the release or your vote failed, follow <a href="http://central.sonatype.org/pages/releasing-the-deployment.html#close-and-drop-or-release-your-staging-repository" target="_blank">these instructions</a> to drop your repo. <em>Don't forget to roll back any SCM changes</em>.</p>
 <h3>Promote a repository</h3>
