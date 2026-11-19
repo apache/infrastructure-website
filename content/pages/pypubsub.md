@@ -1,7 +1,7 @@
 Title: Subscribe to Apache Software Foundation infrastructure events
 license: https://www.apache.org/licenses/LICENSE-2.0
 
-The ASF employs a plain-text publisher/subscriber service called **PyPubSub** at `pubsub.apache.org:2069`, which lists most events that happen within the Foundation's infrastructure.
+The ASF employs a plain-text publisher/subscriber service called **PyPubSub**, at `pubsub.apache.org:2069`, which lists most events that happen within the Foundation's infrastructure.
 
 Currently, the service streams the following events:
 
@@ -23,6 +23,7 @@ You can explore our pubsub stream using the [PyPubSub Explorer](/tools/pse/), a 
 Subscribers can pick one or multiple topics to subscribe to, with more specific subscriptions getting fewer, but more specific, event payloads. Construct subscriptions in the form of: `http://pubsub.apache.org:2069/topics/go/here`, and separate the topics you want to subscribe to with forward slashes.
 
 The service returns events that match _all_ of the topics you are subscribed to.
+
 To subscribe to multiple topic batches in an OR'ed way, you may use a comma to separate your batches of topics.
 
 Some examples:
@@ -53,7 +54,7 @@ Pings are simple objects like this:
 {"stillalive": 1583973410.9620552}
 ~~~
 
-An example of a real event payload, in this case a git commit, could be (emails redacted in this example):
+Here is an example of a real event payload, in this case a Git commit, with emails redacteed:
 
 ~~~ json
 {
@@ -104,7 +105,7 @@ Please note that due to limitations in our TLS terminator, payloads larger than 
 port 2070. If you are using port 2070, you should ensure that the data you receive is terminated with a newline (\n),
 or continue fetching data till you hit a chunk terminated with a newline.
 
-N.B. the following curl switches may be added:
+You may add the following curl:
 
 * -N - non-buffered output; used when piping into another command (e.g. tail)
 * -sS - silent mode (-s) but still shows error messages (-S)
