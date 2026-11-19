@@ -3,13 +3,13 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 [Apache Maven](https://maven.apache.org/) is a software project management and comprehension tool. Based on the concept of a project object model (POM), Maven can manage a project's build, reporting and documentation from a central piece of information.
 
-This document describes how to release Maven artifacts for Apache Software Foundation projects to the [Maven Central Repository](https://maven.apache.org/repository/index.html). This is optional. Apache projects **must** release all software packages through the ASF distribution system. See [Release distribution policy](release-distribution.html) for more details.
+This document describes how to release Maven artifacts for Apache Software Foundation projects to the [Maven Central Repository](https://maven.apache.org/repository/index.html). This is **optional**. ASF projects **must** release all software packages through the ASF distribution system. See [Release distribution policy](release-distribution.html) for more details.
 
 **Note** make sure you are using version 3.0.5 or newer of Maven. You can <a href="https://maven.apache.org/download.cgi" target="_blank">download</a> and install the latest version of Maven before continuing.
 
-## Setting up your project in the ASF Nexus Repository ##
+## Setting up your project in the ASF Nexus Repository
 
-The [ASF Nexus repository](https://repository.apache.org/) enforces security by constraining who can deploy or release a project's artifacts. Nexus maps which artifacts (usually by GroupId) your project produces. This is particularly helpful in preventing accidental releases of a project.
+The [ASF Nexus repository](https://repository.apache.org/) enforces security by constraining who can deploy or release a project's artifacts. Nexus maps which artifacts your project produces, usually by GroupId. This is particularly helpful in preventing accidental product releases.
 
 Before a project can use the repository to release Maven artifacts, it must be configured in Nexus. This is generally a quick and easy process. To get set up, <a href="https://issues.apache.org/jira/secure/CreateIssueDetails!init.jspa?issuetype=3&priority=3&pid=10410&components=12312660&summary=Enable+Nexus+Access+For+[insert+project]&description=Project+URL:%0D%0DSVN+URL:%0D%0DMaven+Group+Ids:%0D%0DManaged+By+This+TLP+Project:" target="_blank">use this link</a> to create a Jira ticket with the following information:
 
@@ -20,17 +20,17 @@ Before a project can use the repository to release Maven artifacts, it must be c
 
 If you have specific questions or concerns, please call them out in the ticket.
   
-Once you file the Jira ticket, Infra will do the following:
+Once you file the Jira ticket, Infra will:
 
 - **Set up the project in Nexus**: We configure your groupIds in Nexus and link them to the appropriate LDAP group for authorization.
 - **Move Existing Artifacts**: To maintain the proper `maven-metadata.xml` files and prevent rsync conflicts in Central, we must move all your artifacts to the new repository. We will mark the folder in the old repository as read-only to prevent accidental deployments.
 - **Check POMs**: If your project is Maven-based, we will check your POM for any obvious problems.
 
-## Adjusting your build to deploy to the ASF Nexus repository ##
+## Adjusting your build to deploy to the ASF Nexus repository
 
 To use the ASF Nexus repository, follow these steps.
 
-### Inherit the Apache POM ###
+### 1. Inherit the Apache POM
 
 Inherit the Apache Parent POM like this:
 
@@ -46,9 +46,9 @@ This parent POM sets up the defaults so your `<distributionManagement>` section 
 
 The POM also provides a default configuration to make sure that a correct source archive is created for your project. This is separate and in addition to the typical `-sources.jar` that is created.
 
-Further information about the POM, the latest version and other Maven matters is <a href="https://maven.apache.org/pom/asf/" target="_blank">here</a>.
+Further information about the POM, the latest version and other Maven matters is available at <a href="https://maven.apache.org/pom/asf/" target="_blank">maven.apache.org/pom/asf/</a>.
 
-### Set up your development environment ###
+### 2. Set up your development environment
 
 You must sign all artifacts with a key that is publicly verifiable. Follow the instructions here to get your keys created and environment set up.
 
@@ -77,7 +77,7 @@ The <a href="https://maven.apache.org/plugins/maven-gpg-plugin/" target="_blank"
 </settings>
 ```
 
-### Test your settings ###
+### 3. Test your settings
 
 Try installing locally artifacts with activation of the `apache-release` profile:
 
@@ -85,17 +85,17 @@ Try installing locally artifacts with activation of the `apache-release` profile
 
 This will build artifacts and sources and sign them.
 
-## Staging your release ##
+## Staging your release
 
-### 1. Prepare your POMs ###
+### 1. Prepare your POMs
 
 1. Make sure there are no dependencies on snapshots in the POMs to be released. However, the project you want to stage must be a SNAPSHOT version.
-2. Check that your POMs will not lose content when they are rewritten during the release process:
-3. Verify that all pom.xml files have an SCM definition.
-4. Do a dryRun release: `mvn release:prepare -DdryRun=true` You may also wish to pass `-DautoVersionSubmodules=true` as this will save you time if your project is multi-moduled.
-5. Diff the original file `pom.xml` with the one called `pom.xml.tag` to see if the license or any other info has been removed. This has been known to happen if the starting `<project>` tag is not on a single line. The only things that should be different between these files are the `<version>` and `<scm>` elements. Backport any other changes you find to the original `pom.xml` file and commit it before proceeding with the release.
+1. Check that your POMs will not lose content when they are rewritten during the release process:
+1. Verify that all pom.xml files have an SCM definition.
+1. Do a dryRun release: `mvn release:prepare -DdryRun=true` You may also wish to pass `-DautoVersionSubmodules=true` as this will save you time if your project is multi-moduled.
+1. Diff the original file `pom.xml` with the one called `pom.xml.tag` to see if the license or any other info has been removed. This has been known to happen if the starting `<project>` tag is not on a single line. The only things that should be different between these files are the `<version>` and `<scm>` elements. Backport any other changes you find to the original `pom.xml` file and commit it before proceeding with the release.
 
-### 2. Publish a snapshot ###
+### 2. Publish a snapshot
 
 ```text
 mvn deploy
@@ -111,7 +111,7 @@ mvn deploy
 - Be sure that the generated artifacts respect the <a href="https://www.apache.org/legal/release-policy.html#distribute-raw-artifact" target="_blank">Apache release rules</a>: NOTICE and LICENSE files should be present in the META-INF directory within the jar.
 - Verify the deployment under the ASF <a href="https://repository.apache.org/content/repositories/snapshots/" target="_blank">Maven Snapshot repository</a>.
   
-### 3. Prepare the release ###
+### 3. Prepare the release
 
 ```bash
 mvn release:clean
@@ -125,7 +125,7 @@ mvn release:prepare
 - Preparing the release will create a new tag in SVN, and automatically check the version in on your behalf.
 - If you're located in Europe, `release:prepare` may fail with `Unable to tag SCM` and `svn: No such revision X`. Wait 10 seconds and run `mvn release:prepare` again.
   
-### 4. Stage the release for a vote ###
+### 4. Stage the release for a vote
 
 `mvn release:perform`
 
@@ -133,7 +133,7 @@ Maven automatically inserts the release into a temporary staging repository for 
 
 Now you must close the staging repository to indicate to Nexus that the build is done and to make the artifacts available. Follow the steps in **Closing the Staged Repository**, later in this document. This will allow your community to **vote** on the staged artifacts.
 
-## Troubleshooting ##
+## Troubleshooting
 
 1. If you get an **error message** like this:
 
@@ -170,11 +170,11 @@ Delete the tag using
 
 This likely occurred because you're trying to restage the release and you didn't roll back the changes that created the previous tag, or you're trying to release a version that already exists. If that is the case, you need to adjust the versions in your POM and start over.
 
-## Procedures for Ant + Ivy ##
+## Procedures for Ant + Ivy
 
 <a href="https://ant.apache.org/" target="_blank">Apache Ant</a> is a popular command-line build tool. <a href="https://ant.apache.org/ivy/" target="_blank">Ivy</a> is a dependency manager designed to work with Ant.
 
-### 1 Prepare your build ###
+### 1 Prepare your build
 
 Usually your normal build process will create the artifacts you want to publish (typically jars), but you may need to PGP-sign them the same way you sign your normal distribution artifacts. The jars are expected to follow the naming scheme `artifactId-version.jar`.
 
@@ -184,7 +184,7 @@ If you are publishing multiple jars you may consider adding a parent POM to enca
 
 Users who use your project's jars from the Maven repository rather than using your "normal" distributions will likely want additional artifacts containing the source files or javadocs matching your jars in files named `artifactId-version-sources.jar` and `artifactId-version-javadoc.jar` respectively. Don't forget to sign those jars as well if you provide them.
 
-### 2. Create minimal Ivy files for your project ###
+### 2. Create minimal Ivy files for your project
 
 If you are not already using Ivy in your project you'll need to create a minimal `ivy.xml` file for it. The syntax is described in <a href="https://ant.apache.org/ivy/history/latest-milestone/ivyfile.html" target="_blank">Ivy's documentation</a>. Since you will only use the file to publish your artifacts, all you need to provide are the organization, module and revision definitions and an entry for each artifact you want to publish; see <a href="http://svn.apache.org/repos/asf/ant/core/trunk/release/ivy.xml" target="_blank">Ant's ivy.xml file</a> for a minimal version.
 
@@ -196,7 +196,7 @@ If you are publishing source or javadoc jars as well, you'll need to provide som
 
 Alternatively you can specify the `-sources` and `-javadoc` artifacts inside your `publish` task rather than your `ivy.xml` file. If you use Ivy 2.2.0 or later, you can also configure it to PGP-sign your artifacts so you no longer need to specify your signatures as artifacts. Ivy's own <a href="http://svn.apache.org/repos/asf/ant/ivy/core/trunk/ivysettings-release.xml" target="_blank">ivy-settings.xml</a> configures Ivy to sign artifacts and the <a href="http://svn.apache.org/repos/asf/ant/ivy/core/trunk/build-release.xml" target="_blank">publish task inside the upload-nexus target</a> declares the POM as well as `-sources` and `-javadoc` jars as additional artifacts.
 
-### 3. Configure Ivy to use Nexus ###
+### 3. Configure Ivy to use Nexus
 
 If you are already using Ivy you may need to adapt your `resolvers` configuration by adding an URL resolver for Nexus and referencing that in a module matching your `ivy.xml`.
 
@@ -204,7 +204,7 @@ You usually need to adapt the `ivysettings.xml` file used by Ant by using the sa
 
 Ant's `ivysettings.xml` uses Ant properties for the authentication information and Nexus' URL which will be expanded by the `ivy:configure` task. It also shows how to use the `classifier` extra attribute.
 
-### 4. Upload the artifacts ###
+### 4. Upload the artifacts
 
 Uploading involves three Ivy tasks.
 
@@ -214,20 +214,20 @@ Uploading involves three Ivy tasks.
 
 Here is a link to an <a href="http://svn.apache.org/repos/asf/ant/antlibs/common/trunk/upload.xml" target="_blank">example build file combining those steps</a> that expects you to provide the authentication information via the command line (i.e. `ant -Dupload.user=YOUR-ASF_ID -Dupload.password=YOUR-PASSWORD`).
 
-## Common procedures ##
+## Common procedures
 
 How to manage your staged release, no matter which build tool you used.
 
-### Close the staged repository ###
+### Close the staged repository
 
 Your artifacts should now exist in a new staging repository. See <a href="http://central.sonatype.org/pages/releasing-the-deployment.html#locate-and-examine-your-staging-repository" target="_blank">Locate and Examine</a> for instructions on how to "close" this repository to trigger the quality checks and prepare it for a vote.
 
-Now you go call your vote. Based on the results you will either promote (yay!) or drop and restage the release. If you are an **incubating project**, don't forget the IPMC vote before promoting. The actual Vote process is project=specific, but if you're looking for some examples, the Maven project has thorough <a href="http://maven.apache.org/developers/release/maven-project-release-procedure.html" target="_blank">documentation on their voting process</a>.
+Now you go call your vote. Based on the results you will either promote (yay!) or drop and restage the release. If you are an **incubating project**, don't forget the IPMC vote before promoting. The actual voting process is project=specific, but if you're looking for some examples, the Maven project has thorough <a href="http://maven.apache.org/developers/release/maven-project-release-procedure.html" target="_blank">documentation on their voting process</a>.
 
-### Drop a repository ###
+### Drop a repository
 
 If you bungled the release or your vote failed, follow <a href="http://central.sonatype.org/pages/releasing-the-deployment.html#close-and-drop-or-release-your-staging-repository" target="_blank">these instructions</a> to drop your repo. _Don't forget to roll back any SCM changes_.
 
-### Promote a repository ###
+### Promote a repository
 
 Congratulations, your vote was successful. The last step is to <a href="http://central.sonatype.org/pages/releasing-the-deployment.html#close-and-drop-or-release-your-staging-repository" target="_blank">promote the artifacts</a> to the release repository where they will get picked up by Central.
