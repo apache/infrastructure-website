@@ -116,7 +116,7 @@
           <h1>
               Subscribe to Apache Software Foundation infrastructure events
           </h1>
-              <p>The ASF employs a plain-text publisher/subscriber service called <strong>PyPubSub</strong> at <code>pubsub.apache.org:2069</code>, which lists most events that happen within the Foundation's infrastructure.</p>
+              <p>The ASF employs a plain-text publisher/subscriber service called <strong>PyPubSub</strong>, at <code>pubsub.apache.org:2069</code>, which lists most events that happen within the Foundation's infrastructure.</p>
 <p>Currently, the service streams the following events:</p>
 <ul>
 <li>Subversion commits</li>
@@ -131,8 +131,8 @@
 <p>You can explore our pubsub stream using the <a href="/tools/pse/">PyPubSub Explorer</a>, a live visualization tool for PyPubSub streams.</p>
 <h2>How to subscribe</h2>
 <p>Subscribers can pick one or multiple topics to subscribe to, with more specific subscriptions getting fewer, but more specific, event payloads. Construct subscriptions in the form of: <code>http://pubsub.apache.org:2069/topics/go/here</code>, and separate the topics you want to subscribe to with forward slashes.</p>
-<p>The service returns events that match <em>all</em> of the topics you are subscribed to.
-To subscribe to multiple topic batches in an OR'ed way, you may use a comma to separate your batches of topics.</p>
+<p>The service returns events that match <em>all</em> of the topics you are subscribed to.</p>
+<p>To subscribe to multiple topic batches in an OR'ed way, you may use a comma to separate your batches of topics.</p>
 <p>Some examples:</p>
 <ul>
 <li>To subscribe to all svn commits; <code>http://pubsub.apache.org:2069/svn/commit</code></li>
@@ -155,7 +155,7 @@ For example <code>https://pubsub.apache.org:2070/private/svn/private/committers/
 <p>Pings are simple objects like this:</p>
 <pre><code class="language-json">{"stillalive": 1583973410.9620552}
 </code></pre>
-<p>An example of a real event payload, in this case a git commit, could be (emails redacted in this example):</p>
+<p>Here is an example of a real event payload, in this case a Git commit, with emails redacteed:</p>
 <pre><code class="language-json">{
 	"commit": {
 		"body": "[maven-release-plugin] prepare for next development iteration\n",
@@ -193,7 +193,7 @@ For example <code>https://pubsub.apache.org:2070/private/svn/private/committers/
 <p>Please note that due to limitations in our TLS terminator, payloads larger than 64kb are split into 64kb chunks on
 port 2070. If you are using port 2070, you should ensure that the data you receive is terminated with a newline (\n),
 or continue fetching data till you hit a chunk terminated with a newline.</p>
-<p>N.B. the following curl switches may be added:</p>
+<p>You may add the following curl:</p>
 <ul>
 <li>-N - non-buffered output; used when piping into another command (e.g. tail)</li>
 <li>-sS - silent mode (-s) but still shows error messages (-S)</li>
