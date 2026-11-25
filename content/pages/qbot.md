@@ -3,7 +3,7 @@ license: https://www.apache.org/licenses/LICENSE-2.0
 
 The Infrastructure team's **Qbot** is a Slack assistant that can simplify both important and frivolous tasks on Slack channels in the `the-asf` workspace. It can support requests in channels for PMCs, ASF committees, the ASF Board and `asfmembers`.
 
-The name references the tool-maker 'Q', who provides weapons and gadgets for Agent 007 in the James Bond movies.
+The name references the tool-maker 'Q', who provides weapons and gadgets for Agent 007 in the James Bond  books and movies.
 
 ## What Qbot can do
 
@@ -14,11 +14,11 @@ Qbot has an evolving set of functions:
 - Displaying information about Jira tickets by project, by keyword, by status (available to ASF Members).
 - Starting a question queue in the huddle in a channel workspace. (Note: Infra designed this for use with Roundtable events, in case participants had a flood of questions and comments that would need to be queued so everyone had a fair chance to speak. So far, we have not needed to use it.)
 
-It also has a set of 'fun' features, such as rolling dice, flipping a coin, or talking to someone from the (fictional) ASF Human Resources Department.
+It also has a set of 'fun' features, such as rolling dice, flipping a coin, and talking to someone from the (fictional) ASF Human Resources Department.
 
 ## Setting up Qbot in your PMC's channels
 
-If you want to have Qbot available in your PMC's channel, create a Jira ticket for Infra with the request. Include this information:
+If you want to have Qbot available in your PMC's private channel, create a Jira ticket for Infra with the request. Include this information:
 
 - If you want to get Jira-ticket notifications, the name of the channel or channels where notifications about tickets related to your projects should appear
 - How you want notifications to appear. There are five options:
@@ -37,16 +37,14 @@ To have Qbot active in a project's private channel, once it is available in your
 
 In Slack, there are three ways to talk to Qbot:
 
-- Anywhere in the ASF workspace, type `/qbot` and the command you want to give it. If it is a command which you do not have permission to use where you currently are in Slack, the command will fail.
-- In a channel where Qbot is present, type `qbot` without the slash, and the command.
-- In the Slack interface, there is a general menu bar at the far left. The next column is the menu bar for the ASF workspace. Below the list of your contacts and channels, there is a section for `Apps`. Qbot appears there.
-  - Click that entry to see a display with three tabs.
-  - Select the `Messages` tab.
-  - Write your command to Qbot without `/` or 'qbot` at the start.
+1. Anywhere in the ASF workspace, type `/qbot` and the command you want to give it. If it is a command which you do not have permission to use where you currently are in Slack, the command will fail.
+1. In a channel where Qbot is present, type `qbot` without the slash, and the command.
+1. In the Slack interface, there is a general menu bar at the far left. The next column is the menu bar for the ASF workspace. Below the list of your contacts and channels, there is a section for `Apps`. Qbot appears there.
+    1. Click that entry to see a display with three tabs
+    2. Select the `Messages` tab.
+    3. Write your command to Qbot without `/` or 'qbot` at the start.
 
 ## Qbot commands
-
-**Note** we are expanding Qbot's reach, and this list will expand to match its capabilities.
 
 - `help` - You see a list of the available commands: `qbot help`.
 
